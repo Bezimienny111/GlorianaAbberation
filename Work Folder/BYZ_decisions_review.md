@@ -132,3 +132,36 @@ Kazda zmiana pliku eventu lub decyzji wymaga wpisu po angielsku do CHANGELOG_eve
 - Widocznosc 6030 przy dominacji przez wasali oraz 6036 przy dwoch brakujacych kluczowych ziemiach.
 
 Nie potwierdzono w silniku: ponawiania eventow wywolywanych komenda `trigger`, migracji flag po zmianie tagu ani zachowania nagrod przy limitach zasobow.
+
+
+## 7. Wdrozone Rozwiazania i Nowe Mechaniki (2026-10-08)
+
+Na podstawie uzgodnien z uzytkownikiem zaimplementowano nastepujace zmiany w `Db/Decisions/alt_byzantine.txt` oraz `Db/Events/alt_byzantine.txt`:
+
+1. **Relokacja Stolic Mocarstw Kolonialnych (Events 3009010-3009014):**
+   - Warunek wyzwolenia: wylacznie podczas wojny z Bizancjum (`war = { country = <TAG> country = BYZ }`) oraz bezposredniej kontroli stolicy przez armie Bizancjum (`control = { province = <ID> data = BYZ }`).
+   - Portugalia (POR): ucieczka z Lizbony do Salvadoru/Rio w Brazylii lub na Azory.
+   - Hiszpania (SPA): ucieczka z Madrytu/Toledo do Nowej Hiszpanii (Meksyk), Hawany (Kuba) lub na Wyspy Kanaryjskie.
+   - Francja (FRA): ucieczka z Paryza do Nowej Francji (Quebec/Stadacone), Luizjany lub na Korsyke.
+   - Anglia (ENG): ucieczka z Londynu do Ameryki Polnocnej (Manhattan, Delaware) lub do Szkocji (Edynburg).
+   - Austria (HAB): ucieczka z Wiednia do Pragi (Czechy) lub Budy/Pesztu (Wegry).
+   - Kazde panstwo posiada opcje odmowy ewakuacji ("Walka w ruinach") dajaca premie defensywne i morale.
+
+2. **Dwie Sciezki Rozwoju Kulturowego (Decyzje 6063 i 6064):**
+   - **Sciezka A (Konstytucja Antoninska / Polyethnic Commonwealth, dec. 6064):**
+     * Oparta na edykcie Karakalli: akceptacja kultur lokalnych (`iberian`, `french`, `anglosaxon`, `german`, `italian`).
+     * Decyzje 6045, 6050, 6052, 6055 nadaja odpowiednie kultury narodowe, zapewniajac wysoki dochod podatkowy i brak niepokojow.
+   - **Sciezka B (Renovatio Romanitatis / Roman Assimilation, dec. 6063):**
+     * Odrzucenie jezykow barbarzynskich i narzucenie kultury `roman` jako najwyzszej tozsamosci Panstwa.
+     * Odebranie akceptacji kultur prowincjonalnych, konwersja kluczowych metropolii europejskich na kulture `roman`.
+     * Koszt: -800 dukatow, -3 stabilnosci, +4 revolt risk na 5 lat, wywolanie eventu oporu prowincji (3009021).
+     * Decyzje 6045, 6050, 6052, 6055 dynamicznie przelaczaja sie na konwersje kolejnych miast na kulture rzymska zamiast akceptacji narodowosci.
+
+3. **Rozwiazanie Swietego Cesarstwa Rzymskiego (Decyzja 6065 & Event 3009020):**
+   - *Abolitio Sacri Romani Imperii*: dostepna, gdy Bizancjum kontroluje Rzym oraz co najmniej 4 stolice elektorskie w Niemczech (Wieden, Kolonia, Moguncja, Palatynat, Praga, Brandenburgia, Saksonia).
+   - Mechanika FTG: odebranie statusu elektora wszystkim 10 elektorom (`elector = 0`) oraz skasowanie przynaleznosci ziem niemieckich do HRE (`hre = no`).
+   - Likwidacja roszczen niemieckich do tytulu Cesarza Rzymskiego, transfer archiwow, nagroda w prestizu i skarbcu.
+
+4. **Zniesienie Sztucznych Blokad Czasowych (Decyzje 6024-6065):**
+   - Usunieto wymogi `year = 1450`, `1475`, `1500`, `1520`, `1530`, `1550` z warunkow wykonania decyzji.
+   - Gracz ma pelna swobode tempa podboju: jesli zrealizuje cele militarne i terytorialne wczesniej, moze natychmiast oglaszac odpowiednie edykty imperialne.

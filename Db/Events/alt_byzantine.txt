@@ -34,3 +34,411 @@ event = {
 		command = { type = sleepevent which = 3001167 } #The Restoration is Complete
 	}
 }
+
+#=============================================================================
+# CAPITAL RELOCATION EVENTS FOR DEFEATED EUROPEAN POWERS
+# Triggered when at war with BYZ and BYZ actively controls the national capital.
+# Allows government and court to evacuate to overseas colonies or regional redoubts.
+# ID Range: 3009010 - 3009019
+#=============================================================================
+
+#-----------------------------------------------------------------------------
+# Event 3009010: POR - The Flight of the Court to Brazil
+# Trigger: war with BYZ, BYZ controls Lisboa (441)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009010
+	random = no
+	country = POR
+
+	name = "The Flight of the Portuguese Court"
+	desc = "Lisbon has fallen! The triumphant legions of the Eastern Roman Emperor occupy the Tagus estuary and the ancient royal citadel. King and court face imminent capture unless they take to the Atlantic. Our transatlantic fleet stands ready to carry the Braganza dynasty and the royal archives across the ocean to our flourishing Brazilian captaincies or our island strongholds."
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 15
+	deathdate = { day = 30 month = december year = 1838 }
+
+	trigger = {
+		war = { country = POR country = BYZ }
+		control = { province = 441 data = BYZ } # Tago / Lisboa controlled by BYZ
+		NOT = { flag = por_capital_relocated }
+		NOT = { capital = 209 }
+		NOT = { capital = 211 }
+		NOT = { capital = 823 }
+	}
+
+	action_a = {
+		name = "Transfer the Royal Residence to Brazil (Salvador)"
+		trigger = {
+			owned = { province = 209 data = -1 } # Salvador
+		}
+		command = { type = setflag which = por_capital_relocated }
+		command = { type = capital which = 209 }
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 200 }
+		command = { type = provincetax which = 209 value = 2 }
+		command = { type = provincemanpower which = 209 value = 1 }
+		command = { type = warships which = 209 value = 5 }
+	}
+	action_b = {
+		name = "Establish the Crown in Rio de Janeiro"
+		trigger = {
+			owned = { province = 211 data = -1 } # Niteroi / Rio
+		}
+		command = { type = setflag which = por_capital_relocated }
+		command = { type = capital which = 211 }
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 200 }
+		command = { type = provincetax which = 211 value = 2 }
+		command = { type = warships which = 211 value = 5 }
+	}
+	action_c = {
+		name = "Retreat to the Azores Archipelago"
+		trigger = {
+			owned = { province = 823 data = -1 } # Azores
+		}
+		command = { type = setflag which = por_capital_relocated }
+		command = { type = capital which = 823 }
+		command = { type = stability value = -1 }
+		command = { type = treasury value = 100 }
+	}
+	action_d = {
+		name = "Never abandon Lusitania! Die in Lisbon!"
+		command = { type = setflag which = por_capital_relocated }
+		command = { type = stability value = -2 }
+		command = { type = landmorale which = 60 value = 1 }
+		command = { type = INF which = -2 value = 5000 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009011: SPA - The Transfer of the Spanish Crown to the Americas
+# Trigger: war with BYZ, BYZ controls Toledo/Madrid (439) or Castilla (436)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009011
+	random = no
+	country = SPA
+
+	name = "The Crown of Spain in Exile"
+	desc = "Madrid has fallen to the restored Roman forces! The banners of the double-headed eagle fly over Castile. To avoid unconditional capitulation and preserve the independence of the Spanish Monarchy, the Council of the Indies urges the Sovereign to board the treasure galleons in Cadiz and transfer the capital across the Atlantic to our opulent viceroyalties in the New World."
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 15
+	deathdate = { day = 30 month = december year = 1838 }
+
+	trigger = {
+		war = { country = SPA country = BYZ }
+		OR = {
+			control = { province = 439 data = BYZ } # Toledo / Madrid
+			control = { province = 436 data = BYZ } # Castilla
+		}
+		NOT = { flag = spa_capital_relocated }
+		NOT = { capital = 27 }
+		NOT = { capital = 137 }
+		NOT = { capital = 817 }
+	}
+
+	action_a = {
+		name = "Relocate the Imperial Court to Mexico (New Spain)"
+		trigger = {
+			owned = { province = 27 data = -1 } # Zacatecas / Mexico
+		}
+		command = { type = setflag which = spa_capital_relocated }
+		command = { type = capital which = 27 }
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 300 }
+		command = { type = provincetax which = 27 value = 3 }
+		command = { type = provincemanpower which = 27 value = 2 }
+		command = { type = INF which = 27 value = 6000 }
+	}
+	action_b = {
+		name = "Withdraw the Government to the Fortress of Havana"
+		trigger = {
+			owned = { province = 137 data = -1 } # Havana
+		}
+		command = { type = setflag which = spa_capital_relocated }
+		command = { type = capital which = 137 }
+		command = { type = stability value = 1 }
+		command = { type = fortress which = 137 value = 1 }
+		command = { type = warships which = 137 value = 6 }
+	}
+	action_c = {
+		name = "Retreat to the Canary Islands"
+		trigger = {
+			owned = { province = 817 data = -1 } # Canaries
+		}
+		command = { type = setflag which = spa_capital_relocated }
+		command = { type = capital which = 817 }
+		command = { type = stability value = -1 }
+		command = { type = treasury value = 150 }
+	}
+	action_d = {
+		name = "Fight to the last Spaniard in the Iberian mountains!"
+		command = { type = setflag which = spa_capital_relocated }
+		command = { type = stability value = -2 }
+		command = { type = landmorale which = 60 value = 1 }
+		command = { type = INF which = -2 value = 8000 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009012: FRA - The Flight of the French Crown to New France
+# Trigger: war with BYZ, BYZ controls Paris (385)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009012
+	random = no
+	country = FRA
+
+	name = "The Flight of the French Crown to New France"
+	desc = "Paris is besieged and overrun! The Byzantine legions march under the Arc de Triomphe of ancient memory. The King and the royal princes have managed to escape through Normandy to the waiting Atlantic squadron. Ahead lies New France--the vast, untamed territories of the St. Lawrence and North America, where the fleur-de-lis may rule unhindered."
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 15
+	deathdate = { day = 30 month = december year = 1838 }
+
+	trigger = {
+		war = { country = FRA country = BYZ }
+		control = { province = 385 data = BYZ } # Ile de France / Paris
+		NOT = { flag = fra_capital_relocated }
+		NOT = { capital = 110 }
+		NOT = { capital = 58 }
+		NOT = { capital = 398 }
+	}
+
+	action_a = {
+		name = "Establish the Crown of France in Quebec (Stadacone)"
+		trigger = {
+			owned = { province = 110 data = -1 } # Stadacone / Quebec
+		}
+		command = { type = setflag which = fra_capital_relocated }
+		command = { type = capital which = 110 }
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 250 }
+		command = { type = provincetax which = 110 value = 2 }
+		command = { type = provincemanpower which = 110 value = 1 }
+		command = { type = INF which = 110 value = 5000 }
+	}
+	action_b = {
+		name = "Retreat to the Mississippi in Louisiana"
+		trigger = {
+			owned = { province = 58 data = -1 } # Missouri / Louisiana
+		}
+		command = { type = setflag which = fra_capital_relocated }
+		command = { type = capital which = 58 }
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 200 }
+	}
+	action_c = {
+		name = "Withdraw the Royal Court to Corsica"
+		trigger = {
+			owned = { province = 398 data = -1 } # Corsica
+		}
+		command = { type = setflag which = fra_capital_relocated }
+		command = { type = capital which = 398 }
+		command = { type = stability value = -1 }
+		command = { type = fortress which = 398 value = 1 }
+	}
+	action_d = {
+		name = "Never leave France! Vive le Roi!"
+		command = { type = setflag which = fra_capital_relocated }
+		command = { type = stability value = -2 }
+		command = { type = landmorale which = 60 value = 1 }
+		command = { type = INF which = -2 value = 10000 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009013: ENG - The Fall of London and the Colonial Evacuation
+# Trigger: war with BYZ, BYZ controls London (247)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009013
+	random = no
+	country = ENG
+
+	name = "The Fall of London and the Colonial Evacuation"
+	desc = "Londinium has fallen to Roman arms once more! The Tower of London has capitulated, and Roman triremes anchor along the Thames. King and Parliament have retreated downriver to the Royal Navy fleet at Portsmouth. With Britannia overrun, our ministers propose transferring the seat of government across the sea to our North American colonies or falling back into Scotland."
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 15
+	deathdate = { day = 30 month = december year = 1838 }
+
+	trigger = {
+		war = { country = ENG country = BYZ }
+		control = { province = 247 data = BYZ } # London / Anglia
+		NOT = { flag = eng_capital_relocated }
+		NOT = { capital = 87 }
+		NOT = { capital = 86 }
+		NOT = { capital = 239 }
+	}
+
+	action_a = {
+		name = "Transfer Parliament and the Crown to Manhattan"
+		trigger = {
+			owned = { province = 87 data = -1 } # Manhattan
+		}
+		command = { type = setflag which = eng_capital_relocated }
+		command = { type = capital which = 87 }
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 300 }
+		command = { type = provincetax which = 87 value = 2 }
+		command = { type = provincemanpower which = 87 value = 1 }
+		command = { type = INF which = 87 value = 6000 }
+	}
+	action_b = {
+		name = "Fall back to Edinburgh in Scotland"
+		trigger = {
+			owned = { province = 239 data = -1 } # Strathclyde / Edinburgh
+		}
+		command = { type = setflag which = eng_capital_relocated }
+		command = { type = capital which = 239 }
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 150 }
+		command = { type = INF which = 239 value = 5000 }
+	}
+	action_c = {
+		name = "Establish the Crown in Delaware"
+		trigger = {
+			owned = { province = 86 data = -1 } # Delaware
+		}
+		command = { type = setflag which = eng_capital_relocated }
+		command = { type = capital which = 86 }
+		command = { type = stability value = 1 }
+	}
+	action_d = {
+		name = "Die in the ruins of England! God Save the King!"
+		command = { type = setflag which = eng_capital_relocated }
+		command = { type = stability value = -2 }
+		command = { type = landmorale which = 60 value = 1 }
+		command = { type = INF which = -2 value = 10000 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009014: HAB - The Fall of Vienna and the Habsburg Retreat
+# Trigger: war with BYZ, BYZ controls Wien (351)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009014
+	random = no
+	country = HAB
+
+	name = "The Fall of Vienna and the Habsburg Retreat"
+	desc = "Vienna has surrendered! The Hofburg palace is occupied by imperial troops from Constantinople, and the double-headed eagle casts its shadow over the Danube. The Archduke and the imperial chancery must make a hasty retreat to keep the dynasty alive and coordinate the defense of the remaining ancestral lands."
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 15
+	deathdate = { day = 30 month = december year = 1838 }
+
+	trigger = {
+		war = { country = HAB country = BYZ }
+		control = { province = 351 data = BYZ } # Austria / Wien
+		NOT = { flag = hab_capital_relocated }
+		NOT = { capital = 328 }
+		NOT = { capital = 353 }
+	}
+
+	action_a = {
+		name = "Move the Imperial Court to Prague (Bohemia)"
+		trigger = {
+			owned = { province = 328 data = -1 } # Bohemia / Prague
+		}
+		command = { type = setflag which = hab_capital_relocated }
+		command = { type = capital which = 328 }
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 250 }
+		command = { type = provincetax which = 328 value = 2 }
+	}
+	action_b = {
+		name = "Withdraw the Dynasty to Buda / Pest (Hungary)"
+		trigger = {
+			owned = { province = 353 data = -1 } # Pest / Buda
+		}
+		command = { type = setflag which = hab_capital_relocated }
+		command = { type = capital which = 353 }
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 200 }
+	}
+	action_c = {
+		name = "The House of Habsburg yields nothing! Fight on!"
+		command = { type = setflag which = hab_capital_relocated }
+		command = { type = stability value = -2 }
+		command = { type = landmorale which = 60 value = 1 }
+		command = { type = INF which = -2 value = 10000 }
+	}
+}
+
+#=============================================================================
+# BYZANTINE NARRATIVE & CULTURAL EVENTS
+# ID Range: 3009020 - 3009025
+#=============================================================================
+
+#-----------------------------------------------------------------------------
+# Event 3009020: BYZ - The Dissolution of the Holy Roman Empire
+# Triggered by Decision 6065
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009020
+	random = no
+	country = BYZ
+
+	name = "The Dissolution of the Holy Roman Empire"
+	desc = "The German electors have officially surrendered their electoral seals and insignias. The counterfeit 'Imperium' founded by Charlemagne in 800 has ceased to exist in both law and reality. All German principalities now recognize the Basileus in Constantinople and Rome as the only legitimate Roman Emperor under heaven. The imperial archives have been brought to Rome, and the false crown sent to the melting pots."
+	style = 1
+
+	action_a = {
+		name = "There is only one Emperor in Christendom!"
+		command = { type = stability value = 2 }
+		command = { type = vp value = 200 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009021: BYZ - Backlash against Renovatio Romanitatis
+# Triggered by Decision 6063
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009021
+	random = no
+	country = BYZ
+
+	name = "Resistance to the Edict of Romanization"
+	desc = "The decree of total cultural Romanization has provoked violent resistance across the western provinces! Local nobles in Gaul, Iberia, and Britannia view the suppression of their native idioms and traditions as tyrannical despotism. Riots have erupted in major cities, while regional aristocrats refuse to pay taxes in protest. The legions must enforce Romanitas by iron and fire!"
+	style = 1
+
+	action_a = {
+		name = "Roman law will prevail without compromise!"
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = provincetax which = -1 value = -1 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009022: BYZ - Acclamation of the Polyethnic Commonwealth
+# Triggered by Decision 6064
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009022
+	random = no
+	country = BYZ
+
+	name = "Triumph of the Polyethnic Commonwealth"
+	desc = "Across the vast Mediterranean world, our proclamation of equal citizenship and cultural toleration has been met with jubilant celebration! Provincial magistrates, Western bishops, and merchants laud the Emperor as the father of all his peoples. Commerce blossoms from the Tagus to the Levant, secured by mutual respect and civic brotherhood."
+	style = 1
+
+	action_a = {
+		name = "Concordia Augustorum!"
+		command = { type = merchants value = 6 }
+		command = { type = infra value = 500 }
+		command = { type = trade value = 500 }
+	}
+}

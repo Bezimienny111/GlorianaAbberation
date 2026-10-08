@@ -31,7 +31,7 @@ global shared event/decision ID space, monarch space, and leader space:
 
 | Module / Nation             | Tag(s)        | Decisions | Events          | Monarchs      | Leaders       |
 |-----------------------------|---------------|-----------|-----------------|---------------|---------------|
-| 1. Byzantine Empire         | BYZ           | 6000-6062 | 3009000         | Vanilla       | Vanilla       |
+| 1. Byzantine Empire         | BYZ           | 6000-6065 | 3009000-3009022 | Vanilla       | Vanilla       |
 | 2. Papal States / Italy/WRE | PAP, ITA, WRE | 7010-7049 | 3009100-3009145 | 39001-39023   | 39101-39109   |
 | 3. Mameluks & Ptolemaic Egy | MAM, EGY      | 7050-7076 | 3009200-3009245 | 39201-39232   | 39251-39259   |
 | 4. Hanseatic League         | HSA           | 7150-7160 | 3009300-3009345 | 13599-13763   | 39401-39410   |
@@ -128,6 +128,43 @@ global shared event/decision ID space, monarch space, and leader space:
     (Rome, Constantinople, Alexandria, Jerusalem, London, Paris, Toledo, Wien, Köln); awards +1 stability, 
     -10 badboy, +2000 gold, +1000 VP, and permanent capital bonuses.
 
+
+
+[2026-10-08] Expansion Phase 2 (Capital Flight, Romanization, HRE Dissolution & Pacing):
+1. Unrestricted Player Progression (Decisions 6024-6065):
+   - Removed artificial year gate restrictions (year = 1450, 1475, 1500, 1520, 1530, 1550) 
+     from all expansion and restoration decisions.
+   - The player can now progress freely based on military and strategic achievement without 
+     waiting decades for artificial calendar thresholds.
+2. Dual Cultural Policy Paths (Decisions 6045, 6050, 6052, 6055, 6063, 6064):
+   - Path A (Constitutio Antoniniana - Edictum de Civitate, Decision 6064):
+     * Embraces the polyethnic Roman Commonwealth.
+     * Decisions 6045, 6050, 6052, 6055 award accepted cultures (iberian, french, anglosaxon, 
+       german, italian) ensuring high stability, low unrest, and tax prosperity.
+     * Fires celebration event 3009022.
+   - Path B (Renovatio Romanitatis - Lex de Assimilatione, Decision 6063):
+     * Enforces total Latin/Roman cultural supremacy. Adopts "roman" state culture and strips 
+       barbarian accepted cultures.
+     * Decisions 6045, 6050, 6052, 6055 convert key provincial capitals directly to "roman" 
+       culture rather than accepting barbarian tongues.
+     * Heavy trade-off: -800 treasury, -3 stability, +4 revolt risk for 5 years, and fires 
+       assimilation resistance event 3009021.
+3. Holy Roman Empire Dissolution (Decision 6065 & Event 3009020):
+   - "Abolitio Sacri Romani Imperii": Available when BYZ controls Rome and at least 4 key German 
+     elector capitals (Vienna, Koln, Mainz, Pfalz, Prague, Brandenburg, Saxony).
+   - Strips elector status (elector = 0) from all 10 imperial electors (HAB, BOH, BRA, SAC, 
+     BAY, PFA, MAI, KOL, TRR, HAN).
+   - Removes HRE territory status (hre = no) from key German centers.
+   - Rewards: +800 treasury, +300 VP, -5 badboy, while inflicting severe diplomatic penalties 
+     with German states and Papacy. Fires narrative event 3009020.
+4. Capital Relocation for Defeated European Powers (Events 3009010-3009014):
+   - Fires during active war when BYZ directly controls the enemy national capital:
+     * Event 3009010 (POR): Portugal evacuates Lisbon (441) to Salvador (209) / Rio (211) / Azores (823).
+     * Event 3009011 (SPA): Spain evacuates Madrid/Toledo (439) to Mexico (27) / Havana (137) / Canaries (817).
+     * Event 3009012 (FRA): France evacuates Paris (385) to Quebec (110) / Louisiana (58) / Corsica (398).
+     * Event 3009013 (ENG): England evacuates London (247) to Manhattan (87) / Delaware (86) / Edinburgh (239).
+     * Event 3009014 (HAB): Austria evacuates Vienna (351) to Prague (328) / Buda (353).
+   - Includes fallback "Fight to the death in the ruins" options granting morale and emergency troops.
 
 ================================================================================
 4. MODULE 2: PAPAL STATES, KINGDOM OF ITALY & WESTERN ROMAN EMPIRE (PAP / ITA / WRE)
