@@ -12,6 +12,10 @@
 # 7050: Emancipation of Fellahs and Copts
 decision = {
 	id = 7050
+	potential = {
+		tag = MAM
+		NOT = { flag = mam_emancipation }
+	}
 	name = "Emancypacja Fellahow i Koptow"
 	desc = "Przez stulecia wladza nad Nilem spoczywala w rekach obcej, sprowadzanej z Kipczaku i Kaukazu kasty mameluckich niewolnikow-wojownikow. Rdzenni egipscy fellahowie oraz chrzescijascy Koptowie byli traktowani jak poddani nizszej kategorii. Otwarcie korpusu urzedniczego i szeregow armii dla wolnych autochtonow przelamie monopol emirow i zjednoczy mieszkancow Nilu w jeden silny narod."
 
@@ -47,6 +51,11 @@ decision = {
 # 7051: Dismantling the Military Slave Monopoly
 decision = {
 	id = 7051
+	potential = {
+		tag = MAM
+		flag = mam_emancipation
+		NOT = { flag = mam_mamluk_dismantled }
+	}
 	name = "Likwidacja Kasty Niewolnikow Wojskowych"
 	desc = "Utrzymanie targow niewolnikow i nieustanne oplacanie obcych garnizonow wyczerpuje skarb panstwa i rodzi ciagle przewroty palacowe. Wydajac edykt o zakazie zakupu wojskowych niewolnikow i tworzac stala armie poborowa z ludnosci rodzimej, kladziemy kres samowoli mameluckiej oligarchii."
 
@@ -81,6 +90,11 @@ decision = {
 # 7052: Coronation in Alexandria: The New Ptolemaic Kingdom
 decision = {
 	id = 7052
+	potential = {
+		tag = MAM
+		flag = mam_mamluk_dismantled
+		NOT = { flag = egy_ptolemaic }
+	}
 	name = "Koronacja w Aleksandrii: Odrodzenie Panstwa Ptolemeuszy"
 	desc = "Zrzucajac mameluckie jarzmo, wladca Egiptu przenosi stolice z kontynentalnego Kairu do nadmorskiej metropolii Aleksandrii. Przyjmujac tradycje dawnej dynastii Lagidow (Ptolemeuszy), panstwo zwraca sie ku Morzu Srodziemnemu, laczac dziedzictwo greckie, koptyjskie i arabskie w kosmopolityczne imperium handlu i nauki."
 
@@ -125,6 +139,9 @@ decision = {
 # 7053: Reconstruction of the Pharos of Alexandria
 decision = {
 	id = 7053
+	potential = {
+		tag = EGY
+	}
 	name = "Odbudowa Latarni na Faros"
 	desc = "Siodmy Cud Swiata, potezna latarnia morska na wysepce Faros, zostala powaznie uszkodzona przez trzesienia ziemi. Wykorzystujac zyski z ceł aleksandryjskich i najnowsze osiagniecia inzynierii, wznosimy na nowo monumentalna wieze z systemem luster i bateriami dzial nadbrzeznych, aby prowadzic okrety calego Morza Srodziemnego."
 
@@ -151,6 +168,9 @@ decision = {
 # 7054: The New Great Library of Alexandria
 decision = {
 	id = 7054
+	potential = {
+		tag = EGY
+	}
 	name = "Nowa Wielka Biblioteka Aleksandryjska"
 	desc = "Podobnie jak w czasach starozytnego Mouseionu, wladca nakazuje zebranie manuskryptow ze wszystkich stron swiata. Tlumacze, filozofowie, astronomowie i lekarze z Konstantynopola, Bagdadu, Rzymu i Andaluzji otrzymuja wysokie uposazenia i schronienie w Aleksandrii, czyniac z niej serce renesansu wiedzy."
 
@@ -178,6 +198,9 @@ decision = {
 # 7055: Restoration of the Ancient Canal of the Pharaohs (Suez Link)
 decision = {
 	id = 7055
+	potential = {
+		tag = EGY
+	}
 	name = "Pradawny Kanal Faraonow"
 	desc = "Jeszcze przed wiekami Faraon Necho i perski krol Dariusz wybudowali kanal laczacy odnoge Nilu z Morzem Czerwonym. Zmobilizowanie inzynierow i tysiecy robotnikow do oczyszczenia i poszerzenia dawnego szlaku pozwoli egipskim okretom przeplywac prosto ze Srodziemnomorza na Ocean Indyjski bez oplywania Afryki."
 
@@ -221,6 +244,9 @@ decision = {
 # 7056: Levantine and Aegean Thalassocracy
 decision = {
 	id = 7056
+	potential = {
+		tag = EGY
+	}
 	name = "Talasokracja Wschodniego Srodziemnomorza"
 	desc = "Flota aleksandryjska dominuje na wodach Lewantu. Aby zabezpieczyc szlaki handlowe przed weneckimi i genuenskimi konsorcjami, proklamujemy strefe protektoratu nad wyspami Morza Egejskiego i wybrzezami Syrii."
 
@@ -248,6 +274,13 @@ decision = {
 # 7057: Securing the Sources of the Nile (Nubia Expedition)
 decision = {
 	id = 7057
+	potential = {
+		or = {
+			tag = MAM
+			tag = EGY
+		}
+		NOT = { flag = nile_secured }
+	}
 	name = "Zabezpieczenie Zrodel Nilu"
 	desc = "Egipt jest darem Nilu. Kazde zaklocenie doplywu zyznych mulow grozi kleska glodu. Wyslanie ekspedycji w gore rzeki ku Nubii i zawarcie strategicznego porozumienia z chrzescjanskim krolestwem Etiopii zabezpieczy zyciodajne zrodla."
 
@@ -281,6 +314,14 @@ decision = {
 # 7060: Edict of Memphis: Return of the Living Horus
 decision = {
 	id = 7060
+	potential = {
+		or = {
+			tag = MAM
+			tag = EGY
+		}
+		flag = mam_mamluk_dismantled
+		NOT = { flag = kemet_restored }
+	}
 	name = "Edykt z Memfis: Powrot Zywiacego Horusa"
 	desc = "Pod natchnieniem odnalezionych hieroglificznych inskrypcji i prastarej tradycji, wladca oglaza sie prawowitym Faraonem – Synem Boga Slonca Ra i ziemskim wcieleniem Horusa. Wiara dawnego Kemetu wraca nad brzegi Nilu, wypierajac obce nauki i wprawiajac swiat monoteistyczny w bezgraniczne przerazenie!"
 
@@ -324,6 +365,13 @@ decision = {
 # 7061: Restoration of the Pyramids and Great Sphinx of Giza
 decision = {
 	id = 7061
+	potential = {
+		or = {
+			tag = MAM
+			tag = EGY
+		}
+		religion = egyptian_pagan
+	}
 	name = "Odnowienie Piramid w Gizie"
 	desc = "Przez stulecia wielkie grobowce dawnych kroli i oblicze Wielkiego Sfinksa byly dewastowane na material budowlany dla kairskich twierdz. Faraon nakazuje natychmiastowe wstrzymanie rozbiorki, odkopanie monumentow spod ton pustynnego piasku i odtworzenie ich lsnacej biela wapiennej okladziny."
 
@@ -350,6 +398,13 @@ decision = {
 # 7062: Reconstruction of Karnak and Luxor Temples
 decision = {
 	id = 7062
+	potential = {
+		or = {
+			tag = MAM
+			tag = EGY
+		}
+		religion = egyptian_pagan
+	}
 	name = "Odbudowa Swiatyn w Karnaku i Luksorze"
 	desc = "Prastare Wese (Teby) znow staje sie swietym sercem kultu Amona-Ra. Monumentalne aleje sfinksow, gigantyczne pylony i sale hypostylowe w Karnaku i Luksorze zostaja zrekonstruowane, przyciagajac kaplanow i pielgrzymow z calej doliny Nilu."
 
@@ -376,6 +431,13 @@ decision = {
 # 7063: The Great Feast of Opet and Cult of Amun-Ra
 decision = {
 	id = 7063
+	potential = {
+		or = {
+			tag = MAM
+			tag = EGY
+		}
+		religion = egyptian_pagan
+	}
 	name = "Swieto Opet i Kult Amona-Ra"
 	desc = "Co roku swieta barka Amona wyrusza z Karnaku ku Luxorowi w uroczystej procesji, potwierdzajac kosmiczna wiez miedzy bostwem a zyjacym Faraonem. Rozdanie chleba i wina wsrod ludu umacnia wiare i posluszenstwo wobec boskiego wladcy."
 
@@ -405,6 +467,10 @@ decision = {
 # 7070: Edict of Reason: The Mu'tazilite Reformation
 decision = {
 	id = 7070
+	potential = {
+		tag = MAM
+		NOT = { flag = mam_mutazilite }
+	}
 	name = "Edykt Rozumu i Mu'tazilizm"
 	desc = "Odrzucajac bierny fatalizm i doslowny dogmatyzm, wladca przyjmuje szkole Mu'tazila jako oficjalna doktryne panstwowa. Prymat ludzkiego rozumu ('aql) w interpretacji wiary otwiera drzwi dla wolnej woli, nauk przyrodniczych, medycyny i tolerancji wobec ludnosci ksiegi. Choć konserwatywni teolodzy wrza z gniewu, Kair wkracza w nowy zloty wiek intelektualny."
 
@@ -437,6 +503,13 @@ decision = {
 # 7071: Transformation of Al-Azhar into Academy of Sciences
 decision = {
 	id = 7071
+	potential = {
+		or = {
+			tag = MAM
+			tag = EGY
+		}
+		religion = mutazilite
+	}
 	name = "Akademia Nauk Scislych Al-Azhar"
 	desc = "Slynna ustronna szkola teologiczna Al-Azhar w Kairze zostaje przeksztalcona w uniwersytet nauk empirycznych. Katedry astronomii, matematyki, algebry, anatomii i fizyki przyciagaja wybitne umysly z calego swiata."
 
@@ -463,6 +536,12 @@ decision = {
 # 7072: The Mansuri Hospital and Medical College
 decision = {
 	id = 7072
+	potential = {
+		or = {
+			tag = MAM
+			tag = EGY
+		}
+	}
 	name = "Szpital i Szkola Medyczna Mansuri"
 	desc = "Kompleks szpitalny sułtana Qalawuna w Kairze zostaje rozbudowany w najnowoczesniejszy bimaristan swiata. Nauczanie oparte na sekcjach anatomicznych, farmakopei ziolowej i higienie zapobiega zarazom i zapewnia bezplatne leczenie kazdemu obywatelowi."
 
@@ -491,6 +570,13 @@ decision = {
 # 7073: New House of Wisdom on the Nile (Beit al-Hikma)
 decision = {
 	id = 7073
+	potential = {
+		or = {
+			tag = MAM
+			tag = EGY
+		}
+		religion = mutazilite
+	}
 	name = "Nowy Dom Madrosci nad Nilem"
 	desc = "Wskrzeszajac legendarna tradycje Domu Madrosci dawnego Bagdadu, biblioteka w Kairze staje sie archiwum prac filozoficznych, astronomicznych atlasow i tlumaczen z sanskrytu, greki i laciny na jezyk arabski."
 
@@ -521,6 +607,12 @@ decision = {
 # 7075: Pacification and Integration of Syria
 decision = {
 	id = 7075
+	potential = {
+		or = {
+			tag = MAM
+			tag = EGY
+		}
+	}
 	name = "Pacyfikacja i Integracja Syrii"
 	desc = "Syria od dawna stanowila zarzewie rebelii wrogich frakcji. Przeprowadzenie gruntownej reformy administracyjnej, zrownanie w prawach syryjskich miast oraz ufortyfikowanie Damaszku i Aleppo cementuje unie Syrii z Egiptem."
 
@@ -557,6 +649,13 @@ decision = {
 # 7076: Protector of the Holy Sanctuaries of Hedjaz
 decision = {
 	id = 7076
+	potential = {
+		or = {
+			tag = MAM
+			tag = EGY
+		}
+		NOT = { religion = egyptian_pagan }
+	}
 	name = "Straznik Swietych Miejsc Hedzazu"
 	desc = "Sprawowanie pieczy nad Swietymi Miastami Mekka i Medyna stanowi najwyzszy honor dla wladcy panujacego nad Morzem Czerwonym. Zapewnienie bezpieczenstwa karawan pielgrzymich przynosi powszechny szacunek w calym swiecie."
 

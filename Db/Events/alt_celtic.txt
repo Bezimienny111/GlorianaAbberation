@@ -5,27 +5,26 @@
 ## ID Range: 3009500 - 3009550                                 ##
 #################################################################
 
-# 3009500: Przebudzenie Smoka: Powstanie Glyndwra (1400)
+# 3009500: Przebudzenie Smoka: Powstanie Glyndwra
 event = {
 	id = 3009500
 	random = no
 	name = "Przebudzenie Smoka: Powstanie Glyndwra"
-	desc = "W 1400 roku w polnocnej Walii Owain Glyndwr podnosi sztandar buntu przeciwko angielskiemu krolu Henrykowi IV. Walijczycy ze wszystkich zakatkow kraju chwytaja za bron, a bardowie spiewaja o powrocie prawowitych wladcow Brytanii."
+	desc = "W obliczu oslabienia korony angielskiej w polnocnej Walii Owain Glyndwr podnosi sztandar buntu. Walijczycy ze wszystkich commotes chwytaja za bron, a bardowie spiewaja o powrocie prawowitych wladcow Brytanii."
 
 	trigger = {
 		owned = { province = 243 data = -1 } # Wales
 		control = { province = 243 data = -1 }
-		year = 1400
-		not = { year = 1415 }
 		not = { hasflag = { which = wls_rising_fired value = 1 } }
 	}
 
-	date = { day = 16 month = september year = 1400 }
+	date = { day = 1 month = january year = 1337 }
 	offset = 30
-	deathdate = { day = 30 month = december year = 1415 }
+	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
 		name = "Y Ddraig Goch ddyry gychwyn! (Czerwony Smok Rusza ku Wolnosci!)"
+		ai_chance = 80
 		command = { type = stability value = 1 }
 		command = { type = domestic which = QUALITY value = 1 }
 		command = { type = INF which = 243 value = 8000 }
@@ -33,34 +32,131 @@ event = {
 		command = { type = setflag which = wls_rising_fired value = 1 }
 		command = { type = vp value = 50 }
 	}
+	action_b = {
+		name = "Wynegocjujcie kompromis i autonomię z koroną"
+		ai_chance = 20
+		command = { type = treasury value = 100 }
+		command = { type = stability value = 1 }
+		command = { type = setflag which = wls_rising_fired value = 1 }
+	}
 }
 
-# 3009501: Sejm w Machynlleth: Parlament Walijski (1404)
+# 3009501: Sejm w Machynlleth: Parlament Walijski
 event = {
 	id = 3009501
 	random = no
 	country = WLS
 	name = "Sejm w Machynlleth: Parlament Walijski"
-	desc = "W 1404 roku Ksiaze Owain zwoluje w Machynlleth pierwszy niepodlegly parlament walijski z udzialem delegatow ze wszystkich commotes. Przyjmuje korone w obecnosci poslow krola Francji, Szkocji i Kastylii."
+	desc = "Ksiaze Owain zwoluje w Machynlleth pierwszy niepodlegly parlament walijski z udzialem delegatow ze wszystkich commotes. Przyjmuje korone w obecnosci poslow krola Francji, Szkocji i Kastylii, formalizujac struktury nowego panstwa."
 
 	trigger = {
 		owned = { province = 243 data = -1 }
 		control = { province = 243 data = -1 }
-		year = 1404
-		not = { year = 1420 }
+		hasflag = { which = wls_proclaimed value = 1 }
 	}
 
-	date = { day = 10 month = may year = 1404 }
+	date = { day = 1 month = january year = 1337 }
 	offset = 30
-	deathdate = { day = 30 month = december year = 1420 }
+	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
 		name = "Uchwalmy konstytucje i sojusz z Francja!"
+		ai_chance = 85
 		command = { type = stability value = 2 }
 		command = { type = treasury value = 200 }
-		command = { type = domestic which = centralization value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
 		command = { type = relation which = FRA value = 100 }
 		command = { type = vp value = 50 }
+	}
+	action_b = {
+		name = "Skupmy się na obronie twierdz Gwynedd"
+		ai_chance = 15
+		command = { type = fortress which = 243 value = 1 }
+		command = { type = domestic which = OFFENSIVE value = -1 }
+	}
+}
+
+# 3009505: Wybór Ustroju Unii Celtyckiej: Federalna Rada vs Cesarstwo Arturiańskie
+event = {
+	id = 3009505
+	random = no
+	name = "Wybór Ustroju Unii Celtyckiej: Federalna Rada vs Cesarstwo Arturiańskie"
+	desc = "Zjednoczenie koron Alby, Cymru i Eire stawia celtyckie elity przed dziejowym wyborem ustrojowym: czy zachowac tradycje swobod klanowych w ramach Federalnej Rzeczypospolitej Celtyckiej z rotacyjna Wysoka Rada Trzech Narodow, czy tez wskrzesic jednolita imperialna Korone Arturiańska ze scentralizowana wladza w jednej stolicy."
+
+	trigger = {
+		hasflag = { which = celt_union_formed value = 1 }
+		not = { hasflag = { which = celt_constitution_chosen value = 1 } }
+	}
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 10
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Federalna Rzeczpospolita Celtycka: Wysoka Rada Trzech Narodów"
+		ai_chance = 60
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = stability value = 2 }
+		command = { type = provincemanpower which = 239 value = 2 }
+		command = { type = provincemanpower which = 243 value = 1 }
+		command = { type = provincemanpower which = 233 value = 2 }
+		command = { type = setflag which = celt_republic_path value = 1 }
+		command = { type = setflag which = celt_constitution_chosen value = 1 }
+		command = { type = vp value = 100 }
+	}
+	action_b = {
+		name = "Cesarstwo Arturiańskie: Zjednoczona Korona Wielkiej Brytanii"
+		ai_chance = 40
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = provincetax which = 239 value = 3 }
+		command = { type = provincetax which = 243 value = 2 }
+		command = { type = provincetax which = 233 value = 2 }
+		command = { type = stability value = -1 }
+		command = { type = setflag which = celt_empire_path value = 1 }
+		command = { type = setflag which = celt_constitution_chosen value = 1 }
+		command = { type = vp value = 120 }
+	}
+}
+
+# 3009506: Los Pokonanej Anglii: Wessex vs Bezpośrednia Aneksja
+event = {
+	id = 3009506
+	random = no
+	name = "Los Pokonanej Anglii: Wessex vs Bezpośrednia Aneksja"
+	desc = "Gdy Londyn zostal zdobyty przez celtyckie armie, a wladza Plantagenetow legla w gruzach, zwyciescy wodzowie stoja przed decyzja ostatecznego uregulowania losow narodu anglosaskiego: czy zredukowac Anglie do wasalnego malego ksiestwa Wessex, czy tez dokonac calkowitej aneksji i podzialu ziem pod bezposredni zarzad celtycki."
+
+	trigger = {
+		hasflag = { which = celt_britain_restored value = 1 }
+		not = { hasflag = { which = celt_england_fate_resolved value = 1 } }
+	}
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 10
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Zredukujcie Anglię do wasalnego Księstwa Wessex"
+		ai_chance = 70
+		command = { trigger = { exists = ENG } type = vassal which = ENG }
+		command = { trigger = { exists = ENG } type = relation which = ENG value = 100 }
+		command = { type = badboy value = -5 }
+		command = { type = stability value = 2 }
+		command = { type = setflag which = celt_england_fate_resolved value = 1 }
+		command = { type = vp value = 150 }
+	}
+	action_b = {
+		name = "Całkowita aneksja i podział ziem anglosaskich"
+		ai_chance = 30
+		command = { trigger = { exists = ENG } type = inherit which = ENG }
+		command = { type = badboy value = 6 }
+		command = { type = revoltrisk which = 60 value = 5 }
+		command = { type = addcore_claim which = 246 } # Midlands
+		command = { type = addcore_claim which = 244 } # Lancashire
+		command = { type = stability value = -2 }
+		command = { type = setflag which = celt_england_fate_resolved value = 1 }
+		command = { type = vp value = 200 }
 	}
 }
 
@@ -84,16 +180,64 @@ event = {
 		not = { hasflag = { which = pale_fallen value = 1 } }
 	}
 
-	date = { day = 1 month = january year = 1350 }
-	offset = 60
-	deathdate = { day = 30 month = december year = 1550 }
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Erinn go Bragh! (Irlandia na Zawsze Wolna!)"
+		name = "Éirinn go Brách! (Irlandia na Zawsze Wolna!)"
+		ai_chance = 85
 		command = { type = stability value = 2 }
 		command = { type = treasury value = 150 }
 		command = { type = setflag which = pale_fallen value = 1 }
 		command = { type = vp value = 60 }
+	}
+	action_b = {
+		name = "Zezwólcie kupcom na zachowanie przywilejów miejskich"
+		ai_chance = 15
+		command = { type = trade value = 300 }
+		command = { type = treasury value = 200 }
+		command = { type = setflag which = pale_fallen value = 1 }
+	}
+}
+
+# 3009515: Szlak Świętego Brendana: Odkrycie Nowej Alby
+event = {
+	id = 3009515
+	random = no
+	name = "Szlak Świętego Brendana: Odkrycie Nowej Alby"
+	desc = "Powracajaca z zachodniego oceanu flotylla celtycka przywozi wiesci o odkryciu rozleglych, bogatych w ryby i lasy ziem za Atlantykiem. Pradawna celtycka legenda o podrozy swietego Brendana Zeglarza staje sie rzeczywistoscia, otwierajac erę zamorskiej kolonizacji Nowej Alby."
+
+	trigger = {
+		hasflag = { which = celt_brendan_voyage value = 1 }
+		not = { hasflag = { which = celt_new_alba_founded value = 1 } }
+	}
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Zakładać osady rybackie i faktorje handlowe w Nowej Albie"
+		ai_chance = 75
+		command = { type = cot which = 249 } # CoT in Cornwall / Falmouth
+		command = { type = colonists value = 3 }
+		command = { type = trade value = 800 }
+		command = { type = naval value = 800 }
+		command = { type = treasury value = 300 }
+		command = { type = stability value = 1 }
+		command = { type = setflag which = celt_new_alba_founded value = 1 }
+		command = { type = vp value = 150 }
+	}
+	action_b = {
+		name = "Skupić flotę na ochronie wód ojczystych i Kanału"
+		ai_chance = 25
+		command = { type = naval value = 1000 }
+		command = { type = domestic which = NAVAL value = 2 }
+		command = { type = fortress which = 249 value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = setflag which = celt_new_alba_founded value = 1 }
+		command = { type = vp value = 80 }
 	}
 }
 
@@ -109,16 +253,222 @@ event = {
 		atwar = no
 	}
 
-	date = { day = 1 month = january year = 1420 }
+	date = { day = 1 month = january year = 1337 }
 	offset = 120
-	deathdate = { day = 30 month = december year = 1600 }
+	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
 		name = "Powitajmy bretonskich braci w naszym przymierzu!"
+		ai_chance = 85
 		command = { type = relation which = BRI value = 150 }
 		command = { type = alliance which = BRI }
 		command = { type = trade value = 400 }
 		command = { type = vp value = 50 }
+	}
+	action_b = {
+		name = "Zachowajcie ostroznosc wobec zaangazowania we Francji"
+		ai_chance = 15
+		command = { type = relation which = BRI value = 50 }
+		command = { type = treasury value = 100 }
+	}
+}
+
+#----------------------------------------------------------------
+# Celtic Historical Flavor & Crisis Events
+#----------------------------------------------------------------
+
+# 3009531: Francuska Gwardia Szkocka (Garde Écossaise)
+event = {
+	id = 3009531
+	random = no
+	name = "Francuska Gwardia Szkocka: Przymierze Auld Alliance"
+	desc = "Wobec wspolnej walki z Anglia krol Francji ufundowal w Paryzu elitarna formacje Garde Écossaise, a w zamian przesyla do Szkocji zaciagi doswiadczonych rusznikarzy, artylerzystow i instruktorow wojskowych, umacniajac celtycka armie."
+
+	trigger = {
+		or = {
+			tag = SCO
+			hasflag = { which = celt_union_formed value = 1 }
+		}
+		owned = { province = 239 data = -1 } # Lothian
+		control = { province = 239 data = -1 }
+		relation = { country = FRA value = 100 }
+	}
+
+	date = { day = 1 month = january year = 1418 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1480 }
+
+	action_a = {
+		name = "Przyjmijcie francuskich artylerzystow i zbroje!"
+		ai_chance = 85
+		command = { type = treasury value = 250 }
+		command = { type = land value = 600 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = INF which = 239 value = 6000 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 50 }
+	}
+	action_b = {
+		name = "Zachowajcie pelna niezaleznosc od dworu w Paryzu"
+		ai_chance = 15
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = land value = 300 }
+	}
+}
+
+# 3009532: Walijscy Łucznicy z Gwent: Potęga Długiego Łuku
+event = {
+	id = 3009532
+	random = no
+	name = "Walijscy Łucznicy z Gwent: Potęga Długiego Łuku"
+	desc = "Walijskie gory od wiekow slyna z nieprzescignionych lucznikow posluguujacych sie ciezkimi lukami z cisu (Welsh Longbow). Ich strzaly potrafia przebic plytowe zbroje rycerskie na setki krokow. Zorganizowanie narodowych regimentow luczniczych daje armii celtyckiej druzgocaca przewage ogniowa."
+
+	trigger = {
+		or = {
+			tag = WLS
+			hasflag = { which = celt_union_formed value = 1 }
+		}
+		owned = { province = 243 data = -1 } # Wales
+		control = { province = 243 data = -1 }
+	}
+
+	date = { day = 1 month = january year = 1350 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1500 }
+
+	action_a = {
+		name = "Ufundujcie krolewskie kompanie lucznikow z Gwent!"
+		ai_chance = 90
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = land value = 500 }
+		command = { type = treasury value = -100 }
+		command = { type = INF which = 243 value = 5000 }
+		command = { type = vp value = 50 }
+	}
+	action_b = {
+		name = "Pozostawcie milicje lokalnym commotes"
+		ai_chance = 10
+		command = { type = treasury value = 50 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# 3009533: Wojny Klanów Highlandu: MacDonaldowie vs Campbelli
+event = {
+	id = 3009533
+	random = no
+	name = "Wojny Klanów Highlandu: MacDonaldowie vs Campbelli"
+	desc = "Krwawa rywalizacja miedzy poteznym klanem MacDonald (Lordowie Wysp) a rosnacym w sile klanem Campbell z Argyll grozi rozerwaniem pokoju w gorach Szkocji. Obydwa klany domagaja sie poparcia korony w sporze o lenna i jurysdykcje."
+
+	trigger = {
+		or = {
+			tag = SCO
+			hasflag = { which = celt_union_formed value = 1 }
+		}
+		owned = { province = 236 data = -1 } # Highlands
+		owned = { province = 238 data = -1 } # Strathclyde
+		control = { province = 236 data = -1 }
+	}
+
+	date = { day = 1 month = january year = 1430 }
+	offset = 90
+	deathdate = { day = 30 month = december year = 1520 }
+
+	action_a = {
+		name = "Narzućcie sprawiedliwy kompromis królewski"
+		ai_chance = 70
+		command = { type = treasury value = -100 }
+		command = { type = stability value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = vp value = 50 }
+	}
+	action_b = {
+		name = "Poprzyjcie tradycje Lorda Wysp (MacDonalda)"
+		ai_chance = 15
+		command = { type = revolt which = 238 }
+		command = { type = stability value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+	}
+	action_c = {
+		name = "Poprzyjcie Campbellów i prawo królewskie"
+		ai_chance = 15
+		command = { type = revolt which = 236 }
+		command = { type = stability value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+	}
+}
+
+# 3009534: Odrodzenie Kościoła Iro-Szkockiego: Dziedzictwo św. Kolumby
+event = {
+	id = 3009534
+	random = no
+	name = "Odrodzenie Kościoła Iro-Szkockiego: Dziedzictwo św. Kolumby"
+	desc = "Pradawne klasztory w Ionie, Derry i Armagh odzywaja nowym duchem duchowym. Tradycja mnichow celtyckich (Céli Dé / Culdees), skupiona na nauce, pismie i lokalnej wspolnocie zamiast odleglej wladzy kurii rzymskiej, staje sie filarem tozsamosci celtyckiej."
+
+	trigger = {
+		or = {
+			tag = SCO
+			tag = EIR
+			hasflag = { which = celt_union_formed value = 1 }
+		}
+		owned = { province = 236 data = -1 } # Highlands (Iona)
+		control = { province = 236 data = -1 }
+		stability = 1
+	}
+
+	date = { day = 1 month = january year = 1440 }
+	offset = 90
+	deathdate = { day = 30 month = december year = 1550 }
+
+	action_a = {
+		name = "Wesprzyjcie autonomiczny ryt i nauke mnichow celtyckich"
+		ai_chance = 80
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = infra value = 500 }
+		command = { type = stability value = 1 }
+		command = { type = relation which = PAP value = -50 }
+		command = { type = vp value = 50 }
+	}
+	action_b = {
+		name = "Pozostancie w scislej ortodoksji rzymskiej"
+		ai_chance = 20
+		command = { type = relation which = PAP value = 150 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# 3009535: Górnicy Cyny w Kornwalii i Flota Falmouth
+event = {
+	id = 3009535
+	random = no
+	name = "Górnicy Cyny w Kornwalii i Flota Falmouth"
+	desc = "Kornwalia od starozytnosci slynie z bogatych kopaln cyny i miedzi. Po wyzwoleniu spod jarzma Londynu zjednoczone gildię kornwalijskie (Stannary Courts) przezywaja boom wydobywczy, a glebokowodny port w Falmouth staje sie glowna baza atlantyckiej floty handlowej i wojennej."
+
+	trigger = {
+		owned = { province = 249 data = -1 } # Cornwall
+		control = { province = 249 data = -1 }
+	}
+
+	date = { day = 1 month = january year = 1400 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Rozbudowac kopalnie cyny i doki oceaniczne w Falmouth"
+		ai_chance = 85
+		command = { type = treasury value = 300 }
+		command = { type = trade value = 500 }
+		command = { type = provincetax which = 249 value = 3 }
+		command = { type = naval value = 400 }
+		command = { type = vp value = 50 }
+	}
+	action_b = {
+		name = "Pozostawic dochody lokalnej radzie gorniczej"
+		ai_chance = 15
+		command = { type = stability value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
 	}
 }
 

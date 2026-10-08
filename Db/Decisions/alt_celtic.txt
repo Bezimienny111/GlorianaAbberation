@@ -12,17 +12,20 @@
 # 7250: Crowning of Owain Glyndŵr - Prince of Wales
 decision = {
 	id = 7250
-	name = "Koronacja Owaina Glyndwra: Ksiaze Walii"
-	desc = "W zylach Owaina Glyndwra plynie krew dawnych wladcow Gwynedd i Powys. Zrzucajac anglo-normanskie jarzmo, Owain zwoluje walijskie rody, przyjmuje tytul Ksiecia Walii (Tywysog Cymru) i wznosi sztandar Zlotego Smoka. Wolna Walia staje sie suwerennym panstwem gotowym do walki o wolnosc celtyckich narodow."
-
-	trigger = {
+	major = yes
+	potential = {
 		or = {
 			tag = WLS
 			owned = { province = 243 data = -1 } # Wales
 		}
+		not = { hasflag = { which = wls_proclaimed value = 1 } }
+	}
+	name = "Koronacja Owaina Glyndwra: Ksiaze Walii"
+	desc = "W zylach Owaina Glyndwra plynie krew dawnych wladcow Gwynedd i Powys. Zrzucajac anglo-normanskie jarzmo, Owain zwoluje walijskie rody, przyjmuje tytul Ksiecia Walii (Tywysog Cymru) i wznosi sztandar Zlotego Smoka. Wolna Walia staje sie suwerennym panstwem gotowym do walki o wolnosc celtyckich narodow."
+
+	trigger = {
 		owned = { province = 243 data = -1 }
 		control = { province = 243 data = -1 }
-		year = 1400
 	}
 
 	cost = 150
@@ -52,10 +55,8 @@ decision = {
 # 7251: Liberation of the Pale and Proclamation of High King
 decision = {
 	id = 7251
-	name = "Oczyszczenie Pale: Wysoki Krol Irlandii"
-	desc = "Przez pokolenia angielska twierdza wokol Dublina (The Pale) byla symbolem obcej okupacji Zielonej Wyspy. Odbicie Dublina i likwidacja angielskiego urzedu Justiciara otwiera droge do wskrzeszenia tytulu Wysokiego Krola Irlandii (Ard Ri na hEireann) i zjednoczenia klanow pod jednym sztandarem."
-
-	trigger = {
+	major = yes
+	potential = {
 		or = {
 			tag = EIR
 			tag = ULS
@@ -63,6 +64,12 @@ decision = {
 			tag = MST
 			tag = LEI
 		}
+		not = { hasflag = { which = eir_high_king value = 1 } }
+	}
+	name = "Oczyszczenie Pale: Wysoki Krol Irlandii"
+	desc = "Przez pokolenia angielska twierdza wokol Dublina (The Pale) byla symbolem obcej okupacji Zielonej Wyspy. Odbicie Dublina i likwidacja angielskiego urzedu Justiciara otwiera droge do wskrzeszenia tytulu Wysokiego Krola Irlandii (Ard Ri na hEireann) i zjednoczenia klanow pod jednym sztandarem."
+
+	trigger = {
 		owned = { province = 233 data = -1 } # Meath / Dublin
 		control = { province = 233 data = -1 }
 		atwar = no
@@ -96,15 +103,19 @@ decision = {
 # 7252: The Pact of Caernarfon (Auld Alliance 2.0)
 decision = {
 	id = 7252
-	name = "Pakt z Caernarfon: Wielki Sojusz Celtycki"
-	desc = "Wobec imperialnych roszczen Londynu, delegacje Szkocji, Walii i Irlandii spotykaja sie w zamku Caernarfon. Zamiast walczyc osobno, ludy celtyckie tworza nierozerwalna federacje obronna poparta francuskimi posilkami i zlotem."
-
-	trigger = {
+	major = yes
+	potential = {
 		or = {
 			tag = SCO
 			tag = WLS
 			tag = EIR
 		}
+		not = { hasflag = { which = celt_pact_formed value = 1 } }
+	}
+	name = "Pakt z Caernarfon: Wielki Sojusz Celtycki"
+	desc = "Wobec imperialnych roszczen Londynu, delegacje Szkocji, Walii i Irlandii spotykaja sie w zamku Caernarfon. Zamiast walczyc osobno, ludy celtyckie tworza nierozerwalna federacje obronna poparta francuskimi posilkami i zlotem."
+
+	trigger = {
 		atwar = yes
 		war = { country = ENG }
 		stability = 1
@@ -127,15 +138,19 @@ decision = {
 # 7253: Unia Koron Celtyckich (Alba, Cymru, Éire)
 decision = {
 	id = 7253
-	name = "Unia Koron Celtyckich: Alba, Cymru, Eire"
-	desc = "Zwyciestwo nad najeźdźcami umozliwia ostateczne zjednoczenie celtyckich narodow w jedno potezne imperium atlantyckie. Polaczenie tradycji Edynburga, Caernarfon i Dublina tworzy mocarstwo oparte na wspolnocie jezykow gaelickich i brytonskich."
-
-	trigger = {
+	major = yes
+	potential = {
 		or = {
 			tag = SCO
 			tag = EIR
 			tag = WLS
 		}
+		not = { hasflag = { which = celt_union_formed value = 1 } }
+	}
+	name = "Unia Koron Celtyckich: Alba, Cymru, Eire"
+	desc = "Zwyciestwo nad najeźdźcami umozliwia ostateczne zjednoczenie celtyckich narodow w jedno potezne imperium atlantyckie. Polaczenie tradycji Edynburga, Caernarfon i Dublina tworzy mocarstwo oparte na wspolnocie jezykow gaelickich i brytonskich."
+
+	trigger = {
 		owned = { province = 239 data = -1 } # Lothian / Edinburgh
 		owned = { province = 243 data = -1 } # Wales
 		owned = { province = 233 data = -1 } # Meath / Dublin
@@ -159,7 +174,7 @@ decision = {
 		command = { type = addcore_national which = 238 } # Strathclyde
 		command = { type = addcore_national which = 239 } # Lothian
 		command = { type = addcore_national which = 243 } # Wales
-		command = { type = cot which = 239 value = yes }
+		command = { type = cot which = 239 }
 		command = { type = treasury value = -300 }
 		command = { type = stability value = 2 }
 		command = { type = setflag which = celt_union_formed value = 1 }
@@ -170,11 +185,20 @@ decision = {
 # 7254: March on London & Liberation of the Celtic Fringe
 decision = {
 	id = 7254
+	major = yes
+	potential = {
+		hasflag = { which = celt_union_formed value = 1 }
+		or = {
+			tag = SCO
+			tag = WLS
+			tag = EIR
+		}
+		not = { hasflag = { which = celt_march_london value = 1 } }
+	}
 	name = "Marsz na Londyn: Wyzwolenie Kornwalii i Polnocy"
 	desc = "Przelamujac angielska obrone w bitwach pod Marches i w Yorkshire, celtyckie armie staja u bram Londynu. Wyzwolenie brytonskiej Kornwalii, celtyckiej Kumbrii i starozytnej Brytanii Pólnocnej trwale odsuwa zagrozenie anglosaskie."
 
 	trigger = {
-		hasflag = { which = celt_union_formed value = 1 }
 		owned = { province = 242 data = -1 } # The Marches
 		owned = { province = 245 data = -1 } # Yorkshire
 		control = { province = 242 data = -1 }
@@ -194,6 +218,7 @@ decision = {
 		command = { type = addcore_national which = 249 } # Cornwall
 		command = { type = addcore_claim which = 247 } # London
 		command = { type = stability value = 1 }
+		command = { type = setflag which = celt_march_london value = 1 }
 		command = { type = vp value = 100 }
 	}
 }
@@ -201,11 +226,20 @@ decision = {
 # 7255: Restoration of Arthurian Britain
 decision = {
 	id = 7255
-	name = "Restauracja Brytanii Artura"
-	desc = "Zajecie Londynu i zepchniecie anglosaskiej monarchii do roli malego wasala w Wessex stanowi historyczne zwienczenie legendy o Krolu Arturze. Celtycki renesans przywraca pradawny blask Wyspom Brytyjskim, a atlantyckie floty celtyckie ruszaja na podboj oceanow."
+	major = yes
+	potential = {
+		hasflag = { which = celt_march_london value = 1 }
+		or = {
+			tag = SCO
+			tag = WLS
+			tag = EIR
+		}
+		not = { hasflag = { which = celt_britain_restored value = 1 } }
+	}
+	name = "Restauracja Brytanii Artura: Los Anglii"
+	desc = "Zajecie Londynu i zepchniecie anglosaskiej monarchii stanowi dziejowy triumf ludow celtyckich. W obliczu ostatecznego zwyciestwa Celci musza zadecydowac o losie Anglii: czy pozostawic ja jako zwasalizowane małe ksiestwo Wessex, czy tez dokonac bezposredniej aneksji i podzialu ziem anglosaskich."
 
 	trigger = {
-		hasflag = { which = celt_union_formed value = 1 }
 		owned = { province = 247 data = -1 } # London
 		owned = { province = 249 data = -1 } # Cornwall
 		control = { province = 247 data = -1 }
@@ -228,6 +262,43 @@ decision = {
 		command = { type = naval value = 800 }
 		command = { type = domestic which = naval value = 2 }
 		command = { type = stability value = 2 }
+		command = { type = setflag which = celt_britain_restored value = 1 }
 		command = { type = vp value = 250 }
+	}
+}
+
+# 7256: The Voyage of Saint Brendan: New Alba on the Atlantic
+decision = {
+	id = 7256
+	major = yes
+	potential = {
+		hasflag = { which = celt_union_formed value = 1 }
+		or = {
+			tag = SCO
+			tag = WLS
+			tag = EIR
+		}
+		not = { hasflag = { which = celt_brendan_voyage value = 1 } }
+	}
+	name = "Szlak Świętego Brendana: Nowa Alba na Atlantyku"
+	desc = "Podtrzymujac pradawne legendy o oceanicznej wyprawie swietego Brendana Zeglarza na zachod przez wzburzony Atlantyk, zjednoczona flotylla celtycka wyrusza ze stoczni w Kintyre i Falmouth na podboj Nowego Swiata. Celtyccy pionierzy zakladaja Nowa Albe wyprzedzajac innych kolonizatorow."
+
+	trigger = {
+		owned = { province = 249 data = -1 } # Cornwall / Falmouth
+		control = { province = 249 data = -1 }
+		atwar = no
+		stability = 2
+	}
+
+	cost = 300
+	treasury = 300
+
+	action = {
+		name = "Wyslij floty na Szlak Swietego Brendana!"
+		command = { type = treasury value = -300 }
+		command = { type = naval value = 800 }
+		command = { type = trade value = 800 }
+		command = { type = setflag which = celt_brendan_voyage value = 1 }
+		command = { type = vp value = 150 }
 	}
 }

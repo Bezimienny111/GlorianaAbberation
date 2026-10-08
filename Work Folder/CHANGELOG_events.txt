@@ -523,3 +523,46 @@ global shared event/decision ID space, monarch space, and leader space:
 - Converted "The Restoration Is Complete" to decision while preserving trigger/effects and splitting visibility vs execution rules.
 - In BYZANNEX_06_Renaissance.txt, action A of event 3001135 now sets flag byz_restoration_complete_blocked.
 ================================================================================
+
+
+================================================================================
+12. ALTERNATE DESTINIES & ENGINE HARDENING LOG (OCTOBER 2026)
+================================================================================
+[2026-10-09] Engine Crash, Assertion & Syntax Resolutions:
+- Duplicate Decision ID 6000 (type = 9):
+  * Trimmed Db/Decisions/alt_byzantine.txt to strictly contain new decisions 6041-6065, removing duplicated base decisions 6000-6040.
+- Trigger Syntax Error (Unknown trigger type ai_trigger = { at line 1700):
+  * Fixed unclosed NOT = { block where trailing closing brace was accidentally commented out (# year = 1838 }). Also repaired lines in decisions 6049 and 6062.
+- Religions Syntax in Db/Religions/religions.txt & Work Folder/Alt_Patches/religions_patch.txt:
+  * Converted block definition from invalid 'religion = { name = "roman_pagan" ... }' to native FTG root format 'roman_pagan = { ... }', 'egyptian_pagan = { ... }', 'mutazilite = { ... }', 'nahua_reformed = { ... }', and 'inti_reformed = { ... }'.
+- Invalid Country Tag HED:
+  * Corrected Hedjaz country tag from HED to native FTG tag ARA in Db/Events/alt_egypt.txt.
+- Leader ID vs Monarch ID Collisions & Duplicates (type = 6 assertion fix):
+  * Remapped AZT leaders from 39501-39508 to clean range 39701-39708 (avoiding collision with ADA monarchs 39500-39536).
+  * Remapped ADA leaders from 24091-24092 to 39721-39722 (avoiding collision with ANS monarchs 24091-24092).
+  * Remapped SXA leaders from 24093-24094 to 39723-39724 (avoiding collision with ANS monarchs 24093-24094).
+  * Remapped HOL leader van Reede from 060346 to 39726 (eliminating internal duplicate with van Rossum in leaders_hol.txt).
+  * Remapped TIM leader Muhammad Sultan from 08925 to 39725 (eliminating collision with TEM monarch in leaders_tem.txt).
+  * 0 collisions remaining mod-wide across all monarchs and leaders!
+- Decision Visibility Scoping (potential = { tag = ... }):
+  * Added rigorous tag and requirement scoping to potential blocks across all decisions in alt_americas.txt, alt_celtic.txt, alt_egypt.txt, alt_hansa.txt, alt_ethiopia.txt, and alt_korea.txt. Decisions no longer appear globally in unrelated countries' ledgers.
+
+[2026-10-09] Module 6: Celtic Union (SCO / WLS / EIR / BRI / COR / CEL):
+- Decisions Implemented (Db/Decisions/alt_celtic.txt: 7250-7256):
+  * 7250: Unrestricted Welsh qualification and claim restoration.
+  * 7251: High Kingship of Ireland & expulsion of the Pale.
+  * 7252: Coronation in Caernarfon (Prince of Wales / Brythonic Crown).
+  * 7253: Union of the Celtic Crowns (Alba, Cymru, Eire).
+  * 7254: March on London & Liberation of the Celtic Fringe (Cornwall, Cumbria, Northumbria).
+  * 7255: Restoration of Arthurian Britain (Fate of England).
+  * 7256: Voyage of Saint Brendan & New Alba (Transatlantic exploration).
+- Events Implemented (Db/Events/alt_celtic.txt: 3009500-3009545):
+  * 3009500: Fall of Dublin & Expulsion of the Anglo-Normans.
+  * 3009501: Coronation at Caernarfon Castle.
+  * 3009505: Proclamation of the Celtic Union (Federal Council 60% vs Arthurian High Empire 40%).
+  * 3009506: The Fate of Defeated England (Client Kingdom of Wessex 70% vs Direct Annexation 30%).
+  * 3009510: The Cornish Tin Mines & Falmouth Admiralty.
+  * 3009515: The Voyage of Saint Brendan & Discovery of New Alba.
+  * 3009520: The Breton Connection (Uniting Armorica with the Celtic Realm).
+  * Flavor & Depth: Garde Ecossaise in Continental Wars (3009531), Longbow Tradition of Wales (3009532), Highland Clan Wars (3009533), Culdees & Reformation of the Celtic Church (3009534), Integration Waves (3009541-3009545).
+================================================================================

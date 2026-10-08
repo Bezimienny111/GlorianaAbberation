@@ -12,6 +12,17 @@
 # 7150: Proclamation of the Sovereign Hanseatic State (Großer Hansetag)
 decision = {
 	id = 7150
+	potential = {
+		or = {
+			tag = HSA
+			tag = BRE
+			tag = DAN
+			tag = POM
+			tag = SHL
+			tag = KOL
+		}
+		NOT = { flag = hsa_proclaimed }
+	}
 	name = "Proklamacja Suwerennego Panstwa Hanzeatyckiego"
 	desc = "Podczas gdy ksiazeta Rzeszy i monarchowie Skandynawii tocza nieustanne wojny, wolne miasta kupieckie zrzeszone w Lidze gromadza sie na powszechnym zjezdzie w Lubece. Przeksztalcenie luznego porozumienia gildii i kantorow w jedno suwerenne, niepodzielne panstwo ze stala reprezentacja pozwoli narzucic wole kupcow na wszystkich wodach Polnocy."
 
@@ -53,6 +64,12 @@ decision = {
 # 7151: The Hanseatic Republic (Merchant Oligarchy / Senate Path)
 decision = {
 	id = 7151
+	potential = {
+		tag = HSA
+		flag = hsa_proclaimed
+		NOT = { flag = hsa_republic }
+		NOT = { flag = hsa_seereich }
+	}
 	name = "Die Hanseatische Republik: Rzady Senatu Kupieckiego"
 	desc = "Odrzucajac feudalny despotyzm arystokracji, wladze najwyzsza powierzamy Senatowi Ligi i czterem Kwartalom Miejskim (Wendish, Saxon, Westphalian, Prussian). Prawa patrycjatu, wolny obrot towarami i bezwzgledny prymat handlu morskiego staja sie fundamentem nowego ustroju."
 
@@ -84,6 +101,12 @@ decision = {
 # 7152: Das Nordische Seereich (Stadtholderate / Thalassocracy Path)
 decision = {
 	id = 7152
+	potential = {
+		tag = HSA
+		flag = hsa_proclaimed
+		NOT = { flag = hsa_republic }
+		NOT = { flag = hsa_seereich }
+	}
 	name = "Das Nordische Seereich: Kapitanat Generalny Ligi"
 	desc = "Aby stawic czolo mocarstwom ladowym Danii, Francji i Szwecji, Hanza potrzebuje silnej, scentralizowanej wladzy wykonawczej. Wybierajac dziedzicznego Stadtholdera i Kapitana Generalnego sposrod zasluzonych rodow, budujemy morska monarchie polnocy wsparta potezna regularna armada wojenna."
 
@@ -118,6 +141,9 @@ decision = {
 # 7153: Seizure of the Sound Toll (Kontrola Cła Sundzkiego)
 decision = {
 	id = 7153
+	potential = {
+		tag = HSA
+	}
 	name = "Kontrola Cla Sundzkiego: Zlamanie Monopolu Danii"
 	desc = "Krolestwo Danii przez wieki drenowalo hanzeatyckich kupcow z naleznych zyskow, pobierajac myto w ciesninie Sund pod lufami zamkow Helsingborg i Kronborg. Opanowujac oba brzegi ciesniny, przejmujemy kontrola nad kluczowym przesmykiem laczacym Morze Polnocne z Baltykiem."
 
@@ -146,6 +172,10 @@ decision = {
 # 7154: The London Steelyard (Uzbrojony Kontor w Londynie)
 decision = {
 	id = 7154
+	potential = {
+		tag = HSA
+		NOT = { flag = hsa_steelyard }
+	}
 	name = "Uzbrojony Kontor Stalowy w Londynie (Steelyard)"
 	desc = "Nad brzegiem Tamizy hanzeatycka baza Stalhof (Steelyard) stanowi serce wymiany miedzy Anglia a kontynentem. Wywierajac presje finansowa i morska na Korone Angielska, uzyskujemy eksterytorialny status naszej faktorii, wylaczny monopol na eksport angielskiej welny oraz immunitet podatkowy dla niemieckich kupcow."
 
@@ -172,6 +202,10 @@ decision = {
 # 7155: The Novgorod Peterhof (Uzbrojony Kontor w Nowogrodzie)
 decision = {
 	id = 7155
+	potential = {
+		tag = HSA
+		NOT = { flag = hsa_peterhof }
+	}
 	name = "Kontor Dworu Sw. Piotra w Nowogrodzie (Peterhof)"
 	desc = "Nowogrod Wielki jest brama do bezkresnych bogactw Rusi: futer, wosku i dziegciu. Wzmocnienie obwarowan Peterhofu i narzucenie posadnikom nienaruszalnosci hanzeatyckiego sadownictwa gwarantuje absolutna kontrole nad rynkiem futrzarskim."
 
@@ -198,6 +232,10 @@ decision = {
 # 7156: The Bergen Bryggen (Uzbrojony Kontor w Bergen)
 decision = {
 	id = 7156
+	potential = {
+		tag = HSA
+		NOT = { flag = hsa_bryggen }
+	}
 	name = "Bryggen w Bergen: Monopol na Tran i Sztokfisz"
 	desc = "Zabudowania nabrzeza Bryggen w norweskim Bergen skupiaja caly eksport suszonego dorsza z polnocnych lowisk Lofotow. Narzucenie norweskiej koronie wylacznosci hanzeatyckich kompanii zabezpiecza zaopatrzenie w tania zywnosc i tluszcze dla calej Europy."
 
@@ -223,6 +261,10 @@ decision = {
 # 7157: The Flemish Counter in Bruges and Antwerp
 decision = {
 	id = 7157
+	potential = {
+		tag = HSA
+		NOT = { flag = hsa_flanders }
+	}
 	name = "Kantor we Flandrii: Brugia i Antwerpia"
 	desc = "Flandria to najbogatszy rynek tkacki Europy i glowny wezel zamorskiego handlu. Utworzenie wlasnego konsorcjum w Antwerpii i Brugii otwiera bezposredni dostep do sukna lewantu oraz hiszpanskiego i portugalskiego kruszcu."
 
@@ -249,6 +291,10 @@ decision = {
 # 7158: The Norse Atlantic Route to Vinland
 decision = {
 	id = 7158
+	potential = {
+		tag = HSA
+		NOT = { flag = hsa_vinland }
+	}
 	name = "Szlakiem Wikingow ku Winlandii"
 	desc = "Czerpiac ze starych sag i relacji norweskich rybakow z Bergen i Islandii, hanzeatyccy kapitanowie Didrik Pining i Hans Pothorst ruszaja na zachod ku niezbadanym wodom Nowego Swiata. Zalozenie stacji wielorybniczych i faktorii handlu futrami w Winlandii otwiera nowy kontynent na dekady przed innymi mocarstwami!"
 
@@ -281,6 +327,9 @@ decision = {
 # 7159: Baltic Cities Defense Pact
 decision = {
 	id = 7159
+	potential = {
+		tag = HSA
+	}
 	name = "Federalny Pakt Obrony Miast Bałtyckich"
 	desc = "Prusy, Pomorze i Inflanty usiane sa wielkimi osrodkami hanzeatyckimi: Gdanskiem, Elblagiem, Ryga i Rewlem. Zaciesnienie wiezow obronnych i wlaczenie tych metropolii do jednolitego systemu prawnego Ligi tworzy nieprzerwany kordon handlowy wzdluz calego Baltyku."
 
@@ -309,6 +358,9 @@ decision = {
 # 7160: Grand Arsenal and Admiralty of Lübeck
 decision = {
 	id = 7160
+	potential = {
+		tag = HSA
+	}
 	name = "Wielka Zbrojownia i Stocznia w Lubece"
 	desc = "Stolica Ligi zasluguje na najnowoczesniejsza baze morska w Europie. Wzorem weneckiego Arsenale wznosimy w Lubece stocznie wojenna zdolna do masowej produkcji uzbrojonych kog, karawel i galeonow oraz odlewania dzial bronzowych dla flotylli Ligi."
 

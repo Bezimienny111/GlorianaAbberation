@@ -12,6 +12,11 @@
 # 7200: Legal Code of Texcoco (Philosophy of Nezahualcoyotl)
 decision = {
 	id = 7200
+	major = yes
+	potential = {
+		tag = AZT
+		not = { hasflag = { which = azt_texcoco_code value = 1 } }
+	}
 	name = "Wielka Narada w Texcoco: Kodeks Nezahualcoyotla"
 	desc = "Pod wplywem poety i filozofa Nezahualcoyotla z Texcoco, Mexikowie staja przed dziejowym wyborem przyszlosci Cemanahuac: czy odrzucic krwawy terror masowych ofiar z jencow i paranoje Wojen Kwietnych na rzecz oswiecenia boga madrosci Quetzalcoatla, czy tez podwoic fanatyczna potęge boga wojny Huitzilopochtli."
 
@@ -40,6 +45,13 @@ decision = {
 # 7201: The Eternal League of Cemanahuac (Peaceful Path)
 decision = {
 	id = 7201
+	major = yes
+	potential = {
+		tag = AZT
+		hasflag = { which = azt_reformed_faith value = 1 }
+		not = { hasflag = { which = azt_war_cult value = 1 } }
+		not = { hasflag = { which = azt_league_formed value = 1 } }
+	}
 	name = "Wieczna Liga Cemanahuac: Pojednanie z Sasiadami"
 	desc = "Odrzucenie krwawych wojen pozwala na zawarcie trwalej konfederacji miedzy Mexikami, Tlaxcala, Taraskanami i Zapotekami. Uznanie praw i tradycji sasiadow wlacza ich elity do wspolnej armii i rzadu, uniemozliwiajac obcym najezdzcom znalezienie jakichkolwiek indiańskich sojusznikow."
 
@@ -71,6 +83,12 @@ decision = {
 # 7206: Hegemony of Blood and War (Militarist Path)
 decision = {
 	id = 7206
+	major = yes
+	potential = {
+		tag = AZT
+		hasflag = { which = azt_war_cult value = 1 }
+		not = { hasflag = { which = azt_league_formed value = 1 } }
+	}
 	name = "Hegemonia Krwi i Wojny: Zmiażdżenie Sąsiadów"
 	desc = "Podtrzymujac swiety nakaz karmienia slonca krwia jencow, Mexikowie ruszaja na ostateczna wojne totalna przeciwko Tlaxcali, Taraskanom i Zapotekom. Podbite krainy zostaja przeksztalcone w niewolne prowincje trybutarne pod zelazna wladza garnizonow Tenochtitlan."
 
@@ -100,6 +118,11 @@ decision = {
 # 7202: The Iron Mexica Empire: Adaptation of Fire and Steel
 decision = {
 	id = 7202
+	major = yes
+	potential = {
+		tag = AZT
+		not = { hasflag = { which = azt_iron_empire value = 1 } }
+	}
 	name = "Zelazne Imperium Mexikow: Mistrzowie Ognia i Stali"
 	desc = "Przelom technologiczny Mexicow dokonuje sie badz dzieki pojmanym hiszpanskim rusznikarzom, kowalom i koniom bojowym, badz dzieki unifikacji bogatych kopaln miedzi i zlota oraz geniuszowi mezoamerykanskich rzemieslnikow. Rycerze Orla i Jaguara dosiadaja koni bojowych, a bataliony arkebuzerow staja sie postrachem najezdzcow."
 
@@ -141,6 +164,12 @@ decision = {
 # 7203: Veracruz Arsenals and High Seas Fleet
 decision = {
 	id = 7203
+	major = yes
+	potential = {
+		tag = AZT
+		hasflag = { which = azt_iron_empire value = 1 }
+		not = { hasflag = { which = azt_caribbean_claims value = 1 } }
+	}
 	name = "Arsenaly w Veracruz i Pelnomorska Flota"
 	desc = "Budowa pelnomorskich karaweli i galeonow w Veracruz przelamuje obcy monopol na Morzu Karaibskim. Wyplywajac z Zatoki Meksykanskiej, wyzwalajmy wyspy z rak najezdzcow i zabezpieczamy wybrzeza Ameryki Srodkowej."
 
@@ -171,6 +200,12 @@ decision = {
 # 7204: Grand Chinampas and Aqueducts of Tenochtitlan
 decision = {
 	id = 7204
+	major = no
+	potential = {
+		tag = AZT
+		owned = { province = 27 data = -1 }
+		not = { hasflag = { which = azt_chinampas_built value = 1 } }
+	}
 	name = "Wielkie Groble i Akwedukty Tenochtitlan"
 	desc = "Monumentalna rozbudowa systemu plywajacych ogrodow (chinampas), grobli przeciwpowodziowych oraz kamiennych akweduktow z Chapultepec zapewnia milionowej metropolii staly dostep do krystalicznej wody i nieprzebrane zbiory kukurydzy."
 
@@ -190,6 +225,7 @@ decision = {
 		command = { type = populationpercent which = 27 value = 15 }
 		command = { type = provincetax which = 27 value = 4 }
 		command = { type = infra value = 400 }
+		command = { type = setflag which = azt_chinampas_built value = 1 }
 		command = { type = vp value = 50 }
 	}
 }
@@ -197,6 +233,12 @@ decision = {
 # 7205: Transatlantic Embassy to the Old World
 decision = {
 	id = 7205
+	major = yes
+	potential = {
+		tag = AZT
+		hasflag = { which = azt_iron_empire value = 1 }
+		not = { hasflag = { which = azt_transatlantic_embassy value = 1 } }
+	}
 	name = "Wyprawa Poselska Mexiców ku Staremu Światu"
 	desc = "Dysponujac pelnomorska flota galeonow zbudowanych w Veracruz oraz doswiadczonymi nawigatorami, wladca Mexicow wysyla wielka oceaniczna ekspedycje przez Atlantyk. Poselstwo ma nawiazac bezposredni kontakt dyplomatyczny ze stolicami Europy i potwierdzic status Cemanahuac jako suwerennego imperium."
 
@@ -230,6 +272,11 @@ decision = {
 # 7210: The Royal Road of Qhapaq Ñan
 decision = {
 	id = 7210
+	major = yes
+	potential = {
+		tag = INC
+		not = { hasflag = { which = inc_qhapaq_nan value = 1 } }
+	}
 	name = "Krolewski Szlak Qhapaq Nan"
 	desc = "Siec kamiennych drog andyjskich i linowych mostow wiszacych nad przepasciami laczy wszystkie cztery czesci swiata Tawantinsuyu od Quito po Chile. Potezna arteria komunikacyjna umozliwia blyskawiczne przemieszczanie armii i znoszenie barier handlowych w gorach."
 
@@ -259,6 +306,12 @@ decision = {
 # 7211: Imperial Granaries (Qullqa) and Chasqui Network
 decision = {
 	id = 7211
+	major = yes
+	potential = {
+		tag = INC
+		hasflag = { which = inc_qhapaq_nan value = 1 }
+		not = { hasflag = { which = inc_chasqui_network value = 1 } }
+	}
 	name = "Spichlerze Panstwowe Qullqa i Biegacze Chasqui"
 	desc = "Siec tysiecy kamiennych spichlerzy qullqa magazynujacych liofilizowane ziemniaki (chuño) i suszone mieso oraz sztafeta kurierow chasqui chronia imperium przed kleskami glodu i umozliwiaja natychmiastowe wprowadzanie kordonow sanitarnych w razie zarazy."
 
@@ -285,6 +338,11 @@ decision = {
 # 7212: Reformation of the Faith of Inti
 decision = {
 	id = 7212
+	major = yes
+	potential = {
+		tag = INC
+		not = { hasflag = { which = inc_reformed_faith value = 1 } }
+	}
 	name = "Zreformowany Kult Boga Slonca Inti"
 	desc = "Wzmocnienie autorytetu Najwyzszego Kaplana Willaq Umu i uporzadkowanie kultu Inti oraz boga-stwórcy Viracochy tworzy jednolity kodeks moralny, odrzucajac barbarzynskie stereotypy i nadajac Tawantinsuyu niezachwiana tozsamosc cywilizacyjna."
 
@@ -314,6 +372,11 @@ decision = {
 # 7213: The Iron Legions of Tawantinsuyu & Andean Cavalry
 decision = {
 	id = 7213
+	major = yes
+	potential = {
+		tag = INC
+		not = { hasflag = { which = inc_iron_legions value = 1 } }
+	}
 	name = "Zelazne Legiony Tawantinsuyu i Andyjska Konnica"
 	desc = "Modernizacja armii Inkow nastepuje albo w wyniku pojmania hiszpanskich najeźdźców, albo dzieki zjednoczeniu szlaku andyjskiego, kopalni srebra i miedzi Altiplano oraz wlasnemu odlewnictwu. Twierdze w Cuzco i Tiwanaku otrzymuja nowoczesne baterie armat, a lekka kawaleria andyjska strzeze gorskich przeleczy."
 
@@ -356,6 +419,12 @@ decision = {
 # 7214: Galleons of Guayaquil: Heritage of Tupac Yupanqui
 decision = {
 	id = 7214
+	major = yes
+	potential = {
+		tag = INC
+		hasflag = { which = inc_iron_legions value = 1 }
+		not = { hasflag = { which = inc_pacific_thalassocracy value = 1 } }
+	}
 	name = "Galeony z Guayaquil: Szlak Tupaca Yupanqui"
 	desc = "Podtrzymujac tradycje morskiej wyprawy cesarza Tupaca Yupanqui na Pacyfik, w stoczniach Guayaquil i Callao wznosimy oceaniczne okrety wojenne. Inkowskie floty dominuja na zachodnim wybrzezu Ameryki i otwieraja szlaki pelnomorskie ku odleglym archipelagom."
 
@@ -384,6 +453,12 @@ decision = {
 # 7215: Great Pacific Expedition of Sapa Inca
 decision = {
 	id = 7215
+	major = yes
+	potential = {
+		tag = INC
+		hasflag = { which = inc_pacific_thalassocracy value = 1 }
+		not = { hasflag = { which = inc_pacific_expedition value = 1 } }
+	}
 	name = "Wielka Ekspedycja Pacyficzna ku Polinezji i Azji"
 	desc = "Czerpiac ze starych map i legend o wyprawie cesarza Tupaca Yupanqui, Sapa Inka posyla oceaniczna flote galeonow balsa w gląb bezkresnego Pacyfiku. Wyprawa dociera do odleglych wysp Polinezji, nawiazujac bezposredni transpacyficzny handel z obcymi ludami i kupcami."
 

@@ -12,6 +12,10 @@
 # 7300: Gate of the Red Sea: Port of Massawa
 decision = {
 	id = 7300
+	potential = {
+		tag = ETH
+		NOT = { flag = eth_massawa_built }
+	}
 	name = "Wrota Morza Czerwonego: Port w Massawa"
 	desc = "Przez stulecia wrogie emiraty odcinaly chrzecijanskie cesarstwo Abisynii od morskich szlakow swiata. Zdobycie i ufortyfikowanie portu Massawa oraz archipelagu Dahlak otwiera bezposredni dostep do handlu z Indiami, Egiptem i Lewantem."
 
@@ -42,6 +46,11 @@ decision = {
 # 7301: The Bab al-Mandab Blockade & Fortress of Aden
 decision = {
 	id = 7301
+	potential = {
+		tag = ETH
+		flag = eth_massawa_built
+		NOT = { flag = eth_aden_secured }
+	}
 	name = "Blokada Bab al-Mandab i Twierdza w Adenie"
 	desc = "Waska ciesnina Bab al-Mandab (Wrota Lez) laczy Morze Czerwone z Oceanem Indyjskim. Przejecie kontroli nad strategicznym portem Aden pozwala etiopskim flotyllom pobierac cla ze wszystkich statkow korzennych plynacych z Indii ku Europie."
 
@@ -76,6 +85,11 @@ decision = {
 # 7302: The Prester John Embassy to Europe
 decision = {
 	id = 7302
+	potential = {
+		tag = ETH
+		flag = eth_massawa_built
+		NOT = { flag = eth_prester_john }
+	}
 	name = "Poselstwo Ksieza Jana do Europy"
 	desc = "Wiesc o legendarnym krolestwie Ksieza Jana w gornym biegu Nilu obiega dwory Rzymu, Wenecji i Lizbony. Wyslanie wielkiego poselstwa przez Morze Czerwone przynosi sojusz ze swiatem zachodnim, traktaty handlowe oraz przybycie portugalskich i wloskich instruktorow broni palnej."
 
@@ -111,6 +125,10 @@ decision = {
 # 7303: Reconquista of Christian Nubia
 decision = {
 	id = 7303
+	potential = {
+		tag = ETH
+		NOT = { flag = eth_nubia_reclaimed }
+	}
 	name = "Rekonkwista Dawnych Krolestw Nubii"
 	desc = "Wzdluz gorno-srodkowego biegu Nilu kwitly niegdys chrzecijanskie krolestwa Makurii i Alodii. Wyprawa armii cesarskiej na polnoc w dol rzeki przynosi wyzwolenie wspolwyznawcow spod ucisku nomadow i wlacza ludy Nubii do korony salomonskiej."
 
@@ -141,6 +159,12 @@ decision = {
 # 7304: Southern Crusade to Sinai and Jerusalem
 decision = {
 	id = 7304
+	potential = {
+		tag = ETH
+		flag = eth_nubia_reclaimed
+		flag = eth_prester_john
+		NOT = { flag = eth_southern_crusade }
+	}
 	name = "Poludniowa Krucjata ku Synajowi i Jerozolimie"
 	desc = "Dysponujac armia zbrojna w armaty i muszkiety oraz pelna kontrola nad gornym Nilem i Morzem Czerwonym, Cesarz Etiopii wyrusza na wyzwolenie Swietych Miejsc Chrzescijanstwa od poludnia. Marsz ku Synajowi i Bramom Syjonu stawia Abisynie na czele swiatowej krucjaty!"
 
@@ -172,6 +196,10 @@ decision = {
 # 7305: Restoration of the Axumite-Solomonic Empire
 decision = {
 	id = 7305
+	potential = {
+		tag = ETH
+		flag = eth_southern_crusade
+	}
 	name = "Restauracja Cesarstwa Aksumicko-Salomonskiego"
 	desc = "Pod panowaniem Niegusa Niegusti (Krola Krolow) zjednoczyly sie ziemie od zrodel Nilu az po Jerozolime i Ciesnine Ormuz. Spełnia sie pradawne proroctwo: Krolestwo Ksieza Jana staje sie niezwyciezonym bastionem wschodniego chrzescijanstwa i paniem szlakow handlowych swiata!"
 

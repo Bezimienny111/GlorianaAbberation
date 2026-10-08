@@ -12,6 +12,10 @@
 # 7350: The Hall of Worthies (Jiphyeonjeon)
 decision = {
 	id = 7350
+	potential = {
+		tag = KOR
+		NOT = { flag = kor_hall_of_worthies }
+	}
 	name = "Krolewski Instytut Medrcow: Jiphyeonjeon"
 	desc = "Krol Sejong Wielki powoluje w palacu Gyeongbokgung akademie najtezszych umyslow krolestwa. Jiphyeonjeon laczy badania nad astronomia, kartografia, inzynieria wodna, agronomia i medycyna. Rewolucja naukowa stawia Koree na czele innowacyjnosci swiata przednowozytnego."
 
@@ -41,6 +45,11 @@ decision = {
 # 7351: Implementation of the Hangul Alphabet
 decision = {
 	id = 7351
+	potential = {
+		tag = KOR
+		flag = kor_hall_of_worthies
+		NOT = { flag = kor_hangul_adopted }
+	}
 	name = "Wdrozenie Alfabetu Narodowego Hangul"
 	desc = "Dotychczasowe pismo chinskie (Hanja) bylo narzedziem dominacji arystokracji yangban i zrodlem analfabetyzmu ludu. Stworzenie logicznego, naukowego alfabetu Hangul (Hunminjeongeum - Wlasciwe dzwieki do nauczania ludu) oraz druk ruchoma czcionka metalowa umozliwia masowa edukacje chlopow i rzemieslnikow."
 
@@ -73,6 +82,10 @@ decision = {
 # 7352: Early Armored Turtle Ships (Geobukseon 1430)
 decision = {
 	id = 7352
+	potential = {
+		tag = KOR
+		NOT = { flag = kor_geobukseon_built }
+	}
 	name = "Pancerne Okręty Żółwie: Geobukseon"
 	desc = "Laczenie doswiadczen stoczniowcow z Pusan z krolewskim biurem artylerii umozliwia stworzenie pierwszych na swiecie pancernych okretow wojennych. Geobukseon posiada zelazny dach najeżony kolcami przeciw abordazowi, dziala armatnie zieonace ogniem z paszczy smoka na dziobie i zdolnosc taranowania wrogich lodzi."
 
@@ -101,6 +114,11 @@ decision = {
 # 7353: Subjugation of the Wōkō Pirate Havens
 decision = {
 	id = 7353
+	potential = {
+		tag = KOR
+		flag = kor_geobukseon_built
+		NOT = { flag = kor_woko_cleared }
+	}
 	name = "Ekspedycja Karna Przeciwko Piratom Wōkō"
 	desc = "Japonskie pirackie bandy Wōkō od dziesiecioleci lupily wybrzeza Korei. Zmobilizowanie floty okretow Geobukseon i uderzenie na pirackie bazy na wyspie Tsushima niszczy gniazda korsarzy i wymusza na wladcach Japonii pelne bezpieczenstwo szlakow morskich."
 
@@ -132,6 +150,10 @@ decision = {
 # 7354: Reconquest of Ancient Goguryeo (March across the Yalu)
 decision = {
 	id = 7354
+	potential = {
+		tag = KOR
+		NOT = { flag = kor_goguryeo_reclaimed }
+	}
 	name = "Rekonkwista Goguryeo: Marsz za Rzeke Yalu"
 	desc = "Wykorzystujac oslabienie koczownikow i kryzysy dynastii polnocnych, Korea przekracza graniczna rzeke Yalu, by odzyskac prastare prowincje krolestwa Goguryeo. Podboj ziem Mandzurii i zintegrowanie koczowniczych plemion Dżurdżenow tworzy potezne mocarstwo kontynentalne."
 
@@ -162,6 +184,10 @@ decision = {
 # 7355: Golden Age of the Korean-Manchurian Empire
 decision = {
 	id = 7355
+	potential = {
+		tag = KOR
+		flag = kor_goguryeo_reclaimed
+	}
 	name = "Złoty Wiek Półwyspu i Mandżurii"
 	desc = "Ugruntowanie granic na rzece Amur i pelna integracja Mandzurii z krolestwem w Hanseongu. Korea staje sie suwerennym imperium wschodnioazjatyckim, dysponujacym nieprzebranymi zasobami zelaza, drewna i zboza oraz pancerzami Geobukseon broniacymi Morza Zoltego."
 
