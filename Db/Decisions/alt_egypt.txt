@@ -143,7 +143,7 @@ decision = {
 		command = { type = treasury value = -200 }
 		command = { type = naval value = 300 }
 		command = { type = trade value = 300 }
-		command = { type = shipyard which = 744 value = yes }
+		command = { type = gainbuilding which = 744 value = shipyard }
 		command = { type = vp value = 50 }
 	}
 }
@@ -170,7 +170,7 @@ decision = {
 		command = { type = treasury value = -300 }
 		command = { type = domestic which = innovative value = 2 }
 		command = { type = infra value = 600 }
-		command = { type = manufactory which = 744 value = refinery }
+		command = { type = gainmanufactory which = 744 value = refinery }
 		command = { type = vp value = 75 }
 	}
 }
@@ -203,7 +203,7 @@ decision = {
 		command = { type = treasury value = -800 }
 		command = { type = cot which = 745 value = yes } # Centrum Handlu w Delcie
 		command = { type = provincetax which = 745 value = 4 } # Delta metropolia
-		command = { type = shipyard which = 747 } # Stocznia nad Morzem Czerwonym w Nile
+		command = { type = gainbuilding which = 747 value = shipyard } # Stocznia nad Morzem Czerwonym w Nile
 		command = { type = warships which = 747 value = 10 } # Czerwona Eskadra
 		command = { type = trade value = 1000 }
 		command = { type = infra value = 600 }
@@ -341,7 +341,7 @@ decision = {
 		name = "Odnów wieczne monumenty bogow"
 		command = { type = treasury value = -300 }
 		command = { type = stability value = 2 }
-		command = { type = tax_modifier which = 746 value = 3 }
+		command = { type = provincetax which = 746 value = 3 }
 		command = { type = manpower which = 746 value = 2 }
 		command = { type = vp value = 100 }
 	}
@@ -455,7 +455,7 @@ decision = {
 		command = { type = treasury value = -250 }
 		command = { type = infra value = 500 }
 		command = { type = domestic which = innovative value = 1 }
-		command = { type = manufactory which = 746 value = refinery }
+		command = { type = gainmanufactory which = 746 value = refinery }
 		command = { type = vp value = 80 }
 	}
 }
@@ -481,8 +481,8 @@ decision = {
 	action = {
 		name = "Rozbuduj centrum medyczne Nilu"
 		command = { type = treasury value = -180 }
-		command = { type = population which = 746 value = 6000 }
-		command = { type = tax_modifier which = 746 value = 2 }
+		command = { type = populationpercent which = 746 value = 15 }
+		command = { type = provincetax which = 746 value = 2 }
 		command = { type = infra value = 300 }
 		command = { type = vp value = 40 }
 	}

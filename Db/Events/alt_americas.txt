@@ -28,7 +28,7 @@ event = {
 	action_a = {
 		name = "Uderzcie ze wszystkich stron i pojmijcie kowali zywcem!"
 		command = { type = treasury value = 300 }
-		command = { type = land_morale value = 0.20 }
+		command = { type = domestic which = QUALITY value = 1 }
 		command = { type = land value = 500 }
 		command = { type = setflag which = azt_captured_technology value = 1 }
 		command = { type = stability value = 1 }
@@ -55,7 +55,7 @@ event = {
 	action_a = {
 		name = "Zastosujcie kordony sanitarne i wiedze zielarzy"
 		command = { type = stability value = 1 }
-		command = { type = population which = 27 value = 5000 }
+		command = { type = populationpercent which = 27 value = 15 }
 		command = { type = infra value = 300 }
 		command = { type = vp value = 50 }
 	}
@@ -86,7 +86,7 @@ event = {
 		name = "Niech Synowie Slonca stana razem w obronie Andow!"
 		command = { type = stability value = 2 }
 		command = { type = domestic which = centralization value = 1 }
-		command = { type = land_morale value = 0.15 }
+		command = { type = domestic which = QUALITY value = 1 }
 		command = { type = setflag which = inc_succession_resolved value = 1 }
 		command = { type = vp value = 80 }
 	}

@@ -28,7 +28,7 @@ decision = {
 		stability = 2
 		owned = { province = 305 data = -1 } # Mecklemburg / Luebeck
 		control = { province = 305 data = -1 }
-		year = 1356
+		# year = 1356 # Unrestricted pacing
 	}
 
 	cost = 250
@@ -136,7 +136,7 @@ decision = {
 		name = "Pobieraj Clo Sundzkie na rzecz Ligi"
 		command = { type = treasury value = -300 }
 		command = { type = addcore_national which = 251 }
-		command = { type = tax_modifier which = 305 value = 5 }
+		command = { type = provincetax which = 305 value = 5 }
 		command = { type = trade value = 800 }
 		command = { type = relation which = DAN value = -150 }
 		command = { type = vp value = 100 }
@@ -163,7 +163,7 @@ decision = {
 		name = "Zabezpiecz przywileje Steelyardu"
 		command = { type = treasury value = -200 }
 		command = { type = trade value = 500 }
-		command = { type = tax_modifier which = 305 value = 3 }
+		command = { type = provincetax which = 305 value = 3 }
 		command = { type = setflag which = hsa_steelyard value = 1 }
 		command = { type = vp value = 50 }
 	}
@@ -189,7 +189,7 @@ decision = {
 		name = "Zmonopolizuj szlak handlu futrami"
 		command = { type = treasury value = -200 }
 		command = { type = trade value = 500 }
-		command = { type = tax_modifier which = 308 value = 3 }
+		command = { type = provincetax which = 308 value = 3 }
 		command = { type = setflag which = hsa_peterhof value = 1 }
 		command = { type = vp value = 50 }
 	}
@@ -254,7 +254,7 @@ decision = {
 
 	trigger = {
 		tag = HSA
-		year = 1460
+		# year = 1460 # Unrestricted pacing
 		naval = 3
 		atwar = no
 		stability = 2
@@ -326,9 +326,49 @@ decision = {
 	action = {
 		name = "Wznies admiralska stocznie Lubecka"
 		command = { type = treasury value = -300 }
-		command = { type = shipyard which = 305 value = yes }
+		command = { type = gainbuilding which = 305 value = shipyard }
 		command = { type = naval value = 600 }
 		command = { type = manpower which = 305 value = 2 }
 		command = { type = vp value = 80 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Decision 7161: Atlantycka Kompania Hanzeatycka: Nowa Lubeka
+# Creates the Hanseatic Atlantic Trading Company with colonies in the New World.
+#-----------------------------------------------------------------------------
+decision = {
+	id = 7161
+	name = "Atlantycka Kompania Hanzeatycka: Nowa Lubeka"
+	desc = "Podczas gdy zachodnie mocarstwa zajmuja szlaki oceaniczne, kapitalisci z Lubeki, Hamburga i Gdanska powoluja Atlantycka Kompanie Hanzeatycka. Zamiast ograniczac sie do Baltyku, wysylamy wielkie kogi handlowe za ocean, zakladajac wlasne faktorie i kolonie cukrowe - Nowa Lubeke!"
+
+	potential = {
+		tag = HSA
+		NOT = { flag = hsa_atlantic_company }
+	}
+
+	trigger = {
+		atwar = no
+		stability = 1
+		treasury = 500
+		owned = { province = 305 data = -1 } # Mecklemburg / Lubeck
+	}
+
+	cost = 500
+	treasury = 500
+
+	action = {
+		name = "Ufunduj Kompanie Oceaniczna i zaloz Nowa Lubeke!"
+		command = { type = setflag which = hsa_atlantic_company }
+		command = { type = treasury value = -500 }
+		command = { type = colonists value = 6 }
+		command = { type = merchants value = 6 }
+		command = { type = trade value = 500 }
+		command = { type = naval value = 400 }
+		command = { type = discover which = 138 } # Kuba
+		command = { type = discover which = 142 } # Hispaniola
+		command = { type = discover which = 802 } # Afryka Zachodnia
+		command = { type = vp value = 150 }
+		command = { type = trigger which = 3009335 } # Event: Nowa Lubeka
 	}
 }

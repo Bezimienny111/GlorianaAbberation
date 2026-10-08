@@ -27,7 +27,7 @@ event = {
 	action_a = {
 		name = "Y Ddraig Goch ddyry gychwyn! (Czerwony Smok Rusza ku Wolnosci!)"
 		command = { type = stability value = 1 }
-		command = { type = land_morale value = 0.20 }
+		command = { type = domestic which = QUALITY value = 1 }
 		command = { type = INF which = 243 value = 8000 }
 		command = { type = CAV which = 243 value = 2000 }
 		command = { type = setflag which = wls_rising_fired value = 1 }

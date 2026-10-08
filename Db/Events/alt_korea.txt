@@ -56,8 +56,8 @@ event = {
 	action_a = {
 		name = "Wdrozyc wynalazki w kazdej prowincji krolestwa!"
 		command = { type = infra value = 500 }
-		command = { type = tax_modifier which = 641 value = 2 }
-		command = { type = tax_modifier which = 642 value = 2 }
+		command = { type = provincetax which = 641 value = 2 }
+		command = { type = provincetax which = 642 value = 2 }
 		command = { type = stability value = 1 }
 		command = { type = vp value = 60 }
 	}
@@ -82,7 +82,7 @@ event = {
 
 	action_a = {
 		name = "Geobukseon przynosza absolutne panowanie na morzu!"
-		command = { type = naval_morale value = 0.20 }
+		command = { type = naval value = 300 }
 		command = { type = naval value = 500 }
 		command = { type = stability value = 1 }
 		command = { type = vp value = 80 }

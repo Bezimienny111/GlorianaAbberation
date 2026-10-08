@@ -333,6 +333,31 @@ global shared event/decision ID space, monarch space, and leader space:
    - Events 3009341-3009345: 10-year organic integration events for Bremen, Danzig, Vorpommern, Skåne, Holstein.
    - Db/Leaders/leaders_hsa.txt: 10 Hanseatic admirals and explorers (39401-39410), including Störtebeker, Pining, Pothorst, Wullenwever.
 
+[2026-10-08] Expansion Phase 2 (Sound Hegemony, Constitutional Choice, Atlantic Company & Flavor):
+1. Unrestricted Merchant Pacing (Decisions 7150, 7158):
+   - Removed artificial year locks (year = 1356, 1470) to enable sovereign league formation upon territorial/economic readiness.
+2. Constitutional Path Selection (Event 3009305):
+   - Triggered upon League Proclamation (Decision 7150):
+     * Action A: Die Hanseatische Republik (Plutocratic Senate & Trade Hegemony) -> ai_chance = 60.
+     * Action B: Das Nordische Seereich (Hereditary Admiral-Stadtholderate & Maritime Empire) -> ai_chance = 40.
+3. Atlantic Hanseatic Company & New Lübeck (Decision 7161, Event 3009335):
+   - Decision 7161: Establishes chartered trading company, granting shipyard and colonization of Placentia (110).
+   - Event 3009335: "Początki Nowej Lubeki w Nowym Świecie" - Transatlantic fishing, fur trade, and overseas commerce expansion.
+4. Authentic Hanseatic Flavor Events (Events 3009336-3009338):
+   - 3009336: "Klaus Störtebeker i Bracia Witalijscy" - Privateering mercenary alliance vs maritime law enforcement.
+   - 3009337: "Zbożowy Monopol Gdańska" - Danzig granary integration and Baltic grain shipping monopoly.
+   - 3009338: "Bunt Cechów w Lubece i Reformacja Wullenwevera" - Democratic guild council revolt and religious upheaval.
+
+[2026-10-08] Engine-Wide Event Command Audit & Sanitization:
+- Audited and sanitized 57 occurrences of invalid or non-FTG engine syntax across all alt_*.txt files:
+  * Replaced nonexistent `tax_modifier` with `provincetax which = X value = Y`.
+  * Replaced invalid `shipyard which = X` with `gainbuilding which = X value = shipyard`.
+  * Replaced invalid `manufactory which = X value = Y` with `gainmanufactory which = X value = Y`.
+  * Replaced unsupported direct morale modifiers (`landmorale`, `navalmorale`) with domestic policy sliders (`QUALITY`, `OFFENSIVE`, `LAND`) and tech investments.
+  * Corrected `techgroup` to `technology which = <group>`.
+  * Corrected inverted `dip which = X value = Y` to `DIP which = Y value = X`.
+
+
 
 ================================================================================
 7. MODULE 5: PRE-COLUMBIAN AMERICAS (AZT / INC)

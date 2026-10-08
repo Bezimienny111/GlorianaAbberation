@@ -28,7 +28,7 @@ decision = {
 	action = {
 		name = "Zbuduj cesarska stocznie w Massawie"
 		command = { type = treasury value = -150 }
-		command = { type = shipyard which = 753 value = yes }
+		command = { type = gainbuilding which = 753 value = shipyard }
 		command = { type = naval value = 400 }
 		command = { type = discover which = 1059 } # Red Sea North
 		command = { type = discover which = 1060 } # Red Sea South
@@ -62,7 +62,7 @@ decision = {
 		command = { type = treasury value = -200 }
 		command = { type = addcore_national which = 500 } # Aden
 		command = { type = trade value = 600 }
-		command = { type = tax_modifier which = 753 value = 4 }
+		command = { type = provincetax which = 753 value = 4 }
 		command = { type = stability value = 1 }
 		command = { type = setflag which = eth_aden_secured value = 1 }
 		command = { type = vp value = 100 }
@@ -162,7 +162,7 @@ decision = {
 		command = { type = addcore_claim which = 494 } # Sinai
 		command = { type = addcore_claim which = 493 } # Judea / Jerusalem
 		command = { type = addcore_claim which = 746 } # Egypt / Cairo
-		command = { type = land_morale value = 0.20 }
+		command = { type = domestic which = QUALITY value = 1 }
 		command = { type = stability value = 1 }
 		command = { type = setflag which = eth_southern_crusade value = 1 }
 		command = { type = vp value = 150 }

@@ -113,7 +113,7 @@ event = {
 
 	action_a = {
 		name = "Niech bogowie Nilu zmiota najezdzcow!"
-		command = { type = landmorale which = 120 value = 2 } # Fanatyzm obroncow Nilu
+		command = { type = domestic which = QUALITY value = 1 } # Fanatyzm obroncow Nilu
 		command = { type = INF which = 746 value = 12000 } # Gwardia Faraona
 		command = { type = domestic which = OFFENSIVE value = 2 }
 		command = { trigger = { exists = TUR } type = relation which = TUR value = -400 }
@@ -149,8 +149,8 @@ event = {
 	action_a = {
 		name = "Jestesmy synami tej samej pradawnej ziemi"
 		command = { type = stability value = 1 }
-		command = { type = population which = 743 value = 2000 }
-		command = { type = population which = 747 value = 3000 }
+		command = { type = populationpercent which = 743 value = 15 }
+		command = { type = populationpercent which = 747 value = 15 }
 		command = { type = revoltrisk which = 48 value = -2 }
 	}
 }
@@ -505,7 +505,7 @@ event = {
 		name = "Niech zyje Krolowa Nilu!"
 		command = { type = wakemonarch which = 39202 } #Kleopatra VIII Philopator
 		command = { type = stability value = 1 }
-		command = { type = dip which = 120 value = 2 }
+		command = { type = DIP which = 2 value = 120 }
 		command = { type = vp value = 50 }
 	}
 }

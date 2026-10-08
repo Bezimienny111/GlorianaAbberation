@@ -116,7 +116,7 @@ decision = {
 	action = {
 		name = "Zawrzyj Swiety Pakt Obrony Celtyckiej"
 		command = { type = treasury value = -100 }
-		command = { type = land_morale value = 0.15 }
+		command = { type = domestic which = QUALITY value = 1 }
 		command = { type = treasury value = 250 } # French subsidies
 		command = { type = stability value = 1 }
 		command = { type = setflag which = celt_pact_formed value = 1 }
@@ -224,7 +224,7 @@ decision = {
 		command = { type = addcore_national which = 248 } # Kent
 		command = { type = addcore_national which = 244 } # Lancashire
 		command = { type = addcore_national which = 246 } # Midlands
-		command = { type = shipyard which = 249 value = yes }
+		command = { type = gainbuilding which = 249 value = shipyard }
 		command = { type = naval value = 800 }
 		command = { type = domestic which = naval value = 2 }
 		command = { type = stability value = 2 }

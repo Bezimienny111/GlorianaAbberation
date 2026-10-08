@@ -289,3 +289,165 @@ event = {
 		command = { type = stability value = 1 }
 	}
 }
+
+#=============================================================================
+# HANSEATIC EXPANSION & FLAVOR EVENTS
+# ID Range: 3009305, 3009335 - 3009340
+#=============================================================================
+
+#-----------------------------------------------------------------------------
+# Event 3009305: HSA - Wybor Ustroju Panstwa Hanzeatyckiego
+# Triggered by Proclamation of HSA (Decision 7150)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009305
+	random = no
+	country = HSA
+
+	name = "Ustroj Panstwa Hanzeatyckiego: Republika czy Morska Monarchia?"
+	desc = "Po uroczystej proklamacji zjednoczonego panstwa, Wielki Hansetag staje przed historycznym wyborem ustrojowym. Czy Hanza ma pozostac Wolna Republika Kupiecka rzadzona przez patrycjat miejski, czy tez przeksztalcic sie w dziedziczne Krolestwo Baltyku (Das Nordische Seereich) z silnym Kapitanem Generalnym na czele?"
+	style = 1
+
+	action_a = {
+		name = "Die Hanseatische Republik: Rzady Wolnych Kupcow i Senatu"
+		ai_chance = 60
+		command = { type = setflag which = hsa_republic_chosen }
+		command = { type = domestic which = ARISTOCRACY value = -3 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = trade value = 600 }
+		command = { type = merchants value = 6 }
+		command = { type = treasury value = 250 }
+		command = { type = stability value = 1 }
+	}
+	action_b = {
+		name = "Das Nordische Seereich: Dziedziczny Kapitanat Generalny"
+		ai_chance = 40
+		command = { type = setflag which = hsa_monarchy_chosen }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = warships which = 305 value = 8 }
+		command = { type = land value = 300 }
+		command = { type = naval value = 500 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009335: HSA - Zalozenie Nowej Lubeki w Nowym Swiecie
+# Triggered by Decision 7161 (Atlantycka Kompania)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009335
+	random = no
+	country = HSA
+
+	name = "Zalozenie Nowej Lubeki w Nowym Swiecie"
+	desc = "Pierwsze statki Atlantyckiej Kompanii Hanzeatyckiej zawinely do cieplych wod Karaibow! Wzniesiono pierwszy hanzeatycki fort handlowy, nazwany Nowa Lubeka. Bogate zbiory trzciny cukrowej, tytoniu i kakao zasilaja skarb Ligi, otwierajac zloty wiek transatlantyckiego handlu."
+	style = 1
+
+	action_a = {
+		name = "Niechaj Hanza rozkwita na obu polkulach!"
+		command = { type = merchants value = 6 }
+		command = { type = trade value = 400 }
+		command = { type = treasury value = 300 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 50 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009336: HSA - Bracia Witalijscy i Klaus Stoertebeker
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009336
+	random = no
+	country = HSA
+
+	name = "Bracia Witalijscy i Klaus Stoertebeker"
+	desc = "Fale Morza Baltyckiego i Polnocnego zostaly zlane zuchwalymi rajdami Braci Witalijskich pod wodza legendarnego Klausa Stoertebekera! Piraci paralizuja handel morski z Gotlandii, lamiac monopol hanzeatyckich kupcow. Czy powinnismy wyslac flote wojenna i sciac ich wodzow, czy tez zaoferowac im listy kaperskie?"
+	style = 1
+
+	date = { day = 1 month = january year = 1395 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1410 }
+
+	action_a = {
+		name = "Rozgromic piratow i sciac ich przywodcow w Hamburgu!"
+		ai_chance = 70
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = naval value = 250 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 50 }
+	}
+	action_b = {
+		name = "Dac im listy kaperskie: niech lupia obcych rywali Ligi!"
+		ai_chance = 30
+		command = { type = warships which = 305 value = 6 }
+		command = { type = badboy value = 1 }
+		command = { type = relation which = DAN value = -50 }
+		command = { type = relation which = ENG value = -50 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009337: HSA - Zlote Zniwa Baltyku: Monopol Zbozowy Gdanska
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009337
+	random = no
+	country = HSA
+
+	trigger = {
+		owned = { province = 301 data = -1 } # Danzig
+	}
+
+	name = "Zlote Zniwa Baltyku: Monopol Zbozowy Gdanska"
+	desc = "Wisla splywaja setki szkut i koli pelnych zlocistego zboza z calej Polski i Mazowsza. Gdansk staje sie najwiekszym spichlerzem Europy. Caly zachodni swiat - od Londynu po Lizbone - zalezy od hanzeatyckiego chleba, co przynosi niebotyczne zyski miejskim patrycjuszom."
+	style = 1
+
+	date = { day = 1 month = january year = 1450 }
+	offset = 120
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Baltyk zywicielem Europy!"
+		command = { type = provincetax which = 301 value = 2 } # Danzig
+		command = { type = trade value = 500 }
+		command = { type = treasury value = 300 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009338: HSA - Bunt Gildii Rzemieslniczych w Lubece
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009338
+	random = no
+	country = HSA
+
+	name = "Bunt Gildii Rzemieslniczych w Lubece"
+	desc = "Cechy rzemieslnikow, tkaczy i kowali zarzucaja wielkiemu patrycjatowi kupieckiemu egoizm, chciwosc i monopolizacje wladzy w radzie miejskiej. Na ulicach Lubeki dochodzi do starc i zamieszek domagajacych sie dopuszczenia cechow do rzadow."
+	style = 1
+
+	date = { day = 1 month = january year = 1410 }
+	offset = 90
+	deathdate = { day = 30 month = december year = 1480 }
+
+	action_a = {
+		name = "Pojsc na ustepstwa i dopuscic cechy do reprezentacji"
+		ai_chance = 50
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = stability value = -1 }
+		command = { type = treasury value = -50 }
+	}
+	action_b = {
+		name = "Zgniesc bunt przy pomocy najemnikow rady!"
+		ai_chance = 50
+		command = { type = revolt which = 305 } # Mecklemburg / Lubeck
+		command = { type = stability value = -2 }
+		command = { type = domestic which = QUALITY value = 1 }
+	}
+}

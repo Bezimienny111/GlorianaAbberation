@@ -58,7 +58,7 @@ decision = {
 		name = "Wprowadz Hangul jako pismo panstwowe"
 		command = { type = treasury value = -150 }
 		command = { type = domestic which = serfdom value = -2 }
-		command = { type = tax_modifier which = 642 value = 3 }
+		command = { type = provincetax which = 642 value = 3 }
 		command = { type = inflation value = -2 }
 		command = { type = stability value = 1 }
 		command = { type = setflag which = kor_hangul_adopted value = 1 }
@@ -89,7 +89,7 @@ decision = {
 	action = {
 		name = "Zwoduj pancerne lodzie Geobukseon!"
 		command = { type = treasury value = -250 }
-		command = { type = shipyard which = 641 value = yes }
+		command = { type = gainbuilding which = 641 value = shipyard }
 		command = { type = naval value = 600 }
 		command = { type = domestic which = naval value = 2 }
 		command = { type = domestic which = quality value = 1 }

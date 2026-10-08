@@ -89,7 +89,7 @@ decision = {
 	action = {
 		name = "Przekuj obsydian w zelazo i proch!"
 		command = { type = treasury value = -300 }
-		command = { type = techgroup which = orthodox }
+		command = { type = technology which = orthodox }
 		command = { type = domestic which = quality value = 2 }
 		command = { type = domestic which = offensive value = 1 }
 		command = { type = land value = 800 }
@@ -120,7 +120,7 @@ decision = {
 	action = {
 		name = "Wyprowadz floty na Morze Karaibskie"
 		command = { type = treasury value = -300 }
-		command = { type = shipyard which = 34 value = yes }
+		command = { type = gainbuilding which = 34 value = shipyard }
 		command = { type = naval value = 600 }
 		command = { type = addcore_claim which = 138 } # Havana / Cuba
 		command = { type = addcore_claim which = 140 } # Jamaica
@@ -149,8 +149,8 @@ decision = {
 	action = {
 		name = "Rozbuduj wodna metropolie Mexikow"
 		command = { type = treasury value = -200 }
-		command = { type = population which = 27 value = 12000 }
-		command = { type = tax_modifier which = 27 value = 4 }
+		command = { type = populationpercent which = 27 value = 15 }
+		command = { type = provincetax which = 27 value = 4 }
 		command = { type = infra value = 400 }
 		command = { type = vp value = 50 }
 	}
@@ -182,8 +182,8 @@ decision = {
 		name = "Wybrukuj Krolewska Droge Slonca"
 		command = { type = treasury value = -250 }
 		command = { type = infra value = 600 }
-		command = { type = tax_modifier which = 168 value = 3 }
-		command = { type = tax_modifier which = 164 value = 2 }
+		command = { type = provincetax which = 168 value = 3 }
+		command = { type = provincetax which = 164 value = 2 }
 		command = { type = setflag which = inc_qhapaq_nan value = 1 }
 		command = { type = vp value = 80 }
 	}
@@ -263,7 +263,7 @@ decision = {
 	action = {
 		name = "Wystaw zelazne regimenty Synow Slonca!"
 		command = { type = treasury value = -300 }
-		command = { type = techgroup which = orthodox }
+		command = { type = technology which = orthodox }
 		command = { type = domestic which = quality value = 2 }
 		command = { type = domestic which = offensive value = 1 }
 		command = { type = land value = 800 }
@@ -294,7 +294,7 @@ decision = {
 	action = {
 		name = "Zbuduj Pacyficzna Flote Tawantinsuyu"
 		command = { type = treasury value = -300 }
-		command = { type = shipyard which = 167 value = yes }
+		command = { type = gainbuilding which = 167 value = shipyard }
 		command = { type = naval value = 600 }
 		command = { type = trade value = 500 }
 		command = { type = setflag which = inc_pacific_thalassocracy value = 1 }

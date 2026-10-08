@@ -186,7 +186,7 @@ event = {
 		command = { type = relation which = FRA value = -200 }
 		command = { type = relation which = HAB value = -200 }
 		command = { type = relation which = SPA value = -200 }
-		command = { type = landmorale which = 120 value = 2 }
+		command = { type = domestic which = QUALITY value = 1 }
 		command = { type = INF which = 399 value = 10000 }
 	}
 }
@@ -506,7 +506,7 @@ event = {
 	action_a = {
 		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
 		command = { type = stability value = 1 }
-		command = { type = dip which = 24 value = 2 }
+		command = { type = DIP which = 2 value = 24 }
 	}
 }
 
@@ -629,7 +629,7 @@ event = {
 
 	action_a = {
 		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
-		command = { type = dip which = 36 value = 2 }
+		command = { type = DIP which = 2 value = 36 }
 		command = { type = treasury value = 200 }
 	}
 }
@@ -660,7 +660,7 @@ event = {
 
 	action_a = {
 		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
-		command = { type = landmorale which = 60 value = 1 }
+		command = { type = domestic which = QUALITY value = 1 }
 		command = { type = fortress which = 399 value = 1 }
 	}
 }
@@ -849,7 +849,7 @@ event = {
 	action_a = {
 		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
 		command = { type = warships which = 399 value = 5 }
-		command = { type = navalmorale which = 60 value = 1 }
+		command = { type = naval value = 300 }
 	}
 }
 
@@ -1096,7 +1096,7 @@ event = {
 
 	action_a = {
 		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
-		command = { type = landmorale which = 60 value = 1 }
+		command = { type = domestic which = QUALITY value = 1 }
 		command = { type = stability value = 1 }
 	}
 }
@@ -1341,7 +1341,7 @@ event = {
 	action_a = {
 		name = "Wybierz Konsula Wojskowego (Legatus Legionum)"
 		ai_chance = 35
-		command = { type = landmorale which = 60 value = 1 }
+		command = { type = domestic which = QUALITY value = 1 }
 		command = { type = land value = 200 }
 		command = { type = INF which = 399 value = 4000 }
 		command = { type = CAV which = 399 value = 1000 }
@@ -1350,7 +1350,7 @@ event = {
 		name = "Wybierz Konsula Dyplomatycznego (Princeps Senatus)"
 		ai_chance = 35
 		command = { type = badboy value = -1 }
-		command = { type = dip which = 60 value = 2 }
+		command = { type = DIP which = 2 value = 60 }
 		command = { type = stability value = 1 }
 		command = { type = relation which = FRA value = 25 }
 		command = { type = relation which = HAB value = 25 }
@@ -1389,7 +1389,7 @@ event = {
 	action_a = {
 		name = "Frakcja Legionowa: Konsul Wojenny"
 		ai_chance = 35
-		command = { type = landmorale which = 60 value = 1 }
+		command = { type = domestic which = QUALITY value = 1 }
 		command = { type = land value = 200 }
 		command = { type = INF which = 399 value = 3000 }
 	}
@@ -1397,7 +1397,7 @@ event = {
 		name = "Frakcja Senatorska: Konsul Dyplomatyczny"
 		ai_chance = 35
 		command = { type = badboy value = -1 }
-		command = { type = dip which = 60 value = 2 }
+		command = { type = DIP which = 2 value = 60 }
 		command = { type = stability value = 1 }
 	}
 	action_c = {
@@ -1441,7 +1441,7 @@ event = {
 		name = "Zatrudnij go jako doradce dyplomatycznego Stolicy Apostolskiej"
 		ai_chance = 50
 		command = { type = setflag which = machiavelli_handled }
-		command = { type = dip which = 60 value = 2 }
+		command = { type = DIP which = 2 value = 60 }
 		command = { type = badboy value = -2 }
 		command = { type = infra value = 150 }
 		command = { type = relation which = FRA value = -25 }
@@ -1485,7 +1485,7 @@ event = {
 		command = { type = domestic which = QUALITY value = 1 }
 		command = { type = domestic which = LAND value = 1 }
 		command = { type = domestic which = ARISTOCRACY value = -1 }
-		command = { type = landmorale which = 60 value = 1 }
+		command = { type = domestic which = QUALITY value = 1 }
 		command = { type = land value = 300 }
 		command = { type = INF which = 401 value = 8000 }
 		command = { type = stability value = 1 }
@@ -1495,7 +1495,7 @@ event = {
 		name = "Wykorzystaj jego geniusz wylacznie w dyplomacji zagranicznej"
 		ai_chance = 20
 		command = { type = setflag which = machiavelli_handled }
-		command = { type = dip which = 60 value = 3 }
+		command = { type = DIP which = 3 value = 60 }
 		command = { type = badboy value = -3 }
 		command = { type = trade value = 200 }
 	}
@@ -1529,7 +1529,7 @@ event = {
 		command = { type = setflag which = machiavelli_handled }
 		command = { type = domestic which = CENTRALIZATION value = 1 }
 		command = { type = domestic which = OFFENSIVE value = 1 }
-		command = { type = landmorale which = 60 value = 1 }
+		command = { type = domestic which = QUALITY value = 1 }
 		command = { type = infra value = 250 }
 		command = { type = vp value = 100 }
 	}
