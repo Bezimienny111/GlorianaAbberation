@@ -33,3 +33,15 @@
 7. Decisions 6036 and 6037: lowered someof requirement in potential from 5 to 4 out of 6 staging provinces, preventing the decision from being hidden when the 19/21 trigger condition is satisfied.
 
 [2026-10-08] Db/Events/alt_byzantine.txt: added startup sleeper event 3009000 ("Imperial Administration: The Grand Strategy"). Fires on day 1 of 1337 for BYZ to sleep original conflicting linear progression events (3001154-3001162, 3001167) without needing to modify vanilla event files, ensuring full compatibility with upstream mod updates.
+
+[2026-10-08] Db/Decisions/alt_byzantine.txt: implemented 22 new Roman Empire expansion decisions (IDs 6041-6062) across 10 regional sequences:
+1. Sequence 1 (6041): "Reconquista Italiae Superioris" - grants claim cores on northern Italy (Veneto 370, Lombardia 389, Mantua 390, Liguria 403, Piemonte 404, Savoie 405) after completing basic restoration.
+2. Sequence 2 (6042-6045): "Reconquista Hispaniae" - 6042 claims Baetica (443-444); 6043 claims Lusitania (434, 441-442); 6044 claims Tarraconensis & central Spain (428-433, 435-440); 6045 "Imperium Hispanicum" crowns full conquest with national cores on all 17 Iberian provinces, iberian accepted culture, badboy reduction, and treasury bonus.
+3. Sequence 3 (6046-6050): "Reconquista Galliae" - 6046 claims Narbonensis/Provence (406-407, 421-422); 6047 claims Aquitania (415-416, 423-425); 6048 claims Lugdunensis/Paris (385-386, 408-410, 418-420); 6049 claims Belgica & Armorica (376, 379, 382-384, 411-414, 417); 6050 "Imperium Gallicum" awards national cores on all 27 Gallic provinces and french accepted culture.
+4. Sequence 4 (6051-6052): "Reconquista Britanniae" - 6051 "The Channel Crossing" grants claims on Roman Britannia (240-250) with imperial naval mobilization; 6052 "Imperium Britannicum" awards national cores and anglosaxon accepted culture.
+5. Sequence 5 (6053-6055): "Reconquista Germaniae" - 6053 claims Germania Inferior / Low Countries (336-340, 344, 378, 380); 6054 claims Germania Superior / Rhineland (343, 345-346, 373-375); 6055 "Imperium Germanicum" awards national cores and german accepted culture.
+6. Sequence 6 (6056): "Reconquista Alpium: Raetia et Noricum" - claims Alpine passes and Austria (350-351, 369, 371, 388).
+7. Sequence 7 (6057-6058): "Reconquista Pannoniae" - 6057 claims Hungarian plain (324-327, 352-354); 6058 "Imperium Pannonicum et Noricum" awards national cores on all 12 middle Danube and Alpine provinces.
+8. Sequence 8 (6059-6060): "Reconquista Daciae Traianae" - 6059 claims Dacia beyond the Danube (318-319, 322-323); 6060 "Imperium Dacicum" awards national cores and Transylvanian gold revenues.
+9. Sequence 9 (6061): "Mesopotamia Traiana" - claims Euphrates & Tigris (Kirkuk 488, Iraq 489).
+10. Sequence 10 (6062): "Renovatio Imperii Maximi: Pax Romana Restaurata" - grand culmination requiring Trajan-era boundaries (Thrace, Rome, Alexandria, Jerusalem, Toledo, Paris, London, Wien, Köln); awards national cores on northern Italy and Mesopotamia, +1 stability, -10 badboy, +2000 gold, +1000 VP, and major permanent tax/manpower boosts to imperial capitals.

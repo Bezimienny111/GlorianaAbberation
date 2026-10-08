@@ -2703,8 +2703,1247 @@ decision = {
 }
 
 #=============================================================================
-# PROPOSALS FOR NEW DECISION SEQUENCES - ROMAN EMPIRE EXPANSION
-# (after decision 6040)
+# EXPANSION DECISION SEQUENCES (IDs 6041-6062) - ROMAN EMPIRE RESTORATION
+#=============================================================================
+
+#-----------------------------------------------------------------------------
+# SEQUENCE 1: RECONQUISTA ITALIAE SUPERIORIS (Northern Italy)
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 6041
+	major = yes
+	unique = yes
+	potential = {
+		tag = BYZ
+		flag = byz_restoration_complete
+		NOT = { flag = byz_italia_superior }
+		owned = { province = 399 data = -1 } #Roma
+	}
+	trigger = {
+		year = 1500
+		NOT = { year = 1838 }
+		atwar = no
+		isvassal = no
+		stability = 1
+		owned = { province = 399 data = -1 } #Roma
+		OR = {
+			owned = { province = 391 data = -1 } #Romagna
+			owned = { province = 401 data = -1 } #Firenze
+			owned = { province = 402 data = -1 } #Emilia
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Reconquista Italiae Superioris"
+	desc = "Having restored the imperial authority over Rome and the Mezzogiorno, the northern plains of Lombardy, the bustling ports of Genoa and Venice, and the Alpine marches remain outside the imperial fold. To secure the Italian peninsula and recreate the ancient prefecture of Italy, the legions must march beyond the Po river."
+
+	action = {
+		command = { type = setflag which = byz_italia_superior }
+		command = { type = addcore_claim which = 370 } #Veneto
+		command = { type = addcore_claim which = 389 } #Lombardia
+		command = { type = addcore_claim which = 390 } #Mantua
+		command = { type = addcore_claim which = 403 } #Liguria
+		command = { type = addcore_claim which = 404 } #Piemonte
+		command = { type = addcore_claim which = 405 } #Savoie
+		command = { type = relation which = VEN value = -300 }
+		command = { type = relation which = GEN value = -250 }
+		command = { type = relation which = MLO value = -250 }
+		command = { type = relation which = SAV value = -200 }
+		command = { type = badboy value = 2 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# SEQUENCE 2: RECONQUISTA HISPANIAE (Iberian Peninsula)
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 6042
+	major = yes
+	unique = yes
+	potential = {
+		tag = BYZ
+		flag = byz_conquest_africa
+		NOT = { flag = byz_hispania_gates }
+		OR = {
+			owned = { province = 445 data = -1 } #Gibraltar
+			owned = { province = 732 data = -1 } #Tangiers
+			owned = { province = 733 data = -1 } #Fez
+		}
+	}
+	trigger = {
+		year = 1500
+		NOT = { year = 1838 }
+		atwar = no
+		isvassal = no
+		stability = 1
+		OR = {
+			owned = { province = 445 data = -1 } #Gibraltar
+			owned = { province = 732 data = -1 } #Tangiers
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "The Gates of Hispania: Baetica"
+	desc = "Standing upon the Pillars of Hercules at the gateway between the Mediterranean and the Atlantic, the Emperor looks across the strait toward the rich former Roman diocese of Hispania. Through the fertile valleys of the Baetis river, the ancient Roman legions once marched. It is time to cross into southern Hispania and establish our foothold."
+
+	action = {
+		command = { type = setflag which = byz_hispania_gates }
+		command = { type = addcore_claim which = 443 } #Andalusia
+		command = { type = addcore_claim which = 444 } #Granada
+		command = { type = relation which = CAS value = -200 }
+		command = { type = relation which = SPA value = -300 }
+		command = { type = relation which = POR value = -200 }
+		command = { type = relation which = GRA value = -200 }
+		command = { type = badboy value = 1 }
+	}
+}
+
+decision = {
+	id = 6043
+	major = yes
+	unique = yes
+	potential = {
+		tag = BYZ
+		flag = byz_hispania_gates
+		NOT = { flag = byz_lusitania }
+		OR = {
+			owned = { province = 443 data = -1 } #Andalusia
+			owned = { province = 444 data = -1 } #Granada
+			owned = { province = 445 data = -1 } #Gibraltar
+		}
+	}
+	trigger = {
+		year = 1500
+		NOT = { year = 1838 }
+		atwar = no
+		isvassal = no
+		stability = 1
+		OR = {
+			owned = { province = 443 data = -1 } #Andalusia
+			owned = { province = 444 data = -1 } #Granada
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Reconquista Lusitaniae"
+	desc = "From our base in Baetica, the Atlantic province of Lusitania beckons. The ports of Lisbon, Oporto, and the Algarve form the westernmost rim of the old Roman world. The legions must secure Lusitania to command the Atlantic approaches to the Mediterranean."
+
+	action = {
+		command = { type = setflag which = byz_lusitania }
+		command = { type = addcore_claim which = 434 } #Oporto
+		command = { type = addcore_claim which = 441 } #Tago / Lisboa
+		command = { type = addcore_claim which = 442 } #Algarve
+		command = { type = relation which = POR value = -300 }
+		command = { type = badboy value = 1 }
+	}
+}
+
+decision = {
+	id = 6044
+	major = yes
+	unique = yes
+	potential = {
+		tag = BYZ
+		flag = byz_hispania_gates
+		NOT = { flag = byz_tarraconensis }
+		OR = {
+			owned = { province = 443 data = -1 } #Andalusia
+			owned = { province = 444 data = -1 } #Granada
+			owned = { province = 436 data = -1 } #Valencia
+		}
+	}
+	trigger = {
+		year = 1500
+		NOT = { year = 1838 }
+		atwar = no
+		isvassal = no
+		stability = 1
+		OR = {
+			owned = { province = 443 data = -1 } #Andalusia
+			owned = { province = 444 data = -1 } #Granada
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Reconquista Tarraconensis"
+	desc = "The vast expanses of the Meseta Central and the Mediterranean coast of Hispania - the historic provinces of Tarraconensis, Carthaginensis, and Gallaecia - call for imperial liberation. Toledo, Valencia, and Zaragoza must return under the eagle."
+
+	action = {
+		command = { type = setflag which = byz_tarraconensis }
+		command = { type = addcore_claim which = 428 } #Navarra
+		command = { type = addcore_claim which = 429 } #Catalonia
+		command = { type = addcore_claim which = 430 } #Aragon
+		command = { type = addcore_claim which = 431 } #Cantabria
+		command = { type = addcore_claim which = 432 } #Asturias
+		command = { type = addcore_claim which = 433 } #Galicia
+		command = { type = addcore_claim which = 435 } #Leon
+		command = { type = addcore_claim which = 436 } #Valencia
+		command = { type = addcore_claim which = 437 } #Murcia
+		command = { type = addcore_claim which = 438 } #Castilla
+		command = { type = addcore_claim which = 439 } #Toledo
+		command = { type = addcore_claim which = 440 } #Estramadura
+		command = { type = relation which = CAS value = -300 }
+		command = { type = relation which = SPA value = -400 }
+		command = { type = relation which = ARG value = -300 }
+		command = { type = relation which = NAV value = -200 }
+		command = { type = badboy value = 2 }
+	}
+}
+
+decision = {
+	id = 6045
+	major = yes
+	unique = yes
+	potential = {
+		tag = BYZ
+		flag = byz_lusitania
+		flag = byz_tarraconensis
+		NOT = { flag = byz_hispania_complete }
+		someof = {
+			number = 8
+			owned = { province = 429 data = -1 } #Catalonia
+			owned = { province = 434 data = -1 } #Oporto
+			owned = { province = 436 data = -1 } #Valencia
+			owned = { province = 438 data = -1 } #Castilla
+			owned = { province = 439 data = -1 } #Toledo
+			owned = { province = 441 data = -1 } #Tago / Lisboa
+			owned = { province = 443 data = -1 } #Andalusia
+			owned = { province = 444 data = -1 } #Granada
+		}
+	}
+	trigger = {
+		year = 1500
+		NOT = { year = 1838 }
+		atwar = no
+		isvassal = no
+		stability = 2
+		owned = { province = 439 data = -1 } #Toledo
+		owned = { province = 441 data = -1 } #Tago / Lisboa
+		owned = { province = 443 data = -1 } #Andalusia
+		someof = {
+			number = 15
+			owned = { province = 428 data = -1 } #Navarra
+			owned = { province = 429 data = -1 } #Catalonia
+			owned = { province = 430 data = -1 } #Aragon
+			owned = { province = 431 data = -1 } #Cantabria
+			owned = { province = 432 data = -1 } #Asturias
+			owned = { province = 433 data = -1 } #Galicia
+			owned = { province = 434 data = -1 } #Oporto
+			owned = { province = 435 data = -1 } #Leon
+			owned = { province = 436 data = -1 } #Valencia
+			owned = { province = 437 data = -1 } #Murcia
+			owned = { province = 438 data = -1 } #Castilla
+			owned = { province = 439 data = -1 } #Toledo
+			owned = { province = 440 data = -1 } #Estramadura
+			owned = { province = 441 data = -1 } #Tago / Lisboa
+			owned = { province = 442 data = -1 } #Algarve
+			owned = { province = 443 data = -1 } #Andalusia
+			owned = { province = 444 data = -1 } #Granada
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Imperium Hispanicum"
+	desc = "From the Atlantic cliffs of Finisterre to the straits of Gibraltar and the Pyrenean gates, all of Hispania is restored to imperial rule! The proud peoples of the peninsula are welcomed back into the Roman family, their traditions respected and their warriors drafted into the imperial comitatus."
+
+	action = {
+		command = { type = setflag which = byz_hispania_complete }
+		command = { type = add_countryculture which = iberian }
+		command = { type = addcore_national which = 428 } #Navarra
+		command = { type = addcore_national which = 429 } #Catalonia
+		command = { type = addcore_national which = 430 } #Aragon
+		command = { type = addcore_national which = 431 } #Cantabria
+		command = { type = addcore_national which = 432 } #Asturias
+		command = { type = addcore_national which = 433 } #Galicia
+		command = { type = addcore_national which = 434 } #Oporto
+		command = { type = addcore_national which = 435 } #Leon
+		command = { type = addcore_national which = 436 } #Valencia
+		command = { type = addcore_national which = 437 } #Murcia
+		command = { type = addcore_national which = 438 } #Castilla
+		command = { type = addcore_national which = 439 } #Toledo
+		command = { type = addcore_national which = 440 } #Estramadura
+		command = { type = addcore_national which = 441 } #Tago / Lisboa
+		command = { type = addcore_national which = 442 } #Algarve
+		command = { type = addcore_national which = 443 } #Andalusia
+		command = { type = addcore_national which = 444 } #Granada
+		command = { type = badboy value = -4 }
+		command = { type = treasury value = 500 }
+		command = { type = stability value = 1 }
+		command = { type = provincetax which = 439 value = 2 } #Toledo
+		command = { type = provincetax which = 441 value = 2 } #Lisboa
+	}
+}
+
+#-----------------------------------------------------------------------------
+# SEQUENCE 3: RECONQUISTA GALLIAE (Gaul / France)
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 6046
+	major = yes
+	unique = yes
+	potential = {
+		tag = BYZ
+		OR = {
+			flag = byz_italia_superior
+			flag = byz_hispania_gates
+		}
+		NOT = { flag = byz_gallia_narbonensis }
+	}
+	trigger = {
+		year = 1520
+		NOT = { year = 1838 }
+		atwar = no
+		isvassal = no
+		stability = 1
+		OR = {
+			owned = { province = 403 data = -1 } #Liguria
+			owned = { province = 404 data = -1 } #Piemonte
+			owned = { province = 405 data = -1 } #Savoie
+			owned = { province = 429 data = -1 } #Catalonia
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Reconquista Narbonensis"
+	desc = "Gallia Narbonensis, the earliest Roman province beyond the Alps and known simply as 'Provincia', guards the sunny Mediterranean littoral connecting Italy and Hispania. Reclaiming Marseille, the Rhone valley, and the Pyrenean marches is essential to bridge our imperial realms."
+
+	action = {
+		command = { type = setflag which = byz_gallia_narbonensis }
+		command = { type = addcore_claim which = 406 } #Provence
+		command = { type = addcore_claim which = 407 } #Dauphine
+		command = { type = addcore_claim which = 421 } #Languedoc
+		command = { type = addcore_claim which = 422 } #Roussillon
+		command = { type = relation which = FRA value = -250 }
+		command = { type = relation which = PRO value = -250 }
+		command = { type = relation which = DAU value = -250 }
+		command = { type = badboy value = 1 }
+	}
+}
+
+decision = {
+	id = 6047
+	major = yes
+	unique = yes
+	potential = {
+		tag = BYZ
+		flag = byz_gallia_narbonensis
+		NOT = { flag = byz_gallia_aquitania }
+	}
+	trigger = {
+		year = 1520
+		NOT = { year = 1838 }
+		atwar = no
+		isvassal = no
+		stability = 1
+		OR = {
+			owned = { province = 421 data = -1 } #Languedoc
+			owned = { province = 422 data = -1 } #Roussillon
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Reconquista Aquitaniae"
+	desc = "From the Garonne river to the Pyrenees, the ancient province of Aquitania was prized by Rome for its wealth, vineyards, and Atlantic ports. The legions shall march west across the plains of Gascony and Guyenne."
+
+	action = {
+		command = { type = setflag which = byz_gallia_aquitania }
+		command = { type = addcore_claim which = 415 } #Bourbonnais
+		command = { type = addcore_claim which = 416 } #Berri
+		command = { type = addcore_claim which = 423 } #Guyenne
+		command = { type = addcore_claim which = 424 } #Gascogne
+		command = { type = addcore_claim which = 425 } #Bearn
+		command = { type = relation which = FRA value = -250 }
+		command = { type = relation which = ENG value = -200 }
+		command = { type = badboy value = 1 }
+	}
+}
+
+decision = {
+	id = 6048
+	major = yes
+	unique = yes
+	potential = {
+		tag = BYZ
+		flag = byz_gallia_narbonensis
+		NOT = { flag = byz_gallia_lugdunensis }
+	}
+	trigger = {
+		year = 1520
+		NOT = { year = 1838 }
+		atwar = no
+		isvassal = no
+		stability = 1
+		OR = {
+			owned = { province = 406 data = -1 } #Provence
+			owned = { province = 407 data = -1 } #Dauphine
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Reconquista Lugdunensis"
+	desc = "The heart of Gaul lies along the Saone, the Loire, and the Seine. Lugdunum (Lyon) was the ancient capital of the Gauls, and Lutetia Parisiorum (Paris) was Caesar's stronghold. Reclaiming these fertile basins will break the back of Frankish power."
+
+	action = {
+		command = { type = setflag which = byz_gallia_lugdunensis }
+		command = { type = addcore_claim which = 385 } #Ile de France
+		command = { type = addcore_claim which = 386 } #Champagne
+		command = { type = addcore_claim which = 408 } #Lyonnais
+		command = { type = addcore_claim which = 409 } #Bourgogne
+		command = { type = addcore_claim which = 410 } #Franche-Comte
+		command = { type = addcore_claim which = 418 } #Poitou
+		command = { type = addcore_claim which = 419 } #Limousin
+		command = { type = addcore_claim which = 420 } #Auvergne
+		command = { type = relation which = FRA value = -350 }
+		command = { type = relation which = BUR value = -250 }
+		command = { type = badboy value = 2 }
+	}
+}
+
+decision = {
+	id = 6049
+	major = yes
+	unique = yes
+	potential = {
+		tag = BYZ
+		flag = byz_gallia_lugdunensis
+		NOT = { flag = byz_gallia_belgica }
+	}
+	trigger = {
+		year = 1520
+		NOT = { year = 1838 }
+		atwar = no
+		isvassal = no
+		stability = 1
+		owned = { province = 385 data = -1 } #Ile de France
+	}
+	ai_trigger = {
+	}
+
+	name = "Reconquista Belgicae et Armoricae"
+	desc = "With Paris secured, the northernmost Roman province of Belgica, the plains of Flanders, and the rugged Atlantic peninsula of Armorica (Brittany) must be integrated to complete the pacification of Gaul and look out toward the English Channel."
+
+	action = {
+		command = { type = setflag which = byz_gallia_belgica }
+		command = { type = addcore_claim which = 376 } #Flandern
+		command = { type = addcore_claim which = 379 } #Artois
+		command = { type = addcore_claim which = 382 } #Calais
+		command = { type = addcore_claim which = 383 } #Picardie
+		command = { type = addcore_claim which = 384 } #Caux
+		command = { type = addcore_claim which = 411 } #Normandie
+		command = { type = addcore_claim which = 412 } #Maine
+		command = { type = addcore_claim which = 413 } #Anjou
+		command = { type = addcore_claim which = 414 } #Armor
+		command = { type = addcore_claim which = 417 } #Vendee
+		command = { type = relation which = FRA value = -300 }
+		command = { type = relation which = BRI value = -250 }
+		command = { type = relation which = BUR value = -250 }
+		command = { type = badboy value = 2 }
+	}
+}
+
+decision = {
+	id = 6050
+	major = yes
+	unique = yes
+	potential = {
+		tag = BYZ
+		flag = byz_gallia_belgica
+		NOT = { flag = byz_gallia_complete }
+		someof = {
+			number = 10
+			owned = { province = 385 data = -1 } #Ile de France
+			owned = { province = 386 data = -1 } #Champagne
+			owned = { province = 406 data = -1 } #Provence
+			owned = { province = 408 data = -1 } #Lyonnais
+			owned = { province = 411 data = -1 } #Normandie
+			owned = { province = 414 data = -1 } #Armor
+			owned = { province = 415 data = -1 } #Bourbonnais
+			owned = { province = 421 data = -1 } #Languedoc
+			owned = { province = 423 data = -1 } #Guyenne
+			owned = { province = 424 data = -1 } #Gascogne
+		}
+	}
+	trigger = {
+		year = 1520
+		NOT = { year = 1838 }
+		atwar = no
+		isvassal = no
+		stability = 2
+		flag = byz_gallia_narbonensis
+		flag = byz_gallia_aquitania
+		flag = byz_gallia_lugdunensis
+		flag = byz_gallia_belgica
+		owned = { province = 385 data = -1 } #Ile de France
+		owned = { province = 406 data = -1 } #Provence
+		someof = {
+			number = 24
+			owned = { province = 376 data = -1 } #Flandern
+			owned = { province = 379 data = -1 } #Artois
+			owned = { province = 382 data = -1 } #Calais
+			owned = { province = 383 data = -1 } #Picardie
+			owned = { province = 384 data = -1 } #Caux
+			owned = { province = 385 data = -1 } #Ile de France
+			owned = { province = 386 data = -1 } #Champagne
+			owned = { province = 406 data = -1 } #Provence
+			owned = { province = 407 data = -1 } #Dauphine
+			owned = { province = 408 data = -1 } #Lyonnais
+			owned = { province = 409 data = -1 } #Bourgogne
+			owned = { province = 410 data = -1 } #Franche-Comte
+			owned = { province = 411 data = -1 } #Normandie
+			owned = { province = 412 data = -1 } #Maine
+			owned = { province = 413 data = -1 } #Anjou
+			owned = { province = 414 data = -1 } #Armor
+			owned = { province = 415 data = -1 } #Bourbonnais
+			owned = { province = 416 data = -1 } #Berri
+			owned = { province = 417 data = -1 } #Vendee
+			owned = { province = 418 data = -1 } #Poitou
+			owned = { province = 419 data = -1 } #Limousin
+			owned = { province = 420 data = -1 } #Auvergne
+			owned = { province = 421 data = -1 } #Languedoc
+			owned = { province = 422 data = -1 } #Roussillon
+			owned = { province = 423 data = -1 } #Guyenne
+			owned = { province = 424 data = -1 } #Gascogne
+			owned = { province = 425 data = -1 } #Bearn
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Imperium Gallicum"
+	desc = "Gallia est omnis divisa in partes tres... no more! All of Gaul stands reunited under the Roman purple. From the Mediterranean to the North Sea, Roman law, commerce, and culture are re-established across the province."
+
+	action = {
+		command = { type = setflag which = byz_gallia_complete }
+		command = { type = add_countryculture which = french }
+		command = { type = addcore_national which = 376 } #Flandern
+		command = { type = addcore_national which = 379 } #Artois
+		command = { type = addcore_national which = 382 } #Calais
+		command = { type = addcore_national which = 383 } #Picardie
+		command = { type = addcore_national which = 384 } #Caux
+		command = { type = addcore_national which = 385 } #Ile de France
+		command = { type = addcore_national which = 386 } #Champagne
+		command = { type = addcore_national which = 406 } #Provence
+		command = { type = addcore_national which = 407 } #Dauphine
+		command = { type = addcore_national which = 408 } #Lyonnais
+		command = { type = addcore_national which = 409 } #Bourgogne
+		command = { type = addcore_national which = 410 } #Franche-Comte
+		command = { type = addcore_national which = 411 } #Normandie
+		command = { type = addcore_national which = 412 } #Maine
+		command = { type = addcore_national which = 413 } #Anjou
+		command = { type = addcore_national which = 414 } #Armor
+		command = { type = addcore_national which = 415 } #Bourbonnais
+		command = { type = addcore_national which = 416 } #Berri
+		command = { type = addcore_national which = 417 } #Vendee
+		command = { type = addcore_national which = 418 } #Poitou
+		command = { type = addcore_national which = 419 } #Limousin
+		command = { type = addcore_national which = 420 } #Auvergne
+		command = { type = addcore_national which = 421 } #Languedoc
+		command = { type = addcore_national which = 422 } #Roussillon
+		command = { type = addcore_national which = 423 } #Guyenne
+		command = { type = addcore_national which = 424 } #Gascogne
+		command = { type = addcore_national which = 425 } #Bearn
+		command = { type = badboy value = -5 }
+		command = { type = treasury value = 600 }
+		command = { type = stability value = 1 }
+		command = { type = provincetax which = 385 value = 3 } #Paris
+		command = { type = provincetax which = 408 value = 2 } #Lyon
+	}
+}
+
+#-----------------------------------------------------------------------------
+# SEQUENCE 4: RECONQUISTA BRITANNIAE (England)
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 6051
+	major = yes
+	unique = yes
+	potential = {
+		tag = BYZ
+		flag = byz_gallia_belgica
+		NOT = { flag = byz_britannia_invasion }
+		OR = {
+			owned = { province = 382 data = -1 } #Calais
+			owned = { province = 383 data = -1 } #Picardie
+			owned = { province = 384 data = -1 } #Caux
+			owned = { province = 411 data = -1 } #Normandie
+		}
+	}
+	trigger = {
+		year = 1530
+		NOT = { year = 1838 }
+		atwar = no
+		isvassal = no
+		stability = 1
+		OR = {
+			owned = { province = 382 data = -1 } #Calais
+			owned = { province = 383 data = -1 } #Picardie
+			owned = { province = 384 data = -1 } #Caux
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "The Channel Crossing: Britannia"
+	desc = "Across the churning gray waters of Oceanus Britannicus lies the island Caesar invaded and Claudius annexed. For centuries, Britannia formed the northernmost bastion of the Roman world. Assembling an imperial armada in the ports of the Channel, the Emperor prepares to plant the eagle back onto British soil."
+
+	action = {
+		command = { type = setflag which = byz_britannia_invasion }
+		command = { type = addcore_claim which = 240 } #Northumberland
+		command = { type = addcore_claim which = 241 } #Yorkshire
+		command = { type = addcore_claim which = 242 } #Lancashire
+		command = { type = addcore_claim which = 243 } #Wales
+		command = { type = addcore_claim which = 244 } #Midlands
+		command = { type = addcore_claim which = 245 } #Lincoln
+		command = { type = addcore_claim which = 246 } #Bristol
+		command = { type = addcore_claim which = 247 } #Anglia / London
+		command = { type = addcore_claim which = 248 } #Kent
+		command = { type = addcore_claim which = 249 } #Wessex
+		command = { type = addcore_claim which = 250 } #Cornwall
+		command = { type = warships which = -1 value = 15 }
+		command = { type = transports which = -1 value = 10 }
+		command = { type = relation which = ENG value = -400 }
+		command = { type = relation which = SCO value = -150 }
+		command = { type = badboy value = 2 }
+	}
+}
+
+decision = {
+	id = 6052
+	major = yes
+	unique = yes
+	potential = {
+		tag = BYZ
+		flag = byz_britannia_invasion
+		NOT = { flag = byz_britannia_complete }
+		someof = {
+			number = 4
+			owned = { province = 246 data = -1 } #Bristol
+			owned = { province = 247 data = -1 } #Anglia / London
+			owned = { province = 248 data = -1 } #Kent
+			owned = { province = 249 data = -1 } #Wessex
+			owned = { province = 250 data = -1 } #Cornwall
+		}
+	}
+	trigger = {
+		year = 1530
+		NOT = { year = 1838 }
+		atwar = no
+		isvassal = no
+		stability = 2
+		owned = { province = 247 data = -1 } #Anglia / London
+		someof = {
+			number = 9
+			owned = { province = 240 data = -1 } #Northumberland
+			owned = { province = 241 data = -1 } #Yorkshire
+			owned = { province = 242 data = -1 } #Lancashire
+			owned = { province = 243 data = -1 } #Wales
+			owned = { province = 244 data = -1 } #Midlands
+			owned = { province = 245 data = -1 } #Lincoln
+			owned = { province = 246 data = -1 } #Bristol
+			owned = { province = 247 data = -1 } #Anglia / London
+			owned = { province = 248 data = -1 } #Kent
+			owned = { province = 249 data = -1 } #Wessex
+			owned = { province = 250 data = -1 } #Cornwall
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Imperium Britannicum"
+	desc = "From Hadrian's Wall to the white cliffs of Dover, Roman Britannia has been liberated! Londinium once again heeds the decrees of the Senate and the Emperor. The British fleet is integrated into the Classis Britannica."
+
+	action = {
+		command = { type = setflag which = byz_britannia_complete }
+		command = { type = add_countryculture which = anglosaxon }
+		command = { type = addcore_national which = 240 } #Northumberland
+		command = { type = addcore_national which = 241 } #Yorkshire
+		command = { type = addcore_national which = 242 } #Lancashire
+		command = { type = addcore_national which = 243 } #Wales
+		command = { type = addcore_national which = 244 } #Midlands
+		command = { type = addcore_national which = 245 } #Lincoln
+		command = { type = addcore_national which = 246 } #Bristol
+		command = { type = addcore_national which = 247 } #Anglia / London
+		command = { type = addcore_national which = 248 } #Kent
+		command = { type = addcore_national which = 249 } #Wessex
+		command = { type = addcore_national which = 250 } #Cornwall
+		command = { type = badboy value = -3 }
+		command = { type = treasury value = 400 }
+		command = { type = stability value = 1 }
+		command = { type = provincetax which = 247 value = 3 } #London
+		command = { type = warships which = -1 value = 10 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# SEQUENCE 5: RECONQUISTA GERMANIAE (Low Countries & Rhineland)
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 6053
+	major = yes
+	unique = yes
+	potential = {
+		tag = BYZ
+		flag = byz_gallia_belgica
+		NOT = { flag = byz_germania_inferior }
+	}
+	trigger = {
+		year = 1530
+		NOT = { year = 1838 }
+		atwar = no
+		isvassal = no
+		stability = 1
+		OR = {
+			owned = { province = 376 data = -1 } #Flandern
+			owned = { province = 379 data = -1 } #Artois
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Reconquista Germaniae Inferioris"
+	desc = "The lower Rhine, known to antiquity as Germania Inferior, formed the heavily fortified frontier of the empire against the Germanic tribes. The wealthy merchant towns of the Netherlands and the bishopric of Cologne must be secured under Roman authority."
+
+	action = {
+		command = { type = setflag which = byz_germania_inferior }
+		command = { type = addcore_claim which = 336 } #Holland
+		command = { type = addcore_claim which = 337 } #Friesland
+		command = { type = addcore_claim which = 338 } #Guelders
+		command = { type = addcore_claim which = 339 } #Zeeland
+		command = { type = addcore_claim which = 340 } #Brabant
+		command = { type = addcore_claim which = 344 } #Köln
+		command = { type = addcore_claim which = 378 } #Hainaut
+		command = { type = addcore_claim which = 380 } #Luxembourg
+		command = { type = relation which = HOL value = -250 }
+		command = { type = relation which = GEL value = -250 }
+		command = { type = relation which = FRI value = -250 }
+		command = { type = relation which = KOL value = -250 }
+		command = { type = relation which = LUX value = -200 }
+		command = { type = badboy value = 1 }
+	}
+}
+
+decision = {
+	id = 6054
+	major = yes
+	unique = yes
+	potential = {
+		tag = BYZ
+		flag = byz_germania_inferior
+		NOT = { flag = byz_germania_superior }
+	}
+	trigger = {
+		year = 1530
+		NOT = { year = 1838 }
+		atwar = no
+		isvassal = no
+		stability = 1
+		OR = {
+			owned = { province = 340 data = -1 } #Brabant
+			owned = { province = 344 data = -1 } #Köln
+			owned = { province = 410 data = -1 } #Franche-Comte
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Reconquista Germaniae Superioris"
+	desc = "From the fortified castra of Mogontiacum (Mainz) and Argentoratum (Strasbourg) to the Upper Rhine, Germania Superior was the shield of Gaul and Italy. Reclaiming these key crossings across the Rhine restores the Limes Germanicus."
+
+	action = {
+		command = { type = setflag which = byz_germania_superior }
+		command = { type = addcore_claim which = 343 } #Kleve
+		command = { type = addcore_claim which = 345 } #Pfalz
+		command = { type = addcore_claim which = 346 } #Mainz
+		command = { type = addcore_claim which = 373 } #Baden
+		command = { type = addcore_claim which = 374 } #Alsace
+		command = { type = addcore_claim which = 375 } #Lorraine
+		command = { type = relation which = PFA value = -250 }
+		command = { type = relation which = MAI value = -250 }
+		command = { type = relation which = BAD value = -250 }
+		command = { type = relation which = STR value = -250 }
+		command = { type = relation which = LOR value = -200 }
+		command = { type = badboy value = 1 }
+	}
+}
+
+decision = {
+	id = 6055
+	major = yes
+	unique = yes
+	potential = {
+		tag = BYZ
+		flag = byz_germania_superior
+		NOT = { flag = byz_germania_complete }
+		someof = {
+			number = 6
+			owned = { province = 336 data = -1 } #Holland
+			owned = { province = 340 data = -1 } #Brabant
+			owned = { province = 344 data = -1 } #Köln
+			owned = { province = 345 data = -1 } #Pfalz
+			owned = { province = 346 data = -1 } #Mainz
+			owned = { province = 373 data = -1 } #Baden
+			owned = { province = 374 data = -1 } #Alsace
+		}
+	}
+	trigger = {
+		year = 1530
+		NOT = { year = 1838 }
+		atwar = no
+		isvassal = no
+		stability = 2
+		flag = byz_germania_inferior
+		flag = byz_germania_superior
+		someof = {
+			number = 12
+			owned = { province = 336 data = -1 } #Holland
+			owned = { province = 337 data = -1 } #Friesland
+			owned = { province = 338 data = -1 } #Guelders
+			owned = { province = 339 data = -1 } #Zeeland
+			owned = { province = 340 data = -1 } #Brabant
+			owned = { province = 343 data = -1 } #Kleve
+			owned = { province = 344 data = -1 } #Köln
+			owned = { province = 345 data = -1 } #Pfalz
+			owned = { province = 346 data = -1 } #Mainz
+			owned = { province = 373 data = -1 } #Baden
+			owned = { province = 374 data = -1 } #Alsace
+			owned = { province = 375 data = -1 } #Lorraine
+			owned = { province = 378 data = -1 } #Hainaut
+			owned = { province = 380 data = -1 } #Luxembourg
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Imperium Germanicum"
+	desc = "The Rhine frontier has been secured and pacified! The ancient Germanic provinces once again bow to Roman discipline and civic law. The German culture is formally accepted into the polyethnic commonwealth of the Empire."
+
+	action = {
+		command = { type = setflag which = byz_germania_complete }
+		command = { type = add_countryculture which = german }
+		command = { type = addcore_national which = 336 } #Holland
+		command = { type = addcore_national which = 337 } #Friesland
+		command = { type = addcore_national which = 338 } #Guelders
+		command = { type = addcore_national which = 339 } #Zeeland
+		command = { type = addcore_national which = 340 } #Brabant
+		command = { type = addcore_national which = 343 } #Kleve
+		command = { type = addcore_national which = 344 } #Köln
+		command = { type = addcore_national which = 345 } #Pfalz
+		command = { type = addcore_national which = 346 } #Mainz
+		command = { type = addcore_national which = 373 } #Baden
+		command = { type = addcore_national which = 374 } #Alsace
+		command = { type = addcore_national which = 375 } #Lorraine
+		command = { type = addcore_national which = 378 } #Hainaut
+		command = { type = addcore_national which = 380 } #Luxembourg
+		command = { type = badboy value = -3 }
+		command = { type = treasury value = 500 }
+		command = { type = stability value = 1 }
+		command = { type = provincetax which = 344 value = 2 } #Köln
+		command = { type = provincetax which = 336 value = 2 } #Holland
+	}
+}
+
+#-----------------------------------------------------------------------------
+# SEQUENCE 6: RECONQUISTA RAETIAE ET NORICI (Alps & Austria)
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 6056
+	major = yes
+	unique = yes
+	potential = {
+		tag = BYZ
+		OR = {
+			flag = byz_italia_superior
+			flag = byz_germania_superior
+		}
+		NOT = { flag = byz_raetia_noricum }
+	}
+	trigger = {
+		year = 1520
+		NOT = { year = 1838 }
+		atwar = no
+		isvassal = no
+		stability = 1
+		OR = {
+			owned = { province = 370 data = -1 } #Veneto
+			owned = { province = 404 data = -1 } #Piemonte
+			owned = { province = 405 data = -1 } #Savoie
+			owned = { province = 373 data = -1 } #Baden
+			owned = { province = 374 data = -1 } #Alsace
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Reconquista Alpium: Raetia et Noricum"
+	desc = "Controlling the formidable Alpine mountain passes and the upper Danube valley - the Roman provinces of Raetia and Noricum - is critical to defending the Italian heartland against northern invasions. The imperial standards must be raised atop the Alpine peaks."
+
+	action = {
+		command = { type = setflag which = byz_raetia_noricum }
+		command = { type = addcore_claim which = 350 } #Salzburg
+		command = { type = addcore_claim which = 351 } #Austria
+		command = { type = addcore_claim which = 369 } #Steiermark
+		command = { type = addcore_claim which = 371 } #Tirol
+		command = { type = addcore_claim which = 388 } #Bern
+		command = { type = relation which = HAB value = -350 }
+		command = { type = relation which = HEL value = -250 }
+		command = { type = relation which = SLZ value = -250 }
+		command = { type = badboy value = 1 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# SEQUENCE 7: RECONQUISTA PANNONIAE (Hungary & Middle Danube)
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 6057
+	major = yes
+	unique = yes
+	potential = {
+		tag = BYZ
+		OR = {
+			flag = byz_victory_balkans
+			flag = byz_raetia_noricum
+		}
+		NOT = { flag = byz_pannonia_conquest }
+	}
+	trigger = {
+		year = 1500
+		NOT = { year = 1838 }
+		atwar = no
+		isvassal = no
+		stability = 1
+		OR = {
+			owned = { province = 355 data = -1 } #Serbia
+			owned = { province = 366 data = -1 } #Croatia
+			owned = { province = 368 data = -1 } #Istria
+			owned = { province = 351 data = -1 } #Austria
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Reconquista Pannoniae"
+	desc = "The fertile middle Danube basin - Pannonia - was settled by Rome under Augustus and defended by legions at Aquincum and Sirmium. Reclaiming the Hungarian plains restores the northern buffer protecting the Balkans and Greece."
+
+	action = {
+		command = { type = setflag which = byz_pannonia_conquest }
+		command = { type = addcore_claim which = 324 } #Banat
+		command = { type = addcore_claim which = 325 } #Magyar / Pest
+		command = { type = addcore_claim which = 326 } #Maros
+		command = { type = addcore_claim which = 327 } #Odenburg
+		command = { type = addcore_claim which = 352 } #Ostmarch
+		command = { type = addcore_claim which = 353 } #Presburg
+		command = { type = addcore_claim which = 354 } #Krain
+		command = { type = relation which = HUN value = -400 }
+		command = { type = relation which = BOH value = -200 }
+		command = { type = badboy value = 1 }
+	}
+}
+
+decision = {
+	id = 6058
+	major = yes
+	unique = yes
+	potential = {
+		tag = BYZ
+		flag = byz_pannonia_conquest
+		flag = byz_raetia_noricum
+		NOT = { flag = byz_pannonia_complete }
+		someof = {
+			number = 5
+			owned = { province = 325 data = -1 } #Magyar / Pest
+			owned = { province = 351 data = -1 } #Austria
+			owned = { province = 353 data = -1 } #Presburg
+			owned = { province = 354 data = -1 } #Krain
+			owned = { province = 369 data = -1 } #Steiermark
+			owned = { province = 371 data = -1 } #Tirol
+		}
+	}
+	trigger = {
+		year = 1520
+		NOT = { year = 1838 }
+		atwar = no
+		isvassal = no
+		stability = 2
+		owned = { province = 325 data = -1 } #Magyar / Pest
+		owned = { province = 351 data = -1 } #Austria
+		someof = {
+			number = 10
+			owned = { province = 324 data = -1 } #Banat
+			owned = { province = 325 data = -1 } #Magyar / Pest
+			owned = { province = 326 data = -1 } #Maros
+			owned = { province = 327 data = -1 } #Odenburg
+			owned = { province = 350 data = -1 } #Salzburg
+			owned = { province = 351 data = -1 } #Austria
+			owned = { province = 352 data = -1 } #Ostmarch
+			owned = { province = 353 data = -1 } #Presburg
+			owned = { province = 354 data = -1 } #Krain
+			owned = { province = 369 data = -1 } #Steiermark
+			owned = { province = 371 data = -1 } #Tirol
+			owned = { province = 388 data = -1 } #Bern
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Imperium Pannonicum et Noricum"
+	desc = "From the peaks of the Alps to the great bend of the Danube, the provinces of Raetia, Noricum, and Pannonia are once again garrisoned by imperial legions. The middle Danube limes is permanently restored."
+
+	action = {
+		command = { type = setflag which = byz_pannonia_complete }
+		command = { type = addcore_national which = 324 } #Banat
+		command = { type = addcore_national which = 325 } #Magyar / Pest
+		command = { type = addcore_national which = 326 } #Maros
+		command = { type = addcore_national which = 327 } #Odenburg
+		command = { type = addcore_national which = 350 } #Salzburg
+		command = { type = addcore_national which = 351 } #Austria
+		command = { type = addcore_national which = 352 } #Ostmarch
+		command = { type = addcore_national which = 353 } #Presburg
+		command = { type = addcore_national which = 354 } #Krain
+		command = { type = addcore_national which = 369 } #Steiermark
+		command = { type = addcore_national which = 371 } #Tirol
+		command = { type = addcore_national which = 388 } #Bern
+		command = { type = badboy value = -3 }
+		command = { type = treasury value = 400 }
+		command = { type = stability value = 1 }
+		command = { type = provincetax which = 351 value = 2 } #Wien
+	}
+}
+
+#-----------------------------------------------------------------------------
+# SEQUENCE 8: RECONQUISTA DACIAE (Romania)
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 6059
+	major = yes
+	unique = yes
+	potential = {
+		tag = BYZ
+		OR = {
+			flag = byz_victory_balkans
+			flag = byz_pannonia_conquest
+		}
+		NOT = { flag = byz_dacia_conquest }
+	}
+	trigger = {
+		year = 1480
+		NOT = { year = 1838 }
+		atwar = no
+		isvassal = no
+		stability = 1
+		OR = {
+			owned = { province = 320 data = -1 } #Dobrudja
+			owned = { province = 356 data = -1 } #Bulgaria
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Reconquista Daciae Traianae"
+	desc = "Trajan's glorious campaigns across the Danube brought the wealthy kingdom of Dacia into the empire. The gold-rich mountains of Transylvania and the Wallachian plain once held Roman colonies and forts. The Empire shall re-cross the Danube and claim Trajan's bequest."
+
+	action = {
+		command = { type = setflag which = byz_dacia_conquest }
+		command = { type = addcore_claim which = 318 } #Moldavia
+		command = { type = addcore_claim which = 319 } #Bessarabia
+		command = { type = addcore_claim which = 322 } #Wallachia
+		command = { type = addcore_claim which = 323 } #Transylvania
+		command = { type = relation which = WAL value = -250 }
+		command = { type = relation which = MOL value = -250 }
+		command = { type = relation which = HUN value = -200 }
+		command = { type = badboy value = 1 }
+	}
+}
+
+decision = {
+	id = 6060
+	major = yes
+	unique = yes
+	potential = {
+		tag = BYZ
+		flag = byz_dacia_conquest
+		NOT = { flag = byz_dacia_complete }
+		someof = {
+			number = 2
+			owned = { province = 318 data = -1 } #Moldavia
+			owned = { province = 319 data = -1 } #Bessarabia
+			owned = { province = 322 data = -1 } #Wallachia
+			owned = { province = 323 data = -1 } #Transylvania
+		}
+	}
+	trigger = {
+		year = 1480
+		NOT = { year = 1838 }
+		atwar = no
+		isvassal = no
+		stability = 2
+		owned = { province = 322 data = -1 } #Wallachia
+		someof = {
+			number = 3
+			owned = { province = 318 data = -1 } #Moldavia
+			owned = { province = 319 data = -1 } #Bessarabia
+			owned = { province = 322 data = -1 } #Wallachia
+			owned = { province = 323 data = -1 } #Transylvania
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Imperium Dacicum"
+	desc = "Dacia Felix has been restored to Roman rule! The ancient gold mines of the Apuseni mountains once again pour their wealth into the imperial treasury, and the Danube frontier is fortified from both banks."
+
+	action = {
+		command = { type = setflag which = byz_dacia_complete }
+		command = { type = addcore_national which = 318 } #Moldavia
+		command = { type = addcore_national which = 319 } #Bessarabia
+		command = { type = addcore_national which = 322 } #Wallachia
+		command = { type = addcore_national which = 323 } #Transylvania
+		command = { type = badboy value = -1 }
+		command = { type = provincetax which = 323 value = 2 } #Transylvanian gold
+		command = { type = treasury value = 300 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# SEQUENCE 9: MESOPOTAMIA ROMANA (Northern Iraq)
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 6061
+	major = yes
+	unique = yes
+	potential = {
+		tag = BYZ
+		OR = {
+			flag = byz_victory_egypt
+			flag = byz_conquest_egypt
+		}
+		NOT = { flag = byz_mesopotamia_conquest }
+	}
+	trigger = {
+		year = 1500
+		NOT = { year = 1838 }
+		atwar = no
+		isvassal = no
+		stability = 1
+		OR = {
+			owned = { province = 485 data = -1 } #Aleppo
+			owned = { province = 486 data = -1 } #Nuyssaybin
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Mesopotamia Traiana"
+	desc = "The easternmost extension of the Roman Empire reached the banks of the Euphrates and Tigris under the Emperor Trajan. Reclaiming the historic cities between the two rivers establishes Roman supremacy over the cradle of civilization and guards against Persian resurgence."
+
+	action = {
+		command = { type = setflag which = byz_mesopotamia_conquest }
+		command = { type = addcore_claim which = 488 } #Kirkuk
+		command = { type = addcore_claim which = 489 } #Iraq
+		command = { type = relation which = PER value = -300 }
+		command = { type = relation which = QAR value = -250 }
+		command = { type = relation which = AKK value = -250 }
+		command = { type = badboy value = 1 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# SEQUENCE 10: RENOVATIO IMPERII MAXIMI (Maximum Empire Restored)
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 6062
+	major = yes
+	unique = yes
+	potential = {
+		tag = BYZ
+		flag = byz_restoration_complete
+		NOT = { flag = byz_imperium_maximum }
+		someof = {
+			number = 8
+			owned = { province = 357 data = -1 } #Constantinople
+			owned = { province = 399 data = -1 } #Roma
+			owned = { province = 744 data = -1 } #Alexandria
+			owned = { province = 493 data = -1 } #Judea
+			owned = { province = 439 data = -1 } #Toledo
+			owned = { province = 385 data = -1 } #Paris
+			owned = { province = 247 data = -1 } #London
+			owned = { province = 344 data = -1 } #Köln
+			owned = { province = 351 data = -1 } #Wien
+		}
+	}
+	trigger = {
+		year = 1550
+		NOT = { year = 1838 }
+		atwar = no
+		isvassal = no
+		stability = 2
+		flag = byz_restoration_complete
+		flag = byz_hispania_complete
+		flag = byz_gallia_complete
+		flag = byz_britannia_complete
+		flag = byz_germania_complete
+		flag = byz_pannonia_complete
+		flag = byz_dacia_complete
+		owned = { province = 357 data = -1 } #Constantinople
+		owned = { province = 399 data = -1 } #Roma
+		owned = { province = 744 data = -1 } #Alexandria
+		owned = { province = 493 data = -1 } #Judea
+		owned = { province = 439 data = -1 } #Toledo
+		owned = { province = 385 data = -1 } #Paris
+		owned = { province = 247 data = -1 } #London
+		owned = { province = 351 data = -1 } #Wien
+	}
+	ai_trigger = {
+	}
+
+	name = "Renovatio Imperii Maximi: Pax Romana Restaurata"
+	desc = "After more than a millennium of catastrophic divisions, barbaric invasions, and seemingly insurmountable odds, the Imperium Romanum has been restored to the full glory of Trajan's golden age! From the mist of Britannia to the Euphrates, from the Rhine to the burning sands of the Sahara, the purple of the Emperor rules over all seas and all nations. Pax Romana returns! Basileus ton Romaion - Imperator Romanorum - Kosmokrator!"
+
+	action = {
+		command = { type = setflag which = byz_imperium_maximum }
+		command = { type = addcore_national which = 370 } #Veneto
+		command = { type = addcore_national which = 389 } #Lombardia
+		command = { type = addcore_national which = 390 } #Mantua
+		command = { type = addcore_national which = 403 } #Liguria
+		command = { type = addcore_national which = 404 } #Piemonte
+		command = { type = addcore_national which = 405 } #Savoie
+		command = { type = addcore_national which = 488 } #Kirkuk
+		command = { type = addcore_national which = 489 } #Iraq
+		command = { type = stability value = 1 }
+		command = { type = badboy value = -10 }
+		command = { type = treasury value = 2000 }
+		command = { type = vp value = 1000 }
+		command = { type = provincetax which = 357 value = 5 } #Constantinople
+		command = { type = provincetax which = 399 value = 5 } #Roma
+		command = { type = provincetax which = 744 value = 3 } #Alexandria
+		command = { type = provincemanpower which = 357 value = 3 }
+		command = { type = provincemanpower which = 399 value = 3 }
+		command = { type = provincemanpower which = 744 value = 2 }
+	}
+}
+
+
+#=============================================================================
+# HISTORICAL DESIGN & CAPITAL RELOCATION SPECIFICATIONS
 #=============================================================================
 
 #-----------------------------------------------------------------------------
