@@ -1,0 +1,113 @@
+header = {
+	name = "1337 - Alternate Destinies"
+	absolutestartyear = 1337
+	startyear = 1337
+	endyear = 1837
+	startdate = { day = 0 month = january year = 1337 }
+
+	selectable = {
+		FRA CAS ENG TUR BUR NVG CHI HOK AZT INC CHE ZAP RIM DOB
+		CRE SHA HUR BOH HAB BRI SCO BRA POM BRE SHL MOS CON LNA
+		TRE PAP DAN SWE FLO VEN GEN MAM SON ZIM LAT POL LIT FLA
+		HUN WAL AYU BYZ ADE ARG ARK ASH ATJ BAD BAY BEN LNK ERT
+		NOR BOS KHM CHA CHM CYP DAH DAI DLH ULS LEI MST LAX LUX SIL
+		DUL ETH FRI GEL GEO GRA GUJ BRU HAU HEL HES KAR KLE KNI
+		KOL KON KOR LOR MAI MAL MLO MOR MUN NAP NAV OHI BRM COC ATH
+		OLD ORM PFA PSK RAG RYA SAC SAV SER PAL KUT SLZ TYR
+		STR NUB POR THU TIB TUN TVE WUR ZAN MAA SUZ TER BUT AYY AYD
+		EPI BEI CHG VER STT MKS MLC MAJ AMI TLE ADA MGU CLC PIS VOL
+		AJU MLI MOM KIL HLL SIA ABB MUB MON TRV SUN CAN BUL CRG
+		MLL NVS PRY YRL SAM KIC KOW MRD ILK KRT CHB TEM INJ BLI
+		MHR MUZ NAN URB MAS BHR MVA DSM KSM USM TEK GLL NAX YEM ARA
+		SMO CRO SLD SIC RAJ JLY BAR ARL AMG OJI KMK POT SKN POW DAK
+		OTW CEE CHW WAZ ILI CAD PUE CHU	HOP ALN MOH SXF SAH TWA CKW
+		NEU TAR TLX HSA LIV APA SHI SUS HAS OYO SOC PRM BON SUK AHA
+		NYN VIJ WLS
+	}
+
+	flagname = {
+		ENG = "Lionheart"
+		FRA = "Ancien"
+		LIT = "Gediminas"
+		ATJ = "Pasai"
+		LAX = "Sua"
+	}
+	countryname = {
+		BRM = "Pinya and Sagaing"
+		ATJ = "Samudera Pasai"
+		LAX = "Muang Sua"
+	}
+
+	FRA = {
+		countrydifficulty = 3
+		countryeconomy = 4
+		countrymilitary = 4
+		countrydiplomacy = 3
+	}
+	ENG  = {
+		countrydifficulty = 4
+		countryeconomy = 3
+		countrymilitary = 4
+		countrydiplomacy = 3
+	}
+	ARG = {
+		countrydifficulty = 3
+		countryeconomy = 4
+		countrymilitary = 4
+		countrydiplomacy = 3
+	}
+	BAY  = {
+		countrydifficulty = 4
+		countryeconomy = 2
+		countrymilitary = 2
+		countrydiplomacy = 4
+	}
+	HUN  = {
+		countrydifficulty = 3
+		countryeconomy = 3
+		countrymilitary = 3
+		countrydiplomacy = 3
+	}
+	LIT  = {
+		countrydifficulty = 3
+		countryeconomy = 2
+		countrymilitary = 3
+		countrydiplomacy = 2
+	}
+	BYZ  = {
+		countrydifficulty = 3
+		countryeconomy = 2
+		countrymilitary = 2
+		countrydiplomacy = 3
+	}
+	PAP = {
+		countrydifficulty = 3
+		countryeconomy = 3
+		countrymilitary = 3
+		countrydiplomacy = 4
+	}
+	BHR = {
+		countrydifficulty = 4
+		countryeconomy = 4
+		countrymilitary = 3
+		countrydiplomacy = 4
+	}
+	CHI  = {
+		countrydifficulty = 4
+		countryeconomy = 4
+		countrymilitary = 3
+		countrydiplomacy = 4
+	}
+}
+
+include = "scenarios\inc\Reformation_Events.inc"
+include = "scenarios\inc\RNGC.inc"
+
+include = "scenarios\1337\inc\1337.inc"
+include = "db\events_timur.txt"
+include = "db\events.txt"
+
+# Master loader for Gloriana Alternate Destinies modules
+include = "db\events_alt_master.txt"
+
+include = "scenarios\inc\Pirates.inc"
