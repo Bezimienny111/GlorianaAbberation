@@ -1,199 +1,379 @@
-# CHANGELOG - Events and decisions changes (Gloriana_1337)
-# Format:
-#   [date] Event <ID> (<file>): <description of change>
-#   [date] Event <ID> (<file>) -> Decision <ID> (<decision file>): <description>
-# -----------------------------------------------------------------------
+================================================================================
+GLORIANA 1337: ALTERNATE DESTINIES - MASTER CHANGELOG & ARCHITECTURE REGISTRY
+================================================================================
+Project: Gloriana 1337 Mod for For The Glory (Engine 1.3)
+Branch: alternate-destinies
+Document: Work Folder/CHANGELOG_events.txt
+Last Updated: 2026-10-08
+Language: English
 
-[2026-04-30] Event 3001154 (BYZANNEX_08_Imperial_Restoration.txt) -> Decisions 6020-6023 (Db/Decisions/Byzantine.txt). Reason: converted event "A Crossroads" (BYZ, four expansion paths) into four separate decisions (one per action, as FTG allows only one action per decision). Each decision sets flag byz_crossroads (shared for the whole path) and path-specific flags (totheeast / westwardho / optionsopen). Decision 6023 (abdication, BYZ->GRE) blocks AI via ai_trigger = { ai = no }. Event 3001154 disabled by adding NOT = { tag = BYZ } to its trigger (not removed). All references to event = 3001154 replaced: in BYZ events (BYZANNEX_08) -> flag = byz_crossroads; in PAP/MOS/RUS events (BYZANNEX_14_Rome.txt l.764, BYZANNEX_19_Russia.txt l.119,158) -> GRE = { flag = byz_crossroads } (because they check BYZ->GRE abdication with NOT exists = BYZ). Total: 9 references changed in BYZANNEX_08 and 3 in other files.
-
-[2026-05-01] Decisions 6020-6039 (Db/Decisions/Byzantine.txt): moved year and NOT = { year = 1838 } constraints from potential to trigger in all 20 BYZ expansion decisions. Reason: year in potential only affects UI visibility; year in trigger is a hard execution block, eliminating ambiguity about when decisions can actually be taken.
-
-[2026-05-01] Decisions 6000-6003, 6005-6010, 6012-6013, 6015, 6027-6039 (Db/Decisions/Byzantine.txt): wrapped large groups of owned province conditions in trigger blocks with someof = { number = N-1 }, allowing 1 province to be missing (approx 90% threshold). Applies only to owned and vassal conditions; stability/atwar/isvassal/year/flag conditions remain outside someof. Decisions with 5 or fewer owned provinces (6004, 6011, 6014) left unchanged. For decisions with OR blocks (vassal/owned alternatives) at the end of the trigger (6031-6033, 6035-6039), the OR blocks remain outside someof. Affected decision count: 25.
-
-[2026-04-30] Events 3001155-3001162 (BYZANNEX_08_Imperial_Restoration.txt) -> Decisions 6024-6039 (Db/Decisions/Byzantine.txt). Reason: converted eight "Victory" and imperial expansion events into 16 decisions (one per action). Milestone flags introduced: byz_victory_balkans (dec. 6024-6026), byz_victory_anatolia (dec. 6027-6029), byz_victory_italy (dec. 6030), byz_basil2 (dec. 6031-6033), byz_victory_egypt (dec. 6034), byz_conquest_egypt (dec. 6035), byz_empire_east (dec. 6036-6037), byz_conquest_africa (dec. 6038-6039). All events disabled via NOT = { tag = BYZ } in trigger. Cross-references in BYZANNEX_08 triggers (event = 3001155/6/7/8) replaced with corresponding flags. References to event = 3001159/3001161/3001162 in BYZANNEX_16_Mameluks.txt (3 occurrences) and BYZANNEX_19_Russia.txt (1 occurrence) replaced with flag = byz_victory_egypt / byz_empire_east / byz_conquest_africa.
-
-[2026-05-01] Decisions 6000-6015 (Db/Decisions/Byzantine.txt): added command = { type = badboy value = -X } in each decision action with multiple addcore_national entries, where X = floor(addcore_national_count * 0.2). Applied values: 6000(-3), 6001(-2), 6002(-5), 6003(-3), 6004(-1), 6005(-4), 6006(-2), 6007(-2), 6008(-5), 6009(-3), 6010(-2), 6011(-1), 6012(-2), 6013(-2), 6014(-1), 6015(-2). Reason: scale badboy reduction with scope of national core restoration.
-
-[2026-05-01] Decisions 6002, 6005, 6008, 6036, 6037, 6038, 6039 (Db/Decisions/Byzantine.txt): adjusted someof thresholds with number > 19 by an additional -1 step (effective rule: N-2 for those high-count cases). Applied updates: 25->24 (6002), 20->19 (6005), 24->23 (6008), 20->19 (6036), 20->19 (6037), 22->21 (6038), 22->21 (6039). Reason: slightly relax execution requirements for very large province-condition sets.
-
-[2026-05-02] Event 3001167 (BYZANNEX_08_Imperial_Restoration.txt) -> Decision 6040 (Db/Decisions/Byzantine.txt). Reason: converted "The Restoration Is Complete" to a decision while preserving original trigger/effects and splitting visibility vs execution rules (someof in potential, full requirements in trigger, year 1500-1837 execution window). Event 3001167 was disabled via NOT = { tag = BYZ } in trigger (not removed). Dependency update: in BYZANNEX_06_Renaissance.txt, action A of event 3001135 now sets flag byz_restoration_complete_blocked instead of sleeping event 3001167 (old sleepevent line kept commented), and decision 6040 checks NOT = { flag = byz_restoration_complete_blocked }.
-
-[2026-05-02] Db/Decisions/Byzantine.txt: added comprehensive proposals (after decision 6040) for 10 new decision sequences covering missing Roman Empire territories. Proposed sequences: (1) Reconquista Italiae Superioris 6041 (northern Italy: 370,389-390,403-405), (2) Reconquista Hispaniae 6042-6045 (Iberian Peninsula: 428-444 with sub-sequences for Baetica, Lusitania, Tarraconensis), (3) Reconquista Galliae 6046-6050 (France: 376,379,382-386,406-425 with sub-sequences for Narbonensis, Aquitania, Lugdunensis, Belgica), (4) Reconquista Britanniae 6051-6052 (England: 240-250), (5) Reconquista Germaniae 6053-6055 (western Germany & Netherlands: 336-346,373-374,378,380 with sub-sequences for Germania Inferior/Superior), (6) Reconquista Raetiae et Norici 6056 (Austria & Switzerland: 350-351,369,371,388), (7) Reconquista Pannoniae 6057-6058 (Hungary: 324-327,352-354), (8) Reconquista Daciae 6059-6060 (Romania beyond Dobrudja: 318-319,322-323), (9) Mesopotamia Romana 6061 (northern Iraq: 488-489), (10) Renovatio Imperii Maximi 6062 (final grand decision for full empire restoration). Each sequence includes detailed notes on provinces, historical regions, logical progression, suggested flags, trigger/potential structure, AI requirements, balance considerations, cultural rewards, support events, and implementation order. Total proposed IDs: 6041-6062 (22 decisions). No actual implementation yet - proposals only as schemas for future development. All proposal content (sequence descriptions, decision specifications, implementation notes) fully translated to English.
-
-[2026-05-02] Db/Decisions/Byzantine.txt: added section 9 to implementation notes covering capital relocation events for defeated European powers when BYZ threatens their continental territories. Specifications added for: (1) Portugal - relocate from Lisboa to Brazilian colonies when BYZ executes Hispania gates decision (flag byz_hispania_gates) and threatens Lisboa; (2) Spain - relocate from Madrid to Central America/Caribbean when BYZ executes Tarraconensis decision (flag byz_tarraconensis) or Lusitania (flag byz_lusitania); (3) France - relocate from Paris to North American colonies (Quebec, Louisiana, Acadia) when BYZ executes Narbonensis decision (flag byz_gallia_narbonensis) or Lugdunensis (flag byz_gallia_lugdunensis); (4) England - two-tier relocation when BYZ executes Channel Crossing (flag byz_britannia_invasion): first priority to Scotland (238-239) if owned, otherwise to North American colonies; (5) Austria - relocate from Wien to remaining HRE territories or Hungary when BYZ executes Raetia/Noricum decision (flag byz_raetia_noricum) or Pannonia campaign (flag byz_pannonia_conquest). Key design principle: events trigger using campaign START flags (when BYZ threatens territory), NOT completion flags (when conquest already finished), allowing nations to relocate before total collapse. Includes event design notes (2-4 options per event with ownership triggers, refusal option leading to annexation, narrative flavor, flags, timing guidance), technical implementation guidance (separate event file BYZANNEX_XX_Capital_Relocations.txt, trigger via decision actions or periodic checks, careful use of province specification), and suggestions for follow-up mechanics (stability bonuses for exiled administrations, reconquest attempts, colonial independence movements).
+--------------------------------------------------------------------------------
+TABLE OF CONTENTS
+--------------------------------------------------------------------------------
+1. MASTER ID ALLOCATION & MODULE MATRIX
+2. ARCHITECTURE & UPDATE-RESILIENCE SYSTEM
+3. MODULE 1: BYZANTINE EMPIRE (BYZ)
+4. MODULE 2: PAPAL STATES, KINGDOM OF ITALY & WESTERN ROMAN EMPIRE (PAP / ITA / WRE)
+5. MODULE 3: MAMELUKS & PTOLEMAIC EGYPT (MAM / EGY)
+6. MODULE 4: HANSEATIC LEAGUE (HSA)
+7. MODULE 5: PRE-COLUMBIAN AMERICAS (AZT / INC)
+8. MODULE 6: CELTIC UNION (SCO / WLS / EIR)
+9. MODULE 7: SOLOMONIC EMPIRE OF ETHIOPIA (ETH)
+10. MODULE 8: JOSEON KINGDOM OF KOREA (KOR)
+11. LEGACY REVISION LOG (APRIL - MAY 2026)
 
 
-[2026-10-08] Db/Decisions/alt_byzantine.txt: fixed 7 logic, progression, and potential bugs across decisions 6000-6040:
-1. Decision 6029 ("Victory in Anatolia: I can never choose"): added missing "command = { type = setflag which = optionsopen3 }" in action block. Previously, decision 6008 ("Restoration of the East and West") required flag = optionsopen3, making it 100% unreachable when taking this path.
-2. Decision 6012 ("Restoration of the Balkans"): fixed faulty trigger province list. Replaced misplaced Levant/Egypt province IDs (490-494, 743-747) with the proper Balkan core provinces (320, 355-356, 361-366, 368, 475, 480, 481, 484) matching 6001/6006. Also lowered stability trigger requirement to 2.
-3. Decision 6035 ("Conquest of Egypt: In His name, to His glory"): fixed potential condition which mistakenly required owning Alexandria (744) and Syria/Judea prior to receiving claims on them. Replaced with Anatolian staging requirement (474, 476, 477, 482, 483, number = 3).
-4. Decision 6030 ("Victory in Italy"): relaxed potential condition to allow diplomatic/vassal expansion. Previously required direct ownership of 3 Italian provinces, hiding the decision from players pursuing the vassalage route supported in the trigger. Replaced with OR block covering Italian province ownership or Italian vassals (NAP, PAP, TOS, SIC, VEN, MLO).
-5. Decision 6037 ("Mother of God, aid your servant"): added missing "command = { type = addcore_claim which = 393 } #Napoli" in action block to ensure claim on Napoli is granted before decision 6014 requires it.
-6. Decisions 6001, 6006, 6007, 6012: lowered stability trigger requirement from 3 to 2, ensuring that the rewarded +1 stability is not wasted at the maximum cap.
-7. Decisions 6036 and 6037: lowered someof requirement in potential from 5 to 4 out of 6 staging provinces, preventing the decision from being hidden when the 19/21 trigger condition is satisfied.
+================================================================================
+1. MASTER ID ALLOCATION & MODULE MATRIX
+================================================================================
+All modular additions utilize collision-free ID allocations across FTG 1.3's 
+global shared event/decision ID space, monarch space, and leader space:
 
-[2026-10-08] Db/Events/alt_byzantine.txt: added startup sleeper event 3009000 ("Imperial Administration: The Grand Strategy"). Fires on day 1 of 1337 for BYZ to sleep original conflicting linear progression events (3001154-3001162, 3001167) without needing to modify vanilla event files, ensuring full compatibility with upstream mod updates.
+| Module / Nation             | Tag(s)        | Decisions | Events          | Monarchs      | Leaders       |
+|-----------------------------|---------------|-----------|-----------------|---------------|---------------|
+| 1. Byzantine Empire         | BYZ           | 6000-6062 | 3009000         | Vanilla       | Vanilla       |
+| 2. Papal States / Italy/WRE | PAP, ITA, WRE | 7010-7049 | 3009100-3009145 | 39001-39023   | 39101-39109   |
+| 3. Mameluks & Ptolemaic Egy | MAM, EGY      | 7050-7076 | 3009200-3009245 | 39201-39232   | 39251-39259   |
+| 4. Hanseatic League         | HSA           | 7150-7160 | 3009300-3009345 | 13599-13763   | 39401-39410   |
+| 5. Pre-Columbian Americas   | AZT, INC      | 7200-7214 | 3009400-3009425 | Vanilla       | 39501-39558   |
+| 6. Celtic Union             | SCO, WLS, EIR | 7250-7255 | 3009500-3009545 | 12280-12294   | 39601-39608   |
+| 7. Solomonic Ethiopia       | ETH           | 7300-7305 | 3009600-3009645 | Vanilla       | 39651-39658   |
+| 8. Joseon Korea             | KOR           | 7350-7355 | 3009700-3009745 | Vanilla       | Vanilla/18691+|
 
-[2026-10-08] Db/Decisions/alt_byzantine.txt: implemented 22 new Roman Empire expansion decisions (IDs 6041-6062) across 10 regional sequences:
-1. Sequence 1 (6041): "Reconquista Italiae Superioris" - grants claim cores on northern Italy (Veneto 370, Lombardia 389, Mantua 390, Liguria 403, Piemonte 404, Savoie 405) after completing basic restoration.
-2. Sequence 2 (6042-6045): "Reconquista Hispaniae" - 6042 claims Baetica (443-444); 6043 claims Lusitania (434, 441-442); 6044 claims Tarraconensis & central Spain (428-433, 435-440); 6045 "Imperium Hispanicum" crowns full conquest with national cores on all 17 Iberian provinces, iberian accepted culture, badboy reduction, and treasury bonus.
-3. Sequence 3 (6046-6050): "Reconquista Galliae" - 6046 claims Narbonensis/Provence (406-407, 421-422); 6047 claims Aquitania (415-416, 423-425); 6048 claims Lugdunensis/Paris (385-386, 408-410, 418-420); 6049 claims Belgica & Armorica (376, 379, 382-384, 411-414, 417); 6050 "Imperium Gallicum" awards national cores on all 27 Gallic provinces and french accepted culture.
-4. Sequence 4 (6051-6052): "Reconquista Britanniae" - 6051 "The Channel Crossing" grants claims on Roman Britannia (240-250) with imperial naval mobilization; 6052 "Imperium Britannicum" awards national cores and anglosaxon accepted culture.
-5. Sequence 5 (6053-6055): "Reconquista Germaniae" - 6053 claims Germania Inferior / Low Countries (336-340, 344, 378, 380); 6054 claims Germania Superior / Rhineland (343, 345-346, 373-375); 6055 "Imperium Germanicum" awards national cores and german accepted culture.
-6. Sequence 6 (6056): "Reconquista Alpium: Raetia et Noricum" - claims Alpine passes and Austria (350-351, 369, 371, 388).
-7. Sequence 7 (6057-6058): "Reconquista Pannoniae" - 6057 claims Hungarian plain (324-327, 352-354); 6058 "Imperium Pannonicum et Noricum" awards national cores on all 12 middle Danube and Alpine provinces.
-8. Sequence 8 (6059-6060): "Reconquista Daciae Traianae" - 6059 claims Dacia beyond the Danube (318-319, 322-323); 6060 "Imperium Dacicum" awards national cores and Transylvanian gold revenues.
-9. Sequence 9 (6061): "Mesopotamia Traiana" - claims Euphrates & Tigris (Kirkuk 488, Iraq 489).
-10. Sequence 10 (6062): "Renovatio Imperii Maximi: Pax Romana Restaurata" - grand culmination requiring Trajan-era boundaries (Thrace, Rome, Alexandria, Jerusalem, Toledo, Paris, London, Wien, Köln); awards national cores on northern Italy and Mesopotamia, +1 stability, -10 badboy, +2000 gold, +1000 VP, and major permanent tax/manpower boosts to imperial capitals.
+* Custom Religions defined in Db/Religions/religions.txt:
+  - roman_pagan (Western Roman Empire revival)
+  - egyptian_pagan (Kemetic revival of Ancient Egypt)
+  - mutazilite (Islamic rationalist reformation)
+  - nahua_reformed (Cosmic harmony of Quetzalcoatl / non-annexable)
+  - inti_reformed (Order of the Sun / non-annexable)
 
-[2026-10-08] Db/Decisions/alt_papal.txt & Db/Events/alt_papal.txt: implemented comprehensive alternate history module for Papal States (PAP), Kingdom of Italy (ITA), and Western Roman Empire (WRE):
-1. Common Path C01-C06 (Decisions 7010-7016):
-   - C01 (7010): "Powrot do Rzymu" - relocates Papal capital from Avignon to Rome, triggers French reaction (3009102).
-   - C02 (7011): "Legaci i zbuntowane komuny" - pacification of Romagna and Marche via Cardinal Albornoz legates.
-   - C03 (7012): "Liga Pokoju Wloskiego" - peace league and protectorate over Tuscany and Emilia (Siena, Firenze, Emilia).
-   - C05 (7013/7014): "Korona Longobardzka" - early (pre-1450) and mature (post-1450, 70% threshold) decisions claiming northern Italy (Lombardia, Mantua, Veneto, Liguria, Piemonte) and triggering HRE reaction (3009103).
-   - C06 (7015/7016): "Zjednoczenie Polnocnej Italii" - early (90% threshold) and mature (75% threshold) decisions completing northern unification.
-2. Crossroads Event C07 (Event 3009100): "Miecz i Tiara" - presents the 3 constitutional paths for a unified Italy upon reaching 1450.
-3. Branch T - Militant Theocracy (tag PAP, Decisions 7020-7026):
-   - T01 (7020): "Patrimonium Sancti Petri" - declares permanent theocratic constitution under the Holy See.
-   - T02-T09 (7021-7026): Roman Curia reform, St. Peter's Basilica patronage, Ecumenical Council, Gregorianum colleges, Holy League of Faith, and post-religious-wars consolidation.
-4. Branch K - Kingdom of Italy (tag ITA, Decisions 7030-7036):
-   - K01 (7030): "Korona Italii" - transitions tag from PAP to ITA, capital in Rome, sleeps Transition Council (12150), triggers royal dynasty election (3009110) between Medici (12217), Sforza (12153), or Savoy (12165).
-   - K03-K08 (7031-7036): Southern Italy unification claims (393-396, 819), Royal Arsenals of Genoa & Venice, Oceanic Company, Cape of Good Hope Haven (Porto Reale), East India Company spice monopoly, and High Renaissance cultural patronage.
-5. Branch I - Western Roman Empire (tag WRE, Decisions 7040-7049):
-   - I01 (7040): "Renovatio Imperii Occidentalis" - resurrects the Western Roman Empire (tag WRE) in Rome, triggers Concordat of the Two Emperors with Byzantine Empire (3009120).
-   - I02-I09 (7041-7047): Italia Mezzogiorno claims, Africa Romana claims (Carthage/Tunis, Tripoli), Hispania Romana claims, Gallia Narbonensis claims, Corpus Iuris Civilis legal codification, Lex de Civitate Romana reviving roman accepted culture, and grand Pax Romana Restaurata triumph across all 4 imperial regions.
-   - I10 (7048): "Res Publica Restituta" - optional 1775+ late-era republican revolution proclaiming SPQR and activating elected Senate Consuls pairs (39020-39023).
-   - I11 (7049): "Wyprawa Transsaharyjska" - trans-Saharan expedition to Mali, waking conquistador Lucio Africano (39103) and discovering Sahara oases (1597, 1488, 1495, 1490, 1496) and Bambuk gold (3009130).
-6. Supporting Mechanics & Data Files:
-   - Event 3009101: "Habemus Papam" - periodic conclave events for secular paths ITA and WRE maintaining +1 stability.
-   - Events 3009141-3009145: Organic provincial 10-year integration events (ownerchange = 10 -> addcore_national) for core Italian provinces (Romagna, Marche, Firenze, Lombardia, Napoli).
-   - Db/Monarchs/monarchs_wre.txt: 12 monarchs of the Aurelia dynasty (39001-39012) + 4 SPQR Consul pairs (39020-39023).
-   - Db/Leaders/leaders_wre.txt: 9 Roman generals, admirals, and explorer Lucio Africano (39101-39109).
+* Custom Cultures defined in Db/cultures.txt:
+  - roman (Romanitas for BYZ and WRE)
+  - coptic (Coptic native Egyptians for MAM and EGY)
 
-[2026-10-08] Db/Decisions/alt_egypt.txt & Db/Events/alt_egypt.txt: implemented comprehensive alternate history module for Mameluks (MAM) and Ptolemaic Egypt (EGY):
-1. Common Reform Path (Decisions 7050-7051, Event 3009200):
-   - Event 3009200: "Czystka w Cytadeli Kairskiej" (The Cairo Citadel Purge, 1345-1360) - physical liquidation of rebellious Kipchak/Circassian Mamluk emirs, liberating Egyptian fellahs and Copts.
-   - Decision 7050: "Emancypacja Fellahow i Koptow" - grants coptic accepted culture alongside arabic, breaks military monopoly, shifts domestic sliders toward centralization and freedom.
-   - Decision 7051: "Likwidacja Kasty Niewolnikow Wojskowych" - abolishes boy-slave trade from Kipchak/Caucasus, forms native standing army, reduces inflation and increases provincial manpower.
+
+================================================================================
+2. ARCHITECTURE & UPDATE-RESILIENCE SYSTEM
+================================================================================
+[2026-10-08] Core Architecture Design:
+1. Scenario Isolation:
+   - Dedicated scenario file: "Scenarios/1337 - Alternate Destinies.eeg".
+   - Loads base scenario data while referencing the master modular event loader.
+2. Master Loader:
+   - File: "Db/events_alt_master.txt".
+   - Modularly references "Db/Decisions/alt_*.txt" and "Db/Events/alt_*.txt".
+   - Completely decouples custom logic from upstream vanilla files (Byzantine.txt,
+     OAJF_italy.txt, mameluks.txt, etc.).
+3. Startup Sleeper Events:
+   - Event 3009000 dynamically disables conflicting vanilla linear progression 
+     events at scenario start without altering author's base event files.
+4. One-Click Patch Applier:
+   - File: "Work Folder/Alt_Patches/Apply-AltPatches.ps1".
+   - Associated patch files: countries_patch.txt, cultures_patch.txt, 
+     religions_patch.txt, monarchs_egy_patch.txt.
+   - When upstream mod updates overwrite core database tables, executing this 
+     script instantly restores all custom tags, cultures, religions, and dynasties.
+
+
+================================================================================
+3. MODULE 1: BYZANTINE EMPIRE (BYZ)
+================================================================================
+[2026-10-08] Decisions 6000-6040 (Bugfixes & Logic Repair in Db/Decisions/alt_byzantine.txt):
+1. Decision 6029 ("Victory in Anatolia: I can never choose"):
+   - Added missing "command = { type = setflag which = optionsopen3 }" in action block.
+   - Fixed blocker preventing Decision 6008 ("Restoration of the East and West") from triggering.
+2. Decision 6012 ("Restoration of the Balkans"):
+   - Replaced erroneous Levant/Egypt province IDs (490-494, 743-747) with proper Balkan cores 
+     (320, 355-356, 361-366, 368, 475, 480, 481, 484).
+   - Reduced stability requirement from 3 to 2 to prevent wasted stability bonuses.
+3. Decision 6035 ("Conquest of Egypt: In His name, to His glory"):
+   - Fixed potential block that previously required Alexandria and Levant before granting claims.
+   - Replaced with Anatolian staging requirement (474, 476, 477, 482, 483, number = 3).
+4. Decision 6030 ("Victory in Italy"):
+   - Relaxed potential requirement from 3 owned Italian provinces to OR block covering 
+     Italian ownership or Italian vassals (NAP, PAP, TOS, SIC, VEN, MLO).
+5. Decision 6037 ("Mother of God, aid your servant"):
+   - Added missing claim on Napoli (393) prior to Decision 6014 requiring it.
+6. Decisions 6001, 6006, 6007, 6012:
+   - Adjusted stability trigger requirement from 3 to 2.
+7. Decisions 6036 and 6037:
+   - Adjusted staging someof requirement in potential from 5 to 4 out of 6 staging provinces.
+
+[2026-10-08] Event 3009000 (Db/Events/alt_byzantine.txt):
+- Added startup sleeper event "Imperial Administration: The Grand Strategy" firing 
+  on 1337.1.1 to sleep vanilla linear events (3001154-3001162, 3001167).
+
+[2026-10-08] Decisions 6041-6062 (Db/Decisions/alt_byzantine.txt):
+- Implemented 22 Roman Empire expansion decisions across 10 regional campaigns:
+  * Sequence 1 (6041): "Reconquista Italiae Superioris" - Claims northern Italy (370, 389, 390, 403, 404, 405).
+  * Sequence 2 (6042-6045): "Reconquista Hispaniae" - 6042 claims Baetica (443-444); 6043 claims Lusitania 
+    (434, 441-442); 6044 claims Tarraconensis (428-433, 435-440); 6045 "Imperium Hispanicum" grants 
+    national cores on all 17 Iberian provinces and accepted iberian culture.
+  * Sequence 3 (6046-6050): "Reconquista Galliae" - 6046 claims Narbonensis (406-407, 421-422); 6047 claims 
+    Aquitania (415-416, 423-425); 6048 claims Lugdunensis (385-386, 408-410, 418-420); 6049 claims Belgica 
+    & Armorica (376, 379, 382-384, 411-414, 417); 6050 "Imperium Gallicum" awards 27 national cores and 
+    accepted french culture.
+  * Sequence 4 (6051-6052): "Reconquista Britanniae" - 6051 claims Britannia (240-250); 6052 "Imperium 
+    Britannicum" awards national cores and accepted anglosaxon culture.
+  * Sequence 5 (6053-6055): "Reconquista Germaniae" - 6053 claims Germania Inferior (336-340, 344, 378, 380); 
+    6054 claims Germania Superior (343, 345-346, 373-375); 6055 "Imperium Germanicum" awards national cores 
+    and accepted german culture.
+  * Sequence 6 (6056): "Reconquista Alpium: Raetia et Noricum" - Claims Alpine passes and Austria (350-351, 369, 371, 388).
+  * Sequence 7 (6057-6058): "Reconquista Pannoniae" - 6057 claims Danube plain (324-327, 352-354); 6058 "Imperium 
+    Pannonicum et Noricum" awards national cores on 12 Danube/Alpine provinces.
+  * Sequence 8 (6059-6060): "Reconquista Daciae Traianae" - 6059 claims Dacia (318-319, 322-323); 6060 "Imperium 
+    Dacicum" awards national cores and Transylvanian gold.
+  * Sequence 9 (6061): "Mesopotamia Traiana" - Claims Euphrates and Tigris basins (Kirkuk 488, Iraq 489).
+  * Sequence 10 (6062): "Renovatio Imperii Maximi: Pax Romana Restaurata" - Final Trajan borders culmination 
+    (Rome, Constantinople, Alexandria, Jerusalem, London, Paris, Toledo, Wien, Köln); awards +1 stability, 
+    -10 badboy, +2000 gold, +1000 VP, and permanent capital bonuses.
+
+
+================================================================================
+4. MODULE 2: PAPAL STATES, KINGDOM OF ITALY & WESTERN ROMAN EMPIRE (PAP / ITA / WRE)
+================================================================================
+[2026-10-08] Db/Decisions/alt_papal.txt & Db/Events/alt_papal.txt:
+1. Common Unification Path (Decisions 7010-7016, Event 3009100):
+   - Decision 7010: "Powrot do Rzymu" - Relocates Papal see from Avignon to Rome; triggers French diplomatic reaction (3009102).
+   - Decision 7011: "Legaci i zbuntowane komuny" - Albornoz legatine pacification of Romagna and Marche.
+   - Decision 7012: "Liga Pokoju Wloskiego" - Italian Peace League over Tuscany and Emilia.
+   - Decisions 7013/7014: "Korona Longobardzka" - Iron Crown claims on northern Italy; triggers HRE reaction (3009103).
+   - Decisions 7015/7016: "Zjednoczenie Polnocnej Italii" - Unification of northern Italian provinces.
+   - Event 3009100: "Miecz i Tiara" - The 1450 constitutional crossroads selecting Branch T, K, or I.
+2. Branch T - Militant Theocracy (tag PAP, Decisions 7020-7026):
+   - Decision 7020: "Patrimonium Sancti Petri" - Establishes permanent theocratic rule under the Holy See.
+   - Decisions 7021-7026: Curia reform, St. Peter's Basilica, Ecumenical Council, Gregorianum University, 
+     Holy League of Faith, and Counter-Reformation golden age.
+3. Branch K - Kingdom of Italy (tag ITA, Decisions 7030-7036, Event 3009110):
+   - Decision 7030: "Korona Italii" - Changes tag to ITA, capital in Rome; triggers royal dynasty election 
+     between Medici (12217), Sforza (12153), and Savoy (12165).
+   - Decisions 7031-7036: Mezzogiorno claims (393-396, 819), Royal Arsenals of Genoa & Venice, Oceanic Company, 
+     Porto Reale Cape colony, East India spice monopoly, and High Renaissance patronage.
+4. Branch I - Western Roman Empire (tag WRE, Decisions 7040-7049, Events 3009120, 3009130):
+   - Decision 7040: "Renovatio Imperii Occidentalis" - Resurrects Western Roman Empire under tag WRE; triggers 
+     Concordat of the Two Emperors with BYZ (3009120).
+   - Decisions 7041-7047: Mezzogiorno, Africa Romana (Carthage/Tunis 739, Tripoli 740), Hispania Romana, 
+     Gallia Narbonensis, Corpus Iuris Civilis, Lex de Civitate Romana (accepted roman culture), and Pax Romana Restaurata.
+   - Decision 7048: "Res Publica Restituta" - 1775+ late-era republican revolution reviving SPQR Senate Consuls (39020-39023).
+   - Decision 7049 & Event 3009130: "Wyprawa Transsaharyjska" - Trans-Saharan expedition waking Lucio Africano (39103) 
+     and discovering Bambuk gold fields.
+5. Supporting Data:
+   - Event 3009101: "Habemus Papam" periodic conclave stability events for secular branches.
+   - Events 3009141-3009145: 10-year organic integration events (ownerchange = 10 -> addcore_national) 
+     for Romagna, Marche, Firenze, Lombardia, Napoli.
+   - Db/Monarchs/monarchs_wre.txt: 12 monarchs of the Aurelia dynasty (39001-39012) + 4 SPQR Consul pairs.
+   - Db/Leaders/leaders_wre.txt: 9 Roman generals, admirals, and conquistadors (39101-39109).
+
+
+================================================================================
+5. MODULE 3: MAMELUKS & PTOLEMAIC EGYPT (MAM / EGY)
+================================================================================
+[2026-10-08] Db/Decisions/alt_egypt.txt & Db/Events/alt_egypt.txt:
+1. Native Emancipation & Caste Dismantling (Decisions 7050-7051, Event 3009200):
+   - Event 3009200: "Czystka w Cytadeli Kairskiej" (1345-1360) - Follow-up to al-Nasir's death; purge of 
+     rebellious Kipchak/Circassian emirs, freeing Egyptian fellahs and Copts.
+   - Decision 7050: "Emancypacja Fellahow i Koptow" - Adds accepted coptic culture alongside arabic, breaks military monopoly.
+   - Decision 7051: "Likwidacja Kasty Niewolnikow Wojskowych" - Abolishes military boy-slave trade, establishes native army.
 2. The Nile Crossroads (Event 3009201):
-   - Presents the 4 strategic paths for Egypt: Hellenistic/Ptolemaic Thalassocracy (EGY), Ancient Kemetic Revival (Egyptian Pagan), Islamic Rationalist Reformation (Mu'tazilism), or Traditional Sunni Sultanate.
-3. Branch E - The New Ptolemaic Kingdom (tag EGY, Decisions 7052-7057):
-   - Decision 7052: "Koronacja w Aleksandrii" - transforms tag to EGY, moves capital to coastal metropolis Alexandria (744), grants greek accepted culture and national cores along the Nile (743-747), sleeps Crusader monarchs and awakens the New Ptolemaic Dynasty (39201-39214).
-   - Decision 7053: "Odbudowa Latarni na Faros" - rebuilds the Pharos Lighthouse (Seventh Wonder), establishing modern shipyard and naval superiority.
-   - Decision 7054: "Nowa Wielka Biblioteka Aleksandryjska" - resurrects the Mouseion and Great Library, granting refinery, innovative boost, and rapid tech progression.
-   - Decision 7055: "Pradawny Kanal Faraonow" - excavates the ancient Necho/Darius canal linking Nile to Red Sea (Suez), creating a Center of Trade in Delta (745) and discovering Indian Ocean routes.
-   - Decision 7056: "Talasokracja Wschodniego Srodziemnomorza" - claims Cyprus (484), Crete (480), Rhodes (481), and Lebanon (491).
-   - Decision 7057: "Zabezpieczenie Zrodel Nilu" - secures Upper Nile through Nubian expedition and alliance with Christian Ethiopia (ETH).
+   - Presents the 4 strategic paths: Ptolemaic Thalassocracy (EGY), Kemetic Revival (pagan), 
+     Mu'tazilite Rationalism (muslim), or Traditional Sunni Sultanate.
+3. Branch E - New Ptolemaic Kingdom (tag EGY, Decisions 7052-7057):
+   - Decision 7052: "Koronacja w Aleksandrii" - Switches tag to EGY, capital in Alexandria (744), adds accepted greek culture 
+     and national Nile cores (743-747); sleeps Crusader monarchs and awakens New Ptolemaic Dynasty (39201-39214).
+   - Decision 7053: "Odbudowa Latarni na Faros" - Rebuilds the Pharos Lighthouse (7th Wonder) with modern naval shipyard.
+   - Decision 7054: "Nowa Wielka Biblioteka Aleksandryjska" - Resurrects the Mouseion & Great Library (+600 infra, refinery).
+   - Decision 7055: "Pradawny Kanal Faraonow" - Excavates the ancient Suez canal connecting Nile to Red Sea; creates 
+     Center of Trade in Delta (745) and reveals Indian Ocean routes.
+   - Decision 7056: "Talasokracja Wschodniego Srodziemnomorza" - Claims Cyprus (484), Crete (480), Rhodes (481), Lebanon (491).
+   - Decision 7057: "Zabezpieczenie Zrodel Nilu" - Secures Upper Nile via Nubian expedition and Ethiopian alliance.
 4. Branch P - Ancient Kemetic Revival (Decisions 7060-7063, Events 3009220-3009221):
-   - Decision 7060: "Edykt z Memfis: Powrot Zywiacego Horusa" - converts state religion to egyptian_pagan, ruler crowned Pharaoh and Son of Ra, wakes the Kemetic Dynasty (39221-39232), converts Memphis (746) and Thebes (747).
-   - Event 3009220: "Powszechny Dzihad przeciwko Faraonowi Apostacie" - pan-Islamic holy war declared by Ottoman Empire (TUR) and Caliphate rivals against the apostate Pharaoh.
-   - Event 3009221: "Koptowie witaja Nowego Faraona" - Christian Egyptian population rallies behind the restoration of native sovereignty.
-   - Decisions 7061-7063: Restoration of the Giza Pyramids and Great Sphinx, reconstruction of Karnak and Luxor temple complexes, and annual celebration of the sacred Feast of Opet.
-5. Branch M - Islamic Rationalist Reformation / Mu'tazilism (Decisions 7070-7073, Events 3009230-3009231):
-   - Decision 7070: "Edykt Rozumu i Mu'tazilizm" - establishes the rationalist Mu'tazilite school as state religion (mutazilite), elevating human reason ('aql) and free will.
-   - Decision 7071: "Akademia Nauk Scislych Al-Azhar" - transforms Al-Azhar into an empirical science academy of astronomy, mathematics, and medicine.
-   - Decision 7072: "Szpital i Szkola Medyczna Mansuri" - expands the Mansuri bimaristan complex into a world-leading hospital, boosting Cairo population and health.
-   - Decision 7073: "Nowy Dom Madrosci nad Nilem" - revives Beit al-Hikma, translating world scientific treatises into Arabic.
-   - Events 3009230-3009231: Ash'arite orthodox backlash and subsequent mass influx of scholars from Persia, Spain, and Europe.
-6. Regional Consolidation & Supporting Data:
-   - Decision 7075: "Pacyfikacja i Integracja Syrii" - grants national cores on Syria, Lebanon, Judea, Samaria, and Jordan.
-   - Decision 7076: "Straznik Swietych Miejsc Hedzazu" - claims and protects Mecca (498) and Medina (497).
-   - Events 3009241-3009245: 10-year organic provincial integration events (ownerchange = 10 -> addcore_national) for Cyprus, Syria, Judea, Nubia, and Crete.
-   - Db/Monarchs/monarchs_egy.txt: added 14 New Ptolemaic monarchs (39201-39214) and 12 Kemetic Pharaoh monarchs (39221-39232).
-   - Db/Leaders/leaders_egy.txt: created 9 Egyptian generals, admirals, and explorers (39251-39259).
-   - Db/cultures.txt & Work Folder/Alt_Patches/cultures_patch.txt: added coptic culture definition.
+   - Decision 7060: "Edykt z Memfis: Powrot Zywiacego Horusa" - Adopts egyptian_pagan religion, crowns ruler Pharaoh, 
+     wakes Kemetic Dynasty (39221-39232), converts Memphis (746) and Thebes (747).
+   - Event 3009220: "Powszechny Dzihad przeciwko Faraonowi Apostacie" - Pan-Islamic holy war declared by Ottoman Empire (TUR) and Caliphate.
+   - Event 3009221: "Koptowie witaja Nowego Faraona" - Native Christian Egyptians rally to the Pharaoh.
+   - Decisions 7061-7063: Restoration of Giza Pyramids and Sphinx, Karnak/Luxor temples, and sacred Feast of Opet.
+5. Branch M - Islamic Rationalism / Mu'tazilism (Decisions 7070-7073, Events 3009230-3009231):
+   - Decision 7070: "Edykt Rozumu i Mu'tazilizm" - Establishes mutazilite religion, exalting reason ('aql) and free will.
+   - Decision 7071: "Akademia Nauk Scislych Al-Azhar" - Transforms Al-Azhar into an empirical science academy.
+   - Decision 7072: "Szpital i Szkola Medyczna Mansuri" - Expands Mansuri bimaristan, boosting Cairo population and health.
+   - Decision 7073: "Nowy Dom Madrosci nad Nilem" - Revives Beit al-Hikma scientific translation bureau.
+   - Events 3009230-3009231: Conservative Ash'arite backlash followed by mass influx of scholars from Persia, Spain, and Europe.
+6. Regional Consolidation & Data:
+   - Decision 7075: "Pacyfikacja i Integracja Syrii" - National cores on Syria, Lebanon, Judea, Samaria, and Jordan.
+   - Decision 7076: "Straznik Swietych Miejsc Hedzazu" - Claims and protects Mecca (498) and Medina (497).
+   - Events 3009241-3009245: 10-year organic integration events for Cyprus, Syria, Judea, Nubia, and Crete.
+   - Db/Monarchs/monarchs_egy.txt: 14 New Ptolemaic monarchs (39201-39214) + 12 Kemetic Pharaohs (39221-39232).
+   - Db/Leaders/leaders_egy.txt: 9 Egyptian generals, admirals, and explorers (39251-39259).
+   - Db/cultures.txt & Work Folder/Alt_Patches/cultures_patch.txt: Added coptic culture definition.
 
-[2026-10-08] Db/Decisions/alt_hansa.txt & Db/Events/alt_hansa.txt: implemented comprehensive alternate history module for Hanseatic League (HSA):
+
+================================================================================
+6. MODULE 4: HANSEATIC LEAGUE (HSA)
+================================================================================
+[2026-10-08] Db/Decisions/alt_hansa.txt & Db/Events/alt_hansa.txt:
 1. Proclamation & Constitutional Foundation (Decisions 7150-7152, Event 3009300):
-   - Decision 7150: "Proklamacja Suwerennego Panstwa Hanzeatyckiego" (Großer Hansetag) - available to HSA, BRE, DAN, POM, SHL, KOL; unifies the merchant league into a sovereign state with capital in Lübeck (305), German culture, cores on Lübeck (305) and Gotland (308), Center of Trade.
-   - Decision 7151: "Die Hanseatische Republik" - establishes a merchant oligarchic republic governed by the Senate and 4 Regional Quarters, maximizing plutocracy, naval trade, and free commerce.
-   - Decision 7152: "Das Nordische Seereich" - creates a hereditary maritime Stadtholderate / Thalassocracy with centralized command and regular high-seas navy.
-   - Event 3009300: "Pierwszy Ogolny Hansetag w Lubece" (1356 Diet) - formalizes mutual defense and collective diplomacy across member cities.
-2. Maritime Supremacy & Sound Toll (Decision 7153, Event 3009301):
-   - Decision 7153: "Kontrola Cla Sundzkiego" - breaks Danish monopoly by taking Skåne (251) and Sjaelland, securing the historical Sundzoll toll revenue (+5 base tax, +800 trade investment).
-   - Event 3009301: "Pokoj w Stralsundzie" (Peace of Stralsund, 1370) - historic humiliation of Denmark, securing trade primacy.
-3. Extraterritorial Armed Kontors & European Dominance (Decisions 7154-7157, Events 3009310-3009320):
-   - Decision 7154 & Event 3009310: "Steelyard w Londynie" - establishes fortified German trading compound in London, monopolizing English wool export; includes blockade retaliatory crisis.
-   - Decision 7155 & Event 3009320: "Peterhof w Nowogrodzie" - secures Russian fur/wax trade and allows diplomatic intervention to protect Novgorod from Muscovite conquest.
-   - Decision 7156: "Bryggen w Bergen" - establishes monopoly over North Atlantic cod fisheries and train oil.
-   - Decision 7157: "Kantor we Flandrii" - secures direct commercial access to Antwerp and Bruges financial centers.
+   - Decision 7150: "Proklamacja Suwerennego Panstwa Hanzeatyckiego" (Großer Hansetag) - Available to HSA, BRE, DAN, 
+     POM, SHL, KOL; unifies merchant league into a sovereign state (HSA), capital in Lübeck (305), german culture, CoT.
+   - Decision 7151: "Die Hanseatische Republik" - Merchant oligarchy governed by the Senate and 4 Regional Quarters, 
+     maximizing plutocracy, naval trade, and free commerce.
+   - Decision 7152: "Das Nordische Seereich" - Hereditary maritime Stadtholderate with centralized high-seas navy.
+   - Event 3009300: "Pierwszy Ogolny Hansetag w Lubece" (1356 Diet) - Formalizes collective Hanseatic diplomacy.
+2. Maritime Dominance & Sound Toll (Decision 7153, Event 3009301):
+   - Decision 7153: "Kontrola Cla Sundzkiego" - Seizes Skåne (251) and Sjaelland from Denmark, levying the Sound Toll 
+     (+5 base tax in Lübeck, +800 trade investment).
+   - Event 3009301: "Pokoj w Stralsundzie" (Peace of Stralsund, 1370) - Historic triumph over Valdemar IV of Denmark.
+3. Extraterritorial Armed Kontors (Decisions 7154-7157, Events 3009310, 3009320):
+   - Decision 7154 & Event 3009310: "Steelyard w Londynie" - Fortified London compound, English wool monopoly, blockade event.
+   - Decision 7155 & Event 3009320: "Peterhof w Nowogrodzie" - Russian fur monopoly; allows military guarantee of Novgorod vs Moscow.
+   - Decision 7156: "Bryggen w Bergen" - Monopolizes Norwegian cod fisheries and train oil.
+   - Decision 7157: "Kantor we Flandrii" - Direct commercial access to Antwerp and Bruges financial centers.
 4. North Atlantic Exploration & Vinland Colony (Decision 7158, Event 3009330):
-   - Decision 7158: "Szlakiem Wikingow ku Winlandii" - Hanseatic navigators Didrik Pining and Hans Pothorst discover Newfoundland (Placentia, Wabana, Isle Royale) starting in 1460, establishing whaling stations and fur factories decades before English/Cabot voyages.
-   - Event 3009330: "Zlote Lowiska w Winlandii" - awards colonial rewards, trade income, and settlers.
-5. Baltic Integration & Naval Infrastructure (Decisions 7159-7160, Events 3009341-3009345):
-   - Decision 7159: "Federalny Pakt Obrony Miast Bałtyckich" - integrates Danzig (301), Riga (282), and Reval (276).
-   - Decision 7160: "Wielka Zbrojownia i Stocznia w Lubece" - constructs state-of-the-art naval admiralty and shipyard in Lübeck.
-   - Events 3009341-3009345: 10-year organic integration events (ownerchange = 10 -> addcore_national) for Bremen (336), Danzig (301), Vorpommern (304), Skåne (251), and Holstein (306).
-   - Db/Leaders/leaders_hsa.txt: created 10 Hanseatic admirals, captains, and explorers (39401-39410), including Störtebeker, Didrik Pining, Hans Pothorst, and Wullenwever.
+   - Decision 7158 & Event 3009330: "Szlakiem Wikingow ku Winlandii" - Hanseatic navigators Didrik Pining and Hans Pothorst 
+     discover Newfoundland (Placentia, Wabana, Isle Royale) starting in 1460, establishing whaling factories ahead of Cabot.
+5. Baltic Integration & Commanders:
+   - Decision 7159: "Federalny Pakt Obrony Miast Bałtyckich" - Integrates Danzig (301), Riga (282), and Reval (276).
+   - Decision 7160: "Wielka Zbrojownia i Stocznia w Lubece" - Constructs grand naval admiralty and shipyard in Lübeck.
+   - Events 3009341-3009345: 10-year organic integration events for Bremen, Danzig, Vorpommern, Skåne, Holstein.
+   - Db/Leaders/leaders_hsa.txt: 10 Hanseatic admirals and explorers (39401-39410), including Störtebeker, Pining, Pothorst, Wullenwever.
 
-[2026-10-08] Db/Decisions/alt_americas.txt & Db/Events/alt_americas.txt: implemented comprehensive alternate history module for Pre-Columbian Americas (AZT / INC):
+
+================================================================================
+7. MODULE 5: PRE-COLUMBIAN AMERICAS (AZT / INC)
+================================================================================
+[2026-10-08] Db/Decisions/alt_americas.txt & Db/Events/alt_americas.txt:
 1. Aztec Empire / Mexica (tag AZT, Decisions 7200-7204, Events 3009400-3009401):
-   - Decision 7200: "Kodeks Prawny z Texcoco" - philosophical reform inspired by Nezahualcoyotl; transitions state religion to nahua_reformed (removes pagan one-war annexation penalty, increases innovative and centralization).
-   - Decision 7201: "Wieczna Liga Cemanahuac" - reconciles Tenochtitlan with neighbouring Tarascan, Tlaxcalan, and Zapotec peoples, granting tarascan and zapotec accepted cultures and national cores on Michoacan (26), Zacatecas (28), and Oaxaca (31).
-   - Event 3009400: "Wielka Noc Odwetu na Groblach Tenochtitlan" (1519-1525) - Mexica annihilate Cortés' expedition, capturing horses, gunpowder, firearms, and Spanish blacksmiths alive.
-   - Event 3009401: "Kordon Sanitarny i Medycyna Ziolowa" - herbal botanical medicine and temazcal quarantine stop smallpox devastation.
-   - Decision 7202: "Zelazne Imperium Mexikow" - adapts European metallurgical technology, elevates techgroup to orthodox, unlocks cavalry (Eagle and Jaguar Knights on horseback) and Mexica arquebusier regiments.
-   - Decision 7203: "Arsenaly w Veracruz i Pelnomorska Flota" - constructs shipyards in Veracruz, granting ocean-going caravels and claim cores on Cuba (138), Jamaica (140), and Hispaniola (141).
-   - Decision 7204: "Wielkie Groble i Akwedukty Tenochtitlan" - monumental urban enhancement of chinampas and aqueducts, boosting population and tax base.
+   - Decision 7200: "Kodeks Prawny z Texcoco" - Nezahualcoyotl's philosophical reform; transitions state religion to 
+     nahua_reformed (removes pagan 1-war annexation penalty, increases innovative and centralization).
+   - Decision 7201: "Wieczna Liga Cemanahuac" - Unites Tenochtitlan with Tarascans and Zapotecs, granting tarascan and zapotec 
+     accepted cultures and cores on Michoacan (26), Zacatecas (28), and Oaxaca (31).
+   - Event 3009400: "Wielka Noc Odwetu na Groblach Tenochtitlan" (1519-1525) - Mexica annihilate Cortés' force on the causeways, 
+     capturing horses, gunpowder, armor, and Spanish gunsmiths alive.
+   - Event 3009401: "Kordon Sanitarny i Medycyna Ziolowa" - Temazcal steam baths and botanical quarantine mitigate smallpox.
+   - Decision 7202: "Zelazne Imperium Mexikow" - Adapts European metallurgy, upgrades techgroup to orthodox, unlocks cavalry 
+     (Jaguar Knights on horseback) and Mexica arquebusier regiments.
+   - Decision 7203: "Arsenaly w Veracruz i Pelnomorska Flota" - High-seas caravels and claims on Cuba, Jamaica, Hispaniola.
+   - Decision 7204: "Wielkie Groble i Akwedukty Tenochtitlan" - Chinampa and aqueduct upgrades boosting population and tax.
 2. Inca Empire / Tawantinsuyu (tag INC, Decisions 7210-7214, Events 3009410-3009411):
-   - Decision 7210: "Krolewski Szlak Qhapaq Nan" - constructs paved stone highway and suspension bridge network across the Andes from Quito to Cuzco, boosting infrastructure (+600) and movement.
-   - Decision 7211: "Spichlerze Panstwowe Qullqa i Biegacze Chasqui" - establishes state granary reserves and royal relay runners, immunizing the realm against famines and epidemics.
-   - Decision 7212: "Zreformowany Kult Boga Slonca Inti" - transitions religion to inti_reformed (annexable = no, tax +15%, tech speed bonus).
-   - Event 3009410: "Pojednanie w Quito" (1525-1530) - Huáscar and Atahualpa reconcile, preventing the historical civil war and facing the Spanish fully united.
-   - Event 3009411: "Zasadzka w Cajamarce" (1532) - Inca forces ambush and capture Pizarro's band, extracting ransoms of blacksmiths, horses, and maritime navigation charts.
-   - Decision 7213: "Zelazne Legiony Tawantinsuyu i Andyjska Konnica" - establishes cannon foundries in Cuzco/Tiwanaku and mountain cavalry from Altiplano, upgrading techgroup to orthodox.
-   - Decision 7214: "Galeony z Guayaquil: Szlak Tupaca Yupanqui" - Pacific ocean fleet built from Ecuadorian timber, dominating South American coasts and establishing direct trans-Pacific trade routes to Ming China and Japan.
-3. Provincial Integration & Military Commanders:
-   - Events 3009421-3009425: 10-year organic integration events (ownerchange = 10 -> addcore_national) for Michoacan (26), Oaxaca (31), Quito (164), Potosi (192), and Callao/Lima (167).
-   - Db/Leaders/leaders_azt.txt: created 8 Aztec generals and admirals (39501-39508), including Nezahualcoyotl, Cuitlahuac, Cuauhtemoc, and Tlacaelel.
-   - Db/Leaders/leaders_inc.txt: created 8 Inca generals, explorers, and admirals (39551-39558), including Pachacuti, Tupac Yupanqui, Quizquiz, and Manco Inca.
+   - Decision 7210: "Krolewski Szlak Qhapaq Nan" - Stone highway and suspension bridge network across the Andes (+600 infra).
+   - Decision 7211: "Spichlerze Panstwowe Qullqa i Biegacze Chasqui" - State food reserves and courier network, granting famine immunity.
+   - Decision 7212: "Zreformowany Kult Boga Slonca Inti" - Transitions to inti_reformed (non-annexable, +15% tax).
+   - Event 3009410: "Pojednanie w Quito" (1525-1530) - Huáscar and Atahualpa reconcile, preventing civil war.
+   - Event 3009411: "Zasadzka w Cajamarce" (1532) - Inca forces capture Pizarro's band, ransomed for blacksmiths, horses, and sea charts.
+   - Decision 7213: "Zelazne Legiony Tawantinsuyu i Andyjska Konnica" - Cannon foundries in Cuzco and mountain cavalry from Altiplano; 
+     upgrades techgroup to orthodox.
+   - Decision 7214: "Galeony z Guayaquil: Szlak Tupaca Yupanqui" - Pacific fleet built from Ecuadorian timber, establishing 
+     direct trans-Pacific trade with Ming China and Japan.
+3. Provincial Integration & Commanders:
+   - Events 3009421-3009425: 10-year organic integration events for Michoacan, Oaxaca, Quito, Potosi, Callao/Lima.
+   - Db/Leaders/leaders_azt.txt: 8 Aztec commanders (39501-39508), including Nezahualcoyotl, Cuitlahuac, Cuauhtemoc.
+   - Db/Leaders/leaders_inc.txt: 8 Inca commanders (39551-39558), including Pachacuti, Tupac Yupanqui, Quizquiz, Manco Inca.
 
-[2026-10-08] Db/Decisions/alt_celtic.txt & Db/Events/alt_celtic.txt: implemented comprehensive alternate history module for the Celtic Union (SCO / WLS / EIR):
+
+================================================================================
+8. MODULE 6: CELTIC UNION (SCO / WLS / EIR)
+================================================================================
+[2026-10-08] Db/Decisions/alt_celtic.txt & Db/Events/alt_celtic.txt:
 1. Principality of Wales (tag WLS, Decision 7250, Events 3009500-3009501):
-   - Decision 7250: "Koronacja Owaina Glyndwra" - available to Wales; establishes independent Principality of Wales (WLS), welsh culture, cores on Wales (243) and Marches (242), alliance with Scotland and France.
-   - Event 3009500: "Przebudzenie Smoka: Powstanie Glyndwra" (1400) - historic insurrection against Henry IV, spawning Welsh regiments and morale boost.
-   - Event 3009501: "Sejm w Machynlleth: Parlament Walijski" (1404) - parliamentary ratification of Welsh statehood.
+   - Decision 7250: "Koronacja Owaina Glyndwra" - Proclaims sovereign Wales (WLS), welsh culture, cores on Wales (243) and Marches (242).
+   - Event 3009500: "Przebudzenie Smoka: Powstanie Glyndwra" (1400) - Insurrection against Henry IV, raising Welsh regiments.
+   - Event 3009501: "Sejm w Machynlleth: Parlament Walijski" (1404) - Parliamentary ratification of Welsh statehood and French alliance.
 2. High Kingdom of Ireland (tag EIR, Decision 7251, Event 3009510):
-   - Decision 7251: "Oczyszczenie Pale: Wysoki Krol Irlandii" - available to Irish clan realms upon liberating Dublin (233); crowns the High King (Ard Rí), granting national cores on all 5 Irish provinces (231-235).
-   - Event 3009510: "Upadek Angielskiego Pale w Irlandii" - clan triumph driving out the Dublin Justiciar.
+   - Decision 7251: "Oczyszczenie Pale: Wysoki Krol Irlandii" - Liberates Dublin (233); crowns the High King (Ard Rí) 
+     with national cores on all 5 Irish provinces (231-235).
+   - Event 3009510: "Upadek Angielskiego Pale w Irlandii" - Expulsion of the English Justiciar from Dublin.
 3. The Grand Celtic Union (Decisions 7252-7255, Event 3009520):
-   - Decision 7252: "Pakt z Caernarfon" - defensive alliance of Celtic nations with French gold subsidies and morale boost during wars against England.
-   - Decision 7253: "Unia Koron Celtyckich" - unifies Alba, Cymru, and Éire into a single sovereign realm, granting accepted cultures gaelic, welsh, and breton, national cores across Scotland and Wales, and a Center of Trade in Edinburgh.
-   - Event 3009520: "Poselstwo Ksiecia Bretanii" - alliance and cultural integration with Brittany (BRI).
-   - Decision 7254: "Marsz na Londyn: Wyzwolenie Kornwalii i Polnocy" - liberates Cornwall (249), Cumbria (241), and Northumberland (240).
-   - Decision 7255: "Restauracja Brytanii Artura" - Arthurian renaissance upon capturing London (247), pushing English territory back to small Wessex, granting Celtic Atlantic shipyards and naval superiority.
+   - Decision 7252: "Pakt z Caernarfon" - Defensive alliance of Scotland, Wales, and Ireland with French gold subsidies.
+   - Decision 7253: "Unia Koron Celtyckich" - Unifies Alba, Cymru, and Éire; adds accepted gaelic, welsh, and breton cultures, 
+     cores across Scotland and Wales, and a Center of Trade in Edinburgh.
+   - Event 3009520: "Poselstwo Ksiecia Bretanii" - Alliance and integration with Brittany (BRI).
+   - Decision 7254: "Marsz na Londyn: Wyzwolenie Kornwalii i Polnocy" - Liberates Cornwall (249), Cumbria (241), Northumberland (240).
+   - Decision 7255: "Restauracja Brytanii Artura" - Arthurian renaissance upon taking London (247), reducing England to small Wessex, 
+     granting Celtic Atlantic shipyards and naval supremacy.
 4. Provincial Integration & Commanders:
-   - Events 3009541-3009545: 10-year organic integration events (ownerchange = 10 -> addcore_national) for Strathclyde/Glasgow (238), The Marches (242), Cornwall (249), Dublin (233), and Highlands (236).
-   - Db/Leaders/leaders_sco.txt: created 8 Scottish and Celtic generals and admirals (39601-39608), including Owain Glyndŵr, Sir Andrew Wood, Hugh O'Neill, and Montrose.
+   - Events 3009541-3009545: 10-year organic integration events for Strathclyde, Marches, Cornwall, Dublin, Highlands.
+   - Db/Leaders/leaders_sco.txt: 8 Celtic commanders (39601-39608), including Owain Glyndŵr, Sir Andrew Wood, Hugh O'Neill, Montrose.
 
-[2026-10-08] Db/Decisions/alt_ethiopia.txt & Db/Events/alt_ethiopia.txt: implemented comprehensive alternate history module for Solomonic Empire of Ethiopia (ETH):
+
+================================================================================
+9. MODULE 7: SOLOMONIC EMPIRE OF ETHIOPIA (ETH)
+================================================================================
+[2026-10-08] Db/Decisions/alt_ethiopia.txt & Db/Events/alt_ethiopia.txt:
 1. Red Sea Thalassocracy & Trade Openings (Decisions 7300-7301):
-   - Decision 7300: "Wrota Morza Czerwonego: Port w Massawa" - constructs imperial shipyard in Massawa (753), discovers Red Sea and Gulf of Aden sea lanes (1059-1061), connecting Ethiopia to maritime trade.
-   - Decision 7301: "Blokada Bab al-Mandab i Twierdza w Adenie" - captures and fortifies Aden (500), granting national cores and levying tolls on Indian spice fleets (+15 annual revenue, +600 trade investment).
+   - Decision 7300: "Wrota Morza Czerwonego: Port w Massawa" - Constructs shipyard in Massawa (753), discovers Red Sea and 
+     Gulf of Aden sea lanes (1059-1061), connecting Ethiopia to maritime trade.
+   - Decision 7301: "Blokada Bab al-Mandab i Twierdza w Adenie" - Fortifies Aden (500), levying tolls on Indian spice fleets 
+     (+15 annual revenue, +600 trade investment).
 2. Western Contact & Prester John Alliance (Decision 7302, Events 3009600-3009610):
-   - Decision 7302 & Event 3009610: "Poselstwo Ksieza Jana do Europy" - opens diplomatic ties with Rome (PAP), Venice (VEN), and Portugal (POR); imports European cannon founders, blacksmiths, and musketeer tactics (+500 infra, +600 land tech).
-   - Event 3009600: "Zwyciestwo Cesarza Amda Seyona nad Ifat" (1338) - historical military triumph breaking Muslim encirclement.
-   - Event 3009601: "Zloty Wiek Cesarza Zara Yaqoba" (1434-1468) - monastic and administrative golden age, enhancing theological treatises and centralization.
+   - Decision 7302 & Event 3009610: "Poselstwo Ksieza Jana do Europy" - Diplomatic ties with Rome (PAP), Venice (VEN), Portugal (POR); 
+     imports European cannon founders and musketeer tactics (+500 infra, +600 land tech).
+   - Event 3009600: "Zwyciestwo Cesarza Amda Seyona nad Ifat" (1338) - Historical victory breaking Muslim encirclement.
+   - Event 3009601: "Zloty Wiek Cesarza Zara Yaqoba" (1434-1468) - Monastic and administrative golden age.
 3. Southern Crusade & Axumite Restoration (Decisions 7303-7305):
-   - Decision 7303: "Rekonkwista Dawnych Krolestw Nubii" - reconquers Christian Nubia along the Nile (Dongola 750, Batn al-Hajar 748, Nubia 749), adding nubian accepted culture and national cores.
-   - Decision 7304: "Poludniowa Krucjata ku Synajowi i Jerozolimie" - launches the Southern Crusade down the Nile and across the Red Sea, claiming Sinai (494), Cairo (746), and Jerusalem (493).
-   - Decision 7305: "Restauracja Cesarstwa Aksumicko-Salomonskiego" - grand culmination establishing Defender of Eastern Christendom (defender = yes), Center of Trade in Massawa, -5 badboy, and permanent global prestige (+300 VP).
+   - Decision 7303: "Rekonkwista Dawnych Krolestw Nubii" - Reconquers Christian Nubia along the Nile (Dongola 750, Batn al-Hajar 748, 
+     Nubia 749), adding accepted nubian culture and national cores.
+   - Decision 7304: "Poludniowa Krucjata ku Synajowi i Jerozolimie" - Southern Crusade down the Nile claiming Sinai (494), 
+     Cairo (746), and Jerusalem (493).
+   - Decision 7305: "Restauracja Cesarstwa Aksumicko-Salomonskiego" - Establishes Defender of Eastern Christendom (defender = yes), 
+     Center of Trade in Massawa, -5 badboy, and permanent global prestige (+300 VP).
 4. Provincial Integration & Commanders:
-   - Events 3009641-3009645: 10-year organic integration events (ownerchange = 10 -> addcore_national) for Massawa (753), Dongola (750), Batn al-Hajar (748), Aden (500), and Sinai (494).
-   - Db/Leaders/leaders_eth.txt: created 8 Ethiopian emperors, generals, and admirals (39651-39658), including Amda Seyon I, Zara Yaqob, Cristovão da Gama, Gelawdewos, and Sarsa Dengel.
+   - Events 3009641-3009645: 10-year organic integration events for Massawa, Dongola, Batn al-Hajar, Aden, Sinai.
+   - Db/Leaders/leaders_eth.txt: 8 Ethiopian commanders (39651-39658), including Amda Seyon I, Zara Yaqob, Cristovão da Gama, Gelawdewos.
 
-[2026-10-08] Db/Decisions/alt_korea.txt & Db/Events/alt_korea.txt: implemented comprehensive alternate history module for Joseon Kingdom of Korea (KOR):
+
+================================================================================
+10. MODULE 8: JOSEON KINGDOM OF KOREA (KOR)
+================================================================================
+[2026-10-08] Db/Decisions/alt_korea.txt & Db/Events/alt_korea.txt:
 1. Scientific Revolution of King Sejong (Decisions 7350-7351, Event 3009701):
-   - Decision 7350: "Krolewski Instytut Medrcow: Jiphyeonjeon" (Hall of Worthies, 1420) - establishes the royal academy of science in Seoul, boosting infrastructure (+600) and innovation (+3).
-   - Decision 7351: "Wdrozenie Alfabetu Narodowego Hangul" - adopts the phonetic Hangul alphabet and movable metal type printing, eradicating commoner illiteracy, reducing serfdom (-2) and inflation (-2).
-   - Event 3009701: "Zegary Wodne i Deszczomierze Jang Yeong-sila" (1441) - adopts standardized rain gauges (Cheugugi) and water clocks, protecting agriculture and boosting provincial tax base.
+   - Decision 7350: "Krolewski Instytut Medrcow: Jiphyeonjeon" (1420) - Establishes the royal academy of science in Seoul (+600 infra, +3 innovative).
+   - Decision 7351: "Wdrozenie Alfabetu Narodowego Hangul" - Adopts phonetic Hangul alphabet and movable metal type printing, 
+     eradicating illiteracy, reducing serfdom (-2) and inflation (-2).
+   - Event 3009701: "Zegary Wodne i Deszczomierze Jang Yeong-sila" (1441) - Adopts standardized rain gauges (Cheugugi) and water clocks, 
+     protecting agriculture and boosting provincial taxes.
 2. Foundation & Naval Innovation (Decisions 7352-7353, Events 3009700, 3009710):
-   - Event 3009700: "Przewrot Generala Yi Seong-gye: Narodziny Joseon" (1392) - overthrows Goryeo dynasty, founds Joseon and relocates capital to Hanseong/Seoul (642).
-   - Decision 7352 & Event 3009710: "Pancerne Okręty Żółwie: Geobukseon" (1430) - creates ironclad Turtle Ships 150 years ahead of time in Pusan shipyards, providing bronze cannon firepower and absolute naval supremacy.
-   - Decision 7353: "Ekspedycja Karna Przeciwko Piratom Wōkō" - raids pirate havens on Tsushima and Kyushu, securing yellow sea trade (+500 trade investment).
+   - Event 3009700: "Przewrot Generala Yi Seong-gye: Narodziny Joseon" (1392) - Overthrows Goryeo dynasty, relocates capital to Hanseong/Seoul (642).
+   - Decision 7352 & Event 3009710: "Pancerne Okręty Żółwie: Geobukseon" (1430) - Creates ironclad Turtle Ships 150 years early in Pusan shipyards, 
+     securing absolute naval supremacy.
+   - Decision 7353: "Ekspedycja Karna Przeciwko Piratom Wōkō" - Raids pirate havens on Tsushima and Kyushu, securing yellow sea trade.
 3. Continental Expansion & Goguryeo Reconquest (Decisions 7354-7355):
-   - Decision 7354: "Rekonkwista Goguryeo: Marsz za Rzeke Yalu" - marches north into Manchuria following Yuan decline, integrating Jurchen nomads, adding manchu accepted culture, and cores on Liaodong (636) and Jilin (637).
-   - Decision 7355: "Złoty Wiek Półwyspu i Mandżurii" - crowns the Eastern Empire on the Amur River (638), Center of Trade in Seoul, trade and infra boosts (+600 each), stability +2, and +250 VP.
+   - Decision 7354: "Rekonkwista Goguryeo: Marsz za Rzeke Yalu" - Marches north into Manchuria following Yuan decline, integrating Jurchen nomads, 
+     adding accepted manchu culture, and cores on Liaodong (636) and Jilin (637).
+   - Decision 7355: "Złoty Wiek Półwyspu i Mandżurii" - Crowns the Eastern Empire on the Amur River (638), Center of Trade in Seoul, 
+     trade/infra boosts (+600 each), stability +2, +250 VP.
 4. Provincial Integration:
-   - Events 3009741-3009745: 10-year organic integration events (ownerchange = 10 -> addcore_national) for Pusan (641), Pyongyang (643), Liaodong (636), Jilin (637), and Amur (638).
+   - Events 3009741-3009745: 10-year organic integration events for Pusan, Pyongyang, Liaodong, Jilin, Amur.
+
+
+================================================================================
+11. LEGACY REVISION LOG (APRIL - MAY 2026)
+================================================================================
+[2026-04-30] Event 3001154 (BYZANNEX_08_Imperial_Restoration.txt) -> Decisions 6020-6023 (Db/Decisions/Byzantine.txt):
+- Converted event "A Crossroads" (BYZ, four expansion paths) into four separate decisions (one per action).
+- Flags set: byz_crossroads (shared) and path-specific flags (totheeast / westwardho / optionsopen).
+- Decision 6023 (abdication, BYZ->GRE) blocks AI via ai_trigger = { ai = no }.
+- Event 3001154 disabled by adding NOT = { tag = BYZ } to trigger.
+- Updated 9 references in BYZANNEX_08 and 3 references in PAP/MOS/RUS events.
+
+[2026-04-30] Events 3001155-3001162 (BYZANNEX_08_Imperial_Restoration.txt) -> Decisions 6024-6039 (Db/Decisions/Byzantine.txt):
+- Converted eight "Victory" and imperial expansion events into 16 decisions.
+- Introduced milestone flags: byz_victory_balkans (6024-6026), byz_victory_anatolia (6027-6029), byz_victory_italy (6030), 
+  byz_basil2 (6031-6033), byz_victory_egypt (6034), byz_conquest_egypt (6035), byz_empire_east (6036-6037), byz_conquest_africa (6038-6039).
+- Replaced cross-references across BYZANNEX_08, BYZANNEX_16_Mameluks.txt, and BYZANNEX_19_Russia.txt.
+
+[2026-05-01] Decisions 6020-6039 (Db/Decisions/Byzantine.txt):
+- Moved year and NOT = { year = 1838 } constraints from potential to trigger in all 20 BYZ expansion decisions.
+
+[2026-05-01] Decisions 6000-6003, 6005-6010, 6012-6013, 6015, 6027-6039 (Db/Decisions/Byzantine.txt):
+- Wrapped large groups of owned province conditions with someof = { number = N-1 } (90% threshold).
+- Decisions with <= 5 provinces left untouched. Affected decision count: 25.
+
+[2026-05-01] Decisions 6000-6015 (Db/Decisions/Byzantine.txt):
+- Added badboy reduction scaled to national core restoration: X = floor(addcore_national_count * 0.2).
+
+[2026-05-01] Decisions 6002, 6005, 6008, 6036, 6037, 6038, 6039 (Db/Decisions/Byzantine.txt):
+- Relaxed someof thresholds with number > 19 by an additional -1 step (effective rule: N-2).
+
+[2026-05-02] Event 3001167 (BYZANNEX_08_Imperial_Restoration.txt) -> Decision 6040 (Db/Decisions/Byzantine.txt):
+- Converted "The Restoration Is Complete" to decision while preserving trigger/effects and splitting visibility vs execution rules.
+- In BYZANNEX_06_Renaissance.txt, action A of event 3001135 now sets flag byz_restoration_complete_blocked.
+================================================================================
