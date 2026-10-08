@@ -1,0 +1,1800 @@
+##################################
+## Events between 1337 and 1419 ##
+## For Gloriana 1337		##
+## By Ayeshteni			##
+##################################
+
+#195000 range.
+
+#End of a divided Scotland 195000-195003, 195015
+#Sale of Estonia, Livland version 195004
+#Start of the HYW 195005-195006
+#Murder of Louis d'Orleannais 195007
+#Conversion of Samogitia 195008-195009
+#Poland inherits Sieradz 195010-195011
+#AI becomes Kingdom of the Netherlands 195012
+#Normandy gets the CoA of Alencon 195013
+#The Despotate of Morea 195014
+#195015 Gives error so likely mismatch. [195015 therfore not used]
+#1st Red Turban Rebellion 195016
+#Reconstructing China 195017-195018
+#Famine in China 195019
+#Yuan Military Decline 195020
+#General China Reconstruction (in FTG1.3 style) 195021
+#Breton War of Succession 195022-195024
+#Death of Isabella, She-Wolf of France 195025
+#1st War of Guelderian Succession 195026-195027
+#Stephen of Perm 195028
+#Yuan Monarchs 195029
+#Ava Kingdom and Burma 195030-195031
+#Golconda and Hyderabad 195032-195033
+#Persistent events for Yuan China and Ming China to annex their independent tags 195034-195035
+#Samudera Pasai to Atjeh 195036
+#Muang Sua to Lan Xang 195037
+#Friuli Earthquake 195038
+#Golden Bull 195039
+#Set up the Avingnon Papacy 195040-195041
+
+#------------------------------#
+#Scotland United---------------#
+#------------------------------#
+
+#Balliol Fails to take Scotland
+event = {
+
+	id = 195000
+	trigger = {
+		exists = SCO
+		NOT = {
+			event = 195015
+		}
+	}
+	random = no
+	country = GLL
+	name = "None Acknowledge Our Claim"
+	desc = "Edward III and Balliol returned in July 1336 with a large English army and advanced through Scotland, first to Glasgow and then to Perth, destroying the surrounding countryside as they went but by late 1336, the Scots had regained control over virtually all of Scotland, and by 1338 the tide had turned against the usurper. Edward Balliol returned to Scotland after the defeat of King David II at the Battle of Neville's Cross in 1346 and with a small force raised an insurrection in Galloway in a final attempt to gain the crown of Scotland. He only succeeded in gaining control of some of Galloway, with his power diminishing there until 1355. On 20 January 1356, Balliol surrendered his claim to the Scottish throne to Edward III in exchange for an English pension. He spent the rest of his life living near Yorkshire and died childless in January 1364, at Wheatley, Doncaster."
+	style = 1
+
+	date = { day = 10 month = january year = 1356 }
+	offset = 10
+	deathdate = { day = 1 month = february year = 1364 }
+
+	action_a = {
+		name = "Recognise David as King (Game Over)"
+		command = { type = trigger which = 195001 }
+	}
+
+	action_b = {
+		name = "Hand all gains to Edward (Game Over)"
+		command = { type = trigger which = 195002 }
+	}
+
+	action_c = {
+		name = "I'm a masochist"
+		trigger = { ai = no }
+		command = { type = vp value = 1 }
+	}
+}
+
+event = {
+
+	id = 195001
+
+	random = no
+	country = SCO
+	name = "Balliol Concedes Defeat"
+	desc = "Edward Balliol has conceded defeat and has formally recognised our right as King of the Scots. The nobles that followed Balliol have come crawling back to us."
+	style = 1
+
+	action_a = {
+		name = "And I expect their loyalty"
+		command = { type = inherit which = GLL }
+	}
+}
+
+event = {
+
+	id = 195002
+
+	random = no
+	country = ENG
+	name = "We've Gained Scottish Land"
+	desc = "Edward Balliol has given up his claim to Scotland. He has offered all his gains in Scotland to the English Crown for the price of a pension. How can we not refuse?"
+	style = 1
+
+	action_a = {
+		name = "And a Pension You Will Have!"
+		command = { type = annex which = GLL }
+		command = { type = treasury value = -5 }
+	}
+}
+
+#Balliol succeeds where Scotland does not.
+event = {
+
+	id = 195003
+
+	trigger = {
+		NOT = {
+			exists = SCO
+		}
+	}
+	random = no
+	country = GLL
+	name = "Edward Balliol Victorious"
+	desc = "Balliol has succeeded in defeating David of Scotland and will be crowned King Edward of Scotland at Scone."
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 5
+	deathdate = { day = 1 month = february year = 1364 }
+
+	action_a = {
+		name "Hail King Edward Balliol"
+		command = { type = country which = SCO }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = vp value = 10 }
+		command = { type = trigger which = 195015 }
+	}
+}
+
+#Set Scottish monarchs event.
+event = {
+
+	id = 195015
+
+	random = no
+	country = SCO
+	name = "Edward Balliol Crowned"
+	desc = "Balliol has succeeded in defeating David of Scotland and will be crowned King Edward of Scotland at Scone."
+	style = 1
+
+	action_a = {
+		name "Hail King Edward Balliol"
+		command = { type = stability value = 2 }
+		command = { type = sleepmonarch which = 150070 }
+		command = { type = wakemonarch which = 04842 }
+		command = { type = wakemonarch which = 04843 }
+		command = { type = sleepevent which = 195000 }
+	}
+}
+
+#------------------------------#
+#Sale of Estonia (LIV version)-#
+#------------------------------#
+
+#(1345-1346) The Sale of Estonia - (by Brian Roastbeef, edited by Ayeshteni)
+event = {
+	id = 195004
+	trigger = {
+		owned = { province = 276 data = -1 }
+		exists = LIV
+	}
+	random = no
+	country = DAN
+	name = "The Sale of Estonia"
+	desc = "After gaining titular control over Denmark, Valdemar IV Atterdag methodically and determinedly began reclaiming Danish lands through conquest or through purchase. While he was successful in doing so, thoroughly ridding both Sjaelland and Jutland of the Holsteiners by 1347, this endeavor placed him deeply in debt. Some of this debt was financed through extra taxation on the newly conquered peasants. Nevertheless, excessive taxation caused greater rebellion hindering his ability to consolidate power. In order to relieve some of this economic pressure on himself and his countrymen, Valdemar made a deal in 1346 to sell Denmark's piece of Estonia to the Teutonic Order, allowing him to pay off debts in parts of Denmark that were culturally Danish. Had Valdemar elected to keep control of Estonia, his financial troubles likely would have deepened, as he struggled to reclaim complete control in this relatively distant province."
+	style = 1
+	
+	date = { day = 1 month = april year = 1345 }
+	offset = 200
+	deathdate = { day = 1 month = july year = 1346 }
+
+	action_a ={	 
+		name = "The money is of more value to us"
+		command = { type = treasury value = 190 }
+		command = { type = cedeprovince which = LIV value = 276 }
+		command = { type = relation which = LIV value = 50 }
+		command = { type = sleepevent which = 104003 }
+	}
+	action_b ={	 
+		name = "No, we may need the land later"
+		command = { type = treasury value = -150 }
+		command = { type = relation which = LIV value = -100 }
+	}
+}
+
+#------------------------------#
+#Start of the Hundred Years War#
+#------------------------------#
+
+event = {
+	id = 195005
+	trigger = {
+		NOT = {
+			war = { country = ENG country = FRA }
+			alliance = { country = ENG country = FRA }
+		}
+	}
+	random = no
+	country = FRA
+	name = "EVENTNAME195005" #The Gasgogne Issue
+	desc = "EVENTHIST195005"
+
+	style = "C02"
+
+	
+	date = { day = 30 month = april year = 1337 }
+	offset = 1
+	deathdate = { day = 30 month = april year = 1338 }
+
+	action_a = {
+		name = "He will obey or we will take it by force"
+		command = { type = trigger which = 195006 }
+	}
+}
+
+event = {
+	id = 195006
+
+	random = no
+	country = ENG
+	name = "EVENTNAME195006" #France Demands the Return of Gascony
+	desc = "EVENTHIST195006"
+
+	style = "C01"
+
+	action_a = {
+		name = "I will come to Paris and answer, with 60k men at my back"
+		command = { type = flagname which = "" }
+		command = { type = war which = FRA }
+		command = { type = vp value = 25 }
+	}
+
+	action_b = {
+		name = "We will ascede. For now"
+		command = { type = cedeprovince which = FRA value = 418 }
+		command = { type = cedeprovince which = FRA value = 424 }
+		command = { type = stability value = 2 }
+		command = { type = revoltrisk which = 12 value = 3 }
+	}
+}
+
+#------------------------------#
+#Murder of Louis of Orleans----#
+#------------------------------#
+
+event = {
+	id = 195007
+
+	trigger = {
+		NOT = {
+			war = { country = BUR country = FRA }
+			war = { country = BUR country = AMG }
+		}
+	}
+	random = no
+	country = BUR
+	name = "Assassinate Louis of Orleans"
+	desc = "EVENTHIST195007"
+
+	style = "C05"
+
+	date = { day = 22 month = november year = 1407 }
+	offset = 1
+	deathdate = { day = 1 month = december year = 1407 }
+
+	action_a = {
+		name = "And So Dies My Rival!"
+		trigger = { OR = { exists = AMG exists = ORL }}
+		command = { type = war which = AMG }
+		command = { type = relation which = AMG value = -400 }
+		command = { type = casusbelli which = AMG value = 36 }
+		command = { type = war which = ORL }
+		command = { type = relation which = ORL value = -400 }
+		command = { type = casusbelli which = ORL value = 36 }
+	}
+
+	action_b = {
+		name = "And So Dies My Rival!"
+		trigger = { NOT = {  OR = { exists = AMG exists = ORL }}}
+		command = { type = breakvassal which = FRA }
+		command = { type = war which = FRA }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = casusbelli which = FRA value = 36 }
+	}
+}
+
+#------------------------------#
+#Conversion of Samogitia-------#
+#------------------------------#
+
+#If Lithuania is Catholic
+event = {
+	id = 195008
+
+	trigger = {
+		vassal = { country = LIT country = SAM }
+		provincereligion = { province = 288 data = catholic }
+	}
+	random = no
+	country = SAM
+	name = "Catholic converts in Samogita"
+	desc = "Samogitia was the last ethnic region of Lithuania to become Christianized in 1413, following the defeat of the Teutonic Order in the Battle of Grunwald and the Peace of Thorn and its subsequent return to the Lithuanian control. In November 1413, Vytautas himself sailed Neman River and Dubysa, reached the environs of Betygala, where he baptised the first groups of Samogitians. In 1416, the construction of eight first parochial churches was started. The Diocese of Samogitia was established on 23 October 1417 and Matthias of Trakai became the first Bishop of Samogitia. The cathedral was built in Medininkai around 1464."
+	style = 1
+
+	date = { day = 1 month = november year = 1413 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1838 }
+
+	action_a = {
+		name = "Adopt Catholicism"
+		command = { type = religion which = catholic }
+		command = { type = conversion which = -2 }
+	}
+
+	action_b = {
+		name = "Never!"
+		command = { type = stability value = 2 }
+		command = { type = relation which = LIT value = -100 }
+	}
+}
+
+#If Lithuania is Orthodox
+event = {
+	id = 195009
+
+	trigger = {
+		vassal = { country = LIT country = SAM }
+		provincereligion = { province = 288 data = orthodox }
+	}
+	random = no
+	country = SAM
+	name = "Orthodox converts in Samogita"
+	desc = "Samogitia was the last ethnic region of Lithuania to become Christianized in 1413, following the defeat of the Teutonic Order in the Battle of Grunwald and the Peace of Thorn and its subsequent return to the Lithuanian control. In November 1413, Vytautas himself sailed Neman River and Dubysa, reached the environs of Betygala, where he baptised the first groups of Samogitians. In 1416, the construction of eight first parochial churches was started. The Diocese of Samogitia was established on 23 October 1417 and Matthias of Trakai became the first Bishop of Samogitia. The cathedral was built in Medininkai around 1464."
+	style = 1
+
+	date = { day = 1 month = november year = 1413 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1838 }
+
+	action_a = {
+		name = "Adopt Catholicism"
+		command = { type = religion which = orthodox }
+		command = { type = conversion which = -2 }
+	}
+
+	action_b = {
+		name = "Never!"
+		command = { type = stability value = 2 }
+		command = { type = relation which = LIT value = -100 }
+	}
+}
+
+#------------------------------#
+#Poland inherits Sieradz-------#
+#------------------------------#
+
+event = {
+	id = 195010
+
+	random = no
+	country = SRZ
+	name = "Death of Przemysl of Inowroclaw"
+	desc = "The Duchy of Sieradz, also known as the Duchy of Siradia, was one of the territories created during the period of the fragmentation of Poland. It was originally part of the central Seniorate Province, but became separated upon the death of High Duke Wladyslaw III Spindleshanks in 1231, ruled by the rivaling Masovian branch of the Piast dynasty. In 1299 Duke Wladysław I the Elbow-high had to cede Sieradz to King Wenceslaus II of Bohemia, who had also obtained the Seniorate Duchy of Krakow in 1291. Nevertheless, upon the extinction of the Bohemian Premyslid dynasty in 1306, it was reunited with the Kingdom of Poland as a vassal duchy, and after 1339 incorporated by King Casimir III the Great into the Lands of the Polish Crown as Sieradz Voivodship after the death of Przemysl of Inowroclaw."
+	style = 1
+
+	date = { day = 1 month = january year = 1339 }
+	offset = 1
+	deathdate = { day = 1 month = january year = 1838 }
+
+	action_a = {
+		name = "OK (Game Over)"
+		command = { type = trigger which = 195011 }
+	}
+
+	action_b = {
+		name = "Never!"
+		trigger = { ai = no }
+		command = { }
+	}
+}
+
+event = {
+	id = 195011
+
+	random = no
+	country = POL
+	name = "Death of Przemysl of Inowroclaw"
+	desc = "The Duchy of Sieradz, also known as the Duchy of Siradia, was one of the territories created during the period of the fragmentation of Poland. It was originally part of the central Seniorate Province, but became separated upon the death of High Duke Wladyslaw III Spindleshanks in 1231, ruled by the rivaling Masovian branch of the Piast dynasty. In 1299 Duke Wladysław I the Elbow-high had to cede Sieradz to King Wenceslaus II of Bohemia, who had also obtained the Seniorate Duchy of Krakow in 1291. Nevertheless, upon the extinction of the Bohemian Premyslid dynasty in 1306, it was reunited with the Kingdom of Poland as a vassal duchy, and after 1339 incorporated by King Casimir III the Great into the Lands of the Polish Crown as Sieradz Voivodship after the death of Przemysl of Inowroclaw."
+	style = 1
+
+	action_a = {
+		name = "OK"
+		command = { type = inherit which = SRZ }
+	}
+}
+
+#------------------------------#
+#AI Dutch nation becomes KotN--#
+#------------------------------#
+
+#### Original Event by Lambert Simnel, altered by Ayeshteni ####
+#Creation of the Dutch Republic#
+event = {
+
+	id = 195012
+	trigger = {
+		ai = yes
+		someof = {
+		number = 3
+			owned = {
+					province = 337
+					data = -1
+				}
+			owned = {
+					province = 338
+					data = -1
+				}
+			owned = {
+					province = 339
+					data = -1
+				}
+			owned = {
+					province = 340
+					data = -1
+				}
+			owned = {
+					province = 378
+					data = -1
+				}
+			owned = {
+					province = 380
+					data = -1
+				}
+			}
+			NOT = {
+				exists = HOL
+				}
+			OR = {
+				tag = FLA
+				tag = HLL
+				tag = FRI
+				tag = GEL
+				tag = HAU
+			}
+		}
+	random = no
+	province = 339
+	name = "Creation of the Dutch Republic"
+	desc = "The monopoly on positions of authority by those born in our nation, many of whom abused their positions for personal profit, has become a source of resentment in the remainder of the low countries. Demands for power to be devolved to the cities were presented by the burghers of Amsterdam, Haarlem and Delft. Most of the remaining cities and some of the rural nobility soon signed up to this League of Holland. We have two courses of action to choose between. Firstly, we could replace some of our officials with wavering individuals from within the League, thus dividing the League, removing one of their key grievances and cleansing our bureaucracy of graft. Alternatively, we might have to accede to the League's demand to share power"
+	style = 2
+
+	date = { day = 1 month = january year = 1559 }
+	offset = 3600
+	deathdate = { day = 1 month = january year = 1648 }
+
+	action_a ={
+		name = "Remain As We Are"
+		command = { type = vp value = 200 }
+		command = { type = stability value = -2 }
+		command = { type = revoltrisk   which = 48 value = 8 } 
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = gainbuilding   which = -1 value = bailiff } 
+		command = { type = gainbuilding   which = -1 value = bailiff } 
+		command = { type = gainbuilding   which = -1 value = bailiff }  
+		command = { type = gainbuilding   which = -1 value = bailiff } 
+		command = { type = gainbuilding   which = -1 value = courthouse }  
+		command = { type = gainbuilding   which = -1 value = courthouse }
+	}
+
+	action_b ={
+		name = "Become Holland"
+		command = { type = vp value = -200 }
+		command = { type = inflation value = 10 }
+		command = { type = stability value = -1 }
+		command = { type = country which = HOL }
+		command = { type = religion   which = reformed } 
+		command = { type = sleepevent   which = 3900 } 
+		command = { type = domestic which = CENTRALIZATION value = -5 }
+		command = { type = domestic which = ARISTOCRACY value = -3 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = domestic which = QUALITY value = -3 }
+		command = { type = addcore_national which = 337 }
+		command = { type = addcore_national which = 338 }
+		command = { type = addcore_national which = 339 }
+		command = { type = addcore_national which = 340 }
+		command = { type = addcore_national which = 378 }
+		command = { type = addcore_national which = 380 }
+	}
+}
+
+#----------------------------------#
+#Normandy gets the CoA of Alencon--#
+#----------------------------------#
+
+event = {
+	id = 195013
+	trigger = {
+		NOT = {
+			vassal = { country = ENG country = NRM }
+		}
+	}
+	random = no
+	country = NRM
+	name = "The Alencon Coat of Arms"
+	desc = "The first line of Counts of Alencon came from the House of Belleme, who ruled from the 10th to the early 13th centuries. Alencon was granted as an appanage to Peter, son of Louis IX of France, and then to Charles, count of Valois, brother of Philip IV (1293). A third house of Alencon counts descended from Charles, second son of the Count of Valois, who was killed at the Battle of Crécy in 1346. The county of Alencon was raised to a dukedom in 1414. Jean, 1st Duc d'Alencon, was killed at Agincourt, 1415, after having with his own hand slain the Duke of York. His son, Jean, 2nd Duc d'Alencon (who features in Shakespeare's Henry VI), was dispossessed of his duchy in the Battle of Verneuil on 17 August 1424, the Duke was defeated and taken prisoner by English forces led by John, Duke of Bedford. Jean reconquered his domain in 1449."
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 1
+	deathdate = { day = 1 month = january year = 1838 }
+
+	action_a ={
+		name = "A Noble Flag for a Noble House"
+		command = { type = flagname which = "alencon" }
+		command = { type = vp value = 1 }
+	}
+}
+
+#----------------------------------#
+#The Despotate of Morea------------#
+#----------------------------------#
+
+event = {
+	id = 195014
+	trigger = {
+		owned = { province = 360 data = BYZ }
+	}
+	random = no
+	country = BYZ
+	name = "The Despotate of Morea"
+	desc = "The Despotate of the Morea was created out of territory seized from the Frankish Principality of Achaea. This had been organized from former Byzantine territory after the Fourth Crusade (1204). In 1259, the Principality's ruler William II Villehardouin lost the Battle of Pelagonia against the Byzantine Emperor Michael VIII Palaeologus. William was forced to ransom himself by surrendering most of the eastern part of Morea and his newly built strongholds. The surrendered territory became the nucleus of the Despotate of Morea. A later Byzantine emperor, John VI Kantakouzenos, reorganized the territory in 1349 to establish it as an appanage for his son, the Despot Manuel Kantakouzenos. For the larger portion of his reign, Manuel maintained peaceful relations with his Latin neighbors and secured a long period of prosperity for the area."
+	style = 1
+
+	date = { day = 25 month = october year = 1349 }
+	offset = 24
+	deathdate = { day = 1 month = january year = 1838 }
+
+	action_a = {
+		name = "Set up the Despotate"
+		command = { type = independence which = SPR }
+		command = { type = vp value = 25 }
+	}
+
+	action_b = {
+		name = "No, I may need that province later"
+		command = { type = stability value = 1 }
+	}
+}
+
+#----------------------------------#
+#1st Red Turban Rebellion----------#
+#----------------------------------#
+
+event = {
+	id = 195016
+	trigger = {
+		NOT = {
+			exists = YUA
+		}
+	}
+
+	random = no
+	country = CHI
+	name = "Red Turban Rebellion"
+	desc = "In 1351, a mass mobilization of workers from the farming population, numbering 150,000 in total, for a project to rechannel the Yellow River and to open the Grand Canal in western Shandong saw ripe conditions for recruitment by the Red Turbans. A Red Turban leader, Han Shantong, and his advisor, Liu Futong, successfully recruited from the disgruntled workers, resulting in explosive rebellious activity. Han Shantong was captured and executed, but his wife and son, Han Lin'er, escaped with Liu. Liu established a capital at Yingzhou in modern western Anhui at the Hunan border and proclaimed the establishment of a Red Turban government. Han Lin'er was proclaimed the 'Young Prince of Radiance' hailing from Song dynasty royalty. The start of a general rebellion against the Yuan Dynasty had begun."
+	style = C10
+
+	date = { day = 1 month = january year = 1351 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1370 }
+
+	action_a = {
+		name = "How bad can it be?"
+		command = { type = country which = YUA }
+		command = { type = manpower value = -20 }
+		command = { type = stability value = -3 }
+		command = { type = revoltrisk which = 240 value = 14 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+	}
+}
+
+#----------------------------------#
+#Reconstructing China--------------#
+#----------------------------------#
+
+#Yuan
+#event = {
+#	id = 195017
+#	trigger = {
+#		stability = 2
+#		NOT = {
+#			exists = CHI
+#		}
+#		OR = {
+#			vassal = { country = YUA country = ZHO }
+#			NOT = {
+#				exists = ZHO
+#			}
+#		}
+#		OR = {
+#			vassal = { country = YUA country = MNG }
+#			NOT = {
+#				exists = MNG
+#			}
+#		}
+#		OR = {
+#			vassal = { country = YUA country = DHN }
+#			NOT = {
+#				exists = DHN
+#			}
+#		}
+#		OR = {
+#			vassal = { country = YUA country = TIA }
+#			NOT = {
+#				exists = TIA
+#			}
+#		}
+#		OR = {
+#			vassal = { country = YUA country = SNG }
+#			NOT = {
+#				exists = SNG
+#			}
+#		}
+#		OR = {
+#			vassal = { country = YUA country = HEN }
+#			NOT = {
+#				exists = HEN
+#			}
+#		}
+#		OR = {
+#			vassal = { country = YUA country = ZHE }
+#			NOT = {
+#				exists = ZHE
+#			}
+#		}
+#		OR = {
+#			vassal = { country = YUA country = FUJ }
+#			NOT = {
+#				exists = FUJ
+#			}
+#		}
+#		OR = {
+#			vassal = { country = YUA country = GUA }
+#			NOT = {
+#				exists = GUA
+#			}
+#		}
+#		OR = {
+#			vassal = { country = YUA country = HSI }
+#			NOT = {
+#				exists = HSI
+#			}
+#		}
+#		OR = {
+#			vassal = { country = YUA country = YUN }
+#			NOT = {
+#				exists = YUN
+#			}
+#		}
+#		OR = {
+#			vassal = { country = YUA country = SXI }
+#			NOT = {
+#				exists = SXI
+#			}
+#		}
+#		OR = {
+#			vassal = { country = YUA country = SXA }
+#			NOT = {
+#				exists = SXA
+#			}
+#		}
+#		OR = {
+#			vassal = { country = YUA country = LIA }
+#			NOT = {
+#				exists = LIA
+#			}
+#		}
+#		OR = {
+#			vassal = { country = YUA country = HNA }
+#			NOT = {
+#				exists = HNA
+#			}
+#		}
+#		OR = {
+#			vassal = { country = YUA country = GXI }
+#			NOT = {
+#				exists = GXI
+#			}
+#		}
+#		OR = {
+#			vassal = { country = YUA country = XIN }
+#			NOT = {
+#				exists = XIN
+#			}
+#		}
+#	}
+#	random = no
+#	country = YUA
+#	name = "Red Turban Rebellion Has Been Put Down"
+#	desc = "Order has been restored and the Yuan Dynasty will continue. For a while."
+#	style = 1
+#
+#	date = { day = 1 month = january year = 1381 }
+#	offset = 10
+#	deathdate = { day = 1 month = january year = 1838 }
+#
+#	action_a = {
+#		name = "That was a struggle!"
+#		command = { type = country which = CHI }
+#		command = { type = sleepmonarch which = 122358 }
+#		command = { type = sleepmonarch which = 07432 }
+#		command = { type = sleepmonarch which = 07400 }
+#		command = { type = sleepmonarch which = 07401 }
+#		command = { type = sleepmonarch which = 07402 }
+#		command = { type = sleepmonarch which = 07403 }
+#		command = { type = sleepmonarch which = 07404 }
+#		command = { type = sleepmonarch which = 07405 }
+#		command = { type = sleepmonarch which = 07406 }
+#		command = { type = sleepmonarch which = 07407 }
+#		command = { type = sleepmonarch which = 07408 }
+#		command = { type = sleepmonarch which = 07409 }
+#		command = { type = sleepmonarch which = 07410 }
+#		command = { type = sleepmonarch which = 07411 }
+#		command = { type = sleepmonarch which = 07412 }
+#		command = { type = wakemonarch which = 07433 }
+#		command = { type = wakemonarch which = 07434 }
+#		command = { type = wakemonarch which = 07435 }
+#		command = { type = wakemonarch which = 07436 }
+#		command = { type = wakemonarch which = 07437 }
+#		command = { type = wakemonarch which = 07438 }
+#		command = { type = wakemonarch which = 07439 }
+#		command = { type = wakemonarch which = 122340 }
+#		command = { type = wakemonarch which = 122341 }
+#		command = { type = wakemonarch which = 122342 }
+#		command = { type = wakemonarch which = 122343 }
+#		command = { type = wakemonarch which = 122344 }
+#		command = { type = wakemonarch which = 122345 }
+#		command = { type = wakemonarch which = 122346 }
+#		command = { type = wakemonarch which = 122347 }
+#		command = { type = wakemonarch which = 122348 }
+#		command = { type = wakemonarch which = 122349 }
+#		command = { type = wakemonarch which = 122350 }
+#		command = { type = wakemonarch which = 122351 }
+#		command = { type = wakemonarch which = 122352 }
+#		command = { type = wakemonarch which = 122353 }
+#		command = { type = wakemonarch which = 122354 }
+#		command = { type = wakemonarch which = 122355 }
+#		command = { type = wakemonarch which = 122356 }
+#		command = { type = wakemonarch which = 122357 }
+#	}
+#}
+
+#Ming
+#event = {
+#	id = 195018
+#	trigger = {
+#		stability = 2
+#		NOT = {
+#			exists = CHI
+#		}
+#		OR = {
+#			vassal = { country = MNG country = ZHO }
+#			NOT = {
+#				exists = ZHO
+#			}
+#		}
+#		OR = {
+#			vassal = { country = MNG country = YUA }
+#			NOT = {
+#				exists = YUA
+#			}
+#		}
+#		OR = {
+#			vassal = { country = MNG country = DHN }
+#			NOT = {
+#				exists = DHN
+#			}
+#		}
+#		OR = {
+#			vassal = { country = MNG country = TIA }
+#			NOT = {
+#				exists = TIA
+#			}
+#		}
+#		OR = {
+#			vassal = { country = MNG country = SNG }
+#			NOT = {
+#				exists = SNG
+#			}
+#		}
+#		OR = {
+#			vassal = { country = MNG country = HEN }
+#			NOT = {
+#				exists = HEN
+#			}
+#		}
+#		OR = {
+#			vassal = { country = MNG country = ZHE }
+#			NOT = {
+#				exists = ZHE
+#			}
+#		}
+#		OR = {
+#			vassal = { country = MNG country = FUJ }
+#			NOT = {
+#				exists = FUJ
+#			}
+#		}
+#		OR = {
+#			vassal = { country = MNG country = GUA }
+#			NOT = {
+#				exists = GUA
+#			}
+#		}
+#		OR = {
+#			vassal = { country = MNG country = HSI }
+#			NOT = {
+#				exists = HSI
+#			}
+#		}
+#		OR = {
+#			vassal = { country = MNG country = YUN }
+#			NOT = {
+#				exists = YUN
+#			}
+#		}
+#		OR = {
+#			vassal = { country = MNG country = SXI }
+#			NOT = {
+#				exists = SXI
+#			}
+#		}
+#		OR = {
+#			vassal = { country = MNG country = SXA }
+#			NOT = {
+#				exists = SXA
+#			}
+#		}
+#		OR = {
+#			vassal = { country = MNG country = LIA }
+#			NOT = {
+#				exists = LIA
+#			}
+#		}
+#		OR = {
+#			vassal = { country = MNG country = HNA }
+#			NOT = {
+#				exists = HNA
+#			}
+#		}
+#		OR = {
+#			vassal = { country = MNG country = GXI }
+#			NOT = {
+#				exists = GXI
+#			}
+#		}
+#		OR = {
+#			vassal = { country = MNG country = XIN }
+#			NOT = {
+#				exists = XIN
+#			}
+#		}
+#	}
+#	random = no
+#	country = MNG
+#	name = "Red Turban Rebellion Has Been Put Down"
+#	desc = "Order has been restored and the Ming Dynasty is triumphant! For a while."
+#	style = 1
+#
+#	date = { day = 1 month = january year = 1381 }
+#	offset = 10
+#	deathdate = { day = 1 month = january year = 1838 }
+#
+#	action_a = {
+#		name = "That was a struggle!"
+#		command = { type = country which = CHI }
+#	}
+#}
+
+#----------------------------------#
+#Famine in China-------------------#
+#----------------------------------#
+
+event = {
+
+	id = 195019
+
+	random = no
+	country = CHI
+	name = "Famine and Natural Disasters"
+	desc = "Since the 1340s, the Yuan dynasty experienced problems. The Yellow River flooded constantly and other natural disasters also occurred. Groups or religious sects made an effort to undermine the power of the last Yuan rulers, these religious movements often warned of impending doom. Decline of agriculture, epidemics and cold weather hit China, spurring the armed rebellion. The earliest record of an unusual epidemic during the 14th century says that in the year 1331, an epidemic occurred in Hebei and then spread elsewhere, killing 13 million people by 1333. Another epidemic ravaged Fujian and Shandong from 1344 to 1346. The epidemic returned in Shanxi, Hebei, and Jiangsu in 1351–52. Additional epidemics were recorded in various provinces from 1356 to 1360. In Shanxi and Hebei, 200,000 people died in 1358."
+	style = 1
+
+	date = { day = 1 month = january year = 1340 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1838 }
+
+	action_a = {
+		name = "Does it ever end?"
+		command = { type = stability value = -2 }
+		command = { type = revoltrisk which = 60 value = 3 }
+	}
+}
+
+#----------------------------------#
+#Yuan Military Decline-------------#
+#----------------------------------#
+
+event = {
+	id = 195020
+
+	random = no
+	country = CHI
+	name = "Yuan Military Decline"
+	desc = "Yuan garrisons had already entered a steep decline by the end of the 13th century and by 1340, repeatedly failed to put down local rebellions. In the 1340s a bandit gang of merely 36 persons in Huashan took over a Daoist temple. For more than three months, government forces from three provinces failed to defeat them. It was only when salt-field workers, noted for their fierceness and independence in Hangzhou, were brought in to handle the situation that the bandits were defeated. From that time on the people of the realm regarded the government forces as useless and depended on local leadership for defense, contributing to the process of decentralization."
+	style = 1
+
+	date = { day = 1 month = january year = 1345 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1360 }
+
+	action_a = {
+		name = "How bad can it be?"
+		command = { type = manpower value = -20 }
+		command = { type = domestic which = quality value = -2 }
+		command = { type = stability value = -2 }
+		command = { type = revoltrisk which = 120 value = 7 }
+		command = { type = revolt which = -1 }
+	}
+}
+
+#----------------------------------#
+#General Chinese Reconstruction----#
+#----------------------------------#
+
+# China #
+#event = {
+#	id = 195021
+#	trigger = {
+#		atwar = no
+#		isvassal = no
+#		stability = 2
+#		owned = { province = 649 data = -1 } # Hebei
+#		someof = {
+#			number = 18
+#			owned = { province = 650 data = -1 }
+#			owned = { province = 651 data = -1 }
+#			owned = { province = 652 data = -1 }
+#			owned = { province = 653 data = -1 }
+#			owned = { province = 654 data = -1 }
+#			owned = { province = 655 data = -1 }
+#			owned = { province = 656 data = -1 }
+#			owned = { province = 657 data = -1 }
+#			owned = { province = 658 data = -1 }
+#			owned = { province = 659 data = -1 }
+#			owned = { province = 660 data = -1 }
+#			owned = { province = 661 data = -1 }
+#			owned = { province = 1545 data = -1 }
+#			owned = { province = 1555 data = -1 }
+#			owned = { province = 1556 data = -1 }
+#			owned = { province = 1557 data = -1 }
+#			owned = { province = 1558 data = -1 }
+#			owned = { province = 1559 data = -1 }
+#			owned = { province = 1560 data = -1 }
+#			owned = { province = 1561 data = -1 }
+#			owned = { province = 1562 data = -1 }
+#			owned = { province = 1563 data = -1 }
+#			owned = { province = 1564 data = -1 }
+##			owned = { province = 1565 data = -1 }
+#			owned = { province = 1566 data = -1 }
+#			owned = { province = 1567 data = -1 }
+#			owned = { province = 1606 data = -1 }
+#		}
+#		NOT = { exists = CHI }
+#		OR = {
+#			tag = ZHO # Zhou
+#			tag = MNG # Ming
+#			tag = DHN # Han
+#			tag = TIA # Tianwan
+#			tag = SNG # Song
+#			tag = HEN # Henan
+#			tag = ZHE #Zhejang
+#			tag = FUJ # Fujian
+#			tag = GUA # Guangdong
+#			tag = HSI # Hsia
+#			tag = YUN # Yunnan
+#			tag = SXI # Shanxi
+#			tag = SXA # Shaanxi
+#			tag = YUA # Yuan
+#			tag = LIA # Liaotung
+#			tag = HNA # Hunan
+#			tag = GXI # Guangxi
+#			tag = XIN # Xinjiang
+#		}
+#	}
+#
+#	name = "We are China"
+#	desc = "Order has been restored and the our Dynasty is triumphant! For a while."
+#	
+#	date = { day = 1 month = january year = 1381 }
+#	offset = 180
+#	deathdate = { day = 1 month = january year = 1838 }
+#
+#	action_a = {	# Glory to the Emperor! #
+#		name = "ACTIONNAME25009A"
+#		trigger = { tag = YUA }
+#		command = { type = remove_countryculture which = mongol }
+#		command = { type = vp value = 100 }
+#		command = { type = capital which = 649 }
+#		command = { type = diplomats value = 2 }
+#		command = { type = addcore_national which = 649 }
+#		command = { type = addcore_national which = 650 }
+#		command = { type = addcore_national which = 651 }
+#		command = { type = addcore_national which = 652 }
+#		command = { type = addcore_national which = 653 }
+#		command = { type = addcore_national which = 654 }
+#		command = { type = addcore_national which = 655 }
+#		command = { type = addcore_national which = 656 }
+#		command = { type = addcore_national which = 657 }
+#		command = { type = addcore_national which = 658 }
+#		command = { type = addcore_national which = 659 }
+#		command = { type = addcore_national which = 660 }
+#		command = { type = addcore_national which = 661 }
+#		command = { type = addcore_national which = 1545 }
+#		command = { type = addcore_national which = 1555 }
+#		command = { type = addcore_national which = 1556 }
+#		command = { type = addcore_national which = 1557 }
+#		command = { type = addcore_national which = 1558 }
+#		command = { type = addcore_national which = 1559 }
+#		command = { type = addcore_national which = 1560 }
+#		command = { type = addcore_national which = 1561 }
+#		command = { type = addcore_national which = 1562 }
+#		command = { type = addcore_national which = 1563 }
+#		command = { type = addcore_national which = 1564 }
+#		command = { type = addcore_national which = 1565 }
+#		command = { type = addcore_national which = 1566 }
+#		command = { type = addcore_national which = 1567 }
+#		command = { type = addcore_national which = 1606 }
+#		command = { type = country which = CHI }
+#		command = { type = trigger which = 195029 }
+#	}
+#
+#	action_b = {	# Glory to the Emperor! #
+#		name = "ACTIONNAME25009A"
+#		trigger = { NOT = { tag = YUA }	}
+#		command = { type = remove_countryculture which = mongol }
+#		command = { type = vp value = 100 }
+#		command = { type = capital which = 649 }
+#		command = { type = diplomats value = 2 }
+#		command = { type = addcore_national which = 649 }
+#		command = { type = addcore_national which = 650 }
+#		command = { type = addcore_national which = 651 }
+#		command = { type = addcore_national which = 652 }
+#		command = { type = addcore_national which = 653 }
+#		command = { type = addcore_national which = 654 }
+#		command = { type = addcore_national which = 655 }
+#		command = { type = addcore_national which = 656 }
+#		command = { type = addcore_national which = 657 }
+#		command = { type = addcore_national which = 658 }
+#		command = { type = addcore_national which = 659 }
+#		command = { type = addcore_national which = 660 }
+#		command = { type = addcore_national which = 661 }
+#		command = { type = addcore_national which = 1545 }
+#		command = { type = addcore_national which = 1555 }
+#		command = { type = addcore_national which = 1556 }
+#		command = { type = addcore_national which = 1557 }
+#		command = { type = addcore_national which = 1558 }
+#		command = { type = addcore_national which = 1559 }
+#		command = { type = addcore_national which = 1560 }
+#		command = { type = addcore_national which = 1561 }
+#		command = { type = addcore_national which = 1562 }
+#		command = { type = addcore_national which = 1563 }
+#		command = { type = addcore_national which = 1564 }
+#		command = { type = addcore_national which = 1565 }
+#		command = { type = addcore_national which = 1566 }
+#		command = { type = addcore_national which = 1567 }
+#		command = { type = addcore_national which = 1606 }
+#		command = { type = country which = CHI }
+#	}
+#
+#	action_c = {	# Why should we foresake our kin? #
+#		name = "ACTIONNAME25009B"
+#		command = { type = provincetax which = -2 value = 2 }
+#		command = { type = populationpercent which = -2 value = 5 }
+#		command = { type = provincetax which = -5 value = 2 }
+#		command = { type = populationpercent which = -3 value = 5 }
+#		command = { type = relation which = KOR value = 200 }
+#		command = { type = relation which = NIP value = 100 }
+#		command = { type = relation which = DAI value = 100 }
+#		command = { type = relation which = TIB value = 100 }
+#		command = { type = treasury value = 200 }
+#		command = { type = stability value = 1 }
+#	}
+#}#
+
+#-----------------------------------#
+# Yuan Monarchs---------------------#
+#-----------------------------------#
+
+event = {
+
+	id = 195029
+	random = no
+	country = CHI
+	name = "The Yuan Dynasty"
+	desc = "Our dynasty still controls China"
+	style = 1
+
+	action_a = {
+		name = "OK"
+		command = { type = add_countryculture which = mongolc }
+		command = { type = sleepmonarch which = 122358 }
+		command = { type = sleepmonarch which = 07432 }
+		command = { type = sleepmonarch which = 07400 }
+		command = { type = sleepmonarch which = 07401 }
+		command = { type = sleepmonarch which = 07402 }
+		command = { type = sleepmonarch which = 07403 }
+		command = { type = sleepmonarch which = 07404 }
+		command = { type = sleepmonarch which = 07405 }
+		command = { type = sleepmonarch which = 07406 }
+		command = { type = sleepmonarch which = 07407 }
+		command = { type = sleepmonarch which = 07408 }
+		command = { type = sleepmonarch which = 07409 }
+		command = { type = sleepmonarch which = 07410 }
+		command = { type = sleepmonarch which = 07411 }
+		command = { type = sleepmonarch which = 07412 }
+		command = { type = wakemonarch which = 07433 }
+		command = { type = wakemonarch which = 07434 }
+		command = { type = wakemonarch which = 07435 }
+		command = { type = wakemonarch which = 07436 }
+		command = { type = wakemonarch which = 07437 }
+		command = { type = wakemonarch which = 07438 }
+		command = { type = wakemonarch which = 07439 }
+		command = { type = wakemonarch which = 122340 }
+		command = { type = wakemonarch which = 122341 }
+		command = { type = wakemonarch which = 122342 }
+		command = { type = wakemonarch which = 122343 }
+		command = { type = wakemonarch which = 122344 }
+		command = { type = wakemonarch which = 122345 }
+		command = { type = wakemonarch which = 122346 }
+		command = { type = wakemonarch which = 122347 }
+		command = { type = wakemonarch which = 122348 }
+		command = { type = wakemonarch which = 122349 }
+		command = { type = wakemonarch which = 122350 }
+		command = { type = wakemonarch which = 122351 }
+		command = { type = wakemonarch which = 122352 }
+		command = { type = wakemonarch which = 122353 }
+		command = { type = wakemonarch which = 122354 }
+		command = { type = wakemonarch which = 122355 }
+		command = { type = wakemonarch which = 122356 }
+		command = { type = wakemonarch which = 122357 }
+	}
+}
+
+##################################################
+## Breton War of Succession Event Sequence	##
+##################################################
+
+#The initial problem
+event = {
+	id = 195022
+	trigger = {
+	}
+
+	random = no
+	country = BRI
+	name = "The Issue of Succession"
+	desc = "EVENTHIST195022"
+	style = 1
+	
+	date = { day = 1 month = january year = 1340 }
+	offset = 10
+	deathdate = { day = 1 month = may year = 1341 }
+
+	action_a = {
+		name = "Jeanne Penthievre, as originally intended."
+		command = { type = sleepmonarch which = 122063 }
+		command = { type = sleepmonarch which = 122064 }
+		command = { type = wakemonarch which = 122061 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = ENG value = -75 }
+		command = { type = setflag which = penthievre }
+	}
+
+	action_b = {
+		name = "Jean de Montfort, so I can die in peace."
+		command = { type = relation which = FRA value = -75 }
+		command = { type = relation which = ENG value = 50 }
+		command = { type = setflag which = montfort }
+	}
+}
+
+#War of the Breton Succession
+event = {
+
+	id = 195023
+	trigger = {
+		event = 195022
+		monarch = 122061
+		flag = penthievre
+	}
+
+	random = no
+	country = BRI
+	name = "The Breton War of Succession, War of the Two Jeannes"
+	desc = "EVENTHIST195023"
+	style = 1
+	
+	date = { day = 1 month = may year = 1341 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1345 }
+
+	action_a = {
+		name = "It is what it is"
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = stability value = -2 }
+		command = { type = revoltrisk which = 48 value = 5 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+	}
+}
+
+#War of the Breton Succession
+event = {
+
+	id = 195024
+	trigger = {
+		event = 195022
+		monarch = 122063
+		flag = montfort
+	}
+
+	random = no
+	country = BRI
+	name = "The Breton War of Succession, War of the Two Jeannes"
+	desc = "EVENTHIST195024"
+	style = 1
+	
+	date = { day = 1 month = may year = 1341 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1345 }
+
+	action_a = {
+		name = "It is what it is"
+		command = { type = relation which = FRA value = -75 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = stability value = -2 }
+		command = { type = revoltrisk which = 36 value = 3 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+	}
+}
+
+#The Death of Isabella, She-Wolf of France
+event = {
+	id = 195025
+	trigger = {}
+
+	random = no
+	country = ENG
+	name = "The Death of Isabella, the She-Wolf of France"
+	desc = "EVENTHIST195025"
+	style = 1
+
+	date = { day = 22 month = august year = 1358 }
+
+	action_a = {
+		name = "Requiescat In Pace"
+		command = { type = treasury value = -10 }
+		command = { type = vp value = 2 }
+	}
+}
+
+#1st War of Guelderian Succession
+event = {
+	id = 195026
+	trigger = {}
+
+	random = no
+	country = GEL
+	name = "1st War of Guelderian Succession"
+	desc = "The First War of the Guelderian Succession was a battle for the throne of the Duchy of Guelders that raged between 1371 and 1379. The war originated when Duke Reginald III died without issue in 1371. His brother, Edward, who had been killed in the Battle of Baesweiler earlier that same year, also left no offspring. The claimants to the ducal throne were their half-sisters, Matilda, who was married to John II, Count of Blois, and Maria, wife of William II of Juelich and mother to William I of Guelders and Juelich, on whose behalf she claimed the throne of Guelders. Guelders was divided in two factions, The Heeckerens supported Matilda, and were led by Frederik van Heeckeren van der Eze (1320-1386) and the Bronckhorsters supported William, and were led by Gijsbert V van Bronckhorst (1328-1356). The war lasted eight years, with Maria and her supporters emerging victorious, and Maria's son William becoming duke."
+	style = 1
+
+	date = { day = 2 month = december year = 1371 }
+
+	action_a = {
+		name = "Support Maria and the Bronckhorsters"
+		command = { type = relation which = LUX value = 50 }
+		command = { type = relation which = BOH value = 50 }
+		command = { type = stability value = -3 }
+		command = { type = revolt which = -1 }
+	}
+
+	action_b = {
+		name = "Support Matilda and the Heeckerens"
+		command = { type = relation which = UTR value = 50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = stability value = -3 }
+		command = { type = revolt which = -1 }
+		command = { type = sleepmonarch which = 04423 }
+		command = { type = sleepmonarch which = 04417 }
+		command = { type = wakemonarch which = 04424 }
+		command = { type = setflag which = janI }
+	}
+}
+
+#Death of Jan I
+event = {
+
+	id = 195027
+	trigger = {
+		flag = janI
+	}
+
+	random = no
+	country = GEL
+	name = "The Death of Jan I"
+	desc = "EVENTHIST195027"
+	style = 1
+
+	date = { day = 19 month = may year = 1381 }
+
+	action_a = {
+		name = "Was it worth it?"
+		command = { type = sleepmonarch which = 04424 }
+		command = { type = wakemonarch which = 04417 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#------------------------------#
+#Stephen of Perm---------------#
+#------------------------------#
+
+#Stephen of Perm
+event = {
+
+	id = 195028
+	trigger = {
+	}
+
+	random = no
+	country = PRM
+	name = "Stephen of Perm"
+	desc = "EVENTHIST195028"
+	style = 1
+
+	date = { day = 1 month = january year = 1376 }
+
+	action_a = {
+		name = "Embrace Stephen and his Faith"
+		command = { type = sleepmonarch which = 124317 }
+		command = { type = wakemonarch which = 124311 }
+		command = { type = stability value = -1 }
+		command = { type = religion which = orthodox }
+		command = { type = add_countryculture which = russian }
+		command = { type = provincereligion which = -1 value = orthodox }
+		command = { type = relation which = NVG value = -50 }
+		command = { type = relation which = MOS value = 50 }
+	}
+
+	action_b = {
+		name = "Send him packing"
+		command = { type = relation which = NVG value = 50 }
+		command = { type = relation which = MOS value = -50 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = trade value = 250 }
+		command = { type = vp value = 20 }
+	}
+}
+
+#------------------------------#
+#The Ava Kingdom---------------#
+#------------------------------#
+
+#The Ava Kingdom
+event = {
+
+	id = 195030
+	trigger = {
+	}
+
+	random = no
+	country = BRM
+	name = "The Foundation of the Ava Kingdom"
+	desc = "The Ava Kingdom was founded by Thado Minbya in 1364 following the collapse of the Sagaing and Pinya Kingdoms due to raids by the Shan States to the north. In its first years of existence, Ava, which viewed itself as the rightful successor to the Pagan Kingdom, tried to reassemble the former empire by waging constant wars against the Mon Hanthawaddy Kingdom in the south, the Shan States in the north and east, and Rakhine State in the west."
+	style = 1
+
+	date = { day = 1 month = september year = 1364 }
+	offset = 1
+	deathdate = { day = 28 month = december year = 1751 }
+
+	action_a = {
+		name = "OK"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = countryname value = "Ava Kingdom" }
+		command = { type = flagname which = "ava" }
+	}
+}
+
+#Burma
+event = {
+
+	id = 195031
+	trigger = {
+	}
+
+	random = no
+	country = BRM
+	name = "The Foundation of Burma"
+	desc = "EVENTHIST195031"
+	style = 1
+
+	date = { day = 1 month = january year = 1752 }
+	offset = 1
+	deathdate = { day = 28 month = december year = 1836 }
+
+	action_a = {
+		name = "OK"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = countryname value = "Burma" }
+		command = { type = flagname which = "" }
+	}
+}
+
+#------------------------------#
+#Golconda---------------#
+#------------------------------#
+
+#Golconda
+event = {
+
+	id = 195032
+	trigger = {
+	}
+
+	random = no
+	country = HYD
+	name = "The Foundation of Golconda"
+	desc = "The Sultanate of Golconda was an early modern kingdom in southern India, ruled by the Qutb Shahi dynasty of Turkoman origin. After the collapse of the Bahmani Sultanate, the Qutb Shahi dynasty was established in 1512 by Quli Qutb Shah, as one of the five Deccan sultanates. This dynasty shall now rule our nation under the new name of the Golconda Sultanate."
+	style = 1
+
+	date = { day = 1 month = january year = 1526 }
+	offset = 1
+	deathdate = { day = 1 month = january year = 1700 }
+
+	action_a = {
+		name = "OK"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = countryname value = "Golconda" }
+		command = { type = flagname which = "golconda" }
+	}
+}
+
+#Hyderabad
+event = {
+
+	id = 195033
+	trigger = {
+	}
+
+	random = no
+	country = HYD
+	name = "The Foundation of Hyderabad"
+	desc = "Hyderabad State was founded by Mir Qamar-ud-din Khan who was the governor of Deccan under the Mughals from 1713 to 1721. In 1724, he resumed rule from the Mughal provincial capital of Aurangabad, under the title of Asaf Jah (granted by Mughal Emperor Muhammad Shah). His other title, Nizam ul-Mulk (Order of the Realm), became the title of his position 'Nizam of Hyderabad'. By the end of his rule, the Nizam had become independent from the Mughals, and had founded the Asaf Jahi dynasty. This dynasty shall now rule our nation under the new name of Hyderabad."
+	style = 1
+
+	date = { day = 1 month = january year = 1700 }
+	offset = 1
+	deathdate = { day = 28 month = december year = 1837 }
+
+	action_a = {
+		name = "OK"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = countryname value = "Hyderabad" }
+		command = { type = flagname which = "sultanate" }
+	}
+}
+
+##########################################
+### Yuan and Ming China's annex events ###
+##########################################
+
+#Yuan
+event = {
+
+	id = 195034
+	trigger = {
+		exists = YUA
+		OR = {
+			monarch = 20850
+			monarch = 07433
+			monarch = 07434
+			monarch = 07435
+			monarch = 07436
+			monarch = 07437
+			monarch = 07438
+			monarch = 07439
+			monarch = 122340
+			monarch = 122341
+			monarch = 122342
+			monarch = 122343
+			monarch = 122344
+			monarch = 122345
+			monarch = 122346
+			monarch = 122347
+			monarch = 122349
+			monarch = 122350
+			monarch = 122351
+			monarch = 122352
+			monarch = 122353
+			monarch = 122354
+			monarch = 122355
+			monarch = 122356
+			monarch = 122357
+		}
+	}
+	random = no
+	persistent = yes
+	country = CHI
+
+	name = "Take control of our Ancestral lands"
+	desc = "We should incorporate our ancestral lands to strengthen our hold of the Chinese state."
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 15
+	deathdate = { day = 28 month = december year = 1837 }
+
+	action_a = {
+		name = "Incorporate into the Mandate of Heaven"
+		command = { type = stability value = 1 }
+		command = { type = inherit which = YUA }
+	}
+}
+
+#Ming
+event = {
+
+	id = 195035
+	trigger = {
+		exists = MNG
+		OR = {
+			monarch = 122358
+			monarch = 07432
+			monarch = 07400
+			monarch = 07401
+			monarch = 07402
+			monarch = 07403
+			monarch = 07404
+			monarch = 07405
+			monarch = 07406
+			monarch = 07407
+			monarch = 07408
+			monarch = 07409
+			monarch = 07410
+			monarch = 07411
+			monarch = 07412
+			monarch = 07413
+			monarch = 07414
+			monarch = 07421
+			monarch = 07422
+			monarch = 07423
+			monarch = 07424
+			monarch = 07425
+			monarch = 07426
+			monarch = 07427
+			monarch = 07428
+			monarch = 07429
+		}
+	}
+	random = no
+	persistent = yes
+	country = CHI
+
+	name = "Take control of our Ancestral lands"
+	desc = "We should incorporate our ancestral lands to strengthen our hold of the Chinese state."
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 15
+	deathdate = { day = 28 month = december year = 1837 }
+
+	action_a = {
+		name = "Incorporate into the Mandate of Heaven"
+		command = { type = stability value = 1 }
+		command = { type = inherit which = MNG }
+	}
+}
+
+###########################
+### Pasai to Atjeh	###
+###########################
+
+#Atjeh
+event = {
+
+	id = 195036
+	trigger = {
+	}
+
+	random = no
+	country = ATJ
+	name = "The Rise of the Sultanate of Atjeh"
+	desc = "The Samudera Pasai Sultanate, also known as Samudera or Pasai or Samudera Darussalam or Pacem, was a Muslim kingdom on the north coast of Sumatra from the 13th to the 16th centuries. Little evidence has been left to allow for historical study of the kingdom. The kingdom was believed to have been founded by Merah Silu, who later converted to Islam and adopted the name Malik ul Salih, in the year 1267 CE. After the 1521 Portuguese invasion, the garrison evacuated Pasai in 1524 and the first Sultan of Aceh, Ali Mughayat Syah, annexed the territory. Our power has been fading and the Sultanate of Atjeh has become the dominant force in the region."
+	style = 1
+
+	date = { day = 1 month = january year = 1517 }
+	offset = 1
+	deathdate = { day = 28 month = december year = 1524 }
+
+	action_a = {
+		name = "OK"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = countryname value = "Atjeh" }
+		command = { type = flagname which = "" }
+	}
+}
+
+#############################
+### Muang Sua to Lan Xang ###
+#############################
+
+#Lan Xang
+event = {
+
+	id = 195037
+	trigger = {
+	}
+
+	random = no
+	country = LAX
+	name = "The Rise of Lan Xang"
+	desc = "Lan Xang was a Lao kingdom that held the area of present-day Laos from 1353 to 1707. For three and a half centuries, Lan Xang was one of the largest kingdoms in Southeast Asia. The kingdom is the basis for Laos's national historic and cultural identity.
+Lan Xang, meaning 'the Million Elephants and the White Parasol'. The kingdom's name alludes to the power of the king, his ties to Laotian Buddhism, and his army's countless war elephants. The histories of Lan Xang begin in 1316 with the birth of Fa Ngum. Fa Ngum's Grandfather Souvanna Khampong was king of Muang Sua and his father Chao Fa Ngiao was the crown prince. As a youth Fa Ngum was sent to the Khmer Empire to live as a son of King Jayavarman IX. In 1343 King Souvanna Khampong died, and a succession dispute for Muang Sua took place. In 1353 Fa Ngum was crowned, and named his Kingdom Lan Xang Hom Khao, Fa Ngum continued his conquests to secure the areas around the Mekong."
+	style = 1
+
+	date = { day = 1 month = january year = 1353 }
+	offset = 1
+	deathdate = { day = 28 month = december year = 1385 }
+
+	action_a = {
+		name = "OK"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = countryname value = "Lan Xang" }
+		command = { type = flagname which = "" }
+	}
+}
+
+############################
+### Friuli Earthquake	 ###
+############################
+
+#Friuli Earthquake
+event = {
+
+	id = 195038
+	trigger = {
+	}
+
+	random = no
+	province = 370
+	name = "Friuli Earthquake"
+	desc = "The 1348 Friuli earthquake, centered in the South Alpine region of Friuli, was felt across Europe on 25 January. The earthquake hit in the same year that the Great Plague ravaged Italy. According to contemporary sources, it caused considerable damage to structures where churches and houses collapsed and villages were destroyed. The epicenter was located east of Tolmezzo, Venzone and Gemona, with a seismic intensity of eight to nine according to the European Macroseismic Scale (approximately measured 6.9 on the Richter scale). Most of the damage reported was in Northern Italy, in the present-day Friuli-Venezia Giulia region, in the adjacent provinces of Belluno, Vicenza and Verona up to Lombardy and Venice, as well as in Carinthia and Carniola to the north and east. Aftershocks occurred until 5 March."
+	style = 1
+
+	date = { day = 25 month = january year = 1348 }
+
+	action_a = {
+		name = "OK"
+		command = { type = stability value = -1 }
+		command = { type = infra value = -250 }
+		command = { type = populationpercent which = 370 value = -10 }
+	}
+}
+
+############################
+### Golden Bull		 ###
+############################
+
+#Golden Bull
+event = {
+
+	id = 195039
+	trigger = {
+	}
+
+	random = no
+	global = yes
+	name = "The Golden Bull of 1356"
+	desc = "EVENTHIST195039"
+
+	style = "C04"
+
+	date = { day = 10 month = january year = 1356 }
+
+	action_a = {
+		name = "OK"
+		command = { type = elector which = MAI value = 2 }
+		command = { type = elector which = KOL value = 2 }
+		command = { type = elector which = TRR value = 2 }
+		command = { type = elector which = BOH value = 2 }
+		command = { type = elector which = PFA value = 2 }
+		command = { type = elector which = SAC value = 2 }
+		command = { type = elector which = BRA value = 2 }
+		command = { type = elector which = BAY value = 1 }
+		command = { type = vp value = 10 }
+	}
+}
+
+##########################
+### The Avignon Papacy ###
+##########################
+
+event = {
+
+	id = 195040
+	trigger = {
+		event = 296011	
+		religion = catholic
+		countrysize = 2
+	}
+
+	random = no
+	province = 407	
+	name = "The Avignon Papacy"
+	desc = "EVENTHIST296011"
+	style = "C08"
+	date = { day = 8 month = april year = 1378 }
+	offset = 1
+	deathdate = { day = 3 month = july year = 1415 }
+
+	action_a = {
+		name = "Set up the Antipopes"
+		ai_chance = 100
+		command = { type = independence which = AVI }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = religion which = avignon_catholic }
+		command = { type = vp value = 25 }
+		command = { type = treasury value = 50 }
+		command = { type = trigger which = 195041 }
+	}
+
+	action_b = {	
+		name = "Stay Loyal to Rome"
+		ai_chance = 0	
+		command = { type = relation which = PAP value = 100 }
+		command = { type = stability value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+	}
+}
+
+event = {
+
+	id = 195041
+	trigger = {
+	}
+
+	random = no
+	country = AVI	
+	name = "The Avignon Papacy"
+	desc = "EVENTHIST296011"
+	style = "C08"
+
+	action_a = {
+		name = "Deus Vult!"
+		command = { type = religion which = avignon_catholic }
+		command = { type = relation which = PAP value = -100 }
+	}
+}						

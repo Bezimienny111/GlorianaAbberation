@@ -1,0 +1,105 @@
+#-----------------------------------------------------------------------------
+# Southern Italian Events
+
+# Magna Graecia
+event = {
+	id = 3001267
+	trigger = {
+		owned = { province = 394 data = -1 } #Apulia
+		owned = { province = 395 data = -1 } #Messina
+		owned = { province = 396 data = -1 } #Sicilia
+	}
+	random = NO
+	country = BYZ
+	name = "Magna Graecia"
+	desc = "For more than a thousand years, the people and culture of Apulia and Sicily had been more Greek than Latin. In the golden age of Greece, the most richest and most powerful cities had been the colonies here, not the old poleis. The loss of Bari to the Normans in 1071 had begun a transformation towards Italian dominance, and although Guiscard long permitted services in Greek, the population is already heavily Catholic. Still, the Emperor's authority has returned, and a number of options present themselves."
+
+	date = { day = 1 month = january year = 1450 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Recolonize these lands!"
+		command = { type = treasury value = -300 }
+		command = { type = populationpercent which = 357 value = -5 } #Thrace
+		command = { type = populationpercent which = 358 value = -10 } #Macedonia
+		command = { type = populationpercent which = 359 value = -10 }
+		command = { type = population which = 394 value = 15}
+		command = { type = population which = 395 value = 15 }
+		command = { type = population which = 396 value = 15 }
+		command = { type = trigger which = 3001268 }
+	}
+	action_b = {
+		name = "Who needs the bother?"
+		command = { type = stability value = 1 }
+	}
+	action_c = {
+		name = "Relocate the Italians... to the sulphur mines"
+		command = { type = populationpercent which = 394 value = -10 }
+		command = { type = provincetax which = 394 value = -2 }
+		command = { type = provincemanpower which = 394 value = -2 }
+		command = { type = provinceculture which = 394 value = greek }
+		command = { type = populationpercent which = 395 value = -10 }
+		command = { type = provincetax which = 395 value = -2 }
+		command = { type = provincemanpower which = 395 value = -2 }
+		command = { type = provinceculture which = 395 value = greek }
+		command = { type = populationpercent which = 396 value = -10 }
+		command = { type = provincetax which = 396 value = -2 }
+		command = { type = provincemanpower which = 396 value = -2 }
+		command = { type = provinceculture which = 396 value = greek }
+		command = { type = badboy value = 5 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = relation which = NAP value = -100 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = PIS value = -100 }
+		command = { type = relation which = TOS value = -100 }
+		command = { type = relation which = FLO value = -100 }
+		command = { type = relation which = MOD value = -100 }
+		command = { type = relation which = PAR value = -100 }
+		command = { type = relation which = VEN value = -100 }
+		command = { type = relation which = MLO value = -100 }
+		command = { type = relation which = GEN value = -100 }
+		command = { type = sleepevent which = 3001426 } #american revolution
+		command = { type = sleepevent which = 3001434 } #french revolution
+	}
+}
+
+# Magna Graecia
+event = {
+	id = 3001268
+	random = NO
+	country = BYZ
+	name = "Magna Graecia"
+	desc = "The waves of new immigrants to these shores has finally succeeded in changing the prevailing culture. Greek is the lingua franca of Syracuse and Taranto once more!"
+
+#	date = { day = 1 month = january year = 1550 }
+#	offset = 3600 #10 years
+#	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Opa!"
+		command = { type = populationpercent which = 394 value = 10 }
+		command = { type = populationpercent which = 395 value = 10 }
+		command = { type = populationpercent which = 396 value = 10 }
+		command = { type = provincetax which = 394 value = 1 }
+		command = { type = provincemanpower which = 394 value = 1 }
+		command = { type = provinceculture which = 394 value = greek }
+		command = { type = provincetax which = 395 value = 1 }
+		command = { type = provincemanpower which = 395 value = 1 }
+		command = { type = provinceculture which = 395 value = greek }
+		command = { type = provincetax which = 396 value = 1 }
+		command = { type = provincemanpower which = 396 value = 1 }
+		command = { type = provinceculture which = 396 value = greek }
+		command = { type = relation which = NAP value = -100 } #They're still not happy...
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = PIS value = -100 }
+		command = { type = relation which = TOS value = -100 }
+		command = { type = relation which = TOS value = -100 }
+		command = { type = relation which = FLO value = -100 }
+		command = { type = relation which = MOD value = -100 }
+		command = { type = relation which = PAR value = -100 }
+		command = { type = relation which = VEN value = -100 }
+		command = { type = relation which = MLO value = -100 }
+		command = { type = relation which = GEN value = -100 }
+	}
+}

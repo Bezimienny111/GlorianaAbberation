@@ -1,0 +1,1182 @@
+###################################
+### The Great Schism decisions	###
+###################################
+
+decision = {
+	id = 2000
+	major = no
+	persistent = yes
+
+	name = "Schism diplomacy"
+	desc = "During the Great Schism, states would align with not only who they considered the true Pope, but also those who thought the same."
+
+	potential = {
+		flag = 8
+		NOT = { flag = 7 }
+		religion = catholic
+	}
+
+	trigger = {
+		missionaries = 4
+		flag = 8
+		NOT = { flag = 7 }
+		religion = catholic
+	}
+
+	ai_trigger = {
+		treasury = 20
+	}
+
+	action = {
+		command = { type = missionaries value = -4 }
+		#command = { type = treasury value = 40 }
+		command = { type = treasury value = -20 }
+		command = { type = relation which = PAP value = 25 }
+		command = { type = relation which = -11 value = 25 }
+		command = { type = relation which = -11 value = 25 }
+		command = { type = relation which = AVI value = -25 }
+	}
+}
+
+decision = {
+	id = 2001
+	major = no
+	persistent = yes
+
+	name = "Schism diplomacy"
+	desc = "During the Great Schism, states would align with not only who they considered the true Pope, but also those who thought the same."
+
+	potential = {
+		flag = 8
+		NOT = { flag = 7 }
+		religion = avignon_catholic
+	}
+
+	trigger = {
+		missionaries = 4
+		flag = 8
+		NOT = { flag = 7 }
+		religion = avignon_catholic
+	}
+
+	ai_trigger = {
+		treasury = 20
+	}
+
+	action = {
+		command = { type = missionaries value = -4 }
+		#command = { type = treasury value = 40 }
+		command = { type = treasury value = -20 }
+		command = { type = relation which = AVI value = 25 }
+		command = { type = relation which = -11 value = 25 }
+		command = { type = relation which = -11 value = 25 }
+		command = { type = relation which = PAP value = -25 }
+	}
+}
+
+decision = {
+	id = 2002
+	major = no
+	persistent = yes
+
+	name = "Schism diplomacy"
+	desc = "During the Great Schism, states would align with not only who they considered the true Pope, but also those who thought the same."
+
+	potential = {
+		flag = 8
+		NOT = { flag = 7 }
+		religion = pisan_catholic
+	}
+
+	trigger = {
+		missionaries = 4
+		flag = 8
+		NOT = { flag = 7 }
+		religion = pisan_catholic
+	}
+
+	ai_trigger = {
+		treasury = 20
+	}
+
+	action = {
+		command = { type = missionaries value = -4 }
+		#command = { type = treasury value = 40 }
+		command = { type = treasury value = -20 }
+		command = { type = relation which = -11 value = 25 }
+		command = { type = relation which = -11 value = 25 }
+		command = { type = relation which = -11 value = 25 }
+		command = { type = relation which = PAP value = -25 }
+		command = { type = relation which = AVI value = -25 }
+	}
+}
+
+###########################################
+### Create Crusader State decisions	###
+###########################################
+
+decision = {
+	id = 2100
+	major = no
+	unique = yes
+	potential = {
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+		NOT = { 
+			exists = JER
+			year = 1600
+		}
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		someof = {
+			number = 1
+			owned = { province = 492 data = -1 }
+			owned = { province = 493 data = -1 }
+		}
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+		NOT = {
+			domestic = { type = innovative value = 7 }
+			exists = JER
+			year = 1600
+			}
+	}
+	ai_trigger = {
+	}
+
+	name = "Release Kingdom of Jerusalem"
+	desc = "Sire, we are in an unique position to grant independence and re-invigorate Christian states within the Holy Land. The Pope has stressed Christian duty to allow them their existence. Lets do it."
+
+	action = {
+		command = { type = free which = JER }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 15 }
+	}
+}
+
+decision = {
+	id = 2101
+	major = no
+	unique = yes
+	potential = {
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+		NOT = { 
+			exists = TRP
+			year = 1492
+		}
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		owned = { province = 491 data = -1 }
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+		NOT = {
+			domestic = { type = innovative value = 7 }
+			exists = TRP
+			year = 1492
+			}
+	}
+	ai_trigger = {
+	}
+
+	name = "Release County of Tripoli"
+	desc = "Sire, we are in an unique position to grant independence and re-invigorate Christian states within the Holy Land. The Pope has stressed Christian duty to allow them their existence. Lets do it."
+
+	action = {
+		command = { type = free which = TRP }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 15 }
+	}
+}
+
+decision = {
+	id = 2102
+	major = no
+	unique = yes
+	potential = {
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+		NOT = { 
+			exists = ANT
+			year = 1492
+		}
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		owned = { province = 485 data = -1 }
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+		NOT = {
+			domestic = { type = innovative value = 7 }
+			exists = ANT
+			year = 1492
+			}
+	}
+	ai_trigger = {
+	}
+
+	name = "Release Principality of Antioch"
+	desc = "Sire, we are in an unique position to grant independence and re-invigorate Christian states within the Holy Land. The Pope has stressed Christian duty to allow them their existence. Lets do it."
+
+	action = {
+		command = { type = free which = ANT }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 15 }
+	}
+}
+
+decision = {
+	id = 2103
+	major = no
+	unique = yes
+	potential = {
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+		NOT = { 
+			exists = EDE
+			year = 1500
+		}
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		owned = { province = 492 data = -1 }
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+		NOT = {
+			domestic = { type = innovative value = 7 }
+			exists = EDE
+			year = 1500
+			}
+	}
+	ai_trigger = {
+	}
+
+	name = "Release Country of Edessa"
+	desc = "Sire, we are in an unique position to grant independence and re-invigorate Christian states within the Holy Land. The Pope has stressed Christian duty to allow them their existence. Lets do it."
+
+	action = {
+		command = { type = free which = EDE }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 15 }
+	}
+}
+
+decision = {
+	id = 2104
+	major = no
+	unique = yes
+	potential = {
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+		NOT = { 
+			exists = EGY
+			year = 1600
+		}
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		someof = {
+			number = 3
+			owned = { province = 744 data = -1 }
+			owned = { province = 745 data = -1 }
+			owned = { province = 746 data = -1 }
+			owned = { province = 494 data = -1 }
+			owned = { province = 742 data = -1 }
+			owned = { province = 743 data = -1 }
+			owned = { province = 747 data = -1 }
+		}
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+		NOT = {
+			domestic = { type = innovative value = 7 }
+			exists = EGY
+			year = 1600
+			}
+	}
+	ai_trigger = {
+	}
+
+	name = "Release Kingdom of Egypt"
+	desc = "Sire, we are in an unique position to grant independence and re-invigorate Christian states within the Holy Land. The Pope has stressed Christian duty to allow them their existence. Lets do it."
+
+	action = {
+		command = { type = free which = EGY }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 15 }
+	}
+}
+
+decision = {
+	id = 2105
+	major = no
+	unique = yes
+	potential = {
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+		NOT = { 
+			exists = NAF
+			year = 1600
+		}
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		someof = {
+			number = 5
+			owned = { province = 804 data = -1 }
+			owned = { province = 805 data = -1 }
+			owned = { province = 806 data = -1 }
+			owned = { province = 741 data = -1 }
+			owned = { province = 740 data = -1 }
+			owned = { province = 739 data = -1 }
+			owned = { province = 738 data = -1 }
+			owned = { province = 737 data = -1 }
+			owned = { province = 736 data = -1 }
+			owned = { province = 735 data = -1 }
+			owned = { province = 734 data = -1 }
+			owned = { province = 733 data = -1 }
+			owned = { province = 732 data = -1 }
+		}
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+		NOT = {
+			domestic = { type = innovative value = 7 }
+			exists = NAF
+			year = 1600
+			}
+	}
+	ai_trigger = {
+	}
+
+	name = "Release Kingdom of North Africa"
+	desc = "Sire, we are in an unique position to grant independence and re-invigorate Christian states within the Holy Land. The Pope has stressed Christian duty to allow them their existence. Lets do it."
+
+	action = {
+		command = { type = free which = NAF }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 15 }
+	}
+}
+
+decision = {
+	id = 2106
+	major = no
+	unique = yes
+	potential = {
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+		NOT = { 
+			exists = PET
+			year = 1500
+		}
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		someof = {
+			number = 1
+			owned = { province = 495 data = -1 }
+			owned = { province = 496 data = -1 }
+		}
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+		NOT = {
+			domestic = { type = innovative value = 7 }
+			exists = PET
+			year = 1500
+			}
+	}
+	ai_trigger = {
+	}
+
+	name = "Release Duchy of Petra"
+	desc = "Sire, we are in an unique position to grant independence and re-invigorate Christian states within the Holy Land. The Pope has stressed Christian duty to allow them their existence. Lets do it."
+
+	action = {
+		command = { type = free which = PET }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 15 }
+	}
+}
+
+decision = {
+	id = 2107
+	major = no
+	unique = yes
+	potential = {
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+		NOT = { 
+			exists = DAM
+			year = 1500
+		}
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		owned = { province = 490 data = -1 }
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+		NOT = {
+			domestic = { type = innovative value = 7 }
+			exists = DAM
+			year = 1500
+			}
+	}
+	ai_trigger = {
+	}
+
+	name = "Release Principality of Damascus"
+	desc = "Sire, we are in an unique position to grant independence and re-invigorate Christian states within the Holy Land. The Pope has stressed Christian duty to allow them their existence. Lets do it."
+
+	action = {
+		command = { type = free which = DAM }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 15 }
+	}
+}
+
+decision = {
+	id = 2108
+	major = no
+	unique = yes
+	potential = {
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+		NOT = { 
+			exists = MES
+			year = 1600
+		}
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		someof = {
+			number = 1
+			owned = { province = 488 data = -1 }
+			owned = { province = 489 data = -1 }
+		}
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+		NOT = {
+			domestic = { type = innovative value = 7 }
+			exists = MES
+			year = 1600
+			}
+	}
+	ai_trigger = {
+	}
+
+	name = "Release Kingdom of Mesopotamia"
+	desc = "Sire, we are in an unique position to grant independence and re-invigorate Christian states within the Holy Land. The Pope has stressed Christian duty to allow them their existence. Lets do it."
+
+	action = {
+		command = { type = free which = MES }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 15 }
+	}
+}
+
+decision = {
+	id = 2109
+	major = no
+	unique = yes
+	potential = {
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+		NOT = { 
+			exists = SYR
+			year = 1600
+		}
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		someof = {
+			number = 2
+			owned = { province = 495 data = -1 }
+			owned = { province = 492 data = -1 }
+			owned = { province = 491 data = -1 }
+			owned = { province = 490 data = -1 }
+			owned = { province = 485 data = -1 }
+		}
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+		NOT = {
+			domestic = { type = innovative value = 7 }
+			exists = SYR
+			year = 1600
+			}
+	}
+	ai_trigger = {
+	}
+
+	name = "Release Kingdom of Syria"
+	desc = "Sire, we are in an unique position to grant independence and re-invigorate Christian states within the Holy Land. The Pope has stressed Christian duty to allow them their existence. Lets do it."
+
+	action = {
+		command = { type = free which = SYR }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 15 }
+	}
+}
+
+decision = {
+	id = 2110
+	major = no
+	unique = yes
+	potential = {
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+		NOT = { 
+			exists = ABA
+			year = 1600
+		}
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		someof = {
+			number = 2
+			owned = { province = 495 data = -1 }
+			owned = { province = 496 data = -1 }
+			owned = { province = 497 data = -1 }
+		}
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+		NOT = {
+			domestic = { type = innovative value = 7 }
+			exists = ABA
+			year = 1600
+			}
+	}
+	ai_trigger = {
+	}
+
+	name = "Release Kingdom of Arabia"
+	desc = "Sire, we are in an unique position to grant independence and re-invigorate Christian states within the Holy Land. The Pope has stressed Christian duty to allow them their existence. Lets do it."
+
+	action = {
+		command = { type = free which = ABA }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 15 }
+	}
+}
+
+decision = {
+	id = 2111
+	major = no
+	unique = yes
+	potential = {
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+		NOT = { 
+			exists = BAS
+			year = 1500
+		}
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		someof = {
+			number = 2
+			owned = { province = 508 data = -1 }
+			owned = { province = 507 data = -1 }
+			owned = { province = 506 data = -1 }
+		}
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+		NOT = {
+			domestic = { type = innovative value = 7 }
+			exists = BAS
+			year = 1500
+			}
+	}
+	ai_trigger = {
+	}
+
+	name = "Release Duchy of Basra"
+	desc = "Sire, we are in an unique position to grant independence and re-invigorate Christian states within the Holy Land. The Pope has stressed Christian duty to allow them their existence. Lets do it."
+
+	action = {
+		command = { type = free which = BAS }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 15 }
+	}
+}
+
+decision = {
+	id = 2112
+	major = no
+	unique = yes
+	potential = {
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+		NOT = { 
+			exists = CIL
+			exists = AMI
+			year = 1492
+		}
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		someof = {
+			number = 1
+			owned = { province = 483 data = -1 }
+			owned = { province = 1611 data = -1 }
+		}
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+		NOT = {
+			domestic = { type = innovative value = 7 }
+			exists = CIL
+			exists = AMI
+			year = 1492
+			}
+	}
+	ai_trigger = {
+	}
+
+	name = "Release Kingdom of Cilicia"
+	desc = "Sire, we are in an unique position to grant independence and re-invigorate Christian states within the Holy Land. The Pope has stressed Christian duty to allow them their existence. Lets do it."
+
+	action = {
+		command = { type = free which = CIL }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 15 }
+	}
+}
+
+decision = {
+	id = 2113
+	major = no
+	unique = yes
+	potential = {
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+		NOT = { 
+			exists = TOX
+			year = 1500
+		}
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		someof = {
+			number = 2
+			owned = { province = 1594 data = -1 }
+			owned = { province = 1592 data = -1 }
+			owned = { province = 1591 data = -1 }
+			owned = { province = 1533 data = -1 }
+		}
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+		NOT = {
+			domestic = { type = innovative value = 7 }
+			exists = TOX
+			year = 1500
+			}
+	}
+	ai_trigger = {
+	}
+
+	name = "Release Kingdom of Transoxiania"
+	desc = "Sire, we are in an unique position to grant independence and re-invigorate Christian states within the Holy Land. The Pope has stressed Christian duty to allow them their existence. Lets do it."
+
+	action = {
+		command = { type = free which = TOX }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 15 }
+	}
+}
+
+###################################################
+### Crusader Kings decisions			###
+###################################################
+
+decision = {
+	id = 2200
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = ANT # Antioch
+			tag = BAS # Basra
+			tag = CYP # Cyprus
+			tag = DAM # Damascus
+			tag = EDE # Edessa
+			tag = KNI # Order of St. John
+			tag = PET # Petra
+			tag = TRP # Tripoli
+		}
+		religion = catholic
+		NOT = { exists = EGY }
+		NOT = { year = 1600 }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		someof = {
+			number = 3
+			owned = { province = 744 data = -1 }
+			owned = { province = 745 data = -1 }
+			owned = { province = 746 data = -1 }
+			owned = { province = 494 data = -1 }
+			owned = { province = 742 data = -1 }
+			owned = { province = 743 data = -1 }
+			owned = { province = 747 data = -1 }
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Proclaim the Kingdom of Egypt"
+	desc = "Our proud crusader heritage demands we wrestle the Holy Land from the clutches of our enemies. Once we have done so, we may rebuild the Kingdom of Egypt anew."
+
+	action = {
+		command = { type = vp value = 100 }
+		command = { type = capital which = 746 }
+		command = { type = conversion which = 746 }
+		command = { type = add_countryculture which = arabic }
+		command = { type = diplomats value = 2 }
+		command = { type = addcore_national which = 744 }
+		command = { type = addcore_national which = 745 }
+		command = { type = addcore_national which = 746 }
+		command = { type = addcore_national which = 494 }
+		command = { type = addcore_national which = 742 }
+		command = { type = addcore_national which = 743 }
+		command = { type = addcore_national which = 747 }
+		command = { type = flagname which = "" }
+		command = { type = country which = EGY }
+	}
+}
+
+decision = {
+	id = 2201
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = ANT # Antioch
+			tag = BAS # Basra
+			tag = CYP # Cyprus
+			tag = DAM # Damascus
+			tag = EDE # Edessa
+			tag = KNI # Order of St. John
+			tag = PET # Petra
+			tag = TRP # Tripoli
+		}
+		religion = catholic
+		NOT = { exists = NAF }
+		NOT = { year = 1600 }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		someof = {
+			number = 5
+			owned = { province = 804 data = -1 }
+			owned = { province = 805 data = -1 }
+			owned = { province = 806 data = -1 }
+			owned = { province = 741 data = -1 }
+			owned = { province = 740 data = -1 }
+			owned = { province = 739 data = -1 }
+			owned = { province = 738 data = -1 }
+			owned = { province = 737 data = -1 }
+			owned = { province = 736 data = -1 }
+			owned = { province = 735 data = -1 }
+			owned = { province = 734 data = -1 }
+			owned = { province = 733 data = -1 }
+			owned = { province = 732 data = -1 }
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Proclaim the Kingdom of North Africa"
+	desc = "Our proud crusader heritage demands we wrestle the Holy Land from the clutches of our enemies. Once we have done so, we may rebuild the Kingdom of North Africa anew."
+
+	action = {
+		command = { type = vp value = 100 }
+		command = { type = capital which = 739 }
+		command = { type = conversion which = 739 }
+		command = { type = add_countryculture which = arabic }
+		command = { type = diplomats value = 2 }
+		command = { type = addcore_national which = 804 }
+		command = { type = addcore_national which = 805 }
+		command = { type = addcore_national which = 806 }
+		command = { type = addcore_national which = 741 }
+		command = { type = addcore_national which = 740 }
+		command = { type = addcore_national which = 739 }
+		command = { type = addcore_national which = 738 }
+		command = { type = addcore_national which = 737 }
+		command = { type = addcore_national which = 736 }
+		command = { type = addcore_national which = 735 }
+		command = { type = addcore_national which = 734 }
+		command = { type = addcore_national which = 733 }
+		command = { type = addcore_national which = 732 }
+		command = { type = flagname which = "" }
+		command = { type = country which = NAF }
+	}
+}
+
+decision = {
+	id = 2202
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = ANT # Antioch
+			tag = BAS # Basra
+			tag = CYP # Cyprus
+			tag = DAM # Damascus
+			tag = EDE # Edessa
+			tag = KNI # Order of St. John
+			tag = PET # Petra
+			tag = TRP # Tripoli
+		}
+		religion = catholic
+		NOT = { exists = MES }
+		NOT = { year = 1600 }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		someof = {
+			number = 1
+			owned = { province = 488 data = -1 }
+			owned = { province = 489 data = -1 }
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Proclaim the Kingdom of Mesopotamia"
+	desc = "Our proud crusader heritage demands we wrestle the Holy Land from the clutches of our enemies. Once we have done so, we may rebuild the Kingdom of Mesopotamia anew."
+
+	action = {
+		command = { type = vp value = 100 }
+		command = { type = capital which = 489 }
+		command = { type = conversion which = 489 }
+		command = { type = add_countryculture which = arabic }
+		command = { type = diplomats value = 2 }
+		command = { type = addcore_national which = 488 }
+		command = { type = addcore_national which = 489 }
+		command = { type = flagname which = "" }
+		command = { type = country which = MES }
+	}
+}
+
+decision = {
+	id = 2203
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = ANT # Antioch
+			tag = BAS # Basra
+			tag = CYP # Cyprus
+			tag = DAM # Damascus
+			tag = EDE # Edessa
+			tag = KNI # Order of St. John
+			tag = PET # Petra
+			tag = TRP # Tripoli
+		}
+		religion = catholic
+		NOT = { exists = SYR }
+		NOT = { year = 1600 }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		someof = {
+			number = 2
+			owned = { province = 495 data = -1 }
+			owned = { province = 492 data = -1 }
+			owned = { province = 491 data = -1 }
+			owned = { province = 490 data = -1 }
+			owned = { province = 485 data = -1 }
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Proclaim the Kingdom of Syria"
+	desc = "Our proud crusader heritage demands we wrestle the Holy Land from the clutches of our enemies. Once we have done so, we may rebuild the Kingdom of Syria anew."
+
+	action = {
+		command = { type = vp value = 100 }
+		command = { type = capital which = 490 }
+		command = { type = conversion which = 490 }
+		command = { type = add_countryculture which = syrian }
+		command = { type = diplomats value = 2 }
+		command = { type = addcore_national which = 495 }
+		command = { type = addcore_national which = 492 }
+		command = { type = addcore_national which = 491 }
+		command = { type = addcore_national which = 490 }
+		command = { type = addcore_national which = 485 }
+		command = { type = flagname which = "" }
+		command = { type = country which = SYR }
+	}
+}
+
+decision = {
+	id = 2204
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = ANT # Antioch
+			tag = BAS # Basra
+			tag = CYP # Cyprus
+			tag = DAM # Damascus
+			tag = EDE # Edessa
+			tag = KNI # Order of St. John
+			tag = PET # Petra
+			tag = TRP # Tripoli
+		}
+		religion = catholic
+		NOT = { exists = ABA }
+		NOT = { year = 1600 }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		someof = {
+			number = 2
+			owned = { province = 495 data = -1 }
+			owned = { province = 496 data = -1 }
+			owned = { province = 497 data = -1 }
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Proclaim the Kingdom of Arabia"
+	desc = "Our proud crusader heritage demands we wrestle the Holy Land from the clutches of our enemies. Once we have done so, we may rebuild the Kingdom of Arabia anew."
+
+	action = {
+		command = { type = vp value = 100 }
+		command = { type = capital which = 495 }
+		command = { type = conversion which = 495 }
+		command = { type = add_countryculture which = arabic }
+		command = { type = diplomats value = 2 }
+		command = { type = addcore_national which = 495 }
+		command = { type = addcore_national which = 496 }
+		command = { type = addcore_national which = 497 }
+		command = { type = flagname which = "" }
+		command = { type = country which = ABA }
+	}
+}
+
+decision = {
+	id = 2205
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = ANT # Antioch
+			tag = BAS # Basra
+			tag = CYP # Cyprus
+			tag = DAM # Damascus
+			tag = EDE # Edessa
+			tag = KNI # Order of St. John
+			tag = PET # Petra
+			tag = TRP # Tripoli
+		}
+		religion = catholic
+		NOT = { exists = CIL }
+		NOT = { exists = AMI }
+		NOT = { year = 1600 }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		someof = {
+			number = 1
+			owned = { province = 483 data = -1 }
+			owned = { province = 1611 data = -1 }
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Proclaim the Kingdom of Cilicia"
+	desc = "Our proud crusader heritage demands we wrestle the Holy Land from the clutches of our enemies. Once we have done so, we may rebuild the Kingdom of Cilicia anew."
+
+	action = {
+		command = { type = vp value = 100 }
+		command = { type = capital which = 483 }
+		command = { type = conversion which = 483 }
+		command = { type = add_countryculture which = armenian }
+		command = { type = diplomats value = 2 }
+		command = { type = addcore_national which = 483 }
+		command = { type = addcore_national which = 1611 }
+		command = { type = flagname which = "" }
+		command = { type = country which = CIL }
+	}
+}
+
+decision = {
+	id = 2206
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = ANT # Antioch
+			tag = BAS # Basra
+			tag = CYP # Cyprus
+			tag = DAM # Damascus
+			tag = EDE # Edessa
+			tag = KNI # Order of St. John
+			tag = PET # Petra
+			tag = TRP # Tripoli
+		}
+		religion = catholic
+		NOT = { exists = TOX }
+		NOT = { year = 1600 }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		someof = {
+			number = 2
+			owned = { province = 1594 data = -1 }
+			owned = { province = 1592 data = -1 }
+			owned = { province = 1591 data = -1 }
+			owned = { province = 1533 data = -1 }
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Proclaim the Kingdom of Transoxiania"
+	desc = "Our proud crusader heritage demands we wrestle the Holy Land from the clutches of our enemies. Once we have done so, we may rebuild the Kingdom of Transoxiania anew."
+
+	action = {
+		command = { type = vp value = 100 }
+		command = { type = capital which = 1592 }
+		command = { type = conversion which = 1592 }
+		command = { type = add_countryculture which = persian }
+		command = { type = diplomats value = 2 }
+		command = { type = addcore_national which = 1594 }
+		command = { type = addcore_national which = 1592 }
+		command = { type = addcore_national which = 1591 }
+		command = { type = addcore_national which = 1533 }
+		command = { type = flagname which = "" }
+		command = { type = country which = TOX }
+	}
+}

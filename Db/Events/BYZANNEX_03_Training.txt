@@ -1,0 +1,2076 @@
+#-----------------------------------------------------------------------------
+#Crown Prince Training events
+
+#(1419-1820) The Fate of the Crown Prince
+event = {
+	id = 3001013
+	trigger = {
+		countrysize = 6 #means that at least some property has been won from the turks
+		NOT = { exists = SPR }
+	}
+	random = NO
+	country = BYZ
+	name = "The Fate of the Crown Prince"
+	desc = "Now that he no longer governs his own state, the Crown Prince wants to know what his place will be within the Empire. The Prince is keen to become a viceroy over the lands new-claimed from the Turks. The Emperor would much rather indulge him in idleness at court, where an eye can be kept on him, or keep him out of the way back in Morea. Lastly, we could also use the prince as our Megas Domestikos, supreme commmander of the army. It might be nice to have a few more Imperial generals over the years..."
+
+	date = { day = 1 month = january year = 1419 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Keep the princes at court"
+		command = { type = stability value = 2 }
+		command = { type = treasury value = -100 } #new palace
+		#command = { type = revoltrisk which = 357 value = -3 } #Thrace
+		command = { type = provincetax which = 357 value = -1 } #added instead of revolrisk above, Gloriana1337
+		command = { type = sleepevent which = 3001038 } #BYZ: Ioannes VIII - Court Training Pays Off
+		command = { type = sleepevent which = 3001039 } #BYZ: Konstantin XI - Court Training Pays Off
+		command = { type = sleepevent which = 3001040 } #BYZ: Demetrios - Court Training Pays Off
+		command = { type = sleepevent which = 3001041 } #BYZ: Andreas I - Court Training Fails
+		command = { type = sleepevent which = 3001042 } #BYZ: Manuel III - Court Training Pays Off
+		command = { type = sleepevent which = 3001043 } #BYZ: Andreas II - Court Training Pays Off
+		command = { type = sleepevent which = 3001044 } #BYZ: Ioannes IX - Court Training Pays Off
+		command = { type = sleepevent which = 3001045 } #BYZ: Michael X - Court Training Pays Off
+		command = { type = sleepevent which = 3001046 } #BYZ: Ioannes X - Court Training Pays Off
+		command = { type = sleepevent which = 3001047 } #BYZ: Andronicus V - Court Training Pays Off
+		command = { type = sleepevent which = 3001048 } #BYZ: Konstantinos XII - Court Training Pays Off
+		command = { type = sleepevent which = 3001049 } #BYZ: Konstantinos XIII - Court Training Pays Off
+		command = { type = sleepevent which = 3001050 } #BYZ: Nikolai II - Court Training Fails
+		command = { type = sleepevent which = 3001051 } #BYZ: Alexius VI - Court Training Pays Off
+		command = { type = sleepevent which = 3001052 } #BYZ: Ioannes XI - Court Training Pays Off
+		command = { type = sleepevent which = 3001053 } #BYZ: Konstantinos XIV - Court Training Pays Off
+		command = { type = sleepevent which = 3001054 } #BYZ: Konstantinos XV - Court Training Pays Off
+		command = { type = sleepevent which = 3001055 } #BYZ: Michael XI - Court Training Pays Off
+		command = { type = sleepevent which = 3001056 } #BYZ: Alexius VII - Court Training Pays Off
+		command = { type = sleepevent which = 3001057 } #BYZ: Konstantinos XVI - Court Training Pays Off
+		command = { type = sleepevent which = 3001058 } #BYZ: Nikolai III - Court Training Pays Off
+		command = { type = sleepevent which = 3001059 } #BYZ: Konstantinos XVII - Court Training Pays Off
+		command = { type = sleepevent which = 3001060 } #BYZ: Ioannes XII - Court Training Pays Off
+		command = { type = sleepevent which = 3001061 } #BYZ: Ioannes XIII - Court Training Pays Off
+		command = { type = sleepevent which = 3001063 } #BYZ: Ioannes VIII - Military Training Pays Off
+		command = { type = sleepevent which = 3001064 } #BYZ: Konstantinos XI - Military Training Pays Off
+		command = { type = sleepevent which = 3001065 } #BYZ: Demetrios - Military Training Pays Off
+		command = { type = sleepevent which = 3001066 } #BYZ: Andreas I - Military Training Fails
+		command = { type = sleepevent which = 3001067 } #BYZ: Manuel III - Military Training Pays Off
+		command = { type = sleepevent which = 3001068 } #BYZ: Andreas II - Military Training Pays Off
+		command = { type = sleepevent which = 3001069 } #BYZ: Ioannes IX - Military Training Pays Off
+		command = { type = sleepevent which = 3001070 } #BYZ: Michael X - Military Training Pays Off
+		command = { type = sleepevent which = 3001071 } #BYZ: Ioannes X - Military Training Pays Off
+		command = { type = sleepevent which = 3001072 } #BYZ: Andronicus V - Military Training Pays Off
+		command = { type = sleepevent which = 3001073 } #BYZ: Konstantinos XII - Military Training Pays Off
+		command = { type = sleepevent which = 3001074 } #BYZ: Konstantinos XIII - Military Training Pays Off
+		command = { type = sleepevent which = 3001075 } #BYZ: Nikolai II - Military Training Fails
+		command = { type = sleepevent which = 3001076 } #BYZ: Alexius VI - Military Training Pays Off
+		command = { type = sleepevent which = 3001077 } #BYZ: Ioannes XI - Military Training Pays Off
+		command = { type = sleepevent which = 3001078 } #BYZ: Konstantinos XIV - Military Training Pays Off
+		command = { type = sleepevent which = 3001079 } #BYZ: Konstantinos XV - Military Training Pays Off
+		command = { type = sleepevent which = 3001080 } #BYZ: Michael XI - Military Training Pays Off
+		command = { type = sleepevent which = 3001081 } #BYZ: Alexius VII - Military Training Pays Off
+		command = { type = sleepevent which = 3001082 } #BYZ: Konstantinos XVI - Military Training Pays Off
+		command = { type = sleepevent which = 3001083 } #BYZ: Nikolai III - Military Training Pays Off
+		command = { type = sleepevent which = 3001084 } #BYZ: Konstantinos XVII - Military Training Pays Off
+		command = { type = sleepevent which = 3001085 } #BYZ: Ioannes XII - Military Training Pays Off
+		command = { type = sleepevent which = 3001086 } #BYZ: Ioannes XIII - Military Training Pays Off
+		command = { type = sleepevent which = 3001468 } #BYZ: A Lion in Winter
+	}
+	action_b = {
+		name = "Return the princes to Morea"
+		command = { type = stability value = 1 }
+		command = { type = provincemanpower which = 360 value = 2 } #Morea
+		command = { type = provincetax which = 360 value = 2 } #Morea
+		command = { type = sleepevent which = 3001014 } #BYZ: Ioannes VIII - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001015 } #BYZ: Konstantinos XI - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001016 } #BYZ: Demetrios - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001017 } #BYZ: Andreas I - Diplomatic Training Fails
+		command = { type = sleepevent which = 3001018 } #BYZ: Manuel V - Diplmatic Training Pays Off
+		command = { type = sleepevent which = 3001019 } #BYZ: Andreas II - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001020 } #BYZ: Ioannes IX - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001021 } #BYZ: Michael X - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001022 } #BYZ: Ioannes X - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001023 } #BYZ: Andronicus V - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001024 } #BYZ: Konstantinos XII - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001025 } #BYZ: Konstantinos XIII - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001026 } #BYZ: Nikolai II - No Diplomatic Training Provided
+		command = { type = sleepevent which = 3001027 } #BYZ: Alexius VI - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001028 } #BYZ: Ioannes XI - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001029 } #BYZ: Konstantinos XIV - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001030 } #BYZ: Konstantinos XV - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001031 } #BYZ: Michael XI - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001032 } #BYZ: Alexius VII - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001033 } #BYZ: Konstantinos XVI - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001034 } #BYZ: Nikolai III - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001035 } #BYZ: Konstantinos XVII - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001036 } #BYZ: Ioannes XII - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001037 } #BYZ: Ioannes XIII - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001063 } #BYZ: Ioannes VIII - Military Training Pays Off
+		command = { type = sleepevent which = 3001064 } #BYZ: Konstantinos XI - Military Training Pays Off
+		command = { type = sleepevent which = 3001065 } #BYZ: Demetrios - Military Training Pays Off
+		command = { type = sleepevent which = 3001066 } #BYZ: Andreas I - Military Training Fails
+		command = { type = sleepevent which = 3001067 } #BYZ: Manuel III - Military Training Pays Off
+		command = { type = sleepevent which = 3001068 } #BYZ: Andreas II - Military Training Pays Off
+		command = { type = sleepevent which = 3001069 } #BYZ: Ioannes IX - Military Training Pays Off
+		command = { type = sleepevent which = 3001070 } #BYZ: Michael X - Military Training Pays Off
+		command = { type = sleepevent which = 3001071 } #BYZ: Ioannes X - Military Training Pays Off
+		command = { type = sleepevent which = 3001072 } #BYZ: Andronicus V - Military Training Pays Off
+		command = { type = sleepevent which = 3001073 } #BYZ: Konstantinos XII - Military Training Pays Off
+		command = { type = sleepevent which = 3001074 } #BYZ: Konstantinos XIII - Military Training Pays Off
+		command = { type = sleepevent which = 3001075 } #BYZ: Nikolai II - Military Training Fails
+		command = { type = sleepevent which = 3001076 } #BYZ: Alexius VI - Military Training Pays Off
+		command = { type = sleepevent which = 3001077 } #BYZ: Ioannes XI - Military Training Pays Off
+		command = { type = sleepevent which = 3001078 } #BYZ: Konstantinos XIV - Military Training Pays Off
+		command = { type = sleepevent which = 3001079 } #BYZ: Konstantinos XV - Military Training Pays Off
+		command = { type = sleepevent which = 3001080 } #BYZ: Michael XI - Military Training Pays Off
+		command = { type = sleepevent which = 3001081 } #BYZ: Alexius VII - Military Training Pays Off
+		command = { type = sleepevent which = 3001082 } #BYZ: Konstantinos XVI - Military Training Pays Off
+		command = { type = sleepevent which = 3001083 } #BYZ: Nikolai III - Military Training Pays Off
+		command = { type = sleepevent which = 3001084 } #BYZ: Konstantinos XVII - Military Training Pays Off
+		command = { type = sleepevent which = 3001085 } #BYZ: Ioannes XII - Military Training Pays Off
+		command = { type = sleepevent which = 3001086 } #BYZ: Ioannes XIII - Military Training Pays Off
+	}
+	action_c = {
+		name = "Create the princes Strategoi tes Anatoles" #Generals/Governors of the East
+		command = { type = domestic which = CENTRALIZATION value = -3 }
+		command = { type = provincetax which = 476 value = 1 } #Angora
+		command = { type = provincetax which = 477 value = 1 } #Anatolia
+		command = { type = provincetax which = 478 value = 1 } #Smyrna
+		command = { type = provincetax which = 482 value = 1 } #Konya
+		command = { type = provincetax which = 483 value = 1 } #Adana
+		command = { type = provincetax which = 1610 value = 1 } #Antalya
+		#command = { type = province_revoltrisk which = 476 value = -1 } #Angora
+		#command = { type = province_revoltrisk which = 477 value = -1 } #Anatolia
+		#command = { type = province_revoltrisk which = 478 value = -1 } #Smyrna
+		#command = { type = province_revoltrisk which = 482 value = -1 } #Konya
+		#command = { type = province_revoltrisk which = 483 value = -1 } #Adana
+		#command = { type = province_revoltrisk which = 1610 value = -1 } #Antalya
+		command = { type = sleepevent which = 3001014 } #BYZ: Ioannes VIII - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001015 } #BYZ: Konstantinos XI - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001016 } #BYZ: Demetrios - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001017 } #BYZ: Andreas I - Diplomatic Training Fails
+		command = { type = sleepevent which = 3001018 } #BYZ: Manuel V - Diplmatic Training Pays Off
+		command = { type = sleepevent which = 3001019 } #BYZ: Andreas II - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001020 } #BYZ: Ioannes IX - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001021 } #BYZ: Michael X - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001022 } #BYZ: Ioannes X - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001023 } #BYZ: Andronicus V - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001024 } #BYZ: Konstantinos XII - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001025 } #BYZ: Konstantinos XIII - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001026 } #BYZ: Nikolai II - No Diplomatic Training Provided
+		command = { type = sleepevent which = 3001027 } #BYZ: Alexius VI - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001028 } #BYZ: Ioannes XI - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001029 } #BYZ: Konstantinos XIV - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001030 } #BYZ: Konstantinos XV - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001031 } #BYZ: Michael XI - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001032 } #BYZ: Alexius VII - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001033 } #BYZ: Konstantinos XVI - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001034 } #BYZ: Nikolai III - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001035 } #BYZ: Konstantinos XVII - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001036 } #BYZ: Ioannes XII - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001037 } #BYZ: Ioannes XIII - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001038 } #BYZ: Ioannes VIII - Court Training Pays Off
+		command = { type = sleepevent which = 3001039 } #BYZ: Konstantin XI - Court Training Pays Off
+		command = { type = sleepevent which = 3001040 } #BYZ: Demetrios - Court Training Pays Off
+		command = { type = sleepevent which = 3001041 } #BYZ: Andreas I - Court Training Fails
+		command = { type = sleepevent which = 3001042 } #BYZ: Manuel III - Court Training Pays Off
+		command = { type = sleepevent which = 3001043 } #BYZ: Andreas II - Court Training Pays Off
+		command = { type = sleepevent which = 3001044 } #BYZ: Ioannes IX - Court Training Pays Off
+		command = { type = sleepevent which = 3001045 } #BYZ: Michael X - Court Training Pays Off
+		command = { type = sleepevent which = 3001046 } #BYZ: Ioannes X - Court Training Pays Off
+		command = { type = sleepevent which = 3001047 } #BYZ: Andronicus V - Court Training Pays Off
+		command = { type = sleepevent which = 3001048 } #BYZ: Konstantinos XII - Court Training Pays Off
+		command = { type = sleepevent which = 3001049 } #BYZ: Konstantinos XIII - Court Training Pays Off
+		command = { type = sleepevent which = 3001050 } #BYZ: Nikolai II - Court Training Fails
+		command = { type = sleepevent which = 3001051 } #BYZ: Alexius VI - Court Training Pays Off
+		command = { type = sleepevent which = 3001052 } #BYZ: Ioannes XI - Court Training Pays Off
+		command = { type = sleepevent which = 3001053 } #BYZ: Konstantinos XIV - Court Training Pays Off
+		command = { type = sleepevent which = 3001054 } #BYZ: Konstantinos XV - Court Training Pays Off
+		command = { type = sleepevent which = 3001055 } #BYZ: Michael XI - Court Training Pays Off
+		command = { type = sleepevent which = 3001056 } #BYZ: Alexius VII - Court Training Pays Off
+		command = { type = sleepevent which = 3001057 } #BYZ: Konstantinos XVI - Court Training Pays Off
+		command = { type = sleepevent which = 3001058 } #BYZ: Nikolai III - Court Training Pays Off
+		command = { type = sleepevent which = 3001059 } #BYZ: Konstantinos XVII - Court Training Pays Off
+		command = { type = sleepevent which = 3001060 } #BYZ: Ioannes XII - Court Training Pays Off
+		command = { type = sleepevent which = 3001061 } #BYZ: Ioannes XIII - Court Training Pays Off
+		command = { type = sleepevent which = 3001063 } #BYZ: Ioannes VIII - Military Training Pays Off
+		command = { type = sleepevent which = 3001064 } #BYZ: Konstantinos XI - Military Training Pays Off
+		command = { type = sleepevent which = 3001065 } #BYZ: Demetrios - Military Training Pays Off
+		command = { type = sleepevent which = 3001066 } #BYZ: Andreas I - Military Training Fails
+		command = { type = sleepevent which = 3001067 } #BYZ: Manuel III - Military Training Pays Off
+		command = { type = sleepevent which = 3001068 } #BYZ: Andreas II - Military Training Pays Off
+		command = { type = sleepevent which = 3001069 } #BYZ: Ioannes IX - Military Training Pays Off
+		command = { type = sleepevent which = 3001070 } #BYZ: Michael X - Military Training Pays Off
+		command = { type = sleepevent which = 3001071 } #BYZ: Ioannes X - Military Training Pays Off
+		command = { type = sleepevent which = 3001072 } #BYZ: Andronicus V - Military Training Pays Off
+		command = { type = sleepevent which = 3001073 } #BYZ: Konstantinos XII - Military Training Pays Off
+		command = { type = sleepevent which = 3001074 } #BYZ: Konstantinos XIII - Military Training Pays Off
+		command = { type = sleepevent which = 3001075 } #BYZ: Nikolai II - Military Training Fails
+		command = { type = sleepevent which = 3001076 } #BYZ: Alexius VI - Military Training Pays Off
+		command = { type = sleepevent which = 3001077 } #BYZ: Ioannes XI - Military Training Pays Off
+		command = { type = sleepevent which = 3001078 } #BYZ: Konstantinos XIV - Military Training Pays Off
+		command = { type = sleepevent which = 3001079 } #BYZ: Konstantinos XV - Military Training Pays Off
+		command = { type = sleepevent which = 3001080 } #BYZ: Michael XI - Military Training Pays Off
+		command = { type = sleepevent which = 3001081 } #BYZ: Alexius VII - Military Training Pays Off
+		command = { type = sleepevent which = 3001082 } #BYZ: Konstantinos XVI - Military Training Pays Off
+		command = { type = sleepevent which = 3001083 } #BYZ: Nikolai III - Military Training Pays Off
+		command = { type = sleepevent which = 3001084 } #BYZ: Konstantinos XVII - Military Training Pays Off
+		command = { type = sleepevent which = 3001085 } #BYZ: Ioannes XII - Military Training Pays Off
+		command = { type = sleepevent which = 3001086 } #BYZ: Ioannes XIII - Military Training Pays Off
+		command = { type = sleepevent which = 3001185 } #BYZ: Jihad in Anatolia
+		command = { type = sleepevent which = 3001186 } #BYZ: Ottoman Pretender
+		command = { type = sleepevent which = 3001187 } #BYZ: Last Stand of the House of Osman
+		command = { type = trigger which = 3001062 } #BYZ: Prince Andreas Goes Native
+	}
+	action_d = {
+		name = "Dub them Grand Domestic"
+		command = { type = stability value = -1 }
+		command = { type = wakeleader which = 027860 } #Demetrios
+		command = { type = wakeleader which = 027861 } #Andreas II
+		command = { type = wakeleader which = 027862 } #Ioannes
+		command = { type = wakeleader which = 027863 } #Iacobus (Michael)
+		command = { type = wakeleader which = 027864 } #Andronicos
+		command = { type = wakeleader which = 027865 } #Alexius
+		command = { type = wakeleader which = 027866 } #Petros (Konstantinos)
+		command = { type = wakeleader which = 027867 } #Konstantinos
+		command = { type = wakeleader which = 027868 } #Michael
+		command = { type = wakeleader which = 027869 } #Ioannes
+		command = { type = wakeleader which = 027870 } #Ioannes
+		command = { type = sleepevent which = 3001014 } #BYZ: Ioannes VIII - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001015 } #BYZ: Konstantinos XI - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001016 } #BYZ: Demetrios - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001017 } #BYZ: Andreas I - Diplomatic Training Fails
+		command = { type = sleepevent which = 3001018 } #BYZ: Manuel V - Diplmatic Training Pays Off
+		command = { type = sleepevent which = 3001019 } #BYZ: Andreas II - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001020 } #BYZ: Ioannes IX - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001021 } #BYZ: Michael X - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001022 } #BYZ: Ioannes X - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001023 } #BYZ: Andronicus V - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001024 } #BYZ: Konstantinos XII - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001025 } #BYZ: Konstantinos XIII - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001026 } #BYZ: Nikolai II - No Diplomatic Training Provided
+		command = { type = sleepevent which = 3001027 } #BYZ: Alexius VI - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001028 } #BYZ: Ioannes XI - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001029 } #BYZ: Konstantinos XIV - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001030 } #BYZ: Konstantinos XV - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001031 } #BYZ: Michael XI - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001032 } #BYZ: Alexius VII - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001033 } #BYZ: Konstantinos XVI - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001034 } #BYZ: Nikolai III - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001035 } #BYZ: Konstantinos XVII - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001036 } #BYZ: Ioannes XII - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001037 } #BYZ: Ioannes XIII - Diplomatic Training Pays Off
+		command = { type = sleepevent which = 3001038 } #BYZ: Ioannes VIII - Court Training Pays Off
+		command = { type = sleepevent which = 3001039 } #BYZ: Konstantin XI - Court Training Pays Off
+		command = { type = sleepevent which = 3001040 } #BYZ: Demetrios - Court Training Pays Off
+		command = { type = sleepevent which = 3001041 } #BYZ: Andreas I - Court Training Fails
+		command = { type = sleepevent which = 3001042 } #BYZ: Manuel III - Court Training Pays Off
+		command = { type = sleepevent which = 3001043 } #BYZ: Andreas II - Court Training Pays Off
+		command = { type = sleepevent which = 3001044 } #BYZ: Ioannes IX - Court Training Pays Off
+		command = { type = sleepevent which = 3001045 } #BYZ: Michael X - Court Training Pays Off
+		command = { type = sleepevent which = 3001046 } #BYZ: Ioannes X - Court Training Pays Off
+		command = { type = sleepevent which = 3001047 } #BYZ: Andronicus V - Court Training Pays Off
+		command = { type = sleepevent which = 3001048 } #BYZ: Konstantinos XII - Court Training Pays Off
+		command = { type = sleepevent which = 3001049 } #BYZ: Konstantinos XIII - Court Training Pays Off
+		command = { type = sleepevent which = 3001050 } #BYZ: Nikolai II - Court Training Fails
+		command = { type = sleepevent which = 3001051 } #BYZ: Alexius VI - Court Training Pays Off
+		command = { type = sleepevent which = 3001052 } #BYZ: Ioannes XI - Court Training Pays Off
+		command = { type = sleepevent which = 3001053 } #BYZ: Konstantinos XIV - Court Training Pays Off
+		command = { type = sleepevent which = 3001054 } #BYZ: Konstantinos XV - Court Training Pays Off
+		command = { type = sleepevent which = 3001055 } #BYZ: Michael XI - Court Training Pays Off
+		command = { type = sleepevent which = 3001056 } #BYZ: Alexius VII - Court Training Pays Off
+		command = { type = sleepevent which = 3001057 } #BYZ: Konstantinos XVI - Court Training Pays Off
+		command = { type = sleepevent which = 3001058 } #BYZ: Nikolai III - Court Training Pays Off
+		command = { type = sleepevent which = 3001059 } #BYZ: Konstantinos XVII - Court Training Pays Off
+		command = { type = sleepevent which = 3001060 } #BYZ: Ioannes XII - Court Training Pays Off
+		command = { type = sleepevent which = 3001061 } #BYZ: Ioannes XIII - Court Training Pays Off
+	}
+}
+
+#(1425) Ioannes VIII - Diplomatic Training Pays Off
+event = {
+	id = 3001014
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027501 #Ioannes VIII (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Diplomatic Training Pays Off."
+	desc = "Years of tutelage at court have made Ioannes a better diplomat"
+
+	date = { day = 21 month = july year = 1425 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1425 }
+
+	action_a = {
+		name = "Which fork do I use again?"
+		command = { type = DIP which = 1 value = 1200 }
+		command = { type = relation which = -1 value = 100 }
+		command = { type = relation which = -1 value = 100 }
+	}
+}
+
+#(1448) Konstantinos XI - Diplomatic Training Pays Off
+event = {
+	id = 3001015
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027502 #Konstantinos XI Dragases (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Diplomatic Training Pays Off."
+	desc = "Years of tutelage at court have made Konstantinos a better diplomat."
+
+	date = { day = 29 month = october year = 1448 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1448 }
+
+	action_a = {
+		name = "Which fork do I use again?"
+		command = { type = DIP which = 1 value = 1200 }
+		command = { type = relation which = -1 value = 100 }
+		command = { type = relation which = -1 value = 100 }
+	}
+}
+
+#(1453) Demetrios - Diplomatic Training Pays Off
+event = {
+	id = 3001016
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027503 #Demetrios (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Diplomatic Training Pays Off."
+	desc = "Years of tutelage at court have made Demetrios a better diplomat"
+
+	date = { day = 29 month = may year = 1453 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = may year = 1453 }
+
+	action_a = {
+		name = "Which fork do I use again?"
+		command = { type = DIP which = 1 value = 1200 }
+		command = { type = relation which = -1 value = 100 }
+		command = { type = relation which = -1 value = 100 }
+	}
+}
+
+#(1470) Andreas I - Diplomatic Training Fails
+event = {
+	id = 3001017
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027504 #Andreas I (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Diplomatic Training fails..."
+	desc = "Andreas was just kind of beyond training."
+
+	date = { day = 1 month = january year = 1470 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1470 }
+
+	action_a = {
+		name = "Where is Budapest again?"
+		command = { type = DIP which = -1 value = 1200 }
+		command = { type = relation which = -1 value = -50 }
+		command = { type = relation which = -1 value = -50 }
+	}
+}
+
+#(1502) Manuel V - Diplmatic Training Pays Off
+event = {
+	id = 3001018
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027505 #Manuel V (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Diplomatic Training Pays Off."
+	desc = "Years of tutelage at court have made Manuel a better diplomat"
+
+	date = { day = 7 month = april year = 1502 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1502 }
+
+	action_a = {
+		name = "Which fork do I use again?"
+		command = { type = DIP which = 1 value = 1200 }
+		command = { type = relation which = -1 value = 100 }
+		command = { type = relation which = -1 value = 100 }
+	}
+}
+
+#(1512) Andreas II - Diplomatic Training Pays Off
+event = {
+	id = 3001019
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027506 #Andreas II (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Diplomatic Training Pays Off"
+	desc = "Years of tutelage at court have made Andreas a better diplomat"
+
+	date = { day = 1 month = january year = 1512 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1512 }
+
+	action_a = {
+		name = "Which fork do I use again?"
+		command = { type = DIP which = 1 value = 1200 }
+		command = { type = relation which = -1 value = 100 }
+		command = { type = relation which = -1 value = 100 }
+	}
+}
+
+#(1519) Ioannes IX - Diplomatic Training Pays Off
+event = {
+	id = 3001020
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027507 #Ioannes IX * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Diplomatic Training Pays Off"
+	desc = "Years of tutelage at court have made Ioannes a better diplomat"
+
+	date = { day = 1 month = january year = 1519 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1519 }
+
+	action_a = {
+		name = "Which fork do I use again?"
+		command = { type = DIP which = 1 value = 1200 }
+		command = { type = relation which = -1 value = 100 }
+		command = { type = relation which = -1 value = 100 }
+	}
+}
+
+#(1535) Michael X - Diplomatic Training Pays Off
+event = {
+	id = 3001021
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027508 #Michael X * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Diplomatic Training Pays Off"
+	desc = "Years of tutelage at court have made Michael a better diplomat"
+
+	date = { day = 1 month = january year = 1535 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1535 }
+
+	action_a = {
+		name = "Which fork do I use again?"
+		command = { type = DIP which = 1 value = 1200 }
+		command = { type = relation which = -1 value = 100 }
+		command = { type = relation which = -1 value = 100 }
+	}
+}
+
+#(1542) Ioannes X - Diplomatic Training Pays Off
+event = {
+	id = 3001022
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027509 #Ioannes X * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Diplomatic Training Pays Off"
+	desc = "Years of tutelage at court have made Ioannes a better diplomat"
+
+	date = { day = 1 month = january year = 1542 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1542 }
+
+	action_a = {
+		name = "Which fork do I use again?"
+		command = { type = DIP which = 1 value = 1200 }
+		command = { type = relation which = -1 value = 100 }
+		command = { type = relation which = -1 value = 100 }
+	}
+}
+
+#(1566) Andronicus V - Diplomatic Training Pays Off
+event = {
+	id = 3001023
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027511 #Andronicus V * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Diplomatic Training Pays Off"
+	desc = "Years of tutelage at court have made Andronikos a better diplomat"
+
+	date = { day = 1 month = january year = 1566 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1566 }
+
+	action_a = {
+		name = "Which fork do I use again?"
+		command = { type = DIP which = 1 value = 1200 }
+		command = { type = relation which = -1 value = 100 }
+		command = { type = relation which = -1 value = 100 }
+	}
+}
+
+#(1581) Konstantinos XII - Diplomatic Training Pays Off
+event = {
+	id = 3001024
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027512 #Konstantinos XII * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Diplomatic Training Pays Off"
+	desc = "Years of tutelage at court have made Konstantinos a better diplomat"
+
+	date = { day = 1 month = january year = 1581 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1581 }
+
+	action_a = {
+		name = "Which fork do I use again?"
+		command = { type = DIP which = 1 value = 1200 }
+		command = { type = relation which = -1 value = 100 }
+		command = { type = relation which = -1 value = 100 }
+	}
+}
+
+#(1604) Konstantinos XIII - Diplomatic Training Pays Off
+event = {
+	id = 3001025
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027513 #Konstantinos XIII * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Diplomatic Training Pays Off"
+	desc = "Years of tutelage at court have made Konstantinos a better diplomat"
+
+	date = { day = 1 month = january year = 1604 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1604 }
+
+	action_a = {
+		name = "Which fork do I use again?"
+		command = { type = DIP which = 1 value = 1200 }
+		command = { type = relation which = -1 value = 100 }
+		command = { type = relation which = -1 value = 100 }
+	}
+}
+
+#(1620) Nikolai II - No Diplomatic Training Provided
+event = {
+	id = 3001026
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027515 #Nikolai II * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "No Diplomatic Training Provided"
+	desc = "Since he was never given any access to power and was only adopted at the last minute, Nikolai didn't have any experience with the diplomatic corps."
+
+	date = { day = 1 month = january year = 1620 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1620 }
+
+	action_a = {
+		name = "Should I know you?"
+		command = { type = DIP which = -1 value = 1200 }
+		command = { type = relation which = -1 value = -150 }
+		command = { type = relation which = -1 value = -50 }
+		command = { type = relation which = -1 value = -50 }
+		command = { type = relation which = -1 value = -50 }
+	}
+}
+
+#(1623) Alexius VI - Diplomatic Training Pays Off
+event = {
+	id = 3001027
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027516 #Alexius VI * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Diplomatic Training Pays Off"
+	desc = "Years of tutelage at court have made Alexius a better diplomat"
+
+	date = { day = 1 month = january year = 1623 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1623 }
+
+	action_a = {
+		name = "Which fork do I use again?"
+		command = { type = DIP which = 1 value = 1200 }
+		command = { type = relation which = -1 value = 100 }
+		command = { type = relation which = -1 value = 100 }
+	}
+}
+
+#(1660) Ioannes XI - Diplomatic Training Pays Off
+event = {
+	id = 3001028
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027517 #Ioannes XI * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Diplomatic Training Pays Off"
+	desc = "Years of tutelage at court have made Ioannes a better diplomat"
+
+	date = { day = 1 month = january year = 1660 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1660 }
+
+	action_a = {
+		name = "Which fork do I use again?"
+		command = { type = DIP which = 1 value = 1200 }
+		command = { type = relation which = -1 value = 100 }
+		command = { type = relation which = -1 value = 100 }
+	}
+}
+
+#(1678) Konstantinos XIV - Diplomatic Training Pays Off
+event = {
+	id = 3001029
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027518 #Konstantinos XIV * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Diplomatic Training Pays Off"
+	desc = "Years of tutelage at court have made Konstantinos a better diplomat"
+
+	date = { day = 1 month = january year = 1678 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1678 }
+
+	action_a = {
+		name = "Which fork do I use again?"
+		command = { type = DIP which = 1 value = 1200 }
+		command = { type = relation which = -1 value = 100 }
+		command = { type = relation which = -1 value = 100 }
+	}
+}
+
+#(1699) Konstantinos XV - Diplomatic Training Pays Off
+event = {
+	id = 3001030
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027519 #Konstantinos XV * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Diplomatic Training Pays Off"
+	desc = "Years of tutelage at court have made Konstantinos a better diplomat"
+
+	date = { day = 1 month = january year = 1699 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1699 }
+
+	action_a = {
+		name = "Which fork do I use again?"
+		command = { type = DIP which = 1 value = 1200 }
+		command = { type = relation which = -1 value = 100 }
+		command = { type = relation which = -1 value = 100 }
+	}
+}
+
+#(1712) Michael XI - Diplomatic Training Pays Off
+event = {
+	id = 3001031
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027520 #Michael XI * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Training pays off"
+	desc = "Years of tutelage at court have made Michael a better diplomat"
+
+	date = { day = 1 month = january year = 1712 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1712 }
+
+	action_a = {
+		name = "Which fork do I use again?"
+		command = { type = DIP which = 1 value = 1200 }
+		command = { type = relation which = -1 value = 100 }
+		command = { type = relation which = -1 value = 100 }
+	}
+}
+
+#(1728) Alexius VII - Diplomatic Training Pays Off
+event = {
+	id = 3001032
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027521 #Alexius VII * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Diplomatic Training Pays Off"
+	desc = "Years of tutelage at court have made Alexius a better diplomat"
+
+	date = { day = 1 month = january year = 1728 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1728 }
+
+	action_a = {
+		name = "Which fork do I use again?"
+		command = { type = DIP which = 1 value = 1200 }
+		command = { type = relation which = -1 value = 100 }
+		command = { type = relation which = -1 value = 100 }
+	}
+}
+
+#(1750) Konstantinos XVI - Diplomatic Training Pays Off
+event = {
+	id = 3001033
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027522 #Konstantinos XVI * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Diplomatic Training Pays Off"
+	desc = "Years of tutelage at court have made Konstantinos a better diplomat"
+
+	date = { day = 1 month = january year = 1750 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1750 }
+
+	action_a = {
+		name = "Which fork do I use again?"
+		command = { type = DIP which = 1 value = 1200 }
+		command = { type = relation which = -1 value = 100 }
+		command = { type = relation which = -1 value = 100 }
+	}
+}
+
+#(1762) Nikolai III - Diplomatic Training Pays Off
+event = {
+	id = 3001034
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027523 #Nikolai III * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Diplomatic Training Pays Off"
+	desc = "Years of tutelage at court have made Nikolai a better diplomat"
+
+	date = { day = 1 month = january year = 1762 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1762 }
+
+	action_a = {
+		name = "Which fork do I use again?"
+		command = { type = DIP which = 1 value = 1200 }
+		command = { type = relation which = -1 value = 100 }
+		command = { type = relation which = -1 value = 100 }
+	}
+}
+
+#(1766) Konstantinos XVII - Diplomatic Training Pays Off
+event = {
+	id = 3001035
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027524 #Konstantinos XVII * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Diplomatic Training Pays Off"
+	desc = "Years of tutelage at court have made Konstantinos a better diplomat"
+
+	date = { day = 1 month = january year = 1766 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1766 }
+
+	action_a = {
+		name = "Which fork do I use again?"
+		command = { type = DIP which = 1 value = 1200 }
+		command = { type = relation which = -1 value = 100 }
+		command = { type = relation which = -1 value = 100 }
+	}
+}
+
+#(1778) Ioannes XII - Diplomatic Training Pays Off
+event = {
+	id = 3001036
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027525 #Ioannes XII * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Diplomatic Training Pays Off"
+	desc = "Years of tutelage at court have made Ioannes a better diplomat"
+
+	date = { day = 1 month = january year = 1778 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1778 }
+
+	action_a = {
+		name = "Which fork do I use again?"
+		command = { type = DIP which = 1 value = 1200 }
+		command = { type = relation which = -1 value = 100 }
+		command = { type = relation which = -1 value = 100 }
+	}
+}
+
+#(1805) Ioannes XIII - Diplomatic Training Pays Off
+event = {
+	id = 3001037
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027526 #Ioannes XIII * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Diplomatic Training Pays Off"
+	desc = "Years of tutelage at court have made Ioannes a better diplomat"
+
+	date = { day = 1 month = january year = 1805 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1805 }
+
+	action_a = {
+		name = "Which fork do I use again?"
+		command = { type = DIP which = 1 value = 1200 }
+		command = { type = relation which = -1 value = 100 }
+		command = { type = relation which = -1 value = 100 }
+	}
+}
+
+#(1425) Ioannes VIII - Court Training Pays Off
+event = {
+	id = 3001038
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027501 #Ioannes VIII (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Court Training Pays Off"
+	desc = "Years of rule in Morea have made Ioannes a better administrator."
+
+	date = { day = 21 month = july year = 1425 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1442 }
+
+	action_a = {
+		name = "He used to run into this problem all the time"
+		command = { type = ADM which = 1 value = 1200 }
+		command = { type = trade value = 100 }
+		command = { type = infra value = 100 }
+	}
+}
+
+#(1448) Konstantin XI - Court Training Pays Off
+event = {
+	id = 3001039
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027502 #Konstantinos XI Dragases (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Court Training Pays Off"
+	desc = "Years of rule in Morea have made Konstantinos a better administrator."
+
+	date = { day = 29 month = october year = 1448 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1448 }
+
+	action_a = {
+		name = "He used to run into this problem all the time"
+		command = { type = ADM which = 1 value = 1200 }
+		command = { type = trade value = 100 }
+		command = { type = infra value = 100 }
+	}
+}
+
+#(1453) Demetrios - Court Training Pays Off
+event = {
+	id = 3001040
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027503 #Demetrios (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Court Training Pays Off"
+	desc = "Years of rule in Morea have made Demetrios a better administrator"
+
+	date = { day = 29 month = may year = 1453 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = may year = 1453 }
+
+	action_a = {
+		name = "He used to run into this problem all the time"
+		command = { type = ADM which = 1 value = 1200 }
+		command = { type = trade value = 100 }
+		command = { type = infra value = 100 }
+	}
+}
+
+#(1470) Andreas I - Court Training Fails
+event = {
+	id = 3001041
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027504 #Andreas I (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Court Training fails..."
+	desc = "Andreas was just kind of beyond training."
+
+	date = { day = 1 month = january year = 1470 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1470 }
+
+	action_a = {
+		name = "Must be why he spent a lot of time with the Turks."
+		command = { type = ADM which = -1 value = 1200 }
+		command = { type = trade value = -100 }
+		command = { type = infra value = -100 }
+	}
+}
+
+#(1502) Manuel III - Court Training Pays Off
+event = {
+	id = 3001042
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027505 #Manuel III (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Court Training Pays Off"
+	desc = "Years of rule in Morea have made Manuel a better administrator"
+
+	date = { day = 7 month = april year = 1502 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1502 }
+
+	action_a = {
+		name = "He used to run into this problem all the time"
+		command = { type = ADM which = 1 value = 1200 }
+		command = { type = trade value = 100 }
+		command = { type = infra value = 100 }
+	}
+}
+
+#(1512) Andreas II - Court Training Pays Off
+event = {
+	id = 3001043
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027506 #Andreas II (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Court Training Pays Off"
+	desc = "Years of rule in Morea have made Andreas a better administrator"
+
+	date = { day = 1 month = january year = 1512 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1512 }
+
+	action_a = {
+		name = "He used to run into this problem all the time"
+		command = { type = ADM which = 1 value = 1200 }
+		command = { type = trade value = 100 }
+		command = { type = infra value = 100 }
+	}
+}
+
+#(1519) Ioannes IX - Court Training Pays Off
+event = {
+	id = 3001044
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027507 #Ioannes IX * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Court Training Pays Off"
+	desc = "Years of rule in Morea have made Ioannes a better administrator"
+
+	date = { day = 1 month = january year = 1519 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1519 }
+
+	action_a = {
+		name = "He used to run into this problem all the time"
+		command = { type = ADM which = 1 value = 1200 }
+		command = { type = trade value = 100 }
+		command = { type = infra value = 100 }
+	}
+}
+
+#(1535) Michael X - Court Training Pays Off
+event = {
+	id = 3001045
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027508 #Michael X * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Court Training Pays Off"
+	desc = "Years of rule in Morea have made Michael a better administrator"
+
+	date = { day = 1 month = january year = 1535 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1535 }
+
+	action_a = {
+		name = "He used to run into this problem all the time"
+		command = { type = ADM which = 1 value = 1200 }
+		command = { type = trade value = 100 }
+		command = { type = infra value = 100 }
+	}
+}
+
+#(1542) Ioannes X - Court Training Pays Off
+event = {
+	id = 3001046
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027509 #Ioannes X * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Court Training Pays Off"
+	desc = "Years of rule in Morea have made Ioannes a better administrator"
+
+	date = { day = 1 month = january year = 1542 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1542 }
+
+	action_a = {
+		name = "He used to run into this problem all the time"
+		command = { type = ADM which = 1 value = 1200 }
+		command = { type = trade value = 100 }
+		command = { type = infra value = 100 }
+	}
+}
+
+#(1566) Andronicus V - Court Training Pays Off
+event = {
+	id = 3001047
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027511 #Andronicus V * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Court Training Pays Off"
+	desc = "Years of rule in Morea have made Andronikos a better administrator"
+
+	date = { day = 1 month = january year = 1566 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1566 }
+
+	action_a = {
+		name = "He used to run into this problem all the time"
+		command = { type = ADM which = 1 value = 1200 }
+		command = { type = trade value = 100 }
+		command = { type = infra value = 100 }
+	}
+}
+
+#(1581) Konstantinos XII - Court Training Pays Off
+event = {
+	id = 3001048
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027512 #Konstantinos XII * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Court Training Pays Off"
+	desc = "Years of rule in Morea have made Konstantinos a better administrator"
+
+	date = { day = 1 month = january year = 1581 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1581 }
+
+	action_a = {
+		name = "He used to run into this problem all the time"
+		command = { type = ADM which = 1 value = 1200 }
+		command = { type = trade value = 100 }
+		command = { type = infra value = 100 }
+	}
+}
+
+#(1604) Konstantinos XIII - Court Training Pays Off
+event = {
+	id = 3001049
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027513 #Konstantinos XIII * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Court Training Pays Off"
+	desc = "Years of rule in Morea have made Konstantinos a better administrator"
+
+	date = { day = 1 month = january year = 1604 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1604 }
+
+	action_a = {
+		name = "He used to run into this problem all the time"
+		command = { type = ADM which = 1 value = 1200 }
+		command = { type = trade value = 100 }
+		command = { type = infra value = 100 }
+	}
+}
+
+#(1620) Nikolai II - Court Training Fails
+event = {
+	id = 3001050
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027515 #Nikolai II * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Oops"
+	desc = "Since he was never given any access to power and was only adopted at the last minute, Nikolai didn't have any experience with the administration."
+
+	date = { day = 1 month = january year = 1620 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1620 }
+
+	action_a = {
+		name = "At least he does well at chess"
+		command = { type = ADM which = -1 value = 1200 }
+		command = { type = trade value = -100 }
+		command = { type = infra value = -100 }
+	}
+}
+
+#(1623) Alexius VI - Court Training Pays Off
+event = {
+	id = 3001051
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027516 #Alexius VI * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Court Training Pays Off"
+	desc = "Years of rule in Morea have made Alexius a better administrator"
+
+	date = { day = 1 month = january year = 1623 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1623 }
+
+	action_a = {
+		name = "He used to run into problems like this all the time"
+		command = { type = ADM which = 1 value = 1200 }
+		command = { type = trade value = 100 }
+		command = { type = infra value = 100 }
+	}
+}
+
+#(1660) Ioannes XI - Court Training Pays Off
+event = {
+	id = 3001052
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027517 #Ioannes XI * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Court Training Pays Off"
+	desc = "Years of rule in Morea have made Ioannes a better administrator"
+
+	date = { day = 1 month = january year = 1660 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1660 }
+
+	action_a = {
+		name = "He used to run into problems like this all the time"
+		command = { type = ADM which = 1 value = 1200 }
+		command = { type = trade value = 100 }
+		command = { type = infra value = 100 }
+	}
+}
+
+#(1678) Konstantinos XIV - Court Training Pays Off
+event = {
+	id = 3001053
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027518 #Konstantinos XIV * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Court Training Pays Off"
+	desc = "Years of rule in Morea have made Konstantinos a better administrator"
+
+	date = { day = 1 month = january year = 1678 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1678 }
+
+	action_a = {
+		name = "He used to run into problems like this all the time"
+		command = { type = ADM which = 1 value = 1200 }
+		command = { type = trade value = 100 }
+		command = { type = infra value = 100 }
+	}
+}
+
+#(1699) Konstantinos XV - Court Training Pays Off
+event = {
+	id = 3001054
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027519 #Konstantinos XV * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Court Training Pays Off"
+	desc = "Years of rule in Morea have made Konstantinos a better administrator"
+
+	date = { day = 1 month = january year = 1699 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1699 }
+
+	action_a = {
+		name = "He used to run into problems like this all the time"
+		command = { type = ADM which = 1 value = 1200 }
+		command = { type = trade value = 100 }
+		command = { type = infra value = 100 }
+	}
+}
+
+#(1712) Michael XI - Court Training Pays Off
+event = {
+	id = 3001055
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027520 #Michael XI * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Court Training Pays Off"
+
+	desc = "Years of rule in Morea have made Michael a better administrator"
+	date = { day = 1 month = january year = 1712 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1712 }
+
+	action_a = {
+		name = "He used to run into problems like this all the time"
+		command = { type = ADM which = 1 value = 1200 }
+		command = { type = trade value = 100 }
+		command = { type = infra value = 100 }
+	}
+}
+
+#(1728) Alexius VII - Court Training Pays Off
+event = {
+	id = 3001056
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027521 #Alexius VII * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Court Training Pays Off"
+	desc = "Years of rule in Morea have made Alexius a better administrator"
+
+	date = { day = 1 month = january year = 1728 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1728 }
+
+	action_a = {
+		name = "He used to run into problems like this all the time"
+		command = { type = ADM which = 1 value = 1200 }
+		command = { type = trade value = 100 }
+		command = { type = infra value = 100 }
+	}
+}
+
+#(1750) Konstantinos XVI - Court Training Pays Off
+event = {
+	id = 3001057
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027522 #Konstantinos XVI * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Court Training Pays Off"
+	desc = "Years of rule in Morea have made Konstantinos a better administrator"
+
+	date = { day = 1 month = january year = 1750 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1750 }
+
+	action_a = {
+		name = "He used to run into problems like this all the time"
+		command = { type = ADM which = 1 value = 1200 }
+		command = { type = trade value = 100 }
+		command = { type = infra value = 100 }
+	}
+}
+
+
+#(1762) Nikolai III - Court Training Pays Off
+event = {
+	id = 3001058
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027523 #Nikolai III * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Court Training Pays Off"
+	desc = "Years of rule in Morea have made Nikolai a better administrator"
+
+	date = { day = 1 month = january year = 1762 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1762 }
+
+	action_a = {
+		name = "He used to run into problems like this all the time"
+		command = { type = ADM which = 1 value = 1200 }
+		command = { type = trade value = 100 }
+		command = { type = infra value = 100 }
+	}
+}
+
+#(1766) Konstantinos XVII - Court Training Pays Off
+event = {
+	id = 3001059
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027524 #Konstantinos XVII * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Court Training Pays Off"
+	desc = "Years of rule in Morea have made Konstantinos a better administrator"
+
+	date = { day = 1 month = january year = 1766 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1766 }
+
+	action_a = {
+		name = "He used to run into problems like this all the time"
+		command = { type = ADM which = 1 value = 1200 }
+		command = { type = trade value = 100 }
+		command = { type = infra value = 100 }
+	}
+}
+
+#(1778) Ioannes XII - Court Training Pays Off
+event = {
+	id = 3001060
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027525 #Ioannes XII * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Court Training Pays Off"
+	desc = "Years of rule in Morea have made Ioannes a better administrator"
+
+	date = { day = 1 month = january year = 1778 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1778 }
+
+	action_a = {
+		name = "He used to run into problems like this all the time"
+		command = { type = ADM which = 1 value = 1200 }
+		command = { type = trade value = 100 }
+		command = { type = infra value = 100 }
+	}
+}
+
+#(1805) Ioannes XIII - Court Training Pays Off
+event = {
+	id = 3001061
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027526 #Ioannes XIII * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Court Training Pays Off"
+	desc = "Years of rule in Morea have made Ioannes a better administrator"
+
+	date = { day = 1 month = january year = 1805 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1805 }
+
+	action_a = {
+		name = "He used to run into problems like this all the time"
+		command = { type = ADM which = 1 value = 1200 }
+		command = { type = trade value = 100 }
+		command = { type = infra value = 100 }
+	}
+}
+
+#(1470) Prince Andreas Goes Native
+event = {
+	id = 3001062
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027504 #Andreas I (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Prince Andreas Goes Native!"
+	desc = "For generations now, the Imperial princes have grown up surrounded by Turkish nurses, servants, subjects, lords. Andreas Palaiologos Tourkophilos has decided it is high time to bring his loyal followers with him into power in Constantinople. The Patriarch and Greek lords, however, take a dim view of this development."
+
+	date = { day = 1 month = january year = 1470 }
+	offset = 1 #immediate
+	deathdate = { day = 6 month = april year = 1502 }
+
+	action_a = {
+		name = "The Turks are valued subjects. Peace be upon them!" #Skip normal Turk-integration events
+		command = { type = stability value = -2 }
+		command = { type = add_countryculture which = turkish }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -1 }
+		command = { type = wakeleader which = 027841 } #Ferhad Pasha (BYZ)
+		command = { type = wakeleader which = 027842 } #Pechlivan Khan (BYZ)
+		command = { type = wakeleader which = 027843 } #Salih Reis (BYZ)
+		#command = { type = province_revoltrisk which = 475 value = 1 } #Trabzon
+		command = { type = revoltrisk which = 120 value = 6 } #Gloriana1337 replacing province revoltrisk above
+		command = { type = provincetax which = 474 value = 1 } #Sivas
+		command = { type = provincetax which = 476 value = 1 } #Angora
+		command = { type = provincetax which = 477 value = 1 } #Anatolia
+		command = { type = provincetax which = 478 value = 1 } #Smyrna
+		command = { type = provincetax which = 482 value = 1 } #Konya
+		command = { type = provincetax which = 483 value = 1 } #Adana
+		command = { type = provincetax which = 1609 value = 1 } #Kastamonu
+		command = { type = provincetax which = 1610 value = 1 } #Antalya
+		command = { type = provincetax which = 1611 value = 1 } #Taurus
+		command = { type = sleepevent which = 3001189 } #BYZ: The Turks in Sivas
+		command = { type = sleepevent which = 3001191 } #BYZ: The Turks in Smyrna
+		command = { type = sleepevent which = 3001193 } #BYZ: The Turks in Angora
+		command = { type = sleepevent which = 3001195 } #BYZ: The Turks in Anatolia
+		command = { type = sleepevent which = 3001197 } #BYZ: The Turks in Konya
+		command = { type = sleepevent which = 3001199 } #BYZ: The Turks in Kastamonu
+		command = { type = sleepevent which = 3001201 } #BYZ: The Turks in Antalya
+		command = { type = sleepevent which = 3001203 } #BYZ: The Turks in Taurus
+		command = { type = sleepevent which = 3001205 } #BYZ: The Turks in Adana
+	}
+	action_b = {
+		name = "Block the Emperor's plan"
+		command = { type = stability value = 1 }
+		command = { type = provincetax which = 475 value = 1 } #Trabzon
+		#command = { type = province_revoltrisk which = 474 value = 2 } #Sivas
+		#command = { type = province_revoltrisk which = 476 value = 2 } #Angora
+		#command = { type = province_revoltrisk which = 477 value = 2 } #Anatolia
+		#command = { type = province_revoltrisk which = 478 value = 2 } #Smyrna
+		#command = { type = province_revoltrisk which = 482 value = 2 } #Konya
+		#command = { type = province_revoltrisk which = 483 value = 2 } #Adana
+		#command = { type = province_revoltrisk which = 1609 value = 2 } #Kastamonu
+		#command = { type = province_revoltrisk which = 1610 value = 2 } #Antalya
+		#command = { type = province_revoltrisk which = 1611 value = 2 } #Taurus
+		command = { type = revoltrisk which = 60 value = 3 } #Gloriana1337 replacing province revoltrisks above
+	}
+}
+
+#(1425) Ioannes VIII - Military Training Pays Off
+event = {
+	id = 3001063
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027501 #Ioannes VIII (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Military Training Pays Off"
+	desc = "Years of experience in the army have made Ioannes a better general."
+
+	date = { day = 21 month = july year = 1425 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1425 }
+
+	action_a = {
+		name = "At-ten-HUT!"
+		command = { type = MIL which = 1 value = 1200 }
+		command = { type = land value = 100 }
+		command = { type = naval value = 100 }
+	}
+}
+
+#(1448) Konstantinos XI - Military Training Pays Off
+event = {
+	id = 3001064
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027502 #Konstantinos XI Dragases (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Military Training Pays Off"
+	desc = "Years of experience in the army have made Konstantinos a better general."
+
+	date = { day = 29 month = october year = 1448 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1448 }
+
+	action_a = {
+		name = "At-ten-HUT!"
+		command = { type = MIL which = 1 value = 1200 }
+		command = { type = land value = 100 }
+		command = { type = naval value = 100 }
+	}
+}
+
+#(1453) Demetrios - Military Training Pays Off
+event = {
+	id = 3001065
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027503 #Demetrios (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Military Training Pays Off"
+	desc = "Years of experience in the army have made Demetrios a better general"
+
+	date = { day = 29 month = may year = 1453 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = may year = 1453 }
+
+	action_a = {
+		name = "At-ten-HUT!"
+		command = { type = MIL which = 1 value = 1200 }
+		command = { type = land value = 100 }
+		command = { type = naval value = 100 }
+	}
+}
+
+#(1470) Andreas I - Military Training Fails
+event = {
+	id = 3001066
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027504 #Andreas I (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Military Training Fails..."
+	desc = "Andreas was just kind of beyond training."
+
+	date = { day = 1 month = january year = 1470 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1470 }
+
+	action_a = {
+		name = "Thank God I'm finally off base"
+		command = { type = MIL which = -1 value = 1200 }
+		command = { type = land value = -50 }
+		command = { type = naval value = -50 }
+	}
+}
+
+#(1502) Manuel III - Military Training Pays Off
+event = {
+	id = 3001067
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027505 #Manuel III (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Military Training Pays Off"
+	desc = "Years of experience in the army have made Manuel a better general"
+
+	date = { day = 7 month = april year = 1502 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1502 }
+
+	action_a = {
+		name = "At-ten-HUT!"
+		command = { type = MIL which = 1 value = 1200 }
+		command = { type = land value = 100 }
+		command = { type = naval value = 100 }
+	}
+}
+
+#(1512) Andreas II - Military Training Pays Off
+event = {
+	id = 3001068
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027506 #Andreas II (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Military Training Pays Off"
+	desc = "Years of experience in the army have made Andreas a better general"
+
+	date = { day = 1 month = january year = 1512 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1512 }
+
+	action_a = {
+		name = "At-ten-HUT!"
+		command = { type = MIL which = 1 value = 1200 }
+		command = { type = land value = 100 }
+		command = { type = naval value = 100 }
+	}
+}
+
+#(1519) Ioannes IX - Military Training Pays Off
+event = {
+	id = 3001069
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027507 #Ioannes IX * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Military Training Pays Off"
+	desc = "Years of experience in the army have made Ioannes a better general"
+
+	date = { day = 1 month = january year = 1519 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1519 }
+
+	action_a = {
+		name = "At-ten-HUT!"
+		command = { type = MIL which = 1 value = 1200 }
+		command = { type = land value = 100 }
+		command = { type = naval value = 100 }
+	}
+}
+
+#(1535) Michael X - Military Training Pays Off
+event = {
+	id = 3001070
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027508 #Michael X * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Military Training Pays Off"
+	desc = "Years of experience in the army have made Michael a better general"
+
+	date = { day = 1 month = january year = 1535 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1535 }
+
+	action_a = {
+		name = "At-ten-HUT!"
+		command = { type = MIL which = 1 value = 1200 }
+		command = { type = land value = 100 }
+		command = { type = naval value = 100 }
+	}
+}
+
+#(1542) Ioannes X - Military Training Pays Off
+event = {
+	id = 3001071
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027509 #Ioannes X * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Military Training Pays Off"
+	desc = "Years of experience in the army have made Ioannes a better general"
+
+	date = { day = 1 month = january year = 1542 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1542 }
+
+	action_a = {
+		name = "At-ten-HUT!"
+		command = { type = MIL which = 1 value = 1200 }
+		command = { type = land value = 100 }
+		command = { type = naval value = 100 }
+	}
+}
+
+#(1566) Andronicus V - Military Training Pays Off
+event = {
+	id = 3001072
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027511 #Andronicus V * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Military Training Pays Off"
+	desc = "Years of experience in the army have made Andronikos a better general"
+
+	date = { day = 1 month = january year = 1566 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1566 }
+
+	action_a = {
+		name = "At-ten-HUT!"
+		command = { type = MIL which = 1 value = 1200 }
+		command = { type = land value = 100 }
+		command = { type = naval value = 100 }
+	}
+}
+
+#(1581) Konstantinos XII - Military Training Pays Off
+event = {
+	id = 3001073
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027512 #Konstantinos XII * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Military Training Pays Off"
+	desc = "Years of experience in the army have made Konstantinos a better general"
+
+	date = { day = 1 month = january year = 1581 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1581 }
+
+	action_a = {
+		name = "At-ten-HUT!"
+		command = { type = MIL which = 1 value = 1200 }
+		command = { type = land value = 100 }
+		command = { type = naval value = 100 }
+	}
+}
+
+#(1604) Konstantinos XIII - Military Training Pays Off
+event = {
+	id = 3001074
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027513 #Konstantinos XIII * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Military Training Pays Off"
+	desc = "Years of experience in the army have made Konstantinos a better general"
+
+	date = { day = 1 month = january year = 1604 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1604 }
+
+	action_a = {
+		name = "At-ten-HUT!"
+		command = { type = MIL which = 1 value = 1200 }
+		command = { type = land value = 100 }
+		command = { type = naval value = 100 }
+	}
+}
+
+#(1620) Nikolai II - Military Training Fails
+event = {
+	id = 3001075
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027515 #Nikolai II *
+	}
+	random = NO
+	country = BYZ
+	name = "Oops"
+	desc = "Since he was never given any access to power and was only adopted at the last minute, Nikolai didn't have any experience with the army."
+
+	date = { day = 1 month = january year = 1620 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1620 }
+
+	action_a = {
+		name = "This sword is so... OWW!"
+		command = { type = MIL which = -1 value = 1200 }
+		command = { type = land value = -100 }
+		command = { type = naval value = -100 }
+	}
+}
+
+#(1623) Alexius VI - Military Training Pays Off
+event = {
+	id = 3001076
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027516 #Alexius VI * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Military Training Pays Off"
+	desc = "Years of experience in the army have made Alexius a better general"
+
+	date = { day = 1 month = january year = 1623 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1623 }
+
+	action_a = {
+		name = "At-ten-HUT!"
+		command = { type = MIL which = 1 value = 1200 }
+		command = { type = land value = 100 }
+		command = { type = naval value = 100 }
+	}
+}
+
+#(1660) Ioannes XI - Military Training Pays Off
+event = {
+	id = 3001077
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027517 #Ioannes XI * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Military Training Pays Off"
+	desc = "Years of experience in the army have made Ioannes a better general"
+
+	date = { day = 1 month = january year = 1660 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1660 }
+
+	action_a = {
+		name = "At-ten-HUT!"
+		command = { type = MIL which = 1 value = 1200 }
+		command = { type = land value = 100 }
+		command = { type = naval value = 100 }
+	}
+}
+
+#(1678) Konstantinos XIV - Military Training Pays Off
+event = {
+	id = 3001078
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027518 #Konstantinos XIV * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Military Training Pays Off"
+	desc = "Years of experience in the army have made Konstantinos a better general"
+
+	date = { day = 1 month = january year = 1678 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1678 }
+
+	action_a = {
+		name = "At-ten-HUT!"
+		command = { type = MIL which = 1 value = 1200 }
+		command = { type = land value = 100 }
+		command = { type = naval value = 100 }
+	}
+}
+
+#(1699) Konstantinos XV - Military Training Pays Off
+event = {
+	id = 3001079
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027519 #Konstantinos XV * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Military Training Pays Off"
+	desc = "Years of experience in the army have made Konstantinos a better general"
+
+	date = { day = 1 month = january year = 1699 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1699 }
+
+	action_a = {
+		name = "At-ten-HUT!"
+		command = { type = MIL which = 1 value = 1200 }
+		command = { type = land value = 100 }
+		command = { type = naval value = 100 }
+	}
+}
+
+#(1712) Michael XI - Military Training Pays Off
+event = {
+	id = 3001080
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027520 #Michael XI * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Military Training Pays Off"
+	desc = "Years of experience in the army have made Michael a better general"
+
+	date = { day = 1 month = january year = 1712 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1712 }
+
+	action_a = {
+		name = "At-ten-HUT!"
+		command = { type = MIL which = 1 value = 1200 }
+		command = { type = land value = 100 }
+		command = { type = naval value = 100 }
+	}
+}
+
+#(1728) Alexius VII - Military Training Pays Off
+event = {
+	id = 3001081
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027521 #Alexius VII * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Military Training Pays Off"
+	desc = "Years of experience in the army have made Alexius a better general"
+
+	date = { day = 1 month = january year = 1728 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1728 }
+
+	action_a = {
+		name = "At-ten-HUT!"
+		command = { type = MIL which = 1 value = 1200 }
+		command = { type = land value = 100 }
+		command = { type = naval value = 100 }
+	}
+}
+
+#(1750) Konstantinos XVI - Military Training Pays Off
+
+
+event = {
+	id = 3001082
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027522 #Konstantinos XVI * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Military Training Pays Off"
+	desc = "Years of experience in the army have made Konstantinos a better general"
+	date = { day = 1 month = january year = 1750 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1750 }
+
+	action_a = {
+		name = "At-ten-HUT!"
+		command = { type = MIL which = 1 value = 1200 }
+		command = { type = land value = 100 }
+		command = { type = naval value = 100 }
+	}
+}
+
+#(1762) Nikolai III - Military Training Pays Off
+event = {
+	id = 3001083
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027523 #Nikolai III * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Military Training Pays Off"
+	desc = "Years of experience in the army have made Nikolai a better general"
+	date = { day = 1 month = january year = 1762 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1762 }
+
+	action_a = {
+		name = "At-ten-HUT!"
+		command = { type = MIL which = 1 value = 1200 }
+		command = { type = land value = 100 }
+		command = { type = naval value = 100 }
+	}
+}
+
+#(1766) Konstantinos XVII - Military Training Pays Off
+event = {
+	id = 3001084
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027524 #Konstantinos XVII * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Military Training Pays Off"
+	desc = "Years of experience in the army have made Konstantinos a better general"
+	date = { day = 1 month = january year = 1766 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1766 }
+
+	action_a = {
+		name = "At-ten-HUT!"
+		command = { type = MIL which = 1 value = 1200 }
+		command = { type = land value = 100 }
+		command = { type = naval value = 100 }
+	}
+}
+
+#(1778) Ioannes XII - Military Training Pays Off
+event = {
+	id = 3001085
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027525 #Ioannes XII * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Military Training Pays Off"
+	desc = "Years of experience in the army have made Ioannes a better general"
+	date = { day = 1 month = january year = 1778 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1778 }
+
+	action_a = {
+		name = "At-ten-HUT!"
+		command = { type = MIL which = 1 value = 1200 }
+		command = { type = land value = 100 }
+		command = { type = naval value = 100 }
+	}
+}
+
+#(1805) Ioannes XIII - Military Training Pays Off
+event = {
+	id = 3001086
+	trigger = {
+		event = 3001013 #BYZ: The Fate of the Crown Prince
+		monarch = 027526 #Ioannes XIII * (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "Military Training Pays Off"
+	desc = "Years of experience in the army have made Ioannes a better general"
+	date = { day = 1 month = january year = 1805 }
+	offset = 30 #1 month
+	deathdate = { day = 29 month = december year = 1805 }
+
+	action_a = {
+		name = "At-ten-HUT!"
+		command = { type = MIL which = 1 value = 1200 }
+		command = { type = land value = 100 }
+		command = { type = naval value = 100 }
+	}
+}

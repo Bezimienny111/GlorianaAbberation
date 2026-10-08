@@ -1,0 +1,33 @@
+######Kazakh Major Events######
+#  By Demetrios and Havard    #
+#                             #
+#  altered a bit by Doomdark  #
+#                             #
+###############################
+
+# The Kalmyk Conquest
+event = {
+	id = 3830
+	random = no
+	country = KZK
+	name = "EVENTNAME3830"
+	desc = "EVENTHIST3830"
+	
+	date = { day = 1 month = january year = 1652 }
+	offset = 300
+
+	action_a ={ # Resist the invaders
+		name = "ACTIONNAME3830A"
+		command = { type = land value = 400 }
+		command = { type = CAV which = -2 value = 5000 }
+		command = { type = domestic which = CENTRALIZATION  value = 1 }
+		command = { type = stability value = -2 }
+	}
+	action_b ={ # We are powerless to resist
+		name = "ACTIONNAME3830B"
+		command = { type = domestic which = CENTRALIZATION  value = -1 }
+		command = { type = stability value = 2 }
+		command = { type = trade value = 400 }
+		
+	}
+}

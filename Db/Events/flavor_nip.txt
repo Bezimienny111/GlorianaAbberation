@@ -1,0 +1,284 @@
+#
+# EUE2 -Flavor Events
+#
+#		written by Johan Andersson
+#
+
+
+event = { id = 6950 #The Murder of Togashi Mitsushige#
+	random = no
+	country = NIP
+	name = "EVENTNAME6950"
+	desc = "EVENTHIST6950"
+	date = { day = 15 month = february year = 1419}
+	offset = 30
+	action_a = {	name = "OK"
+			command = { type = stability value = -1}}}
+
+event = { id = 6951 #Zeami Motokiyo writes Nohsakusho#
+	random = no
+	country = NIP
+	name = "EVENTNAME6951"
+	desc = "EVENTHIST6951"
+	date = { day = 1 month = june year = 1423} #must check the exact date#
+	offset = 90
+	action_a = {	name = "OK"
+			command = { type = infra value = 100 }
+			command = { type = domestic which = ARISTOCRACY value = 1 }}}
+
+event = { id = 6952 #Yoshinori orders the collection of waka#
+	random = no
+	country = NIP
+	name = "EVENTNAME6952"
+	desc = "EVENTHIST6952"
+	date = { day = 1 month = august year = 1433}
+	offset = 15
+	action_a = {	name = "OK"
+			command = { type = infra value = 50 }}}
+
+
+
+event = { id = 6954 #Hyogokita tax and toll reforms#
+	random = no
+	country = NIP
+	name = "EVENTNAME6954"
+	desc = "EVENTHIST6954"
+	date = { day = 15 month = august year = 1445}
+	offset = 15
+	action_a = {	name = "OK"
+			command = { type = provincetax which = 684 value = 1}
+			command = { type = provincetax which = 685 value = 3}
+			command = { type = provincetax which = 686 value = 3}
+			command = { type = provincetax which = 687 value = 1}
+			command = { type = provincetax which = 688 value = 3}
+			command = { type = domestic which = Mercantilism value = 2 }}}
+
+
+event = { id = 6955 #Floods and famine in 1459#
+	country = NIP
+	random = no
+	name = "EVENTNAME6955"
+	desc = "EVENTHIST6955"
+	date = { day = 1 month = june year = 1459 }
+	offset = 60
+	action_a = {	name = "OK" #poor and weak die so population decreases more than other#
+			command = { type = population which = 684 value = -5000 }
+			command = { type = population which = 685 value = -20000 }
+			command = { type = population which = 686 value = -20000 }
+			command = { type = population which = 687 value = -5000 }
+			command = { type = population which = 688 value = -20000 }
+			command = { type = provincetax which = 684 value = -1}
+			command = { type = provincetax which = 685 value = -1}
+			command = { type = provincetax which = 686 value = -1}
+			command = { type = provincetax which = 687 value = -1}
+			command = { type = provincetax which = 688 value = -1}}}
+
+
+event = { id = 6956 #Ashikaga Masatomo murdered by his own son!#
+	random = no
+	country = NIP
+	trigger = { owned = {province = 685 data = -1 }}
+	name = "EVENTNAME6956"
+	desc = "EVENTHIST6956"
+	date = { day = 1 month = march year = 1491} #must check the exact date#
+	offset = 90
+	action_a = {	name = "OK"
+			command = { type = stability value = -1}}}
+
+event = { id = 6957 #Ise Shinkuro slays the murderer#
+	random = no
+	country = NIP
+	trigger = { AND = {	event = 6956
+			 	owned = { province = 685 data = -1 }}}
+	name = "EVENTNAME6957"
+	desc = "EVENTHIST6957"
+	date = { day = 1 month = march year = 1493} #must check the exact date#
+	offset = 90
+	action_a = {	name = "OK"
+			command = { type = domestic which = ARISTOCRACY value = -1 }}}
+
+event = { id = 6958 #Ginkakuji construction starts#
+	random = no
+	country = NIP
+	##trigger = { event = 6939}
+	name = "EVENTNAME6958"
+	desc = "EVENTHIST6958"
+	date = { day = 1 month = june year = 1483}
+	offset = 180
+	action_a = {	name = "OK"
+			command = { type = infra value = 100 }
+			command = { type = treasury value = -300 }
+			command = { type = domestic which = ARISTOCRACY value = 2 }
+			command = { type = domestic which = Innovative value = 2 }
+			command = { type = gainmanufactory which = 686	value = luxury }}}
+
+event = { id = 6959 #Sen no Rikyu perfects Tea Ceremony #
+	random = no
+	country = NIP
+	trigger = { OR = {event = 6958
+			  NOT = {event = 6940}}} ##No oninEND means later scenario##
+	name = "EVENTNAME6959"
+	desc = "EVENTHIST6959"
+	date = { day = 1 month = june year = 1582}
+	offset = 180
+	action_a = {	name = "OK"
+			command = { type = infra value = 50 }
+			command = { type = domestic which = ARISTOCRACY value = 1 }}}
+
+event = { id = 6960 #Okuni creates Kabuki#
+	random = no
+	country = NIP
+	name = "EVENTNAME6960"
+	desc = "EVENTHIST6960"
+	date = { day = 1 month = july year = 1603}
+	offset = 90
+	action_a = {	name = "ACTIONNAME6960A" #forbid women#
+			command = { type = infra value = 100 }
+			command = { type = domestic which = ARISTOCRACY value = -1 }
+			command = { type = domestic which = Innovative value = -1 }}
+	action_B = {	name = "ACTIONNAME6960B" #allow women#
+			command = { type = infra value = 100 }
+			command = { type = religiousrevolt which = -1}
+			command = { type = domestic which = ARISTOCRACY value = -1 }
+			command = { type = domestic which = Innovative value = 1 }
+			command = { type = stability value = -1}
+			command = { type = sleepevent which = 6962 }}}
+
+event = { id = 6961 #Musashi Miyamoto writes the Book of Five Rings#
+	random = no
+	country = NIP
+	name = "EVENTNAME6961"
+	desc = "EVENTHIST6961"
+	date = { day = 1 month = june year = 1645}
+	offset = 180
+	action_a = {	name = "OK"
+			command = { type = infra value = 50 }
+			command = { type = domestic which = ARISTOCRACY value = 1 }
+			command = { type = domestic which = Quality value = 1 }}}
+
+event = { id = 6962 #Kabuki banned again by authorities#
+	random = no
+	country = NIP
+	name = "EVENTNAME6962"
+	desc = "EVENTHIST6962"
+	date = { day = 1 month = june year = 1652}
+	offset = 180
+	action_a = {	name = "OK"
+			command = { type = domestic which = Innovative value = -1 }}}
+
+
+event = { id = 6963 #First Sewamono written by Chikamatsu Monzaemon#
+	random = no
+	country = NIP
+	name = "EVENTNAME6963"
+	desc = "EVENTHIST6963"
+	date = { day = 1 month = june year = 1679}
+	offset = 180
+	action_a = {	name = "OK"
+			command = { type = infra value = 50 }
+			command = { type = domestic which = ARISTOCRACY value = -1 }
+			command = { type = domestic which = Quality value = 1 }}}
+
+
+event = { id = 6964 #Basho Matsuo develops haiku poetry#
+	random = no
+	country = NIP
+	name = "EVENTNAME6964"
+	desc = "EVENTHIST6964"
+	date = { day = 1 month = june year = 1681}
+	offset = 180
+	action_a = {	name = "OK"
+			command = { type = infra value = 200 }}}
+
+
+
+event = {
+	id = 1508
+	random = no
+	country = NIP
+	date = { year = 1685 }
+	offset = 300
+	name = "ENAME_F_1508"
+	desc = "EDESC_F_1508"
+	action_a = {
+			name = "OK"
+			command = { type = stability value = -2 }
+		}
+	}
+
+
+
+
+
+
+event = {
+	id = 6965 #Incident of the 47 Ronin#
+	random = no
+	country = NIP
+	name = "EVENTNAME6965"
+	desc = "EVENTHIST6965"
+	date = { day = 1 month = january year = 1703}
+	offset = 30
+	action_a = {
+		name = "ACTIONNAME6965A" #Order seppukku#
+		command = { type = infra value = 100 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = Quality value = -1 }
+		}
+	action_B = {
+		name = "ACTIONNAME6965B" #Let them off#
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = Quality value = 1 }
+		command = { type = stability value = -2}
+		}
+}
+
+
+event = {
+	id = 6966 #First mawaributai built by Namiki Shozo#
+	random = no
+	country = NIP
+	name = "EVENTNAME6966"
+	desc = "EVENTHIST6966"
+	date = { day = 1 month = june year = 1758}
+	offset = 180
+	action_a = {
+		name = "OK"
+		command = { type = infra value = 50 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = Innovative value = -1 }
+		}
+}
+
+event = {
+	id = 6967 #Kitagawa Utamaro completes Selected Poems on Love#
+	random = no
+	country = NIP
+	name = "EVENTNAME6967"
+	desc = "EVENTHIST6967"
+	date = { day = 1 month = june year = 1793}
+	offset = 180
+	action_a = {
+		name = "OK"
+		command = { type = infra value = 100 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+	}
+}
+
+event = {
+	id = 6973 #Ryoanji stone garden built#
+	random = no
+	country = NIP
+	name = "EVENTNAME6973"
+	desc = "EVENTHIST6973"
+
+	style = "6973"
+
+	date = { day = 1 month = march year = 1488 }
+	offset = 180
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+	}
+}

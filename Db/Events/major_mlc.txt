@@ -1,0 +1,113 @@
+# Malacca #
+
+# The Fall of Malacca #
+event = {
+	id = 25021
+	trigger = {
+		owned = { province = 677 data = MLC }
+		NOT = { control = { province = 677 data = MLC } }
+		owned = { province = 678 data = MLC }
+		control = { province = 678 data = MLC }
+		OR = {
+			# Malacca seized by one of the main colonial powers
+			AND = {
+				war = { country = POR country = MLC } # Portugal
+				control = { province = 677 data = POR }
+			}
+			AND = {
+				war = { country = SPA country = MLC } # Spain
+				control = { province = 677 data = SPA }
+			}
+			AND = {
+				war = { country = HOL country = MLC } # Holland
+				control = { province = 677 data = HOL }
+			}
+			AND = {
+				war = { country = ENG country = MLC } # England
+				control = { province = 677 data = ENG }
+			}
+			AND = {
+				war = { country = FRA country = MLC } # France
+				control = { province = 677 data = FRA }
+			}
+		}
+		NOT = { exists = JOH }
+	}
+	random = no
+	country = MLC
+	name = "The Fall of Malacca"
+	desc = "Malacca was one of the foremost powers of the East Indies, regularly vying with Mataram, Brunei and the Aceh Sultanate for dominance in the region. Its legendary Hindu king Parameswara converted to Islam in around 1390, adopting the title of Iskandar Shâh and introducing Islam to the southern half of the Malay peninsula. (According to historically dubious accounts, the northern Kedah Sultanate had adopted Islam as early as 1136 AD). A lucrative trade hub following the collapse of the Majapahit Empire, Malacca was long sought after by the European colonial powers seeking to expand trade routes from their holdings in India and East Africa. In the end, it was the Portuguese under Afonso de Albuquerque, colonial governor of Goa, who beat the Spanish to be the first to conquer Malacca in the summer of 1511."
+	
+	style = "25021"
+
+	date = { day = 1 month = january year = 1495 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1595 }
+	
+	action_a = { # Focus our efforts on Johor
+		name = "Focus our efforts on Johor"
+		command = { type = capital which = 678 }
+		command = { type = cityname which = 678 value = "Johor" }
+		command = { type = fortress which = 678 value = 1 }
+		command = { type = domestic which = OFFENSIVE value = -2 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = removecore_national which = 676 } # Imperial cores
+		command = { type = removecore_national which = 677 }
+		command = { type = removecore_national which = 680 }
+		command = { type = removecore_national which = 681 }
+		command = {
+			trigger = { control = { province = 677 data = POR } }
+			type = cedeprovince which = POR value = 677
+		}
+		command = {
+			trigger = { control = { province = 677 data = SPA } }
+			type = cedeprovince which = SPA value = 677
+		}
+		command = {
+			trigger = { control = { province = 677 data = HOL } }
+			type = cedeprovince which = HOL value = 677
+		}
+		command = {
+			trigger = { control = { province = 677 data = ENG } }
+			type = cedeprovince which = ENG value = 677
+		}
+		command = {
+			trigger = { control = { province = 677 data = FRA } }
+			type = cedeprovince which = FRA value = 677
+		}
+		command = { type = populationpercent which = 677 value = -25 }
+		command = { type = populationpercent which = 678 value = 10 }
+		command = { type = flagname which = "" }
+		command = { type = country which = JOH }
+		command = { type = stability value = -1 }
+		#TODO: add whitepeace command here if implemented
+	}
+	action_b = { # We must retake Malacca
+		name = "We must retake Malacca"
+		command = { type = INF which = 678 value = 15000 }
+		command = { type = ART which = 678 value = 15 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = domestic which = QUALITY value = -2 }
+		command = {
+			trigger = { control = { province = 677 data = POR } }
+			type = relation  which = POR value = -200
+		}
+		command = {
+			trigger = { control = { province = 677 data = SPA } }
+			type = relation  which = SPA value = -200
+		}
+		command = {
+			trigger = { control = { province = 677 data = HOL } }
+			type = relation  which = HOL value = -200
+		}
+		command = {
+			trigger = { control = { province = 677 data = ENG } }
+			type = relation  which = ENG value = -200
+		}
+		command = {
+			trigger = { control = { province = 677 data = FRA } }
+			type = relation  which = FRA value = -200
+		}
+		command = { type = stability value = -3 }
+	}
+}

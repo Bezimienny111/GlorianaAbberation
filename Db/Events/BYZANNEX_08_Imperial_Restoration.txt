@@ -1,0 +1,1160 @@
+#-----------------------------------------------------------------------------
+# Imperial Restoration Path based on Events by Shadowstrike
+
+#(1419-1820) A Crossroads
+#ZAST?PIONY DECYZJAMI 6020-6023 w Db/Decisions/Byzantine.txt
+#event = {
+#	id = 3001154
+event = {
+	id = 3001154
+	trigger = {
+		NOT = { tag = BYZ } #WY??CZONY - zast?piony decyzjami 6020-6023 (Db/Decisions/Byzantine.txt)
+		owned = { province = 356 data = -1 } #Bulgaria
+		owned = { province = 357 data = -1 } #Thrace
+		owned = { province = 358 data = -1 } #Macedonia
+		owned = { province = 478 data = -1 } #Smyrna
+		countrysize = 7 #three other territories
+	}
+	random = NO
+	country = BYZ
+	name = "A Crossroads"
+	desc = "Recovering from the brink of destruction, the Empire has repulsed the Turkish onslaught against all odds. Having reunited the Greek lands of the Aegean coast for the first time since the Fourth Crusade, the Byzantine state stands at an important crossroads in its future development. The barons and generals yearn to seek glory in recovering the Anatolian heartlands (and their former estates) from the heathen Turk. The civil service and the Church counter that the recovery of the Balkan provinces from the Western schismatics is much easier and more pressing. Finally, some merchants and intellectuals at court suggest we accept the limitations of our state and rejuvenate Hellas, abandoning our Imperial claims forever. Such an abdication would be massively unpopular with the nobles, but understood by our people and loved by the West."
+
+	date = { day = 1 month = january year = 1355 }
+	offset = 1080 #3 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "To the East!" #greater favor at court, greater dominion in new lands
+		command = { type = addcore_claim which = 472 } #Armenia
+		command = { type = addcore_claim which = 473 } #Kurdistan
+		command = { type = addcore_claim which = 474 } #Sivas
+		command = { type = addcore_claim which = 475 } #Trabzon
+		command = { type = addcore_claim which = 476 } #Angora
+		command = { type = addcore_claim which = 480 } #Crete
+		command = { type = addcore_claim which = 481 } #Rhodos
+		command = { type = addcore_claim which = 482 } #Konya
+		command = { type = addcore_claim which = 483 } #Adana
+		command = { type = addcore_claim which = 484 } #Cyprus
+		command = { type = addcore_claim which = 485 } #Aleppo
+		command = { type = addcore_claim which = 486 } #Nuyssaybin
+		command = { type = addcore_claim which = 487 } #Azerbaijan
+		command = { type = addcore_claim which = 1609 } #Kastamonou
+		command = { type = addcore_claim which = 1610 } #Antalya
+		command = { type = addcore_claim which = 1611 } #Taurus
+		command = { type = relation which = PAP value = -50 }
+		command = { type = relation which = MAM value = -100 }
+		command = { type = relation which = DUL value = -100 }
+		command = { type = relation which = KAR value = -100 }
+		command = { type = relation which = QAR value = -100 }
+		command = { type = relation which = AKK value = -100 }
+		command = { type = relation which = TEK value = -100 }
+		command = { type = relation which = TUR value = -200 }
+		command = { type = setflag which = totheeast }
+	}
+	action_b = {
+		name = "Westward ho!" #bureaucrats' greater influence against the nobles
+		command = { type = addcore_claim which = 320 } #Dobrudja
+		command = { type = addcore_claim which = 355 } #Serbia
+		command = { type = addcore_claim which = 356 } #Bulgaria
+		command = { type = addcore_claim which = 361 } #Albania
+		command = { type = addcore_claim which = 362 } #Ragusa
+		command = { type = addcore_claim which = 363 } #Kosovo
+		command = { type = addcore_claim which = 364 } #Bosnia
+		command = { type = addcore_claim which = 365 } #Dalmatia
+		command = { type = addcore_claim which = 366 } #Croatia
+		command = { type = addcore_claim which = 368 } #Istria
+		command = { type = addcore_claim which = 475 } #Trabzon
+		command = { type = addcore_claim which = 480 } #Crete
+		command = { type = addcore_claim which = 481 } #Rhodos
+		command = { type = addcore_claim which = 484 } #Cyprus
+		command = { type = relation which = PAP value = -50 }
+		command = { type = relation which = BOS value = -100 }
+		command = { type = relation which = ALB value = -100 }
+		command = { type = relation which = CRO value = -100 }
+		command = { type = relation which = HUN value = -200 }
+		command = { type = relation which = RAG value = -100 }
+		command = { type = relation which = SER value = -100 }
+		command = { type = relation which = VEN value = -100 }
+		command = { type = relation which = WAL value = -100 }
+		command = { type = setflag which = westwardho }
+	}
+	action_c = {
+		name = "I like to keep my options open"
+		command = { type = addcore_claim which = 320 } #Dobrudja
+		command = { type = addcore_claim which = 355 } #Serbia
+		command = { type = addcore_claim which = 356 } #Bulgaria
+		command = { type = addcore_claim which = 361 } #Albania
+		command = { type = addcore_claim which = 362 } #Ragusa
+		command = { type = addcore_claim which = 363 } #Kosovo
+		command = { type = addcore_claim which = 364 } #Bosnia
+		command = { type = addcore_claim which = 365 } #Dalmatia
+		command = { type = addcore_claim which = 366 } #Croatia
+		command = { type = addcore_claim which = 368 } #Istria
+		command = { type = addcore_claim which = 472 } #Armenia
+		command = { type = addcore_claim which = 473 } #Kurdistan
+		command = { type = addcore_claim which = 474 } #Sivas
+		command = { type = addcore_claim which = 475 } #Trabzon
+		command = { type = addcore_claim which = 476 } #Angora
+		command = { type = addcore_claim which = 480 } #Crete
+		command = { type = addcore_claim which = 481 } #Rhodos
+		command = { type = addcore_claim which = 482 } #Konya
+		command = { type = addcore_claim which = 483 } #Adana
+		command = { type = addcore_claim which = 484 } #Cyprus
+		command = { type = addcore_claim which = 485 } #Aleppo
+		command = { type = addcore_claim which = 486 } #Nuyssaybin
+		command = { type = addcore_claim which = 487 } #Azerbaijan
+		command = { type = addcore_claim which = 1609 } #Kastamonou
+		command = { type = addcore_claim which = 1610 } #Antalya
+		command = { type = addcore_claim which = 1611 } #Taurus
+		command = { type = relation which = PAP value = -50 }
+		command = { type = relation which = MAM value = -100 }
+		command = { type = relation which = DUL value = -100 }
+		command = { type = relation which = QAR value = -100 }
+		command = { type = relation which = AKK value = -100 }
+		command = { type = relation which = KAR value = -100 }
+		command = { type = relation which = TEK value = -100 }
+		command = { type = relation which = TUR value = -200 }
+		command = { type = relation which = BOS value = -100 }
+		command = { type = relation which = CRO value = -100 }
+		command = { type = relation which = HUN value = -200 }
+		command = { type = relation which = ALB value = -100 }
+		command = { type = relation which = RAG value = -100 }
+		command = { type = relation which = SER value = -100 }
+		command = { type = relation which = VEN value = -100 }
+		command = { type = relation which = WAL value = -100 }
+		command = { type = setflag which = optionsopen }
+	}
+	action_d = {
+		name = "We are but a Rigas"
+#obviously, this is the historical option; basically accepting failure and retooling Romania on the model of the northern Italian states; few players will take it, but i wanted to make it interesting for those who do
+		command = { type = country which = GRE }
+		command = { type = badboy value = -5 }
+		command = { type = stability value = 3 }
+		command = { type = technology which = latin }
+		command = { type = infra value = 1500 }
+		command = { type = trade value = 1500 }
+		command = { type = domestic which = CENTRALIZATION value = -1 } #Imperial bureaucracy retooled
+		command = { type = domestic which = INNOVATIVE value = 5 }
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = revoltrisk which = 360 value = 7 } #should work out to about 1-3% rr for 30 years
+		command = { type = provincetax which = 357 value = 2 } #Thrace
+		command = { type = provincetax which = 358 value = 2 } #Macedonia
+		command = { type = provincetax which = 359 value = 2 } #Hellas
+		command = { type = provincetax which = 360 value = 2 } #Morea
+		command = { type = provincetax which = 477 value = 2 } #Anatolia
+		command = { type = provincetax which = 478 value = 2 } #Smyrna
+		command = { type = provincetax which = 479 value = 2 } #Ionia
+		command = { type = provinceculture which = 321 value = -1 } #Rumelia
+		command = { type = provinceculture which = 477 value = -1 } #Anatolia
+		command = { type = addcore_claim which = 464 } #Kaffa
+		command = { type = addcore_claim which = 465 } #Kerch
+		command = { type = addcore_claim which = 475 } #Trabzon
+		command = { type = addcore_claim which = 480 } #Crete
+		command = { type = addcore_claim which = 481 } #Rhodos
+		command = { type = addcore_claim which = 484 } #Cyprus
+		command = { type = relation which = PAP value = 200 }
+		command = { type = relation which = HAB value = 200 }
+		command = { type = relation which = ARG value = 200 }
+		command = { type = relation which = CAS value = 200 }
+		command = { type = relation which = FRA value = 200 }
+		command = { type = relation which = SPA value = 200 }
+		command = { type = relation which = ENG value = 200 }
+		command = { type = sleepevent which = 289000 } #TRE: Byzantine Refugees
+		command = { type = sleepevent which = 326015 } #VEN: Byzantine Refugees
+	}
+}
+
+#(1450-1820) Victory in the Balkans
+#WY??CZONY - zast?piony decyzjami 6024-6026 w Db/Decisions/Byzantine.txt
+event = {
+	id = 3001155
+	trigger = {
+		NOT = { tag = BYZ } #WY??CZONY - zast?piony decyzjami 6024-6026 (Db/Decisions/Byzantine.txt)
+		flag = byz_crossroads #BYZ: A Crossroads (dec. 6020-6023)
+		NOT = { flag = byz_victory_anatolia } #BYZ: Victory in Anatolia (dec. 6027-6029)
+		owned = { province = 320 data = -1 } #Dobrudja
+		owned = { province = 356 data = -1 } #Bulgaria
+		owned = { province = 361 data = -1 } #Albania
+		owned = { province = 362 data = -1 } #Ragusa
+		owned = { province = 363 data = -1 } #Kosovo
+		OR = {
+			vassal = { country = BYZ country = SER}
+			owned = { province = 355 data = -1 } #Serbia
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "Victory in the Balkans"
+	desc = "As the Balkan campaign was brought to a spectacular conclusion with an Imperial triumph in the old Roman style, the Emperor and his councilors again convened to discuss the future. Should the Second Rome seek her revenge upon the first and revisit the iniquities of the Fourth Crusade with an invasion of her own? or should she instead follow the more just path towards the recovery her lands from the Turks of Anatolia?"
+
+	date = { day = 1 month = january year = 1355 }
+	offset = 1080 #3 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "To the East!" #Traditional Gr. battle cry
+		command = { type = addcore_claim which = 472 } #Armenia
+		command = { type = addcore_claim which = 473 } #Kurdistan
+		command = { type = addcore_claim which = 474 } #Sivas
+		command = { type = addcore_claim which = 475 } #Trabzon
+		command = { type = addcore_claim which = 476 } #Angora
+		command = { type = addcore_claim which = 480 } #Crete
+		command = { type = addcore_claim which = 481 } #Rhodos
+		command = { type = addcore_claim which = 482 } #Konya
+		command = { type = addcore_claim which = 483 } #Adana
+		command = { type = addcore_claim which = 484 } #Cyprus
+		command = { type = addcore_claim which = 485 } #Aleppo
+		command = { type = addcore_claim which = 486 } #Nuyssaybin
+		command = { type = addcore_claim which = 487 } #Azerbaijan
+		command = { type = addcore_claim which = 1609 } #Kastamonou
+		command = { type = addcore_claim which = 1610 } #Antalya
+		command = { type = addcore_claim which = 1611 } #Taurus
+		command = { type = relation which = DUL value = -100 }
+		command = { type = relation which = KAR value = -100 }
+		command = { type = relation which = TEK value = -100 }
+		command = { type = relation which = TUR value = -200 }
+		command = { type = relation which = QAR value = -100 }
+		command = { type = relation which = AKK value = -100 }
+		command = { type = relation which = MAM value = -100 }
+		command = { type = setflag which = totheeast2 }
+	}
+	action_b = {
+		name = "We march on Rome!" #yes, it *would* have built up a lot of bb points
+		#addcore_claim_claim_claim_claim_claims represent territories to which the byz had at least quasilegal claim
+		command = { type = addcore_claim which = 393 } #Napoli
+		command = { type = addcore_claim which = 394 } #Apulia
+		command = { type = addcore_claim which = 395 } #Messina
+		command = { type = addcore_claim which = 396 } #Sicily
+		command = { type = addcore_claim which = 819 } #Malta
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = HOL value = 100 }
+		command = { type = relation which = GEL value = 100 }
+		command = { type = relation which = FRI value = 100 }
+		command = { type = relation which = FLA value = 100 }
+		command = { type = relation which = DAU value = -200 }
+		command = { type = relation which = GEN value = -100 }
+		command = { type = relation which = KNI value = -100 }
+		command = { type = relation which = MAN value = -100 }
+		command = { type = relation which = MLO value = -100 }
+		command = { type = relation which = NAP value = -100 }
+		command = { type = relation which = FRA value = -200 }
+		command = { type = relation which = CAS value = -200 }
+		command = { type = relation which = ARG value = -200 }
+		command = { type = relation which = SPA value = -200 }
+		command = { type = relation which = PAP value = -400 }
+		command = { type = relation which = PIS value = -100 }
+		command = { type = relation which = SIC value = -100 }
+		command = { type = relation which = TOS value = -100 }
+		command = { type = relation which = VEN value = -100 }
+		command = { type = setflag which = Romeward }
+		}
+	action_c = {
+		name = "I like to keep my options open"
+		command = { type = addcore_claim which = 393 } #Napoli
+		command = { type = addcore_claim which = 394 } #Apulia
+		command = { type = addcore_claim which = 395 } #Messina
+		command = { type = addcore_claim which = 396 } #Sicily
+		command = { type = addcore_claim which = 472 } #Armenia
+		command = { type = addcore_claim which = 473 } #Kurdistan
+		command = { type = addcore_claim which = 474 } #Sivas
+		command = { type = addcore_claim which = 475 } #Trabzon
+		command = { type = addcore_claim which = 476 } #Angora
+		command = { type = addcore_claim which = 480 } #Crete
+		command = { type = addcore_claim which = 481 } #Rhodos
+		command = { type = addcore_claim which = 482 } #Konya
+		command = { type = addcore_claim which = 483 } #Adana
+		command = { type = addcore_claim which = 484 } #Cyprus
+		command = { type = addcore_claim which = 485 } #Aleppo
+		command = { type = addcore_claim which = 486 } #Nuyssaybin
+		command = { type = addcore_claim which = 487 } #Azerbaijan
+		command = { type = addcore_claim which = 819 } #Malta
+		command = { type = addcore_claim which = 1609 } #Kastamonou
+		command = { type = addcore_claim which = 1610 } #Antalya
+		command = { type = addcore_claim which = 1611 } #Taurus
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = HOL value = 100 }
+		command = { type = relation which = GEL value = 100 }
+		command = { type = relation which = FRI value = 100 }
+		command = { type = relation which = FLA value = 100 }
+		command = { type = relation which = DAU value = -200 }
+		command = { type = relation which = GEN value = -100 }
+		command = { type = relation which = KNI value = -100 }
+		command = { type = relation which = AKK value = -100 }
+		command = { type = relation which = QAR value = -100 }
+		command = { type = relation which = MAN value = -100 }
+		command = { type = relation which = MLO value = -100 }
+		command = { type = relation which = NAP value = -100 }
+		command = { type = relation which = FRA value = -200 }
+		command = { type = relation which = CAS value = -200 }
+		command = { type = relation which = ARG value = -200 }
+		command = { type = relation which = SPA value = -200 }
+		command = { type = relation which = PAP value = -400 }
+		command = { type = relation which = PIS value = -100 }
+		command = { type = relation which = SIC value = -100 }
+		command = { type = relation which = TOS value = -100 }
+		command = { type = relation which = VEN value = -100 }
+		command = { type = relation which = DUL value = -100 }
+		command = { type = relation which = KAR value = -100 }
+		command = { type = relation which = TEK value = -100 }
+		command = { type = relation which = TUR value = -200 }
+		command = { type = relation which = MAM value = -100 }
+		command = { type = setflag which = optionsopen2 }
+	}
+}
+
+#(1450-1820) Victory in Anatolia
+#WY??CZONY - zast?piony decyzjami 6027-6029 w Db/Decisions/Byzantine.txt
+event = {
+	id = 3001156
+	trigger = {
+		NOT = { tag = BYZ } #WY??CZONY - zast?piony decyzjami 6027-6029 (Db/Decisions/Byzantine.txt)
+		flag = byz_crossroads #BYZ: A Crossroads (dec. 6020-6023)
+		owned = { province = 474 data = -1 } #Sivas
+		owned = { province = 476 data = -1 } #Angora
+		owned = { province = 477 data = -1 } #Anatolia
+		owned = { province = 482 data = -1 } #Konya
+		owned = { province = 483 data = -1 } #Adana
+		owned = { province = 1609 data = -1 } #Kastamonu
+		owned = { province = 1610 data = -1 } #Antalya
+		owned = { province = 1611 data = -1 } #Taurus
+		NOT = { flag = byz_victory_balkans } #BYZ: Victory in the Balkans (dec. 6024-6026)
+	}
+	random = NO
+	country = BYZ
+	name = "Victory in Anatolia"
+	desc = "As the Anatolian campaign was brought to a spectacular conclusion with an Imperial triumph in the old Roman style, the Emperor and his councilors again convened to discuss the future. Had these long years of humiliation and our subsequent recovery been ordained by God that we should recover Jerusalem ourselves, as the Patriarch preaches every service? or should the tagmata first follow the sensible course and move against the petty lords of the Balkans?"
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 1080 #3 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "We oughtn't leave a knife at our back"
+		command = { type = addcore_claim which = 320 } #Dobrudja
+		command = { type = addcore_claim which = 355 } #Serbia
+		command = { type = addcore_claim which = 356 } #Bulgaria
+		command = { type = addcore_claim which = 361 } #Albania
+		command = { type = addcore_claim which = 362 } #Ragusa
+		command = { type = addcore_claim which = 363 } #Kosovo
+		command = { type = addcore_claim which = 364 } #Bosnia
+		command = { type = addcore_claim which = 365 } #Dalmatia
+		command = { type = addcore_claim which = 366 } #Croatia
+		command = { type = addcore_claim which = 368 } #Istria
+		command = { type = addcore_claim which = 475 } #Trabzon
+		command = { type = addcore_claim which = 480 } #Crete
+		command = { type = addcore_claim which = 481 } #Rhodos
+		command = { type = addcore_claim which = 484 } #Cyprus
+		command = { type = relation which = PAP value = -50 }
+		command = { type = relation which = BOS value = -100 }
+		command = { type = relation which = CRO value = -100 }
+		command = { type = relation which = HUN value = -200 }
+		command = { type = relation which = RAG value = -100 }
+		command = { type = relation which = ALB value = -100 }
+		command = { type = relation which = SER value = -100 }
+		command = { type = relation which = VEN value = -100 }
+		command = { type = relation which = WAL value = -100 }
+		command = { type = setflag which = westwardho2 }
+	}
+	action_b = {
+		name = "Next year in Jerusalem!"
+		command = { type = addcore_claim which = 486 } #Nuyssaybin
+		command = { type = addcore_claim which = 490 } #Syria
+		command = { type = addcore_claim which = 491 } #Lebanon
+		command = { type = addcore_claim which = 492 } #Samaria
+		command = { type = addcore_claim which = 493 } #Judea
+		command = { type = addcore_claim which = 494 } #Sinai
+		command = { type = addcore_claim which = 743 } #Cataract
+		command = { type = addcore_claim which = 744 } #Alexandria
+		command = { type = addcore_claim which = 745 } #Delta
+		command = { type = addcore_claim which = 746 } #Egypt
+		command = { type = addcore_claim which = 747 } #Nile
+		command = { type = relation which = MAM value = -400 }
+		command = { type = relation which = AKK value = -200 }
+		command = { type = relation which = VEN value = -200 }
+		command = { type = setflag which = levant }
+	}
+	action_c = {
+		name = "I can never choose"
+		command = { type = addcore_claim which = 320 } #Dobrudja
+		command = { type = addcore_claim which = 355 } #Serbia
+		command = { type = addcore_claim which = 356 } #Bulgaria
+		command = { type = addcore_claim which = 361 } #Albania
+		command = { type = addcore_claim which = 362 } #Ragusa
+		command = { type = addcore_claim which = 363 } #Kosovo
+		command = { type = addcore_claim which = 364 } #Bosnia
+		command = { type = addcore_claim which = 365 } #Dalmatia
+		command = { type = addcore_claim which = 366 } #Croatia
+		command = { type = addcore_claim which = 368 } #Istria
+		command = { type = addcore_claim which = 475 } #Trabzon
+		command = { type = addcore_claim which = 480 } #Crete
+		command = { type = addcore_claim which = 481 } #Rhodos
+		command = { type = addcore_claim which = 484 } #Cyprus
+		command = { type = addcore_claim which = 486 } #Nuyssaybin
+		command = { type = addcore_claim which = 490 } #Syria
+		command = { type = addcore_claim which = 491 } #Lebanon
+		command = { type = addcore_claim which = 492 } #Samaria
+		command = { type = addcore_claim which = 493 } #Judea
+		command = { type = addcore_claim which = 494 } #Sinai
+		command = { type = addcore_claim which = 743 } #Cataract
+		command = { type = addcore_claim which = 744 } #Alexandria
+		command = { type = addcore_claim which = 745 } #Delta
+		command = { type = addcore_claim which = 746 } #Egypt
+		command = { type = addcore_claim which = 747 } #Nile
+		command = { type = relation which = PAP value = -50 }
+		command = { type = relation which = BOS value = -100 }
+		command = { type = relation which = CRO value = -100 }
+		command = { type = relation which = HUN value = -200 }
+		command = { type = relation which = RAG value = -100 }
+		command = { type = relation which = SER value = -100 }
+		command = { type = relation which = VEN value = -300 }
+		command = { type = relation which = WAL value = -100 }
+		command = { type = relation which = MAM value = -400 }
+		command = { type = relation which = AKK value = -200 }
+	}
+}
+
+#(1475-1820) Victory in Italy
+#WY??CZONY - zast?piony decyzj? 6030 w Db/Decisions/Byzantine.txt
+event = {
+	id = 3001157
+	trigger = {
+		NOT = { tag = BYZ } #WY??CZONY - zast?piony decyzj? 6030 (Db/Decisions/Byzantine.txt)
+		flag = byz_crossroads #BYZ: A Crossroads (dec. 6020-6023)
+		flag = byz_victory_balkans #BYZ: Victory in the Balkans (dec. 6024-6026)
+		NOT = { flag = byz_victory_anatolia } #BYZ: Victory in Anatolia (dec. 6027-6029)
+		NOT = { flag = byz_basil2 } #BYZ: The Empire of Basil II (dec. 6031-6033)
+		OR = {
+			vassal = { country = BYZ country = BOL }
+			vassal = { country = BYZ country = FER }
+			vassal = { country = BYZ country = ROM }
+			vassal = { country = BYZ country = RIM }
+			owned = { province = 391 data = -1 } #Romagna
+		}
+		OR = {
+			vassal = { country = BYZ country = VEN}
+			vassal = { country = BYZ country = URB }
+			owned = { province = 392 data = -1 } #Marche
+		}
+		OR = {
+			vassal = { country = BYZ country = NAP }
+			vassal = { country = BYZ country = TWO }
+			owned = { province = 393 data = -1 } #Napoli
+		}
+		OR = {
+			vassal = { country = BYZ country = ARG }
+			vassal = { country = BYZ country = APU }
+			owned = { province = 394 data = -1 } #Apulia
+		}
+		OR = {
+			vassal = { country = BYZ country = SIC }
+			owned = { province = 395 data = -1 } #Messina
+		}
+		OR = {
+			vassal = { country = BYZ country = SIC }
+			owned = { province = 396 data = -1 } #Sicily
+		}
+		OR = {
+			vassal = { country = BYZ country = PAP }
+			owned = { province = 399 data = -1 } #Roma
+		}
+		OR = {
+			vassal = { country = BYZ country = PIS }
+			owned = { province = 400 data = -1 } #Siena
+		}
+		OR = {
+			vassal = { country = BYZ country = TOS }
+			vassal = { country = BYZ country = LUC }
+			vassal = { country = BYZ country = FLO }
+			vassal = { country = BYZ country = PIA }
+			owned = { province = 401 data = -1 } #Firenze
+		}
+		OR = {
+			vassal = { country = BYZ country = MLO }
+			vassal = { country = BYZ country = PAR }
+			vassal = { country = BYZ country = MOD }
+			owned = { province = 402 data = -1 } #Emila
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "Victory in Italy"
+	desc = "With the establishment of our hegemony over Italy and especially the ports of Sicily, Byzantine power once again extends over much of the Mediterranean. However, an old enemy remains - the Turks of Anatolia. Now it is time to avenge ourselves on the scourge that brought us to our knees."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 1080 #3 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "To the East!" #Greek war-cry
+		command = { type = addcore_claim which = 472 } #Armenia
+		command = { type = addcore_claim which = 473 } #Kurdistan
+		command = { type = addcore_claim which = 474 } #Sivas
+		command = { type = addcore_claim which = 475 } #Trabzon
+		command = { type = addcore_claim which = 476 } #Angora
+		command = { type = addcore_claim which = 480 } #Crete
+		command = { type = addcore_claim which = 481 } #Rhodos
+		command = { type = addcore_claim which = 482 } #Konya
+		command = { type = addcore_claim which = 483 } #Adana
+		command = { type = addcore_claim which = 484 } #Cyprus
+		command = { type = addcore_claim which = 485 } #Aleppo
+		command = { type = addcore_claim which = 486 } #Nuyssaybin
+		command = { type = addcore_claim which = 487 } #Azerbaijan
+		command = { type = addcore_claim which = 1609 } #Kastamonou
+		command = { type = addcore_claim which = 1610 } #Antalya
+		command = { type = addcore_claim which = 1611 } #Taurus
+		command = { type = relation which = DUL value = -100 }
+		command = { type = relation which = KAR value = -100 }
+		command = { type = relation which = TEK value = -100 }
+		command = { type = relation which = TUR value = -200 }
+		command = { type = relation which = QAR value = -100 }
+		command = { type = relation which = AKK value = -100 }
+		command = { type = relation which = MAM value = -100 }
+		command = { type = setflag which = totheeast3 }
+	}
+}
+
+#(1435-1820) The Empire of Basil II
+#WY??CZONY - zast?piony decyzjami 6031-6033 w Db/Decisions/Byzantine.txt
+event = {
+	id = 3001158
+	trigger = {
+		NOT = { tag = BYZ } #WY??CZONY - zast?piony decyzjami 6031-6033 (Db/Decisions/Byzantine.txt)
+		flag = byz_crossroads #BYZ: A Crossroads (dec. 6020-6023)
+		owned = { province = 320 data = -1 } #Doubrudja
+		owned = { province = 356 data = -1 } #Bulgaria
+		owned = { province = 361 data = -1 } #Albania
+		owned = { province = 362 data = -1 } #Ragusa
+		owned = { province = 363 data = -1 } #Kosovo
+		owned = { province = 474 data = -1 } #Sivas
+		owned = { province = 476 data = -1 } #Angora
+		owned = { province = 477 data = -1 } #Anatolia
+		owned = { province = 482 data = -1 } #Konya
+		owned = { province = 483 data = -1 } #Adana
+		owned = { province = 1609 data = -1 } #Kastamonu
+		owned = { province = 1610 data = -1 } #Antalya
+		owned = { province = 1611 data = -1 } #Taurus
+		NOT = { flag = byz_victory_italy } #BYZ: Victory in Italy (dec. 6030)
+		OR = {
+			flag = byz_victory_balkans #BYZ: Victory in the Balkans (dec. 6024-6026)
+			flag = byz_victory_anatolia #BYZ: Victory in Anatolia (dec. 6027-6029)
+		}
+		OR = {
+			vassal = { country = BYZ country = SER}
+			owned = { province = 355 data = -1 } #Serbia
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "The Empire of Basil II"
+	desc = "Having reconquered both the Balkans and Anatolia, the Empire has gained significant strength and has become one of the world's great powers once more. Constantinople flourishes as a center of learning and culture. But a great debate rages in our streets about whether this martial recovery should now give way to peace and trade or if these sufferings and miracles have been provided only in order the better to glorify God and to purify us for our recovery of the Holy Land from the Saracens. Meanwhile, behind closed doors, an influential cluster of nobles and merchants speak of moving against the great houses of Italy, bringing on them fourfold the destruction they provided us three centuries ago..."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 1080 #3 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Let us put away our childish things"
+		command = { type = badboy value = -2 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = naval value = 1000 }
+		command = { type = infra value = 750 }
+		command = { type = trade value = 750 }
+		command = { type = loansize which = 400 }
+		command = { type = provincetax which = 357 value = 2 } #Thrace
+		command = { type = provincetax which = 358 value = 1 } #Macedonia
+		command = { type = provincetax which = 359 value = 1 } #Hellas
+		command = { type = provincetax which = 360 value = 1 } #Morea
+		command = { type = provincetax which = 478 value = 1 } #Smyrna
+		command = { type = provincetax which = 477 value = 1 } #Anatolia
+		command = { type = provincetax which = 479 value = 1 } #Ionia
+		command = { type = relation which = PAP value = 100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = ARG value = 100 }
+		command = { type = relation which = CAS value = 100 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = stability value = 3 }
+		#command = { type = vp value = 100 }
+	}
+	action_b = {
+		name = "Next year in Jerusalem!"
+		command = { type = addcore_claim which = 486 } #Nuyssaybin
+		command = { type = addcore_claim which = 490 } #Syria
+		command = { type = addcore_claim which = 491 } #Lebanon
+		command = { type = addcore_claim which = 492 } #Samaria
+		command = { type = addcore_claim which = 493 } #Judea
+		command = { type = addcore_claim which = 494 } #Sinai
+		command = { type = addcore_claim which = 743 } #Cataract
+		command = { type = addcore_claim which = 744 } #Alexandria
+		command = { type = addcore_claim which = 745 } #Delta
+		command = { type = addcore_claim which = 746 } #Egypt
+		command = { type = addcore_claim which = 747 } #Nile
+		command = { type = relation which = MAM value = -400 }
+		command = { type = relation which = AKK value = -200 }
+		command = { type = relation which = VEN value = -200 }
+		command = { type = setflag which = levant2 }
+	}
+	action_c = {
+		name = "We march on Rome!" #yes, it *would* have built up a lot of bb points
+		#addcore_claim_claims represent territories to which the byz had at least quasilegal claim
+		command = { type = addcore_claim which = 393 } #Napoli
+		command = { type = addcore_claim which = 394 } #Apulia
+		command = { type = addcore_claim which = 395 } #Messina
+		command = { type = addcore_claim which = 396 } #Sicily
+		command = { type = addcore_claim which = 819 } #Malta
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = HOL value = 100 }
+		command = { type = relation which = GEL value = 100 }
+		command = { type = relation which = FRI value = 100 }
+		command = { type = relation which = FLA value = 100 }
+		command = { type = relation which = DAU value = -200 }
+		command = { type = relation which = GEN value = -100 }
+		command = { type = relation which = KNI value = -100 }
+		command = { type = relation which = MAN value = -100 }
+		command = { type = relation which = MLO value = -100 }
+		command = { type = relation which = NAP value = -100 }
+		command = { type = relation which = FRA value = -200 }
+		command = { type = relation which = CAS value = -200 }
+		command = { type = relation which = ARG value = -200 }
+		command = { type = relation which = sPA value = -200 }
+		command = { type = relation which = PAP value = -400 }
+		command = { type = relation which = PIS value = -100 }
+		command = { type = relation which = SIC value = -100 }
+		command = { type = relation which = TOS value = -100 }
+		command = { type = relation which = VEN value = -100 }
+		command = { type = setflag which = Romeward2 }
+	}
+}
+#cb represent territories which the byz would feel justified in claiming, without anyone else on earth agreeing with them
+#the empire has expanded too much and yet not enough to fight two major wars on two fronts
+
+#(1475-1820) Victory in Egypt
+#WY??CZONY - zast?piony decyzj? 6034 w Db/Decisions/Byzantine.txt
+event = {
+	id = 3001159
+	trigger = {
+		NOT = { tag = BYZ } #WY??CZONY - zast?piony decyzj? 6034 (Db/Decisions/Byzantine.txt)
+		flag = byz_crossroads #BYZ: A Crossroads (dec. 6020-6023)
+		NOT = { flag = byz_victory_balkans } #BYZ: Victory in the Balkans (dec. 6024-6026)
+		owned = { province = 490 data = -1 } #Syria
+		owned = { province = 491 data = -1 } #Lebanon
+		owned = { province = 492 data = -1 } #Samaria
+		owned = { province = 493 data = -1 } #Judea
+		owned = { province = 494 data = -1 } #Sinai
+		owned = { province = 743 data = -1 } #Cataract
+		owned = { province = 744 data = -1 } #Alexandria
+		owned = { province = 745 data = -1 } #Delta
+		owned = { province = 746 data = -1 } #Egypt
+		owned = { province = 747 data = -1 } #Nile
+	}
+	random = NO
+	country = BYZ
+	name = "Victory in Egypt"
+	desc = "Glory be to God the Father, God the Son, God the Spirit! After centuries of wandering in the wilderness, the Imperial standard flies over the bazaars of Alexandria and the ramparts of Jerusalem. A long, harsh campaign through the deserts, mountains and swamps of Palestine and Egypt has left the Empire master over a hostile land of deserts, mountains and swamps, but such a land as saw the birth and death and rebirth of Our Lord. Already there is talk of beatification for Drageses. For you, though, there still remains"
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 1080 #3 years
+	deathdate = { day = 29 month = december year = 1838 }
+
+	action_a = {
+		name = "Unfinished business"
+		command = { type = stability value = 1 }
+		command = { type = addcore_claim which = 320 } #Dobrudja
+		command = { type = addcore_claim which = 355 } #Serbia
+		command = { type = addcore_claim which = 356 } #Bulgaria
+		command = { type = addcore_claim which = 361 } #Albania
+		command = { type = addcore_claim which = 362 } #Ragusa
+		command = { type = addcore_claim which = 363 } #Kosovo
+		command = { type = addcore_claim which = 364 } #Bosnia
+		command = { type = addcore_claim which = 365 } #Dalmatia
+		command = { type = addcore_claim which = 366 } #Croatia
+		command = { type = addcore_claim which = 368 } #Istria
+		command = { type = addcore_claim which = 475 } #Trabzon
+		command = { type = addcore_claim which = 480 } #Crete
+		command = { type = addcore_claim which = 481 } #Rhodos
+		command = { type = addcore_claim which = 484 } #Cyprus
+		command = { type = relation which = PAP value = -50 }
+		command = { type = relation which = BOS value = -100 }
+		command = { type = relation which = CRO value = -100 }
+		command = { type = relation which = HUN value = -200 }
+		command = { type = relation which = RAG value = -100 }
+		command = { type = relation which = ALB value = -100 }
+		command = { type = relation which = SER value = -100 }
+		command = { type = relation which = VEN value = -100 }
+		command = { type = relation which = WAL value = -100 }
+		command = { type = setflag which = westwardho3 }
+	}
+}
+
+#(1475-1820) Conquest of Egypt
+#WY??CZONY - zast?piony decyzj? 6035 w Db/Decisions/Byzantine.txt
+event = {
+	id = 3001160
+	trigger = {
+		NOT = { tag = BYZ } #WY??CZONY - zast?piony decyzj? 6035 (Db/Decisions/Byzantine.txt)
+		flag = byz_crossroads #BYZ: A Crossroads (dec. 6020-6023)
+		owned = { province = 474 data = -1 } #Sivas
+		owned = { province = 476 data = -1 } #Angora
+		owned = { province = 477 data = -1 } #Anatolia
+		owned = { province = 482 data = -1 } #Konya
+		owned = { province = 483 data = -1 } #Adana
+		owned = { province = 1609 data = -1 } #Kastamonu
+		owned = { province = 1610 data = -1 } #Antalya
+		owned = { province = 1611 data = -1 } #Taurus
+		owned = { province = 320 data = -1 } #Doubrudja
+		owned = { province = 362 data = -1 } #Ragusa
+		owned = { province = 361 data = -1 } #Albania
+		owned = { province = 363 data = -1 } #Kosovo
+		owned = { province = 356 data = -1 } #Bulgaria
+		OR = {
+			vassal = { country = BYZ country = SER}
+			owned = { province = 355 data = -1 } #Serbia
+		}
+		OR = {
+			vassal = { country = BYZ country = BOL }
+			vassal = { country = BYZ country = FER }
+			vassal = { country = BYZ country = ROM }
+			vassal = { country = BYZ country = RIM }
+			owned = { province = 391 data = -1 } #Romagna
+		}
+		OR = {
+			vassal = { country = BYZ country = VEN}
+			vassal = { country = BYZ country = URB }
+			owned = { province = 392 data = -1 } #Marche
+		}
+		OR = {
+			vassal = { country = BYZ country = NAP }
+			vassal = { country = BYZ country = TWO }
+			owned = { province = 393 data = -1 } #Napoli
+		}
+		OR = {
+			vassal = { country = BYZ country = ARG }
+			vassal = { country = BYZ country = APU }
+			owned = { province = 394 data = -1 } #Apulia
+		}
+		OR = {
+			vassal = { country = BYZ country = SIC }
+			owned = { province = 395 data = -1 } #Messina
+		}
+		OR = {
+			vassal = { country = BYZ country = SIC }
+			owned = { province = 396 data = -1 } #Sicily
+		}
+		OR = {
+			vassal = { country = BYZ country = PAP }
+			owned = { province = 399 data = -1 } #Roma
+		}
+		OR = {
+			vassal = { country = BYZ country = PIS }
+			owned = { province = 400 data = -1 } #Siena
+		}
+		OR = {
+			vassal = { country = BYZ country = TOS }
+			vassal = { country = BYZ country = LUC }
+			vassal = { country = BYZ country = FLO }
+			vassal = { country = BYZ country = PIA }
+			owned = { province = 401 data = -1 } #Firenze
+		}
+		OR = {
+			vassal = { country = BYZ country = MLO }
+			vassal = { country = BYZ country = PAR }
+			vassal = { country = BYZ country = MOD }
+			owned = { province = 402 data = -1 } #Emila
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "Conquest of Egypt"
+	desc = "Having restored Italy, Anatolia and the Balkans to Imperial rule, there is no doubt that the will of God is that this dynasty should reunite the patriarchates and the Holy Apostolic Church once more. The blood of the martyrs and the blood of our Savior call, and the Patriarch echoes their voice on every visitation. It is time to restore the Holy Land to its proper place, in fealty to the Emperor, God's vicar and equal of the Apostles."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 1080 #3 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "In His name, to His glory"
+		command = {type = addcore_claim which = 486 } #Nuyssaybin
+		command = {type = addcore_claim which = 490 } #Syria
+		command = {type = addcore_claim which = 491 } #Lebanon
+		command = {type = addcore_claim which = 492 } #Samaria
+		command = {type = addcore_claim which = 493 } #Judea
+		command = {type = addcore_claim which = 494 } #Sinai
+		command = {type = addcore_claim which = 743 } #Cataract
+		command = {type = addcore_claim which = 744 } #Alexandria
+		command = {type = addcore_claim which = 745 } #Delta
+		command = {type = addcore_claim which = 746 } #Egypt
+		command = {type = addcore_claim which = 747 } #Nile
+		command = { type = relation which = MAM value = -400 }
+		command = { type = relation which = AKK value = -200 }
+		command = { type = relation which = VEN value = -200 }
+		command = { type = setflag which = levant3 }
+	}
+}
+
+#(1475-1820) The Empire of the East
+#WY??CZONY - zast?piony decyzjami 6036-6037 w Db/Decisions/Byzantine.txt
+event = {
+	id = 3001161
+	trigger = {
+		NOT = { tag = BYZ } #WY??CZONY - zast?piony decyzjami 6036-6037 (Db/Decisions/Byzantine.txt)
+		flag = byz_crossroads #BYZ: A Crossroads (dec. 6020-6023)
+		owned = { province = 320 data = -1 } #Dobrudja
+		owned = { province = 362 data = -1 } #Ragusa
+		owned = { province = 361 data = -1 } #Albania
+		owned = { province = 363 data = -1 } #Kosovo
+		owned = { province = 356 data = -1 } #Bulgaria
+		owned = { province = 477 data = -1 } #Anatolia
+		owned = { province = 474 data = -1 } #Sivas
+		owned = { province = 476 data = -1 } #Angora
+		owned = { province = 490 data = -1 } #Syria
+		owned = { province = 491 data = -1 } #Lebanon
+		owned = { province = 492 data = -1 } #Samaria
+		owned = { province = 493 data = -1 } #Judea
+		owned = { province = 494 data = -1 } #Sinai
+		owned = { province = 743 data = -1 } #Cataract
+		owned = { province = 744 data = -1 } #Alexandria
+		owned = { province = 745 data = -1 } #Delta
+		owned = { province = 746 data = -1 } #Egypt
+		owned = { province = 747 data = -1 } #Nile
+		owned = { province = 1609 data = -1 } #Kastamonu
+		owned = { province = 1610 data = -1 } #Antalya
+		owned = { province = 1611 data = -1 } #Taurus
+		OR = {
+			vassal = { country = BYZ country = SER}
+			owned = { province = 355 data = -1 } #Serbia
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "The Empire of the East"
+	desc = "Diocletan was not successful even in his life with providing an orderly transfer of power from one Emperor to the next, but his division of the empire into halves was far more lasting. The East remained united politically despite dissolving into an anarchy of heresies; the West collapsed politically but united into a single church under the Roman Pope. Now, the East is again united under a single Emperor. The people and the army demand that we consolidate this land and repair its frayed economy. The church and the merchants, however, cry out for you to avenge our humiliations and our sufferings on the Western schismatics. It could not possibly be worth the trouble..."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 1080 #3 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Consolidate our realm"
+		command = { type = stability value = 2 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincemanpower which = -1 value = 1 }
+		command = { type = provincemanpower which = -1 value = 1 }
+		command = { type = provincemanpower which = -1 value = 1 }
+		command = { type = provincemanpower which = -1 value = 1 }
+		command = { type = relation which = DAU value = -200 }
+		command = { type = relation which = GEN value = -100 }
+		command = { type = relation which = KNI value = -100 }
+		command = { type = relation which = MAN value = -100 }
+		command = { type = relation which = MLO value = -100 }
+		command = { type = relation which = NAP value = -100 }
+		command = { type = relation which = FRA value = -200 }
+		command = { type = relation which = CAS value = -200 }
+		command = { type = relation which = ARG value = -200 }
+		command = { type = relation which = SPA value = -200 }
+		command = { type = relation which = PAP value = -400 }
+		command = { type = relation which = PIS value = -100 }
+		command = { type = relation which = SIC value = -100 }
+		command = { type = relation which = TOS value = -100 }
+		command = { type = relation which = VEN value = -100 }
+		#command = { type = vp value = 250 }
+		}
+	action_b = {
+		name = "Mother of God, aid your servant"
+		command = { type = addcore_claim which = 394 } #apulia
+		command = { type = addcore_claim which = 395 } #messina
+		command = { type = addcore_claim which = 396 } #sicily
+		command = { type = addcore_claim which = 819 } #malta
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = HOL value = 100 }
+		command = { type = relation which = GEL value = 100 }
+		command = { type = relation which = FRI value = 100 }
+		command = { type = relation which = FLA value = 100 }
+		command = { type = relation which = DAU value = -200 }
+		command = { type = relation which = GEN value = -100 }
+		command = { type = relation which = KNI value = -100 }
+		command = { type = relation which = MAN value = -100 }
+		command = { type = relation which = MLO value = -100 }
+		command = { type = relation which = NAP value = -100 }
+		command = { type = relation which = FRA value = -200 }
+		command = { type = relation which = CAS value = -200 }
+		command = { type = relation which = ARG value = -200 }
+		command = { type = relation which = SPA value = -200 }
+		command = { type = relation which = PAP value = -400 }
+		command = { type = relation which = PIS value = -100 }
+		command = { type = relation which = SIC value = -100 }
+		command = { type = relation which = TOS value = -100 }
+		command = { type = relation which = VEN value = -100 }
+		command = { type = setflag which = Romeward3 }
+	}
+}
+
+#(1475-1820) Conquest of Africa
+#WY??CZONY - zast?piony decyzjami 6038-6039 w Db/Decisions/Byzantine.txt
+event = {
+	id = 3001162
+	trigger = {
+		NOT = { tag = BYZ } #WY??CZONY - zast?piony decyzjami 6038-6039 (Db/Decisions/Byzantine.txt)
+		flag = byz_crossroads #BYZ: A Crossroads (dec. 6020-6023)
+		owned = { province = 320 data = -1 } #Dobrudja
+		owned = { province = 356 data = -1 } #Bulgaria
+		owned = { province = 362 data = -1 } #Ragusa
+		owned = { province = 361 data = -1 } #Albania
+		owned = { province = 363 data = -1 } #Kosovo
+		owned = { province = 490 data = -1 } #Syria
+		owned = { province = 491 data = -1 } #Lebanon
+		owned = { province = 492 data = -1 } #Samaria
+		owned = { province = 493 data = -1 } #Judea
+		owned = { province = 494 data = -1 } #Sinai
+		owned = { province = 743 data = -1 } #Cataract
+		owned = { province = 744 data = -1 } #Alexandria
+		owned = { province = 745 data = -1 } #Delta
+		owned = { province = 746 data = -1 } #Egypt
+		owned = { province = 747 data = -1 } #Nile
+		owned = { province = 477 data = -1 } #Anatolia
+		owned = { province = 474 data = -1 } #Sivas
+		owned = { province = 476 data = -1 } #Angora
+		owned = { province = 482 data = -1 } #Konya
+		owned = { province = 483 data = -1 } #Adana
+		owned = { province = 1609 data = -1 } #Kastamonu
+		owned = { province = 1610 data = -1 } #Antalya
+		owned = { province = 1611 data = -1 } #Taurus
+		OR = {
+			vassal = { country = BYZ country = BOL }
+			vassal = { country = BYZ country = FER }
+			vassal = { country = BYZ country = ROM }
+			vassal = { country = BYZ country = RIM }
+			owned = { province = 391 data = -1 } #Romagna
+		}
+		OR = {
+			vassal = { country = BYZ country = VEN}
+			vassal = { country = BYZ country = URB }
+			owned = { province = 392 data = -1 } #Marche
+		}
+		OR = {
+			vassal = { country = BYZ country = NAP }
+			vassal = { country = BYZ country = TWO }
+			owned = { province = 393 data = -1 } #Napoli
+		}
+		OR = {
+			vassal = { country = BYZ country = ARG }
+			vassal = { country = BYZ country = APU }
+			owned = { province = 394 data = -1 } #Apulia
+		}
+		OR = {
+			vassal = { country = BYZ country = SIC }
+			owned = { province = 395 data = -1 } #Messina
+		}
+		OR = {
+			vassal = { country = BYZ country = SIC }
+			owned = { province = 396 data = -1 } #Sicily
+		}
+		OR = {
+			vassal = { country = BYZ country = PAP }
+			owned = { province = 399 data = -1 } #Roma
+		}
+		OR = {
+			vassal = { country = BYZ country = PIS }
+			owned = { province = 400 data = -1 } #Siena
+		}
+		OR = {
+			vassal = { country = BYZ country = TOS }
+			vassal = { country = BYZ country = LUC }
+			vassal = { country = BYZ country = FLO }
+			vassal = { country = BYZ country = PIA }
+			owned = { province = 401 data = -1 } #Firenze
+		}
+		OR = {
+			vassal = { country = BYZ country = MLO }
+			vassal = { country = BYZ country = PAR }
+			vassal = { country = BYZ country = MOD }
+			owned = { province = 402 data = -1 } #Emila
+		}
+		OR = {
+			vassal = { country = BYZ country = SER}
+			owned = { province = 355 data = -1 } #Serbia
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "Conquest of Africa"
+	desc = "With the consolidation of her rule in Italy and Egypt, the Empire was again able to project her power into the Western Mediterranean. Conflict with the regional power Spain seemed inevitable, although France could be placated by support in Germany against the Habsburgs. If Byzantium were ever going to be able to control the stranglehold at the Strait of Gibraltar, reestablishing her presence in the Maghreb was essential. There is little wealth and little remains of the Christian presence here after 700 years of Muslim rule. It is a massively unpopular and nearly completely thankless task. But there is this - if the Byzantines were able to force the Strait and secure access to the Atlantic, colonization of the new world would become a possibility for the last survivor of Antiquity."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 1080 #3 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "This war is unjust"
+		command = { type = stability value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = relation which = ALD value = 100 }
+		command = { type = relation which = MAM value = 100 }
+		command = { type = relation which = TUN value = 100 }
+		command = { type = relation which = MOR value = 100 }
+		command = { type = relation which = XHO value = 100 }
+		command = { type = relation which = CYR value = 100 }
+		command = { type = relation which = PAP value = 50 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = DAU value = 100 }
+		command = { type = relation which = POR value = 100 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = GEN value = 100 }
+	}
+	action_b = {
+		name = "Reclaim Africa for the Cross"
+		command = { type = stability value = -1 }
+		command = { type = domestic which = OFFENSIVE value = 2 }
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = relation which = ALD value = -100 }
+		command = { type = relation which = MAM value = -100 }
+		command = { type = relation which = TUN value = -100 }
+		command = { type = relation which = PAP value = -50 }
+		command = { type = relation which = FRA value = -200 }
+		command = { type = relation which = DAU value = -200 }
+		command = { type = relation which = POR value = -100 }
+		command = { type = relation which = SPA value = -200 }
+		command = { type = relation which = GEN value = -100 }
+		command = {type = addcore_claim which = 445 } #Gibraltar
+		command = {type = addcore_claim which = 732 } #Tangiers
+		command = {type = addcore_claim which = 734 } #Orania
+		command = {type = addcore_claim which = 735 } #Atlas
+		command = {type = addcore_claim which = 736 } #Aures
+		command = {type = addcore_claim which = 737 } #Al-Djazair
+		command = {type = addcore_claim which = 738 } #Kabylia
+		command = {type = addcore_claim which = 739 } #Tunisia
+		command = {type = addcore_claim which = 740 } #Tripolitania
+		command = {type = addcore_claim which = 741 } #Cyrenica
+		command = {type = addcore_claim which = 742 } #Quattara
+		command = { type = setflag which = nthafrica }
+	}
+}
+
+#The Balkan Campaign#
+event = {
+	id = 3001163
+	random = NO
+	country = BYZ
+	name = "The Balkan Campaign"
+	desc = "The church has been preaching the importance of the Balkan campaign and inspired thousands to join our forces! The Logothete tou Stratiotikou ('Quartermaster') even managed to purchase some cannon from the Genovese."
+
+	action_a = {
+		name = "Ooh! Ooh! Let me play with it!"
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = ART which = -2 value = 20 }
+		command = { type = treasury value = -40 }
+	}
+}
+
+#(1475-1820) The Anatolian Campaign
+event = {
+	id = 3001164
+	random = NO
+	country = BYZ
+	name = "The Anatolian Campaign"
+	desc = "The nobles have assembled a great cavalry force to help fight back the Turks! Of course, they expect the treasury to pay its way from now..."
+
+	action_a = {
+		name = "Giddy-ap!"
+		command = { type = CAV which = -2 value = 7500 }
+	}
+}
+
+#The Italian Campaign#
+event = {
+	id = 3001165
+	random = NO
+	country = BYZ
+	name = "The Italian Campaign"
+	desc = "The reconquest of Italy had a deep meaning for the people of Byzantium. The Normans had kept the Empire off-balance after Manzikert, and the sacrilege of the Fourth Crusade had been orchestrated by the Venetians. No meaningful help had come from any quarter when the Ottomans had risen and surrounded Constantinople. Then there was Rome, and the promise of its recovery from the meddlesome Popes. Using this as propaganda, the strateute were again able to recruit a large army of enthusiastic volunteers." #Imperial recruiting officers
+
+	action_a = {
+		name = "Our relics!"
+		command = { type = INF which = -2 value = 7500 }
+		command = { type = CAV which = -2 value = 5000 }
+	}
+}
+
+#(1475-1820) The Egyptian Campaign
+event = {
+	id = 3001166
+	random = NO
+	country = BYZ
+	name = "The Egyptian Campaign"
+	desc = "Until its loss to the Arabs, Egypt had been the breadbasket to the Empire; its fertility had funded the universities and libraries of Alexandria. Far more important now, though, was the recovery of Jerusalem and the Holy Sepulchre. However poor and distant, this was the land where the Savior had lived and died and lived again. The miracle of our recovery has convinced the populace that we are blessed by God for this purpose. Every able man in the Empire has gathered for the fleet at Constantinople. Unbidden, the Logothetes have purchased cannon with their own estates."
+
+	action_a = {
+		name = "Thine will be done!" #what's 'Deus vult' in Greek? =)
+		command = { type = INF which = -2 value = 35000 }
+		command = { type = CAV which = -2 value = 15000 }
+		command = { type = ART which = -2 value = 40 }
+		command = { type = manpower value = -500 } #meant it about everybody showing up
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincetax which = -1 value = -1 }
+	}
+}
+
+#(1500-1820) The Restoration Is Complete
+#WY??CZONY - zast?piony decyzj? 6040 w Db/Decisions/Byzantine.txt
+event = {
+	id = 3001167
+	trigger = {
+		NOT = { tag = BYZ } #WY??CZONY - zast?piony decyzj? 6040 (Db/Decisions/Byzantine.txt)
+		flag = byz_crossroads #BYZ: A Crossroads (dec. 6020-6023)
+		owned = { province = 357 data = -1 } #Thrace
+		owned = { province = 395 data = -1 } #Messina
+		owned = { province = 396 data = -1 } #Sicily
+		owned = { province = 399 data = -1 } #Roma
+		owned = { province = 480 data = -1 } #Crete
+		owned = { province = 484 data = -1 } #Cyprus
+		owned = { province = 493 data = -1 } #Judea
+		owned = { province = 734 data = -1 } #Orania
+		owned = { province = 735 data = -1 } #Atlas
+		owned = { province = 736 data = -1 } #Aures
+		owned = { province = 737 data = -1 } #Al-Djazair
+		owned = { province = 738 data = -1 } #Kabylia
+		owned = { province = 739 data = -1 } #Tunisia
+		owned = { province = 740 data = -1 } #Tripolitania
+		owned = { province = 741 data = -1 } #Cyrenica
+		owned = { province = 742 data = -1 } #Quattara
+		owned = { province = 744 data = -1 } #Alexandria
+		OR = {
+			owned = { province = 732 data = -1 } #Tangiers
+			owned = { province = 445 data = -1 } #Gibraltar
+		}
+		OR = {
+			NOT = { exists = PAP }
+			vassal = { country = BYZ country = PAP }
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "The Restoration is Complete"
+	desc = "With the return of Africa to Roman rule, the Restoration of the Imperium Iustiniani is complete. Over a millennium later and regrown from a single province, Byzantium stands again at the zenith of her power. The Mediterranean is but a Roman lake. Despite the recent emergance of Protestant and Reformed denominations of Christianity, all five Patriarchs are governed by a single Emperor once more. The title Autokrator, the title Basileos, the title Kosmokrator, so very hollow these many years, ring hollow no longer!"
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 1080 #3 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "King of Kings, ruling over those who rule!"
+		command = { type = add_countryculture which = berber }
+		#command = { type = add_countryculture which = iberian }
+		command = { type = add_countryculture which = italian }
+		command = { type = stability value = 2 }
+		command = { type = badboy value = -5 }
+		command = { type = provincetax which = 357 value = 4 } #Thrace
+		command = { type = treasury value = 500 }
+		#command = { type = vp value = 500 }
+	}
+}

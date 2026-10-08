@@ -1,0 +1,254 @@
+#-----------------------------------------------------------------------------
+# Flavor Events (should gain more)
+
+#(1420-1430) Hesychasm flavor event (by Driftwood)
+event = {
+	id = 3001488
+	trigger = {
+		religion = orthodox
+	}
+	random = NO
+	country = BYZ
+	name = "Hesychasm returns!"
+	desc = "The Byzantines were always fond of religious fights, spending centuries to hammer out the exact interrelationships between the components of the Trinity, before moving on to the desirability of icons, back to the components of the Trinity, and so on. Of course, these debates usually became foils for political struggles of a secular nature after a couple of years. One such struggle was sparked by the practice of the monks of Mt. Athos, who would hold their breath and meditate, sometimes being blessed by a vision of the light of God. The Patriarch interpreted this as a heretical belief in an uncreated Light, a fourth component of the Godhead. More generally, it reflected a Byzantine tendency towards mysticism over intellectualism. Though settled in the 14th century, the debate was tied up with that over the Union with the Catholic Church and periodically burst back into contention again."
+
+	date = { year = 1337 }
+	offset = 3600 #10 years
+	deathdate = { year = 1430 }
+
+	action_a = {
+		name = "Endorse the Hesychasts"
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = stability value = 1 }
+		command = { type = relation which = PAP value = -50 }
+		command = { type = revolt which = -1 }
+	}
+	action_b = {
+		name = "Tolerate the Hesychasts"
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = stability value = -2 }
+	}
+	action_c = {
+		name = "Persecute the Hesychasts"
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = stability value = -1 }
+		command = { type = revoltrisk which = 60 value = 4 }
+		command = { type = relation which = PAP value = 50 }
+	}
+}
+
+#(1455-1456) Georgios Skholarios
+event = {
+	id = 3001489
+	trigger = {
+		religion = orthodox
+	}
+	random = NO
+	country = BYZ
+	name = "Georgios Skholarios"
+	desc = "Historically a Byzantine scholar and the Patriarch Gennadios B', Georgios trained as a lawyer and became a Judge-General in charge of the University. Learning Latin, he read and admired the works of Hagios Thomas Aquinas and wrote a number of philosophical works. A delegate to the Council of Florence and pro-unionist, he had second thoughts after his return to Constantinople. This was partially because he believed the end of the world was at hand: by Byzantine calculations the world would be 7000 years old in 1492, a turning point and certainly the Anti-Christ was at the gates. Therefore, to his mind, it was more important to keep the Faith pure than preserve the worldly Empire. In this capacity he was instrumental in establishing a constitution with the Sultan preserving the structure of the Church. With the Turks kept at bay and routed, his patriarchate is more secure and long-lived and his consummate skill helps to spread order and peace to the new-won lands."
+
+	date = { year = 1455 }
+	offset = 360 #1 year
+	deathdate = { year = 1456 }
+
+	action_a = {
+		name = "Is he a saint?"
+		#command = { type = vp value = 10 }
+		command = { type = infra value = 50 }
+		command = { type = stability value = 2 }
+	}
+}
+
+#(1450-1550) Classics flavor event (based on idea by Angelus)
+event = {
+	id = 3001490
+	trigger = {
+		domestic = { type = QUALITY value = 5 }
+	}
+	random = NO
+	country = BYZ
+	name = "Classics"
+	desc = "With the spread of the printing press through western Europe, the enlightened incumbant of the Patriarchate has suggested that we invest in one of our own, distributing Bibles, exegeses, and copies of the Classics translated into the modern vernacular. No doubt a more educated populace would be more productive, but as many states discovered during the period, they also tend to be more restive."
+
+	date = { year = 1450 }
+	offset = 3600 #10 years
+	deathdate = { year = 1550 }
+
+	action_a = {
+		name = "Create the Imperial Press"
+		command = { type = treasury value = -200 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = infra value = 50 }
+	}
+	action_b = {
+		name = "Surely the worthy can afford tutors"
+		command = { type = domestic which = INNOVATIVE value = -1 }
+	}
+}
+
+#Composer flavor event
+event = {
+	id = 3001491
+	random = YES
+	country = BYZ
+	name = "Court Composer"
+	desc = "The latest fashion is to commission operas in Italian or the vernacular. C'mon. Everybody's doing it." #??? obviously needs history =)
+	date = { year = 1700 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Commission operas from Roman history"
+		command = { type = treasury value = -100 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+	}
+	action_b = {
+		name = "But I love the chanting monks!"
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		#command = { type = vp value = -25 }
+	}
+}
+
+#Monasticism flavor event
+event = {
+	id = 3001492
+	trigger = {
+		religion = orthodox
+		NOT = {
+			countrysize = 20
+		}
+	}
+	random = YES
+	country = BYZ
+	name = "Monastic Order"
+	desc = "Numerous Emperors gave grants to and found monasteries throughout the Empire. A group of holy monks comes before the Emperor seeking support and offering prayers for our health and the Empire."
+	# Both the Byzantine and Trebizond Emperors founded monasteries, which were the focus of the intellectual life of the Empire in its last three centuries.
+	date = { year = 1337 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "All there is, is yours, O Lord" #Totus tuus - JP2's motto
+		command = { type = treasury value = -50 }
+		command = { type = stability value = 1 }
+	}
+	action_b = {
+		name = "We need farmers and soldiers!"
+		command = { type = stability value = -1 }
+		command = { type = provincetax which = -1 value = 1 }
+	}
+}
+
+#Monasticism flavor event
+event = {
+	id = 3001493
+	trigger = {
+		religion = orthodox
+		countrysize = 20
+	}
+	random = YES
+	country = BYZ
+	name = "Monastic Order"
+	desc = "Numerous Emperors gave grants to and found monasteries throughout the Empire. A group of holy monks comes before the Emperor seeking support and offering prayers for our health and the Empire."
+	# Both the Byzantine and Trebizond Emperors founded monasteries, which were the focus of the intellectual life of the Empire in its last three centuries.
+	date = { year = 1337 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "All there is, is yours, O Lord" #Totus tuus - JP2's motto
+		command = { type = treasury value = -250 }
+		command = { type = stability value = 1 }
+	}
+	action_b = {
+		name = "We need farmers and soldiers!"
+		command = { type = stability value = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+	}
+}
+
+#from the Aberration event sequence
+event = {
+	id = 3001494
+	trigger = {
+		domestic = { type = aristocracy value = 3 }
+		owned = { province = 358 data = -1 } #Macedonia
+		owned = { province = 478 data = -1 }
+	}
+	random = YES
+	country = BYZ
+
+	name = "Noble families rivalry flares up"
+	desc = "Two very influental noble families' rivalry has suddenly flared up into an open war between them over an insult during a marriage ceremony. Should we let them fight it out or intervene in one's support?"
+
+	date = { day = 1 month = january year = 1454 }
+	offset = 7200 #20 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Let them fight it out"
+		command = { type = stability value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+	}
+	action_b = {
+		name = "Support the Anatolian family"
+		command = { type = revolt which = 358 } #Macedonia
+		command = { type = revolt which = 358 } #Macedonia
+		#command = { type = province_revoltrisk which = 358 value = 5 } #Macedonia
+		command = { type = revoltrisk which = 12 value = 3 }
+		command = { type = infra value = 500 }
+	}
+	action_c = {
+		name = "Support the Macedonian family"
+		command = { type = revolt which = 478 }
+		command = { type = revolt which = 478 }
+		#command = { type = province_revoltrisk which = 478 value = 5 }
+		command = { type = revoltrisk which = 12 value = 3 }
+		command = { type = trade value = 500 }
+	}
+}
+
+#(1470-1820) Renaissance Arrives in Byzantium (from Aberration)
+event = {
+	id = 3001495
+	random = no
+	country = BYZ
+	name = "The Renaissance Arrives in Byzantium"
+	desc = "The new ideas of the 'renaissance' spread during the late 15th century from Italy, and were eagerly adopted by artists and imperial bureaucrats alike."
+
+	date = { day = 1 month = january year = 1470 }
+	offset = 7200 #20 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Scoff at the heretical Italian humanists"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+	}
+	action_b = {
+		name = "Accept some of the ideas of the renaissance"
+		command = { type = treasury value = -250 }
+		command = { type = infra value = 550 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+	}
+	action_c = {
+		name = "Embrace the renaissance"
+		command = { type = stability value = -1 }
+		command = { type = treasury value = -400 }
+		command = { type = infra value = 850 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+	}
+}

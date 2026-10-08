@@ -1,0 +1,278 @@
+#####Brittany Major Events####
+#By Joakim 'Greven' Bergqwist#
+##############################
+
+#The Marriage of Anne of Brittany#
+event = {
+
+	id = 3602
+	trigger = {
+			exists = FRA
+			exists = HAB
+			event = 3178
+		}
+	random = no
+	country = BRI
+	name = "EVENTNAME3602"
+	desc = "EVENTHIST3602"
+	style = "3602"
+
+	date = { day = 9 month = september year = 1488 }
+	offset = 30
+	deathdate = { day = 22 month = december year = 1491 }
+
+	action_a ={				#Charles of France#
+		name = "ACTIONNAME3602A"
+		command = { type = trigger which = 3321 }
+		command = { type = trigger which = 3330 }
+		command = { type = dynastic which = FRA }
+#		command = { type = alliance which = FRA }
+		command = { type = stability value = 2 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = HAB value = -100 }
+	}
+
+	action_b ={				#Let a remote relative become Duke#
+		name = "ACTIONNAME3602B"
+		command = { type = stability value = -2 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = revolt which = -1 }
+	}
+}
+
+#The Marriage of Anne of Brittany#
+event = {
+
+	id = 3603
+	trigger = {
+			exists = HAB
+			exists = FRA
+			event = 3319
+		}
+	random = no
+	country = BRI
+	name = "EVENTNAME3603"
+	desc = "EVENTHIST3603"
+	style = "3602"
+
+	date = { day = 9 month = september year = 1488 }
+	offset = 30
+	deathdate = { day = 22 month = december year = 1491 }
+
+	action_a ={				#Maximilian of Austria#
+		name = "ACTIONNAME3603A"
+		command = { type = trigger which = 3329 }
+		command = { type = trigger which = 3322 }
+		command = { type = dynastic which = HAB }
+#		command = { type = alliance which = HAB }
+		command = { type = stability value = 2 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = HAB value = 100 }
+	}
+
+	action_b ={				#Let a remote relative become Duke#
+		name = "ACTIONNAME3603B"
+		command = { type = stability value = -2 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = revolt which = -1 }
+	}
+}
+
+#The Marriage of Anne of Brittany#
+event = {
+
+	id = 3604
+	trigger = {
+		NOT = {
+			event = 3178
+			event = 3319
+		}
+	}
+	random = no
+	country = BRI
+	name = "The Marriage of Anne of Brittany"
+	desc = "EVENTHIST3604"
+
+	style = "3602"
+
+	date = { day = 9 month = september year = 1488 }
+	offset = 30
+	deathdate = { day = 22 month = december year = 1491 }
+
+	action_a ={				#Let a remote relative become Duke#
+		name = "Let a remote relative become Duke"
+		command = { type = stability value = 1 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = ENG value = -50 }
+	}
+}
+
+#The War of Brittany#
+event = {
+	id = 4169			#Triggered by FRA 4168A#
+	random = no
+	country = BRI
+	name = "The War of Brittany"
+	desc = "My Lord, civil war in France presents us with the opportunity to break free of their orbit. Both the Duke of Orléans and the young King Charles VIII seek your daughter's hand in marriage, and the Duke's ambition to seize the Regency from the King's sister, Anne of Beaujeu, is now drawing our own Breton nobles into this deadly trap. Sire, should we remain as we are, or take advantage of events over the border to assert our own independence?"
+	
+	style = "4168"
+
+	action_a ={			# Do not anger the French
+		name = "Do not anger the French"
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = ENG value = -50 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={			# Fight for our independence
+		name = "Fight for our independence"
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = breakvassal which = FRA }
+		command = { type = casusbelli which = FRA value = 60 }
+		command = { type = manpower value = 10 }
+		command = { type = treasury value = 200 }
+		command = { type = INF which = -2 value = 15000 }
+		command = { type = CAV which = -2 value = 5000 }
+		command = { type = ART which = -2 value = 20 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 50 }
+		command = { type = sleepevent which = 3602 }
+		command = { type = sleepevent which = 3603 }
+	}
+}
+
+#The Duke of Orléans seizes the Regency#
+event = {
+	id = 4171			#Triggered by FRA 4168B#
+	random = no
+	country = BRI
+	name = "The Duke of Orléans seizes the Regency"
+	desc = "My Lord, the Duke of Orléans has seized the Regency from the young King's sister, Anne of Beaujeu, and now seeks your daughter's hand in marriage. The swift change of government in Paris is good news for Brittany, as it means the threat of being drawn into bloody civil war among the French nobles has ended."
+	
+	style = "4168"
+
+	action_a ={			# A bloodless coup in Paris!
+		name = "A bloodless coup in Paris!"
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = dynastic which = FRA }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = ENG value = -50 }
+		command = { type = treasury value = 200 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#Brittany and the New World#
+event = {
+	id = 4172
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+	}
+	random = no
+	country = BRI
+	name = "Brittany and the New World"
+	desc = "EVENTHIST4172"
+
+	date = { day = 1 month = january year = 1510 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1540 }
+
+	action_a ={			# Our future lies across the ocean
+		name = "Our future lies across the ocean"
+		command = { type = domestic which = OFFENSIVE value = 2 }
+		command = { type = domestic which = LAND value = -2 }
+		command = { type = naval value = 800 }
+		command = { type = warships which = -1 value = 10 }
+		command = { type = transports which = -3 value = 5 }
+		command = { type = conquistador which = -1 }
+		command = { type = explorer which = -1 }
+		command = { type = colonists value = 6 }
+		command = { type = missionaries value = 3 }
+		command = { type = cash value = -300 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={			# Our future lies here at home
+		name = "Our future lies here at home"
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = OFFENSIVE value = -1 }
+		command = { type = provincetax which = 414 value = 2 }
+		command = { type = provincemanpower which = 414 value = 1 }
+		command = { type = provincetax which = 415 value = 2 }
+		command = { type = provincemanpower which = 415 value = 1 }
+		command = { type = provincetax which = 416 value = 2 }
+		command = { type = provincemanpower which = 416 value = 1 }
+		command = { type = cash value = -300 }
+		command = { type = stability value = -1 }
+	}
+
+	action_c ={			# We cannot afford such dreams
+		name = "We cannot afford such dreams"
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = relation which = ENG value = 50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#Catholic Revolt in Brittany#
+event = {
+
+	id = 4173
+	trigger = {
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+		FRA = {
+			OR = {
+				religion = protestant
+				religion = reformed
+			}
+		}
+	}
+	random = no
+	country = BRI
+	name = "Catholic Revolt in Brittany"
+	desc = "In the reign of King Louis XIII, Cardinal Richelieu decided to suppress Catholic political privileges. An uprising (1621-22) against the introduction of Protestantism in the Vendée was put down by Richelieu, and the Catholics lost all the strongholds given to them under the Edict of Nantes, except Guise and Péronne."
+
+	date = { day = 1 month = january year = 1621 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1623 }
+
+	action_a ={				#Throw off the French yoke#
+		name = "Throw off the French yoke"
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = breakvassal which = FRA }
+		command = { type = casusbelli which = FRA value = 60 }
+		command = { type = manpower value = 20 }
+		command = { type = treasury value = 500 }
+		command = { type = INF which = -2 value = 25000 }
+		command = { type = CAV which = -2 value = 5000 }
+		command = { type = ART which = -2 value = 50 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 50 }
+	}
+	action_b ={				#Remain loyal to Paris#
+		name = "Remain loyal to Paris"
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = stability value = -1 }
+	}
+}

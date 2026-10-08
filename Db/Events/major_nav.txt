@@ -1,0 +1,162 @@
+#####Navarra Major Events#####
+#By Joakim 'Greven' Bergqwist#
+##############################
+
+#The Crown of France#
+event = {
+
+	id = 3589
+	trigger = {
+			owned = {
+					province = 385
+					data = -1
+				}
+			NOT = {
+				exists = FRA
+				}
+		}
+	random = no
+	country = NAV
+	name = "EVENTNAME3589"
+	desc = "EVENTHIST3589"
+
+	date = { day = 1 month = january year = 1480 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1575 }
+
+	action_a ={					#France is reborn with me#
+		name = "ACTIONNAME3589A"
+		command = { type = vp value = 200 }
+		command = { type = stability value = 3 }
+		command = { type = country which = FRA }
+		command = { type = INF which = 385 value = 15000 }
+		command = { type = CAV which = 385 value = 10000 }
+		command = { type = ART which = 385 value = 30 }
+	}
+
+	action_b ={					#Let France rest in peace#
+		name = "ACTIONNAME3589B"
+		command = { type = vp value = -100 }
+		command = { type = stability value = -3 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = BUR value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = SPA value = 150 }
+	}
+}
+
+# Removed 15005 'The Dual Monarchy' (now a decision)
+
+#Protestant Revolt in Navarre#
+event = {
+
+	id = 4175
+	trigger = {
+		NOT = {
+			decision = 1003 # Proclaim the Dual Monarchy
+		}
+		OR = {
+			religion = protestant
+			religion = reformed
+		}
+		FRA = {
+			OR = {
+				religion = catholic
+				religion = counterreform
+			}
+		}
+	}
+	random = no
+	country = NAV
+	name = "EVENTNAME3119"
+	desc = "EVENTHIST3119"
+
+	date = { day = 1 month = january year = 1621 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1623 }
+
+	action_a ={				#Throw off the French yoke#
+		name = "Throw off the French yoke"
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = breakvassal which = FRA }
+		command = { type = casusbelli which = FRA value = 60 }
+		command = { type = manpower value = 20 }
+		command = { type = treasury value = 500 }
+		command = { type = INF which = -2 value = 25000 }
+		command = { type = CAV which = -2 value = 5000 }
+		command = { type = ART which = -2 value = 50 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 50 }
+	}
+	action_b ={				#Remain loyal to Paris#
+		name = "Remain loyal to Paris"
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#French Wars of Religion#
+event = {
+	id = 4176			#Triggered by FRA 3110#
+	random = no
+	country = NAV
+
+	name = "French Wars of Religion"
+	desc = "Your Majesty, the bitter civil war between Catholics and Protestants in France has now made its way over the border into Navarre. Whatever happens, we must prepare our realm for invasion from the north, and protect our ancient liberties from the marauding armies of both the Huguenots and the Catholic League."
+
+	style = "3110"
+
+	action_a ={				#We must defend our Kingdom#
+		name = "We must defend our Kingdom"
+		command = { type = domestic which = OFFENSIVE value = -1 }
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = fortress which = 425 value = 1 }
+		command = { type = fortress which = 428 value = 1 }
+		command = { type = land value = 500 }
+		command = { type = missionaries value = 2 }
+		command = { type = treasury value = 200 }
+		command = { type = vp value = 50 }
+		command = { type = stability value = 2 }
+	}
+}
+
+#At the Walls of Paris#
+event = {
+	id = 4177			#Triggered by FRA 3111/3113/3774#
+	random = no
+	country = NAV
+
+	name = "At the Walls of Paris"
+	desc = "Your Majesty, with your election as King Henry IV of France, you must now decide whether to rule Navarre in personal union or absorb it into the French crown."
+
+	style = "3111"
+
+	action_a ={				#One King, One Kingdom#
+		name = "One King, One Kingdom"
+		trigger = { 
+			ai = yes
+		}
+		command = { type = trigger which = 4178 } # annexed by FRA
+	}
+
+	action_b ={				#One King, Two Kingdoms#
+		name = "One King, Two Kingdoms"
+		command = { type = dynastic which = FRA }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = provincetax which = 425 value = 2 }
+		command = { type = provincetax which = 428 value = 2 }
+		command = { type = infra value = 400 }
+		command = { type = trade value = 800 }
+		command = { type = stability value = 1 }
+		command = { type = trigger which = 4179 }
+	}
+}

@@ -1,0 +1,113 @@
+#######Eire Major Events#######
+#  By Demetrios and Havard    #
+###############################
+
+#Queen Elizabeth's Offer#
+event = {
+	id = 3826
+	trigger = { 
+		atwar = no
+		exists = ENG
+		NOT = {
+			vassal = { country = ENG country = EIR }
+		}
+  	}
+	random = no
+	country = EIR
+	name = "EVENTNAME3826"
+	desc = "EVENTHIST3826"
+	
+ 	date = { day = 1 month = january year = 1542 }
+  	offset = 30
+  	deathdate = { day = 1 month = january year = 1547 }
+	
+	action_a ={		#Yes, freedom is a relative concept#
+		name = "ACTIONNAME3826A"
+		command = { type = relation which = ENG value = 200 }
+		command = { type = trigger which = 3827 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = stability value = -2 }
+	}
+	action_b ={		#No, we are not slaves to England!#
+		name = "ACTIONNAME3826B"
+		command = { type = relation which = ENG value = -200 }
+		command = { type = trigger which = 3828 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#Hugh O'Neills Irish Rebellion#
+event = {
+  	id = 3829
+	trigger = { 
+		atwar = no
+		vassal = { country = ENG country = EIR }
+  	}
+  	random = no
+  	country = EIR
+  	name = "EVENTNAME3829"
+  	desc = "EVENTHIST3829"
+  
+  	date = { day = 1 month = january year = 1590 }
+  	offset = 30
+  	deathdate = { day = 30 month = december year = 1610 }
+
+  	action_a ={		#We are free of England's yoke!#
+		name = "ACTIONNAME3829A"
+		command = { type = relation which = ENG value = -200 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = casusbelli which = ENG value = 60 }
+		command = { type = breakvassal which = ENG }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = CAV which = -2 value = 5000 }
+		command = { type = ART which = -2 value = 5 }
+		command = { type = stability value = 2 }
+  	}
+  	action_b ={		#Let us bide our time...#
+		name = "ACTIONNAME3829B"
+		command = { type = relation which = ENG value = 50 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = stability value = -1 }
+  	}
+}
+
+# Wolfe Tone's Irish Rebellion (EIR) #
+event = {
+  	id = 3916
+	trigger = { 
+		atwar = no
+		vassal = { country = ENG country = EIR }
+		exists = USA
+  	}
+  	random = no
+  	country = EIR
+  	name = "Wolfe Tone's Irish Rebellion"
+  	desc = "EVENTHIST3916"
+
+	style = "3915"
+
+	date = { day = 1 month = january year = 1798 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1808 }
+
+  	action_a ={		#We are free of England's yoke!#
+		name = "We are free of England's yoke!"
+		command = { type = relation which = ENG value = -200 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = casusbelli which = ENG value = 60 }
+		command = { type = breakvassal which = ENG }
+		command = { type = INF which = -2 value = 20000 }
+		command = { type = CAV which = -2 value = 5000 }
+		command = { type = ART which = -2 value = 15 }
+		command = { type = stability value = 2 }
+  	}
+  	action_b ={		#Let us bide our time...#
+		name = "Let us bide our time..."
+		command = { type = relation which = ENG value = 50 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = stability value = -1 }
+  	}
+}

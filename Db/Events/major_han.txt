@@ -1,0 +1,49 @@
+#####Hannover Major Events#####
+#By Joakim 'Greven' Bergqwist##
+###############################
+
+#The Hannover Dynasty in England#
+event = {
+
+	id = 3612
+	trigger = {
+			exists = ENG
+			event = 3031
+		}
+	random = no
+	country = HAN
+	name = "EVENTNAME3612"
+	desc = "EVENTHIST3612"
+
+	date = { day = 29 month = july year = 1714 }
+	offset = 0
+	deathdate = { day = 30 month = july year = 1714 }
+
+	action_a ={				#I will be King of England#
+		name = "ACTIONNAME3612A"
+		command = { type = dynastic which = ENG }
+#		command = { type = alliance which = ENG }
+		command = { type = stability value = 3 }
+	}
+}
+
+#The Stuart Dynasty in England#
+event = {
+
+	id = 25017			#Triggered by ENG3038B#
+	random = no
+	country = HAN
+	name = "The Stuart Dynasty in England"
+	desc = "Though the 1701 Act of Succession in England forbade Catholics from taking the throne, it seems that the exiled Prince of Wales, James Stuart, has decided that 'Londres ne vaut bien une messe' and is now offering to convert to the Anglican faith in exchange for being restored to the line of succession. By doing so he has completely scuppered our dynasty's chances of succeeding Queen Anne. Though England will likely avoid a return to Catholicism, it seems the continuation of the Stuart dynasty is assured - at least for now."
+
+	action_a ={				#Oh well, it's probably for the best#
+		name = "Oh well, it's probably for the best"
+		command = { type = wakeleader which = 0251 } # Wilhelm August
+		command = { type = relation which = -6 value = 100 }
+		command = { type = relation which = -9 value = 50 }
+		command = { type = relation which = -9 value = 50 }
+		command = { type = relation which = -9 value = 50 }
+		command = { type = relation which = -9 value = 50 }
+		command = { type = stability value = 1 }
+	}
+}

@@ -1,0 +1,26 @@
+##Dauphine Events##
+
+#(1349) The Sale of Dauphiné 
+event = {
+	id = 296021
+	random = no
+	country = DAU
+	name = "The Sale of Dauphiné"
+	desc = "Humbert II, count of Dauphiné since 1333 differed greatly from the administrative practices of his predecessors, instead favoring the extravagant life of a governing noble. His tastes, along with a fruitless desire to Crusade bankrupted the realm. Left with no other option and without an heir, Humbert first attempted to sell his property to Pope Benedict XII. This arrangement fell through, but in 1349, he successfully sold the land to Philip VI of France."
+	date = { day = 14 month = july year = 1349 }
+
+	action_a = {
+		name = "Transport the land to the French crown (end game)"
+		command = { type = trigger which = 107003 } #FRA: The Purchase of Dauphiné – Historical
+	}
+	action_b = {
+		name = "Offer the land to the Church (end game)"
+		command = { type = trigger which = 296023 } #PAP: The Purchase of Dauphiné - Alternate
+	}
+	action_c = { 
+		name = "Offer the title to the French, but maintain autonomy"
+		command = { type = trigger which = 107004 } #FRA: The Purchase of Dauphiné - Limited Agreement
+		command = { type = relation which = FRA value = 100 }
+		command = { type = stability value = -6 }
+	}
+}

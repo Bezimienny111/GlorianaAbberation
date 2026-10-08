@@ -1,0 +1,814 @@
+#-----------------------------------------------------------------------------
+# Hedjaz Events
+
+#Sack of Mecca
+event = {
+	id = 3001303
+	trigger = {
+		owned = { province = 498 data = -1 } #Mecca
+		NOT = { domestic = { type = INNOVATIVE value = 8 } }
+	}
+	random = NO
+	country = BYZ
+	name = "The Kaaba"
+	desc = "Our armies under the banner of the Holy Virgin have captured the infidel's prized city of Mecca! The rumors of idolatry and devil worship have turned out to be completely false. Still, there is nothing you can do that will please everyone. The people demand you raze the town and poison the wells; the Patriarch that you consecrate the mosque as a church in honor of Abraham. Either choice will lead to massive riots in our Arab lands and ceaseless war with Muslim neighbours. Surely the most politic and lucrative opportunity is simply to promote a Muslim princeling over the region and tax the pilgrim trade, but our own people would be outraged."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30 #1 month
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Create the Sharifate of Hedjaz"
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = treasury value = 300 }
+		command = { type = stability value = -2 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = trigger which = 3001510 } #Release ARA to create Hedjaz
+		command = { type = trigger which = 3001511 } #Give ARA Mecca/Medina
+	}
+	action_b = {
+		name = "Convert the Kaaba to Hagios Abramios"
+		command = { type = populationpercent which = 498 value = -30 }
+		command = { type = provincetax which = 498 value = -2 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		#command = { type = trigger which = 3001499 }
+		#would spark either war or cb with every muslim country
+		#is a mecca cb hardwired for Muslim countries along the lines of Catholics and Rome?
+	}
+	action_c = {
+		name = "Poison the Well of Zamzam"
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = populationpercent which = 498 value = -60 } #it doesn't go below 1000 right?
+		command = { type = provincetax which = 498 value = -30 } #is there a lower limit on ptax?
+		command = { type = stability value = 2 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		#command = { type = trigger which = 3001499 }
+		#would spark either war or cb with every muslim country
+		#is a mecca cb hardwired for Muslim countries along the lines of Catholics and Rome?
+	}
+}
+#the lesson of this event is to stay out of the desert =D
+
+#event = {
+#	id = 3001499 #triggered by 3001303 B & C
+#	trigger = {
+#		OR = {
+#			religion = sunni
+#			religion = shia
+#		}
+#	}
+#	random = NO
+#	name = "Sword of Allah"
+#	desc = "Infidel Greeks have desecrated the sacred mosque in Mecca. Jihad!"
+#
+#	action_a = {
+#		name = "The insolence! This means war!"
+#		command = { type = relation which = BYZ value = -200 }
+#		command = { type = casusbelli which = BYZ value = 200 }
+#		command = { type = war which = BYZ }
+#	}
+#}
+
+#Pilgrim Trade
+event = {
+	id = 3001304
+	trigger = {
+		vassal = { country = ARA country = BYZ }
+	}
+	random = YES
+	country = ARA
+	name = "The Pilgrim Trade"
+	desc = "Strange to say, Byzantine overlordship of the Hedjaz may be the best thing to happen to the Holy Cities in centuries. Although there are occasional disturbances from zealous Christians, who now have to be allowed access to the region, a special tagma has been created to protect the hajjis and caravans from bedouin attacks and there is an end to discrimination between Sunni and Shia pilgrims. Even the majority of the Christian visitors are merely curious pilgrims to Abraham's shrines or traders, who leave 10% of their earnings with the Sharif."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 1800 #5 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Business is booming!"
+		command = { type = provincetax which = 498 value = 5 }
+		command = { type = relation which = BYZ value = 100 }
+		command = { type = INF which = 498 value = 4000 }
+		command = { type = CAV which = 498 value = 1000 }
+	}
+}
+
+#Bedouin Attack!
+event = {
+	id = 3001305
+	trigger = {
+		NOT = { event = 3001303 } #the Ottomans never successfully ended the raids either...
+	}
+	random = YES
+	province = 498
+	name = "Bedouin Attack!"
+	desc = "From ancient times until the 20th century, the central region of Arabia was never under centralized control. Rather, it was a constantly shifting territory contested by the organized governments at the periphery and the tribes of the nomadic bedouin. After the coming of Islam, it would not be until the rise of the Saudis that any true unity came to the region. One of the Bedouin's most profitable occupations was attacking the caravans on the routes to Mecca, which they just did."
+	date = { year = 1337 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Just wait til I develop GPS!"
+		command = { type = treasury value = -25 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Great Arab Rebellion by Louis-Philippe
+
+event = {
+	id = 3001306
+	trigger = {
+		owned = { province = 744 data = -1 } #Alexandria
+		domestic = { type = centralization value = 6 } #necessary?
+		NOT = {
+			stability = -1
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "The Great Arab Rebellion"
+	desc = "For several decades, the Arab population of the Middle East has been subject to Roman occupation. Now, they can no longer endure this foreign rule over their long-held lands. The missionary work against Islam, the Greek colonization of the Middle East has spread an anti-Roman sentiment throughout the region. In 1649, an attack on an Arab town in Palestine by Greek pilgrims finally put the fire to the powder. The remnants of Arab society in Palestine rose against the occupying Greek. From there, the revolt spread through the Orient, from Syria to Egypt, setting the Empire awash in fire and blood. The Empire reacted immediately - gathering new troups in the Balkans and sending orders for deployed troops to massacre the revolters. The Empire was in chaos."
+	date = { day = 1 month = august year = 1649 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Oooooh, crap..."
+		command = { type = stability value = -4 }
+		command = { type = independence which = MAM }
+		command = { type = trigger which = 3001307 }
+	}
+}
+
+event = {
+	id = 3001307
+	trigger = {
+		event = 3001306
+	}
+	random = NO
+	country = BYZ
+	name = "The Loss of the East"
+	desc = "The Eastern provinces were quickly uncontrollable. The Roman troops were forced back to the Taurus passes by the Arab population controlling the greater part of Syria and Egypt. The Emperor prepared troops in Anatolia and the Balkans, organizing an army of reconquest at Constantinople to restore order. The war had begun."
+	date = { day = 1 month = august year = 1649 }
+	offset = 30 #1 month
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "The War of the East begins!"
+		command = { type = cedeprovince which = MAM value = 485 }
+		command = { type = cedeprovince which = MAM value = 486 }
+		command = { type = cedeprovince which = MAM value = 490 }
+		command = { type = cedeprovince which = MAM value = 491 }
+		command = { type = cedeprovince which = MAM value = 492 }
+		command = { type = cedeprovince which = MAM value = 493 }
+		command = { type = cedeprovince which = MAM value = 494 }
+		command = { type = cedeprovince which = MAM value = 746 }
+		command = { type = cedeprovince which = MAM value = 744 }
+		command = { type = cedeprovince which = MAM value = 745 }
+		command = { type = cedeprovince which = MAM value = 747 }
+		command = { type = cedeprovince which = MAM value = 743 }
+		command = { type = cedeprovince which = MAM value = 748 }
+		command = { type = cedeprovince which = MAM value = 749 }
+		command = { type = cedeprovince which = MAM value = 742 }
+		command = { type = MIL which = 3 value = 120 }
+		command = { type = INF which = 357 value = 15000 } #Thrace
+		command = { type = CAV which = 357 value = 5000 } #Thrace
+		command = { type = ART which = 357 value = 30 } #Thrace
+		command = { type = setflag which = orientalrevolt }
+		command = { type = trigger which = 3001308 } #MAM
+	}
+}
+#toned down free armies
+
+event = {
+	id = 3001308
+	trigger = {
+		event = 3001306
+		flag = orientalrevolt
+	}
+	random = NO
+	country = MAM
+	name = "The Great Arab Rebellion"
+	desc = "For several decades, the Arab population of the Middle East has been subject to Roman occupation. Now, they can no longer endure the foreign rule over their ancient lands. The missionary work against Islam, the Greek colonization of the Middle East has spread an anti-Roman sentiment throughout the region. In 1649, an attack on an Arab town in Palestine by Greek pilgrims finally put the fire to the powder. The remnants of Arab society in Palestine rose against the occupying Greek. From there, the revolt spread through the Orient, from Syria to Egypt, setting the Empire awash in fire and blood. The Empire reacts immediately - gathering new troups in the Balkans and sending orders for deployed troops to massacre the revolters. The Empire was in chaos."
+	date = { day = 1 month = august year = 1649 }
+	offset = 30 #1 month
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Courage!"
+		command = { type = setflag which = orientalrevolt }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+		command = { type = stability value = 6 }
+		command = { type = MIL which = 3 value = 120 }
+		command = { type = capital which = 744 } #Alexandria
+		command = { type = INF which = 744 value = 35000 }
+		command = { type = CAV which = 744 value = 15000 }
+		command = { type = ART which = 744 value = 50 }
+		command = { type = INF which = -1 value = 10000 }
+		command = { type = INF which = -1 value = 10000 }
+		command = { type = INF which = -1 value = 10000 }
+		command = { type = treasury value = 500 }
+		command = { type = setflag which = mamalex }
+	}
+}
+
+#Antioch
+event = {
+	id = 3001309
+	trigger = {
+		flag = orientalrevolt
+		war = { country = BYZ country = MAM }
+		control = { province = 485 data = BYZ }
+	}
+	random = NO
+	country = MAM
+	name = "The loss of Antioch"
+	desc = "The Roman counter-attack was very violent, and the defenders of Syria could not withstand the power of the Empire. Antioch, bombarded, besieged on all sides, falls into its hands. This brings with it the loss of the hinter-land as far as Nisibus, the large Euphrates port."
+	date = { day = 1 month = may year = 1650 }
+	offset = 1 #immediate
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Aargh!"
+		command = { type = cedeprovince which = BYZ value = 485 }
+		command = { type = cedeprovince which = BYZ value = 486 }
+		command = { type = INF which = -1 value = 10000 }
+		command = { type = INF which = -1 value = 10000 }
+		command = { type = trigger which = 3001310 }
+	}
+}
+
+#Antioch
+event = {
+	id = 3001310
+	trigger = {
+		flag = orientalrevolt
+		event = 3001309
+	}
+	random = NO
+	country = BYZ
+	name = "City of God" #Antioch had been called Theoupolis since the time of Iustinianus
+	desc = "The revolters of northern Syria finally succumb to the bloody blows of the Empire. Antioch, in ruins, capitulated, leading to the recovery of the entire Euphrates border. Nevertheless, some insurrections appeared in the recently-retaken cities, somewhat impeding the progression of the Empire into enemy territory."
+	date = { day = 1 month = may year = 1650 }
+	offset = 30 #1 month
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Finish them!"
+		command = { type = revolt which = 485 }
+		command = { type = populationpercent which = 485 value = -5 }
+		command = { type = revolt which = 486 }
+		command = { type = populationpercent which = 486 value = -5 }
+	}
+}
+
+#Damascus
+event = {
+	id = 3001311
+	trigger = {
+		flag = orientalrevolt
+		war = { country = BYZ country = MAM }
+		control = { province = 490 data = BYZ }
+	}
+	random = NO
+	country = MAM
+	name = "The loss of Syria"
+	desc = "Damascus, reduced to cinders, surrendered itself to the enemy. The Imperials avenged themselves against this bastion, destroying all her fortifications and dispersing her people throughout Anatolia. This terrible loss wounds the Arab's morale, making it seem almost impossible to withstand the Empire's forces."
+	date = { day = 1 month = december year = 1650 }
+	offset = 1 #immediate
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Aargh!"
+		command = { type = stability value = -2 }
+		command = { type = fortress which = 490 value = -2 }
+		command = { type = cedeprovince which = BYZ value = 490 }
+		command = { type = INF which = -1 value = 10000 }
+		command = { type = INF which = -1 value = 10000 }
+		command = { type = trigger which = 3001312 }
+	}
+}
+
+#Damascus
+event = {
+	id = 3001312
+	trigger = {
+		flag = orientalrevolt
+		event = 3001311
+	}
+	random = NO
+	country = BYZ
+	name = "Damascus"
+	desc = "Damascus was overcome. Crazed, its last defenders were run through, and the city's population, helpless, were deported to Anatolia. The violence of the Imperial reaction against the Arab center of Syria had to set an example to all those who would oppose themselves against the Emperor."
+	date = { day = 1 month = december year = 1650 }
+	offset = 30 #1 month
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "They will know my might!"
+		command = { type = populationpercent which = 474 value = 2 }
+		command = { type = populationpercent which = 475 value = 2 }
+		command = { type = populationpercent which = 476 value = 2 }
+		command = { type = populationpercent which = 477 value = 2 }
+		command = { type = populationpercent which = 478 value = 2 }
+		command = { type = populationpercent which = 482 value = 2 }
+		command = { type = populationpercent which = 483 value = 2 }
+		command = { type = populationpercent which = 1609 value = 2 }
+		command = { type = populationpercent which = 1610 value = 2 }
+		command = { type = populationpercent which = 1611 value = 2 }
+		command = { type = populationpercent which = 490 value = -10 }
+		command = { type = revolt which = 490 }
+	}
+}
+
+# Palestine
+event = {
+	id = 3001313
+	trigger = {
+		flag = orientalrevolt
+		war = { country = BYZ country = MAM }
+		control = { province = 491 data = BYZ }
+		control = { province = 492 data = BYZ }
+		control = { province = 493 data = BYZ }
+	}
+	random = NO
+	country = MAM
+	name = "The Fall of Palestine"
+	desc = "After intense combat, notably at the battles of Jaffa and Askalon, the Eastern troops withdrew to Ierosolumon, where they strengthened the fortifications of the Holy City as best they could. The city was soon besieged by a powerful army personally led by the Emperor, who ordered an unceasing bombardment of the town. Fire consummed the entire city, whose population begged the Arab general to seek terms. He soon agreed. With that loss, the entire region, spreading from Lebanon to the Negev, surrendered to the Romans - the Arab revolt was reduced to Sinai, Egypt and the northern Sudan."
+	date = { day = 1 month = september year = 1651 }
+	offset = 30 #1 month
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "We must strengthen our defenses!"
+		command = { type = treasury value = 200 }
+		command = { type = fortress which = 494 value = 3 }
+		command = { type = INF which = 494 value = 25000 }
+		command = { type = CAV which = 494 value = 10000 }
+		command = { type = ART which = 494 value = 30 }
+		command = { type = cedeprovince which = BYZ value = 491 }
+		command = { type = cedeprovince which = BYZ value = 492 }
+		command = { type = cedeprovince which = BYZ value = 493 }
+		command = { type = cedeprovince which = BYZ value = 495 }
+		command = { type = trigger which = 3001314 }
+	}
+}
+
+event = {
+	id = 3001314
+	trigger = {
+		flag = orientalrevolt
+		event = 3001313
+	}
+	random = NO
+	country = BYZ
+	name = "The reconquest of Palestine"
+	desc = "After intense combat, notably at the battles of Jaffa and Askalon, the Eastern troops retired to Ierosolumon, where they strengthened the walls of the Holy City as best they could. The city was soon besieged by a powerful army personally led by the Emperor, who ordered unceasing bombardment of the town. Fire consummed the entire city, whose population begged the Arab general to seek terms. He soon agreed. With that loss, the entire region, spreading from Lebanon to the Negev, surrendered to the Romans - the Arab revolt was reduced to Sinai, Egypt and the northern Sudan."
+	style = 1
+	date = { day = 1 month = september year = 1651 }
+	offset = 10
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Onward!"
+		command = { type = INF which = 493 value = 5000 }
+	}
+}
+
+#Sinai
+event = {
+	id = 3001315
+	trigger = {
+		flag = orientalrevolt
+		event = 3001313
+		event = 3001311
+		war = { country = BYZ country = MAM }
+		control = { province = 494 data = BYZ }
+	}
+	random = NO
+	country = MAM
+	name = "The Pelusian lock is picked"
+	desc = "The Egyptian's last hope had just collapsed. The Sinai, although strongly defended by an army of more than 35,000, had not been able to withstand the Imperial army. Methodically, the Roman generals reduced the strongholds, one by one, before finally crushing the Egyptians at Pelusion, the protector of the Nile delta. The harbor had been strongly reinforced to withstand the enemy's attacks, but the city's defenses could not resist a siege directed by the Emperor himself. The road to Alexandria lay open before the invasion."
+	style = 1
+	date = { day = 1 month = january year = 1653 }
+	offset = 10
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Never!"
+		command = { type = INF which = -2 value = 35000 }
+		command = { type = CAV which = -2 value = 3000 }
+		command = { type = fortress which = 494 value = -1 }
+		command = { type = cedeprovince which = BYZ value = 494 }
+		command = { type = fortress which = 746 value = 1 }
+		command = { type = fortress which = 747 value = 1 }
+		command = { type = fortress which = 744 value = 1 }
+		command = { type = fortress which = 743 value = 1 }
+		command = { type = fortress which = 742 value = 1 }
+		command = { type = trigger which = 3001316 }
+	}
+}
+
+event = {
+	id = 3001316
+	trigger = {
+		flag = orientalrevolt
+		event = 3001315
+	}
+	random = NO
+	country = BYZ
+	name = "The Pelusian Lock is picked"
+	desc = "The Egyptian's last hope has just collapsed. The Sinai, although strongly defended by an army of more than 35,000, has not been able to withstand the Imperial army. Methodically, the Roman generals reduced their strongholds, one by one, before finally crushing the Egyptians at the one known as the Lock of Pelusion. The harbor had been strongly reinforced to withstand the enemy's attacks, but the city's defenses could not resist a siege directed by the Emperor himself. The road to Alexandria lay open before the invasion."
+	date = { day = 1 month = january year = 1653 }
+	offset = 10
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Charge!"
+		command = { type = stability value = 1 }
+		command = { type = INF which = 494 value = 10000 }
+	}
+}
+
+# Nil Est
+event = {
+	id = 3001317
+	trigger = {
+		flag = orientalrevolt
+		event = 3001315
+		war = { country = BYZ country = MAM }
+		control = { province = 746 data = BYZ }
+		control = { province = 745 data = BYZ }
+	}
+	random = NO
+	country = MAM
+	name = "Cairo and the Delta"
+	desc = "Despite quickly reinforced defenses, Egypt was easily invaded by the Romans, who massacred a large army raised against them. It did not take many months for the Emperor, at the head of his troops, to penetrate deep into enemy territory. After Cairo was left destroyed, the army moved on to the Nile Delta. The Arabs had no other choice than to gather on the western shore, abandoning the eastern provinces as indefensible."
+	date = { day = 1 month = september year = 1653 }
+	offset = 10
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Let us reposition for better defense"
+		command = { type = stability value = -1 }
+		command = { type = cedeprovince which = BYZ value = 746 }
+		command = { type = cedeprovince which = BYZ value = 745 }
+		command = { type = cedeprovince which = BYZ value = 747 }
+		command = { type = cedeprovince which = BYZ value = 748 }
+		command = { type = cedeprovince which = BYZ value = 749 }
+		command = { type = fortress which = 744 value = 3 }
+		command = { type = fortress which = 743 value = 1 }
+		command = { type = trigger which = 3001318 }
+	}
+}
+
+event = {
+	id = 3001318
+	trigger = {
+		flag = orientalrevolt
+		event = 3001317
+	}
+	random = NO
+	country = BYZ
+	name = "Cairo and the Delta"
+	desc = "Despite quickly reinforced defenses, Egypt was easily invested by the Romans, who massacred a large army raised against them. It did not take many months for the Emperor, at the head of his troops, to penetrate deep into enemy territory. After Cairo was left destroyed, the army moved on the Nile Delta. The Arabs had no other choice than to gather on the western shore, abandonning the eastern provinces as indefensible."
+	date = { day = 1 month = september year = 1653 }
+	offset = 10
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Onward!"
+		command = { type = stability value = 1 }
+		command = { type = INF which = 746 value = 5000 }
+		command = { type = CAV which = 746 value = 2500 }
+		command = { type = ART which = 746 value = 10 }
+	}
+}
+#toned down free armies
+
+# Alexandria
+event = {
+	id = 3001319
+	trigger = {
+		flag = orientalrevolt
+		event = 3001317
+		war = { country = BYZ country = MAM }
+		control = { province = 744 data = BYZ }
+		control = { province = 743 data = BYZ }
+	}
+	random = NO
+	country = MAM
+	name = "The loss of Alexandria"
+	desc = "The Imperial offensive has lasted many months. Alexandria's defenses, in anticipation of the attack, had been considerably increased to withstand a long siege. But the Imperial forces perservered and, finally, the Egyptians had to abandon their capital. The Libyan desert alone remained. All the survivors gathered there for a last dance. Still, the Emperor had already faced all those soldiers, and it seemed impossible, for the Egyptians, to be able to withstand this immense army embarking into the wastes."
+	date = { day = 1 month = january year = 1654 }
+	offset = 10
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Run away!"
+		command = { type = capital which = 742 } #not resetting flag to Cairo as if MAM retake Alexandria they can move back there
+		command = { type = cedeprovince which = BYZ value = 744 }
+		command = { type = cedeprovince which = BYZ value = 743 }
+		command = { type = trigger which = 3001320 }
+	}
+}
+
+event = {
+	id = 3001320
+	trigger = {
+		flag = orientalrevolt
+		event = 3001319
+	}
+	random = NO
+	country = BYZ
+	name = "Alexandria!"
+	desc = "The Imperial offensive has lasted many months. Alexandria's defenses, in anticipation of the attack, had been considerably increased to withstand a long siege. But the Imperial forces perservered and, finally, the Egyptians had to abandon their capital. The Libyan desert alone remained. All the survivors gathered there for a last dance. Still, the Emperor had already faced all those soldiers, and it seemed impossible, for the Egyptians, to be able to withstand this immense army embarking into the wastes."
+	date = { day = 1 month = january year = 1654 }
+	offset = 10
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Ready?"
+		command = { type = badboy value = -1 } #to allow event to activate
+		#command = { type = vp value = 5 }
+	}
+}
+
+# Quattara
+event = {
+	id = 3001321
+	trigger = {
+		flag = orientalrevolt
+		event = 3001319
+		war = { country = BYZ country = MAM }
+		control = { province = 742 data = BYZ }
+	}
+	random = NO
+	country = MAM
+	name = "Check-mate"
+	desc = "The Romans finally overcame the rebels. The Arabs, cornered in Lybia, finally surrendered their weapons to the Emperor. He executed the ringleaders, notably Ibn-Ibrahim, a former logothetes at the Imperial Palace and one of the original conspirators behind the revolt. Overcome, the Arabs had no more ability to resist the Empire. They finally came to reason. The Empire had won a great victory in the most serious civil war in centuries, larger even than the nobles revolt against Zoë II. But it is wounded. Its finances are depleted, its richest territories ravaged. It will be necessary to rebuild the economy of the entire south."
+
+	date = { day = 1 month = january year = 1654 }
+	offset = 10
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "We have no choice"
+		command = { type = trigger which = 3001322 }
+	}
+}
+
+event = {
+	id = 3001322
+	trigger = {
+		flag = orientalrevolt
+		event = 300321
+	}
+	random = NO
+	country = BYZ
+	name = "Check-mate"
+	desc = "The Romans finally overcame the rebels. The Arabs, cornered in Lybia, finally surrendered their weapons to the Emperor. He executed the ringleaders, notably Ibn-Ibrahim, a former logothetes at the Imperial Palace and one of the original conspirators behind the revolt. Overcome, the Arabs had no more ability to resist the Empire. They finally came to reason. The Empire had won a great victory in the most serious civil war in centuries, larger even than the nobles revolt against Zoë II. But it is wounded. Its finances are depleted, its richest territories ravaged. It will be necessary to rebuild the economy of the entire south."
+	style = 1
+	date = { day = 1 month = january year = 1654 }
+	offset = 10
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Good news!"
+		command = { type = inherit which = MAM }
+		command = { type = stability value = 1 }
+		command = { type = provincetax which = 485 value = -1 }
+		command = { type = provincetax which = 486 value = -1 }
+		command = { type = provincetax which = 490 value = -1 }
+		command = { type = provincetax which = 491 value = -1 }
+		command = { type = provincetax which = 492 value = -1 }
+		command = { type = provincetax which = 495 value = -1 }
+		command = { type = provincetax which = 493 value = -1 }
+		command = { type = provincetax which = 494 value = -1 }
+		command = { type = provincetax which = 746 value = -1 }
+		command = { type = provincetax which = 744 value = -1 }
+		command = { type = provincetax which = 745 value = -1 }
+		command = { type = provincetax which = 747 value = -1 }
+		command = { type = provincetax which = 743 value = -1 }
+		command = { type = provincetax which = 748 value = -1 }
+		command = { type = provincetax which = 749 value = -1 }
+		command = { type = provincetax which = 742 value = -1 }
+		command = { type = sleepevent which = 3001323 } #unnecessary, i imagine
+	}
+}
+
+
+# The revolt succeeds
+event = {
+	id = 3001323
+	trigger = {
+		exists = MAM
+		flag = orientalrevolt
+	}
+	random = NO
+	country = BYZ
+	name = "The East is lost!"
+	desc = "After a rough fight, the East finally freed itself from the Byzantine occupation and declared its independence. Unable to overcome the rebellion led by Ibn-Ibrahim, a former logothetes of the Imperial Palace, the Romans finally accepted a peace providing the rebels dominion over all the lands south of Lebanon. Constantinople has even ceded its claims to these lands. The defeat was crushing, but peace had proven more valuable than honor."
+	date = { day = 1 month = january year = 1670 }
+	offset = 60
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Crap!"
+		command = { type = cedeprovince which = MAM value = 485 }
+		command = { type = cedeprovince which = MAM value = 486 }
+		command = { type = cedeprovince which = MAM value = 490 }
+		command = { type = cedeprovince which = MAM value = 491 }
+		command = { type = cedeprovince which = MAM value = 492 }
+		command = { type = cedeprovince which = MAM value = 493 }
+		command = { type = cedeprovince which = MAM value = 494 }
+		command = { type = cedeprovince which = MAM value = 746 }
+		command = { type = cedeprovince which = MAM value = 744 }
+		command = { type = cedeprovince which = MAM value = 745 }
+		command = { type = cedeprovince which = MAM value = 747 }
+		command = { type = cedeprovince which = MAM value = 743 }
+		command = { type = cedeprovince which = MAM value = 748 }
+		command = { type = cedeprovince which = MAM value = 749 }
+		command = { type = cedeprovince which = MAM value = 742 }
+		command = { type = removecore_national which = 485 }
+		command = { type = removecore_national which = 486 }
+		command = { type = removecore_national which = 490 }
+		command = { type = removecore_national which = 491 }
+		command = { type = removecore_national which = 492 }
+		command = { type = removecore_national which = 493 }
+		command = { type = removecore_national which = 494 }
+		command = { type = removecore_national which = 746 }
+		command = { type = removecore_national which = 744 }
+		command = { type = removecore_national which = 745 }
+		command = { type = removecore_national which = 747 }
+		command = { type = removecore_national which = 743 }
+		command = { type = removecore_national which = 748 }
+		command = { type = removecore_national which = 749 }
+		command = { type = removecore_national which = 742 }
+		command = { type = sleepevent which = 3001324 }
+		command = { type = sleepevent which = 3001325 }
+		command = { type = clrflag which = orientalrevolt }
+	}
+}
+
+event = {
+	id = 3001324
+	trigger = {
+		flag = orientalrevolt
+		domestic = { type = CENTRALIZATION value = 8 }
+	}
+	random = NO
+	country = BYZ
+	name = "After-shocks"
+	desc = "At last rid of the rebellion, the Emperor began to completely rethink the governance of the eastern provinces. Continuing to administer the lands from Constantinople would continue the inefficiencies and lack of loyalty already apparent. One idea was that he could recreate a system of local strategoi, who would possess both military and civil jurisdiction, based on the mediaeval Thematic structure. These strategoi would be subject to two newly-created eparchoi, in Antioch and Alexandria, who would themselves report to a hyperarchos in Constantinople under the Emperor himself. Alternatively, he could turn his back on these compromises and reestablish the provinces of the ancient Roman model - the separated powers would check the power of the nobles."
+	date = { day = 1 month = january year = 1662 }
+	offset = 30
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Create the strategoi and the eparchoi"
+		command = { type = stability value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -3 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = treasury value = -50 }
+		command = { type = provincetax which = 744 value = 2 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+	}
+	action_b = {
+		name = "Follow the ancient model"
+		command = { type = stability value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+	}
+	action_c = {
+		name = "Maintain central control"
+		command = { type = stability value = -4 }
+		command = { type = remove_countryculture which = arabic }
+		command = { type = remove_countryculture which = kurdish }
+		command = { type = remove_countryculture which = syrian }
+		command = { type = treasury value = 100 }
+	}
+}
+
+event = {
+	id = 3001325
+	trigger = {
+		flag = orientalrevolt
+	}
+	random = NO
+	country = BYZ
+	name = "Recovery"
+	desc = "Years have passed since the Great Arab Rebellion. Once combat had ended, the people began the reconstruction of the country. The economy took years to recover its losses and the dearth of births had a strong demographic effect on the Empire. Still, after twenty-five years, things had returned to order. The lands' fertility had even increased afer the losses, and the population surged. Egypt, in particular, profited richly from the Empire's new leap."
+	date = { day = 1 month = january year = 1680 }
+	offset = 90
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Good thing, that"
+		command = { type = treasury value = 150 }
+		command = { type = infra value = 2000 }
+		command = { type = trade value = 2000 }
+		command = { type = gainmanufactory which = 746 value = luxury }
+		command = { type = provincetax which = 485 value = 1 }
+		command = { type = provincetax which = 486 value = 1 }
+		command = { type = provincetax which = 490 value = 1 }
+		command = { type = provincetax which = 491 value = 1 }
+		command = { type = provincetax which = 492 value = 1 }
+		command = { type = provincetax which = 495 value = 1 }
+		command = { type = provincetax which = 493 value = 1 }
+		command = { type = provincetax which = 494 value = 1 }
+		command = { type = provincetax which = 746 value = 2 }
+		command = { type = provincetax which = 744 value = 2 }
+		command = { type = provincetax which = 745 value = 2 }
+		command = { type = provincetax which = 747 value = 2 }
+		command = { type = provincetax which = 743 value = 2 }
+		command = { type = provincetax which = 748 value = 2 }
+		command = { type = provincetax which = 749 value = 2 }
+		command = { type = provincetax which = 742 value = 2 }
+		command = { type = provincemanpower which = 485 value = 1 }
+		command = { type = provincemanpower which = 486 value = 1 }
+		command = { type = provincemanpower which = 490 value = 1 }
+		command = { type = provincemanpower which = 491 value = 1 }
+		command = { type = provincemanpower which = 492 value = 1 }
+		command = { type = provincemanpower which = 495 value = 1 }
+		command = { type = provincemanpower which = 493 value = 1 }
+		command = { type = provincemanpower which = 494 value = 1 }
+		command = { type = provincemanpower which = 746 value = 2 }
+		command = { type = provincemanpower which = 744 value = 2 }
+		command = { type = provincemanpower which = 745 value = 2 }
+		command = { type = provincemanpower which = 747 value = 2 }
+		command = { type = provincemanpower which = 743 value = 2 }
+		command = { type = provincemanpower which = 748 value = 2 }
+		command = { type = provincemanpower which = 749 value = 2 }
+		command = { type = provincemanpower which = 742 value = 2 }
+		command = { type = clrflag which = orientalrevolt }
+	}
+}

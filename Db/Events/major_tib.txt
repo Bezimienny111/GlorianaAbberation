@@ -1,0 +1,44 @@
+#######Tibet Major Events######
+#  By Demetrios and Havard    #
+###############################
+
+# The Dalai Lama takes control
+event = {
+	id = 3825
+	trigger = { monarch = 05478 }
+	random = no
+	country = TIB
+	name = "EVENTNAME3825"
+	desc = "EVENTHIST3825"
+
+	date = { year = 1750 }
+	offset = 60
+	deathdate = { year = 1758 }
+	
+	action_a ={ # Turn inward
+		name = "ACTIONNAME3825A"
+		command = { type = domestic which = innovative value = -3 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = land value = -200 }
+		command = { type = trade value = -200 }
+		command = { type = relation which = CHI value = 50 }
+		command = { type = relation which = CHG value = 50 }
+		command = { type = relation which = NEP value = 50 }
+		command = { type = stability value = 1 }
+	}
+	action_b ={ # Become aggressive
+		name = "ACTIONNAME3825B"
+		command = { type = domestic which = innovative value = 2 }
+		command = { type = domestic which = centralization value = 3 }
+		command = { type = domestic which = offensive value = 2 }
+		command = { type = land value = 400 }
+		command = { type = trade value = 400 }
+		command = { type = casusbelli which = CHI value = 72 }
+		command = { type = casusbelli which = CHG value = 72 }
+		command = { type = casusbelli which = NEP value = 72 }
+		command = { type = relation which = CHI value = -50 }
+		command = { type = relation which = CHG value = -50 }
+		command = { type = relation which = NEP value = -50 }
+		command = { type = stability value = -2 }
+	}
+}

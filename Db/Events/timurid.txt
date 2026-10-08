@@ -1,0 +1,36 @@
+#The Death of Timur#
+event = {
+
+	id = 296000
+	random = no 
+	country = TIM
+	name = "EVENTNAME296000"
+	desc = "EVENTHIST296000"
+	style = "26019"
+	
+	date = { day = 13 month = february year = 1405 }
+
+	action_a ={
+		name = "ACTIONNAME296000A"	#All good things come to an end
+		command = { type = revoltrisk which = 60 value = 12 } # Tough!
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = 1529 }
+		command = { type = revolt which = 1530 }
+		command = { type = desertion which = -1 value = 8000 }
+		command = { type = desertion which = -1 value = 10000 }
+		command = { type = desertion which = -1 value = 10000 }
+		command = { type = desertion which = -1 value = 7000 }
+		command = {
+			trigger = {
+				NOT = { event = 26042 }
+			}
+			type = trigger which = 26027 #TUR: The Ottoman Revival
+		}
+		command = { type = stability value = -8 }
+	}
+}

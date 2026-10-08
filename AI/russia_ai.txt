@@ -1,0 +1,69 @@
+#
+# Europa Universalis. Russia
+#
+# Russian AI
+# 
+#
+# Henrik Fåhraeus 01-10-2001 
+ 
+# preferred areas for expansion
+
+region = { Siberia Scandinavia Korea }
+area = { Alaska California Oregon Manchuria Russia "Russian North" Steppe }
+# The amount of provinces we try to colonize at the same time
+expansion = 8
+
+# % of the time we prefer to establish a tradingpost if both are good.
+tradingpost = 10
+
+# Bonus for areas to establish colonies adjacent to previous ones.
+neighbour = 30
+
+# Bonus/Penalty for establish colonies adjacent to other countries.
+enemies = 10
+
+# 100 = max trader rate, lesser means slower focus on sending a trader.
+traders = 50
+
+# 100 = Total monopolist, will refuse trade as much as possible.
+monopoly = 70
+
+# 100 = Total warmonger, 0 = absolute pacifist
+war = 100
+ferocity = no
+
+#Which countries to conquer if possible. (to guide nation historically)
+combat = { TVE PSK MOS RYA SUZ YRL NVG KAZ STE AST SIB NOG KZK UZB POL LAT KUR CRI PRM MRD NYN }
+
+#How important is it to gather troops close to base
+base = 0.1
+#How important is it to be as close to target position when gathering troops.
+front = 5.0
+
+
+#Evaluation factors for conquer plans 
+conquer = 
+{ 
+	# multiply enemy province value 
+	enemy = 1.0 
+	# multiplying supply factor 
+	supply = 0.3 
+	# factor for distance to not owner provinces 
+	distance = 5.0 
+	# factor for owned provines 
+	owner = 1.0 
+	# Multiplier for provinces not in supply. 
+	notsupply = 4.0 
+	# Multiplying the base constant for conquer. 
+	base = 6.0 
+} 
+
+# Modifiers for garrison plans 
+garrison = 
+{ 
+	fortress = 1.0 
+	strategic = 3.0 
+	size = 1.0 
+	supply = 2.0 
+	war = 5.0 
+}

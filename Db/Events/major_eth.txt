@@ -1,0 +1,46 @@
+# Ethiopia (new for 1.31) #
+
+#The Kingdom of Prester John#
+event = {
+
+	id = 5302
+	trigger = {
+		atwar = no
+		OR = {
+			ENG = { knows = ETH }
+			FRA = { knows = ETH }
+			HOL = { knows = ETH }
+			POR = { knows = ETH }
+			SPA = { knows = ETH }
+		}
+	}
+	random = no
+	country = ETH
+	name = "EVENTNAME5302"
+	desc = "EVENTHIST5302"
+
+	style = "5302"
+
+	date = { day = 1 month = january year = 1399 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1600 }
+
+	action_a ={		#Welcome to the land of the Three Magi#
+		name = "ACTIONNAME5302A"
+		command = { type = vp value = 25 }
+		command = { type = infra value = 500 }
+		command = { type = trade value = 500 }
+		command = { type = treasury value = 150 }
+		command = { type = diplomats value = 2 }
+		command = { type = merchants value = 2 }
+		command = { type = missionaries value = 2 }
+		command = { type = discover which = 399 }
+		command = { type = discover which = 357 }
+		command = { type = discover which = 490 }
+		command = { type = discover which = 489 }
+		command = { type = discover which = 1592 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = stability value = 1 }
+	}
+}

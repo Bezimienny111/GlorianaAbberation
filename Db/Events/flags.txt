@@ -1,0 +1,411 @@
+###################################
+### graphic flag/shield changes	###
+### for the NAJF scenario	###
+### by Ayeshteni (AJFowler)	###
+###################################
+
+#italy (see italia file)
+
+#Great Britain#
+event = {
+	id = 100100
+	trigger = {
+		event = 3037
+		land = 51
+	}
+	random = no
+	country = ENG
+	name = "The Napoleonic Age"
+	desc = "The flags and Coats of Arms of the major European nations changed with the times and with the great monarchs that bore them. The Age of Enlightenment also saw the standards of the great nations change. This is one such change."
+	style = 4
+
+	date = { day = 1 month = january year = 1700 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Update our Flags"
+		command = { type = vp value = 10 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = flagname which = NAP }
+	}
+
+	action_b = {
+		name = "stick with the old"
+		command = { type = domestic which = innovative value = -1 }
+	}
+}
+
+#Prussia#
+event = {
+	id = 100101
+	trigger = {
+		land = 51
+	}
+	random = no
+	country = PRU
+	name = "The Napoleonic Age"
+	desc = "The flags and Coats of Arms of the major European nations changed with the times and with the great monarchs that bore them. The Age of Enlightenment also saw the standards of the great nations change. This is one such change."
+	style = 4
+
+	date = { day = 1 month = january year = 1700 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Update our Flags"
+		command = { type = vp value = 10 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = flagname which = NAP }
+	}
+
+	action_b = {
+		name = "stick with the old"
+		command = { type = domestic which = innovative value = -1 }
+	}
+}
+
+#Russia#
+event = {
+	id = 100102
+	trigger = {
+		land = 51
+	}
+	random = no
+	country = RUS
+	name = "The Napoleonic Age"
+	desc = "The flags and Coats of Arms of the major European nations changed with the times and with the great monarchs that bore them. The Age of Enlightenment also saw the standards of the great nations change. This is one such change."
+	style = 4
+
+	date = { day = 1 month = january year = 1700 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Update our Flags"
+		command = { type = vp value = 10 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = flagname which = NAP }
+	}
+
+	action_b = {
+		name = "stick with the old"
+		command = { type = domestic which = innovative value = -1 }
+	}
+}
+
+#Portugal#
+event = {
+	id = 100103
+	trigger = {
+		land = 51
+	}
+	random = no
+	country = POR
+	name = "The Napoleonic Age"
+	desc = "The flags and Coats of Arms of the major European nations changed with the times and with the great monarchs that bore them. The Age of Enlightenment also saw the standards of the great nations change. This is one such change."
+	style = 4
+
+	date = { day = 1 month = january year = 1700 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Update our Flags"
+		command = { type = vp value = 10 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = flagname which = NAP }
+	}
+
+	action_b = {
+		name = "stick with the old"
+		command = { type = domestic which = innovative value = -1 }
+	}
+}
+
+#austria-hungary#
+event = {
+	id = 100104
+	trigger = {
+		land = 51
+		NOT = {
+			exists = HUN
+		}
+	}
+	random = no
+	country = HAB
+	name = "The Napoleonic Age"
+	desc = "The flags and Coats of Arms of the major European nations changed with the times and with the great monarchs that bore them. The Age of Enlightenment also saw the standards of the great nations change. This is one such change."
+	style = 4
+
+	date = { day = 1 month = january year = 1700 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Update our Flags"
+		command = { type = vp value = 10 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = flagname which = NAP }
+	}
+
+	action_b = {
+		name = "stick with the old"
+		command = { type = domestic which = innovative value = -1 }
+	}
+}
+
+#sweden#
+event = {
+	id = 100105
+	trigger = {
+		land = 51
+	}
+	random = no
+	country = SWE
+	name = "The Napoleonic Age"
+	desc = "The flags and Coats of Arms of the major European nations changed with the times and with the great monarchs that bore them. The Age of Enlightenment also saw the standards of the great nations change. This is one such change."
+	style = 4
+
+	date = { day = 1 month = january year = 1700 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Update our Flags"
+		command = { type = vp value = 10 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = flagname which = NAP }
+	}
+
+	action_b = {
+		name = "stick with the old"
+		command = { type = domestic which = innovative value = -1 }
+	}
+}
+
+#denmark#
+event = {
+	id = 100106
+	trigger = {
+		land = 51
+	}
+	random = no
+	country = DAN
+	name = "The Napoleonic Age"
+	desc = "The flags and Coats of Arms of the major European nations changed with the times and with the great monarchs that bore them. The Age of Enlightenment also saw the standards of the great nations change. This is one such change."
+	style = 4
+
+	date = { day = 1 month = january year = 1700 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Update our Flags"
+		command = { type = vp value = 10 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = flagname which = NAP }
+	}
+
+	action_b = {
+		name = "stick with the old"
+		command = { type = domestic which = innovative value = -1 }
+	}
+}
+
+#norway- yeah right#
+event = {
+	id = 100107
+	trigger = {
+		land = 51
+	}
+	random = no
+	country = NOR
+	name = "The Napoleonic Age"
+	desc = "The flags and Coats of Arms of the major European nations changed with the times and with the great monarchs that bore them. The Age of Enlightenment also saw the standards of the great nations change. This is one such change."
+	style = 4
+
+	date = { day = 1 month = january year = 1700 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Update our Flags"
+		command = { type = vp value = 10 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = flagname which = NAP }
+	}
+
+	action_b = {
+		name = "stick with the old"
+		command = { type = domestic which = innovative value = -1 }
+	}
+}
+
+#spain#
+event = {
+	id = 100108
+	trigger = {
+		land = 51
+	}
+	random = no
+	country = SPA
+	name = "The Napoleonic Age"
+	desc = "The flags and Coats of Arms of the major European nations changed with the times and with the great monarchs that bore them. The Age of Enlightenment also saw the standards of the great nations change. This is one such change."
+	style = 4
+
+	date = { day = 1 month = january year = 1700 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Update our Flags"
+		command = { type = vp value = 10 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = flagname which = NAP }
+	}
+
+	action_b = {
+		name = "stick with the old"
+		command = { type = domestic which = innovative value = -1 }
+	}
+}
+
+#savoie#
+event = {
+	id = 100109
+	trigger = {
+		land = 51
+	}
+	random = no
+	country = SAV
+	name = "The Napoleonic Age"
+	desc = "The flags and Coats of Arms of the major European nations changed with the times and with the great monarchs that bore them. The Age of Enlightenment also saw the standards of the great nations change. This is one such change."
+	style = 4
+
+	date = { day = 1 month = january year = 1700 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Update our Flags"
+		command = { type = vp value = 10 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = flagname which = NAP }
+	}
+
+	action_b = {
+		name = "stick with the old"
+		command = { type = domestic which = innovative value = -1 }
+	}
+}
+
+#ireland#
+event = {
+	id = 100110
+	trigger = {
+		land = 51
+	}
+	random = no
+	country = EIR
+	name = "The Napoleonic Age"
+	desc = "The flags and Coats of Arms of the major European nations changed with the times and with the great monarchs that bore them. The Age of Enlightenment also saw the standards of the great nations change. This is one such change."
+	style = 4
+
+	date = { day = 1 month = january year = 1700 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Update our Flags"
+		command = { type = vp value = 10 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = flagname which = NAP }
+	}
+
+	action_b = {
+		name = "stick with the old"
+		command = { type = domestic which = innovative value = -1 }
+	}
+}
+
+#egypt#
+event = {
+	id = 100111
+	trigger = {
+		land = 51
+	}
+	random = no
+	country = MAM
+	name = "The Napoleonic Age"
+	desc = "The flags and Coats of Arms of the major European nations changed with the times and with the great monarchs that bore them. The Age of Enlightenment also saw the standards of the great nations change. This is one such change."
+	style = 4
+
+	date = { day = 1 month = january year = 1700 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Update our Flags"
+		command = { type = vp value = 10 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = flagname which = NAP }
+	}
+
+	action_b = {
+		name = "stick with the old"
+		command = { type = domestic which = innovative value = -1 }
+	}
+}
+
+#german empire#
+event = {
+	id = 100112
+	trigger = {
+		land = 51
+	}
+	random = no
+	country = GER
+	name = "The Napoleonic Age"
+	desc = "The flags and Coats of Arms of the major European nations changed with the times and with the great monarchs that bore them. The Age of Enlightenment also saw the standards of the great nations change. This is one such change."
+	style = 4
+
+	date = { day = 1 month = january year = 1700 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Update our Flags"
+		command = { type = vp value = 10 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = flagname which = NAP }
+	}
+
+	action_b = {
+		name = "stick with the old"
+		command = { type = domestic which = innovative value = -1 }
+	}
+}
+
+#imperial austria#
+#event = {
+#	id = 100113
+#	trigger = {
+#		emperor = yes
+#	}
+#	random = no
+#	country = HAB
+#	name = "The Imperial Eagle"
+#	desc = "We have become Emperor of the Holy Roman Empire. we are eligible to fly the Imperial Eagle."
+#	style = 1
+#
+#	date = { day = 1 month = january year = 1419 }
+#	offset = 2
+#	deathdate = { day = 1 month = january year = 1821 }
+#
+#	action_a = {
+#		name = "Raise the Standard!"
+#		command = { type = vp value = 5 }
+#		command = { type = flagname which = Imp }
+#	}
+#}

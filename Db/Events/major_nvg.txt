@@ -1,0 +1,258 @@
+#####Novgorodian Major Events#####
+###By Joakim 'Greven' Bergqwist###
+##################################
+
+#Civil War in Novgorod#
+event = {
+	id = 3583
+	random = no
+	country = NVG
+	name = "EVENTNAME3583"
+	desc = "EVENTHIST3583"
+
+	date = { day = 1 month = january year = 1457 }
+	offset = 30
+	deathdate = { day = 7 month = december year = 1468 }
+
+	action_a ={				#Support Merchant Faction#
+		name = "ACTIONNAME3583A"
+		command = { type = stability value = -6 }
+		command = { type = revoltrisk which = 48 value = 8 }
+		command = { type = merchants value = 6 }
+		command = { type = relation which = MOS value = -100 }
+		command = { type = domestic which = LAND value = -3 }
+		command = { type = domestic which = MERCANTILISM value = 3 }
+	}
+
+	action_b ={				#Support Noble Faction#
+		name = "ACTIONNAME3583B"
+		command = { type = stability value = -6 }
+		command = { type = revoltrisk which = 48 value = 6 }
+		command = { type = relation which = MOS value = 100 }
+		command = { type = domestic which = LAND value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = 3 }
+		command = { type = sleepleader which = 0368 } # Boretskaya
+	}
+
+	action_c ={				#Support Peasant Faction#
+		name = "ACTIONNAME3583C"
+		command = { type = stability value = -6 }
+		command = { type = revoltrisk which = 48 value = 8 }
+		command = { type = relation which = MOS value = -100 }
+		command = { type = domestic which = QUALITY value = -3 }
+		command = { type = domestic which = SERFDOM value = -3 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+	}
+}
+
+# Novgorodian Foreign Policy #
+event = {
+	id = 25026
+	trigger = {
+		isvassal = no
+	}
+	random = no
+	country = NVG
+	name = "EVENTNAME25026"
+	desc = "EVENTHIST25026"
+
+	date = { day = 1 month = january year = 1425 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1445 }
+
+	action_a = {	# Focus on the Livonians #
+		name = "ACTIONNAME25026A"
+		command = { type = addcore_claim which = 276 }
+		command = { type = addcore_claim which = 282 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = land value = 500 }
+		command = { type = relation which = SWE value = 50 }
+		command = { type = relation which = LAT value = -100 }
+		command = { type = relation which = LIV value = -100 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b = {	# Push into Savonia #
+		name = "ACTIONNAME25026B"
+		command = { type = addcore_claim which = 264 }
+		command = { type = addcore_claim which = 265 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = missionaries value = 2 }
+		command = { type = manpower value = 10 }
+		command = { type = relation which = LAT value = 50 }
+		command = { type = relation which = LIV value = 50 }
+		command = { type = relation which = SWE value = -100 }
+		command = { type = stability value = -1 }
+	}
+
+	action_c = {	# Consolidate our Rus' holdings #
+		name = "ACTIONNAME25026C"
+		command = { type = addcore_national which = 268 }
+		command = { type = addcore_national which = 271 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = conquistador which = -1 }
+		command = { type = colonists value = 3 }
+		command = { type = infra value = 400 }
+		command = {
+			trigger = { vassal = { country = NVG country = PSK } }
+			type = inherit which = PSK
+		}
+		command = { type = relation which = MOS value = -100 }
+		command = { type = relation which = SUZ value = -50 }
+		command = { type = relation which = RYA value = -50 }
+		command = { type = relation which = TVE value = -50 }
+		command = { type = relation which = SMO value = -50 }
+		command = { type = relation which = POK value = -50 }
+		command = { type = relation which = YRL value = -50 }
+		command = { type = relation which = PSK value = -50 }
+		command = { type = stability value = -2 }
+	}
+
+	action_d = {	# Strengthen ties with the Hansa #
+		name = "ACTIONNAME25026D"
+		command = { type = addcore_claim which = 308 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = MERCANTILISM value = 1 }
+		command = { type = domestic which = LAND value = -2 }
+		command = { type = merchants value = 4 }
+		command = { type = treasury value = 200 }
+		command = { type = naval value = 500 }
+		command = { type = trade value = 800 }
+		command = { type = relation which = MEC value = 50 }
+		command = { type = relation which = BRE value = 50 }
+		command = { type = relation which = SHL value = 50 }
+		command = { type = relation which = POM value = 50 }
+		command = { type = relation which = PRL value = 50 }
+		command = { type = relation which = STT value = 50 }
+		command = { type = relation which = BRA value = 50 }
+		command = { type = relation which = OLD value = 50 }
+		command = { type = relation which = DAN value = -100 }
+		command = { type = stability value = -2 }
+	}
+}
+
+# The Heresy of the Judaizers #
+event = {
+	id = 25027
+	trigger = {
+		religion = orthodox
+	}
+	random = no
+	country = NVG
+	name = "EVENTNAME25027"
+	desc = "EVENTHIST25027"
+
+	date = { day = 1 month = january year = 1471 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1481 }
+
+	action_a = {	# Exile the heretic Skhariya #
+		name = "ACTIONNAME25027A"
+		ai_chance = 60
+		command = { type = revoltrisk which = 24 value = 2 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = relation which = LIT value = -50 }
+		command = { type = relation which = MOS value = 50 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b = {	# Invite Mikhailo to rule as Prince #
+		name = "ACTIONNAME25027B"
+		ai_chance = 30
+		command = { type = revoltrisk which = 24 value = 3 }
+		command = { type = wakemonarch which = 04789 } # Mikhailo
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = relation which = LIT value = 50 }
+		command = { type = relation which = MOS value = -50 }
+		command = { type = stability value = -2 }
+	}
+
+	action_c = {	# Embrace Catholicism and install Mikhailo as Regent #
+		name = "ACTIONNAME25027C"
+		ai_chance = 10
+		command = { type = religion which = catholic }
+		command = { type = revoltrisk which = 24 value = 4 }
+		command = { type = wakemonarch which = 04789 } # Mikhailo
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = relation which = LIT value = 150 }
+		command = { type = relation which = MOS value = -100 }
+		command = { type = revolt which = -2 }
+		command = { type = missionaries value = 2 }
+		command = { type = conversion which = -2 }
+		command = { type = conversion which = -4 }
+		command = { type = stability value = -3 }
+	}
+
+#	action_d = {	# Embrace Skhariya and his Jewish heresy #
+#		name = "ACTIONNAME25027D"
+#		ai_chance = 0
+#		command = { type = religion which = jewish }
+#		command = { type = revoltrisk which = 24 value = 6 }
+#		command = { type = wakeleader which = 0369 } # Olelkovich
+#		command = { type = domestic which = INNOVATIVE value = 1 }
+#		command = { type = domestic which = SERFDOM value = -2 }
+#		command = { type = relation which = LIT value = -100 }
+#		command = { type = relation which = MOS value = -100 }
+#		command = { type = revolt which = -2 }
+#		command = { type = DIP which = 4 value = 120 }
+#		command = { type = ADM which = 4 value = 120 }
+#		command = { type = MIL which = 4 value = 120 }
+#		command = { type = missionaries value = 4 }
+#		command = { type = conversion which = -2 }
+#		command = { type = stability value = -5 }
+#	}
+}
+
+# The Fall of Moscow #
+event = {
+	id = 25028
+	trigger = {
+		isvassal = no
+		war = { country = NVG country = MOS }
+		owned = { province = 270 data = MOS }
+		control = { province = 270 data = NVG }
+		NOT = { decision = 1004 } # Found the Empire of Russia
+		NOT = { event = 25029 } # MOS: The Fall of Novgorod
+	}
+	random = no
+	country = NVG
+	name = "The Fall of Moscow"
+	desc = "My Lord, our victorious druzhina have captured the fortified kremlin of Moscow and routed the Grand Prince's forces in the field. With such a grievous defeat now upon them, the boyars of Moscow have no option but to surrender unto you. Sire, our victory is total: the Muscovite Principality is no more!"
+
+	date = { day = 1 month = january year = 1450 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a = {	# Victory! #
+		name = "Victory!"
+		command = { type = annex which = MOS }
+		command = { type = treasury value = 300 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#The Novgorodian Conquest of Great Perm#
+event = {
+
+	id = 4220				#Triggered by PRM4219A#
+	random = no
+	country = NVG
+	name = "EVENTNAME4220"
+	desc = "EVENTHIST4220"
+
+	action_a ={				#Excellent!#
+		name = "ACTIONNAME4220A"
+		command = { type = annex which = PRM }
+		command = { type = addcore_national which = 1580 }
+		command = { type = addcore_national which = 1581 }
+		command = { type = addcore_national which = 1582 }
+		command = { type = addcore_national which = 1583 }
+		command = { type = addcore_national which = 1584 }
+		command = { type = conquistador which = -2 }
+		command = { type = colonists value = 2 }
+		command = { type = missionaries value = 2 }
+		command = { type = stability value = 1 }
+	}
+}

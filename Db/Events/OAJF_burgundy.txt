@@ -1,0 +1,436 @@
+############################
+### AGC-EEP EVENTS	 ###
+### authors credited	 ###
+############################
+
+#Flavor event by Archeolooginspe-Jan Van eyck
+event = {
+	id = 131020
+	trigger = {
+			owned = { province = 380 data = -1 }
+	}
+	random = no
+	country = BUR
+	name = "Jan Van Eyck"
+	desc = "Jan van Eyck was the greatest artist of the early Netherlands
+school. He held high positions throughout his career, including court
+painter and diplomat in Bruges. So outstanding was his skill as an oil
+painter that the invention of the medium was at one time attributed to
+him, with his brother Hubert, also a painter. Van Eyck exploited the
+qualities of oil as never before, building up layers of transparent
+glazes, thus giving him a surface on which to capture objects in the
+minutest detail and allowing for the preservation of his colours."
+	style = 1
+
+	date = { day = 1 month = january year = 1422 }
+	offset = 1200
+	deathdate = { day = 1 month = january year = 1441 }
+
+	action_a = {
+		name = "Merveilleux!"
+		command = { type = infra value = 50 }
+	}
+}
+
+#Military Reform by Lambert Simnel
+event = {
+	id = 131021
+	random = no
+	country = BUR
+	trigger = { 
+		countrysize = 4 
+		}
+	name = "The Ordonnance of 1471"
+	desc = "During the reign of Philip the Good the quality of the armies provided by the feudal levy had declined, the men-at-arms were ill-equiped and poorly skilled, the armed valets that in other armies fought alongside their masters were all but absent and not all nobles were able or willing to heed the call to muster. Nor could the disciplined city militias of the low countries be relied upon as the city governments were often in oposition to the Dukes of Burgundy. In 1471 a decision was finally made to reform the army. At the core of the new army would be the best mercenaries available; English longbowmen, German pikemen, Italian crossbowmen and men-at-arms from throughout Christendom."
+	style = 2
+	
+	date = { day = 1 month = january year = 1471 }
+	offset = 120
+	deathdate = { day = 1 month = january year = 1472 }
+
+	action_a ={ 
+		name = "Stengthen the army with mercenaries"
+		command = { type = treasury value = -400 }
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = domestic which = QUALITY value = 4 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = CAV which = -2 value = 5000 }
+		command = { type = INF which = -2 value = 5000 }
+		command = { type = ART which = -2 value = 20 }
+		command = { type = land value = 250 }
+	}
+	action_b ={ 
+		name = "Reform the feudal troops"
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = stability value = -2 }
+	}
+	action_c ={ 
+		name = "Let the decay continue"
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = QUALITY value = -3 }
+		command = { type = stability value = 1 }
+		command = { type = land value = -250 }
+	}
+}
+
+#eep events by fate - kingdom of lothringen
+event = {
+	id = 131022
+	trigger = {
+		stability  = 3
+		atwar   =  no 
+		owned   = { province = 339 data = BUR } 
+		owned   = { province = 340 data = BUR } 
+		owned   = { province = 374 data = BUR } 
+		owned   = { province = 378 data = BUR }  
+		owned   = { province = 379 data = BUR } 
+		owned   = { province = 380 data = BUR } 
+		owned   = { province = 387 data = BUR } 
+		owned   = { province = 409 data = BUR }
+		exists = HAB
+		}
+	random = no
+	country = BUR
+	name = "Philip the Good parleys with Emperor Frederick III"
+	desc = "After the death of Louis the Pious in 840 the Carolingian Empire was divided between his three sons. Two of these kingdoms would survive to become France and the Holy Roman Empire. The third kingdom, Lothairingia, dwindled and, upon the death in 900 of king Zwentibold was absorbed into Germany. Twice during his reign Philip the Good requested from Emperor Frederick III the vacant crown of Lotharingia."
+	style = 1
+	date = { day = 1 month = january year = 1447 }
+	offset = 360
+	deathdate = { day = 30 month = december year = 1447 }
+
+
+	action_a ={				#Yes#
+		name = "Request the crown of Lotharingia"
+		command = { type = trigger   which = 131023 } #austria
+		command = { type = relation which = LOR value = -50 } 
+		command = { type = relation which = HEL value = -50 }
+		command = { type = relation which = FRA value = -50 }
+		}
+	action_b ={				#No#
+		name = "Do not request the crown of Lotharingia"
+		command = { type = relation which = HAB value = 50 } #should be HEI#
+		}
+	}
+
+event = {
+	id = 131023
+	random = no
+	country = HAB #should be HEI#
+	name = "Philip the Good requests the Lotharingian crown"
+	desc = "After the death of Louis the Pious in 840 the Carolingian Empire was divided between his three sons. Two of these kingdoms would survive to become France and the Holy Roman Empire. The third kingdom, Lothairingia, dwindled and, upon the death in 900 of king Zwentibold was absorbed into Germany. Twice during his reign Philip the Good requested from Emperor Frederick III the vacant crown of Lotharingia."
+	style = 1
+
+	action_a ={				#No#
+		name = "Deny him the crown"
+		command = { type = relation which = BUR value = -50 } 
+		command = { type = relation which = FRA value = 50 } 
+		}
+	action_b ={				#Yes#
+		name = "Grant him the crown"
+		command = { type = stability  value = -1 } 
+		command = { type = secedeprovince which = BUR value = 334 } 
+		command = { type = secedeprovince which = BUR value = 335 }
+		command = { type = secedeprovince which = BUR value = 337 } 
+		command = { type = secedeprovince which = BUR value = 338 } 
+		command = { type = secedeprovince which = BUR value = 343 }
+		command = { type = secedeprovince which = BUR value = 344 } 
+		command = { type = secedeprovince which = BUR value = 345 } 
+		command = { type = secedeprovince which = BUR value = 375 }  
+		command = { type = secedeprovince which = BUR value = 377 }  
+		command = { type = secedeprovince which = BUR value = 388 }
+		command = { type = secedeprovince which = BUR value = 405 } 
+		command = { type = secedeprovince which = BUR value = 406 } 
+		command = { type = secedeprovince which = BUR value = 407 }  
+		command = { type = secedeprovince which = BUR value = 408 }
+		command = { type = relation which = BUR value = 200 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = KOL value = -50 }
+		command = { type = relation which = PFA value = -50 } 
+		command = { type = relation which = HEL value = -50 }
+		command = { type = relation which = LOR value = -50 }
+		command = { type = relation which = OLD value = -50 } 
+		command = { type = relation which = MUN value = -50 }
+		command = { type = relation which = KLE value = -50 }
+		command = { type = trigger   which = 131024 }
+		}
+	}
+
+event = {
+	id = 131024
+	random = no
+	country = BUR
+	name = "Long Live King Philip!!"
+	desc = "Philip the Good has been crowned king of Lotharingia"
+	style = 1
+
+	action_a ={				#No#
+		name = "God save the king!"
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = addcore which  = 334 } #Munster#
+		command = { type = addcore which  = 335 } #Oldenburg#
+		command = { type = addcore which  = 343 } #Kleves#
+		command = { type = addcore which  = 344 } #Cologne#
+		command = { type = addcore which  = 345 } #Pfalz#  
+		command = { type = addcore which  = 388 } #Bern#
+		command = { type = addcore which  = 405 } #Savoy#
+		command = { type = addcore which  = 406 } #Provence#
+		command = { type = addcore which  = 407 } #Dauphine# 
+		command = { type = addcore which  = 408 } #Lyonnais#
+		command = { type = DIP   which = 2 value = 12 } 
+		command = { type = relation which = KOL value = -50 }
+		command = { type = relation which = PFA value = -50 } 
+		command = { type = relation which = PRO value = -50 }
+		command = { type = relation which = SAV value = -50 }
+		command = { type = relation which = OLD value = -50 } 
+		command = { type = relation which = MUN value = -50 }
+		command = { type = relation which = KLE value = -50 } 
+ 		command = { type = sleepevent which = 131025 }
+		command = { type = relation  which = HAB value = -50 }   
+	}
+}
+
+event = {
+	id = 131025
+	trigger = {
+		stability  = 3
+		atwar   =  no 
+		owned   = { province = 339 data = BUR } 
+		owned   = { province = 340 data = BUR } 
+		owned   = { province = 374 data = BUR } 
+		owned   = { province = 377 data = BUR }  
+		owned   = { province = 378 data = BUR } 
+		owned   = { province = 379 data = BUR } 
+		owned   = { province = 380 data = BUR } 
+		owned   = { province = 387 data = BUR } 
+		owned   = { province = 409 data = BUR }
+		exists = HAB
+		}
+	random = no
+	country = BUR
+	name = "Philip the Good parleys with Emperor Frederick III"
+	desc = "After the death of Louis the Pious in 840 the Carolingian Empire was divided between his three sons. Two of these kingdoms would survive to become France and the Holy Roman Empire. The third kingdom, Lothairingia, dwindled and, upon the death in 900 of king Zwentibold was absorbed into Germany. Twice during his reign Philip the Good requested from Emperor Frederick III the vacant crown of Lotharingia."
+	style = 1
+	date = { day = 1 month = january year = 1463 }
+	offset = 360
+	deathdate = { day = 30 month = december year = 1463 }
+
+
+	action_a ={				#Yes#
+		name = "Request the crown of Lotharingia"
+		command = { type = trigger   which = 131026 }
+		command = { type = relation which = LOR value = -50 } 
+		command = { type = relation which = HEL value = -50 }
+		command = { type = relation which = FRA value = -50 }
+		}
+	action_b ={				#No#
+		name = "Do not request the crown of Lotharingia"
+		command = { type = relation which = HAB value = 50 } #should be HEI#
+		}
+	}
+
+event = {
+	id = 131026
+	random = no
+	country = HAB #should be HEI#
+	name = "Philip the Good requests the Lotharingian crown"
+	desc = "After the death of Louis the Pious in 840 the Carolingian Empire was divided between his three sons. Two of these kingdoms would survive to become France and the Holy Roman Empire. The third kingdom, Lothairingia, dwindled and, upon the death in 900 of king Zwentibold was absorbed into Germany. Twice during his reign Philip the Good requested from Emperor Frederick III the vacant crown of Lotharingia."
+	style = 1
+
+	action_a ={				#No#
+		name = "Deny him the crown"
+		command = { type = relation which = BUR value = -50 } 
+		command = { type = relation which = FRA value = 50 } 
+		}
+	action_b ={				#Yes#
+		name = "Grant him the crown"
+		command = { type = stability  value = -1 } 
+		command = { type = secedeprovince which = BUR value = 334 } 
+		command = { type = secedeprovince which = BUR value = 335 }
+		command = { type = secedeprovince which = BUR value = 337 } 
+		command = { type = secedeprovince which = BUR value = 338 } 
+		command = { type = secedeprovince which = BUR value = 343 }
+		command = { type = secedeprovince which = BUR value = 344 } 
+		command = { type = secedeprovince which = BUR value = 345 } 
+		command = { type = secedeprovince which = BUR value = 375 }  
+		command = { type = secedeprovince which = BUR value = 388 }
+		command = { type = secedeprovince which = BUR value = 405 } 
+		command = { type = secedeprovince which = BUR value = 406 } 
+		command = { type = secedeprovince which = BUR value = 407 }  
+		command = { type = secedeprovince which = BUR value = 408 }
+		command = { type = relation which = BUR value = 200 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = KOL value = -50 }
+		command = { type = relation which = PFA value = -50 } 
+		command = { type = relation which = HEL value = -50 }
+		command = { type = relation which = LOR value = -50 }
+		command = { type = relation which = OLD value = -50 } 
+		command = { type = relation which = MUN value = -50 }
+		command = { type = relation which = KLE value = -50 }
+		command = { type = trigger   which = 131024 }
+		}
+	}
+
+event = {
+	id = 131027
+	trigger = { 
+		owned = { province = 380 data = BUR } 
+		}
+	random = no
+	country = BUR
+	name = "Unrest in Bruges"
+	desc = "The cities of the low countries did not take kindly to the efforts of the Dukes of Burgundy to bring them under central control and in 1436 the people of Bruges rose in revolt."
+	style = 1
+	date = { day = 1 month = january year = 1436 }
+	offset = 360
+	deathdate = { day = 30 month = december year = 1436 }
+	action_a ={				#Yes#
+		name = "Supress the revolt"
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = revolt   which = 380 } 
+		command = { type = stability   value = -1 } 
+		}
+	action_b ={				#No#
+		name = "Allow the cities of the low countries more autonomy"
+		command = { type = domestic which = CENTRALIZATION value = -3 }
+		}
+	}
+
+event = {
+	id = 131028
+	trigger = { 
+		owned = { province = 380 data = BUR } 
+		}
+	random = no
+	country = BUR
+	name = "Unrest in Ghent"
+	desc = "The cities of the low countries did not take kindly to the efforts of the Dukes of Burgundy to bring them under central control and in 1451 the people of Ghent rose in a revolt that took two years to crush."
+	style = 1
+	date = { day = 1 month = january year = 1451 }
+	offset = 360
+	deathdate = { day = 30 month = december year = 1451 }
+	action_a ={				#Yes#
+		name = "Supress the revolt"
+		command = { type = revolt   which = 380 } 
+		command = { type = stability   value = -1 } 
+		command = { type = province_revoltrisk   which = 380 value = 12 } 
+		}
+	action_b ={				#No#
+		name = "Allow the cities of the low countries more autonomy"
+		command = { type = domestic which = CENTRALIZATION value = -3 }
+		command = { type = sleepevent   which = 131029 } 
+		}
+	}
+
+event = {
+	id = 131029
+	trigger = { 
+		owned = { province = 380 data = BUR } 
+		event = 131028 
+		}
+	random = no
+	country = BUR
+	name = "The defeat of Ghent"
+	desc = "After two years the commune of Ghent was defeated at Gavre, enabling Philip the Good to strengthen his authority in Flanders."
+	style = 1
+	date = { day = 1 month = january year = 1453 }
+	offset = 360
+	deathdate = { day = 30 month = december year = 1453 }
+	action_a ={				#Yes#
+		name = "Supress the revolt"
+		command = { type = domestic which = CENTRALIZATION value = 1 } 
+		command = { type = province_revoltrisk   which = 380 value = -12 } 
+		}
+	}
+
+event = {
+	id = 131030
+	trigger = { 
+		owned = { province = 378 data = BUR } 
+		}
+	random = no
+	country = BUR
+	name = "Unrest in Liege"
+	desc = "The cities of the low countries did not take kindly to the efforts of the Dukes of Burgundy to bring them under central control and in 1465 the people of Liege rose in revolt."
+	style = 1
+	date = { day = 1 month = january year = 1465 }
+	offset = 360
+	deathdate = { day = 30 month = december year = 1465 }
+	action_a ={				#Yes#
+		name = "Supress the revolt"
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = revolt   which = 378 } 
+		command = { type = stability   value = -1 } 
+		}
+	action_b ={				#No#
+		name = "Allow the cities of the low countries more autonomy"
+		command = { type = domestic which = CENTRALIZATION value = -3 }
+		}
+	}
+
+#Foundation of the university of Leuven, by Archeolooginspe 
+#(Only if the own the province, historically they did not, but it was founded by the one in the Burgundian family)
+event = {
+	id = 131031
+	trigger = {
+		owned = { province = 378 data = -1 }
+	}
+	random = no
+	country = BUR
+	name = "Foundation of the university of Leuven"
+	desc = "Founded in 1425 by Pope Martin V, the K.U.Leuven bears the honour of being the oldest Catholic university in the world still in existence and the oldest university in the Low Countries. In its early days this University was modelled on the universities of Paris, Cologne and Vienna. In a short time it grew into one of the largest and most renowned universities in Europe. Its academic fame attracted scientists who have made valuable contributions to European culture. Let us enumerate a few renowned names. In the 16th century the humanist, Desiderius Erasmus, lectured here. He founded the Collegium Trilingue in 1517 for the study of Hebrew, Latin and Greek - the first of its kind. The tutor of the young emperor Charles V, Adriaan Cardinal Florensz of Utrecht, was a professor here before being elected in 1522 as the last non-Italian Pope before Pope John Paul II. The philologist, legal scholar and historian, Justus Lipsius, taught here for years."
+	style = 1
+	date = { day = 1 month = january year = 1425 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1426 }
+
+	action_a = {
+		name = "Found the university"
+		command = { type = infra value = 150 }
+		command = { type = diplomats value = 1 }
+		command = { type = missionaries value = 1 }
+		command = { type = relation which = PAP value = 10 }
+		command = { type = treasury value = -45 }
+	}
+	action_b = {
+		name = "Our money is better spend on a hall for wool"
+		command = { type = trade value = 150 }
+		command = { type = merchants value = 1 }
+		command = { type = treasury value = -45 }
+	}
+	action_c = {
+		name = "We better keep the money in our pockets"
+		command = { type = relation which = PAP value = -10 }
+		command = { type = vp value = -1 }
+	}
+}
+
+#The Order of the Golden Fleece, by Archeolooginspe  
+event = { 
+	id = 131032
+	trigger = {
+		countrysize = 4
+	}
+	random = no
+	country = BUR
+	name = "Golden Fleece"
+	desc = "The Order of the Golden Fleece was established in 1430 by Philip the Good, Duke of Burgundy in celebration of the properous and wealthy domaines united in his person that ran from Flanders to Switzerland. He also used it to keep the local nobility attached to him."
+	style = 1
+
+	date = { day = 1 month = january year = 1430 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1431 }
+
+	action_a = {
+		name = "Found this order in our honour"
+		command = { type = domestic which = aristocracy value = 1 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = treasury value = -250 }
+	}
+	action_b = {
+		name = "It costs way to much"
+		command = { type = vp value = -5 }
+	}
+}

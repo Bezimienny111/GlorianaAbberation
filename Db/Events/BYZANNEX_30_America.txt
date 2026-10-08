@@ -1,0 +1,382 @@
+#-----------------------------------------------------------------------------
+#American events
+
+#(1770-1790) American Declaration of Independence
+event = {
+	id = 3001418
+	trigger = {
+		exists = USA
+		domestic = { type = serfdom value = 5 }
+	}
+	random = NO
+	country = BYZ
+	name = "American Declaration of Independence"
+	desc = "Representatives of England's North American colonies have gathered together and signed a document seceding their provinces from the Crown. An emissary, John Jay, has been sent to the Imperial court to try to garner recognition, funding and supplies for use against England. Should we interfere?"
+
+	date = { year = 1770 }
+	offset = 30
+	deathdate = { year = 1790 }
+
+	action_a = {
+		name = "Support the rebellion"
+		command = { type = treasury value = -600 }
+		command = { type = stability value = -2 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = relation which = USA value = 200 }
+		command = { type = relation which = ENG value = -200 }
+		command = { type = casusbelli which = ENG value = 60 }
+		command = { type = trigger which = 3001420 }
+	}
+	action_b = {
+		name = "Support England against the rebels"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = casusbelli which = USA value = 60 }
+		command = { type = relation which = USA value = -400 }
+	}
+	action_c = {
+		name = "Do business with both sides"
+		command = { type = treasury value = 100 }
+		command = { type = relation which = USA value = -50 }
+		command = { type = relation which = ENG value = -50 }
+	}
+}
+
+#(1770-1790) American Declaration of Independence II
+event = {
+	id = 3001419
+	trigger = {
+		exists = USA
+		NOT = { domestic = { type = serfdom value = 5 } }
+	}
+	random = NO
+	country = BYZ
+	name = "American Declaration of Independence"
+	desc = "Representatives of England's North American colonies have gathered together and signed a document seceding their provinces from the Crown. An emissary, John Jay, has been sent to the Imperial court to try to garner recognition, funding and supplies for use against England. Should we interfere?"
+
+	date = { year = 1770 }
+	offset = 30
+	deathdate = { year = 1790 }
+
+	action_a = {
+		name = "Do business with both sides"
+		command = { type = relation which = USA value = -50 }
+		command = { type = relation which = ENG value = -50 }
+		command = { type = treasury value = 100 }
+	}
+	action_b = {
+		name = "Support England against the rebels"
+		command = { type = relation which = USA value = -400 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = stability value = -2 }
+		command = { type = casusbelli which = USA value = 60 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+	}
+	action_c = {
+		name = "Support the rebellion"
+		command = { type = relation which = USA value = 200 }
+		command = { type = relation which = ENG value = -200 }
+		command = { type = stability value = 1 }
+		command = { type = casusbelli which = ENG value = 60 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = treasury value = -600 }
+		command = { type = trigger which = 3001420 }
+	}
+}
+
+#(1770-1790) Roman Assistance to America
+event = {
+	id = 3001420
+	random = NO
+	country = USA
+	name = "Roman Assistance to America"
+	desc = "John Jay's embassy to the Roman court has paid handsome dividends. The Romans have sent gold bullion, arms, military instructors, and even a few ships of the line. Their offer to underwrite some loans on our behalf has also attracted more supplies from the banks in Amsterdam. This should protect us from overprinting our currency and sparking hyperinflation for a little while at least."
+
+	action_a = {
+		name = "Remind me to send a thank you note, Martha"
+		command = { type = INF which = -1 value = 15000 }
+		command = { type = ART which = -3 value = 50 }
+		command = { type = warships which = -1 value = 5 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = treasury value = 800 }
+		command = { type = relation which = BYZ value = 50 }
+	}
+}
+
+#(1780-1810) The Treaty of Paris
+event = {
+	id = 3001421
+	trigger = {
+		event = 3001420 #USA: Roman Assistance to America
+		exists = USA
+		NOT = { war = { country = USA country = ENG } }
+		OR = {
+			domestic = { type = innovative value = 1 }
+			NOT = { domestic = { type = serfdom value = 10 } }
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "The Treaty of Paris"
+	desc = "With some help from the French and the Romans, the American colonists have thrown off the English yoke and fought off one of the strongest military forces in the world. While it might be wonderful in the short term that a major outpost of a great power has been replaced by a number of squabbling municipalities, over the next few decades major rebellions would break out in France, Germany, and the Empire as people sought more representative government and local autonomy."
+
+	date = { year = 1780 }
+	offset = 30
+	deathdate = { year = 1810 }
+
+	action_a = {
+		name = "Self-determination was a fine idea, elsewhere"
+		command = { type = revoltrisk which = 600 value = 1 }
+		#command = { type = vp value = 50 }
+	}
+}
+
+#The Treaty of Paris#
+event = {
+	id = 3001422
+	trigger = {
+		exists = USA
+		NOT = { event = 3001420 } #USA: Roman Assistance to America
+		NOT = { war = { country = USA country = ENG } }
+		OR = {
+			domestic = { type = innovative value = 1 }
+			NOT = { domestic = { type = serfdom value = 10 } }
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "The Treaty of Paris"
+	desc = "Although we tried to help keep them down, the American colonists have thrown off the English yoke and fought off one of the strongest military forces in the world. While it might be wonderful in the short run that a major outpost of a great power has been replaced by a number of squabbling municipalities, over the next few decades major rebellions would break out in France, Germany, and the Empire as people sought more representative government and local autonomy."
+	date = { year = 1780 }
+	offset = 30
+	deathdate = { year = 1810 }
+
+	action_a = {
+		name = "I knew no good could come of this"
+		command = { type = revoltrisk which = 600 value = 3 }
+	}
+}
+
+#The American experiment#
+event = {
+	id = 3001423
+	trigger = {
+		exists = USA
+		OR = {
+			owned = { province = 354 data = -1 }
+			owned = { province = 355 data = -1 }
+			owned = { province = 363 data = -1 } #serbia,croatia,bosnia
+			owned = { province = 471 data = -1 }
+			owned = { province = 487 data = -1 } #daghestan, azerbaijan, tabriz
+			owned = { province = 530 data = -1 }
+			owned = { province = 732 data = -1 }
+			owned = { province = 733 data = -1 }
+			owned = { province = 734 data = -1 }
+			owned = { province = 735 data = -1 }
+			owned = { province = 736 data = -1 }
+			owned = { province = 737 data = -1 } #maghreb
+			owned = { province = 738 data = -1 }
+			owned = { province = 739 data = -1 }
+			owned = { province = 740 data = -1 }
+			owned = { province = 741 data = -1 }
+			owned = { province = 806 data = -1 }
+		}
+		OR = {
+			event = 3001421
+			event = 3001422
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "The American shadow"
+	desc = "Nationalities long accommodated to our rule have become emboldened following the success of the American revolution. Secret societies are proliferating in Serbia and local government offices have been bombed. Some of our more Muslim provinces have begun having mujahadeen appear in the mosques and madrasas to preach jihad against our Christian empire."
+	date = { year = 1780 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "This is going to be painful"
+		command = { type = province_revoltrisk which = 363 value = 10 } #serbia
+		command = { type = province_revoltrisk which = 354 value = 10 } #serbia
+		command = { type = province_revoltrisk which = 355 value = 10 } #serbia
+		command = { type = province_revoltrisk which = 487 value = 10 } #azerbaijan
+		command = { type = province_revoltrisk which = 530 value = 10 } #azerbaijan
+		command = { type = province_revoltrisk which = 471 value = 10 } #azerbaijan
+		command = { type = province_revoltrisk which = 496 value = 10 } #hedjaz
+		command = { type = province_revoltrisk which = 497 value = 10 } #hedjaz
+		command = { type = province_revoltrisk which = 498 value = 10 } #hedjaz
+		command = { type = province_revoltrisk which = 737 value = 10 } #maghreb
+		command = { type = province_revoltrisk which = 735 value = 10 } #maghreb
+		command = { type = province_revoltrisk which = 736 value = 10 } #maghreb
+		command = { type = province_revoltrisk which = 741 value = 10 } #maghreb
+		command = { type = province_revoltrisk which = 733 value = 10 } #maghreb
+		command = { type = province_revoltrisk which = 738 value = 10 } #maghreb
+		command = { type = province_revoltrisk which = 734 value = 10 } #maghreb
+		command = { type = province_revoltrisk which = 732 value = 10 } #maghreb
+		command = { type = province_revoltrisk which = 806 value = 10 } #maghreb
+		command = { type = province_revoltrisk which = 740 value = 10 } #maghreb
+		command = { type = province_revoltrisk which = 739 value = 10 } #maghreb
+	}
+}
+
+#(1780-1820) American Shadows over Bulgaria
+event = {
+	id = 3001424
+	trigger = {
+		exists = USA
+		OR = {
+			owned = { province = 320 data = -1 } #Dobrudja
+			owned = { province = 321 data = -1 } #Rumelia
+			owned = { province = 356 data = -1 } #Bulgaria
+		}
+		OR = {
+			event = 3001421
+			event = 3001422
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "American Shadows over Bulgaria"
+	desc = "Nationalities long accommodated to our rule have become emboldened following the success of the American revolution. In Bulgaria, one of the old nobility has proclaimed himself Tsar and is leading a guerilla war against the loyal populace. His corps's terroristic attacks sell newspapers, but are causing widespread panic and seriously impeding local governance."
+
+	date = { year = 1780 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "This is going to be painful"
+		command = { type = province_revoltrisk which = 320 value = 10 } #Dobrudja
+		command = { type = province_revoltrisk which = 321 value = 10 } #Rumelia
+		command = { type = province_revoltrisk which = 356 value = 10 } #Bulgaria
+	}
+}
+
+#(1780-1820) American Shadow over Armenia
+event = {
+	id = 3001425
+	trigger = {
+		exists = USA
+		OR = {
+			owned = { province = 473 data = -1 } #kurdistan
+			owned = { province = 472 data = -1 } #armenia
+			owned = { province = 483 data = -1 } #adana
+		}
+		OR = {
+			event = 3001421
+			event = 3001422
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "American Shadow over Armenia"
+	desc = "Nationalities long accommodated to our rule have become emboldened following the success of the American revolution. Long one of the most restive peoples in the Empire, the Armenians have redoubled their efforts to be free of us and our church."
+	date = { year = 1780 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "This is going to be painful"
+		command = { type = province_revoltrisk which = 473 value = 10 } #armenia
+		command = { type = province_revoltrisk which = 472 value = 10 } #armenia
+		command = { type = province_revoltrisk which = 483 value = 10 } #armenia
+	}
+}
+
+#The American experiment#
+event = {
+	id = 3001426
+	trigger = {
+		exists = USA
+		event = 3001267 #didn't colonize sicily w/greeks
+		OR = {
+			owned = { province = 394 data = -1 } #apulia
+			owned = { province = 395 data = -1 } #messina
+			owned = { province = 396 data = -1 } #sicily
+		}
+		OR = {
+			event = 3001421
+			event = 3001422
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "The American shadow"
+	desc = "Nationalities long accommodated to our rule have become emboldened following the success of the American revolution. The native population of the thema Sikelias has banded into groups called Mafia to oppose our rule there."
+	date = { year = 1780 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Stugots!"
+		command = { type = province_revoltrisk which = 394 value = 10 } #sicily
+		command = { type = province_revoltrisk which = 395 value = 10 } #sicily
+		command = { type = province_revoltrisk which = 396 value = 10 } #sicily
+	}
+}
+
+#Rebelliousness dies down
+event = {
+
+	id = 3101427
+	trigger = {
+		OR = {
+			event = 3001423
+			event = 3001424
+			event = 3001425
+			event = 3001426
+		}
+		stability = 3
+		atwar = no
+		domestic = { type = innovative value = 7 }
+		domestic = { type = serfdom value = 8 }
+	}
+	random = no
+	country = BYZ
+
+	name = "Revolutionary Tendencies Subside"
+	desc = "The push for independence has been quashed throughout the Empire. For now."
+
+	date = { year = 1820 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Finally!"
+		command = { type = province_revoltrisk which = 363 value = -10 } #serbia
+		command = { type = province_revoltrisk which = 354 value = -10 } #serbia
+		command = { type = province_revoltrisk which = 355 value = -10 } #serbia
+		command = { type = province_revoltrisk which = 487 value = -10 } #azerbaijan
+		command = { type = province_revoltrisk which = 530 value = -10 } #azerbaijan
+		command = { type = province_revoltrisk which = 471 value = -10 } #azerbaijan
+		command = { type = province_revoltrisk which = 496 value = -10 } #hedjaz
+		command = { type = province_revoltrisk which = 497 value = -10 } #hedjaz
+		command = { type = province_revoltrisk which = 498 value = -10 } #hedjaz
+		command = { type = province_revoltrisk which = 737 value = -10 } #maghreb
+		command = { type = province_revoltrisk which = 735 value = -10 } #maghreb
+		command = { type = province_revoltrisk which = 736 value = -10 } #maghreb
+		command = { type = province_revoltrisk which = 741 value = -10 } #maghreb
+		command = { type = province_revoltrisk which = 733 value = -10 } #maghreb
+		command = { type = province_revoltrisk which = 738 value = -10 } #maghreb
+		command = { type = province_revoltrisk which = 734 value = -10 } #maghreb
+		command = { type = province_revoltrisk which = 732 value = -10 } #maghreb
+		command = { type = province_revoltrisk which = 806 value = -10 } #maghreb
+		command = { type = province_revoltrisk which = 740 value = -10 } #maghreb
+		command = { type = province_revoltrisk which = 739 value = -10 } #maghreb
+		command = { type = province_revoltrisk which = 320 value = -10 } #Dobrudja
+		command = { type = province_revoltrisk which = 321 value = -10 } #Rumelia
+		command = { type = province_revoltrisk which = 356 value = -10 } #Bulgaria
+		command = { type = province_revoltrisk which = 473 value = -10 } #armenia
+		command = { type = province_revoltrisk which = 472 value = -10 } #armenia
+		command = { type = province_revoltrisk which = 483 value = -10 } #armenia
+		command = { type = province_revoltrisk which = 394 value = -10 } #sicily
+		command = { type = province_revoltrisk which = 395 value = -10 } #sicily
+		command = { type = province_revoltrisk which = 396 value = -10 } #sicily
+		command = { type = province_revoltrisk which = 600 value = -10 } 
+		command = { type = sleepevent which = 3001423 } #american revolution
+		command = { type = sleepevent which = 3001424 } #american revolution
+		command = { type = sleepevent which = 3001425 } #american revolution
+		command = { type = sleepevent which = 3001426 } #american revolution
+	}
+}

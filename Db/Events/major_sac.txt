@@ -1,0 +1,447 @@
+#####Saxony Major Events######
+#By Joakim 'Greven' Bergqwist#
+##############################
+
+#The Great Northern Conflict#
+event = {
+
+	id = 3621
+	trigger = {
+			vassal ={
+				country = SAC
+				country = POL
+				}  
+		 	AND = {
+				OR = {
+					owned = { province = 282 data =SWE }
+					owned = { province = 283 data =SWE }
+					owned = { province = 289 data =SWE }
+					owned = { province = 290 data =SWE }
+					owned = { province = 301 data =SWE }
+					owned = { province = 303 data =SWE }
+					owned = { province = 300 data =SWE }
+					owned = { province = 331 data =SWE }
+					owned = { province = 332 data =SWE }
+					}
+				}
+		}
+	random = no
+	country = SAC
+	name = "EVENTNAME3621"
+	desc = "EVENTHIST3621"
+
+	date = { day = 15 month = june year = 1697 }
+	offset = 0
+	deathdate = { day = 1 month = april year = 1700 }
+
+	action_a ={				#Advance!#
+		name = "ACTIONNAME3621A"
+		command = { type = casusbelli which = SWE value = 36 }
+		command = { type = relation which = SWE value = -150 }
+		command = { type = relation which = DAN value = 150 }
+		command = { type = relation which = RUS value = 150 }
+		command = { type = relation which = POL value = 200 }
+		command = { type = INF which = -1 value = 15000 }
+		command = { type = CAV which = -3 value = 3000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={				#Let the Poles meet the Elephant first#
+		name = "ACTIONNAME3621B"
+		command = { type = casusbelli which = SWE value = 36 }
+		command = { type = relation which = SWE value = -100 }
+		command = { type = relation which = DAN value = 50 }
+		command = { type = relation which = RUS value = -150 }
+		command = { type = relation which = POL value = 50 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#The League of Schmalkalden#
+event = {
+
+	id = 3622
+	trigger = {
+		 exists = HAB  
+		 	AND = { 
+				OR = {
+					religion = protestant
+					religion = reformed
+						}
+			}
+	}
+	random = no
+	country = SAC
+	name = "EVENTNAME3622"
+	desc = "EVENTHIST3622"
+
+	date = { day = 1 month = january year = 1527 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1529 }
+
+	action_a ={					#Give it your support#
+		name = "ACTIONNAME3622A"
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = HAN value = 150 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = PFA value = 150 }
+		command = { type = relation which = BAD value = 150 }
+		command = { type = relation which = THU value = 150 }
+		command = { type = relation which = KLE value = 100 }
+		command = { type = relation which = KOL value = 50 }
+		command = { type = relation which = BAY value = 50 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={					#Ignore it#
+		name = "ACTIONNAME3622B"
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = HAN value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = PFA value = -100 }
+		command = { type = relation which = BAD value = -100 }
+		command = { type = relation which = THU value = -100 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#The Evangelic Union#
+event = {
+
+	id = 3623
+	trigger = {
+		 OR = {
+			religion = protestant
+			religion = reformed
+				}
+			}		
+	random = no
+	country = SAC
+	name = "EVENTNAME3623"
+	desc = "EVENTHIST3623"
+
+	date = { day = 1 month = january year = 1605 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a ={					#Prepare to Join#
+		name = "ACTIONNAME3623A"
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = HAN value = 150 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = PFA value = 150 }
+		command = { type = relation which = BAD value = 150 }
+		command = { type = relation which = THU value = 150 }
+		command = { type = relation which = SHL value = 150 }
+		command = { type = relation which = KLE value = 100 }
+		command = { type = relation which = KOL value = 50 }
+		command = { type = relation which = BAY value = 50 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={					#Stay Neutral#
+		name = "ACTIONNAME3623B"
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = HAN value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = PFA value = -100 }
+		command = { type = relation which = BAD value = -100 }
+		command = { type = relation which = THU value = -100 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#The Catholic League#
+event = {
+
+	id = 3624
+	trigger = {
+		 OR = {
+			religion = catholic
+			religion = counterreform
+				}
+			}
+	random = no
+	country = SAC
+	name = "EVENTNAME3624"
+	desc = "EVENTHIST3624"
+
+	date = { day = 1 month = january year = 1607 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a ={					#Prepare to Join#
+		name = "ACTIONNAME3624A"
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = BRA value = -150 }
+		command = { type = relation which = HAN value = -150 }
+		command = { type = relation which = HES value = -150 }
+		command = { type = relation which = PFA value = -150 }
+		command = { type = relation which = BAD value = -150 }
+		command = { type = relation which = THU value = -150 }
+		command = { type = relation which = SHL value = -150 }
+		command = { type = relation which = KLE value = 50 }
+		command = { type = relation which = KOL value = 100 }
+		command = { type = relation which = BAY value = 100 }
+		command = { type = relation which = PAP value = 100 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = HAB value = 150 }
+	}
+
+	action_b ={					#Stay Neutral#
+		name = "ACTIONNAME3624B"
+		command = { type = relation which = BRA value = 50 }
+		command = { type = relation which = HAN value = 50 }
+		command = { type = relation which = HES value = 50 }
+		command = { type = relation which = PFA value = 50 }
+		command = { type = relation which = BAD value = 50 }
+		command = { type = relation which = THU value = 50 }
+		command = { type = relation which = BAY value = -50 }
+		command = { type = relation which = KLE value = -50 }
+		command = { type = relation which = KOL value = -50 }
+		command = { type = relation which = HAB value = -100 }
+	}
+}
+
+#The Effects of the Pragmatic Sanctions#
+event = {
+
+	id = 3625
+	trigger = { event = 3205 }
+	random = no
+	country = SAC
+	name = "EVENTNAME3625"
+	desc = "EVENTHIST3625"
+
+	date = { day = 1 month = january year = 1741 }
+	offset = 10
+	deathdate = { day = 1 month = june year = 1741 }
+
+	action_a ={				#Anti-Habsburg#
+		name = "ACTIONNAME3625A"
+		command = { type = casusbelli which = HAB value = 36 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = PRU value = 150 }
+		command = { type = relation which = BAY value = 150 }
+		command = { type = relation which = GEN value = 50 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = RUS value = -100 }
+		command = { type = relation which = HES value = -50 }
+		command = { type = relation which = HAN value = -50 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={				#Neutral#
+		name = "ACTIONNAME3625B"
+		command = { type = relation which = PRU value = -50 }
+		command = { type = relation which = BAY value = -50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = HOL value = 100 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = relation which = HES value = 100 }
+		command = { type = relation which = HAN value = 100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = stability value = 1 }
+	}
+
+	action_c ={				#Pro-Habsburg#
+		name = "ACTIONNAME3625C"
+		command = { type = relation which = PRU value = -150 }
+		command = { type = relation which = BAY value = -150 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HOL value = 100 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = HAN value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = stability value = -2 }
+		command = { type = casusbelli which = PRU value = 12 }
+	}
+
+}
+
+#The Polish Succession of 1697#
+event = {
+
+	id = 3627				#Triggered by POL3486#
+	random = no
+	country = SAC
+	name = "EVENTNAME3627"
+	desc = "EVENTHIST3627"
+
+	action_a ={				#The Wettin Dynasty in Poland#
+		name = "ACTIONNAME3627A"
+		command = { type = vassal which = POL }
+		command = { type = vp value = 200 }
+		command = { type = relation which = POL value = 100 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = RUS value = 100 }
+		command = { type = stability value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = alliance which = POL }
+	}
+}
+
+#The Polish Succession of 1733#
+event = {
+
+	id = 3628				#Triggered by POL3495#
+	random = no
+	country = SAC
+	name = "EVENTNAME3628"
+	desc = "EVENTHIST3628"
+
+	action_a ={				#We must fight to defend our crown#
+		name = "ACTIONNAME3628A"
+		command = { type = trigger which = 3429 }
+		command = { type = trigger which = 3204 }
+		command = { type = trigger which = 4117 }
+		command = {
+			trigger = {
+				SPA = { monarch = 04145 }
+			}
+			type = trigger which = 3761
+		}
+		command = { type = dynastic which = POL } 
+		command = { type = alliance which = POL } 
+		command = { type = vassal which = POL }
+		command = { type = relation which = POL value = 100 }
+		command = { type = relation which = RUS value = 200 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = PRU value = 100 }
+		command = { type = relation which = SWE value = -100 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={				#Back down#
+		name = "ACTIONNAME3628B"
+		command = {
+			trigger = {
+				NOT = {
+					POL = { monarch = 04125 }
+				}
+			}
+			type = trigger which = 3487
+		}
+		command = { type = relation which = POL value = -100 }
+		command = { type = relation which = RUS value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = PRU value = -100 }
+		command = { type = relation which = SWE value = 100 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#The Polish Succession of 1733#
+event = {
+
+	id = 3626				#Triggered by POL3495#
+	random = no
+	country = SAC
+	name = "EVENTNAME3626"
+	desc = "EVENTHIST3626"
+
+	action_a ={				#Poland is ours! Take it!#
+		name = "Poland is ours! Take it!"
+		command = { type = trigger which = 3429 }
+		command = { type = trigger which = 3204 }
+		command = { type = trigger which = 3528 }
+		command = { type = trigger which = 4117 }
+		command = {
+			trigger = {
+				SPA = { monarch = 04145 }
+			}
+			type = trigger which = 3761
+		}
+		command = { type = relation which = POL value = 100 }
+		command = { type = relation which = RUS value = 200 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = PRU value = 100 }
+		command = { type = relation which = SWE value = -100 }
+		command = { type = stability value = 1 }
+
+	}
+
+	action_b ={				#Let's listen to some poetry instead#
+		name = "We must accept the result"
+		command = { type = relation which = POL value = -100 }
+		command = { type = relation which = RUS value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = PRU value = -100 }
+		command = { type = relation which = SWE value = 100 }
+		command = { type = stability value = 3 }
+	}
+}
+#August the Strong returns to the Throne of Poland##
+event = {
+
+	id = 3737			#Triggered by POL3501#
+	random = no
+	country = SAC
+	name = "EVENTNAME3737"
+	desc = "EVENTHIST3737"
+
+	action_a ={				#I am back!#
+		name = "ACTIONNAME3737A"
+		command = { type = vassal which = POL }
+		command = { type = relation which = POL value = 150 }
+		command = { type = stability value = 2 }
+		command = { type = alliance which = POL }
+	}
+}
+
+#The Polish Succession of 1690#
+event = {
+
+	id = 4110			#Triggered by POL 4105#
+	random = no
+	country = SAC
+	name = "The Polish Succession of 1690"
+	desc = "Your Majesty, the recent election of the Polish Sejm following the death of the late Queen Christina has deliberated on the succession in their lands and has elected to offer the crown to none other than your son, Augustus the Strong. My Lord, the great Wettin dynasty shall now also rule as Kings of Poland!"
+
+	action_a ={			#The Wettin Dynasty in Poland#
+		name = "The Wettin Dynasty in Poland"
+		command = { type = vassal which = POL }
+		command = { type = vp value = 100 }
+		command = { type = relation which = POL value = 100 }
+		command = { type = stability value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = alliance which = POL }
+	}
+}
+
+#The Polish Succession of 1764#
+event = {
+
+	id = 4111			#Triggered by POL 4100#
+	random = no
+	country = SAC
+	name = "The Polish Succession of 1764"
+	desc = "Your Majesty, the recent election of the Polish Sejm following the death of the late King Augustus III has deliberated on the succession in their lands and has elected to continue the union between our two realms. My Lord, the great Wettin dynasty shall carry on ruling as Kings of Poland!"
+
+	action_a ={			#The Wettin Dynasty in Poland#
+		name = "The Wettin Dynasty in Poland"
+		command = { type = vassal which = POL }
+		command = { type = vp value = 100 }
+		command = { type = relation which = POL value = 100 }
+		command = { type = stability value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = alliance which = POL }
+	}
+}

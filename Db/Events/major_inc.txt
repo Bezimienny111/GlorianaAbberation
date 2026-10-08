@@ -1,0 +1,38 @@
+#####Incan Major Events#######
+#By Joakim 'Greven' Bergqwist#
+##############################
+
+#The Incan Civil War#
+event = {
+
+	id = 3698
+	random = no
+	country = INC
+	name = "EVENTNAME3698"
+	desc = "EVENTHIST3698"
+
+	date = { day = 1 month = january year = 1521 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1522 }
+
+	action_a ={				#Atahualpa#
+		name = "ACTIONNAME3698A"
+		command = { type = revoltrisk which = 72 value = 10 }	
+		command = { type = wakemonarch which = 07465 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = INF which = -1 value = 15000 }
+		command = { type = wakeleader which = 09880 }
+	}
+
+	action_b ={				#Huascar#
+		name = "ACTIONNAME3698B"
+		command = { type = revoltrisk which = 72 value = 10 }	
+		command = { type = wakemonarch which = 07464 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = INF which = -1 value = 10000 }
+		command = { type = wakeleader which = 09881 }
+		command = { type = wakeleader which = 09882 }
+	}
+}

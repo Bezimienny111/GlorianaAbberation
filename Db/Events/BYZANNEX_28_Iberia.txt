@@ -1,0 +1,74 @@
+#-----------------------------------------------------------------------------
+# Spanish Events
+
+#Rome Again Sides with the Enemies of Spain#
+event = {
+	id = 3001413
+	trigger = {
+		exists = HOL
+		war = { country = SPA country = HOL }
+	}
+	random = NO
+	country = BYZ
+	name = "The United Provinces"
+	desc = "The United Provinces of the Netherlands have formed, giving the Spanish opposition in the Low Countries an organization and structure. We now must face the possibility that the Dutch will actually win the war and be free from Spanish interference in their trading. Still, as much competition as we might one day face from the Dutch in world markets, the competition we have with the Spanish in the Mediterranean is much more real and immediate."
+	date = { year = 1558 }
+	offset = 360 #1 year
+	deathdate = { year = 1648 }
+
+	action_a = {
+		name = "Support the enemy of my enemy"
+		command = { type = relation which = HOL value = 200 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = treasury value = -300 }
+		command = { type = casusbelli which = SPA value = 60 }
+		command = { type = trigger which = 3001414 }
+		command = { type = trigger which = 3001415 }
+	}
+	action_b = {
+		name = "They'd probably just use the money for booze"
+		command = { type = relation which = SPA value = 25 }
+		command = { type = relation which = HAB value = 25 }
+		command = { type = relation which = HOL value = -25 }
+	}
+}
+
+#Rome again sides with the enemies of Spain
+event = {
+	id = 3001414
+	random = NO
+	country = SPA
+	name = "Byzantine interference"
+	desc = "As if the Dutch weren't troublesome enough on their own, our sources report that the Romans have joined the English in funneling arms and money to the insurgents."
+
+action_a = {
+		name = "¡Hotos!" #How unpleasant
+		command = { type = revolt which = 337 }
+		command = { type = revolt which = 338 }
+		command = { type = revolt which = 339 }
+		command = { type = revolt which = 340 }
+		command = { type = revolt which = 377 }
+		command = { type = revolt which = 378 }
+		command = { type = revolt which = 379 }
+		command = { type = revolt which = 380 }
+		command = { type = casusbelli which = BYZ value = 60 }
+	}
+}
+
+#Rome again sides with the enemies of Spain
+event = {
+	id = 3001415
+	random = NO
+	country = HOL
+	name = "Roman support"
+	desc = "Between the English, the Germans and the Venetians, we aren't hurting for funding but the Emperor in Constantinople has sent us an armada loaded with light guns, light armor, and heavy gold. They also sent some instructors from their naval and military academies. We should remember to send a thank you card some time."
+
+	action_a = {
+		name = "I want to try these out. Where's a Spaniard?"
+		command = { type = INF which = -2 value = 15000 }
+		command = { type = treasury value = 100 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+	}
+}

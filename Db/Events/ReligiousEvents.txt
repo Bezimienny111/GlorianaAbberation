@@ -1,0 +1,136 @@
+#
+# EU2 - Religious Events
+#
+#		written by Johan Andersson
+#
+
+
+
+#########################################################################
+#  Reformation
+#########################################################################
+event = { 
+
+	id = 100
+	name = "EVENTNAME101"
+	desc = "EVENTHIST101"
+
+        style = "101"
+
+	date = { day = 1 month = november year = 1517 } # October 31st
+
+	global = yes
+	action_a = {
+			name = "OK"
+			command = { type = flag which = 1 }
+		}
+
+	}
+
+
+
+#########################################################################
+#  John Calvin
+#########################################################################
+event = { 
+
+	id = 101
+	name = "EVENTNAME204"
+	desc = "EVENTHIST204"
+	style = "204"
+
+	date = { day = 1 month = november year = 1533 }
+
+	global = yes
+
+	action_a = {
+			name = "OK"
+			command = { type = flag which = 2 }
+		}
+
+	}
+
+
+
+
+#########################################################################
+#  Council of Trent
+#########################################################################
+event = { 
+
+	id = 102
+	name = "EVENTNAME102"
+	desc = "EVENTHIST102"
+	style = "102"
+
+	date = { day = 13 month = december year = 1545 }
+
+	global = yes
+
+	action_a = {
+			name = "OK"
+			command = { type = flag which = 3 }
+		}
+
+	}
+
+
+
+#########################################################################
+#  Predominance tolerance
+#########################################################################
+event = { 
+
+	id = 104
+	name = "EVENTNAME104"
+	desc = "EVENTHIST104"
+	date = { year = 1610 }
+	offset = 5000
+	global = yes
+	action_a = {
+			name = "OK"
+			command = { type = flag which = 4 }
+		}
+
+	}
+
+
+
+#########################################################################
+#  Edict of Tolerance
+#########################################################################
+event = { 
+
+	id = 103
+	name = "EVENTNAME302"
+	desc = "EVENTHIST302"
+	date = { year = 1650 }
+	offset = 3000
+	global = yes
+	action_a = {
+			name = "OK"
+			command = { type = flag which = 5 }
+		}
+
+	}
+
+
+
+#########################################################################
+#  More tolerance
+#########################################################################
+event = { 
+
+	id = 105
+	name = "EVENTNAME105"
+	desc = "EVENTHIST105"
+	date = { year = 1700 }
+	offset = 5000
+	global = yes
+	action_a = {
+			name = "OK"
+			command = { type = flag which = 6 }
+		}
+
+	}
+

@@ -1,0 +1,96 @@
+#-----------------------------------------------------------------------------
+# Ethiopian Events
+
+event = {
+	id = 3001390
+	trigger = {
+		discovered = 1517
+		owned = { province = 357 data = -1 } # Thrace
+		NOT = { domestic = { type = innovative value = 5 } }
+		event = 2200026 # Black plague hits Thrace
+	}
+	random = NO
+	country = BYZ
+	name = "The Wisdom of the Ancients"
+	desc = "There was a long-held superstition among the doctors and peasants of the Eastern Empire that disease arose out of Ethiopia. A recent outbreak of plague has touched off a wave of violence as outraged Greeks assault the few Ethiopian traders in the capital and destroy their property."
+	date = { year = 1347 }
+	offset = 180 #6 months
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Heh, um, sorry about that"
+		command = { type = relation which = ETH value = -50 }
+	}
+}
+
+event = {
+	id = 3001391
+	trigger = {
+		OR = {
+			event = 3001215
+			event = 3001435 #council of alexandria
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "Ethiopia celebrates!"
+	desc = "With an arrangement reached between the Ecumenical Patriarch and the Alexandrian Pope, relations with Ethiopia have greatly improved. Not only do they share the Miaphysite Christology of the Copts, the leader of the Ethiopian Church - the 'Bishop of Peace,' the Abuna Salama - has been appointed from Alexandria for over a millennium. The Copt abuna has ordered a week of thanksgiving and weekly prayers in support of our empire into perpetuity!"
+	date = { year = 1337 }
+	offset = 90
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "You're going to make me blush"
+		command = { type = relation which = ETH value = 250 }
+	}
+}
+
+#(1419-1820) The Southern Front
+event = {
+	id = 3001392 #slept by Armenian intolerance event
+	trigger = {
+		war = { country = MAM country = BYZ }
+		relation = { country = ETH data = 100 }
+	}
+	random = NO
+	country = BYZ
+	name = "The Southern front"
+	desc = "Ethiopia has come to our aid, declaring war on the heretic Mamluks! Of course, technically the Ethiopians themselves are heretics, but..."
+	date = { year = 1337 }
+	offset = 180
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "The more, the merrier!"
+		command = { type = alliance which = ETH }
+		command = { type = relation which = ETH value = 50 }
+		command = { type = treasury value = -50 } #arms, etc.
+		command = { type = trigger which = 3001393 }
+	}
+	action_b = {
+	name = "Let them fend for themselves"
+		command = { type = relation which = ETH value = -150 }
+		command = { type = trigger which = 3001393 }
+	}
+}
+
+event = {
+	id = 3001393
+	random = NO
+	country = ETH
+	name = "The Great Egyptian War"
+	desc = "Our friends to the North, the resurgent Roman Empire, has declared war on the decrepit Mamluks. Despite the intolerance the lords of Constantinople have displayed in the past, this presents an excellent opportunity not only to score points with a rising star, but also a chance to secure some quick borderland to our north."
+
+	action_a = {
+		name = "Regulators! Mount up!"
+		command = { type = casusbelli which = MAM value = 200 }
+		command = { type = breakvassal which = MAM }
+		command = { type = war which = MAM }
+		command = { type = treasury value = 50 }
+	}
+	action_b = {
+		name = "Hey, waitaminute!!!"
+		command = { type = relation which = BYZ value = -100 }
+		command = { type = relation which = MAM value = 100 }
+	}
+}

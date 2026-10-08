@@ -1,0 +1,118 @@
+#####Florence (Toscana) Major Events#####
+#######By Joakim 'Greven' Bergqwist######
+#########################################
+
+#The League of Cambrai#
+event = {
+
+	id = 3649
+	trigger = { exists = VEN }
+	random = no
+	country = FLO
+	name = "EVENTNAME3649"
+	desc = "EVENTHIST3649"
+
+	date = { day = 1 month = october year = 1500 }
+	offset = 3000
+	deathdate = { day = 1 month = may year = 1512 }
+
+	action_a ={
+		name = "ACTIONNAME3649A"		#Express Support#
+		command = { type = casusbelli which = VEN value = 72 }
+		command = { type = relation which = VEN value = -150 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = PAP value = 150 }
+		command = { type = relation which = HAB value = 150 }
+	}
+
+	action_b ={
+		name = "ACTIONNAME3649B"		#Ignore#
+		command = { type = relation which = VEN value = 50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = PAP value = -50 }
+		command = { type = relation which = HAB value = -50 }
+	}
+
+	action_c ={
+		name = "ACTIONNAME3649C"		#Express Hostility#
+		command = { type = relation which = VEN value = 150 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = PAP value = -150 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+}
+
+#The Holy League#
+event = {
+
+	id = 3650
+	trigger = {
+				 exists = TUR
+				event = 3549
+			 }
+	random = no
+	country = TOS
+	name = "EVENTNAME3650"
+	desc = "EVENTHIST3650"
+
+	date = { day = 1 month = january year = 1568 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1571 }
+
+	action_a ={						#Support the Holy League#
+		name = "ACTIONNAME3650A"
+		command = { type = casusbelli which = TUR value = 72 }
+		command = { type = relation which = TUR value = -150 }
+		command = { type = relation which = PAP value = 150 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = SPA value = 150 }
+		command = { type = relation which = KNI value = 150 }
+		command = { type = relation which = VEN value = 150 }
+		command = { type = relation which = NAP value = 150 }
+		command = { type = relation which = SAV value = 150 }
+	}
+
+	action_b ={						#Let the matter fall#
+		name = "ACTIONNAME3650B"
+		command = { type = relation which = TUR value = 50 }
+		command = { type = relation which = PAP value = -50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = KNI value = -50 }
+		command = { type = relation which = VEN value = -50 }
+		command = { type = relation which = NAP value = -50 }
+		command = { type = relation which = SAV value = -50 }
+	}
+}
+
+# Galileo Galilei #
+event = {
+
+	id = 5239
+	random = no
+	country = TOS
+	name = "Galileo Galilei"
+	desc = "Galileo Galilei was the first European to enforce rigorous proofs as a method of scientific discussion. He got himself in trouble with the Catholic church for his non-Earth centric view of the Solar System. His work was published more accessibly outside of Italy in Lutheran and other Protestant countries."
+
+	date = { day = 22 month = february year = 1632 }
+
+	action_a ={				#Accept his teachings#
+		name = "Accept his teachings"
+		command = { type = infra value = 800 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = relation which = PAP value = -50 }
+		command = { type = revoltrisk which = 36 value = 2 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={				#Burn him as a heretic!#
+		name = "Burn him as a heretic!"
+		command = { type = infra value = -400 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = relation which = PAP value = 100 }
+		command = { type = stability value = 2 }
+	}
+}

@@ -1,0 +1,71 @@
+# Oman #
+
+# The Sultan of East Africa #
+event = {
+
+	id = 250055 #3591
+	trigger = {
+		OR = {
+			owned = { province = 765 data = OMA }
+			vassal = { country = OMA country = ZAN }
+		}
+	}
+	random = no
+	country = OMA
+	name = "The Sultan of East Africa"
+	desc = "Saïd bin Sultan al-Busaidi, known as the Lion of Oman, was an Ibadi Imam and the Sultan of the Omani Empire from 1804 until his death in 1856. Considered among the greatest Arabian rulers of the age, he is known for having unified the succession by wiping out rival clans, strengthening the Omani army and navy with the aid of British officers and engineers, and expanding Omani dominion in East Africa. By the end of Saïd's reign, the ancient sultanates of East Africa had either been conquered or forced into vassalage, and he had moved his capital from Muscat to the island of Zanzibar. He fostered close relations with Britain, secured trading rights with the United States, and - with the East India Company - launched joint expeditions against the Wahhabis of Arabia."
+
+	date = { day = 1 month = october year = 1805 }
+	offset = 90
+	deathdate = { day = 1 month = may year = 1837 }
+
+	action_a ={
+		name = "Onwards to greatness!"		#Onwards to greatness!#
+		command = { type = inherit which = ZAN }
+		command = { type = add_countryculture which = swahili }
+		command = { type = addcore_national which = 765 }
+		command = { type = addcore_claim which = 760 }
+		command = { type = addcore_claim which = 761 }
+		command = { type = addcore_claim which = 762 }
+		command = { type = addcore_claim which = 763 }
+		command = { type = addcore_claim which = 764 }
+		command = { type = addcore_claim which = 1512 }
+		command = { type = addcore_claim which = 1513 }
+		command = { type = addcore_claim which = 1514 }
+		command = { type = addcore_claim which = 1515 }
+		command = { type = cot which = 765 }
+		command = { type = removecot which = 500 }
+		command = { type = provincetax which = 765 value = 3 }
+		command = { type = provincetax which = 763 value = 1 }
+		command = { type = provincetax which = 764 value = 1 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = domestic which = LAND value = -2 }
+		command = { type = trade value = 400 }
+		command = { type = naval value = 1000 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = POR value = -100 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={
+		name = "Invest in the homeland"		#Invest in the homeland#
+		command = { type = addcore_national which = 756 }
+		command = { type = addcore_claim which = 499 }
+		command = { type = addcore_claim which = 500 }
+		command = { type = addcore_claim which = 501 }
+		command = { type = addcore_claim which = 502 }
+		command = { type = fortress which = 504 value = 1 }
+		command = { type = provincetax which = 504 value = 5 }
+		command = { type = provincetax which = 503 value = 2 }
+		command = { type = provincetax which = 505 value = 2 }
+		command = { type = provincetax which = 506 value = 2 }
+		command = { type = provincetax which = 507 value = 2 }
+		command = { type = domestic which = OFFENSIVE value = -1 }
+		command = { type = domestic which = LAND value = 2 }
+		command = { type = infra value = 400 }
+		command = { type = land value = 1000 }
+		command = { type = relation which = POR value = 100 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = stability value = 2 }
+	}
+}

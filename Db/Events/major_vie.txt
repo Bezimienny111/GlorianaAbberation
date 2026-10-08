@@ -1,0 +1,62 @@
+##### Vientiane Major Events#####
+#By Tom Rinschler               #
+#   Håvard                      #
+#################################
+
+#The Move to Vientiane#
+event = {
+	id = 3902
+	random = no
+	country = VIE
+	name = "EVENTNAME3902"
+	desc = "EVENTHIST3902"
+	date = { day = 1 month = january year = 1563 }
+	offset = 300
+	deathdate = { day = 1 month = january year = 1564 }
+	
+	action_a ={#Move the capital#
+		name = "ACTIONNAME3902A"
+		command = { type = capital which = 1551 }
+		command = { type = domestic which = centralization value = 1 } 
+		command = { type = stability value = -2 }
+		command = { type = provincetax which = 1551 value = 1 }
+		command = { type = cash value = -200}
+	}
+	action_b ={#Stay in Luangphrebang#
+		name = "ACTIONNAME3902B"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = innovative value = -1}
+	}
+}
+
+#The Succession Crisis#
+event = {
+	id = 3903
+	trigger = {
+		NOT = {
+			exists = LUA
+		}
+	}
+	random = no
+	country = VIE
+	name = "EVENTNAME3903"
+	desc = "EVENTHIST3903"
+	
+	date = { day = 1 month = january year = 1707 }
+	offset = 300
+	deathdate = { day = 1 month = january year = 1708 }
+	
+	action_a = {     #Let them fight it out #
+		name = "ACTIONNAME3903A"
+		command = { type = stability value = -6 }
+		command = { type = domestic which = centralization value = -3 }
+		command = { type = revoltrisk value = 5 }
+	}
+	action_b ={        #Support the rightful heir#
+		name = "ACTIONNAME3903B"
+		command = { type = stability value = -3 }
+		command = { type = revoltrisk value = 5 }
+		command = { type = revolt which = 1552 }
+		command = { type = revolt which = -1 }
+	}
+}

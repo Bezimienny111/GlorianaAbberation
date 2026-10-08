@@ -1,0 +1,171 @@
+GLORIANA 1337 PROJECT v1.10 BYZANTINE ANNEX CHANGELOG
+----------------------------------------------------------------
+
+BYZANNEX_01_Hellas.txt:
+- Changed some start dates to 1337
+- Added a trigger for the Ottomans to actually be a threat (country size 7) to try and pressure Byzantium to release Athens.
+
+BYZANNEX_02_Morea.txt:
+- Changed some start dates to 1337
+- Changed tags SUD to NUB (Nubia)
+- Updated command syntax (addcore to addcore_national and secedeprovince to cedeprovince)
+
+BYZANNEX_03_Training.txt:
+- changed countrysize trigger from 3 to 6 in 'Fate of the Crown Prince' event.
+- hashed out province revolt risk (entered with wrong command anyway) and gave reduced provincetax instead, to action_a 'Fate of the Crown Prince' event.
+- hashed out reduced province revoltrisk commands from action_c 'Fate of the Crown Prince' event.
+- extended deathdate of event 'Prince Andreas Goes Native'
+- hashed out the province revoltrisk commands from action_a and action_b and replaced with revoltrisk commands in 'Prince Andreas Goes Native' event.
+
+BYZANNEZ_04_Macedonia.txt:
+- Changed some start dates to 1337
+- Added trigger for Ottomons to be enough of a threat to make Citizens of Constantinople to flee (countrysize = 5)
+- Updated command syntax (addcore_national, removecore_national and populationpercent)
+
+BYZANNEX_05_Trebizond,txt:
+- Changed some start dates to 1337
+- A few tweaks including adding 'ai = yes' to inheritance option and hashing out province_revolt for Trabzon (doesn't get deleted).
+
+BYZANNEX_06_Renaissance.txt:
+- Updated command syntax (secedeprovince to cedeprovince, addcore to addcore_national, and population to populationpercent (also changed values))
+- Reduced the amount of months the RR reduction is from 144 months to 36 in 'Counter-Espionage' event.
+- Reduced the desertion amounts from 'Our Mercenaries Abandon Us' event.
+- Changed the trigger on 'Reclaiming Control of Imperial Trade' event as event in trigger does not exist in Gloriana1337
+- hashed out the removecore commands for Genoa in 'The Byzantine Land Purchase' event as they do not have any cores on the provinces.
+
+BYZANNEX_07_Magnates.txt:
+- No changes.
+
+BYZANNEX_08_Imperial_Restoration.txt:
+- Increased the number of Italian tags in triggers of relevant events.
+- Changed majority of start dates to 1337
+- Split events into events and decisions:
+	- Events give relationship changes and claim cores on the relevant provinces
+	- Decisions give national cores when all relevant provinces are owned, as well as trigger events and any relevant bonuses.
+
+BYZANNEX_09_Bulgaria.txt:
+- Changed some start dates to 1337
+- BUGFIX: Various event commands targeted the wrong tag (Morocco (MOR) rather than correct Moldova (MOL)). Fixed.
+
+BYZANNEX_10_Turkish_States.txt:
+- Changed the start dates of all the Submission events to 1337.
+- Added ai triggers to actions that could see you being annexed in the Submission events.
+= Added submission events for Aydin and Eretnids.
+
+BYZANNEX_11_Resettlement.txt:
+- Changed a start date to 1337
+- Updated command syntax (population to populationpercent)
+
+BYZANNEX_12_Armenia.txt:
+- Sivas no longer required in event triggers; Armenia province required instead (de-AGCEEPing the Annex), Same applies in event commands. Miaphysite replaces Orthodox in commands. Byzantium Empire can become Miaphysite in one of the options in "Armenian Orthodox Church".
+
+BYZANNEX_13_North_Italy.txt:
+- Changed a start date to 1337
+- Corrected the tags to Modena (MOD) and Parma (PAR) (from (PAR and PAM respectively) in the Union of Monserrat event chain.
+- Added Florence (FLO) to the Union of Monserrat Chain (as date could cover pre-Tuscany (TOS) start date)
+- Added Verona (VER) and Rimini (RIM) to Union of Monserrat event chain effects.
+- Updated command syntax (addcore to addcore_national, removecore to removecore_national and secedeprovince to cedeprovince)
+
+BYZANNEX_14_Rome.txt:
+- Changed some start dates to 1337
+- Updated command syntax (addcore to addcore_national)
+- Reinstated Avignon events
+- Changed the Avignon events from Provence province (406) to Dauphine province (407)
+- Changed the single provence Avignon event from Provence (PRO) to Duphine (DAU)
+- Added Religious, Cultural and Nationalist Rebels to trigger for 'Too Late!' event
+
+BYZANNEX_15_South_Italy.txt:
+- Updated copmmand syntax (population with populationpercent (also changed values))
+- Corrected the tags to Modena (MOD) and Parma (PAR) (from PAR and PAM respectively)
+- Added Florence (FLO) to the relevant events due to date range.
+
+BYZANNEX_16_Mameluks.txt:
+- Changed most start dates to 1337
+- Updated command syntax (population to populationpercent and secedeprovince to cedeprovince)
+- Corrected the Tags from SUD to the tag NUB (Nubia).
+
+BYZANNEX_17_Middle_East.txt:
+- Changed some start dates to 1337
+- Updated command syntax (population to populationpercent and secedeprovince to cedeprovince)
+- Tweaked some triggers
+- Set flag for Move Capital decision for action to move MAM capital to Alexandria (Updated Capital.txt)
+
+BYZANNEX_18_Theodoro.txt:
+- Updated command syntax (addcore_national and populationpercent)
+
+BYZANNEX_19_Russia.txt:
+- Added trigger for Byzantium not to exist in 'The Roman Empire is no more!' events.
+- BUGFIX: Event trigger had wrong ID for Russian event 'The Pugatchev Uprising', now fixed.
+- BUGFIX: Sleepevent command had wrong ID for Russian event 'The Reactionary Policy'. now fixed.
+- Updated command syntax (addcore to addcore_national, removecore to removecore_national and secedeprovince to cedeprovince)
+
+BYZANNEX_20_Vassalization.txt:
+- Hashed out event commands that are not found in the Byzantine_Annex.
+
+BYZANNEX_21_Georgia.txt:
+- Added more country tags to event trigger for a couple of events
+- Added a command to change Georgia's religion to Orthodox in the 'Byzantiums Ultimatum' event if Byzantium is Orthodox and Georgia is not Orthodox. 
+
+BYZANNEX_22_Wallachia.txt:
+- No changes.
+
+BYZANNEX_23_Moldovia.txt:
+- No changes.
+
+BYZANNEX_24_Serbia.txt:
+- No changes.
+
+BYZANNEX_25_Nubia.txt:
+- Changed some start dates to 1337
+- Corrected the Tags from SUD to the tag NUB (Nubia).
+- Hashed out the sleepevent commands for 'Fall of Alodia' as the event does not appear in Gloriana1337 (it's an AGCEEP event)
+- Added to triggers for Orthodox or Miaphysite (rather than Orthodox alone).
+- Added a command to change Nubia's religion to Orthodox in the 'Byzantiums Ultimatum' event if Byzantium is Orthodox and Nubia is not Orthodox.
+
+BYZANNEX_26_Ethiopia.txt:
+- Deleted all the PLAGUE! events from "The Wisdom of the Ancients" event trigger as these events do not exist in Gloriana1337.
+- Altered the event trigger for "Wisdom of the Ancients" event to have Byzantium to own Thrace and for the Black Plague to have hit Thrace.
+- Altered some starting dates.
+
+BYZANNEX_27_Austro-Hungary.txt:
+- Noted that no event in the Byzantine Annex triggers event 3001399. May remedy that later.
+- BUGFIX: trigger for event 3001401 had incorrect event ID (now fixed).
+- Alyered the dates for Byzantium's response to the effects of the Habsburg's Pragmatic Sanction.
+
+BYZANNEX_28_Iberia.txt:
+- No changes.
+
+BYZANNEX_29_England.txt:
+- No changes.
+
+BYZANNEX_30_America.txt:
+- BUGFIX: Put in missing trigger 'exists = USA' from 'Treaty of Paris' event.
+- Altered the province numbers relating to the Armenia event.
+- Added a blanket 'Revolutionary Tendencies Subside' event to get rid of all the provincerevolt commands in this file.
+
+BYZANNEX_31_France.txt:
+- Altered the province numbers relating to the Armenia event.
+- Added a blanket 'Revolutionary Tendencies Subside' event to get rid of all the provincerevolt commands in this file.
+
+BYZANNEX_32_Religion.txt:
+- Corrected the Tags from SUD to the tag NUB (Nubia).
+- Changed some start dates to 1337
+- Updated command syntax (addcore to addcore_national) 
+
+BYZANNEX_33_Persia.txt:
+- Updated command syntax (secedeprovince to cedeprovince)
+- Changed provinces to relate to Armenia rather than Kurdistan.
+
+BYZANNEX_34_Colonies.txt:
+- Updated command syntax (population to populationpercent)
+- Set flag for Move Capital decision for action to move BYZ capital to Alexandria (Updated Capital.txt)
+
+BYZANNEX_35_Dynasties.txt:
+- Tweaked the triggers to 'Papal Envoy' event as event trigger 'Council of Florence II' does not exist in Gloriana1337, Papal relations increased from 100 to 125.
+- ai_chances included in both options of 'Papal Envoy' event to weigh 90/10 on options a over b.
+- Hashed out the command to trigger Russian 'The Roman Empire is no More' event as it is not relevant (more Greece than Byzantium, has it's own triggers and date range and shouldn't be triggered from a random event regardless.)
+
+BYZANNEX_36_Flavour_Events.txt:
+- Changed the start date of 'Monastic Order' events to start of scenario date 1337.
+- Changed another start date to 1337
+- hashed out province revolt commands in random events 'Noble families rivalry flares up' as they do not end.

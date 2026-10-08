@@ -1,0 +1,255 @@
+#####Bohemia Major Events#######
+#By Joakim 'Greven' Bergqwist  #
+#   Henrik 'Doomdark' Fåhraeus #
+#   Håvard Moe                 #
+#   Tom 'Demetrios' Rinschler  #
+################################
+
+#Defenestration of Prague
+event = {
+	id = 129000
+	random = no
+	country = BOH
+	name = "EVENTNAME129000" #Defenestration of Prague
+	desc = "EVENTHIST129000"
+
+	date = { day = 29 month = july year = 1419 }
+
+	action_a = {
+		name = "ACTIONNAME129000A" #What can we do?
+		command = { type = stability value = -2 }
+		command = { type = revoltrisk which = 160 value = 3 }
+		command = { type = domestic which = serfdom value = -1 }
+	}
+}
+
+# The Death of King Vaclav IV
+event = {
+	id = 3801
+	random = no
+	country = BOH
+	name = "EVENTNAME3801"
+	desc = "EVENTHIST3801"
+	
+	date = { day = 16 month = august year = 1419 }
+	offset = 0
+
+	action_a ={	# Reject the traitor and fight for the Hussite faith
+		name = "ACTIONNAME3801A"
+		command = { type = religion which = hussite }
+		command = { type = wakemonarch which = 010542 }
+		command = { type = wakemonarch which = 010543 }
+		command = { type = sleepmonarch which = 010541 }
+		command = { type = domestic which = ARISTOCRACY value = -4 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = OFFENSIVE value = 2 }
+		command = { type = domestic which = QUALITY value = 2 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = land value = 2000 }
+		command = { type = INF which = -2 value = 15000 }
+		command = { type = CAV which = -2 value = 5000 }
+		command = { type = ART which = -2 value = 15 }
+		command = { type = provincereligion which = 328 value = hussite } #Bohemia
+		command = { type = provincereligion which = 329 value = hussite } #Erz
+		command = { type = provincereligion which = 330 value = hussite } #Sudeten
+		command = { type = relation which = HUN value = -200 }
+		command = { type = relation which = HAB value = -200 }
+		command = { type = relation which = BRA value = -200 }
+		command = { type = relation which = PAP value = -200 }
+		command = { type = relation which = LAT value = -200 }
+		command = { type = relation which = POL value = 50 }
+		command = { type = trigger which = 3851 }
+		command = { type = stability value = 2 }
+	}
+	action_b ={	# Zikmund is our king
+		name = "ACTIONNAME3801B"
+		command = { type = sleepleader which = 09680 } # Jan Ziska
+		command = { type = sleepleader which = 09681 } # Prokop Holy
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = relation which = HUN value = 200 }
+		command = { type = stability value = -6 }
+	}
+}
+
+# Zigmunt makes concessions
+event = {
+	trigger = {
+		monarch = 010543 # Táborité
+	}
+	id = 3802
+	random = no
+	country = BOH
+	name = "EVENTNAME3802"
+	desc = "EVENTHIST3802"
+	
+	date = { day = 23 month = august year = 1437 }
+
+	action_a = {	# Yes, his concessions are acceptable
+		name = "ACTIONNAME3802A"
+		command = { type = religion which = catholic } 
+		command = { type = wakemonarch which = 010541 }
+		command = { type = relation which = HUN value = 50 }
+		command = { type = relation which = POL value = -50 }
+		command = { type = relation which = LIT value = -50 }
+		command = { type = stability value = 1 }
+	}
+	action_b ={	# No compromise with the betrayer of Jan Hus!
+		name = "ACTIONNAME3802B"
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = ART which = -2 value = 10 }
+		command = { type = relation which = HUN value = -50 }
+		command = { type = relation which = POL value = 50 }
+		command = { type = relation which = LIT value = 50 }
+		command = { type = stability value = -2 }
+	}
+}
+# Jiriz the Heretic King
+event = {
+	id = 3803
+	trigger = {    
+	           religion = catholic # New
+	}
+	random = no
+	country = BOH
+	name = "EVENTNAME3803"
+	desc = "EVENTHIST3803"
+	
+	date = { day = 2 month = march year = 1458 }
+
+	action_a = { # Acknowledge but downplay their help
+		name = "ACTIONNAME3803A"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = relation which = HUN value = -25 }
+		command = { type = relation which = POL value = -25 }
+		command = { type = relation which = LIT value = -25 }
+		command = { type = relation which = HAB value = -25 }
+	}
+	action_b = {	# Embrace the Hussite faith and tradition
+		name = "ACTIONNAME3803B"
+		command = { type = religion which = hussite }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = relation which = HUN value = -150 }
+		command = { type = relation which = POL value = -150 }
+		command = { type = relation which = LIT value = -150 }
+		command = { type = relation which = HAB value = -150 }
+		command = { type = relation which = CAS value = -100 }
+		command = { type = relation which = ARG value = -100 }
+		command = { type = relation which = POR value = -100 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = stability value = 3 }
+	}
+	action_c = { # Supress the Hussites to play on European opinion
+		name = "ACTIONNAME3803C"
+		command = { type = stability value = -5 }
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = relation which = HUN value = 100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = POL value = 100 }
+		command = { type = relation which = LIT value = 100 }
+		command = { type = relation which = BRA value = 100 }
+		command = { type = relation which = SAC value = 100 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = PAP value = 100 }
+		command = { type = relation which = CAS value = 100 }
+		command = { type = relation which = ARG value = 100 }
+	}
+}
+
+#The Death of King Lajos of Bohemia#
+event = {
+
+	id = 3642
+	random = no
+	country = BOH
+	name = "EVENTNAME3642"
+	desc = "EVENTHIST3642"
+
+	date = { day = 28 month = august year = 1526 }
+
+	action_a ={	#Accept the Habsburgs as elected kings
+		name = "ACTIONNAME3642A"
+		command = { type = trigger which = 3187 }
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 200 }
+		command = { type = dynastic which = HAB }
+		command = { type = relation which = HAB value = 100 }
+	}
+
+	action_b ={	#Accept the Habsburgs as hereditary kings
+		name = "ACTIONNAME3642B"
+		command = { type = trigger which = 3733 }
+	}
+}
+
+#The Winterking in Prague#
+event = {
+
+	id = 3643
+	trigger = {
+			exists = HAB
+			exists = PFA
+			event = 3194
+		}
+	random = no
+	country = BOH
+	name = "EVENTNAME3643"
+	desc = "EVENTHIST3643"
+	style = "3643"
+
+	date = { day = 20 month = march year = 1619 }
+
+	action_a ={	#Elect the Wittelsbachs
+		name = "ACTIONNAME3643A"
+		command = { type = trigger which = 3097 }
+		command = { type = trigger which = 3665 }
+		command = { type = breakvassal which = HAB }
+		command = { type = dynastic which = PFA }
+		command = { type = religion which = protestant }
+		command = { type = relation which = PFA value = 150 }
+		command = { type = relation which = HAB value = -200 }
+		command = { type = domestic which = ARISTOCRACY value = -3 }
+		command = { type = domestic which = SERFDOM value = -3 }
+		command = { type = wakeleader which = 09684 } # Fridrich I
+		command = { type = wakemonarch which = 010563 } # Wittelsbachs
+		command = { type = wakemonarch which = 010564 }
+		command = { type = wakemonarch which = 010565 }
+		command = { type = wakemonarch which = 010566 }
+		command = { type = wakemonarch which = 010567 }
+		command = { type = wakemonarch which = 010568 }
+		command = { type = wakemonarch which = 010569 }
+		command = { type = wakemonarch which = 010570 }
+		command = { type = wakemonarch which = 04220 }
+		command = { type = sleepmonarch which = 010554 } # Habsburgs
+		command = { type = sleepmonarch which = 010555 }
+		command = { type = sleepmonarch which = 010556 }
+		command = { type = sleepmonarch which = 010557 }
+		command = { type = sleepmonarch which = 010558 }
+		command = { type = sleepmonarch which = 010559 }
+		command = { type = sleepmonarch which = 010560 }
+		command = { type = sleepmonarch which = 010561 }
+		command = { type = sleepmonarch which = 010562 }
+		command = { type = stability value = 2 }
+	 }
+
+	action_b ={	#Elect the Habsburgs
+		name = "ACTIONNAME3643B"
+		command = { type = wakeleader which = 09685 } # Valdstejna
+		command = { type = sleepleader which = 09356 } # von Wallenstein (HAB)
+		command = { type = relation which = HAB value = 150 }
+		command = { type = revoltrisk which = 60 value = 6 }
+		command = { type = stability value = -3 }
+	}
+}

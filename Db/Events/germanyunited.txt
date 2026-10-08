@@ -1,0 +1,4569 @@
+######################################################
+###                                                ###
+###	 German Unification Events for the AJF     ###
+###	 By Alex J 'Ayeshteni' Fowler              ###
+###                                                ###
+######################################################
+
+##########################################################
+### Line of events. Who is eligible. What does it take ###
+### Eligibility: Prussia, Brandenburg, Koln, Pfalz     ###
+### Saxony, Bavaria, Teutonic Order, Hessen	       ###
+##########################################################
+
+#event-1-baseline, German state begins unification plans#
+event = {
+
+	id = 500000
+	trigger = {
+		atwar = no
+		countrysize = 7
+		domestic = { type = centralization value = 5 }
+		stability = 2
+		NOT = {
+			exists = GER
+		}
+	}
+	random = no
+	country = PRU
+	name = "Prussia Consolidates her Power"
+	desc = "A United Germany was not possible within this timeframe, but that is not to say it was not possible. Sire, there is a possibilty that we may have the resources to attempt such a unification. Such ambition may be a long and dangerous process and we are sure to face rampant objections. Will we make these grandoise machinations our aim and ambition and strive for a united German Kingdom?"
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Let us fulfill our destiny"
+		command = { type = stability value = -2 }
+		command = { type = vp value = 5 }
+		command = { type = diplomats value = 3 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = revoltrisk which = 36 value = 1 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = FRA value = -25 }
+		command = { type = relation which = POL value = -25 }
+		command = { type = relation which = LAT value = -20 }
+		command = { type = relation which = POM value = -20 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = setflag which = germany }
+	}
+
+	action_b = {
+		name = "Let the idea of a Unified Germany die"
+		command = { type = stability value = 2 }
+		command = { type = vp value = -5 }
+		command = { type = relation which = HAB value = 25 }
+		command = { type = relation which = FRA value = 25 }
+		command = { type = relation which = POL value = 25 }
+		command = { type = relation which = LAT value = 20 }
+		command = { type = relation which = POM value = 20 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+	}
+}
+
+#e-2, German state has expanded#
+event = {
+
+	id = 500001
+	trigger = {
+          	 AND = {
+                 	OR = {
+                       		owned = { province = 312 data = -1 }
+                        	vassal = { country = PRU country = BRA }
+				NOT = { exists = BRA }
+                  	}
+                  	OR = {
+                        	owned = { province = 305 data = -1 }
+                        	vassal = { country = PRU country = MEC }
+				NOT = { exists = MEC }
+			}
+                 	OR = {
+                       		owned = { province = 306 data = -1 }
+                        	vassal = { country = PRU country = SHL }
+				NOT = { exists = SHL }
+                  	}
+                  	OR = {
+                        	owned = { province = 310 data = -1 }
+                        	vassal = { country = PRU country = HAN }
+				NOT = { exists = HAN }
+                  	}
+                 	OR = {
+                       		owned = { province = 311 data = -1 }
+                        	vassal = { country = PRU country = MAG }
+				NOT = { exists = MAG }
+                  	}
+                	OR = {
+                       		owned = { province = 304 data = -1 }
+                        	vassal = { country = PRU country = POM }
+				NOT = { exists = POM }
+                  	}
+                  	OR = {
+                        	owned = { province = 331 data = -1 }
+                        	vassal = { country = PRU country = SAC }
+				NOT = { exists = SAC }
+			}
+                 	OR = {
+                       		owned = { province = 333 data = -1 }
+                        	vassal = { country = PRU country = HES }
+				NOT = { exists = HES }
+                  	}
+                  	OR = {
+                        	owned = { province = 334 data = -1 }
+                        	vassal = { country = PRU country = MUN }
+				NOT = { exists = MUN }
+                  	}
+                 	OR = {
+                       		owned = { province = 347 data = -1 }
+                        	vassal = { country = PRU country = THU }
+				NOT = { exists = THU }
+                  	}
+                	OR = {
+                       		owned = { province = 346 data = -1 }
+                        	vassal = { country = PRU country = MAI }
+				NOT = { exists = MAI }
+                  	}
+                  	OR = {
+                        	owned = { province = 345 data = -1 }
+                        	vassal = { country = PRU country = PFA }
+				NOT = { exists = PFA }
+			}
+                 	OR = {
+                       		owned = { province = 343 data = -1 }
+                        	vassal = { country = PRU country = KLE }
+				NOT = { exists = KLE }
+                  	}
+                  	OR = {
+                        	owned = { province = 344 data = -1 }
+                        	vassal = { country = PRU country = KOL }
+				NOT = { exists = KOL }
+                  	}
+                 	OR = {
+                       		owned = { province = 373 data = -1 }
+                        	vassal = { country = PRU country = BAD }
+				NOT = { exists = BAD }
+                  	}
+                  	OR = {
+                        	owned = { province = 372 data = -1 }
+                        	vassal = { country = PRU country = WUR }
+				NOT = { exists = WUR }
+                  	}
+                 	OR = {
+                       		owned = { province = 349 data = -1 }
+                        	vassal = { country = PRU country = BAY }
+				NOT = { exists = BAY }
+                  	}
+			flag = germany
+			atwar = no
+			domestic = { type = centralization value = 5 }
+			stability = 2
+			countrysize = 7
+			NOT = {
+				exists = GER
+			}
+           	}
+	}
+	random = no
+	country = PRU
+	name = "German Unification"
+	desc = "With most of the German North united under the Prussian banner, the Prussian Duke, with the support of his select ministers felt the time was right to declare himself the King of the Germanic people. While he had not the backing of some of the southern states (and several figures within Prussia would also prove troublesome), it was beleived that the new Kingdom of Germany would prosper and survive, and would hold its own against the furious indignation of the Hapsburgs dynasty. Sire, what is to be done, the Hapsburgs warn us one last time not to proceed, shall we declare ourselve the Kingdom of Germany?"
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "All hail the King of Germany!"
+		command = { type = treasury value = -200 }
+		command = { type = stability value = -3 }
+		command = { type = vp value = 50 }
+		command = { type = breakvassal which = HAB }
+		command = { type = breakdynastic which = HAB }
+		command = { type = trigger which = 500002 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = revoltrisk which = 120 value = 6 }
+		command = { type = country which = GER }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = POL value = -50 }
+		command = { type = relation which = LAT value = -50 }
+		command = { type = relation which = POM value = -50 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = setflag which = united }
+	}
+
+	action_b = {
+		name = "We will stand down on our claims"
+		command = { type = stability value = 1 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = vp value = -25 }
+	}
+}
+
+#hapsburgs outraged, others worried#
+event = {
+
+	id = 500002
+	random = no
+	country = HAB
+	name = "German King Crowned"
+	desc = "One of the German Electors has grown so much in power that he has declared himself King of the Germanic People. We have been lax in trying to curtail this madman's ambition. Sire, we can not allow this meglomaniac the time to strengthen his hold on our people and your lands. He will not stop until you have kissed and licked the dirt off of his boots!"
+	style = 4
+
+	action_a = {
+		name = "Resist this Teuton upstart!"
+		command = { type = relation which = GER value = -100 }
+		command = { type = casusbelli which = GER value = 120 }
+		command = { type = war which = GER }
+		command = { type = INF which = -2 value = 5000 }
+	}
+
+	action_b = {
+		name = "We shall watch them with caution"
+		command = { type = relation which = GER value = -50 }
+		command = { type = stability value = -1 }
+		command = { type = fortress which = -1 value = 1 }
+		command = { type = treasury value = -100 }
+		command = { type = vp value = -10 }
+	}
+}
+
+#Kingdom of Germany consolidates control - east#
+event = {
+
+	id = 500003
+	trigger = {
+		flag = united
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the East"
+	desc = "With the foundation of the Kingdom, the lengthy process of determining the extent of its borders began. With the foundation of the kingdom originating in the East these were the first to be drawn and claimed by this state. The ultimate aim was to found a Kingdom whereby all German speaking people could call home and whereapon all German nobles should pay homage to their master; the King of Germany."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the East"
+		command = { type = addcore_national which = 289 }
+		command = { type = addcore_national which = 290 }
+		command = { type = addcore_national which = 301 }
+		command = { type = addcore_national which = 302 }
+		command = { type = addcore_national which = 311 }
+		command = { type = addcore_national which = 312 }
+		command = { type = addcore_national which = 313 }
+		command = { type = addcore_national which = 314 }
+		command = { type = addcore_national which = 329 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = POL value = -100 }
+		command = { type = relation which = BOH value = -100 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = SWE value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - north#
+event = {
+
+	id = 500004
+	trigger = {
+		event = 500003
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the North"
+	desc = "The Kingdom's claims also included the rich and vital Baltic and North Sea provinces. These provinces would be vital for Germany's emerging traders. With access to the ports, German merchants began plying their trade and brought in wealth and foreign investments to this resplendant realm."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the North"
+		command = { type = addcore_national which = 306 }
+		command = { type = addcore_national which = 335 }
+		command = { type = addcore_national which = 336 }
+		command = { type = addcore_national which = 305 }
+		command = { type = addcore_national which = 304 }
+		command = { type = addcore_national which = 334 }
+		command = { type = addcore_national which = 310 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = DAN value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = FRA value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - central#
+event = {
+
+	id = 500005
+	trigger = {
+		event = 500004
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the Heartland"
+	desc = "The Heart of Germany lay between the banks of the River Rhine and the Danube. By laying claim to the central heartlands, the German State would envelop the majority of its 'Volk', the essential backbone of this majestic Kingdom."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the Heartlands"
+		command = { type = addcore_national which = 333 }
+		command = { type = addcore_national which = 332 }
+		command = { type = addcore_national which = 331 }
+		command = { type = addcore_national which = 330 }
+		command = { type = addcore_national which = 346 }
+		command = { type = addcore_national which = 347 }
+		command = { type = addcore_national which = 348 }
+		command = { type = addcore_national which = 327 }
+		command = { type = addcore_national which = 373 }
+		command = { type = addcore_national which = 372 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = BOH value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = HEL value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - west#
+event = {
+
+	id = 500006
+	trigger = {
+		event = 500005
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the West"
+	desc = "The Western territories of the Germanic Volk had always been in contention with that of the French who for centuries persisted with their own claim to the land. By claiming the Western marches Germany provided a strong barrier to the false claimants and a reasuring presense to its subjects that worked the land for the glory of the German King."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the West"
+		command = { type = addcore_national which = 343 }
+		command = { type = addcore_national which = 344 }
+		command = { type = addcore_national which = 345 }
+		command = { type = addcore_national which = 374 }
+		command = { type = addcore_national which = 375 }
+		command = { type = addcore_national which = 387 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = SPA value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - south#
+event = {
+
+	id = 500007
+	trigger = {
+		event = 500006
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the South"
+	desc = "Germany's Southern border had always been a bastion against the encroaching barbarians of the Huns and Slavs. The South and South East was also ripe for colonisation by the Germanic people and indeed many ventured in search of new lands and dreams of rich pastures. These Marches contained a simple folk until a small family called the Hapsburgs burst upon the international scene. Shall we extend our protection to these simple folk and the wayward Austrians?"
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the South"
+		command = { type = addcore_national which = 349 }
+		command = { type = addcore_national which = 388 }
+		command = { type = addcore_national which = 1612 }
+		command = { type = addcore_national which = 371 }
+		command = { type = addcore_national which = 350 }
+		command = { type = addcore_national which = 351 }
+		command = { type = addcore_national which = 326 }
+		command = { type = addcore_national which = 352 }
+		command = { type = addcore_national which = 369 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = HUN value = -100 }
+		command = { type = relation which = VEN value = -50 }
+		command = { type = relation which = FRA value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#event-1-baseline, German state begins unification plans#
+event = {
+
+	id = 510000
+	trigger = {
+		atwar = no
+		countrysize = 7
+		domestic = { type = centralization value = 5 }
+		stability = 2
+		NOT = {
+			exists = GER
+		}
+	}
+	random = no
+	country = BRA
+	name = "Brandenburg Consolidates her Power"
+	desc = "A United Germany was not possible within this timeframe, but that is not to say it was not possible. Sire, there is a possibilty that we may have the resources to attempt such a unification. Such ambition may be a long and dangerous process and we are sure to face rampant objections. Will we make these grandoise machinations are aim and ambition and strive for a united German Kingdom?"
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Let us fulfill our destiny"
+		command = { type = stability value = -2 }
+		command = { type = vp value = 5 }
+		command = { type = diplomats value = 3 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = revoltrisk which = 36 value = 1 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = FRA value = -25 }
+		command = { type = relation which = POL value = -25 }
+		command = { type = relation which = LAT value = -20 }
+		command = { type = relation which = POM value = -20 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = setflag which = germany1 }
+	}
+
+	action_b = {
+		name = "Let the idea of a Unified Germany die"
+		command = { type = stability value = 2 }
+		command = { type = vp value = -5 }
+		command = { type = relation which = HAB value = 25 }
+		command = { type = relation which = FRA value = 25 }
+		command = { type = relation which = POL value = 25 }
+		command = { type = relation which = LAT value = 20 }
+		command = { type = relation which = POM value = 20 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+	}
+}
+
+#e-2, German state has expanded#
+event = {
+
+	id = 510001
+	trigger = {
+          	 AND = {
+                  	OR = {
+                        	owned = { province = 305 data = -1 }
+                        	vassal = { country = BRA country = MEC }
+				NOT = { exists = MEC }
+			}
+                 	OR = {
+                       		owned = { province = 306 data = -1 }
+                        	vassal = { country = BRA country = SHL }
+				NOT = { exists = SHL }
+                  	}
+                  	OR = {
+                        	owned = { province = 310 data = -1 }
+                        	vassal = { country = BRA country = HAN }
+				NOT = { exists = HAN }
+                  	}
+                 	OR = {
+                       		owned = { province = 311 data = -1 }
+                        	vassal = { country = BRA country = MAG }
+				NOT = { exists = MAG }
+                  	}
+                	OR = {
+                       		owned = { province = 304 data = -1 }
+                        	vassal = { country = BRA country = POM }
+				NOT = { exists = POM }
+                  	}
+                  	OR = {
+                        	owned = { province = 331 data = -1 }
+                        	vassal = { country = BRA country = SAC }
+				NOT = { exists = SAC }
+			}
+                 	OR = {
+                       		owned = { province = 333 data = -1 }
+                        	vassal = { country = BRA country = HES }
+				NOT = { exists = HES }
+                  	}
+                  	OR = {
+                        	owned = { province = 334 data = -1 }
+                        	vassal = { country = BRA country = MUN }
+				NOT = { exists = MUN }
+                  	}
+                 	OR = {
+                       		owned = { province = 347 data = -1 }
+                        	vassal = { country = BRA country = THU }
+				NOT = { exists = THU }
+                  	}
+                	OR = {
+                       		owned = { province = 346 data = -1 }
+                        	vassal = { country = BRA country = MAI }
+				NOT = { exists = MAI }
+                  	}
+                  	OR = {
+                        	owned = { province = 345 data = -1 }
+                        	vassal = { country = BRA country = PFA }
+				NOT = { exists = PFA }
+			}
+                 	OR = {
+                       		owned = { province = 343 data = -1 }
+                        	vassal = { country = BRA country = KLE }
+				NOT = { exists = KLE }
+                  	}
+                  	OR = {
+                        	owned = { province = 344 data = -1 }
+                        	vassal = { country = BRA country = KOL }
+				NOT = { exists = KOL }
+                  	}
+                 	OR = {
+                       		owned = { province = 373 data = -1 }
+                        	vassal = { country = BRA country = BAD }
+				NOT = { exists = BAD }
+                  	}
+                  	OR = {
+                        	owned = { province = 372 data = -1 }
+                        	vassal = { country = BRA country = WUR }
+				NOT = { exists = WUR }
+                  	}
+                 	OR = {
+                       		owned = { province = 349 data = -1 }
+                        	vassal = { country = BRA country = BAY }
+				NOT = { exists = BAY }
+                  	}
+			flag = germany1
+			atwar = no
+			domestic = { type = centralization value = 5 }
+			stability = 2
+			countrysize = 7
+			NOT = {
+				exists = GER
+			}
+           	}
+	}
+	random = no
+	country = BRA
+	name = "German Unification"
+	desc = "With most of the German North united under the Brandenburg banner, the Brandenburgian elector, with the support of his select ministers felt the time was right to declare himself the King of the Germanic people. While he had not the backing of some of the southern states (and several figures within Brandenburg would also prove troublesome), it was beleived that the new Kingdom of Germany would prosper and survive, and would hold its own against the furious indignation of the Hapsburgs dynasty. Sire, what is to be done, the Hapsburgs warn us one last time not to proceed, shall we declare ourselve the Kingdom of Germany?"
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "All hail the King of Germany!"
+		command = { type = treasury value = -200 }
+		command = { type = stability value = -3 }
+		command = { type = vp value = 50 }
+		command = { type = breakvassal which = HAB }
+		command = { type = breakdynastic which = HAB }
+		command = { type = trigger which = 510002 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = revoltrisk which = 120 value = 6 }
+		command = { type = country which = GER }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = POL value = -50 }
+		command = { type = relation which = LAT value = -50 }
+		command = { type = relation which = POM value = -50 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = setflag which = united1 }
+	}
+
+	action_b = {
+		name = "We will stand down on our claims"
+		command = { type = stability value = 1 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = vp value = -25 }
+	}
+}
+
+#hapsburgs outraged, others worried#
+event = {
+
+	id = 510002
+	random = no
+	country = HAB
+	name = "German King Crowned"
+	desc = "One of the German Electors has grown some much in power that he has declared himself King of the Germanic People. We have been lax in trying to curtail this madman's ambition. Sire, we can not allow this meglomaniac the time to strengthen his hold on our people and your lands. He will not stop until you have kissed and licked the dirt off of his boots!"
+	style = 4
+
+	action_a = {
+		name = "Resist this German upstart!"
+		command = { type = relation which = GER value = -100 }
+		command = { type = casusbelli which = GER value = 120 }
+		command = { type = war which = GER }
+		command = { type = INF which = -2 value = 5000 }
+	}
+
+	action_b = {
+		name = "We shall watch them with caution"
+		command = { type = relation which = GER value = -50 }
+		command = { type = stability value = -1 }
+		command = { type = fortress which = -1 value = 1 }
+		command = { type = treasury value = -100 }
+		command = { type = vp value = -10 }
+	}
+}
+
+#Kingdom of Germany consolidates control - east#
+event = {
+
+	id = 510003
+	trigger = {
+		flag = united1
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the East"
+	desc = "With the foundation of the Kingdom, the lengthy process of determining the extent of its borders began. With the foundation of the kingdom originating in the East these were the first to be drawn and claimed by this state. The ultimate aim was to found a Kingdom whereby all German speaking people could call home and whereapon all German nobles should pay homage to their master; the King of Germany."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the East"
+		command = { type = addcore_national which = 289 }
+		command = { type = addcore_national which = 290 }
+		command = { type = addcore_national which = 301 }
+		command = { type = addcore_national which = 302 }
+		command = { type = addcore_national which = 311 }
+		command = { type = addcore_national which = 312 }
+		command = { type = addcore_national which = 313 }
+		command = { type = addcore_national which = 314 }
+		command = { type = addcore_national which = 329 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = POL value = -100 }
+		command = { type = relation which = BOH value = -100 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = SWE value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - north#
+event = {
+
+	id = 510004
+	trigger = {
+		event = 510003
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the North"
+	desc = "The Kingdom's claims also included the rich and vital Baltic and North Sea provinces. These provinces would be vital for Germany's emerging traders. With access to the ports, German merchants began plying their trade and brought in wealth and foreign investments to this resplendant realm."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the North"
+		command = { type = addcore_national which = 306 }
+		command = { type = addcore_national which = 335 }
+		command = { type = addcore_national which = 336 }
+		command = { type = addcore_national which = 305 }
+		command = { type = addcore_national which = 304 }
+		command = { type = addcore_national which = 334 }
+		command = { type = addcore_national which = 310 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = DAN value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = FRA value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - central#
+event = {
+
+	id = 510005
+	trigger = {
+		event = 510004
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the Heartland"
+	desc = "The Heart of Germany lay between the banks of the River Rhine and the Danube. By laying claim to the central heartlands, the German State would envelop the majority of its 'Volk', the essential backbone of this majestic Kingdom."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the Heartlands"
+		command = { type = addcore_national which = 333 }
+		command = { type = addcore_national which = 332 }
+		command = { type = addcore_national which = 331 }
+		command = { type = addcore_national which = 330 }
+		command = { type = addcore_national which = 346 }
+		command = { type = addcore_national which = 347 }
+		command = { type = addcore_national which = 348 }
+		command = { type = addcore_national which = 327 }
+		command = { type = addcore_national which = 373 }
+		command = { type = addcore_national which = 372 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = BOH value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = HEL value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - west#
+event = {
+
+	id = 510006
+	trigger = {
+		event = 510005
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the West"
+	desc = "The Western territories of the Germanic Volk had always been in contention with that of the French who for centuries persisted with their own claim to the land. By claiming the Western marches Germany provided a strong barrier to the false claimants and a reasuring presense to its subjects that worked the land for the glory of the German King."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the West"
+		command = { type = addcore_national which = 343 }
+		command = { type = addcore_national which = 344 }
+		command = { type = addcore_national which = 345 }
+		command = { type = addcore_national which = 374 }
+		command = { type = addcore_national which = 375 }
+		command = { type = addcore_national which = 387 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = SPA value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - south#
+event = {
+
+	id = 510007
+	trigger = {
+		event = 510006
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the South"
+	desc = "Germany's Southern border had always been a bastion against the encroaching barbarians of the Huns and Slavs. The South and South East was also ripe for colonisation by the Germanic people and indeed many ventured in search of new lands and dreams of rich pastures. These Marches contained a simple folk until a small family called the Hapsburgs burst upon the international scene. Shall we extend our protection to these simple folk and the wayward Austrians?"
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the South"
+		command = { type = addcore_national which = 388 }
+		command = { type = addcore_national which = 349 }
+		command = { type = addcore_national which = 1612 }
+		command = { type = addcore_national which = 371 }
+		command = { type = addcore_national which = 350 }
+		command = { type = addcore_national which = 351 }
+		command = { type = addcore_national which = 326 }
+		command = { type = addcore_national which = 352 }
+		command = { type = addcore_national which = 369 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = HUN value = -100 }
+		command = { type = relation which = VEN value = -50 }
+		command = { type = relation which = FRA value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#event-1-baseline, German state begins unification plans#
+event = {
+
+	id = 520000
+	trigger = {
+		atwar = no
+		countrysize = 7
+		domestic = { type = centralization value = 5 }
+		stability = 2
+		NOT = {
+			exists = GER
+		}
+	}
+	random = no
+	country = KOL
+	name = "Cologne Consolidates her Power"
+	desc = "A United Germany was not possible within this timeframe, but that is not to say it was not possible. Sire, there is a possibilty that we may have the resources to attempt such a unification. Such ambition may be a long and dangerous process and we are sure to face rampant objections. Will we make these grandoise machinations are aim and ambition and strive for a united German Kingdom?"
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Let us fulfill our destiny"
+		command = { type = stability value = -2 }
+		command = { type = vp value = 5 }
+		command = { type = diplomats value = 3 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = revoltrisk which = 36 value = 1 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = FRA value = -25 }
+		command = { type = relation which = HOL value = -25 }
+		command = { type = relation which = LUX value = -20 }
+		command = { type = relation which = DAN value = -20 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = setflag which = germany2 }
+	}
+
+	action_b = {
+		name = "Let the idea of a Unified Germany die"
+		command = { type = stability value = 2 }
+		command = { type = vp value = -5 }
+		command = { type = relation which = HAB value = 25 }
+		command = { type = relation which = FRA value = 25 }
+		command = { type = relation which = HOL value = 25 }
+		command = { type = relation which = LUX value = 20 }
+		command = { type = relation which = DAN value = 20 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+	}
+}
+
+#e-2, German state has expanded#
+event = {
+
+	id = 520001
+	trigger = {
+          	 AND = {
+                 	OR = {
+                       		owned = { province = 312 data = -1 }
+                        	vassal = { country = KOL country = BRA }
+				NOT = { exists = BRA }
+                  	}
+                  	OR = {
+                        	owned = { province = 305 data = -1 }
+                        	vassal = { country = KOL country = MEC }
+				NOT = { exists = MEC }
+			}
+                 	OR = {
+                       		owned = { province = 306 data = -1 }
+                        	vassal = { country = KOL country = SHL }
+				NOT = { exists = SHL }
+                  	}
+                  	OR = {
+                        	owned = { province = 310 data = -1 }
+                        	vassal = { country = KOL country = HAN }
+				NOT = { exists = HAN }
+                  	}
+                 	OR = {
+                       		owned = { province = 311 data = -1 }
+                        	vassal = { country = KOL country = MAG }
+				NOT = { exists = MAG }
+                  	}
+                	OR = {
+                       		owned = { province = 304 data = -1 }
+                        	vassal = { country = KOL country = POM }
+				NOT = { exists = POM }
+                  	}
+                  	OR = {
+                        	owned = { province = 331 data = -1 }
+                        	vassal = { country = KOL country = SAC }
+				NOT = { exists = SAC }
+			}
+                 	OR = {
+                       		owned = { province = 333 data = -1 }
+                        	vassal = { country = KOL country = HES }
+				NOT = { exists = HES }
+                  	}
+                  	OR = {
+                        	owned = { province = 334 data = -1 }
+                        	vassal = { country = KOL country = MUN }
+				NOT = { exists = MUN }
+                  	}
+                 	OR = {
+                       		owned = { province = 347 data = -1 }
+                        	vassal = { country = KOL country = THU }
+				NOT = { exists = THU }
+                  	}
+                	OR = {
+                       		owned = { province = 346 data = -1 }
+                        	vassal = { country = KOL country = MAI }
+				NOT = { exists = MAI }
+                  	}
+                  	OR = {
+                        	owned = { province = 345 data = -1 }
+                        	vassal = { country = KOL country = PFA }
+				NOT = { exists = PFA }
+			}
+                 	OR = {
+                       		owned = { province = 343 data = -1 }
+                        	vassal = { country = KOL country = KLE }
+				NOT = { exists = KLE }
+                  	}
+                 	OR = {
+                       		owned = { province = 373 data = -1 }
+                        	vassal = { country = KOL country = BAD }
+				NOT = { exists = BAD }
+                  	}
+                  	OR = {
+                        	owned = { province = 372 data = -1 }
+                        	vassal = { country = KOL country = WUR }
+				NOT = { exists = WUR }
+                  	}
+                 	OR = {
+                       		owned = { province = 349 data = -1 }
+                        	vassal = { country = KOL country = BAY }
+				NOT = { exists = BAY }
+                  	}
+			flag = germany2
+			atwar = no
+			domestic = { type = centralization value = 5 }
+			stability = 2
+			countrysize = 7
+			NOT = {
+				exists = GER
+			}
+           	}
+	}
+	random = no
+	country = KOL
+	name = "German Unification"
+	desc = "With most of the German North united under the banner of Cologne, the elector of Cologne, with the support of his select ministers felt the time was right to declare himself the King of the Germanic people. While he had not the backing of some of the southern states (and several figures within Cologne would also prove troublesome), it was beleived that the new Kingdom of Germany would prosper and survive, and would hold its own against the furious indignation of the Hapsburgs dynasty. Sire, what is to be done, the Hapsburgs warn us one last time not to proceed, shall we declare ourselve the Kingdom of Germany?"
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "All hail the King of Germany!"
+		command = { type = treasury value = -200 }
+		command = { type = stability value = -3 }
+		command = { type = vp value = 50 }
+		command = { type = breakvassal which = HAB }
+		command = { type = breakdynastic which = HAB }
+		command = { type = trigger which = 520002 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = revoltrisk which = 120 value = 6 }
+		command = { type = country which = GER }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = HOL value = -50 }
+		command = { type = relation which = LUX value = -50 }
+		command = { type = relation which = DAN value = -50 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = setflag which = united2 }
+	}
+
+	action_b = {
+		name = "We will stand down on our claims"
+		command = { type = stability value = 1 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = vp value = -25 }
+	}
+}
+
+#hapsburgs outraged, others worried#
+event = {
+
+	id = 520002
+	random = no
+	country = HAB
+	name = "German King Crowned"
+	desc = "One of the German Electors has grown some much in power that he has declared himself King of the Germanic People. We have been lax in trying to curtail this madman's ambition. Sire, we can not allow this meglomaniac the time to strengthen his hold on our people and your lands. He will not stop until you have kissed and licked the dirt off of his boots!"
+	style = 4
+
+	action_a = {
+		name = "Resist this German upstart!"
+		command = { type = relation which = GER value = -100 }
+		command = { type = casusbelli which = GER value = 120 }
+		command = { type = war which = GER }
+		command = { type = INF which = -2 value = 5000 }
+	}
+
+	action_b = {
+		name = "We shall watch them with caution"
+		command = { type = relation which = GER value = -50 }
+		command = { type = stability value = -1 }
+		command = { type = fortress which = -1 value = 1 }
+		command = { type = treasury value = -100 }
+		command = { type = vp value = -10 }
+	}
+}
+
+#Kingdom of Germany consolidates control - east#
+event = {
+
+	id = 520003
+	trigger = {
+		event = 520007
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the East"
+	desc = "With the foundation of the Kingdom, the lengthy process of determining the extent of its borders began. With the foundation of the kingdom originating in the East these were the first to be drawn and claimed by this state. The ultimate aim was to found a Kingdom whereby all German speaking people could call home and whereapon all German nobles should pay homage to their master; the King of Germany."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the East"
+		command = { type = addcore_national which = 289 }
+		command = { type = addcore_national which = 290 }
+		command = { type = addcore_national which = 301 }
+		command = { type = addcore_national which = 302 }
+		command = { type = addcore_national which = 311 }
+		command = { type = addcore_national which = 312 }
+		command = { type = addcore_national which = 313 }
+		command = { type = addcore_national which = 314 }
+		command = { type = addcore_national which = 329 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = POL value = -100 }
+		command = { type = relation which = BOH value = -100 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = SWE value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - north#
+event = {
+
+	id = 520004
+	trigger = {
+		event = 520006
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the North"
+	desc = "The Kingdom's claims also included the rich and vital Baltic and North Sea provinces. These provinces would be vital for Germany's emerging traders. With access to the ports, German merchants began plying their trade and brought in wealth and foreign investments to this resplendant realm."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the North"
+		command = { type = addcore_national which = 306 }
+		command = { type = addcore_national which = 335 }
+		command = { type = addcore_national which = 336 }
+		command = { type = addcore_national which = 305 }
+		command = { type = addcore_national which = 304 }
+		command = { type = addcore_national which = 334 }
+		command = { type = addcore_national which = 310 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = DAN value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = FRA value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - central#
+event = {
+
+	id = 520005
+	trigger = {
+		event = 520004
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the Heartland"
+	desc = "The Heart of Germany lay between the banks of the River Rhine and the Danube. By laying claim to the central heartlands, the German State would envelop the majority of its 'Volk', the essential backbone of this majestic Kingdom."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the Heartlands"
+		command = { type = addcore_national which = 333 }
+		command = { type = addcore_national which = 332 }
+		command = { type = addcore_national which = 331 }
+		command = { type = addcore_national which = 330 }
+		command = { type = addcore_national which = 346 }
+		command = { type = addcore_national which = 347 }
+		command = { type = addcore_national which = 348 }
+		command = { type = addcore_national which = 327 }
+		command = { type = addcore_national which = 373 }
+		command = { type = addcore_national which = 372 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = BOH value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = HEL value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - west#
+event = {
+
+	id = 520006
+	trigger = {
+		flag = united2
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the West"
+	desc = "The Western territories of the Germanic Volk had always been in contention with that of the French who for centuries persisted with their own claim to the land. By claiming the Western marches Germany provided a strong barrier to the false claimants and a reasuring presense to its subjects that worked the land for the glory of the German King."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the West"
+		command = { type = addcore_national which = 343 }
+		command = { type = addcore_national which = 344 }
+		command = { type = addcore_national which = 345 }
+		command = { type = addcore_national which = 374 }
+		command = { type = addcore_national which = 375 }
+		command = { type = addcore_national which = 387 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = SPA value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - south#
+event = {
+
+	id = 520007
+	trigger = {
+		event = 520005
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the South"
+	desc = "Germany's Southern border had always been a bastion against the encroaching barbarians of the Huns and Slavs. The South and South East was also ripe for colonisation by the Germanic people and indeed many ventured in search of new lands and dreams of rich pastures. These Marches contained a simple folk until a small family called the Hapsburgs burst upon the international scene. Shall we extend our protection to these simple folk and the wayward Austrians?"
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the South"
+		command = { type = addcore_national which = 388 }
+		command = { type = addcore_national which = 349 }
+		command = { type = addcore_national which = 1612 }
+		command = { type = addcore_national which = 371 }
+		command = { type = addcore_national which = 350 }
+		command = { type = addcore_national which = 351 }
+		command = { type = addcore_national which = 326 }
+		command = { type = addcore_national which = 352 }
+		command = { type = addcore_national which = 369 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = HUN value = -100 }
+		command = { type = relation which = VEN value = -50 }
+		command = { type = relation which = FRA value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#event-1-baseline, German state begins unification plans#
+event = {
+
+	id = 530000
+	trigger = {
+		atwar = no
+		countrysize = 7
+		domestic = { type = centralization value = 5 }
+		stability = 2
+		NOT = {
+			exists = GER
+		}
+	}
+	random = no
+	country = PFA
+	name = "Palatinate Consolidates her Power"
+	desc = "A United Germany was not possible within this timeframe, but that is not to say it was not possible. Sire, there is a possibilty that we may have the resources to attempt such a unification. Such ambition may be a long and dangerous process and we are sure to face rampant objections. Will we make these grandoise machinations are aim and ambition and strive for a united German Kingdom?"
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Let us fulfill our destiny"
+		command = { type = stability value = -2 }
+		command = { type = vp value = 5 }
+		command = { type = diplomats value = 3 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = revoltrisk which = 36 value = 1 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = FRA value = -25 }
+		command = { type = relation which = HOL value = -25 }
+		command = { type = relation which = LUX value = -20 }
+		command = { type = relation which = DAN value = -20 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = setflag which = germany3 }
+	}
+
+	action_b = {
+		name = "Let the idea of a Unified Germany die"
+		command = { type = stability value = 2 }
+		command = { type = vp value = -5 }
+		command = { type = relation which = HAB value = 25 }
+		command = { type = relation which = FRA value = 25 }
+		command = { type = relation which = HOL value = 25 }
+		command = { type = relation which = LUX value = 20 }
+		command = { type = relation which = DAN value = 20 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+	}
+}
+
+#e-2, German state has expanded#
+event = {
+
+	id = 530001
+	trigger = {
+          	 AND = {
+                 	OR = {
+                       		owned = { province = 312 data = -1 }
+                        	vassal = { country = PFA country = BRA }
+				NOT = { exists = BRA }
+                  	}
+                  	OR = {
+                        	owned = { province = 305 data = -1 }
+                        	vassal = { country = PFA country = MEC }
+				NOT = { exists = MEC }
+			}
+                 	OR = {
+                       		owned = { province = 306 data = -1 }
+                        	vassal = { country = PFA country = SHL }
+				NOT = { exists = SHL }
+                  	}
+                  	OR = {
+                        	owned = { province = 310 data = -1 }
+                        	vassal = { country = PFA country = HAN }
+				NOT = { exists = HAN }
+                  	}
+                 	OR = {
+                       		owned = { province = 311 data = -1 }
+                        	vassal = { country = PFA country = MAG }
+				NOT = { exists = MAG }
+                  	}
+                	OR = {
+                       		owned = { province = 304 data = -1 }
+                        	vassal = { country = PFA country = POM }
+				NOT = { exists = POM }
+                  	}
+                  	OR = {
+                        	owned = { province = 331 data = -1 }
+                        	vassal = { country = PFA country = SAC }
+				NOT = { exists = SAC }
+			}
+                 	OR = {
+                       		owned = { province = 333 data = -1 }
+                        	vassal = { country = PFA country = HES }
+				NOT = { exists = HES }
+                  	}
+                  	OR = {
+                        	owned = { province = 334 data = -1 }
+                        	vassal = { country = PFA country = MUN }
+				NOT = { exists = MUN }
+                  	}
+                 	OR = {
+                       		owned = { province = 347 data = -1 }
+                        	vassal = { country = PFA country = THU }
+				NOT = { exists = THU }
+                  	}
+                	OR = {
+                       		owned = { province = 346 data = -1 }
+                        	vassal = { country = PFA country = MAI }
+				NOT = { exists = MAI }
+                  	}
+                 	OR = {
+                       		owned = { province = 343 data = -1 }
+                        	vassal = { country = PFA country = KLE }
+				NOT = { exists = KLE }
+                  	}
+                  	OR = {
+                        	owned = { province = 344 data = -1 }
+                        	vassal = { country = PFA country = KOL }
+				NOT = { exists = KOL }
+                  	}
+                 	OR = {
+                       		owned = { province = 373 data = -1 }
+                        	vassal = { country = PFA country = BAD }
+				NOT = { exists = BAD }
+                  	}
+                  	OR = {
+                        	owned = { province = 372 data = -1 }
+                        	vassal = { country = PFA country = WUR }
+				NOT = { exists = WUR }
+                  	}
+                 	OR = {
+                       		owned = { province = 349 data = -1 }
+                        	vassal = { country = PFA country = BAY }
+				NOT = { exists = BAY }
+                  	}
+			flag = germany3
+			atwar = no
+			domestic = { type = centralization value = 5 }
+			stability = 2
+			countrysize = 7
+			NOT = {
+				exists = GER
+			}
+           	}
+	}
+	random = no
+	country = PFA
+	name = "German Unification"
+	desc = "With most of the German North united under the Palatine banner, the elector of the Palatinate, with the support of his select ministers felt the time was right to declare himself the King of the Germanic people. While he had not the backing of some of the southern states (and several figures within the Palatinate would also prove troublesome), it was beleived that the new Kingdom of Germany would prosper and survive, and would hold its own against the furious indignation of the Hapsburgs dynasty. Sire, what is to be done, the Hapsburgs warn us one last time not to proceed, shall we declare ourselve the Kingdom of Germany?"
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "All hail the King of Germany!"
+		command = { type = treasury value = -200 }
+		command = { type = stability value = -3 }
+		command = { type = vp value = 50 }
+		command = { type = breakvassal which = HAB }
+		command = { type = breakdynastic which = HAB }
+		command = { type = trigger which = 530002 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = revoltrisk which = 120 value = 6 }
+		command = { type = country which = GER }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = HOL value = -50 }
+		command = { type = relation which = LUX value = -50 }
+		command = { type = relation which = DAN value = -50 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = setflag which = united3 }
+	}
+
+	action_b = {
+		name = "We will stand down on our claims"
+		command = { type = stability value = 1 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = vp value = -25 }
+	}
+}
+
+#hapsburgs outraged, others worried#
+event = {
+
+	id = 530002
+	random = no
+	country = HAB
+	name = "German King Crowned"
+	desc = "One of the German Electors has grown some much in power that he has declared himself King of the Germanic People. We have been lax in trying to curtail this madman's ambition. Sire, we can not allow this meglomaniac the time to strengthen his hold on our people and your lands. He will not stop until you have kissed and licked the dirt off of his boots!"
+	style = 4
+
+	action_a = {
+		name = "Resist this German upstart!"
+		command = { type = relation which = GER value = -100 }
+		command = { type = casusbelli which = GER value = 120 }
+		command = { type = war which = GER }
+		command = { type = INF which = -2 value = 5000 }
+	}
+
+	action_b = {
+		name = "We shall watch them with caution"
+		command = { type = relation which = GER value = -50 }
+		command = { type = stability value = -1 }
+		command = { type = fortress which = -1 value = 1 }
+		command = { type = treasury value = -100 }
+		command = { type = vp value = -10 }
+	}
+}
+
+#Kingdom of Germany consolidates control - east#
+event = {
+
+	id = 530003
+	trigger = {
+		event = 530007
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the East"
+	desc = "With the foundation of the Kingdom, the lengthy process of determining the extent of its borders began. With the foundation of the kingdom originating in the East these were the first to be drawn and claimed by this state. The ultimate aim was to found a Kingdom whereby all German speaking people could call home and whereapon all German nobles should pay homage to their master; the King of Germany."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the East"
+		command = { type = addcore_national which = 289 }
+		command = { type = addcore_national which = 290 }
+		command = { type = addcore_national which = 301 }
+		command = { type = addcore_national which = 302 }
+		command = { type = addcore_national which = 311 }
+		command = { type = addcore_national which = 312 }
+		command = { type = addcore_national which = 313 }
+		command = { type = addcore_national which = 314 }
+		command = { type = addcore_national which = 329 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = POL value = -100 }
+		command = { type = relation which = BOH value = -100 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = SWE value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - north#
+event = {
+
+	id = 530004
+	trigger = {
+		event = 530006
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the North"
+	desc = "The Kingdom's claims also included the rich and vital Baltic and North Sea provinces. These provinces would be vital for Germany's emerging traders. With access to the ports, German merchants began plying their trade and brought in wealth and foreign investments to this resplendant realm."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the North"
+		command = { type = addcore_national which = 306 }
+		command = { type = addcore_national which = 335 }
+		command = { type = addcore_national which = 336 }
+		command = { type = addcore_national which = 305 }
+		command = { type = addcore_national which = 304 }
+		command = { type = addcore_national which = 334 }
+		command = { type = addcore_national which = 310 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = DAN value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = FRA value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - central#
+event = {
+
+	id = 530005
+	trigger = {
+		event = 530004
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the Heartland"
+	desc = "The Heart of Germany lay between the banks of the River Rhine and the Danube. By laying claim to the central heartlands, the German State would envelop the majority of its 'Volk', the essential backbone of this majestic Kingdom."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the Heartlands"
+		command = { type = addcore_national which = 333 }
+		command = { type = addcore_national which = 332 }
+		command = { type = addcore_national which = 331 }
+		command = { type = addcore_national which = 330 }
+		command = { type = addcore_national which = 346 }
+		command = { type = addcore_national which = 347 }
+		command = { type = addcore_national which = 348 }
+		command = { type = addcore_national which = 327 }
+		command = { type = addcore_national which = 373 }
+		command = { type = addcore_national which = 372 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = BOH value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = HEL value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - west#
+event = {
+
+	id = 530006
+	trigger = {
+		flag = united3
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the West"
+	desc = "The Western territories of the Germanic Volk had always been in contention with that of the French who for centuries persisted with their own claim to the land. By claiming the Western marches Germany provided a strong barrier to the false claimants and a reasuring presense to its subjects that worked the land for the glory of the German King."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the West"
+		command = { type = addcore_national which = 343 }
+		command = { type = addcore_national which = 344 }
+		command = { type = addcore_national which = 345 }
+		command = { type = addcore_national which = 374 }
+		command = { type = addcore_national which = 375 }
+		command = { type = addcore_national which = 387 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = SPA value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - south#
+event = {
+
+	id = 530007
+	trigger = {
+		event = 530005
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the South"
+	desc = "Germany's Southern border had always been a bastion against the encroaching barbarians of the Huns and Slavs. The South and South East was also ripe for colonisation by the Germanic people and indeed many ventured in search of new lands and dreams of rich pastures. These Marches contained a simple folk until a small family called the Hapsburgs burst upon the international scene. Shall we extend our protection to these simple folk and the wayward Austrians?"
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the South"
+		command = { type = addcore_national which = 388 }
+		command = { type = addcore_national which = 349 }
+		command = { type = addcore_national which = 1612 }
+		command = { type = addcore_national which = 371 }
+		command = { type = addcore_national which = 350 }
+		command = { type = addcore_national which = 351 }
+		command = { type = addcore_national which = 326 }
+		command = { type = addcore_national which = 352 }
+		command = { type = addcore_national which = 369 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = HUN value = -100 }
+		command = { type = relation which = VEN value = -50 }
+		command = { type = relation which = FRA value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#event-1-baseline, German state begins unification plans#
+event = {
+
+	id = 540000
+	trigger = {
+		atwar = no
+		countrysize = 7
+		domestic = { type = centralization value = 5 }
+		stability = 2
+		NOT = {
+			exists = GER
+		}
+	}
+	random = no
+	country = SAC
+	name = "Saxony Consolidates her Power"
+	desc = "A United Germany was not possible within this timeframe, but that is not to say it was not possible. Sire, there is a possibilty that we may have the resources to attempt such a unification. Such ambition may be a long and dangerous process and we are sure to face rampant objections. Will we make these grandoise machinations are aim and ambition and strive for a united German Kingdom?"
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Let us fulfill our destiny"
+		command = { type = stability value = -2 }
+		command = { type = vp value = 5 }
+		command = { type = diplomats value = 3 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = revoltrisk which = 36 value = 1 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = BOH value = -25 }
+		command = { type = relation which = POL value = -25 }
+		command = { type = relation which = HOL value = -20 }
+		command = { type = relation which = DAN value = -20 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = setflag which = germany4 }
+	}
+
+	action_b = {
+		name = "Let the idea of a Unified Germany die"
+		command = { type = stability value = 2 }
+		command = { type = vp value = -5 }
+		command = { type = relation which = HAB value = 25 }
+		command = { type = relation which = BOH value = 25 }
+		command = { type = relation which = POL value = 25 }
+		command = { type = relation which = HOL value = 20 }
+		command = { type = relation which = DAN value = 20 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+	}
+}
+
+#e-2, German state has expanded#
+event = {
+
+	id = 540001
+	trigger = {
+          	 AND = {
+                 	OR = {
+                       		owned = { province = 312 data = -1 }
+                        	vassal = { country = SAC country = BRA }
+				NOT = { exists = BRA }
+                  	}
+                  	OR = {
+                        	owned = { province = 305 data = -1 }
+                        	vassal = { country = SAC country = MEC }
+				NOT = { exists = MEC }
+			}
+                 	OR = {
+                       		owned = { province = 306 data = -1 }
+                        	vassal = { country = SAC country = SHL }
+				NOT = { exists = SHL }
+                  	}
+                  	OR = {
+                        	owned = { province = 310 data = -1 }
+                        	vassal = { country = SAC country = HAN }
+				NOT = { exists = HAN }
+                  	}
+                 	OR = {
+                       		owned = { province = 311 data = -1 }
+                        	vassal = { country = SAC country = MAG }
+				NOT = { exists = MAG }
+                  	}
+                	OR = {
+                       		owned = { province = 304 data = -1 }
+                        	vassal = { country = SAC country = POM }
+				NOT = { exists = POM }
+                  	}
+                 	OR = {
+                       		owned = { province = 333 data = -1 }
+                        	vassal = { country = SAC country = HES }
+				NOT = { exists = HES }
+                  	}
+                  	OR = {
+                        	owned = { province = 334 data = -1 }
+                        	vassal = { country = SAC country = MUN }
+				NOT = { exists = MUN }
+                  	}
+                 	OR = {
+                       		owned = { province = 347 data = -1 }
+                        	vassal = { country = SAC country = THU }
+				NOT = { exists = THU }
+                  	}
+                	OR = {
+                       		owned = { province = 346 data = -1 }
+                        	vassal = { country = SAC country = MAI }
+				NOT = { exists = MAI }
+                  	}
+                  	OR = {
+                        	owned = { province = 345 data = -1 }
+                        	vassal = { country = SAC country = PFA }
+				NOT = { exists = PFA }
+			}
+                 	OR = {
+                       		owned = { province = 343 data = -1 }
+                        	vassal = { country = SAC country = KLE }
+				NOT = { exists = KLE }
+                  	}
+                  	OR = {
+                        	owned = { province = 344 data = -1 }
+                        	vassal = { country = SAC country = KOL }
+				NOT = { exists = KOL }
+                  	}
+                 	OR = {
+                       		owned = { province = 373 data = -1 }
+                        	vassal = { country = SAC country = BAD }
+				NOT = { exists = BAD }
+                  	}
+                  	OR = {
+                        	owned = { province = 372 data = -1 }
+                        	vassal = { country = SAC country = WUR }
+				NOT = { exists = WUR }
+                  	}
+                 	OR = {
+                       		owned = { province = 349 data = -1 }
+                        	vassal = { country = SAC country = BAY }
+				NOT = { exists = BAY }
+                  	}
+			flag = germany4
+			atwar = no
+			domestic = { type = centralization value = 5 }
+			stability = 2
+			countrysize = 7
+			NOT = {
+				exists = GER
+			}
+           	}
+	}
+	random = no
+	country = SAC
+	name = "German Unification"
+	desc = "With most of the German North united under the Saxon banner, the elector of Saxony, with the support of his select ministers felt the time was right to declare himself the King of the Germanic people. While he had not the backing of some of the southern states (and several figures within Saxony would also prove troublesome), it was beleived that the new Kingdom of Germany would prosper and survive, and would hold its own against the furious indignation of the Hapsburgs dynasty. Sire, what is to be done, the Hapsburgs warn us one last time not to proceed, shall we declare ourselve the Kingdom of Germany?"
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "All hail the King of Germany!"
+		command = { type = treasury value = -200 }
+		command = { type = stability value = -3 }
+		command = { type = vp value = 50 }
+		command = { type = breakvassal which = HAB }
+		command = { type = breakdynastic which = HAB }
+		command = { type = trigger which = 540002 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = revoltrisk which = 120 value = 6 }
+		command = { type = country which = GER }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = BOH value = -50 }
+		command = { type = relation which = POL value = -50 }
+		command = { type = relation which = HOL value = -50 }
+		command = { type = relation which = DAN value = -50 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = setflag which = united4 }
+	}
+
+	action_b = {
+		name = "We will stand down on our claims"
+		command = { type = stability value = 1 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = vp value = -25 }
+	}
+}
+
+#hapsburgs outraged, others worried#
+event = {
+
+	id = 540002
+	random = no
+	country = HAB
+	name = "German King Crowned"
+	desc = "One of the German Electors has grown some much in power that he has declared himself King of the Germanic People. We have been lax in trying to curtail this madman's ambition. Sire, we can not allow this meglomaniac the time to strengthen his hold on our people and your lands. He will not stop until you have kissed and licked the dirt off of his boots!"
+	style = 4
+
+	action_a = {
+		name = "Resist this German upstart!"
+		command = { type = relation which = GER value = -100 }
+		command = { type = casusbelli which = GER value = 120 }
+		command = { type = war which = GER }
+		command = { type = INF which = -2 value = 5000 }
+	}
+
+	action_b = {
+		name = "We shall watch them with caution"
+		command = { type = relation which = GER value = -50 }
+		command = { type = stability value = -1 }
+		command = { type = fortress which = -1 value = 1 }
+		command = { type = treasury value = -100 }
+		command = { type = vp value = -10 }
+	}
+}
+
+#Kingdom of Germany consolidates control - east#
+event = {
+
+	id = 540003
+	trigger = {
+		event = 540004
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the East"
+	desc = "With the foundation of the Kingdom, the lengthy process of determining the extent of its borders began. With the foundation of the kingdom originating in the East these were the first to be drawn and claimed by this state. The ultimate aim was to found a Kingdom whereby all German speaking people could call home and whereapon all German nobles should pay homage to their master; the King of Germany."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the East"
+		command = { type = addcore_national which = 289 }
+		command = { type = addcore_national which = 290 }
+		command = { type = addcore_national which = 301 }
+		command = { type = addcore_national which = 302 }
+		command = { type = addcore_national which = 311 }
+		command = { type = addcore_national which = 312 }
+		command = { type = addcore_national which = 313 }
+		command = { type = addcore_national which = 314 }
+		command = { type = addcore_national which = 329 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = POL value = -100 }
+		command = { type = relation which = BOH value = -100 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = SWE value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - north#
+event = {
+
+	id = 540004
+	trigger = {
+		flag = united4
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the North"
+	desc = "The Kingdom's claims also included the rich and vital Baltic and North Sea provinces. These provinces would be vital for Germany's emerging traders. With access to the ports, German merchants began plying their trade and brought in wealth and foreign investments to this resplendant realm."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the North"
+		command = { type = addcore_national which = 306 }
+		command = { type = addcore_national which = 335 }
+		command = { type = addcore_national which = 336 }
+		command = { type = addcore_national which = 305 }
+		command = { type = addcore_national which = 304 }
+		command = { type = addcore_national which = 334 }
+		command = { type = addcore_national which = 310 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = DAN value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = FRA value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - central#
+event = {
+
+	id = 540005
+	trigger = {
+		event = 540003
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the Heartland"
+	desc = "The Heart of Germany lay between the banks of the River Rhine and the Danube. By laying claim to the central heartlands, the German State would envelop the majority of its 'Volk', the essential backbone of this majestic Kingdom."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the Heartlands"
+		command = { type = addcore_national which = 333 }
+		command = { type = addcore_national which = 332 }
+		command = { type = addcore_national which = 331 }
+		command = { type = addcore_national which = 330 }
+		command = { type = addcore_national which = 346 }
+		command = { type = addcore_national which = 347 }
+		command = { type = addcore_national which = 348 }
+		command = { type = addcore_national which = 327 }
+		command = { type = addcore_national which = 373 }
+		command = { type = addcore_national which = 372 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = BOH value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = HEL value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - west#
+event = {
+
+	id = 540006
+	trigger = {
+		event = 540005
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the West"
+	desc = "The Western territories of the Germanic Volk had always been in contention with that of the French who for centuries persisted with their own claim to the land. By claiming the Western marches Germany provided a strong barrier to the false claimants and a reasuring presense to its subjects that worked the land for the glory of the German King."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the West"
+		command = { type = addcore_national which = 343 }
+		command = { type = addcore_national which = 344 }
+		command = { type = addcore_national which = 345 }
+		command = { type = addcore_national which = 374 }
+		command = { type = addcore_national which = 375 }
+		command = { type = addcore_national which = 387 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = SPA value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - south#
+event = {
+
+	id = 540007
+	trigger = {
+		event = 540006
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the South"
+	desc = "Germany's Southern border had always been a bastion against the encroaching barbarians of the Huns and Slavs. The South and South East was also ripe for colonisation by the Germanic people and indeed many ventured in search of new lands and dreams of rich pastures. These Marches contained a simple folk until a small family called the Hapsburgs burst upon the international scene. Shall we extend our protection to these simple folk and the wayward Austrians?"
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the South"
+		command = { type = addcore_national which = 388 }
+		command = { type = addcore_national which = 349 }
+		command = { type = addcore_national which = 1612 }
+		command = { type = addcore_national which = 371 }
+		command = { type = addcore_national which = 350 }
+		command = { type = addcore_national which = 351 }
+		command = { type = addcore_national which = 326 }
+		command = { type = addcore_national which = 352 }
+		command = { type = addcore_national which = 369 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = HUN value = -100 }
+		command = { type = relation which = VEN value = -50 }
+		command = { type = relation which = FRA value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#event-1-baseline, German state begins unification plans#
+event = {
+
+	id = 550000
+	trigger = {
+		atwar = no
+		countrysize = 7
+		domestic = { type = centralization value = 5 }
+		stability = 2
+		NOT = {
+			exists = GER
+		}
+	}
+	random = no
+	country = BAY
+	name = "Bavaria Consolidates her Power"
+	desc = "A United Germany was not possible within this timeframe, but that is not to say it was not possible. Sire, there is a possibilty that we may have the resources to attempt such a unification. Such ambition may be a long and dangerous process and we are sure to face rampant objections. Will we make these grandoise machinations are aim and ambition and strive for a united German Kingdom?"
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Let us fulfill our destiny"
+		command = { type = stability value = -2 }
+		command = { type = vp value = 5 }
+		command = { type = diplomats value = 3 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = revoltrisk which = 36 value = 1 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = BOH value = -25 }
+		command = { type = relation which = HEL value = -25 }
+		command = { type = relation which = VEN value = -20 }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = setflag which = germany5 }
+	}
+
+	action_b = {
+		name = "Let the idea of a Unified Germany die"
+		command = { type = stability value = 2 }
+		command = { type = vp value = -5 }
+		command = { type = relation which = HAB value = 25 }
+		command = { type = relation which = BOH value = 25 }
+		command = { type = relation which = HEL value = 25 }
+		command = { type = relation which = VEN value = 20 }
+		command = { type = relation which = FRA value = 20 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+	}
+}
+
+#e-2, German state has expanded#
+event = {
+
+	id = 550001
+	trigger = {
+          	 AND = {
+                 	OR = {
+                       		owned = { province = 312 data = -1 }
+                        	vassal = { country = BAY country = BRA }
+				NOT = { exists = BRA }
+                  	}
+                  	OR = {
+                        	owned = { province = 305 data = -1 }
+                        	vassal = { country = BAY country = MEC }
+				NOT = { exists = MEC }
+			}
+                 	OR = {
+                       		owned = { province = 306 data = -1 }
+                        	vassal = { country = BAY country = SHL }
+				NOT = { exists = SHL }
+                  	}
+                  	OR = {
+                        	owned = { province = 310 data = -1 }
+                        	vassal = { country = BAY country = HAN }
+				NOT = { exists = HAN }
+                  	}
+                 	OR = {
+                       		owned = { province = 311 data = -1 }
+                        	vassal = { country = BAY country = MAG }
+				NOT = { exists = MAG }
+                  	}
+                	OR = {
+                       		owned = { province = 304 data = -1 }
+                        	vassal = { country = BAY country = POM }
+				NOT = { exists = POM }
+                  	}
+                  	OR = {
+                        	owned = { province = 331 data = -1 }
+                        	vassal = { country = BAY country = SAC }
+				NOT = { exists = SAC }
+			}
+                 	OR = {
+                       		owned = { province = 333 data = -1 }
+                        	vassal = { country = BAY country = HES }
+				NOT = { exists = HES }
+                  	}
+                  	OR = {
+                        	owned = { province = 334 data = -1 }
+                        	vassal = { country = BAY country = MUN }
+				NOT = { exists = MUN }
+                  	}
+                 	OR = {
+                       		owned = { province = 347 data = -1 }
+                        	vassal = { country = BAY country = THU }
+				NOT = { exists = THU }
+                  	}
+                	OR = {
+                       		owned = { province = 346 data = -1 }
+                        	vassal = { country = BAY country = MAI }
+				NOT = { exists = MAI }
+                  	}
+                  	OR = {
+                        	owned = { province = 345 data = -1 }
+                        	vassal = { country = BAY country = PFA }
+				NOT = { exists = PFA }
+			}
+                 	OR = {
+                       		owned = { province = 343 data = -1 }
+                        	vassal = { country = BAY country = KLE }
+				NOT = { exists = KLE }
+                  	}
+                  	OR = {
+                        	owned = { province = 344 data = -1 }
+                        	vassal = { country = BAY country = KOL }
+				NOT = { exists = KOL }
+                  	}
+                 	OR = {
+                       		owned = { province = 373 data = -1 }
+                        	vassal = { country = BAY country = BAD }
+				NOT = { exists = BAD }
+                  	}
+                  	OR = {
+                        	owned = { province = 372 data = -1 }
+                        	vassal = { country = BAY country = WUR }
+				NOT = { exists = WUR }
+                  	}
+			flag = germany5
+			atwar = no
+			domestic = { type = centralization value = 5 }
+			stability = 2
+			countrysize = 7
+			NOT = {
+				exists = GER
+			}
+           	}
+	}
+	random = no
+	country = BAY
+	name = "German Unification"
+	desc = "With most of the German South united under the Bavarian banner, the Bavarianelector, with the support of his select ministers felt the time was right to declare himself the King of the Germanic people. While he had not the backing of some of the northern states (and several figures within Bavaria would also prove troublesome), it was beleived that the new Kingdom of Germany would prosper and survive, and would hold its own against the furious indignation of the Hapsburgs dynasty. Sire, what is to be done, the Hapsburgs warn us one last time not to proceed, shall we declare ourselve the Kingdom of Germany?"
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "All hail the King of Germany!"
+		command = { type = treasury value = -200 }
+		command = { type = stability value = -3 }
+		command = { type = vp value = 50 }
+		command = { type = breakvassal which = HAB }
+		command = { type = breakdynastic which = HAB }
+		command = { type = trigger which = 550002 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = revoltrisk which = 120 value = 6 }
+		command = { type = country which = GER }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = BOH value = -50 }
+		command = { type = relation which = HEL value = -50 }
+		command = { type = relation which = VEN value = -50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = setflag which = united5 }
+	}
+
+	action_b = {
+		name = "We will stand down on our claims"
+		command = { type = stability value = 1 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = vp value = -25 }
+	}
+}
+
+#hapsburgs outraged, others worried#
+event = {
+
+	id = 550002
+	random = no
+	country = HAB
+	name = "German King Crowned"
+	desc = "One of the German Electors has grown some much in power that he has declared himself King of the Germanic People. We have been lax in trying to curtail this madman's ambition. Sire, we can not allow this meglomaniac the time to strengthen his hold on our people and your lands. He will not stop until you have kissed and licked the dirt off of his boots!"
+	style = 4
+
+	action_a = {
+		name = "Resist this German upstart!"
+		command = { type = relation which = GER value = -100 }
+		command = { type = casusbelli which = GER value = 120 }
+		command = { type = war which = GER }
+		command = { type = INF which = -2 value = 5000 }
+	}
+
+	action_b = {
+		name = "We shall watch them with caution"
+		command = { type = relation which = GER value = -50 }
+		command = { type = stability value = -1 }
+		command = { type = fortress which = -1 value = 1 }
+		command = { type = treasury value = -100 }
+		command = { type = vp value = -10 }
+	}
+}
+
+#Kingdom of Germany consolidates control - east#
+event = {
+
+	id = 550003
+	trigger = {
+		event = 550004
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the East"
+	desc = "With the foundation of the Kingdom, the lengthy process of determining the extent of its borders began. With the foundation of the kingdom originating in the East these were the first to be drawn and claimed by this state. The ultimate aim was to found a Kingdom whereby all German speaking people could call home and whereapon all German nobles should pay homage to their master; the King of Germany."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the East"
+		command = { type = addcore_national which = 289 }
+		command = { type = addcore_national which = 290 }
+		command = { type = addcore_national which = 301 }
+		command = { type = addcore_national which = 302 }
+		command = { type = addcore_national which = 311 }
+		command = { type = addcore_national which = 312 }
+		command = { type = addcore_national which = 313 }
+		command = { type = addcore_national which = 314 }
+		command = { type = addcore_national which = 329 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = POL value = -100 }
+		command = { type = relation which = BOH value = -100 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = SWE value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - north#
+event = {
+
+	id = 550004
+	trigger = {
+		event = 550005
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the North"
+	desc = "The Kingdom's claims also included the rich and vital Baltic and North Sea provinces. These provinces would be vital for Germany's emerging traders. With access to the ports, German merchants began plying their trade and brought in wealth and foreign investments to this resplendant realm."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the North"
+		command = { type = addcore_national which = 306 }
+		command = { type = addcore_national which = 335 }
+		command = { type = addcore_national which = 336 }
+		command = { type = addcore_national which = 305 }
+		command = { type = addcore_national which = 304 }
+		command = { type = addcore_national which = 334 }
+		command = { type = addcore_national which = 310 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = DAN value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = FRA value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - central#
+event = {
+
+	id = 550005
+	trigger = {
+		event = 550007
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the Heartland"
+	desc = "The Heart of Germany lay between the banks of the River Rhine and the Danube. By laying claim to the central heartlands, the German State would envelop the majority of its 'Volk', the essential backbone of this majestic Kingdom."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the Heartlands"
+		command = { type = addcore_national which = 333 }
+		command = { type = addcore_national which = 332 }
+		command = { type = addcore_national which = 331 }
+		command = { type = addcore_national which = 330 }
+		command = { type = addcore_national which = 346 }
+		command = { type = addcore_national which = 347 }
+		command = { type = addcore_national which = 348 }
+		command = { type = addcore_national which = 327 }
+		command = { type = addcore_national which = 373 }
+		command = { type = addcore_national which = 372 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = BOH value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = HEL value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - west#
+event = {
+
+	id = 550006
+	trigger = {
+		event = 550005
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the West"
+	desc = "The Western territories of the Germanic Volk had always been in contention with that of the French who for centuries persisted with their own claim to the land. By claiming the Western marches Germany provided a strong barrier to the false claimants and a reasuring presense to its subjects that worked the land for the glory of the German King."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the West"
+		command = { type = addcore_national which = 343 }
+		command = { type = addcore_national which = 344 }
+		command = { type = addcore_national which = 345 }
+		command = { type = addcore_national which = 374 }
+		command = { type = addcore_national which = 375 }
+		command = { type = addcore_national which = 387 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = SPA value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - south#
+event = {
+
+	id = 550007
+	trigger = {
+		flag = united5
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the South"
+	desc = "Germany's Southern border had always been a bastion against the encroaching barbarians of the Huns and Slavs. The South and South East was also ripe for colonisation by the Germanic people and indeed many ventured in search of new lands and dreams of rich pastures. These Marches contained a simple folk until a small family called the Hapsburgs burst upon the international scene. Shall we extend our protection to these simple folk and the wayward Austrians?"
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the South"
+		command = { type = addcore_national which = 388 }
+		command = { type = addcore_national which = 349 }
+		command = { type = addcore_national which = 1612 }
+		command = { type = addcore_national which = 371 }
+		command = { type = addcore_national which = 350 }
+		command = { type = addcore_national which = 351 }
+		command = { type = addcore_national which = 326 }
+		command = { type = addcore_national which = 352 }
+		command = { type = addcore_national which = 369 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = HUN value = -100 }
+		command = { type = relation which = VEN value = -50 }
+		command = { type = relation which = FRA value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#event-1-baseline, German state begins unification plans#
+event = {
+
+	id = 570000
+	trigger = {
+		atwar = no
+		countrysize = 7
+		domestic = { type = centralization value = 5 }
+		stability = 2
+		NOT = {
+			exists = GER
+		}
+	}
+	random = no
+	country = LAT
+	name = "Teutonic Order Consolidates her Power"
+	desc = "A United Germany was not possible within this timeframe, but that is not to say it was not possible. Sire, there is a possibilty that we may have the resources to attempt such a unification. Such ambition may be a long and dangerous process and we are sure to face rampant objections. Will we make these grandoise machinations our aim and ambition and strive for a united German Kingdom?"
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Let us fulfill our destiny"
+		command = { type = stability value = -2 }
+		command = { type = vp value = 5 }
+		command = { type = diplomats value = 3 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = revoltrisk which = 36 value = 1 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = FRA value = -25 }
+		command = { type = relation which = POL value = -25 }
+		command = { type = relation which = LIT value = -20 }
+		command = { type = relation which = POM value = -20 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = setflag which = germany6 }
+	}
+
+	action_b = {
+		name = "Let the idea of a Unified Germany die"
+		command = { type = stability value = 2 }
+		command = { type = vp value = -5 }
+		command = { type = relation which = HAB value = 25 }
+		command = { type = relation which = FRA value = 25 }
+		command = { type = relation which = POL value = 25 }
+		command = { type = relation which = LIT value = 20 }
+		command = { type = relation which = POM value = 20 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+	}
+}
+
+#e-2, German state has expanded#
+event = {
+
+	id = 570001
+	trigger = {
+          	 AND = {
+                 	OR = {
+                       		owned = { province = 312 data = -1 }
+                        	vassal = { country = LAT country = BRA }
+				NOT = { exists = BRA }
+                  	}
+                  	OR = {
+                        	owned = { province = 305 data = -1 }
+                        	vassal = { country = LAT country = MEC }
+				NOT = { exists = MEC }
+			}
+                 	OR = {
+                       		owned = { province = 306 data = -1 }
+                        	vassal = { country = LAT country = SHL }
+				NOT = { exists = SHL }
+                  	}
+                  	OR = {
+                        	owned = { province = 310 data = -1 }
+                        	vassal = { country = LAT country = HAN }
+				NOT = { exists = HAN }
+                  	}
+                 	OR = {
+                       		owned = { province = 311 data = -1 }
+                        	vassal = { country = LAT country = MAG }
+				NOT = { exists = MAG }
+                  	}
+                	OR = {
+                       		owned = { province = 304 data = -1 }
+                        	vassal = { country = LAT country = POM }
+				NOT = { exists = POM }
+                  	}
+                  	OR = {
+                        	owned = { province = 331 data = -1 }
+                        	vassal = { country = LAT country = SAC }
+				NOT = { exists = SAC }
+			}
+                 	OR = {
+                       		owned = { province = 333 data = -1 }
+                        	vassal = { country = LAT country = HES }
+				NOT = { exists = HES }
+                  	}
+                  	OR = {
+                        	owned = { province = 334 data = -1 }
+                        	vassal = { country = LAT country = MUN }
+				NOT = { exists = MUN }
+                  	}
+                 	OR = {
+                       		owned = { province = 347 data = -1 }
+                        	vassal = { country = LAT country = THU }
+				NOT = { exists = THU }
+                  	}
+                	OR = {
+                       		owned = { province = 346 data = -1 }
+                        	vassal = { country = LAT country = MAI }
+				NOT = { exists = MAI }
+                  	}
+                  	OR = {
+                        	owned = { province = 345 data = -1 }
+                        	vassal = { country = LAT country = PFA }
+				NOT = { exists = PFA }
+			}
+                 	OR = {
+                       		owned = { province = 343 data = -1 }
+                        	vassal = { country = LAT country = KLE }
+				NOT = { exists = KLE }
+                  	}
+                  	OR = {
+                        	owned = { province = 344 data = -1 }
+                        	vassal = { country = LAT country = KOL }
+				NOT = { exists = KOL }
+                  	}
+                 	OR = {
+                       		owned = { province = 373 data = -1 }
+                        	vassal = { country = LAT country = BAD }
+				NOT = { exists = BAD }
+                  	}
+                  	OR = {
+                        	owned = { province = 372 data = -1 }
+                        	vassal = { country = LAT country = WUR }
+				NOT = { exists = WUR }
+                  	}
+                 	OR = {
+                       		owned = { province = 349 data = -1 }
+                        	vassal = { country = LAT country = BAY }
+				NOT = { exists = BAY }
+                  	}
+			flag = germany6
+			atwar = no
+			domestic = { type = centralization value = 5 }
+			stability = 2
+			countrysize = 7
+			NOT = {
+				exists = GER
+			}
+           	}
+	}
+	random = no
+	country = LAT
+	name = "German Unification"
+	desc = "With most of the German North united under the Teutonic banner, the Teuton Hochmeister, with the support of his select ministers felt the time was right to declare himself the King of the Germanic people. While he had not the backing of some of the southern states (and several figures within the Order would also prove troublesome), it was beleived that the new Kingdom of Germany would prosper and survive, and would hold its own against the furious indignation of the Hapsburgs dynasty. Sire, what is to be done, the Hapsburgs warn us one last time not to proceed, shall we declare ourselve the Kingdom of Germany?"
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "All hail the King of Germany!"
+		command = { type = treasury value = -200 }
+		command = { type = stability value = -3 }
+		command = { type = vp value = 50 }
+		command = { type = breakvassal which = HAB }
+		command = { type = breakdynastic which = HAB }
+		command = { type = trigger which = 570002 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = revoltrisk which = 120 value = 6 }
+		command = { type = country which = GER }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = POL value = -50 }
+		command = { type = relation which = LIT value = -50 }
+		command = { type = relation which = POM value = -50 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = setflag which = united6 }
+	}
+
+	action_b = {
+		name = "We will stand down on our claims"
+		command = { type = stability value = 1 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = vp value = -25 }
+	}
+}
+
+#hapsburgs outraged, others worried#
+event = {
+
+	id = 570002
+	random = no
+	country = HAB
+	name = "German King Crowned"
+	desc = "One of the German Electors has grown so much in power that he has declared himself King of the Germanic People. We have been lax in trying to curtail this madman's ambition. Sire, we can not allow this meglomaniac the time to strengthen his hold on our people and your lands. He will not stop until you have kissed and licked the dirt off of his boots!"
+	style = 4
+
+	action_a = {
+		name = "Resist this Teuton upstart!"
+		command = { type = relation which = GER value = -100 }
+		command = { type = casusbelli which = GER value = 120 }
+		command = { type = war which = GER }
+		command = { type = INF which = -2 value = 5000 }
+	}
+
+	action_b = {
+		name = "We shall watch them with caution"
+		command = { type = relation which = GER value = -50 }
+		command = { type = stability value = -1 }
+		command = { type = fortress which = -1 value = 1 }
+		command = { type = treasury value = -100 }
+		command = { type = vp value = -10 }
+	}
+}
+
+#Kingdom of Germany consolidates control - east#
+event = {
+
+	id = 570003
+	trigger = {
+		flag = united6
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the East"
+	desc = "With the foundation of the Kingdom, the lengthy process of determining the extent of its borders began. With the foundation of the kingdom originating in the East these were the first to be drawn and claimed by this state. The ultimate aim was to found a Kingdom whereby all German speaking people could call home and whereapon all German nobles should pay homage to their master; the King of Germany."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the East"
+		command = { type = addcore_national which = 289 }
+		command = { type = addcore_national which = 290 }
+		command = { type = addcore_national which = 301 }
+		command = { type = addcore_national which = 302 }
+		command = { type = addcore_national which = 311 }
+		command = { type = addcore_national which = 312 }
+		command = { type = addcore_national which = 313 }
+		command = { type = addcore_national which = 314 }
+		command = { type = addcore_national which = 329 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = POL value = -100 }
+		command = { type = relation which = BOH value = -100 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = SWE value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - north#
+event = {
+
+	id = 570004
+	trigger = {
+		event = 570003
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the North"
+	desc = "The Kingdom's claims also included the rich and vital Baltic and North Sea provinces. These provinces would be vital for Germany's emerging traders. With access to the ports, German merchants began plying their trade and brought in wealth and foreign investments to this resplendant realm."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the North"
+		command = { type = addcore_national which = 306 }
+		command = { type = addcore_national which = 335 }
+		command = { type = addcore_national which = 336 }
+		command = { type = addcore_national which = 305 }
+		command = { type = addcore_national which = 304 }
+		command = { type = addcore_national which = 334 }
+		command = { type = addcore_national which = 310 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = DAN value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = FRA value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - central#
+event = {
+
+	id = 570005
+	trigger = {
+		event = 570004
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the Heartland"
+	desc = "The Heart of Germany lay between the banks of the River Rhine and the Danube. By laying claim to the central heartlands, the German State would envelop the majority of its 'Volk', the essential backbone of this majestic Kingdom."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the Heartlands"
+		command = { type = addcore_national which = 333 }
+		command = { type = addcore_national which = 332 }
+		command = { type = addcore_national which = 331 }
+		command = { type = addcore_national which = 330 }
+		command = { type = addcore_national which = 346 }
+		command = { type = addcore_national which = 347 }
+		command = { type = addcore_national which = 348 }
+		command = { type = addcore_national which = 327 }
+		command = { type = addcore_national which = 373 }
+		command = { type = addcore_national which = 372 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = BOH value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = HEL value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - west#
+event = {
+
+	id = 570006
+	trigger = {
+		event = 570005
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the West"
+	desc = "The Western territories of the Germanic Volk had always been in contention with that of the French who for centuries persisted with their own claim to the land. By claiming the Western marches Germany provided a strong barrier to the false claimants and a reasuring presense to its subjects that worked the land for the glory of the German King."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the West"
+		command = { type = addcore_national which = 343 }
+		command = { type = addcore_national which = 344 }
+		command = { type = addcore_national which = 345 }
+		command = { type = addcore_national which = 374 }
+		command = { type = addcore_national which = 375 }
+		command = { type = addcore_national which = 387 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = SPA value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - south#
+event = {
+
+	id = 570007
+	trigger = {
+		event = 570006
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the South"
+	desc = "Germany's Southern border had always been a bastion against the encroaching barbarians of the Huns and Slavs. The South and South East was also ripe for colonisation by the Germanic people and indeed many ventured in search of new lands and dreams of rich pastures. These Marches contained a simple folk until a small family called the Hapsburgs burst upon the international scene. Shall we extend our protection to these simple folk and the wayward Austrians?"
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the South"
+		command = { type = addcore_national which = 388 }
+		command = { type = addcore_national which = 349 }
+		command = { type = addcore_national which = 1612 }
+		command = { type = addcore_national which = 371 }
+		command = { type = addcore_national which = 350 }
+		command = { type = addcore_national which = 351 }
+		command = { type = addcore_national which = 326 }
+		command = { type = addcore_national which = 352 }
+		command = { type = addcore_national which = 369 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = HUN value = -100 }
+		command = { type = relation which = VEN value = -50 }
+		command = { type = relation which = FRA value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#event-1-baseline, German state begins unification plans#
+event = {
+
+	id = 580000
+	trigger = {
+		atwar = no
+		countrysize = 7
+		domestic = { type = centralization value = 5 }
+		stability = 2
+		NOT = {
+			exists = GER
+		}
+	}
+	random = no
+	country = HES
+	name = "Hessen Consolidates her Power"
+	desc = "A United Germany was not possible within this timeframe, but that is not to say it was not possible. Sire, there is a possibilty that we may have the resources to attempt such a unification. Such ambition may be a long and dangerous process and we are sure to face rampant objections. Will we make these grandoise machinations are aim and ambition and strive for a united German Kingdom?"
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Let us fulfill our destiny"
+		command = { type = stability value = -2 }
+		command = { type = vp value = 5 }
+		command = { type = diplomats value = 3 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = revoltrisk which = 36 value = 1 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = FRA value = -25 }
+		command = { type = relation which = HOL value = -25 }
+		command = { type = relation which = LUX value = -20 }
+		command = { type = relation which = DAN value = -20 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = relation which = -1 value = -10 }
+		command = { type = setflag which = germany7 }
+	}
+
+	action_b = {
+		name = "Let the idea of a Unified Germany die"
+		command = { type = stability value = 2 }
+		command = { type = vp value = -5 }
+		command = { type = relation which = HAB value = 25 }
+		command = { type = relation which = FRA value = 25 }
+		command = { type = relation which = HOL value = 25 }
+		command = { type = relation which = LUX value = 20 }
+		command = { type = relation which = DAN value = 20 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -1 value = 10 }
+	}
+}
+
+#e-2, German state has expanded#
+event = {
+
+	id = 580001
+	trigger = {
+          	 AND = {
+                 	OR = {
+                       		owned = { province = 312 data = -1 }
+                        	vassal = { country = HES country = BRA }
+				NOT = { exists = BRA }
+                  	}
+                  	OR = {
+                        	owned = { province = 305 data = -1 }
+                        	vassal = { country = HES country = MEC }
+				NOT = { exists = MEC }
+			}
+                 	OR = {
+                       		owned = { province = 306 data = -1 }
+                        	vassal = { country = HES country = SHL }
+				NOT = { exists = SHL }
+                  	}
+                  	OR = {
+                        	owned = { province = 310 data = -1 }
+                        	vassal = { country = HES country = HAN }
+				NOT = { exists = HAN }
+                  	}
+                 	OR = {
+                       		owned = { province = 311 data = -1 }
+                        	vassal = { country = HES country = MAG }
+				NOT = { exists = MAG }
+                  	}
+                	OR = {
+                       		owned = { province = 304 data = -1 }
+                        	vassal = { country = HES country = POM }
+				NOT = { exists = POM }
+                  	}
+                  	OR = {
+                        	owned = { province = 331 data = -1 }
+                        	vassal = { country = HES country = SAC }
+				NOT = { exists = SAC }
+			}
+                  	OR = {
+                        	owned = { province = 334 data = -1 }
+                        	vassal = { country = HES country = MUN }
+				NOT = { exists = MUN }
+                  	}
+                 	OR = {
+                       		owned = { province = 347 data = -1 }
+                        	vassal = { country = HES country = THU }
+				NOT = { exists = THU }
+                  	}
+                	OR = {
+                       		owned = { province = 346 data = -1 }
+                        	vassal = { country = HES country = MAI }
+				NOT = { exists = MAI }
+                  	}
+                  	OR = {
+                        	owned = { province = 345 data = -1 }
+                        	vassal = { country = HES country = PFA }
+				NOT = { exists = PFA }
+			}
+                 	OR = {
+                       		owned = { province = 343 data = -1 }
+                        	vassal = { country = HES country = KLE }
+				NOT = { exists = KLE }
+                  	}
+                  	OR = {
+                        	owned = { province = 344 data = -1 }
+                        	vassal = { country = HES country = KOL }
+				NOT = { exists = KOL }
+                  	}
+                 	OR = {
+                       		owned = { province = 373 data = -1 }
+                        	vassal = { country = HES country = BAD }
+				NOT = { exists = BAD }
+                  	}
+                  	OR = {
+                        	owned = { province = 372 data = -1 }
+                        	vassal = { country = HES country = WUR }
+				NOT = { exists = WUR }
+                  	}
+                 	OR = {
+                       		owned = { province = 349 data = -1 }
+                        	vassal = { country = HES country = BAY }
+				NOT = { exists = BAY }
+                  	}
+			flag = germany7
+			atwar = no
+			domestic = { type = centralization value = 5 }
+			stability = 2
+			countrysize = 7
+			NOT = {
+				exists = GER
+			}
+           	}
+	}
+	random = no
+	country = HES
+	name = "German Unification"
+	desc = "With most of the German North united under the banner of Hessen, the elector of Hessen, with the support of his select ministers felt the time was right to declare himself the King of the Germanic people. While he had not the backing of some of the southern states (and several figures within Hessen would also prove troublesome), it was beleived that the new Kingdom of Germany would prosper and survive, and would hold its own against the furious indignation of the Hapsburgs dynasty. Sire, what is to be done, the Hapsburgs warn us one last time not to proceed, shall we declare ourselve the Kingdom of Germany?"
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "All hail the King of Germany!"
+		command = { type = treasury value = -200 }
+		command = { type = stability value = -3 }
+		command = { type = vp value = 50 }
+		command = { type = breakvassal which = HAB }
+		command = { type = breakdynastic which = HAB }
+		command = { type = trigger which = 520002 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = revoltrisk which = 120 value = 6 }
+		command = { type = country which = GER }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = HOL value = -50 }
+		command = { type = relation which = LUX value = -50 }
+		command = { type = relation which = DAN value = -50 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = setflag which = united7 }
+	}
+
+	action_b = {
+		name = "We will stand down on our claims"
+		command = { type = stability value = 1 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = vp value = -25 }
+	}
+}
+
+#hapsburgs outraged, others worried#
+event = {
+
+	id = 580002
+	random = no
+	country = HAB
+	name = "German King Crowned"
+	desc = "One of the German Electors has grown some much in power that he has declared himself King of the Germanic People. We have been lax in trying to curtail this madman's ambition. Sire, we can not allow this meglomaniac the time to strengthen his hold on our people and your lands. He will not stop until you have kissed and licked the dirt off of his boots!"
+	style = 4
+
+	action_a = {
+		name = "Resist this German upstart!"
+		command = { type = relation which = GER value = -100 }
+		command = { type = casusbelli which = GER value = 120 }
+		command = { type = war which = GER }
+		command = { type = INF which = -2 value = 5000 }
+	}
+
+	action_b = {
+		name = "We shall watch them with caution"
+		command = { type = relation which = GER value = -50 }
+		command = { type = stability value = -1 }
+		command = { type = fortress which = -1 value = 1 }
+		command = { type = treasury value = -100 }
+		command = { type = vp value = -10 }
+	}
+}
+
+#Kingdom of Germany consolidates control - east#
+event = {
+
+	id = 580003
+	trigger = {
+		event = 580007
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the East"
+	desc = "With the foundation of the Kingdom, the lengthy process of determining the extent of its borders began. With the foundation of the kingdom originating in the East these were the first to be drawn and claimed by this state. The ultimate aim was to found a Kingdom whereby all German speaking people could call home and whereapon all German nobles should pay homage to their master; the King of Germany."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the East"
+		command = { type = addcore_national which = 289 }
+		command = { type = addcore_national which = 290 }
+		command = { type = addcore_national which = 301 }
+		command = { type = addcore_national which = 302 }
+		command = { type = addcore_national which = 311 }
+		command = { type = addcore_national which = 312 }
+		command = { type = addcore_national which = 313 }
+		command = { type = addcore_national which = 314 }
+		command = { type = addcore_national which = 329 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = POL value = -100 }
+		command = { type = relation which = BOH value = -100 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = SWE value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - north#
+event = {
+
+	id = 580004
+	trigger = {
+		event = 580006
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the North"
+	desc = "The Kingdom's claims also included the rich and vital Baltic and North Sea provinces. These provinces would be vital for Germany's emerging traders. With access to the ports, German merchants began plying their trade and brought in wealth and foreign investments to this resplendant realm."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the North"
+		command = { type = addcore_national which = 306 }
+		command = { type = addcore_national which = 335 }
+		command = { type = addcore_national which = 336 }
+		command = { type = addcore_national which = 305 }
+		command = { type = addcore_national which = 304 }
+		command = { type = addcore_national which = 334 }
+		command = { type = addcore_national which = 310 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = DAN value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = FRA value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - central#
+event = {
+
+	id = 580005
+	trigger = {
+		event = 580004
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the Heartland"
+	desc = "The Heart of Germany lay between the banks of the River Rhine and the Danube. By laying claim to the central heartlands, the German State would envelop the majority of its 'Volk', the essential backbone of this majestic Kingdom."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the Heartlands"
+		command = { type = addcore_national which = 333 }
+		command = { type = addcore_national which = 332 }
+		command = { type = addcore_national which = 331 }
+		command = { type = addcore_national which = 330 }
+		command = { type = addcore_national which = 346 }
+		command = { type = addcore_national which = 347 }
+		command = { type = addcore_national which = 348 }
+		command = { type = addcore_national which = 327 }
+		command = { type = addcore_national which = 373 }
+		command = { type = addcore_national which = 372 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = BOH value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = HEL value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - west#
+event = {
+
+	id = 580006
+	trigger = {
+		flag = united7
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the West"
+	desc = "The Western territories of the Germanic Volk had always been in contention with that of the French who for centuries persisted with their own claim to the land. By claiming the Western marches Germany provided a strong barrier to the false claimants and a reasuring presense to its subjects that worked the land for the glory of the German King."
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the West"
+		command = { type = addcore_national which = 343 }
+		command = { type = addcore_national which = 344 }
+		command = { type = addcore_national which = 345 }
+		command = { type = addcore_national which = 374 }
+		command = { type = addcore_national which = 375 }
+		command = { type = addcore_national which = 387 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = SPA value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany consolidates control - south#
+event = {
+
+	id = 580007
+	trigger = {
+		event = 580005
+		stability = 3
+		atwar = no
+		domestic = { type = aristocracy value = 7 }
+		domestic = { type = centralization value = 7 }
+	}
+	random = no
+	country = GER
+	name = "Kingdom of Germany's claims on the South"
+	desc = "Germany's Southern border had always been a bastion against the encroaching barbarians of the Huns and Slavs. The South and South East was also ripe for colonisation by the Germanic people and indeed many ventured in search of new lands and dreams of rich pastures. These Marches contained a simple folk until a small family called the Hapsburgs burst upon the international scene. Shall we extend our protection to these simple folk and the wayward Austrians?"
+	style = 4
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Lay claim to the South"
+		command = { type = addcore_national which = 388 }
+		command = { type = addcore_national which = 349 }
+		command = { type = addcore_national which = 1612 }
+		command = { type = addcore_national which = 371 }
+		command = { type = addcore_national which = 350 }
+		command = { type = addcore_national which = 351 }
+		command = { type = addcore_national which = 326 }
+		command = { type = addcore_national which = 352 }
+		command = { type = addcore_national which = 369 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = HUN value = -100 }
+		command = { type = relation which = VEN value = -50 }
+		command = { type = relation which = FRA value = -25 }
+	}
+
+	action_b = {
+		name = "Let us not over-reach ourselves"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kingdom of Germany events#
+#Gottfried Wilhelm Leibniz#
+event = {
+	id = 560000
+	trigger = {
+		owned = { province = 310 data = -1 } #hanover#
+	}
+	random = no
+	country = GER
+	name = "EVENTNAME5160"
+	desc = "EVENTHIST5160"
+	style = 4
+	date = { day = 1 month = january year = 1684 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5160A"
+		command = { type = domestic which = INNOVATIVE value = 1 }
+	}
+}
+
+#Johann Sebastian Bach#
+event = {
+	id = 560001
+	trigger = {
+		owned = { province = 331 data = -1 } #sachsen#
+	}
+	random = no
+	country = GER
+	name = "EVENTNAME5170"
+	desc = "EVENTHIST5170"
+	style = 4
+	date = { day = 1 month = january year = 1729 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5170A"
+		command = { type = stability value = 1 }
+		command = { type = infra value = 100 }
+	}
+}
+
+#The League of Augsburg#
+event = {
+
+	id = 560002			#triggered by FRA3127#
+	random = no
+	country = GER
+	name = "EVENTNAME3680"
+	desc = "EVENTHIST3680"
+	style = 3
+
+	action_a ={					#Defy French claims#
+		name = "ACTIONNAME3680A"
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = PRU value = 150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = HAN value = 100 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = HES value = 100 }
+		command = { type = relation which = KLE value = 100 }
+		command = { type = relation which = KOL value = 100 }
+		command = { type = relation which = PFA value = 100 }
+		command = { type = relation which = THU value = 100 }
+	}
+
+	action_b ={					#Ignore it#
+		name = "ACTIONNAME3680B"
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = PRU value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = HAN value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = HES value = -50 }
+		command = { type = relation which = KLE value = -50 }
+		command = { type = relation which = KOL value = -50 }
+		command = { type = relation which = PFA value = -50 }
+		command = { type = relation which = THU value = -50 }
+	}
+}
+
+#The League of Schmalkalden#
+event = {
+
+	id = 560003
+	trigger = {
+		 exists = HAB  
+		 	AND = { 
+				OR = {
+					religion = protestant
+					religion = reformed
+						}
+			}
+	}
+	random = no
+	country = GER
+	name = "EVENTNAME3681"
+	desc = "EVENTHIST3681"
+	style = 2
+
+	date = { day = 1 month = january year = 1527 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1529 }
+
+	action_a ={				#Give it your support#
+		name = "ACTIONNAME3681A"
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = HAN value = 150 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = PFA value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = THU value = 150 }
+		command = { type = relation which = KLE value = 100 }
+		command = { type = relation which = KOL value = 50 }
+		command = { type = relation which = BAY value = 50 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={				#Ignore it#
+		name = "ACTIONNAME3681B"
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = HAN value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = PFA value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = relation which = THU value = -100 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#The Evangelic Union#
+event = {
+		
+	id = 560004
+	trigger = {
+		 OR = {
+			religion = protestant
+			religion = reformed
+				}
+			}		
+	random = no
+	country = GER
+	name = "EVENTNAME3682"
+	desc = "EVENTHIST3682"
+	style = 3
+
+	date = { day = 1 month = january year = 1605 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a ={				#Prepare to Join#
+		name = "ACTIONNAME3682A"
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = HAN value = 150 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = PFA value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = THU value = 150 }
+		command = { type = relation which = SHL value = 150 }
+		command = { type = relation which = KLE value = 100 }
+		command = { type = relation which = KOL value = 50 }
+		command = { type = relation which = BAY value = 50 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={				#Stay Neutral#
+		name = "ACTIONNAME3682B"
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = HAN value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = PFA value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = relation which = THU value = -100 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#The Catholic League#
+event = {
+
+	id = 560005
+	trigger = {
+		 OR = {
+			religion = catholic
+			religion = counterreform
+				}
+			}			
+	random = no
+	country = GER
+	name = "EVENTNAME3683"
+	desc = "EVENTHIST3683"
+	style = 3
+
+	date = { day = 1 month = january year = 1607 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a ={				#Prepare to Join#
+		name = "ACTIONNAME3683A"
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = BRA value = -150 }
+		command = { type = relation which = HAN value = -150 }
+		command = { type = relation which = HES value = -150 }
+		command = { type = relation which = PFA value = -150 }
+		command = { type = relation which = SAC value = -150 }
+		command = { type = relation which = THU value = -150 }
+		command = { type = relation which = SHL value = -150 }
+		command = { type = relation which = KLE value = 50 }
+		command = { type = relation which = KOL value = 100 }
+		command = { type = relation which = BAY value = 100 }
+		command = { type = relation which = PAP value = 100 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = HAB value = 150 }
+	}
+
+	action_b ={				#Stay Neutral#
+		name = "ACTIONNAME3683B"
+		command = { type = relation which = BRA value = 50 }
+		command = { type = relation which = HAN value = 50 }
+		command = { type = relation which = HES value = 50 }
+		command = { type = relation which = PFA value = 50 }
+		command = { type = relation which = SAC value = 50 }
+		command = { type = relation which = THU value = 50 }
+		command = { type = relation which = BAY value = -50 }
+		command = { type = relation which = KLE value = -50 }
+		command = { type = relation which = KOL value = -50 }
+		command = { type = relation which = HAB value = -100 }
+	}
+}
+
+#The Effects of the Pragmatic Sanction#
+event = {
+
+	id = 560006
+	random = no
+	country = GER
+	name = "EVENTNAME3616"
+	desc = "EVENTHIST3616"
+	style = 4
+
+	date = { day = 1 month = january year = 1741 }
+	offset = 10
+	deathdate = { day = 1 month = june year = 1741 }
+
+	action_a ={				#Anti-Habsburg#
+		name = "ACTIONNAME3616A"
+		command = { type = casusbelli which = HAB value = 36 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = PRU value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = GEN value = 50 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = RUS value = -100 }
+		command = { type = relation which = HES value = -50 }
+		command = { type = relation which = HAN value = -50 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={				#Neutral#
+		name = "ACTIONNAME3616B"
+		command = { type = relation which = PRU value = -50 }
+		command = { type = relation which = SAC value = -50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = HOL value = 100 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = relation which = HES value = 100 }
+		command = { type = relation which = HAN value = 100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = stability value = 1 }
+	}
+	action_c ={				#Pro-Habsburg#
+		name = "ACTIONNAME3616C"
+		command = { type = relation which = PRU value = -150 }
+		command = { type = relation which = SAC value = -150 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HOL value = 100 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = HAN value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = stability value = -2 }
+		command = { type = casusbelli which = PRU value = 12 }
+	}
+}
+
+#The Great Northern Conflict#
+event = {
+
+	id = 560007
+	trigger = {
+			vassal ={
+				country = GER
+				country = POL
+				}  
+		 	AND = {
+				OR = {
+					owned = { province = 282 data =SWE }
+					owned = { province = 283 data =SWE }
+					owned = { province = 289 data =SWE }
+					owned = { province = 290 data =SWE }
+					owned = { province = 301 data =SWE }
+					owned = { province = 303 data =SWE }
+					owned = { province = 300 data =SWE }
+					owned = { province = 331 data =SWE }
+					owned = { province = 332 data =SWE }
+					}
+				}
+		}
+	random = no
+	country = GER
+	name = "EVENTNAME3621"
+	desc = "EVENTHIST3621"
+	style = 4
+
+	date = { day = 15 month = june year = 1697 }
+	offset = 0
+	deathdate = { day = 1 month = april year = 1700 }
+
+	action_a ={				#Advance!#
+		name = "ACTIONNAME3621A"
+		command = { type = casusbelli which = SWE value = 36 }
+		command = { type = relation which = SWE value = -150 }
+		command = { type = relation which = DAN value = 150 }
+		command = { type = relation which = RUS value = 150 }
+		command = { type = relation which = POL value = 200 }
+		command = { type = INF which = -1 value = 15000 }
+		command = { type = CAV which = -3 value = 3000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={				#Let the Poles meet the Elephant first#
+		name = "ACTIONNAME3621B"
+		command = { type = casusbelli which = SWE value = 36 }
+		command = { type = relation which = SWE value = -100 }
+		command = { type = relation which = DAN value = 50 }
+		command = { type = relation which = RUS value = -150 }
+		command = { type = relation which = POL value = 50 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#NEW RESTORATION EVENT - GERMANY
+#french empire lose control of paris
+event = {
+	id = 560023
+	trigger = {
+		monarch = 04018
+		control = { province = 385 data = GER }
+	}
+	random = no
+	country = FRA
+	name = "German Troops enter Paris"
+	desc = "All is lost, Napoleons Gambit has failed. Enemy troops have entered our capital."
+	style = 5
+
+	date = { day = 1 month = january year = 1809 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "All is lost"
+		command = { type = trigger which = 560008 }
+	}
+}
+
+#The Restoration of the French Monarchy#
+event = {
+
+	id = 560008
+	random = no
+	country = GER
+	name = "EVENTNAME3784"
+	desc = "EVENTHIST3784"
+	style = 5
+
+	action_a ={				#The Bourbons are reinstalled#
+		name = "ACTIONNAME3784A"
+		command = { type = vp value = 500 }
+		command = { type = treasury value = 500 }
+		command = { type = relation which = FRA value = 200 }
+		command = { type = stability value = 3 }
+		command = { type = trigger which = 3788 }
+	}
+}
+
+#capital move to Berlin#
+event = {
+
+	id = 560009
+	trigger = {
+		owned = { province = 312 data = GER }
+		atwar = no
+		}
+	random = no
+	country = GER
+	name = "Capital to Berlin"
+	desc = "Historically after the restoration of the Kingdom of Germany in the late 1800s the capital of the Kingdom was the old Brandenburgian city of Berlin. We have the honour of owning this majestic city, shall we move our capital to Berlin?"
+	style = 2
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "Yes, let us move"
+		command = { type = capital which = 312 }
+		command = { type = vp value = 5 }
+	}
+
+	action_b = {
+		name = "No we are fine here"
+		command = { type = vp value = -1 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#the german maid#
+event = {
+
+	id = 560010
+	random = no
+	country = GER
+	name = "The German Maid"
+	desc = "EVENTHIST560010"
+	style = 3
+
+	date = { day = 1 month = january year = 1694 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1706 }
+
+	action_a = {
+		name = "Civil War!"
+		command = { type = revoltrisk which = 36 value = 6 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = 331 }
+		command = { type = INF which = -2 value = 10000 }
+	}
+}
+
+#Queen Anna of Wittelsbach#
+event = {
+
+	id = 560011
+	trigger = {
+		monarch = 16520
+	}
+	random = no
+	country = GER
+	name = "Queen Anna von Wittelsbach"
+	desc = "In 1694 the young King Elrich von Mittelmarche-Bek died without an heir at the age of 20. The Throne of Germany then passed to his younger sister Anna who had married into the Wittelsbach dynasty of Bavaria, however her husband Otto von Wittelsbach had died before the marriage could be consumated and she had been returned reluctantly to Heidelberg. Now however, she had been made Queen of Germany, and many of her enemies were within the state rather than without. Queen Anna would either have to tread carefully or cow her opponents with her forceful personality."
+	style = 3
+
+	date = { day = 1 month = january year = 1694 }
+	offset = 10
+	deathdate = { day = 31 month = december year = 1706 }
+
+	action_a = {
+		name = "I am Queen"
+		command = { type = religion which = catholic }
+		command = { type = provincereligion which = -1 value = catholic }
+		command = { type = capital which = 349 }
+		command = { type = dynastic which = BAY }
+		command = { type = domestic which = aristocracy value = -1 }
+		command = { type = domestic which = innovative value = -1 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = relation which = HAB value = 25 }
+		command = { type = relation which = PAP value = 75 }
+		command = { type = relation which = SWE value = -75 }
+		command = { type = relation which = DAN value = -50 }
+	}
+
+	action_b = {
+		name = "Tread carefully"
+		command = { type = stability value = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = provincereligion which = -1 value = reformed }
+		command = { type = revoltrisk which = 12 value = 1 }
+		command = { type = ADM which = 2 value = 24 }
+		command = { type = DIP which = -1 value = 24 }
+		command = { type = domestic which = aristocracy value = 2 }
+		command = { type = domestic which = centralization value = -2 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = relation which = HAB value = -25 }
+		command = { type = relation which = PAP value = -75 }
+		command = { type = relation which = SWE value = 75 }
+		command = { type = relation which = DAN value = 50 }
+	}
+}
+
+#ralph von mittelsmarche-bek#
+event = {
+
+	id = 560012
+	random = no
+	country = GER
+	name = "Succession of Ralph I"
+	desc = "EVENTHIST560012"
+	style = 4
+
+	date = { day = 1 month = january year = 1707 }
+	offset = 30
+	deathdate = { day = 31 month = december year = 1709 }
+
+	action_a = {
+		name = "Long live the King!"
+		command = { type = religion which = protestant }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = capital which = 331 }
+		command = { type = domestic which = innovative value = -2 }
+		command = { type = domestic which = serfdom value = -2 }
+		command = { type = missionaries value = 6 }
+	}
+}
+
+#pseudo-historical events for franco-german union in the regency of louis XV#
+#union with the house of orleans#
+event = {
+
+	id = 560013
+	trigger = {
+		NOT = {
+			event = 560014
+			}
+		}
+	random = no
+	country = GER
+	name = "Marriage of Monsieur and Madame"
+	desc = "In 1670 the first wife of Duc Philippe I of Orleans, Henrietta of England died childless. Philippe (also known as Monsieur) was obliged to remarry to provide an heir, even though his own sexual proclivities lay elsewhere (he was a renowned homosexual). Monsieur was the  brother of the French Sun-King Louis XIV and therefore an important man and he found his equal in the personage of his second wife Elisabeth-Charlotte of Bavaria (Madame), who had grown up in the fertile lands of the Palatinate. Their union produced a boy (Philippe II) who would become the regent of the young Louis XV of France. However, Elisabeth-Charlotte was also the youngest sister to Maximillian von Mittelmarche-Bek and therfore a part of the German Royal family, and this was to have major consequences for Europe when the Sun-King died."
+	style = 3
+
+
+	date = { day = 1 month = january year = 1670 }
+	offset = 30
+	deathdate = { day = 31 month = december year = 1671 }
+
+	action_a = {
+		name = "A worthy match"
+		command = { type = dynastic which = FRA }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#if no GER the palatinate should still get the RM to france#
+event = {
+
+	id = 560014
+	trigger = {
+		NOT = {
+			event = 560013
+			}
+		}
+	random = no
+	country = PFA
+	name = "Marriage of Monsieur and Madame"
+	desc = "In 1670 the first wife of Duc Philippe I of Orleans, Henrietta of England died childless. Philippe (also known as Monsieur) was obliged to remarry to provide an heir, even though his own sexual proclivities lay elsewhere (he was a renowned homosexual). Monsieur was the  brother of the French Sun-King Loius XIV and therefore an important man and he found his equal in the personage of his second wife Elisabeth-Charlotte of Bavaria (Madame), who had grown up in the fertile lands of the Palatinate. Their union produced a boy (Philippe II) who would become the regent of the young Louis XV of France."
+	style = 3
+
+
+	date = { day = 1 month = january year = 1670 }
+	offset = 30
+	deathdate = { day = 31 month = december year = 1671 }
+
+	action_a = {
+		name = "A worthy match"
+		command = { type = dynastic which = FRA }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = stability value = 1 }
+	}
+}
+
+
+
+#sun-king dies, philippe becomes regent of france and is king of Germany#
+event = {
+
+	id = 560016
+	trigger = {
+		dynastic = { country = FRA country = GER }
+		}
+	country = GER
+	name = "Philip of Orleans becomes King of Germany"
+	desc = "EVENTHIST560016"
+	style = 4
+
+	date = { day = 1 month = january year = 1716 }
+	offset = 10
+	deathdate = { day = 31 month = december year = 1718 }
+
+	action_a = {
+		name = "All hail King Philip I"
+		command = { type = treasury value = 500 }
+		command = { type = alliance which = FRA }
+		command = { type = vassal which = FRA }
+		command = { type = capital which = 345 }
+		command = { type = add_countryculture which = french }
+		command = { type = relation which = FRA value = 400 }
+		command = { type = relation which = ENG value = -200 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = HAB value = -100 }
+	}
+}
+
+#revolutionary Germany - french rad. rep.#
+event = {
+
+	id = 560017
+	trigger = {
+			exists = FRA
+			exists = USA
+			event = 3342
+			domestic = {
+						type = aristocracy
+						value = 8
+						}
+			}
+	random = no
+	country = GER
+	name = "Revolution has struck France!"
+	desc = "The House of Orleans ruled Germany successfully from the time of Philip I, but with revolution brewing in Europe and France's support for the United States' independence from Britain caused concern in central Europe. When the French overthrew the government and formed a radical republic, Emigres from France poured into neighbouring Germany. The German King, Philip II Egalite allowed the Emigres into the country and pondered what to do next. As the revolutionaries in France turned their gaze out to neighbouring regimes, the German nobles began to panic. The peasants on the Franco-German border began to ponder the benefits of the enlightenment and of revolution, while the nobles either brutally suppressed such ideas or fled to the Royal court. Other nobles began secret negotiations with the revolutionaries in a doomed bid to save their property and valuables. The Great German Kingdom began to fragment and fall apart, only the actions of its enlightened King could hold the pieces together."
+	style = 4
+
+	date = { day = 1 month = january year = 1790 }
+	offset = 0
+	deathdate = { day = 31 month = december year = 1792 }
+
+	action_a = {
+		name = "Limit the damage here"
+		command = { type = sleepevent which = 560018 }
+		command = { type = sleepevent which = 560019 }
+		command = { type = sleepmonarch which = 16531 }
+		command = { type = domestic which = CENTRALIZATION value = -4 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = SERFDOM value = -4 }
+		command = { type = domestic which = INNOVATIVE value = 4 }
+		command = { type = domestic which = OFFENSIVE value = 2 }
+		command = { type = domestic which = LAND value = 2 }
+		command = { type = domestic which = QUALITY value = -2 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = stability value = -4 }
+	}
+}
+
+#revolutionary Germany - french rep. monarchy#
+event = {
+
+	id = 560018
+	trigger = {
+		exists = FRA
+		exists = USA
+		event = 3779
+		domestic = {
+			type = aristocracy
+			value = 6
+		}
+		NOT = {
+			domestic = {
+				type = aristocracy
+				value = 8
+			}
+		}
+	}
+	random = no
+	country = GER
+	name = "Revolution has struck France!"
+	desc = "The House of Orleans ruled Germany successfully from the time of Philip I, but with revolution brewing in Europe and France's support for the United States' independence from Britain caused concern in central Europe. When the French overthrew the government and formed a republican monarchy, Emigres from France poured into neighbouring Germany. The German King, Philip II Egalite allowed the Emigres into the country and pondered what to do next. As the revolutionaries in France turned their gaze out to neighbouring regimes, the German nobles began to panic. The peasants on the Franco-German border began to ponder the benefits of the enlightenment and of revolution, while the nobles either brutally suppressed such ideas or fled to the Royal court. Other nobles began secret negotiations with the revolutionaries in a doomed bid to save their property and valuables. The Great German Kingdom began to fragment and fall apart, only the actions of its enlightened King could hold the pieces together."
+	style = 4
+
+	date = { day = 1 month = january year = 1790 }
+	offset = 0
+	deathdate = { day = 31 month = december year = 1792 }
+
+	action_a = {
+		name = "Limit the damage here"
+		command = { type = sleepevent which = 560017 }
+		command = { type = sleepevent which = 560019 }
+		command = { type = sleepmonarch which = 16526 }
+		command = { type = sleepmonarch which = 16527 }
+		command = { type = sleepmonarch which = 16528 }
+		command = { type = sleepmonarch which = 16529 }
+		command = { type = wakemonarch which = 16531 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = domestic which = QUALITY value = -1 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = stability value = -3 }
+	}
+}
+
+#revolutionary Germany - french constitutional monarchy#
+event = {
+
+	id = 560019
+	trigger = {
+		exists = FRA
+		NOT = {
+			event = 560017
+			event = 560018
+		}
+	}
+	random = no
+	country = GER
+	name = "Revolution has struck France!"
+	desc = "The House of Orleans ruled Germany successfully from the time of Philip I, but with revolution brewing in Europe and France's support for the United States' independence from Britain caused concern in central Europe. When the French overthrew the government and formed a constitutional monarchy, Emigres from France poured into neighbouring Germany. The German King, Philip II Egalite allowed the Emigres into the country and pondered what to do next. As the revolutionaries in France turned their gaze out to neighbouring regimes, the German nobles began to panic. The peasants on the Franco-German border began to ponder the benefits of the enlightenment and of revolution, while the nobles either brutally suppressed such ideas or fled to the Royal court. Other nobles began secret negotiations with the revolutionaries in a doomed bid to save their property and valuables. The Great German Kingdom began to fragment and fall apart, only the actions of its enlightened King could hold the pieces together."
+	style = 4
+
+	date = { day = 1 month = january year = 1790 }
+	offset = 0
+	deathdate = { day = 31 month = december year = 1792 }
+
+	action_a = {
+		name = "Limit the damage here"
+		command = { type = sleepmonarch which = 16526 }
+		command = { type = sleepmonarch which = 16527 }
+		command = { type = sleepmonarch which = 16528 }
+		command = { type = sleepmonarch which = 16529 }
+		command = { type = wakemonarch which = 16531 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = domestic which = QUALITY value = -1 }
+		command = { type = desertion which = -1 value = 1000 }
+		command = { type = desertion which = -1 value = 1000 }
+		command = { type = desertion which = -1 value = 1000 }
+		command = { type = desertion which = -1 value = 1000 }
+		command = { type = desertion which = -1 value = 1000 }
+		command = { type = desertion which = -1 value = 1000 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#nobles revolt against egalite's social reforms#
+event = {
+
+	id = 560020
+	trigger = {
+		event = 560017
+		}
+	random = no
+	country = GER
+	name = "Noble Revolt against Egalite"
+	desc = "EVENTNAME560020"
+	style = 4
+
+	date = { day = 1 month = january year = 1792 }
+	offset = 0
+	deathdate = { day = 31 month = december year = 1792 }
+
+	action_a = {
+		name = "Down with the Revolution!"
+		command = { type = breakdynastic which = FRA }
+		command = { type = breakvassal which = FRA }
+		command = { type = war which = FRA }
+		command = { type = revolt which = -1 }
+		#command = { type = ai which = antifrench.ai }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = capital which = 331 }
+		command = { type = remove_countryculture which = french }
+		command = { type = domestic which = aristocracy value = 1 }
+		command = { type = domestic which = innovative value = -3 }
+		command = { type = domestic which = serfdom value = -3 }
+		command = { type = wakeleader which = 21022 }
+		command = { type = wakeleader which = 21023 }
+		command = { type = wakeleader which = 21024 }
+		command = { type = wakeleader which = 21025 }
+	}
+}
+
+#start of the von beks (unlikely to be kicked, too early)#
+event = {
+
+	id = 560021
+	random = no
+	country = GER
+	name = "Reign of the von Bek dynasty"
+	desc = "The German Kingdom had many notable dynasties, and many other notable ones aiming at securing the throne for themselves. Nevertheless, the most successful was that of the von Bek family from Northern Germany. The von Bek's were reputed to be from either Bremen or Magdeburg originally, but it is well known that they had several holdings within these areas. In 1460 King Alexander II died with only a daughter to carry on his line. This daughter Birgit von Schwarzkassel had married Heinrich von Bek and this was the start of the von Bek dynasty which would rule the German Kingdom until 1694."
+	style = 1
+
+	date = { day = 1 month = january year = 1460 }
+	offset = 0
+	deathdate = { day = 31 month = december year = 1460 }
+
+	action_a = {
+		name = "God save von Bek!"
+		command = { type = stability value = 1 }
+	}
+}
+
+#the marriage of friedrich I von bek and katerina von mittelmarche#
+event = {
+
+	id = 560022
+	random = no
+	country = GER
+	name = "The marriage of von Bek to von Mittelmarche"
+	desc = "In 1642 the future King Friedrich I von Bek married the richest dowager in Germany, the domineering but stunningly beautiful Katerina Maria Radziwill von Mittelmarche from Brandenburg. The marriage between these two houses would cement the German Kingdom and provide the Kingdom with some of its most able rulers. The House of Mittelmarche also had close relations with the Polish Kingdom and the Radziwill's were a powerful family within Poland-Lithuania."
+	style = 3
+
+	date = { day = 1 month = january year = 1642 }
+	offset = 30
+	deathdate = { day = 31 month = december year = 1643 }
+
+	action_a = {
+		name = "Bless these houses"
+		command = { type = relation which = POL value = 50 }
+		command = { type = relation which = LIT value = 50 }
+		command = { type = dynastic which = POL }
+		command = { type = stability value = 1 }
+	}
+}

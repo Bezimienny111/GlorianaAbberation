@@ -1,0 +1,151 @@
+######################################
+### French Regency events for ajf  ###
+### by Alex J 'ayeshteni' Fowler   ###
+######################################
+
+#who will be the regent of France#
+event = {
+
+	id = 120720
+	trigger = {
+		NOT = {
+			event = 3774
+		}
+	}
+	random = no
+	country = FRA
+	name = "We need a Regent"
+	desc = "EVENTHIST120720"
+	style = 4
+
+	date = { day = 1 month = september year = 1715 }
+
+	action_a = {
+		name = "Philippe, duc d'Orleans"
+		command = { type = wakemonarch which = 13044 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = ENG value = 50 }
+		command = { type = stability value = 1 }
+		command = { type = domestic which = innovative value = 2 }
+		command = { type = domestic which = aristocracy value = -1 }
+		command = { type = population which = 385 value = 2000 }
+		command = { type = setflag which = dubois }
+	}
+
+	action_b = {
+		name = "Louis Auguste, duc du Maine"
+		command = { type = wakemonarch which = 13045 }
+		command = { type = relation which = SPA value = 25 }
+		command = { type = stability value = 1 }
+		command = { type = domestic which = aristocracy value = 1 }
+		command = { type = domestic which = centralization value = -2 }
+		command = { type = inflation value = 3 }
+	}
+
+	action_c = {
+		name = "Philip V of Spain"
+		trigger = {
+			SPA = { monarch = 04150 }
+		}
+		command = { type = wakemonarch which = 13046 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = stability value = -1 }
+		command = { type = domestic which = innovative value = -1 }
+		command = { type = trigger which = 120721 }
+	}
+}
+
+#Philip V of Spain becomes regent#
+event = {
+
+	id = 120721
+	random = no
+	country = SPA
+	name = "Felipe V, Regent of France"
+	desc = "The Regency Council in France have elected the young King Louis XV's uncle Felipe V of Spain to be Regent of France. This will cause panic across most of Europe at the fear of the two crowns of Spain and France being merged. If anything was to befall the young King of France, Felipe would be in the right place to declare himself King of France as the rightful living heir to Louis XIV. Sire, this is a great opportunity, one we cannot afford to pass up."
+	style = 4
+
+	action_a = {
+		name = "Let it be so"
+		command = { type = vassal which = FRA }
+		command = { type = alliance which = FRA }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = PAP value = 50 }
+		command = { type = relation which = SCO value = 50 }
+		command = { type = relation which = FRA value = 100 }
+	}
+}
+
+#affair of the bonnet#
+event = {
+
+	id = 120722
+	trigger = {
+		NOT = {
+			event = 3774
+		}
+	}
+	random = no
+	country = FRA
+	name = "Affair of the Bonnet"
+	desc = "At the reading of Louis XIV's will a group of Dukes headed by Saint-Simon, intended to use the ocassion to demand the return of the custom whereby the president of Parlement had to take off his hat when addressing the Dukes. This may sound trivial, but it had huge ramifications and would determine the order of precedence and rank if allowed. Historically the motion never even passed the lips of Saint-Simon as other more momentous events unfolded. But, what if?"
+	style = 4
+
+	date = { day = 1 month = september year = 1715 }
+	offset = 30
+	deathdate = { day = 30 month = november year = 1715 }
+
+	action_a = {
+		name = "There are more important things than this"
+		command = { type = vp value = 1 }
+	}
+
+	action_b = {
+		name = "accept the demand"
+		command = { type = domestic which = aristocracy value = 1 }
+		command = { type = treasury value = -50 }
+	}
+
+	action_c = {
+		name = "refuse this nonsense"
+		command = { type = domestic which = aristocracy value = -1 }
+	}
+}
+
+#cardinal dubois#
+event = {
+
+	id = 120723
+	trigger = {
+			flag = dubois
+		}
+	random = no
+	country = FRA
+	name = "Guillaume Dubois"
+	desc = "Guillaume Dubois was a close friend and confidant of Philippe d'Orleans, and was also (supposedly) a man of the cloth. During Philippe's Regency, Dubois often acted as the Duc's unofficial ambassador for the more discrete political missions. It was through the machinations of Dubois (under the guise of an art collector in Holland) that contact was made with the English that would improve the relations between France and England and that would drive a wedge between the French and the Spanish. Dubois' ambition was to become a Cardinal, an ambition which would come to fruition. Dubois, a man of France was despised by the French nobles, but died of natural causes at 4 o'clock in the afternoon, 10th of August 1723."
+	style = 4
+
+	date = { day = 1 month = september year = 1715 }
+	offset = 30
+	deathdate = { day = 30 month = november year = 1715 }
+
+	action_a = {
+		name = "A fine minister!"
+		command = { type = domestic which = aristocracy value = -1 }
+		command = { type = domestic which = innovative value = -2 }
+		command = { type = diplomats value = 6 }
+		command = { type = ADM which = 2 value = 100 }
+		command = { type = DIP which = 4 value = 100 }
+		command = { type = relation which = ENG value = 50 }
+		command = { type = relation which = SPA value = -75 }
+	}
+
+	action_b = {
+		name = "No, I don't trust this man"
+		command = { type = domestic which = aristocracy value = 2 }
+		command = { type = relation which = SPA value = 25 }
+	}
+}

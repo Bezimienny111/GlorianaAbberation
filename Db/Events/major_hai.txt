@@ -1,0 +1,63 @@
+# Haiti #
+
+# A Land Divided #
+event = {
+
+	id = 3694
+	trigger = {
+		OR = {
+			event = 3342
+			event = 3779
+		}
+	}
+	random = no
+	country = HAI
+	name = "A Land Divided"
+	desc = "EVENTHIST3694"
+
+	style = "3694"
+
+	date = { day = 1 month = january year = 1807 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1811 }
+
+	action_a ={
+		name = "Support the Royalists"		#Support the Royalists#
+		command = { type = sleepleader which = 09923 } # Jean-Pierre Boyer
+		command = { type = revoltrisk which = 60 value = 4 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = domestic which = OFFENSIVE value = -1 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = USA value = -100 }
+		command = { type = provincetax which = 141 value = 2 }
+		command = { type = provincetax which = 142 value = 3 }
+		command = { type = fortress which = 142 value = 1 }
+		command = { type = stability value = -3 }
+	}
+
+	action_b ={
+		name = "Support the Republicans"		#Support the Republicans#
+		command = { type = wakemonarch which = 08325 } # Alexandre Sabès Pétion
+		command = { type = wakemonarch which = 08326 } # Jean-Pierre Boyer
+		command = { type = sleepmonarch which = 08324 } # Henri II
+		command = { type = revoltrisk which = 60 value = 3 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = domestic which = QUALITY value = -1 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = USA value = 100 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = provincemanpower which = 141 value = 1 }
+		command = { type = provincemanpower which = 142 value = 2 }
+		command = { type = treasury value = 250 }
+		command = { type = stability value = -2 }
+	}
+}

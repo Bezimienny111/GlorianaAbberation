@@ -1,0 +1,404 @@
+#-----------------------------------------------------------------------------
+# Orthodoxy Events
+
+#The Council of Alexandria
+event = {
+	id = 3001435
+	trigger = {
+		NOT = { event = 3001215 }
+		owned = { province = 744 data = -1 } #Alexandria
+		owned = { province = 745 data = -1 } #Delta
+		owned = { province = 743 data = -1 } #Cataract
+		owned = { province = 746 data = -1 } #Cairo
+	}
+	random = NO
+	country = BYZ
+	name = "The Council of Alexandria"
+	desc = "The Copts of Egypt, although of great help in the fight against the Arabs, are schismatic from the mother church. In fact, however, infelicitous phrasing and power politics were certainly more evident at Chalcedon than any false doctrine. Yet, because Chalcedon ratified the powers of the Patriarch at Constantinople, a new ecumenical council needed to be convened at Alexandria. After over a millenium, the Miaphysites finally achieved recognition of their (in fact orthodox) assertion that the divine and human natures of our Lord are 'incarnate in one God the Logos.'"
+	date = { year = 1337 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Ratify the dictates of the council"
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = add_countryculture which = arabic }
+		command = { type = stability value = -3 }
+		command = { type = revolt which = 357 } #Thrace
+		command = { type = revolt which = 357 } #Thrace
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = sleepevent which = 3001386 } #BYZ: Nubia Appeals to the Empire for Aid I
+	}
+	action_b = {
+		name = "We shall defend orthodoxy with our lives!"
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = stability value = 3 }
+		command = { type = treasury value = 250 }
+		command = { type = revolt which = 744 }
+		command = { type = revolt which = 745 }
+		command = { type = revolt which = 743 }
+		command = { type = revolt which = 746 }
+		command = { type = relation which = NUB value = -150 }
+		command = { type = relation which = ETH value = -250 }
+		command = { type = sleepevent which = 3001387 } #BYZ: Nubia Appeals to the Empire for Aid II
+		command = { type = sleepevent which = 3001391 } #ethiopian celebration
+	}
+}
+
+#The Council of Alexandria
+event = {
+	id = 3001436
+	trigger = {
+		event = 3001215
+		owned = { province = 744 data = -1 } #Alexandria
+		owned = { province = 745 data = -1 } #Delta
+		owned = { province = 743 data = -1 } #Cataract
+		owned = { province = 746 data = -1 } #Cairo
+	}
+	random = NO
+	country = BYZ
+	name = "The Council of Alexandria"
+	desc = "The Copts of Egypt had been split from the mother church over the same issues as the Armenians. Since an agreement had already been worked out, a new ecumenical council was quickly convened and ratified at Alexandria. After over a millenium, the Miaphysites finally achieved recognition of their (in fact orthodox) assertion that the divine and human natures of our Lord are 'incarnate in one God the Logos.'"
+	date = { year = 1337 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Ratify the dictates of the council"
+		command = { type = add_countryculture which = arabic }
+		command = { type = stability value = 1 }
+		command = { type = revolt which = 357 } #Thrace
+		command = { type = sleepevent which = 3001386 } #BYZ: Nubia Appeals to the Empire for Aid I
+	}
+}
+
+#The Council of Antioch
+event = {
+	id = 3001437
+	trigger = {
+		owned = { province = 485 data = -1 } #Aleppo
+		OR = {
+			owned = { province = 486 data = -1 } #Nuyssaybin
+			owned = { province = 488 data = -1 } #Kirkuk
+			owned = { province = 489 data = -1 } #Iraq
+			owned = { province = 558 data = -1 } #Howrah
+			owned = { province = 560 data = -1 } #Orissa
+			owned = { province = 561 data = -1 } #Berhampur
+			owned = { province = 564 data = -1 } #Palakimedi
+			owned = { province = 565 data = -1 } #Yanam
+			owned = { province = 571 data = -1 } #Madras
+			owned = { province = 572 data = -1 } #Pondicherry
+			owned = { province = 573 data = -1 } #Cochin
+			owned = { province = 574 data = -1 } #Trivandrum
+			owned = { province = 575 data = -1 } #Madukai
+			owned = { province = 568 data = -1 } #Mangalore
+			owned = { province = 569 data = -1 } #Kerala
+			owned = { province = 548 data = -1 } #Bombay
+			owned = { province = 549 data = -1 } #Goa
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "The Council of Antioch"
+	desc = "With our growing presence in the East, we have encountered the followers of the Nestorian church. The Patriarch has consented to try with a new council in the City of God, Antioch. At Ephesus Nestorios and his followers were accused of believing that the Lord had only a human nature. The Nestorian bishops are at pains to explain that this is not in fact the case. Unfortunately, the Nestorians still seem determined to refer to Maria only as the Khristotokos (Christ-bearer) and not as the Theotokos (Mother of God,) believing that the divine and human natures of Our Redeemer were distinct and divisible. There is no compromise possible with such heresy, but is the honor of the Protectress of our City and scriptural exactness worth cutting ties that could help us in India and Central Asia?"
+	
+	date = { year = 1337 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Allow the Katholikoi to set the usage"
+		command = { type = domestic which = INNOVATIVE value = 3 }
+		command = { type = add_countryculture which = kurdish }
+		#there is no getting around the heresy; it's tolerance that's being allowed
+		command = { type = revoltrisk which = 600 value = 5 }
+		command = { type = stability value = -2 } #the Greeks were very attached to Mary
+		command = { type = addcore_national which = 488 } #Kirkuk
+		command = { type = addcore_national which = 489 } #Iraq
+		command = { type = addcore_national which = 558 } #Howrah
+		command = { type = addcore_national which = 560 } #Orissa
+		command = { type = addcore_national which = 561 } #Berhampur
+		command = { type = addcore_national which = 564 } #Palakimedi
+		command = { type = addcore_national which = 565 } #Yanam
+		command = { type = addcore_national which = 571 } #Madras
+		command = { type = addcore_national which = 572 } #Pondicherry
+		command = { type = addcore_national which = 573 } #Cochin
+		command = { type = addcore_national which = 574 } #Trivandrum
+		command = { type = addcore_national which = 575 } #Madukai
+		command = { type = addcore_national which = 568 } #Mangalore
+		command = { type = addcore_national which = 569 } #Kerala
+		command = { type = addcore_national which = 548 } #Bombay
+		command = { type = addcore_national which = 549 } #Goa
+		command = { type = revolt which = 744 } #the Copts to Christ's single nature as God and man
+		command = { type = revolt which = 744 }
+		command = { type = revolt which = 744 }
+	}
+	action_b = {
+		name = "She is the Theotokos! and you will acknowledge her as such!"
+		command = { type = stability value = 1 }
+		command = { type = revolt which = 488 } #Kirkuk
+		command = { type = revolt which = 489 } #Iraq
+		command = { type = revolt which = 558 } #Howrah
+		command = { type = revolt which = 560 } #Orissa
+		command = { type = revolt which = 561 } #Berhampur
+		command = { type = revolt which = 564 } #Palakimedi
+		command = { type = revolt which = 565 } #Yanam
+		command = { type = revolt which = 571 } #Madras
+		command = { type = revolt which = 572 } #Pondicherry
+		command = { type = revolt which = 573 } #Cochin
+		command = { type = revolt which = 574 } #Trivandrum
+		command = { type = revolt which = 575 } #Madukai
+		command = { type = revolt which = 568 } #Mangalore
+		command = { type = revolt which = 569 } #Kerala
+		command = { type = revolt which = 548 } #Bombay
+		command = { type = revolt which = 549 } #Goa
+		command = { type = sleepevent which = 3001438 } #Byz East India Company
+	}
+}
+
+#The Byzantine East India Company
+event = {
+	id = 3001438
+	trigger = {
+		event = 3001437 #St. Thomas Christians
+		OR = {
+			owned = { province = 494 data = -1 } #Sinai
+			owned = { province = 508 data = -1 } #Basra
+		}
+		OR = {
+			owned = { province = 485 data = -1 } #Aleppo
+			owned = { province = 486 data = -1 } #Nuyssaybin
+			owned = { province = 558 data = -1 } #Howrah
+			owned = { province = 560 data = -1 } #Orissa
+			owned = { province = 561 data = -1 } #Berhampur
+			owned = { province = 564 data = -1 } #Palakimedi
+			owned = { province = 565 data = -1 } #Yanam
+			owned = { province = 571 data = -1 } #Madras
+			owned = { province = 572 data = -1 } #Pondicherry
+			owned = { province = 573 data = -1 } #Cochin
+			owned = { province = 574 data = -1 } #Trivandrum
+			owned = { province = 575 data = -1 } #Madukai
+			owned = { province = 568 data = -1 } #Mangalore
+			owned = { province = 569 data = -1 } #Kerala
+			owned = { province = 548 data = -1 } #Bombay
+			owned = { province = 549 data = -1 } #Goa
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "The Imperial East India Company"
+	desc = "With our new Christian allies in Kerala and our new foothold in the Subcontinent, our trade with India has grown phenomenally. The wealth and spices of the East pass through Alexandria, Constantinople, and Venice more prolifically and even more cheaply than Portugal's new naval route. We are rich, sire! Filthy, stinking rich!"
+	date = { day = 1 month = january year = 1500 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Remind me to do penance... later!"
+		command = { type = trade value = 2000 }
+		command = { type = gainmanufactory which = -1 value = goods }
+		command = { type = gainmanufactory which = -1 value = refinery }
+		command = { type = merchants value = 6 }
+		command = { type = treasury value = 500 }
+		command = { type = stability value = 1 }
+		command = { type = relation which = POR value = -200 }
+	}
+}
+
+
+#Patriarch Cyril Lukaris
+event = {
+	id = 3001439
+	trigger = {
+		NOT = { religion = protestant }
+	}
+	random = NO
+	country = BYZ
+	name = "Patriarch Cyril"
+	desc = "Historically, the Ecumenical Patriarch Cyril Lykaris, who had studied in the West and was friendly throughout his term with Protestant envoys, has long been accused of seeking covertly to 'Protestantize' the Orthodox Church. In 1629, a Confession of Faith was published in Geneva and attributed to Cyril that expounded Calvinist beliefs. While Cyril himself may have been attracted to Calvinism, councils under him condemned the Confession, which was later found to have been composed first in Latin and later (poorly) translated into Greek. Cyril tried to improve the educational opportunities of Greeks - limited at the time to a single (frequently closed) school in the entire Turkish empire. His attempts to educate his flock resulted in the foundation of the first Greek printing press, but he himself died a martyr's death of strangulation at the Turk's hands.
+	With the Sultans a distant memory, Cyril will not know this fate, but he must choose his mission."
+	date = { year = 1623 }
+	offset = 360 #1 year
+	deathdate = { year = 1624 }
+
+	action_a = {
+		name = "Reform the Skholai"
+		command = { type = domestic which = INNOVATIVE value = 3 }
+		command = { type = treasury value = -300 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+	}
+	action_b = {
+		name = "Reform the Church"
+		command = { type = religion which = protestant }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = treasury value = -300 }
+		command = { type = stability value = -2 }
+		command = { type = revoltrisk which = 60 value = 10 }
+		command = { type = sleepevent which = 3001359 } #orthodox minor events
+		command = { type = sleepevent which = 3001366 }
+		command = { type = sleepevent which = 3001371 }
+		command = { type = sleepevent which = 3001376 }
+		command = { type = sleepevent which = 3001379 }
+		command = { type = sleepevent which = 3001382 }
+		command = { type = sleepevent which = 3001385 }
+		command = { type = trigger which = 3001338 } #RUS: The Roman Empire is no more
+	}
+	action_c = {
+		name = "If it ain't broke..."
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = stability value = 1 }
+		command = { type = conversion which = -1 }
+		command = { type = revoltrisk which = 60 value = -1 }
+	}
+}
+
+#Patriarch Cyril Lukaris
+event = {
+	id = 3001440
+	trigger = {
+		religion = protestant
+		NOT = { event = 3001439 }
+	}
+	random = NO
+	country = BYZ
+	name = "Patriarch Cyril"
+	desc = "Historically, the Ecumenical Patriarch Cyril Lykaris, who had studied in the West and was friendly throughout his term with Protestant envoys, has long been accused of seeking covertly to 'Protestantize' the Orthodox Church. In 1629, a Confession of Faith was published in Geneva and attributed to Cyril that expounded Calvinist beliefs. While Cyril himself may have been attracted to Calvinism, councils under him condemned the Confession, which was later found to have been composed first in Latin and later (poorly) translated into Greek. Cyril tried to improve the educational opportunities of Greeks - limited at the time to a single (frequently closed) school in the entire Turkish empire. His attempts to educate his flock resulted in the foundation of the first Greek printing press, but he himself died a martyr's death of strangulation at the Turk's hands.
+	With the Sultans a distant memory, Cyril will not know this fate, but he must choose his mission."
+
+	date = { year = 1623 }
+	offset = 360 #1 year
+	deathdate = { year = 1624 }
+
+	action_a = {
+		name = "Reform the Skholai"
+		command = { type = domestic which = INNOVATIVE value = 3 }
+		command = { type = treasury value = -300 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+	}
+	action_b = {
+		name = "Reform the Church"
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = conversion which = -1 }
+		command = { type = conversion which = -1 }
+		command = { type = conversion which = -1 }
+		command = { type = stability value = 1 }
+		command = { type = revoltrisk which = 60 value = -1 }
+	}
+}
+
+# Catholicism events based on suggestions by Archaalen
+event = {
+	id = 3001441
+	trigger = {
+		religion = orthodox
+		NOT = { event = 3001437 } #council of antioch
+	}
+	random = NO
+	country = BYZ
+	name = "Pax Dei" #The Peace of God
+	desc = "Struggling to hold back the tide of Reformation, the Roman Pope is seeking the support of the Emperor and of the Church in the East. He promises to suspend conversion and mission work in the Balkans in exchange for condemnations of Luther and his fellows."
+	date = { year = 1530 }
+	offset = 360 #1 year
+	deathdate = { year = 1531 }
+
+	action_a = {
+		name = "We will support our Spiritual Father"
+		command = { type = relation which = PAP value = 100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = treasury value = 200 }
+		command = { type = stability value = -1 }
+	}
+	action_b = {
+		name = "This is not our concern"
+		#command = { type = vp value = -25 }
+		command = { type = relation which = PAP value = -25 }
+	}
+	action_c = {
+		name = "The Papists are the heretics"
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = stability value = 1 }
+		command = { type = sleepevent which = 3001487 } #BYZ: A Papal Envoy
+	}
+}
+
+event = {
+	id = 3001442
+	trigger = {
+		religion = catholic
+	}
+	random = NO
+	country = BYZ
+	name = "Quia Unim Est" #Since there is unity
+	desc = "On the hundredth anniversary of the Council of Florence, Pope Paulus III held a great ceremony on the Vatican with the Archbishop of Constantinople New Rome and Ecumenical Patriarch Jeremias in attendance and both Emperors, Eastern and Holy Roman. Declaring a (spiritual) reunion of the two empires, West and East, he crowned both rulers again in the name of God Almighty and His Son Iesus Christus. Needless to say, the 'Most Christian' kings of France and Spain were a little nonplussed by the whole affair.
+	Likewise there were still holdouts in the Muslim Orient and the Russian wastelands, but who knew that they would ever be of any consequence?"
+	date = { year = 1539 }
+	offset = 360 #1 year
+	deathdate = { year = 1540 }
+
+	action_a = {
+		name = "I was crowned Emperor of the East and all I got was this lousy chrysobull"
+		#command = { type = vp value = 25 }
+		command = { type = stability value = 1 }
+		command = { type = relation which = PAP value = 200 }
+		command = { type = relation which = HAB value = 300 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = POR value = 100 }
+		command = { type = relation which = MLO value = 100 }
+		command = { type = trigger which = 3001443 } #PAP
+		command = { type = trigger which = 3001444 } #HAB
+	}
+}
+
+event = {
+	id = 3001443
+	random = NO
+	country = PAP
+	name = "Quia Unim Est" #Since there is unity
+	desc = "On the hundredth anniversary of the Council of Florence, Pope Paulus III held a great ceremony on the Vatican with the Archbishop of Constantinople New Rome and Ecumenical Patriarch Jeremias in attendance and both Emperors, Eastern and Holy Roman. Declaring a (spiritual) reunion of the two empires, West and East, he crowned both rulers again in the name of God Almighty and His Son Iesus Christus. Needless to say, the 'Most Christian' kings of France and Spain were a little nonplussed by the whole affair.
+	Likewise there were still holdouts in the Muslim Orient and the Russian wastelands, but who knew that they would ever be of any consequence?"
+
+	action_a = {
+		name = "Hallelujah!"
+		#command = { type = vp value = 500 }
+		command = { type = stability value = 3 }
+		command = { type = treasury value = 100 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = SPA value = -100 }
+	}
+}
+
+event = {
+	id = 3001444
+	random = NO
+	country = HAB
+	name = "Quia Unim Est" #Since there is unity
+	desc = "On the hundredth anniversary of the Council of Florence, Pope Paulus III held a great ceremony on the Vatican with the Archbishop of Constantinople New Rome and Ecumenical Patriarch Jeremias in attendance and both Emperors, Eastern and Holy Roman. Declaring a (spiritual) reunion of the two empires, West and East, he crowned both rulers again in the name of God Almighty and His Son Iesus Christus. Needless to say, the 'Most Christian' kings of France and Spain were a little nonplussed by the whole affair.
+	Likewise there were still holdouts in the Muslim Orient and the Russian wastelands, but who knew that they would ever be of any consequence?"
+
+	action_a = {
+		name = "I was crowned Emperor of the West and all I got was this lousy chrysobull"
+		#command = { type = vp value = 25 }
+		command = { type = stability value = 1 }
+		command = { type = relation which = PAP value = 200 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = POR value = 100 }
+		command = { type = relation which = MLO value = 100 }
+	}
+}

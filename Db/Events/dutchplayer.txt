@@ -1,0 +1,486 @@
+#### Event by Lambert Simnel ####
+
+#Creation of the Dutch Republic#
+event = {
+
+	id = 128000
+	trigger = {
+		ai = no
+		someof = {
+		number = 3
+			owned = {
+					province = 337
+					data = -1
+				}
+			owned = {
+					province = 338
+					data = -1
+				}
+			owned = {
+					province = 339
+					data = -1
+				}
+			owned = {
+					province = 340
+					data = -1
+				}
+			owned = {
+					province = 378
+					data = -1
+				}
+			owned = {
+					province = 380
+					data = -1
+				}
+			}
+			NOT = {
+				exists = HOL
+				}
+		}
+	random = no
+	country = FLA
+	name = "Creation of the Dutch Republic"
+	desc = "The monopoly on positions of authority by those born in Flandern, many of whom abused their positions for personal profit, has become a source of resentment in the remainder of the low countries. Demands for power to be devolved to the cities were presented by the burghers of Amsterdam, Haarlem and Delft. Most of the remaining cities outside Flandern and some of the rural nobility soon signed up to this League of Holland. We have two courses of action to choose between. Firstly, we could replace some of our officials with wavering individuals from within the League, thus dividing the League, removing one of their key grievances and cleansing our bureaucracy of graft. Alternatively, we might have to accede to the League's demand to share power"
+	style = 2
+
+	date = { day = 1 month = january year = 1559 }
+	offset = 3600
+	deathdate = { day = 1 month = january year = 1648 }
+
+	action_a ={
+		name = "Remain as Flandres"
+		command = { type = vp value = 200 }
+		command = { type = stability value = -2 }
+		command = { type = revoltrisk   which = 48 value = 8 } 
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = gainbuilding   which = -1 value = bailiff } 
+		command = { type = gainbuilding   which = -1 value = bailiff } 
+		command = { type = gainbuilding   which = -1 value = bailiff }  
+		command = { type = gainbuilding   which = -1 value = bailiff } 
+		command = { type = gainbuilding   which = -1 value = courthouse }  
+		command = { type = gainbuilding   which = -1 value = courthouse }
+	}
+
+	action_b ={
+		name = "Become Holland"
+		command = { type = vp value = -200 }
+		command = { type = inflation value = 10 }
+		command = { type = stability value = -1 }
+		command = { type = country which = HOL }
+		command = { type = religion   which = reformed } 
+		command = { type = sleepevent   which = 3900 } 
+		command = { type = domestic which = CENTRALIZATION value = -5 }
+		command = { type = domestic which = ARISTOCRACY value = -3 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = domestic which = QUALITY value = -3 }
+		command = { type = addcore_national which = 337 }
+		command = { type = addcore_national which = 338 }
+		command = { type = addcore_national which = 339 }
+		command = { type = addcore_national which = 340 }
+		command = { type = addcore_national which = 378 }
+		command = { type = addcore_national which = 380 }
+	}
+}
+
+#### Event by Lambert Simnel ####
+
+#Creation of the Dutch Republic#
+event = {
+
+	id = 128001
+	trigger = {
+		ai = no
+		someof = {
+		number = 3
+			owned = {
+					province = 337
+					data = -1
+				}
+			owned = {
+					province = 338
+					data = -1
+				}
+			owned = {
+					province = 339
+					data = -1
+				}
+			owned = {
+					province = 340
+					data = -1
+				}
+			owned = {
+					province = 378
+					data = -1
+				}
+			owned = {
+					province = 380
+					data = -1
+				}
+			}
+			NOT = {
+				exists = HOL
+				}
+		}
+	random = no
+	country = FRI
+	name = "Creation of the Dutch Republic"
+	desc = "The monopoly on positions of authority by those born in Friesen, many of whom abused their positions for personal profit, has become a source of resentment in the remainder of the low countries. Demands for power to be devolved to the cities were presented by the burghers of Amsterdam, Haarlem and Delft. Most of the remaining cities outside Friesen and some of the rural nobility soon signed up to this League of Holland. We have two courses of action to choose between. Firstly, we could replace some of our officials with wavering individuals from within the League, thus dividing the League, removing one of their key grievances and cleansing our bureaucracy of graft. Alternatively, we might have to accede to the League's demand to share power"
+	style = 2
+
+	date = { day = 1 month = january year = 1559 }
+	offset = 3600
+	deathdate = { day = 1 month = january year = 1648 }
+
+	action_a ={
+		name = "Remain as Friesland"
+		command = { type = vp value = 200 }
+		command = { type = stability value = -2 }
+		command = { type = revoltrisk   which = 48 value = 8 } 
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = gainbuilding   which = -1 value = bailiff } 
+		command = { type = gainbuilding   which = -1 value = bailiff } 
+		command = { type = gainbuilding   which = -1 value = bailiff }  
+		command = { type = gainbuilding   which = -1 value = bailiff } 
+		command = { type = gainbuilding   which = -1 value = courthouse }  
+		command = { type = gainbuilding   which = -1 value = courthouse }
+	}
+
+	action_b ={
+		name = "Become Holland"
+		command = { type = vp value = -200 }
+		command = { type = inflation value = 10 }
+		command = { type = stability value = -1 }
+		command = { type = country which = HOL }
+		command = { type = religion   which = reformed } 
+		command = { type = sleepevent   which = 3900 } 
+		command = { type = domestic which = CENTRALIZATION value = -5 }
+		command = { type = domestic which = ARISTOCRACY value = -3 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = domestic which = QUALITY value = -3 }
+		command = { type = addcore_national which = 337 }
+		command = { type = addcore_national which = 338 }
+		command = { type = addcore_national which = 339 }
+		command = { type = addcore_national which = 340 }
+		command = { type = addcore_national which = 378 }
+		command = { type = addcore_national which = 380 }
+	}
+}
+
+#### Event by Lambert Simnel ####
+
+#Creation of the Dutch Republic#
+event = {
+
+	id = 128002
+	trigger = {
+		ai = no
+		someof = {
+		number = 3
+			owned = {
+					province = 337
+					data = -1
+				}
+			owned = {
+					province = 338
+					data = -1
+				}
+			owned = {
+					province = 339
+					data = -1
+				}
+			owned = {
+					province = 340
+					data = -1
+				}
+			owned = {
+					province = 378
+					data = -1
+				}
+			owned = {
+					province = 380
+					data = -1
+				}
+			}
+			NOT = {
+				exists = HOL
+				}
+		}
+	random = no
+	country = GEL
+	name = "Creation of the Dutch Republic"
+	desc = "The monopoly on positions of authority by those born in Geldern, many of whom abused their positions for personal profit, has become a source of resentment in the remainder of the low countries. Demands for power to be devolved to the cities were presented by the burghers of Amsterdam, Haarlem and Delft. Most of the remaining cities outside Geldern and some of the rural nobility soon signed up to this League of Holland. We have two courses of action to choose between. Firstly, we could replace some of our officials with wavering individuals from within the League, thus dividing the League, removing one of their key grievances and cleansing our bureaucracy of graft. Alternatively, we might have to accede to the League's demand to share power"
+	style = 2
+
+	date = { day = 1 month = january year = 1559 }
+	offset = 3600
+	deathdate = { day = 1 month = january year = 1648 }
+
+	action_a ={
+		name = "Remain as Gelre"
+		command = { type = vp value = 200 }
+		command = { type = stability value = -2 }
+		command = { type = revoltrisk   which = 48 value = 8 } 
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = gainbuilding   which = -1 value = bailiff } 
+		command = { type = gainbuilding   which = -1 value = bailiff } 
+		command = { type = gainbuilding   which = -1 value = bailiff }  
+		command = { type = gainbuilding   which = -1 value = bailiff } 
+		command = { type = gainbuilding   which = -1 value = courthouse }  
+		command = { type = gainbuilding   which = -1 value = courthouse }
+	}
+
+	action_b ={
+		name = "Become Holland"
+		command = { type = vp value = -200 }
+		command = { type = inflation value = 10 }
+		command = { type = stability value = -1 }
+		command = { type = country which = HOL }
+		command = { type = religion   which = reformed } 
+		command = { type = sleepevent   which = 3900 } 
+		command = { type = domestic which = CENTRALIZATION value = -5 }
+		command = { type = domestic which = ARISTOCRACY value = -3 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = domestic which = QUALITY value = -3 }
+		command = { type = addcore_national which = 337 }
+		command = { type = addcore_national which = 338 }
+		command = { type = addcore_national which = 339 }
+		command = { type = addcore_national which = 340 }
+		command = { type = addcore_national which = 378 }
+		command = { type = addcore_national which = 380 }
+	}
+}
+
+#### Event by Lambert Simnel ####
+
+#Creation of the Dutch Republic#
+event = {
+
+	id = 128003
+	trigger = {
+		ai = no
+		someof = {
+		number = 3
+			owned = {
+					province = 337
+					data = -1
+				}
+			owned = {
+					province = 338
+					data = -1
+				}
+			owned = {
+					province = 339
+					data = -1
+				}
+			owned = {
+					province = 340
+					data = -1
+				}
+			owned = {
+					province = 378
+					data = -1
+				}
+			owned = {
+					province = 380
+					data = -1
+				}
+			}
+			NOT = {
+				exists = HOL
+				}
+		}
+	random = no
+	country = HAU
+	name = "Creation of the Dutch Republic"
+	desc = "The monopoly on positions of authority by those born in Brabant, many of whom abused their positions for personal profit, has become a source of resentment in the remainder of the low countries. Demands for power to be devolved to the cities were presented by the burghers of Amsterdam, Haarlem and Delft. Most of the remaining cities outside Brabant and some of the rural nobility soon signed up to this League of Holland. We have two courses of action to choose between. Firstly, we could replace some of our officials with wavering individuals from within the League, thus dividing the League, removing one of their key grievances and cleansing our bureaucracy of graft. Alternatively, we might have to accede to the League's demand to share power"
+	style = 2
+
+	date = { day = 1 month = january year = 1559 }
+	offset = 3600
+	deathdate = { day = 1 month = january year = 1648 }
+
+	action_a ={
+		name = "Remain as Brabant"
+		command = { type = vp value = 200 }
+		command = { type = stability value = -2 }
+		command = { type = revoltrisk   which = 48 value = 8 } 
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = gainbuilding   which = -1 value = bailiff } 
+		command = { type = gainbuilding   which = -1 value = bailiff } 
+		command = { type = gainbuilding   which = -1 value = bailiff }  
+		command = { type = gainbuilding   which = -1 value = bailiff } 
+		command = { type = gainbuilding   which = -1 value = courthouse }  
+		command = { type = gainbuilding   which = -1 value = courthouse }
+	}
+
+	action_b ={
+		name = "Become Holland"
+		command = { type = vp value = -200 }
+		command = { type = inflation value = 10 }
+		command = { type = stability value = -1 }
+		command = { type = country which = HOL }
+		command = { type = religion   which = reformed } 
+		command = { type = sleepevent   which = 3900 } 
+		command = { type = domestic which = CENTRALIZATION value = -5 }
+		command = { type = domestic which = ARISTOCRACY value = -3 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = domestic which = QUALITY value = -3 }
+		command = { type = addcore_national which = 337 }
+		command = { type = addcore_national which = 338 }
+		command = { type = addcore_national which = 339 }
+		command = { type = addcore_national which = 340 }
+		command = { type = addcore_national which = 378 }
+		command = { type = addcore_national which = 380 }
+	}
+}
+
+#### Event by Lambert Simnel ####
+
+#Creation of the Dutch Republic#
+event = {
+
+	id = 128004
+	trigger = {
+		ai = no
+		someof = {
+		number = 3
+			owned = {
+					province = 337
+					data = -1
+				}
+			owned = {
+					province = 338
+					data = -1
+				}
+			owned = {
+					province = 339
+					data = -1
+				}
+			owned = {
+					province = 340
+					data = -1
+				}
+			owned = {
+					province = 378
+					data = -1
+				}
+			owned = {
+					province = 380
+					data = -1
+				}
+			}
+			NOT = {
+				exists = HOL
+				}
+		}
+	random = no
+	country = HLL
+	name = "Creation of the Dutch Republic"
+	desc = "The monopoly on positions of authority by those born in Brabant, many of whom abused their positions for personal profit, has become a source of resentment in the remainder of the low countries. Demands for power to be devolved to the cities were presented by the burghers of Amsterdam, Haarlem and Delft. Most of the remaining cities outside Brabant and some of the rural nobility soon signed up to this League of Holland. We have two courses of action to choose between. Firstly, we could replace some of our officials with wavering individuals from within the League, thus dividing the League, removing one of their key grievances and cleansing our bureaucracy of graft. Alternatively, we might have to accede to the League's demand to share power"
+	style = 2
+
+	date = { day = 1 month = january year = 1559 }
+	offset = 3600
+	deathdate = { day = 1 month = january year = 1648 }
+
+	action_a ={
+		name = "Remain as County of Holland"
+		command = { type = vp value = 200 }
+		command = { type = stability value = -2 }
+		command = { type = revoltrisk   which = 48 value = 8 } 
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = gainbuilding   which = -1 value = bailiff } 
+		command = { type = gainbuilding   which = -1 value = bailiff } 
+		command = { type = gainbuilding   which = -1 value = bailiff }  
+		command = { type = gainbuilding   which = -1 value = bailiff } 
+		command = { type = gainbuilding   which = -1 value = courthouse }  
+		command = { type = gainbuilding   which = -1 value = courthouse }
+	}
+
+	action_b ={
+		name = "Become Holland"
+		command = { type = vp value = -200 }
+		command = { type = inflation value = 10 }
+		command = { type = stability value = -1 }
+		command = { type = country which = HOL }
+		command = { type = religion   which = reformed } 
+		command = { type = sleepevent   which = 3900 } 
+		command = { type = domestic which = CENTRALIZATION value = -5 }
+		command = { type = domestic which = ARISTOCRACY value = -3 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = domestic which = QUALITY value = -3 }
+		command = { type = addcore_national which = 337 }
+		command = { type = addcore_national which = 338 }
+		command = { type = addcore_national which = 339 }
+		command = { type = addcore_national which = 340 }
+		command = { type = addcore_national which = 378 }
+		command = { type = addcore_national which = 380 }
+	}
+}
+
+# The Dutch Republic
+event = {
+	id = 128005
+	
+	# Triggered by HOL 3900
+	
+	random = no
+	country = HLL
+	name = "EVENTNAME3806"
+	desc = "EVENTHIST3806"
+	
+	action_a = { # Join
+		name = "ACTIONNAME3806A"
+		trigger = { 
+			ai = yes
+		}
+		command = { type = trigger which = 128006 }
+	}
+
+	action_b = { # Stay out
+		name = "ACTIONNAME3806B"
+		command = { type = relation which = HOL value = -100 }
+		command = { type = stability value = -2 }
+	}
+}
+
+# Holland joins the Republic
+event = {
+	id = 128006
+	random = no
+	country = HOL
+	name = "Holland joins the Republic"
+	desc = "EVENTHIST3813"
+
+	action = { # Marvellous!
+		name = "Marvellous!"
+		command = { type = inherit which = HLL }
+		command = { type = gainbuilding which = 339 value = bailiff }
+		command = { type = treasury value = 150 }
+	}
+}

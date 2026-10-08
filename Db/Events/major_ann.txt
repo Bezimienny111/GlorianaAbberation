@@ -1,0 +1,27 @@
+## Major Events for Annam
+#
+# Idea and text: Demetrios
+# Scripting: Havard & Doomdark
+#
+
+#The Foundation of the Modern Vietnamese State#
+event = {
+	id = 3912
+	random = no
+	country = ANN
+	name = "EVENTNAME3912"
+	desc = "EVENTHIST3912"
+	
+	
+	#Triggered by DAI 3910A#
+	
+	action_a ={#We are one nation! (Game Over) #
+		name = "ACTIONNAME3912A"
+		command = { type = trigger which = 3911 }
+	}
+	action_b ={#We will remain separate#
+		name = "ACTIONNAME3912B"
+		command = { type = stability value = -6 }
+		command = { type = relation which = DAI value = -200}
+	}
+}

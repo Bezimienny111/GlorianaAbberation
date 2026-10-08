@@ -1,0 +1,4694 @@
+#Revolters 1.3
+
+#Information on how countries are created from revolt or as vassals.
+#As of 1.3 vassals can not be released whilst at war.
+
+#date = { }	  First date of possible action.
+#expirydate = { }    Last date of possible action.
+#revolt = yes/no     Can revolt or not.
+#annexable = yes/no  If yes, the country can always be annexed in one war even if not an annexable religion.
+#no = <tag> or { }   Cannot revolt from the listed countries. Entry can be used several times. In this case, tags will be added to the list.
+#yes = <tag> or { }  Can revolt from the listed countries only. Entry can be used several times. In this case, tags will be added to the list.
+#vassal = yes/no     Can be released as vassal or not.
+#minimum = { }       List of any mandatory revolted provinces for the country to appear as a revolter / list of all provinces given to the vassal if owned. Listed provinces are CORES of the new country.
+#extra = { }         List of provinces that will join a revolter if also revolted. Listed provinces are CLAIMS of the new country.
+#capital = <id>      Capital province. If the province is not specified, capital will be located in the "best" province according to accepted culture, religion, fortress level and city level, in descending order and as a combination. Capital can thus be located outside minimal provinces.
+#group = <name>      Techgroup (same as the involved country if not specified).
+#culture = <name>    Primary culture (same as the capital location if not specified).
+#religion = <name>   State religion (same as the capital location if not specified).
+#ai = "<name>"       AI file for the country (file is "default_ai.txt" if not specified).
+
+#-----------------------------------------------------------------------------------------------
+
+NYN = { # Northern Yuan
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1635 }
+	minimum = { 600 601 602 603 604 605 606 607 608 609 610 611 }
+	extra = { 595 597 598 599 612 630 631 632 633 }
+	capital = 603
+	group = asian
+	culture = mongol
+	ai = "default_ai.txt"
+}
+BIM = { # Bima
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 710 }
+	extra = { }
+	capital = 710
+	group = asian
+	ai = "SmallTrade1_ai.txt"
+}
+BLI = { # Bali
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 705 }
+	extra = { }
+	capital = 705
+	group = asian
+	ai = "SmallTrade1_ai.txt"
+}
+BST = { # Bastar
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 563 }
+	extra = { }
+	capital = 563
+	group = asian
+	religion = hinduism
+	ai = "peaceful_ai.txt"
+}
+JNT = { # Jaintia
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 671 }
+	extra = { 672 }
+	capital = 671
+	group = asian
+	religion = hinduism
+	ai = "peaceful_ai.txt"
+}
+KHE = { # Khemundi
+	date = { day = 1 month = january year = 1399 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 564 565 }
+	extra = { }
+	capital = 564
+	group = asian
+	religion = hinduism
+	ai = "default_ai.txt"
+}
+SKH = { # Sikh Empire
+	no = KSH
+	date = { day = 1 month = january year = 1492 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 1520 1521 }
+	extra = { }
+	capital = 1521
+	group = muslim
+	religion = sikh
+	ai = "peaceful_ai.txt"
+}
+AHA = { # Al-Haasa
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 506 507 }
+	extra = { 509 }
+	capital = 507
+	group = muslim
+	religion = sunni
+	ai = "default_ai.txt"
+}
+BON = { # Bone
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 707 }
+	extra = { 706 708 709 }
+	capital = 707
+	group = asian
+	ai = "default_ai.txt"
+}
+
+SPR = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 31 month = december year = 1400 }
+	minimum = { 360 }
+	extra = { }
+	capital = 360
+	group = orthodox
+	}
+PIH = {
+	date = { day = 1 month = january year = 1419 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 142 }
+	extra = { }
+	capital = 142
+	group = latin
+	}
+BFR = {
+	revolt = no
+	date = { day = 1 month = january year = 1380 }
+	expirydate = { day = 31 month = december year = 1461 }
+	minimum = { 382 384 385 376 383 386 }
+	extra = { }
+	capital = 385
+	group = latin
+	}
+WPH = {
+	revolt = no
+	date = { day = 1 month = january year = 1789 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 310 311 334 }
+	extra = { }
+	capital = 334
+	group = latin
+	}
+RHB = {
+	revolt = no
+	date = { day = 1 month = january year = 1789 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 291 292 299 300 303 305 310 331 332 333 334 335 336 343 344 345 346 347 348 349 372 373  }
+	extra = { }
+	capital = 346
+	group = latin
+	}
+OJI = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 31 month = december year = 1750 }
+	minimum = { 93 94 95 96 }
+	extra = { }
+	capital = 95
+	group = pagan
+	}
+KMK = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 31 month = december year = 1750 }
+	minimum = { 74 79 80 }
+	extra = { }
+	capital = 79
+	group = pagan
+	}
+POT = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 31 month = december year = 1750 }
+	minimum = { 81 82 }
+	extra = { }
+	capital = 81
+	group = pagan
+	}
+SKN = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 31 month = december year = 1750 }
+	minimum = { 65 66 }
+	extra = { }
+	capital = 65
+	group = pagan
+	}
+POW = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 31 month = december year = 1750 }
+	minimum = { 69 70 }
+	extra = { }
+	capital = 69
+	group = pagan
+	}
+OTW = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 31 month = december year = 1750 }
+	minimum = { 107 }
+	extra = { }
+	capital = 107
+	group = pagan
+	}
+CEE = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 31 month = december year = 1750 }
+	minimum = { 133 134 }
+	extra = { }
+	capital = 133
+	group = pagan
+	}
+CHW = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 31 month = december year = 1750 }
+	minimum = { 53 }
+	extra = { }
+	capital = 53
+	group = pagan
+	}
+WAZ = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 31 month = december year = 1750 }
+	minimum = { 57 }
+	extra = { }
+	capital = 57
+	group = pagan
+	}
+ILI = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 31 month = december year = 1750 }
+	minimum = { 59 }
+	extra = { }
+	capital = 59
+	group = pagan
+	}
+CAD = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 31 month = december year = 1750 }
+	minimum = { 44 1480 1481 }
+	extra = { }
+	capital = 1481
+	group = pagan
+	}
+SXF = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 31 month = december year = 1750 }
+	minimum = { 73 }
+	extra = { }
+	capital = 73
+	group = pagan
+	}
+TWA = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 31 month = december year = 1750 }
+	minimum = { 60 }
+	extra = { }
+	capital = 60
+	group = pagan
+	}
+WAM = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 31 month = december year = 1750 }
+	minimum = { 103 104 }
+	extra = { }
+	capital = 103
+	group = pagan
+	}
+SEM = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 31 month = december year = 1750 }
+	minimum = { 49 }
+	extra = { }
+	capital = 49
+	group = pagan
+	}
+PUE = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 31 month = december year = 1750 }
+	minimum = { 22 40 42 }
+	extra = { }
+	capital = 40
+	group = pagan
+	}
+MIK = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 31 month = december year = 1750 }
+	minimum = { 112 113 114 115 }
+	extra = { }
+	capital = 113
+	group = pagan
+	}
+ALN = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 31 month = december year = 1750 }
+	minimum = { 101 105 111 }
+	extra = { }
+	capital = 105
+	group = pagan
+	}
+SAH = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 31 month = december year = 1750 }
+	minimum = { 58 }
+	extra = { }
+	capital = 58
+	group = pagan
+	}
+CKW = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 31 month = december year = 1750 }
+	minimum = { 52 }
+	extra = { }
+	capital = 52
+	group = pagan
+	}
+CHU = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 31 month = december year = 1750 }
+	minimum = { 11 1476 }
+	extra = { }
+	capital = 11
+	group = pagan
+	}
+HOP = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 31 month = december year = 1750 }
+	minimum = { 14 16 18 }
+	extra = { }
+	capital = 16
+	group = pagan
+	}
+MOH = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 31 month = december year = 1750 }
+	minimum = { 88 99 100 102 }
+	extra = { }
+	capital = 88
+	group = pagan
+	}
+NEU = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 31 month = december year = 1750 }
+	minimum = { 92 }
+	extra = { }
+	capital = 92
+	group = pagan
+	}
+QUA = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 31 month = december year = 1750 }
+	minimum = { 51 }
+	extra = { }
+	capital = 51
+	group = pagan
+	}
+TAR = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 31 month = december year = 1530 }
+	minimum = { 26 }
+	extra = { 24 }
+	capital = 26
+	group = pagan
+	}
+TLX = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 31 month = december year = 1519 }
+	minimum = { 29 }
+	extra = { }
+	capital = 29
+	group = pagan
+	}
+ITA = {
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 389 390 400 401 402 404 }
+	extra = { }
+	capital = 404
+	group = latin
+	}
+PST = {
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1492 }
+	minimum = { 493 494 }
+	extra = { 485 490 491 492 495 }
+	capital = 493
+	group = orthodox
+	religion = orthodox
+	culture = greek
+	}
+OUT = {
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1492 }
+	minimum = { 485 490 491 492 493 494 495 }
+	extra = { }
+	capital = 493
+	group = orthodox
+	religion = catholic
+	culture = french
+	ai = "crusader_ai.txt"
+	}
+ANT = {
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1492 }
+	minimum = { 485 }
+	extra = { }
+	capital = 485
+	group = orthodox
+	religion = catholic
+	culture = french
+	ai = "crusader_ai.txt"
+	}
+CIL = {
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1492 }
+	minimum = { 483 1611 }
+	extra = { 482 1610 }
+	capital = 483
+	group = orthodox
+	religion = catholic
+	culture = french
+	ai = "crusader_ai.txt"
+	}
+ABA = {
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1836 }
+	minimum = { 495 496 497 }
+	extra = { 498 499 500 501 502 503 504 505 506 507 }
+	capital = 496
+	group = orthodox
+	religion = catholic
+	culture = french
+	ai = "crusader_ai.txt"
+	}
+
+#-----------------------------------------------------------------------------------------------
+
+ACH = { # Achaea
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1492 }
+	minimum = { 360 }
+	extra = { }
+	capital = 360
+	group = orthodox
+	religion = catholic
+	culture = french
+	ai = "crusader_ai.txt"
+}
+
+ANG = { # Angoche
+	date = { day = 1 month = january year = 1492 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 770 771 }
+	extra = { }
+	capital = 770
+	group = african
+	culture = swahili
+	ai = "SmallTrade1_ai.txt"
+}
+
+ANS = { # Ansbach
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 348 }
+	extra = { }
+	capital = 348
+	group = latin
+	ai = "default_ai.txt"
+}
+
+ARB = { # Arborea
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1492 }
+	minimum = { 397 }
+	extra = { }
+	capital = 397
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+
+AVI = { # Avignon
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1492 }
+	minimum = { 407 }
+	extra = { }
+	capital = 407
+	group = latin
+	religion = catholic
+	ai = "Papal_ai.txt"
+}
+
+BAH = { # Bahrain
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 509 }
+	extra = { 506 }
+	capital = 509
+	group = muslim
+	religion = sunni
+	ai = "SmallTrade1_ai.txt"
+}
+
+BOL = { # Bologna
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 391 }
+	extra = { }
+	capital = 391
+	group = latin
+	ai = "trader_ai.txt"
+}
+
+BRG = { # Berg
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 343 }
+	extra = { }
+	capital = 343
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+
+BRU = { # Brunswick
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1700 }
+	minimum = { 310 }
+	extra = { }
+	capital = 310
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+
+CNY = { # Canary Islands
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1635 }
+	minimum = { 817 }
+	extra = { }
+	capital = 817
+	group = muslim
+	religion = catholic
+	ai = "default_ai.txt"
+}
+COC = { # Cochin
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1700 }
+	minimum = { 573 }
+	extra = { }
+	capital = 573
+	group = asian
+	religion = hinduism
+	ai = "peaceful_ai.txt"
+}
+
+DAL = { # Dalmatia
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1492 }
+	minimum = { 365 }
+	extra = { }
+	capital = 365
+	group = orthodox
+	religion = catholic
+	ai = "default_ai.txt"
+}
+
+DOB = { # Dobruja
+	no = BUL
+	no = TUR
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1492 }
+	minimum = { 320 }
+	extra = { 321 }
+	capital = 320
+	group = orthodox
+	religion = orthodox
+	ai = "default_ai.txt"
+}
+
+EPI = { # Epirus
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1492 }
+	minimum = { 361 }
+	extra = { }
+	capital = 361
+	group = orthodox
+	religion = orthodox
+	culture = greek
+	ai = "default_ai.txt"
+}
+
+FAR = { # Fars
+	no = PER
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1700 }
+	minimum = { 531 532 533 534 535 }
+	extra = { }
+	capital = 533
+	group = muslim
+	religion = shia
+	ai = "PER_1499.txt"
+}
+
+FER = { # Ferrara
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 391 }
+	extra = { }
+	capital = 391
+	group = latin
+	ai = "default_ai.txt"
+}
+FEZ = { # Fez
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 732 733 }
+	extra = { }
+	capital = 733
+	group = muslim
+	religion = sunni
+	culture = berber
+	ai = "Morocco_ai.txt"
+}
+
+FLO = { # Florence
+	no = TOS
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 401 }
+	extra = { }
+	capital = 401
+	group = latin
+	ai = "trader_ai.txt"
+}
+
+GAL = { # Galicia
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1492 }
+	minimum = { 433 434 }
+	extra = { }
+	capital = 433
+	group = latin
+	religion = catholic
+	ai = "default_ai.txt"
+}
+
+GHA = { # Ghana
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 1487 1488 1489 }
+	extra = { }
+	capital = 1488
+	group = african
+	#culture = mande
+	ai = "Mande_ai.txt"
+}
+
+HAL = { # Halych
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1492 }
+	minimum = { 297 298 }
+	extra = { }
+	capital = 298
+	group = orthodox
+	religion = orthodox
+	culture = ruthenian
+	ai = "Rus_ai.txt"
+}
+
+HAW = { # Hawai'i
+	date = { day = 1 month = january year = 1750 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 812 813 }
+	extra = { }
+	capital = 813
+	group = asian
+	ai = "default_ai.txt"
+}
+
+ISL = { # The Isles
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 236 }
+	extra = { 232 233 239 }
+	capital = 236
+	group = latin
+	culture = gaelic
+	ai = "default_ai.txt"
+}
+
+IST = { # Istria
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 368 }
+	extra = { }
+	capital = 368
+	group = latin
+	religion = catholic
+	ai = "default_ai.txt"
+}
+
+JOH = { # Johor
+	date = { day = 1 month = january year = 1492 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 678 }
+	extra = { }
+	capital = 678
+	group = asian
+	religion = sunni
+	ai = "default_ai.txt"
+}
+
+KED = { # Kedah
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 676 }
+	extra = { }
+	capital = 676
+	group = asian
+	religion = sunni
+	ai = "default_ai.txt"
+}
+
+KHA = { # Khandesh
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 551 }
+	extra = { }
+	capital = 551
+	group = muslim
+	religion = sunni
+	ai = "default_ai.txt"
+}
+
+KMT = { # Kamata
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 555 }
+	extra = { 556 }
+	capital = 555
+	group = asian
+	religion = hinduism
+	ai = "default_ai.txt"
+}
+
+LIE = { # Liège
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 377 }
+	extra = { }
+	capital = 377
+	group = latin
+	culture = french
+	ai = "peaceful_ai.txt"
+}
+
+LTN = { # Latin Empire
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1492 }
+	minimum = { 357 }
+	extra = { 320 321 356 358 359 360 361 475 476 477 478 479 480 481 482 484 820 1609 1610 1611 }
+	capital = 357
+	group = orthodox
+	religion = catholic
+	culture = french
+	ai = "crusader_ai.txt"
+}
+
+LUC = { # Lucca
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 401 }
+	extra = { }
+	capital = 401
+	group = latin
+	ai = "trader_ai.txt"
+}
+
+MEI = { # Meissen
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 331 }
+	extra = { }
+	capital = 331
+	group = latin
+	ai = "default_ai.txt"
+}
+
+MAS = { # Masovia
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 291 }
+	extra = { }
+	capital = 291
+	group = orthodox
+	ai = "default_ai.txt"
+}
+
+MOD = { # Modena
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 391 402 }
+	extra = { }
+	capital = 402
+	group = latin
+	ai = "default_ai.txt"
+}
+
+MUL = { # Multan
+	date = { day = 1 month = january year = 1399 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 1523 }
+	extra = { 1524 }
+	capital = 1523
+	group = muslim
+	religion = sunni
+	ai = "default_ai.txt"
+}
+
+NAX = { # Naxos
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1492 }
+	minimum = { 479 }
+	extra = { }
+	capital = 479
+	group = orthodox
+	religion = catholic
+	culture = italian
+	ai = "crusader_ai.txt"
+}
+
+NEP = { # Nepal
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 1539 }
+	extra = { 544 }
+	capital = 1539
+	group = asian
+	religion = hinduism
+	#culture = nepali
+	ai = "peaceful_ai.txt"
+}
+
+NIC = { # Nicaea
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1492 }
+	minimum = { 477 478 }
+	extra = { }
+	capital = 477
+	group = orthodox
+	religion = orthodox
+	culture = greek
+	ai = "default_ai.txt"
+}
+
+NUB = { # Nubia
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 747 748 749 }
+	extra = { 743 }
+	capital = 748
+	group = african
+	religion = miaphysite
+	culture = nubian
+	ai = "default_ai.txt"
+}
+
+OYO = { # Oyo
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 1500 1501 1502 }
+	extra = { }
+	capital = 1500
+	group = pagan
+	#culture = yoruba
+	ai = "default_ai.txt"
+}
+
+PRL = { # Pomerelia
+	no = POM
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 301 }
+	extra = { }
+	capital = 301
+	group = latin
+	culture = polish
+	ai = "trader_ai.txt"
+}
+PRM = { # Permia
+	date = { day = 1 month = january year = 1399 }
+	expirydate = { day = 1 month = january year = 1492 }
+	minimum = { 1580 1581 }
+	extra = { }
+	capital = 1580
+	group = asian
+	religion = orthodox
+	#culture = permic
+	ai = "MOS_1419_Standard.txt"
+}
+SAM = { # Samogitia
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 283 }
+	extra = { }
+	capital = 283
+	group = orthodox
+	culture = baltic
+	ai = "default_ai.txt"
+}
+
+SEI = { # Styria
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 369 }
+	extra = { }
+	capital = 369
+	group = latin
+	ai = "default_ai.txt"
+}
+
+SHI = { # Shirvan
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 471 }
+	extra = { }
+	capital = 471
+	group = muslim
+	religion = sunni
+	culture = persian
+	ai = "peaceful_ai.txt"
+}
+
+SOC = { # Socotra
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 756 }
+	extra = { }
+	capital = 756
+	group = african
+	religion = miaphysite
+	culture = somali
+	ai = "peaceful_ai.txt"
+}
+
+SOS = { # Sosso
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 1490 1494 1495 }
+	extra = { }
+	capital = 1495
+	group = african
+	#culture = mande
+	ai = "Mande_ai.txt"
+}
+
+SUS = { # Sus
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 805 806 1595 }
+	extra = { 801 802 803 804 1596 1597 }
+	capital = 806
+	group = muslim
+	religion = sunni
+	culture = berber
+	ai = "Morocco_ai.txt"
+}
+SUZ = { # Vladimir-Suzdal
+	no = RUS
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1492 }
+	minimum = { 271 272 }
+	extra = { }
+	capital = 271
+	group = orthodox
+	religion = orthodox
+	ai = "MOS_1419_Standard.txt"
+}
+
+THO = { # Theodoro
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1492 }
+	minimum = { 464 }
+	extra = { }
+	capital = 464
+	group = orthodox
+	religion = orthodox
+	culture = greek
+	ai = "trader_ai.txt"
+}
+
+TNT = { # Trent
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 371 }
+	extra = { }
+	capital = 371
+	group = latin
+	culture = italian
+	ai = "peaceful_ai.txt"
+}
+
+TRA = { # Transylvania
+	date = { day = 1 month = january year = 1550 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 323 }
+	extra = { 318 319 320 322 }
+	capital = 323
+	group = orthodox
+	ai = "default_ai.txt"
+}
+TRE = { # Trebizond
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1492 }
+	minimum = { 475 }
+	extra = { }
+	capital = 475
+	group = orthodox
+	religion = orthodox
+	culture = greek
+	ai = "default_ai.txt"
+}
+
+TRR = { # Trier
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 345 }
+	extra = { }
+	capital = 345
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+TRV = { # Travancore
+	date = { day = 1 month = january year = 1399 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 574 }
+	extra = { }
+	capital = 574
+	group = asian
+	religion = hinduism
+	ai = "default_ai.txt"
+}
+
+UTR = { # Utrecht
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 338 }
+	extra = { }
+	capital = 338
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+
+VER = { # Verona
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 390 }
+	extra = { }
+	capital = 390
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+
+YRL = { # Yaroslavl
+	no = RUS
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1492 }
+	minimum = { 268 }
+	extra = { }
+	capital = 268
+	group = orthodox
+	religion = orthodox
+	ai = "MOS_1419_Standard.txt"
+}
+
+ZET = { # Zeta
+	no = SER
+	no = TUR
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1492 }
+	minimum = { 362 }
+	extra = { }
+	capital = 362
+	group = orthodox
+	religion = orthodox
+	ai = "default_ai.txt"
+}
+
+#-----------------------------------------------------------------------------------------------
+
+ENG = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 240 241 242 244 245 246 247 248 249 }
+	extra = { 243 250 }
+	capital = 247
+	group = latin
+	culture = anglosaxon
+	ai = "England_ai.txt"
+}
+ROY = {
+	no = PUR
+	date = { day = 1 month = january year = 1640 }
+	expirydate = { day = 29 month = december year = 1688 }
+	minimum = { 241 240 242 245 }
+	extra = { }
+	capital = 241
+	group = latin
+	ai = "England_ai.txt"
+}
+PUR = {
+	no = ROY
+	date = { day = 1 month = january year = 1640 }
+	expirydate = { day = 15 month = february year = 1688 }
+	minimum = { 244 246 }
+	extra = { 248 249 250 }
+	capital = 244
+	group = latin
+	ai = "England_ai.txt"
+	culture = anglosaxon
+	religion = reformed
+}
+FRA = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 376 379 380 382 383 384 385 407 408 410 411 412 413 417 418 419 420 421 422 423 424 425 426 }
+	extra = { }
+	capital = 385
+	group = latin
+	culture = french
+	ai = "France_ai.txt"
+}
+FPR = {
+	date = { day = 1 month = january year = 1559 }
+	expirydate = { day = 29 month = december year = 1589 }
+	minimum = { 407 412 418 419 421 422 423 425 }
+	extra = { }
+	capital = 418
+	group = latin
+	culture = french
+	religion = reformed
+	ai = "FPR_Huguenots.txt"
+}
+FUC = {
+	date = { day = 1 month = january year = 1559 }
+	expirydate = { day = 29 month = december year = 1589 }
+	minimum = { 417 424 408 409 420 410 411 386 376 384 383 382 }
+	extra = { }
+	capital = 417
+	group = latin
+	culture = french
+	religion = counterreform
+	ai = "FUC_UltraCatholics.txt"
+}
+ORL = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1650 }
+	minimum = { 411 }
+	extra = { }
+	capital = 411
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+AQU = { # Aquileia
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 370 }
+	extra = { 368 }
+	capital = 370
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+GUY = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1500 }
+	minimum = { 418 423 424 }
+	extra = {  }
+	capital = 424
+	group = latin
+	ai = "default_ai.txt"
+}
+BOU = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1550 }
+	minimum = { 410 419 }
+	extra = { }
+	capital = 410
+	group = latin
+	ai = "default_ai.txt"
+}
+LUX = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 377 }
+	extra = { }
+	capital = 377
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+HAU = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1491 }
+	minimum = { 378 }
+	extra = { 339 340 379 }
+	capital = 378
+	group = latin
+	ai = "trader_ai.txt"
+}
+AUV = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1550 }
+	minimum = { 420 421 }
+	extra = { }
+	capital = 420
+	group = latin
+	ai = "default_ai.txt"
+}
+HAB = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 327 350 351 369 371 }
+	extra = { 367 }
+	capital = 351
+	group = latin
+	ai = "Habsburg_ai.txt"
+}
+HOL = {
+	date = { day = 1 month = january year = 1550 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 337 338 339 340 378 380 }
+	extra = { }
+	capital = 339
+	group = latin
+	ai = "Holland_ai.txt"
+}
+HON = { # Honduras
+	no = UCA
+	date = { day = 1 month = january year = 1750 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 36 }
+	extra = { }
+	capital = 36
+	group = latin
+	ai = "default_ai.txt"
+}
+HSA = { # Hansa
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 304 305 306 }
+	extra = { 289 301 302 335 336 337 339 }
+	capital = 305
+	group = latin
+	ai = "trader_ai.txt"
+}
+GEL = {
+	no = HOL
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1550 }
+	minimum = { 338 }
+	extra = { }
+	capital = 338
+	group = latin
+	ai = "trader_ai.txt"
+}
+FLA = {
+	no = HOL
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { year = 1550 }
+	minimum = { 380 }
+	extra = { 382 }
+	capital = 380
+	group = latin
+	ai = "trader_ai.txt"
+}
+FRI = {
+	no = HOL
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1550 }
+	minimum = { 337 }
+	extra = { }
+	capital = 337
+	group = latin
+	ai = "trader_ai.txt"
+}
+POR = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 434 441 442 }
+	extra = { 823 }
+	capital = 441
+	group = latin
+	religion = catholic
+	ai = "Portugal_ai.txt"
+}
+PRG = { # Paraguay
+	date = { day = 1 month = january year = 1750 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 216 217 218 }
+	extra = { }
+	capital = 218
+	group = latin
+	ai = "PRG_1750.txt"
+}
+PRU = {
+	no = LAT
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 289 290 301 }
+	extra = { }
+	capital = 290
+	group = latin
+	ai = "Prussia_ai.txt"
+}
+RUS = {
+	no = MOS
+	no = NVG
+	date = { day = 1 month = january year = 1492 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 268 270 271 272 }
+	extra = { 262 266 267 269 274 275 276 277 278 279 282 447 448 452 1470 }
+	capital = 270
+	group = orthodox
+	religion = orthodox
+	culture = russian
+	ai = "Russia_ai.txt"
+}
+MOS = {
+	no = RUS
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1530 }
+	minimum = { 268 270 271 272 279 }
+	extra = { }
+	capital = 270
+	group = orthodox
+	religion = orthodox
+	ai = "MOS_1419_Standard.txt"
+}
+SPA = {
+	no = ARG
+	no = CAS
+	date = { day = 1 month = january year = 1481 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 426 427 428 429 430 431 432 433 435 436 437 438 439 440 443 444 445 821 }
+	extra = { 817 }
+	capital = 436
+	group = latin
+	religion = catholic
+	culture = iberian
+	ai = "Spain_ai.txt"
+}
+CAS = {
+	no = SPA
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1480 }
+	minimum = { 431 432 433 435 436 438 439 440 443 444 445 }
+	extra = { 817 }
+	capital = 439
+	group = latin
+	religion = catholic
+	ai = "ARG_1515_de Olid.txt"
+}
+SWE = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 252 253 254 257 260 341 1469 }
+	extra = { 251 308 381 }
+	capital = 254
+	group = latin
+	culture = scandinavian
+	ai = "Sweden_ai.txt"
+}
+TUR = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 476 477 482 483 }
+	extra = { 357 }
+	capital = 476
+	group = muslim
+	culture = turkish
+	religion = sunni
+	ai = "Turkey_ai.txt"
+}
+JER = {
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 492 493 }
+	extra = { }
+	capital = 493
+	group = orthodox
+	religion = catholic
+	culture = french
+	ai = "crusader_ai.txt"
+}
+VEN = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 370 }
+	extra = { 368 }
+	capital = 370
+	group = latin
+	ai = "Venice_ai.txt"
+}
+POL = { # Poland
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 299 300 303 }
+	extra = { 291 292 297 298 301 302 314 }
+	capital = 299
+	group = orthodox
+	religion = catholic
+	culture = polish
+	ai = "Poland_ai.txt"
+}
+LIT = {
+	no = POL
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1660 }
+	minimum = { 284 288 293 }
+	extra = { 280 281 285 286 287 294 295 296 297 449 450 451 460 461 462 }
+	capital = 288
+	group = orthodox
+	religion = catholic
+	culture = lithuanian
+	ai = "Poland_ai.txt"
+}
+ADE = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 500 501 502 }
+	extra = { 756 }
+	capital = 500
+	group = muslim
+	religion = sunni
+	ai = "default_ai.txt"
+}
+ALD = {
+	date = { day = 1 month = january year = 1510 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 734 735 736 737 738 }
+	extra = { }
+	capital = 737
+	group = muslim
+	religion = sunni
+	culture = arabic
+	ai = "default_ai.txt"
+}
+ARA = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 495 496 497 498 }
+	extra = { }
+	capital = 498
+	group = muslim
+	religion = sunni
+	ai = "default_ai.txt"
+}
+AST = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1700 }
+	minimum = { 455 456 457 458 }
+	extra = { }
+	capital = 457
+	group = muslim
+	religion = sunni
+	#culture = tatar
+	ai = "default_ai.txt"
+}
+NOG = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1700 }
+	minimum = { 513 514 515 518 519 520 }
+	extra = { }
+	capital = 515
+	group = muslim
+	religion = sunni
+	#culture = nogai
+	ai = "default_ai.txt"
+}
+UZB = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1700 }
+	minimum = { 1594 1533 522 }
+	extra = { 521 523 524 1532 1592 }
+	capital = 1594
+	group = muslim
+	religion = sunni
+	culture = uzbek
+	ai = "UZB_1419_Summer.txt"
+}
+KZK = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1700 }
+	minimum = { 516 517 579 580 582 584 1535 1536 }
+	extra = { }
+	capital = 1536
+	group = asian
+	religion = sunni
+	culture = khazak
+	ai = "default_ai.txt"
+}
+AFG = {
+	no = KAB
+	date = { day = 1 month = january year = 1492 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 1524 1525 1527 }
+	extra = { 539 1523 1528 1591 }
+	capital = 1525
+	group = muslim
+	religion = sunni
+	ai = "AFG_1707_Hotaki.txt"
+}
+BAL = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 536 537 538 1526 }
+	extra = { }
+	capital = 537
+	group = muslim
+	religion = shia
+	ai = "default_ai.txt"
+}
+BAD = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 373 }
+	extra = { }
+	capital = 373
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+MEC = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 305 }
+	extra = { }
+	capital = 305
+	group = latin
+	ai = "trader_ai.txt"
+}
+POM = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1700 }
+	minimum = { 304 302 }
+	extra = { }
+	capital = 304
+	group = latin
+	ai = "Peaceful_ai.txt"
+}
+BAY = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 348 349 }
+	extra = { }
+	capital = 349
+	group = latin
+	ai = "default_ai.txt"
+}
+KLE = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 343 }
+	extra = { }
+	capital = 343
+	group = latin
+	ai = "Peaceful_ai.txt"
+}
+MAG = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 311 }
+	extra = { }
+	capital = 311
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+OLD = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 335 }
+	extra = { }
+	capital = 335
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+MUN = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 334 }
+	extra = { }
+	capital = 334
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+THU = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1492 }
+	minimum = { 347 }
+	extra = { }
+	capital = 347
+	group = latin
+	ai = "default_ai.txt"
+}
+BRE = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 336 }
+	extra = { }
+	capital = 336
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+MAI = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 346 }
+	extra = { }
+	capital = 346
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+BOH = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 315 328 329 330 }
+	extra = { 314 }
+	capital = 328
+	group = latin
+	culture = czech
+	ai = "default_ai.txt"
+}
+KNI = {
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 481 819 }
+	extra = { }
+	capital = 819
+	group = latin
+	religion = catholic
+	culture = french
+	ai = "crusader_ai.txt"
+}
+KOK = { # Kokand
+	date = { day = 1 month = january year = 1700 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 1591 1598 }
+	extra = { 1592 1594 1599 1600 }
+	capital = 1598
+	group = muslim
+	religion = sunni
+	culture = persian
+	ai = "UZB_1488_Shaibani.txt"
+}
+CRI = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1700 }
+	minimum = { 463 466 }
+	extra = { 296 459 460 462 464 465 467 468 }
+	capital = 463
+	group = muslim
+	religion = sunni
+	#culture = tatar
+	ai = "default_ai.txt"
+}
+DAN = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 251 307 309 }
+	extra = { 306 308 }
+	capital = 307
+	group = latin
+	ai = "DAN_1419_Early.txt"
+}
+GEN = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 403 }
+	extra = { 398 }
+	capital = 403
+	group = latin
+	ai = "Genoa_ai.txt"
+}
+HAN = {
+	no = BRU
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 310 }
+	extra = { }
+	capital = 310
+	group = latin
+	ai = "default_ai.txt"
+}
+HEL = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 388 1612 }
+	extra = { }
+	capital = 388
+	group = latin
+	ai = "Peaceful_ai.txt"
+}
+HES = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 333 }
+	extra = { }
+	capital = 333
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+HLL = { # Holland
+	no = HOL
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 339 }
+	extra = { 340 }
+	capital = 339
+	group = latin
+	ai = "trader_ai.txt"
+}
+HUN = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 316 317 323 324 325 326 352 353 354 }
+	extra = { }
+	capital = 325
+	group = orthodox
+	religion = catholic
+	culture = magyar
+	ai = "default_ai.txt"
+}
+SIE = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 323 }
+	extra = { 318 319 320 322 }
+	capital = 323
+	group = orthodox
+	ai = "default_ai.txt"
+}
+RAG = {
+	no = TUR
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 362 }
+	extra = { }
+	capital = 362
+	group = orthodox
+	religion = catholic
+	ai = "trader_ai.txt"
+}
+GRE = {
+	date = { day = 1 month = january year = 1750 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 359 360 }
+	extra = { 358 479 480 481 484 820 }
+	capital = 359
+	group = orthodox
+	culture = greek
+	religion = orthodox
+	ai = "default_ai.txt"
+}
+GRN = { # Greenland
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 1537 1538 }
+	extra = { }
+	capital = 1538
+	group = orthodox
+	ai = "trader_ai.txt"
+}
+GUT = { # Guatemala
+	no = UCA
+	date = { day = 1 month = january year = 1750 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 33 }
+	extra = { }
+	capital = 33
+	group = latin
+	ai = "default_ai.txt"
+}
+ATH = {
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1492 }
+	minimum = { 359 }
+	extra = { }
+	capital = 359
+	group = orthodox
+	religion = catholic
+	culture = italian
+	ai = "crusader_ai.txt"
+}
+SER = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 355 363 }
+	extra = { 362 364 }
+	capital = 355
+	group = orthodox
+	religion = orthodox
+	ai = "default_ai.txt"
+}
+BUL = {
+	no = TUR
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 321 356 }
+	extra = { 320 358 }
+	capital = 356
+	group = orthodox
+	religion = orthodox
+	ai = "default_ai.txt"
+}
+BOS = {
+	no = TUR
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 364 }
+	extra = { 365 }
+	capital = 364
+	group = orthodox
+	religion = catholic
+	ai = "default_ai.txt"
+}
+ALB = {
+	no = TUR
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 361 }
+	extra = { }
+	capital = 361
+	group = orthodox
+	religion = catholic
+	ai = "default_ai.txt"
+}
+CRO = {
+	no = TUR
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 366 }
+	extra = { 364 365 }
+	capital = 366
+	group = orthodox
+	religion = catholic
+	ai = "default_ai.txt"
+}
+CUB = { # Cuba
+	date = { day = 1 month = january year = 1750 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 137 138 139 }
+	extra = { }
+	capital = 137
+	group = latin
+	ai = "default_ai.txt"
+}
+DUL = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1550 }
+	minimum = { 485 474 }
+	extra = { }
+	capital = 474
+	group = muslim
+	religion = sunni
+	culture = turkish
+	ai = "default_ai.txt"
+}
+ECU = { # Ecuador
+	date = { day = 1 month = january year = 1750 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 163 164 187 188 }
+	extra = { }
+	capital = 163
+	group = latin
+	ai = "default_ai.txt"
+}
+RAM = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1650 }
+	minimum = { 483 }
+	extra = { }
+	capital = 483
+	group = muslim
+	religion = sunni
+	culture = turkish
+	ai = "default_ai.txt"
+}
+AKK = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1550 }
+	minimum = { 473 474 486 }
+	extra = { 471 472 487 488 489 508 525 526 527 528 529 530 531 532 533 534 535 1529 1530 1531 }
+	capital = 486
+	group = muslim
+	religion = sunni
+	culture = turkish
+	ai = "AKK_1419.txt"
+}
+QAR = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1550 }
+	minimum = { 487 488 489 530 }
+	extra = { 471 472 473 474 486 508 525 526 527 528 529 531 532 533 534 535 1529 1530 1531 }
+	capital = 530
+	group = muslim
+	religion = shia
+	culture = turkish
+	ai = "QAR_1419_Start.txt"
+}
+ARM = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 472 }
+	extra = { 473 474 486 }
+	capital = 472
+	group = orthodox
+	religion = miaphysite
+	ai = "default_ai.txt"
+}
+CYP = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = {day = 1 month = january year = 1492 }
+	minimum = { 484 }
+	extra = { }
+	capital = 484
+	group = orthodox
+	religion = catholic
+	culture = french
+	ai = "crusader_ai.txt"
+}
+CYR = { # Cyrenaica
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 741 }
+	extra = { }
+	capital = 741
+	group = muslim
+	religion = sunni
+	ai = "default_ai.txt"
+}
+HYD = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 566 }
+	extra = { 565 }
+	capital = 566
+	group = muslim
+	religion = sunni
+	ai = "default_ai.txt"
+}
+IRA = {
+	date = { day = 1 month = january year = 1750 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 488 489 508 }
+	extra = { }
+	capital = 489
+	group = muslim
+	religion = sunni
+	ai = "default_ai.txt"
+}
+KAZ = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1700 }
+	minimum = { 446 453 454 }
+	extra = { }
+	capital = 446
+	group = muslim
+	religion = sunni
+	culture = mongol
+	ai = "default_ai.txt"
+}
+KOL = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 344 }
+	extra = { }
+	capital = 344
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+LOR = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 375 }
+	extra = { }
+	capital = 375
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+MAM = {
+	no = FAT
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 744 745 746 }
+	extra = { 494 742 743 747 }
+	capital = 746
+	group = muslim
+}
+MOR = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 732 733 805 806 1595 }
+	extra = { }
+	capital = 733
+	group = muslim
+	religion = sunni
+	culture = berber
+	ai = "Morocco_ai.txt"
+}
+MLO = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 389 }
+	extra = { 402 }
+	capital = 389
+	group = latin
+	ai = "default_ai.txt"
+}
+MOL = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 318 319 }
+	extra = { 320 322 323 }
+	capital = 318
+	group = orthodox
+	ai = "default_ai.txt"
+}
+MYS = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 570 }
+	extra = { }
+	capital = 570
+	group = asian
+	ai = "default_ai.txt"
+}
+OHI = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1750 }
+	minimum = { 90 }
+	extra = { }
+	capital = 90
+	group = pagan
+}
+HUR = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1750 }
+	minimum = { 98 }
+	extra = { }
+	capital = 98
+	group = pagan
+}
+CHE = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1750 }
+	minimum = { 56 }
+	extra = { }
+	capital = 56
+	group = pagan
+}
+CRE = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1750 }
+	minimum = { 48 }
+	extra = { }
+	capital = 48
+	group = pagan
+}
+APA = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1750 }
+	minimum = { 1477 }
+	extra = { }
+	capital = 1477
+	group = pagan
+}
+DAK = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1750 }
+	minimum = { 76 }
+	extra = { }
+	capital = 76
+	group = pagan
+}
+SHA = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1750 }
+	minimum = { 71 72 }
+	extra = { }
+	capital = 71
+	group = pagan
+}
+DEL = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1750 }
+	minimum = { 86 87 }
+	extra = { }
+	capital = 87
+	group = pagan
+}
+OMA = {
+	no = ORM
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 503 504 505 }
+	extra = { 506 507 509 }
+	capital = 504
+	group = muslim
+	religion = shia
+	ai = "Oman_ai.txt"
+}
+PAP = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 399 }
+	extra = { 391 392 }
+	capital = 399
+	group = latin
+	religion = catholic
+	ai = "Papal_ai.txt"
+}
+PAR = {
+	date = { day = 1 month = january year = 1545 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 402 }
+	extra = { }
+	capital = 402
+	group = latin
+	ai = "default_ai.txt"
+}
+PIS = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 400 }
+	extra = { }
+	capital = 400
+	group = latin
+	ai = "trader_ai.txt"
+}
+MAN = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 390 }
+	extra = { }
+	capital = 390
+	group = latin
+	ai = "default_ai.txt"
+}
+PER = {
+	date = { day = 1 month = january year = 1480 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 529 530 531 532 533 }
+	extra = { 471 472 473 474 486 487 488 489 508 525 526 527 528 534 535 1529 1530 1531 }
+	capital = 530
+	group = muslim
+	religion = shia
+	ai = "PER_1499.txt"
+	culture = persian
+}
+PFA = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 345 346 }
+	extra = { }
+	capital = 345
+	group = latin
+	ai = "default_ai.txt"
+}
+SAC = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 331 332 }
+	extra = { }
+	capital = 331
+	group = latin
+	ai = "default_ai.txt"
+}
+SAV = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 404 405 }
+	extra = { }
+	capital = 405
+	group = latin
+	culture = italian
+	ai = "default_ai.txt"
+}
+SCO = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 236 237 238 239 }
+	extra = { 240 }
+	capital = 238
+	group = latin
+	culture = scots
+	ai = "default_ai.txt"
+}
+SIB = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1750 }
+	minimum = { 510 511 512 578 1570 1571 1573 }
+	extra = { }
+	capital = 1573
+	group = asian
+	religion = sunni
+	culture = altai
+	ai = "default_ai.txt"
+}
+SUD = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 750 751 }
+	extra = { 752 }
+	capital = 751
+	group = african
+	religion = sunni
+	culture = nubian
+	ai = "default_ai.txt"
+}
+SUL = { # Sulu
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 695 }
+	extra = { 694 }
+	capital = 695
+	group = asian
+	religion = sunni
+	ai = "SmallTrade1_ai.txt"
+}
+SUN = { # Sunda
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 701 702 }
+	extra = { 703 }
+	capital = 701
+	group = asian
+	religion = hinduism
+	ai = "default_ai.txt"
+}
+TOS = {
+	no = FLO
+	date = { day = 1 month = january year = 1550 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 400 401 }
+	extra = { }
+	capital = 401
+	group = latin
+	ai = "default_ai.txt"
+}
+TRI = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 740 }
+	extra = { }
+	capital = 740
+	group = muslim
+	religion = sunni
+	ai = "default_ai.txt"
+}
+TRP = {
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1492 }
+	minimum = { 491 }
+	extra = { }
+	capital = 491
+	group = orthodox
+	religion = catholic
+	culture = french
+	ai = "crusader_ai.txt"
+	}
+TUN = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 739 }
+	extra = { }
+	capital = 739
+	group = muslim
+	religion = sunni
+	ai = "default_ai.txt"
+}
+WAL = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 320 322 }
+	extra = { 318 319 323 }
+	capital = 322
+	group = orthodox
+	ai = "default_ai.txt"
+}
+WUR = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 372 }
+	extra = { }
+	capital = 372
+	group = latin
+	ai = "default_ai.txt"
+}
+CHI = {
+	revolt = no
+	date = { day = 1 month = january year = 1419 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 647 648 649 650 651 652 653 654 655 656 657 658 659 660 661 689 1544 1545 1553 1555 1556 1557 1558 1559 1560 1561 1562 1563 1564 1565 1566 1567 }
+	extra = { }
+	capital = 654
+	group = asian
+	religion = confucianism
+	culture = han
+	ai = "CHI_1419_ZengHe.txt"
+}
+CHL = { # Chile
+	date = { day = 1 month = january year = 1750 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 171 172 173 174 175 176 177 228 }
+	extra = { }
+	capital = 174
+	group = latin
+	ai = "CHL_1750.txt"
+}
+CIR = { # Circassia
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 466 467 468 }
+	extra = { 465 469 }
+	capital = 468
+	group = orthodox
+	culture = circassian
+	ai = "default_ai.txt"
+}
+CLC = { # Calicut
+	date = { day = 1 month = january year = 1399 }
+	expirydate = { day = 1 month = january year = 1700 }
+	minimum = { 569 }
+	extra = { }
+	capital = 569
+	group = asian
+	religion = hinduism
+	ai = "peaceful_ai.txt"
+}
+MCH = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 625 626 627 628 634 635 636 637 638 639 640 643 644 645 646 }
+	extra = { 647 648 649 }
+	capital = 643
+	group = asian
+	religion = confucianism
+	culture = manchu
+	ai = "default_ai.txt"
+}
+MDG = { # Madagascar
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 807 808 }
+	extra = { }
+	capital = 808
+	group = african
+	culture = madagasque
+	ai = "default_ai.txt"
+}
+KOR = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 641 642  }
+	extra = { }
+	capital = 642
+	group = asian
+	ai = "peaceful_ai.txt"
+}
+KRD = { # Kurdistan
+	date = { day = 1 month = january year = 1492 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 473 474 486 }
+	extra = { 487 488 490 }
+	capital = 473
+	group = muslim
+	culture = kurdish
+	ai = "default_ai.txt"
+}
+TIB = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 1540 1541 1542 1543 }
+	extra = { 1539 1605 1607 }
+	capital = 1543
+	group = asian
+	religion = buddhism
+	ai = "peaceful_ai.txt"
+}
+TLE = { # Tlemcen
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 734 735 736 737 }
+	extra = { }
+	capital = 735
+	group = muslim
+	religion = sunni
+	culture = berber
+	ai = "default_ai.txt"
+}
+NIP = {
+	date = { day = 1 month = march year = 1392 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 685 683 684 686 687 688 }
+	extra = { }
+	capital = 686
+	group = asian
+	religion = shinto
+	ai = "default_ai.txt"
+}
+MOG = {
+	date = { day = 1 month = january year = 1527 }
+	expirydate = { day = 1 month = january year = 1700 }
+	minimum = { 543 544 545 546 552 553 554 555 }
+	extra = { 539 540 541 542 547 548 549 550 551 556 557 558 559 560 561 562 563 564 565 566 567 1520 1521 1522 1523 1524 1527 }
+	capital = 543
+	group = muslim
+	religion = sunni
+	culture = persian
+	ai = "Mughal_ai.txt"
+}
+DLH = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1700 }
+	minimum = { 543 544 545 1520 1521 1522 }
+	extra = { }
+	capital = 543
+	group = muslim
+	religion = sunni
+	culture = hindi
+	ai = "default_ai.txt"
+}
+DLI = { # Dali
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 1545 }
+	extra = { 1553 1557 }
+	capital = 1545
+	group = asian
+	religion = buddhism
+	ai = "default_ai.txt"
+}
+TIM = {
+	date = { day = 1 month = january year = 1369 }
+	expirydate = { day = 1 month = february year = 1405 }
+	minimum = { 1532 1591 1592 1594 1598 1599 1530 1531 }
+	extra = { }
+	capital = 1592
+	group = muslim
+	ai = "TIM_1369"
+}
+ORI = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 560 561 562 564 }
+	extra = { }
+	capital = 560
+	group = asian
+	religion = hinduism
+	ai = "default_ai.txt"
+}
+MLC = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1492 }
+	minimum = { 677 678 }
+	extra = { 676 }
+	capital = 677
+	group = asian
+	religion = sunni
+	ai = "default_ai.txt"
+}
+MTR = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 703 704 }
+	extra = { 701 702 705 }
+	capital = 704
+	group = asian
+	religion = sunni
+	ai = "default_ai.txt"
+}
+MKS = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 708 }
+	extra = { 706 707 709 }
+	capital = 708
+	group = asian
+	ai = "default_ai.txt"
+}
+BEI = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 696 }
+	extra = { 695 697 }
+	capital = 696
+	group = asian
+	ai = "Brunei_ai.txt"
+}
+CHG = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1700 }
+	minimum = { 1600 1601 1602 1603 1604 1605 1606 1607 1608 }
+	extra = { }
+	capital = 1603
+	group = muslim
+	religion = sunni
+	ai = "default_ai.txt"
+}
+STR = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 374 }
+	extra = { }
+	capital = 374
+	group = latin
+	ai = "Peaceful_ai.txt"
+}
+AZT = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1519 }
+	minimum = { 27 }
+	extra = { 26 29 30 }
+	capital = 27
+	group = pagan
+}
+INC = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1530 }
+	minimum = { 167 168 169 170 193 }
+	extra = { }
+	capital = 169
+	group = pagan
+}
+CHM = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1530 }
+	minimum = { 164 }
+	extra = { 162 163 }
+	capital = 164
+	group = pagan
+}
+ZAP = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1530 }
+	minimum = { 30 }
+	extra = { 29 31 }
+	capital = 30
+	group = pagan
+	ai = "peaceful_ai.txt"
+}
+MAA = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1530 }
+	minimum = { 35 }
+	extra = { 32 33 34 }
+	capital = 35
+	group = pagan
+}
+USA = {
+	date = { day = 1 month = january year = 1750 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 54 62 63 64 68 85 86 87 88 101 102 103 104 112 }
+	extra = { 55 56 61 65 66 67 69 70 83 84 89 90 91 100 }
+	capital = 86
+	group = latin
+	culture = american
+	religion = protestant
+	ai = "USA_1774_Independence.txt"
+}
+QUE = {
+	date = { day = 1 month = january year = 1750 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 105 106 107 108 109 110 111 113 114 }
+	extra = { 92 94 95 96 97 98 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 }
+	capital = 110
+	group = latin
+	ai = "QUE_1750.txt"
+}
+HAI = {
+	date = { day = 1 month = january year = 1750 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 141 142 143 }
+	extra = { }
+	capital = 141
+	group = latin
+	ai = "default_ai.txt"
+}
+MEX = {
+	no = AZT
+	date = { day = 1 month = january year = 1750 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 40 41 822 }
+	extra = { }
+	capital = 27
+	group = latin
+	ai = "MEX_1750.txt"
+}
+COL = {
+	date = { day = 1 month = january year = 1750 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 39 154 155 156 157 158 159 160 161 162 163 164 }
+	extra = { }
+	capital = 158
+	group = latin
+	ai = "COL_1750.txt"
+}
+LAP = {
+	date = { day = 1 month = january year = 1750 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 215 216 217 218 221 222 223 224 225 226 227 228 229 1485 1486 }
+	extra = { }
+	capital = 223
+	group = latin
+	ai = "LAP_1750.txt"
+}
+BRZ = {
+	date = { day = 1 month = january year = 1750 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 183 184 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 }
+	extra = { }
+	capital = 209
+	group = latin
+	ai = "BRZ_1750.txt"
+}
+UKR = {
+	date = { day = 1 month = january year = 1510 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 294 295 460 461 462 }
+	extra = { 296 297 463 }
+	capital = 461
+	group = orthodox
+	religion = orthodox
+	ai = "default_ai.txt"
+}
+RYA = {
+	no = RUS
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1650 }
+	minimum = { 279 447 448 452 }
+	extra = { }
+	capital = 448
+	group = orthodox
+	religion = orthodox
+	ai = "MOS_1419_Standard.txt"
+}
+NVG = {
+	no = RUS
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1492 }
+	minimum = { 267 274 275 }
+	extra = { 262 266 269 276 277 282 1470 }
+	capital = 274
+	group = orthodox
+	religion = orthodox
+	culture = russian
+	ai = "MOS_1419_Standard.txt"
+}
+TVE = {
+	no = RUS
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1650 }
+	minimum = { 278 }
+	extra = { }
+	capital = 278
+	group = orthodox
+	religion = orthodox
+	ai = "MOS_1419_Standard.txt"
+}
+COR = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 398 }
+	extra = { }
+	capital = 398
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+EIR = {
+	date = { day = 1 month = january year = 1550 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 231 232 233 234 235 }
+	extra = { }
+	capital = 233
+	group = latin
+	culture = gaelic
+	ai = "default_ai.txt"
+}
+WLS = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1491 }
+	minimum = { 243  }
+	extra = { }
+	capital = 243
+	group = latin
+	ai = "default_ai.txt"
+}
+WRZ = { # Würzburg
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 347 }
+	extra = { }
+	capital = 347
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+SIC = {
+	no = NAP
+	no = TWO
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 395 396 }
+	extra = { 393 394 819 }
+	capital = 396
+	group = latin
+	ai = "default_ai.txt"
+}
+CAT = {
+	no = ARG
+	date = { day = 1 month = june year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 426 427 429 }
+	extra = { }
+	capital = 429
+	group = latin
+	religion = catholic
+	culture = catalan
+	ai = "trader_ai.txt"
+}
+MAH = {
+	date = { day = 1 month = january year = 1650 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 550 551 }
+	extra = { 542 543 545 546 548 549 552 553 558 559 560 561 562 563 564 565 566 567 1522 }
+	capital = 550
+	group = muslim
+	religion = hinduism
+	ai = "MAH_1650_Shivaji.txt"
+}
+NAP = {
+	no = SIC
+	no = TWO
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 393 394 }
+	extra = { 395 396 819 }
+	capital = 393
+	group = latin
+	ai = "default_ai.txt"
+}
+NAV = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 425 428 }
+	extra = { }
+	capital = 428
+	group = latin
+	culture = basque
+	ai = "default_ai.txt"
+}
+GEO = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 469 470 }
+	extra = { 471 472 }
+	capital = 470
+	group = orthodox
+	religion = orthodox
+	ai = "default_ai.txt"
+}
+BRA = {
+	no = PRU
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 311 312 313 }
+	extra = { }
+	capital = 312
+	group = latin
+	ai = "Prussia_ai.txt"
+}
+SHL = {
+	no = DAN
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 306 }
+	extra = { }
+	capital = 306
+	group = latin
+	ai = "trader_ai.txt"
+}
+SAR = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 397 }
+	extra = { }
+	capital = 397
+	group = latin
+	ai = "default_ai.txt"
+}
+PSK = {
+	no = RUS
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1492 }
+	minimum = { 277 }
+	extra = { }
+	capital = 277
+	group = orthodox
+	religion = orthodox
+	ai = "MOS_1419_Standard.txt"
+}
+PUC = { # Puerto Rico
+	date = { day = 1 month = january year = 1750 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 144 }
+	extra = { }
+	capital = 144
+	group = latin
+	ai = "default_ai.txt"
+}
+ARG = {
+	no = SPA
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = may year = 1492 }
+	minimum = { 426 427 429 430 437 821 }
+	extra = { }
+	capital = 430
+	group = latin
+	religion = catholic
+	ai = "ARG_1399.txt"
+}
+BRI = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 414 415 416 }
+	extra = { }
+	capital = 414
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+BUR = {
+	no = HAB
+	no = SPA
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 386 387 409 }
+	extra = { }
+	capital = 409
+	group = latin
+	ai = "burgundy_ai.txt"
+}
+BUT = { # Butung
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 709 }
+	extra = { 706 707 708 }
+	capital = 709
+	group = asian
+	ai = "default_ai.txt"
+}
+NOR = {
+	no = DAN
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 255 256 258 259 261 381 }
+	extra = { 1466 1537 1538 }
+	capital = 255
+	group = latin
+	ai = "NOR_1419.txt"
+}
+PRO = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 406 422 }
+	extra = { 407 404  }
+	capital = 406
+	group = latin
+	ai = "default_ai.txt"
+}
+KUR = {
+	date = { day = 1 month = january year = 1562 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 283 }
+	extra = { }
+	capital = 283
+	group = latin
+	culture = wendish
+	ai = "trader_ai.txt"
+}
+LAT = {
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1562 }
+	minimum = { 276 282 283 289 290 301 }
+	extra = { 275 277 308 }
+	capital = 290
+	group = latin
+	religion = catholic
+	culture = wendish
+	ai = "default_ai.txt"
+}
+GRA = {
+	vassal = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1492 }
+	minimum = { 444 }
+	extra = { 436 437 438 439 440 442 443 445 }
+	capital = 444
+	group = latin
+	religion = sunni
+	culture = berber
+	ai = "default_ai.txt"
+}
+GRC = { # Gran Colombia
+	no = COL
+	date = { day = 1 month = january year = 1750 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 39 154 155 156 157 158 159 160 161 162 163 164 178 187 188 }
+	extra = { }
+	capital = 160
+	group = latin
+	ai = "COL_1750.txt"
+}
+CAL = {
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1549 }
+	minimum = { 489 }
+	extra = {  }
+	capital = 489
+	group = muslim
+}
+ETH = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 752 753 1516 1517 1518 1519 1588 1589 1590 }
+	extra = { }
+	capital = 1517
+	group = african
+	religion = miaphysite
+	culture = ethiopian
+	ai = "default_ai.txt"
+}
+KON = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 786 787 788 789 790 1503 1504 1505 1506 }
+	extra = { }
+	capital = 1506
+	group = pagan
+	culture = kongolese
+	ai = "Kongo_ai.txt"
+}
+SON = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 1496 1497 }
+	extra = { }
+	capital = 1496
+	group = african
+	#culture = songhai
+	ai = "Mande_ai.txt"
+}
+BEN = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 791 792 793 }
+	extra = { }
+	capital = 792
+	group = pagan
+	#culture = yoruba
+	ai = "default_ai.txt"
+}
+ZIM = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 772 1507 1508 1509 1510 1511 }
+	extra = { }
+	capital = 1509
+	group = pagan
+	culture = shona
+	ai = "default_ai.txt"
+}
+ZAN = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 765 }
+	extra = {  }
+	capital = 765
+	group = african
+	culture = swahili
+	ai = "default_ai.txt"
+}
+KIL = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 764 766 767 768 769 }
+	extra = { }
+	capital = 766
+	group = african
+	culture = swahili
+	ai = "KIL_1419.txt"
+}
+MOM = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 763 }
+	extra = { }
+	capital = 763
+	group = african
+	culture = swahili
+	ai = "default_ai.txt"
+}
+MLI = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 761 762 }
+	extra = { }
+	capital = 762
+	group = african
+	culture = swahili
+	ai = "default_ai.txt"
+}
+MGU = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 760 }
+	extra = { }
+	capital = 760
+	group = african
+	culture = somali
+	ai = "default_ai.txt"
+}
+AJU = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 757 759 760 }
+	extra = { }
+	capital = 759
+	group = african
+	culture = somali
+	ai = "default_ai.txt"
+}
+ADA = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 754 755 758 1518 1519 }
+	extra = { }
+	capital = 754
+	group = african
+	culture = somali
+	ai = "default_ai.txt"
+}
+MAL = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 1491 1492 }
+	extra = { }
+	capital = 1492
+	group = african
+	#culture = mande
+	ai = "Mande_ai.txt"
+}
+DAH = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 794 1498 }
+	extra = {  }
+	capital = 1498
+	group = pagan
+	#culture = akan
+	ai = "default_ai.txt"
+}
+ASH = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 795 1493 }
+	extra = {  }
+	capital = 1493
+	group = pagan
+	culture = ashanti
+	ai = "default_ai.txt"
+}
+ASS = { # Assam
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 671 1546 }
+	extra = { 1545 }
+	capital = 1546
+	group = asian
+	ai = "default_ai.txt"
+}
+BGL = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1700 }
+	minimum = { 558 559 }
+	extra = { 554 555 556 557 }
+	capital = 559
+	group = muslim
+	religion = sunni
+	ai = "default_ai.txt"
+}
+VIJ = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1700 }
+	minimum = { 567 568 570 571 }
+	extra = { }
+	capital = 567
+	group = asian
+	religion = hinduism
+	ai = "default_ai.txt"
+}
+VNZ = { # Venezuela
+	date = { day = 1 month = january year = 1750 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 154 155 156 157 178 }
+	extra = { }
+	capital = 154
+	group = latin
+	ai = "default_ai.txt"
+}
+AYU = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 670 675 674 }
+	extra = {  }
+	capital = 670
+	group = asian
+	ai = "default_ai.txt"
+}
+DAI = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 662 663 1554 }
+	extra = { 664 665 666 }
+	capital = 662
+	group = asian
+	ai = "default_ai.txt"
+}
+ANN = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 664 665 }
+	extra = { 662 663 666 1554 }
+	capital = 664
+	group = asian
+	religion = buddhism
+	culture = vietnamese
+	ai = "default_ai.txt"
+}
+LUA = {
+	date = { day = 1 month = january year = 1700 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 1552 }
+	extra = {  }
+	capital = 1552
+	group = asian
+	ai = "default_ai.txt"
+}
+VIE = {
+	date = { day = 1 month = january year = 1700 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 1551 }
+	extra = { 669 }
+	capital = 1551
+	group = asian
+	ai = "default_ai.txt"
+}
+#MYA = {
+#	date = { day = 1 month = january year = 1337 }
+#	expirydate = { day = 1 month = january year = 1837 }
+#	minimum = { 1547 1548 }
+#	extra = { 672 1546 }
+#	capital = 1547
+#	group = asian
+#	ai = "default_ai.txt"
+#}
+TAU = {
+	date = { day = 1 month = january year = 1399 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 673 1549 }
+	extra = { 669 670 671 674 675 1546 1547 1548 1550 1551 1552 }
+	capital = 1549
+	group = asian
+	culture = burmanese
+	ai = "Toungoo_ai.txt"
+}
+TEK = { # Teke
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 1610 }
+	extra = { }
+	capital = 1610
+	group = muslim
+	religion = sunni
+	ai = "default_ai.txt"
+}
+ARK = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 556 672 }
+	extra = { }
+	capital = 672
+	group = asian
+	ai = "default_ai.txt"
+}
+KHM = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1450 }
+	minimum = { 667 }
+	extra = {  }
+	capital = 667
+	group = asian
+	ai = "default_ai.txt"
+	revolt = no
+}
+CAM = {
+	no = KHM
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 667 668 }
+	extra = { 666 }
+	capital = 667
+	group = asian
+	ai = "default_ai.txt"
+}
+CAN = { # Candar
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 476 1609 }
+	extra = { }
+	capital = 1609
+	group = muslim
+	religion = sunni
+	ai = "default_ai.txt"
+}
+ATJ = {
+	date = { day = 1 month = january year = 1517 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 679 680 }
+	extra = {  }
+	capital = 679
+	group = asian
+	ai = "default_ai.txt"
+}
+FIN = {
+	date = { day = 1 month = january year = 1700 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 263 264 265 273 342 }
+	extra = { 262 266 275 1470 }
+	capital = 265
+	group = latin
+	culture = ugric
+	ai = "default_ai.txt"
+}
+GUJ = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 541 547 }
+	extra = { }
+	capital = 541
+	group = muslim
+	religion = sunni
+	ai = "default_ai.txt"
+}
+CHA = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 664 665 }
+	extra = { 666 }
+	capital = 664
+	group = asian
+	religion = hinduism
+	culture = cham
+	ai = "default_ai.txt"
+}
+#PEG = {
+#	date = { day = 1 month = january year = 1337 }
+#	expirydate = { day = 1 month = january year = 1837 }
+#	minimum = { 673 }
+#	extra = {  }
+#	capital = 673
+#	group = asian
+#	ai = "default_ai.txt"
+#}
+MLW = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 546 }
+	extra = { }
+	capital = 546
+	group = muslim
+	religion = sunni
+	ai = "default_ai.txt"
+}
+MND = { # Maguindanao
+	date = { day = 1 month = january year = 1492 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 693 }
+	extra = { 694 }
+	capital = 693
+	group = asian
+	religion = sunni
+	ai = "SmallTrade1_ai.txt"
+}
+MNT = { # Montenegro
+	date = { day = 1 month = january year = 1700 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 362 }
+	extra = { }
+	capital = 362
+	group = orthodox
+	religion = orthodox
+	ai = "peaceful_ai.txt"
+}
+JAI = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 542 }
+	extra = { 1522 }
+	capital = 542
+	group = muslim
+	religion = sunni
+	ai = "default_ai.txt"
+}
+ZUL = {
+	date = { day = 1 month = january year = 1750 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 773 774 }
+	extra = { }
+	capital = 773
+	group = pagan
+	#culture = zulu
+	ai = "default_ai.txt"
+}
+XHO = {
+	date = { day = 1 month = january year = 1700 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 775 776 }
+	extra = { }
+	capital = 775
+	group = pagan
+	#culture = xhosa
+	ai = "default_ai.txt"
+}
+KSH = { # Kashmir
+	no = SKH
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 1520 1521 }
+	extra = { }
+	capital = 1520
+	group = muslim
+	religion = sunni
+	ai = "default_ai.txt"
+}
+ABB = {
+	no = CAL
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 489 }
+	extra = { }
+	capital = 489
+	group = muslim
+	religion = sunni
+	ai = "default_ai.txt"
+}
+ALE = {
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 485 }
+	extra = { }
+	capital = 485
+	group = orthodox
+	ai = "crusader_ai.txt"
+}
+ALM = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = {806 805 739 738 737 736 735 734 733 732 445 444 443 442 440 439 438 437 }
+	extra = { }
+	capital = 806
+	group = muslim
+	religion = sunni
+	ai = "default_ai.txt"
+}
+ALT = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 311 }
+	extra = { }
+	capital = 311
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+ANH = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 332 }
+	extra = { }
+	capital = 332
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+ANJ = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 412 }
+	extra = { }
+	capital = 412
+	group = latin
+	ai = "default_ai.txt"
+}
+APU = {
+	no = NAP
+	no = SIC
+	no = TWO
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 394 }
+	extra = { 393 }
+	capital = 394
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+AMG = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 423 }
+	extra = { }
+	capital = 423
+	group = latin
+	ai = "default_ai.txt"
+}
+AMI = { # Armenia Minor
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1492 }
+	minimum = { 483 }
+	extra = { }
+	capital = 483
+	group = muslim
+	religion = miaphysite
+	ai = "peaceful_ai.txt"
+}
+ART = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 379 }
+	extra = { }
+	capital = 379
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+ASU = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 431 432 }
+	extra = { }
+	capital = 432
+	group = latin
+	religion = catholic
+	ai = "default_ai.txt"
+}
+AYY = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 495 490 486}
+	extra = { 493 492 481}
+	capital = 490
+	group = muslim
+	religion = sunni
+	ai = "default_ai.txt"
+}
+BAE = {
+	vassal = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 821 }
+	extra = { }
+	capital = 821
+	group = muslim
+	religion = sunni
+	culture = berber
+	ai = "default_ai.txt"
+}
+BAS = {
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 508 507 506 }
+	extra = { }
+	capital = 508
+	group = orthodox
+	religion = catholic
+	culture = french
+	ai = "crusader_ai.txt"
+}
+BEA = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 425 }
+	extra = { }
+	capital = 425
+	group = latin
+	ai = "default_ai.txt"
+}
+BUK = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1700 }
+	minimum = { 1532 1592 1594 1598 1599 }
+	extra = { 1531 1591 }
+	capital = 1532
+	group = muslim
+	religion = sunni
+	culture = uzbek
+	ai = "UZB_1488_Shaibani.txt"
+}
+CMG = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 376 }
+	extra = { }
+	capital = 376
+	group = latin
+	ai = "default_ai.txt"
+}
+CMP = { # Champassak
+	date = { day = 1 month = january year = 1700 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 669 }
+	extra = { }
+	capital = 669
+	group = asian
+	ai = "default_ai.txt"
+}
+CRG = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 286 294 295 449 450 451 460 461 462 }
+	extra = { }
+	capital = 294
+	group = orthodox
+	religion = orthodox
+	culture = ruthenian
+	ai = "Rus_ai.txt"
+}
+CON = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 231 }
+	extra = { }
+	capital = 231
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+COI = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 442 }
+	extra = { }
+	capital = 442
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+MSK = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 280 281 284 285 287 }
+	extra = { }
+	capital = 284
+	group = orthodox
+	religion = orthodox
+	culture = russian
+	ai = "Rus_ai.txt"
+}
+CRD = {
+	vassal = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 443 }
+	extra = { 429 430 434 436 437 438 439 440 441 442 444 445 732 821 }
+	capital = 443
+	group = latin
+	religion = sunni
+	culture = berber
+	ai = "default_ai.txt"
+}
+CNW = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 250 }
+	extra = { }
+	capital = 250
+	group = latin
+	ai = "trader_ai.txt"
+}
+DAM = {
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 490 }
+	extra = { }
+	capital = 490
+	group = orthodox
+	religion = catholic
+	culture = french
+	ai = "crusader_ai.txt"
+}
+DAU = {
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 407 408}
+	extra = { }
+	capital = 407
+	group = latin
+	ai = "default_ai.txt"
+}
+EDE = {
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 492 }
+	extra = { }
+	capital = 492
+	group = orthodox
+	religion = catholic
+	culture = french
+	ai = "crusader_ai.txt"
+}
+EGY = {
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1836 }
+	minimum = { 744 745 746 494 742 743 747 }
+	extra = { }
+	capital = 746
+	group = orthodox
+	culture = french
+	religion = catholic
+	ai = "crusader_ai.txt"
+	}
+FAT = {
+	no = MAM
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 744 745 746 }
+	extra = { 494 742 743 747 }
+	capital = 746
+	group = muslim
+	religion = sunni
+	culture = arabic
+	ai = "default_ai.txt"
+}
+FRC = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 346 347 348 }
+	extra = { }
+	capital = 346
+	group = latin
+	ai = "default_ai.txt"
+}
+GOT = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 308 }
+	extra = { }
+	capital = 308
+	group = latin
+	ai = "trader_ai.txt"
+}
+HAM = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 735 736}
+	extra = { }
+	capital = 735
+	group = muslim
+	religion = sunni
+	ai = "default_ai.txt"
+}
+ICE = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 1466 }
+	extra = { }
+	capital = 1466
+	group = latin
+	ai = "trader_ai.txt"
+}
+IST = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 368 }
+	extra = { }
+	capital = 368
+	group = latin
+	religion = catholic
+	ai = "default_ai.txt"
+}
+JUT = {
+	no = DAN
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 309 }
+	extra = { }
+	capital = 309
+	group = latin
+	ai = "trader_ai.txt"
+}
+#KIE = {
+#	date = { day = 1 month = january year = 1337 }
+#	expirydate = { day = 1 month = january year = 1500 }
+#	minimum = { 295 }
+#	extra = { }
+#	capital = 295
+#	group = orthodox
+#	ai = "default_ai.txt"
+#}
+KRE = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 480 }
+	extra = { }
+	capital = 480
+	group = orthodox
+	religion = catholic
+	culture = italian
+	ai = "crusader_ai.txt"
+}
+KUS = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 313 }
+	extra = { }
+	capital = 313
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+KRN = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	capital = 367
+	minimum = { 367 }
+	extra = { 368 }
+	group = latin
+	culture = bavarian
+	ai = "default_ai.txt"
+}
+LAN = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 242 }
+	extra = { }
+	capital = 242
+	group = latin
+	ai = "default_ai.txt"
+}
+LGD = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 422 }
+	extra = { }
+	capital = 422
+	group = latin
+	ai = "default_ai.txt"
+}
+LEI = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 234 }
+	extra = { }
+	capital = 234
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+LEO = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 431 432 433 435 }
+	extra = { }
+	capital = 435
+	group = latin
+	religion = catholic
+	ai = "default_ai.txt"
+}
+LIV = {
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 276 282 283 }
+	extra = { 275 277 308 }
+	capital = 282
+	group = latin
+	religion = catholic
+	culture = wendish
+	ai = "default_ai.txt"
+}
+LOU = {
+	date = { day = 1 month = january year = 1750 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 44 45 51 52 57 58 75 76 1481 }
+	extra = { }
+	capital = 45
+	group = latin
+	ai = "LOU_1750.txt"
+}
+MLL = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 422 426 821 }
+	extra = { }
+	capital = 821
+	group = latin
+	religion = catholic
+	culture = catalan
+	ai = "default_ai.txt"
+}
+MEA = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 233 }
+	extra = { }
+	capital = 233
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+MES = {
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1836 }
+	minimum = { 488 489 }
+	extra = { }
+	capital = 489
+	group = orthodox
+	religion = catholic
+	culture = french
+	ai = "crusader_ai.txt"
+}
+MST = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 235 }
+	extra = { }
+	capital = 235
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+NRM = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 413 384 }
+	extra = { }
+	capital = 413
+	group = latin
+	ai = "default_ai.txt"
+}
+NAF = {
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1836 }
+	minimum = { 804 805 806 741 740 739 738 737 736 735 734 733 732 }
+	extra = { }
+	capital = 737
+	group = orthodox
+	religion = catholic
+	culture = french
+	ai = "crusader_ai.txt"
+}
+PEU = {
+	date = { day = 1 month = january year = 1750 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 164 165 166 167 168 169 170 171 172 173 }
+	extra = { }
+	capital = 168
+	group = latin
+	ai = "default_ai.txt"
+}
+PET = {
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 495 496 }
+	extra = { }
+	capital = 495
+	group = orthodox
+	religion = catholic
+	culture = french
+	ai = "crusader_ai.txt"
+}
+PIC = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 383 }
+	extra = { }
+	capital = 383
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+PIA = { # Pisa
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 401 }
+	extra = { }
+	capital = 401
+	group = latin
+	ai = "trader_ai.txt"
+}
+POD = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 292 }
+	extra = { }
+	capital = 292
+	group = orthodox
+	ai = "default_ai.txt"
+}
+
+POI = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 417 418 }
+	extra = { }
+	capital = 418
+	group = latin
+	ai = "default_ai.txt"
+}
+POK = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 280 281 284 }
+	extra = { }
+	capital = 281
+	group = orthodox
+	religion = orthodox
+	culture = russian
+	ai = "Rus_ai.txt"
+}
+PRT = {
+	no = POR
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 434 }
+	extra = { }
+	capital = 434
+	group = latin
+	religion = catholic
+	ai = "default_ai.txt"
+}
+ROM = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 391 392 }
+	extra = { }
+	capital = 391
+	group = latin
+	ai = "default_ai.txt"
+}
+SEL = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 483 482 476 }
+	extra = { }
+	capital = 476
+	group = muslim
+	ai = "default_ai.txt"
+}
+SEV = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 443 445 }
+	extra = { }
+	capital = 443
+	group = latin
+	religion = catholic
+	ai = "default_ai.txt"
+}
+SIL = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 314 }
+	extra = { }
+	capital = 314
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+SKA = {
+	no = DAN
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 251 }
+	extra = { }
+	capital = 251
+	group = latin
+	ai = "trader_ai.txt"
+}
+SLO = {
+	date = { day = 1 month = january year = 1700 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 316 326}
+	extra = { }
+	capital = 316
+	group = orthodox
+	culture = slovak
+	ai = "default_ai.txt"
+}
+SLZ = { # Salzburg
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 350 }
+	extra = { }
+	capital = 350
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+SMO = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 285 287 }
+	extra = { }
+	capital = 285
+	group = orthodox
+	religion = orthodox
+	culture = russian
+	ai = "Rus_ai.txt"
+}
+STT = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 302 }
+	extra = { }
+	capital = 302
+	group = latin
+	culture = polish
+	ai = "trader_ai.txt"
+}
+SWA = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 1612 374 373 372 }
+	extra = { }
+	capital = 372
+	group = latin
+	ai = "default_ai.txt"
+}
+SYR = {
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1836 }
+	minimum = { 495 492 491 490 485 }
+	extra = { }
+	capital = 490
+	group = orthodox
+	religion = catholic
+	culture = french
+	ai = "crusader_ai.txt"
+}
+TAN = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 732 }
+	extra = { }
+	capital = 732
+	group = muslim
+	ai = "trader_ai.txt"
+}
+THE = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 358 }
+	extra = { }
+	capital = 358
+	group = orthodox
+	religion = orthodox
+	culture = greek
+	ai = "default_ai.txt"
+}
+TOU = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 423 422 421 }
+	extra = { }
+	capital = 423
+	group = latin
+	ai = "default_ai.txt"
+}
+TOX = {
+	revolt = no
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 1594 1592 1591 1533 }
+	extra = { }
+	capital = 1591
+	group = muslim
+	religion = catholic
+	revolt = no
+	ai = "crusader_ai.txt"
+}
+TYR = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 371 }
+	extra = { }
+	capital = 371
+	group = latin
+	ai = "default_ai.txt"
+}
+UCA = { # (United Provinces of) Central America
+	date = { day = 1 month = january year = 1750 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 33 34 36 37 38 822 }
+	extra = { }
+	capital = 33
+	group = latin
+	ai = "UCA_1750.txt"
+}
+ULS = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 232 }
+	extra = { }
+	capital = 232
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+URB = { # Urbino
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 392 }
+	extra = { }
+	capital = 392
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+URG = { # Uruguay
+	date = { day = 1 month = january year = 1750 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 215 }
+	extra = { }
+	capital = 215
+	group = latin
+	ai = "URG_1750.txt"
+}
+VAL = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 437 }
+	extra = { }
+	capital = 437
+	group = latin
+	religion = catholic
+	ai = "default_ai.txt"
+}
+VER = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 392 }
+	extra = { }
+	capital = 392
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+VOL = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 293 }
+	extra = { }
+	capital = 293
+	group = orthodox
+	religion = orthodox
+	culture = ruthenian
+	ai = "Rus_ai.txt"
+}
+YEM = { # Yemen
+	date = { day = 1 month = january year = 1399 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 499 }
+	extra = { 498 }
+	capital = 499
+	group = muslim
+	religion = shia
+	ai = "default_ai.txt"
+}
+YOR = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 241 }
+	extra = { }
+	capital = 241
+	group = latin
+	ai = "default_ai.txt"
+}
+ZEE = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1500 }
+	minimum = { 340 }
+	extra = { }
+	capital = 340
+	group = latin
+	ai = "trader_ai.txt"
+}
+
+LNA = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1780 }
+	minimum = { 1549 1550 }
+	extra = {  }
+	capital = 1550
+	group = asian
+	ai = "default_ai.txt"
+}
+
+LAX = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1710 }
+	minimum = { 669 1551 1552 }
+	extra = {  }
+	capital = 1552
+	group = asian
+	ai = "default_ai.txt"
+}
+
+MON = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 673 674 }
+	extra = {  }
+	capital = 673
+	group = asian
+	ai = "default_ai.txt"
+}
+
+BRM = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 1547 1548 1549 }
+	extra = { 671 1546 }
+	capital = 1547
+	group = asian
+	ai = "default_ai.txt"
+}
+
+MUB = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 1548 }
+	extra = { 1553 1557 }
+	capital = 1548
+	group = asian
+	ai = "default_ai.txt"
+}
+
+LNK = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 576 577 }
+	extra = { }
+	capital = 576
+	group = asian
+	religion = buddhism
+	ai = "peaceful_ai.txt"
+}
+
+PAL = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 681 682 }
+	extra = { }
+	capital = 682
+	group = asian
+	ai = "default_ai.txt"
+}
+
+SIA = { 
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 680 }
+	extra = { 678 681 }
+	capital = 680
+	group = asian
+	ai = "default_ai.txt"
+}
+
+KUT = { 
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 700 }
+	extra = { 699 }
+	capital = 700
+	group = asian
+	ai = "SmallTrade1_ai.txt"
+}
+
+HAS = { 
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 1499 1500 1501 1502 }
+	extra = { }
+	capital = 1501
+	group = pagan
+	#culture = yoruba
+	ai = "default_ai.txt"
+}
+
+TER = { 
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1700 }
+	minimum = { 713 }
+	extra = { 714 715 716 }
+	capital = 713
+	group = asian
+	ai = "Ternate_ai.txt"
+}
+TEX = { # Texas
+	date = { day = 1 month = january year = 1750 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 40 41 42 43 44 }
+	extra = { 19 22 1479 1480 }
+	capital = 42
+	group = latin
+	ai = "TEX_1750.txt"
+}
+
+BIJ = { 
+	date = { day = 1 month = january year = 1480 }
+	expirydate = { day = 1 month = january year = 1700 }
+	minimum = { 549 550 }
+	extra = { 566 567 568 }
+	capital = 550
+	group = muslim
+	religion = shia
+	ai = "default_ai.txt"
+}
+
+AHM = { 
+	date = { day = 1 month = january year = 1480 }
+	expirydate = { day = 1 month = january year = 1700 }
+	minimum = { 548 550 551 }
+	extra = { }
+	capital = 551
+	group = muslim
+	religion = shia
+	ai = "default_ai.txt"
+}
+
+GON = { 
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 552 553 }
+	extra = { }
+	capital = 552
+	group = muslim
+	religion = hinduism
+	ai = "default_ai.txt"
+}
+
+SIN = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 539 540 }
+	extra = { }
+	capital = 539
+	group = muslim
+	religion = sunni
+	ai = "default_ai.txt"
+}
+
+KAB = { 
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1700 }
+	minimum = { 1524 1525 1527 }
+	extra = { }
+	capital = 1527
+	group = muslim
+	religion = sunni
+	ai = "Timurid_ai.txt"
+}
+KAR = { # Karaman
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 482 1610 1611 }
+	extra = { }
+	capital = 1611
+	group = muslim
+	religion = sunni
+	ai = "default_ai.txt"
+}
+
+KHI = {
+	date = { day = 1 month = january year = 1509 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 521 522 523 524 1533 1534 }
+	extra = { }
+	capital = 1533
+	group = muslim
+	religion = sunni
+	culture = uzbek
+	ai = "UZB_1488_Shaibani.txt"
+}
+KHO = { 
+	no = PER
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 29 month = december year = 1700 }
+	minimum = { 525 526 527 528 529 530 1529 1530 }
+	extra = { }
+	capital = 1530
+	group = muslim
+	religion = sunni
+	ai = "Timurid_ai.txt"
+}
+
+RAJ = { 
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 542 1522 }
+	extra = { }
+	capital = 542
+	group = muslim
+	religion = hinduism
+	ai = "default_ai.txt"
+}
+BJR = { 
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 698 }
+	extra = { 699 }
+	capital = 698
+	group = asian
+	ai = "default_ai.txt"
+}
+BLV = { # Bolivia
+	date = { day = 1 month = january year = 1750 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 192 193 194 }
+	extra = { }
+	capital = 194
+	group = latin
+	ai = "BLV_1750.txt"
+}
+BTN = { 
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 682 701 }
+	extra = { }
+	capital = 701
+	group = asian
+	religion = sunni
+	ai = "default_ai.txt"
+}
+MAD = { 
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 572 575 }
+	extra = { }
+	capital = 575
+	group = asian
+	religion = hinduism
+	ai = "peaceful_ai.txt"
+}
+ZHO = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 652 653 }
+	extra = {  }
+	capital = 653
+	group = asian
+	ai = "china_ai.txt"
+}
+MNG = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 652 654 }
+	extra = {  }
+	capital = 654
+	group = asian
+	ai = "china_ai.txt"
+}
+DHN = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1450 }
+	minimum = { 1567 }
+	extra = {  }
+	capital = 1567
+	group = asian
+	ai = "china_ai.txt"
+}
+TIA = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1450 }
+	minimum = { 1565 }
+	extra = {  }
+	capital = 1565
+	group = asian
+	ai = "china_ai.txt"
+}
+SNG = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1450 }
+	minimum = { 650 651 }
+	extra = {  }
+	capital = 651
+	group = asian
+	ai = "china_ai.txt"
+}
+HEN = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 1564 }
+	extra = { }
+	capital = 1564
+	group = asian
+	ai = "china_ai.txt"
+}
+ZHE = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 655 }
+	extra = { }
+	capital = 655
+	group = asian
+	ai = "china_ai.txt"
+}
+FUJ = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 656 657 }
+	extra = { }
+	capital = 656
+	group = asian
+	ai = "china_ai.txt"
+}
+GUA = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 659 660 }
+	extra = { }
+	capital = 659
+	group = asian
+	ai = "china_ai.txt"
+}
+HSI = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1450 }
+	minimum = { 1556 }
+	extra = { }
+	capital = 1556
+	group = asian
+	ai = "china_ai.txt"
+}
+YUN = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 1545 1553 1557 }
+	extra = { }
+	capital = 1553
+	group = asian
+	ai = "china_ai.txt"
+}
+SXI = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 1563 1560 }
+	extra = { }
+	capital = 1563
+	group = asian
+	ai = "china_ai.txt"
+}
+SXA = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 1562 1561 }
+	extra = { }
+	capital = 1562
+	group = asian
+	ai = "china_ai.txt"
+}
+YUA = {
+	date = { day = 1 month = january year = 1380 }
+	expirydate = { day = 1 month = january year = 1450 }
+	minimum = { 647 648 649 }
+	extra = { }
+	capital = 649
+	group = asian
+	ai = "china_ai.txt"
+}
+YUC = { # Yucatán
+	date = { day = 1 month = january year = 1750 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 34 35 }
+	extra = { }
+	capital = 35
+	group = latin
+	ai = "default_ai.txt"
+}
+LIA = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 643 646 }
+	extra = { }
+	capital = 646
+	group = asian
+	ai = "china_ai.txt"
+}
+HNA = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 658 1566 }
+	extra = { }
+	capital = 1566
+	group = asian
+	ai = "china_ai.txt"
+}
+TWN = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 689 }
+	extra = { }
+	capital = 689
+	group = asian
+	ai = "china_ai.txt"
+}
+GXI = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 661 1555 }
+	extra = { }
+	capital = 661
+	group = asian
+	ai = "china_ai.txt"
+}
+XIN = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1837 }
+	minimum = { 1544 1558 1559 1607 1608 }
+	extra = { }
+	capital = 1544
+	group = asian
+	ai = "china_ai.txt"
+}
+MVA = { # Moravia
+	date = { day = 1 month = january year = 1399 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 315 }
+	extra = { }
+	capital = 315
+	group = latin
+	ai = "peaceful_ai.txt"
+}
+CLL = { # Celje
+	date = { day = 1 month = january year = 1399 }
+	expirydate = { day = 1 month = january year = 1550 }
+	minimum = { 367 }
+	extra = { }
+	capital = 367
+	group = latin
+	culture = slavonic
+	ai = "default_ai.txt"
+}
+CFU = { # Cephalonia
+	revolt = no
+	date = { day = 1 month = january year = 1399 }
+	expirydate = { day = 1 month = january year = 1492 }
+	minimum = { 820 }
+	extra = { }
+	capital = 820
+	group = orthodox
+	religion = catholic
+	culture = italian
+	ai = "crusader_ai.txt"
+}
+SUK = {
+	date = { day = 1 month = january year = 1337 }
+	expirydate = { day = 1 month = january year = 1450 }
+	minimum = { 1551 }
+	extra = { 674 }
+	capital = 1551
+	group = asian
+	ai = "default_ai.txt"
+}
+#-----------------------------------------------------------------------------------------------

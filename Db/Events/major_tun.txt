@@ -1,0 +1,20 @@
+# Events copied from AGCEEP in FTG 1.3 to make it likely that Algeria (ALD) appears
+
+
+#(1509-1520) The Barbarossas
+event = {
+	id = 51023 #triggered by TUR_50024 A/B
+	random = no
+	country = TUN
+	name = "The Barbarossas" #The Barbarossas
+	desc = "In the 16th century, Spain occupied various ports in North Africa. Algiers was blockaded and forced to pay tribute. Other ports were captured outright. The desperate Muslims called for help from the Ottoman sultan, then the caliph of all Islam. Two corsair brothers, the Barbarossas petitioned the sultan to send them with a fleet to North Africa. The brothers planned to use the city of Tunis as a launching point for piracy operations and attacks on Algiers. To convince the sultan of Tunisia, they gifted him with sumptuous presents."
+	action_a = {
+		name = "Let them use Tunis as a base of operations" #Let them use Tunis as a base of operations
+		command = { type = sleepevent which = 51025 } #TLE: Arudj and Khayr al-Din Barbarossa
+		command = { type = treasury value = 75 }
+	}
+	action_b = {
+		name = "We feel like laughing" #We feel like laughing
+		command = { type = sleepevent which = 51024 } #TLE: Arudj and Khayr al-Din Barbarossa
+	}
+}

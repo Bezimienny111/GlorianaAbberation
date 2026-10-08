@@ -1,0 +1,1351 @@
+#####Chung Kuo (China) Major Events#####
+#     By Tom Rinschler                 #
+#        Håvard Moe                    #
+#        Joakim 'Greven' Bergqwist     #
+#        Henrik Fåhraeus               #
+#                                      #
+########################################
+
+#The Strategic Decision after Zheng Ho's Journey#
+event = {
+
+	id = 3703
+	random = no
+	country = CHI
+	name = "EVENTNAME3703"
+	desc = "EVENTHIST3703"
+
+	style = "3703"
+
+	date = { day = 1 month = january year = 1435 }
+	offset = 300
+	deathdate = { day = 1 month = january year = 1455 }
+
+	action_a ={
+		name = "ACTIONNAME3703A"	#Inward Perfection#
+		command = { type = domestic which = CENTRALIZATION value = -5 }
+		command = { type = domestic which = ARISTOCRACY value = 10 }
+		command = { type = domestic which = SERFDOM value = 10 }
+		command = { type = domestic which = MERCANTILISM value = 10 }
+		command = { type = domestic which = LAND value = 10 }
+		command = { type = domestic which = QUALITY value = -10 }
+		command = { type = domestic which = OFFENSIVE value = -10 }
+		command = { type = land value = 1000 }
+		command = { type = infra value = 1000 }
+		command = { type = stability value = 6 }
+	}
+	action_b = {
+		name = "ACTIONNAME3703B"	#Balanced Position#
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = MERCANTILISM value = -1 }
+		command = { type = domestic which = LAND value = -1 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = land value = 500 }
+		command = { type = infra value = 500 }
+		command = { type = naval value = 500 }
+		command = { type = trade value = 500 }
+		command = { type = stability value = -2 }
+	}
+	action_c = {
+		name = "ACTIONNAME3703C"	#Outward Expansion#
+		command = { type = technology which = muslim }
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = -3 }
+		command = { type = domestic which = SERFDOM value = -5 }
+		command = { type = domestic which = INNOVATIVE value = 5 }
+		command = { type = domestic which = MERCANTILISM value = -5 }
+		command = { type = domestic which = LAND value = -5 }
+		command = { type = domestic which = QUALITY value = 5 }
+		command = { type = domestic which = OFFENSIVE value = 3 }
+		command = { type = naval value = 2000 }
+		command = { type = trade value = 2000 }
+		command = { type = stability value = -6 }
+		command = { type = revoltrisk which = 60 value = 8 }
+	}
+}
+
+#The Treaty of Nerchiinsk#
+event = {
+
+	id = 3705				#Triggered by RUS3421#
+	random = no
+	country = CHI
+	name = "EVENTNAME3705"
+	desc = "EVENTHIST3705"
+
+	action_a ={				#The Our Victory has been Acknowledged#
+		name = "ACTIONNAME3705A"
+		command = { type = land value = 2000 }
+		command = { type = infra value = 500 }
+		command = { type = trade value = 1000 }
+		command = { type = relation which = RUS value = 250 }
+		command = { type = treasury value = 600 }
+		command = { type = stability value = 3 }
+		command = { type = addcore_claim which = 625 }
+		command = { type = addcore_claim which = 626 }
+		command = { type = addcore_claim which = 635 }
+		command = { type = addcore_claim which = 636 }
+		command = { type = addcore_claim which = 637 }
+		command = { type = addcore_claim which = 638 }
+		command = { type = addcore_claim which = 639 }
+		command = { type = addcore_claim which = 640 }
+		command = { type = addcore_claim which = 643 }
+		command = { type = addcore_claim which = 644 }
+		command = { type = addcore_claim which = 645 }
+		command = { type = addcore_claim which = 646 }
+	}
+}
+#The Treaty of Nerchiinsk#
+event = {
+
+	id = 3793				#Triggered by RUS3421#
+	random = no
+	country = CHI
+	name = "EVENTNAME3793"
+	desc = "EVENTHIST3793"
+
+	action_a ={				#Exterminate these Rude Barbarians#
+		name = "ACTIONNAME3793A"
+		command = { type = addcore_claim which = 623 }
+		command = { type = addcore_claim which = 624 }
+		command = { type = addcore_claim which = 627 }
+		command = { type = addcore_claim which = 628 }
+		command = { type = addcore_claim which = 629 }
+		command = { type = addcore_claim which = 630 }
+		command = { type = addcore_claim which = 631 }
+		command = { type = addcore_claim which = 632 }
+		command = { type = addcore_claim which = 633 }
+		command = { type = addcore_claim which = 634 }
+		command = { type = addcore_claim which = 1467 }
+		command = { type = addcore_claim which = 1468 }
+		command = { type = addcore_claim which = 612 }
+		command = { type = addcore_claim which = 613 }
+		command = { type = addcore_claim which = 614 }
+		command = { type = addcore_claim which = 615 }
+		command = { type = addcore_claim which = 616 }
+		command = { type = addcore_claim which = 617 }
+		command = { type = addcore_claim which = 618 }
+		command = { type = addcore_claim which = 619 }
+		command = { type = addcore_claim which = 620 }
+		command = { type = addcore_claim which = 621 }
+		command = { type = addcore_claim which = 622 }
+		command = { type = addcore_claim which = 1586 }
+		command = { type = addcore_claim which = 1587 }
+		command = { type = casusbelli which = RUS value = 1200 }
+		command = { type = domestic which = QUALITY value = 2 }
+		command = { type = land value = 1000 }
+		command = { type = provincemanpower which = -1 value = 2 }
+		command = { type = provincemanpower which = -4 value = 2 }
+		command = { type = provincemanpower which = -4 value = 2 }
+		command = { type = provincemanpower which = -4 value = 2 }
+		command = { type = provincemanpower which = -4 value = 2 }
+		command = { type = manpower value = 100 }
+	}
+}
+
+#The Move to Beijing#
+event = {
+    id = 10000
+    trigger = {
+        owned = {
+            province = 649
+            data = -1
+        }
+    }
+    random = no
+    country = CHI
+    name = "EVENTNAME10000"
+    desc = "EVENTHIST10000"
+    
+    date = { day = 1 month = january year = 1420 }
+    offset = 30
+    deathdate = { day = 1 month = january year = 1421 }
+
+    action_a ={ # Yes, let us move to the Northern Capital!#
+        name = "ACTIONNAME10000A"
+        command = { type = capital which = 649 }
+        command = { type = provincetax which = 649 value = 1 }
+        command = { type = fortress which = 649 value = 1 }
+        command = { type = treasury value = -300 }
+        command = { type = stability value = -1 }
+	command = { type = setflag which = beijing }
+    }
+    action_b ={ #No, we will remain in the Southern Capital#
+        name = "ACTIONNAME10000B"
+        command = { type = domestic which = centralization value = 1 }
+        command = { type = stability value = -2 }
+    }
+}
+
+#The Emperor has been captured!#
+event = {
+	id = 10001
+	random = no
+	country = CHI
+	name = "EVENTNAME10001"
+	desc = "EVENTHIST10001"
+	
+	date = { day = 22 month = november year = 1449 }
+	
+	action_a ={#This is terrible news!#
+	name = "ACTIONNAME10001A"
+		command = { type = stability value = -3 }
+		command = { type = revoltrisk   which = 96 value = 3 }
+		command = { type = province_revoltrisk which = 648 value = 10 }
+		command = { type = revolt which = 648 }
+		command = { type = revolt which = 648 }
+		command = { type = province_revoltrisk which = 1561 value = 10 }
+		command = { type = revolt which = 1561 }
+		command = { type = revolt which = 1561 }
+		command = { type = relation which = NYN value = -100 }
+	}
+}
+
+#Zhengtong returns to the throne#
+event = {
+	id = 10002
+	trigger = {
+		event = 10001
+	}
+	random = no
+	country = CHI
+	name = "EVENTNAME10002"
+	desc = "EVENTHIST10002"
+	
+	date = { day = 24 month = february year = 1457 }
+	
+	action_a ={ #Great!#
+		name = "ACTIONNAME10002A"
+		command = { type = stability value = 2 }
+		command = { type = province_revoltrisk which = 648 value = -10 }
+		command = { type = province_revoltrisk which = 1561 value = -10 }
+		command = { type = relation which = NYN value = 50 }
+	}
+}
+
+#Repairing the Great Wall#
+event = {
+	id = 10003
+	random = no
+	country = CHI
+	name = "EVENTNAME10003"
+	desc = "EVENTHIST10003"
+
+	date = { day = 1 month = january year = 1450 }
+	offset = 100
+	deathdate = { day = 1 month = january year = 1490 }
+	
+	action_a ={#Yes, we need to repair the Great Wall#
+		name = "ACTIONNAME10003A"
+		command = { type = domestic   which = offensive value = -2 }
+		command = { type = fortress   which = 648 value = 1 }
+		command = { type = fortress   which = 1561 value = 1 }
+		command = { type = provincetax   which = 648 value = 1 }
+		command = { type = provincetax   which = 1561 value = 1 }
+		command = { type = stability value = -1 }
+		command = { type = treasury   value =  -500 }
+	}
+	action_b ={#Let it continue to crumble#
+		name = "ACTIONNAME10003B"
+		command = { type = domestic   which = offensive value = 1 }
+		command = { type = stability value = 1 }                     
+		command = { type = populationpercent which = 648 value = -5 }
+		command = { type = populationpercent which = 1561 value = -5 }
+	}
+}
+
+#Further Repairs for the Great Wall#
+event = {
+	id = 10034
+	random = no
+	country = CHI
+	name = "EVENTNAME10034"
+	desc = "EVENTHIST10034"
+	
+	date = { day = 1 month = january year = 1500 }
+	offset = 100
+	deathdate = { day = 1 month = january year = 1540 }
+	
+	action_a ={#Yes, we need to repair the Great Wall#
+		name = "ACTIONNAME10034A"
+		command = { type = domestic   which = offensive value = -2 }
+		command = { type = fortress   which = 647 value = 1 }
+		command = { type = fortress   which = 1560 value = 1 }
+		command = { type = provincetax   which = 647 value = 1 }
+		command = { type = provincetax   which = 1560 value = 1 }
+		command = { type = stability value = -1 }
+		command = { type = treasury   value =  -500 }
+	}
+	action_b ={#Let it continue to crumble#
+		name = "ACTIONNAME10034B"
+		command = { type = domestic   which = offensive value = 1 }
+		command = { type = stability value = 1 }                     
+		command = { type = populationpercent which = 647 value = -5 }
+		command = { type = populationpercent which = 1560 value = -5 }
+	}
+}
+
+#The Perfection of Ming Porcelain#
+event = {
+	id = 10004
+	trigger = {
+		owned = { province = 654 data = -1 }
+		owned = { province = 1563 data = -1 }
+	}
+	random = no
+	country = CHI
+	name = "EVENTNAME10004"
+	desc = "EVENTHIST10004"
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1510 }
+	
+	action_a ={#Perfect!#
+		name = "ACTIONNAME10004A"
+		command = { type = goods which = 654 value = chinaware }
+		command = { type = provincetax which = 654 value = 2 }
+		command = { type = goods which = 1563 value = chinaware }
+		command = { type = provincetax which = 1563 value = 2 }
+	}
+}
+
+#Japanese Pirates Attack!#
+event = {
+	id = 10005
+	random = no
+	country = CHI
+	name = "EVENTNAME10005"
+	desc = "EVENTHIST10005"
+	
+	date = { day = 1 month = january year = 1523 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1524 }
+	
+	action_a ={#Let the provinces look to their own defense#
+		name = "ACTIONNAME10005A"
+		command = { type = stability value = -2 }
+		command = { type = pirates which = 940 value = 3 }
+		command = { type = pirates which = 941 value = 3 }
+		command = { type = pirates which = 1018 value = 3 }
+		command = { type = populationpercent which = 650 value = -5 }
+		command = { type = populationpercent which = 652 value = -5 }
+		command = { type = populationpercent which = 653 value = -5 }
+		command = { type = domestic   which = centralization value = -1 }
+	}
+	action_b ={#Combat the pirates#
+		name = "ACTIONNAME10005B"
+		command = { type = treasury   value = -300 }
+		command = { type = revolt value = WKR which = 650 }
+		command = { type = revolt value = WKR which = 652 }
+		command = { type = revolt value = WKR which = 653 }
+		command = { type = sleepevent   which = 10006 }
+		command = { type = naval   value = 200 }
+		command = { type = relation   which = NIP value = -100 }
+	}
+	action_c ={#Launch an invasion to destroy the pirate havens#
+		name = "Launch an invasion to destroy the pirate havens"
+		command = { type = treasury   value = -500 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = domestic which = LAND value = -2 }
+		command = { type = sleepevent   which = 10006 }
+		command = { type = explorer which = -1 }
+		command = { type = warships which = -3 value = 15 }
+		command = { type = transports which = -3 value = 5 }
+		command = { type = naval   value = 600 }
+		command = { type = casusbelli which = NIP value = 72 }
+		command = { type = relation   which = NIP value = -200 }
+	}
+}
+
+#Pirates besiege Nanjing#
+event = {
+	id = 10006
+	trigger = {}
+	random = no
+	country = CHI
+	name = "EVENTNAME10006"
+	desc = "EVENTHIST10006"
+	
+	date = { day = 1 month = january year = 1555 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1556 }
+	
+	action_a ={#Drive the pirates away#
+		name = "ACTIONNAME10006A"
+		command = { type = pirates which = 1018 value = 6 }
+		command = { type = treasury value = -400 }
+		command = { type = naval value = 200 }
+	}
+	action_b ={#Let them sack the city#
+		name = "ACTIONNAME10006B"
+		command = { type = revolt value = WKR which = 654 }
+		command = { type = revolt value = WKR which = 654 }
+		command = { type = populationpercent which = 654 value = -5 }
+		command = { type = provincetax which = 654 value = -1 }
+		command = { type = stability value = -2 }
+	}
+}
+
+
+#The Closure of China# #1557#
+event = {
+	id = 3704
+	random = no
+	country = CHI
+	name = "EVENTNAME3704"
+	desc = "EVENTHIST3704"
+	
+	date = { day = 1 month = january year = 1557 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1558 }
+	
+	action_a ={ #Hold a small breathing hole open#
+		name = "ACTIONNAME3704A"
+		command = { type = domestic which = innovative value =  -2 }
+		command = { type = domestic which = mercantilism value = 3 }
+		command = { type = domestic which = centralization value = 1 }
+		#command = { type = cot  which = 658 }
+		#command = { type = cedeprovince which = POR value = 659 }
+		command = { type = relation which = POR value = 100 }
+	}
+	action_b ={ #Close China to the outside world#
+		name = "ACTIONNAME3704B"
+		command = { type = domestic   which = innovative value =  -6 }
+		command = { type = domestic   which = mercantilism value = 5 }
+		command = { type = domestic   which = centralization value = 2 }
+		command = { type = domestic   which = aristocracy value = 1 }
+		command = { type = stability   value = 2 }
+		command = { type = trade   value = -300 }
+		command = { type = sleepevent which = 10008 }
+	}
+	action_c ={ #Keep trade open for all#
+		name = "ACTIONNAME3704C"
+		command = { type = domestic   which = innovative value = 2 }
+		command = { type = domestic   which = mercantilism value = -3 }
+		command = { type = domestic   which = aristocracy value = -2 }
+		command = { type = cot  which = 658 }
+		#command = { type = cedeprovince   which = POR value = 659 }
+		command = { type = merchants   value = 3 }
+		command = { type = stability   value = -1 }
+		command = { type = trade   value = 200 }
+		command = { type = provincetax   which = -1 value = -1 }
+		command = { type = provincetax   which = -4 value = -1 }
+		command = { type = provincetax   which = -4 value = -1 }
+		command = { type = provincetax   which = -4 value = -1 }
+		command = { type = provincetax   which = -4 value = -1 }
+		command = { type = relation   which = POR value = 100 }
+	}
+}
+
+
+#Qi Jiguang's Army Reforms#
+event = {
+	id = 10007
+	random = no
+	country = CHI
+	name = "EVENTNAME10007"
+	desc = "EVENTHIST10007"
+	
+	date = { day = 1 month = january year = 1563 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1564 }
+	
+	action_a ={#Go with the reforms#
+		name = "ACTIONNAME10007A"
+		command = { type = treasury   value = -500 }
+		command = { type = land   value = 200 }
+		command = { type = domestic   which = land value = 1 }
+		command = { type = domestic   which = offensive value = 1 }
+		command = { type = stability   value = -1 }
+		command = { type = desertion   which = -1 value = 5000 }
+		command = { type = desertion   which = -4 value = 5000 }
+	}
+	action_b ={#No, such reforms would be too costly#
+		name = "ACTIONNAME10007B"
+		command = { type = land   value = -100 }
+		command = { type = domestic   which = innovative value = -1 }
+	}
+}
+
+#The Arrival of the Jesuits#
+event = {
+	id = 10008
+	random = no
+	country = CHI
+	name = "EVENTNAME10008"
+	desc = "EVENTHIST10008"
+
+	date = { day = 1 month = january year = 1581 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1582 }
+	
+	action_a ={#Yes, we may benefit from their learning#
+		name = "ACTIONNAME10008A"
+		command = { type = infra   value = 250 }
+		command = { type = trade   value = 250 }
+		command = { type = land   value = 250 }
+		command = { type = domestic   which = innovative value = 1 }
+		command = { type = stability   value = -2 }
+		command = { type = relation   which = PAP value = 50 }
+		command = { type = relation   which = POR value = 50 }
+		command = { type = relation   which = SPA value = 50 }
+	}
+	action_b ={#No, their foreign ideas are not acceptable in our society#
+		name = "ACTIONNAME10008B"
+		command = { type = stability value = 2 }
+		command = { type = domestic which = innovative value = -1 }
+		command = { type = sleepevent which = 10036 }
+	}
+	action_c ={#Yes, fully embrace their teachings and customs#
+		name = "Yes, fully embrace their teachings and customs"
+		command = { type = religion which = counterreform }
+		command = { type = missionaries value = 6 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -4 }
+		command = { type = religiousrevolt which = -4 }
+		command = { type = religiousrevolt which = -4 }
+		command = { type = religiousrevolt which = -4 }
+		command = { type = religiousrevolt which = -4 }
+		command = { type = religiousrevolt which = -4 }
+		command = { type = revoltrisk which = 240 value = 10 }
+		command = { type = domestic which = centralization value = 2 }
+		command = { type = domestic which = innovative value = 3 }
+		command = { type = domestic which = quality value = 2 }
+		command = { type = stability value = -6 }
+		command = { type = relation   which = PAP value = 150 }
+		command = { type = relation   which = POR value = 150 }
+		command = { type = relation   which = SPA value = 150 }
+	}
+}
+
+
+#Famine!#
+event = {
+	id = 10009
+	random = no
+	country = CHI
+	name = "EVENTNAME10009"
+	desc = "EVENTHIST10009"
+	
+	date = { day = 1 month = january year = 1588 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1589 }
+	
+	action_a ={#Try to alleviate the suffering#
+		name = "ACTIONNAME10009A"
+		command = { type = treasury value = -1000 }
+		command = { type = populationpercent which = -1 value = -15 }
+		command = { type = populationpercent which = -4 value = -15 }
+		command = { type = populationpercent which = -4 value = -15 }
+		command = { type = populationpercent which = -4 value = -15 }
+		command = { type = populationpercent which = -4 value = -15 }
+		command = { type = stability   value = -1 }
+	}
+	action_b ={#We are helpless in the face of such a disaster#
+		name = "ACTIONNAME10009B"
+		command = { type = populationpercent which = -1 value = -20 }
+		command = { type = populationpercent which = -4 value = -20 }
+		command = { type = populationpercent which = -4 value = -20 }
+		command = { type = populationpercent which = -4 value = -20 }
+		command = { type = populationpercent which = -4 value = -20 }
+		command = { type = populationpercent which = -4 value = -20 }
+		command = { type = populationpercent which = -4 value = -20 }
+		command = { type = populationpercent which = -4 value = -20 }
+		command = { type = populationpercent which = -4 value = -20 }
+		command = { type = populationpercent which = -4 value = -20 }
+		command = { type = stability   value = -3 }
+		command = { type = revoltrisk   which = 36 value = 5 }
+	}
+}
+
+#The Manchu Rebellion#
+event = {
+	id = 10010
+	random = no
+	country = CHI
+	name = "EVENTNAME10010"
+	desc = "EVENTHIST10010"
+
+	date = { day = 1 month = january year = 1615 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1616 }
+	
+	action_a ={#We are too weak to crush the rebels#
+		name = "ACTIONNAME10010A"
+		trigger = { 
+			NOT = { exists = MCH }
+		}
+		command = { type = free  which = MCH  }
+		command = { type = stability   value = -3 }
+		command = { type = revoltrisk   which = 60 value = 5 }
+	}
+	action_b ={#Attempt to crush the rebels#
+		name = "ACTIONNAME10010B"
+		command = { type = treasury value = -1000 }
+		command = { type = stability value = -5 }
+		command = { type = revoltrisk which = 60 value = 10 }
+		command = { type = revolt which = 625 }
+		command = { type = revolt which = 626 }
+		command = { type = revolt which = 628 }
+		command = { type = revolt which = 634 }
+		command = { type = revolt which = 635 }
+		command = { type = revolt which = 636 }
+		command = { type = revolt which = 637 }
+		command = { type = revolt which = 638 }
+		command = { type = revolt which = 639 }
+		command = { type = revolt which = 640 }
+		command = { type = revolt which = 643 }
+		command = { type = revolt which = 644 }
+		command = { type = revolt which = 645 }
+		command = { type = revolt which = 646 }
+	}
+}
+
+#The Cult of the White Lotus#
+event = {
+	id = 10011
+	random = no
+	country = CHI
+	name = "EVENTNAME10011"
+	desc = "EVENTHIST10011"
+
+	date = { day = 1 month = january year = 1622 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1623 }
+	
+	action_a ={#Bah, surely these cultists can do no lasting harm!#
+		name = "ACTIONNAME10011A"
+		command = { type = stability   value = -5 }
+		command = { type = revoltrisk   which = 300 value = 8 }
+		command = { type = revolt   which = -1 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+	}
+	action_b ={#Let the forces of the Empire crush the Rebellion!#
+		name = "ACTIONNAME10011B"
+		command = { type = treasury   value = -500 }
+		command = { type = stability   value = -3 }
+		command = { type = revoltrisk   which = 240 value = 6 }
+		command = { type = revolt   which = -1 }
+		command = { type = revolt   which = -4 }
+	}
+}
+
+#The Financial Crisis#
+event = {
+	id = 10012
+	random = no
+	country = CHI
+	name = "EVENTNAME10012"
+	desc = "EVENTHIST10012"
+	
+	date = { day = 1 month = january year = 1640 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1641 }
+	
+	action_a ={#Yes, let us raise new taxes#
+		name = "ACTIONNAME10012A"
+		command = { type = treasury value = 1000 }
+		command = { type = stability value = -4 }
+		command = { type = revoltrisk which = 60 value = 6 }
+		command = { type = revolt   which = -1 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+	}
+	action_b ={#No, our subjects are already angry enough!#
+		name = "ACTIONNAME10012B"
+		command = { type = stability   value = 1 }
+		command = { type = provincetax   which = -1 value = -1 }       
+		command = { type = provincetax   which = -4 value = -1 }
+		command = { type = provincetax   which = -4 value = -1 }
+		command = { type = provincetax   which = -4 value = -1 }
+		command = { type = provincetax   which = -4 value = -1 }
+		command = { type = provincetax   which = -4 value = -1 }
+		command = { type = provincetax   which = -4 value = -1 }
+		command = { type = provincetax   which = -4 value = -1 }
+		command = { type = provincetax   which = -4 value = -1 }
+		command = { type = provincetax   which = -4 value = -1 }
+		command = { type = domestic   which = centralization value = -1 }
+	}
+}
+
+#Li Zechang's Rebellion#
+event = {
+	id = 10013
+	random = no
+	country = CHI
+	name = "EVENTNAME10013"
+	desc = "EVENTHIST10013"
+
+	date = { day = 1 month = january year = 1644 }
+	offset = 5
+	deathdate = { day = 1 month = february year = 1644 }
+	
+	action_a ={#Let us attempt to destroy the traitor!#
+		name = "ACTIONNAME10013A"
+		command = { type = stability   value = -5 }
+		command = { type = revoltrisk   which = 12 value = 6 }
+		command = { type = revolt   which = -1 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = desertion   which = -1 value = 10000 }
+		command = { type = desertion   which = -4 value = 10000 }
+		command = { type = desertion   which = -4 value = 10000 }
+		command = { type = sleepleader which = 08835 }
+	}
+	action_b ={#Let us negotiate with him#
+		name = "ACTIONNAME10013B"
+		command = { type = treasury value = -1000 }
+		command = { type = stability value = -3 }
+		command = { type = revoltrisk which = 12 value = 5 }
+		command = { type = domestic which = centralization value = -2 }
+		command = { type = desertion which = -1 value = 10000 }
+	}
+}
+
+## Emperor Chongzhen Commits Suicide
+event = {
+	id = 3913
+	trigger = { 
+		NOT = {
+			exists = MCH 
+		}
+	}
+	random = no
+	country = CHI
+	name = "EVENTNAME10435"
+	desc = "EVENTHIST10435"
+	
+	date = { day = 25 month = april year = 1644 }
+	
+	action_a = { #Woe is us!
+		name = "ACTIONNAME10435A"
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -2 }
+		command = { type = capital which = 654 }
+		command = { type = revoltrisk which = 240 value = 8 }
+		command = { type = desertion which = -1 value = 10000 }
+		command = { type = desertion which = -4 value = 10000 }
+		command = { type = desertion which = -4 value = 10000 }
+		command = { type = desertion which = -4 value = 10000 }
+		command = { type = free  which = MCH  }
+		command = { type = sleepevent which = 10025 }
+		command = { type = sleepevent which = 10026 }
+		command = { type = sleepmonarch which = 07415 }
+		command = { type = sleepmonarch which = 07416 }
+		command = { type = sleepmonarch which = 07417 }
+		command = { type = sleepmonarch which = 07418 }
+		command = { type = sleepmonarch which = 07419 }
+		command = { type = sleepmonarch which = 07420 }
+		command = { type = sleepleader which = 08836 }
+		command = { type = sleepleader which = 08840 }
+		command = { type = sleepleader which = 08842 }
+		command = { type = sleepleader which = 08097 }
+		command = { type = sleepleader which = 8811 }
+		command = { type = sleepleader which = 8814 }
+		command = { type = sleepleader which = 8815 }
+		command = { type = wakemonarch which = 07421 }
+		command = { type = wakemonarch which = 07422 }
+		command = { type = wakemonarch which = 07422 }
+		command = { type = wakemonarch which = 07423 }
+		command = { type = wakemonarch which = 07424 }
+		command = { type = wakemonarch which = 07425 }
+		command = { type = wakemonarch which = 07426 }
+		command = { type = wakemonarch which = 07427 }
+		command = { type = wakemonarch which = 07428 }
+		command = { type = wakemonarch which = 07429 }
+		command = { type = setflag which = Chongzhen }       
+	}
+}
+
+#The Fall of the Ming Dynasty#
+event = {
+	id = 10014
+	trigger = { exists = MCH }
+	random = no
+	country = CHI
+	name = "EVENTNAME10014"
+	desc = "EVENTHIST10014"
+	
+	date = { day = 25 month = april year = 1644 }
+	
+	action_a = { #Continue to fight on in the south#
+		name = "ACTIONNAME10014A"
+		command = { type = capital which = 654 }
+		command = { type = relation which = MCH value = -400 }
+		command = { type = stability value = -8 }
+		command = { type = add_countryculture which = cantonese } # because focusing on Zhuang regions as a powerbase
+		command = { type = cedeprovince which = MCH value = 635 }
+		command = { type = cedeprovince which = MCH value = 636 }
+		command = { type = cedeprovince which = MCH value = 637 }
+		command = { type = cedeprovince which = MCH value = 638 }
+		command = { type = cedeprovince which = MCH value = 639 }
+		command = { type = cedeprovince which = MCH value = 640 }
+		command = { type = cedeprovince which = MCH value = 643 }
+		command = { type = cedeprovince which = MCH value = 644 }
+		command = { type = cedeprovince which = MCH value = 645 }
+		command = { type = cedeprovince which = MCH value = 646 }
+		command = { type = cedeprovince which = MCH value = 647 }
+		command = { type = cedeprovince which = MCH value = 648 }
+		command = { type = cedeprovince which = MCH value = 649 }
+		command = { type = cedeprovince which = MCH value = 650 }
+		command = { type = cedeprovince which = MCH value = 651 }
+		command = { type = cedeprovince which = MCH value = 1560 }
+		command = { type = cedeprovince which = MCH value = 1561 }
+		command = { type = cedeprovince which = MCH value = 1562 }
+		command = { type = revoltrisk which = 340 value = 5 }
+		command = { type = treasury value = -1000 }
+		command = { type = desertion which = -1 value = 20000 }
+		command = { type = desertion which = -4 value = 20000 }
+		command = { type = desertion which = -4 value = 20000 }
+		command = { type = desertion which = -4 value = 20000 }
+		command = { type = sleepmonarch which = 07415 }
+		command = { type = sleepmonarch which = 07416 }
+		command = { type = sleepmonarch which = 07417 }
+		command = { type = sleepmonarch which = 07418 }
+		command = { type = sleepmonarch which = 07419 }
+		command = { type = sleepmonarch which = 07420 }
+		command = { type = sleepleader which = 08836 }
+		command = { type = sleepleader which = 08840 }
+		command = { type = sleepleader which = 08842 }
+		command = { type = sleepleader which = 08097 }
+		command = { type = sleepleader which = 8811 }
+		command = { type = sleepleader which = 8814 }
+		command = { type = sleepleader which = 8815 }
+		command = { type = wakemonarch which = 07421 }
+		command = { type = wakemonarch which = 07422 }
+		command = { type = wakemonarch which = 07422 }
+		command = { type = wakemonarch which = 07423 }
+		command = { type = wakemonarch which = 07424 }
+		command = { type = wakemonarch which = 07425 }
+		command = { type = wakemonarch which = 07426 }
+		command = { type = wakemonarch which = 07427 }
+		command = { type = wakemonarch which = 07428 }
+		command = { type = wakemonarch which = 07429 }              
+	}
+	action_b = {#Throw our lot in with the Manchu and proclaim the Qing Dynasty#
+		name = "ACTIONNAME10014B"
+		command = { type = trigger which = 10015 }
+		command = { type = stability value = -3 }
+		command = { type = revoltrisk which = 120 value = 5 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = desertion which = -1 value = 10000 }
+		command = { type = desertion which = -1 value = 10000 }
+		command = { type = desertion which = -4 value = 10000 }
+		command = { type = desertion which = -4 value = 10000 }
+		command = { type = desertion which = -4 value = 10000 }
+		command = { type = sleepleader which = 08838 }
+		command = { type = sleepleader which = 08841 }
+		command = { type = sleepleader which = 2124 }
+		command = { type = infra value = -2000 }
+		command = { type = trade value = -2000 }
+	}
+}
+
+#The Manchu takeover of China#
+event = {
+	id = 10016
+	random = no
+	country = CHI
+	name = "EVENTNAME10016"
+	desc = "EVENTHIST10016"
+	
+	#Triggered by MCH event 10015A#
+	
+	action_a ={#We will rule this Empire together!#
+		name = "ACTIONNAME10016A"
+		command = { type = inherit which = MCH }
+	}
+}
+
+#The Manchu Takeover of China#
+event = {
+	id = 10043
+	trigger = {
+		event   = 10016
+	}
+	random = no
+	country = CHI
+	name = "EVENTNAME10043"
+	desc = "EVENTHIST10043"
+	
+	date = { day = 25 month = april year = 1644 }
+	offset = 30
+	deathdate = { day = 26 month = april year = 1699 }
+	
+	action_a = {#Long live the Qing Dynasty of the Manchu!#
+		name = "ACTIONNAME10043A"
+		command = { type = flagname which = "" }
+		command = { type = country which = MCH }
+		command = { type = revoltrisk which = 60 value = 5 }
+		command = { type = add_countryculture which = manchu }
+		command = { type = remove_countryculture which = cantonese }
+	}
+}
+
+#The Manchu Takeover of China#
+event = {
+	id = 10017
+	random = no
+	country = CHI
+	name = "EVENTNAME10017"
+	desc = "EVENTHIST10017"
+	
+	#Triggered by MCH event 10015B#
+	
+	action_a ={#We have no choice but to accept#
+		name = "ACTIONNAME10017A"
+		command = { type = trigger which = 10018 }
+	}
+	action_b ={#We will not completely submit to these barbarians#
+		name = "ACTIONNAME10017B"
+		command = { type = cedeprovince   which = MCH value = 625 }
+		command = { type = cedeprovince   which = MCH value = 626 }
+		command = { type = cedeprovince   which = MCH value = 638 }
+		command = { type = cedeprovince   which = MCH value = 634 }
+		command = { type = cedeprovince   which = MCH value = 635 }
+		command = { type = cedeprovince   which = MCH value = 636 }
+		command = { type = cedeprovince   which = MCH value = 637 }
+		command = { type = cedeprovince   which = MCH value = 638 }
+		command = { type = cedeprovince   which = MCH value = 639 }
+		command = { type = cedeprovince   which = MCH value = 640 }
+		command = { type = cedeprovince   which = MCH value = 643 }
+		command = { type = cedeprovince   which = MCH value = 644 }
+		command = { type = cedeprovince   which = MCH value = 645 }
+		command = { type = cedeprovince   which = MCH value = 646 }
+		command = { type = cedeprovince   which = MCH value = 647 }
+		command = { type = cedeprovince   which = MCH value = 648 }
+		command = { type = cedeprovince   which = MCH value = 649 }
+		command = { type = cedeprovince   which = MCH value = 650 }
+		command = { type = cedeprovince   which = MCH value = 651 }
+		command = { type = cedeprovince   which = MCH value = 1560 }
+		command = { type = cedeprovince   which = MCH value = 1561 }
+		command = { type = cedeprovince   which = MCH value = 1562 }
+		command = { type = trigger   which = 10019 }
+	}
+}
+
+#The Chinese Collapse#
+event = {
+	id = 10025
+	trigger = {
+		stability = 3 #Yes, stability of +3
+	}
+	random = no
+	country = CHI
+	name = "EVENTNAME10025"
+	desc = "EVENTHIST10025"
+
+	date = { day = 1 month = june year = 1644 }
+	offset = 30
+	deathdate = { day = 1 month = june year = 1646 }
+	
+	action_a ={#Drat!#
+		name = "ACTIONNAME10025A"
+		command = { type = cedeprovince   which = MCH value = 652}
+		command = { type = cedeprovince   which = MCH value = 1558}
+		command = { type = cedeprovince   which = MCH value = 1559}
+		command = { type = cedeprovince   which = MCH value = 1563}
+		command = { type = cedeprovince   which = MCH value = 1564}
+		command = { type = cedeprovince   which = MCH value = 1565}
+		command = { type = stability   value = -4 }   
+		command = { type = capital which = 658 }       
+	}
+}
+
+#The End of the Ming Dynasty#
+event = {
+	id = 10026
+	trigger = {
+		exists = MCH
+	}
+	random = no
+	country = CHI
+	name = "EVENTNAME10026"
+	desc = "EVENTHIST10026"
+	
+	date = { day = 1 month = january year = 1683 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1684 }
+	
+	action_a ={#We surrender to the Manchu#
+		name = "ACTIONNAME10026A"
+		command = { type = trigger which = 10027 }
+	}
+	action_b ={#No, we will never give up!#
+		name = "ACTIONNAME10026B"
+		command = { type = stability value = -6 }
+		command = { type = revoltrisk which = 120 value = 6 }
+	}
+}
+
+#The Expulsion of the Jesuits#
+event = {
+	id = 10036
+	random = no
+	country = CHI
+	name = "EVENTNAME10036"
+	desc = "EVENTHIST10036"
+
+	style = "10008"
+	
+	date = { day = 1 month = january year = 1722 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1723 }
+	
+	action_a ={#Expel them!#
+		name = "ACTIONNAME10036A"
+		command = {
+			trigger = {
+				OR = {
+					religion = catholic
+					religion = counterreform
+				}
+			}
+			type = religion which = confucian
+		}
+		command = { type = technology  which = african }
+		command = { type = infra value = -1000 }
+		command = { type = trade value = -1000 }
+		command = { type = domestic which = innovative value = -3 }
+		command = { type = domestic which = centralization value = 2 }
+		command = { type = stability value = 3 }
+	}
+	action_b ={#No, they are too valuable#
+		name = "ACTIONNAME10036B"
+		command = { type = domestic which = innovative value = 2 }
+		command = { type = stability value = -3 }
+	}
+}	
+
+#The Appointment of Heshen#
+event = {
+	id = 10037
+	trigger = {
+		owned = { province = 649 data = -1 }
+	}
+	random = no
+	country = CHI
+	name = "EVENTNAME10037"
+	desc = "EVENTHIST10037"
+	
+	date = { day = 1 month = january year = 1770 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1771 }
+	
+	action_a ={#Appoint him despite his faults#
+		name = "ACTIONNAME10037A"
+		command = { type = ADM   which = 3 value = 240 }
+		command = { type = DIP   which = 1 value = 240}
+		command = { type = domestic   which = centralization value = 2 }
+		command = { type = domestic   which = innovative value = -2 }
+		command = { type = inflation   value = 5 }
+		command = { type = treasury   value = -500 }
+	}
+	action_b ={#No, such corruption could ruin the state!#
+		name = "ACTIONNAME10037B"
+		command = { type = domestic   which = centralization value = -2 }
+		command = { type = domestic   which = innovative value = 1 }
+		command = { type = stability   value = -3 }
+	}
+}
+
+#Lord Macartney's Mission#
+event = {
+	id = 10038
+	trigger = {
+		owned = { province = 649 data = -1 }
+	}
+	random = no
+	country = CHI
+	name = "EVENTNAME10038"
+	desc = "EVENTHIST10038"
+	date = { day = 1 month = october year = 1793 }
+	offset = 5
+	deathdate = { day = 1 month = november year = 1793 }
+	
+	action_a ={#Reject the overtures of these rude western barbarians!#
+		name = "ACTIONNAME10038A"
+		command = { type = relation   which = ENG value = -100 }
+		command = { type = domestic   which = innovative value = -2 }
+		command = { type = trade   value = -1000 }
+		command = { type = stability   value = 3 }
+	}
+	action_b ={#We are interested in their ideas#
+		name = "ACTIONNAME10038B"
+		command = { type = relation   which = ENG value = 100 }
+		command = { type = domestic   which = innovative value = 1 }
+		command = { type = trade   value = 500 }
+		command = { type = stability   value = -3 }
+	}
+}
+
+#The White Lotus Rebellion#
+event = {
+	id = 10039
+	trigger = {
+		owned = { province = 649 data = -1 }
+	}
+	random = no
+	country = CHI
+	name = "EVENTNAME10039"
+	desc = "EVENTHIST10039"
+	
+	date = { day = 1 month = january year = 1796 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1797 }
+	
+	action_a ={#It's likely just harmless talk#
+		name = "ACTIONNAME10039A"
+		command = { type = revoltrisk   which = 24 value = 8 }
+		command = { type = stability   value = -4 }
+		command = { type = revolt   which = -1 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+	}
+	action_b ={#Crush these plotters!#
+		name = "ACTIONNAME10039B"
+		command = { type = revoltrisk   which = 24 value = 6 }
+		command = { type = stability   value = -2 }
+		command = { type = revolt   which = -1 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = treasury   value = -500 }
+	}
+}
+
+#The Celestial Order Rebellion#
+event = {
+	id = 10040
+	trigger = {
+		owned = { province = 649 data = -1 }
+	}
+	random = no
+	country = CHI
+	name = "EVENTNAME10040"
+	desc = "EVENTHIST10040"
+	
+	date = { day = 1 month = january year = 1811 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1812 }
+	
+	action_a ={#It's likely just harmless talk#
+		name = "ACTIONNAME10040A"
+		command = { type = revoltrisk   which = 24 value = 8 }
+		command = { type = stability   value = -4 }
+		command = { type = revolt   which = -1 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+	}
+	action_b ={#Crush these plotters!#
+		name = "ACTIONNAME10040B"
+		command = { type = revoltrisk   which = 24 value = 6 }
+		command = { type = stability   value = -2 }
+		command = { type = revolt   which = -1 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = treasury   value = -500 }
+	}
+}
+
+#The Eight Trigrams Rebellion#
+event = {
+	id = 10041
+	trigger = {
+		owned = { province = 649 data = -1 }
+	}
+	random = no
+	country = CHI
+	name = "EVENTNAME10041"
+	desc = "EVENTHIST10041"
+	
+	date = { day = 18 month = october year = 1813 }
+	
+	action_a ={#It's likely just harmless talk#
+		name = "ACTIONNAME10041A"
+		command = { type = revoltrisk   which = 24 value = 6 }
+		command = { type = stability   value = -6 }
+		command = { type = revolt   which = -1 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+	}
+	action_b ={#Crush these plotters!#
+		name = "ACTIONNAME10041B"
+		command = { type = revoltrisk   which = 24 value = 4 }
+		command = { type = stability   value = -4 }
+		command = { type = revolt   which = -1 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = revolt   which = -4 }
+		command = { type = treasury   value = -700 }
+	}
+}
+# The Conquest of Dzungaria #
+event = {
+	id = 10042
+	trigger = {
+		owned = { province = 649 data = -1 }
+		event = 3831
+		neighbour = CHG
+		NOT = {
+			alliance = { country = CHI country = CHG }
+			vassal = { country = CHI country = CHG }
+			war = { country = CHI country = CHG }
+		}
+	}
+	random = no
+	country = CHI
+	name = "The Conquest of Dzungaria"
+	desc = "The conquest of Dzungaria took place in the 18th century when the Qing Dynasty of China sought to extend its authority and control over the Dzungar Khanate, a Mongol state located in the former Chagatai lands. The conflict began in the early 1750s and culminated in the Qianlong Emperor's campaign against the Dzungars from 1755 to 1759. The invasion resulted in the near-annihilation of the Dzungar people, with many killed, and others expelled or assimilated into the Qing Dynasty's territories. The Qing government's brutal suppression of the Dzungars is regarded as a dark chapter in Chinese history and is often referred to as a genocide. This campaign solidified Qing control over Dzungaria (now Xinjiang) and contributed to the demographic and political landscape of the region that persists today, with the Uighur people being the descendants of the ancient Dzungars (an Oirat tribe)."
+
+	date = { day = 1 month = january year = 1690 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1760 }
+
+	action_a = { # Annex their lands into China #
+		name = "Annex their lands into China"
+		command = { type = casusbelli which = CHG value = 72 }
+		command = { type = relation which = CHG value = -200 }
+		command = { type = addcore_claim which = 1600 }
+		command = { type = addcore_claim which = 1601 }
+		command = { type = addcore_claim which = 1602 }
+		command = { type = addcore_claim which = 1603 }
+		command = { type = addcore_claim which = 1604 }
+		command = { type = addcore_claim which = 1605 }
+		command = { type = addcore_claim which = 1606 }
+		command = { type = addcore_claim which = 1607 }
+		command = { type = addcore_claim which = 1608 }
+		command = { type = badboy value = 5 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b = { # Allow them limited autonomy #
+		name = "Allow them limited autonomy"
+		command = { type = vassal which = CHG }
+		command = { type = relation which = CHG value = 50 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = stability value = 1 }
+		command = { type = sleepevent which = 10044 }
+	}
+}
+
+# The Afaqi Khoja Rebellion #
+event = {
+	id = 10044
+	trigger = {
+		owned = { province = 649 data = -1 }
+		event = 10042
+		someof = {
+			number = 4
+			owned = { province = 1600 data = -1 }
+			owned = { province = 1601 data = -1 }
+			owned = { province = 1602 data = -1 }
+			owned = { province = 1603 data = -1 }
+			owned = { province = 1604 data = -1 }
+			owned = { province = 1605 data = -1 }
+			owned = { province = 1606 data = -1 }
+			owned = { province = 1607 data = -1 }
+			owned = { province = 1608 data = -1 }
+		}
+		NOT = { exists = CHG }
+	}
+	random = no
+	country = CHI
+	name = "The Afaqi Khoja Rebellion"
+	desc = "In 1759, the Qing dynasty of China defeated the Dzungar Khanate and completed the conquest of Dzungaria. Concurrent with this conquest, the Qing occupied the Altishahr region in modern southern Xinjiang, which had been settled by Muslims who followed the political and religious leadership of Afaq Khoja. After the Qing conquest, the Chinese began to incorporate Altishahr and the Tarim Basin into their empire. This territory along with Dzungaria came to be known as Xinjiang. Although the followers of Afaq Khoja known as the Afaqi Khojas resisted Qing rule, their rebellion was put down and the Afaqi Khojas were removed from power. Beginning at that time and lasting for around a century, the Afaqi Khojas waged numerous military campaigns in an effort to retake Altishahr from the Qing."
+
+	date = { day = 1 month = january year = 1797 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a = { # Crush the Afaqi Khojas! #
+		name = "Crush the Afaqi Khojas!"
+		command = { type = casusbelli which = KOK value = 36 }
+		command = { type = relation which = KOK value = -150 }
+		command = { type = revolt which = -1257 }
+		command = { type = revolt which = -1257 }
+		command = { type = revolt which = -1257 }
+		command = { type = revolt which = -1257 }
+		command = { type = revolt which = -1257 }
+		command = { type = revolt which = -1257 }
+		command = { type = stability value = -3 }
+	}
+}
+
+# The Korea Question #
+event = {
+
+	id = 3759
+	trigger = {
+		owned = { province = 649 data = -1 }
+		neighbour = KOR
+		NOT = {
+			alliance = { country = CHI country = KOR }
+			vassal = { country = CHI country = KOR }
+			war = { country = CHI country = KOR }
+		}
+		event = 3705
+	}
+	random = no
+	country = CHI
+	name = "The Korea Question"
+	desc = "Various Chinese dynasties have made successive attempts to exert control over Korea at different points in history. During the early Ming era, China intervened in Joseon (Korean) affairs to restore stability and influence the succession, and the later Jin and Qing dynasties launched armed interventions (in 1627 and 1636 respectively) which successfully establishing a tributary relationship with Korea - though this did not result in direct control. By the 18th century, the Qing Empire had undertaken an expansionist policy in order to subdue neighboring regions such as Dzungaria, Taiwan and Korea. Though the Ming and Jin efforts to control Korea were met with limited success - it largely maintained its sovereignty and independence despite a nominal subservience to Beijing - the degree of control held by the Qing was much greater, with Korea being integrated as the province of Chaoxian until the Treaty of Shimonoseki in 1895."
+
+	date = { day = 1 month = january year = 1730 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1770 }
+
+	action_a = { # Carrot #
+		name = "Carrot"
+		command = { type = vassal which = KOR }
+		command = { type = dynastic which = KOR }
+		command = { type = relation which = KOR value = 100 }
+		command = { type = treasury value = -400 }
+		command = { type = stability value = 1 }
+	}
+	action_b = { # Stick #
+		name = "Stick"
+		command = { type = casusbelli which = KOR value = 72 }
+		command = { type = relation which = KOR value = -150 }
+		command = { type = addcore_claim which = 641 }
+		command = { type = addcore_claim which = 642 }
+		command = { type = stability value = -1 }
+	}
+}

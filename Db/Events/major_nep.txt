@@ -1,0 +1,105 @@
+# Nepal (new for 1.3) #
+
+# Jayayakshya's Ambition #
+event = {
+
+	id = 3874
+	random = no
+	country = NEP
+	name = "Jayayakshya's Ambition"
+	desc = "By the 15th century, the Malla dynasty had brought long-term stability to Nepal, having ruled various regional kingdoms since the early 1200s before unifying much of the country into a single realm during the long reign of the most successful Malla king, Jayayakshya (1428-1482). He had largely built on the work of his illustrious grandfather Jayasthiti (1382-1395), the first Malla king to conquer much of the Nepalese valley and introduce a codified system of laws. Jayayakshya, seeking even greater glory still, constructed the Pashupatinath Temple and fortified Nepal with a series of moats and palisades. Never lacking in ambition, he also raided south into the plains of Bihar and took vassalage of several local princes. Jayayakshya's dream, which failed to materialize following the partition of his kingdom after his death, was to lay claim to the southern border regions and establish Nepal as a serious rival to the powerful Bengal Sultanate."
+
+	date = { day = 1 month = january year = 1430 }
+	offset = 720
+	deathdate = { day = 1 month = january year = 1450 }
+
+	action_a ={				#Assemble the Army!#
+		name = "Assemble the Army!"
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = casusbelli which = TIB value = 72 }
+		command = { type = addcore_claim which = 554 }
+		command = { type = addcore_claim which = 555 }
+		command = { type = diplomats value = 2 }
+		command = { type = treasury value = -200 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={				#Peace must be our policy#
+		name = "Peace must be our policy"
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = OFFENSIVE value = -1 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -4 value = 50 }
+		command = { type = relation which = -4 value = 50 }
+		command = { type = relation which = -4 value = 50 }
+		command = { type = fortress which = -2 value = 1 }
+		command = { type = merchants value = 2 }
+		command = { type = treasury value = 100 }
+		command = { type = stability value = 1 }
+		command = { type = sleepevent which = 3875 }
+	}
+}
+
+# Rise of the Gorkha Empire #
+event = {
+
+	id = 250031 #3875
+	random = no
+	country = NEP
+	name = "Rise of the Gorkha Empire"
+	desc = "EVENTHIST250031"
+
+	date = { day = 1 month = january year = 1768 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1772 }
+
+	action_a ={				#We are the real Hindustan!#
+		name = "We are the real Hindustan!"
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = gainmanufactory which = -2 value = weapons }
+		command = { type = gainbuilding which = -2 value = barrack }
+		command = { type = manpower value = 20 }
+		command = { type = addcore_claim which = 544 }
+		command = { type = addcore_claim which = 556 }
+		command = { type = relation which = -1 value = -100 }
+		command = { type = relation which = -4 value = -100 }
+		command = { type = relation which = -4 value = -100 }
+		command = { type = relation which = -4 value = -100 }
+		command = { type = stability value = 2 }
+	}
+
+	action_b ={				#Focus on China and Tibet#
+		name = "Focus on China and Tibet"
+		command = { type = domestic which = MERCANTILISM value = 1 }
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = gainmanufactory which = -2 value = luxury }
+		command = { type = religion which = buddhism }
+		command = { type = missionaries value = 1 }
+		command = { type = relation which = CHI value = 100 }
+		command = { type = relation which = TIB value = 100 }
+		command = { type = relation which = CHG value = 50 }
+		command = { type = stability value = -1 }
+	}
+
+	action_c ={				#Make a pact with the Sikh Empire#
+		name = "Make a pact with the Sikh Empire"
+		trigger = {
+			exists = KSH
+			KSH = { religion = sikh }
+			NOT = { war = { country = NEP country = KSH } }
+		}
+		command = { type = domestic which = QUALITY value = 2 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = gainmanufactory which = -2 value = goods }
+		command = { type = religion which = sikh }
+		command = { type = missionaries value = 1 }
+		command = { type = relation which = KSH value = 300 }
+		command = { type = alliance which = KSH }
+		command = { type = dynastic which = KSH }
+		command = { type = stability value = -2 }
+	}
+}

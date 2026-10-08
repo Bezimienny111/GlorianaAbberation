@@ -1,0 +1,201 @@
+##Castile Events##
+
+#(1362-1390) Inflationary problems - (by Corleone)
+event = {
+	id = 101000 
+	trigger = { 
+		NOT = { 
+			stability = 3 
+		} 
+	}
+	random = no
+	country = CAS
+	name = "Inflationary problems"
+	desc = "The years 1340-1390 saw a great rise in prices and salaries. The low volume of productivity during those years, as well as the demographic problems due to famines and plagues, could explain the process. The inflation became so high that the government had to pass contention laws for the prices and salaries."
+
+	date = { day = 1 month = august year = 1362 }
+	offset = 30
+	deathdate = { day = 1 month = august year = 1390 }
+
+	action_a = { 
+		name = "Try to contain the inflation"
+ 		command = { type = inflation value = 5 }
+ 		command = { type = stability value = -1 }
+ 		command = { type = revoltrisk which = 6 value = 4 } # traders don't like price laws
+ 	}
+	action_b = { 
+		name = "We can do nothing"
+ 		command = { type = inflation value = 10 }
+ 	}
+}
+
+
+#(1391) Anti-semitic uprisings of 1391 - (by Corleone)
+event = {
+	id = 101001 
+	trigger = { 
+		NOT = { 
+			stability = 2 
+		}
+		event = 101000 #CAS: Inflationary problems
+	}
+	random = no
+	country = CAS
+	name = "Anti-semitic uprisings"
+	desc = "The urban popular masses, exasperated by the economical problems, the rise in prices and the desorganization of the monetary system, looked desperately for a responsable of the problems. As was common through Europe during Middle Ages, the aim were the jews, which were considered by the masses responsible of the crises. In 1391 the jewish quarters (the 'aljamas') of many cities were assaulted."
+
+	date = { day = 1 month = february year = 1391 }
+	offset = 10
+	deathdate = { day = 1 month = december year = 1391 }
+
+	action_a = { 
+		name = "Darn!"
+ 		command = { type = inflation value = 1 }
+ 		command = { type = stability value = -1 }
+ 		command = { type = population which = -2 value = -600 }
+ 		command = { type = population which = -1 value = -200 }
+ 		command = { type = population which = -1 value = -200 }
+	}
+}
+
+# Castilian Civil War (by Corleone and Obelixeke)
+
+#event = {
+#id = 101566
+#trigger = { 
+#domestic = { type = centralization value = 5 }
+#ai = no
+#}
+#random = no
+#country = CAS
+
+#name = "Nobiliary uprise led by the Trastámara!"
+#desc = "The desertion of his wife, Blanca (Blanche of Bourbon), for María #Padilla and his favors to the Padilla family, and the Ordinances of Alcalá, #aroused the opposition of the nobles and led to several rebellions fomented by #Pedro's illegitimate half brother, Enrique of Trastámara (later Henry II). The #rebel aristocratic army was defeated in 1153 and at the battles of Toledo #(1355) and Toro (1356). Pedro I started then a strong repression among the #nobility. His executions, confiscations and prosecution of the aristocracy gave #him the nickname of 'the Cruel'. But the confrontation with Enrique did not end #there..."
+
+#style = 3
+#date = { day = 1 month = august year = 1356 }
+#offset = 30
+#deathdate = { day = 1 month = january year = 1369 }
+
+#action_a = { name = "Side with Enrique!"
+#command = { type = country which = LEO }
+#command = { type = trigger which = 115002 }
+#}
+#action_b = { name = "Fight that bastard!"
+#command = { type = independence which = LEO }
+#command = { type = relation which = LEO value = -200 }
+#command = { type = provincetax which = -2 value = 1 }
+#command = { type = provincetax which = -1 value = 1 }
+#command = { type = INF which = -2 value = 3000 }
+#command = { type = CAV which = -1 value = 1500 }
+#command = { type = trigger which = 115001 }
+#}
+#}
+
+#(1356-1363) War of the Two Pedros
+event = {
+	id = 101002 
+	trigger = {
+		#monarch = 15509
+		#monarch = 17466
+		owned = { province = 437 data = ARG }
+	}
+	random = no
+	country = CAS
+	name = "War of the Two Pedros"
+	desc = "A naval incident in Sanlúcar de Barrameda, where some Catalan ships en route to France were involved, was used as a war pretext by Pedro I to resurrect an old Castilian reivindication. He wanted back the region of Alicante so the dream of a Castilian Mediterranean port in Valencia could come true at last. Pedro I attacked Aragonese king Pedro IV 'el Cerimoniós' and war lasted until 1363, when the peace of Murviedro sanctioned Castilian supremacy."
+
+	date = { day = 1 month = march year = 1356 }
+	offset = 30
+	deathdate = { day = 1 month = march year = 1363 }
+
+	action_a = { 
+		name = "We must conquer Valencia!"
+		command = { type = casusbelli which = ARG value = 60 }
+		command = { type = stability value = 1 }
+		command = { type = relation which = ARG value = -50 }
+		command = { type = vp value = 15 }
+		command = { type = MIL which = 1 value = 60 }
+		command = { type = land value = 200 }
+		command = { type = naval value = 100 }
+		command = { type = trigger which = 1100001 } #ARG: The War of the Two Pedros
+	}
+	action_b = { 
+		name = "No, Pere is our friend"
+		command = { type = stability value = -1 }
+		command = { type = relation which = ARG value = 50 }
+		command = { type = trade value = 100 }
+		command = { type = vp value = -5 }
+		command = { type = ADM which = 1 value = 60 }
+	}
+}
+
+#(1383-1385) The Portuguese Crown - (by Corleone)
+event = {
+	id = 101003 
+	trigger = {
+	#	monarch = 17468
+		dynastic = { country = POR country = CAS }
+	}
+	random = no
+	country = CAS
+	name = "The Portuguese Crown"
+	desc = "In 1383, after the death of Portuguese monarch Fernando I, his daughter Beatriz, who was married to Juan I of Castilla y León, was the rightful heiress to the throne. The Castilian monarch wielded the hereditary rights of his wife and entered Portugal with the support of the Lusitan nobility. In front of him stood an alliance made of the bourgeoisie and the lowtown, supported militarily by the English and headed by the Master of Avís, Juan. The decisive struggle took place at the battle of Aljubarrota in 1385. The Portuguese nobility and the Castilian cavalry were defeated and the master of Avís, Juan I of Portugal, was proclaimed king."
+
+	date = { day = 1 month = august year = 1383 }
+	offset = 60
+	deathdate = { day = 1 month = august year = 1385 }
+
+
+	action_a = { 
+		name = "Fight for our rights!"
+		command = { type = land value = 100 }
+		command = { type = MIL which = 1 value = 24 }
+		command = { type = casusbelli which = POR value = 24 }
+		command = { type = relation which = POR value = -50 }
+		command = { type = vp value = 10 }
+		command = { type = trigger which = 116000 } #POR: Juan of Castilla claims the throne
+	}
+	action_b = { 
+		name = "It's not our business"
+		command = { type = trade value = 100 }
+		command = { type = DIP which = 1 value = 24 }
+		command = { type = relation which = POR value = 50 }
+		command = { type = vp value = -10 }
+	}
+}
+
+#(1402) A bridge in the Atlantic - (by Corleone)
+
+event = {
+	id = 101004
+	random = no
+	country = CAS
+	name = "A bridge in the Atlantic"
+	desc = "In the early 15 century, the colonization of the Canary island by Castilla y León begun. That venture, sponsored by Enrique III, was undertook by two French cavaliers, Jean de Bethencourt y Gadifer de la Salle, in the King's name. On the 1st of May of 1402, the squadron left the port of La Rochelle headed to Cádiz, and from there to the Canary Islands. It was to be the start of the colonization race that took Castilla to land never known before..."
+
+	date = { day = 1 month = may year = 1402 }
+	offset = 90
+
+	action_a = { 
+		name = "We are an empire!"
+		command = { type = naval value = 200 }
+		command = { type = infra value = 50 }
+		command = { type = trade value = 100 }
+		command = { type = warships which = -1 value = 3 }
+		command = { type = transports which = -1 value = 2 }
+		command = { type = domestic which = land value = -1 }
+		command = { type = stability value = 1 }
+		command = { type = cash value = -100 }
+		command = { type = vp value = 15 }
+	}
+	action_b = { 
+		name = "That issue is on the backburner..."
+		command = { type = stability value = -1 }
+		command = { type = cash value = 50 }
+		command = { type = vp value = -15 }
+		command = { type = sleepevent which = 26022 } #CAS: Distant Shores
+	}
+}
+
+#first free ID: 101005

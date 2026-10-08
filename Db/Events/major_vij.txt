@@ -1,0 +1,117 @@
+#####Vijayanagar Major Events#####
+# By Henrik 'Doomdark' Fåhraeus  #
+##################################
+
+#Mysore Revolts
+event = {
+	id = 4446
+	trigger = {
+		owned = {
+			province = 570 # Mysore
+			data = -1
+		}
+	}
+	random = no
+	country = VIJ
+	name = "EVENTNAME4446"
+	desc = "EVENTHIST4446"
+	
+	date = { day = 1 month = january year = 1559 }
+	offset = 0
+	deathdate = { day = 1 month = january year = 1565 }
+	
+	action_a = { # Try to surpress revolt
+		name = "ACTIONNAME4446A"
+		command = { type = revolt which = 570 }
+		command = { type = revolt which = 570 }
+		command = { type = revolt which = 570 }
+		command = { type = stability value = -5 }
+	}
+	action_b = { # Make Concessions
+		name = "ACTIONNAME4446B"
+		command = { type = stability value = -1 }
+		command = { type = vp value = -100 }
+		command = { type = treasury value = -200 }
+	}
+}
+# The Fall of the City of Victory
+event = {
+	id = 3823
+	trigger = {
+		NOT = {
+			control = { province = 567 data = -1 }
+		}
+		OR = {
+			# capital siezed by rebels or one of the Deccan sultanates
+			war = { country = HYD country = VIJ } # Hyderabad
+			war = { country = BIJ country = VIJ } # Bijapur
+			war = { country = AHM country = VIJ } # Ahmadnagar
+			control = { province = 567 data = REB }
+		}
+	}
+	random = no
+	country = VIJ
+	name = "EVENTNAME3823"
+	desc = "EVENTHIST3823"
+	
+	date = { day = 2 month = january year = 1565 }
+	offset = 10
+	deathdate = { year = 1600 }
+
+	action_a = { # Cut our losses and regroup
+		name = "ACTIONNAME3823A"
+		command = { type = stability value = 3 }
+		command = { type = revoltrisk which = 60 value = 6 }
+		command = { type = domestic which = centralization value = -3 }
+		command = { type = revolt which = 566 } # Hyderabad
+		command = { type = revolt which = 566 } # Hyderabad
+		command = { type = revolt which = 566 } # Hyderabad
+		command = { type = revolt which = 570 } # Mysore
+		command = { type = revolt which = 570 } # Mysore
+		command = { type = revolt which = 570 } # Mysore
+		command = { type = casusbelli which = MYS value = 60 } #5 years CB on MYS
+	      	command = { type = casusbelli which = HYD value = 60 } #5 years CB on HYD
+		command = { type = cedeprovince which = MOG value = 545 } #Bundelkhand
+	      	command = { type = cedeprovince which = MOG value = 546 } #Malwa
+      		command = { type = cedeprovince which = MOG value = 547 } #Gujarat
+	      	command = { type = cedeprovince which = MOG value = 552 } #Gondwana
+	      	command = { type = cedeprovince which = MOG value = 553 } #Raipur
+      		command = { type = cedeprovince which = BGL value = 560 } #Odisa
+	      	command = { type = cedeprovince which = BGL value = 561 } #Berhampur
+	      	command = { type = cedeprovince which = BGL value = 562 } #Sambalpur
+	      	command = { type = cedeprovince which = HYD value = 548 } #Bombay
+	      	command = { type = cedeprovince which = HYD value = 549 } #Goa
+	      	command = { type = cedeprovince which = HYD value = 550 } #Maharashtra
+	      	command = { type = cedeprovince which = HYD value = 551 } #Khandesh
+	      	command = { type = cedeprovince which = HYD value = 563 } #Bastar
+	      	command = { type = cedeprovince which = HYD value = 564 } #Palakimedi
+		command = { type = cedeprovince which = MYS value = 569 } #Kerala
+		command = { type = cedeprovince which = MYS value = 570 } #Mysore
+		command = { type = cedeprovince which = MYS value = 572 } #Pondicherry
+		command = { type = cedeprovince which = MYS value = 573 } #Cochin
+		command = { type = cedeprovince which = MYS value = 574 } #Trivandrum
+		command = { type = cedeprovince which = MYS value = 575 } #Madurai
+		command = { type = cedeprovince which = MYS value = 576 } #Colombo
+		command = { type = cedeprovince which = MYS value = 577 } #Jaffna
+	}
+	action_b = { # Protect the whole nation!
+		name = "ACTIONNAME3823B"
+		command = { type = stability value = -8 }
+		command = { type = treasury value = -400 }
+		command = { type = infra value = -1000 }
+		command = { type = trade value = -1000 }
+		command = { type = relation which = HYD value = -400 }
+		command = { type = relation which = MYS value = -400 }
+		command = { type = revoltrisk which = 60 value = 8 }
+		command = { type = revolt which = 566 } # Hyderabad
+		command = { type = revolt which = 566 } # Hyderabad
+		command = { type = revolt which = 566 } # Hyderabad
+		command = { type = revolt which = 570 } # Mysore
+		command = { type = revolt which = 570 } # Mysore
+		command = { type = revolt which = 570 } # Mysore
+		command = { type = revolt which = 546 } # Malwa
+		command = { type = revolt which = 546 }
+		command = { type = revolt which = 547 } # Gujarat
+		command = { type = revolt which = 547 }
+	}
+}

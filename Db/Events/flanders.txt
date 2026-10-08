@@ -1,0 +1,81 @@
+##Flanders Events##
+
+#(1339-1345) Van Artevelde's Uprising
+event = {
+      id = 106314
+      trigger = {
+              exists = FRA
+              exists = ENG
+              NOT = { stability = 3 }
+      }
+      random = no
+      country = FLA
+      name = "Van Artevelde's Uprising"
+      desc = "In 1336, viewing Flanders as an important ally, Edward III sent letters expounding upon the treachery of Philip VI and imploring the nobles to rally to his cause.  The Count of Flanders, Louis de Nevers, remained obstinately loyal to the French king and began arresting English merchants in his lands. In response, Edward enacted a trade embargo whereby English wool was forbidden to be sold to Flanders. This was a devastating blow to the Flemish weaving industry and by 1338 the leaders of the Flemish cities and cloth-workers were united by the threat of utter ruin.  In 1339, the rich artisan, Jacob van Artevelde, lead a general uprising against the count and immediately called for the assistance of the King of England. From this date until the assassination of Van Artevelde in 1345, Flanders was under de facto English control."
+
+      date = { year = 1339 }
+      offset = 20
+      deathdate = { year = 1345 }
+
+      action_a = {
+               name = "Van Artevelde takes power and negotiates an alliance with England"
+               command = { type = stability value = 2 }
+               command = { type = domestic which = centralization value = -5 }
+               command = { type = domestic which = aristocracy value = -3 }
+               command = { type = domestic which = serfdom value = -3 }
+               command = { type = domestic which = innovative value = 1 }
+               command = { type = domestic which = mercantilism value = -2 }
+               command = { type = INF which = -2 value = 10000 }
+               command = { type = breakvassal which = FRA }
+               command = { type = relation which = ENG value = 300 }
+               command = { type = trigger which = 105510 } #ENG: Van Artevelde's Uprising
+      }
+      action_b = {
+               name = "Crush the revolters!"
+               command = { type = stability value = -6 }
+               command = { type = revolt which = -1 }
+               command = { type = revolt which = -1 }
+               command = { type = revolt which = -1 }
+               command = { type = revoltrisk which = 36 value = 5 }
+               command = { type = domestic which = centralization value = 1 }
+               command = { type = domestic which = aristocracy value = 1 }
+               command = { type = domestic which = innovative value = -1 }
+               command = { type = domestic which = serfdom value = 1 }
+               command = { type = relation which = FRA value = 200 }
+               command = { type = cash value = -300 }
+               command = { type = sleepevent which = 106315 } #FLA: Van Artevelde's Assassination
+      }
+}
+
+#(1345) Van Artevelde's Assassination
+event = {
+      id = 106315
+      trigger = {
+              event = 106314 #FLA: Van Artevelde's Uprising
+      }
+      random = no
+      country = FLA
+      name = "Van Artevelde's Assassination"
+      desc = "Despite all hopes, the English alliance didn't ameliorate the economic situation in Flanders. Edward III, having quickly understood the tumultuous situation was reluctant to support permanently a rebel government and eventually recalled his troops after several years of immobilisation. In an act of desperation, Artevelde offered the county to Edward's son, contravening all feudal laws as Louis de Nevers, the legitimate count, was alive and no worse for the wear. The King was intrigued with the offer and came personnaly in Flanders to negotiate with the rebel leader, but Flemish popular opinion changed. Van Artevelde was assassinated on July 17, 1345 at Ghent after a popular rebellion. Viewing the situation as a quagmire Edward III went home to England."
+
+      date = { month = july year = 1345 }
+      offset = 10
+      deathdate = { month = august year = 1345 }
+
+      action_a = {
+               name = "Send the English home!"
+               command = { type = stability value = 2 }
+               command = { type = breakvassal which = ENG }
+               command = { type = relation which = ENG value = -250 }
+               command = { type = relation which = FRA value = 200 }
+               command = { type = trigger which = 105511 } #ENG: Van Artevelde's Assassination
+      }
+      action_b = {
+               name = "The English alliance will be fruitful!"
+               command = { type = stability value = -3 }
+               command = { type = relation which = ENG value = 50 }
+               command = { type = relation which = FRA value = -100 }
+      }
+}
+
+#first free ID: 106000

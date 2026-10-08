@@ -1,0 +1,61 @@
+##Ottoman Empire Events##
+
+#(1344-1347) A wedding with Byzantium
+event = {
+	id = 114000
+	trigger = { exists = BYZ }
+	random = no
+	country = TUR
+	name = "A wedding with Byzantium"
+	desc = "In 1345, Orhan I Gazi married Roman emperor John Cantacuzenus' daughter, Theodora. At that time, both states were on good terms and even created an alliance to fight against the Slavonics."
+
+	date = { day = 1 month = january year = 1344 }
+	offset = 150
+	deathdate = { day = 30 month = december year = 1347 }
+
+	action_a ={
+		name = "Marry Theodora"
+		command = { type = dynastic which = BYZ }
+		command = { type = relation which = BYZ value = 75 }
+		command = { type = DIP which = 2 value = 36 }
+		command = { type = ADM which = -1 value = 36 }
+		command = { type = stability value = -1 }
+		command = { type = vp value = 10 }
+	}
+	action_b ={
+		name = "No, they are the enemy!"
+		command = { type = relation which = BYZ value = -50 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = -10 }
+	}
+}
+
+#(1402) The Ottoman Interregnum
+event = {
+	id = 296003
+	random = no 
+	country = TUR
+	name = "EVENTNAME296003"
+	desc = "EVENTHIST296003"
+	style = "26017"
+	
+	date = { day = 2 month = july year = 1402 }
+
+	action_a ={
+		name = "ACTIONNAME296003A"	#Things take a turn for the worst
+		command = { type = revoltrisk which = 144 value = 12 } # Tough!
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -2 }
+		command = { type = desertion which = -1 value = 8000 }
+		command = { type = desertion which = -1 value = 10000 }
+		command = { type = desertion which = -1 value = 10000 }
+		command = { type = desertion which = -1 value = 7000 }
+		command = { type = stability value = -5 }
+	}
+}
+
+#first free ID: 114001

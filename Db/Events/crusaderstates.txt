@@ -1,0 +1,1249 @@
+###########################################
+### events for the christian holyland	###
+### for the NAJF scenario		###
+### by Alex J Fowler (Ayeshteni)	###
+###########################################
+
+#liberation of the holyland#
+event = {
+
+	id = 150013
+	random = no
+	country = JER
+	name = "Christians have flocked to our cause!"
+	desc = "With the liberation of the Holy land, Christians from Europe once more journeyed to the Holy Land intent on securing once and for all its continuance"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 150
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "Deus Volt!"
+		command = { type = INF which = -2 value = 2000 }
+		command = { type = CAV which = -2 value = 1000 }
+	}
+}
+
+#liberation of the holyland#
+event = {
+
+	id = 150014
+	random = no
+	country = TRP
+	name = "Christians have flocked to our cause!"
+	desc = "With the liberation of the Holy land, Christians from Europe once more journeyed to the Holy Land intent on securing once and for all its continuance"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 150
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "Deus Volt!"
+		command = { type = INF which = -2 value = 2000 }
+		command = { type = CAV which = -2 value = 1000 }
+	}
+}
+
+#liberation of the holyland#
+event = {
+
+	id = 150015
+	random = no
+	country = ANT
+	name = "Christians have flocked to our cause!"
+	desc = "With the liberation of the Holy land, Christians from Europe once more journeyed to the Holy Land intent on securing once and for all its continuance"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 150
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "Deus Volt!"
+		command = { type = INF which = -2 value = 2000 }
+		command = { type = CAV which = -2 value = 1000 }
+	}
+}
+
+#holy see endorses holyland#
+event = {
+
+	id = 150037
+	trigger = { 
+		OR = {
+			exists = JER
+			exists = TRP
+			exists = ANT
+			exists = OUT
+		}
+	}
+	random = no
+	country = PAP
+	name = "Holy See endorses the Holy Land"
+	desc = "With the Christian states set up in the Holy Land the Papacy had to decide whether to publically support them or not"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "Yes we will grant them support"
+		command = { type = relation which = JER value = 75 }
+		command = { type = relation which = TRP value = 75 }
+		command = { type = relation which = ANT value = 75 }
+		command = { type = relation which = OUT value = 75 }
+		command = { type = relation which = MAM value = -75 }
+		command = { type = relation which = TUR value = -75 }
+	}
+
+	action_b = {
+		name = "No we will not support them"
+		command = { type = relation which = JER value = -75 }
+		command = { type = relation which = TRP value = -75 }
+		command = { type = relation which = ANT value = -75 }
+		command = { type = relation which = OUT value = -75 }
+		command = { type = relation which = MAM value = 75 }
+		command = { type = relation which = TUR value = 75 }
+	}
+}
+
+#pilgrims flock to jerusalem#
+event = {
+
+	id = 150038
+	trigger = {
+		owned = { province = 493 data = JER }
+		event = 150037
+		}
+	random = no
+	country = JER
+	name = "Pilgrims flock to the city of peace"
+	desc = "With the Holy Lands back in Christian hands pilgrims begin returning to the City of Peace"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "Come, brave Christians, come"
+		command = { type = population which = -2 value = 5000 }
+	}
+}
+
+#event 150057 - creation of Outremer#
+event = {
+
+	id = 150057
+	trigger = {
+		exists = JER
+		exists = TRP
+		exists = ANT
+#		dynastic = { country = JER country TRI }
+#		dynastic = { country = JER country ANT }
+		relation = { country = TRP value = 100 }
+		relation = { country = ANT value = 100 }
+		atwar = no
+		}
+	random = no
+	country = JER
+	name = "Restoration of Outremer"
+	desc = "Our bastion of Christianity is constantly threatened from without. Shall we all reunite? Together we become stronger, divided we may fall."
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "We shall only support the common cause"
+		command = { type = trigger which = 150061 }
+		command = { type = trigger which = 150062 }
+		command = { type = trigger which = 150063 }
+		command = { type = trigger which = 150064 }
+		command = { type = trigger which = 150010 }
+	}
+
+	action_b = {
+		name = "We shall push for Restoration"
+		command = { type = trigger which = 150065 }
+		command = { type = trigger which = 150066 }
+		command = { type = trigger which = 150067 }
+		command = { type = trigger which = 150068 }
+		command = { type = trigger which = 150012 }
+		command = { type = country which = OUT }
+	}
+}
+
+#limited union for county#
+event = {
+
+	id = 150061 #triggered by 150057#
+	random = no
+	country = TRP
+	name = "Vassalage to Jerusalem"
+	desc = "The King of Jerusalem asks for our fealty in an attempt to strengthen our position within the Holy Land, will we yield to the King?"
+	style = 1
+
+	action_a = {
+		name = "Yes we will yield!"
+		command = { type = breakvassal which = BYZ }
+		command = { type = breakvassal which = SPA }
+		command = { type = breakvassal which = FRA }
+		command = { type = breakvassal which = ENG }
+		command = { type = breakvassal which = VEN }
+		command = { type = breakvassal which = GEN }
+		command = { type = breakvassal which = PAP }
+		command = { type = breakvassal which = POR }
+		command = { type = trigger which = 150069 }
+	}
+
+	action_b = {
+		name = "No we will not yield!"
+		command = { type = relation which = JER value = -50 }
+		command = { type = vp value = -10 }
+	}
+}
+
+#county accepts limited#
+event = {
+
+	id = 150069 #triggered by 150061#
+	random = no
+	country = JER
+	name = "County of Tripoli swears fealty"
+	desc = "Sire, the Count of Tripoli swears fealty to your crown, they are with us!"
+	style = 1
+
+	action_a = {
+		name = "Good, it is done"
+		command = { type = vassal which = TRP }
+		command = { type = alliance which = TRP }
+	}
+}
+
+#restoration for county#
+event = {
+
+	id = 150065 #triggered by 150057#
+	random = no
+	country = TRP
+	name = "Outremer restored"
+	desc = "Sire, the King of Jerusalem wishes us to become part of a newly restored Outremer. If we accept we will be absorbed into the new kingdom, will we accept?"
+	style = 1
+
+	action_a = {
+		name = "For Christ, we shall (Annexed)"
+		command = { type = trigger which = 150070 }
+	}
+
+	action_b = {
+		name = "No we will not!"
+		command = { type = relation which = OUT value = -100 }
+		command = { type = vp value = -10 }
+	}
+}
+
+#county restored#
+event = {
+
+	id = 150070 #triggered by 150065#
+	random = no
+	country = JER
+	name = "The County accepts absorbtion (Annex)"
+	desc = "The Count of Tripoli has given up his demesne to you Sire! His lands are yours!"
+	style = 1
+
+	action_a = {
+		name = "Excellent! Praise be to God!"
+		command = { type = inherit which = TRP }
+	}
+}
+
+#limited union for principality#
+event = {
+
+	id = 150062 #triggered by 150057#
+	random = no
+	country = ANT
+	name = "Vassalage to Jerusalem"
+	desc = "The King of Jerusalem asks for our fealty in an attempt to strengthen our position within the Holy Land, will we yield to the King?"
+	style = 1
+
+	action_a = {
+		name = "Yes we will yield!"
+		command = { type = breakvassal which = BYZ }
+		command = { type = breakvassal which = SPA }
+		command = { type = breakvassal which = FRA }
+		command = { type = breakvassal which = ENG }
+		command = { type = breakvassal which = VEN }
+		command = { type = breakvassal which = GEN }
+		command = { type = breakvassal which = PAP }
+		command = { type = breakvassal which = POR }
+		command = { type = trigger which = 150071 }
+	}
+
+	action_b = {
+		name = "No we will not yield!"
+		command = { type = relation which = JER value = -50 }
+		command = { type = vp value -10 }
+	}
+}
+
+#principality accepts limited#
+event = {
+
+	id = 150071 #triggered by 150062#
+	random = no
+	country = JER
+	name = "Principality of Antioch swears fealty"
+	desc = "Sire, the Prince of Antioch swears fealty to your crown, they are with us!"
+	style = 1
+
+	action_a = {
+		name = "Good, it is done"
+		command = { type = vassal which = ANT }
+		command = { type = alliance which = ANT }
+	}
+}
+
+#restoration for principality#
+event = {
+
+	id = 150066 #triggered by 150057#
+	random = no
+	country = ANT
+	name = "Outremer restored"
+	desc = "Sire, the King of Jerusalem wishes us to become part of a newly restored Outremer. If we accept we will be absorbed into the new kingdom, will we accept?"
+	style = 1
+
+	action_a = {
+		name = "For Christ, we shall (Annexed)"
+		command = { type = trigger which = 150072 }
+	}
+
+	action_b = {
+		name = "No we will not!"
+		command = { type = relation which = OUT value = -100 }
+		command = { type = vp value = -10 }
+	}
+}
+
+#principality restored#
+event = {
+
+	id = 150072 #triggered by 150066#
+	random = no
+	country = JER
+	name = "The Principality accepts absorbtion (Annex)"
+	desc = "The Prince of Antioch has given up his demesne to you Sire! His lands are yours!"
+	style = 1
+
+	action_a = {
+		name = "Excellent! Praise be to God!"
+		command = { type = inherit which = ANT }
+	}
+}
+
+#limited union for cyprus#
+event = {
+
+	id = 150063 #triggered by 150057#
+	random = no
+	country = CYP
+	name = "Vassalage to Jerusalem"
+	desc = "The King of Jerusalem asks for our fealty in an attempt to strengthen our position within the Holy Land, will we yield to the King?"
+	style = 1
+
+	action_a = {
+		name = "Yes we will yield!"
+		command = { type = breakvassal which = BYZ }
+		command = { type = breakvassal which = SPA }
+		command = { type = breakvassal which = FRA }
+		command = { type = breakvassal which = ENG }
+		command = { type = breakvassal which = VEN }
+		command = { type = breakvassal which = GEN }
+		command = { type = breakvassal which = PAP }
+		command = { type = breakvassal which = POR }
+		command = { type = trigger which = 150073 }
+	}
+
+	action_b = {
+		name = "No we will not yield!"
+		command = { type = relation which = JER value = -50 }
+		command = { type = vp value -10 }
+	}
+}
+
+#cyprus accepts limited#
+event = {
+
+	id = 150073 #triggered by 150063#
+	random = no
+	country = JER
+	name = "Cyprus swears fealty"
+	desc = "Sire, the King of Cyprus swears fealty to your crown, they are with us!"
+	style = 1
+
+	action_a = {
+		name = "Good, it is done"
+		command = { type = vassal which = CYP }
+		command = { type = alliance which = CYP }
+	}
+}
+
+#restoration for cyprus#
+event = {
+
+	id = 150067 #triggered by 150057#
+	random = no
+	country = CYP
+	name = "Outremer restored"
+	desc = "Sire, the King of Jerusalem wishes us to become part of a newly restored Outremer. If we accept we will be absorbed into the new kingdom, will we accept?"
+	style = 1
+
+	action_a = {
+		name = "For Christ, we shall (Annexed)"
+		command = { type = trigger which = 150074 }
+	}
+
+	action_b = {
+		name = "No we will not!"
+		command = { type = relation which = OUT value = -100 }
+		command = { type = vp value = -10 }
+	}
+}
+
+#cyprus restored#
+event = {
+
+	id = 150074 #triggered by 150067#
+	random = no
+	country = JER
+	name = "Cyprus accepts absorbtion (Annex)"
+	desc = "The King of Cyprus has given up his demesne to you Sire! His lands are yours!"
+	style = 1
+
+	action_a = {
+		name = "Excellent! Praise be to God!"
+		command = { type = inherit which = CYP }
+	}
+}
+
+#limited union for knights#
+event = {
+
+	id = 150064 #triggered by 150057#
+	random = no
+	country = KNI
+	name = "Vassalage to Jerusalem"
+	desc = "The King of Jerusalem asks for our fealty in an attempt to strengthen our position within the Holy Land, will we yield to the King?"
+	style = 1
+
+	action_a = {
+		name = "Yes we will yield!"
+		command = { type = breakvassal which = BYZ }
+		command = { type = breakvassal which = SPA }
+		command = { type = breakvassal which = FRA }
+		command = { type = breakvassal which = ENG }
+		command = { type = breakvassal which = VEN }
+		command = { type = breakvassal which = GEN }
+		command = { type = breakvassal which = PAP }
+		command = { type = breakvassal which = POR }
+		command = { type = trigger which = 150075 }
+	}
+
+	action_b = {
+		name = "No we will not yield!"
+		command = { type = relation which = JER value = -50 }
+		command = { type = vp value -10 }
+	}
+}
+
+#knights accepts limited#
+event = {
+
+	id = 150075 #triggered by 150064#
+	random = no
+	country = JER
+	name = "Knights of St John swears fealty"
+	desc = "Sire, the Grandmaster of he Knights of St John swears fealty to your crown, they are with us!"
+	style = 1
+
+	action_a = {
+		name = "Good, it is done"
+		command = { type = vassal which = KNI }
+		command = { type = alliance which = KNI }
+	}
+}
+
+#restoration for knights#
+event = {
+
+	id = 150068 #triggered by 150057#
+	random = no
+	country = KNI
+	name = "Outremer restored"
+	desc = "Sire, the King of Jerusalem wishes us to become part of a newly restored Outremer. If we accept we will be absorbed into the new kingdom, will we accept?"
+	style = 1
+
+	action_a = {
+		name = "For Christ, we shall (Annexed)"
+		command = { type = trigger which = 150076 }
+	}
+
+	action_b = {
+		name = "No we will not!"
+		command = { type = relation which = OUT value = -100 }
+		command = { type = vp value = -10 }
+	}
+}
+
+#knights restored#
+event = {
+
+	id = 150076 #triggered by 150068#
+	random = no
+	country = JER
+	name = "The Knights of St John accepts absorbtion (Annex)"
+	desc = "The Grandmaster of the Knights of Ft John has given up his demesne to you Sire! His lands are yours!"
+	style = 1
+
+	action_a = {
+		name = "Excellent! Praise be to God!"
+		command = { type = inherit which = KNI }
+	}
+}
+
+#holyland asserts its independence#
+event = {
+
+	id = 150058
+	trigger = {
+		}
+	random = no
+	country = JER
+	name = "Holy Land asserts its independence"
+	desc = "The Holy Land, boosted by Knights and Gentlemen Adventurers from the West profitted by a steady supply of manpower to protect the Christian States"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 700
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "To arms brave Christians"
+		command = { type = provincemanpower which = 493 value = 1 }
+		command = { type = provincetax which = 493 value = 1 }
+		command = { type = manpower value = 10 }
+		command = { type = conquistador which = -2 }
+	}
+}
+
+#holyland asserts its independence#
+event = {
+
+	id = 150059
+	trigger = {
+		}
+	random = no
+	country = TRP
+	name = "Holy Land asserts its independence"
+	desc = "The Holy Land, boosted by Knights and Gentlemen Adventurers from the West profitted by a steady supply of manpower to protect the Christian States"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 700
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "To arms brave Christians"
+		command = { type = provincemanpower which = 491 value = 1 }
+		command = { type = provincetax which = 491 value = 1 }
+		command = { type = manpower value = 10 }
+		command = { type = conquistador which = -2 }
+	}
+}
+
+#holyland asserts its independence#
+event = {
+
+	id = 150060
+	trigger = {
+		}
+	random = no
+	country = ANT
+	name = "Holy Land asserts its independence"
+	desc = "The Holy Land, boosted by Knights and Gentlemen Adventurers from the West profitted by a steady supply of manpower to protect the Christian States"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 700
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "To arms brave Christians"
+		command = { type = provincemanpower which = 485 value = 1 }
+		command = { type = provincetax which = 485 value = 1 }
+		command = { type = manpower value = 10 }
+		command = { type = conquistador which = -2 }
+	}
+}
+
+#holyland secession#
+event = {
+
+	id = 150003
+	trigger = {
+		owned = { province = 493 data = -1 }
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+			}
+		NOT = {
+			domestic = { type = innovative value = 7 }
+			exists = JER
+			}
+		}
+	random = no
+	province = 493
+	name = "Secession of the Holy Lands"
+	desc = "Sire, we are in an unique position to grant independence and re-invigorate Christian states within the Holy Land. The Pope has stressed Christian duty to allow them their existence. What shall we do?"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 900
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "It is our Christian duty!"
+		command = { type = independence which = JER }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 15 }
+	}
+
+	action_b = {
+		name = "No, it is ours!"
+		command = { type = stability value = -1 }
+		command = { type = vp value = -20 }
+		command = { type = revoltrisk which = 3600 value = 5 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = KNI value = -100 }
+	}
+}
+
+#holyland secession#
+event = {
+
+	id = 150004
+	trigger = {
+		owned = { province = 491 data = -1 }
+#		exists = JER
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+			}
+		NOT = {
+			domestic = { type = innovative value = 7 }
+			exists = TRP
+			}
+		}
+	random = no
+	province = 491
+	name = "Secession of the Holy Lands"
+	desc = "Sire, we are in an unique position to grant independence and re-invigorate Christian states within the Holy Land. The Pope has stressed Christian duty to allow them their existence. What shall we do?"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 900
+	deathdate = { day = 31 month = december year = 1492 }
+
+	action_a = {
+		name = "It is our Christian duty!"
+		command = { type = independence which = TRP }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 15 }
+	}
+
+	action_b = {
+		name = "No, it is ours!"
+		command = { type = stability value = -1 }
+		command = { type = vp value = -20 }
+		command = { type = revoltrisk which = 3600 value = 5 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = KNI value = -100 }
+	}
+}
+
+#holyland secession#
+event = {
+
+	id = 150005
+	trigger = {
+		owned = { province = 485 data = -1 }
+#		exists = JER
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+			}
+		NOT = {
+			domestic = { type = innovative value = 7 }
+			exists = ANT
+			}
+		}
+	random = no
+	province = 485
+	name = "Secession of the Holy Lands"
+	desc = "Sire, we are in an unique position to grant independence and re-invigorate Christian states within the Holy Land. The Pope has stressed Christian duty to allow them their existence. What shall we do?"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 900
+	deathdate = { day = 31 month = december year = 1492 }
+
+	action_a = {
+		name = "It is our Christian duty!"
+		command = { type = independence which = ANT }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 15 }
+	}
+
+	action_b = {
+		name = "No, it is ours!"
+		command = { type = stability value = -1 }
+		command = { type = vp value = -20 }
+		command = { type = revoltrisk which = 3600 value = 5 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = KNI value = -100 }
+	}
+}
+
+#holyland secession#
+event = {
+
+	id = 150006
+	trigger = {
+		owned = { province = 492 data = -1 }
+#		exists = JER
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+			}
+		NOT = {
+			domestic = { type = innovative value = 7 }
+			exists = EDE
+			}
+		}
+	random = no
+	province = 492
+	name = "Secession of the Holy Lands"
+	desc = "Sire, we are in an unique position to grant independence and re-invigorate Christian states within the Holy Land. The Pope has stressed Christian duty to allow them their existence. What shall we do?"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 900
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "It is our Christian duty!"
+		command = { type = independence which = EDE }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 15 }
+	}
+
+	action_b = {
+		name = "No, it is ours!"
+		command = { type = stability value = -1 }
+		command = { type = vp value = -20 }
+		command = { type = revoltrisk which = 3600 value = 5 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = KNI value = -100 }
+	}
+}
+
+#holyland secession#
+event = {
+
+	id = 150007
+	trigger = {
+		owned = { province = 744 data = -1 }
+		owned = { province = 745 data = -1 }
+		owned = { province = 746 data = -1 }
+#		exists = JER
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+			}
+		NOT = {
+			domestic = { type = innovative value = 7 }
+			exists = EGY
+			}
+		}
+	random = no
+	province = 746
+	name = "Secession of the Holy Lands"
+	desc = "Sire, we are in an unique position to grant independence and re-invigorate Christian states within the Holy Land. The Pope has stressed Christian duty to allow them their existence. What shall we do?"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 900
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "It is our Christian duty!"
+		command = { type = independence which = EGY }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 15 }
+	}
+
+	action_b = {
+		name = "No, it is ours!"
+		command = { type = stability value = -1 }
+		command = { type = vp value = -20 }
+		command = { type = revoltrisk which = 3600 value = 5 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = KNI value = -100 }
+	}
+}
+
+#holyland secession#
+event = {
+
+	id = 150008
+	trigger = {
+		owned = { province = 737 data = -1 }
+		owned = { province = 736 data = -1 }
+		owned = { province = 738 data = -1 }
+#		exists = JER
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+			}
+		NOT = {
+			domestic = { type = innovative value = 7 }
+			exists = NAF
+			}
+		}
+	random = no
+	province = 746
+	name = "Secession of the Holy Lands"
+	desc = "Sire, we are in an unique position to grant independence and re-invigorate Christian states within the Holy Land. The Pope has stressed Christian duty to allow them their existence. What shall we do?"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 900
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "It is our Christian duty!"
+		command = { type = independence which = NAF }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 15 }
+	}
+
+	action_b = {
+		name = "No, it is ours!"
+		command = { type = stability value = -1 }
+		command = { type = vp value = -20 }
+		command = { type = revoltrisk which = 3600 value = 5 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = KNI value = -100 }
+	}
+}
+
+#holyland secession#
+event = {
+
+	id = 150009
+	trigger = {
+		owned = { province = 795 data = -1 }
+#		exists = JER
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+			}
+		NOT = {
+			domestic = { type = innovative value = 7 }
+			exists = PET
+			}
+		}
+	random = no
+	province = 745
+	name = "Secession of the Holy Lands"
+	desc = "Sire, we are in an unique position to grant independence and re-invigorate Christian states within the Holy Land. The Pope has stressed Christian duty to allow them their existence. What shall we do?"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 900
+	deathdate = { day = 31 month = december year = 1500 }
+
+	action_a = {
+		name = "It is our Christian duty!"
+		command = { type = independence which = PET }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 15 }
+	}
+
+	action_b = {
+		name = "No, it is ours!"
+		command = { type = stability value = -1 }
+		command = { type = vp value = -20 }
+		command = { type = revoltrisk which = 3600 value = 5 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = KNI value = -100 }
+	}
+}
+
+#limited union for edesse#
+event = {
+
+	id = 150010 #triggered by 150057#
+	random = no
+	country = EDE
+	name = "Vassalage to Jerusalem"
+	desc = "The King of Jerusalem asks for our fealty in an attempt to strengthen our position within the Holy Land, will we yield to the King?"
+	style = 1
+
+	action_a = {
+		name = "Yes we will yield!"
+		command = { type = breakvassal which = BYZ }
+		command = { type = breakvassal which = SPA }
+		command = { type = breakvassal which = FRA }
+		command = { type = breakvassal which = ENG }
+		command = { type = breakvassal which = VEN }
+		command = { type = breakvassal which = GEN }
+		command = { type = breakvassal which = PAP }
+		command = { type = breakvassal which = POR }
+		command = { type = trigger which = 150011 }
+	}
+
+	action_b = {
+		name = "No we will not yield!"
+		command = { type = relation which = JER value = -50 }
+		command = { type = vp value -10 }
+	}
+}
+
+#edessa accepts limited#
+event = {
+
+	id = 150011 #triggered by 150010#
+	random = no
+	country = JER
+	name = "County of Edessa swears fealty"
+	desc = "Sire, the Count of Edessa swears fealty to your crown, they are with us!"
+	style = 1
+
+	action_a = {
+		name = "Good, it is done"
+		command = { type = vassal which = EDE }
+		command = { type = alliance which = EDE }
+	}
+}
+
+#restoration for edessa#
+event = {
+
+	id = 150012 #triggered by 150057#
+	random = no
+	country = EDE
+	name = "Outremer restored"
+	desc = "Sire, the King of Jerusalem wishes us to become part of a newly restored Outremer. If we accept we will be absorbed into the new kingdom, will we accept?"
+	style = 1
+
+	action_a = {
+		name = "For Christ, we shall (Annexed)"
+		command = { type = trigger which = 150016 }
+	}
+
+	action_b = {
+		name = "No we will not!"
+		command = { type = relation which = OUT value = -100 }
+		command = { type = vp value = -10 }
+	}
+}
+
+#edessa restored#
+event = {
+
+	id = 150016 #triggered by 150012#
+	random = no
+	country = JER
+	name = "Edessa accepts absorbtion (Annex)"
+	desc = "The Count of Edessa has given up his demesne to you Sire! His lands are yours!"
+	style = 1
+
+	action_a = {
+		name = "Excellent! Praise be to God!"
+		command = { type = inherit which = EDE }
+	}
+}
+
+#liberation of the holyland#
+event = {
+
+	id = 150017
+	random = no
+	country = EDE
+	name = "Christians have flocked to our cause!"
+	desc = "With the liberation of the Holy land, Christians from Europe once more journeyed to the Holy Land intent on securing once and for all its continuance"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 150
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "Deus Volt!"
+		command = { type = INF which = -2 value = 2000 }
+		command = { type = CAV which = -2 value = 1000 }
+	}
+}
+
+#liberation of the holyland#
+event = {
+
+	id = 150018
+	random = no
+	country = DAM
+	name = "Christians have flocked to our cause!"
+	desc = "With the liberation of the Holy land, Christians from Europe once more journeyed to the Holy Land intent on securing once and for all its continuance"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 150
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "Deus Volt!"
+		command = { type = INF which = -2 value = 2000 }
+		command = { type = CAV which = -2 value = 1000 }
+	}
+}
+
+#holyland asserts its independence#
+event = {
+
+	id = 150019
+	trigger = {
+		}
+	random = no
+	country = EDE
+	name = "Holy Land asserts its independence"
+	desc = "The Holy Land, boosted by Knights and Gentlemen Adventurers from the West profitted by a steady supply of manpower to protect the Christian States"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 700
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "To arms brave Christians"
+		command = { type = provincemanpower which = 492 value = 1 }
+		command = { type = provincetax which = 492 value = 1 }
+		command = { type = manpower value = 10 }
+		command = { type = conquistador which = -2 }
+	}
+}
+
+#holyland asserts its independence#
+event = {
+
+	id = 150020
+	trigger = {
+		}
+	random = no
+	country = DAM
+	name = "Holy Land asserts its independence"
+	desc = "The Holy Land, boosted by Knights and Gentlemen Adventurers from the West profitted by a steady supply of manpower to protect the Christian States"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 700
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "To arms brave Christians"
+		command = { type = provincemanpower which = 490 value = 1 }
+		command = { type = provincetax which = 490 value = 1 }
+		command = { type = manpower value = 10 }
+		command = { type = conquistador which = -2 }
+	}
+}
+
+#holyland secession#
+event = {
+
+	id = 150021
+	trigger = {
+		owned = { province = 491 data = -1 }
+		exists = JER
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+			}
+		NOT = {
+			domestic = { type = innovative value = 7 }
+			exists = DAM
+			}
+		}
+	random = no
+	province = 491
+	name = "Secession of the Holy Lands"
+	desc = "Sire, we are in an unique position to grant independence and re-invigorate Christian states within the Holy Land. The Pope has stressed Christian duty to allow them their existence. What shall we do?"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 900
+	deathdate = { day = 31 month = december year = 1500 }
+
+	action_a = {
+		name = "It is our Christian duty!"
+		command = { type = independence which = DAM }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 15 }
+	}
+
+	action_b = {
+		name = "No, it is ours!"
+		command = { type = stability value = -1 }
+		command = { type = vp value = -20 }
+		command = { type = revoltrisk which = 3600 value = 5 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = KNI value = -100 }
+	}
+}
+
+#holyland secession#
+event = {
+
+	id = 150022
+	trigger = {
+		owned = { province = 508 data = -1 }
+		owned = { province = 489 data = -1 }
+		owned = { province = 488 data = -1 }
+#		exists = JER
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+			}
+		NOT = {
+			domestic = { type = innovative value = 7 }
+			exists = MES
+			}
+		}
+	random = no
+	province = 489
+	name = "Secession of the Holy Lands"
+	desc = "Sire, we are in an unique position to grant independence and re-invigorate Christian states within the Holy Land. The Pope has stressed Christian duty to allow them their existence. What shall we do?"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 900
+	deathdate = { day = 31 month = december year = 1836 }
+
+	action_a = {
+		name = "It is our Christian duty!"
+		command = { type = independence which = MES }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 15 }
+	}
+
+	action_b = {
+		name = "No, it is ours!"
+		command = { type = stability value = -1 }
+		command = { type = vp value = -20 }
+		command = { type = revoltrisk which = 3600 value = 5 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = KNI value = -100 }
+	}
+}
+
+#holyland secession#
+event = {
+
+	id = 150023
+	trigger = {
+		owned = { province = 495 data = -1 }
+		owned = { province = 492 data = -1 }
+		owned = { province = 491 data = -1 }
+		owned = { province = 490 data = -1 }
+		owned = { province = 485 data = -1 }
+		exists = JER
+		continent = europe
+		OR = {
+			religion = catholic
+			religion = counterreform
+			}
+		NOT = {
+			domestic = { type = innovative value = 7 }
+			exists = SYR
+			}
+		}
+	random = no
+	province = 489
+	name = "Secession of the Holy Lands"
+	desc = "Sire, we are in an unique position to grant independence and re-invigorate Christian states within the Holy Land. The Pope has stressed Christian duty to allow them their existence. What shall we do?"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 900
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "It is our Christian duty!"
+		command = { type = independence which = SYR }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 15 }
+	}
+
+	action_b = {
+		name = "No, it is ours!"
+		command = { type = stability value = -1 }
+		command = { type = vp value = -20 }
+		command = { type = revoltrisk which = 3600 value = 5 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = KNI value = -100 }
+	}
+}
+
+#creation of syria
+#event = {
+#
+#	id = 150024
+#	trigger = {
+#		exists = DAM
+#		exists = PET
+#		NOT = {
+#			war = { country = DAM country = PET }
+#			exists = SYR
+#			}
+#		}
+#	random = no
+#	country = DAM
+#	name = "Creation of the Kingdom of Syria"
+#	desc = "formed on the outer edges of Outremer, the Principality of Damasus and the County of Petra felt isolated and vulnerable. #Therefore when the Prince of Damascus suggested the formal formation of the Kingdom of Syria, Petra was quick to accept."
+#	style = 0
+#
+#	date = { day = 1 month = january year = 1337 }
+#	offset = 900
+#	deathdate = { day = 31 month = december year = 1820 }
+#
+#	action_a = {
+#		name = "OK"
+#		command = { type = inherit which = PET }
+#		command = { type = country which = SYR }
+#	}
+#}

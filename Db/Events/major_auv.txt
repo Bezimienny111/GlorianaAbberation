@@ -1,0 +1,46 @@
+#####Auvergne Major Events#####
+#By Joakim 'Greven' Bergqwist##
+###############################
+
+#The Crown of France#
+event = {
+
+	id = 3593
+	trigger = {
+			owned = {
+					province = 385
+					data = -1
+				}
+			NOT = {
+				exists = FRA
+				}
+		}
+	random = no
+	country = AUV
+	name = "EVENTNAME3593"
+	desc = "EVENTHIST3593"
+
+	date = { day = 1 month = january year = 1420 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1515 }
+
+	action_a ={					#France is reborn with me#
+		name = "ACTIONNAME3593A"
+		command = { type = vp value = 200 }
+		command = { type = stability value = 3 }
+		command = { type = country which = FRA }
+		command = { type = INF which = 385 value = 15000 }
+		command = { type = CAV which = 385 value = 10000 }
+		command = { type = ART which = 385 value = 30 }
+	}
+
+	action_b ={					#Let France rest in peace#
+		name = "ACTIONNAME3593B"
+		command = { type = vp value = -100 }
+		command = { type = stability value = -3 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = BUR value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = SPA value = 150 }
+	}
+}

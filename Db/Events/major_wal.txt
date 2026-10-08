@@ -1,0 +1,52 @@
+#####Walachia Major Events#####
+#  By Demetrios and Havard    #
+#                             #
+#  altered a bit by Doomdark  #
+#                             #
+###############################
+
+# Vlad the Impaler!
+event = { 
+	id = 3832
+	trigger = {
+		vassal = { country = TUR country = WAL }
+	}
+	random = no
+	country = WAL
+	name = "EVENTNAME3832"
+	desc = "EVENTHIST3832"
+	style = "3832"
+	
+	date = { day = 1 month = april year = 1456 }
+	offset = 2300
+	
+	action_a ={ #We owe the Turks nothing!
+		name = "ACTIONNAME3832A"
+		command = { type = breakvassal which = TUR }
+		command = { type = relation which = HUN value = 50 }
+		command = { type = relation which = TUR value = -100 }
+		command = { type = domestic which = QUALITY value = 1 }
+	}
+	action_b ={ #Apologize to the Sultan
+		name = "ACTIONNAME3832B"
+		command = { type = relation which = TUR value = 100 }
+		command = { type = relation which = HUN value = -50 }
+	}
+}
+
+# The Council of Florence and the Union of the Churches
+event = { 
+	id = 3839
+	
+	# Triggered by BYZ 3833
+	
+	random = no
+	country = WAL
+	name = "EVENTNAME3839"
+	desc = "EVENTHIST3839"
+	
+	action_a ={ #Gain CB on Ottomans#
+		name = "ACTIONNAME3839A"
+		command = { type = casusbelli which = TUR value = 60 }
+	}
+}

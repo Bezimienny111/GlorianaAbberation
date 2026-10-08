@@ -1,0 +1,66 @@
+#####Provence Major Events#####
+#By Joakim 'Greven' Bergqwist##
+###############################
+
+#The Succession in Provence#
+event = {
+
+	id = 3607
+	trigger = {
+		NOT = {
+			vassal = { country = FRA country = PRO }
+			vassal = { country = ENG country = PRO }
+			vassal = { country = HAB country = PRO }
+		}
+	}
+	random = no
+	country = PRO
+	name = "EVENTNAME3607"
+	desc = "EVENTHIST3607"
+	style = 1
+
+	date = { day = 10 month = december year = 1481 }
+
+	action_a ={
+		name = "ACTIONNAME3607A"	#The King of France (Annect)#
+		trigger = { exists = FRA ai = yes }
+		command = { type = trigger which = 3323 }
+	}
+
+	action_b ={		# We shall become a vassal of King Louis #
+		name = "ACTIONNAME3607B"
+		trigger = { exists = FRA }
+		command = { type = dynastic which = FRA }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = INF which = -1 value = 10000 }
+		command = { type = trigger which = 3324 }
+		command = { type = stability value = -2 }
+	}
+
+	action_c ={		# We shall become a vassal of King Henry #
+		trigger = {
+			NOT = { exists = FRA }
+#			ENG = { monarch = 04031 } # Henry VI
+		}
+		name = "ACTIONNAME3607C"
+		command = { type = dynastic which = ENG }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = INF which = -1 value = 10000 }
+		command = { type = trigger which = 3314 }
+		command = { type = stability value = -2 }
+	}
+	action_d ={		# We shall become a vassal of the Emperor #
+		name = "ACTIONNAME3607D"
+		trigger = { exists = HAB }
+		command = { type = dynastic which = HAB }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = INF which = -1 value = 10000 }
+		command = { type = trigger which = 250036 }
+		command = { type = stability value = -2 }
+	}
+	action = { #Trace the closest relation
+		name = "Trace the closest relation"
+		command = { type = stability value = -1 }
+		command = { type = treasury value = -25 }
+	}
+}

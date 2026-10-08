@@ -1,0 +1,76 @@
+# Event by Dark Knight
+# Text by Henrik 'Doomdark' Fåhraeus
+
+#Restore Byzantium#
+event = {
+	id = 3875
+	trigger = {
+		owned = {
+			province = 357
+			data = -1
+		}
+		religion = orthodox
+		NOT = {
+			exists = BYZ
+		}
+		atwar = no
+	}
+	random = no
+	country = GRE
+	name = "EVENTNAME3875"
+	desc = "EVENTHIST3875"
+	date = { day = 1 month = january year = 1419}
+	offset = 30
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = { #Move to Byzantium and Restore the Empire#
+		name = "ACTIONNAME3875A"
+		command = { type = capital which = 357 }
+		command = { type = country which = BYZ }
+		command = { type = conversion which = 357 }
+		command = { type = provinceculture which = 357 value = greek }
+		command = { type = conversion which = -1 }
+		command = { type = conversion which = -4 }
+		command = { type = missionaries value = 3 }
+		command = { type = diplomats value = 2 }
+		command = { type = merchants value = 2 }
+		command = { type = domestic which = ARISTOCRACY value = 1}
+	}
+	action_b = { #Let Athens Remain the Capital of a New Empire#
+		name = "ACTIONNAME3875B"
+		command = { type = conversion which = 357 }
+		command = { type = provinceculture which = 357 value = greek }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = population which = 359 value = 30000 }
+		command = { type = missionaries value = 3 }
+		command = { type = merchants value = 2 }
+		command = { type = provincetax which = 359 value = 3}
+		command = { type = provincetax which = 357 value = -2}
+		command = { type = domestic which = ARISTOCRACY value = -1}
+	}
+}
+
+# Troops for the Revolution #
+event = {
+	id = 2910
+	trigger = {
+		ai = yes
+		atwar = yes
+		event = 50026
+	}
+	random = no
+	country = GRE
+	name = "AI_EVENT"
+	desc = "AI_EVENT"
+
+	date = { day = 1 month = january year = 1820 }
+	offset = 10
+
+	action = { 
+		name = "OK"
+		command = { type = stability value = 3 }
+		command = { type = INF which = -2 value = 35000 }
+		command = { type = CAV which = -2 value = 15000 }
+		command = { type = ART which = -2 value = 25 }
+	}
+}

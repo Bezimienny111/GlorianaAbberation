@@ -1,0 +1,190 @@
+#####Delhi Major Events########
+#  By Tom Rinschler
+#			&
+#  Henrik 'Doomdark' Fåhraeus
+#
+###############################
+
+# The Marathi Revolt
+event = {
+	id = 3821
+	trigger = {
+		owned = {
+			province = 550
+			data = -1
+		}
+		NOT = {
+			exists = MAH
+		}
+	}
+	random = no
+	country = DLH
+	name = "EVENTNAME3821"
+	desc = "EVENTHIST3821"
+
+	date = { day = 1 month = january year = 1660 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1680 }
+
+	action_a = { # Crush the rebels.
+		name = "ACTIONNAME3821A"
+		command = { type = revolt which = 550 }
+		command = { type = revolt which = 550 }
+		command = { type = revolt which = 550 }
+		command = { type = revolt which = 551 }
+		command = { type = revolt which = 551 }
+		command = { type = stability value = -3 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -2 }
+	}
+	action_b = { # Give in to their demands.
+		name = "ACTIONNAME3821B"
+		command = { type = stability value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = -3 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+	}
+}
+
+# Tiger on the Border
+event = {
+	id = 3824
+	trigger = {
+		exists = MOG
+
+		owned = {
+			province = 1523 # Thar
+			data = -1
+		}
+
+		NOT = {
+			war = { country = DLH country = MOG }
+		}
+	}
+	random = no
+	country = DLH
+	name = "EVENTNAME3824"
+	desc = "EVENTHIST3824"
+
+	date = { day = 1 month = january year = 1510 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1530 }
+
+	action_a = { # Negotiate with Babur
+		name = "ACTIONNAME3824A"
+		command = { type = cedeprovince which = MOG value = 1522 } #Bikaner
+		command = { type = cedeprovince which = MOG value = 1523 } #Thar
+		command = { type = relation which = MOG value = 50 }
+		command = { type = casusbelli which = MOG value = 240 }
+		command = { type = stability value = 1 }
+	}
+	action_b = { # No compromises!
+		name = "ACTIONNAME3824B"
+		command = { type = relation which = MOG value = -200 }
+		command = { type = war which = MOG }
+		command = { type = stability value = -4 }
+	}
+}
+
+#The Lodi Dynasty#
+event = {
+	id = 3917
+	random = no
+	country = DLH
+	name = "EVENTNAME3917"
+	desc = "EVENTHIST3917"
+
+	date = { day = 19 month = april year = 1451 }
+	offset = 0
+	deathdate = { day = 20 month = april year = 1451 }
+
+	action_a ={        #Curses!#
+		name = "ACTIONNAME3917A"
+		command = { type = stability value = -2 }
+		command = { type  = revoltrisk value = 5 }
+		command = { type =  revolt which = -1 }
+		command = { type =  revolt which = -4 }
+		command = { type = relation which = TIM value = -300 }
+		command = { type = relation which = GUJ value = -200 }
+		command = { type = relation which = BGL value = -200 }
+		command = { type = relation which = HYD value = -200 }
+		command = { type = relation which = MLW value = -200 }
+		command = { type = relation which = JAI value = -200 }
+		command = { type = relation which = MUL value = -200 }
+		command = { type = relation which = KHA value = -200 }
+		command = { type = relation which = SIN value = -200 }
+		command = { type = relation which = RAJ value = -200 }
+		command = { type =  inflation value = 5 }
+	}
+}
+
+#The Incompetence of the Lodis#
+event = {
+	id = 3918
+	random = no
+	country = DLH
+	name = "EVENTNAME3918"
+	desc = "EVENTHIST3918"
+
+	date = { day = 1 month = january year = 1518 }
+	offset = 300
+	deathdate = { day = 1 month = january year = 1519 }
+
+	action_a ={        #Curses!#
+		name = "ACTIONNAME3918A"
+		command = { type = stability value = -4 }
+		command = { type  = revoltrisk value = 5 }
+		command = { type =  revolt which = -1 }
+		command = { type =  revolt which = -4 }
+		command = { type =  revolt which = -4 }
+		command = { type =  revolt which = -4 }
+		command = { type = relation which = TIM value = -100 }
+		command = { type = relation which = GUJ value = -50 }
+		command = { type = relation which = BGL value = -50 }
+		command = { type = relation which = HYD value = -50 }
+		command = { type = relation which = MLW value = -50 }
+		command = { type = relation which = JAI value = -50 }
+		command = { type = relation which = MUL value = -50 }
+		command = { type = relation which = KHA value = -50 }
+		command = { type = relation which = SIN value = -50 }
+		command = { type = relation which = RAJ value = -50 }
+		command = { type =  inflation value = 5 }
+	}
+}
+
+#The Battle of Panipat#
+event = {
+    id = 3919
+    trigger = {
+    	control = { province = 543 data = MOG }
+    	owned = { province = 543 data = -1 }
+	}
+    random = no
+    country = DLH
+    name = "EVENTNAME3919"
+    desc = "EVENTHIST3919"
+
+    date = { day = 1 month = january year = 1525 }
+    offset = 0
+    deathdate = { day = 1 month = january year = 1819 }
+
+    action_a ={        #We surrender to their forces!#
+        name = "ACTIONNAME3919A"
+        command = { type = free which = BGL }
+        command = { type = free which = HYD }
+        command = { type = free which = GUJ }
+        command = { type = free which = MLW }
+        command = { type = free which = JAI }
+	command = { type = free which = RAJ }
+	command = { type = free which = SIN }
+	command = { type = free which = KHA }
+	command = { type = free which = MUL }
+        command = { type = trigger which = 3921 }#See below for this event#
+	}
+
+    action_b = {     #We will fight to the death!#
+    	name = "ACTIONNAME3919B"
+       	command = { type = stability value = -5 }
+       	command = { type = desertion which = -1 value = 5000 }
+       	command = { type = desertion which = -4 value = 5000 }
+   	}
+}

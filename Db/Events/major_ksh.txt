@@ -1,0 +1,171 @@
+#####Kashmir (Sikh) Major Events#####
+####By Joakim 'Greven' Bergqwist#####
+#####################################
+
+#Guru Nanak reform Sikh Religion#
+event = {
+
+	id = 3695
+	random = no
+	country = KSH
+	name = "EVENTNAME3695"
+	desc = "EVENTHIST3695"
+	style = "3695"
+
+	date = { day = 1 month = january year = 1498 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1503 }
+
+	action_a ={				#Let Guru Nanak reform#
+		name = "ACTIONNAME3695A"
+		command = { type = domestic which = ARISTOCRACY value = -3 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = INNOVATIVE value = 3 }
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = domestic which = SERFDOM value = -3 }
+		command = { type = land value = 800 }
+		command = { type = trade value = 800 }
+		command = { type = stability value = 1 }
+		command = { type = gainmanufactory which = -2 value = luxury }
+	}
+
+	action_b ={				#Let a more Radical Guru reform#
+		name = "ACTIONNAME3695B"
+		command = { type = domestic which = ARISTOCRACY value = -5 }
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = INNOVATIVE value = 3 }
+		command = { type = domestic which = LAND value = 3 }
+		command = { type = domestic which = QUALITY value = 3 }
+		command = { type = domestic which = SERFDOM value = -5 }
+		command = { type = land value = 1200 }
+		command = { type = stability value = -1 }
+	}
+
+	action_c ={				#Let a more Conservative Guru reform#
+		name = "ACTIONNAME3695C"
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = OFFENSIVE value = -2 }
+		command = { type = domestic which = QUALITY value = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = trade value = 1200 }
+		command = { type = stability value = 3 }
+	}
+
+}
+
+#Militarization of Sikh Society#
+event = {
+
+	id = 3696
+	random = no
+	country = KSH
+	name = "EVENTNAME3696"
+	desc = "EVENTHIST3696"
+
+	date = { day = 1 month = january year = 1605 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1628 }
+
+	action_a ={				#Let Guru Har Govinda reform#
+		name = "ACTIONNAME3696A"
+		command = { type = domestic which = ARISTOCRACY value = -3 }
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = INNOVATIVE value = -3 }
+		command = { type = domestic which = OFFENSIVE value = 3 }
+		command = { type = domestic which = LAND value = 3 }
+		command = { type = domestic which = QUALITY value = 3 }
+		command = { type = domestic which = SERFDOM value = -3 }
+		command = { type = land value = 1200 }
+		command = { type = trade value = 800 }
+		command = { type = stability value = 3 }
+		command = { type = INF which = -1 value = 20000 }
+	}
+
+	action_b ={				#Let a more peaceful man reform#
+		name = "ACTIONNAME3696B"
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 3 }
+		command = { type = domestic which = OFFENSIVE value = -2 }
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = domestic which = QUALITY value = -3 }
+		command = { type = domestic which = SERFDOM value = -3 }
+		command = { type = land value = 800 }
+		command = { type = trade value = 1200 }
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 300 }
+	}
+}
+
+#Guru Govind Singh install Sikh Confederacy#
+event = {
+
+	id = 3697
+	random = no
+	country = KSH
+	name = "EVENTNAME3697"
+	desc = "EVENTHIST3697"
+	style = "3697"
+
+	date = { day = 1 month = january year = 1704 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1708 }
+
+	action_a ={				#Conservatives rule the Council#
+		name = "ACTIONNAME3697A"
+		command = { type = countryname value = "Sikh Empire" }
+		command = {
+			trigger = {
+				owned = { province = 1520 data = -1 }
+				NOT = { capital = 1520 }
+			}
+			type = capital which = 1520 # Amritsar
+		}
+		command = { type = addcore_claim which = 1522 }
+		command = { type = addcore_claim which = 1523 }
+		command = { type = vp value = 200 }
+		command = { type = trade value = 800 }
+		command = { type = infra value = 800 }
+		command = { type = DIP which = 2 value = 60 }
+		command = { type = relation which = RAJ value = -50 }
+		command = { type = relation which = AFG value = -50 }
+		command = { type = domestic which = CENTRALIZATION value = -3 }
+		command = { type = domestic which = INNOVATIVE value = -3 }
+		command = { type = domestic which = SERFDOM value = -3 }
+		command = { type = diplomats value = 6 }
+		command = { type = stability value = 2 }
+	}
+
+	action_b ={				#Militants rule the Council#
+		name = "ACTIONNAME3697B"
+		command = { type = countryname value = "Sikh Empire" }
+		command = {
+			trigger = {
+				owned = { province = 1520 data = -1 }
+				NOT = { capital = 1520 }
+			}
+			type = capital which = 1520 # Amritsar
+		}
+		command = { type = addcore_claim which = 1522 }
+		command = { type = addcore_claim which = 1523 }
+		command = { type = addcore_claim which = 543 }
+		command = { type = addcore_claim which = 544 }
+		command = { type = vp value = 200 }
+		command = { type = land value = 800 }
+		command = { type = naval value = 800 }
+		command = { type = MIL which = 2 value = 60 }
+		command = { type = relation which = RAJ value = -100 }
+		command = { type = relation which = AFG value = -100 }
+		command = { type = relation which = NEP value = -100 }
+		command = { type = relation which = MOG value = -100 }
+		command = { type = domestic which = CENTRALIZATION value = -3 }
+		command = { type = domestic which = INNOVATIVE value = -3 }
+		command = { type = domestic which = SERFDOM value = -3 }
+		command = { type = diplomats value = 3 }
+		command = { type = stability value = -1 }
+		command = { type = badboy value = 5 }
+	}
+}

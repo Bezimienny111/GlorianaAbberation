@@ -1,0 +1,384 @@
+#-----------------------------------------------------------------------------
+# Byzantine Colony Events by Louis-Philippe
+
+event = {
+	id = 3001453
+	trigger = {
+		event = 3001302 #Alexandria event
+		owned = { province = 744 data = BYZ } #Alexandria
+		NOT = { domestic = { type = land value = 10 } }
+	}
+	random = NO
+	country = BYZ
+	name = "Broad Horizons"
+	desc = "The resurgent Roman Empire has obtained complete superiority over its enemies in the east, and in the west, no one dared challenge it. With the collapse of Venice, Constantinople rediscovered its mastery of the eastern Mediterranean. Alexandria, the largest port on the sea, welcomed sailors from the entire world, who offered their services to the Emperor that they might participate in turn in the glory of Rome. The Basileos accepted these offers and in return paid them handsomely. He could, thanks to them, enter in competition with the maritime powers of the West - first, with his Mediterranean rival, the Spanish."
+	date = { day = 1 month = january year = 1562 }
+	offset = 15
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Heave-ho! To sea!"
+		command = { type = domestic which = LAND value = -2 }
+		command = { type = treasury value = -600 }
+		command = { type = naval value = 500 }
+		command = { type = gainmanufactory which = 744 value = navalequipment }
+		command = { type = setflag which = byzcolony }
+	}
+	action_b = {
+		name = "I am sea-sick"
+		command = { type = domestic which = LAND value = 3 }
+	}
+}
+#boosted expense
+
+event = {
+	id = 3001454
+	trigger = {
+		flag = byzcolony
+		OR = {
+			owned = { province = 732 data = -1 } #Tangiers
+			owned = { province = 445 data = -1 } #Gibraltar
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "The Prodromos"
+	desc = "Prodromos, or Forerunner, had long been a title of John the Baptist in the Eastern Church - but now there was a new usage, describing the adventurers charting the seas for the great navies of the Atlantic. A prodromos has offered his services to the Emperor, promising to find for him a new land to expand his realm and the true Faith. The captain, financed by a rich dynatos in the capital, has access to an impressive fleet equipped in the western style, able to survive the storms of the Atlantic. The big problem with this route is the obligatory passage through Spanish waters, which deeply irritates his most Catholic king."
+	date = { day = 1 month = january year = 1543 }
+	offset = 30
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Hoist the double eagle!"
+		command = { type = wakeleader which = 027804 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = warships which = 744 value = 5 }
+		command = { type = colonists value = 3 }
+	}
+}
+
+event = {
+	id = 3001455
+	trigger = {
+		flag = byzcolony
+		owned = { province = 744 data = BYZ } #Alexandria
+	}
+	random = NO
+	country = BYZ
+	name = "Alexandria, center of world commerce"
+	desc = "With the growth of Byzantine colonization, Egypt's grand capital Alexandria has become the Empire's great commercial center. All the cargo of the Atlantic and Indian trade converged towards this center before being redistributed outwards throughout the Empire. Here, too, came the merchants looking to export their goods to the colonies and the rest of the world. The wealth of the city was such that thousands came looking for wealth, and many eventually found work in the powerful Roman navy. Soon, the nobles of Alexandria grew richer than those in Constantinople, and the city was spoken of as a new New Rome."
+	date = { day = 1 month = january year = 1590 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "How wonderful"
+		command = { type = populationpercent which = 744 value = 15 }
+		command = { type = provincetax which = 744 value = 3 }
+		command = { type = warships which = 744 value = 5 }
+		command = { type = wakeleader which = 027805 }
+	}
+	action_b = {
+		name = "A new capital for our renewed Empire!"
+		command = { type = capital which = 744 }
+		command = { type = populationpercent which = 357 value = -10 } #Thrace
+		command = { type = populationpercent which = 744 value = 20 }
+		command = { type = provincetax which = 744 value = 10 }
+		command = { type = fortress which = 744 value = 2 }
+		command = { type = removecot which = 357 } #Thrace
+		command = { type = revolt which = 357 } #Thrace
+		command = { type = revolt which = 357 } #Thrace
+		command = { type = warships which = 744 value = 15 }
+		command = { type = naval value = 1000 }
+		command = { type = trade value = 1000 }
+		command = { type = stability value = -2 }
+		command = { type = wakeleader which = 027805 }
+		command = { type = setflag which = alex }
+	}
+}
+
+#Prisoners in the colonies
+event = {
+	id = 3001456
+	trigger = {
+		flag = byzcolony
+	}
+	random = YES
+	country = BYZ
+	name = "Prisoners in the colonies"
+	desc = "For the Empire, the colonies represented an easy way to rid itself of all its undesirables. Convoys of prisoners, peasants and heretics were sent to the colonies, giving them a second chance so long as they stayed far from the great towns."
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Get moving!"
+		command = { type = colonists value = 1 }
+		command = { type = stability value = 1 }
+	}
+}
+
+event = {
+	id = 3001457
+	trigger = {
+		flag = byzcolony
+	}
+	random = YES
+	country = BYZ
+	name = "Ethnic troubles in the colonies"
+	desc = "The Roman colonies have become havens for the ethnic minorities of the Empire. Despite the desire to create a new land accepting of all these cultures, disturbance burst forth sometimes and could even transform into revolutions."
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Aargh!"
+		command = { type = colonialrevolt which = -1 }
+	}
+}
+
+event = {
+	id = 3001458
+	trigger = {
+		flag = byzcolony
+	}
+	random = YES
+	country = BYZ
+	name = "A strategos abuses his power"
+	desc = "The Roman colonies that were not created by private entrepreneurs were organized by the Crown and placed under the authority of a strategos for the region. Far from the control of the capital, some men used their power to enrich themselves or enjoy tyrannical dominion over their settlers. The settlers revolted sometimes against these petty lords, who more often than not were returned by the Emperor."
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 7200 #20 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Restore order"
+		command = { type = colonialrevolt which = -1 }
+		command = { type = colonialrevolt which = -3 }
+	}
+}
+
+event = {
+	id = 3001459
+	trigger = {
+		flag = byzcolony
+		OR = {
+			owned = { province = 62 data = BYZ } #Ye Old Dominion
+			owned = { province = 63 data = BYZ }
+			owned = { province = 64 data = BYZ }
+			owned = { province = 68 data = BYZ }
+		}
+	}
+	random = YES
+	country = BYZ
+	name = "Virginia tobacco"
+	desc = "At the end of the 16th century, the Roman colonies included villages in the virgin lands of the North American continent, called Virginia after the Holy Mother. After their inception, the colonies came into contact with Indians who showed them new plants, called tobacco, which became the principal crop of the region. Tobacco was a great success in Europe. Again, colonists rush to the region to enjoy the riches of the great plantations."
+
+	action_a = {
+		name = "Huzzah!"
+		command = { type = treasury value = 15 }
+		command = { type = populationpercent which = 62 value = 10 }
+		command = { type = populationpercent which = 63 value = 10 }
+		command = { type = populationpercent which = 64 value = 10 }
+		command = { type = populationpercent which = 68 value = 10 }
+	}
+}
+
+event = {
+	id = 3001460
+	trigger = {
+		flag = byzcolony
+	}
+	random = YES
+	country = BYZ
+	name = "A plague from our colonies!"
+	desc = "One of the problems with exploration and colonization was the exchange of foreign organisms and diseases between the continents. With the expansion of sea travel, diseases could travel quickly from one place to another, contaminating new populations where they were unknown. This happened with syphilis in Europe, and worse yet with the plague and smallpox in the Americas. It took a long time for the populations of the great ports to adapt and develop immunities."
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 30 #1 month
+	deathdate = { year = 1700 }
+
+	action_a = {
+		name = "Crap..."
+		command = { type = populationpercent which = 744 value = -20 } #Alexandria
+		command = { type = populationpercent which = -2 value = -15 }
+		command = { type = populationpercent which = -1 value = -10 }
+		command = { type = populationpercent which = -1 value = -10 }
+	}
+}
+#boosted numbers from original level
+
+event = {
+	id = 3001461
+	trigger = {
+		flag = byzcolony
+	}
+	random = NO
+	country = BYZ
+	name = "The gold of the New World"
+	desc = "With its colonies, the Roman Empire entered into a great phase of commericial growth, which did not stop with the Arab revolt of the 17th century. The commerce began an unprecidented growth of Imperial wealth, surpassing in spades the golden age of the 6th century and the reign of Iustinianus. Gold arrived in profusion into Alexandria and Constantinople - from the colonies, certainly, but also from all the commercial centers of the Empire. Yet, this led to many problems, including inflation and great disparities in wealth. Some malcontents surrounded the Imperial palace, demanding to see the Emperor, and revolts arose in the distant corners of the Empire."
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 30 #1 month
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Still, the Empire grows strong"
+		command = { type = treasury value = 500 }
+		command = { type = provincetax which = 357 value = 3 } #Thrace
+		command = { type = provincetax which = 744 value = 3 } #Alexandria
+		command = { type = inflation value = 5 }
+		command = { type = stability value = -2 }
+		command = { type = revolt which = -2 }
+		command = { type = colonialrevolt which = -1 }
+		command = { type = colonialrevolt which = -1 }
+		command = { type = colonialrevolt which = -1 }
+	}
+}
+
+event = {
+	id = 3001462
+	trigger = {
+		flag = byzcolony
+	}
+	random = YES
+	country = BYZ
+	name = "The poor want to leave for the New World"
+	desc = "Pushed by the famine, religious turmoil and the eastern wars, thousands of peasants left their lands to swell the great port of Alexandria, the point of departure for all the convoys to the colonies. From there, they could sail the Red Sea or (the majority) take places on small vessels that sailed to the ports around the Canaries, where they could board at last the great ships that would take them to their destination."
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 7200 #20 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Fewer mouths to feed"
+		command = { type = colonists value = 4 }
+		command = { type = populationpercent which = -1 value = -5 }
+	}
+}
+
+event = {
+	id = 3001463
+	trigger = {
+		flag = byzcolony
+	}
+	random = YES
+	country = BYZ
+	name = "The Pirate War"
+	desc = "A principal blight on the seas were the pirates. These men who looked for a quick profit, damn the cost, raided the Roman vessels bringing the riches of America and the East to Alexandria. Very quickly, the councilors of the Emperor realized it was necessary to act to counter this threat. Several men-of-war were commissioned to protect the seas around the colonies where the raiders waited."
+	style = 1
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 7200 #20 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Avast!"
+		command = { type = warships which = -1 value = 3 }
+	}
+}
+
+event = {
+	id = 3001464
+	trigger = {
+		flag = byzcolony
+	}
+	random = YES
+	country = BYZ
+	name = "The Empire captures an enemy galleon"
+	desc = "The vessels encountered on the seas were not only pirates. Very quickly, the Atlantic became a 'expressway' on which all nations met without bias. The competition was such that many battles were fought to impede the growth of rivals' wealth. Certain vessels, particularly the Spanish galleons, were filled with a great deal of treasure. The capture of one of these was always a great victory for the commander."
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 7200 #20 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "It'll sail much better without all that silver"
+		command = { type = treasury value = 75 }
+		command = { type = relation which = -1 value = -15 }
+	}
+}
+
+event = {
+	id = 3001465
+	trigger = {
+		flag = byzcolony
+		NOT = {
+			naval = 20
+		}
+	}
+	random = YES
+	country = BYZ
+	name = "The Empire buys naval tech"
+	desc = "Long kept distracted by its problems on the continent, the Empire developed a huge technical deficit against the navies of Spain, which largely dominated the seas in the 16th century, and then Holland, which ruled the 17th. Facing these powerful maritime forces, the Greeks could not fight properly on the seas. The native flotillas of the Empire were designed for the calm waters of the Mediterranean and Red seas, and the Imperial fleet was now called onto the far rougher waters of the Atlantic and Indian oceans. The shipwrights of the east purchased naval engineers and carpenters from the west to allow the construction of vessels in Alexandria and Constantinople on the new model. Thanks to these purchases, the Empire recovered from some of its lag and at last joined the ranks of the colonial nations."
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 7200 #20 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Pay up"
+		command = { type = treasury value = -100 }
+		command = { type = naval value = 1000 }
+	}
+	action_b = {
+		name = "Nothing doing"
+		command = { type = land value = 100 }
+	}
+}
+
+#added expense and b option; moved ships to red sea
+event = {
+	id = 3001466
+	trigger = {
+		flag = byzcolony
+	}
+	random = YES
+	country = BYZ
+	name = "A prodromos offers his services"
+	desc = "After the first maritime campaigns of the Empire beyond the Mediterranean and their success, sailors again arrived in Alexandria, which was becoming a great center for overseas exploration. The city welcomed all these adventurers, ready to risk their lives on the seas, but the Empire could only afford so many."
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 7200 #20 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Welcome aboard"
+		command = { type = explorer which = 747 } #nile
+		command = { type = warships which = 747 value = 2 }
+		command = { type = treasury value = -150 }
+	}
+	action_b = {
+		name = "Pah. We'll conquer our maps."
+		command = { type = treasury value = 50 }
+	}
+}
+
+#added expense and b option
+event = {
+	id = 3001467
+	trigger = {
+		flag = byzcolony
+	}
+	random = YES
+	country = BYZ
+	name = "A prodromos offers his services"
+	desc = "After the first maritime campaigns of the Empire beyond the Mediterranean and their success, sailors again arrived in Alexandria, which was becoming a great center for overseas exploration. The city welcomed all these adventurers, ready to risk their lives on the seas, but the Empire could only afford so many."
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 7200 #20 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Welcome aboard"
+		command = { type = explorer which = 744 } #Alexandria
+		command = { type = warships which = 744 value = 2 }
+		command = { type = treasury value = -150 }
+	}
+	action_b = {
+		name = "Pah. We'll conquer our maps."
+		command = { type = treasury value = 50 }
+	}
+}

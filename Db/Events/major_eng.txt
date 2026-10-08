@@ -1,0 +1,4311 @@
+#####English Major Events###########
+#By Joakim 'Greven' Bergqwist      #
+#   Henrik 'Doomdark' Fåhraeus     #
+#   Kristof 'BiB' Haekens          #
+#   William 'State Machine' Thomas #
+####################################
+
+#The Lollard Heresy#
+event = {
+
+	id = 3001
+	trigger = {
+		religion = catholic
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME3001"
+	desc = "EVENTHIST3001"
+	style = "3001"
+
+	date = { day = 1 month = january year = 1419 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1425 }
+
+
+	action_a ={		#Stop the Heretics#
+		name = "ACTIONNAME3001A"
+		command = { type = revoltrisk which = 36 value = 3 }
+		command = { type = conversion which = -1 }
+		command = { type = stability value = -2 }
+		command = { type = treasury value = -50 }
+	}
+
+	action_b ={		#Let them be#
+		name = "ACTIONNAME3001B"
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = BUR value = -100 }
+		command = { type = relation which = BRI value = -100 }
+		command = { type = relation which = ORL value = -100 }
+		command = { type = relation which = BOU value = -100 }
+
+	}
+}
+
+#The War of the Roses#
+event = {
+
+	id = 3002
+	trigger = {    
+	           event = 3004 #New
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME3002"
+	desc = "EVENTHIST3002"
+	style = "3002"
+
+	date = { day = 1 month = january year = 1455 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1461 }
+
+
+	action_a ={		#Yorkist and Lancaster Kings alternate in making policy#
+		name = "ACTIONNAME3002A"
+		command = { type = sleepevent which = 3751 }
+		command = { type = sleepevent which = 3752 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = LAND value = -1 }
+		command = { type = stability value = -3 }
+		command = { type = province_revoltrisk which = 240 value = 4 }
+		command = { type = provincetax which = 240 value = -1 }
+		command = { type = province_revoltrisk which = 241 value = 4 }
+		command = { type = provincetax which = 241 value = -1 }
+		command = { type = province_revoltrisk which = 242 value = 4 }
+		command = { type = provincetax which = 242 value = -1 }
+		command = { type = province_revoltrisk which = 243 value = 4 }
+		command = { type = provincetax which = 243 value = -1 }
+		command = { type = province_revoltrisk which = 244 value = 4 }
+		command = { type = provincetax which = 244 value = -1 }
+		command = { type = province_revoltrisk which = 245 value = 4 }
+		command = { type = provincetax which = 245 value = -1 }
+		command = { type = province_revoltrisk which = 246 value = 4 }
+		command = { type = provincetax which = 246 value = -1 }
+		command = { type = province_revoltrisk which = 247 value = 4 }
+		command = { type = provincetax which = 247 value = -1 }
+		command = { type = province_revoltrisk which = 248 value = 4 }
+		command = { type = provincetax which = 248 value = -1 }
+		command = { type = province_revoltrisk which = 249 value = 4 }
+		command = { type = provincetax which = 249 value = -1 }
+		command = { type = province_revoltrisk which = 250 value = 4 }
+		command = { type = provincetax which = 250 value = -1 }
+	}
+
+	action_b ={		#Yorkist Kings make most important policies#
+		name = "ACTIONNAME3002B"
+		command = { type = sleepevent which = 3003 }
+		command = { type = sleepevent which = 3752 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = stability value = -3 }
+		command = { type = province_revoltrisk which = 240 value = 6 }
+		command = { type = province_revoltrisk which = 241 value = 6 }
+		command = { type = province_revoltrisk which = 242 value = 6 }
+		command = { type = province_revoltrisk which = 243 value = 6 }
+		command = { type = province_revoltrisk which = 244 value = 6 }
+		command = { type = province_revoltrisk which = 245 value = 6 }
+		command = { type = province_revoltrisk which = 246 value = 6 }
+		command = { type = province_revoltrisk which = 247 value = 6 }
+		command = { type = province_revoltrisk which = 248 value = 6 }
+		command = { type = province_revoltrisk which = 249 value = 6 }
+		command = { type = province_revoltrisk which = 250 value = 6 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = desertion which = -1 value = 7341 }
+		command = { type = desertion which = -1 value = 5189 }
+		command = { type = desertion which = -1 value = 6334 }
+	}
+
+	action_c ={		#Lancaster Kings make most important policies#
+		name = "ACTIONNAME3002C"
+		command = { type = sleepevent which = 3003 }
+		command = { type = sleepevent which = 3751 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = LAND value = -2 }
+		command = { type = stability value = -2 }
+		command = { type = province_revoltrisk which = 240 value = 2 }
+		command = { type = provincetax which = 240 value = -2 }
+		command = { type = province_revoltrisk which = 241 value = 2 }
+		command = { type = provincetax which = 241 value = -2 }
+		command = { type = province_revoltrisk which = 242 value = 2 }
+		command = { type = provincetax which = 242 value = -2 }
+		command = { type = province_revoltrisk which = 243 value = 2 }
+		command = { type = provincetax which = 243 value = -2 }
+		command = { type = province_revoltrisk which = 244 value = 2 }
+		command = { type = provincetax which = 244 value = -2 }
+		command = { type = province_revoltrisk which = 245 value = 2 }
+		command = { type = provincetax which = 245 value = -2 }
+		command = { type = province_revoltrisk which = 246 value = 2 }
+		command = { type = provincetax which = 246 value = -2 }
+		command = { type = province_revoltrisk which = 247 value = 2 }
+		command = { type = provincetax which = 247 value = -2 }
+		command = { type = province_revoltrisk which = 248 value = 2 }
+		command = { type = provincetax which = 248 value = -2 }
+		command = { type = province_revoltrisk which = 249 value = 2 }
+		command = { type = provincetax which = 249 value = -2 }
+		command = { type = province_revoltrisk which = 250 value = 2 }
+		command = { type = provincetax which = 250 value = -2 }
+	}
+
+}
+#Bosworth Field#
+event = {
+
+	id = 3003
+	random = no
+	country = ENG
+	name = "EVENTNAME3003"
+	desc = "EVENTHIST3003"
+	style = "3003"
+
+	date = { day = 22 month = august year = 1485 }
+	offset = 0
+	deathdate = { day = 23 month = august year = 1485 }
+
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME3003A"
+		command = { type = province_revoltrisk which = 240 value = -4 }
+		command = { type = provincetax which = 240 value = 1 }
+		command = { type = province_revoltrisk which = 241 value = -4 }
+		command = { type = provincetax which = 241 value = 1 }
+		command = { type = province_revoltrisk which = 242 value = -4 }
+		command = { type = provincetax which = 242 value = 1 }
+		command = { type = province_revoltrisk which = 243 value = -4 }
+		command = { type = provincetax which = 243 value = 1 }
+		command = { type = province_revoltrisk which = 244 value = -4 }
+		command = { type = provincetax which = 244 value = 1 }
+		command = { type = province_revoltrisk which = 245 value = -4 }
+		command = { type = provincetax which = 245 value = 1 }
+		command = { type = province_revoltrisk which = 246 value = -4 }
+		command = { type = provincetax which = 246 value = 1 }
+		command = { type = province_revoltrisk which = 247 value = -4 }
+		command = { type = provincetax which = 247 value = 1 }
+		command = { type = province_revoltrisk which = 248 value = -4 }
+		command = { type = provincetax which = 248 value = 1 }
+		command = { type = province_revoltrisk which = 249 value = -4 }
+		command = { type = provincetax which = 249 value = 1 }
+		command = { type = province_revoltrisk which = 250 value = -4 }
+		command = { type = provincetax which = 250 value = 1 }
+		command = { type = stability value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = -5 }
+		command = { type = domestic which = SERFDOM value = -3 }
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = MERCANTILISM value = -3 }
+		command = { type = sleepleader which = 09343 }
+	}
+}
+#Bosworth Field#
+event = {
+
+	id = 3751
+	random = no
+	country = ENG
+	name = "EVENTNAME3751"
+	desc = "EVENTHIST3751"
+	style = "3003"
+
+	date = { day = 20 month = august year = 1485 }
+	offset = 0
+	deathdate = { day = 21 month = august year = 1485 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME3751A"
+		command = { type = wakemonarch which = 00001 }
+		command = { type = sleepmonarch which = 04037 }
+	                  command = { type = province_revoltrisk which = 240 value = -6 }
+		command = { type = provincetax which = 240 value = 1 }
+		command = { type = province_revoltrisk which = 241 value = -6 }
+		command = { type = provincetax which = 241 value = 1 }
+		command = { type = province_revoltrisk which = 242 value = -6 }
+		command = { type = provincetax which = 242 value = 1 }
+		command = { type = province_revoltrisk which = 243 value = -6 }
+		command = { type = provincetax which = 243 value = 1 }
+		command = { type = province_revoltrisk which = 244 value = -6 }
+		command = { type = provincetax which = 244 value = 1 }
+		command = { type = province_revoltrisk which = 245 value = -6 }
+		command = { type = provincetax which = 245 value = 1 }
+		command = { type = province_revoltrisk which = 246 value = -6 }
+		command = { type = provincetax which = 246 value = 1 }
+		command = { type = province_revoltrisk which = 247 value = -6 }
+		command = { type = provincetax which = 247 value = 1 }
+		command = { type = province_revoltrisk which = 248 value = -6 }
+		command = { type = provincetax which = 248 value = 1 }
+		command = { type = province_revoltrisk which = 249 value = -6 }
+		command = { type = provincetax which = 249 value = 1 }
+		command = { type = province_revoltrisk which = 250 value = -6 }
+		command = { type = provincetax which = 250 value = 1 }
+		command = { type = stability value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = MERCANTILISM value = -1 }
+	}
+}
+
+#Bosworth Field#
+event = {
+
+	id = 3752
+	random = no
+	country = ENG
+	name = "EVENTNAME3752"
+	desc = "EVENTHIST3752"
+	style = "3003"
+
+	date = { day = 22 month = august year = 1485 }
+	offset = 0
+	deathdate = { day = 23 month = august year = 1485 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME3752A"
+		command = { type = province_revoltrisk which = 240 value = -2 }
+		command = { type = provincetax which = 240 value = 1 }
+		command = { type = province_revoltrisk which = 241 value = -2 }
+		command = { type = provincetax which = 241 value = 1 }
+		command = { type = province_revoltrisk which = 242 value = -2 }
+		command = { type = provincetax which = 242 value = 1 }
+		command = { type = province_revoltrisk which = 243 value = -2 }
+		command = { type = provincetax which = 243 value = 1 }
+		command = { type = province_revoltrisk which = 244 value = -2 }
+		command = { type = provincetax which = 244 value = 1 }
+		command = { type = province_revoltrisk which = 245 value = -2 }
+		command = { type = provincetax which = 245 value = 1 }
+		command = { type = province_revoltrisk which = 246 value = -2 }
+		command = { type = provincetax which = 246 value = 1 }
+		command = { type = province_revoltrisk which = 247 value = -2 }
+		command = { type = provincetax which = 247 value = 1 }
+		command = { type = province_revoltrisk which = 248 value = -2 }
+		command = { type = provincetax which = 248 value = 1 }
+		command = { type = province_revoltrisk which = 249 value = -2 }
+		command = { type = provincetax which = 249 value = 1 }
+		command = { type = province_revoltrisk which = 250 value = -2 }
+		command = { type = provincetax which = 250 value = 1 }
+		command = { type = stability value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = MERCANTILISM value = -1 }
+		command = { type = sleepleader which = 09343 }
+	}
+}
+#The End of the Hundred Year War#
+event = {
+
+	id = 3004
+	trigger = {
+		exists = FRA
+		NOT = {
+			AND = {
+				owned = { province = 382 data = -1 } # Pale of Calais
+				owned = { province = 384 data = -1 } # Duchy of Normandy
+                          	owned = { province = 413 data = -1 }
+				owned = { province = 418 data = -1 } # Duchy of Guyenne
+				owned = { province = 423 data = -1 }
+				owned = { province = 424 data = -1 }
+			}
+			war = { country = ENG country = FRA }
+		}
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME3004"
+	desc = "EVENTHIST3004"
+	style = "3004"
+
+	date = { day = 1 month = january year = 1453 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1837 }
+
+	action_a ={			#No one seem to acknowledge our claims#
+		name = "ACTIONNAME3004A"
+		command = { type = vp value = -50 }
+		command = { type = remove_countryculture which = french }
+		command = { type = remove_countryculture which = occitan }
+		command = { type = removecore_national which = 376 } # France
+		command = { type = removecore_national which = 382 }
+		command = { type = removecore_national which = 383 }
+		command = { type = removecore_national which = 384 }
+		command = { type = removecore_national which = 385 }
+		command = { type = removecore_national which = 407 }
+		command = { type = removecore_national which = 408 }
+		command = { type = removecore_national which = 410 }
+		command = { type = removecore_national which = 411 }
+		command = { type = removecore_national which = 412 }
+		command = { type = removecore_national which = 413 }
+		command = { type = removecore_national which = 417 }
+		command = { type = removecore_national which = 418 }
+		command = { type = removecore_national which = 419 }
+		command = { type = removecore_national which = 420 }
+		command = { type = removecore_national which = 421 }
+		command = { type = removecore_national which = 422 }
+		command = { type = removecore_national which = 423 }
+		command = { type = removecore_national which = 424 }
+		command = { type = trigger which = 3104 }
+		command = { type = badboy value = -5 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = stability value = -2 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = flagname which = Lose }
+	}
+}
+#The End of the Hundred Years' War (English victory)#
+event = {
+
+	id = 5305
+	trigger = {
+		NOT = {
+			exists = FRA
+			event = 3004
+		}
+		AND = {
+			owned = { province = 376 data = -1 } # Champagne
+			owned = { province = 382 data = -1 } # Pale of Calais
+			owned = { province = 385 data = -1 } # Ile-de-France
+			owned = { province = 411 data = -1 } # Orleanais
+			owned = { province = 384 data = -1 } # Duchy of Normandy
+			owned = { province = 413 data = -1 }
+			owned = { province = 418 data = -1 } # Duchy of Guyenne
+			owned = { province = 423 data = -1 }
+			owned = { province = 424 data = -1 }
+		}
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME5305"
+	desc = "EVENTHIST5305"
+
+	style = "5305"
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1453 }
+
+	action_a ={		#England prevails!#
+		name = "ACTIONNAME5305A"
+		command = { type = vp value = 250 }
+		command = { type = revoltrisk which = 120 value = -5 }
+		command = { type = DIP which = 3 value = 120 }
+		command = { type = ADM which = 3 value = 120 }
+		command = { type = MIL which = 3 value = 120 }
+		command = { type = badboy value = -10 }
+		command = { type = relation which = BUR value = -150 }
+		command = { type = relation which = BRI value = -150 }
+		command = { type = relation which = -6 value = -100 }
+		command = { type = stability value = 3 }
+		command = { type = sleepevent which = 3004 }
+	}
+}
+#The Justices of Peace#
+event = {
+
+	id = 3005
+	random = no
+	country = ENG
+	name = "EVENTNAME3005"
+	desc = "EVENTHIST3005"
+	style = 1
+
+	date = { day = 1 month = january year = 1485 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1490 }
+
+	action_a ={			#Yes we need them#
+		name = "ACTIONNAME3005A"
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = gainbuilding which = -1 value = bailiff }
+		command = { type = gainbuilding which = -4 value = bailiff }
+		command = { type = gainbuilding which = -4 value = bailiff }
+		command = { type = gainbuilding which = -4 value = bailiff }
+		command = { type = gainbuilding which = -4 value = bailiff }
+		command = { type = gainbuilding which = -4 value = bailiff }
+		command = { type = treasury value = -200 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={			#No that is the Noblemens job#
+		name = "ACTIONNAME3005B"
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = stability value = 2 }
+		command = { type = treasury value = 100 }
+	}
+}
+
+#Support Middle-class Bureaucrats#
+event = {
+
+	id = 3006
+	random = no
+	country = ENG
+	name = "EVENTNAME3006"
+	desc = "EVENTHIST3006"
+	style = 1
+
+	date = { day = 1 month = january year = 1490 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1495 }
+
+
+	action_a ={			#Support them your support#
+		name = "ACTIONNAME3006A"
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = MERCANTILISM value = -1 }
+		command = { type = domestic which = LAND value = -1 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={		#Prohibite them from working in the Government#
+		name = "ACTIONNAME3006B"
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = domestic which = LAND value = 2 }
+		command = { type = stability value = 1}
+		command = { type = treasury value = 100 }
+	}
+}
+
+#Court of the Star Chamber#
+event = {
+
+	id = 3007
+	random = no
+	country = ENG
+	name = "EVENTNAME3007"
+	desc = "EVENTHIST3007"
+	style = 1
+
+	date = { day = 1 month = january year = 1495 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1500 }
+
+	action_a ={				#Yes we need one#
+		name = "ACTIONNAME3007A"
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = stability value = 1 }
+		command = { type = revoltrisk which = 60 value = 3 }
+	}
+
+	action_b ={				#No we don't#
+		name = "ACTIONNAME3007B"
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#The Enclosure Movement#
+event = {
+
+	id = 3008
+	random = no
+	country = ENG
+	name = "EVENTNAME3008"
+	desc = "EVENTHIST3008"
+	style = 1
+
+	date = { day = 1 month = january year = 1510 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1520 }
+
+	action_a ={			#Reform#
+		name = "ACTIONNAME3008A"
+		command = { type = provinceculture which = 250 value = anglosaxon }
+		command = { type = provincetax which = 244 value = 1 }
+		command = { type = provincetax which = 245 value = 1 }
+		command = { type = provincetax which = 246 value = 1 }
+		command = { type = provincetax which = 247 value = 1 }
+		command = { type = provincetax which = 248 value = 1 }
+		command = { type = provincetax which = 249 value = 1 }
+		command = { type = stability value = -3 }
+		command = { type = revoltrisk which = 240 value = 1 }
+		command = { type = revolt which = 244 }
+		command = { type = revolt which = 250 }
+	}
+
+	action_b ={			#Do not Reform#
+		name = "ACTIONNAME3008B"
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#The Act of Supremacy#
+event = {
+
+	id = 3009
+	trigger = {
+			religion = catholic
+		}
+	random = no
+	country = ENG
+	name = "EVENTNAME3009"
+	desc = "EVENTHIST3009"
+	style = "3009"
+
+	date = { day = 1 month = january year = 1534 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1541 }
+
+	action_a ={		#Take Command of the Church of England#
+		name = "ACTIONNAME3009A"
+		command = { type = religion which = protestant }
+		command = { type = treasury value = 500 }
+		command = { type = breakdynastic which = -1 }
+#		command = { type = relation which = -3 value = -150 }
+		command = { type = breakdynastic which = -1 }
+#		command = { type = relation which = -3 value = -150 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={	#Accept Rome's Supremacy, but ignore it on a personal level#
+		name = "ACTIONNAME3009B"
+		command = { type = relation which = PAP value = 100 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = stability value = 1 }
+	}
+}
+#The League of Schmalkalden#
+event = {
+
+	id = 3010
+trigger = {
+		 exists = HAB
+		 	AND = {
+				OR = {
+					religion = protestant
+					religion = reformed
+						}
+			}
+	}
+random = no
+	country = ENG
+	name = "EVENTNAME3010"
+	desc = "EVENTHIST3010"
+	style = 2
+
+	date = { day = 1 month = january year = 1527 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1529 }
+
+	action_a ={				#Give it your support#
+		name = "ACTIONNAME3010A"
+		command = { type = relation which = BRA value = 50 }
+		command = { type = relation which = HAN value = 50 }
+		command = { type = relation which = HES value = 50 }
+		command = { type = relation which = PFA value = 50 }
+		command = { type = relation which = SAC value = 50 }
+		command = { type = relation which = THU value = 50 }
+		command = { type = relation which = KLE value = 50 }
+		command = { type = relation which = PAP value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = HAB value = -100 }
+	}
+
+	action_b ={				#Ignore it#
+		name = "ACTIONNAME3010B"
+command = { type = relation which = BRA value = -50 }
+		command = { type = relation which = HAN value = -50 }
+		command = { type = relation which = HES value = -50 }
+		command = { type = relation which = PFA value = -50 }
+		command = { type = relation which = SAC value = -50 }
+		command = { type = relation which = THU value = -50 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = relation which = SPA value = 50 }
+	}
+}
+
+#The Admirality#
+event = {
+
+	id = 3011
+	random = no
+	trigger = {
+		owned = { province = 249 data = -1 } # Wessex
+		NOT = {
+			event = 3753
+			domestic = {
+				type = land
+				value = 6
+			}
+		}
+	}
+	country = ENG
+	name = "EVENTNAME3011"
+	desc = "EVENTHIST3011"
+	style = 2
+
+	date = { day = 1 month = march year = 1530 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1547 }
+
+
+	action_a ={			#Invest in the Royal Navy#
+		name = "ACTIONNAME3011A"
+		command = { type = cot which = 247 }
+		command = { type = manpower value = -20 }
+		command = { type = cityname which = 249 value = "Portsmouth" }
+		command = { type = gainbuilding which = 249 value = shipyard }
+		command = { type = provincetax which = 249 value = 2 }
+		command = { type = naval value = 800 }
+		command = { type = trade value = 400 }
+		command = { type = treasury value = -200 }
+		command = { type = domestic which = LAND value = -3 }
+	}
+
+	action_b ={			#Expand the King's Army instead#
+		name = "ACTIONNAME3011B"
+		command = { type = gainbuilding which = 249 value = barrack }
+		command = { type = provincetax which = 249 value = 2 }
+		command = { type = fortress which = 249 value = 1 }
+		command = { type = land value = 800 }
+		command = { type = infra value = 400 }
+		command = { type = treasury value = -200 }
+		command = { type = domestic which = LAND value = 3 }
+	}
+}
+#The Royal Army#
+event = {
+
+	id = 3753
+	trigger = {
+		owned = { province = 249 data = -1 } # Wessex
+		NOT = {
+			event = 3011
+		}
+		domestic = {
+			type = land
+			value = 6
+		}
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME3753"
+	desc = "EVENTHIST3753"
+	style = 2
+
+	date = { day = 1 month = january year = 1530 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1547 }
+
+	action_a ={			#Invest in the King's Army#
+		name = "ACTIONNAME3753A"
+		command = { type = gainbuilding which = 249 value = barrack }
+		command = { type = provincetax which = 249 value = 2 }
+		command = { type = fortress which = 249 value = 1 }
+		command = { type = land value = 800 }
+		command = { type = infra value = 400 }
+		command = { type = treasury value = -200 }
+		command = { type = domestic which = LAND value = 3 }
+	}
+
+	action_b ={			#Expand the Royal Navy instead#
+		name = "ACTIONNAME3753B"
+		command = { type = cot which = 247 }
+		command = { type = manpower value = -20 }
+		command = { type = cityname which = 249 value = "Portsmouth" }
+		command = { type = gainbuilding which = 249 value = shipyard }
+		command = { type = provincetax which = 249 value = 2 }
+		command = { type = naval value = 800 }
+		command = { type = trade value = 400 }
+		command = { type = treasury value = -200 }
+		command = { type = domestic which = LAND value = -3 }
+	}
+
+}
+#The Merchant Adventures#
+event = {
+
+	id = 3012
+	trigger = {
+			domestic = {
+					type = innovative
+					value = 6
+					}
+		}
+	random = no
+	country = ENG
+	name = "EVENTNAME3012"
+	desc = "EVENTHIST3012"
+	style = 2
+
+	date = { day = 1 month = january year = 1545 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1555 }
+
+	action_a ={			#We will exploit this!#
+		name = "ACTIONNAME3012A"
+		command = { type = gainmanufactory which = -1 value = navalequipment }
+		command = { type = treasury value = 200 }
+		command = { type = merchants value = 5 }
+		command = { type = explorer which = -1 }
+	}
+}
+
+#Jane Grey and the Revolt against Northumberland#
+event = {
+
+	id = 3013
+	random = no
+	country = ENG
+	name = "EVENTNAME3013"
+	desc = "EVENTHIST3013"
+	style = "3013"
+
+	date = { day = 10 month = july year = 1553 }
+
+
+	action_a ={			#Let us revolt against Northumberland#
+		name = "ACTIONNAME3013A"
+		command = { type = revoltrisk which = 36 value = 6 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={			#Let us negotiate with Northumberland#
+		name = "ACTIONNAME3013B"
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -1}
+		command = { type = stability value = -1 }
+	}
+}
+
+#Bloody Mary and King Felipé of England#
+event = {
+
+	id = 3014
+	trigger = {
+		OR = {
+			religion = protestant
+			religion = reformed
+		}
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME3014"
+	desc = "EVENTHIST3014"
+	style = "3014"
+
+	date = { day = 25 month = july year = 1554 }
+
+	action_a ={			#Reinstate Papal power over Church of England#
+		name = "ACTIONNAME3014A"
+		command = { type = religion which = catholic }
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = conversion which = -1 }
+		command = { type = missionaries value = 3 }
+		command = { type = dynastic which = SPA }
+		command = { type = relation which = SPA value = 150 }
+		command = { type = relation which = PAP value = 150 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={			#Make Catholicism the most favoured religion#
+		name = "ACTIONNAME3014B"
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = missionaries value = 1 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = PAP value = 100 }
+		command = { type = stability value = -1 }
+	}
+
+	action_c ={			#Confirm religious freedom for all#
+		name = "ACTIONNAME3014C"
+		command = { type = heretic which = -1 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = missionaries value = -6 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = PAP value = -150 }
+		command = { type = stability value = 1 }
+	}
+
+}
+
+#The Muscowy Trade Company#
+event = {
+
+	id = 3015
+	trigger = {
+		OR = {
+			exists = MOS
+			exists = RUS
+		}
+		domestic = {
+			type = innovative
+			value = 6
+		}
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME3015"
+	desc = "EVENTHIST3015"
+	style = 2
+
+	date = { day = 1 month = january year = 1555 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1565 }
+
+	action_a ={			#We will exploit this!#
+		name = "ACTIONNAME3015A"
+		command = { type = treasury value = 200 }
+		command = { type = merchants value = 5 }
+		command = { type = explorer which = -1 }
+		command = { type = relation which = MOS value = 150 } #New - just in case
+		command = { type = relation which = RUS value = 150 }
+		command = { type = trade value = 200 }
+	}
+}
+
+#Sir Francis Walsingham#
+event = {
+
+	id = 3016
+	trigger = {
+		OR = {
+			religion = protestant
+			religion = reformed
+		}
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME3016"
+	desc = "EVENTHIST3016"
+	style = 2
+
+	date = { day = 1 month = january year = 1573 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1588 }
+
+	action_a ={			#Let him become our Spymaster!#
+		name = "ACTIONNAME3016A"
+		command = { type = dynastic which = -1 }
+		command = { type = dynastic which = -4 }
+		command = { type = dynastic which = -4 }
+		command = { type = dynastic which = -4 }
+		command = { type = dynastic which = -4 }
+		command = { type = dynastic which = -4 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = treasury value = -200 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={			#No I do not trust him!#
+		name = "ACTIONNAME3016B"
+		command = { type = domestic which = INNOVATIVE value = -1 }
+	}
+}
+
+#Sir Thomas Gresham's Currency Reform#
+event = {
+
+	id = 3017
+	random = no
+	country = ENG
+	name = "EVENTNAME3017"
+	desc = "EVENTHIST3017"
+	style = 2
+
+	date = { day = 1 month = january year = 1551 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1574 }
+
+	action_a ={				#Reform#
+		name = "ACTIONNAME3017A"
+		command = { type = inflation value = -5 }
+		command = { type = provincetax which = 247 value = 2 }
+		command = { type = stability value = 3 }
+	}
+}
+#The Northern Rebellion#
+event = {
+
+	id = 3018
+	random = no
+	trigger = {
+			event = 3077
+			}
+
+	country = ENG
+
+	name = "EVENTNAME3018"
+	desc = "EVENTHIST3018"
+	style = 2
+
+	date = { day = 1 month = november year = 1569 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1570 }
+
+	action_a ={		#Keep Norfolk in the Tower and smash the rebels#
+		name = "ACTIONNAME3018A"
+		command = { type = revolt which = 240 }
+		command = { type = revolt which = 241 }
+		command = { type = revolt which = 242 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={		#Keep Norfolk in the Tower and start to negotiate#
+		name = "ACTIONNAME3018B"
+		command = { type = revolt which = 240 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+	}
+
+	action_c ={			#Release Norfolk#
+		name = "ACTIONNAME3018C"
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = stability value = -1 }
+	}
+
+}
+
+#The Creation of the London Stock Exchange#
+event = {
+
+	id = 3019
+	random = no
+	country = ENG
+	name = "EVENTNAME3019"
+	desc = "EVENTHIST3019"
+	style = 2
+
+	date = { day = 1 month = january year = 1566 }
+	offset = 10
+	deathdate = { day = 30 month = december year = 1573 }
+
+	action_a ={			#Expand Loan Market#
+		name = "ACTIONNAME3019A"
+		command = { type = loansize which = 400 }
+		command = { type = gainmanufactory which = -1 value = refinery }
+		command = { type = inflation value = 4 }
+		command = { type = stability value = 1 }
+	}
+	action_b ={			#Issue Strict Control#
+		name = "ACTIONNAME3019B"
+		command = { type = gainmanufactory which = -1 value = refinery }
+		command = { type = inflation value = -2 }
+		command = { type = stability value = 2 }
+	}
+}
+
+#The Beheading of Mary of Scots#
+event = {
+
+	id = 3020
+	trigger = {
+			event = 3077
+			}
+	random = no
+	country = ENG
+	name = "EVENTNAME3020"
+	desc = "EVENTHIST3020"
+	style = "3020"
+
+	date = { day = 8 month = february year = 1587 }
+
+	action_a ={			#Behead her!#
+		name = "ACTIONNAME3020A"
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = SPA value = -150 }
+		command = { type = relation which = PAP value = -150 }
+		command = { type = revoltrisk which = 12 value = 2 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={			#Let her live imprisoned though#
+		name = "ACTIONNAME3020B"
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = PAP value = -50 }
+		command = { type = stability value = -1 }
+	}
+
+	action_c ={		#Set her free, but send her to the Guise in France#
+		name = "ACTIONNAME3020C"
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = PAP value = 50 }
+		command = { type = stability value = -3 }
+	}
+
+}
+
+#The Canceling of Royal Monopolies#
+event = {
+
+	id = 3021
+	random = no
+	country = ENG
+	name = "EVENTNAME3021"
+	desc = "EVENTHIST3021"
+	style = 3
+
+	date = { day = 1 month = january year = 1598 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1604 }
+
+	action_a ={			#Cancel them!#
+		name = "ACTIONNAME3021A"
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = treasury value = -200 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={			#Strengthen them!#
+		name = "ACTIONNAME3021B"
+		command = { type = domestic which = MERCANTILISM value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = treasury value = 100 }
+	}
+}
+
+#Hugh O'Neills Irish Rebellion#
+event = {
+
+	id = 3022
+	trigger = {
+		someof = {
+			number = 3
+			owned = { province = 231 data = -1 }
+			owned = { province = 232 data = -1 }
+			owned = { province = 233 data = -1 }
+			owned = { province = 234 data = -1 }
+			owned = { province = 235 data = -1 }
+		}
+		NOT = {
+			exists = EIR
+			religion = catholic
+			religion = counterreform
+		}
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME3022"
+	desc = "EVENTHIST3022"
+	style = 3
+
+	date = { day = 1 month = january year = 1590 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1610 }
+
+	action_a ={			#We are not amused!#
+		name = "ACTIONNAME3022A"
+		command = { type = revolt which = 231 }
+		command = { type = revolt which = 232 }
+		command = { type = revolt which = 235 }
+		command = { type = relation which = SPA value = -150 }
+		command = { type = stability value = 1 }
+	}
+}
+#The Petition of Rights#
+event = {
+
+	id = 3023
+	random = no
+	country = ENG
+	name = "EVENTNAME3023"
+	desc = "EVENTHIST3023"
+	style = 3
+
+	date = { day = 1 month = january year = 1628 }
+	offset = 10
+	deathdate = { day = 30 month = december year = 1628 }
+
+	action_a ={			#Sign it#
+		name = "ACTIONNAME3023A"
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={			#Refuse to sign it#
+		name = "ACTIONNAME3023B"
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#The Parliamentary Conflict#
+event = {
+
+	id = 3024
+	random = no
+	country = ENG
+	name = "EVENTNAME3024"
+	desc = "EVENTHIST3024"
+	style = "3024"
+
+	date = { day = 1 month = january year = 1640 }
+	offset = 10
+	deathdate = { day = 30 month = december year = 1640 }
+
+	action_a ={			#Combat the Parliament#
+		name = "ACTIONNAME3024A"
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = revoltrisk which = 120 value = 8 }
+		command = { type = treasury value = -500 }
+		command = { type = stability value = 2 }
+	}
+
+	action_b ={			#Oppose the Parliament#
+		name = "ACTIONNAME3024B"
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = revoltrisk which = 120 value = 6 }
+		command = { type = treasury value = -300 }
+		command = { type = stability value = 1 }
+	}
+
+	action_c ={			#Submit to the Parliament#
+		name = "ACTIONNAME3024C"
+		command = { type = domestic which = CENTRALIZATION value = -4 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = treasury value = 500 }
+		command = { type = stability value = -1 }
+	}
+
+}
+
+#The English Civil War#
+event = {
+
+	id = 3025
+
+	random = no
+	country = ENG
+	name = "EVENTNAME3025"
+	desc = "EVENTHIST3025"
+	style = "3025"
+
+	date = { day = 1 month = january year = 1642 }
+	offset = 10
+	deathdate = { day = 30 month = december year = 1642 }
+
+	action_a ={			#Puritans#
+		name = "ACTIONNAME3025A"
+		command = { type = sleepevent which = 3771 }
+		command = { type = revolt which = 233 }
+		command = { type = revolt which = 234 }
+		command = { type = revolt which = 250 }
+		command = { type = revolt which = 246 }
+		command = { type = revolt which = 243 }
+		command = { type = revolt which = 240 }
+		command = { type = INF which = -2 value = 20000 }
+		command = { type = CAV which = -2 value = 5000 }
+		command = { type = ART which = -2 value = 5 }
+		command = { type = wakeleader which = 09278 } # Monck
+		command = { type = wakeleader which = 09257 } # Fairfax
+		command = { type = wakeleader which = 09259 } # Cromwell
+		command = { type = wakeleader which = 09286 } # Blake
+		command = { type = wakeleader which = 09288 } # Ayscue
+		command = { type = sleepleader which = 09255 }
+		command = { type = sleepleader which = 09285 }
+		command = { type = relation which = HOL value = 100 }
+		command = { type = relation which = SWE value = 100 }
+		command = { type = stability value = -4 }
+	}
+
+	action_b ={			#Royalists#
+		name = "ACTIONNAME3025B"
+		command = { type = sleepevent which = 3026 }
+		command = { type = revolt which = 248 }
+		command = { type = revolt which = 249 }
+		command = { type = revolt which = 245 }
+		command = { type = revolt which = 244 }
+		command = { type = revolt which = 232 }
+		command = { type = revolt which = 242 }
+		command = { type = INF which = -2 value = 15000 }
+		command = { type = CAV which = -2 value = 15000 }
+		command = { type = ART which = -2 value = 10 }
+		#command = { type = wakeleader which = 09275 } # Charles I
+		command = { type = wakeleader which = 09255 } # Prince Rupert - General
+		command = { type = wakeleader which = 09285 } # Prince Rupert - Admiral
+		command = { type = sleepleader which = 09256 }
+		command = { type = sleepleader which = 09259 }
+		command = { type = sleepleader which = 09287 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = SPA value = 150 }
+		command = { type = stability value = -5 }
+	}
+}
+
+#Cromwell and the Republic#
+event = {
+
+	id = 3026
+	trigger = {
+			event = 3025
+			}
+	random = no
+	country = ENG
+	name = "EVENTNAME3026"
+	desc = "EVENTHIST3026"
+	style = "3026"
+
+	date = { day = 29 month = january year = 1649 }
+
+	action_a ={			#Be Vengeful#
+		name = "ACTIONNAME3026A"
+		command = { type = inherit which = ROY }
+		command = { type = inherit which = PUR }
+		command = { type = flagname which = REV }
+		command = { type = religion which = reformed }
+		command = { type = provinceculture which = 243 value = anglosaxon }
+		command = { type = provincereligion which = 232 value = reformed }
+		command = { type = wakemonarch which = 04044 }
+		command = { type = sleepmonarch which = 04043 }
+		command = { type = domestic which = CENTRALIZATION value = 5 }
+		command = { type = domestic which = ARISTOCRACY value = -5 }
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = domestic which = OFFENSIVE value = 2 }
+		command = { type = stability value = -2 }
+		command = { type = domestic which = QUALITY value = 2 }
+	}
+
+	action_b ={			#Be Merciful#
+		name = "ACTIONNAME3026B"
+		command = { type = inherit which = ROY }
+		command = { type = inherit which = PUR }
+		command = { type = flagname which = REV }
+		command = { type = religion which = protestant }
+		command = { type = provinceculture which = 243 value = anglosaxon }
+		command = { type = provincereligion which = 232 value = protestant }
+		command = { type = wakemonarch which = 04044 }
+		command = { type = sleepmonarch which = 04043 }
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = OFFENSIVE value = 2 }
+		command = { type = stability value = 1 }
+		command = { type = domestic which = QUALITY value = 2 }
+	}
+}
+#King Charles and the New Monarchy#
+event = {
+
+	id = 3771
+	trigger = {
+			event = 3025
+			}
+	random = no
+	country = ENG
+	name = "EVENTNAME3771"
+	desc = "EVENTHIST3771"
+	style = "3771"
+
+	date = { day = 29 month = january year = 1649 }
+
+	action_a ={			#Be Merciful#
+		name = "ACTIONNAME3771A"
+		command = { type = inherit which = PUR }
+		command = { type = inherit which = ROY }
+		command = { type = religion which = protestant }
+		command = { type = provinceculture which = 243 value = anglosaxon }
+		command = { type = provincereligion which = 244 value = catholic }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = LAND value = 2 }
+		command = { type = domestic which = OFFENSIVE value = -2 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={			#Be Vengeful#
+		name = "ACTIONNAME3771B"
+		command = { type = inherit which = PUR }
+		command = { type = inherit which = ROY }
+		command = { type = religion which = catholic }
+		command = { type = provinceculture which = 243 value = anglosaxon }
+		command = { type = provincereligion which = 244 value = catholic }
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = 4 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = LAND value = 2 }
+		command = { type = domestic which = OFFENSIVE value = -2 }
+		command = { type = stability value = -2 }
+	}
+}
+#The Act of Navigation#
+event = {
+
+	id = 3027
+	random = no
+	country = ENG
+	name = "EVENTNAME3027"
+	desc = "EVENTHIST3027"
+	style = 3
+
+	date = { day = 1 month = january year = 1651 }
+	offset = 10
+	deathdate = { day = 30 month = december year = 1651 }
+
+	action_a ={			#Enact#
+		name = "ACTIONNAME3027A"
+		trigger = { 
+			NOT = { alliance = { country = ENG country = HOL } }
+		}
+		command = { type = domestic which = MERCANTILISM value = 6 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = SWE value = -50 }
+		command = { type = relation which = DAN value = -50 }
+		command = { type = trade value = 400 }
+		command = { type = trigger which = 4136 }
+	}
+
+	action_b ={			#The present policy is perfect#
+		name = "ACTIONNAME3027B"
+		command = { type = stability value = 1 }
+	}
+
+	action_c ={			#Ease the present policy up#
+		name = "ACTIONNAME3027C"
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = relation which = HOL value = 100 }
+		command = { type = relation which = SWE value = 50 }
+		command = { type = relation which = DAN value = 50 }
+		command = { type = treasury value = -200 }
+		command = { type = stability value = -1 }
+	}
+
+}
+
+#The Restoration of the Stuarts#
+event = {
+
+	id = 3028
+	trigger = {
+		event = 3026
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME3028"
+	desc = "EVENTHIST3028"
+	style = "3028"
+
+	date = { day = 21 month = april year = 1660 }
+
+	action_a ={			#Restore the Monarchy#
+		name = "ACTIONNAME3028A"
+		command = { type = inherit which = ROY }
+		command = { type = inherit which = PUR }
+		command = { type = flagname which = "" }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = SPA value = 100 } #New
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={			#Lord Protector John Lambert#
+		name = "ACTIONNAME3028B"
+		command = { type = inherit which = ROY }
+		command = { type = inherit which = PUR }
+		command = { type = sleepevent which = 3029 }
+		command = { type = sleepevent which = 3032 }
+		command = { type = wakemonarch which = 00006 }
+		command = { type = wakemonarch which = 04047 }
+		command = { type = wakemonarch which = 04048 }
+		command = { type = sleepmonarch which = 04045 }
+	                  command = { type = sleepmonarch which = 04046 }
+	                  command = { type = sleepmonarch which = 00002 }
+	                  command = { type = relation which = FRA value = -150 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = revoltrisk which = 60 value = 3 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#The Decree of Indulgence and the Bill of Test#
+event = {
+
+	id = 3029
+	trigger = {
+			religion = protestant
+		}
+	random = no
+	country = ENG
+	name = "EVENTNAME3029"
+	desc = "EVENTHIST3029"
+	style = 3
+
+	date = { day = 1 month = january year = 1673 }
+	offset = 10
+	deathdate = { day = 30 month = december year = 1673 }
+
+	action_a ={			#Religious Freedom for All#
+		name = "ACTIONNAME3029A"
+#		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+#		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = religion which = protestant }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={			#Protestant Supremacy#
+		name = "ACTIONNAME3029B"
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = religion which = reformed }
+		command = { type = stability value = -1 }
+	}
+
+	action_c ={			#Catholic Supremacy#
+		name = "ACTIONNAME3029C"
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = religion which = catholic }
+		command = { type = stability value = -3 }
+	}
+
+}
+#The League of Augsburg#
+event = {
+
+	id = 3030			#triggered by FRA3127#
+	random = no
+	country = ENG
+	name = "EVENTNAME3030"
+	desc = "EVENTHIST3030"
+	style = 3
+
+	action_a ={				#Defy French claims#
+		name = "ACTIONNAME3030A"
+		command = { type = casusbelli which = FRA value = 72 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = BAD value = 100 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = PRU value = 150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = HAN value = 100 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = HES value = 100 }
+		command = { type = relation which = KLE value = 100 }
+		command = { type = relation which = KOL value = 100 }
+		command = { type = relation which = PFA value = 100 }
+		command = { type = relation which = THU value = 100 }
+	}
+
+	action_b ={				#Ignore it#
+		name = "ACTIONNAME3030B"
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = BAD value = -50 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = PRU value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = HAN value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = HES value = -50 }
+		command = { type = relation which = KLE value = -50 }
+		command = { type = relation which = KOL value = -50 }
+		command = { type = relation which = PFA value = -50 }
+		command = { type = relation which = THU value = -50 }
+	}
+}
+
+#The Glorious Revolution#	#PUR won Civil War#
+event = {
+
+	id = 3031
+	trigger = {
+		event = 3026
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME3031"
+	desc = "EVENTHIST3031"
+	style = "3031"
+
+	date = { day = 15 month = february year = 1688 }
+
+	action_a ={			#William of Oranien#
+		name = "ACTIONNAME3031A"
+		command = { type = flagname which = "" }
+		command = { type = trigger which = 3082 }
+		command = { type = wakemonarch which = 04047 }
+		command = { type = wakemonarch which = 04048 }
+		command = { type = sleepmonarch which = 04046 }
+                command = { type = sleepmonarch which = 00002 }
+                command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = ARISTOCRACY value = -4 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={			#Chastize King James#
+		name = "ACTIONNAME3031B"
+		command = { type = sleepevent which = 3612 }
+		command = { type = sleepevent which = 3038 }
+		command = { type = domestic which = CENTRALIZATION value = -4 }
+		command = { type = domestic which = ARISTOCRACY value = -3 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = stability value = 3 }
+	}
+}
+
+#The Glorious Revolution#	#ROY won Civil War#
+event = {
+
+	id = 3032
+	trigger = {
+		event = 3771
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME3032"
+	desc = "EVENTHIST3032"
+	style = 3
+
+	date = { day = 15 month = february year = 1688 }
+
+	action_a ={			#Absolute Monarchy#
+		name = "ACTIONNAME3032A"
+		command = { type = inherit which = PUR }
+		command = { type = inherit which = ROY }
+		command = { type = sleepevent which = 3612 }
+		command = { type = sleepevent which = 3038 }
+		command = { type = domestic which = CENTRALIZATION value = 5 }
+		command = { type = domestic which = ARISTOCRACY value = 5 }
+		command = { type = domestic which = INNOVATIVE value = -3 }
+		command = { type = domestic which = SERFDOM value = 3 }
+		command = { type = stability value = 3 }
+		command = { type = wakemonarch which = 00003 }
+		command = { type = wakemonarch which = 00004 }
+		command = { type = wakemonarch which = 00005 }
+		command = { type = sleepmonarch which = 04049 }
+		command = { type = sleepmonarch which = 04050 }
+		command = { type = sleepmonarch which = 04051 }
+		command = { type = sleepmonarch which = 124074 }
+		command = { type = sleepmonarch which = 124075 }
+	}
+
+	action_b ={			#Strong Monarchy with Parliament#
+		name = "ACTIONNAME3032B"
+		command = { type = inherit which = PUR }
+		command = { type = inherit which = ROY }
+		command = { type = sleepevent which = 3612 }
+		command = { type = sleepevent which = 3038 }
+		command = { type = domestic which = CENTRALIZATION value = 5 }
+		command = { type = domestic which = ARISTOCRACY value = 5 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = wakemonarch which = 00003 }
+		command = { type = wakemonarch which = 00004 }
+		command = { type = wakemonarch which = 00005 }
+		command = { type = sleepmonarch which = 04049 }
+		command = { type = sleepmonarch which = 04050 }
+		command = { type = sleepmonarch which = 04051 }
+		command = { type = sleepmonarch which = 124074 }
+		command = { type = sleepmonarch which = 124075 }
+	}
+}
+
+#Personalunion with Holland#
+event = {
+
+	id = 3033
+	trigger = {
+			monarch = 04047
+			}
+	random = no
+	country = ENG
+	name = "Personal Union with Holland"
+	desc = "EVENTHIST3033"
+	style = "4135"
+
+	date = { day = 16 month = february year = 1688 }
+	offset = 0
+	deathdate = { day = 17 month = february year = 1688 }
+
+	action_a ={			#That was expected#
+		name = "ACTIONNAME3033A"
+		command = { type = dynastic which = HOL }
+		command = { type = alliance which = HOL }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#The Creation of Bank of England#
+event = {
+
+	id = 3034
+	random = no
+	country = ENG
+	name = "EVENTNAME3034"
+	desc = "EVENTHIST3034"
+	style = 3
+
+	date = { day = 1 month = january year = 1690 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1700 }
+
+	action_a ={			#National Loans at 500 ducats#
+		name = "ACTIONNAME3034A"
+		command = { type = gainmanufactory which = -2 value = luxury }
+		command = { type = loansize which = 500 }
+		command = { type = inflation value = -2 }
+		command = { type = stability value = 2 }
+	}
+
+	action_b ={			#National Loans at 200 ducats#
+		name = "ACTIONNAME3034B"
+		command = { type = gainmanufactory which = -2 value = luxury }
+		command = { type = loansize which = 200 }
+		command = { type = inflation value = -5 }
+		command = { type = stability value = 2 }
+	}
+
+	action_c ={			#National Loans at 800 ducats#
+		name = "ACTIONNAME3034C"
+		command = { type = gainmanufactory which = -2 value = luxury }
+		command = { type = loansize which = 800 }
+		command = { type = inflation value = 3 }
+		command = { type = stability value = -1 }
+	}
+
+}
+#Phillip of Bourbon succedes Carlos II in Spain#	#Bourbon#
+event = {
+
+	id = 3035		#Triggered by SPA3173#
+	random = no
+	country = ENG
+	name = "EVENTNAME3035"
+	desc = "EVENTHIST3035"
+	style = 4
+
+	action_a ={				#Fight him#
+		name = "ACTIONNAME3035A"
+		command = { type = casusbelli which = FRA value = 36 }
+		command = { type = casusbelli which = SPA value = 36 }
+		command = { type = relation which = SPA value = -150 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = stability value = 3 }
+	}
+
+	action_b ={				#Accept it#
+		name = "ACTIONNAME3035B"
+		command = { type = relation which = SPA value = 150 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = HAB value = -150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = BRA value = -150 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#Charles of Habsburg succedes Carlos II in Spain#	#Habsburg#
+event = {
+
+	id = 3036		#Triggered by SPA3173#
+	random = no
+	country = ENG
+	name = "EVENTNAME3036"
+	desc = "EVENTHIST3036"
+	style = 4
+
+	action_a ={				#Accept it conditionally#
+		name = "ACTIONNAME3036A"
+		command = { type = casusbelli which = HAB value = 36 }
+		command = { type = casusbelli which = FRA value = 36 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={				#Fight him#
+		name = "ACTIONNAME3036B"
+		command = { type = casusbelli which = HAB value = 36 }
+		command = { type = casusbelli which = SPA value = 36 }
+		command = { type = relation which = SPA value = -150 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = HAB value = -150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = stability value = 3 }
+	}
+
+	action_c ={				#Accept it#
+		name = "ACTIONNAME3036C"
+		command = { type = relation which = SPA value = 150 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = stability value = -1 }
+	}
+
+}
+
+#The Act of Union#
+event = {
+
+	id = 3037
+	trigger = {
+		OR = {
+			vassal = { country = ENG country = SCO }
+			union = { country = ENG country = SCO }
+			AND = {
+				owned = { province = 238 data = -1 }
+				owned = { province = 239 data = -1 }
+				NOT = { exists = SCO }
+			}
+		}
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME3037"
+	desc = "EVENTHIST3037"
+	style = "3037"
+
+	date = { day = 1 month = january year = 1700 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={			#We are Great Britain#
+		name = "ACTIONNAME3037A"
+		command = { type = flagname which = GBR }
+		command = { type = countryname value = "Great Britain" }
+		command = { type = inherit which = SCO }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = stability value = 1 }
+		command = { type = addcore_national which = 236 }
+		command = { type = addcore_national which = 237 }
+		command = { type = addcore_national which = 238 }
+		command = { type = addcore_national which = 239 }
+		command = { type = add_countryculture which = scots }
+		}
+
+	action_b ={			#A personal union is enough#
+		name = "A personal union is enough"
+		command = { type = alliance which = SCO }
+		command = { type = relation which = SCO value = 200 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = sleepevent which = 3582 }
+		command = { type = stability value = -1 }
+	}
+}
+#The Hannover Dynasty in England#
+event = {
+
+	id = 3038
+	trigger = {
+		event = 3031
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME3038"
+	desc = "EVENTHIST3038"
+	style = "3038"
+
+	date = { day = 1 month = august year = 1714 }
+
+	action_a ={			#Ahh Yes#
+		name = "ACTIONNAME3038A"
+		command = { type = vassal which = HAN }
+		command = { type = relation which = HAN value = 100 }
+		command = { type = sleepmonarch which = 00002 }
+		command = { type = wakemonarch which = 04049 }
+		command = { type = alliance which = HAN }
+	}
+}
+
+#Jacobite Rebellion#
+event = {
+
+	id = 3039
+	trigger = {
+			monarch = 04049
+		}
+	random = no
+	country = ENG
+	name = "EVENTNAME3039"
+	desc = "EVENTHIST3039"
+	style = 4
+
+	date = { day = 1 month = january year = 1715 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1720 }
+
+	action_a ={			#We will smash them!#
+		name = "ACTIONNAME3039A"
+		command = { type = revoltrisk which = 24 value = 3 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = revolt which = 236 } #New
+		command = { type = revolt which = 237 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={			#The Stuarts take back the throne!#
+		name = "ACTIONNAME3039B"
+		command = { type = wakemonarch which = 00002 }
+		command = { type = wakemonarch which = 00003 }
+		command = { type = wakemonarch which = 00004 }
+		command = { type = wakemonarch which = 00005 }
+		command = { type = sleepmonarch which = 04049 }
+                command = { type = sleepmonarch which = 04050 }
+                command = { type = sleepmonarch which = 04051 }
+		command = { type = sleepmonarch which = 124074 }
+		command = { type = sleepmonarch which = 124075 }
+                command = { type = revoltrisk which = 60 value = 3 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = HAN value = -300 }
+		command = { type = breakvassal which = HAN }
+	}
+}
+#Sir Robert Walpole#
+event = {
+
+	id = 3040
+	random = no
+	country = ENG
+	name = "EVENTNAME3040"
+	desc = "EVENTHIST3040"
+	style = "3040"
+
+	date = { day = 1 month = january year = 1721 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1722 }
+
+
+	action_a ={		#An Excellent Minister!#
+		name = "ACTIONNAME3040A"
+		command = { type = DIP which = 3 value = 240 }
+		command = { type = ADM which = 3 value = 240 }
+		command = { type = MIL which = 3 value = 240 }
+		command = { type = stability value = 3 }
+	}
+}
+
+#Captain Jenkins Ear#
+event = {
+
+	id = 3041
+	trigger = {
+		exists = SPA
+		NOT = { relation = { country = SPA data = 100 } }
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME3041"
+	desc = "EVENTHIST3041"
+	style = 4
+
+	date = { day = 1 month = january year = 1737 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1740 }
+
+	action_a ={			#Use it as an excuse for War#
+		name = "ACTIONNAME3041A"
+		command = { type = casusbelli which = SPA value = 24 }
+		command = { type = relation which = SPA value = -150 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={			#Try not to severe our relation too much#
+		name = "ACTIONNAME3041B"
+		command = { type = relation which = SPA value = -50 }
+		command = { type = stability value = -1 }
+	}
+}
+#The Effect of the Pragmatic Sanction#
+event = {
+
+	id = 3042
+	trigger = { event = 3205 }
+	random = no
+	country = ENG
+	name = "EVENTNAME3042"
+	desc = "EVENTHIST3042"
+
+	date = { day = 1 month = january year = 1741 }
+	offset = 10
+	deathdate = { day = 1 month = june year = 1741 }
+
+	action_a ={		#Pro-Habsburg#
+		name = "ACTIONNAME3042A"
+		command = { type = casusbelli which = FRA value = 36 }
+		command = { type = casusbelli which = PRU value = 36 }
+		command = { type = relation which = BAY value = -150 }
+		command = { type = relation which = SAC value = -150 }
+		command = { type = relation which = PRU value = -150 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = RUS value = 100 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = HAN value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = stability value = 1 }
+
+	}
+
+	action_b ={		#Neutral#
+		name = "ACTIONNAME3042B"
+		command = { type = relation which = BAY value = -50 }
+		command = { type = relation which = SAC value = -50 }
+		command = { type = relation which = PRU value = -50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = HOL value = -50 }
+		command = { type = relation which = RUS value = -50 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = HAN value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = stability value = -1 }
+		command = { type = casusbelli which = FRA value = 12 }
+		command = { type = casusbelli which = SPA value = 12 }
+
+	}
+
+	action_c ={		#Anti-Habsburg#
+		name = "ACTIONNAME3042C"
+		command = { type = casusbelli which = HAB value = 12 }
+		command = { type = casusbelli which = RUS value = 12 }
+		command = { type = relation which = BAY value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = PRU value = 150 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = HOL value = -150 }
+		command = { type = relation which = RUS value = -150 }
+		command = { type = relation which = HES value = 100 }
+		command = { type = relation which = HAN value = 100 }
+		command = { type = relation which = HAB value = -150 }
+		command = { type = stability value = 1 }
+	}
+
+}
+
+#Jacobite Rebellion#
+event = {
+
+	id = 3043
+	trigger = {
+			monarch = 04050
+		}
+	random = no
+	country = ENG
+	name = "EVENTNAME3043"
+	desc = "EVENTHIST3043"
+	style = "3043"
+
+	date = { day = 1 month = january year = 1745 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1750 }
+
+	action_a ={			#We will smash them!#
+		name = "ACTIONNAME3043A"
+		command = { type = revoltrisk which = 24 value = 5 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = stability value = 1 }
+		command = { type = revolt which = 236 } #New
+		command = { type = revolt which = 236 }
+		command = { type = revolt which = 237 }
+		command = { type = revolt which = 238 }
+		command = { type = provinceculture   which = 236 value = anglosaxon }
+	}
+
+	action_b ={			#The Stuarts take back the throne!#
+		name = "ACTIONNAME3043B"
+		command = { type = wakemonarch which = 00002 }
+		command = { type = wakemonarch which = 00003 }
+		command = { type = wakemonarch which = 00004 }
+		command = { type = wakemonarch which = 00005 }
+		command = { type = sleepmonarch which = 04050 }
+		command = { type = sleepmonarch which = 04051 }
+		command = { type = sleepmonarch which = 124074 }
+		command = { type = sleepmonarch which = 124075 }
+		command = { type = revoltrisk which = 60 value = 3 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = HAN value = -300 }
+		command = { type = breakvassal which = HAN }
+	}
+}
+#William Pitt the Elder#
+event = {
+
+	id = 3044
+	random = no
+	country = ENG
+	name = "EVENTNAME3044"
+	desc = "EVENTHIST3044"
+	style = "3044"
+
+	date = { day = 1 month = january year = 1757 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1758 }
+
+
+	action_a ={			#An Excellent Minister!#
+		name = "ACTIONNAME3044A"
+		command = { type = DIP which = 4 value = 240 }
+		command = { type = ADM which = 3 value = 240 }
+		command = { type = MIL which = 3 value = 240 }
+		command = { type = stability value = 3 }
+	}
+}
+
+#The East India Company#
+event = {
+
+	id = 3045
+	trigger = {
+			OR = {
+				owned = { province = 558 data = -1 }
+				owned = { province = 560 data = -1 }
+				owned = { province = 561 data = -1 }
+				owned = { province = 564 data = -1 }
+				owned = { province = 565 data = -1 }
+				owned = { province = 571 data = -1 }
+				owned = { province = 572 data = -1 }
+				owned = { province = 573 data = -1 }
+				owned = { province = 574 data = -1 }
+				owned = { province = 568 data = -1 }
+				owned = { province = 569 data = -1 }
+				owned = { province = 548 data = -1 }
+				owned = { province = 549 data = -1 }
+				}
+		}
+
+	random = no
+	country = ENG
+	name = "EVENTNAME3045"
+	desc = "EVENTHIST3045"
+	style = "3045"
+
+	date = { day = 1 month = january year = 1750 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1760 }
+
+	action_a ={			#We will exploit this!#
+		name = "ACTIONNAME3045A"
+		command = { type = trade value = 2000 }
+		command = { type = gainmanufactory which = -1 value = goods }
+		command = { type = gainmanufactory which = -1 value = refinery }
+		command = { type = merchants value = 6 }
+		command = { type = treasury value = 500 }
+		command = { type = stability value = 1 }
+	}
+}
+#The Sale of Corsica#
+event = {
+
+	id = 3046			#Triggered by MLO3707 or FRA3140#
+	random = no
+	country = ENG
+	name = "EVENTNAME3046"
+	desc = "EVENTHIST3046"
+	style = 4
+
+	action_a ={			#Offer to buy Corsica#
+		name = "ACTIONNAME3046A"
+		command = { type = trigger which = 3708 }
+	}
+
+	action_b ={			#Pass the opportunity#
+		name = "ACTIONNAME3046B"
+		command = { type = trigger which = 3175 }
+	}
+}
+
+# Genoa accepts offer to buy Corsica #
+event = {
+
+	id = 3721			#Triggered by GEN3708#
+	random = no
+	country = ENG
+	name = "EVENTNAME3721"
+	desc = "EVENTHIST3721"
+	style = 4
+
+	action_a ={				#Good#
+		name = "ACTIONNAME3721A"
+		command = { type = relation which = GEN value = 150 }
+		command = { type = treasury value = -1500 }
+	}
+}
+
+# Genoa decline offer to buy Corsica #
+event = {
+
+	id = 3722			#Triggered by GEN3708#
+	random = no
+	country = ENG
+	name = "EVENTNAME3722"
+	desc = "EVENTHIST3722"
+	style = 4
+
+	action_a ={				#Darn#
+		name = "ACTIONNAME3722A"
+		command = { type = relation which = GEN value = -150 }
+	}
+}
+
+#Tax Revolt in America#
+
+# 20 Nov 2001, State Machine - Added condition that USA should not exist,
+# and a trigger for the prerequisite event of the next revolt event in the
+# USA revolt progression if the action chosen moves the revolt forward.
+
+event = {
+	id = 3047
+	trigger = {
+		NOT = {
+			domestic = { type = innovative value = 10 }
+		}
+		NOT = { exists = USA }
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME3047"
+	desc = "EVENTHIST3047"
+	style = "3047"
+
+	date = { day = 1 month = january year = 1765 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1766 }
+
+	action_a ={			#Stamptax and Tolls#
+		name = "ACTIONNAME3047A"
+		command = { type = province_revoltrisk which = 54 value = 2 }
+		command = { type = province_revoltrisk which = 62 value = 2 }
+		command = { type = province_revoltrisk which = 63 value = 2 }
+		command = { type = province_revoltrisk which = 64 value = 2 }
+		command = { type = province_revoltrisk which = 68 value = 2 }
+		command = { type = province_revoltrisk which = 85 value = 2 }
+		command = { type = province_revoltrisk which = 86 value = 2 }
+		command = { type = province_revoltrisk which = 87 value = 2 }
+		command = { type = province_revoltrisk which = 88 value = 2 }
+		command = { type = province_revoltrisk which = 100 value = 2 }
+		command = { type = province_revoltrisk which = 101 value = 2 }
+		command = { type = province_revoltrisk which = 102 value = 2 }
+		command = { type = province_revoltrisk which = 103 value = 2 }
+		command = { type = trigger which = 4980 }
+	}
+	action_b ={			#Stamptax, Defensetax and Tolls#
+		name = "ACTIONNAME3047B"
+		command = { type = province_revoltrisk which = 54 value = 5 }
+		command = { type = province_revoltrisk which = 62 value = 5 }
+		command = { type = province_revoltrisk which = 63 value = 5 }
+		command = { type = province_revoltrisk which = 64 value = 5 }
+		command = { type = province_revoltrisk which = 68 value = 5 }
+		command = { type = province_revoltrisk which = 85 value = 5 }
+		command = { type = province_revoltrisk which = 86 value = 5 }
+		command = { type = province_revoltrisk which = 87 value = 5 }
+		command = { type = province_revoltrisk which = 88 value = 5 }
+		command = { type = province_revoltrisk which = 100 value = 5 }
+		command = { type = province_revoltrisk which = 101 value = 5 }
+		command = { type = province_revoltrisk which = 102 value = 5 }
+		command = { type = province_revoltrisk which = 103 value = 5 }
+		command = { type = vp value = 50 }
+		command = { type = treasury value = 500 }
+		command = { type = stability value = -1 }
+		command = { type = trigger which = 4980 }
+	}
+	action_c ={			#More Taxes in England#
+		name = "ACTIONNAME3047C"
+		command = { type = province_revoltrisk which = 231 value = 2 }
+		command = { type = province_revoltrisk which = 232 value = 2 }
+		command = { type = province_revoltrisk which = 233 value = 2 }
+		command = { type = province_revoltrisk which = 234 value = 2 }
+		command = { type = province_revoltrisk which = 235 value = 2 }
+		command = { type = province_revoltrisk which = 236 value = 2 }
+		command = { type = province_revoltrisk which = 237 value = 2 }
+		command = { type = province_revoltrisk which = 238 value = 2 }
+		command = { type = province_revoltrisk which = 239 value = 2 }
+                command = { type = province_revoltrisk which = 240 value = 2 }
+		command = { type = province_revoltrisk which = 241 value = 2 }
+		command = { type = province_revoltrisk which = 242 value = 2 }
+		command = { type = province_revoltrisk which = 243 value = 2 }
+		command = { type = province_revoltrisk which = 244 value = 2 }
+		command = { type = province_revoltrisk which = 245 value = 2 }
+		command = { type = province_revoltrisk which = 246 value = 2 }
+		command = { type = province_revoltrisk which = 247 value = 2 }
+		command = { type = province_revoltrisk which = 248 value = 2 }
+		command = { type = province_revoltrisk which = 249 value = 2 }
+		command = { type = province_revoltrisk which = 250 value = 2 }
+		command = { type = vp value = -100 }
+	}
+}
+
+#Tax Revolt in America Consequences#
+# 20 Nov 2001, State Machine - New event to reflect ENG choosing regressive
+# policies that are not liked in the American colonies.
+
+event = {
+	id = 4980
+	random = no
+	country = ENG
+	name = "EVENTNAME4980"
+	desc = "EVENTHIST4980"
+	style = 4
+
+	action_a ={			#Ok
+		name = "ACTIONNAME4980A"
+		command = { }
+	}
+}
+
+#The American Colonial Policy#
+# 20 Nov 2001, State Machine - Added condition that USA should not exist,
+# and that ENG chose regressive policies in event 3047, and a trigger for
+# the prerequisite event of the next revolt event in the USA revolt progression
+# if the action chosen moves the revolt forward.
+
+event = {
+	id = 3048
+	trigger = {
+		NOT = {
+			domestic = { type = innovative value = 10 }
+		}
+		NOT = { exists = USA }
+		event = 4980
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME3048"
+	desc = "EVENTHIST3048"
+	style = 4
+
+	date = { day = 1 month = january year = 1770 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1771 }
+
+	action_a ={			#Abolish all Tolls, but the Tea Toll#
+		name = "ACTIONNAME3048A"
+		command = { type = province_revoltrisk which = 54 value = 3 }
+		command = { type = province_revoltrisk which = 62 value = 3 }
+		command = { type = province_revoltrisk which = 63 value = 3 }
+		command = { type = province_revoltrisk which = 64 value = 3 }
+		command = { type = province_revoltrisk which = 68 value = 3 }
+		command = { type = province_revoltrisk which = 85 value = 3 }
+		command = { type = province_revoltrisk which = 86 value = 3 }
+		command = { type = province_revoltrisk which = 87 value = 3 }
+		command = { type = province_revoltrisk which = 88 value = 3 }
+		command = { type = province_revoltrisk which = 100 value = 3 }
+		command = { type = province_revoltrisk which = 101 value = 3 }
+		command = { type = province_revoltrisk which = 102 value = 3 }
+		command = { type = province_revoltrisk which = 103 value = 3 }
+		command = { type = treasury value = -500 }
+		command = { type = stability value = -2 }
+		command = { type = trigger which = 4981 }
+	}
+
+	action_b ={			#Keep all Tolls#
+		name = "ACTIONNAME3048B"
+		command = { type = province_revoltrisk which = 54 value = 8 }
+		command = { type = province_revoltrisk which = 62 value = 8 }
+		command = { type = province_revoltrisk which = 63 value = 8 }
+		command = { type = province_revoltrisk which = 64 value = 8 }
+		command = { type = province_revoltrisk which = 68 value = 8 }
+		command = { type = province_revoltrisk which = 85 value = 8 }
+		command = { type = province_revoltrisk which = 86 value = 8 }
+		command = { type = province_revoltrisk which = 87 value = 8 }
+		command = { type = province_revoltrisk which = 88 value = 8 }
+		command = { type = province_revoltrisk which = 100 value = 8 }
+		command = { type = province_revoltrisk which = 101 value = 8 }
+		command = { type = province_revoltrisk which = 102 value = 8 }
+		command = { type = province_revoltrisk which = 103 value = 8 }
+		command = { type = vp value = 100 }
+		command = { type = stability value = 1 }
+		command = { type = trigger which = 4981 }
+	}
+
+	action_c ={			#Abolish all Tolls#
+		name = "ACTIONNAME3048C"
+		command = { type = province_revoltrisk which = 54 value = -7 }
+		command = { type = province_revoltrisk which = 62 value = -7 }
+		command = { type = province_revoltrisk which = 63 value = -7 }
+		command = { type = province_revoltrisk which = 64 value = -7 }
+		command = { type = province_revoltrisk which = 68 value = -7 }
+		command = { type = province_revoltrisk which = 85 value = -7 }
+		command = { type = province_revoltrisk which = 86 value = -7 }
+		command = { type = province_revoltrisk which = 87 value = -7 }
+		command = { type = province_revoltrisk which = 88 value = -7 }
+		command = { type = province_revoltrisk which = 100 value = -7 }
+		command = { type = province_revoltrisk which = 101 value = -7 }
+		command = { type = province_revoltrisk which = 102 value = -7 }
+		command = { type = province_revoltrisk which = 103 value = -7 }
+		command = { type = vp value = -100 }
+		command = { type = treasury value = -800 }
+		command = { type = stability value = -4 }
+	}
+}
+
+#The American Colonial Policy#
+# 20 Nov 2001, State Machine - New event to reflect ENG choosing regressive
+# policies that are not liked in the American colonies.
+
+event = {
+	id = 4981
+	random = no
+	country = ENG
+	name = "EVENTNAME4981"
+	desc = "EVENTHIST4981"
+	style = 4
+
+	action_a = {			#Ok
+		name = "ACTIONNAME4981A"
+		command = { }
+	}
+}
+
+#The American Revolution#
+# 20 Nov 2001, State Machine - Added condition that USA should not exist,
+# and that ENG chose regressive policies in event 3048.
+
+event = {
+	id = 3049
+	trigger = {
+		NOT = {
+			domestic = { type = innovative value = 10 }
+		}
+		NOT = { exists = USA }
+		event = 4981
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME3049"
+	desc = "EVENTHIST3049"
+	style = "3049"
+
+	date = { day = 1 month = january year = 1773 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1775 }
+
+	action_a ={			#Revoke the Constitutional Freedom of the Colonies#
+		name = "ACTIONNAME3049A"
+		command = { type = province_revoltrisk which = 54 value = 10 }
+		command = { type = province_revoltrisk which = 55 value = 10 }
+		command = { type = province_revoltrisk which = 61 value = 10 }
+		command = { type = province_revoltrisk which = 62 value = 10 }
+		command = { type = province_revoltrisk which = 63 value = 10 }
+		command = { type = province_revoltrisk which = 64 value = 10 }
+		command = { type = province_revoltrisk which = 65 value = 10 }
+		command = { type = province_revoltrisk which = 66 value = 10 }
+		command = { type = province_revoltrisk which = 68 value = 10 }
+		command = { type = province_revoltrisk which = 69 value = 10 }
+		command = { type = province_revoltrisk which = 84 value = 10 }
+		command = { type = province_revoltrisk which = 85 value = 10 }
+		command = { type = province_revoltrisk which = 86 value = 10 }
+		command = { type = province_revoltrisk which = 87 value = 10 }
+		command = { type = province_revoltrisk which = 88 value = 10 }
+		command = { type = province_revoltrisk which = 89 value = 10 }
+		command = { type = province_revoltrisk which = 90 value = 10 }
+		command = { type = province_revoltrisk which = 91 value = 10 }
+		command = { type = province_revoltrisk which = 100 value = 10 }
+		command = { type = province_revoltrisk which = 101 value = 10 }
+		command = { type = province_revoltrisk which = 102 value = 10 }
+		command = { type = province_revoltrisk which = 103 value = 10 }
+		command = { type = province_revoltrisk which = 104 value = 10 }
+		command = { type = province_revoltrisk which = 112 value = 10 }
+		command = { type = revolt value = USR which = 85 }
+		command = { type = revolt value = USR which = 86 }
+		command = { type = revolt value = USR which = 87 }
+		command = { type = revolt value = USR which = 102 }
+		command = { type = revolt value = USR which = 103 }
+		command = { type = revolt value = USR which = 103 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = relation which = FRA value = -100 }
+	}
+
+	action_b ={			#Install British Administration and Judges#
+		name = "ACTIONNAME3049B"
+		command = { type = province_revoltrisk which = 54 value = 16 }
+		command = { type = province_revoltrisk which = 55 value = 16 }
+		command = { type = province_revoltrisk which = 61 value = 16 }
+		command = { type = province_revoltrisk which = 62 value = 16 }
+		command = { type = province_revoltrisk which = 63 value = 16 }
+		command = { type = province_revoltrisk which = 64 value = 16 }
+		command = { type = province_revoltrisk which = 65 value = 16 }
+		command = { type = province_revoltrisk which = 66 value = 16 }
+		command = { type = province_revoltrisk which = 68 value = 16 }
+		command = { type = province_revoltrisk which = 69 value = 16 }
+		command = { type = province_revoltrisk which = 84 value = 16 }
+		command = { type = province_revoltrisk which = 85 value = 16 }
+		command = { type = province_revoltrisk which = 86 value = 16 }
+		command = { type = province_revoltrisk which = 87 value = 16 }
+		command = { type = province_revoltrisk which = 88 value = 16 }
+		command = { type = province_revoltrisk which = 89 value = 16 }
+		command = { type = province_revoltrisk which = 90 value = 16 }
+		command = { type = province_revoltrisk which = 91 value = 16 }
+		command = { type = province_revoltrisk which = 100 value = 16 }
+		command = { type = province_revoltrisk which = 101 value = 16 }
+		command = { type = province_revoltrisk which = 102 value = 16 }
+		command = { type = province_revoltrisk which = 103 value = 16 }
+		command = { type = province_revoltrisk which = 104 value = 16 }
+		command = { type = province_revoltrisk which = 112 value = 16 }
+		command = { type = revolt value = USR which = 102 }
+		command = { type = revolt value = USR which = 103 }
+		command = { type = revolt value = USR which = 103 }
+		command = { type = revolt value = USR which = 103 }
+		command = { type = revolt value = USR which = 68 }
+		command = { type = revolt value = USR which = 85 }
+		command = { type = revolt value = USR which = 85 }
+		command = { type = revolt value = USR which = 86 }
+		command = { type = revolt value = USR which = 87 }
+		command = { type = revolt value = USR which = 87 }
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = INNOVATIVE value = -3 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = stability value = 1 }
+	}
+
+	action_c ={			#Start Negotiations for Self-Determination#
+		name = "ACTIONNAME3049C"
+		command = { type = province_revoltrisk which = 54 value = -15 }
+		command = { type = province_revoltrisk which = 62 value = -15 }
+		command = { type = province_revoltrisk which = 63 value = -15 }
+		command = { type = province_revoltrisk which = 64 value = -15 }
+		command = { type = province_revoltrisk which = 68 value = -15 }
+		command = { type = province_revoltrisk which = 85 value = -15 }
+		command = { type = province_revoltrisk which = 86 value = -15 }
+		command = { type = province_revoltrisk which = 87 value = -15 }
+		command = { type = province_revoltrisk which = 88 value = -15 }
+		command = { type = province_revoltrisk which = 100 value = -15 }
+		command = { type = province_revoltrisk which = 101 value = -15 }
+		command = { type = province_revoltrisk which = 102 value = -15 }
+		command = { type = province_revoltrisk which = 103 value = -15 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -3 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = stability value = -3 }
+	}
+}
+
+#The Declaration of Independence#
+# 20 Nov 2001, BiB, State Machine - New event of the consequence of the Continental
+# Congress forming a united front.
+
+event = {
+	id = 4982
+	random = no
+	country = ENG
+	name = "EVENTNAME4982"
+	desc = "EVENTHIST4982"
+	style = "4993"
+
+	action_a ={			#Drat!#
+		name = "ACTIONNAME4982A"
+		command = { type = cedeprovince which = USA value = 54 } # Savannah
+		command = { type = cedeprovince which = USA value = 55 } # Alabama (Georgia)
+		command = { type = cedeprovince which = USA value = 61 } # Alleghany
+		command = { type = cedeprovince which = USA value = 62 } # Carolina
+		command = { type = cedeprovince which = USA value = 63 } # Santee
+		command = { type = cedeprovince which = USA value = 64 } # Roanoke
+		command = { type = cedeprovince which = USA value = 65 } # Catawba
+		command = { type = cedeprovince which = USA value = 66 } # Appalache
+		command = { type = cedeprovince which = USA value = 68 } # Chesapeake
+		command = { type = cedeprovince which = USA value = 69 } # Powhatan
+		command = { type = cedeprovince which = USA value = 70 } # Shenandoah
+		command = { type = cedeprovince which = USA value = 85 } # Susquehanna
+		command = { type = cedeprovince which = USA value = 86 } # Delaware
+		command = { type = cedeprovince which = USA value = 87 } # Manhattan
+		command = { type = cedeprovince which = USA value = 88 } # Catskill
+		command = { type = cedeprovince which = USA value = 89 } # Oswego
+		command = { type = cedeprovince which = USA value = 100 } # Adirondak
+		command = { type = cedeprovince which = USA value = 101 } # Sebago
+		command = { type = cedeprovince which = USA value = 102 } # Connecticut
+		command = { type = cedeprovince which = USA value = 103 } # Massachussetts
+		command = { type = cedeprovince which = USA value = 104 } # Penobscot
+		command = { type = cedeprovince which = USA value = 112 } # Bangor
+	}
+}
+
+#Treaty of Paris#
+#20 Nov 2001, State Machine - New event. The USA has won (ie survived)
+
+event = {
+
+	id = 4983
+	trigger = {
+		event = 4994
+		NOT = { war = { country = USA country = ENG } }
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME4983"
+	desc = "EVENTHIST4983"
+	style = "4983"
+
+	date = { day = 1 month = january year = 1773 }
+	offset = 0
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={			#We managed to keep something.#
+		name = "ACTIONNAME4983A"
+		command = { type = province_revoltrisk which = 54 value = -35 }
+		command = { type = province_revoltrisk which = 55 value = -35 }
+		command = { type = province_revoltrisk which = 61 value = -35 }
+		command = { type = province_revoltrisk which = 62 value = -35 }
+		command = { type = province_revoltrisk which = 63 value = -35 }
+		command = { type = province_revoltrisk which = 64 value = -35 }
+		command = { type = province_revoltrisk which = 65 value = -35 }
+		command = { type = province_revoltrisk which = 66 value = -35 }
+		command = { type = province_revoltrisk which = 68 value = -35 }
+		command = { type = province_revoltrisk which = 69 value = -35 }
+		command = { type = province_revoltrisk which = 84 value = -35 }
+		command = { type = province_revoltrisk which = 85 value = -35 }
+		command = { type = province_revoltrisk which = 86 value = -35 }
+		command = { type = province_revoltrisk which = 87 value = -35 }
+		command = { type = province_revoltrisk which = 88 value = -35 }
+		command = { type = province_revoltrisk which = 89 value = -35 }
+		command = { type = province_revoltrisk which = 90 value = -35 }
+		command = { type = province_revoltrisk which = 91 value = -35 }
+		command = { type = province_revoltrisk which = 100 value = -35 }
+		command = { type = province_revoltrisk which = 101 value = -35 }
+		command = { type = province_revoltrisk which = 102 value = -35 }
+		command = { type = province_revoltrisk which = 103 value = -35 }
+		command = { type = province_revoltrisk which = 104 value = -35 }
+		command = { type = province_revoltrisk which = 112 value = -35 }
+		command = { type = vp value = -200 }
+		command = { type = stability value = -1 }
+	}
+}
+
+
+#Treaty of Paris#
+#20 Nov 2001, State Machine - New event. We lost big.
+
+event = {
+	id = 4984
+	trigger = {
+		event = 4995
+		NOT = { war = { country = USA country = ENG } }
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME4984"
+	desc = "EVENTHIST4984"
+	style = "4983"
+
+	date = { day = 1 month = january year = 1773 }
+	offset = 0
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={			#We lost the Struggle!#
+		name = "ACTIONNAME4984A"
+		command = { type = province_revoltrisk which = 54 value = -35 }
+		command = { type = province_revoltrisk which = 55 value = -35 }
+		command = { type = province_revoltrisk which = 61 value = -35 }
+		command = { type = province_revoltrisk which = 62 value = -35 }
+		command = { type = province_revoltrisk which = 63 value = -35 }
+		command = { type = province_revoltrisk which = 64 value = -35 }
+		command = { type = province_revoltrisk which = 65 value = -35 }
+		command = { type = province_revoltrisk which = 66 value = -35 }
+		command = { type = province_revoltrisk which = 68 value = -35 }
+		command = { type = province_revoltrisk which = 69 value = -35 }
+		command = { type = province_revoltrisk which = 84 value = -35 }
+		command = { type = province_revoltrisk which = 85 value = -35 }
+		command = { type = province_revoltrisk which = 86 value = -35 }
+		command = { type = province_revoltrisk which = 87 value = -35 }
+		command = { type = province_revoltrisk which = 88 value = -35 }
+		command = { type = province_revoltrisk which = 89 value = -35 }
+		command = { type = province_revoltrisk which = 90 value = -35 }
+		command = { type = province_revoltrisk which = 91 value = -35 }
+		command = { type = province_revoltrisk which = 100 value = -35 }
+		command = { type = province_revoltrisk which = 101 value = -35 }
+		command = { type = province_revoltrisk which = 102 value = -35 }
+		command = { type = province_revoltrisk which = 103 value = -35 }
+		command = { type = province_revoltrisk which = 104 value = -35 }
+		command = { type = province_revoltrisk which = 112 value = -35 }
+		command = { type = cedeprovince which = USA value = 59 } # Illinois - Northwest Territory
+		command = { type = cedeprovince which = USA value = 60 } # Miamis
+		command = { type = cedeprovince which = USA value = 71 } # Erie
+		command = { type = cedeprovince which = USA value = 72 } # Hindua
+		command = { type = cedeprovince which = USA value = 73 } # Fox
+		command = { type = cedeprovince which = USA value = 74 } # Milwaukee
+		command = { type = cedeprovince which = USA value = 77 } # Mesabi
+		command = { type = cedeprovince which = USA value = 78 } # Duluth
+		command = { type = cedeprovince which = USA value = 79 } # Wisconsin
+		command = { type = cedeprovince which = USA value = 80 } # Oshkosh
+		command = { type = cedeprovince which = USA value = 81 } # Michilimakinak
+		command = { type = cedeprovince which = USA value = 82 } # Detroit
+		command = { type = cedeprovince which = USA value = 83 } # Irondekoit
+		command = { type = cedeprovince which = USA value = 93 } # Sault
+		command = { type = cedeprovince which = SPA value = 46 } # Biloxi - British Florida
+		command = { type = cedeprovince which = SPA value = 47 } # Mobile
+		command = { type = cedeprovince which = SPA value = 48 } # Tallahassee
+		command = { type = cedeprovince which = SPA value = 49 } # Seminole
+		command = { type = cedeprovince which = SPA value = 50 } # Everglades
+		command = { type = vp value = -400 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#William Pitt the Younger#
+event = {
+
+	id = 3050
+	random = no
+	country = ENG
+	name = "EVENTNAME3050"
+	desc = "EVENTHIST3050"
+	style = "3050"
+
+	date = { day = 1 month = january year = 1783 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1784 }
+
+
+	action_a ={			#An Excellent Minister!#
+		name = "ACTIONNAME3050A"
+		command = { type = DIP which = 4 value = 240 }
+		command = { type = ADM which = 3 value = 240 }
+		command = { type = MIL which = 3 value = 240 }
+		command = { type = stability value = 3 }
+	}
+}
+
+#Loyalists to Canada#
+#20 Nov 2001, State Machine - Changed to trigger based on US winning.
+#13 Feb 2002, Viper37 - Corrected to not assign anglosaxon to historically French culture provinces.
+#27 May 2002, AndrewT - removed anglosaxon culture from prov 106 and halved its other benefits
+
+event = {
+	id = 3051
+	trigger = { event = 4984 }
+	random = no
+	country = ENG
+	name = "EVENTNAME3051"
+	desc = "EVENTHIST3051"
+	style = 4
+
+	date = { day = 1 month = january year = 1773 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1788 }
+
+	action_a ={			#Loyalists we welcome you!#
+		name = "ACTIONNAME3051A"
+		command = { type = cityname which = 92 value = "Fort Malden" }
+		command = { type = provincetax which = 92 value = 1 }
+		command = { type = populationpercent which = 92 value = 15 }
+		command = { type = provinceculture which = 92 value = anglosaxon }
+		command = { type = cityname which = 96 value = "Sudbury" }
+		command = { type = provincetax which = 96 value = 1 }
+		command = { type = populationpercent which = 96 value = 15 }
+		command = { type = provinceculture which = 96 value = anglosaxon }
+		command = { type = cityname which = 97 value = "York" }
+		command = { type = provincetax which = 97 value = 2 }
+		command = { type = populationpercent which = 97 value = 25 }
+		command = { type = provinceculture which = 97 value = anglosaxon }
+		command = { type = cityname which = 98 value = "Kingston" }
+		command = { type = provincetax which = 98 value = 2 }
+		command = { type = populationpercent which = 98 value = 25 }
+		command = { type = provinceculture which = 98 value = anglosaxon }
+		command = { type = provincetax which = 105 value = 1 }
+		command = { type = populationpercent which = 105 value = 15 }
+		command = { type = provincetax which = 106 value = 1 }
+		command = { type = populationpercent which = 106 value = 15 }
+		command = { type = cityname which = 107 value = "Ottawa" }
+		command = { type = provincetax which = 107 value = 2 }
+		command = { type = populationpercent which = 107 value = 25 }
+		command = { type = provinceculture which = 107 value = anglosaxon }
+		command = { type = provincetax which = 108 value = 1 }
+		command = { type = populationpercent which = 108 value = 15 }
+		command = { type = provincetax which = 109 value = 1 }
+		command = { type = populationpercent which = 109 value = 15 }
+		command = { type = provincetax which = 110 value = 1 }
+		command = { type = populationpercent which = 110 value = 15 }
+		command = { type = provincetax which = 111 value = 1 }
+		command = { type = populationpercent which = 111 value = 15 }
+		command = { type = cityname which = 113 value = "Fredericks" }
+		command = { type = provincetax which = 113 value = 1 }
+		command = { type = populationpercent which = 113 value = 15 }
+		command = { type = provinceculture which = 113 value = anglosaxon }
+		command = { type = cityname which = 114 value = "Gaspay" }
+		command = { type = provincetax which = 114 value = 1 }
+		command = { type = populationpercent which = 114 value = 15 }
+		command = { type = provinceculture which = 114 value = anglosaxon }
+		command = { type = cityname which = 115 value = "Amherst" }
+		command = { type = provincetax which = 115 value = 2 }
+		command = { type = populationpercent which = 115 value = 25 }
+		command = { type = provinceculture which = 115 value = anglosaxon }
+		command = { type = cityname which = 116 value = "Halifax" }
+		command = { type = provincetax which = 116 value = 2 }
+		command = { type = populationpercent which = 116 value = 25 }
+		command = { type = provinceculture which = 116 value = anglosaxon }
+		command = { type = gainmanufactory which = -1 value = goods where = Quebec }
+		command = { type = gainmanufactory which = -1 value = weapons where = "Grand Lacs" }
+		command = { type = stability value = 2 }
+	}
+}
+
+#Small version: normal USA victory, fewer Loyalists flee north
+event = {
+	id = 4131
+	trigger = { event = 4983 }
+	random = no
+	country = ENG
+	name = "EVENTNAME3051"
+	desc = "EVENTHIST3051"
+
+	date = { day = 1 month = january year = 1773 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1788 }
+
+	action_a ={			#Loyalists we welcome you!#
+		name = "ACTIONNAME3051A"
+		command = { type = cityname which = 92 value = "Fort Malden" }
+		command = { type = provincetax which = 92 value = 1 }
+		command = { type = populationpercent which = 92 value = 15 }
+		command = { type = provinceculture which = 92 value = anglosaxon }
+		command = { type = cityname which = 96 value = "Sudbury" }
+		command = { type = provincetax which = 96 value = 1 }
+		command = { type = populationpercent which = 96 value = 15 }
+		command = { type = provinceculture which = 96 value = anglosaxon }
+		command = { type = cityname which = 97 value = "York" }
+		command = { type = provincetax which = 97 value = 2 }
+		command = { type = populationpercent which = 97 value = 25 }
+		command = { type = provinceculture which = 97 value = anglosaxon }
+		command = { type = cityname which = 98 value = "Kingston" }
+		command = { type = provincetax which = 98 value = 2 }
+		command = { type = populationpercent which = 98 value = 25 }
+		command = { type = provinceculture which = 98 value = anglosaxon }
+		command = { type = cityname which = 107 value = "Ottawa" }
+		command = { type = provincetax which = 107 value = 2 }
+		command = { type = populationpercent which = 107 value = 25 }
+		command = { type = provinceculture which = 107 value = anglosaxon }
+		command = { type = cityname which = 115 value = "Amherst" }
+		command = { type = provincetax which = 115 value = 2 }
+		command = { type = populationpercent which = 115 value = 25 }
+		command = { type = provinceculture which = 115 value = anglosaxon }
+		command = { type = cityname which = 116 value = "Halifax" }
+		command = { type = provincetax which = 116 value = 2 }
+		command = { type = populationpercent which = 116 value = 25 }
+		command = { type = provinceculture which = 116 value = anglosaxon }
+		command = { type = gainmanufactory which = -1 value = goods where = Quebec }
+		command = { type = stability value = 1 }
+	}
+}
+
+#We win!#
+#20 Nov 2001, State Machine - New.
+
+event = {
+	id = 4985
+	trigger = {
+		OR = { event = 4982 event = 4986 }
+		NOT = { exists = USA }
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME4985"
+	desc = "EVENTHIST4985"
+	style = 4
+
+	date = { day = 1 month = january year = 1773 }
+	offset = 0
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={			#We won the Struggle!#
+		name = "ACTIONNAME4985A"
+		command = { type = province_revoltrisk which = 54 value = -35 }
+		command = { type = province_revoltrisk which = 55 value = -35 }
+		command = { type = province_revoltrisk which = 61 value = -35 }
+		command = { type = province_revoltrisk which = 62 value = -35 }
+		command = { type = province_revoltrisk which = 63 value = -35 }
+		command = { type = province_revoltrisk which = 64 value = -35 }
+		command = { type = province_revoltrisk which = 65 value = -35 }
+		command = { type = province_revoltrisk which = 66 value = -35 }
+		command = { type = province_revoltrisk which = 68 value = -35 }
+		command = { type = province_revoltrisk which = 69 value = -35 }
+		command = { type = province_revoltrisk which = 84 value = -35 }
+		command = { type = province_revoltrisk which = 85 value = -35 }
+		command = { type = province_revoltrisk which = 86 value = -35 }
+		command = { type = province_revoltrisk which = 87 value = -35 }
+		command = { type = province_revoltrisk which = 88 value = -35 }
+		command = { type = province_revoltrisk which = 89 value = -35 }
+		command = { type = province_revoltrisk which = 90 value = -35 }
+		command = { type = province_revoltrisk which = 91 value = -35 }
+		command = { type = province_revoltrisk which = 100 value = -35 }
+		command = { type = province_revoltrisk which = 101 value = -35 }
+		command = { type = province_revoltrisk which = 102 value = -35 }
+		command = { type = province_revoltrisk which = 103 value = -35 }
+		command = { type = province_revoltrisk which = 104 value = -35 }
+		command = { type = province_revoltrisk which = 112 value = -35 }
+		command = { type = vp value = 400 }
+		command = { type = stability value = 3 }
+	}
+}
+
+#The North American Union#
+# 20 Nov 2001, State Machine - Changed offset. Revolt risk reduction probably not necessary,
+# but keeping it in.
+
+event = {
+	id = 3052
+	trigger = {
+		event = 3342
+		NOT = { exists = USA }
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME3052"
+	desc = "EVENTHIST3052"
+	style = 4
+
+	date = { day = 1 month = january year = 1790 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1791 }
+
+	action_a ={			#We won the Struggle!#
+		name = "ACTIONNAME3052A"
+		command = { type = province_revoltrisk which = 54 value = -35 }
+		command = { type = province_revoltrisk which = 55 value = -35 }
+		command = { type = province_revoltrisk which = 61 value = -35 }
+		command = { type = province_revoltrisk which = 62 value = -35 }
+		command = { type = province_revoltrisk which = 63 value = -35 }
+		command = { type = province_revoltrisk which = 64 value = -35 }
+		command = { type = province_revoltrisk which = 65 value = -35 }
+		command = { type = province_revoltrisk which = 66 value = -35 }
+		command = { type = province_revoltrisk which = 68 value = -35 }
+		command = { type = province_revoltrisk which = 69 value = -35 }
+		command = { type = province_revoltrisk which = 84 value = -35 }
+		command = { type = province_revoltrisk which = 85 value = -35 }
+		command = { type = province_revoltrisk which = 86 value = -35 }
+		command = { type = province_revoltrisk which = 87 value = -35 }
+		command = { type = province_revoltrisk which = 88 value = -35 }
+		command = { type = province_revoltrisk which = 89 value = -35 }
+		command = { type = province_revoltrisk which = 90 value = -35 }
+		command = { type = province_revoltrisk which = 91 value = -35 }
+		command = { type = province_revoltrisk which = 100 value = -35 }
+		command = { type = province_revoltrisk which = 101 value = -35 }
+		command = { type = province_revoltrisk which = 102 value = -35 }
+		command = { type = province_revoltrisk which = 103 value = -35 }
+		command = { type = province_revoltrisk which = 104 value = -35 }
+		command = { type = province_revoltrisk which = 112 value = -35 }
+		command = { type = vp value = 400 }
+		command = { type = stability value = 3 }
+	}
+}
+
+#The American colonies have revolted, but are in a muddle!#
+# 20 Nov 2001, State Machine - New event of the consequence of the Continental
+# Congress being unable to create a united front. Most revolt risk removed.
+
+event = {
+	id = 4986
+	random = no
+	country = ENG
+	name = "EVENTNAME4986"
+	desc = "EVENTHIST4986"
+	style = 4
+
+	action_a ={			#Oh well#
+		name = "ACTIONNAME4986A"
+		command = { type = province_revoltrisk which = 54 value = -12 }
+		command = { type = province_revoltrisk which = 55 value = -12 }
+		command = { type = province_revoltrisk which = 61 value = -12 }
+		command = { type = province_revoltrisk which = 62 value = -12 }
+		command = { type = province_revoltrisk which = 63 value = -12 }
+		command = { type = province_revoltrisk which = 64 value = -12 }
+		command = { type = province_revoltrisk which = 65 value = -12 }
+		command = { type = province_revoltrisk which = 66 value = -12 }
+		command = { type = province_revoltrisk which = 68 value = -12 }
+		command = { type = province_revoltrisk which = 69 value = -12 }
+		command = { type = province_revoltrisk which = 84 value = -12 }
+		command = { type = province_revoltrisk which = 85 value = -12 }
+		command = { type = province_revoltrisk which = 86 value = -12 }
+		command = { type = province_revoltrisk which = 87 value = -12 }
+		command = { type = province_revoltrisk which = 88 value = -12 }
+		command = { type = province_revoltrisk which = 89 value = -12 }
+		command = { type = province_revoltrisk which = 90 value = -12 }
+		command = { type = province_revoltrisk which = 91 value = -12 }
+		command = { type = province_revoltrisk which = 100 value = -12 }
+		command = { type = province_revoltrisk which = 101 value = -12 }
+		command = { type = province_revoltrisk which = 102 value = -12 }
+		command = { type = province_revoltrisk which = 103 value = -12 }
+		command = { type = province_revoltrisk which = 104 value = -12 }
+		command = { type = province_revoltrisk which = 112 value = -12 }
+	}
+}
+
+#Revolt sentiment cools
+# 20 Nov 2001, State Machine - New event to reduce revolt risk if there is no USA
+# after some time, and the historical path has not been followed.
+
+event = {
+	id = 4987
+	trigger = { NOT = { event = 4982 } }
+	random = no
+	country = ENG
+	name = "EVENTNAME4987"
+	desc = "EVENTHIST4987"
+	style = 4
+
+	date = { day = 1 month = january year = 1785 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1790 }
+
+	action_a ={			#Everyone loses interest#
+		name = "ACTIONNAME3052A"
+		command = { type = province_revoltrisk which = 54 value = -35 }
+		command = { type = province_revoltrisk which = 55 value = -35 }
+		command = { type = province_revoltrisk which = 61 value = -35 }
+		command = { type = province_revoltrisk which = 62 value = -35 }
+		command = { type = province_revoltrisk which = 63 value = -35 }
+		command = { type = province_revoltrisk which = 64 value = -35 }
+		command = { type = province_revoltrisk which = 65 value = -35 }
+		command = { type = province_revoltrisk which = 66 value = -35 }
+		command = { type = province_revoltrisk which = 68 value = -35 }
+		command = { type = province_revoltrisk which = 69 value = -35 }
+		command = { type = province_revoltrisk which = 84 value = -35 }
+		command = { type = province_revoltrisk which = 85 value = -35 }
+		command = { type = province_revoltrisk which = 86 value = -35 }
+		command = { type = province_revoltrisk which = 87 value = -35 }
+		command = { type = province_revoltrisk which = 88 value = -35 }
+		command = { type = province_revoltrisk which = 89 value = -35 }
+		command = { type = province_revoltrisk which = 90 value = -35 }
+		command = { type = province_revoltrisk which = 91 value = -35 }
+		command = { type = province_revoltrisk which = 100 value = -35 }
+		command = { type = province_revoltrisk which = 101 value = -35 }
+		command = { type = province_revoltrisk which = 102 value = -35 }
+		command = { type = province_revoltrisk which = 103 value = -35 }
+		command = { type = province_revoltrisk which = 104 value = -35 }
+		command = { type = province_revoltrisk which = 112 value = -35 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#The Bank Restriction Act#
+event = {
+
+	id = 3053
+	trigger = {	exists = FRA }
+	random = no
+	country = ENG
+	name = "EVENTNAME3053"
+	desc = "EVENTHIST3053"
+	style = 4
+
+	date = { day = 1 month = january year = 1797 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1798 }
+
+	action_a ={			#Issue the Act#
+		name = "ACTIONNAME3053A"
+		command = { type = loansize which = 200 }
+		command = { type = inflation value = -5 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={			#Don't issue the Act#
+		name = "ACTIONNAME3053B"
+		command = { type = infra value = 1000 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#The Corn Laws#
+event = {
+
+	id = 3054
+	random = no
+	country = ENG
+	name = "EVENTNAME3054"
+	desc = "EVENTHIST3054"
+	style = 5
+
+	date = { day = 1 month = january year = 1815 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1816 }
+
+	action_a ={			#Issue the Act#
+		name = "ACTIONNAME3054A"
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = MERCANTILISM value = 1 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={			#Don't issue the Act#
+		name = "Don't issue the Act"
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = treasury value = -1000 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#The Meuthen Agreement#
+event = {
+
+	id = 3093			#Triggered by POR3275#
+	random = no
+	country = ENG
+	name = "EVENTNAME3093"
+	desc = "EVENTHIST3093"
+	style = 4
+
+	action_a ={			#Accept the Agreement#
+		name = "ACTIONNAME3093A"
+		command = { type = vassal which = POR }
+		command = { type = givetrade which = POR }
+		command = { type = relation which = POR value = 150 }
+		command = { type = provincetax which = 241 value = 1 }
+		command = { type = provincetax which = 242 value = 1 }
+		command = { type = provincetax which = 244 value = 1 }
+		command = { type = provincetax which = 245 value = 1 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={			#Denounce the Agreement#
+		name = "ACTIONNAME3093B"
+		command = { type = provincetax which = 250 value = 1 }
+		command = { type = relation which = POR value = -100 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#The Succession in Provence#
+event = {
+
+	id = 3314			#Triggered by PRO3607#
+	random = no
+	country = ENG
+	name = "EVENTNAME3314"
+	desc = "EVENTHIST3314"
+	style = 1
+
+	action_a ={			#I will be the Duke of Provence#
+		name = "ACTIONNAME3314A"
+		command = { type = vassal which = PRO }
+		command = { type = alliance which = PRO }
+		command = { type = stability value = 1 }
+		command = { type = relation which = ARG value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = addcore_claim which = 406 } # Provence
+	}
+}
+
+#Colonial Defense#
+event = {
+
+	id = 3343
+	random = no
+	country = ENG
+	name = "EVENTNAME3343"
+	desc = "EVENTHIST3343"
+	style = 3
+
+	date = { day = 1 month = january year = 1615 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1630 }
+
+	action_a ={			#Leave it to the Colonial Militia#
+		name = "ACTIONNAME3343A"
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={			#Invest in expensive Perimeter Defense#
+		name = "ACTIONNAME3343B"
+		command = { type = sleepevent which = 3346 }
+		command = { type = treasury value = -300 }
+		command = { type = fortress which = -1016 value = 1 } #North America
+		command = { type = fortress which = -1016 value = 1 } #North America
+	}
+}
+
+#Colonial Defense#
+event = {
+
+	id = 3344
+	random = no
+	country = ENG
+	name = "EVENTNAME3344"
+	desc = "EVENTHIST3344"
+	style = 3
+
+	date = { day = 1 month = january year = 1645 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1660 }
+
+	action_a ={			#Leave it to the Colonial Militia#
+		name = "ACTIONNAME3344A"
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={			#Invest in expensive Perimeter Defense#
+		name = "ACTIONNAME3344B"
+		command = { type = sleepevent which = 3347 }
+		command = { type = treasury value = -500 }
+		command = { type = fortress which = -1016 value = 1 } #North America
+		command = { type = fortress which = -1016 value = 1 } #North America
+		command = { type = fortress which = -1016 value = 1 } #North America
+	}
+}
+
+#Colonial Defense#
+event = {
+
+	id = 3345
+	random = no
+	country = ENG
+	name = "EVENTNAME3345"
+	desc = "EVENTHIST3345"
+	style = 3
+
+	date = { day = 1 month = january year = 1675 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1690 }
+
+	action_a ={			#Invest in expensive Perimeter Defense#
+		name = "ACTIONNAME3345A"
+		command = { type = sleepevent which = 3348 }
+		command = { type = treasury value = -800 }
+		command = { type = fortress which = -4 value = 1 }
+		command = { type = fortress which = -4 value = 1 }
+		command = { type = fortress which = -4 value = 1 }
+		command = { type = fortress which = -4 value = 1 }
+		command = { type = fortress which = -4 value = 1 }
+	}
+
+	action_b ={			#Leave it to the Colonial Militia#
+		name = "ACTIONNAME3345B"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Indian Raids#
+event = {
+
+	id = 3346
+	random = no
+	country = ENG
+	name = "EVENTNAME3346"
+	desc = "EVENTHIST3346"
+	style = 3
+
+	date = { day = 2 month = january year = 1620 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1635 }
+
+	action_a ={			#Oh No!#
+		name = "ACTIONNAME3346A"
+		command = { type = colonialrevolt which = -1 }
+		command = { type = colonialrevolt which = -4 }
+		command = { type = colonialrevolt which = -4 }
+	}
+}
+
+#Indian Raids#
+event = {
+
+	id = 3347
+	random = no
+	country = ENG
+	name = "EVENTNAME3347"
+	desc = "EVENTHIST3347"
+	style = 3
+
+	date = { day = 2 month = january year = 1650 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1665 }
+
+	action_a ={			#Oh No!#
+		name = "ACTIONNAME3347A"
+		command = { type = colonialrevolt which = -1 }
+		command = { type = colonialrevolt which = -4 }
+		command = { type = colonialrevolt which = -4 }
+	}
+}
+
+#Indian Raids#
+event = {
+
+	id = 3348
+	random = no
+	country = ENG
+	name = "EVENTNAME3348"
+	desc = "EVENTHIST3348"
+	style = 4
+
+	date = { day = 2 month = january year = 1680 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1695 }
+
+	action_a ={			#Oh No!#
+		name = "ACTIONNAME3348A"
+		command = { type = colonialrevolt which = -1 }
+		command = { type = colonialrevolt which = -4 }
+		command = { type = colonialrevolt which = -4 }
+	}
+}
+
+#American Self-assurance Increase#
+# 20 Nov 2001, State Machine - Changed to trigger on 3346, 3347, OR 3348 occurring.
+# Companion events 3350 and 3351 removed.
+
+event = {
+	id = 3349
+	trigger = {
+		OR = { event = 3346 event = 3347 event = 3348 }
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME3349"
+	desc = "EVENTHIST3349"
+	style = 4
+
+	date = { day = 1 month = january year = 1760 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1765 }
+
+	action_a ={			#Ok#
+		name = "ACTIONNAME3349A"
+		command = { type = province_revoltrisk which = 54 value = 2 }
+		command = { type = province_revoltrisk which = 62 value = 2 }
+		command = { type = province_revoltrisk which = 63 value = 2 }
+		command = { type = province_revoltrisk which = 64 value = 2 }
+		command = { type = province_revoltrisk which = 68 value = 2 }
+		command = { type = province_revoltrisk which = 85 value = 2 }
+		command = { type = province_revoltrisk which = 86 value = 2 }
+		command = { type = province_revoltrisk which = 87 value = 2 }
+		command = { type = province_revoltrisk which = 88 value = 2 }
+		command = { type = province_revoltrisk which = 100 value = 2 }
+		command = { type = province_revoltrisk which = 101 value = 2 }
+		command = { type = province_revoltrisk which = 102 value = 2 }
+		command = { type = province_revoltrisk which = 103 value = 2 }
+	}
+}
+
+#Henry VIII's Offer#
+event = {
+      id = 3827
+
+      # Triggered by EIR 3826
+
+      random = no
+      country = ENG
+      name = "EVENTNAME3827"
+      desc = "EVENTHIST3827"
+      style = 2
+
+      action_a ={ #Accept them#
+          name = "ACTIONNAME3827A"
+          command = { type = vassal which = EIR }
+		command = { type = alliance which = EIR }
+		command = { type = stability value = 1 }
+      }
+}
+
+#Henry VIII's Offer#
+event = {
+      id = 3828
+
+      # Triggered by EIR 3826
+
+      random = no
+      country = ENG
+      name = "EVENTNAME3828"
+      desc = "EVENTHIST3828"
+      style = 2
+
+      action_a ={ #We cannot accept this!#
+          name = "ACTIONNAME3828A"
+          command = { type = casusbelli which = EIR value = 60 }
+		command = { type = stability value = -1 }
+      }
+}
+
+#The Dutch Revolt is successful!#
+event = {
+	id = 3872
+	trigger = {
+		exists = HOL
+		NOT = {
+			religion = protestant
+			religion = reformed
+		}
+		OR = {
+			owned = { province = 337 data = -1 }
+			owned = { province = 338 data = -1 }
+			owned = { province = 339 data = -1 }
+			owned = { province = 340 data = -1 }
+			}
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME3872"
+	desc = "EVENTHIST3872"
+	style = 2
+
+	date = { day = 1 month = january year = 1555 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1648 }
+
+	action_a = { # Curses!
+		name = "ACTIONNAME3872A"
+		command = { type = removecore_national which = 337 } # Netherlands
+		command = { type = removecore_national which = 338 }
+		command = { type = removecore_national which = 339 }
+		command = { type = removecore_national which = 340 }
+		command = { type = removecore_national which = 377 }
+		command = { type = removecore_national which = 378 }
+		command = { type = removecore_national which = 379 }
+		command = { type = removecore_national which = 380 }
+		command = { type = removecore_national which = 386 } # Burgundy
+		command = { type = removecore_national which = 387 }
+		command = { type = removecore_national which = 409 }
+		command = { type = cedeprovince which = HOL value = 337 }
+		command = { type = cedeprovince which = HOL value = 338 }
+		command = { type = cedeprovince which = HOL value = 339 }
+		command = { type = cedeprovince which = HOL value = 340 }
+         }
+}
+
+#Dutch Nobility demands General Estates#
+event = {
+
+	id = 3868
+	trigger = {
+		OR = {
+			owned = { province = 337 data = -1 }
+			owned = { province = 338 data = -1 }
+			owned = { province = 339 data = -1 }
+			owned = { province = 340 data = -1 }
+			owned = { province = 377 data = -1 }
+			owned = { province = 378 data = -1 }
+			owned = { province = 379 data = -1 }
+			owned = { province = 380 data = -1 }
+			}
+		AND = {
+			NOT = {
+				domestic = {
+					type = innovative
+					value = 8
+					}
+				}
+			}
+		}
+	random = no
+	country = ENG
+	name = "EVENTNAME3868"
+	desc = "EVENTHIST3868"
+	style = 2
+
+	date = { day = 1 month = january year = 1560 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1571 }
+
+	action_a ={			#No Concessions#
+		name = "ACTIONNAME3868A"
+		command = { type = province_revoltrisk which = 337 value = 10 }
+		command = { type = province_revoltrisk which = 338 value = 10 }
+		command = { type = province_revoltrisk which = 339 value = 10 }
+		command = { type = revolt value = NDR which = 339 } #Holland
+		command = { type = province_revoltrisk which = 340 value = 10 }
+		command = { type = revolt value = NDR which = 340 } #Zeeland
+		command = { type = province_revoltrisk which = 377 value = 10 }
+		command = { type = province_revoltrisk which = 378 value = 10 }
+		command = { type = province_revoltrisk which = 379 value = 10 }
+		command = { type = province_revoltrisk which = 380 value = 10 }
+		command = { type = revolt value = NDR which = 380 } #Flandern
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = treasury value = 300 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={			#Lower the taxes#
+		name = "ACTIONNAME3868B"
+		command = { type = province_revoltrisk which = 337 value = 5 }
+		command = { type = province_revoltrisk which = 338 value = 5 }
+		command = { type = province_revoltrisk which = 339 value = 5 }
+		command = { type = province_revoltrisk which = 340 value = 5 }
+		command = { type = province_revoltrisk which = 377 value = 5 }
+		command = { type = province_revoltrisk which = 378 value = 5 }
+		command = { type = province_revoltrisk which = 379 value = 5 }
+		command = { type = province_revoltrisk which = 380 value = 5 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = treasury value = -500 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#The Duke of York and the Edict of Blood#
+event = {
+
+	id = 3869
+	trigger = {
+		event = 3868
+		NOT = {
+			religion = protestant
+			religion = reformed
+		}
+		OR = {
+			owned = { province = 337 data = -1 }
+			owned = { province = 338 data = -1 }
+			owned = { province = 339 data = -1 }
+			owned = { province = 340 data = -1 }
+			owned = { province = 377 data = -1 }
+			owned = { province = 378 data = -1 }
+			owned = { province = 379 data = -1 }
+			owned = { province = 380 data = -1 }
+			}
+		AND = {
+			NOT = {
+				domestic = {
+					type = innovative
+					value = 8
+					}
+				}
+			}
+		}
+	random = no
+	country = ENG
+	name = "EVENTNAME3869"
+	desc = "EVENTHIST3869"
+	style = 2
+
+	date = { day = 1 month = january year = 1565 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1576 }
+
+	action_a ={			#No Concessions#
+		name = "ACTIONNAME3869A"
+		command = { type = province_revoltrisk which = 337 value = 10 }
+		command = { type = province_revoltrisk which = 338 value = 10 }
+		command = { type = province_revoltrisk which = 339 value = 10 }
+		command = { type = revolt value = NDR which = 339 } #Holland
+		command = { type = province_revoltrisk which = 340 value = 10 }
+		command = { type = revolt value = NDR which = 340 } #Zeeland
+		command = { type = province_revoltrisk which = 377 value = 7 }
+		command = { type = province_revoltrisk which = 378 value = 7 }
+		command = { type = province_revoltrisk which = 379 value = 7 }
+		command = { type = province_revoltrisk which = 380 value = 7 }
+		command = { type = revolt value = NDR which = 380 } #Flandern
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = treasury value = 300 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={			#Don't introduce that Consumption Tax#
+		name = "ACTIONNAME3869B"
+		command = { type = province_revoltrisk which = 337 value = 5 }
+		command = { type = province_revoltrisk which = 338 value = 5 }
+		command = { type = province_revoltrisk which = 339 value = 5 }
+		command = { type = province_revoltrisk which = 340 value = 5 }
+		command = { type = province_revoltrisk which = 377 value = 2 }
+		command = { type = province_revoltrisk which = 378 value = 2 }
+		command = { type = province_revoltrisk which = 379 value = 2 }
+		command = { type = province_revoltrisk which = 380 value = 2 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = treasury value = -500 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#The Earl of Wessex and the Union of Arras#
+event = {
+
+	id = 3870
+	trigger = {
+		event = 3868
+		event = 3869
+		NOT = {
+			religion = protestant
+			religion = reformed
+		}
+		OR = {
+			owned = { province = 337 data = -1 }
+			owned = { province = 338 data = -1 }
+			owned = { province = 339 data = -1 }
+			owned = { province = 340 data = -1 }
+			owned = { province = 377 data = -1 }
+			owned = { province = 378 data = -1 }
+			owned = { province = 379 data = -1 }
+			owned = { province = 380 data = -1 }
+			}
+		AND = {
+			NOT = {
+				domestic = {
+					type = innovative
+					value = 8
+					}
+				}
+			}
+		}
+	random = no
+	country = ENG
+	name = "EVENTNAME3870"
+	desc = "EVENTHIST3870"
+	style = 2
+
+	date = { day = 1 month = january year = 1575 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1586 }
+
+	action_a ={			#Sign the Union of Arras#
+		name = "ACTIONNAME3870A"
+		command = { type = province_revoltrisk which = 337 value = 10 }
+		command = { type = province_revoltrisk which = 338 value = 10 }
+		command = { type = province_revoltrisk which = 339 value = 10 }
+		command = { type = revolt value = NDR which = 339 } #Holland
+		command = { type = province_revoltrisk which = 340 value = 10 }
+		command = { type = revolt value = NDR which = 340 } #Zeeland
+		command = { type = province_revoltrisk which = 377 value = -7 }
+		command = { type = province_revoltrisk which = 378 value = -7 }
+		command = { type = province_revoltrisk which = 379 value = -7 }
+		command = { type = province_revoltrisk which = 380 value = -7 }
+		command = { type = treasury value = -200 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={			#No Concessions#
+		name = "ACTIONNAME3870B"
+		command = { type = province_revoltrisk which = 337 value = 10 }
+		command = { type = province_revoltrisk which = 338 value = 10 }
+		command = { type = province_revoltrisk which = 339 value = 10 }
+		command = { type = revolt value = NDR which = 339 } #Holland
+		command = { type = province_revoltrisk which = 340 value = 10 }
+		command = { type = revolt value = NDR which = 340 } #Zeeland
+		command = { type = province_revoltrisk which = 377 value = 7 }
+		command = { type = province_revoltrisk which = 378 value = 7 }
+		command = { type = province_revoltrisk which = 379 value = 7 }
+		command = { type = province_revoltrisk which = 380 value = 7 }
+		command = { type = revolt value = NDR which = 380 } #Flandern
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = treasury value = 300 }
+		command = { type = stability value = 3 }
+	}
+
+	action_c ={			#Sign the Union of Arras and lower taxes#
+		name = "ACTIONNAME3870C"
+		command = { type = province_revoltrisk which = 337 value = 5 }
+		command = { type = province_revoltrisk which = 338 value = 5 }
+		command = { type = province_revoltrisk which = 339 value = 5 }
+		command = { type = province_revoltrisk which = 340 value = 5 }
+		command = { type = province_revoltrisk which = 377 value = -7 }
+		command = { type = province_revoltrisk which = 378 value = -7 }
+		command = { type = province_revoltrisk which = 379 value = -7 }
+		command = { type = province_revoltrisk which = 380 value = -7 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = treasury value = -500 }
+		command = { type = stability value = -1 }
+	}
+
+}
+
+#The Repatriation of the Netherlands#
+event = {
+
+	id = 3871
+	trigger = {
+		OR = {
+			event = 3868
+			event = 3869
+			event = 3870
+		}
+		NOT = { event = 3932 }		
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME3871"
+	desc = "EVENTHIST3871"
+	style = 3
+
+	date = { day = 1 month = january year = 1648 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1649 }
+
+	action_a ={			#The Netherlands is Subjugated#
+		name = "ACTIONNAME3871A"
+		command = { type = conversion which = 380 }
+		command = { type = province_revoltrisk which = 337 value = -30 }
+		command = { type = province_revoltrisk which = 338 value = -30 }
+		command = { type = province_revoltrisk which = 339 value = -30 }
+		command = { type = province_revoltrisk which = 340 value = -30 }
+		command = { type = province_revoltrisk which = 377 value = -27 }
+		command = { type = province_revoltrisk which = 378 value = -27 }
+		command = { type = province_revoltrisk which = 379 value = -27 }
+		command = { type = province_revoltrisk which = 380 value = -27 }
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = treasury value = 300 }
+		command = { type = stability value = 3 }
+	}
+}
+
+#Welsh Act of Union#
+event = {
+	id = 3876
+	trigger = {
+		owned = { province = 243 data = -1 } # Wales
+		OR = {
+			religion = protestant
+			religion = reformed
+		}
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME3876"
+	desc = "EVENTHIST3876"
+	style = 2
+	date = { day = 1 month = january year = 1536 }
+	offset = 365
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a = { #Wales Incorporated Into England#
+		name = "ACTIONNAME3876A"
+		command = { type = cityname which = 243 value = "Cardiff" }
+		command = { type = provinceculture which = 243 value = anglosaxon }
+		command = { type = conversion which = 243 }
+	}
+}
+
+#The Gunpowder Plot#
+
+# Idea by Johnny Canuck
+# Text by Demetrios
+# Scripting by Håvard & Doomdark
+
+event = {
+
+	id = 3882
+	trigger = {
+		NOT = {
+			OR = {
+				religion = catholic
+				religion = counterreform
+			}
+		}
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME3882"
+	desc = "EVENTHIST3882"
+	style = "3882"
+
+	date = { day = 5 month = november year = 1605 }
+	offset = 30
+
+	action_a = {		#Punish all#
+		name = "ACTIONNAME3882A"
+		command = { type = stability value = 1 }
+		command = { type = revoltrisk which = 12 value = 5 }
+		command = { type = domestic which = innovative value = -2 }
+		command = { type = conversion which = -1 }
+		command = { type = conversion which = -4 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = FRA value = -100 }
+	}
+	action_b = {		#Punish conspirators#
+		name = "ACTIONNAME3882B"
+		command = { type = stability value = -2 }
+		command = { type = domestic which = innovative value = 1 }
+	}
+}
+#The Dutch Revolt is successful!#
+#This event reduces the revoltrisk in the Southern Netherlands after then Northern Netherlands achieves independence.  
+event = {
+	id = 3932
+	trigger = {
+		exists = HOL
+		event = 3868 #Dutch Nobility Demands General Estates
+		event = 3900 #creation of Dutch Republic
+		NOT = { event = 3871} # Repatriation of the Netherlands
+		OR = {
+			owned = { province = 377 data = -1 } #Luxemburg
+			owned = { province = 378 data = -1 } #Brabant
+			owned = { province = 379 data = -1 } #Artois
+			owned = { province = 380 data = -1 } #Flanders
+			}
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME3819"#text from 'Dutch Revolt Sucessful'#
+	desc = "EVENTHIST3819"#text from 'Dutch Revolt Sucessful'#
+	style = 2
+
+	date = { day = 1 month = january year = 1585 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1648 }
+
+     action_a = { # Curses!
+         name = "ACTIONNAME4980A" # ="OK"#
+	command = { type = province_revoltrisk which = 377 value = -27 } #Luxemburg
+	command = { type = province_revoltrisk which = 378 value = -27 } #Brabant
+	command = { type = province_revoltrisk which = 379 value = -27 } #Artois
+	command = { type = province_revoltrisk which = 380 value = -27 } #Flanders
+	command = { type = conversion which = 380 }
+         }
+}
+
+#FTG events
+event = {
+	id = 164600
+	trigger = {
+		OR = {
+			discovered = 571
+			discovered = 1072 
+		}
+		NOT = {
+			owned = { province = 571 data = ENG } #Madras
+		}
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME164600"
+	desc = "EVENTHIST164600"
+
+	date = { day = 1 month = january year = 1630 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1700 }
+
+	action_a = {
+		name = "ACTIONNAME164600A" 
+		command = { type = treasury value = -200 }
+		command = { type = trigger which = 338013 } 
+	}
+	action_b = {
+		name = "ACTIONNAME164600B" 
+		command = { type = infra value = 200 }
+		command = { type = sleepevent which = 164098 } 
+	}
+}
+
+event = {
+	id = 164601 #triggered by ProvinceSpec_338013 A
+	random = no
+	country = ENG
+	name = "EVENTNAME164601" 
+	desc = "EVENTHIST164601"
+
+	action_a = {
+		name = "ACTIONNAME164601A" #How exciting
+		command = { type = treasury value = 25 }
+		command = { type = inf which = 571 value = 2000 } 
+		command = { type = provincetax which = 571 value = 2 } 
+		#command = { type = addcolonial which = 571 } 
+		command = { type = addcore which = 571 } 
+	}
+}
+
+event = {
+	id = 164602 #triggered by ProvinceSpec_338013 B
+	random = no
+	country = ENG
+	name = "EVENTNAME164602" 
+	desc = "EVENTHIST164602"
+
+	action_a = {
+		name = "ACTIONNAME164602A" 
+		#command = { type = addcolonial which = 571 } 
+		command = { type = addcore which = 571 } 
+	}
+}
+
+event = {
+	id = 164098
+	trigger = {
+		event = 164600
+		NOT = { event = 338013 } 
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME164098" 
+	desc = "EVENTHIST164098"
+
+	date = { day = 1 month = january year = 1630 }
+	offset = 70
+	deathdate = { day = 1 month = january year = 1700 }
+
+	action_a = {
+		name = "ACTIONNAME164098A" 
+		command = { type = treasury value = 25 }
+		command = { type = vp value = -5 }
+	}
+}
+
+event = {
+	id = 164603 #triggered by ProvinceSpec_338012 A
+	random = no
+	country = ENG
+	name = "EVENTNAME164603" 
+	desc = "EVENTHIST164603"
+
+	action_a = {
+		name = "ACTIONNAME164603A" 
+		command = { type = treasury value = -50 }
+		command = { type = inf which = 557 value = 2000 } 
+		command = { type = provincetax which = 557 value = 2 }
+		#command = { type = addcolonial which = 557 } 
+		command = { type = addcore which = 557 }
+	}
+}
+
+event = {
+	id = 164604 #triggered by ProvinceSpec_338012 A
+	random = no
+	country = ENG
+	name = "EVENTNAME164604" 
+	desc = "EVENTHIST164604"
+
+	action_a = {
+		name = "ACTIONNAME164604A" 
+		#command = { type = addcolonial which = 557 } 
+		command = { type = addcore which = 557 }
+	}
+}
+
+###########################
+# New Burgundy sequence for ENG - 1.3 #
+###########################
+
+#The Plantagenet Inheritance of Burgundy#
+event = {
+
+	id = 15009		#Triggered by BUR3597C#
+	random = no
+	country = ENG
+	name = "The Plantagenet Inheritance of Burgundy"
+	desc = "When Charles the Bold, Duke of Burgundy, died under the walls of Nancy in 1477, his inheritance passed to his daughter Mary, the wife of George of Clarence. The Duchy of Burgundy was one of the largest medieval states in Western Europe, covering most of the Low Countries (today's Belgium and Holland), Luxembourg and Franche-Comté. Austria had seized the Imperial county of Burgundy. Mary and George's inheritance was transmitted to Edmund of Dijon, their son. With the Burgundian realm now a core part of England's continental empire, the House of York can once again focus on pacifying France."
+
+	action_a ={			#It's all mine!#
+		name = "It's all mine!"
+		command = { type = inherit which = BUR }
+		command = { type = DIP which = 3 value = 60 }
+		command = { type = addcore_national which = 337 } # Netherlands
+		command = { type = addcore_national which = 338 }
+		command = { type = addcore_national which = 339 }
+		command = { type = addcore_national which = 340 }
+		command = { type = addcore_national which = 377 }
+		command = { type = addcore_national which = 378 }
+		command = { type = addcore_national which = 379 }
+		command = { type = addcore_national which = 380 }
+		command = { type = addcore_national which = 386 } # Burgundy
+		command = { type = addcore_national which = 387 }
+		command = { type = addcore_national which = 409 }
+		command = { type = stability value = 2 }
+	}
+}
+
+#The Habsburg Inheritance of Burgundy#
+event = {
+
+	id = 15013		#Triggered by BUR3597A#
+	random = no
+	country = ENG
+	name = "The Habsburg Inheritance of Burgundy"
+	desc = "When Charles the Bold, Duke of Burgundy, died under the walls of Nancy in 1477, his inheritance passed to his daughter Mary, the wife of Maximilian of Habsburg. The Duchy of Burgundy was one of the largest medieval states in Western Europe, covering most of the Low Countries (today's Belgium and Holland), Luxembourg and Franche-Comté. France had conquered the heart of the Duchy itself. Mary and Maximilian's inheritance was transmitted to their son Philip the Fair, husband of the Spanish heiress Joanna of Castile. Their eldest son, Charles V, would later reign over the Austrian and Spanish Habsburg territories."
+
+	action_a ={			#Rather them than the French...#
+		name = "Rather them than the French..."
+		command = { type = casusbelli which = HAB value = 12 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#The Valois Inheritance of Burgundy#
+event = {
+
+	id = 15006		#Triggered by BUR3597B#
+	random = no
+	country = ENG
+	name = "The Valois Inheritance of Burgundy"
+	desc = "When Charles the Bold, Duke of Burgundy, died under the walls of Nancy in 1477, his inheritance passed to his daughter Mary, the wife of Charles of France. The Duchy of Burgundy was one of the largest medieval states in Western Europe, covering most of the Low Countries (today's Belgium and Holland), Luxembourg and Franche-Comté. France had conquered the heart of the Duchy itself. Mary and Charles' inheritance was transmitted to Louis the Spider King, their son. Ruling over France and Lotharingia, only the Imperial Crown lay between him and the rebirth of the Empire of Charlemagne..."
+
+	action_a ={			#We must put a stop to this!#
+		name = "We must put a stop to this!"
+		command = { type = casusbelli which = FRA value = 24 }
+		command = { type = relation which = FRA value = -200 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#The Habsburg Family Compact#
+event = {
+
+	id = 15012		#Triggered by BUR3597D#
+	random = no
+	country = ENG
+	name = "The Habsburg Family Compact"
+	desc = "When Charles the Bold, Duke of Burgundy died under the walls of Nancy in January 1477 his considerable territories passed to his only child, Mary, who immediately became the most eligible bride in Europe. For over a decade prior to his death the rulers of Europe had kept a close eye on the mixed fortunes of Mary's father and his legendary military campaigns against practically all of Burgundy's neighbours, but by the late 1470s most of them quietly agreed that the so-called 'Grand Duchy of the West' should be dismembered. However, with Mary's marriage to Maximilian, King of the Romans, it looks as if what once seemed inevitable has now been averted - Burgundy, with Austrian support, may yet stand the test of time."
+
+	action_a ={			#I couldn't care less#
+		name = "I couldn't care less"
+		command = { type = relation which = BUR value = -50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = HAB value = -50 }
+	}
+}
+
+# The League of Cambrai #
+#event = {
+#
+#	id = 250032 #3403
+#	trigger = { event = 3545 }
+#	random = no
+#	country = ENG
+#	name = "The League of Cambrai"
+#	desc = "In 1508, Pope Julius II set-up a league against the Republic of Venice which he disliked and found too powerful in Italy. He #enlisted support of Florence, France and even of Emperor Maximilian. French troops decimated the Venetian army at the battle of Agnadel in #1509, but the Republic managed to break the league by concluding separate peace with her opponents."
+#
+#	date = { day = 1 month = january year = 1508 }
+#	offset = 30
+#	deathdate = { day = 1 month = january year = 1510 }
+#
+#	action_a ={
+#		name = "Ignore"		#Ignore#
+#		command = { type = relation which = VEN value = 50 }
+#		command = { type = relation which = PAP value = -50 }
+#	}
+#
+#	action_b ={
+#		name = "Express Hostility"		#Express Hostility#
+#		command = { type = relation which = VEN value = 150 }
+#		command = { type = relation which = PAP value = -100 }
+#		command = { type = relation which = SPA value = -50 }
+#		command = { type = relation which = HAB value = -50 }
+#		command = { type = relation which = FRA value = -50 }
+#		command = { type = relation which = SCO value = -50 }
+#		command = { type = relation which = MLO value = -50 }
+#		command = { type = relation which = HEL value = -50 }
+#		command = { type = relation which = FLO value = -50 }
+#	}
+#
+#	action_c ={
+#		name = "Express Support"		#Express Support#
+#		command = { type = casusbelli which = VEN value = 72 }
+#		command = { type = relation which = VEN value = -150 }
+#		command = { type = relation which = PAP value = 100 }
+#		command = { type = relation which = SPA value = 50 }
+#		command = { type = relation which = HAB value = 50 }
+#		command = { type = relation which = FRA value = 50 }
+#		command = { type = relation which = SCO value = 50 }
+#		command = { type = relation which = MLO value = 50 }
+#		command = { type = relation which = HEL value = 50 }
+#		command = { type = relation which = FLO value = 50 }
+#	}
+#}
+
+#The Second Act of Union#
+event = {
+
+	id = 250033 #3582
+	trigger = {
+		event = 3037
+		OR = {
+			vassal = { country = ENG country = EIR }
+			union = { country = ENG country = EIR }
+			AND = {
+				owned = { province = 232 data = -1 }
+				owned = { province = 233 data = -1 }
+				NOT = { exists = EIR }
+			}
+		}
+	}
+	random = no
+	country = ENG
+	name = "The Second Act of Union"
+	desc = "EVENTHIST250033"
+
+	style = "3582"
+
+	date = { day = 1 month = january year = 1800 }
+	offset = 300
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={			#We are the United Kingdom#
+		name = "We are the United Kingdom"
+		command = { type = flagname which = UK }
+		command = { type = countryname value = "United Kingdom" }
+		command = { type = add_countryculture which = gaelic }
+		command = { type = inherit which = EIR }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = addcore_national which = 231 }
+		command = { type = addcore_national which = 232 }
+		command = { type = addcore_national which = 233 }
+		command = { type = addcore_national which = 234 }
+		command = { type = addcore_national which = 235 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#The Greek War of Independence#
+event = {
+	id = 50038
+	trigger = {
+		event = 50026
+		exists = GRE
+		war = { country = GRE country = TUR }
+	}
+	random = no
+	country = ENG
+	name = "The Greek War of Independence"
+	desc = "Your Majesty, the upstart Greeks have declared their independence from the Sublime Porte and begun a bloody war of liberation. Many among our populace surely have sympathy for their plight, even if direct involvement would be expensive and ruffle a few feathers in government. Sire, should we intervene directly to aid the Greeks or leave them to their fate?"
+
+	style = "50026"
+
+	date = { day = 1 month = january year = 1820 }
+	offset = 30
+	
+	action_a ={ #Support the Greeks#
+		name = "Support the Greeks"
+		command = { type = casusbelli which = TUR value = 60 }
+		command = { type = relation which = GRE value = 200 }
+		command = { type = relation which = TUR value = -100 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = diplomats value = -2 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={ #Stay out of it#
+		name = "Stay out of it"
+		command = { type = relation which = TUR value = 100 }
+		command = { type = relation which = GRE value = -50 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = merchants value = 4 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# The Fortress of Singapore #
+event = {
+	id = 50042
+	trigger = {
+		owned = { province = 678 data = -1 } # Johor
+		control = { province = 678 data = -1 } # Johor
+	}
+	random = no
+	country = ENG
+	name = "The Fortress of Singapore"
+	desc = "EVENTHIST50042"
+
+	date = { day = 1 month = january year = 1800 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a = { # Establish a foothold in the Indies #
+		name = "Establish a foothold in the Indies"
+		command = { type = cot which = 678 }
+		command = { type = removecot which = 677 }
+		command = { type = cityname which = 678 value = "Singapore" }
+		command = { type = gainbuilding which = 678 value = shipyard }
+		command = { type = fortress which = 678 value = 1 }
+		command = { type = provincetax which = 678 value = 2 } 
+		command = { type = treasury value = -500 }
+	}
+
+	action_b = { # Let the local sultans run the show #
+		name = "Let the local sultans run the show"
+		trigger = { 
+			NOT = { exists = JOH }
+		}
+		command = { type = independence which = JOH }
+		command = { type = vp value = -50 }
+	}
+}
+
+# Wolfe Tone's Irish Rebellion (ENG) #
+event = {
+
+	id = 3915
+	trigger = {
+		exists = USA
+		someof = {
+			number = 3
+			owned = { province = 231 data = -1 }
+			owned = { province = 232 data = -1 }
+			owned = { province = 233 data = -1 }
+			owned = { province = 234 data = -1 }
+			owned = { province = 235 data = -1 }
+		}
+		NOT = {
+			exists = EIR
+			religion = catholic
+			religion = counterreform
+		}
+	}
+	random = no
+	country = ENG
+	name = "Wolfe Tone's Irish Rebellion"
+	desc = "EVENTHIST3915"
+
+	style = "3915"
+
+	date = { day = 1 month = january year = 1798 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1808 }
+
+	action_a ={			#Crush the Irish!#
+		name = "Crush the Irish!"
+		command = { type = revolt which = 231 }
+		command = { type = revolt which = 231 }
+		command = { type = revolt which = 234 }
+		command = { type = revolt which = 234 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = stability value = -1 }
+	}
+}
+
+# The Jay Treaty (1785-1799 if at war with FRA, historically 1794) #
+# by MichaelM
+event = {
+	id = 3727
+	# triggered by USA 4988 A
+	random = no
+	country = ENG
+	name = "The Jay Treaty"
+	desc = "EVENTHIST3727"
+	
+	action_a = {	# Sign it #
+		name = "Sign it"
+		command = { type = badboy value = -1 }
+		command = { type = treasury value = -100 }
+		command = {
+			trigger = { owned = { province = 99 data = -1 } }
+			type = cityname which = 99 value = "Crown Point"
+		}
+		command = {
+			trigger = { owned = { province = 99 data = -1 } }
+			type = cedeprovince which = USA value = 99
+		}
+		command = { type = relation which = USA value = 25 }
+		command = { type = naval value = 500 }
+	}
+
+	action_b = {	# We cannot afford to give way #
+		name = "We cannot afford to give way"
+		command = { type = relation which = USA value = -50 }
+		command = { type = trigger which = 4989 } # USA: Jay Treaty rejected
+	}
+}
+
+# The Effects of the Pragmatic Sanction - Stuart version #
+event = {
+
+	id = 3763
+	trigger = { event = 3205 monarch = 04045 }
+	random = no
+	country = ENG
+	name = "EVENTNAME3174"
+	desc = "EVENTHIST3174"
+
+	date = { day = 1 month = january year = 1741 }
+	offset = 10
+	deathdate = { day = 1 month = june year = 1741 }
+
+	action_a ={		#Anti-Habsburg#
+		name = "ACTIONNAME3174A"
+		command = { type = casusbelli which = HAB value = 36 }
+		command = { type = casusbelli which = RUS value = 36 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = BAY value = 100 }
+		command = { type = relation which = SAC value = 100 }
+		command = { type = relation which = PRU value = 150 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = RUS value = -150 }
+		command = { type = relation which = HES value = -50 }
+		command = { type = relation which = HAN value = -100 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={		#Neutral#
+		name = "ACTIONNAME3174B"
+		command = { type = stability value = 2 }
+		command = { type = relation which = BAY value = -50 }
+		command = { type = relation which = SAC value = -50 }
+		command = { type = relation which = PRU value = 50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = HOL value = -50 }
+		command = { type = relation which = RUS value = 100 }
+		command = { type = relation which = HES value = 50 }
+		command = { type = relation which = HAN value = -50 }
+		command = { type = relation which = HAB value = 100 }
+	}
+
+	action_c ={		#Pro-Habsburg#
+		name = "ACTIONNAME3174C"
+		command = { type = stability value = -2 }
+		command = { type = casusbelli which = FRA value = 12 }
+		command = { type = casusbelli which = PRU value = 12 }
+		command = { type = relation which = BAY value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = relation which = PRU value = -150 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = HOL value = 100 }
+		command = { type = relation which = RUS value = 150 }
+		command = { type = relation which = HES value = 50 }
+		command = { type = relation which = HAN value = 100 }
+		command = { type = relation which = HAB value = 150 }
+	}
+}
+
+#The Polish Succession of 1690#
+event = {
+
+	id = 4109			#Triggered by POL 4105#
+	random = no
+	country = ENG
+	name = "The Polish Succession of 1690"
+	desc = "Your Majesty, the recent election of the Polish Sejm following the death of the late Queen Christina has deliberated on the succession in their lands and has elected to offer the crown to none other than our former King, the hated papist tyrant James Stuart. My Lord, it seems the exiled Stuart dynasty now rule as Kings of Poland!"
+
+	action_a ={			#This cannot go unchallenged...#
+		name = "This cannot go unchallenged..."
+		command = { type = casusbelli which = POL value = 36 }
+		command = { type = relation which = POL value = -150 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#The Polish Succession of 1697#
+event = {
+
+	id = 4112			#Triggered by POL 3486#
+	random = no
+	country = ENG
+	name = "The Polish Succession of 1697"
+	desc = "Your Majesty, the recent election of the Polish Sejm following the death of the late King John III Sobieski has deliberated on the succession in their lands and has elected to offer the crown to the late King's son, James Sobieski, whose heirs are none other than the exiled Stuarts. My Lord, it seems the loathsome Stuart dynasty will one day rule as Kings of Poland!"
+
+	action_a ={			#Worrying news#
+		name = "Worrying news"
+		command = { type = casusbelli which = POL value = 12 }
+		command = { type = relation which = POL value = -100 }
+		command = { type = stability value = -1 }
+	}
+}

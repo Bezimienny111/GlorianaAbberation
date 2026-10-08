@@ -1,0 +1,1126 @@
+#-----------------------------------------------------------------------------
+# Venetian Events
+
+#(1450-1820) Union of Monferrat - Venice
+event = {
+	id = 3001219
+	trigger = {
+		exists = BYZ
+		NOT = { relation = { country = BYZ data = 150 } }
+		OR = {
+			control = { province = 394 data = BYZ } #Apulia
+			control = { province = 393 data = BYZ } #Napoli
+			control = { province = 399 data = BYZ } #Rome
+			control = { province = 392 data = BYZ } #Marche
+			control = { province = 391 data = BYZ } #Romagna
+			control = { province = 400 data = BYZ } #Siena
+			control = { province = 401 data = BYZ } #Tuscany
+			control = { province = 402 data = BYZ } #Emilia
+			control = { province = 390 data = BYZ } #Mantua
+			control = { province = 403 data = BYZ } #Genoa
+			control = { province = 370 data = BYZ } #Venice
+			control = { province = 389 data = BYZ } #Lombardia
+		}
+	}
+	random = NO
+	country = VEN
+	name = "The Union of Monferrat"
+	desc = "The dukes and petty lords of Italy cannot believe that Byzantium exists, let alone that it is sending its fleets to their shores, but they must, for the armies are here. Putting aside their rivalries and intrigues, they unite for the protection of Rome and the Serenissima."
+
+	date = { day = 1 month = january year = 1450 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "It's about time!" # I could use the help
+		command = { type = stability value = 2 }
+		command = { type = treasury value = 100 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+		command = { type = relation which = MAN value = 100 } #Mantua
+		command = { type = relation which = PAP value = 100 } #Rome
+		command = { type = relation which = MLO value = 100 } #Milano
+		command = { type = relation which = NAP value = 100 } #Napoli
+		command = { type = relation which = SIC value = 100 } #Sicily
+		command = { type = relation which = TOS value = 100 } #Tuscany
+		command = { type = relation which = FLO value = 100 } #Florence
+		command = { type = relation which = PIS value = 100 } #Siena
+		command = { type = relation which = GEN value = 100 } #Genoa
+		command = { type = relation which = MOD value = 100 } #Modena
+		command = { type = relation which = PAR value = 100 } #Parma
+		command = { type = relation which = VER value = 100 } #Verona
+		command = { type = relation which = RIM value = 100 } #Rimini
+		command = { type = alliance which = MAN } #Mantua
+		command = { type = alliance which = PAP } #Rome
+		command = { type = alliance which = MLO } #Milano
+		command = { type = alliance which = NAP } #Napoli
+		command = { type = alliance which = SIC } #Sicily
+		command = { type = alliance which = TOS } #Tuscany
+		command = { type = alliance which = FLO } #Florence
+		command = { type = alliance which = PIS } #Siena
+		command = { type = alliance which = GEN } #Genoa
+		command = { type = alliance which = MOD } #Modena
+		command = { type = alliance which = PAR } #Parma
+		command = { type = alliance which = VER } #Verona
+		command = { type = alliance which = RIM } #Rimini
+	}
+}
+
+#(1450-1820) Union of Monferrat - Papal States
+event = {
+	id = 3001220
+	trigger = {
+		exists = BYZ
+		NOT = { relation = { country = BYZ data = 150 } }
+		OR = {
+			control = { province = 394 data = BYZ } #Apulia
+			control = { province = 393 data = BYZ } #Napoli
+			control = { province = 399 data = BYZ } #Rome
+			control = { province = 392 data = BYZ } #Marche
+			control = { province = 391 data = BYZ } #Romagna
+			control = { province = 400 data = BYZ } #Siena
+			control = { province = 401 data = BYZ } #Tuscany
+			control = { province = 402 data = BYZ } #Emilia
+			control = { province = 390 data = BYZ } #Mantua
+			control = { province = 403 data = BYZ } #Genoa
+			control = { province = 370 data = BYZ } #Venice
+			control = { province = 389 data = BYZ } #Lombardia
+		}
+	}
+	random = NO
+	country = PAP
+	name = "The Union of Monferrat"
+	desc = "The dukes and petty lords of Italy cannot believe that Byzantium exists, let alone that it is sending its fleets to their shores, but they must, for the armies are here. Putting aside their rivalries and intrigues, they unite for the protection of Rome and the Serenissima."
+
+	date = { day = 1 month = january year = 1450 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "It's about time!" # I could use the help
+		command = { type = stability value = 2 }
+		command = { type = treasury value = 100 }
+		command = { type = relation which = MAN value = 100 } #Mantua
+		command = { type = relation which = VEN value = 100 } #Venice
+		command = { type = relation which = MLO value = 100 } #Milano
+		command = { type = relation which = NAP value = 100 } #Napoli
+		command = { type = relation which = SIC value = 100 } #Sicily
+		command = { type = relation which = TOS value = 100 } #Tuscany
+		command = { type = relation which = FLO value = 100 } #Florence
+		command = { type = relation which = PIS value = 100 } #Siena
+		command = { type = relation which = GEN value = 100 } #Genoa
+		command = { type = relation which = MOD value = 100 } #Modena
+		command = { type = relation which = PAR value = 100 } #Parma
+		command = { type = relation which = VER value = 100 } #Verona
+		command = { type = relation which = RIM value = 100 } #Rimini
+		command = { type = alliance which = MAN } #Mantua
+		command = { type = alliance which = VEN } #Venice
+		command = { type = alliance which = MLO } #Milano
+		command = { type = alliance which = NAP } #Napoli
+		command = { type = alliance which = SIC } #Sicily
+		command = { type = alliance which = TOS } #Tuscany
+		command = { type = alliance which = FLO } #Florence
+		command = { type = alliance which = PIS } #Siena
+		command = { type = alliance which = GEN } #Genoa
+		command = { type = alliance which = MOD } #Modena
+		command = { type = alliance which = PAR } #Parma
+		command = { type = alliance which = VER } #Verona
+		command = { type = alliance which = RIM } #Rimini
+#Rome doesn't get involved in the war unless she already is or gets pulled in - otherwise she just endangers herself against a player
+	}
+}
+
+#(1450-1820) Union of Monferrat - Siena
+event = {
+	id = 3001221
+	trigger = {
+		exists = BYZ
+		NOT = { relation = { country = BYZ data = 150 } }
+		OR = {
+			control = { province = 394 data = BYZ } #Apulia
+			control = { province = 393 data = BYZ } #Napoli
+			control = { province = 399 data = BYZ } #Rome
+			control = { province = 392 data = BYZ } #Marche
+			control = { province = 391 data = BYZ } #Romagna
+			control = { province = 400 data = BYZ } #Siena
+			control = { province = 401 data = BYZ } #Tuscany
+			control = { province = 402 data = BYZ } #Emilia
+			control = { province = 390 data = BYZ } #Mantua
+			control = { province = 403 data = BYZ } #Genoa
+			control = { province = 370 data = BYZ } #Venice
+			control = { province = 389 data = BYZ } #Lombardia
+		}
+	}
+	random = NO
+	country = PIS
+	name = "The Union of Monferrat"
+	desc = "The dukes and petty lords of Italy cannot believe that Byzantium exists, let alone that it is sending its fleets to their shores, but they must, for the armies are here. Putting aside their rivalries and intrigues, they unite for the protection of Rome and the Serenissima."
+
+	date = { day = 1 month = january year = 1450 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "To war!" # I could use the help
+		command = { type = stability value = 2 }
+		command = { type = treasury value = 100 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+		command = { type = relation which = MAN value = 100 } #Mantua
+		command = { type = relation which = PAP value = 100 } #Rome
+		command = { type = relation which = VEN value = 100 } #Venice
+		command = { type = relation which = MLO value = 100 } #Milano
+		command = { type = relation which = NAP value = 100 } #Napoli
+		command = { type = relation which = SIC value = 100 } #Sicily
+		command = { type = relation which = TOS value = 100 } #Tuscany
+		command = { type = relation which = FLO value = 100 } #Florence
+		command = { type = relation which = GEN value = 100 } #Genoa
+		command = { type = relation which = MOD value = 100 } #Modena
+		command = { type = relation which = PAR value = 100 } #Parma
+		command = { type = relation which = VER value = 100 } #Verona
+		command = { type = relation which = RIM value = 100 } #Rimini
+		command = { type = alliance which = MAN } #Mantua
+		command = { type = alliance which = PAP } #Rome
+		command = { type = alliance which = VEN } #Venice
+		command = { type = alliance which = MLO } #Milano
+		command = { type = alliance which = NAP } #Napoli
+		command = { type = alliance which = SIC } #Sicily
+		command = { type = alliance which = TOS } #Tuscany
+		command = { type = alliance which = FLO } #Florence
+		command = { type = alliance which = GEN } #Genoa
+		command = { type = alliance which = MOD } #Modena
+		command = { type = alliance which = PAR } #Parma
+		command = { type = alliance which = VER } #Verona
+		command = { type = alliance which = RIM } #Rimini
+	}
+}
+
+#(1450-1820) Union of Monferrat - Tuscany
+event = {
+	id = 3001222
+	trigger = {
+		exists = BYZ
+		NOT = { relation = { country = BYZ data = 150 } }
+		OR = {
+			control = { province = 394 data = BYZ } #Apulia
+			control = { province = 393 data = BYZ } #Napoli
+			control = { province = 399 data = BYZ } #Rome
+			control = { province = 392 data = BYZ } #Marche
+			control = { province = 391 data = BYZ } #Romagna
+			control = { province = 400 data = BYZ } #Siena
+			control = { province = 401 data = BYZ } #Tuscany
+			control = { province = 402 data = BYZ } #Emilia
+			control = { province = 390 data = BYZ } #Mantua
+			control = { province = 403 data = BYZ } #Genoa
+			control = { province = 370 data = BYZ } #Venice
+			control = { province = 389 data = BYZ } #Lombardia
+		}
+	}
+	random = NO
+	country = TOS
+	name = "The Union of Monferrat"
+	desc = "The dukes and petty lords of Italy cannot believe that Byzantium exists, let alone that it is sending its fleets to their shores, but they must, for the armies are here. Putting aside their rivalries and intrigues, they unite for the protection of Rome and the Serenissima."
+
+	date = { day = 1 month = january year = 1450 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = { # I could use the help
+		name = "To war!"
+		command = { type = stability value = 2 }
+		command = { type = treasury value = 100 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+		command = { type = relation which = MAN value = 100 } #Mantua
+		command = { type = relation which = PAP value = 100 } #Rome
+		command = { type = relation which = VEN value = 100 } #Venice
+		command = { type = relation which = MLO value = 100 } #Milano
+		command = { type = relation which = NAP value = 100 } #Napoli
+		command = { type = relation which = SIC value = 100 } #Sicily
+		command = { type = relation which = PIS value = 100 } #Siena
+		command = { type = relation which = GEN value = 100 } #Genoa
+		command = { type = relation which = MOD value = 100 } #Modena
+		command = { type = relation which = PAR value = 100 } #Parma
+		command = { type = relation which = VER value = 100 } #Verona
+		command = { type = relation which = RIM value = 100 } #Rimini
+		command = { type = alliance which = MAN } #Mantua
+		command = { type = alliance which = PAP } #Rome
+		command = { type = alliance which = VEN } #Venice
+		command = { type = alliance which = MLO } #Milano
+		command = { type = alliance which = NAP } #Napoli
+		command = { type = alliance which = SIC } #Sicily
+		command = { type = alliance which = PIS } #Siena
+		command = { type = alliance which = GEN } #Genoa
+		command = { type = alliance which = MOD } #Modena
+		command = { type = alliance which = PAR } #Parma
+		command = { type = alliance which = VER } #Verona
+		command = { type = alliance which = RIM } #Rimini
+	}
+}
+
+#(1450-1820) Union of Monferrat - Genoa
+event = {
+	id = 3001223
+	trigger = {
+		exists = BYZ
+		NOT = { relation = { country = BYZ data = 150 } }
+		OR = {
+			control = { province = 394 data = BYZ } #Apulia
+			control = { province = 393 data = BYZ } #Napoli
+			control = { province = 399 data = BYZ } #Rome
+			control = { province = 392 data = BYZ } #Marche
+			control = { province = 391 data = BYZ } #Romagna
+			control = { province = 400 data = BYZ } #Siena
+			control = { province = 401 data = BYZ } #Tuscany
+			control = { province = 402 data = BYZ } #Emilia
+			control = { province = 390 data = BYZ } #Mantua
+			control = { province = 403 data = BYZ } #Genoa
+			control = { province = 370 data = BYZ } #Venice
+			control = { province = 389 data = BYZ } #Lombardia
+		}
+	}
+	random = NO
+	country = GEN
+	name = "The Union of Monferrat"
+	desc = "The dukes and petty lords of Italy cannot believe that Byzantium exists, let alone that it is sending its fleets to their shores, but they must, for the armies are here. Putting aside their rivalries and intrigues, they unite for the protection of Rome and the Serenissima."
+
+	date = { day = 1 month = january year = 1450 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = { # I could use the help
+		name = "To war!"
+		command = { type = stability value = 2 }
+		command = { type = treasury value = 100 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+		command = { type = relation which = MAN value = 100 } #Mantua
+		command = { type = relation which = PAP value = 100 } #Rome
+		command = { type = relation which = VEN value = 100 } #Venice
+		command = { type = relation which = MLO value = 100 } #Milano
+		command = { type = relation which = NAP value = 100 } #Napoli
+		command = { type = relation which = SIC value = 100 } #Sicily
+		command = { type = relation which = TOS value = 100 } #Tuscany
+		command = { type = relation which = FLO value = 100 } #Florence
+		command = { type = relation which = PIS value = 100 } #Siena
+		command = { type = relation which = MOD value = 100 } #Modena
+		command = { type = relation which = PAR value = 100 } #Parma
+		command = { type = relation which = VER value = 100 } #Verona
+		command = { type = relation which = RIM value = 100 } #Rimini
+		command = { type = alliance which = MAN } #Mantua
+		command = { type = alliance which = PAP } #Rome
+		command = { type = alliance which = VEN } #Venice
+		command = { type = alliance which = MLO } #Milano
+		command = { type = alliance which = NAP } #Napoli
+		command = { type = alliance which = SIC } #Sicily
+		command = { type = alliance which = TOS } #Tuscany
+		command = { type = alliance which = FLO } #Tuscany
+		command = { type = alliance which = PIS } #Siena
+		command = { type = alliance which = MOD } #Modena
+		command = { type = alliance which = PAR } #Parma
+		command = { type = alliance which = VER } #Verona
+		command = { type = alliance which = RIM } #Rimini
+	}
+}
+
+#(1450-1820) Union of Monferrat - Milano
+event = {
+	id = 3001224
+	trigger = {
+		exists = BYZ
+		NOT = { relation = { country = BYZ data = 150 } }
+		OR = {
+			control = { province = 394 data = BYZ } #Apulia
+			control = { province = 393 data = BYZ } #Napoli
+			control = { province = 399 data = BYZ } #Rome
+			control = { province = 392 data = BYZ } #Marche
+			control = { province = 391 data = BYZ } #Romagna
+			control = { province = 400 data = BYZ } #Siena
+			control = { province = 401 data = BYZ } #Tuscany
+			control = { province = 402 data = BYZ } #Emilia
+			control = { province = 390 data = BYZ } #Mantua
+			control = { province = 403 data = BYZ } #Genoa
+			control = { province = 370 data = BYZ } #Venice
+			control = { province = 389 data = BYZ } #Lombardia
+		}
+	}
+	random = NO
+	country = MLO
+	name = "The Union of Monferrat"
+	desc = "The dukes and petty lords of Italy cannot believe that Byzantium exists, let alone that it is sending its fleets to their shores, but they must, for the armies are here. Putting aside their rivalries and intrigues, they unite for the protection of Rome and the Serenissima."
+
+	date = { day = 1 month = january year = 1450 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = { # I could use the help
+		name = "To war!"
+		command = { type = stability value = 2 }
+		command = { type = treasury value = 100 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+		command = { type = relation which = MAN value = 100 } #Mantua
+		command = { type = relation which = PAP value = 100 } #Rome
+		command = { type = relation which = VEN value = 100 } #Venice
+		command = { type = relation which = NAP value = 100 } #Napoli
+		command = { type = relation which = SIC value = 100 } #Sicily
+		command = { type = relation which = TOS value = 100 } #Tuscany
+		command = { type = relation which = FLO value = 100 } #Florence
+		command = { type = relation which = PIS value = 100 } #Siena
+		command = { type = relation which = GEN value = 100 } #Genoa
+		command = { type = relation which = MOD value = 100 } #Modena
+		command = { type = relation which = PAR value = 100 } #Parma
+		command = { type = relation which = VER value = 100 } #Verona
+		command = { type = relation which = RIM value = 100 } #Rimini
+		command = { type = alliance which = MAN } #Mantua
+		command = { type = alliance which = PAP } #Rome
+		command = { type = alliance which = VEN } #Venice
+		command = { type = alliance which = NAP } #Napoli
+		command = { type = alliance which = SIC } #Sicily
+		command = { type = alliance which = TOS } #Tuscany
+		command = { type = alliance which = FLO } #Florence
+		command = { type = alliance which = PIS } #Siena
+		command = { type = alliance which = GEN } #Genoa
+		command = { type = alliance which = MOD } #Modena
+		command = { type = alliance which = PAR } #Parma
+		command = { type = alliance which = VER } #Verona
+		command = { type = alliance which = RIM } #Rimini
+	}
+}
+
+#(1450-1820) Union of Monferrat - Naples
+event = {
+	id = 3001225
+	trigger = {
+		exists = BYZ
+		NOT = { relation = { country = BYZ data = 150 } }
+		OR = {
+			control = { province = 394 data = BYZ } #Apulia
+			control = { province = 393 data = BYZ } #Napoli
+			control = { province = 399 data = BYZ } #Rome
+			control = { province = 392 data = BYZ } #Marche
+			control = { province = 391 data = BYZ } #Romagna
+			control = { province = 400 data = BYZ } #Siena
+			control = { province = 401 data = BYZ } #Tuscany
+			control = { province = 402 data = BYZ } #Emilia
+			control = { province = 390 data = BYZ } #Mantua
+			control = { province = 403 data = BYZ } #Genoa
+			control = { province = 370 data = BYZ } #Venice
+			control = { province = 389 data = BYZ } #Lombardia
+		}
+	}
+	random = NO
+	country = NAP
+	name = "The Union of Monferrat"
+	desc = "The dukes and petty lords of Italy cannot believe that Byzantium exists, let alone that it is sending its fleets to their shores, but they must, for the armies are here. Putting aside their rivalries and intrigues, they unite for the protection of Rome and the Serenissima."
+	date = { day = 1 month = january year = 1450 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = { # I could use the help
+		name = "To war!"
+		command = { type = stability value = 2 }
+		command = { type = treasury value = 100 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+		command = { type = relation which = MAN value = 100 } #Mantua
+		command = { type = relation which = PAP value = 100 } #Rome
+		command = { type = relation which = VEN value = 100 } #Venice
+		command = { type = relation which = MLO value = 100 } #Milano
+		command = { type = relation which = SIC value = 100 } #Sicily
+		command = { type = relation which = TOS value = 100 } #Tuscany
+		command = { type = relation which = FLO value = 100 } #Florence
+		command = { type = relation which = PIS value = 100 } #Siena
+		command = { type = relation which = GEN value = 100 } #Genoa
+		command = { type = relation which = MOD value = 100 } #Modena
+		command = { type = relation which = PAR value = 100 } #Parma
+		command = { type = relation which = VER value = 100 } #Verona
+		command = { type = relation which = RIM value = 100 } #Rimini
+		command = { type = alliance which = MAN } #Mantua
+		command = { type = alliance which = PAP } #Rome
+		command = { type = alliance which = VEN } #Venice
+		command = { type = alliance which = MLO } #Milano
+		command = { type = alliance which = SIC } #Sicily
+		command = { type = alliance which = TOS } #Tuscany
+		command = { type = alliance which = FLO } #Florence
+		command = { type = alliance which = PIS } #Siena
+		command = { type = alliance which = GEN } #Genoa
+		command = { type = alliance which = MOD } #Modena
+		command = { type = alliance which = PAR } #Parma
+		command = { type = alliance which = VER } #Verona
+		command = { type = alliance which = RIM } #Rimini
+	}
+}
+
+#(1450-1820) Union of Monferrat - Modena
+event = {
+	id = 3001226
+	trigger = {
+		exists = BYZ
+		NOT = { relation = { country = BYZ data = 150 } }
+		OR = {
+			control = { province = 394 data = BYZ } #Apulia
+			control = { province = 393 data = BYZ } #Napoli
+			control = { province = 399 data = BYZ } #Rome
+			control = { province = 392 data = BYZ } #Marche
+			control = { province = 391 data = BYZ } #Romagna
+			control = { province = 400 data = BYZ } #Siena
+			control = { province = 401 data = BYZ } #Tuscany
+			control = { province = 402 data = BYZ } #Emilia
+			control = { province = 390 data = BYZ } #Mantua
+			control = { province = 403 data = BYZ } #Genoa
+			control = { province = 370 data = BYZ } #Venice
+			control = { province = 389 data = BYZ } #Lombardia
+		}
+	}
+	random = NO
+	country = MOD
+	name = "The Union of Monferrat"
+	desc = "The dukes and petty lords of Italy cannot believe that Byzantium exists, let alone that it is sending its fleets to their shores, but they must, for the armies are here. Putting aside their rivalries and intrigues, they unite for the protection of Rome and the Serenissima."
+	date = { day = 1 month = january year = 1450 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = { # I could use the help
+		name = "To war!"
+		command = { type = stability value = 2 }
+		command = { type = treasury value = 100 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+		command = { type = relation which = MAN value = 100 } #Mantua
+		command = { type = relation which = PAP value = 100 } #Rome
+		command = { type = relation which = VEN value = 100 } #Venice
+		command = { type = relation which = MLO value = 100 } #Milano
+		command = { type = relation which = NAP value = 100 } #Napoli
+		command = { type = relation which = SIC value = 100 } #Sicily
+		command = { type = relation which = TOS value = 100 } #Tuscany
+		command = { type = relation which = FLO value = 100 } #Florence
+		command = { type = relation which = PIS value = 100 } #Siena
+		command = { type = relation which = GEN value = 100 } #Genoa
+		command = { type = relation which = PAR value = 100 } #Parma
+		command = { type = relation which = VER value = 100 } #Verona
+		command = { type = relation which = RIM value = 100 } #Rimini
+		command = { type = alliance which = MAN } #Mantua
+		command = { type = alliance which = PAP } #Rome
+		command = { type = alliance which = VEN } #Venice
+		command = { type = alliance which = MLO } #Milano
+		command = { type = alliance which = NAP } #Napoli
+		command = { type = alliance which = SIC } #Sicily
+		command = { type = alliance which = TOS } #Tuscany
+		command = { type = alliance which = FLO } #Florence
+		command = { type = alliance which = PIS } #Siena
+		command = { type = alliance which = GEN } #Genoa
+		command = { type = alliance which = PAR } #Parma
+		command = { type = alliance which = VER } #Verona
+		command = { type = alliance which = RIM } #Rimini
+	}
+}
+
+#(1450-1820) Union of Monferrat - Sicily
+event = {
+	id = 3001227
+	trigger = {
+		exists = BYZ
+		NOT = { relation = { country = BYZ data = 150 } }
+		OR = {
+			control = { province = 394 data = BYZ } #Apulia
+			control = { province = 393 data = BYZ } #Napoli
+			control = { province = 399 data = BYZ } #Rome
+			control = { province = 392 data = BYZ } #Marche
+			control = { province = 391 data = BYZ } #Romagna
+			control = { province = 400 data = BYZ } #Siena
+			control = { province = 401 data = BYZ } #Tuscany
+			control = { province = 402 data = BYZ } #Emilia
+			control = { province = 390 data = BYZ } #Mantua
+			control = { province = 403 data = BYZ } #Genoa
+			control = { province = 370 data = BYZ } #Venice
+			control = { province = 389 data = BYZ } #Lombardia
+		}
+	}
+	random = NO
+	country = SIC
+	name = "The Union of Monferrat"
+	desc = "The dukes and petty lords of Italy cannot believe that Byzantium exists, let alone that it is sending its fleets to their shores, but they must, for the armies are here. Putting aside their rivalries and intrigues, they unite for the protection of Rome and the Serenissima."
+	date = { day = 1 month = january year = 1450 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = { # I could use the help
+		name = "To war!"
+		command = { type = stability value = 2 }
+		command = { type = treasury value = 100 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+		command = { type = relation which = MAN value = 100 } #Mantua
+		command = { type = relation which = PAP value = 100 } #Rome
+		command = { type = relation which = VEN value = 100 } #Venice
+		command = { type = relation which = MLO value = 100 } #Milano
+		command = { type = relation which = NAP value = 100 } #Napoli
+		command = { type = relation which = TOS value = 100 } #Tuscany
+		command = { type = relation which = FLO value = 100 } #Florence
+		command = { type = relation which = PIS value = 100 } #Siena
+		command = { type = relation which = GEN value = 100 } #Genoa
+		command = { type = relation which = MOD value = 100 } #Modena
+		command = { type = relation which = PAR value = 100 } #Parma
+		command = { type = relation which = VER value = 100 } #Verona
+		command = { type = relation which = RIM value = 100 } #Rimini
+		command = { type = alliance which = MAN } #Mantua
+		command = { type = alliance which = PAP } #Rome
+		command = { type = alliance which = VEN } #Venice
+		command = { type = alliance which = MLO } #Milano
+		command = { type = alliance which = NAP } #Napoli
+		command = { type = alliance which = TOS } #Tuscany
+		command = { type = alliance which = FLO } #Florence
+		command = { type = alliance which = PIS } #Siena
+		command = { type = alliance which = GEN } #Genoa
+		command = { type = alliance which = MOD } #Modena
+		command = { type = alliance which = PAR } #Parma
+		command = { type = alliance which = VER } #Verona
+		command = { type = alliance which = RIM } #Rimini
+	}
+}
+
+#(1450-1820) Union of Monferrat - Parma
+event = {
+	id = 3001228
+	trigger = {
+		exists = BYZ
+		NOT = { relation = { country = BYZ data = 150 } }
+		OR = {
+			control = { province = 394 data = BYZ } #Apulia
+			control = { province = 393 data = BYZ } #Napoli
+			control = { province = 399 data = BYZ } #Rome
+			control = { province = 392 data = BYZ } #Marche
+			control = { province = 391 data = BYZ } #Romagna
+			control = { province = 400 data = BYZ } #Siena
+			control = { province = 401 data = BYZ } #Tuscany
+			control = { province = 402 data = BYZ } #Emilia
+			control = { province = 390 data = BYZ } #Mantua
+			control = { province = 403 data = BYZ } #Genoa
+			control = { province = 370 data = BYZ } #Venice
+			control = { province = 389 data = BYZ } #Lombardia
+		}
+	}
+	random = NO
+	country = PAR
+	name = "The Union of Monferrat"
+	desc = "The dukes and petty lords of Italy cannot believe that Byzantium exists, let alone that it is sending its fleets to their shores, but they must, for the armies are here. Putting aside their rivalries and intrigues, they unite for the protection of Rome and the Serenissima."
+	date = { day = 1 month = january year = 1450 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = { # I could use the help
+		name = "To war!"
+		command = { type = stability value = 2 }
+		command = { type = treasury value = 100 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+		command = { type = relation which = MAN value = 100 } #Mantua
+		command = { type = relation which = PAP value = 100 } #Rome
+		command = { type = relation which = VEN value = 100 } #Venice
+		command = { type = relation which = MLO value = 100 } #Milano
+		command = { type = relation which = NAP value = 100 } #Napoli
+		command = { type = relation which = SIC value = 100 } #Sicily
+		command = { type = relation which = TOS value = 100 } #Tuscany
+		command = { type = relation which = FLO value = 100 } #Florence
+		command = { type = relation which = PIS value = 100 } #Siena
+		command = { type = relation which = GEN value = 100 } #Genoa
+		command = { type = relation which = MOD value = 100 } #Modena
+		command = { type = relation which = VER value = 100 } #Verona
+		command = { type = relation which = RIM value = 100 } #Rimini
+		command = { type = alliance which = MAN } #Mantua
+		command = { type = alliance which = PAP } #Rome
+		command = { type = alliance which = VEN } #Venice
+		command = { type = alliance which = MLO } #Milano
+		command = { type = alliance which = NAP } #Napoli
+		command = { type = alliance which = SIC } #Sicily
+		command = { type = alliance which = TOS } #Tuscany
+		command = { type = alliance which = FLO } #Florence
+		command = { type = alliance which = PIS } #Siena
+		command = { type = alliance which = GEN } #Genoa
+		command = { type = alliance which = MOD } #Modena
+		command = { type = alliance which = VER } #Verona
+		command = { type = alliance which = RIM } #Rimini
+	}
+}
+
+#(1450-1820) Union of Monferrat - Mantua
+event = {
+	id = 3001229
+	trigger = {
+		exists = BYZ
+		NOT = { relation = { country = BYZ data = 150 } }
+		OR = {
+			control = { province = 394 data = BYZ } #Apulia
+			control = { province = 393 data = BYZ } #Napoli
+			control = { province = 399 data = BYZ } #Rome
+			control = { province = 392 data = BYZ } #Marche
+			control = { province = 391 data = BYZ } #Romagna
+			control = { province = 400 data = BYZ } #Siena
+			control = { province = 401 data = BYZ } #Tuscany
+			control = { province = 402 data = BYZ } #Emilia
+			control = { province = 390 data = BYZ } #Mantua
+			control = { province = 403 data = BYZ } #Genoa
+			control = { province = 370 data = BYZ } #Venice
+			control = { province = 389 data = BYZ } #Lombardia
+		}
+	}
+	random = NO
+	country = MAN
+	name = "The Union of Monferrat"
+	desc = "The dukes and petty lords of Italy cannot believe that Byzantium exists, let alone that it is sending its fleets to their shores, but they must, for the armies are here. Putting aside their rivalries and intrigues, they unite for the protection of Rome and the Serenissima."
+	date = { day = 1 month = january year = 1450 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = { # I could use the help
+		name = "To war!"
+		command = { type = stability value = 2 }
+		command = { type = treasury value = 100 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+		command = { type = relation which = PAP value = 100 } #Rome
+		command = { type = relation which = VEN value = 100 } #Venice
+		command = { type = relation which = MLO value = 100 } #Milano
+		command = { type = relation which = NAP value = 100 } #Napoli
+		command = { type = relation which = SIC value = 100 } #Sicily
+		command = { type = relation which = TOS value = 100 } #Tuscany
+		command = { type = relation which = FLO value = 100 } #Florence
+		command = { type = relation which = PIS value = 100 } #Siena
+		command = { type = relation which = GEN value = 100 } #Genoa
+		command = { type = relation which = MOD value = 100 } #Modena
+		command = { type = relation which = PAR value = 100 } #Parma
+		command = { type = relation which = VER value = 100 } #Verona
+		command = { type = relation which = RIM value = 100 } #Rimini
+		command = { type = alliance which = PAP } #Rome
+		command = { type = alliance which = VEN } #Venice
+		command = { type = alliance which = MLO } #Milano
+		command = { type = alliance which = NAP } #Napoli
+		command = { type = alliance which = SIC } #Sicily
+		command = { type = alliance which = TOS } #Tuscany
+		command = { type = alliance which = FLO } #Tuscany
+		command = { type = alliance which = PIS } #Siena
+		command = { type = alliance which = GEN } #Genoa
+		command = { type = alliance which = MOD } #Modena
+		command = { type = alliance which = PAR } #Parma
+		command = { type = alliance which = VER } #Verona
+		command = { type = alliance which = RIM } #Rimini
+	}
+}
+
+# Union of Monferrat
+event = {
+	id = 3001230
+	trigger = {
+		OR = {
+			NOT = { exists = VEN }
+			event = 3001219 #VEN: Union of Monferrat
+		}
+		OR = {
+			NOT = { exists = PAP }
+			event = 3001220 #PAP: Union of Monferrat
+		}
+		OR = {
+			NOT = { exists = PIS }
+			event = 3001221 #PIS: Union of Monferrat
+		}
+		OR = {
+			NOT = { exists = TOS }
+			event = 3001222 #TOS: Union of Monferrat
+		}
+		OR = {
+			NOT = { exists = GEN }
+			event = 3001223 #GEN: Union of Monferrat
+			relation = { country = GEN data = 150 }
+		}
+		OR = {
+			NOT = { exists = MLO }
+			event = 3001224 #MLO: Union of Monferrat
+		}
+		OR = {
+			NOT = { exists = NAP }
+			event = 3001225 #NAP: Union of Monferrat
+		}
+		OR = {
+			NOT = { exists = MOD }
+			event = 3001226 #PAR: Union of Monferrat
+		}
+		OR = {
+			NOT = { exists = SIC }
+			event = 3001227 #SIC: Union of Monferrat
+		}
+		OR = {
+			NOT = { exists = PAR }
+			event = 3001228 #PAM: Union of Monferrat
+		}
+		OR = {
+			NOT = { exists = MAN }
+			event = 3001229 #MAN: Union of Monferrat
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "The Union of Monferrat"
+	desc = "It's incredible! With the encouragement of the kings of France and Hungary, the petty barons of Italy have actually stopped their feuding and united ... against us. Let's hope we can buy our way out of this..."
+
+	date = { day = 1 month = january year = 1450 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = { # What th...
+		name = "Mommy!"
+		command = { type = treasury value = 100 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#(1419-1520) Sack of Venice based on an event by Mudder
+event = {
+	id = 3001231
+	trigger = {
+		NOT = { year = 1520 }
+		control = { province = 370 data = BYZ } #Venice
+	}
+	random = NO
+	country = BYZ
+	name = "Sack of Venice "
+	desc = "Having taken Venice, it's time to take vengence for our humiliations of the past. She has grown rich while our lands suffered, and her cathedral of St. Mark is still filled to bursting with the sainted relics and treasures of Byzantium. How much looting should we allow our men?"
+	date = { day = 1 month = january year = 1420 }
+	offset = 30 #1 month
+	deathdate = { day = 1 month = january year = 1520 }
+
+	action_a = {
+		name = "Three days"
+		command = { type = treasury value = 200 } #changed
+		command = { type = relation which = PAP value = -150 }
+		command = { type = relation which = VEN value = -400 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = NAP value = -100 }
+		command = { type = relation which = KNI value = -100 }
+		command = { type = relation which = POR value = 100 } #changed
+		command = { type = relation which = GEN value = 100 }
+		command = { type = trigger which = 3001233 } #VEN: Sack of Venice (weak effect)
+	}
+	action_b = {
+		name = "Raze the town. Sell the people to the Khan"
+		command = { type = treasury value = 300 } #changed
+		command = { type = relation which = PAP value = -400 }
+		command = { type = relation which = VEN value = -400 }
+		command = { type = relation which = HAB value = -400 }
+		command = { type = relation which = FRA value = -400 }
+		command = { type = relation which = SPA value = -400 }
+		command = { type = relation which = NAP value = -400 }
+		command = { type = relation which = KNI value = -400 }
+		command = { type = relation which = CYP value = -400 }
+		command = { type = relation which = HUN value = -300 }
+		command = { type = relation which = -1 value = -200 }
+		command = { type = relation which = -1 value = -200 }
+		command = { type = relation which = -1 value = -200 }
+		command = { type = relation which = -1 value = -200 }
+		command = { type = relation which = -1 value = -200 }
+		command = { type = relation which = -1 value = -200 }
+		command = { type = relation which = POR value = 150 } #changed
+		command = { type = relation which = GEN value = 150 }
+		command = { type = trigger which = 3001234 } #VEN: Sack of Venice (strong effect)
+	}
+	action_c = {
+		name = "I just want the Crown Jewels and the horses from Hagia Sophia back"
+		#command = { type = vp value = 20 }
+		command = { type = treasury value = 50 }
+		command = { type = relation which = VEN value = 100 }
+		command = { type = relation which = PAP value = 50 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = NAP value = 50 }
+		command = { type = relation which = KNI value = 50 }
+		command = { type = relation which = CYP value = 50 }
+		command = { type = relation which = HUN value = 50 }
+		command = { type = relation which = -1 value = 25 }
+		command = { type = relation which = -1 value = 25 }
+		command = { type = relation which = -1 value = 25 }
+		command = { type = relation which = -1 value = 25 }
+		command = { type = relation which = -1 value = 25 }
+		command = { type = relation which = -1 value = 25 }
+	}
+}
+
+#(1520-1820) Sack of Venice based on an event by Mudder
+event = {
+	id = 3001232
+	trigger = {
+		control = { province = 370 data = BYZ } #Venice
+		NOT = { event = 3001231 } #BYZ: Sack of Venice (before 1520)
+	}
+	random = NO
+	country = BYZ
+	name = "Sack of Venice "
+	desc = "Having taken Venice, it's time to take vengence for our humiliations of the past. Unfortunately, having invested her families' wealth in the Atlantic ports and having lost her own lucrative trade routes to the merchants of Lisboa and Alexandria, the town is not the prize she once was."
+	date = { day = 1 month = january year = 1520 }
+	offset = 30 #1 month
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "At least we got the horses from Hagia Sophia and the Crown Jewels back"
+		command = { type = treasury value = 50 }
+		command = { type = relation which = PAP value = -150 }
+		command = { type = relation which = VEN value = -400 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = NAP value = -100 }
+		command = { type = relation which = KNI value = -100 }
+		command = { type = relation which = POR value = 100 } #changed
+		command = { type = relation which = GEN value = 100 }
+		command = { type = trigger which = 3001233 } #VEN: Sack of Venice (weak effect)
+	}
+	action_b = {
+		name = "Burn it all. Sell the people to the Khan"
+		command = { type = treasury value = 200 } #changed
+		command = { type = relation which = PAP value = -400 }
+		command = { type = relation which = VEN value = -400 }
+		command = { type = relation which = HAB value = -400 }
+		command = { type = relation which = FRA value = -400 }
+		command = { type = relation which = SPA value = -400 }
+		command = { type = relation which = NAP value = -400 }
+		command = { type = relation which = KNI value = -400 }
+		command = { type = relation which = CYP value = -400 }
+		command = { type = relation which = HUN value = -300 }
+		command = { type = relation which = -1 value = -200 }
+		command = { type = relation which = -1 value = -200 }
+		command = { type = relation which = -1 value = -200 }
+		command = { type = relation which = -1 value = -200 }
+		command = { type = relation which = -1 value = -200 }
+		command = { type = relation which = -1 value = -200 }
+		command = { type = relation which = -1 value = -200 }
+		command = { type = relation which = -1 value = -200 }
+		command = { type = relation which = -1 value = -200 }
+		command = { type = relation which = -1 value = -200 }
+		command = { type = relation which = -1 value = -200 }
+		command = { type = relation which = -1 value = -200 }
+		command = { type = relation which = POR value = 50 } #changed
+		command = { type = relation which = GEN value = 50 }
+		command = { type = trigger which = 3001234 } #VEN: Sack of Venice (strong effect)
+	}
+}
+
+#Sack of Venice (weak effect)
+event = {
+	id = 3001233
+	random = NO
+	country = VEN
+	name = "Sack of Venice "
+	desc = "The iniquities of our fathers on the Fourth Crusade has been visited upon their children. The Greeks have taken the islands and are burning and looting everything they can find. There are rumors they have even sold some of our noble families into slavery to the Khan!"
+
+	action_a = {
+		name = "The Pope will hear of this!"
+		command = { type = removecot which = 370 }
+		command = { type = losemanufactory which = 370 }
+		command = { type = losebuilding which = 370 value = shipyard }
+		command = { type = fortress which = 370 value = -1 }
+		command = { type = population which = 370 value = -30000 }
+	}
+}
+
+#Sack of Venice (strong effect)
+event = {
+	id = 3001234
+	random = NO
+	country = VEN
+	name = "Sack of Venice "
+	desc = "The iniquities of our fathers on the Fourth Crusade has been visited upon their children. The Greeks have taken the islands and are burning and looting everything they can find. They are selling our families into slavery to the Khan!"
+
+	action_a = {
+		name = "Heaven preserve us!"
+		command = { type = removecot which = 370 }
+		command = { type = losebuilding which = 370 value = barrack }
+		command = { type = losebuilding which = 370 value = shipyard }
+		command = { type = losebuilding which = 370 value = bailiff }
+		command = { type = losebuilding which = 370 value = courthouse }
+		command = { type = losemanufactory which = 370 }
+		command = { type = fortress which = 370 value = -3 }
+		command = { type = population which = 370 value = -60000 }
+	}
+}
+
+#XXXXXX
+
+#(1419-1820) Roman Duchy of Venice by Louis-Philippe
+event = {
+	id = 3001235
+	trigger = {
+		vassal = { country = BYZ country = VEN }
+	}
+	random = NO
+	country = VEN
+	name = "Venice becomes a Roman duchy"
+	desc = "After the resurrection of the Empire, Venice chose to oppose the Greek navy. After rough battles, the Serenissima succumbed and the doge submitted. In exchange for the independence of the old Republic, now an Imperial duchy, Venice gained the loss of her commercial monopolies, her navy, her treasure. What's more, the Patriarch of Aquila was returned to his post, while a Greek doux from the Imperial family was created doge for life. Republican institutions were abolished. The overseas holdings were given to Constantinople, Dogado only remaining."
+	date = { day = 1 month = january year = 1337 }
+	offset = 30 #1 month
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "There's nothing we can do"
+		command = { type = removecot which = 370 }
+		command = { type = relation which = BYZ value = 400 }
+		command = { type = cedeprovince which = BYZ value = 365 }
+		command = { type = cedeprovince which = BYZ value = 359 }
+		command = { type = cedeprovince which = BYZ value = 362 }
+		command = { type = cedeprovince which = BYZ value = 368 }
+		command = { type = removecore_national which = 365 }
+		command = { type = removecore_national which = 359 }
+		command = { type = removecore_national which = 362 }
+		command = { type = removecore_national which = 368 }
+		command = { type = removecore_national which = 479 }
+		command = { type = removecore_national which = 480 }
+		command = { type = removecore_national which = 481 }
+		command = { type = removecore_national which = 484 }
+		command = { type = removecore_national which = 820 }
+		command = { type = treasury value = -1000 }
+		command = { type = religion which = orthodox }
+		command = { type = domestic which = ARISTOCRACY value = 10 }
+		command = { type = domestic which = LAND value = 6 }
+		command = { type = domestic which = MERCANTILISM value = 4 }
+		command = { type = trigger which = 3001236 } #BYZ: Roman Duchy of Venice
+	}
+}
+
+#(1419-1820) Roman Duchy of Venice
+event = {
+	id = 3001236
+	random = NO
+	country = BYZ
+	name = "Venice becomes a Roman duchy"
+	desc = "After the resurrection of the Empire, Venice chose to oppose the Greek navy. After rough battles, the Serenissima succumbed and the doge submitted. In exchange for the independence of the old Republic, now an Imperial duchy, Venice received the loss of her commercial monopolies, her navy, her treasure. What's more, the Patriarch of Aquila was returned to his post, while a Greek doux from the Imperial family is created doge for life. Republican institutions were abolished. The overseas holdings were given to Constantinople, Dogado only remaining."
+
+	action_a = {
+		name = "Huzzah! Byzantia rules the waves!"
+		command = { type = alliance which = VEN }
+		command = { type = treasury value = 1000 }
+		command = { type = addcore_national which = 365 } #Dalmatia
+		command = { type = addcore_national which = 362 } #Ragusa
+		command = { type = addcore_national which = 368 } #Istria
+		command = { type = naval value = 500 }
+		command = { type = trade value = 500 }
+	}
+}
+#removed shipyard
+
+# Thieves in the Night by Mr. Ouija
+event = {
+	id = 3001237
+	trigger = {
+		owned = { province = 744 data = BYZ } #Alexandria
+		NOT = { vassal = { country = BYZ country = VEN } }
+		exists = VEN
+		atwar = no
+		event = 3001219
+		NOT = {
+			relation = { country = VEN data = 0 }
+			stability = 1
+			control = { province = 744 data = BYZ }
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "Thieves in the night"
+	desc = "The Christian missionaries in Egypt and Syria sparked widespread revolt as anticipated. With Byzantium distracted by the riots, the exiled Mamluk nobles husbanded their remaining forces and managed to take control of Alexandria. They then turned over controlling authority to Venice, thus receiving protection and a degree of autonomy. Venice was more than willing to take part in this plot. Byzantium was outraged but their exhausted armies were not ready to fight yet another war after the long conflict and the civil faction refused to support the idea of war with Venice. The Imperial Court was forced to accept this agreement... for now."
+	date = { day = 1 month = may year = 1500 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = { # Drat!
+		name = "Drat!"
+		command = { type = removecore_national which = 744 }
+		command = { type = cedeprovince which = VEN value = 744 }
+		command = { type = trigger which = 3001238 } #VEN: The Last Laugh
+	}
+}
+#added nonvassal condition
+
+# The Last Laugh by Mr. Ouija
+event = {
+	id = 3001238
+	random = NO
+	country = VEN
+	name = "The Last Laugh"
+	desc = "Rebels in Alexandria have broken away from Byzantium and wish to pledge their loyalty to us! We can strengthen our trade and stick a finger in the eye of Constantinople. This is an opportunity we cannot pass up."
+	style = 1
+
+	action_a = { # Yes! Let us cement our position there.
+		name = "Yes! Let us cement our position there."
+		command = { type = treasury value = -200 }
+		command = { type = addcore_national which = 744 } #Alexandria
+		command = { type = trade value = 500 }
+		command = { type = fortress which = 744 value = 1 }
+	}
+}
+
+# Egyptian Uprising by Mr. Ouija
+event = {
+	id = 3001239
+	trigger = {
+		event = 3001238
+		control = { province = 744 data = VEN }
+		NOT = { exists = MAM }
+	}
+	random = NO
+	country = BYZ
+	name = "Egyptian Uprising"
+	desc = "From time to time riots would flare up due to the efforts of Egyptian Nationalists. As long as Venice held on to Alexandria, Byzantium could do little to stop the flow of supplies to the rebels."
+	date = { day = 1 month = january year = 1500 }
+	offset = 7200 #20 years
+	deathdate = { day = 1 month = january year = 1580 }
+
+	action_a = { # Egypt is in revolt!
+		name = "Egypt is in revolt!"
+		command = { type = revolt which = 742 }
+		command = { type = revolt which = 742 }
+		command = { type = revolt which = 743 }
+		command = { type = revolt which = 743 }
+		command = { type = revolt which = 745 }
+		command = { type = revolt which = 745 }
+		command = { type = revolt which = 746 }
+		command = { type = revolt which = 746 }
+		command = { type = revolt which = 747 }
+		command = { type = revolt which = 747 }
+		command = { type = revoltrisk which = 12 value = 3 }
+		command = { type = stability value = -2 }
+	}
+}
+
+# Recovery of Alexandria
+event = {
+	id = 3001240
+	trigger = {
+		event = 3001238
+		owned = { province = 744 data = -1 }
+	}
+	random = NO
+	country = BYZ
+	name = "Alexandria recovered"
+	desc = "Alexandria has returned to Imperial control, with all the privileges, perks and massive looting and destruction that entails."
+	date = { day = 1 month = january year = 1532 }
+	offset = 1 #immediate
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Where's your precious Venice now?"
+		command = { type = revolt which = 744 }
+		command = { type = population which = 744 value = -10000 }
+		command = { type = addcore_national which = 744 } #Alexandria
+		command = { type = stability value = 1 }
+	}
+}

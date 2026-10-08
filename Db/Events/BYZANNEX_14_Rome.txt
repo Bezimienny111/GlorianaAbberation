@@ -1,0 +1,782 @@
+#-----------------------------------------------------------------------------
+# Roma
+
+#The Future of Rome by Mr. Ouija
+event = {
+	id = 3001241
+	trigger = {
+		owned = { province = 399 data = -1 }
+	}
+	random = no
+	country = BYZ
+	name = "Decisions, Decisions"
+	desc = "The capture of Rome poses an interesting dilemma. Shall we relocate the court and capital and claim the old empire reborn, or shall we remain in Constantinople?"
+	date = { day = 1 month = january year = 1337 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = { # Rome is the center of the Empire
+		name = "The Pope's gonna love this..."
+		command = { type = capital which = 399 }
+		command = { type = stability value = -3 }
+		command = { type = provincetax which = 399 value = 5 }
+		command = { type = provincetax which = 357 value = -5 } #Thrace
+		command = { type = fortress which = 399 value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = relation which = MOS value = -300 }
+		command = { type = relation which = NVG value = -300 }
+		command = { type = relation which = RUS value = -300 }
+	}
+	action_b ={ # Constantinople is the center of the empire
+		name = "We are the Empire reborn!"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+	}
+}
+
+#Sack of Rome, pre-Leo
+event = {
+	id = 3001242
+	trigger = {
+		control = { province = 399 data = BYZ } #Rome
+		religion = orthodox
+	}
+	random = NO
+	country = BYZ
+	name = "Sack of Rome"
+	desc = "We have taken Rome. It is not much to look at, but it is the heart of the Western schism. Our troops demand we loot the city; the Patriarch counsels against it. What shall be done?"
+	date = { day = 1 month = january year = 1337 }
+	offset = 1 #immediate
+	deathdate = { day = 22 month = february year = 1513 }
+
+	action_a = {
+		name = "Let's be sure they remember us!"
+		command = { type = treasury value = 50 }
+		command = { type = relation which = PAP value = -400 }
+		command = { type = relation which = VEN value = -100 }
+		command = { type = relation which = HAB value = -200 }
+		command = { type = relation which = FRA value = -200 }
+		command = { type = relation which = SPA value = -200 }
+		command = { type = relation which = NAP value = -200 }
+		command = { type = relation which = KNI value = -300 }
+		command = { type = relation which = POR value = -200 }
+		command = { type = relation which = GEN value = -200 }
+		command = { type = sleepevent which = 3001243 } #We were too thorough
+		command = { type = sleepevent which = 3546 } #PAP: The Commissioning of Saint Peter's Basilica
+		command = { type = sleepevent which = 3001487 } #BYZ: A Papal Envoy
+		command = { type = trigger which = 3001263 } #They'll remember us alright
+		command = { type = trigger which = 3001244 }
+	}
+	action_b = {
+		name = "Let us be merciful to our brothers in Christ"
+		command = { type = stability value = -1 }
+		command = { type = relation which = PAP value = 100 }
+	}
+}
+
+#Sack of Rome, post-Leo
+event = {
+	id = 3001243
+	trigger = {
+		religion = orthodox
+		control = { province = 399 data = BYZ } #Rome
+	}
+	random = NO
+	country = BYZ
+	name = "Sack of Rome"
+	desc = "We have taken Rome. It is bloated with the riches of the West and filled with the most fascinating art. Should we take the opportunity to remind them of their vows of poverty?"
+	date = { day = 22 month = february year = 1513 }
+	offset = 30 #1 month
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Someone should, after all"
+		command = { type = treasury value = 200 }
+		command = { type = domestic which = INNOVATIVE value = 1 } #the masses of stolen art and artists spreads renaissance thought
+		command = { type = relation which = PAP value = -150 }
+		command = { type = relation which = VEN value = -400 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = NAP value = -100 }
+		command = { type = relation which = KNI value = -100 }
+		command = { type = relation which = POR value = 100 } #changed
+		command = { type = relation which = GEN value = 100 }
+		command = { type = sleepevent which = 3001244 }
+		command = { type = sleepevent which = 3001487 } #BYZ: A Papal Envoy
+		command = { type = trigger which = 3001263 } #They'll remember us alright
+	}
+	action_b = {
+		name = "Let us be merciful to our brothers in Christ"
+		command = { type = stability value = -1 }
+		command = { type = relation which = PAP value = 100 }
+	}
+}
+
+#Sack of Rome
+event = {
+	id = 3001244
+	random = NO
+	country = PAP
+	name = "Sack of Rome"
+	desc = "My glorious city!"
+
+	action_a = {
+		name = "I'm gonna cry..."
+		command = { type = treasury value = -200 }
+		command = { type = losemanufactory which = -2 }
+		command = { type = fortress which = 399 value = -1 }
+		command = { type = populationpercent which = 399 value = -25 }
+		command = { type = relation which = VEN value = 100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = NAP value = 100 }
+		command = { type = relation which = KNI value = 100 }
+	}
+}
+
+#Fate of the Papacy based on an event by Mr. Ouija
+event = {
+	id = 3001245
+	trigger = {
+		control = { province = 399 data = BYZ }
+		OR = {
+			event = 3001242
+			event = 3001243
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "Fate of the Papacy"
+	desc = "Having captured the Pope in Rome, a decision must be made about the fate of the Papacy. We could depose the schismatic and allow the church to appoint a new, orthodox bishop for Rome; we could also maintain the current incumbent and see that his rulings become ... more in keeping with Church tradition. Both of these routes are likely to stir up a hornet's nest of opposition from Spain, France, Hungary, Poland. Another option: we could allow the Pope his title and faith and leave him free to migrate to a new see. Last and most diplomatically, we could respect the Donation of Constantine, pack up our relics and go home."
+	#when did they realize it was a forgery?
+	date = { day = 1 month = january year = 1337 }
+	offset = 30 #1 month
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "I have a cousin who's free" #Create an orthodox bishop
+		command = { type = addcore_national which = 391 } #Romagna (Modena on the new map)
+		command = { type = addcore_national which = 392 } #Marche
+		command = { type = addcore_national which = 399 } #Roma
+		command = { type = inherit which = PAP }
+		command = { type = treasury value = 150 }
+		command = { type = domestic which = INNOVATIVE value = -3 }
+		command = { type = stability value = 3 }
+		command = { type = relation which = VEN value = -100 }
+		command = { type = relation which = HAB value = -400 }
+		command = { type = relation which = POL value = -400 }
+		command = { type = relation which = CAS value = -400 }
+		command = { type = relation which = ARG value = -400 }
+		command = { type = relation which = NAP value = -100 }
+		command = { type = relation which = KNI value = -400 }
+		command = { type = relation which = SPA value = -400 }
+		command = { type = relation which = FRA value = -400 }
+		command = { type = relation which = DAU value = -400 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = HUN value = -400 }
+		command = { type = relation which = MOS value = 200 }
+		command = { type = relation which = NVG value = 200 }
+		command = { type = relation which = RUS value = 200 }
+		command = { type = sleepevent which = 3001258 } #dueling pontiffs
+	}
+	action_b = {
+		name = "Post a unit outside the Vatican" #Lean on the current Pope
+		command = { type = stability value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -4 }
+		command = { type = addcore_national which = 391 } #Romagna (Modena on the new map)
+		command = { type = addcore_national which = 392 } #Marche
+		command = { type = addcore_national which = 399 } #Roma
+		command = { type = inherit which = PAP }
+		command = { type = independence which = PAP }
+		command = { type = vassal which = PAP }
+		command = { type = dynastic which = PAP }
+		command = { type = alliance which = PAP }
+		command = { type = relation which = PAP value = 300 }
+		command = { type = diplomats value = 3 }
+		command = { type = DIP which = 1 value = 240 }
+		command = { type = relation which = VEN value = -100 }
+		command = { type = relation which = HAB value = -200 }
+		command = { type = relation which = POL value = -200 }
+		command = { type = relation which = CAS value = -200 }
+		command = { type = relation which = ARG value = -200 }
+		command = { type = relation which = NAP value = -200 }
+		command = { type = relation which = KNI value = -200 }
+		command = { type = relation which = MOS value = 100 }
+		command = { type = relation which = NVG value = 100 }
+		command = { type = relation which = RUS value = 100 }
+		command = { type = sleepevent which = 3001248 } #avignon events
+		command = { type = sleepevent which = 3001249 }
+		command = { type = sleepevent which = 3001250 }
+		command = { type = trigger which = 3001246 } #orthodox Papacy
+	}
+	action_c = { #
+		name = "God will judge him soon enough"
+		command = { type = addcore_national which = 391 } #Romagna (Modena on the new map)
+		command = { type = addcore_national which = 392 } #Marche
+		command = { type = addcore_national which = 399 } #Roma
+		command = { type = inherit which = PAP }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = stability value = -3 }
+		command = { type = relation which = VEN value = 100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = POL value = 100 }
+		command = { type = relation which = CAS value = 100 }
+		command = { type = relation which = ARG value = 100 }
+		command = { type = relation which = NAP value = 100 }
+		command = { type = relation which = KNI value = 100 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = DAU value = 100 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = HUN value = 100 }
+		command = { type = relation which = MOS value = -100 }
+		command = { type = relation which = NVG value = -100 }
+		command = { type = relation which = RUS value = -100 }
+		command = { type = sleepevent which = 3001258 } #dueling pontiffs
+	}
+	action_d = {
+		name = "Let him alone"
+		command = { type = stability value = -6 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -1 }
+		command = { type = sleepevent which = 3001248 } #Avignon events
+		command = { type = sleepevent which = 3001249 }
+		command = { type = sleepevent which = 3001250 }
+		command = { type = relation which = PAP value = 200 }
+		command = { type = relation which = VEN value = 100 }
+		command = { type = relation which = HAB value = 200 }
+		command = { type = relation which = POL value = 200 }
+		command = { type = relation which = CAS value = 200 }
+		command = { type = relation which = ARG value = 200 }
+		command = { type = relation which = NAP value = 100 }
+		command = { type = relation which = KNI value = 200 }
+		command = { type = relation which = SPA value = 200 }
+		command = { type = relation which = FRA value = 200 }
+		command = { type = relation which = DAU value = 200 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = HUN value = 200 }
+		command = { type = relation which = MOS value = -200 }
+		command = { type = relation which = NVG value = -200 }
+		command = { type = relation which = RUS value = -200 }
+		command = { type = sleepevent which = 3001258 } #dueling pontiffs
+	}
+}
+
+event = {
+	id = 3001246
+	random = NO
+	country = PAP
+	name = "We return to the mother faith!"
+	desc = "As our new (and newly Grecified) Pope is at pains to explain to us, we are returned to the faith of our fathers!"
+
+	action_a = {
+		name = "Goody"
+		command = { type = religion which = orthodox }
+	}
+}
+
+event = {
+	id = 3001247
+	trigger = {
+		event = 3001246
+		NOT= { vassal = { country = BYZ country = PAP } }
+	}
+	random = NO
+	country = PAP
+	name = "Freedom!"
+	desc = "Finally free of the influence of the Byzantines, the Papacy is able to restore the faith of its fathers!"
+	date = { year = 1337 }
+	offset = 30 #1 month
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Gloria in excelsis Deo!"
+		command = { type = religion which = catholic }
+		command = { type = conversion which = -2 }
+	}
+}
+
+#The Papacy returns to Avignon - event for France
+event = {
+	id = 3001248
+	trigger = {
+		event = 3001245
+		owned = { province = 407 data = -1 } #dauphine
+		NOT = {
+			exists = PAP
+		}
+	}
+	random = NO
+	country = FRA
+	name = "The Papacy Returns"
+	desc = "With Rome in flames, the Byzantine Empire has taken over the apparatus of the Holy See. In the confusion, the Papacy has been moved once again to the palace at Avignon. The last experience of having the Pope here was a political nightmare for France, but this time (with the Greeks to blame) Germany and England won't be #able to claim the French candidates are antiPopes."
+	date = { year = 1337 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Fantastique! Je mean... trop mal..." #needs real french =)
+		command = { type = independence which = PAP } 
+		command = { type = cedeprovince which = PAP value = 407 }
+		command = { type = treasury value = 200 }
+		#command = { type = vp value = 100 }
+		command = { type = sleepevent which = 3001254 }
+	}
+	action_b = {
+		name = "Non. Je tried ca once already" #plus du francais vrai, moins du franglais =)
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = sleepevent which = 3001251 }
+	}
+}
+
+#The Papacy returns to Avignon - event for Provence
+event = {
+	id = 3001249
+	trigger = {
+		event = 3001245
+		owned = { province = 407 data = -1 } #provence
+		countrysize = 2
+		NOT = {
+			exists = PAP
+		}
+	}
+	random = NO
+	country = PRO
+	name = "The Papacy Returns"
+	desc = "With Rome in flames, the Byzantine Empire has taken over the apparatus of the Holy See. In the confusion, the Papacy has been moved once again to the palace at Avignon. Should we make our new guests feel at home?"
+	date = { year = 1337 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "That's great!"
+		#command = { type = vp value = 50 }
+		command = { type = independence which = PAP }
+		command = { type = cedeprovince which = PAP value = 407 }
+		command = { type = sleepevent which = 3001254 }
+	}
+	action_b = {
+		name = "I only have so much land here..."
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = DAU value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = ARG value = -100 }
+		command = { type = sleepevent which = 3001251 }
+	}
+}
+
+#Event for one-province Dauphine
+event = {
+	id = 3001250
+	trigger = {
+		event = 3001245
+		owned = { province = 407 data = -1 } #dauphine
+		NOT = { countrysize = 2 }
+	}
+	random = NO
+	country = DAU
+	name = "The Papacy in exile"
+	desc = "With Rome in flames, the Byzantine Empire has taken over the apparatus of the Holy See. In the confusion, the Papacy has been moved once again to the palace at Avignon. Should we make our new guests feel at home?"
+	date = { year = 1337 }
+	offset = 30 #1 month
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "I can't say no to the Pope..."
+		trigger = {
+			ai = yes
+		}
+		command = { type = sleepevent which = 3001254 }
+		command = { type = country which = PAP }
+	}
+	action_b = {
+		name = "Sorry, your Holiness"
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = PRO value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = ARG value = -100 }
+		command = { type = sleepevent which = 3001251 }
+	}
+}
+
+#Avignon
+event = {
+	id = 3001251
+	trigger = {
+		OR = {
+			event = 3001248
+			event = 3001249
+			event = 3001250
+		}
+	}
+	random = NO
+	country = PAP
+	name = "Back in Babylon"
+	desc = "Welp, here we are back in Avignon. It's a little drafty, but least we have a home."
+	date = { year = 1337 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Bona! ... Er, bon"
+		command = { type = provincetax which = 407 value = 5 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = CAS value = -100 }
+		command = { type = relation which = SPA value = -100 }
+	}
+}
+
+event = {
+	id = 3001252
+	trigger = {
+		event = 3001251
+		NOT = { owned = { province = 407 data = PAP } }
+		NOT = { event = 3001253 }
+	}
+	random = NO
+	province = 406
+	name = "The Papacy leaves"
+	desc = "With the departure of the Papacy, the great estates and palaces of Avignon have been deserted."
+	date = { year = 1337 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "My tax base!"
+		command = { type = provincetax which = 407 value = -5 }
+	}
+}
+
+event = {
+	id = 3001253
+	trigger = {
+		event = 3001251
+		owned = { province = 399 data = PAP }
+	}
+	random = NO
+	country = PAP
+	name = "The Papacy returns"
+	desc = "Joyous day! The Papacy has returned to the see of St. Peter!"
+
+	action_a = {
+		name = "Gloria in excelsis Deo!"
+		command = { type = capital which = 399 }
+		command = { type = provincetax which = 407 value = -5 }
+	}
+}
+
+event = {
+	id = 3001254
+	trigger = {
+		OR = {
+			event = 3001248
+			event = 3001249
+			event = 3001250
+		}
+	}
+	random = NO
+	country = FRA
+	name = "The Roaming Papacy"
+	desc = "Unable to restore itself to the palace at Avignon, the Papacy has been reduced to touring between the capitals of Europe. Spain, France, and the Emperor will each host him and his (greatly reduced) retinue in turn. The Pope is furious and demanding his restoration to Rome."
+	date = { year = 1337 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "We'll get to it"
+		command = { type = treasury value = 100 }
+		#command = { type = vp value = 25 }
+	}
+}
+
+event = {
+	id = 3001255
+	trigger = {
+		event = 3001254
+	}
+	random = NO
+	country = CAS
+	name = "The Roaming Papacy"
+	desc = "Unable to restore itself to the palace at Avignon, the Papacy has been reduced to touring between the capitals of Europe. Spain, France, and the Emperor will each host him and his (greatly reduced) retinue in turn. The Pope is furious and demanding his restoration to Rome."
+	date = { year = 1337 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "We'll get to it"
+		command = { type = treasury value = 100 }
+		command = { type = relation which = PAP value = 200 }
+		#command = { type = vp value = 25 }
+	}
+}
+
+event = {
+	id = 3001256
+	trigger = {
+		event = 3001254
+	}
+	random = NO
+	country = SPA
+	name = "The Roaming Papacy"
+	desc = "Unable to restore itself to the palace at Avignon, the Papacy has been reduced to touring between the capitals of Europe. Spain, France, and the Emperor will each host him and his (greatly reduced) retinue in turn. The Pope is furious and demanding his restoration to Rome."
+	date = { year = 1337 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "We'll get to it"
+		command = { type = treasury value = 100 }
+		command = { type = relation which = PAP value = 200 }
+		#command = { type = vp value = 25 }
+	}
+}
+
+event = {
+	id = 3001257
+	trigger = {
+		OR = {
+			event = 3001256
+			event = 3001255
+		}
+	}
+	random = NO
+	country = HAB
+	name = "The Roaming Papacy"
+	desc = "Unable to restore itself to the palace at Avignon, the Papacy has been reduced to touring between the capitals of Europe. Spain, France, and the Emperor will each host him and his (greatly reduced) retinue in turn. The Pope is furious and demanding his restoration to Rome."
+	date = { year = 1337 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "We'll get to it"
+		command = { type = relation which = PAP value = 200 }
+		command = { type = treasury value = 100 }
+		#command = { type = vp value = 25 }
+	}
+}
+
+event = {
+	id = 3001258
+	trigger = {
+		event = 3001245
+	}
+	random = NO
+	country = BYZ
+	name = "Dueling pontiffs"
+	desc = "Rather than accept our man as the head of the Church in the West, the Catholics have appointed their own candidate to the post. Should we acknowledge their bishop, who will after all be the actual head of their faith, or should we maintain our Pope as a titular position?"
+	date = { year = 1337 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Well, we already rented the vestments"
+		command = { type = stability value = 1 }
+		command = { type = relation which = POL value = -200 }
+		command = { type = relation which = HUN value = -200 }
+		command = { type = relation which = HAB value = -200 }
+		command = { type = relation which = FRA value = -200 }
+		command = { type = relation which = SPA value = -200 }
+		command = { type = relation which = CAS value = -200 }
+		command = { type = relation which = ARG value = -200 }
+		command = { type = relation which = VEN value = -200 }
+		command = { type = relation which = MLO value = -200 }
+		command = { type = relation which = KNI value = -200 }
+		command = { type = relation which = ENG value = -200 }
+		command = { type = relation which = GEN value = -200 }
+		command = { type = relation which = POR value = -200 }
+		command = { type = sleepevent which = 3001487 } #BYZ: A Papal Envoy
+	}
+	action_b = {
+		name = "End the charade"
+		command = { type = stability value = -1 }
+		#command = { type = vp value = -100 }
+		#command = { type = sleepevent which = 3001259 }
+		#command = { type = sleepevent which = 3001260 }
+		#command = { type = sleepevent which = 3001261 }
+		#command = { type = sleepevent which = 3001262 }
+	}
+}
+
+event = {
+	id = 3001259
+	trigger = {
+		event = 3001258
+	}
+	random = NO
+	country = FRA
+	name = "The Roaming Papacy"
+	desc = "Faced with a Byzantine puppet in Rome, the College of Cardinals has deposed the current pontiff and appointed a new Pope in exile. After the nightmare scenario of the Babylonian captivity, the course agreed upon will be that the new Pope will tour between the capitals of Europe, staying in any one court not longer than ten years. Spain, France, and the Emperor will each host him and his (greatly reduced) retinue in turn. The Pope is furious and demanding his restoration to Rome."
+	date = { year = 1337 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "We'll get to it"
+		command = { type = treasury value = 100 }
+		#command = { type = vp value = 25 }
+	}
+}
+
+event = {
+	id = 3001260
+	trigger = {
+		event = 3001259
+	}
+	random = NO
+	country = CAS
+	name = "The Roaming Papacy"
+	desc = "Faced with a Byzantine puppet in Rome, the College of Cardinals has deposed the current pontiff and appointed a new Pope in exile. After the nightmare scenario of the Babylonian captivity, the course agreed upon will be that the new Pope will tour between the capitals of Europe, staying in any one court not longer than ten years. Spain, France, and the Emperor will each host him and his (greatly reduced) retinue in turn. The Pope is furious and demanding his restoration to Rome."
+	date = { year = 1337 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "We'll get to it"
+		command = { type = treasury value = 100 }
+		command = { type = relation which = PAP value = 200 }
+		#command = { type = vp value = 25 }
+	}
+}
+
+event = {
+	id = 3001261
+	trigger = {
+		event = 3001259
+	}
+	random = NO
+	country = SPA
+	name = "The Roaming Papacy"
+	desc = "Faced with a Byzantine puppet in Rome, the College of Cardinals has deposed the current pontiff and appointed a new Pope in exile. After the nightmare scenario of the Babylonian captivity, the course agreed upon will be that the new Pope will tour between the capitals of Europe, staying in any one court not longer than ten years. Spain, France, and the Emperor will each host him and his (greatly reduced) retinue in turn. The Pope is furious and demanding his restoration to Rome."
+	date = { year = 1337 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "We'll get to it"
+		command = { type = treasury value = 100 }
+		command = { type = relation which = PAP value = 200 }
+		#command = { type = vp value = 25 }
+	}
+}
+
+event = {
+	id = 3001262
+	trigger = {
+		OR = {
+			event = 3001261
+			event = 3001260
+		}
+	}
+	random = NO
+	country = HAB
+	name = "The Roaming Papacy"
+	desc = "Faced with a Byzantine puppet in Rome, the College of Cardinals has deposed the current pontiff and appointed a new Pope in exile. After the nightmare scenario of the Babylonian captivity, the course agreed upon will be that the new Pope will tour between the capitals of Europe, staying in any one court not longer than ten years. Spain, France, and the Emperor will each host him and his (greatly reduced) retinue in turn. The Pope is furious and demanding his restoration to Rome."
+	date = { year = 1337 }
+	offset = 3600 #10 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "We'll get to it"
+		command = { type = relation which = PAP value = 200 }
+		command = { type = treasury value = 100 }
+		#command = { type = vp value = 25 }
+	}
+}
+
+#They did remember
+event = {
+	id = 3001263
+	trigger = {
+		owned = { province = 399 data = -1 } #Rome
+		NOT = { provincereligion = { province = 399 data = orthodox } }
+	}
+	random = YES
+	country = BYZ
+	name = "They still remember!"
+	desc = "Rebel heretics have seized the city of Rome from our garrison! They are calling the Pope back from his exile!"
+	date = { day = 1 month = january year = 1450 }
+	offset = 1 #immediate
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "I'm gonna murderize 'em!"
+		command = { type = revolt which = 399 }
+		command = { type = revolt which = 399 }
+		command = { type = revolt which = 399 }
+		command = { type = revolt which = 399 }
+	}
+}
+
+#They did remember
+event = {
+	id = 3001264
+	trigger = {
+		event = 3001263
+		OR = {
+			control = { province = 399 data = REB } #Rome
+			control = { province = 399 data = R02 } #Rome
+			control = { province = 399 data = R03 } #Rome
+			control = { province = 399 data = R05 } #Rome
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "Too late!"
+	desc = "The Pope arrived in Rome before our army could retake the city. We could still force him out, but there would be much more political damage now."
+	date = { day = 1 month = january year = 1450 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "The sins of the fathers visit sixfold"
+		command = { type = independence which = PAP }
+		command = { type = cedeprovince which = PAP value = 399 }
+		command = { type = trigger which = 3001265 }
+	}
+}
+
+#(1450-1820) Pope Returns to Rome
+event = {
+	id = 3001265 #triggered by BYZ_3001264
+	random = NO
+	country = PAP
+	name = "The Papacy returns"
+	desc = "Joyous day! The Pope has returned to the see of St. Peter!"
+
+	action_a = {
+		name = "Gloria in excelsis Deo!"
+		command = { type = breakvassal which = BYZ }
+		command = { type = capital which = 399 }
+	}
+}
+
+#(1450-1550) The Eastern Empire is no more
+event = {
+	id = 3001266
+	trigger = {
+		GRE = { flag = byz_crossroads } #BYZ abdykacja -> GRE (dec. 6023)
+		NOT = { exists = BYZ }
+	}
+	random = NO
+	country = PAP
+	name = "The Eastern Empire is no more!"
+	desc = "Miracle of Miracles! The Greek inheritors of the Roman mantle have finally laid it aside! Among other perks, that means that the Palaiologoi are no longer above the domain of the church (schismatic though it might be) and the Imperial title held by the German overlord is finally legitimate. Our missionary work in the East and our financial operations in the North will both swell."
+
+	date = { day = 1 month = january year = 1450 }
+	offset = 360 #1 year
+	deathdate = { year = 1550 }
+
+	action_a = {
+		name = "Party at my place!"
+		command = { type = stability value = 1 }
+		command = { type = relation which = GRE value = 50 }
+		#command = { type = vp value = 25 }
+	}
+}

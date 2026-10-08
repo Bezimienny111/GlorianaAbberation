@@ -1,0 +1,2089 @@
+#####Ottoman Major Events#####
+#			By      		 #
+# Joakim 'Greven' Bergqwist  #
+#				     		 #
+# 			and	       		 #
+#				     		 #
+# Henrik 'Doomdark' Fåhraeus #
+##############################
+
+#The Economic Reforms of Mehmed II#
+event = {
+	id = 3352
+	trigger ={
+		event = 3353
+    }
+	random = no
+	country = TUR
+	name = "EVENTNAME3352"
+	desc = "EVENTHIST3352"
+	style = "3352"
+	date = { day = 1 month = january year = 1453 }
+	offset = 150
+	deathdate = { day = 1 month = january year = 1550 } # was 1491
+	
+	action_a ={ # End trade agreements with Venice and Genoa.
+		name = "ACTIONNAME3352A"
+		command = { type = cot which = 357 }
+		command = { type = removecot which = 465 }
+		command = { type = revoketrade which = VEN }
+		command = { type = relation which = VEN value = -150 }
+		command = { type = revoketrade which = GEN }
+		command = { type = relation which = GEN value = -100 }
+		command = { type = domestic which = MERCANTILISM value = 2 }
+		command = { type = merchants value = 6 }
+		command = { type = loansize which = 300 }
+	}
+	action_b ={ # Maintain agreements with Venice and Genoa.
+		name = "ACTIONNAME3352B"
+		command = { type = treasury value = 800 }
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = givetrade which = VEN }
+		command = { type = relation which = VEN value = 100 }
+		command = { type = givetrade which = GEN }
+		command = { type = relation which = GEN value = 50 }
+		command = { type = trade value = 500 }
+		command = { type = loansize which = 500 }
+	}
+}
+
+#The City of Men's Desire#		#Capital moved#
+event = {
+	id = 3353
+	trigger = {
+		owned = {
+			province = 357
+			data = -1
+		}
+		owned = {
+			province = 477
+			data = -1
+		}
+		owned = {
+			province = 478
+			data = -1
+		}
+		NOT = {
+			exists = BYZ
+		}
+		NOT = {
+			decision = 1024 # Restore the Ottoman Empire
+		}
+	}
+	random = no
+	country = TUR
+	name = "EVENTNAME3353"
+	desc = "EVENTHIST3353"
+	style = "3353"
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1836 } # was 1491
+	
+	action_a ={			#Constantinople is new capital#
+		name = "ACTIONNAME3353A"
+		ai_chance = 100
+		command = { type = capital which = 357 }
+		command = { type = cityname which = 357 value = "Istanbul" }
+		command = { type = add_countryculture which = greek }
+		command = { type = add_countryculture which = slavonic }
+		command = { type = domestic which = CENTRALIZATION  value = 1 }
+		command = { type = provinceculture which = 357 value = turkish }
+		command = { type = provinceculture which = 477 value = turkish }
+		command = { type = provinceculture which = 478 value = turkish }
+		command = { type = provincereligion which = 357 value = sunni }
+		command = { type = provincereligion which = 477 value = sunni }
+		command = { type = provincereligion which = 478 value = sunni }
+		command = { type = stability value = 2 }
+		command = { type = setflag which = istanbul }
+	}
+	action_b ={			#Let us keep the Old one instead#
+		name = "ACTIONNAME3353B"
+		command = { type = add_countryculture which = greek }
+		command = { type = add_countryculture which = slavonic }
+		command = { type = provinceculture which = 358 value = turkish }
+		command = { type = provinceculture which = 477 value = turkish }
+		command = { type = provinceculture which = 478 value = turkish }
+		command = { type = provincereligion which = 477 value = sunni }
+		command = { type = provincereligion which = 478 value = sunni }
+		command = { type = domestic which = CENTRALIZATION  value = -3 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#Military Reforms#
+event = {
+	id = 3354
+	random = no
+	country = TUR
+	name = "EVENTNAME3354"
+	desc = "EVENTHIST3354"
+	style = 1
+	date = { day = 1 month = january year = 1419 }
+	offset = 10950
+
+	action_a ={ # Great Army Reform
+		name = "ACTIONNAME3354A"
+		command = { type = land value = 1000 }
+		command = { type = naval value = 500 }
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+	}
+	action_b ={ # Reform Army and Navy
+		name = "ACTIONNAME3354B"
+		command = { type = land value = 750 }
+		command = { type = naval value = 750 }
+	}
+	action_c ={ # Great Navy Reform 
+		name = "ACTIONNAME3354C"
+		command = { type = land value = 500 }
+		command = { type = naval value = 1000 }
+		command = { type = domestic which = LAND value = -1 }
+		command = { type = domestic which = OFFENSIVE value = -1 }
+	}
+}
+
+#Military Reforms#
+event = {
+	id = 3355
+	random = no
+	country = TUR
+	name = "EVENTNAME3355"
+	desc = "EVENTHIST3355"
+	style = 1
+
+	date = { day = 1 month = january year = 1450 }
+	offset = 7300
+
+	action_a ={ # Great Navy Reform
+		name = "ACTIONNAME3355A"
+		command = { type = land value = 500 }
+		command = { type = naval value = 1000 }
+		command = { type = domestic which = LAND value = -1 }
+		command = { type = domestic which = OFFENSIVE value = -1 }
+	}
+	action_b ={ # Reform Army and Navy
+		name = "ACTIONNAME3355B"
+		command = { type = land value = 750 }
+		command = { type = naval value = 750 }
+	}
+	action_c ={ # Great Army Reform
+		name = "ACTIONNAME3355C"
+		command = { type = land value = 1000 }
+		command = { type = naval value = 500 }
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+	}
+}
+
+#Sheikh-ul-Islam Office instituted#
+event = {
+	id = 3356
+	random = no
+	country = TUR
+	name = "EVENTNAME3356"
+	desc = "EVENTHIST3356"
+	style = 1
+	date = { day = 1 month = january year = 1425 }
+	offset = 364
+
+	action_a ={ # Institute the Office
+		name = "ACTIONNAME3356A"
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = stability value = 3 }
+	}
+	action_b ={ # Decline
+		name = "ACTIONNAME3356B"
+		command = { type = stability value = -2 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+	}
+}
+
+#Imperial College instituted#
+event = {
+	id = 3357
+	random = no
+	country = TUR
+	name = "EVENTNAME3357"
+	desc = "EVENTHIST3357"
+	style = 1
+	date = { day = 1 month = january year = 1454 }
+	offset = 3600 # was 364
+	
+	action_a ={ # Found the 'Enderun'.
+		name = "ACTIONNAME3357A"
+		command = { type = treasury value = -400 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = QUALITY value = 2 }
+		command = { type = stability value = -1 }
+		command = { type = infra value = 250 }
+		command = { type = gainbuilding which = -2 value = barrack }
+	}
+	action_b ={ # Expand the Timariot System instead
+		name = "ACTIONNAME3357B"
+		command = { type = domestic which = ARISTOCRACY value = 3 }
+		command = { type = domestic which = OFFENSIVE value = 2 }
+		command = { type = domestic which = QUALITY value = -2 }
+		command = { type = stability value = 2 }
+		# Possibly gain barracks elsewhere. Syria?
+	}
+}
+
+#Ragusan Independence#
+event = {
+	id = 4218
+	trigger = {
+		owned = { province = 362 data = -1 }
+		NOT = {
+			exists = RAG
+		}
+	}
+	random = no
+	country = TUR
+	name = "EVENTNAME4218"
+	desc = "EVENTHIST4218"
+
+	style = "4218"
+
+	date = { day = 1 month = january year = 1458 }
+	offset = 500
+
+	action_a ={ # We could use a valuable trading partner
+		name = "ACTIONNAME4218A"
+		command = { type = independence which = RAG }
+		command = { type = relation which = VEN value = 50 }
+		command = { type = relation which = GEN value = 50 }
+		command = { type = trade value = 400 }
+		command = { type = merchants value = 3 }
+		command = { type = stability value = 1 }
+	}
+	action_b ={ # We must crush the city states
+		name = "ACTIONNAME4218B"
+		command = { type = domestic which = MERCANTILISM value = 2 }
+		command = { type = relation which = VEN value = -150 }
+		command = { type = relation which = GEN value = -150 }
+		command = { type = trade value = -400 }
+		command = { type = merchants value = -3 }
+		command = { type = revolt which = 362 }
+		command = { type = revolt which = 362 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#Atam-Dedem Kanunu Codified#
+event = {
+	id = 3358
+	random = no
+	country = TUR
+	name = "EVENTNAME3358"
+	desc = "EVENTHIST3358"
+	style = 1
+
+	date = { day = 1 month = january year = 1460 }
+	offset = 3650
+	
+	action_a ={ # Codify the 'Laws of the Forefathers'
+		name = "ACTIONNAME3358A"
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#The Veneto-Turkish Conflict#
+event = {
+	id = 3359
+	trigger = {
+		exists = VEN
+		owned = {
+			province = 744
+			data = -1
+		}
+		NOT = {
+			exists = BYZ
+		}
+	}
+	random = no
+	country = TUR
+	name = "EVENTNAME3359"
+	desc = "EVENTHIST3359"
+	style = 2
+
+	date = { day = 1 month = june year = 1492 }
+	offset = 364
+	deathdate = { day = 1 month = january year = 1559 }
+
+	action_a ={				#Refuse even to discuss compensation#
+		name = "ACTIONNAME3359A"
+		command = { type = stability value = 1 }
+		command = { type = trigger which = 3637 }
+		command = { type = relation which = KNI value = -100 }
+		command = { type = relation which = GEN value = -100 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = VEN value = -100 }
+	}
+
+	action_b ={				#Give Alexandria with CoT as compensation#
+		name = "ACTIONNAME3359B"
+		command = { type = stability value = 1 }
+		command = { type = trigger which = 3715 }
+		command = { type = cedeprovince which = VEN value = 744 }
+		command = { type = relation which = VEN value = 100 }
+	}
+}
+
+#The Turko-Persian Conflicts: Shiite rebels.#
+event = {
+	id = 3360
+	random = no
+	country = TUR
+	name = "EVENTNAME3360"
+	desc = "EVENTHIST3360"
+	style = 2
+
+# Triggered by Persian event 3560
+
+	action_a ={ # Crush the Shiite rebellion under Ahmed.
+		name = "ACTIONNAME3360A"
+		command = { type = relation which = PER value = -100 }
+		command = { type = stability value = 1 }
+		command = { type = land value = 200 }
+		command = { type = casusbelli which = PER value = 120 }
+	}
+	action_b ={ # Reconcile with Ahmed.
+		name = "ACTIONNAME3360B"
+		command = { type = stability value = 1 }
+		command = { type = treasury value = -100 }
+		command = { type = relation which = PER value = 40 }
+	}
+	action_c ={ # Adopt the Shi'a faith.
+		name = "ACTIONNAME3360C"
+		command = { type = stability value = -6 }
+		command = { type = relation which = PER value = 200 }
+		command = { type = religion which = shia }
+		command = { type = provincereligion which = -1 value = shia }
+		command = { type = provincereligion which = -4 value = shia }
+		command = { type = provincereligion which = -4 value = shia }
+		command = { type = provincereligion which = -4 value = shia }
+	}
+}
+
+#The Turko-Persian Conflicts: Prince Beyazid flees to Persia.#
+event = {
+	id = 3361
+	trigger = {
+		exists = PER
+		neighbour = PER
+		NOT = {
+			alliance = { country = TUR country = PER }
+			vassal = { country = TUR country = PER }
+		}
+		countrysize = 12
+	}
+	random = no
+	country = TUR
+	name = "EVENTNAME3361"
+	desc = "EVENTHIST3361"
+	style = 2
+	
+	date = { day = 1 month = june year = 1553 }
+	offset = 700
+
+	action_a ={ # Pay the Shah for his extradition and then execute him.
+		name = "ACTIONNAME3361A"
+		command = { type = treasury value = -200 }
+		command = { type = relation which = PER value = -50 }
+		command = { type = stability value = 1 }
+		command = { type = trigger which = 3561 }
+		command = { type = DIP which = 3 value = 24 }
+	}
+	action_b ={ # Ignore him.
+		name = "ACTIONNAME3361B"
+		command = { type = relation which = PER value = -100 }
+		command = { type = DIP which = -2 value = 24 }
+		command = { type = ADM which = -2 value = 24 }
+	}
+	action_c ={ # Arrange to have Beyazid murdered.
+		name = "ACTIONNAME3361C"
+		command = { type = stability value = -1 }
+		command = { type = relation which = PER value = -200 }
+		command = { type = casusbelli which = PER value = 36 }
+	}
+}
+
+#The Turko-Persian Conflicts: Murad III's campaigns against Persia.#
+event = {
+	id = 3362
+	trigger = {
+		exists = PER
+		neighbour = PER
+		NOT = {
+			alliance = { country = TUR country = PER }
+			vassal = { country = TUR country = PER }
+		}
+		countrysize = 12
+	}
+	random = no
+	country = TUR
+	name = "EVENTNAME3362"
+	desc = "EVENTHIST3362"
+	style = 2
+	
+	date = { day = 1 month = june year = 1578 }
+	offset = 365
+
+	action_a ={ # Fan the flames.
+		name = "ACTIONNAME3362A"
+		command = { type = casusbelli which = PER value = 120 }
+		command = { type = relation which = PER value = -200 }
+		command = { type = land value = 200 }
+		command = { type = trigger which = 3562 }
+	}
+	action_b ={ # Maintain status quo.
+		name = "ACTIONNAME3362B"
+		command = { type = stability value = 1 }
+	}
+	action_c ={ # Seek reconciliation.
+		name = "ACTIONNAME3362C"
+		command = { type = DIP which = 3 value = 24 }
+		command = { type = relation which = PER value = 50 }
+	}
+}
+
+#The Turko-Persian Conflicts: Persians take advantage of Ottoman instability.#
+event = {
+
+	id = 3363
+	random = no
+	country = TUR
+	name = "EVENTNAME3363"
+	desc = "EVENTHIST3363"
+	style = 3
+
+# Triggered by Persian event 3563
+
+	action_a ={ # This means war.
+		name = "ACTIONNAME3363A"
+		command = { type = war which = PER }
+		command = { type = MIL which = 4 value = 24 }
+		command = { type = land value = 200 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = stability value = -1 }
+	}
+	action_b ={ # Concentrate on suppressing the rebels.
+		name = "ACTIONNAME3363B"
+		command = { type = ADM which = 4 value = 24 }
+		command = { type = infra value = 200 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#The Great Carrack of Alexandria#
+event = {
+	id = 3364
+	random = no
+	country = TUR
+	name = "EVENTNAME3364"
+	desc = "EVENTHIST3364"
+	style = 1
+	
+#	Triggered by a KNI event. Carrack plundered.
+
+	action_a ={	#Those bastard Franks will pay for this!#
+		name = "ACTIONNAME3364A"
+		command = { type = casusbelli which = KNI value = 72 }
+		command = { type = relation which = KNI value = -200 }
+		command = { type = treasury value = -250 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#The Great Carrack of Alexandria#
+event = {
+	id = 3365
+	random = no
+	country = TUR
+	name = "EVENTNAME3365"
+	desc = "EVENTHIST3365"
+	style = 1
+
+#	Triggered by a KNI event. Carrack not plundered.
+
+	action_a ={	#One less thorn in our side...#
+		name = "ACTIONNAME3365A"
+		command = { type = relation which = KNI value = 50 }
+		command = { type = naval value = 250 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#The Expansion of the Royal Bureaucracy (Suleyman the Great)#
+event = {
+	id = 3366
+	random = no
+	country = TUR
+	name = "EVENTNAME3366"
+	desc = "EVENTHIST3366"
+	style = 2
+	
+	date = { day = 1 month = june year = 1550 }
+	offset = 3649
+
+	action_a ={ # Expand the Royal Bureaucracy
+		name = "ACTIONNAME3366A"
+		command = { type = stability value = -2 }
+		command = { type = revoltrisk which = 24 value = 4 }
+		command = { type = infra value = 2000 }
+		command = { type = provincetax which = -1 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+	}
+	action_b ={ # Limited reforms
+		name = "ACTIONNAME3366B"
+		command = { type = stability value = -1 }
+		command = { type = revoltrisk which = 12 value = 2 }
+		command = { type = infra value = 500 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+	}
+	action_c ={ # Reduce the Royal Bureucracy
+		name = "ACTIONNAME3366C"
+		command = { type = stability value = 3 }
+		command = { type = infantry which = -2 value = 20000 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+	}
+}
+
+#The Great Naval Reform / Imperial Halic Shipyard. # 
+event = {
+	id = 3367
+	trigger = {
+			owned = { province = 357 data = -1 } #Thrace
+	}
+	random = no
+	country = TUR
+	name = "EVENTNAME3367"
+	desc = "EVENTHIST3367"
+	style = 2
+	
+	date = { day = 1 month = june year = 1515 }
+	offset = 700
+	deathdate = { day = 29 month = december year = 1550 }
+
+	action_a ={ # Build the Imperial Halic Shipyard.
+		name = "ACTIONNAME3367A"
+		command = { type = treasury value = -600 }
+		command = { type = naval value = 1000 }
+		command = { type = galleys which = -1 value = 20 }
+		command = { type = gainbuilding which = 357 value = shipyard }
+		command = { type = vp value = 25 }
+	}
+	action_b ={ # Build a smaller shipyard in Ragusa.
+		name = "ACTIONNAME3367B"
+		trigger = { 
+			owned = { province = 362 data = -1 } # Ragusa
+		}
+		command = { type = treasury value = -300 }
+		command = { type = naval value = 500 }
+		command = { type = trade value = 500 }
+		command = { type = gainmanufactory which = 362 value = navalequipment }
+		#command = { type = cot which = 362 } -- ideally, but too close to 357
+		command = { type = gainbuilding which = 362 value = shipyard }
+	}
+	action_c ={ # Reform the army instead
+		name = "ACTIONNAME3367C"
+		command = { type = land value = 1500 }
+	}
+}
+
+#Cem Sultan's Rebellion#
+event = {
+	id = 3368
+	random = no
+	country = TUR
+	name = "EVENTNAME3368"
+	desc = "EVENTHIST3368"
+	style = 1
+	
+	date = { day = 1 month = june year = 1481 }
+	offset = 700
+
+	action_a ={ # Crush Cem's rebellion.
+		name = "ACTIONNAME3368A"
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = stability value = -1 }
+		command = { type = ADM which = 4 value = 24 }
+		command = { type = infra value = 200 }
+	}
+	action_b ={ # Seek reconciliation.
+		name = "ACTIONNAME3368B"
+		command = { type = DIP which = 4 value = 24 }
+		command = { type = treasury value = -100 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+	}
+}
+
+#The 1st Celali Uprising#
+event = {
+	id = 3370
+	trigger = {
+		owned = {
+			province = 474 # Sivas
+			data = -1
+		}
+		NOT = 	{ religion = shia }
+	}
+	random = no
+	country = TUR
+	name = "EVENTNAME3370"
+	desc = "EVENTHIST3370"
+	style = 2
+	date = { day = 1 month = january year = 1519 }
+	offset = 364
+
+	action_a ={ # Crush Celali and the Shiites.
+		name = "ACTIONNAME3370A"
+		command = { type = revolt which = 474}
+		command = { type = revolt which = -1}
+		command = { type = stability value = -1 }
+		command = { type = ADM which = 3 value = 24 }
+		command = { type = infra value = 200 }
+	}
+	action_b ={ # Heed their demands.
+		name = "ACTIONNAME3370B"
+		command = { type = provincereligion which = 474 value = shia }
+		command = { type = stability value = 1 }
+		command = { type = ADM which = 4 value = 24 }
+	}
+}
+
+#The Sultan become 'Khalifa'#
+event = {
+	id = 3371
+	trigger = {
+		control = { province = 746 data = TUR }
+                                        }
+	random = no
+	country = TUR
+	name = "EVENTNAME3371"
+	desc = "EVENTHIST3371"
+	style = 2
+	
+	date = { day = 1 month = january year = 1510 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={ # Assume the title of Caliph
+		name = "ACTIONNAME3371A"
+		command = { type = inherit  which = MAM }
+                command = { type = vassal which = ARA }
+		command = { type = add_countryculture which = arabic }
+		command = { type = relation which = ARA value = 50 }
+		command = { type = relation which = ALD value = 50 }
+		command = { type = relation which = TLE value = 50 }
+		command = { type = relation which = MOR value = 50 }
+		command = { type = relation which = TRI value = 50 }
+		command = { type = relation which = CYR value = 50 }
+		command = { type = relation which = ADE value = 50 }
+		command = { type = relation which = OMA value = 50 }
+		command = { type = relation which = MOG value = 50 }
+		command = { type = relation which = DLH value = 50 }
+	}
+}
+
+
+#The Ottoman Vassalization of Al-Djazaïr#
+event = {
+
+	id = 3372				#Triggered by ALD3651#
+	random = no
+	country = TUR
+	name = "EVENTNAME3372"
+	desc = "EVENTHIST3372"
+	style = 2
+
+	action_a ={				#We accept your submission - Vassal!##
+		name = "ACTIONNAME3372A"
+		command = { type = vassal which = ALD }
+		command = { type = sleepleader which = 09705 }
+		command = { type = treasury value = 200 }
+		command = { type = stability value = 1 }
+		command = { type = INF which = 737 value = 7000 }
+		command = { type = relation which = ALD value = 50 }
+	}
+}
+
+#Mameluk Uprising under Canbirdi Ghazeli#
+event = {
+	id = 3373
+	trigger = {
+		any_owned = "Egypt"
+		NOT = {
+			exists = MAM
+		}
+	}
+	random = no
+	country = TUR
+	name = "EVENTNAME3373"
+	desc = "EVENTHIST3373"
+	style = 2
+	date = { day = 1 month = january year = 1520 }
+	offset = 720
+	deathdate = { day = 1 month = january year = 1550 }
+	
+	action_a ={ # Ok
+		name = "ACTIONNAME3373A"
+		command = { type = revolt which = 744 }
+		command = { type = revolt which = 744 }
+		command = { type = revolt which = 745 }
+		command = { type = revolt which = 745 }
+		command = { type = revolt which = 746 }
+		command = { type = revolt which = 747 }
+	}
+}
+
+#Mimar Sinan's Great Constructions#
+event = {
+	id = 3374
+	trigger = {
+		owned = {
+			province = 357
+			data = -1
+		}
+	}
+	random = no
+	country = TUR
+	name = "EVENTNAME3374"
+	desc = "EVENTHIST3374"
+	style = "3374"
+	
+	date = { day = 1 month = january year = 1538 }
+	offset = 720
+	deathdate = { day = 1 month = january year = 1560 }
+
+	action_a ={ # Great works
+		name = "ACTIONNAME3374A"
+		command = { type = treasury value = -800 }
+		command = { type = infra value = 2000 }
+		command = { type = stability value = 2 }
+		command = { type = gainmanufactory which = -2 value = luxury }
+		command = { type = vp value = 50 }
+	}
+	action_b ={ # Modest works
+		name = "ACTIONNAME3374B"
+		command = { type = infra value = 500 }
+		command = { type = stability value = 1 }
+	}
+	action_c ={ # Invest in fortifications instead.
+		name = "ACTIONNAME3374C"
+		command = { type = fortress which = -2 value = 1 } # Capital
+		command = { type = fortress which = -4 value = 1 } # Random province
+		command = { type = fortress which = -4 value = 1 } # Random province
+		command = { type = fortress which = -4 value = 1 } # Random province
+	}
+}
+
+#The Legal Reforms of Suleyman the Magnificent#
+event = {
+	id = 3375
+	random = no
+	country = TUR
+	name = "EVENTNAME3375"
+	desc = "EVENTHIST3375"
+	style = 2
+	
+	date = { day = 1 month = january year = 1540 }
+	offset = 3649
+
+	action_a ={ # Codify the Ottoman Laws.
+		name = "ACTIONNAME3375A"
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = infra value = 200 }
+	}
+}
+
+#The Spahi Uprising under 'Abd al-Halim (3rd Celali Uprising)#
+event = {
+	id = 3376
+	random = no
+	country = TUR
+	name = "EVENTNAME3376"
+	desc = "EVENTHIST3376"
+	style = 2
+	
+	date = { day = 1 month = january year = 1599 }
+	offset = 700
+
+	action_a ={ # Crush the rebels.
+		name = "ACTIONNAME3376A"
+		command = { type = revolt which = 474 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = stability value = -1 }
+	}
+	action_b ={ # Bribe the rebel leaders.
+		name = "ACTIONNAME3376B"
+		command = { type = treasury value = -100 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#Kösem Sultana - domineering wife of Ahmed I.#
+event = {
+	id = 3377
+	random = no
+	country = TUR
+	name = "EVENTNAME3377"
+	desc = "EVENTHIST3377"
+	style = 3
+	
+	date = { day = 1 month = january year = 1611 }
+	offset = 1000
+	
+	action_a ={ # Wed Kösem
+		name = "ACTIONNAME3377A"
+		command = { type = DIP which = 4 value = 480 }
+		command = { type = ADM which = 4 value = 480 }
+		command = { type = MIL which = 4 value = 480 }
+		command = { type = stability value = -2 }
+	}
+	action_b ={ # Choose another wife.
+		name = "ACTIONNAME3377B"
+		command = { type = sleepevent which = 3384 }
+	}
+}
+
+#The Shuf Mountain Rebellion#
+event = {
+	id = 3378
+	random = no
+	country = TUR
+	name = "EVENTNAME3378"
+	desc = "EVENTHIST3378"
+	style = 3
+	
+	date = { day = 1 month = january year = 1699 }
+	offset = 364
+	
+	action_a ={ # Smash the rebellion by force
+		name = "ACTIONNAME3378A"
+		command = { type = revolt which = 490 }
+		command = { type = revolt which = 491 }
+		command = { type = revolt which = 485 }
+		command = { type = MIL which = 3 value = 12 }
+	}
+	action_b ={ # Negotiate with the rebels.
+		name = "ACTIONNAME3378B"
+		command = { type = stability value = -1 }
+		command = { type = treasury value = -50 }
+		command = { type = DIP which = 3 value = 12 }
+	}
+}
+
+#The Decentralizing Effect of the Provincial System#
+event = {
+	id = 3379
+	random = no
+	country = TUR
+	name = "EVENTNAME3379"
+	desc = "EVENTHIST3379"
+	style = 3
+	
+	date = { day = 1 month = january year = 1615 }
+	offset = 300
+	
+	action_a ={ # More power to the Beys
+		name = "ACTIONNAME3379A"
+		command = { type = provincetax which = -1 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = stability value = 2 }
+		command = { type = technology which = muslim }
+	}
+	action_b ={ # Limit the concessions.
+		name = "ACTIONNAME3379B"
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = revoltrisk which = 12 value = 4 }
+		command = { type = stability value = -1 }
+		command = { type = technology which = muslim }
+	}
+	action_c ={ # Rein them in
+		name = "ACTIONNAME3379C"
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -4 value = 5000 }
+		command = { type = desertion which = -4 value = 5000 }
+		command = { type = revoltrisk which = 48 value = 6 }
+		command = { type = stability value = -6 }
+		command = { type = sleepevent which = 3378 } # The Shusf rebellion
+	}
+}
+
+#The Decentralizing Effect of the Provincial System#
+event = {
+	id = 3380
+	random = no
+	country = TUR
+	name = "EVENTNAME3380"
+	desc = "EVENTHIST3380"
+	style = 3
+	
+	date = { day = 1 month = january year = 1690 }
+	offset = 720
+	
+	action_a ={ # More power to the Beys
+		name = "ACTIONNAME3380A"
+		command = { type = provincetax which = -1 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = stability value = 2 }
+	}
+	action_b ={ # Limit the concessions.
+		name = "ACTIONNAME3380B"
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = revoltrisk which = 12 value = 4 }
+		command = { type = stability value = -1 }
+	}
+	action_c ={ # Rein them in
+		name = "ACTIONNAME3380C"
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -4 value = 5000 }
+		command = { type = desertion which = -4 value = 5000 }
+		command = { type = revoltrisk which = 12 value = 6 }
+		command = { type = stability value = -6 }
+		command = { type = sleepevent which = 3378 } # The Shusf rebellion
+	}
+}
+
+#The Decentralizing Effect of the Provincial System#
+event = {
+	id = 3381
+	random = no
+	country = TUR
+	name = "EVENTNAME3381"
+	desc = "EVENTHIST3381"
+	style = 4
+	
+	date = { day = 1 month = january year = 1740 }
+	offset = 720
+	
+	action_a ={ # More power to the Beys
+		name = "ACTIONNAME3381A"
+		command = { type = provincetax which = -1 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = stability value = 2 }
+	}
+	action_b ={ # Limit the concessions.
+		name = "ACTIONNAME3381B"
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = revoltrisk which = 12 value = 4 }
+		command = { type = stability value = -1 }
+	}
+	action_c ={ # Rein them in
+		name = "ACTIONNAME3381C"
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -4 value = 5000 }
+		command = { type = desertion which = -4 value = 5000 }
+		command = { type = revoltrisk which = 12 value = 6 }
+		command = { type = stability value = -6 }
+		command = { type = sleepevent which = 3378 } # The Shusf rebellion
+	}
+}
+
+#The 5th Celali Uprising#
+event = {
+	id = 3382
+	random = no
+	country = TUR
+	name = "EVENTNAME3382"
+	desc = "EVENTHIST3382"
+	style = 3
+
+	date = { day = 1 month = january year = 1658 }
+	offset = 365
+
+	action_a ={ # Crush the rebels.
+		name = "ACTIONNAME3382A"
+		command = { type = revolt which = 474 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = stability value = -1 }
+	}
+	action_b ={ # Bribe the rebel leaders.
+		name = "ACTIONNAME3382B"
+		command = { type = treasury value = -100 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#Proposal for an Army Reform#
+event = {
+	id = 3383
+	random = no
+	country = TUR
+	name = "EVENTNAME3383"
+	desc = "EVENTHIST3383"
+	style = 3
+	
+	date = { day = 1 month = january year = 1630 }
+	offset = 3649
+	
+	action_a ={ # Let the Janissaries enjoy their privileges.
+		name = "ACTIONNAME3383A"
+		command = { type = stability value = 1 }
+		command = { type = relation which = PER value = -150 }
+		command = { type = relation which = HAB value = -150 }
+		command = { type = relation which = POL value = -150 }
+		command = { type = relation which = HUN value = -150 }
+		command = { type = relation which = ALD value = -150 }
+		command = { type = relation which = MOR value = -150 }
+		command = { type = relation which = RUS value = -150 }
+	}
+	action_b ={ # Reform the military
+		name = "ACTIONNAME3383B"
+		command = { type = land value = 2000 }
+		command = { type = naval value = 500 }
+		command = { type = stability value = -1 }
+		command = { type = revoltrisk which = 48 value = 4 }
+	}
+}
+
+#The Murder of Kösem Sultana#
+event = {
+	id = 3384
+	random = no
+	country = TUR
+	name = "EVENTNAME3384"
+	desc = "EVENTHIST3384"
+	style = 3
+	
+	date = { day = 1 month = january year = 1651 }
+	offset = 364
+
+	action_a ={ # Kösem is murdered
+		name = "ACTIONNAME3384A"
+		command = { type = revoltrisk which = 12 value = 5 }
+	}
+}
+
+#The Age of the Köprülüs#
+event = {
+	id = 3385
+	random = no
+	country = TUR
+	name = "EVENTNAME3385"
+	desc = "EVENTHIST3385"
+	style = 3
+	
+	date = { day = 1 month = january year = 1656 }
+	offset = 1000
+
+	action_a ={ # Support the Koprulu Family
+		name = "ACTIONNAME3385A"
+		command = { type = ADM which = 4 value = 240 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = stability value = 1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+	}
+	action_b ={ # Rely on other advisors.
+		name = "ACTIONNAME3385B"
+		command = { type = stability value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+	}
+}
+
+#The Reforms of Kemankes (Kara Mustafa Pasha)#
+event = {
+	id = 3386
+	random = no
+	country = TUR
+	name = "EVENTNAME3386"
+	desc = "EVENTHIST3386"
+	style = 3
+
+	date = { day = 1 month = january year = 1640 }
+	offset = 1000
+	
+	action_a ={ # Empower Kemankes
+		name = "ACTIONNAME3386A"
+		command = { type = infra value = 500 }
+		command = { type = naval value = 1000 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = stability value = -2 }
+		command = { type = ADM which = 2 value = 240 }
+		command = { type = DIP which = 3 value = 240 }
+		command = { type = MIL which = 2 value = 240 }
+	}
+	action_b ={ # Compromise
+		name = "ACTIONNAME3386B"
+		command = { type = infra value = 200 }
+		command = { type = naval value = 400 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = stability value = -1 }
+		command = { type = ADM which = 1 value = 240 }
+		command = { type = DIP which = 2 value = 240 }
+		command = { type = MIL which = 1 value = 240 }
+	}
+	action_c ={ # Ignore his advice.
+		name = "ACTIONNAME3386C"
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+	}
+}
+
+#The Treaty of Kasr-i Sirin with Persia#
+event = {
+	id = 3387
+	trigger = {
+		exists = PER
+	}
+	random = no
+	country = TUR
+	name = "EVENTNAME3387"
+	desc = "EVENTHIST3387"
+	style = 3
+	
+	date = { day = 1 month = january year = 1645 }
+	offset = 1000
+	
+	action_a ={ # Full Reconciliation
+		name = "ACTIONNAME3387A"
+		command = { type = dynastic which = PER }
+		command = { type = relation which = PER value = 300 }
+		command = { type = DIP which = 4 value = 48 }
+	}
+	action_b ={ # Moderate Treaty
+		name = "ACTIONNAME3387B"
+		command = { type = relation which = PER value = 100 }
+	}
+	action_c ={ # No Treaty
+		name = "ACTIONNAME3387C"
+		command = {  }
+	}
+}
+
+#Turko-Polish Tensions#
+event = {
+	id = 3388
+	trigger = {
+		event = 3488
+	}
+	random = no
+	country = TUR
+	name = "EVENTNAME3388"
+	desc = "EVENTHIST3388"
+	style = 3
+
+	action_a ={ # Rattle the sabres.
+		name = "ACTIONNAME3388A"
+		command = { type = casusbelli which = POL value = 36 }
+		command = { type = relation which = POL value = -150 }
+	}
+	action_b ={ # Seek reconciliation
+		name = "ACTIONNAME3388B"
+		command = { type = relation which = POL value = 50 }
+	}
+}
+
+#Turko-Polish Tensions#
+event = {
+	id = 3389
+	trigger = {
+		event = 3489
+	}
+	random = no
+	country = TUR
+	name = "EVENTNAME3389"
+	desc = "EVENTHIST3389"
+	style = 3
+
+	action_a ={ # Rattle the sabres.
+		name = "ACTIONNAME3389A"
+		command = { type = casusbelli which = POL value = 36 }
+		command = { type = relation which = POL value = -150 }
+	}
+	action_b ={ # Seek reconciliation
+		name = "ACTIONNAME3389B"
+		command = { type = relation which = POL value = 50 }
+	}
+}
+
+#Turko-Polish Tensions#
+event = {
+	id = 3390
+	trigger = {
+		event = 3490
+	}
+	random = no
+	country = TUR
+	name = "EVENTNAME3390"
+	desc = "EVENTHIST3390"
+	style = 3
+
+	action_a ={ # Rattle the sabres.
+		name = "ACTIONNAME3390A"
+		command = { type = casusbelli which = POL value = 36 }
+		command = { type = relation which = POL value = -150 }
+	}
+	action_b ={ # Seek reconciliation
+		name = "ACTIONNAME3390B"
+		command = { type = relation which = POL value = 50 }
+	}
+}
+
+#The Tunisian Rebellion#
+event = {
+	id = 3391
+	trigger = {
+		owned = {
+			province = 739
+			data = -1
+		}
+		NOT = {
+			exists = TUN
+		}
+	}
+	random = no
+	country = TUR
+	name = "EVENTNAME3391"
+	desc = "EVENTHIST3391"
+	style = 4
+
+	date = { day = 1 month = january year = 1703 }
+	offset = 1000
+
+	action_a ={ # Grant limited autonomy
+		name = "ACTIONNAME3391A"
+		command = { type = independence which = TUN }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+	}
+	action_b ={ # Crush the rebels
+		name = "ACTIONNAME3391B"
+		command = { type = revolt which = 739 }
+		command = { type = revolt which = 739 }
+		command = { type = revolt which = 739 }
+		command = { type = revoltrisk which = 36 value = 4 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#The Tripolitanian Rebellion#
+event = {
+	id = 3392
+	trigger = {
+		owned = {
+			province = 740
+			data = -1
+		}
+		owned = {
+			province = 741
+			data = -1
+		}
+		NOT = {
+			exists = TRI
+		}
+	}
+	random = no
+	country = TUR
+	name = "EVENTNAME3392"
+	desc = "EVENTHIST3392"
+	style = 4
+
+	date = { day = 1 month = january year = 1710 }
+	offset = 1000
+
+	action_a ={ # Grant limited autonomy
+		name = "ACTIONNAME3392A"
+		command = { type = independence which = TRI }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+	}
+	action_b ={ # Crush the rebels
+		name = "ACTIONNAME3392B"
+		command = { type = revolt which = 740}
+		command = { type = revolt which = 740}
+		command = { type = revolt which = 741}
+		command = { type = revoltrisk which = 36 value = 4 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#Lale Devri (The Tulip Age)#
+event = {
+	id = 3393
+	random = no
+	country = TUR
+	name = "EVENTNAME3393"
+	desc = "EVENTHIST3393"
+	style = 4
+	
+	date = { day = 1 month = january year = 1718 }
+	offset = 700
+
+	action_a ={ # Begin Westernization Process.
+		name = "ACTIONNAME3393A"
+		command = { type = stability value = -1 }
+		command = { type = revoltrisk which = 36 value = 5 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = provincetax which = -1 value = 3 }
+		command = { type = provincetax which = -4 value = 3 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = gainmanufactory which = -1 value = goods }
+		command = { type = relation which = ENG value = 50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = POR value = 50 }
+		command = { type = relation which = POL value = 50 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = relation which = PER value = -50 }
+		command = { type = relation which = ALD value = -50 }
+		command = { type = relation which = MOR value = -50 }
+		command = { type = relation which = TRI value = -50 }
+		command = { type = relation which = TUN value = -50 }
+		command = { type = relation which = OMA value = -50 }
+		command = { type = relation which = ADE value = -50 }
+		command = { type = relation which = ARA value = -50 }
+	}
+	action_b ={ # Moderate reforms.
+		name = "ACTIONNAME3393B"
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = revoltrisk which = 12 value = 4 }
+		command = { type = sleepevent which = 3397 }
+	}
+	action_c ={ # Islam is the Law!
+		name = "ACTIONNAME3393C"
+		command = { type = stability value = 3 }
+		command = { type = infantry which = -2 value = 10000 }
+		command = { type = cavalry which = -2 value = 10000 }
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = relation which = ENG value = -50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = POR value = -50 }
+		command = { type = relation which = POL value = -50 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = PER value = 50 }
+		command = { type = relation which = ALD value = 50 }
+		command = { type = relation which = MOR value = 50 }
+		command = { type = relation which = CYR value = 50 }
+		command = { type = relation which = TUN value = 50 }
+		command = { type = relation which = OMA value = 50 }
+		command = { type = relation which = ADE value = 50 }
+		command = { type = relation which = ARA value = 50 }
+		command = { type = sleepevent which = 3397 }
+	}
+}
+
+#Ali Bey's Rebellion in Egypt#
+event = {
+	id = 3394
+	trigger = {
+		any_owned = "Egypt"
+		NOT = {
+			exists = MAM
+		}
+	}
+	random = no
+	country = TUR
+	name = "EVENTNAME3394"
+	desc = "EVENTHIST3394"
+	style = 4
+	
+	date = { day = 1 month = january year = 1770 }
+	offset = 1000
+
+	action_a ={ # Crush the rebels
+		name = "ACTIONNAME3394A"
+		command = { type = stability value = -1 }
+		command = { type = revolt which = 743 }
+		command = { type = revolt which = 744 }
+		command = { type = revolt which = 745 }
+		command = { type = revolt which = 746 }
+		command = { type = revolt which = 747 }
+	}
+	action_b ={ # Negotiate a solution
+		name = "ACTIONNAME3394B"
+		command = { type = stability value = -2 }
+		command = { type = treasury value = -500 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = sleepevent which = 3398 }
+	}
+}
+
+#The Horrible Plague in Anatolia#
+event = {
+	id = 3395
+	random = no
+	country = TUR
+	name = "EVENTNAME3395"
+	desc = "EVENTHIST3395"
+	style = 4
+
+	date = { day = 1 month = january year = 1738 }
+	offset = 1000
+
+	action_a ={ # Plague strikes Anatolia
+		name = "ACTIONNAME3395A"
+		command = { type = populationpercent which = 477 value = -25 }
+	}
+}
+
+#The Horrible Plague in Anatolia#
+event = {
+	id = 3396
+	random = no
+	country = TUR
+	name = "EVENTNAME3396"
+	desc = "EVENTHIST3396"
+	style = 4
+	
+	date = { day = 1 month = january year = 1770 }
+	offset = 365
+
+	action_a ={ # Plague strikes Anatolia
+		name = "ACTIONNAME3396A"
+		command = { type = populationpercent which = 476 value = -15 }
+		command = { type = populationpercent which = 477 value = -25 }
+	}
+}
+
+#Patrona Halil Uprising - The End of Lale Devri#
+event = {
+	id = 3397
+	random = no
+	country = TUR
+	name = "EVENTNAME3397"
+	desc = "EVENTHIST3397"
+	style = 4
+	
+	date = { day = 30 month = september year = 1730 }
+
+	action_a = { # Allow Ahmed III to be deposed.
+		name = "ACTIONNAME3397A"
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = sleepmonarch which = 04089 }
+	}
+	action_b ={ # Crush revolt.
+		name = "ACTIONNAME3397B"
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revoltrisk which = 24 value = 4 }
+		command = { type = sleepmonarch which = 04090 }
+	}
+}
+
+#The Independence of the Mameluks in Egypt#
+event = {
+	id = 3398
+	trigger = {
+		any_owned = "Egypt"
+		NOT = {
+			exists = MAM
+		}
+	}
+	random = no
+	country = TUR 
+	name = "EVENTNAME3398"
+	desc = "EVENTHIST3398"
+	style = "3398"
+	
+	date = { day = 1 month = january year = 1805 }
+	offset = 720
+
+	action_a ={ # Accept their freedom
+		name = "ACTIONNAME3398A"
+		command = { type = independence which = MAM }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+	}
+	action_b ={ # Crush the rebels
+		name = "ACTIONNAME3398B"
+		command = { type = revolt which = 743 }
+		command = { type = revolt which = 743 }
+		command = { type = revolt which = 744 }
+		command = { type = revolt which = 745 }
+		command = { type = revolt which = 746 }
+		command = { type = revolt which = 747 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#Serbian Independence#
+event = {
+	id = 3399
+	trigger = {
+		owned = { province = 355 data = -1 }
+		owned = { province = 363 data = -1 }
+		NOT = {
+			exists = SER
+		}
+	}
+	random = no
+	country = TUR
+	name = "EVENTNAME3399"
+	desc = "EVENTHIST3399"
+	style = "3399"
+	
+	date = { day = 1 month = january year = 1800 }
+	offset = 500
+
+	action_a ={ # Accept their freedom
+		name = "ACTIONNAME3399A"
+		command = { type = remove_countryculture which = slavonic }
+		command = { type = independence which = SER }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+	}
+	action_b ={ # Crush the rebels
+		name = "ACTIONNAME3399B"
+		command = { type = remove_countryculture which = slavonic }
+		command = { type = revolt which = 355 }
+		command = { type = revolt which = 355 }
+		command = { type = revolt which = 363 }
+		command = { type = revolt which = 364 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#Proposal for an Army Reform (Mahmud I)#
+event = {
+	id = 3400
+	random = no
+	country = TUR
+	name = "EVENTNAME3400"
+	desc = "EVENTHIST3400"
+	style = 4
+	
+	date = { day = 1 month = january year = 1740 }
+	offset = 1000
+	
+	action_a ={ # Reform military and establish the 'Kara Muhendishanesi'
+		name = "ACTIONNAME3400A"
+		command = { type = treasury value = -1000 }
+		command = { type = land value = 2000 }
+		command = { type = naval value = 1200 }
+		command = { type = stability value = -2 }
+		command = { type = revoltrisk which = 48 value = 4 }
+	}
+	action_b ={ # Reform military
+		name = "ACTIONNAME3400B"
+		command = { type = land value = 500 }
+		command = { type = naval value = 300 }
+		command = { type = stability value = -1 }
+		command = { type = revoltrisk which = 24 value = 4 }
+	}
+	action_c ={ # Let the Janissaries enjoy their privileges.
+		name = "ACTIONNAME3400C"
+		command = { type = stability value = 1 }
+		command = { type = relation which = PER value = -150 }
+		command = { type = relation which = HAB value = -150 }
+		command = { type = relation which = POL value = -150 }
+		command = { type = relation which = HUN value = -150 }
+		command = { type = relation which = ALD value = -150 }
+		command = { type = relation which = MOR value = -150 }
+		command = { type = relation which = RUS value = -150 }
+	}
+}
+
+#Fate of the Patriarchate# 
+event = { 
+	id = 3750 
+	trigger = { 
+		owned = { 
+			province = 357 
+			data = -1 
+			} 
+		NOT = { 
+			exists = BYZ 
+		} 
+	} 
+	random = no 
+	country = TUR 
+	name = "EVENTNAME3750" 
+	desc = "EVENTHIST3750" 
+	style = 1 
+
+	date = { day = 1 month = january year = 1337 } 
+	offset = 150 
+	deathdate = { day = 1 month = january year = 1620 } 
+
+	action_a ={ #Allow the Patriarchate to exist and keep the current Patriarch# 
+	name = "ACTIONNAME3750A" 
+		command = { type = stability value = -1 } 
+		command = { type = relation which = MOS value = 100 } 
+		command = { type = relation which = SER value = 100 } 
+		command = { type = relation which = NVG value = 100 } 
+		command = { type = relation which = TRE value = 100 } 
+		command = { type = domestic which = INNOVATIVE value = 1 } 
+	} 
+
+	action_b ={ #Allow the Patriarchate to exist, but appoint a new Patriarch# 
+	name = "ACTIONNAME3750B" 
+		command = { type = stability value = 1 } 
+		command = { type = relation which = SER value = 50 } 
+		command = { type = relation which = BOS value = 50 } 
+		command = { type = relation which = TRE value = 50 } 
+		command = { type = domestic which = CENTRALIZATION value = 1 } 
+	} 
+	action_c ={ #Close down the Patriarchate and confiscate its properties# 
+	name = "ACTIONNAME3750C" 
+		command = { type = relation which = MOS value = -100 } 
+		command = { type = relation which = NVG value = -100 } 
+		command = { type = relation which = RYA value = -100 } 
+		command = { type = relation which = SUZ value = -100 } 
+		command = { type = relation which = SER value = -100 } 
+		command = { type = relation which = BOS value = -100 } 
+		command = { type = relation which = TRE value = -100 } 
+		command = { type = relation which = TVE value = -100 } 
+		command = { type = domestic which = INNOVATIVE value = -1 } 
+		command = { type = treasury value = 300 } 
+	} 
+} 
+
+event = { 
+	id = 3840
+	
+	# Triggered by BYZ 3833
+	
+	random = no
+	country = TUR
+	name = "EVENTNAME3840"
+	desc = "EVENTHIST3840"
+	style = 1 
+	
+	action_a ={ #Gain CB on Byzantium#
+		name = "ACTIONNAME3840A"
+		command = { type = casusbelli which = BYZ value = 60 }
+		command = { type = domestic which = quality value = 1 }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = CAV which = -2 value = 5000 }
+		command = { type = relation which = TEK value = 100 }
+		command = { type = relation which = CAN value = 100 }
+		command = { type = relation which = KAR value = 100 }
+		command = { type = relation which = DUL value = 100 }
+		command = { type = relation which = AKK value = 100 }
+		command = { type = relation which = QAR value = 100 }
+	}
+}
+
+#The Algerian Rebellion# 
+event = {
+    id = 3897
+    trigger = {
+        owned = {
+            province = 737
+            data = -1
+        }
+        NOT = {
+            exists = ALD
+        }
+    }
+    random = no
+    country = TUR
+    name = "EVENTNAME3897"
+    desc = "EVENTHIST3897"
+    style = 4
+
+    date = { day = 1 month = january year = 1710 }
+    offset = 1000
+
+    action_a ={ # Grant limited autonomy#
+        name = "ACTIONNAME3897A"
+        command = { type = independence which = ALD }
+        command = { type = domestic which = CENTRALIZATION value = -1 }
+    }
+    action_b ={ # Crush the rebels#
+        name = "ACTIONNAME3897B"
+        command = { type = revolt which = 734 }
+        command = { type = revolt which = 735 }
+        command = { type = revolt which = 736 }
+        command = { type = revolt which = 737 }
+        command = { type = revolt which = 738 }
+        command = { type = revoltrisk which = 36 value = 4 }
+        command = { type = stability value = -2 }
+    }
+}
+
+#Greek Independence#
+event = {
+	id = 50026
+	trigger = {
+		owned = { province = 359 data = -1 }
+		owned = { province = 360 data = -1 }
+		NOT = {
+			exists = GRE
+		}
+	}
+	random = no
+	country = TUR
+	name = "Greek Independence"
+	desc = "By the early 19th century Greek nationalism had become a serious threat to the stability of the Ottoman Empire, in large part inspired by the French Revolution and growing nationalist sentiment across Europe. Fueled by Ottoman setbacks in her wars with Russia and the gradual disintegration of her network of puppet states, the underground Greek movement Filiki Eteria ('Society of Friends'), led by Demetrios and Alexander Ypsilanti, raised a revolt at Jassy in Moldavia in 1821 and proclaimed the independence of Greece. The revolt was crushed, but it marked the start of the Greek War of Independence. The major European states supported the Greeks in their struggle, and in 1827, when the Ottomans refused to adhere to the Anglo-French-Russian demands for peace, an allied fleet decisively defeated an Ottoman-Egyptian fleet at Navarino. By 1828, Greece had finally won her independence."
+	
+	style = "50026"
+
+	date = { day = 1 month = january year = 1820 }
+	offset = 250
+
+	action_a ={ # Crush the rebels
+		name = "Crush the rebels"
+		command = { type = remove_countryculture which = greek }
+		command = { type = revolt value = GRR which = 359 }
+		command = { type = revolt value = GRR which = 359 }
+		command = { type = revolt value = GRR which = 359 }
+		command = { type = revolt value = GRR which = 360 }
+		command = { type = revolt value = GRR which = 360 }
+		command = { type = revolt value = GRR which = 360 }
+		command = { type = revolt value = GRR which = 479 }
+		command = { type = stability value = -2 }
+		command = { type = trigger which = 50029 }
+	}
+	action_b ={ # Accept their freedom
+		name = "Accept their freedom"
+		command = { type = remove_countryculture which = greek }
+		command = { type = independence which = GRE }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = sleepevent which = 50038 }
+		command = { type = sleepevent which = 50039 }
+		command = { type = sleepevent which = 50040 }
+	}
+}
+
+#Albanian Independence#
+event = {
+	id = 50027
+	trigger = {
+		owned = { province = 361 data = -1 }
+		owned = { province = 362 data = -1 }
+		NOT = {
+			exists = ALB
+		}
+	}
+	random = no
+	country = TUR
+	name = "Albanian Independence"
+	desc = "EVENTHIST50027"
+	
+	style = "50027"
+
+	date = { day = 1 month = january year = 1820 }
+	offset = 250
+
+	action_a ={ # Crush the rebels
+		name = "Crush the rebels"
+		command = { type = remove_countryculture which = albanian }
+		command = { type = revolt which = 361 }
+		command = { type = revolt which = 361 }
+		command = { type = revolt which = 361 }
+		command = { type = revolt which = 362 }
+		command = { type = revolt which = 362 }
+		command = { type = stability value = -2 }
+	}
+	action_b ={ # Accept their freedom
+		name = "Accept their freedom"
+		command = { type = remove_countryculture which = albanian }
+		command = { type = independence which = ALB }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+	}
+}
+
+#The Moroccan Rebellion#
+event = {
+	id = 50028
+	trigger = {
+		owned = { province = 733 data = -1 }
+		owned = { province = 806 data = -1 }
+		NOT = {
+			exists = MOR
+		}
+	}
+	random = no
+	country = TUR
+	name = "The Moroccan Rebellion"
+	desc = "In the first decades of the 18th century the Beys and Deys (Janissary leaders) of Northern Africa were in a rebellious mood in the wake of the Peace of Carlowitz between the Ottoman Empire and the Holy League. With other North African states being granted - or simply declaring - various forms of autonomy, Morocco was too far away from Constantinople to be governed effectively by Ottoman viziers."
+
+	date = { day = 1 month = january year = 1710 }
+	offset = 1000
+
+	action_a ={ # Grant limited autonomy
+		name = "Grant limited autonomy"
+		command = { type = independence which = MOR }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+	}
+	action_b ={ # Crush the rebels
+		name = "Crush the rebels"
+		command = { type = revolt which = 733 }
+		command = { type = revolt which = 733 }
+		command = { type = revolt which = 806 }
+		command = { type = revolt which = 806 }
+		command = { type = revolt which = 732 }
+		command = { type = revoltrisk which = 36 value = 4 }
+		command = { type = stability value = -2 }
+	}
+}
+
+# Imported from AGCEEP in For the Glory 1.3 to fix the broken TLE->ALD sequence
+
+#(1509-1520) The Barbarossas
+event = {
+	id = 50024
+	trigger = { exists = TUN }
+	random = no
+	country = TUR
+	name = "The Barbarossas" #The Barbarossas
+	desc = "In the 16th century, Spain occupied various ports in North Africa. Algiers was blockaded and forced to pay tribute. Other ports were captured outright. The desperate Muslims called for help from the Ottoman sultan, then the caliph of all Islam. Two corsair brothers, the Barbarossas petitioned the sultan to send them with a fleet to North Africa. Their accomplishments would lead to further Ottoman influence in North Africa."
+
+	date = { day = 1 month = november year = 1509 }
+	offset = 300
+	deathdate = { day = 1 month = january year = 1520 }
+
+	action_a = {
+		name = "Curse them!" #Curse them!
+		command = { type = trigger which = 51023 } #TUN: The Barbarossas
+		command = { type = treasury value = -50 }
+		command = { type = sleepevent which = 50025 } #TUR: The Barbarossas
+	}
+	action_b = {
+		name = "We shall ready our last defenses" #We shall ready our last defenses
+		command = { type = treasury value = -150 }
+		command = { type = trigger which = 51023 } #TUN: The Barbarossas
+		command = { type = stability value = 1 }
+		command = { type = casusbelli which = TLE value = 24 }
+		command = { type = sleepevent which = 50025 } #TUR: The Barbarossas
+	}
+	action_c = {
+		name = "We submit to their power" #We submit to their power
+		command = { type = stability value = -1 }
+		command = { type = sleepevent which = 50025 } #TUR: The Barbarossas
+	}
+}
+#(1509-1520) The Barbarossas
+event = {
+	id = 50025
+	trigger = {
+		NOT = { exists = TUN }
+	}
+	random = no
+	country = TUR
+	name = "The Barbarossas" #The Barbarossas
+	desc = "In the 16th century, Spain occupied various ports in North Africa. Algiers was blockaded and forced to pay tribute. Other ports were captured outright. The desperate Muslims called for help from the Ottoman sultan, then the caliph of all Islam. Two corsair brothers, the Barbarossas petitioned the sultan to send them with a fleet to North Africa. Their accomplishments would lead to further Ottoman influence in North Africa."
+
+	date = { day = 1 month = november year = 1509 }
+	offset = 300
+	deathdate = { day = 1 month = january year = 1520 }
+
+	action_a = {
+		name = "Curse them!" #Curse them!
+		command = { type = treasury value = -50 }
+		command = { type = sleepevent which = 51025 } #TLE: Arudj and Khayr al-Din Barbarossa
+		command = { type = sleepevent which = 50024 } #TUR: The Barbarossas
+	}
+	action_b = {
+		name = "We shall ready our last defenses" #We shall ready our last defenses
+		command = { type = treasury value = -150 }
+		command = { type = sleepevent which = 51025 } #TLE: Arudj and Khayr al-Din Barbarossa
+		command = { type = stability value = 1 }
+		command = { type = casusbelli which = TLE value = 24 }
+		command = { type = sleepevent which = 50024 } #TUR: The Barbarossas
+	}
+	action_c = {
+		name = "We submit to their power" #We submit to their power
+		command = { type = stability value = -1 }
+		command = { type = sleepevent which = 51024 } #TLE: Arudj and Khayr al-Din Barbarossa
+		command = { type = sleepevent which = 50024 } #TUR: The Barbarossas
+	}
+}
+
+###############################
+# Expanded Hungary sequence for TUR - 1.3. Not sure these apply#
+###############################
+
+# The Habsburg Inheritance of Hungary #
+#event = {
+#
+#	id = 3644
+#	random = no
+#	country = TUR
+#	name = "EVENTNAME3185"
+#	desc = "EVENTHIST3185"
+##
+#	action_a ={
+#		name = "ACTIONNAME3184A"
+#		command = { type = stability value = 3 }
+#		command = { type = annex which = HUN }
+#		command = { type = independence which = TRA }
+#		command = { type = vassal which = TRA }
+##		command = { type = trigger which = 3640 } # TRA
+#	}
+#}
+#
+# The Death of King Louis of Hungary #
+#event = {
+#
+#	id = 3645
+#	random = no
+#	country = TUR
+#	name = "EVENTNAME3645"
+#	desc = "EVENTHIST3645"
+#
+##	action_a ={
+#		name = "ACTIONNAME3645A"
+#		command = { type = casusbelli which = HUN value = 60 }
+#		command = { type = relation which = HUN value = -200 }
+#		command = { type = MIL which = 3 value = 120 }
+#		command = { type = land value = 500 }
+#		command = { type = naval value = 500 }
+#		command = { type = stability value = 1 }
+#	}
+#
+#	action_b ={
+#		name = "ACTIONNAME3645B"
+#		command = { type = dynastic which = HUN }
+#		command = { type = relation which = HUN value = 100 }
+#		command = { type = domestic which = INNOVATIVE value = 1 }
+#		command = { type = domestic which = OFFENSIVE value = -1 }
+#		command = { type = cedeprovince which = HUN value = 316 } # Hungary (kingdom)
+#		command = { type = cedeprovince which = HUN value = 317 }
+#		command = { type = cedeprovince which = HUN value = 323 }
+#		command = { type = cedeprovince which = HUN value = 324 }
+#		command = { type = cedeprovince which = HUN value = 325 }
+#		command = { type = cedeprovince which = HUN value = 326 }
+#		command = { type = cedeprovince which = HUN value = 352 }
+#		command = { type = cedeprovince which = HUN value = 353 }
+#		command = { type = cedeprovince which = HUN value = 354 }
+#		command = { type = cedeprovince which = HUN value = 364 } # Croatia (kingdom)
+#		command = { type = cedeprovince which = HUN value = 365 }
+#		command = { type = cedeprovince which = HUN value = 366 }
+#		command = { type = badboy value = -5 }
+#		command = { type = stability value = -2 }
+#	}
+#}
+#
+## The Death of John Zapolya (vassal HUN) #
+#event = {
+#
+#	id = 4193
+#	random = no
+#	country = TUR
+#	name = "EVENTNAME3640"
+#	desc = "EVENTHIST3640"
+#
+#	action_a ={
+#		name = "ACTIONNAME3184A"
+#		command = { type = vassal which = HUN }
+#		command = { type = alliance which = HUN }
+#		command = { type = relation which = HUN value = 200 }
+#		command = { type = stability value = 2 }
+#	}
+#}
+#
+## The Death of John Zapolya (rejected by HUN) #
+#event = {
+#
+#	id = 4194
+#	random = no
+#	country = TUR
+#	name = "EVENTNAME3646"
+#	desc = "EVENTHIST3646"
+#
+#	action_a ={
+#		name = "ACTIONNAME3645A"
+#		command = { type = casusbelli which = HUN value = 60 }
+#		command = { type = relation which = HUN value = -200 }
+#		command = { type = domestic which = OFFENSIVE value = 1 }
+#		command = { type = manpower value = 10 }
+#		command = { type = stability value = 1 }
+#	}
+#}
+
+###############################

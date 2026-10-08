@@ -1,0 +1,96 @@
+#####Genoa Major Events#######
+#By Joakim 'Greven' Bergqwist#
+##############################
+
+#The Sale of Corsica to France#
+event = {
+
+	id = 3707			#Triggered by FRA3140#
+	random = no
+	country = GEN
+	name = "EVENTNAME3707"
+	desc = "EVENTHIST3707"
+
+	action_a ={
+		name = "ACTIONNAME3707A"	#Sell to France#
+		command = { type = trigger which = 3719 }
+		command = { type = cedeprovince which = FRA value = 398 } # Corsica
+		command = { type = removecore_national which = 398 }
+		command = { type = treasury value = 1000 }
+	}
+	action_b ={
+		name = "ACTIONNAME3707B"	#Do not sell to France#
+		command = { type = trigger which = 3046 }
+		command = { type = trigger which = 3720 }
+		command = { type = relation which = FRA value = -50 }
+	}
+}
+#The Sale of Corsica to England#
+event = {
+
+	id = 3708			#Triggered by ENG3046#
+	random = no
+	country = GEN
+	name = "EVENTNAME3708"
+	desc = "EVENTHIST3708"
+
+	action_a ={
+		name = "ACTIONNAME3708A"	#Sell to England#
+		command = { type = trigger which = 3721 }
+		command = { type = cedeprovince which = ENG value = 398 } # Corsica
+		command = { type = removecore_national which = 398 }
+		command = { type = treasury value = 1500 }
+	}
+	action_b ={
+		name = "ACTIONNAME3708B"	#Do not sell to England#
+		command = { type = trigger which = 3175 }
+		command = { type = trigger which = 3722 }
+		command = { type = relation which = ENG value = -50 }
+	}
+}
+
+#The Sale of Corsica to Spain#
+event = {
+
+	id = 3709				#Triggered by SPA3175#
+	random = no
+	country = GEN
+	name = "EVENTNAME3709"
+	desc = "EVENTHIST3709"
+
+	action_a ={
+		name = "ACTIONNAME3709A"	#Sell to Spain#
+		command = { type = trigger which = 3723 }
+		command = { type = cedeprovince which = SPA value = 398 } # Corsica
+		command = { type = removecore_national which = 398 }
+		command = { type = treasury value = 1200 }
+	}
+	action_b ={
+		name = "ACTIONNAME3709B"	#Do not sell to Spain#
+		command = { type = trigger which = 3648 }
+		command = { type = trigger which = 3724 }
+		command = { type = relation which = SPA value = -50 }
+	}
+}
+#The Sale of Corsica to Savoy#
+event = {
+
+	id = 3710				#Triggered by SAV3648#
+	random = no
+	country = GEN
+	name = "EVENTNAME3710"
+	desc = "EVENTHIST3710"
+
+	action_a ={
+		name = "ACTIONNAME3710A"	#Sell to Savoy#
+		command = { type = trigger which = 3725 }
+		command = { type = cedeprovince which = SAV value = 398 } # Corsica
+		command = { type = removecore_national which = 398 }
+		command = { type = treasury value = 800 }
+	}
+	action_b ={
+		name = "ACTIONNAME3710B"	#Do not sell to Savoy#
+		command = { type = trigger which = 3726 }
+		command = { type = relation which = SAV value = -50 }
+	}
+}

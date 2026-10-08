@@ -1,0 +1,3779 @@
+##########################################
+## Linking events Timur>Gloriana	##
+## For Gloriana 1337			##
+## By Ayeshteni				##
+##########################################
+
+#190000 range.
+
+#Formation of the Timurids 190000-190004
+#Uniting Japan 190005-190007
+#The Golden Horde 190008-190009
+#Pre-Treaty of Troyes 190010-190011
+#Kalmar Union 190012-190018
+#Early Swiss Elections 190019-190023
+#Early Ragusan Elections 190024-190033
+#Early Hansa Elections 190034-190043
+#Scottish Capital to Lothian 190044
+#Swiss Capital to Berne 190045
+#AI events Submit to Timur 190046-190061
+#AI Formation of the Sheep Clans 190062-190063
+#Ismail's Resurrection of Persia - Persian region tags 190064-190081#
+#Habsburg Inheritance of Hungary - For a HUN player to continue to play 190082
+#Denmark elect not to persue a Kalmar Union 190083
+#Italy has a new dynasty if the Form Italy decision is taken 190084
+#Byzantine Capital to Constantinople 190085
+#Yuan defeat, Rise of the Ming 190086
+#Inheritance of Flanders 190087-190089
+#Inheritance of Sicily 190090-190091
+
+#-------------------------#
+#Formation of the Timurids#
+#-------------------------#
+#If Barlas still exists
+event = {
+
+	id = 190000
+	trigger = {
+		monarch = 122005
+		NOT = {
+			exists = TIM
+			event = 190001
+			}
+		}
+	random = no
+	country = BAR
+	name = "Rise of the Timurids"
+	desc = "The Timurid Empire was a Persianate Turco-Mongol empire that arose from the Barlas tribe that dominated Greater Iran in the early 15th century, comprising modern-day Iran, Iraq, Afghanistan, much of Central Asia, the South Caucasus, as well as most of contemporary Pakistan and parts of contemporary North India and Turkey. The empire was founded by Timur (also known as Tamerlane), a warlord of Turco-Mongol lineage, who established the empire between 1370 and his death in 1405. He envisioned himself as the great restorer of the Mongol Empire of Genghis Khan, regarded himself as Genghis's heir, and associated much with the Borjigin. Timur continued vigorous trade relations with Ming China and the Golden Horde, with Chinese diplomats regularly traveling west to Samarkand to buy and sell goods. The empire led to the Timurid Renaissance, particularly during the reign of astronomer and mathematician Ulugh Begh."
+
+	style = "C06"
+
+	date = { day = 1 month = january year = 1369 }
+	offset = 10
+	deathdate = { day = 1 month = february year = 1405 }
+
+	action_a = {
+		name = "In Rectitude lies Salvation"
+		command = { type = country which = TIM }
+		command = { type = add_countryculture which = persian }
+		command = { type = breakvassal which = -1 }
+		command = { type = relation which = CHG value = -200 }
+		command = { type = war which = CHG }
+		command = { type = manpower value = 2000 }
+		command = { type = stability value = 3 }
+		command = { type = INF which = 1592 value = 3000 }
+		command = { type = CAV which = 1592 value = 17000 }
+		command = { type = ART which = 1592 value = 10 }
+		command = { type = sleepevent which = 190001 }
+		command = { type = addcore_national which = 1532 }
+		command = { type = addcore_national which = 1591 }
+		command = { type = addcore_national which = 1594 }
+		command = { type = addcore_national which = 1598 }
+		command = { type = addcore_national which = 1599 }
+		command = { type = addcore_national which = 1530 }
+		command = { type = addcore_national which = 1531 }
+		command = { type = addcore_national which = 1592 }
+		command = { type = addcore_claim which = 473 }
+		command = { type = addcore_claim which = 487 }
+		command = { type = addcore_claim which = 533 }
+		command = { type = addcore_claim which = 530 }
+		command = { type = addcore_claim which = 534 }
+		command = { type = addcore_casusbelli which = 508 }
+		command = { type = addcore_casusbelli which = 489 }
+		command = { type = addcore_casusbelli which = 488 }
+		command = { type = addcore_casusbelli which = 490 }
+		command = { type = addcore_casusbelli which = 486 }
+		command = { type = addcore_casusbelli which = 474 }
+		command = { type = addcore_casusbelli which = 485 }
+		command = { type = addcore_casusbelli which = 483 }
+		command = { type = addcore_casusbelli which = 1611 }
+		command = { type = addcore_casusbelli which = 1610 }
+		command = { type = addcore_casusbelli which = 478 }
+		command = { type = addcore_casusbelli which = 477 }
+		command = { type = addcore_casusbelli which = 482 }
+		command = { type = addcore_casusbelli which = 476 }
+		command = { type = addcore_casusbelli which = 1609 }
+		command = { type = addcore_casusbelli which = 475 }
+		command = { type = addcore_casusbelli which = 479 }
+		command = { type = addcore_casusbelli which = 472 }
+		command = { type = addcore_casusbelli which = 470 }
+		command = { type = addcore_casusbelli which = 469 }
+		command = { type = addcore_casusbelli which = 457 }
+		command = { type = addcore_casusbelli which = 468 }
+		command = { type = addcore_casusbelli which = 1600 }
+		command = { type = addcore_casusbelli which = 1601 }
+		command = { type = addcore_casusbelli which = 1602 }
+		command = { type = addcore_casusbelli which = 1603 }
+		command = { type = addcore_casusbelli which = 1604 }
+		command = { type = addcore_casusbelli which = 1605 }
+		command = { type = addcore_casusbelli which = 1607 }
+		command = { type = addcore_casusbelli which = 1608 }
+		command = { type = addcore_casusbelli which = 1544 }
+	}
+}
+
+#If Barlas does not exist
+event = {
+
+	id = 190001
+	trigger = {
+		NOT = {
+			exists = TIM
+			exists = BAR
+			event = 190000
+			}
+		OR = {
+			AND = {
+				owned = { province = 1592 data = CHG }
+				control = { province = 1592 data = CHG }
+			}
+			AND = {
+				owned = { province = 1532 data = CHG }
+				control = { province = 1532 data = CHG }
+			}
+			AND = {
+				owned = { province = 1591 data = CHG }
+				control = { province = 1591 data = CHG }
+			}
+			AND = {
+				owned = { province = 1594 data = CHG }
+				control = { province = 1594 data = CHG }
+			}
+			AND = {
+				owned = { province = 1598 data = CHG }
+				control = { province = 1598 data = CHG }
+			}
+			AND = {
+				owned = { province = 1599 data = CHG }
+				control = { province = 1599 data = CHG }
+			}
+			AND = {
+				owned = { province = 1530 data = CHG }
+				control = { province = 1530 data = CHG }
+			}
+			AND = {
+				owned = { province = 1531 data = CHG }
+				control = { province = 1531 data = CHG }
+			}
+		}
+	}
+	random = no
+	country = CHG
+	name = "Rise of the Timurids"
+	desc = "A rebel leader named Timur has risen in our lands to the west. Historically, Timur conquered large parts of ancient great Persian territories in Central Asia, primarily Transoxiana and Khorasan, from 1363 onwards with various alliances. Acting officially in the name of Suurgatmish, the Chagatai khan, he subjugated Transoxania and Khwarazm in the years that followed. Already in the 1360s he had gained control of the western Chagatai Khanate and while as emir he was nominally subordinate to the khan, in reality it was now Timur that picked the khans who became mere puppet rulers. The western Chagatai khans were continually dominated by Timurid princes in the 15th and 16th centuries and their figurehead importance was eventually reduced into total insignificance."
+	style = 1
+
+	date = { day = 1 month = january year = 1370 }
+	offset = 10
+	deathdate = { day = 1 month = february year = 1405 }
+
+	action_a = {
+		name = "I have a bad feeling about this"
+		command = { type = setflag which = Timursmove }
+		command = { type = independence which = TIM }
+		command = { type = breakoverlord which = TIM }
+		command = { type = relation which = TIM value = -200 }
+		command = { type = stability value = -2 }
+		command = { type = sleepevent which = 190000 }
+		command = { type = trigger which = 190002 }
+	}
+}
+
+#maintenance events for TIMs - triggered by 190001
+event = {
+
+	id = 190002
+
+	random = no
+	country = TIM
+	name = "Timurids Gain Partial Control"
+	desc = "A rebel leader named Timur has risen in our lands to the west. Historically, Timur conquered large parts of ancient great Persian territories in Central Asia, primarily Transoxiana and Khorasan, from 1363 onwards with various alliances. Acting officially in the name of Suurgatmish, the Chagatai khan, he subjugated Transoxania and Khwarazm in the years that followed. Already in the 1360s he had gained control of the western Chagatai Khanate and while as emir he was nominally subordinate to the khan, in reality it was now Timur that picked the khans who became mere puppet rulers. The western Chagatai khans were continually dominated by Timurid princes in the 15th and 16th centuries and their figurehead importance was eventually reduced into total insignificance."
+	style = 1
+
+	action_a = {
+		name = "In Rectitude lies Salvation"
+		command = { type = breakvassal which = -1 }
+		command = { type = add_countryculture which = persian }
+		command = { type = relation which = CHG value = -200 }
+		command = { type = manpower value = 2000 }
+		command = { type = INF which = -2 value = 3000 }
+		command = { type = CAV which = -2 value = 17000 }
+		command = { type = ART which = -2 value = 10 }
+		command = { type = stability value = 3 }
+		command = { type = addcore_national which = 1532 }
+		command = { type = addcore_national which = 1591 }
+		command = { type = addcore_national which = 1594 }
+		command = { type = addcore_national which = 1598 }
+		command = { type = addcore_national which = 1599 }
+		command = { type = addcore_national which = 1530 }
+		command = { type = addcore_national which = 1531 }
+		command = { type = addcore_national which = 1592 }
+		command = { type = addcore_claim which = 473 }
+		command = { type = addcore_claim which = 487 }
+		command = { type = addcore_claim which = 533 }
+		command = { type = addcore_claim which = 530 }
+		command = { type = addcore_claim which = 534 }
+		command = { type = addcore_casusbelli which = 508 }
+		command = { type = addcore_casusbelli which = 489 }
+		command = { type = addcore_casusbelli which = 488 }
+		command = { type = addcore_casusbelli which = 490 }
+		command = { type = addcore_casusbelli which = 486 }
+		command = { type = addcore_casusbelli which = 474 }
+		command = { type = addcore_casusbelli which = 485 }
+		command = { type = addcore_casusbelli which = 483 }
+		command = { type = addcore_casusbelli which = 1611 }
+		command = { type = addcore_casusbelli which = 1610 }
+		command = { type = addcore_casusbelli which = 478 }
+		command = { type = addcore_casusbelli which = 477 }
+		command = { type = addcore_casusbelli which = 482 }
+		command = { type = addcore_casusbelli which = 476 }
+		command = { type = addcore_casusbelli which = 1609 }
+		command = { type = addcore_casusbelli which = 475 }
+		command = { type = addcore_casusbelli which = 479 }
+		command = { type = addcore_casusbelli which = 472 }
+		command = { type = addcore_casusbelli which = 470 }
+		command = { type = addcore_casusbelli which = 469 }
+		command = { type = addcore_casusbelli which = 457 }
+		command = { type = addcore_casusbelli which = 468 }
+		command = { type = addcore_casusbelli which = 1600 }
+		command = { type = addcore_casusbelli which = 1601 }
+		command = { type = addcore_casusbelli which = 1602 }
+		command = { type = addcore_casusbelli which = 1603 }
+		command = { type = addcore_casusbelli which = 1604 }
+		command = { type = addcore_casusbelli which = 1605 }
+		command = { type = addcore_casusbelli which = 1607 }
+		command = { type = addcore_casusbelli which = 1608 }
+		command = { type = addcore_casusbelli which = 1544 }
+	}
+}
+
+#events to vassalise CHG and control the West or go to war.
+event = {
+	id = 190004
+
+	trigger = {
+		flag = Timursmove
+	}
+	random = no
+	country = CHG
+	name = "Timur Makes His Move"
+	desc = "A rebel leader named Timur has risen in our lands to the west. Historically, Timur conquered large parts of ancient great Persian territories in Central Asia, primarily Transoxiana and Khorasan, from 1363 onwards with various alliances. Acting officially in the name of Suurgatmish, the Chagatai khan, he subjugated Transoxania and Khwarazm in the years that followed. Already in the 1360s he had gained control of the western Chagatai Khanate and while as emir he was nominally subordinate to the khan, in reality it was now Timur that picked the khans who became mere puppet rulers. The western Chagatai khans were continually dominated by Timurid princes in the 15th and 16th centuries and their figurehead importance was eventually reduced into total insignificance."
+	style = 1
+
+	date = { day = 1 month = january year = 1370 }
+	offset = 10
+	deathdate = { day = 1 month = february year = 1405 }
+
+	action_a = {
+		name = "Wait, are we not the Master?"
+		command = { type = cedeprovince which = TIM value = 521 }
+		command = { type = cedeprovince which = TIM value = 522 }
+		command = { type = cedeprovince which = TIM value = 523 }
+		command = { type = cedeprovince which = TIM value = 524 }
+		command = { type = cedeprovince which = TIM value = 1532 }
+		command = { type = cedeprovince which = TIM value = 1533 }
+		command = { type = cedeprovince which = TIM value = 1599 }
+		command = { type = trigger which = 190003 }
+		command = { type = vp value = -10 }
+	}
+
+	action_b = {
+		name = "No, This Will Not Stand"
+		command = { type = war which = TIM }
+		command = { type = vp value = 5 }
+	}
+}
+
+#vassalise CHG - triggered by 190004
+event = {
+	id = 190003
+
+	random = no
+	country = TIM
+	name = "Timur Makes His Move"
+	desc = "A rebel leader named Timur has risen in our lands to the west. Historically, Timur conquered large parts of ancient great Persian territories in Central Asia, primarily Transoxiana and Khorasan, from 1363 onwards with various alliances. Acting officially in the name of Suurgatmish, the Chagatai khan, he subjugated Transoxania and Khwarazm in the years that followed. Already in the 1360s he had gained control of the western Chagatai Khanate and while as emir he was nominally subordinate to the khan, in reality it was now Timur that picked the khans who became mere puppet rulers. The western Chagatai khans were continually dominated by Timurid princes in the 15th and 16th centuries and their figurehead importance was eventually reduced into total insignificance."
+	style = 1
+
+	action_a = {
+		name = "The Servant becomes the Master"
+		command = { type = vassal which = CHG }
+		command = { type = vp value = 10 }
+	}
+}
+
+#---------------------------------
+
+#-------------------------#
+#Uniting Japan------------#
+#-------------------------#
+
+#Southern Court Victory
+event = {
+	id = 190005
+
+	trigger = {
+		OR = {
+			NOT = {
+				exists = HOK
+				exists = NIP
+			}
+			vassal = { country = NAN country = HOK }
+		}
+	}
+	random = no
+	country = NAN
+	name = "Japan United"
+	desc = "The Southern Court (Nancho) has succeeded in defeating the Northern Court (Hokucho). We are once again united."
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 10
+	deathdate = { day = 1 month = february year = 1392 }
+	
+	action_a = {
+		name = "As it Should Be"
+		command = { type = country which = NIP }
+		command = { type = inherit which = HOK }
+		command = { type = vp value = 10 }
+	}
+}
+
+#Northern Court Victory
+event = {
+	id = 190006
+
+	trigger = {
+		OR = {
+			NOT = {
+				exists = NAN
+				exists = NIP
+			}
+			vassal = { country = HOK country = NAN }
+		}
+	}
+	random = no
+	country = HOK
+	name = "Japan United"
+	desc = "The Northern Court (Hokucho) has succeeded in defeating the Southern Court (Nancho). We are once again united."
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 10
+	deathdate = { day = 1 month = february year = 1392 }
+	
+	action_a = {
+		name = "As it Should Be"
+		command = { type = country which = NIP }
+		command = { type = inherit which = NAN }
+		command = { type = vp value = 10 }
+	}
+}
+
+#If neither 'wins'
+event = {
+	id = 190007
+
+	random = no
+	country = HOK
+	name = "Claim Victory"
+	desc = "The Southern Court has failed to make it's mark. Most of the nobles have rallied to the Northern Court. We are seen to be the true Imperial Court."
+	style = 1
+
+	date = { day = 1 month = february year = 1392 }
+	offset = 1
+	deathdate = { day = 1 month = february year = 1419 }
+
+	action_a = {
+		name = "As it Should Be"
+		command = { type = country which = NIP }
+		command = { type = inherit which = NAN }
+		command = { type = vp value = 10 }
+	}
+}
+
+#----------------------------------
+
+#-------------------------#
+#The Golden Horde---------#
+#-------------------------#
+
+#Togtamish, rules both the White and Blue Hordes.
+event = {
+	id = 190008
+
+	trigger = {
+		NOT = {
+			war = { country = BHR country = WHR }
+			exists = STE
+		}
+	}
+	random = no
+	country = BHR
+	name = "Tokhtamysh Ruler of All Hordes"
+	desc = "From a fugitive, Tokhtamysh had become a powerful monarch, the first khan in over two decades to rule both halves (wings) of the Golden Horde. In the space of a little over a year, he had made himself master of the left (eastern) wing, the former Ulus of Orda (called White Horde in some Persian sources and Blue Horde in Turkic ones), and then also master of the right (western) wing, the Ulus of Batu (called Blue Horde in some Persian sources and White Horde in Turkic ones). This promised to restore the greatness of the Golden Horde after a long period of division and internecine conflict. Tokhtamysh proceeded to solidify his authority with wisdom and restraint. Already in early 1381, he restored peace with the Genoese of the Crimea, ensuring himself a steady income. He similarly sought the cooperation of the emirs and tribal chieftains by confirming the privileges that had been conferred to them in the past."
+	style = 1
+
+	date = { day = 1 month = january year = 1380 }
+	offset = 10
+	deathdate = { day = 1 month = february year = 1395 }
+
+	action_a = {
+		name = "As it Should Be"
+		command = { type = country which = STE }
+		command = { type = inherit which = WHR }
+		command = { type = vp value = 10 }
+	}
+}
+
+#Death of Togtamish
+event = {
+	id = 190009
+
+	random = no
+	country = STE
+	name = "The Death of Tokhtamysh"
+	desc = "Tokhtamysh's authority was dealt severe setbacks by the two great invasions of Timur into the core territories of the Golden Horde in 1391 and 1395–1396. These left Tokhtamysh competing with rival khans, ultimately driving him out definitively, and hounding him to his death in Sibir in 1406. Tokhtamysh's relative solidification of the khan's authority survived him only briefly, and largely due to the influence of his nemesis Edigu, but after 1411 it gave way to another long period of civil war that ended in the disintegration of the Golden Horde. Moreover, Timur's destruction of the Golden Horde's main urban centers, as well as the Italian colony of Tana, dealt a severe and lasting blow to the trade-based economy of the polity, with various negative implications for its future prospects for prosperity and survival."
+	style = 1
+
+	date = { day = 1 month = january year = 1396 }
+	offset = 10
+	deathdate = { day = 1 month = february year = 1400 }
+
+	action_a = {
+		name = "The Horde Collapseth"
+		command = { type = add_countryculture which = tatar }
+		command = { type = revoltrisk which = 360 value = 12 }
+		command = { type = provinceculture which = 446 value = tatar } #seperate events for non STE owned provinces...
+		command = { type = provinceculture which = 453 value = tatar }
+		command = { type = provinceculture which = 454 value = tatar }
+		command = { type = provinceculture which = 455 value = tatar }
+		command = { type = provinceculture which = 456 value = tatar }
+		command = { type = provinceculture which = 457 value = tatar }
+		command = { type = provinceculture which = 458 value = tatar }
+		command = { type = provinceculture which = 459 value = tatar }
+		command = { type = provinceculture which = 467 value = tatar }
+		command = { type = provinceculture which = 466 value = tatar }
+		command = { type = provinceculture which = 463 value = tatar }
+		command = { type = provinceculture which = 520 value = nogai }
+		command = { type = provinceculture which = 519 value = nogai }
+		command = { type = provinceculture which = 515 value = nogai }
+		command = { type = provinceculture which = 514 value = nogai }
+		command = { type = provinceculture which = 513 value = nogai }
+		command = { type = provinceculture which = 518 value = uzbek }
+		command = { type = provinceculture which = 516 value = uzbek }
+		command = { type = provinceculture which = 1535 value = uzbek }
+		command = { type = provinceculture which = 1534 value = uzbek }
+		command = { type = provinceculture which = 1594 value = uzbek }
+		command = { type = provinceculture which = 1599 value = uzbek }
+		command = { type = provinceculture which = 517 value = khazak }
+		command = { type = provinceculture which = 579 value = khazak }
+		command = { type = provinceculture which = 580 value = khazak }
+		command = { type = provinceculture which = 582 value = khazak }
+		command = { type = provinceculture which = 1536 value = khazak }
+		command = { type = provinceculture which = 584 value = khazak }
+		command = { type = remove_countryculture which = mongol }
+		command = { type = remove_countryculture which = altai }
+	}
+}
+
+#-----------------------------------------------
+
+#-------------------------#
+#Pre-Treaty of Troyes-----#
+#-------------------------#
+
+#The Madness of Charles VI
+event = {
+	id = 190010
+
+	random = no
+	country = FRA
+	name = "The Madness of Charles VI"
+	desc = "In 1392, Charles VI suddenly descended into madness, forcing France into a regency dominated by his uncles and his brother. A conflict for control over the Regency began between his uncle Philip the Bold, Duke of Burgundy and his brother, Louis of Valois, Duke of Orléans. After Philip's death, his son and heir John the Fearless continued the struggle against Louis but with the disadvantage of having no close relation to the king. Finding himself outmanoeuvred politically, John ordered the assassination of Louis in retaliation. His involvement in the murder was quickly revealed and the Armagnac family took political power in opposition to John. By 1410, both sides were bidding for the help of English forces in a civil war. In 1418 Paris was taken by the Burgundians, who were unable to stop the massacre of Count of Armagnac and his followers by a Parisian crowd, with an estimated death toll between 1,000 and 5,000."
+	style = 1
+
+	date = { day = 1 month = august year = 1392 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1422 }
+
+	action_a = {
+		name = "Could be worse"
+		command = { type = cedeprovince which = BUR value = 382 }
+		command = { type = cedeprovince which = BUR value = 384 }
+		command = { type = cedeprovince which = BUR value = 385 }
+		command = { type = cedeprovince which = BUR value = 376 }
+		command = { type = cedeprovince which = BUR value = 383 }
+		command = { type = cedeprovince which = BUR value = 386 }
+		command = { type = cedeprovince which = BUR value = 380 } #low countries
+		command = { type = cedeprovince which = BUR value = 379 } #low countries
+		command = { type = cedeprovince which = BUR value = 378 } #low countries
+		command = { type = cedeprovince which = BUR value = 340 } #low countries
+		command = { type = cedeprovince which = BUR value = 339 } #low countries
+		command = { type = cedeprovince which = BUR value = 338 } #low countries
+		command = { type = cedeprovince which = BUR value = 337 } #low countries
+		command = { type = cedeprovince which = BUR value = 377 } #low countries
+		command = { type = wakemonarch which = 122105 }
+		command = { type = trigger which = 190011 }
+		command = { type = capital which = 410 }
+		command = { type = setflag which = bourges }
+	}
+}
+
+#Burgundy sets up Burgundian France
+event = {
+	id = 190011
+
+	random = no
+	country = BUR
+	name = "Burgundian Influence"
+	desc = "In 1392, Charles VI suddenly descended into madness, forcing France into a regency dominated by his uncles and his brother. A conflict for control over the Regency began between his uncle Philip the Bold, Duke of Burgundy and his brother, Louis of Valois, Duke of Orléans. After Philip's death, his son and heir John the Fearless continued the struggle against Louis but with the disadvantage of having no close relation to the king. Finding himself outmanoeuvred politically, John ordered the assassination of Louis in retaliation. His involvement in the murder was quickly revealed and the Armagnac family took political power in opposition to John. By 1410, both sides were bidding for the help of English forces in a civil war. In 1418 Paris was taken by the Burgundians, who were unable to stop the massacre of Count of Armagnac and his followers by a Parisian crowd, with an estimated death toll between 1,000 and 5,000."
+	style = 1
+
+	action_a = {
+		name = "We control the Court"
+		command = { type = independence which = BFR }
+	}
+}
+
+#-----------------------------------
+
+#-------------------------#
+#Kalmar Union-------------#
+#-------------------------#
+
+event = {
+	id = 190012
+
+	trigger = {
+		exists = NOR
+		exists = SWE
+		NOT = {
+			war = { country = DAN country = SWE }
+			war = { country = DAN country = NOR }
+		}		
+	}
+	random = no
+	country = DAN
+	name = "The Kalmar Union"
+	desc = "The union was the work of Scandinavian aristocracy wishing to counter the influence of the Hanseatic League. More personally, it was achieved by Queen Margaret I of Denmark (1353–1412). Margaret succeeded in having her and Haakon's son Olaf recognized as heir to the throne of Denmark. In 1376 Olaf inherited the crown of Denmark from his maternal grandfather as King Olaf II, with his mother as guardian, when Haakon VI died in 1380, Olaf also inherited the crown of Norway. Margaret became regent of Denmark and Norway when Olaf died in 1387, leaving her without an heir. She adopted her great-nephew Eric of Pomerania the same year. The following year, 1388, Swedish nobles called upon her help against King Albert. After Margaret defeated Albert in 1389, her heir Eric was proclaimed King of Norway. Eric was subsequently elected King of Denmark and Sweden in 1396 under the banner of the House of Griffin. His coronation was held in Kalmar on 17 June 1397."
+	style = 1
+
+	date = { day = 15 month = june year = 1397 }
+	offset = 2
+	deathdate = { day = 1 month = january year = 1435 }
+
+	action_a = {
+		name = "Advance the Idea"
+		command = { type = trigger which = 190013 }
+		command = { type = trigger which = 190014 }
+	}
+
+	action_b = {
+		name = "Let it lie"
+		command = { type = relation which = SWE value = 50 }
+		command = { type = relation which = NOR value = 50 }
+		command = { type = relation which = SHL value = 50 }
+	}
+}
+
+event = {
+	id = 190013
+
+	random = no
+	country = NOR
+	name = "Norway Decides"
+	desc = "The union was the work of Scandinavian aristocracy wishing to counter the influence of the Hanseatic League. More personally, it was achieved by Queen Margaret I of Denmark (1353–1412). Margaret succeeded in having her and Haakon's son Olaf recognized as heir to the throne of Denmark. In 1376 Olaf inherited the crown of Denmark from his maternal grandfather as King Olaf II, with his mother as guardian, when Haakon VI died in 1380, Olaf also inherited the crown of Norway. Margaret became regent of Denmark and Norway when Olaf died in 1387, leaving her without an heir. She adopted her great-nephew Eric of Pomerania the same year. The following year, 1388, Swedish nobles called upon her help against King Albert. After Margaret defeated Albert in 1389, her heir Eric was proclaimed King of Norway. Eric was subsequently elected King of Denmark and Sweden in 1396 under the banner of the House of Griffin. His coronation was held in Kalmar on 17 June 1397."
+	style = 1
+
+	action_a = {
+		name = "We Accept!"
+		command = { type = trigger which = 190015 }
+		command = { type = breakvassal which = -1 }
+	}
+
+	action_b = {
+		name = "We Refuse!"
+		command = { type = relation which = DAN value = -100 }
+	}
+}
+
+event = {
+	id = 190014
+
+	random = no
+	country = SWE
+	name = "Sweden Decides"
+	desc = "The union was the work of Scandinavian aristocracy wishing to counter the influence of the Hanseatic League. More personally, it was achieved by Queen Margaret I of Denmark (1353–1412). Margaret succeeded in having her and Haakon's son Olaf recognized as heir to the throne of Denmark. In 1376 Olaf inherited the crown of Denmark from his maternal grandfather as King Olaf II, with his mother as guardian, when Haakon VI died in 1380, Olaf also inherited the crown of Norway. Margaret became regent of Denmark and Norway when Olaf died in 1387, leaving her without an heir. She adopted her great-nephew Eric of Pomerania the same year. The following year, 1388, Swedish nobles called upon her help against King Albert. After Margaret defeated Albert in 1389, her heir Eric was proclaimed King of Norway. Eric was subsequently elected King of Denmark and Sweden in 1396 under the banner of the House of Griffin. His coronation was held in Kalmar on 17 June 1397."
+	style = 1
+
+	action_a = {
+		name = "We Accept!"
+		command = { type = trigger which = 190016 }
+		command = { type = breakvassal which = -1 }
+		command = { type = wakemonarch which = 06300 }
+	}
+
+	action_b = {
+		name = "We Refuse!"
+		command = { type = relation which = DAN value = -100 }
+		command = { type = wakemonarch which = 16300 }
+	}
+}
+
+event = {
+	id = 190015
+
+	random = no
+	country = DAN
+	name = "Norway Accepts!"
+	desc = "The union was the work of Scandinavian aristocracy wishing to counter the influence of the Hanseatic League. More personally, it was achieved by Queen Margaret I of Denmark (1353–1412). Margaret succeeded in having her and Haakon's son Olaf recognized as heir to the throne of Denmark. In 1376 Olaf inherited the crown of Denmark from his maternal grandfather as King Olaf II, with his mother as guardian, when Haakon VI died in 1380, Olaf also inherited the crown of Norway. Margaret became regent of Denmark and Norway when Olaf died in 1387, leaving her without an heir. She adopted her great-nephew Eric of Pomerania the same year. The following year, 1388, Swedish nobles called upon her help against King Albert. After Margaret defeated Albert in 1389, her heir Eric was proclaimed King of Norway. Eric was subsequently elected King of Denmark and Sweden in 1396 under the banner of the House of Griffin. His coronation was held in Kalmar on 17 June 1397."
+	style = 1
+
+	action_a = {
+		name = "Hurrah!"
+		command = { type = setflag which = KalNOR }
+		command = { type = vp value = 5 }
+		command = { type = breakvassal which = -1 }
+	}
+}
+
+event = {
+	id = 190016
+
+	random = no
+	country = DAN
+	name = "Sweden Accepts!"
+	desc = "The union was the work of Scandinavian aristocracy wishing to counter the influence of the Hanseatic League. More personally, it was achieved by Queen Margaret I of Denmark (1353–1412). Margaret succeeded in having her and Haakon's son Olaf recognized as heir to the throne of Denmark. In 1376 Olaf inherited the crown of Denmark from his maternal grandfather as King Olaf II, with his mother as guardian, when Haakon VI died in 1380, Olaf also inherited the crown of Norway. Margaret became regent of Denmark and Norway when Olaf died in 1387, leaving her without an heir. She adopted her great-nephew Eric of Pomerania the same year. The following year, 1388, Swedish nobles called upon her help against King Albert. After Margaret defeated Albert in 1389, her heir Eric was proclaimed King of Norway. Eric was subsequently elected King of Denmark and Sweden in 1396 under the banner of the House of Griffin. His coronation was held in Kalmar on 17 June 1397."
+	style = 1
+
+	action_a = {
+		name = "Hurrah!"
+		command = { type = setflag which = KalSWE }
+		command = { type = vp value = 5 }
+		command = { type = breakvassal which = -1 }
+	}
+}
+
+event = {
+	id = 190017
+
+	trigger = { flag = KalNOR }
+	random = no
+	country = DAN
+	name = "Bind Norway"
+	desc = "The union was the work of Scandinavian aristocracy wishing to counter the influence of the Hanseatic League. More personally, it was achieved by Queen Margaret I of Denmark (1353–1412). Margaret succeeded in having her and Haakon's son Olaf recognized as heir to the throne of Denmark. In 1376 Olaf inherited the crown of Denmark from his maternal grandfather as King Olaf II, with his mother as guardian, when Haakon VI died in 1380, Olaf also inherited the crown of Norway. Margaret became regent of Denmark and Norway when Olaf died in 1387, leaving her without an heir. She adopted her great-nephew Eric of Pomerania the same year. The following year, 1388, Swedish nobles called upon her help against King Albert. After Margaret defeated Albert in 1389, her heir Eric was proclaimed King of Norway. Eric was subsequently elected King of Denmark and Sweden in 1396 under the banner of the House of Griffin. His coronation was held in Kalmar on 17 June 1397."
+	style = 1
+
+	date = { day = 15 month = june year = 1397 }
+	offset = 2
+	deathdate = { day = 1 month = january year = 1435 }
+
+	action_a = {
+		name = "Hurrah!"
+		command = { type = vassal which = NOR }
+		command = { type = relation which = NOR value = 50 }
+	}
+}
+
+event = {
+	id = 190018
+
+	trigger = { flag = KalSWE }
+	random = no
+	country = DAN
+	name = "Bind Sweden"
+	desc = "The union was the work of Scandinavian aristocracy wishing to counter the influence of the Hanseatic League. More personally, it was achieved by Queen Margaret I of Denmark (1353–1412). Margaret succeeded in having her and Haakon's son Olaf recognized as heir to the throne of Denmark. In 1376 Olaf inherited the crown of Denmark from his maternal grandfather as King Olaf II, with his mother as guardian, when Haakon VI died in 1380, Olaf also inherited the crown of Norway. Margaret became regent of Denmark and Norway when Olaf died in 1387, leaving her without an heir. She adopted her great-nephew Eric of Pomerania the same year. The following year, 1388, Swedish nobles called upon her help against King Albert. After Margaret defeated Albert in 1389, her heir Eric was proclaimed King of Norway. Eric was subsequently elected King of Denmark and Sweden in 1396 under the banner of the House of Griffin. His coronation was held in Kalmar on 17 June 1397."
+	style = 1
+
+	date = { day = 15 month = june year = 1397 }
+	offset = 2
+	deathdate = { day = 1 month = january year = 1435 }
+
+	action_a = {
+		name = "Hurrah!"
+		command = { type = vassal which = SWE }
+		command = { type = relation which = SWE value = 50 }
+	}
+}
+
+#---------------------------------
+
+#---------------------------#
+#Early Swiss Elections------#
+#---------------------------#
+
+#new helvetian monarch events
+event = {
+	id = 190019
+	random = no
+	country = HEL
+	name = "Meeting of the Tagsatzung diet"
+	desc = "The Swiss Confederation was made up of around 10-20 seperate entities during the EU2 timeframe. These entities were made up of rural cantons and Urban city-states and each governed themselves to a large degree. However effects affecting the confederation as a whole would be put to a diet where each canton and city would contribute, these diets would be held regularly, one of which is now being held. You now have a choice by choosing whether the Urban or Rural Cantons will be dominant and which you think would best benefit the Confederation at this time."
+	style = 0
+
+	date = { day = 1 month = january year = 1319 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1338 }
+
+	action_a = {
+		ai_chance = 50
+		name = "Rural Cantons Dominant"
+		command = { type = sleepmonarch which = 2076 }
+		command = { type = wakemonarch which = 122110 }
+	}
+
+	action_b = {
+		ai_chance = 50
+		name = "Urban Cantons Dominant"
+		command = { type = sleepmonarch which = 2076 }
+		command = { type = wakemonarch which = 122111 }
+	}
+}
+
+event = {
+	id = 190020
+	random = no
+	country = HEL
+	name = "Meeting of the Tagsatzung diet"
+	desc = "The Swiss Confederation was made up of around 10-20 seperate entities during the EU2 timeframe. These entities were made up of rural cantons and Urban city-states and each governed themselves to a large degree. However effects affecting the confederation as a whole would be put to a diet where each canton and city would contribute, these diets would be held regularly, one of which is now being held. You now have a choice by choosing whether the Urban or Rural Cantons will be dominant and which you think would best benefit the Confederation at this time."
+	style = 0
+
+	date = { day = 1 month = january year = 1339 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1358 }
+
+	action_a = {
+		ai_chance = 50
+		name = "Rural Cantons Dominant"
+		command = { type = sleepmonarch which = 2076 }
+		command = { type = wakemonarch which = 122112 }
+	}
+
+	action_b = {
+		ai_chance = 50
+		name = "Urban Cantons Dominant"
+		command = { type = sleepmonarch which = 2076 }
+		command = { type = wakemonarch which = 122113 }
+	}
+}
+
+event = {
+	id = 190021
+	random = no
+	country = HEL
+	name = "Meeting of the Tagsatzung diet"
+	desc = "The Swiss Confederation was made up of around 10-20 seperate entities during the EU2 timeframe. These entities were made up of rural cantons and Urban city-states and each governed themselves to a large degree. However effects affecting the confederation as a whole would be put to a diet where each canton and city would contribute, these diets would be held regularly, one of which is now being held. You now have a choice by choosing whether the Urban or Rural Cantons will be dominant and which you think would best benefit the Confederation at this time."
+	style = 0
+
+	date = { day = 1 month = january year = 1359 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1378 }
+
+	action_a = {
+		ai_chance = 50
+		name = "Rural Cantons Dominant"
+		command = { type = sleepmonarch which = 2076 }
+		command = { type = wakemonarch which = 122114 }
+	}
+
+	action_b = {
+		ai_chance = 50
+		name = "Urban Cantons Dominant"
+		command = { type = sleepmonarch which = 2076 }
+		command = { type = wakemonarch which = 122115 }
+	}
+}
+
+event = {
+	id = 190022
+	random = no
+	country = HEL
+	name = "Meeting of the Tagsatzung diet"
+	desc = "The Swiss Confederation was made up of around 10-20 seperate entities during the EU2 timeframe. These entities were made up of rural cantons and Urban city-states and each governed themselves to a large degree. However effects affecting the confederation as a whole would be put to a diet where each canton and city would contribute, these diets would be held regularly, one of which is now being held. You now have a choice by choosing whether the Urban or Rural Cantons will be dominant and which you think would best benefit the Confederation at this time."
+	style = 0
+
+	date = { day = 1 month = january year = 1379 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1398 }
+
+	action_a = {
+		ai_chance = 50
+		name = "Rural Cantons Dominant"
+		command = { type = sleepmonarch which = 2076 }
+		command = { type = wakemonarch which = 122116 }
+	}
+
+	action_b = {
+		ai_chance = 50
+		name = "Urban Cantons Dominant"
+		command = { type = sleepmonarch which = 2076 }
+		command = { type = wakemonarch which = 122117 }
+	}
+}
+
+event = {
+	id = 190023
+	random = no
+	country = HEL
+	name = "Meeting of the Tagsatzung diet"
+	desc = "The Swiss Confederation was made up of around 10-20 seperate entities during the EU2 timeframe. These entities were made up of rural cantons and Urban city-states and each governed themselves to a large degree. However effects affecting the confederation as a whole would be put to a diet where each canton and city would contribute, these diets would be held regularly, one of which is now being held. You now have a choice by choosing whether the Urban or Rural Cantons will be dominant and which you think would best benefit the Confederation at this time."
+	style = 0
+
+	date = { day = 1 month = january year = 1399 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1418 }
+
+	action_a = {
+		ai_chance = 50
+		name = "Rural Cantons Dominant"
+		command = { type = sleepmonarch which = 2076 }
+		command = { type = wakemonarch which = 122118 }
+	}
+
+	action_b = {
+		ai_chance = 50
+		name = "Urban Cantons Dominant"
+		command = { type = sleepmonarch which = 2076 }
+		command = { type = wakemonarch which = 122119 }
+	}
+}
+
+#---------------------------------------------
+
+#---------------------------#
+#Early Ragusan Elections----#
+#---------------------------#
+
+#Ragusa factional dominance#
+event = {
+
+	id = 190024
+	random = no
+	country = RAG
+	name = "Ragusan Senate Influence"
+	desc = "The Republic of Ragusa was was centred around the city of Dubrovnik which centred on Noble merchant families. 11 families dominated the Senate during this time. Whilst the election for Rector of the Senate happened every two months and an individual could not run for two years, these families dominated the politics of the time. Which family will influence the next ten years?"
+	style = 1
+
+	date = { day = 1 month = january year = 1319 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1328 }
+
+	action_a = {
+		ai_chance = 25
+		name = "The Giorgi Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122120 }
+	}
+
+	action_b = {
+		ai_chance = 25
+		name = "The Sorgo Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122121 }
+	}
+
+	action_c = {
+		ai_chance = 25
+		name = "The Capoga Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122122 }
+	}
+
+	action_d = {
+		ai_chance = 25
+		name = "The Pozza Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122123 }
+	}
+}
+
+#Ragusan Senate Influence#
+event = {
+
+	id = 190025
+	random = no
+	country = RAG
+	name = "Ragusan Senate Influence"
+	desc = "The Republic of Ragusa was was centred around the city of Dubrovnik which centred on Noble merchant families. 11 families dominated the Senate during this time. Whilst the election for Rector of the Senate happened every two months and an individual could not run for two years, these families dominated the politics of the time. Which family will influence the next ten years?"
+	style = 1
+
+	date = { day = 1 month = january year = 1329 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1338 }
+
+	action_a = {
+		ai_chance = 25
+		name = "The Giorgi Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122124 }
+	}
+
+	action_b = {
+		ai_chance = 25
+		name = "The Sorgo Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122125 }
+	}
+
+	action_c = {
+		ai_chance = 25
+		name = "The Capoga Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122126 }
+	}
+
+	action_d = {
+		ai_chance = 25
+		name = "The Ghetaldi Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122127 }
+	}
+}
+
+#Ragusan Senate Influence#
+event = {
+
+	id = 190026
+	random = no
+	country = RAG
+	name = "Ragusan Senate Influence"
+	desc = "The Republic of Ragusa was was centred around the city of Dubrovnik which centred on Noble merchant families. 11 families dominated the Senate during this time. Whilst the election for Rector of the Senate happened every two months and an individual could not run for two years, these families dominated the politics of the time. Which family will influence the next ten years?"
+	style = 1
+
+	date = { day = 1 month = january year = 1339 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1348 }
+
+	action_b = {
+		ai_chance = 25
+		name = "The Giorgi Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122128 }
+	}
+
+	action_a = {
+		ai_chance = 25
+		name = "The Sorgo Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122129 }
+	}
+
+	action_c = {
+		ai_chance = 25
+		name = "The Gozze Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122130 }
+	}
+
+	action_d = {
+		ai_chance = 25
+		name = "The Bona Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122131 }
+	}
+}
+
+#Ragusan Senate Influence#
+event = {
+
+	id = 190027
+	random = no
+	country = RAG
+	name = "Ragusan Senate Influence"
+	desc = "The Republic of Ragusa was was centred around the city of Dubrovnik which centred on Noble merchant families. 11 families dominated the Senate during this time. Whilst the election for Rector of the Senate happened every two months and an individual could not run for two years, these families dominated the politics of the time. Which family will influence the next ten years?"
+	style = 1
+
+	date = { day = 1 month = january year = 1349 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1358 }
+
+	action_b = {
+		ai_chance = 25
+		name = "The Giorgi Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122132 }
+	}
+
+	action_a = {
+		ai_chance = 25
+		name = "The Sorgo Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122133 }
+	}
+
+	action_c = {
+		ai_chance = 25
+		name = "The Cerva Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122134 }
+	}
+
+	action_d = {
+		ai_chance = 25
+		name = "The Capoga Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122135 }
+	}
+}
+
+#Ragusan Senate Influence#
+event = {
+
+	id = 190028
+	random = no
+	country = RAG
+	name = "Ragusan Senate Influence"
+	desc = "The Republic of Ragusa was was centred around the city of Dubrovnik which centred on Noble merchant families. 11 families dominated the Senate during this time. Whilst the election for Rector of the Senate happened every two months and an individual could not run for two years, these families dominated the politics of the time. Which family will influence the next ten years?"
+	style = 1
+
+	date = { day = 1 month = january year = 1359 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1368 }
+
+	action_c = {
+		ai_chance = 25
+		name = "The Giorgi Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122136 }
+	}
+
+	action_b = {
+		ai_chance = 25
+		name = "The Sorgo Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122137 }
+	}
+
+	action_a = {
+		ai_chance = 25
+		name = "The Gradi Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122138 }
+	}
+
+	action_d = {
+		ai_chance = 25
+		name = "The Saraca Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122139 }
+	}
+}
+
+#Ragusan Senate Influence#
+event = {
+
+	id = 190029
+	random = no
+	country = RAG
+	name = "Ragusan Senate Influence"
+	desc = "The Republic of Ragusa was was centred around the city of Dubrovnik which centred on Noble merchant families. 11 families dominated the Senate during this time. Whilst the election for Rector of the Senate happened every two months and an individual could not run for two years, these families dominated the politics of the time. Which family will influence the next ten years?"
+	style = 1
+
+	date = { day = 1 month = january year = 1369 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1378 }
+
+	action_d = {
+		ai_chance = 25
+		name = "The Giorgi Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122140 }
+	}
+
+	action_b = {
+		ai_chance = 25
+		name = "The Sorgo Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122141 }
+	}
+
+	action_c = {
+		ai_chance = 25
+		name = "The Ghetaldi Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122142 }
+	}
+
+	action_a = {
+		ai_chance = 25
+		name = "The Pozza Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122143 }
+	}
+}
+
+#Ragusan Senate Influence#
+event = {
+
+	id = 190030
+	random = no
+	country = RAG
+	name = "Ragusan Senate Influence"
+	desc = "The Republic of Ragusa was was centred around the city of Dubrovnik which centred on Noble merchant families. 11 families dominated the Senate during this time. Whilst the election for Rector of the Senate happened every two months and an individual could not run for two years, these families dominated the politics of the time. Which family will influence the next ten years?"
+	style = 1
+
+	date = { day = 1 month = january year = 1379 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1388 }
+
+	action_a = {
+		ai_chance = 25
+		name = "The Giorgi Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122144 }
+	}
+
+	action_b = {
+		ai_chance = 25
+		name = "The Sorgo Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122145 }
+	}
+
+	action_c = {
+		ai_chance = 25
+		name = "The Zamanja Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122146 }
+	}
+
+	action_d = {
+		ai_chance = 25
+		name = "The Bona Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122147 }
+	}
+}
+
+#Ragusan Senate Influence#
+event = {
+
+	id = 190031
+	random = no
+	country = RAG
+	name = "Ragusan Senate Influence"
+	desc = "The Republic of Ragusa was was centred around the city of Dubrovnik which centred on Noble merchant families. 11 families dominated the Senate during this time. Whilst the election for Rector of the Senate happened every two months and an individual could not run for two years, these families dominated the politics of the time. Which family will influence the next ten years?"
+	style = 1
+
+	date = { day = 1 month = january year = 1389 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1398 }
+
+	action_a = {
+		ai_chance = 25
+		name = "The Giorgi Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122148 }
+	}
+
+	action_b = {
+		ai_chance = 25
+		name = "The Sorgo Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122149 }
+	}
+
+	action_c = {
+		ai_chance = 25
+		name = "The Gozze Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122150 }
+	}
+
+	action_d = {
+		ai_chance = 25
+		name = "The Cerva Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122151 }
+	}
+}
+
+#Ragusan Senate Influence#
+event = {
+
+	id = 190032
+	random = no
+	country = RAG
+	name = "Ragusan Senate Influence"
+	desc = "The Republic of Ragusa was was centred around the city of Dubrovnik which centred on Noble merchant families. 11 families dominated the Senate during this time. Whilst the election for Rector of the Senate happened every two months and an individual could not run for two years, these families dominated the politics of the time. Which family will influence the next ten years?"
+	style = 1
+
+	date = { day = 1 month = january year = 1399 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1408 }
+
+	action_a = {
+		ai_chance = 25
+		name = "The Giorgi Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122152 }
+	}
+
+	action_b = {
+		ai_chance = 25
+		name = "The Sorgo Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122153 }
+	}
+
+	action_c = {
+		ai_chance = 25
+		name = "The Capoga Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122154 }
+	}
+
+	action_d = {
+		ai_chance = 25
+		name = "The Gradi Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122155 }
+	}
+}
+
+#Ragusan Senate Influence#
+event = {
+
+	id = 190033
+	random = no
+	country = RAG
+	name = "Ragusan Senate Influence"
+	desc = "The Republic of Ragusa was was centred around the city of Dubrovnik which centred on Noble merchant families. 11 families dominated the Senate during this time. Whilst the election for Rector of the Senate happened every two months and an individual could not run for two years, these families dominated the politics of the time. Which family will influence the next ten years?"
+	style = 2
+
+	date = { day = 1 month = january year = 1409 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1418 }
+
+	action_a = {
+		ai_chance = 25
+		name = "The Giorgi Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122156 }
+	}
+
+	action_b = {
+		ai_chance = 25
+		name = "The Sorgo Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122157 }
+	}
+
+	action_c = {
+		ai_chance = 25
+		name = "The Saraca Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122158 }
+	}
+
+	action_d = {
+		ai_chance = 25
+		name = "The Zamanja Family will have dominance"
+		command = { type = sleepmonarch which = 13799 }
+		command = { type = wakemonarch which = 122159 }
+	}
+}
+
+#---------------------------------
+
+#---------------------------#
+#Early Hansa Elections------#
+#---------------------------#
+
+#Hansa factional dominance#
+event = {
+
+	id = 190034
+	random = no
+	country = HSA
+	name = "Hansa factional dominance"
+	desc = "The Hansa was not a country per se, but was an amalgamation of trading cities. Each of these cities had a representative which represented the cities interests in the Hansatag (council). Every so often different factions would hold a dominance within the council, but which one?"
+	style = 1
+
+	date = { day = 1 month = january year = 1319 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1328 }
+
+	action_a = {
+		ai_chance = 25
+		name = "The Luft faction will have dominance"
+		command = { type = ai which = Lufthansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122160 }
+	}
+
+	action_b = {
+		ai_chance = 25
+		name = "The Erde faction will have dominance"
+		command = { type = ai which = Erdehansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122161 }
+	}
+
+	action_c = {
+		ai_chance = 25
+		name = "The Wasser faction will have dominance"
+		command = { type = ai which = Wasserhansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122162 }
+	}
+
+	action_d = {
+		ai_chance = 25
+		name = "The Feuer faction will have dominance"
+		command = { type = ai which = Feuerhansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122163 }
+	}
+}
+
+#Hansa factional dominance#
+event = {
+
+	id = 190035
+	random = no
+	country = HSA
+	name = "Hansa factional dominance"
+	desc = "The Hansa was not a country per se, but was an amalgamation of trading cities. Each of these cities had a representative which represented the cities interests in the Hansatag (council). Every so often different factions would hold a dominance within the council, but which one?"
+	style = 1
+
+	date = { day = 1 month = may year = 1329 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1338 }
+
+	action_a = {
+		ai_chance = 25
+		name = "The Luft faction will have dominance"
+		command = { type = ai which = Lufthansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122164 }
+	}
+
+	action_b = {
+		ai_chance = 25
+		name = "The Erde faction will have dominance"
+		command = { type = ai which = Erdehansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122165 }
+	}
+
+	action_c = {
+		ai_chance = 25
+		name = "The Wasser faction will have dominance"
+		command = { type = ai which = Wasserhansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122166 }
+	}
+
+	action_d = {
+		ai_chance = 25
+		name = "The Feuer faction will have dominance"
+		command = { type = ai which = Feuerhansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122167 }
+	}
+}
+
+#Hansa factional dominance#
+event = {
+
+	id = 190036
+	random = no
+	country = HSA
+	name = "Hansa factional dominance"
+	desc = "The Hansa was not a country per se, but was an amalgamation of trading cities. Each of these cities had a representative which represented the cities interests in the Hansatag (council). Every so often different factions would hold a dominance within the council, but which one?"
+	style = 1
+
+	date = { day = 1 month = may year = 1339 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1348 }
+
+	action_b = {
+		ai_chance = 25
+		name = "The Luft faction will have dominance"
+		command = { type = ai which = Lufthansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122168 }
+	}
+
+	action_a = {
+		ai_chance = 25
+		name = "The Erde faction will have dominance"
+		command = { type = ai which = Erdehansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122169 }
+	}
+
+	action_c = {
+		ai_chance = 25
+		name = "The Wasser faction will have dominance"
+		command = { type = ai which = Wasserhansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122170 }
+	}
+
+	action_d = {
+		ai_chance = 25
+		name = "The Feuer faction will have dominance"
+		command = { type = ai which = Feuerhansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122171 }
+	}
+}
+
+#Hansa factional dominance#
+event = {
+
+	id = 190037
+	random = no
+	country = HSA
+	name = "Hansa factional dominance"
+	desc = "The Hansa was not a country per se, but was an amalgamation of trading cities. Each of these cities had a representative which represented the cities interests in the Hansatag (council). Every so often different factions would hold a dominance within the council, but which one?"
+	style = 1
+
+	date = { day = 1 month = may year = 1349 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1358 }
+
+	action_b = {
+		ai_chance = 25
+		name = "The Luft faction will have dominance"
+		command = { type = ai which = Lufthansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122172 }
+	}
+
+	action_a = {
+		ai_chance = 25
+		name = "The Erde faction will have dominance"
+		command = { type = ai which = Erdehansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122173 }
+	}
+
+	action_c = {
+		ai_chance = 25
+		name = "The Wasser faction will have dominance"
+		command = { type = ai which = Wasserhansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122174 }
+	}
+
+	action_d = {
+		ai_chance = 25
+		name = "The Feuer faction will have dominance"
+		command = { type = ai which = Feuerhansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122175 }
+	}
+}
+
+#Hansa factional dominance#
+event = {
+
+	id = 190038
+	random = no
+	country = HSA
+	name = "Hansa factional dominance"
+	desc = "The Hansa was not a country per se, but was an amalgamation of trading cities. Each of these cities had a representative which represented the cities interests in the Hansatag (council). Every so often different factions would hold a dominance within the council, but which one?"
+	style = 1
+
+	date = { day = 1 month = may year = 1359 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1368 }
+
+	action_c = {
+		ai_chance = 25
+		name = "The Luft faction will have dominance"
+		command = { type = ai which = Lufthansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122176 }
+	}
+
+	action_b = {
+		ai_chance = 25
+		name = "The Erde faction will have dominance"
+		command = { type = ai which = Erdehansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122177 }
+	}
+
+	action_a = {
+		ai_chance = 25
+		name = "The Wasser faction will have dominance"
+		command = { type = ai which = Wasserhansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122178 }
+	}
+
+	action_d = {
+		ai_chance = 25
+		name = "The Feuer faction will have dominance"
+		command = { type = ai which = Feuerhansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122179 }
+	}
+}
+
+#Hansa factional dominance#
+event = {
+
+	id = 190039
+	random = no
+	country = HSA
+	name = "Hansa factional dominance"
+	desc = "The Hansa was not a country per se, but was an amalgamation of trading cities. Each of these cities had a representative which represented the cities interests in the Hansatag (council). Every so often different factions would hold a dominance within the council, but which one?"
+	style = 1
+
+	date = { day = 1 month = may year = 1369 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1378 }
+
+	action_d = {
+		ai_chance = 25
+		name = "The Luft faction will have dominance"
+		command = { type = ai which = Lufthansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122180 }
+	}
+
+	action_b = {
+		ai_chance = 25
+		name = "The Erde faction will have dominance"
+		command = { type = ai which = Erdehansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122181 }
+	}
+
+	action_c = {
+		ai_chance = 25
+		name = "The Wasser faction will have dominance"
+		command = { type = ai which = Wasserhansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122182 }
+	}
+
+	action_a = {
+		ai_chance = 25
+		name = "The Feuer faction will have dominance"
+		command = { type = ai which = Feuerhansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122183 }
+	}
+}
+
+#Hansa factional dominance#
+event = {
+
+	id = 190040
+	random = no
+	country = HSA
+	name = "Hansa factional dominance"
+	desc = "The Hansa was not a country per se, but was an amalgamation of trading cities. Each of these cities had a representative which represented the cities interests in the Hansatag (council). Every so often different factions would hold a dominance within the council, but which one?"
+	style = 1
+
+	date = { day = 1 month = may year = 1379 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1388 }
+
+	action_a = {
+		ai_chance = 25
+		name = "The Luft faction will have dominance"
+		command = { type = ai which = Lufthansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122184 }
+	}
+
+	action_b = {
+		ai_chance = 25
+		name = "The Erde faction will have dominance"
+		command = { type = ai which = Erdehansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122185 }
+	}
+
+	action_c = {
+		ai_chance = 25
+		name = "The Wasser faction will have dominance"
+		command = { type = ai which = Wasserhansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122186 }
+	}
+
+	action_d = {
+		ai_chance = 25
+		name = "The Feuer faction will have dominance"
+		command = { type = ai which = Feuerhansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122187 }
+	}
+}
+
+#Hansa factional dominance#
+event = {
+
+	id = 190041
+	random = no
+	country = HSA
+	name = "Hansa factional dominance"
+	desc = "The Hansa was not a country per se, but was an amalgamation of trading cities. Each of these cities had a representative which represented the cities interests in the Hansatag (council). Every so often different factions would hold a dominance within the council, but which one?"
+	style = 1
+
+	date = { day = 1 month = may year = 1389 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1398 }
+
+	action_a = {
+		ai_chance = 25
+		name = "The Luft faction will have dominance"
+		command = { type = ai which = Lufthansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122188 }
+	}
+
+	action_b = {
+		ai_chance = 25
+		name = "The Erde faction will have dominance"
+		command = { type = ai which = Erdehansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122189 }
+	}
+
+	action_c = {
+		ai_chance = 25
+		name = "The Wasser faction will have dominance"
+		command = { type = ai which = Wasserhansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122190 }
+	}
+
+	action_d = {
+		ai_chance = 25
+		name = "The Feuer faction will have dominance"
+		command = { type = ai which = Feuerhansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122191 }
+	}
+}
+
+#Hansa factional dominance#
+event = {
+
+	id = 190042
+	random = no
+	country = HSA
+	name = "Hansa factional dominance"
+	desc = "The Hansa was not a country per se, but was an amalgamation of trading cities. Each of these cities had a representative which represented the cities interests in the Hansatag (council). Every so often different factions would hold a dominance within the council, but which one?"
+	style = 1
+
+	date = { day = 1 month = may year = 1399 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1408 }
+
+	action_a = {
+		ai_chance = 25
+		name = "The Luft faction will have dominance"
+		command = { type = ai which = Lufthansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122192 }
+	}
+
+	action_b = {
+		ai_chance = 25
+		name = "The Erde faction will have dominance"
+		command = { type = ai which = Erdehansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122193 }
+	}
+
+	action_c = {
+		ai_chance = 25
+		name = "The Wasser faction will have dominance"
+		command = { type = ai which = Wasserhansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122194 }
+	}
+
+	action_d = {
+		ai_chance = 25
+		name = "The Feuer faction will have dominance"
+		command = { type = ai which = Feuerhansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122195 }
+	}
+}
+
+#Hansa factional dominance#
+event = {
+
+	id = 190043
+	random = no
+	country = HSA
+	name = "Hansa factional dominance"
+	desc = "The Hansa was not a country per se, but was an amalgamation of trading cities. Each of these cities had a representative which represented the cities interests in the Hansatag (council). Every so often different factions would hold a dominance within the council, but which one?"
+	style = 2
+
+	date = { day = 1 month = may year = 1409 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1418 }
+
+	action_a = {
+		ai_chance = 25
+		name = "The Luft faction will have dominance"
+		command = { type = ai which = Lufthansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122196 }
+	}
+
+	action_b = {
+		ai_chance = 25
+		name = "The Erde faction will have dominance"
+		command = { type = ai which = Erdehansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122197 }
+	}
+
+	action_c = {
+		ai_chance = 25
+		name = "The Wasser faction will have dominance"
+		command = { type = ai which = Wasserhansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122198 }
+	}
+
+	action_d = {
+		ai_chance = 25
+		name = "The Feuer faction will have dominance"
+		command = { type = ai which = Feuerhansa_ai.txt }
+		command = { type = sleepmonarch which = 13599 }
+		command = { type = wakemonarch which = 122199 }
+	}
+}
+
+#---------------------------------
+
+#---------------------------#
+#Scottish Capital to Lothian#
+#---------------------------#
+#
+#event = {
+#
+#	id = 190044
+#
+#	trigger = {
+#		NOT = {
+#			capital = 238
+#		}
+#		owned = { province = 238 data = SCO }
+#	}
+#	random = no
+#	country = SCO
+#	name = "Move Our Capital?"
+#	desc = "We have regained Lothian and it's capital Edinburgh. Shall we move our capital back to Edinburgh Castle?"
+#	style = 1
+#
+#	date = { day = 1 month = january year = 1337 }
+#	offset = 90
+#	deathdate = { day = 31 month = december year = 1837 }
+#
+#	action_a = {
+#		name = "Yes, Move to Edinburgh"
+#		command = { type = capital which = 238 }
+#		command = { type = treasury value = -5 }
+#	}
+#
+#	action_b = {
+#		name = "No, I like it here"
+#		command = { type = treasury value = 10 }
+#	}
+#}
+
+#---------------------------------
+
+#---------------------------#
+#Swiss Capital to Berne-----#
+#---------------------------#
+#
+#event = {
+#
+#	id = 190045
+#
+#	trigger = {
+#		NOT = {
+#			capital = 388
+#		}
+#		owned = { province = 388 data = HEL }
+#	}
+#	random = no
+#	country = HEL
+#	name = "Move Our Capital?"
+#	desc = "We have regained Bern and it's capital. Shall we move our capital Bern?"
+#	style = 1
+#
+##	date = { day = 1 month = january year = 1337 }
+#	offset = 90
+#	deathdate = { day = 31 month = december year = 1837 }
+#
+#	action_a = {
+#		name = "Yes, Make the Move"
+#		command = { type = capital which = 388 }
+#		command = { type = treasury value = -5 }
+#	}
+#
+#	action_b = {
+#		name = "No, I like it here"
+#		command = { type = treasury value = 10 }
+#	}
+#}
+
+#---------------------------#
+#Submit to Timur------------#
+#---------------------------#
+
+event = {
+
+	id = 190046
+
+	trigger = {
+		ai = yes
+		atwar = no
+		exists = TIM
+		relation = { country = TIM data = 0 }
+	}
+	random = no
+	country = SLD
+	name = "Submit to Timur?"
+	desc = "Event to build up Timurids"
+	style = 1
+
+	date = { day = 1 month = january year = 1369 }
+	offset = 10
+	deathdate = { day = 31 month = december year = 1404 }
+
+	action_a = {
+		name = "Submit"
+		command = { type = trigger which = 190047 }
+	}
+
+	action_b = {
+		name = "Never!!"
+		command = { }
+	}
+}
+
+event = {
+
+	id = 190047
+	random = no
+	country = TIM
+	name = "Suldus Submits to Us"
+	desc = "Kaching"
+	Style = 1
+
+	action_a = {
+		name = "Result"
+		command = { type = inherit which = SLD }
+		command = { type = badboy value = -2 }
+	}
+}
+
+event = {
+
+	id = 190048
+
+	trigger = {
+		ai = yes
+		atwar = no
+		exists = TIM
+		relation = { country = TIM data = 0 }
+	}
+	random = no
+	country = JLY
+	name = "Submit to Timur?"
+	desc = "Event to build up Timurids"
+	style = 1
+
+	date = { day = 1 month = january year = 1369 }
+	offset = 10
+	deathdate = { day = 31 month = december year = 1404 }
+
+	action_a = {
+		name = "Submit"
+		command = { type = trigger which = 190049 }
+	}
+
+	action_b = {
+		name = "Never!!"
+		command = { }
+	}
+}
+
+event = {
+
+	id = 190049
+	random = no
+	country = TIM
+	name = "Jalayir Submits to Us"
+	desc = "Kaching"
+	Style = 1
+
+	action_a = {
+		name = "Result"
+		command = { type = inherit which = JLY }
+		command = { type = badboy value = -2 }
+	}
+}
+
+event = {
+
+	id = 190050
+
+	trigger = {
+		ai = yes
+		atwar = no
+		exists = TIM
+		relation = { country = TIM data = 0 }
+	}
+	random = no
+	country = ARL
+	name = "Submit to Timur?"
+	desc = "Event to build up Timurids"
+	style = 1
+
+	date = { day = 1 month = january year = 1369 }
+	offset = 10
+	deathdate = { day = 31 month = december year = 1404 }
+
+	action_a = {
+		name = "Submit"
+		command = { type = trigger which = 190051 }
+	}
+
+	action_b = {
+		name = "Never!!"
+		command = { }
+	}
+}
+
+event = {
+
+	id = 190051
+	random = no
+	country = TIM
+	name = "Arlat Submits to Us"
+	desc = "Kaching"
+	Style = 1
+
+	action_a = {
+		name = "Result"
+		command = { type = inherit which = ARL }
+		command = { type = badboy value = -2 }
+	}
+}
+
+event = {
+
+	id = 190052
+
+	trigger = {
+		ai = yes
+		atwar = no
+		exists = TIM
+		relation = { country = TIM data = 0 }
+	}
+	random = no
+	country = INJ
+	name = "Submit to Timur?"
+	desc = "Event to build up Timurids"
+	style = 1
+
+	date = { day = 1 month = january year = 1369 }
+	offset = 10
+	deathdate = { day = 31 month = december year = 1404 }
+
+	action_a = {
+		name = "Submit"
+		command = { type = trigger which = 190053 }
+	}
+
+	action_b = {
+		name = "Never!!"
+		command = { }
+	}
+}
+
+event = {
+
+	id = 190053
+	random = no
+	country = TIM
+	name = "Injuid Submits to Us"
+	desc = "Kaching"
+	Style = 1
+
+	action_a = {
+		name = "Result"
+		command = { type = inherit which = INJ }
+		command = { type = badboy value = -2 }
+	}
+}
+
+event = {
+
+	id = 190054
+
+	trigger = {
+		ai = yes
+		atwar = no
+		exists = TIM
+		relation = { country = TIM data = 0 }
+	}
+	random = no
+	country = MHR
+	name = "Submit to Timur?"
+	desc = "Event to build up Timurids"
+	style = 1
+
+	date = { day = 1 month = january year = 1369 }
+	offset = 10
+	deathdate = { day = 31 month = december year = 1404 }
+
+	action_a = {
+		name = "Submit"
+		command = { type = trigger which = 190055 }
+	}
+
+	action_b = {
+		name = "Never!!"
+		command = { }
+	}
+}
+
+event = {
+
+	id = 190055
+	random = no
+	country = TIM
+	name = "Mihrabanid Submits to Us"
+	desc = "Kaching"
+	Style = 1
+
+	action_a = {
+		name = "Result"
+		command = { type = inherit which = MHR }
+		command = { type = badboy value = -2 }
+	}
+}
+
+event = {
+
+	id = 190056
+
+	trigger = {
+		ai = yes
+		atwar = no
+		exists = TIM
+		relation = { country = TIM data = -100 }
+	}
+	random = no
+	country = TEM
+	name = "Submit to Timur?"
+	desc = "Event to build up Timurids"
+	style = 1
+
+	date = { day = 1 month = january year = 1369 }
+	offset = 10
+	deathdate = { day = 31 month = december year = 1404 }
+
+	action_a = {
+		name = "Submit"
+		command = { type = trigger which = 190057 }
+	}
+
+	action_b = {
+		name = "Never!!"
+		command = { }
+	}
+}
+
+event = {
+
+	id = 190057
+	random = no
+	country = TIM
+	name = "Temurid Submits to Us"
+	desc = "Kaching"
+	Style = 1
+
+	action_a = {
+		name = "Result"
+		command = { type = inherit which = TEM }
+		command = { type = badboy value = -2 }
+	}
+}
+
+event = {
+
+	id = 190058
+
+	trigger = {
+		ai = yes
+		atwar = no
+		exists = TIM
+		relation = { country = TIM data = 0 }
+	}
+	random = no
+	country = MUZ
+	name = "Submit to Timur?"
+	desc = "Event to build up Timurids"
+	style = 1
+
+	date = { day = 1 month = january year = 1369 }
+	offset = 10
+	deathdate = { day = 31 month = december year = 1404 }
+
+	action_a = {
+		name = "Submit"
+		command = { type = trigger which = 190059 }
+	}
+
+	action_b = {
+		name = "Never!!"
+		command = { }
+	}
+}
+
+event = {
+
+	id = 190059
+	random = no
+	country = TIM
+	name = "Muzaffarid Submits to Us"
+	desc = "Kaching"
+	Style = 1
+
+	action_a = {
+		name = "Result"
+		command = { type = inherit which = MUZ }
+		command = { type = badboy value = -2 }
+	}
+}
+
+event = {
+
+	id = 190060
+
+	trigger = {
+		ai = yes
+		atwar = no
+		exists = TIM
+		relation = { country = TIM data = 0 }
+	}
+	random = no
+	country = KRT
+	name = "Submit to Timur?"
+	desc = "Event to build up Timurids"
+	style = 1
+
+	date = { day = 1 month = january year = 1369 }
+	offset = 10
+	deathdate = { day = 31 month = december year = 1404 }
+
+	action_a = {
+		name = "Submit"
+		command = { type = trigger which = 190061 }
+	}
+
+	action_b = {
+		name = "Never!!"
+		command = { }
+	}
+}
+
+event = {
+
+	id = 190061
+	random = no
+	country = TIM
+	name = "Kartid Submits to Us"
+	desc = "Kaching"
+	Style = 1
+
+	action_a = {
+		name = "Result"
+		command = { type = inherit which = KRT }
+		command = { type = badboy value = -2 }
+	}
+}
+
+#----------------------------#
+#Formation of the Sheep Clans#
+#----------------------------#
+
+event = {
+
+	id = 190062
+
+	trigger = {
+		ai = yes
+		exists = TIM
+		atwar = no
+		NOT = {
+			exists = QAR
+			stability = 1
+		}
+	}
+	random = no
+	country = CHB
+	name = "Rise of the Black Sheep"
+	desc = "Baah"
+	style = 1
+
+	date = { day = 1 month = january year = 1351 }
+	offset = 10
+	deathdate = { day = 31 month = december year = 1404 }
+
+	action_a = {
+		name = "Result"
+		command = { type = country which = QAR }
+	}
+}
+
+event = {
+
+	id = 190063
+
+	trigger = {
+		ai = yes
+		exists = TIM
+		atwar = no
+		NOT = {
+			exists = AKK
+			stability = 1
+		}
+		OR = {
+			tag = AYY
+			tag = ERT
+			tag = DUL
+		}
+	}
+	random = no
+	province = 486
+	name = "Rise of the White Sheep"
+	desc = "Baah"
+	style = 1
+
+	date = { day = 1 month = january year = 1360 }
+	offset = 30
+	deathdate = { day = 31 month = december year = 1404 }
+
+	action_a = {
+		name = "Result"
+		command = { type = country which = AKK }
+	}
+}
+
+#################################
+# By Henrik 'Doomdark' Fåhraeus #
+# Altered by Ayeshteni		#
+#################################
+
+#Ismail's Resurrection of Persia#
+event = {
+	id = 190064
+	trigger = {
+		owned = {
+			province = 530 # Tabriz
+			data = -1
+		}
+		NOT = {
+			exists = PER
+			stability = 1 # Lower than 1
+		}
+	}
+	random = no
+	country = QAR
+	name = "EVENTNAME3369"
+	desc = "EVENTHIST3369"
+
+	date = { day = 1 month = january year = 1497 }
+	offset = 720
+	deathdate = { day = 1 month = january year = 1576 }
+
+	action_a ={ # Crush the Shiite rebels
+		name = "ACTIONNAME3369A"
+		command = { type = revolt which = 486 }
+		command = { type = revolt which = 487 }
+		command = { type = revolt which = 508 }
+		command = { type = revolt which = 525 }
+		command = { type = revolt which = 526 }
+		command = { type = revolt which = 527 }
+		command = { type = revolt which = 528 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 531 }
+		command = { type = revolt which = 532 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 534 }
+		command = { type = revolt which = 535 }
+		command = { type = revolt which = 1529 }
+		command = { type = revolt which = 1530 }
+		command = { type = stability value = -1 }
+	}
+	action_b ={ # Negotiate with Ismail
+		name = "ACTIONNAME3369B"
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 531 }
+		command = { type = revolt which = 532 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 533 }
+		command = { type = stability value = -6 }
+	}
+}
+
+# Persia is Resurrected
+event = {
+	id = 190065
+	trigger = {
+		exists = PER
+		OR = {
+			owned = { province = 525 data = -1 }
+			owned = { province = 526 data = -1 }
+			owned = { province = 527 data = -1 }
+			owned = { province = 528 data = -1 }
+			owned = { province = 529 data = -1 }
+			owned = { province = 530 data = -1 }
+			owned = { province = 531 data = -1 }
+			owned = { province = 532 data = -1 }
+			owned = { province = 533 data = -1 }
+			owned = { province = 534 data = -1 }
+			owned = { province = 535 data = -1 }
+			owned = { province = 536 data = -1 }
+			owned = { province = 1529 data = -1 }
+			owned = { province = 1530 data = -1 }
+		}
+	}
+	random = no
+	country = QAR
+	name = "EVENTNAME3817"
+	desc = "EVENTHIST3817"
+	
+	date = { day = 1 month = january year = 1497 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1576 }
+
+	action_a = { # Let them be.
+		name = "ACTIONNAME3817A"
+		command = { type = relation which = PER value = 400 }
+		command = { type = cedeprovince which = PER value = 525 }
+		command = { type = cedeprovince which = PER value = 526 }
+		command = { type = cedeprovince which = PER value = 527 }
+		command = { type = cedeprovince which = PER value = 528 }
+		command = { type = cedeprovince which = PER value = 529 }
+		command = { type = cedeprovince which = PER value = 530 }
+		command = { type = cedeprovince which = PER value = 531 }
+		command = { type = cedeprovince which = PER value = 532 }
+		command = { type = cedeprovince which = PER value = 533 }
+		command = { type = cedeprovince which = PER value = 534 }
+		command = { type = cedeprovince which = PER value = 535 }
+		command = { type = cedeprovince which = PER value = 536 }
+		command = { type = cedeprovince which = PER value = 1529 }
+		command = { type = cedeprovince which = PER value = 1530 }
+	}
+	action_b = { # Crush the rebellion.
+		name = "ACTIONNAME3817B"
+		command = { type = revoltrisk which = 120 value = 8 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = stability value = -6 }
+	}
+}
+
+#Ismail's Resurrection of Persia#
+event = {
+	id = 190066
+	trigger = {
+		owned = {
+			province = 530 # Tabriz
+			data = -1
+		}
+		NOT = {
+			exists = PER
+			stability = 1 # Lower than 1
+		}
+	}
+	random = no
+	country = KHO
+	name = "EVENTNAME3369"
+	desc = "EVENTHIST3369"
+
+	date = { day = 1 month = january year = 1497 }
+	offset = 720
+	deathdate = { day = 1 month = january year = 1576 }
+
+	action_a ={ # Crush the Shiite rebels
+		name = "ACTIONNAME3369A"
+		command = { type = revolt which = 486 }
+		command = { type = revolt which = 487 }
+		command = { type = revolt which = 508 }
+		command = { type = revolt which = 525 }
+		command = { type = revolt which = 526 }
+		command = { type = revolt which = 527 }
+		command = { type = revolt which = 528 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 531 }
+		command = { type = revolt which = 532 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 534 }
+		command = { type = revolt which = 535 }
+		command = { type = revolt which = 1529 }
+		command = { type = revolt which = 1530 }
+		command = { type = stability value = -1 }
+	}
+	action_b ={ # Negotiate with Ismail
+		name = "ACTIONNAME3369B"
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 531 }
+		command = { type = revolt which = 532 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 533 }
+		command = { type = stability value = -6 }
+	}
+}
+
+# Persia is Resurrected
+event = {
+	id = 190067
+	trigger = {
+		exists = PER
+		OR = {
+			owned = { province = 525 data = -1 }
+			owned = { province = 526 data = -1 }
+			owned = { province = 527 data = -1 }
+			owned = { province = 528 data = -1 }
+			owned = { province = 529 data = -1 }
+			owned = { province = 530 data = -1 }
+			owned = { province = 531 data = -1 }
+			owned = { province = 532 data = -1 }
+			owned = { province = 533 data = -1 }
+			owned = { province = 534 data = -1 }
+			owned = { province = 535 data = -1 }
+			owned = { province = 536 data = -1 }
+			owned = { province = 1529 data = -1 }
+			owned = { province = 1530 data = -1 }
+		}
+	}
+	random = no
+	country = KHO
+	name = "EVENTNAME3817"
+	desc = "EVENTHIST3817"
+	
+	date = { day = 1 month = january year = 1497 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1576 }
+
+	action_a = { # Let them be.
+		name = "ACTIONNAME3817A"
+		command = { type = relation which = PER value = 400 }
+		command = { type = cedeprovince which = PER value = 525 }
+		command = { type = cedeprovince which = PER value = 526 }
+		command = { type = cedeprovince which = PER value = 527 }
+		command = { type = cedeprovince which = PER value = 528 }
+		command = { type = cedeprovince which = PER value = 529 }
+		command = { type = cedeprovince which = PER value = 530 }
+		command = { type = cedeprovince which = PER value = 531 }
+		command = { type = cedeprovince which = PER value = 532 }
+		command = { type = cedeprovince which = PER value = 533 }
+		command = { type = cedeprovince which = PER value = 534 }
+		command = { type = cedeprovince which = PER value = 535 }
+		command = { type = cedeprovince which = PER value = 536 }
+		command = { type = cedeprovince which = PER value = 1529 }
+		command = { type = cedeprovince which = PER value = 1530 }
+	}
+	action_b = { # Crush the rebellion.
+		name = "ACTIONNAME3817B"
+		command = { type = revoltrisk which = 120 value = 8 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = stability value = -6 }
+	}
+}
+
+#Ismail's Resurrection of Persia#
+event = {
+	id = 190068
+	trigger = {
+		owned = {
+			province = 530 # Tabriz
+			data = -1
+		}
+		NOT = {
+			exists = PER
+			stability = 1 # Lower than 1
+		}
+	}
+	random = no
+	country = ABB
+	name = "EVENTNAME3369"
+	desc = "EVENTHIST3369"
+
+	date = { day = 1 month = january year = 1497 }
+	offset = 720
+	deathdate = { day = 1 month = january year = 1576 }
+
+	action_a ={ # Crush the Shiite rebels
+		name = "ACTIONNAME3369A"
+		command = { type = revolt which = 486 }
+		command = { type = revolt which = 487 }
+		command = { type = revolt which = 508 }
+		command = { type = revolt which = 525 }
+		command = { type = revolt which = 526 }
+		command = { type = revolt which = 527 }
+		command = { type = revolt which = 528 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 531 }
+		command = { type = revolt which = 532 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 534 }
+		command = { type = revolt which = 535 }
+		command = { type = revolt which = 1529 }
+		command = { type = revolt which = 1530 }
+		command = { type = stability value = -1 }
+	}
+	action_b ={ # Negotiate with Ismail
+		name = "ACTIONNAME3369B"
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 531 }
+		command = { type = revolt which = 532 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 533 }
+		command = { type = stability value = -6 }
+	}
+}
+
+# Persia is Resurrected
+event = {
+	id = 190069
+	trigger = {
+		exists = PER
+		OR = {
+			owned = { province = 525 data = -1 }
+			owned = { province = 526 data = -1 }
+			owned = { province = 527 data = -1 }
+			owned = { province = 528 data = -1 }
+			owned = { province = 529 data = -1 }
+			owned = { province = 530 data = -1 }
+			owned = { province = 531 data = -1 }
+			owned = { province = 532 data = -1 }
+			owned = { province = 533 data = -1 }
+			owned = { province = 534 data = -1 }
+			owned = { province = 535 data = -1 }
+			owned = { province = 536 data = -1 }
+			owned = { province = 1529 data = -1 }
+			owned = { province = 1530 data = -1 }
+		}
+	}
+	random = no
+	country = ABB
+	name = "EVENTNAME3817"
+	desc = "EVENTHIST3817"
+	
+	date = { day = 1 month = january year = 1497 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1576 }
+
+	action_a = { # Let them be.
+		name = "ACTIONNAME3817A"
+		command = { type = relation which = PER value = 400 }
+		command = { type = cedeprovince which = PER value = 525 }
+		command = { type = cedeprovince which = PER value = 526 }
+		command = { type = cedeprovince which = PER value = 527 }
+		command = { type = cedeprovince which = PER value = 528 }
+		command = { type = cedeprovince which = PER value = 529 }
+		command = { type = cedeprovince which = PER value = 530 }
+		command = { type = cedeprovince which = PER value = 531 }
+		command = { type = cedeprovince which = PER value = 532 }
+		command = { type = cedeprovince which = PER value = 533 }
+		command = { type = cedeprovince which = PER value = 534 }
+		command = { type = cedeprovince which = PER value = 535 }
+		command = { type = cedeprovince which = PER value = 536 }
+		command = { type = cedeprovince which = PER value = 1529 }
+		command = { type = cedeprovince which = PER value = 1530 }
+	}
+	action_b = { # Crush the rebellion.
+		name = "ACTIONNAME3817B"
+		command = { type = revoltrisk which = 120 value = 8 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = stability value = -6 }
+	}
+}
+
+#Ismail's Resurrection of Persia#
+event = {
+	id = 190070
+	trigger = {
+		owned = {
+			province = 530 # Tabriz
+			data = -1
+		}
+		NOT = {
+			exists = PER
+			stability = 1 # Lower than 1
+		}
+	}
+	random = no
+	country = ILK
+	name = "EVENTNAME3369"
+	desc = "EVENTHIST3369"
+
+	date = { day = 1 month = january year = 1497 }
+	offset = 720
+	deathdate = { day = 1 month = january year = 1576 }
+
+	action_a ={ # Crush the Shiite rebels
+		name = "ACTIONNAME3369A"
+		command = { type = revolt which = 486 }
+		command = { type = revolt which = 487 }
+		command = { type = revolt which = 508 }
+		command = { type = revolt which = 525 }
+		command = { type = revolt which = 526 }
+		command = { type = revolt which = 527 }
+		command = { type = revolt which = 528 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 531 }
+		command = { type = revolt which = 532 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 534 }
+		command = { type = revolt which = 535 }
+		command = { type = revolt which = 1529 }
+		command = { type = revolt which = 1530 }
+		command = { type = stability value = -1 }
+	}
+	action_b ={ # Negotiate with Ismail
+		name = "ACTIONNAME3369B"
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 531 }
+		command = { type = revolt which = 532 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 533 }
+		command = { type = stability value = -6 }
+	}
+}
+
+# Persia is Resurrected
+event = {
+	id = 190071
+	trigger = {
+		exists = PER
+		OR = {
+			owned = { province = 525 data = -1 }
+			owned = { province = 526 data = -1 }
+			owned = { province = 527 data = -1 }
+			owned = { province = 528 data = -1 }
+			owned = { province = 529 data = -1 }
+			owned = { province = 530 data = -1 }
+			owned = { province = 531 data = -1 }
+			owned = { province = 532 data = -1 }
+			owned = { province = 533 data = -1 }
+			owned = { province = 534 data = -1 }
+			owned = { province = 535 data = -1 }
+			owned = { province = 536 data = -1 }
+			owned = { province = 1529 data = -1 }
+			owned = { province = 1530 data = -1 }
+		}
+	}
+	random = no
+	country = ILK
+	name = "EVENTNAME3817"
+	desc = "EVENTHIST3817"
+	
+	date = { day = 1 month = january year = 1497 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1576 }
+
+	action_a = { # Let them be.
+		name = "ACTIONNAME3817A"
+		command = { type = relation which = PER value = 400 }
+		command = { type = cedeprovince which = PER value = 525 }
+		command = { type = cedeprovince which = PER value = 526 }
+		command = { type = cedeprovince which = PER value = 527 }
+		command = { type = cedeprovince which = PER value = 528 }
+		command = { type = cedeprovince which = PER value = 529 }
+		command = { type = cedeprovince which = PER value = 530 }
+		command = { type = cedeprovince which = PER value = 531 }
+		command = { type = cedeprovince which = PER value = 532 }
+		command = { type = cedeprovince which = PER value = 533 }
+		command = { type = cedeprovince which = PER value = 534 }
+		command = { type = cedeprovince which = PER value = 535 }
+		command = { type = cedeprovince which = PER value = 536 }
+		command = { type = cedeprovince which = PER value = 1529 }
+		command = { type = cedeprovince which = PER value = 1530 }
+	}
+	action_b = { # Crush the rebellion.
+		name = "ACTIONNAME3817B"
+		command = { type = revoltrisk which = 120 value = 8 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = stability value = -6 }
+	}
+}
+
+#Ismail's Resurrection of Persia#
+event = {
+	id = 190072
+	trigger = {
+		owned = {
+			province = 530 # Tabriz
+			data = -1
+		}
+		NOT = {
+			exists = PER
+			stability = 1 # Lower than 1
+		}
+	}
+	random = no
+	country = INJ
+	name = "EVENTNAME3369"
+	desc = "EVENTHIST3369"
+
+	date = { day = 1 month = january year = 1497 }
+	offset = 720
+	deathdate = { day = 1 month = january year = 1576 }
+
+	action_a ={ # Crush the Shiite rebels
+		name = "ACTIONNAME3369A"
+		command = { type = revolt which = 486 }
+		command = { type = revolt which = 487 }
+		command = { type = revolt which = 508 }
+		command = { type = revolt which = 525 }
+		command = { type = revolt which = 526 }
+		command = { type = revolt which = 527 }
+		command = { type = revolt which = 528 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 531 }
+		command = { type = revolt which = 532 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 534 }
+		command = { type = revolt which = 535 }
+		command = { type = revolt which = 1529 }
+		command = { type = revolt which = 1530 }
+		command = { type = stability value = -1 }
+	}
+	action_b ={ # Negotiate with Ismail
+		name = "ACTIONNAME3369B"
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 531 }
+		command = { type = revolt which = 532 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 533 }
+		command = { type = stability value = -6 }
+	}
+}
+
+# Persia is Resurrected
+event = {
+	id = 190073
+	trigger = {
+		exists = PER
+		OR = {
+			owned = { province = 525 data = -1 }
+			owned = { province = 526 data = -1 }
+			owned = { province = 527 data = -1 }
+			owned = { province = 528 data = -1 }
+			owned = { province = 529 data = -1 }
+			owned = { province = 530 data = -1 }
+			owned = { province = 531 data = -1 }
+			owned = { province = 532 data = -1 }
+			owned = { province = 533 data = -1 }
+			owned = { province = 534 data = -1 }
+			owned = { province = 535 data = -1 }
+			owned = { province = 536 data = -1 }
+			owned = { province = 1529 data = -1 }
+			owned = { province = 1530 data = -1 }
+		}
+	}
+	random = no
+	country = INJ
+	name = "EVENTNAME3817"
+	desc = "EVENTHIST3817"
+	
+	date = { day = 1 month = january year = 1497 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1576 }
+
+	action_a = { # Let them be.
+		name = "ACTIONNAME3817A"
+		command = { type = relation which = PER value = 400 }
+		command = { type = cedeprovince which = PER value = 525 }
+		command = { type = cedeprovince which = PER value = 526 }
+		command = { type = cedeprovince which = PER value = 527 }
+		command = { type = cedeprovince which = PER value = 528 }
+		command = { type = cedeprovince which = PER value = 529 }
+		command = { type = cedeprovince which = PER value = 530 }
+		command = { type = cedeprovince which = PER value = 531 }
+		command = { type = cedeprovince which = PER value = 532 }
+		command = { type = cedeprovince which = PER value = 533 }
+		command = { type = cedeprovince which = PER value = 534 }
+		command = { type = cedeprovince which = PER value = 535 }
+		command = { type = cedeprovince which = PER value = 536 }
+		command = { type = cedeprovince which = PER value = 1529 }
+		command = { type = cedeprovince which = PER value = 1530 }
+	}
+	action_b = { # Crush the rebellion.
+		name = "ACTIONNAME3817B"
+		command = { type = revoltrisk which = 120 value = 8 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = stability value = -6 }
+	}
+}
+
+#Ismail's Resurrection of Persia#
+event = {
+	id = 190074
+	trigger = {
+		owned = {
+			province = 530 # Tabriz
+			data = -1
+		}
+		NOT = {
+			exists = PER
+			stability = 1 # Lower than 1
+		}
+	}
+	random = no
+	country = MHR
+	name = "EVENTNAME3369"
+	desc = "EVENTHIST3369"
+
+	date = { day = 1 month = january year = 1497 }
+	offset = 720
+	deathdate = { day = 1 month = january year = 1576 }
+
+	action_a ={ # Crush the Shiite rebels
+		name = "ACTIONNAME3369A"
+		command = { type = revolt which = 486 }
+		command = { type = revolt which = 487 }
+		command = { type = revolt which = 508 }
+		command = { type = revolt which = 525 }
+		command = { type = revolt which = 526 }
+		command = { type = revolt which = 527 }
+		command = { type = revolt which = 528 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 531 }
+		command = { type = revolt which = 532 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 534 }
+		command = { type = revolt which = 535 }
+		command = { type = revolt which = 1529 }
+		command = { type = revolt which = 1530 }
+		command = { type = stability value = -1 }
+	}
+	action_b ={ # Negotiate with Ismail
+		name = "ACTIONNAME3369B"
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 531 }
+		command = { type = revolt which = 532 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 533 }
+		command = { type = stability value = -6 }
+	}
+}
+
+# Persia is Resurrected
+event = {
+	id = 190075
+	trigger = {
+		exists = PER
+		OR = {
+			owned = { province = 525 data = -1 }
+			owned = { province = 526 data = -1 }
+			owned = { province = 527 data = -1 }
+			owned = { province = 528 data = -1 }
+			owned = { province = 529 data = -1 }
+			owned = { province = 530 data = -1 }
+			owned = { province = 531 data = -1 }
+			owned = { province = 532 data = -1 }
+			owned = { province = 533 data = -1 }
+			owned = { province = 534 data = -1 }
+			owned = { province = 535 data = -1 }
+			owned = { province = 536 data = -1 }
+			owned = { province = 1529 data = -1 }
+			owned = { province = 1530 data = -1 }
+		}
+	}
+	random = no
+	country = MHR
+	name = "EVENTNAME3817"
+	desc = "EVENTHIST3817"
+	
+	date = { day = 1 month = january year = 1497 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1576 }
+
+	action_a = { # Let them be.
+		name = "ACTIONNAME3817A"
+		command = { type = relation which = PER value = 400 }
+		command = { type = cedeprovince which = PER value = 525 }
+		command = { type = cedeprovince which = PER value = 526 }
+		command = { type = cedeprovince which = PER value = 527 }
+		command = { type = cedeprovince which = PER value = 528 }
+		command = { type = cedeprovince which = PER value = 529 }
+		command = { type = cedeprovince which = PER value = 530 }
+		command = { type = cedeprovince which = PER value = 531 }
+		command = { type = cedeprovince which = PER value = 532 }
+		command = { type = cedeprovince which = PER value = 533 }
+		command = { type = cedeprovince which = PER value = 534 }
+		command = { type = cedeprovince which = PER value = 535 }
+		command = { type = cedeprovince which = PER value = 536 }
+		command = { type = cedeprovince which = PER value = 1529 }
+		command = { type = cedeprovince which = PER value = 1530 }
+	}
+	action_b = { # Crush the rebellion.
+		name = "ACTIONNAME3817B"
+		command = { type = revoltrisk which = 120 value = 8 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = stability value = -6 }
+	}
+}
+
+#Ismail's Resurrection of Persia#
+event = {
+	id = 190076
+	trigger = {
+		owned = {
+			province = 530 # Tabriz
+			data = -1
+		}
+		NOT = {
+			exists = PER
+			stability = 1 # Lower than 1
+		}
+	}
+	random = no
+	country = TEM
+	name = "EVENTNAME3369"
+	desc = "EVENTHIST3369"
+
+	date = { day = 1 month = january year = 1497 }
+	offset = 720
+	deathdate = { day = 1 month = january year = 1576 }
+
+	action_a ={ # Crush the Shiite rebels
+		name = "ACTIONNAME3369A"
+		command = { type = revolt which = 486 }
+		command = { type = revolt which = 487 }
+		command = { type = revolt which = 508 }
+		command = { type = revolt which = 525 }
+		command = { type = revolt which = 526 }
+		command = { type = revolt which = 527 }
+		command = { type = revolt which = 528 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 531 }
+		command = { type = revolt which = 532 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 534 }
+		command = { type = revolt which = 535 }
+		command = { type = revolt which = 1529 }
+		command = { type = revolt which = 1530 }
+		command = { type = stability value = -1 }
+	}
+	action_b ={ # Negotiate with Ismail
+		name = "ACTIONNAME3369B"
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 531 }
+		command = { type = revolt which = 532 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 533 }
+		command = { type = stability value = -6 }
+	}
+}
+
+# Persia is Resurrected
+event = {
+	id = 190077
+	trigger = {
+		exists = PER
+		OR = {
+			owned = { province = 525 data = -1 }
+			owned = { province = 526 data = -1 }
+			owned = { province = 527 data = -1 }
+			owned = { province = 528 data = -1 }
+			owned = { province = 529 data = -1 }
+			owned = { province = 530 data = -1 }
+			owned = { province = 531 data = -1 }
+			owned = { province = 532 data = -1 }
+			owned = { province = 533 data = -1 }
+			owned = { province = 534 data = -1 }
+			owned = { province = 535 data = -1 }
+			owned = { province = 536 data = -1 }
+			owned = { province = 1529 data = -1 }
+			owned = { province = 1530 data = -1 }
+		}
+	}
+	random = no
+	country = TEM
+	name = "EVENTNAME3817"
+	desc = "EVENTHIST3817"
+	
+	date = { day = 1 month = january year = 1497 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1576 }
+
+	action_a = { # Let them be.
+		name = "ACTIONNAME3817A"
+		command = { type = relation which = PER value = 400 }
+		command = { type = cedeprovince which = PER value = 525 }
+		command = { type = cedeprovince which = PER value = 526 }
+		command = { type = cedeprovince which = PER value = 527 }
+		command = { type = cedeprovince which = PER value = 528 }
+		command = { type = cedeprovince which = PER value = 529 }
+		command = { type = cedeprovince which = PER value = 530 }
+		command = { type = cedeprovince which = PER value = 531 }
+		command = { type = cedeprovince which = PER value = 532 }
+		command = { type = cedeprovince which = PER value = 533 }
+		command = { type = cedeprovince which = PER value = 534 }
+		command = { type = cedeprovince which = PER value = 535 }
+		command = { type = cedeprovince which = PER value = 536 }
+		command = { type = cedeprovince which = PER value = 1529 }
+		command = { type = cedeprovince which = PER value = 1530 }
+	}
+	action_b = { # Crush the rebellion.
+		name = "ACTIONNAME3817B"
+		command = { type = revoltrisk which = 120 value = 8 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = stability value = -6 }
+	}
+}
+
+#Ismail's Resurrection of Persia#
+event = {
+	id = 190078
+	trigger = {
+		owned = {
+			province = 530 # Tabriz
+			data = -1
+		}
+		NOT = {
+			exists = PER
+			stability = 1 # Lower than 1
+		}
+	}
+	random = no
+	country = MUZ
+	name = "EVENTNAME3369"
+	desc = "EVENTHIST3369"
+
+	date = { day = 1 month = january year = 1497 }
+	offset = 720
+	deathdate = { day = 1 month = january year = 1576 }
+
+	action_a ={ # Crush the Shiite rebels
+		name = "ACTIONNAME3369A"
+		command = { type = revolt which = 486 }
+		command = { type = revolt which = 487 }
+		command = { type = revolt which = 508 }
+		command = { type = revolt which = 525 }
+		command = { type = revolt which = 526 }
+		command = { type = revolt which = 527 }
+		command = { type = revolt which = 528 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 531 }
+		command = { type = revolt which = 532 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 534 }
+		command = { type = revolt which = 535 }
+		command = { type = revolt which = 1529 }
+		command = { type = revolt which = 1530 }
+		command = { type = stability value = -1 }
+	}
+	action_b ={ # Negotiate with Ismail
+		name = "ACTIONNAME3369B"
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 531 }
+		command = { type = revolt which = 532 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 533 }
+		command = { type = stability value = -6 }
+	}
+}
+
+# Persia is Resurrected
+event = {
+	id = 190079
+	trigger = {
+		exists = PER
+		OR = {
+			owned = { province = 525 data = -1 }
+			owned = { province = 526 data = -1 }
+			owned = { province = 527 data = -1 }
+			owned = { province = 528 data = -1 }
+			owned = { province = 529 data = -1 }
+			owned = { province = 530 data = -1 }
+			owned = { province = 531 data = -1 }
+			owned = { province = 532 data = -1 }
+			owned = { province = 533 data = -1 }
+			owned = { province = 534 data = -1 }
+			owned = { province = 535 data = -1 }
+			owned = { province = 536 data = -1 }
+			owned = { province = 1529 data = -1 }
+			owned = { province = 1530 data = -1 }
+		}
+	}
+	random = no
+	country = MUZ
+	name = "EVENTNAME3817"
+	desc = "EVENTHIST3817"
+	
+	date = { day = 1 month = january year = 1497 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1576 }
+
+	action_a = { # Let them be.
+		name = "ACTIONNAME3817A"
+		command = { type = relation which = PER value = 400 }
+		command = { type = cedeprovince which = PER value = 525 }
+		command = { type = cedeprovince which = PER value = 526 }
+		command = { type = cedeprovince which = PER value = 527 }
+		command = { type = cedeprovince which = PER value = 528 }
+		command = { type = cedeprovince which = PER value = 529 }
+		command = { type = cedeprovince which = PER value = 530 }
+		command = { type = cedeprovince which = PER value = 531 }
+		command = { type = cedeprovince which = PER value = 532 }
+		command = { type = cedeprovince which = PER value = 533 }
+		command = { type = cedeprovince which = PER value = 534 }
+		command = { type = cedeprovince which = PER value = 535 }
+		command = { type = cedeprovince which = PER value = 536 }
+		command = { type = cedeprovince which = PER value = 1529 }
+		command = { type = cedeprovince which = PER value = 1530 }
+	}
+	action_b = { # Crush the rebellion.
+		name = "ACTIONNAME3817B"
+		command = { type = revoltrisk which = 120 value = 8 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = stability value = -6 }
+	}
+}
+
+#Ismail's Resurrection of Persia#
+event = {
+	id = 190080
+	trigger = {
+		owned = {
+			province = 530 # Tabriz
+			data = -1
+		}
+		NOT = {
+			exists = PER
+			stability = 1 # Lower than 1
+		}
+	}
+	random = no
+	country = KRT
+	name = "EVENTNAME3369"
+	desc = "EVENTHIST3369"
+
+	date = { day = 1 month = january year = 1497 }
+	offset = 720
+	deathdate = { day = 1 month = january year = 1576 }
+
+	action_a ={ # Crush the Shiite rebels
+		name = "ACTIONNAME3369A"
+		command = { type = revolt which = 486 }
+		command = { type = revolt which = 487 }
+		command = { type = revolt which = 508 }
+		command = { type = revolt which = 525 }
+		command = { type = revolt which = 526 }
+		command = { type = revolt which = 527 }
+		command = { type = revolt which = 528 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 531 }
+		command = { type = revolt which = 532 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 534 }
+		command = { type = revolt which = 535 }
+		command = { type = revolt which = 1529 }
+		command = { type = revolt which = 1530 }
+		command = { type = stability value = -1 }
+	}
+	action_b ={ # Negotiate with Ismail
+		name = "ACTIONNAME3369B"
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 531 }
+		command = { type = revolt which = 532 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 533 }
+		command = { type = stability value = -6 }
+	}
+}
+
+# Persia is Resurrected
+event = {
+	id = 190081
+	trigger = {
+		exists = PER
+		OR = {
+			owned = { province = 525 data = -1 }
+			owned = { province = 526 data = -1 }
+			owned = { province = 527 data = -1 }
+			owned = { province = 528 data = -1 }
+			owned = { province = 529 data = -1 }
+			owned = { province = 530 data = -1 }
+			owned = { province = 531 data = -1 }
+			owned = { province = 532 data = -1 }
+			owned = { province = 533 data = -1 }
+			owned = { province = 534 data = -1 }
+			owned = { province = 535 data = -1 }
+			owned = { province = 536 data = -1 }
+			owned = { province = 1529 data = -1 }
+			owned = { province = 1530 data = -1 }
+		}
+	}
+	random = no
+	country = KRT
+	name = "EVENTNAME3817"
+	desc = "EVENTHIST3817"
+	
+	date = { day = 1 month = january year = 1497 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1576 }
+
+	action_a = { # Let them be.
+		name = "ACTIONNAME3817A"
+		command = { type = relation which = PER value = 400 }
+		command = { type = cedeprovince which = PER value = 525 }
+		command = { type = cedeprovince which = PER value = 526 }
+		command = { type = cedeprovince which = PER value = 527 }
+		command = { type = cedeprovince which = PER value = 528 }
+		command = { type = cedeprovince which = PER value = 529 }
+		command = { type = cedeprovince which = PER value = 530 }
+		command = { type = cedeprovince which = PER value = 531 }
+		command = { type = cedeprovince which = PER value = 532 }
+		command = { type = cedeprovince which = PER value = 533 }
+		command = { type = cedeprovince which = PER value = 534 }
+		command = { type = cedeprovince which = PER value = 535 }
+		command = { type = cedeprovince which = PER value = 536 }
+		command = { type = cedeprovince which = PER value = 1529 }
+		command = { type = cedeprovince which = PER value = 1530 }
+	}
+	action_b = { # Crush the rebellion.
+		name = "ACTIONNAME3817B"
+		command = { type = revoltrisk which = 120 value = 8 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = stability value = -6 }
+	}
+}
+
+#The Death of King Lajos of Hungary#
+event = {
+
+	id = 190082
+	trigger = {
+			exists = HAB
+		NOT = {
+			event  = 3639
+			}
+		}
+	random = no
+	country = HUN
+	name = "EVENTNAME3639"
+	desc = "EVENTHIST190082"
+	style = 2
+
+	date = { day = 22 month = july year = 1540 }
+	offset = 1
+	deathdate = { day = 24 month = may year = 1571 }
+
+	action_a ={				#Elect Ferdinand Habsburg of Austria#
+		name = "Elect Ferdinand Habsburg of Austria (Game Over)"
+		command = { type = sleepmonarch which = 06267 }#no effect, but i will leave it here.
+		command = { type = sleepmonarch which = 06284 }
+		command = { type = sleepmonarch which = 06285 }
+		command = { type = sleepmonarch which = 06286 }
+		command = { type = sleepmonarch which = 06287 }
+		command = { type = sleepmonarch which = 06288 }
+		command = { type = sleepmonarch which = 06289 }
+		command = { type = sleepmonarch which = 06290 }
+		command = { type = sleepmonarch which = 06291 }
+		command = { type = sleepmonarch which = 06292 }
+		command = { type = sleepmonarch which = 06293 }
+		command = { type = sleepmonarch which = 06294 }
+		command = { type = sleepmonarch which = 06295 }
+		command = { type = sleepmonarch which = 06296 }
+		command = { type = sleepmonarch which = 06297 }
+		command = { type = sleepmonarch which = 06298 }
+		command = { type = wakemonarch which = 06268 }
+		command = { type = wakemonarch which = 06269 }
+		command = { type = wakemonarch which = 06270 }
+		command = { type = wakemonarch which = 06271 }
+		command = { type = wakemonarch which = 06272 }
+		command = { type = wakemonarch which = 06273 }
+		command = { type = wakemonarch which = 06274 }
+		command = { type = wakemonarch which = 06275 }
+		command = { type = wakemonarch which = 06276 }
+		command = { type = wakemonarch which = 06277 }
+		command = { type = wakemonarch which = 06278 }
+		command = { type = wakemonarch which = 06279 }
+		command = { type = wakemonarch which = 06280 }
+		command = { type = trigger which = 3184 }		#HAB#
+	}
+
+	action_b ={				#Elect Johan Zapolya of Siebenbürgen#
+		name = "Elect Johan II Zapolya of Siebenbürgen"	#This is Die-Hard independence option.#
+		command = { type = stability value = -3 }
+		command = { type = relation which = HAB value = -200 }
+		command = { type = desertion which = -1 value = 15000 }
+		command = { type = desertion which = -1 value = 10000 }
+		command = { type = desertion which = -1 value = 10000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+	}
+}
+
+#Denmark elect not to persue the Kalmar Union#
+event = {
+	id = 190083
+	trigger = {
+		event = 190012
+		NOT = {
+			event = 190016
+			vassal = {
+				country = DAN
+				country = SWE
+			}
+		}
+	}
+	random = no
+	country = SWE
+	name = "Denmark drops the idea of a Kalmar Union"
+	desc = "Denmark had laid out feelers of uniting Denmark, Norway and Sweden in a more tightly formed union due to their power over the thrones of all three Kingdoms. However, they seem to have decided against this approach. We therefor will have a bit more freedom over the control we have over Sweden."
+	style = 1
+
+	date = { day = 20 month = june year = 1397 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1435 }
+
+	action_a ={ # Hurrah!
+		name = "Hurrah"
+		command = { type = sleepmonarch which = 06300 } # The Union Council
+		command = { type = wakemonarch which = 16300 } # National Monarchs
+		command = { type = wakemonarch which = 16301 } # National Monarchs
+		command = { type = wakemonarch which = 16302 } # National Monarchs
+		command = { type = wakemonarch which = 16303 } # National Monarchs
+		command = { type = wakemonarch which = 16304 } # National Monarchs
+		command = { type = wakemonarch which = 16305 } # National Monarchs
+		command = { type = wakemonarch which = 16306 } # National Monarchs
+		command = { type = wakemonarch which = 16307 } # National Monarchs
+		command = { type = wakemonarch which = 16308 } # National Monarchs
+		command = { type = wakemonarch which = 16309 } # National Monarchs
+		command = { type = wakemonarch which = 16310 } # National Monarchs
+		command = { type = wakemonarch which = 16311 } # National Monarchs
+		command = { type = wakemonarch which = 16312 } # National Monarchs
+		command = { type = wakemonarch which = 16313 } # National Monarchs
+		command = { type = wakemonarch which = 16314 } # National Monarchs
+		command = { type = wakemonarch which = 16315 } # National Monarchs
+		command = { type = wakemonarch which = 16316 } # National Monarchs
+		command = { type = wakemonarch which = 16317 } # National Monarchs
+		command = { type = wakemonarch which = 16318 } # National Monarchs
+		command = { type = wakemonarch which = 16319 } # National Monarchs
+		command = { type = sleepevent which = 3219 }
+		command = { type = sleepevent which = 3234 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = stability value = 1 }
+	}
+}
+
+
+
+###########################################
+### Awake Italian Kings by the decision ###
+###########################################
+
+#Awake Italian Kings by the decision#
+event = {
+	id = 190084
+	trigger = {
+		decision = 1009
+	}
+	random = no
+	country = ITA
+	name = "A New Dynasty takes the Throne"
+	desc = "The Transition Council took many years in counsel, with many competing claims to the crown of the new kingdom, but with the passing of many coins, promises, threats and favours, eventually a new favourite arose and in due course the new monarch was crowned and a new dyasty entered the annals of history."
+	style = 1
+
+	date = { day = 20 month = june year = 1337 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={ # Hurrah!
+		name = "Hurrah"
+		command = { type = sleepmonarch which = 12150 } # The Transition Council
+		command = { type = wakemonarch which = 0144575 } # National Monarchs
+		command = { type = wakemonarch which = 0144576 } # National Monarchs
+		command = { type = wakemonarch which = 0144577 } # National Monarchs
+		command = { type = wakemonarch which = 0144578 } # National Monarchs
+		command = { type = wakemonarch which = 0144579 } # National Monarchs
+		command = { type = wakemonarch which = 0144580 } # National Monarchs
+		command = { type = wakemonarch which = 0144581 } # National Monarchs
+		command = { type = wakemonarch which = 0144582 } # National Monarchs
+		command = { type = wakemonarch which = 0144583 } # National Monarchs
+		command = { type = wakemonarch which = 0144584 } # National Monarchs
+		command = { type = wakemonarch which = 0144585 } # National Monarchs
+		command = { type = wakemonarch which = 0144586 } # National Monarchs
+		command = { type = wakemonarch which = 0144587 } # National Monarchs
+		command = { type = wakemonarch which = 0144588 } # National Monarchs
+		command = { type = wakemonarch which = 04978 } # National Monarchs
+	}
+}
+
+#---------------------------------------#
+#Byzantine Capital to Constantinople	#
+#---------------------------------------#
+#
+#event = {
+#
+#	id = 190085
+#
+#	trigger = {
+#		NOT = {
+#			capital = 357
+#		}
+##		owned = { province = 357 data = BYZ }
+#	}
+#	random = no
+#	country = BYZ
+#	name = "Move Our Capital?"
+#	desc = "We have regained the eternal city of Constantinople. Shall we move our capital back to our Imperial seat?"
+#	style = 1
+#
+#	date = { day = 1 month = january year = 1337 }
+#	offset = 90
+#	deathdate = { day = 31 month = december year = 1837 }
+#
+#	action_a = {
+#		name = "Yes, Move to Constantinople"
+#		command = { type = capital which = 357 }
+#		command = { type = treasury value = -5 }
+#		command = { type = vp value = 50 }
+#	}
+#
+#	action_b = {
+#		name = "No, I like it here"
+#		command = { type = treasury value = 10 }
+#	}
+#}
+
+#---------------------------------------#
+#Fall of the Yuan, Rise of the Ming	#
+#---------------------------------------#
+
+event = {
+
+	id = 190086
+
+	trigger = {
+		NOT = {
+			stability = -2
+		}
+	}
+	random = no
+	country = CHI
+	name = "Fall of the Yuan, Rise of the Ming"
+	desc = "EVENTHIST190086"
+
+	date = { day = 1 month = january year = 1381 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1635 }
+
+	action_a = {
+		name = "Oh no!"
+		command = { type = remove_countryculture which = mongolc }
+		command = { type = flagname which = "Ming" }
+		command = { type = sleepmonarch which = 07434 }
+		command = { type = sleepmonarch which = 07435 }
+		command = { type = sleepmonarch which = 07436 }
+		command = { type = sleepmonarch which = 07437 }
+		command = { type = sleepmonarch which = 07438 }
+		command = { type = sleepmonarch which = 07439 }
+		command = { type = sleepmonarch which = 122340 }
+		command = { type = sleepmonarch which = 122341 }
+		command = { type = sleepmonarch which = 122342 }
+		command = { type = sleepmonarch which = 122343 }
+		command = { type = sleepmonarch which = 122344 }
+		command = { type = sleepmonarch which = 122345 }
+		command = { type = sleepmonarch which = 122346 }
+		command = { type = sleepmonarch which = 122347 }
+		command = { type = sleepmonarch which = 122348 }
+		command = { type = sleepmonarch which = 122349 }
+		command = { type = sleepmonarch which = 122350 }
+		command = { type = sleepmonarch which = 122351 }
+		command = { type = sleepmonarch which = 122352 }
+		command = { type = sleepmonarch which = 122353 }
+		command = { type = sleepmonarch which = 122354 }
+		command = { type = sleepmonarch which = 122355 }
+		command = { type = sleepmonarch which = 122356 }
+		command = { type = sleepmonarch which = 122357 }
+		command = { type = wakemonarch which = 122358 }
+		command = { type = wakemonarch which = 07432 }
+		command = { type = wakemonarch which = 07400 }
+		command = { type = wakemonarch which = 07401 }
+		command = { type = wakemonarch which = 07402 }
+		command = { type = wakemonarch which = 07403 }
+		command = { type = wakemonarch which = 07404 }
+		command = { type = wakemonarch which = 07405 }
+		command = { type = wakemonarch which = 07406 }
+		command = { type = wakemonarch which = 07407 }
+		command = { type = wakemonarch which = 07408 }
+		command = { type = wakemonarch which = 07409 }
+		command = { type = wakemonarch which = 07410 }
+		command = { type = wakemonarch which = 07411 }
+		command = { type = wakemonarch which = 07412 }
+		command = { type = wakemonarch which = 07413 }
+		command = { type = wakemonarch which = 07414 }
+	}
+
+	action_b = {
+		name = "We shall never surrender!" #don't know why you should, but...
+		ai_chance = 0
+		command = { type = revoltrisk which = 360 value = 8 }
+		command = { type = vp value = 25 } #got to give something positive
+	}
+}
+
+
+#-------------------------------#
+#Inheritance of Flanders	#
+#-------------------------------#
+
+#Inheritance of Flanders#
+event = {
+
+	id = 190087
+	trigger = {
+			exists = BUR
+		}
+	random = no
+	country = FLA
+	name = "Death of Margaret III of Flanders"
+	desc = "In 1355, Margaret of Flanders married Philip of Rouvres, grandson and heir of Odo IV, Duke of Burgundy. Philip was Count of Burgundy and Artois (1347–1361), Duke of Burgundy (1350–1361), and became Count of Auvergne and Boulogne (1360–1361). Following Philip's death from a riding accident in 1361, Margaret was widowed and had no issue by him. King John II of France then claimed the Duchy of Burgundy for the kingdom of France. In 1364, Philip the Bold, King John's youngest son, was granted the duchy, and subsequently married Margaret. Margaret's second marriage to Philip the Bold took place in 1369. When Margaret's father, the Count of Flanders, died in 1384, she and Philip inherited the counties of Artois, Burgundy, Flanders, Nevers, and Rethel. Philip died in 1404, and Margaret died the following year. With her death, the House of Dampierre came to an end, and the County of Flanders lost its independence to Burgundy. It came under the rule of her son, John the Fearless."
+
+	date = { day = 16 month = march year = 1405 }
+
+
+	action_a ={				#Let us be a part of Great Burgundy#
+		name = "John the Fearless Inherits Flanders"
+		trigger = { 
+			ai = yes
+		}
+		command = { type = trigger which = 190088 }
+	}
+
+	action_c ={				#Let us elect a local Count as Duke#
+		name = "Let the Four Leaders Rule Flanders"
+		command = { type = trigger which = 190089 }
+		command = { type = stability value = -3 }
+		command = { type = revolt which = -1 }
+	}
+
+}
+
+#John the Fearless Inherits Flanders#
+event = {
+
+	id = 190088
+	random = no
+	country = BUR
+	name = "Inheritance of Flanders"
+	desc = "In 1355, Margaret of Flanders married Philip of Rouvres, grandson and heir of Odo IV, Duke of Burgundy. Philip was Count of Burgundy and Artois (1347–1361), Duke of Burgundy (1350–1361), and became Count of Auvergne and Boulogne (1360–1361). Following Philip's death from a riding accident in 1361, Margaret was widowed and had no issue by him. King John II of France then claimed the Duchy of Burgundy for the kingdom of France. In 1364, Philip the Bold, King John's youngest son, was granted the duchy, and subsequently married Margaret. Margaret's second marriage to Philip the Bold took place in 1369. When Margaret's father, the Count of Flanders, died in 1384, she and Philip inherited the counties of Artois, Burgundy, Flanders, Nevers, and Rethel. Philip died in 1404, and Margaret died the following year. With her death, the House of Dampierre came to an end, and the County of Flanders lost its independence to Burgundy. It came under the rule of her son, John the Fearless."
+
+	action_a ={				#Incorporate them#
+		name = "ACTIONNAME3776A"
+		command = { type = inherit which = FLA }
+		command = { type = addcore_national which = 380 } # Flanders
+		command = { type = stability value = 2 }
+		command = { type = DIP which = 1 value = 36 }
+	}
+}
+
+#Flanders deny our rights!#
+event = {
+
+	id = 190089
+	random = no
+	country = BUR
+	name = "The Cities of Flanders deny our claims!"
+	desc = "The Four major cities in Flanders has taken control of Flanders and refuses the legitimate claims of our Duke!"
+
+	action_a ={				#Let them regret this defiance#
+		name = "Let them regret this defiance"
+		command = { type = stability value = -1 }
+		command = { type = relation which = FLA value = -150 }
+		command = { type = addcore_claim which = 380 } # Flanders
+		command = { type = DIP which = -1 value = 36 }
+	}
+}
+
+#-------------------------------#
+# Inheritance of Sicily		#
+#-------------------------------#
+
+#The Aragon Inheritance of Sicily#
+event = {
+
+	id = 190090
+	random = no
+	country = SIC
+	name = "Aragon Inheritance of Sicily"
+	desc = "Sicily was ruled as an independent kingdom by relatives of the House of Barcelona, and was then added permanently to the Crown of Aragon as a result of the Compromise of Caspe of 1412. The Kingdom of Naples was ruled by the Angevin ruler René of Anjou until the two thrones were reunited by Alfonso V of Aragon, after the successful siege of Naples and the defeat of René on 6 June 1443. Alfonso of Aragon divided the two kingdoms during his rule. He gave the rule of Naples to his illegitimate son Ferdinand I of Naples, who ruled from 1458 to 1494, and the rest of the Crown of Aragon and Sicily to his brother John II of Aragon. Whilst both Sicily and Naples were held by the crown of Aragon, they would not be united together until 1816."
+
+	action_a ={
+		name = "Go to the Crown of Aragon"	#Ruled as Vassal#
+		trigger = { 
+			ai = yes
+		}
+		command = { type = trigger which = 190091 }
+		command = { type = relation which = ARG value = 150 }
+		command = { type = relation which = PAP value = 100 }
+		command = { type = relation which = VEN value = 100 }
+		command = { type = relation which = GEN value = 100 }
+		command = { type = relation which = PRO value = -100 }
+		command = { type = stability value = 2 }
+	}
+
+	action_b ={
+		name = "We will remain Independent!"	#Independent#
+		command = { type = relation which = ARG value = -150 }
+		command = { type = relation which = PRO value = 100 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#The Aragon Inheritance of Napoli#
+event = {
+
+	id = 190091
+	random = no
+	country = ARG
+	name = "We Have Inherited Sicily"
+	desc = "Sicily was ruled as an independent kingdom by relatives of the House of Barcelona, and was then added permanently to the Crown of Aragon as a result of the Compromise of Caspe of 1412. The Kingdom of Naples was ruled by the Angevin ruler René of Anjou until the two thrones were reunited by Alfonso V of Aragon, after the successful siege of Naples and the defeat of René on 6 June 1443. Alfonso of Aragon divided the two kingdoms during his rule. He gave the rule of Naples to his illegitimate son Ferdinand I of Naples, who ruled from 1458 to 1494, and the rest of the Crown of Aragon and Sicily to his brother John II of Aragon. Whilst both Sicily and Naples were held by the crown of Aragon, they would not be united together until 1816."
+
+	action_a ={				#Rule it as an autonomous part of Aragon#
+		name = "Rule it as an autonomous part of Aragon"
+		command = { type = addcore which = 395 }
+		command = { type = addcore which = 396 }
+		command = { type = inherit which = SIC }
+		command = { type = stability value = -2 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = TOS value = -100 }
+		command = { type = relation which = VEN value = -100 }
+		command = { type = relation which = GEN value = -100 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = PRO value = -200 }
+	}
+	action_b ={				#Rule it as an independent Kingdom#
+		name = "Rule it as an independent Kingdom"
+		command = { type = vassal which = SIC }
+		command = { type = stability value = 2 }
+		command = { type = relation which = PAP value = 100 }
+		command = { type = relation which = TOS value = 100 }
+		command = { type = relation which = VEN value = 100 }
+		command = { type = relation which = GEN value = 100 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = PRO value = -100 }
+	}
+}

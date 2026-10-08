@@ -1,0 +1,80 @@
+# Northern Yuan (new for 1.3) #
+
+# The Khan Converts #
+event = {
+
+	id = 2907
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		religion = pagan
+	}
+	random = no
+	country = NYN
+	name = "EVENTNAME2907"
+	desc = "EVENTHIST2907"
+
+	date = { day = 1 month = january year = 1575 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1615 }
+
+	action_a ={				#Convert to Buddhism#
+		name = "ACTIONNAME2907A"
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = religion which = buddhism }
+		command = { type = missionaries value = 1 }
+		command = { type = diplomats value = 1 }
+		command = { type = conversion which = 600 }
+		command = { type = conversion which = 602 }
+		command = { type = conversion which = 603 }
+		command = { type = conversion which = 604 }
+		command = { type = conversion which = 605 }
+		command = { type = conversion which = 606 }
+		command = { type = relation which = TIB value = 100 }
+		command = { type = relation which = CHI value = 50 }
+		command = { type = relation which = MCH value = 50 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={				#Convert to Islam#
+		name = "ACTIONNAME2907B"
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = religion which = sunni }
+		command = { type = missionaries value = 2 }
+		command = { type = merchants value = 3 }
+		command = { type = conversion which = 602 }
+		command = { type = conversion which = 603 }
+		command = { type = conversion which = 604 }
+		command = { type = relation which = CHG value = 100 }
+		command = { type = relation which = STE value = 100 }
+		command = { type = technology which = muslim }
+		command = { type = stability value = -3 }
+	}
+
+	action_c ={				#Convert to Orthodoxy#
+		name = "ACTIONNAME2907C"
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = religion which = orthodox }
+		command = { type = missionaries value = 2 }
+		command = { type = merchants value = 3 }
+		command = { type = conversion which = 602 }
+		command = { type = conversion which = 603 }
+		command = { type = conversion which = 604 }
+		command = { type = relation which = RUS value = 100 }
+		command = { type = relation which = MOS value = 100 }
+		command = { type = technology which = muslim }
+		command = { type = stability value = -5 }
+	}
+
+	action_d ={				#Defend the old ways#
+		name = "ACTIONNAME2907D"
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = fortress which = -2 value = 1 }
+		command = { type = treasury value = 200 }
+		command = { type = stability value = -1 }
+	}
+}

@@ -1,0 +1,2309 @@
+#####Russian Major Events#####
+#By Joakim 'Greven' Bergqwist#
+##############################
+
+#Russian claims in the East#
+event = {
+
+	id = 3404
+	random = no
+	country = RUS
+	name = "EVENTNAME3404"
+	desc = "EVENTHIST3404"
+	style = 2
+
+	date = { day = 1 month = january year = 1540 }
+	offset = 500
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={				#It all belongs to Mother Russia#
+		name = "ACTIONNAME3404A"
+		command = { type = stability value = 1 }
+		command = { type = INF which = -1 value = 10000 }
+		command = { type = CAV which = -3 value = 10000 }
+		command = { type = INF which = -4 value = 10000 }
+		command = { type = CAV which = -3 value = 10000 }
+		command = { type = provinceculture which = 269 value = russian }
+		command = { type = addcore_claim which = 262 }
+		command = { type = addcore_claim which = 267 }
+		command = { type = addcore_claim which = 274 }
+		command = { type = addcore_claim which = 277 }
+		command = { type = addcore_claim which = 446 }
+		command = { type = addcore_claim which = 447 }
+		command = { type = addcore_claim which = 448 }
+		command = { type = addcore_claim which = 449 }
+		command = { type = addcore_claim which = 450 }
+		command = { type = addcore_claim which = 451 }
+		command = { type = addcore_claim which = 452 }
+		command = { type = addcore_claim which = 459 }
+		command = { type = addcore_claim which = 460 }
+		command = { type = addcore_claim which = 1470 }
+	}
+}
+
+#Russian claims on Poland-Lithuania#
+event = {
+
+	id = 3405
+	random = no
+	country = RUS
+	name = "EVENTNAME3405"
+	desc = "EVENTHIST3405"
+	style = 2
+
+	date = { day = 1 month = january year = 1540 }
+	offset = 500
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={			#It all belongs to Mother Russia#
+		name = "ACTIONNAME3405A"
+		command = { type = INF which = -1 value = 10000 }
+		command = { type = CAV which = -3 value = 10000 }
+		command = { type = addcore_claim which = 280 }
+		command = { type = addcore_claim which = 286 }
+		command = { type = stability value = 1 }
+		
+	}
+}
+
+#Russian claims on the Steppes#
+event = {
+
+	id = 3406
+	random = no
+	country = RUS
+	name = "EVENTNAME3406"
+	desc = "EVENTHIST3406"
+	style = 2
+
+	date = { day = 1 month = january year = 1560 }
+	offset = 500
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={			#It all belongs to Mother Russia#
+		name = "ACTIONNAME3406A"
+		command = { type = add_countryculture   which = altai }
+		command = { type = cot which = 457 }
+		command = { type = INF which = -1 value = 10000 }
+		command = { type = CAV which = -3 value = 10000 }
+		command = { type = addcore_claim which = 453 }
+		command = { type = addcore_claim which = 454 }
+		command = { type = addcore_claim which = 455 }
+		command = { type = addcore_claim which = 456 }
+		command = { type = addcore_claim which = 457 }
+		command = { type = addcore_claim which = 458 }
+		command = { type = addcore_claim which = 510 }
+		command = { type = addcore_claim which = 511 }
+		command = { type = addcore_claim which = 512 }
+		command = { type = addcore_claim which = 513 }
+		command = { type = addcore_claim which = 514 }
+		command = { type = addcore_claim which = 515 }
+		command = { type = addcore_claim which = 517 }
+		command = { type = addcore_claim which = 518 }
+		command = { type = addcore_claim which = 519 }
+		command = { type = addcore_claim which = 520 }
+		command = { type = addcore_claim which = 578 }
+		command = { type = addcore_claim which = 579 }
+		command = { type = addcore_claim which = 580 }
+		command = { type = addcore_claim which = 581 }
+		command = { type = addcore_claim which = 582 }
+		command = { type = addcore_claim which = 583 }
+		command = { type = addcore_claim which = 584 }
+		command = { type = addcore_claim which = 585 }
+		command = { type = addcore_claim which = 586 }
+		command = { type = addcore_claim which = 587 }
+		command = { type = addcore_claim which = 588 }
+		command = { type = addcore_claim which = 589 }
+		command = { type = addcore_claim which = 590 }
+		command = { type = addcore_claim which = 591 }
+		command = { type = addcore_claim which = 592 }
+		command = { type = addcore_claim which = 593 }
+		command = { type = addcore_claim which = 594 }
+		command = { type = addcore_claim which = 595 }
+		command = { type = addcore_claim which = 596 }
+		command = { type = addcore_claim which = 597 }
+		command = { type = addcore_claim which = 598 }
+		command = { type = addcore_claim which = 599 }
+		command = { type = addcore_claim which = 600 }
+		command = { type = addcore_claim which = 601 }
+		command = { type = addcore_claim which = 602 }
+		command = { type = addcore_claim which = 1570 }
+		command = { type = addcore_claim which = 1571 }
+		command = { type = addcore_claim which = 1572 }
+		command = { type = addcore_claim which = 1573 }
+		command = { type = addcore_claim which = 1574 }
+		command = { type = addcore_claim which = 1575 }
+		command = { type = addcore_claim which = 1576 }
+		command = { type = addcore_claim which = 1577 }
+		command = { type = addcore_claim which = 1578 }
+		command = { type = addcore_claim which = 1579 }
+		command = {
+			trigger = {
+				NOT = {
+					OR = {
+						event = 4220
+						event = 4221
+					}
+				}
+			}
+			type = addcore_claim which = 1580
+		}
+		command = {
+			trigger = {
+				NOT = {
+					OR = {
+						event = 4220
+						event = 4221
+					}
+				}
+			}
+			type = addcore_claim which = 1581
+		}
+		command = {
+			trigger = {
+				NOT = {
+					OR = {
+						event = 4220
+						event = 4221
+					}
+				}
+			}
+			type = addcore_claim which = 1582
+		}
+		command = {
+			trigger = {
+				NOT = {
+					OR = {
+						event = 4220
+						event = 4221
+					}
+				}
+			}
+			type = addcore_claim which = 1583
+		}
+		command = {
+			trigger = {
+				NOT = {
+					OR = {
+						event = 4220
+						event = 4221
+					}
+				}
+			}
+			type = addcore_claim which = 1584
+		}
+		command = { type = stability value = 1 }
+	}
+}
+
+#The Fate of the Teutonic Order#
+event = {
+
+	id = 3407					#Triggered by LAT3620#
+	random = no
+	country = RUS
+	name = "EVENTNAME3407"
+	desc = "EVENTHIST3407"
+	style = 2
+
+	action_a ={					#Defy the Agreement#
+		name = "ACTIONNAME3407A"
+		command = { type = addcore_claim which = 276 }
+		command = { type = addcore_claim which = 282 }
+		command = { type = relation which = KUR value = -50 }
+		command = { type = relation which = DAN value = 150 }
+		command = { type = relation which = POL value = -150 }
+		command = { type = relation which = SWE value = -150 }
+		command = { type = casusbelli which = POL value = 60 }
+		command = { type = casusbelli which = SWE value = 60 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={					#Accept the Agreement#
+		name = "ACTIONNAME3407B"
+		command = { type = relation which = KUR value = 150 }
+		command = { type = relation which = DAN value = -50 }
+		command = { type = relation which = POL value = 100 }
+		command = { type = relation which = SWE value = 100 }
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 200 }
+	}
+}
+
+#The Fate of the Teutonic Order#
+event = {
+
+	id = 3408					#Triggered by LAT3620#
+	random = no
+	country = RUS
+	name = "EVENTNAME3408"
+	desc = "EVENTHIST3408"
+	style = 2
+
+	action_a ={					#Accept Agreement#
+		name = "ACTIONNAME3408A"
+		command = { type = addcore_claim which = 276 }
+		command = { type = addcore_claim which = 275 }
+		command = { type = relation which = KUR value = 150 }
+		command = { type = relation which = DAN value = 100 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={					#Only Accept your part of the Agreement#
+		name = "ACTIONNAME3408B"
+		command = { type = addcore_claim which = 282 }
+		command = { type = addcore_claim which = 281 }
+		command = { type = addcore_claim which = 276 }
+		command = { type = addcore_claim which = 275 }
+		command = { type = relation which = KUR value = 100 }
+		command = { type = relation which = DAN value = -100 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#The Fate of the Teutonic Order#
+event = {
+
+	id = 3409					#Triggered by LAT3620#
+	random = no
+	country = RUS
+	name = "EVENTNAME3409"
+	desc = "EVENTHIST3409"
+	style = 2
+
+	action_a ={					#Defy the Knights#
+		name = "ACTIONNAME3409A"
+		command = { type = addcore_claim which = 276 }
+		command = { type = addcore_claim which = 275 }
+		command = { type = casusbelli which = LAT value = 60 }
+		command = { type = stability value = -2 }
+		command = { type = relation which = LAT value = -150 }
+		command = { type = relation which = POL value = 50 }
+		command = { type = relation which = SWE value = 50 }
+		command = { type = relation which = DAN value = 50 }
+	}
+
+	action_b ={					#Accept this Government#
+		name = "ACTIONNAME3409B"
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 200 }
+		command = { type = relation which = LAT value = 150 }
+		command = { type = relation which = POL value = -50 }
+		command = { type = relation which = SWE value = -50 }
+		command = { type = relation which = DAN value = -50 }
+	}
+}
+
+#The Chosen Council#
+event = {
+
+	id = 3410
+	random = no
+	country = RUS
+	name = "EVENTNAME3410"
+	desc = "EVENTHIST3410"
+	style = 2
+
+	date = { day = 1 month = january year = 1543 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1545 }
+
+	action_a ={				#An Excellent Minister!#
+		name = "ACTIONNAME3410A"
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = DIP which = 2 value = 204 }
+		command = { type = ADM which = 3 value = 204 }
+		command = { type = MIL which = 2 value = 204 }
+		command = { type = stability value = 2 }
+	}
+}
+
+#The Sacking of Moscow#
+event = {
+
+	id = 3411
+	trigger = {
+		exists = CRI
+		NOT = {
+			alliance = { country = RUS country = CRI }
+			vassal = { country = RUS country = CRI }
+		}
+	}
+	random = no
+	country = RUS
+	name = "EVENTNAME3411"
+	desc = "EVENTHIST3411"
+	style = 2
+
+	date = { day = 1 month = january year = 1571 }
+	offset = 130
+	deathdate = { day = 1 month = january year = 1572 }
+
+	action_a ={				#Revenge this horrible insult##
+		name = "ACTIONNAME3411A"
+		command = { type = relation which = CRI value = -150 }
+		command = { type = casusbelli which = CRI value = 60 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={				#Use it to crush the opposition#
+		name = "ACTIONNAME3411B"
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#The Terror of the Opritjina#
+event = {
+
+	id = 3412
+	random = no
+	country = RUS
+	name = "EVENTNAME3412"
+	desc = "EVENTHIST3412"
+	style = 2
+
+	date = { day = 1 month = january year = 1560 }
+	offset = 130
+	deathdate = { day = 1 month = january year = 1570 }
+
+	action_a ={				#Let the Opritjina do its work#
+		name = "ACTIONNAME3412A"
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = stability value = -3 }
+	}
+
+	action_b ={				#Make a deal with the Boyars instead#
+		name = "ACTIONNAME3412B"
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = manpower value = 20 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#The Treasury Reform and the Abolishing of the Kormlenije System#
+event = {
+
+	id = 3413
+	random = no
+	country = RUS
+	name = "EVENTNAME3413"
+	desc = "EVENTHIST3413"
+	style = 2
+
+	date = { day = 1 month = january year = 1560 }
+	offset = 130
+	deathdate = { day = 1 month = january year = 1580 }
+
+	action_a ={				#Reform Treasury and Abolish Kormlenije#
+		name = "ACTIONNAME3413A"
+		command = { type = infra value = 1000 }
+		command = { type = trade value = 500 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = treasury value = 200 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={				#Only Reform Treasury#
+		name = "ACTIONNAME3413B"
+		command = { type = infra value = 1000 }
+		command = { type = trade value = 500 }
+		command = { type = treasury value = 300 }
+		command = { type = stability value = -1 }
+	}
+
+	action_c ={				#Only Abolish Kormlenije#
+		name = "ACTIONNAME3413C"
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = treasury value = -100 }
+		command = { type = stability value = 1 }
+	}
+
+}
+
+#The Time of Trouble#
+event = {
+
+	id = 3414
+	trigger = {
+			domestic = {
+					type = centralization
+					value = 5
+					}
+			domestic = {
+					type = aristocracy
+					value = 4
+					}
+			domestic = {
+					type = serfdom
+					value = 5
+					}
+			}
+	random = no
+	country = RUS
+	name = "EVENTNAME3414"
+	desc = "EVENTHIST3414"
+	style = "3414"
+
+	date = { day = 1 month = january year = 1603 }
+	offset = 359
+	deathdate = { day = 1 month = january year = 1605 }
+
+	action_a ={				#Support Domestic Candidates#
+		name = "ACTIONNAME3414A"
+		command = { type = revoltrisk which = 72 value = 8 }
+		command = { type = relation which = POL value = -300 }
+		command = { type = relation which = SWE value = -300 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={				#Support Polish Candidates#
+		name = "ACTIONNAME3414B"
+		trigger = { 
+			NOT = { war = { country = RUS country = POL } }
+		}
+		command = { type = revoltrisk which = 72 value = 8 }
+		command = { type = dynastic which = POL }
+		command = { type = relation which = POL value = 100 }
+		command = { type = relation which = SWE value = -300 }
+		command = { type = sleepevent which = 3478 }
+		command = { type = stability value = 1 }
+	}
+
+	action_c ={				#Support Swedish Candidates#
+		name = "ACTIONNAME3414C"
+		trigger = { 
+			NOT = { war = { country = RUS country = SWE } }
+		}
+		command = { type = revoltrisk which = 72 value = 8 }
+		command = { type = dynastic which = SWE }
+		command = { type = relation which = SWE value = 100 }
+		command = { type = relation which = POL value = -300 }
+		command = { type = sleepevent which = 3230 }
+		command = { type = stability value = 1 }
+	}
+
+}
+
+#The Russian Orthodox Church declared independent of Constantinople#
+event = {
+
+	id = 3415
+	trigger = {
+		religion = orthodox
+		NOT = { exists = BYZ }
+	}
+	random = no
+	country = RUS
+	name = "EVENTNAME3415"
+	desc = "EVENTHIST3415"
+	style = 2
+
+	date = { day = 1 month = january year = 1588 }
+	offset = 374
+	deathdate = { day = 1 month = january year = 1591 }
+
+	action_a ={				#Let us lead the True Faith from Moscow#
+		name = "ACTIONNAME3415A"
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = relation which = PSK value = 150 }
+		command = { type = relation which = GEO value = 150 }
+		command = { type = relation which = SER value = 150 }
+		command = { type = relation which = WAL value = 150 }
+		command = { type = relation which = MOL value = 150 }
+		command = { type = relation which = NVG value = 150 }
+		command = { type = relation which = SUZ value = 150 }
+		command = { type = relation which = RAG value = 150 }
+		command = { type = relation which = RYA value = 150 }
+		command = { type = relation which = TVE value = 150 }
+		command = { type = relation which = ARM value = 150 }
+		command = { type = relation which = AMI value = 150 }
+		command = { type = relation which = TRE value = 150 }
+		command = { type = relation which = CYP value = 150 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={				#No we need Constantinople to lead the True Faith#
+		name = "ACTIONNAME3415B"
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = DIP which = -3 value = 2772 }
+		command = { type = ADM which = -2 value = 2772 }
+		command = { type = MIL which = -1 value = 2772 }
+		command = { type = addcore_claim which = 320 }
+		command = { type = addcore_claim which = 321 }
+		command = { type = addcore_claim which = 356 }
+		command = { type = addcore_claim which = 357 }
+		command = { type = addcore_claim which = 358 }
+		command = { type = addcore_claim which = 359 }
+		command = { type = addcore_claim which = 360 }
+		command = { type = add_countryculture which = greek }
+		command = { type = stability value = -3 }
+	}
+}
+
+#The Peasantry is brought into Serfdom#
+event = {
+
+	id = 3416
+	trigger = {
+			NOT = {
+				stability = 2
+				}
+			}
+	random = no
+	country = RUS
+	name = "EVENTNAME3416"
+	desc = "EVENTHIST3416"
+	style = 2
+
+	date = { day = 1 month = january year = 1598 }
+	offset = 130
+	deathdate = { day = 1 month = january year = 1605 }
+
+	action_a ={				#Enserf the Peasants#
+		name = "ACTIONNAME3416A"
+		command = { type = provincemanpower which = -1 value = 1 }
+		command = { type = provincemanpower which = -4 value = 1 }
+		command = { type = provincemanpower which = -4 value = 1 }
+		command = { type = provincemanpower which = -4 value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = SERFDOM value = 5 }
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = revoltrisk which = 163 value = 3 }
+		command = { type = inflation value = 2 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={				#Do not enserf them#
+		name = "ACTIONNAME3416B"
+		command = { type = provincemanpower which = -1 value = -1 }
+		command = { type = provincemanpower which = -4 value = -1 }
+		command = { type = provincemanpower which = -4 value = -1 }
+		command = { type = provincemanpower which = -4 value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = MERCANTILISM value = 2 }
+		command = { type = inflation value = 5 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#Full Serfdom enforced by Sobornoj Ulozjenije#
+event = {
+
+	id = 3417
+	trigger = {
+			NOT = {
+				domestic = {
+						type = serfdom
+						value = 8
+						}
+				}
+		}
+	random = no
+	country = RUS
+	name = "EVENTNAME3417"
+	desc = "EVENTHIST3417"
+	style = 3
+
+	date = { day = 1 month = january year = 1649 }
+	offset = 121
+	deathdate = { day = 1 month = january year = 1650 }
+
+	action_a ={				#Enforce#
+		name = "ACTIONNAME3417A"
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = SERFDOM value = 4 }
+		command = { type = trade value = 500 }
+		command = { type = infra value = 250 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={				#Accept detoriated Economy and Burgher Uprisings#
+		name = "ACTIONNAME3417B"
+		command = { type = inflation value = 5 }
+		command = { type = trade value = -250 }
+		command = { type = infra value = -500 }
+		command = { type = revoltrisk which = 36 value = 3 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#Nikons Reform and the Raskolniks#
+event = {
+
+	id = 3418
+	random = no
+	country = RUS
+	name = "EVENTNAME3418"
+	desc = "EVENTHIST3418"
+	style = 3
+
+	date = { day = 1 month = january year = 1653 }
+	offset = 127
+	deathdate = { day = 1 month = january year = 1654 }
+
+	action_a ={				#Let us Modernize the Church#
+		name = "ACTIONNAME3418A"
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = revoltrisk which = 60 value = 1 }
+		command = { type = ADM which = 1 value = 240 }
+		command = { type = stability value = 2 }
+	}
+
+	action_b ={				#Follow the heed of the Raskolniks#
+		name = "ACTIONNAME3418B"
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = INNOVATIVE value = -3 }
+		command = { type = conversion which = -1 }
+		command = { type = conversion which = -4 }
+		command = { type = conversion which = -4 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#Fjodor Baikov's Diplomatic Incident#
+event = {
+
+	id = 3419
+	trigger = {
+			exists = CHI
+			}
+	random = no
+	country = RUS
+	name = "EVENTNAME3419"
+	desc = "EVENTHIST3419"
+	style = 3
+
+	date = { day = 1 month = january year = 1656 }
+	offset = 121
+	deathdate = { day = 1 month = january year = 1657 }
+
+	action_a ={			#Ignore the demands#
+		name = "Ignore the demands"
+		command = { type = relation which = CHI value = -300 }
+		command = { type = DIP which = -1 value = 24 }
+		command = { type = colonists value = -6 }
+		command = { type = merchants value = -3 }
+	}
+	action_b ={			#Pretend to be a Chinese Vassal#
+		name = "ACTIONNAME3419A"
+		command = { type = vp value = -20 }
+		command = { type = relation which = CHI value = 100 }
+		command = { type = stability value = -1 }
+	}
+
+	action_c ={			#Pretend to be a Chinese Vassal and pay Tribute#
+		name = "ACTIONNAME3419B"
+		command = { type = vp value = -50 }
+		command = { type = relation which = CHI value = 200 }
+		command = { type = dynastic which = CHI }
+		command = { type = treasury value = -200 }
+		command = { type = stability value = -2 }
+	}
+
+}
+
+#Stepan Rasin's Cossack Uprisning#
+event = {
+
+	id = 3420
+	trigger = {
+			OR = {
+				atwar = yes
+				NOT = {
+					stability = 1
+					}
+				}
+			}
+	random = no
+	country = RUS
+	name = "EVENTNAME3420"
+	desc = "EVENTHIST3420"
+	style = 3
+
+	date = { day = 1 month = january year = 1667 }
+	offset = 1
+	deathdate = { day = 1 month = january year = 1671 }
+
+	action_a ={				#Quell all Separatist Movements#
+		name = "ACTIONNAME3420A"
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = revoltrisk which = 60 value = 4 }
+		command = { type = revolt which = 457 }
+		command = { type = revolt which = 457 }
+		command = { type = revolt which = 458 }
+		command = { type = revolt which = 458 }
+		command = { type = revolt which = 459 }
+		command = { type = revolt which = 459 }
+		command = { type = stability value = -3 }
+	}
+
+	action_b ={				#Give Autonomy on Province by Province basis#
+		name = "ACTIONNAME3420B"
+		command = { type = domestic which = CENTRALIZATION value = -3 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = revoltrisk which = 60 value = 2 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#The Treaty of Nerchiinsk#
+event = {
+
+	id = 3421
+	trigger = {
+			NOT = {
+				war = {
+					country = RUS
+					country = CHI
+					}
+				}
+		}
+	random = no
+	country = RUS
+	name = "EVENTNAME3421"
+	desc = "EVENTHIST3421"
+	style = 3
+
+	date = { day = 1 month = january year = 1689 }
+	offset = 131
+	deathdate = { day = 1 month = january year = 1690 }
+
+	action_a ={					#Accept the Treaty#
+		name = "ACTIONNAME3421A"
+		command = { type = relation which = CHI value = 250 }
+		command = { type = treasury value = -600 }
+		command = { type = stability value = 1 }
+		command = { type = cedeprovince which = CHI value = 625 }
+		command = { type = cedeprovince which = CHI value = 626 }
+		command = { type = cedeprovince which = CHI value = 635 }
+		command = { type = cedeprovince which = CHI value = 636 }
+		command = { type = cedeprovince which = CHI value = 637 }
+		command = { type = cedeprovince which = CHI value = 638 }
+		command = { type = cedeprovince which = CHI value = 639 }
+		command = { type = cedeprovince which = CHI value = 640 }
+		command = { type = cedeprovince which = CHI value = 643 }
+		command = { type = cedeprovince which = CHI value = 644 }
+		command = { type = cedeprovince which = CHI value = 645 }
+		command = { type = cedeprovince which = CHI value = 646 }
+		command = { type = cedeprovince which = KOR value = 641 }
+		command = { type = cedeprovince which = KOR value = 642 }
+		command = { type = free which = KOR } # Just in case...
+		command = { type = addcore_claim which = 603 }
+		command = { type = addcore_claim which = 604 }
+		command = { type = addcore_claim which = 605 }
+		command = { type = addcore_claim which = 606 }
+		command = { type = addcore_claim which = 607 }
+		command = { type = addcore_claim which = 608 }
+		command = { type = addcore_claim which = 609 }
+		command = { type = addcore_claim which = 610 }
+		command = { type = addcore_claim which = 611 }
+		command = { type = addcore_claim which = 612 }
+		command = { type = addcore_claim which = 613 }
+		command = { type = addcore_claim which = 614 }
+		command = { type = addcore_claim which = 615 }
+		command = { type = addcore_claim which = 616 }
+		command = { type = addcore_claim which = 617 }
+		command = { type = addcore_claim which = 618 }
+		command = { type = addcore_claim which = 619 }
+		command = { type = addcore_claim which = 620 }
+		command = { type = addcore_claim which = 621 }
+		command = { type = addcore_claim which = 622 }
+		command = { type = addcore_claim which = 623 }
+		command = { type = addcore_claim which = 624 }
+		command = { type = addcore_claim which = 627 }
+		command = { type = addcore_claim which = 628 }
+		command = { type = addcore_claim which = 629 }
+		command = { type = addcore_claim which = 630 }
+		command = { type = addcore_claim which = 631 }
+		command = { type = addcore_claim which = 632 }
+		command = { type = addcore_claim which = 633 }
+		command = { type = addcore_claim which = 634 }
+		command = { type = addcore_claim which = 1467 }
+		command = { type = addcore_claim which = 1468 }
+		command = { type = addcore_claim which = 1586 }
+		command = { type = addcore_claim which = 1587 }
+		command = { type = trigger which = 3705 }
+	}
+
+	action_b ={					#Reject the Treaty as Preposterous#
+		name = "ACTIONNAME3421B"
+		command = { type = relation which = CHI value = -250 }
+		command = { type = relation which = -1 value = -250 }
+		command = { type = relation which = -4 value = -250 }
+		command = { type = relation which = -4 value = -250 }
+		command = { type = DIP which = -1 value = 240 }
+		command = { type = casusbelli which = CHI value = 60 }
+		command = { type = stability value = 1 }
+		command = { type = addcore_claim which = 603 }
+		command = { type = addcore_claim which = 604 }
+		command = { type = addcore_claim which = 605 }
+		command = { type = addcore_claim which = 606 }
+		command = { type = addcore_claim which = 607 }
+		command = { type = addcore_claim which = 608 }
+		command = { type = addcore_claim which = 609 }
+		command = { type = addcore_claim which = 610 }
+		command = { type = addcore_claim which = 611 }
+		command = { type = addcore_claim which = 612 }
+		command = { type = addcore_claim which = 613 }
+		command = { type = addcore_claim which = 614 }
+		command = { type = addcore_claim which = 615 }
+		command = { type = addcore_claim which = 616 }
+		command = { type = addcore_claim which = 617 }
+		command = { type = addcore_claim which = 618 }
+		command = { type = addcore_claim which = 619 }
+		command = { type = addcore_claim which = 620 }
+		command = { type = addcore_claim which = 621 }
+		command = { type = addcore_claim which = 622 }
+		command = { type = addcore_claim which = 623 }
+		command = { type = addcore_claim which = 624 }
+		command = { type = addcore_claim which = 627 }
+		command = { type = addcore_claim which = 628 }
+		command = { type = addcore_claim which = 629 }
+		command = { type = addcore_claim which = 630 }
+		command = { type = addcore_claim which = 631 }
+		command = { type = addcore_claim which = 632 }
+		command = { type = addcore_claim which = 633 }
+		command = { type = addcore_claim which = 634 }
+		command = { type = addcore_claim which = 1467 }
+		command = { type = addcore_claim which = 1468 }
+		command = { type = addcore_claim which = 1586 }
+		command = { type = addcore_claim which = 1587 }
+		command = { type = trigger which = 3793 }
+	}
+}
+
+#The Great Northern Conflict#
+event = {
+
+	id = 3422
+	trigger = {
+			OR = {
+				owned = { province = 282 data =SWE }
+				owned = { province = 283 data =SWE }
+				owned = { province = 275 data =SWE }
+				owned = { province = 276 data =SWE }
+				owned = { province = 266 data =SWE }
+				owned = { province = 273 data =SWE }
+				owned = { province = 262 data =SWE }
+				owned = { province = 1470 data =SWE }
+				owned = { province = 267 data =SWE }
+				owned = { province = 269 data =SWE }
+				owned = { province = 274 data =SWE }
+				owned = { province = 277 data =SWE }
+				owned = { province = 268 data =SWE }
+				}
+		}
+	random = no
+	country = RUS
+	name = "EVENTNAME3422"
+	desc = "EVENTHIST3422"
+	style = "3422"
+
+	date = { day = 15 month = june year = 1697 }
+	offset = 1
+	deathdate = { day = 1 month = april year = 1700 }
+
+	action_a ={				#Create a Grand Alliance#
+		name = "ACTIONNAME3422A"
+		command = { type = casusbelli which = SWE value = 36 }
+		command = { type = relation which = SWE value = -150 }
+		command = { type = relation which = DAN value = 150 }
+		command = { type = relation which = POL value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = alliance which = DAN }
+		command = { type = alliance which = POL }
+		command = { type = alliance which = SAC }
+		command = { type = stability value = -1 }
+		command = { type = treasury value = -800 }
+	}
+
+	action_b ={				#Let the others bleed first#
+		name = "ACTIONNAME3422B"
+		command = { type = casusbelli which = SWE value = 12 }
+		command = { type = relation which = SWE value = -150 }
+		command = { type = relation which = DAN value = 50 }
+		command = { type = relation which = POL value = 100 }
+		command = { type = relation which = SAC value = 100 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#Peter the Great and the Army Reform#
+event = {
+
+	id = 3423
+	random = no
+	country = RUS
+	name = "EVENTNAME3423"
+	desc = "EVENTHIST3423"
+	style = "3423"
+
+	date = { day = 27 month = april year = 1682 }
+
+	action_a ={				#Reform the Army and Navy#
+		name = "ACTIONNAME3423A"
+		command = { type = DIP which = 3 value = 240 }
+		command = { type = ADM which = 2 value = 240 }
+		command = { type = MIL which = 4 value = 240 }
+		command = { type = land value = 2000 }
+		command = { type = naval value = 1000 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = domestic which = QUALITY value = 2 }
+		command = { type = gainmanufactory which = -1 value = weapons }
+		command = { type = gainmanufactory which = -1 value = navalequipment }
+		command = { type = INF which = -2 value = 20000 }
+		command = { type = CAV which = -2 value = 10000 }
+		command = { type = ART which = -2 value = 20 }
+		command = { type = manpower value = 20 }
+		command = { type = stability value = 3 }
+	}
+
+	action_b ={				#Only Reform Army#
+		name = "ACTIONNAME3423B"
+		command = { type = land value = 2500 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = OFFENSIVE value = 2 }
+		command = { type = domestic which = LAND value = 2 }
+		command = { type = domestic which = QUALITY value = 3 }
+		command = { type = gainmanufactory which = -1 value = weapons }
+		command = { type = gainmanufactory which = -4 value = weapons }
+		command = { type = INF which = -2 value = 20000 }
+		command = { type = CAV which = -2 value = 10000 }
+		command = { type = ART which = -2 value = 20 }
+		command = { type = INF which = -4 value = 20000 }
+		command = { type = CAV which = -3 value = 10000 }
+		command = { type = ART which = -3 value = 20 }
+		command = { type = stability value = 3 }
+	}
+
+	action_c ={				#Only Reform Navy#
+		name = "ACTIONNAME3423C"
+		command = { type = naval value = 2500 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = domestic which = LAND value = -3 }
+		command = { type = gainmanufactory which = -1 value = navalequipment }
+		command = { type = gainmanufactory which = -4 value = navalequipment }
+		command = { type = warships which = -1 value = 30 }
+		command = { type = transports which = -3 value = 10 }
+		command = { type = galleys which = -1 value = 60 }
+		command = { type = transports which = -3 value = 10 }
+		command = { type = stability value = 3 }
+	}
+
+}
+
+#St:Petersburg#
+event = {
+
+	id = 3424
+	trigger = {
+			owned = {
+					province = 275
+					data = -1
+					}
+		}
+	random = no
+	country = RUS
+	name = "EVENTNAME3424"
+	desc = "EVENTHIST3424"
+	style = "3424"
+
+	date = { day = 27 month = april year = 1682 }
+	offset = 1
+	deathdate = { day = 28 month = january year = 1725 }
+
+	action_a ={				#Move Capital to St. Petersburg#
+		name = "ACTIONNAME3424A"
+		command = { type = capital which = 275 }
+		command = { type = cityname which = 275 value = "St. Petersburg" }
+		command = { type = infra value = 500 }
+		command = { type = trade value = 1000 }
+		command = { type = conversion which = 275 }
+		command = { type = provinceculture which = 275 value =  russian }
+		command = { type = populationpercent which = 275 value = 15 }
+		command = { type = gainbuilding which = 275 value = barrack }
+		command = { type = gainbuilding which = 275 value = shipyard }
+		command = { type = treasury value = -1000 }
+		command = { type = stability value = -2 }
+		command = { type = setflag which = RUSpetersburg }
+	}
+
+	action_b ={				#Keep Capital at Moscow#
+		name = "ACTIONNAME3424B"
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = stability value = 3 }
+	}
+}
+
+#Mazepa's Ukrainian Uprising#
+event = {
+
+	id = 3425
+	trigger = {
+			OR = {
+				atwar = yes
+				NOT = {
+					stability = 1
+					}
+				}
+			}
+	random = no
+	country = RUS
+	name = "EVENTNAME3425"
+	desc = "EVENTHIST3425"
+	style = 4
+
+	date = { day = 1 month = january year = 1707 }
+	offset = 119
+	deathdate = { day = 30 month = december year = 1710 }
+
+	action_a ={				#We have dealt with separatists before#
+		name = "ACTIONNAME3425A"
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = relation which = UKR value = -250 }
+		command = { type = casusbelli which = UKR value = 120 }
+		command = { type = revolt which = 295 }
+		command = { type = revolt which = 295 }
+		command = { type = revolt which = 460 }
+		command = { type = revolt which = 460 }
+		command = { type = revolt which = 461 }
+		command = { type = revolt which = 461 }
+		command = { type = revolt which = 462 }
+		command = { type = revolt which = 462 }
+		command = { type = treasury value = 200 }
+		command = { type = stability value = -3 }
+	}
+
+	action_b ={				#Grant limited autonomy#
+		name = "Grant limited autonomy"
+		trigger = { 
+			NOT = { exists = UKR }
+		}
+		command = { type = domestic which = CENTRALIZATION value = -3 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = independence which = UKR }
+		command = { type = stability value = -2 }
+	}
+}
+
+#Governmental Reforms and the Absolutism#
+event = {
+
+	id = 3426
+	trigger = {
+			atwar = yes
+			}
+	random = no
+	country = RUS
+	name = "EVENTNAME3426"
+	desc = "EVENTHIST3426"
+	style = "3423"
+
+	date = { day = 1 month = january year = 1711 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1837 }
+
+	action_a ={				#Governmental Reforms and the Absolutism#
+		name = "ACTIONNAME3426A"
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = -4 }
+		command = { type = domestic which = INNOVATIVE value = -3 }
+		command = { type = domestic which = MERCANTILISM value = 3 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = revoltrisk which = 240 value = 2 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = gainmanufactory which = -1 value = weapons }
+		command = { type = gainmanufactory which = -1 value = goods }
+		command = { type = gainmanufactory which = -1 value = refinery }
+		command = { type = infra value = 2000 }
+		command = { type = trade value = 1000 }
+		command = { type = treasury value = -1000 }
+		command = { type = stability value = 2 }
+	}
+
+	action_b ={				#Only Absolutism#
+		name = "ACTIONNAME3426B"
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = -4 }
+		command = { type = domestic which = INNOVATIVE value = -3 }
+		command = { type = domestic which = MERCANTILISM value = 3 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = revoltrisk which = 240 value = 2 }
+		command = { type = stability value = 1 }
+	}
+
+	action_c ={				# Only Governmental Reforms#
+		name = "ACTIONNAME3426C"
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = gainmanufactory which = -1 value = weapons }
+		command = { type = gainmanufactory which = -1 value = goods }
+		command = { type = gainmanufactory which = -1 value = refinery }
+		command = { type = infra value = 2000 }
+		command = { type = trade value = 1000 }
+		command = { type = treasury value = -1000 }
+		command = { type = stability value = 1 }
+	}
+
+}
+
+#The State take control of the Russian Church#
+event = {
+
+	id = 3427
+	trigger = { 
+		religion = orthodox
+	}
+	random = no
+	country = RUS
+	name = "EVENTNAME3427"
+	desc = "EVENTHIST3427"
+	style = 4
+
+	date = { day = 1 month = january year = 1719 }
+	offset = 130
+	deathdate = { day = 30 month = december year = 1723 }
+
+	action_a ={				#Yes#
+		name = "ACTIONNAME3427A"
+		command = { type = gainmanufactory which = 270 value = luxury }
+		command = { type = gainmanufactory which = 295 value = luxury  }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={				#No#
+		name = "ACTIONNAME3427B"
+		command = { type = losemanufactory which = -1 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#The Abolishment of the System of Precedence#
+event = {
+	id = 3428
+	random = no
+	country = RUS
+	name = "EVENTNAME3428"
+	desc = "EVENTHIST3428"
+	style = 3
+	
+	date = { day = 1 month = january year = 1679 }
+	offset = 720
+
+	action_a ={	#Abolish Mestnichestvo
+		name = "ACTIONNAME3428A"
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = revoltrisk which = 240 value = 1 }
+		command = { type = stability value = -2 }
+	}
+	action_b ={	#Keep the old system
+		name = "ACTIONNAME3428B"
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#The Polish Succession of 1733#
+event = {
+
+	id = 3429				#Triggered by SAC3628#
+	random = no
+	country = RUS
+	name = "EVENTNAME3429"
+	desc = "EVENTHIST3429"
+	style = 4
+
+	action_a ={				#Secure Poland for the Wettins#
+		name = "ACTIONNAME3429A"
+		command = { type = casusbelli which = FRA value = 24 }
+		command = { type = casusbelli which = SWE value = 24 }
+		command = { type = alliance which = SAC }
+		command = { type = alliance which = HAB }
+		command = { type = alliance which = PRU }
+		command = { type = relation which = POL value = 100 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = PRU value = 150 }
+		command = { type = relation which = SWE value = -150 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={				#Stay out of it#
+		name = "Stay out of it"
+		command = { type = relation which = POL value = -50 }
+		command = { type = relation which = SAC value = -50 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = PRU value = -50 }
+		command = { type = relation which = SWE value = 50 }
+		command = { type = badboy value = -1 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#The Courland Succession of 1726#
+event = {
+
+	id = 3430
+	trigger = {
+		exists = KUR
+	}
+	random = no
+	country = RUS
+	name = "EVENTNAME3430"
+	desc = "EVENTHIST3430"
+	style = 4
+
+	date = { day = 13 month = january year = 1726 }
+
+	action_a ={				#Prepare to grab Kurland#
+		name = "ACTIONNAME3430A"
+		command = { type = addcore_claim which = 283 }
+		command = { type = relation which = PRU value = -150 }
+		command = { type = relation which = KUR value = -150 }
+		command = { type = relation which = POL value = -100 }
+		command = { type = relation which = SWE value = -50 }
+		command = { type = casusbelli which = SWE value = 3 }
+		command = { type = casusbelli which = POL value = 3 }
+		command = { type = casusbelli which = PRU value = 3 }
+		command = { type = casusbelli which = KUR value = 3 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={				#Ignore this petty matter#
+		name = "ACTIONNAME3430B"
+		command = { type = stability value = -2 }
+		command = { type = relation which = PRU value = 100 }
+		command = { type = relation which = KUR value = 100 }
+		command = { type = relation which = SWE value = 50 }
+		command = { type = relation which = POL value = 100 }
+		command = { type = vp value = -50 }
+	}
+}
+
+#The Effects of the Pragmatic Sanction#
+event = {
+
+	id = 3431
+	trigger = { event = 3205 }
+	random = no
+	country = RUS
+	name = "EVENTNAME3431"
+	desc = "EVENTHIST3431"
+
+	date = { day = 1 month = january year = 1741 }
+	offset = 10
+	deathdate = { day = 1 month = june year = 1741 }
+
+	action_a ={				#Pro-Habsburg#
+		name = "ACTIONNAME3431A"
+		command = { type = casusbelli which = FRA value = 36 }
+		command = { type = casusbelli which = PRU value = 36 }
+		command = { type = relation which = BAY value = -150 }
+		command = { type = relation which = SAC value = -150 }
+		command = { type = relation which = PRU value = -150 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HES value = 100 }
+		command = { type = relation which = HAN value = 100 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = stability value = 1 }
+
+	}
+
+	action_b ={				#Neutral#
+		name = "ACTIONNAME3431B"
+		command = { type = relation which = BAY value = 50 }
+		command = { type = relation which = SAC value = 50 }
+		command = { type = relation which = PRU value = 100 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = HOL value = -50 }
+		command = { type = relation which = RUS value = -50 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = HAN value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = SWE value = -100 }
+		command = { type = stability value = -1 }
+		command = { type = casusbelli which = SWE value = 12 }
+
+	}
+
+	action_c ={				#Anti-Habsburg#
+		name = "ACTIONNAME3431C"
+		command = { type = casusbelli which = HAB value = 12 }
+		command = { type = casusbelli which = ENG value = 12 }
+		command = { type = relation which = BAY value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = PRU value = 150 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = ENG value = -150 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = HAN value = -100 }
+		command = { type = relation which = HAB value = -150 }
+		command = { type = stability value = 1 }
+
+	}
+
+}
+
+#The Duma and the Legislative Reform#
+event = {
+
+	id = 3432
+	random = no
+	country = RUS
+	name = "EVENTNAME3432"
+	desc = "EVENTHIST3432"
+	style = 4
+
+	date = { day = 1 month = january year = 1767 }
+	offset = 102
+	deathdate = { day = 1 month = january year = 1768 }
+
+	action_a ={				#Talk about the Injustice in Society#
+		name = "ACTIONNAME3432A"
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = ARISTOCRACY value = 6 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = revoltrisk which = 240 value = 3 }
+		command = { type = provincetax which = -1 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={				#Do something about the Injustice in Society#
+		name = "ACTIONNAME3432B"
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = ARISTOCRACY value = -5 }
+		command = { type = domestic which = INNOVATIVE value = 5 }
+		command = { type = domestic which = SERFDOM value = -5 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = treasury value = -400 }
+		command = { type = stability value = -4 }
+	}
+}
+
+#The Election of a Swedish Crownprince#		#Russian Candidate#
+event = {
+
+	id = 3433					#Triggered by SWE3252#
+	random = no
+	country = RUS
+	name = "EVENTNAME3433"
+	desc = "EVENTHIST3433"
+	style = 4
+
+	action_a ={				#They made a wise choice#
+		name = "ACTIONNAME3433A"
+		command = { type = dynastic which = SWE }
+		command = { type = relation which = SWE value = 100 }
+		command = { type = stability value = 1 }
+	}
+}
+#The Election of a Swedish Crownprince#		#Danish Candidate#
+event = {
+
+	id = 3792				#Triggered by SWE3252#
+	random = no
+	country = RUS
+	name = "EVENTNAME3792"
+	desc = "EVENTHIST3792"
+	style = 4
+
+	action_a ={				#We have been gravely insulted#
+		name = "ACTIONNAME3792A"
+		command = { type = casusbelli which = SWE value = 12 }
+		command = { type = casusbelli which = DAN value = 12 }
+		command = { type = relation which = SWE value = -200 }
+		command = { type = relation which = DAN value = -200 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={				#They are not worth it#
+		name = "ACTIONNAME3792B"
+		command = { type = relation which = SWE value = 100 }
+		command = { type = relation which = DAN value = 100 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#The Mercantilistic Reforms#
+event = {
+
+	id = 3434
+	random = no
+	country = RUS
+	name = "EVENTNAME3434"
+	desc = "EVENTHIST3434"
+	style = 4
+
+	date = { day = 1 month = january year = 1770 }
+	offset = 130
+	deathdate = { day = 1 month = january year = 1780 }
+
+	action_a ={				#Yes, Reform#
+		name = "ACTIONNAME3434A"
+		command = { type = domestic which = MERCANTILISM value = 5 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = trade value = 500 }
+	}
+
+	action_b ={				#No, Do Nothing#
+		name = "ACTIONNAME3434B"
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = trade value = 1000 }
+	}
+
+	action_c ={				#No, Opt for Free Trade#
+		name = "ACTIONNAME3434C"
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = MERCANTILISM value = -4 }
+		command = { type = trade value = 1500 }
+	}
+
+}
+
+#The Pugatchev Uprising#
+event = {
+
+	id = 3435
+	trigger = {
+			domestic = {
+					type = serfdom
+					value = 6
+					}
+			domestic = {
+					type = aristocracy
+					value = 6
+					}
+			NOT = {
+				stability = 1
+				}
+		}
+	random = no
+	country = RUS
+	name = "EVENTNAME3435"
+	desc = "EVENTHIST3435"
+	style = 4
+
+	date = { day = 1 month = january year = 1773 }
+	offset = 1
+	deathdate = { day = 1 month = january year = 1791 }
+
+	action_a ={				#The Masses are moving...Sire#
+		name = "ACTIONNAME3435A"
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = revolt which = 446 }
+		command = { type = revolt which = 446 }
+		command = { type = revolt which = 446 }
+		command = { type = revolt which = 447 }
+		command = { type = revolt which = 452 }
+		command = { type = revolt which = 453 }
+		command = { type = revolt which = 453 }
+		command = { type = revolt which = 454 }
+		command = { type = revolt which = 454 }
+		command = { type = revolt which = 455 }
+		command = { type = revolt which = 456 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -4 value = 2500 }
+		command = { type = desertion which = -4 value = 2500 }
+		command = { type = desertion which = -4 value = 2500 }
+		command = { type = desertion which = -4 value = 2500 }
+		command = { type = stability value = -5 }
+	}
+}
+
+#The Reactionary Policy#
+event = {
+
+	id = 3436
+	trigger = {
+		stability = 2
+		event = 3435
+		someof = {
+			number = 5
+			control = { province = 446 data = -1 }
+			control = { province = 447 data = -1 }
+			control = { province = 452 data = -1 }
+			control = { province = 453 data = -1 }
+			control = { province = 454 data = -1 }
+			control = { province = 455 data = -1 }
+			control = { province = 456 data = -1 }
+		}
+	}
+	random = no
+	country = RUS
+	name = "EVENTNAME3436"
+	desc = "EVENTHIST3436"
+	style = 4
+
+	date = { day = 2 month = january year = 1773 }
+	offset = 1
+	deathdate = { day = 2 month = january year = 1791 }
+
+	action_a ={				#Keep the Masses in Chains#
+		name = "ACTIONNAME3436A"
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = ARISTOCRACY value = 5 }
+		command = { type = domestic which = INNOVATIVE value = -3 }
+		command = { type = domestic which = SERFDOM value = 5 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={				#Let introduce an idea called 'Freedom'#
+		name = "ACTIONNAME3436B"
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = ARISTOCRACY value = -5 }
+		command = { type = domestic which = INNOVATIVE value = 3 }
+		command = { type = domestic which = SERFDOM value = -5 }
+		command = { type = stability value = -4 }
+	}
+}
+
+#Tsar Paul I:s Liberal Legislation#
+event = {
+
+	id = 3437
+	random = no
+	country = RUS
+	name = "Tsar Paul I's Liberal Legislation"
+	desc = "EVENTHIST3437"
+	style = 4
+
+	date = { day = 1 month = january year = 1797 }
+	offset = 121
+	deathdate = { day = 1 month = january year = 1798 }
+
+	action_a ={				#Restrict Serfdom#
+		name = "ACTIONNAME3437A"
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={				#It is perfect as it is#
+		name = "ACTIONNAME3437B"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Tsar Alexander I:s Liberal Legislation#
+event = {
+
+	id = 3438
+	random = no
+	country = RUS
+	name = "Tsar Alexander I's Liberal Legislation"
+	desc = "EVENTHIST3438"
+	style = 5
+
+	date = { day = 1 month = january year = 1801 }
+	offset = 121
+	deathdate = { day = 1 month = january year = 1802 }
+
+	action_a ={				#Minimal reforms#
+		name = "ACTIONNAME3438A"
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={				#Full Reform#
+		name = "ACTIONNAME3438B"
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = ARISTOCRACY value = -5 }
+		command = { type = domestic which = INNOVATIVE value = 3 }
+		command = { type = domestic which = SERFDOM value = -5 }
+		command = { type = stability value = -4 }
+	}
+}
+
+#The Anjala League#
+event = {
+
+	id = 3439						#Triggered by SWE3263#
+	random = no
+	country = RUS
+	name = "EVENTNAME3439"
+	desc = "EVENTHIST3439"
+	style = 4
+
+	action_a ={				#Promise independence to Finnish Nobility#
+		name = "ACTIONNAME3439A"
+		command = { type = trigger which = 3259 }
+		command = { type = relation which = SWE value = -150 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={				#Reject and disclose them to Gustavus III#
+		name = "ACTIONNAME3439B"
+		command = { type = relation which = SWE value = 150 }
+		command = { type = vp value = 30 } #For being consistent with reactionary policies#
+	}
+}
+
+#The Partition of Poland#	#1st#
+event = {
+
+	id = 3440				#Triggered by POL3499#
+	random = no
+	country = RUS
+	name = "EVENTNAME3440"
+	desc = "EVENTHIST3440"
+	style = 4
+
+	action_a ={			#Poland is trying to reform and it must be stopped#
+		name = "ACTIONNAME3440A"
+		command = { type = casusbelli which = POL value = 60 }
+		command = { type = relation which = POL value = -150 }
+		command = { type = stability value = 3 }
+		command = { type = treasury  value = 250 }
+		command = { type = addcore_claim which = 279 }
+		command = { type = addcore_claim which = 280 }
+		command = { type = addcore_claim which = 286 }
+		command = { type = addcore_claim which = 281 }
+		command = { type = addcore_claim which = 284 }
+		command = { type = addcore_claim which = 285 }
+		command = { type = addcore_claim which = 287 }
+		command = { type = addcore_claim which = 450 }
+		command = { type = addcore_claim which = 460 }
+	}
+}
+
+#The Partition of Poland#	#2nd#
+event = {
+
+	id = 3441			#Triggered by POL3500#
+	random = no
+	country = RUS
+	name = "EVENTNAME3441"
+	desc = "EVENTHIST3441"
+	style = 4
+
+	action_a ={				#Poland is trying to reform and it must be stopped#
+		name = "ACTIONNAME3441A"
+		command = { type = casusbelli which = POL value = 60 }
+		command = { type = relation which = POL value = -150 }
+		command = { type = stability value = 3 }
+		command = { type = treasury  value = 250 }
+		command = { type = addcore_claim which = 279 }
+		command = { type = addcore_claim which = 280 }
+		command = { type = addcore_claim which = 286 }
+		command = { type = addcore_claim which = 281 }
+		command = { type = addcore_claim which = 283 }
+		command = { type = addcore_claim which = 284 }
+		command = { type = addcore_claim which = 285 }
+		command = { type = addcore_claim which = 287 }
+		command = { type = addcore_claim which = 288 }
+		command = { type = addcore_claim which = 293 }
+		command = { type = addcore_claim which = 294 }
+		command = { type = addcore_claim which = 295 }
+		command = { type = addcore_claim which = 296 }
+		command = { type = addcore_claim which = 297 }
+		command = { type = addcore_claim which = 450 }
+		command = { type = addcore_claim which = 460 }
+		command = { type = addcore_claim which = 461 }
+		command = { type = addcore_claim which = 462 }
+		command = { type = addcore_claim which = 463 }
+		command = { type = addcore_claim which = 464 }
+		command = { type = addcore_claim which = 465 }
+		command = { type = addcore_claim which = 466 }
+		command = { type = addcore_claim which = 467 }
+		command = { type = addcore_claim which = 468 }
+	}
+}
+
+#The Silent Sejm#
+event = {
+
+	id = 3442			#Triggered by POL3498#
+	random = no
+	country = RUS
+	name = "EVENTNAME3442"
+	desc = "EVENTHIST3442"
+	style = 4
+
+	action_a ={			#Poland is trying to reform and it must be stopped#
+		name = "ACTIONNAME3442A"
+		command = { type = casusbelli which = POL value = 60 }
+		command = { type = relation which = POL value = -150 }
+		command = { type = stability value = 3 }
+		command = { type = treasury  value = 250 }
+		command = { type = addcore_claim which = 279 }
+		command = { type = addcore_claim which = 280 }
+		command = { type = addcore_claim which = 286 }
+	}
+}
+
+#The Contest with Poland#
+event = {
+
+	id = 3443				#Triggered by POL3497#
+	random = no
+	country = RUS
+	name = "EVENTNAME3443"
+	desc = "EVENTHIST3443"
+	style = 3
+
+	action_a ={			#Poland is trying to reform and it must be stopped#
+		name = "ACTIONNAME3443A"
+		command = { type = casusbelli which = POL value = 60 }
+		command = { type = relation which = POL value = -150 }
+		command = { type = stability value = 3 }
+		command = { type = treasury  value = 250 }
+		command = { type = addcore_claim which = 279 }
+		command = { type = addcore_claim which = 280 }
+		command = { type = addcore_claim which = 286 }
+	}
+}
+
+#In the Face of Napoleon#
+event = {
+
+	id = 3444
+	trigger = {	
+		event = 3148
+		owned = { province = 270 data = RUS }
+		owned = { province = 275 data = RUS }
+		war = { country = RUS country = FRA }
+	}
+	random = no
+	country = RUS
+	name = "EVENTNAME3444"
+	desc = "EVENTHIST3444"
+	style = 5
+
+	date = { day = 1 month = january year = 1803 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1820 }
+
+	action_a ={			#Moscow shall be the capital#
+		name = "ACTIONNAME3444A"
+		command = { type = capital which = 270 }
+		command = { type = stability value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = clrflag which = RUSpetersburg }
+	}
+
+	action_b ={			#St. Petersburg shall be the capital#
+		name = "ACTIONNAME3444B"
+		command = { type = capital which = 275 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = stability value = -1 }
+		command = { type = sleepevent which = 50054 }
+		command = { type = setflag which = RUSpetersburg }
+	}
+}
+
+#The Finnish War#
+event = { 
+	id = 250044 #3585
+	trigger = {
+		event = 3439
+		neighbour = SWE
+	}
+	random = no 
+	country = RUS
+	name = "The Finnish War"
+	desc = "EVENTHIST250044"
+
+	style = "3585"
+
+	date = { day = 1 month = january year = 1808 }
+	offset = 30 
+	deathdate = { day = 1 month = january year = 1809 }
+
+	action_a = { 
+		name = "Let us claim all of Finland"		#Let us claim all of Finland#
+		command = { type = addcore_claim which = 263 }
+		command = { type = addcore_claim which = 264 }
+		command = { type = addcore_claim which = 265 }
+		command = { type = addcore_claim which = 342 }
+		command = { type = addcore_claim which = 273 }
+		command = { type = badboy value = 5 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b = { 
+		name = "We should make peace with the Swedes"		#We should make peace with the Swedes#
+		command = { type = cedeprovince which = SWE value = 263 } # if already owned
+		command = { type = cedeprovince which = SWE value = 264 }
+		command = { type = cedeprovince which = SWE value = 265 }
+		command = { type = cedeprovince which = SWE value = 342 }
+		command = { type = cedeprovince which = SWE value = 273 }
+		command = { type = relation which = SWE value = 200 }
+		command = { type = stability value = -2 }
+		command = { type = sleepevent which = 250045 }
+		command = { type = vp value = -50 }
+	}
+}
+
+#The Grand Duchy of Finland#
+event = { 
+	id = 250045 #3586
+	trigger = {
+		event = 250044
+		someof = {
+			number = 3
+			owned = { province = 263 data = -1 }
+			owned = { province = 264 data = -1 }
+			owned = { province = 265 data = -1 }
+			owned = { province = 342 data = -1 }
+			owned = { province = 273 data = -1 }
+		}
+		NOT = { exists = FIN }
+	}
+	random = no 
+	country = RUS
+	name = "The Grand Duchy of Finland"
+	desc = "EVENTHIST250045"
+
+	date = { day = 1 month = january year = 1809 }
+	offset = 30 
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a = { 
+		name = "Grant the Finns autonomy within Russia"		#Grant the Finns autonomy within Russia#
+		command = { type = removecore_national which = 263 }
+		command = { type = removecore_national which = 264 }
+		command = { type = removecore_national which = 265 }
+		command = { type = removecore_national which = 342 }
+		command = { type = removecore_national which = 273 }
+		command = { type = provinceculture which = 263 value = ugric }
+		command = { type = provinceculture which = 264 value = ugric }
+		command = { type = provinceculture which = 265 value = ugric }
+		command = { type = provinceculture which = 342 value = ugric }
+		command = { type = provinceculture which = 273 value = ugric }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = independence which = FIN }
+		command = { type = stability value = 2 }
+	}
+
+	action_b = { 
+		name = "They must be kept in line"		#They must be kept in line#
+		command = { type = revolt which = 263 }
+		command = { type = revolt which = 264 }
+		command = { type = revolt which = 265 }
+		command = { type = revolt which = 342 }
+		command = { type = revolt which = 273 }
+		command = { type = stability value = -3 }
+	}
+}
+
+#The Caucasus War#
+event = {
+	id = 50031
+	trigger = {
+		owned = { province = 467 data = -1 }
+		owned = { province = 468 data = -1 }
+		NOT = {
+			exists = CIR
+		}
+	}
+	random = no
+	country = RUS
+	name = "The Caucasus War"
+	desc = "The Caucasus War was a 19th century military conflict between the Russian Empire and various peoples of the North Caucasus who resisted subjugation during the Russian conquest of the Caucasus. It consisted of a series of military actions waged by the Russian Imperial Army and Cossack settlers against the native inhabitants such as the Adyghe, Abaza–Abkhaz, Ubykhs, Chechens, and Dagestanis as the Tsars sought to expand. Russian control of the Georgian Military Road in the center divided the Caucasian War into the Russo-Circassian War in the west and the conquest of Chechnya and Dagestan in the east. Other territories of the Caucasus were incorporated into the Russian Empire at various times in the 19th century as a result of Russian wars with Persia. The remaining part, western Georgia, was taken by the Russians from the Ottomans during the same period."
+
+	style = "50031"
+
+	date = { day = 1 month = january year = 1810 }
+	offset = 250
+
+	action_a ={ # Crush the rebels
+		name = "Crush the rebels"
+		command = { type = revolt which = 466 }
+		command = { type = revolt which = 467 }
+		command = { type = revolt which = 467 }
+		command = { type = revolt which = 468 }
+		command = { type = revolt which = 468 }
+		command = { type = revolt which = 468 }
+		command = { type = revolt which = 469 }
+		command = { type = revolt which = 469 }
+		command = { type = revolt which = 470 }
+		command = { type = revolt which = 471 }
+		command = { type = revolt which = 471 }
+		command = { type = revoltrisk which = 36 value = 4 }
+		command = { type = stability value = -2 }
+	}
+	action_b ={ # Grant limited autonomy
+		name = "Grant limited autonomy"
+		command = { type = independence which = CIR }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+	}
+}
+
+#The Greek War of Independence#
+event = {
+	id = 50040
+	trigger = {
+		event = 50026
+		exists = GRE
+		war = { country = GRE country = TUR }
+	}
+	random = no
+	country = RUS
+	name = "The Greek War of Independence"
+	desc = "Your Majesty, the upstart Greeks have declared their independence from the Sublime Porte and begun a bloody war of liberation. Many among our populace surely have sympathy for their plight, even if direct involvement would be expensive and ruffle a few feathers in government. Sire, should we intervene directly to aid the Greeks or leave them to their fate?"
+
+	style = "50026"
+
+	date = { day = 1 month = january year = 1820 }
+	offset = 30
+	
+	action_a ={ #Support the Greeks#
+		name = "Support the Greeks"
+		command = { type = casusbelli which = TUR value = 60 }
+		command = { type = relation which = GRE value = 200 }
+		command = { type = relation which = TUR value = -100 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = diplomats value = -2 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={ #Stay out of it#
+		name = "Stay out of it"
+		command = { type = relation which = TUR value = 100 }
+		command = { type = relation which = GRE value = -50 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = merchants value = 4 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# The Sevastopol Shipyard #
+event = {
+	id = 50051
+	trigger = {
+		owned = { province = 463 data = -1 } # Crimea
+		control = { province = 463 data = -1 } # Crimea
+	}
+	random = no
+	country = RUS
+	name = "The Sevastopol Shipyard"
+	desc = "Sevastopol was founded in June 1783 under the name Akhtiar ('White Cliff') as a base for the Russian Black Sea squadron. Its founder was Rear Admiral Thomas MacKenzie (Foma Fomich Makenzi), a native Scot in Russian service, who claimed the area soon after Russia annexed the Crimean Khanate. The area had been earmarked as a possible naval base five years earlier, when Alexander Suvorov had ordered earthworks be erected along the harbour and Russian troops garrisoned there. In February 1784, Catherine the Great ordered Grigory Potemkin to expand the port into a shipyard and construct a modern fortress and infrastructure, and the town was renamed Sevastopol. It would remain Russia's primary Black Sea port - and one of the empire's major ship-building yards - for centuries after."
+
+	date = { day = 1 month = january year = 1780 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1810 }
+
+	action_a = { # Establish a shipyard in the Black Sea #
+		name = "Establish a shipyard in the Black Sea"
+		command = { type = cityname which = 463 value = "Sevastopol" }
+		command = { type = provinceculture which = 463 value = ruthenian }
+		command = { type = gainbuilding which = 463 value = shipyard }
+		command = { type = fortress which = 463 value = 1 }
+		command = { type = provincetax which = 463 value = 2 } 
+		command = { type = conversion which = 463 }
+		command = { type = treasury value = -500 }
+	}
+
+	action_b = { # Our interests lay elsewhere #
+		name = "Our interests lay elsewhere"
+		command = { type = vp value = -50 }
+	}
+}
+
+# The Decembrist Revolt #
+event = {
+	id = 50052
+	random = no
+	country = RUS
+	name = "The Decembrist Revolt"
+	desc = "EVENTHIST50052"
+
+	style = "50052"
+
+	date = { day = 14 month = december year = 1825 }
+
+	action_a = { # Crush the rebels! #
+		name = "Crush the rebels!"
+		command = { type = revoltrisk which = 24 value = 3 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = desertion which = -1 value = 10000 }
+		command = { type = desertion which = -4 value = 5000 }
+		command = { type = desertion which = -4 value = 5000 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b = { # Konstantin is our rightful Emperor #
+		name = "Konstantin is our rightful Emperor"
+		command = { type = wakemonarch which = 05152 } # Konstantin I
+		command = { type = revoltrisk which = 24 value = 4 }
+		command = { type = revolt which = -2 }
+		command = { type = desertion which = -1 value = 10000 }
+		command = { type = desertion which = -4 value = 5000 }
+		command = { type = desertion which = -4 value = 5000 }
+		command = { type = desertion which = -4 value = 5000 }
+		command = { type = desertion which = -4 value = 5000 }
+		command = { type = stability value = -2 }
+		command = { type = sleepevent which = 50053 }
+	}
+}
+
+# Tsar Nicholas I's Reactionary Legislation #
+event = {
+	id = 50053
+	random = no
+	country = RUS
+	name = "Tsar Nicholas I's Reactionary Legislation"
+	desc = "EVENTHIST50053"
+
+	date = { day = 1 month = january year = 1828 }
+	offset = 121
+	deathdate = { day = 1 month = january year = 1829 }
+
+	action_a = { # Full reform #
+		name = "Full reform"
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = ARISTOCRACY value = 5 }
+		command = { type = domestic which = INNOVATIVE value = -3 }
+		command = { type = domestic which = SERFDOM value = 5 }
+		command = { type = stability value = -4 }
+	}
+
+	action_b = { # Compromise #
+		name = "Compromise"
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = stability value = -2 }
+	}
+}
+
+# The Return to St. Petersburg #
+event = {
+
+	id = 50054
+	trigger = {
+		event = 3444
+		owned = { province = 270 data = RUS }
+		owned = { province = 275 data = RUS }
+		atwar = no
+	}
+	random = no
+	country = RUS
+	name = "The Return to St. Petersburg"
+	desc = "With Russia's participation in the Napoleonic Wars seemingly at an end and St. Petersburg safe from further attacks, the question of a return to the capital may now be addressed. My Lord, should we return the Imperial court to St. Petersburg or maintain our presence at the old Muscovite capital of Moscow?"
+
+	date = { day = 1 month = january year = 1821 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={
+		name = "Move the court back to St. Petersburg"		#Move the court back to St. Petersburg#
+		command = { type = capital which = 275 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = stability value = 2 }
+		command = { type = setflag which = RUSpetersburg }
+	}
+
+	action_b ={
+		name = "Remain in Moscow"		#Remain in Moscow#
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = stability value = -1 }
+		command = { type = clrflag which = RUSpetersburg }
+	}
+}
+
+# The Great Northern Expedition #
+event = {
+
+	id = 50061
+	trigger = {
+		OR = {
+			discovered = 600
+			discovered = 601
+			discovered = 602
+			discovered = 603
+			discovered = 604
+		}
+		atwar = no
+	}
+	random = no
+	country = RUS
+	name = "EVENTNAME50061"
+	desc = "EVENTHIST50061"
+
+	style = "50061"
+
+	date = { day = 1 month = january year = 1725 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1745 }
+
+	action_a ={
+		name = "ACTIONNAME50061A"		#Commit to a grand expedition#
+		command = { type = vp value = 150 }
+		command = { type = colonists value = 6 }
+		command = { type = missionaries value = 6 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = gainbuilding which = -1025 value = bailiff }
+		command = { type = gainbuilding which = -1025 value = bailiff }
+		command = { type = gainbuilding which = -1025 value = bailiff }
+		command = { type = gainbuilding which = -1025 value = bailiff }
+		command = { type = gainbuilding which = -1025 value = bailiff }
+		command = { type = gainbuilding which = -1025 value = bailiff }
+		command = { type = fortress which = -1025 value = 1 }
+		command = { type = fortress which = -1025 value = 1 }
+		command = { type = INF which = -1025 value = 15000 }
+		command = { type = warships which = 269 value = 15 }
+		command = { type = trade value = 2000 }
+		command = { type = infra value = 1000 }
+		command = { type = inflation value = 2 }
+		command = { type = treasury value = -800 }
+		#command = { type = wakeleader which = 09226 } # Vitus Bering
+		#command = { type = wakeleader which = 09227 } # Martin Spanberg
+		#command = { type = wakeleader which = 09687 } # Aleksei Chirikov
+		#command = { type = wakeleader which = 09688 } # Georg Steller
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={
+		name = "ACTIONNAME50061B"		#Commit to a limited expedition#
+		command = { type = vp value = 50 }
+		command = { type = colonists value = 3 }
+		command = { type = missionaries value = 3 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = gainbuilding which = -1025 value = bailiff }
+		command = { type = gainbuilding which = -1025 value = bailiff }
+		command = { type = INF which = -1025 value = 5000 }
+		command = { type = trade value = 800 }
+		command = { type = infra value = 400 }
+		command = { type = inflation value = 1 }
+		command = { type = treasury value = -200 }
+		#command = { type = wakeleader which = 09688 } # Georg Steller
+		command = { type = stability value = -1 }
+	}
+
+	action_c ={
+		name = "ACTIONNAME50061C"		#Finish off the Mongols#
+		trigger = { 
+			exists = NYN
+			NOT = {
+				alliance = { country = RUS country = NYN }
+				vassal = { country = RUS country = NYN }
+			}
+		}
+		command = { type = war which = NYN }
+		command = { type = casusbelli which = NYN value = 120 }
+		command = { type = relation which = NYN value = -200 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = badboy value = 5 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# Yuan AI event #
+event = {
+
+	id = 4133
+	trigger = {
+		ai = yes
+		war = { country = NYN country = RUS }
+		control = { province = 603 data = RUS }
+	}
+	random = no
+	country = RUS
+	name = "AI_EVENT"
+	desc = "AI_EVENT"
+
+	date = { day = 1 month = january year = 1399 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a = {
+		name = "OK"
+		command = { type = annex which = NYN }
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 300 }
+		command = { type = colonists value = 6 }
+		command = { type = missionaries value = 6 }
+	}
+}

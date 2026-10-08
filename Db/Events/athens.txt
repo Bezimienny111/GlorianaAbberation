@@ -1,0 +1,311 @@
+##Athens Events##
+
+#(1355) The House of Barcelona (ARG version)
+event = {
+	id = 113560
+	trigger = {
+		#monarch = 17143
+		#monarch = 15509
+		NOT = { 
+			vassal = { country = ARG country = ATH }
+			vassal = { country = SIC country = ATH }
+		}
+	}
+	random = no
+	country = ATH
+	name = "The House of Barcelona"
+	desc = "In 1355, the Catalan Company asked the royal house of Catalonia-Aragon to provide them with a Duke as a figurehead, during the next years they were ruled by a succession of four absentee Dukes first from Sicily and then from Aragon, none of which seem to have ever set foot in their Duchy."
+
+	date = { day = 1 month = july year = 1355 }
+	offset = 5
+	deathdate = { day = 29 month = december year = 1355 }
+
+	action_a ={
+		name = "Let them rule the Duchy - Offer vassal"
+		command = { type = flagname which = Aragon }
+		command = { type = sleepmonarch which = 04776 } #Marc I Figueras
+		command = { type = sleepmonarch which = 04777 } #Frederic II
+		command = { type = sleepmonarch which = 04778 } #Marc II Figueras
+		command = { type = sleepmonarch which = 04779 } #Marc III Figueras
+		command = { type = wakemonarch which = 04771 } #Pere IV
+		command = { type = wakemonarch which = 04772 } #Joan I
+		command = { type = wakemonarch which = 04773 } #Martí I
+		#command = { type = wakemonarch which = 22107 } #Interregnum
+		command = { type = wakemonarch which = 04774 } #Ferran I
+		command = { type = wakemonarch which = 04775 } #Alfons V
+		command = { type = relation which = ARG value = 50 }
+		command = { type = DIP which = 1 value = 30 }
+		command = { type = ADM which = 1 value = 30 }
+		command = { type = domestic which = centralization value = -1 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = trigger which = 1100002 } #ARG: The House of Barcelona in Athens
+		command = { type = setflag which = pereIV }
+	}
+	action_b ={
+		name = "No, we can manage ourselves"
+		command = { type = relation which = ARG value = -50 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = revolt which = -5 }
+		command = { type = revoltrisk which = 30 value = 3 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#(1381-1387) Pere IV of Aragon assumes sovereignty (vassal)
+event = {
+	id = 113561
+	trigger = {
+		flag = pereIV
+	}
+	random = no
+	country = ATH
+	name = "Pere IV of Aragon assumes sovereignty"
+	desc = "The French feudal culture disappeared after the conquest by the Catalans, and Athens sank into insignificance and poverty, particularly after 1377, when the succession was contested in civil war. Pere IV of Aragon then assumed sovereignty in 1381 but ruled from Barcelona."
+
+	date = { day = 1 month = january year = 1381 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1387 }
+
+	action_a ={
+		trigger = {
+			vassal = { country = ARG country = ATH }
+		}			
+		name = "Offer him the Duchy - End game"
+		command = { type = population which = 359 value = -1700 }#Civil war
+		command = { type = provincetax which = 359 value = -1 }
+		command = { type = provincemanpower which = 359 value = -1 }
+		command = { type = trigger which = 1100003 } #ARG: Pere IV annexes Athens
+	}
+	action_b ={
+		trigger = {
+			vassal = { country = ARG country = ATH }
+		}
+		name = "No, we can manage ourselves"
+		command = { type = flagname which = "" }
+		command = { type = sleepmonarch which = 04772 } #Joan I
+		command = { type = sleepmonarch which = 04773 } #Martí I
+		#command = { type = sleepmonarch which = 22107 } #Interregnum
+		command = { type = sleepmonarch which = 04774 } #Ferran I
+		command = { type = sleepmonarch which = 04775 } #Alfons V
+		command = { type = wakemonarch which = 04777 } #Frederic II
+		command = { type = wakemonarch which = 04778 } #Marc II Figueras
+		command = { type = wakemonarch which = 04779 } #Marc III Figueras
+		command = { type = population which = 359 value = -3100 }#Civil war
+		command = { type = provincetax which = 359 value = -2 }
+		command = { type = provincemanpower which = 359 value = -2 }
+		command = { type = revolt which = 359 }
+		command = { type = revolt which = 359 }
+		command = { type = stability value = -2 }
+	}
+	action_c ={
+		trigger = {
+			NOT = { vassal = { country = ARG country = ATH } }
+		}
+		name = "Offer him the Duchy - Vassal"
+		command = { type = flagname which = Aragon }
+		command = { type = population which = 359 value = -1700 }#Civil war
+		command = { type = provincetax which = 359 value = -1 }
+		command = { type = provincemanpower which = 359 value = -1 }
+		command = { type = revolt which = 359 }
+		command = { type = stability value = -1 }
+		#command = { type = sleepmonarch which = 04772 } #Joan I
+		#command = { type = sleepmonarch which = 04773 } #Martí I
+		#command = { type = wakemonarch which = 04771 } #Pere IV
+		#command = { type = wakemonarch which = 17147 } #Joan I
+		#command = { type = wakemonarch which = 17148 } #Martí I
+		#command = { type = wakemonarch which = 17147 } #Joan I
+		#command = { type = wakemonarch which = 17148 } #Martí I
+		command = { type = trigger which = 1100004 } #ARG: Pere IV assumes sovereignty of Athens
+	}
+	action_d ={
+		trigger = {
+			NOT = { vassal = { country = ARG country = ATH } }
+		}
+		name = "No, we can manage ourselves"
+		command = { type = flagname which = "" }
+		command = { type = sleepmonarch which = 04772 } #Joan I
+		command = { type = sleepmonarch which = 04773 } #Martí I
+		#command = { type = sleepmonarch which = 22107 } #Interregnum
+		command = { type = sleepmonarch which = 04774 } #Ferran I
+		command = { type = sleepmonarch which = 04775 } #Alfons V
+		command = { type = wakemonarch which = 04777 } #Frederic II
+		command = { type = wakemonarch which = 04778 } #Marc II Figueras
+		command = { type = wakemonarch which = 04779 } #Marc III Figueras
+		command = { type = population which = 359 value = -3100 }#Civil war
+		command = { type = provincetax which = 359 value = -2 }
+		command = { type = provincemanpower which = 359 value = -2 }
+		command = { type = revolt which = 359 }
+		command = { type = revolt which = 359 }
+		command = { type = stability value = -3 }
+	}
+}
+
+#(1381-1386) Albanians settle in Hellas
+event = {
+	id = 113563
+	trigger = { 
+		#monarch = 17146
+		event = 113561
+	}
+	random = no
+	country = ATH
+	name = "Albanians settle in Hellas"
+	desc = "On Pere IV initiative, the devastated Duchy was settled by Albanians."
+
+	date = { day = 1 month = january year = 1381 }
+	offset = 150
+	deathdate = { day = 30 month = december year = 1386 }
+
+	action_a ={
+		name = "Accept them"
+		command = { type = population which = 359 value = 1500 }
+		command = { type = provincetax which = 359 value = 1 }
+		command = { type = provincemanpower which = 359 value = 1 }
+		command = { type = relation which = ALB value = 25 }
+		command = { type = relation which = ARG value = 25 }
+		command = { type = revolt which = 359 }
+		command = { type = revolt which = 359 }
+		command = { type = stability value = -1 }
+	}
+	action_b ={
+		name = "Not a good idea"
+		command = { type = cash value = 25 }
+		command = { type = vp value = -5 }
+	}
+}
+
+#(1388-1420) The Florentine Duchy of Athens
+event = {
+	id = 113567 #triggered by ARG_100006A
+	random = no
+	country = ATH
+	name = "The Florentine Duchy of Athens"
+	desc = "In 1379 another force from the Iberian peninsula, the Navarrese Company, moved on from its efforts to conquer Albania and attacked the Catalan Duchy of Athens in concert with a Florentine force led by Nerio The Acciajuoli. Finally, in 1388 the Florentine army defeated the Catalans in a decisive battle at Kaledes (a.k.a. Peritheorion or Anastasioupolis), at the far end of Lake Vistonis on the road from Xanthi to Komotini. Following this defeat and the subsequent loss of their Duchy, the Catalan Grand Company disbanded."
+
+	action_a ={
+		name = "Ok"
+		command = { type = flagname which = Acciajuoli }
+		command = { type = breakvassal which = ARG }
+		command = { type = stability value = 4 }
+		command = { type = add_countryculture which = italian }
+		#command = { type = remove_countryculture which = french }
+		command = { type = sleepmonarch which = 04776 } #Marc I Figueras
+		command = { type = sleepmonarch which = 04777 } #Frederic II
+		command = { type = sleepmonarch which = 04778 } #Marc II Figueras
+		command = { type = sleepmonarch which = 04779 } #Marc III Figueras
+		command = { type = wakemonarch which = 122240 } #Nerio I
+		command = { type = wakemonarch which = 122241 } #Francesca
+		command = { type = wakemonarch which = 04760 } #Antonio I
+		command = { type = wakemonarch which = 04761 } #Nerio II
+		command = { type = wakemonarch which = 04762 } #Antonio II
+		command = { type = wakemonarch which = 04763 } #Nerio II
+		command = { type = wakemonarch which = 04764 } #Francesco I
+		command = { type = wakemonarch which = 04765 } #Franco I
+		command = { type = INF which = -2 value = 4000 }
+		command = { type = CAV which = -2 value = 1000 }
+	}
+}
+
+#(1388-1420) The Acciajuoli
+event = {
+	id = 113564
+	trigger = {
+		NOT = { 
+			event = 113567 #ATH: The Florentine Duchy of Athens
+		}
+	}
+	random = no
+	country = ATH
+	name = "The Acciajuoli"
+	desc = "In 1379 another force from the Iberian peninsula, the Navarrese Company, moved on from its efforts to conquer Albania and attacked the Catalan Duchy of Athens in concert with a Florentine force led by Nerio The Acciajuoli. Finally, in 1388 a Florentine army defeated the Catalans in a decisive battle at Kaledes (a.k.a. Peritheorion or Anastasioupolis), at the far end of Lake Vistonis on the road from Xanthi to Komotini. Following this defeat and the subsequent loss of their Duchy, the Catalan Grand Company disbanded."
+
+	date = { day = 1 month = january year = 1388 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1420 }
+
+	action_a ={
+		name = "Surrender to the Florentine"
+		command = { type = flagname which = Acciajuoli }
+		command = { type = sleepmonarch which = 04778 } #Marc II Figueras *
+		command = { type = sleepmonarch which = 04779 } #Marc III Figueras *
+		command = { type = sleepmonarch which = 04772 } #Joan I
+		command = { type = sleepmonarch which = 04773 } #Martí I
+		#command = { type = sleepmonarch which = 22107 } #Interrregnum
+		command = { type = sleepmonarch which = 04774 } #Ferran I
+		command = { type = sleepmonarch which = 04775 } #Alfons V
+		command = { type = wakemonarch which = 122240 } #Nerio I
+		command = { type = wakemonarch which = 122241 } #Francesca
+		command = { type = wakemonarch which = 04760 } #Antonio I
+		command = { type = wakemonarch which = 04761 } #Nerio II
+		command = { type = wakemonarch which = 04762 } #Antonio II
+		command = { type = wakemonarch which = 04763 } #Nerio II
+		command = { type = wakemonarch which = 04764 } #Francesco I
+		command = { type = wakemonarch which = 04765 } #Franco I
+		#command = { type = wakeleader which = 23399 } #Nerio
+		command = { type = add_countryculture which = italian }
+		#command = { type = remove_countryculture which = french }
+		command = { type = remove_countryculture which = catalan }
+		command = { type = diplomats value = -2 }
+		command = { type = domestic which = aristocracy value = 1 }
+		command = { type = domestic which = centralization value = -1 }
+		command = { type = sleepevent which = 113565 }
+	}
+	action_b ={
+		name = "Fight the invaders!"
+		command = { type = province_revoltrisk which = 359 value = 15 }
+		command = { type = provincetax which = 359 value = -2 }
+		command = { type = provincemanpower which = 359 value = -2 }
+		command = { type = revolt which = 359 }
+		command = { type = revolt which = 359 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = stability value = -3 }
+	}
+}
+
+#(1395-1402) Nerio Acciajuoli seizes the Duchy
+event = {
+	id = 113565
+	trigger = { 
+		event = 113564 #ATH: The Acciajuoli
+		owned = { province = 359 data = -1 }
+		control = { province = 359 data = REB }
+	}
+	random = no
+	country = ATH
+	name = "Nerio Acciajuoli seizes the Duchy"
+	desc = "In 1388, the Florentine army of Nerio Acciajuoli defeated the Catalans in a decisive battle at Kaledes (a.k.a. Peritheorion or Anastasioupolis), at the far end of Lake Vistonis on the road from Xanthi to Komotini. Following this defeat and the subsequent loss of their Duchy, the Catalan Grand Company disbanded."
+
+	date = { day = 1 month = january year = 1395 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1402 }
+
+	action_a ={
+		name = "Oh well..."
+		command = { type = flagname which = Acciajuoli }
+		command = { type = sleepmonarch which = 04778 } #Marc II Figueras *
+		command = { type = sleepmonarch which = 04779 } #Marc III Figueras *
+		command = { type = sleepmonarch which = 04772 } #Joan I
+		command = { type = sleepmonarch which = 04773 } #Martí I
+		#command = { type = sleepmonarch which = 22107 } #Interrregnum
+		command = { type = sleepmonarch which = 04774 } #Ferran I
+		command = { type = sleepmonarch which = 04775 } #Alfons V
+		command = { type = wakemonarch which = 122240 } #Nerio I
+		command = { type = wakemonarch which = 122241 } #Francesca
+		command = { type = wakemonarch which = 04760 } #Antonio I
+		command = { type = wakemonarch which = 04761 } #Nerio II
+		command = { type = wakemonarch which = 04762 } #Antonio II
+		command = { type = wakemonarch which = 04763 } #Nerio II
+		command = { type = wakemonarch which = 04764 } #Francesco I
+		command = { type = wakemonarch which = 04765 } #Franco I
+		#command = { type = wakeleader which = 23399 } #Nerio
+		command = { type = add_countryculture which = italian }
+		#command = { type = remove_countryculture which = french }
+		command = { type = remove_countryculture which = catalan }
+		command = { type = province_revoltrisk which = 359 value = -15 }
+		command = { type = provincetax which = 359 value = 1 }
+		command = { type = provincemanpower which = 359 value = 1 }
+	}
+}
+
+#first free ID: 113000

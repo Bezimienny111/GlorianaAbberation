@@ -1,0 +1,56 @@
+# Gran Colombia (GRC) / Colombia (COL) #
+
+# The Dissolution of Gran Colombia #
+event = {
+
+	id = 3692
+	trigger = {
+		atwar = no
+		NOT = {
+			exists = COL
+			exists = ECU
+			exists = VNZ
+		}
+	}
+	random = no
+	country = GRC
+	name = "EVENTNAME3692"
+	desc = "EVENTHIST3692"
+
+	date = { day = 1 month = january year = 1826 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={
+		name = "ACTIONNAME3692A"		#Fight for Bolivar's dream#
+		command = { type = revoltrisk which = 120 value = 5 }
+		command = { type = revolt which = 154 }
+		command = { type = revolt which = 154 }
+		command = { type = revolt which = 156 }
+		command = { type = revolt which = 163 }
+		command = { type = revolt which = 163 }
+		command = { type = revolt which = 164 }
+		command = { type = relation which = SPA value = -150 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = stability value = -3 }
+	}
+
+	action_b ={
+		name = "ACTIONNAME3692B"		#Dissolve the nation#
+		command = { type = free which = ECU }
+		command = { type = free which = VNZ }
+		command = { type = removecore_national which = 154 }
+		command = { type = removecore_national which = 155 }
+		command = { type = removecore_national which = 156 }
+		command = { type = removecore_national which = 157 }
+		command = { type = removecore_national which = 163 }
+		command = { type = removecore_national which = 164 }
+		command = { type = removecore_national which = 178 }
+		command = { type = removecore_national which = 187 }
+		command = { type = removecore_national which = 188 }
+		command = { type = domestic which = CENTRALIZATION value = -4 }
+		command = { type = stability value = -5 }
+		command = { type = flagname which = "" }
+		command = { type = country which = COL }
+	}
+}

@@ -1,0 +1,64 @@
+#####Lorraine (Lothringen) Major Events#####
+#######By Joakim 'Greven' Bergqwist#########
+############################################
+
+#Habsburg Inheritance of Lothringen#
+event = {
+
+	id = 3632				#Triggered by POL3495 or POL3487#
+	random = no
+	country = LOR
+	name = "EVENTNAME3632"
+	desc = "EVENTHIST3632"
+
+	action_a ={				#François III Étienne married Maria-Theresia#
+		name = "ACTIONNAME3632A"
+		command = { type = trigger which = 3100 }
+		command = { type = wakemonarch which = 04996 }
+		command = { type = wakemonarch which = 04997 }
+		command = { type = wakemonarch which = 04998 }
+		command = { type = wakemonarch which = 04999 }
+		command = { type = sleepmonarch which = 04995 }
+		command = { type = sleepmonarch which = 03998 }
+		command = { type = sleepmonarch which = 06573 }
+		command = { type = sleepmonarch which = 06574 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = dynastic which = HAB }
+		command = { type = stability value = 5 }
+		command = { type = treasury value = 500 }
+	}
+}
+#French Inheritance of Lothringen#
+event = {
+
+	id = 3735
+	trigger = {
+			NOT = {
+				event = 3632
+				}
+		}
+	random = no
+	country = LOR
+	name = "EVENTNAME3735"
+	desc = "EVENTHIST3735"
+
+	date = { day = 22 month = february year = 1766 }
+
+	action_a ={				#France will inherit#
+		name = "ACTIONNAME3735A"
+		trigger = { 
+			ai = yes
+			exists = FRA
+		}
+		command = { type = trigger which = 3736 }
+	}
+
+	action_b ={				#Offer the duchy to the Prince of Condé#
+		name = "Offer the duchy to the Prince of Condé"
+		command = { type = dynastic which = FRA }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = stability value = 1 }
+	}
+}

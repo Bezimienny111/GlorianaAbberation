@@ -1,0 +1,1028 @@
+#####Muscowian Major Events#####
+#By Joakim 'Greven' Bergqwist###
+################################
+
+#Civil War in Muscovy#
+event = {
+    id = 3898
+    random = no
+    country = MOS
+    name = "EVENTNAME3898"
+    desc = "EVENTHIST3898"
+    style = 1
+
+    date = { day = 1 month = january year = 1433 }
+    offset = 100
+
+    action_a ={ # Support Yuri#
+        name = "ACTIONNAME3898A"
+        command = { type = wakemonarch which = 05172 }
+        command = { type = wakemonarch which = 05173 }
+        command = { type = stability value = -2 }
+        command = { type = domestic which = innovative value = -1 }
+        command = { type = domestic which = centralization value = -1 }
+        command = { type = revoltrisk value = 2 }
+        command = { type = relation which = SUZ value = 50 }
+    }
+    action_b ={ # Support Vasily #
+        name = "ACTIONNAME3898B"
+        command = { type = stability value = -4 }
+        command = { type = domestic which = innovative value = 1 }
+        command = { type = domestic which = centralization value = 1 }
+        command = { type = revoltrisk value = 5 }
+        command = { type = relation which = SUZ value = -50 }
+	}
+}
+
+#The Pomjestija Reform#
+event = {
+
+	id = 3401
+	trigger = { owned = { province = 274 data = -1 } }
+	random = no
+	country = MOS
+	name = "EVENTNAME3401"
+	desc = "EVENTHIST3401"
+	style = 1
+
+	date = { day = 1 month = january year = 1460 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1837 }
+
+	action_a ={				#Let us reform#
+		name = "ACTIONNAME3401A"
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = LAND value = 1  }
+		command = { type = domestic which = QUALITY value = 2  }
+		command = { type = land value = 1000 }
+		command = { type = cot which = 270 }
+		command = { type = removecot which = 274 }
+		command = { type = CAV which = -1 value = 10000 }
+		command = { type = CAV which = -1 value = 10000 }
+	}
+
+	action_b ={				#Let us become like Novgorod#
+		name = "ACTIONNAME3401B"
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = OFFENSIVE value = 2 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = trade value = 800 }
+		command = { type = merchants value = 6 }
+		command = { type = ART which = -1 value = 30 }
+	}
+}
+
+#The Subednik Laws#
+event = {
+
+	id = 3402
+	random = no
+	country = MOS
+	name = "EVENTNAME3402"
+	desc = "EVENTHIST3402"
+	style = 1
+
+	date = { day = 1 month = january year = 1495 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1501 }
+
+	action_a ={				#Introduce it#
+		name = "ACTIONNAME3402A"
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = stability value = 1 }
+		command = { type = infra value = 800 }
+		command = { type = gainmanufactory which = -2 value = luxury }
+	}
+	action_b ={				#Encourage a Free Peasantry#
+		name = "ACTIONNAME3402B"
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = SERFDOM value = -3 }
+		command = { type = stability value = -2 }
+		command = { type = revoltrisk value = 6 }
+		command = { type = manpower value = 2 }
+	}
+
+}
+
+# The Fall of Novgorod #
+event = {
+	id = 25029
+	trigger = {
+		isvassal = no
+		war = { country = MOS country = NVG }
+		owned = { province = 274 data = NVG }
+		control = { province = 274 data = MOS }
+		NOT = { decision = 1004 } # Found the Empire of Russia
+		NOT = { event = 25028 } # NVG: The Fall of Moscow
+	}
+	random = no
+	country = MOS
+	name = "The Fall of Novgorod"
+	desc = "My Lord, our victorious druzhina have captured the fortified kremlin of Novgorod and routed the Archbishop's forces in the field. With such a grievous defeat now upon them, the boyars of Novgorod have no option but to surrender unto you. Sire, our victory is total: the Novgorod Republic is no more!"
+
+	style = "25029"
+
+	date = { day = 1 month = january year = 1450 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a = {	# Victory! #
+		name = "Victory!"
+		command = { type = annex which = NVG }
+		command = { type = treasury value = 300 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#The Muscovite Conquest of Great Perm#
+event = {
+
+	id = 4221				#Triggered by PRM4219B#
+	random = no
+	country = MOS
+	name = "EVENTNAME4221"
+	desc = "EVENTHIST4221"
+
+	action_a ={				#Excellent!#
+		name = "ACTIONNAME4221A"
+		command = { type = annex which = PRM }
+		command = { type = addcore_national which = 1580 }
+		command = { type = addcore_national which = 1581 }
+		command = { type = addcore_national which = 1582 }
+		command = { type = addcore_national which = 1583 }
+		command = { type = addcore_national which = 1584 }
+		command = { type = conquistador which = -2 }
+		command = { type = colonists value = 2 }
+		command = { type = missionaries value = 2 }
+		command = { type = stability value = 1 }
+	}
+}
+
+##############################
+## Russian events if no russia
+##############################
+
+#The Chosen Council#
+event = {
+
+	id = 200000
+	trigger = {
+		NOT = {
+			exists = RUS
+		}
+	}
+	random = no
+	country = MOS
+	name = "EVENTNAME3410"
+	desc = "EVENTHIST3410"
+	style = 2
+
+	date = { day = 1 month = january year = 1543 }
+	offset = 130
+	deathdate = { day = 1 month = january year = 1543 }
+
+	action_a ={				#An Excellent Minister!#
+		name = "ACTIONNAME3410A"
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = DIP which = 2 value = 204 }
+		command = { type = ADM which = 3 value = 204 }
+		command = { type = MIL which = 2 value = 204 }
+		command = { type = stability value = 2 }
+	}
+}
+
+#The Sacking of Moscow#
+event = {
+
+	id = 200001
+	trigger = {
+		exists = CRI
+		NOT = {
+			exists = RUS
+			alliance = { country = MOS country = CRI }
+			vassal = { country = MOS country = CRI }
+		}
+	}
+	random = no
+	country = MOS
+	name = "EVENTNAME3411"
+	desc = "EVENTHIST3411"
+	style = 2
+
+	date = { day = 1 month = january year = 1571 }
+	offset = 130
+	deathdate = { day = 1 month = january year = 1572 }
+
+	action_a ={				#Revenge this horrible insult##
+		name = "ACTIONNAME3411A"
+		command = { type = relation which = CRI value = -150 }
+		command = { type = casusbelli which = CRI value = 60 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={				#Use it to crush the opposition#
+		name = "ACTIONNAME3411B"
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#The Terror of the Opritjina#
+event = {
+
+	id = 200002
+	trigger = {
+		NOT = {
+			exists = RUS
+		}
+	}
+	random = no
+	country = MOS
+	name = "EVENTNAME3412"
+	desc = "EVENTHIST3412"
+	style = 2
+
+	date = { day = 1 month = january year = 1560 }
+	offset = 1234
+	deathdate = { day = 1 month = january year = 1570 }
+
+	action_a ={				#Let the Opritjina do its work#
+		name = "ACTIONNAME3412A"
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = stability value = -3 }
+	}
+
+	action_b ={				#Make a deal with the Boyars instead#
+		name = "ACTIONNAME3412B"
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = manpower value = 20 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#The Treasury Reform and the Abolishing of the Kormlenije System#
+event = {
+
+	id = 200003
+	trigger = {
+		NOT = {
+			exists = RUS
+		}
+	}
+	random = no
+	country = MOS
+	name = "EVENTNAME3413"
+	desc = "EVENTHIST3413"
+	style = 2
+
+	date = { day = 1 month = january year = 1560 }
+	offset = 2478
+	deathdate = { day = 1 month = january year = 1580 }
+
+	action_a ={				#Reform Treasury and Abolish Kormlenije#
+		name = "ACTIONNAME3413A"
+		command = { type = infra value = 1000 }
+		command = { type = trade value = 500 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = treasury value = 200 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={				#Only Reform Treasury#
+		name = "ACTIONNAME3413B"
+		command = { type = infra value = 1000 }
+		command = { type = trade value = 500 }
+		command = { type = treasury value = 300 }
+		command = { type = stability value = -1 }
+	}
+
+	action_c ={				#Only Abolish Kormlenije#
+		name = "ACTIONNAME3413C"
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = treasury value = -100 }
+		command = { type = stability value = 1 }
+	}
+
+}
+
+#The Peasantry is brought into Serfdom#
+event = {
+
+	id = 200004
+	trigger = {
+			NOT = {
+				stability = 2
+				exists = RUS
+				}
+			}
+	random = no
+	country = MOS
+	name = "EVENTNAME3416"
+	desc = "EVENTHIST3416"
+	style = 2
+
+	date = { day = 1 month = january year = 1598 }
+	offset = 813
+	deathdate = { day = 1 month = january year = 1605 }
+
+	action_a ={				#Enserf the Peasants#
+		name = "ACTIONNAME3416A"
+		command = { type = provincemanpower which = -1 value = 1 }
+		command = { type = provincemanpower which = -4 value = 1 }
+		command = { type = provincemanpower which = -4 value = 1 }
+		command = { type = provincemanpower which = -4 value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = SERFDOM value = 5 }
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = revoltrisk which = 163 value = 3 }
+		command = { type = inflation value = 2 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={				#Do not enserf them#
+		name = "ACTIONNAME3416B"
+		command = { type = provincemanpower which = -1 value = -1 }
+		command = { type = provincemanpower which = -4 value = -1 }
+		command = { type = provincemanpower which = -4 value = -1 }
+		command = { type = provincemanpower which = -4 value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = MERCANTILISM value = 2 }
+		command = { type = inflation value = 5 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#Full Serfdom enforced by Sobornoj Ulozjenije#
+event = {
+
+	id = 200005
+	trigger = {
+			NOT = {
+				domestic = {
+						type = serfdom
+						value = 8
+						}
+				exists = RUS
+				}
+		}
+	random = no
+	country = MOS
+	name = "EVENTNAME3417"
+	desc = "EVENTHIST3417"
+	style = 3
+
+	date = { day = 1 month = january year = 1649 }
+	offset = 121
+	deathdate = { day = 1 month = january year = 1650 }
+
+	action_a ={				#Enforce#
+		name = "ACTIONNAME3417A"
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = SERFDOM value = 4 }
+		command = { type = trade value = 500 }
+		command = { type = infra value = 250 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={				#Accept detoriated Economy and Burgher Uprisings#
+		name = "ACTIONNAME3417B"
+		command = { type = inflation value = 5 }
+		command = { type = trade value = -250 }
+		command = { type = infra value = -500 }
+		command = { type = revoltrisk which = 36 value = 3 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#Nikons Reform and the Raskolniks#
+event = {
+
+	id = 200006
+	trigger = {
+		NOT = {
+			exists = RUS
+		}
+	}
+	random = no
+	country = MOS
+	name = "EVENTNAME3418"
+	desc = "EVENTHIST3418"
+	style = 3
+
+	date = { day = 1 month = january year = 1653 }
+	offset = 127
+	deathdate = { day = 1 month = january year = 1654 }
+
+	action_a ={				#Let us Modernize the Church#
+		name = "ACTIONNAME3418A"
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = revoltrisk which = 60 value = 1 }
+		command = { type = ADM which = 1 value = 240 }
+		command = { type = stability value = 2 }
+	}
+
+	action_b ={				#Follow the heed of the Raskolniks#
+		name = "ACTIONNAME3418B"
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = INNOVATIVE value = -3 }
+		command = { type = conversion which = -1 }
+		command = { type = conversion which = -4 }
+		command = { type = conversion which = -4 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#Peter the Great and the Army Reform#
+event = {
+
+	id = 200007
+	trigger = {
+		NOT = {
+			exists = RUS
+		}
+	}
+	random = no
+	country = MOS
+	name = "EVENTNAME3423"
+	desc = "EVENTHIST3423"
+	style = "3423"
+
+	date = { day = 27 month = april year = 1682 }
+	offset = 0
+	deathdate = { day = 28 month = april year = 1682 }
+
+	action_a ={				#Reform the Army and Navy#
+		name = "ACTIONNAME3423A"
+		command = { type = DIP which = 3 value = 240 }
+		command = { type = ADM which = 2 value = 240 }
+		command = { type = MIL which = 4 value = 240 }
+		command = { type = land value = 2000 }
+		command = { type = naval value = 1000 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = domestic which = QUALITY value = 2 }
+		command = { type = gainmanufactory which = -1 value = weapons }
+		command = { type = gainmanufactory which = -1 value = navalequipment }
+		command = { type = INF which = -2 value = 20000 }
+		command = { type = CAV which = -2 value = 10000 }
+		command = { type = ART which = -2 value = 20 }
+		command = { type = manpower value = 20 }
+		command = { type = stability value = 3 }
+	}
+
+	action_b ={				#Only Reform Army#
+		name = "ACTIONNAME3423B"
+		command = { type = land value = 2500 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = OFFENSIVE value = 2 }
+		command = { type = domestic which = LAND value = 2 }
+		command = { type = domestic which = QUALITY value = 3 }
+		command = { type = gainmanufactory which = -1 value = weapons }
+		command = { type = gainmanufactory which = -1 value = weapons }
+		command = { type = INF which = -2 value = 20000 }
+		command = { type = CAV which = -2 value = 10000 }
+		command = { type = ART which = -2 value = 20 }
+		command = { type = INF which = -1 value = 20000 }
+		command = { type = CAV which = -3 value = 10000 }
+		command = { type = ART which = -3 value = 20 }
+		command = { type = stability value = 3 }
+	}
+
+	action_c ={				#Only Reform Navy#
+		name = "ACTIONNAME3423C"
+		command = { type = naval value = 2500 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = domestic which = LAND value = -3 }
+		command = { type = gainmanufactory which = -1 value = navalequipment }
+		command = { type = gainmanufactory which = -1 value = navalequipment }
+		command = { type = warships which = -1 value = 30 }
+		command = { type = transports which = -3 value = 10 }
+		command = { type = galleys which = -1 value = 60 }
+		command = { type = transports which = -3 value = 10 }
+		command = { type = stability value = 3 }
+	}
+
+}
+
+#St:Petersburg#
+event = {
+
+	id = 200008
+	trigger = {
+			owned = {
+					province = 275
+					data = -1
+					}
+		NOT = {
+			exists = RUS
+		}
+	}
+	random = no
+	country = MOS
+	name = "EVENTNAME3424"
+	desc = "EVENTHIST3424"
+	style = "3424"
+
+	date = { day = 27 month = april year = 1682 }
+	offset = 1
+	deathdate = { day = 28 month = january year = 1725 }
+
+	action_a ={				#Move Capital to St. Petersburg#
+		name = "ACTIONNAME3424A"
+		command = { type = capital which = 275 }
+		command = { type = cityname which = 275 value = "St. Petersburg" }
+		command = { type = infra value = 500 }
+		command = { type = trade value = 1000 }
+		command = { type = conversion which = 275 }
+		command = { type = provinceculture which = 275 value =  russian }
+		command = { type = populationpercent which = 275 value = 15 }
+		command = { type = gainbuilding which = 275 value = barrack }
+		command = { type = gainbuilding which = 275 value = shipyard }
+		command = { type = treasury value = -1000 }
+		command = { type = stability value = -2 }
+		command = { type = setflag which = MOSpetersburg }
+	}
+
+	action_b ={				#Keep Capital at Moscow#
+		name = "ACTIONNAME3424B"
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = stability value = 3 }
+	}
+}
+
+#Governmental Reforms and the Absolutism#
+event = {
+
+	id = 200009
+	trigger = {
+			atwar = yes
+			NOT = {
+				exists = RUS
+			}
+		}
+	random = no
+	country = MOS
+	name = "EVENTNAME3426"
+	desc = "EVENTHIST3426"
+	style = "3423"
+
+	date = { day = 1 month = january year = 1711 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1837 }
+
+	action_a ={				#Governmental Reforms and the Absolutism#
+		name = "ACTIONNAME3426A"
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = -4 }
+		command = { type = domestic which = INNOVATIVE value = -3 }
+		command = { type = domestic which = MERCANTILISM value = 3 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = revoltrisk which = 240 value = 2 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = gainmanufactory which = -1 value = weapons }
+		command = { type = gainmanufactory which = -1 value = goods }
+		command = { type = gainmanufactory which = -1 value = refinery }
+		command = { type = infra value = 2000 }
+		command = { type = trade value = 1000 }
+		command = { type = treasury value = -1000 }
+		command = { type = stability value = 2 }
+	}
+
+	action_b ={				#Only Absolutism#
+		name = "ACTIONNAME3426B"
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = -4 }
+		command = { type = domestic which = INNOVATIVE value = -3 }
+		command = { type = domestic which = MERCANTILISM value = 3 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = revoltrisk which = 240 value = 2 }
+		command = { type = stability value = 1 }
+	}
+
+	action_c ={				# Only Governmental Reforms#
+		name = "ACTIONNAME3426C"
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = gainmanufactory which = -1 value = weapons }
+		command = { type = gainmanufactory which = -1 value = goods }
+		command = { type = gainmanufactory which = -1 value = refinery }
+		command = { type = infra value = 2000 }
+		command = { type = trade value = 1000 }
+		command = { type = treasury value = -1000 }
+		command = { type = stability value = 1 }
+	}
+
+}
+
+#The State take control of the Russian Church#
+event = {
+
+	id = 200010
+	trigger = {
+		religion = orthodox
+		NOT = {
+			exists = RUS
+		}
+	}
+	random = no
+	country = MOS
+	name = "EVENTNAME3427"
+	desc = "EVENTHIST3427"
+	style = 4
+
+	date = { day = 1 month = january year = 1719 }
+	offset = 299
+	deathdate = { day = 30 month = december year = 1723 }
+
+	action_a ={				#Yes#
+		name = "ACTIONNAME3427A"
+		command = { type = gainmanufactory which = 270 value = luxury }
+		command = { type = gainmanufactory which = 295 value = luxury  }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={				#No#
+		name = "ACTIONNAME3427B"
+		command = { type = losemanufactory which = -1 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#The Abolishment of the System of Precedence#
+event = {
+	id = 200011
+	trigger = {
+		NOT = {
+			exists = RUS
+		}
+	}
+	random = no
+	country = MOS
+	name = "EVENTNAME3428"
+	desc = "EVENTHIST3428"
+	style = 3
+	
+	date = { day = 1 month = january year = 1679 }
+	offset = 720
+
+	action_a ={	#Abolish Mestnichestvo
+		name = "ACTIONNAME3428A"
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = revoltrisk which = 240 value = 1 }
+		command = { type = stability value = -2 }
+	}
+	action_b ={	#Keep the old system
+		name = "ACTIONNAME3428B"
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#The Effects of the Pragmatic Sanction#
+event = {
+
+	id = 200012
+	trigger = {
+		NOT = {
+			exists = RUS
+		}
+	}
+	random = no
+	country = MOS
+	name = "EVENTNAME3431"
+	desc = "EVENTHIST3431"
+	style = 4
+
+	date = { day = 1 month = september year = 1742 }
+	offset = 10
+	deathdate = { day = 1 month = april year = 1746 }
+
+
+	action_a ={				#Pro-Habsburg#
+		name = "ACTIONNAME3431A"
+		command = { type = casusbelli which = FRA value = 36 }
+		command = { type = casusbelli which = PRU value = 36 }
+		command = { type = relation which = BAY value = -150 }
+		command = { type = relation which = SAC value = -150 }
+		command = { type = relation which = PRU value = -150 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HES value = 100 }
+		command = { type = relation which = HAN value = 100 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = stability value = 1 }
+
+	}
+
+	action_b ={				#Neutral#
+		name = "ACTIONNAME3431B"
+		command = { type = relation which = BAY value = 50 }
+		command = { type = relation which = SAC value = 50 }
+		command = { type = relation which = PRU value = 100 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = HOL value = -50 }
+		command = { type = relation which = RUS value = -50 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = HAN value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = SWE value = -100 }
+		command = { type = stability value = -1 }
+		command = { type = casusbelli which = SWE value = 12 }
+
+	}
+
+	action_c ={				#Anti-Habsburg#
+		name = "ACTIONNAME3431C"
+		command = { type = casusbelli which = HAB value = 12 }
+		command = { type = casusbelli which = ENG value = 12 }
+		command = { type = relation which = BAY value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = PRU value = 150 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = ENG value = -150 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = HAN value = -100 }
+		command = { type = relation which = HAB value = -150 }
+		command = { type = stability value = 1 }
+
+	}
+
+}
+
+#The Duma and the Legislative Reform#
+event = {
+
+	id = 200013
+	trigger = {
+		NOT = {
+			exists = RUS
+		}
+	}
+	random = no
+	country = MOS
+	name = "EVENTNAME3432"
+	desc = "EVENTHIST3432"
+	style = 4
+
+	date = { day = 1 month = january year = 1767 }
+	offset = 102
+	deathdate = { day = 1 month = january year = 1768 }
+
+	action_a ={				#Talk about the Injustice in Society#
+		name = "ACTIONNAME3432A"
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = ARISTOCRACY value = 6 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = revoltrisk which = 240 value = 3 }
+		command = { type = provincetax which = -1 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={				#Do something about the Injustice in Society#
+		name = "ACTIONNAME3432B"
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = ARISTOCRACY value = -5 }
+		command = { type = domestic which = INNOVATIVE value = 5 }
+		command = { type = domestic which = SERFDOM value = -5 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = treasury value = -400 }
+		command = { type = stability value = -4 }
+	}
+}
+
+#The Mercantilistic Reforms#
+event = {
+
+	id = 200014
+	trigger = {
+		NOT = {
+			exists = RUS
+		}
+	}
+	random = no
+	country = MOS
+	name = "EVENTNAME3434"
+	desc = "EVENTHIST3434"
+	style = 4
+
+	date = { day = 1 month = january year = 1770 }
+	offset = 1902
+	deathdate = { day = 1 month = january year = 1780 }
+
+	action_a ={				#Yes, Reform#
+		name = "ACTIONNAME3434A"
+		command = { type = domestic which = MERCANTILISM value = 5 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = trade value = 500 }
+	}
+
+	action_b ={				#No, Do Nothing#
+		name = "ACTIONNAME3434B"
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = trade value = 1000 }
+	}
+
+	action_c ={				#No, Opt for Free Trade#
+		name = "ACTIONNAME3434C"
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = MERCANTILISM value = -4 }
+		command = { type = trade value = 1500 }
+	}
+
+}
+
+#The Pugatchev Uprising#
+event = {
+
+	id = 200015
+	trigger = {
+			domestic = {
+					type = serfdom
+					value = 6
+					}
+			domestic = {
+					type = aristocracy
+					value = 6
+					}
+			NOT = {
+				stability = 1
+				exists = RUS
+				}
+		}
+	random = no
+	country = MOS
+	name = "EVENTNAME3435"
+	desc = "EVENTHIST3435"
+	style = 4
+
+	date = { day = 1 month = january year = 1773 }
+	offset = 1
+	deathdate = { day = 1 month = january year = 1791 }
+
+	action_a ={				#The Masses are moving...Sire#
+		name = "ACTIONNAME3435A"
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = revolt which = 446 }
+		command = { type = revolt which = 446 }
+		command = { type = revolt which = 446 }
+		command = { type = revolt which = 447 }
+		command = { type = revolt which = 452 }
+		command = { type = revolt which = 453 }
+		command = { type = revolt which = 453 }
+		command = { type = revolt which = 454 }
+		command = { type = revolt which = 454 }
+		command = { type = revolt which = 455 }
+		command = { type = revolt which = 456 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -4 value = 2500 }
+		command = { type = desertion which = -4 value = 2500 }
+		command = { type = desertion which = -4 value = 2500 }
+		command = { type = desertion which = -4 value = 2500 }
+		command = { type = stability value = -5 }
+	}
+}
+
+#Tsar Paul I:s Liberal Legislation#
+event = {
+
+	id = 200016
+	trigger = {
+		NOT = {
+			exists = RUS
+		}
+	}
+	random = no
+	country = MOS
+	name = "EVENTNAME3437"
+	desc = "EVENTHIST3437"
+	style = 4
+
+	date = { day = 1 month = january year = 1797 }
+	offset = 121
+	deathdate = { day = 1 month = january year = 1798 }
+
+	action_a ={				#Restrict Serfdom#
+		name = "ACTIONNAME3437A"
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={				#It is perfect as it is#
+		name = "ACTIONNAME3437B"
+		command = { type = stability value = 1 }
+	}
+}
+
+#Tsar Alexander I:s Liberal Legislation#
+event = {
+
+	id = 200017
+	trigger = {
+		NOT = {
+			exists = RUS
+		}
+	}
+	random = no
+	country = MOS
+	name = "EVENTNAME3438"
+	desc = "EVENTHIST3438"
+	style = 5
+
+	date = { day = 1 month = january year = 1801 }
+	offset = 121
+	deathdate = { day = 1 month = january year = 1802 }
+
+	action_a ={				#Minimal reforms#
+		name = "ACTIONNAME3438A"
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={				#Full Reform#
+		name = "ACTIONNAME3438B"
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = ARISTOCRACY value = -5 }
+		command = { type = domestic which = INNOVATIVE value = 3 }
+		command = { type = domestic which = SERFDOM value = -5 }
+		command = { type = stability value = -4 }
+	}
+}

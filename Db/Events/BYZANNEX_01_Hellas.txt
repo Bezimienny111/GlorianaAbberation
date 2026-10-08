@@ -1,0 +1,96 @@
+#-----------------------------------------------------------------------------
+# Hellas
+
+#(1419-1500) Turks demand withdrawal from Hellas
+event = {
+	id = 3001000
+	trigger = {
+		exists = TUR
+		TUR = {
+			countrysize = 7
+		}
+		NOT = { war = { country = BYZ country = TUR } }
+		NOT = { countrysize = 5 }
+		NOT = { vassal = { country = BYZ country = TUR } }
+		OR = {
+			owned = { province = 359 data = -1 } #Hellas
+			vassal = { country = BYZ country = ATH }
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "Turks Demand Withdrawal from Hellas"
+	desc = "Careful to keep us from growing too strong, the Sultan threatens war if we do not withdraw from Hellas. Do we dare risk his wrath?"
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 1 #immediate
+	deathdate = { day = 1 month = january year = 1500 }
+
+	action_a = {
+		name = "No. The Duchy of Athens is free." #No
+		command = { type = independence which = ATH }
+		command = { type = badboy value = -1 }
+		command = { type = relation which = TUR value = -50 }
+		command = { type = trigger which = 3001002 } #ATH: Sultan Forces Greeks to Retreat
+		command = { type = trigger which = 3001507 } #TUR: Athens Bows before the Sultan
+	}
+	action_b = {
+		name = "By the Pantokrator, yes!" #Yes
+		command = { type = relation which = TUR value = -150 }
+		command = { type = breakvassal which = TUR }
+		command = { type = trigger which = 3001001 } #TUR: Byzantium Repeats Its Mistake
+	}
+}
+
+#(1419-1500) Turks respond to provocation in Hellas
+event = {
+	id = 3001001 # triggered by BYZ_3001000 B
+	random = NO
+	country = TUR
+	name = "Byzantium Repeats its Mistake"
+	desc = "We have already warned the Romans once, milord, about expanding into the Frankish kingdom in Hellas. Now, they disregard your wishes a second time. What shall be done?"
+
+	action_a = {
+		name = "Glory to God! We march on Constantinople!" #Crush them
+		command = { type = relation which = BYZ value = -100 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+	}
+	action_b = {
+		name = "They are so weak, it is no matter" #Let them be
+		command = { type = relation which = BYZ value = 100 }
+	}
+}
+
+#(1419-1500) Athens Regains its Independence
+event = {
+	id = 3001002 # triggered by BYZ_3001000 A
+	random = NO
+	country = ATH
+	name = "Sultan Forces the Greeks to Retreat"
+	desc = "Despite the Emperor's conquest of Athens, the Sultan has forced them to retreat. Of course, such assistance has its own price."
+
+	action_a = {
+		name = "The Sultan is a worthy master!" #Like we had a choice?
+		command = { type = breakvassal which = BYZ }
+		command = { type = dynastic which = TUR }
+		command = { type = relation which = TUR value = 150 }
+	}
+}
+
+#(1419-1500) Athens Bows before the Sultan
+event = {
+	id = 3001507 # triggered by BYZ_3001000 A
+	random = NO
+	country = TUR
+	name = "Sultan Accepts Overlordship of Athens"
+	desc = "Despite the Emperor's conquest of Athens, the Sultan has forced them to retreat. Of course, such assistance has its own price."
+
+	action_a = {
+		name = "They will make excellent servants!" #Like they had a choice?
+		command = { type = vassal which = ATH }
+		command = { type = alliance which = ATH }
+		command = { type = relation which = ATH value = 150 }
+	}
+}

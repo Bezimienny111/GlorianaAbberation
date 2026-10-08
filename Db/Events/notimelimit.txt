@@ -1,0 +1,21 @@
+######################################
+### notimelimit events for ajf     ###
+### by Alex J 'ayeshteni' Fowler   ###
+######################################
+
+#end of game#
+event = {
+
+	id = 6000000
+	random = no
+	name = "End of game"
+	desc = "As the game does not end due to the notimelimit mod, this message tells you that the game has reached the end of the official time. You can continue playing, but you will get no historical events, leaders or new monarchs."
+	style = 4
+
+	date = { day = 1 month = january year = 1820 }
+
+	action_a = {
+		name = "Oh righty-hoo"
+		command = { }
+	}
+}

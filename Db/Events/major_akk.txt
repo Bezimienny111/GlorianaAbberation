@@ -1,0 +1,123 @@
+#####Ak Koyunlu Major Events#####
+# By Henrik 'Doomdark' Fåhraeus #
+#################################
+
+#Ismail's Resurrection of Persia#
+event = {
+	id = 3369
+	trigger = {
+		owned = {
+			province = 530 # Tabriz
+			data = -1
+		}
+		NOT = {
+			exists = PER
+			stability = 1 # Lower than 1
+		}
+	}
+	random = no
+	country = AKK
+	name = "EVENTNAME3369"
+	desc = "EVENTHIST3369"
+
+	date = { day = 1 month = january year = 1497 }
+	offset = 720
+	deathdate = { day = 1 month = january year = 1576 }
+
+	action_a ={ # Crush the Shiite rebels
+		name = "ACTIONNAME3369A"
+		command = { type = revolt which = 486 }
+		command = { type = revolt which = 487 }
+		command = { type = revolt which = 508 }
+		command = { type = revolt which = 525 }
+		command = { type = revolt which = 526 }
+		command = { type = revolt which = 527 }
+		command = { type = revolt which = 528 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 531 }
+		command = { type = revolt which = 532 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 534 }
+		command = { type = revolt which = 535 }
+		command = { type = revolt which = 1529 }
+		command = { type = revolt which = 1530 }
+		command = { type = stability value = -1 }
+	}
+	action_b ={ # Negotiate with Ismail
+		name = "ACTIONNAME3369B"
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 531 }
+		command = { type = revolt which = 532 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 533 }
+		command = { type = stability value = -6 }
+	}
+}
+
+# Persia is Resurrected
+event = {
+	id = 3817
+	trigger = {
+		exists = PER
+		OR = {
+			owned = { province = 525 data = -1 }
+			owned = { province = 526 data = -1 }
+			owned = { province = 527 data = -1 }
+			owned = { province = 528 data = -1 }
+			owned = { province = 529 data = -1 }
+			owned = { province = 530 data = -1 }
+			owned = { province = 531 data = -1 }
+			owned = { province = 532 data = -1 }
+			owned = { province = 533 data = -1 }
+			owned = { province = 534 data = -1 }
+			owned = { province = 535 data = -1 }
+			owned = { province = 536 data = -1 }
+			owned = { province = 1529 data = -1 }
+			owned = { province = 1530 data = -1 }
+		}
+	}
+	random = no
+	country = AKK
+	name = "EVENTNAME3817"
+	desc = "EVENTHIST3817"
+	
+	date = { day = 1 month = january year = 1497 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1576 }
+
+	action_a = { # Let them be.
+		name = "ACTIONNAME3817A"
+		command = { type = relation which = PER value = 400 }
+		command = { type = cedeprovince which = PER value = 525 }
+		command = { type = cedeprovince which = PER value = 526 }
+		command = { type = cedeprovince which = PER value = 527 }
+		command = { type = cedeprovince which = PER value = 528 }
+		command = { type = cedeprovince which = PER value = 529 }
+		command = { type = cedeprovince which = PER value = 530 }
+		command = { type = cedeprovince which = PER value = 531 }
+		command = { type = cedeprovince which = PER value = 532 }
+		command = { type = cedeprovince which = PER value = 533 }
+		command = { type = cedeprovince which = PER value = 534 }
+		command = { type = cedeprovince which = PER value = 535 }
+		command = { type = cedeprovince which = PER value = 536 }
+		command = { type = cedeprovince which = PER value = 1529 }
+		command = { type = cedeprovince which = PER value = 1530 }
+	}
+	action_b = { # Crush the rebellion.
+		name = "ACTIONNAME3817B"
+		command = { type = revoltrisk which = 120 value = 8 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = stability value = -6 }
+	}
+}

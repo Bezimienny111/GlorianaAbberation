@@ -1,0 +1,78 @@
+# Oyo #
+
+# Adoption of Arabic script # -- based on an idea by Čuarah
+event = {
+	id = 4197
+	trigger = {
+		atwar = no
+		stability = 2
+		OR = {
+			religion = sunni
+			religion = shia
+			MAL = {
+				OR = {
+					religion = sunni
+					religion = shia
+				}
+				neighbour = OYO
+			}
+			SON = {
+				OR = {
+					religion = sunni
+					religion = shia
+				}
+				neighbour = OYO
+			}
+		}
+	}
+	random = no
+	country = OYO
+	name = "EVENTNAME4197"
+	desc = "EVENTHIST4197"
+
+	date = { day = 1 month = january year = 1650 }
+	offset = 720
+
+	action_a = { # Keep to our traditions
+		name = "ACTIONNAME4197A"
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = CAV which = -2 value = 15000 }
+		command = { type = relation which = ASH value = 50 }
+		command = { type = relation which = BEN value = 50 }
+		command = { type = relation which = DAH value = 50 }
+		command = { type = relation which = HAS value = 50 }
+		command = { type = treasury value = 200 }
+		command = { type = stability value = -2 }
+	}
+	action_b = { # Adopt their practices
+		name = "ACTIONNAME4197B"
+		command = {
+			trigger = {
+				OR = {
+				technology = pagan
+				technology = exotic
+				}
+			}
+			type = technology which = african
+		}
+		command = {
+			trigger = {
+				technology = african
+			}
+			type = technology which = asian
+		}
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = domestic which = QUALITY value = 2 }
+		command = { type = INF which = -2 value = 5000 }
+		command = { type = ART which = -2 value = 15 }
+		command = { type = relation which = MAL value = 100 }
+		command = { type = relation which = MOR value = 100 }
+		command = { type = relation which = SON value = 100 }
+		command = { type = relation which = SUS value = 100 }
+		command = { type = infra value = 1000 }
+		command = { type = trade value = 1000 }
+		command = { type = stability value = -5 }
+	}
+}

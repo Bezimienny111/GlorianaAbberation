@@ -1,0 +1,339 @@
+#Major Religious Events
+#by Garbon
+
+##############
+#Great Schism#
+##############
+
+#  The Great Schism
+event = { 
+	id = 296011
+	name = "EVENTNAME296011"
+	desc = "EVENTHIST296011"
+	style = "C08"
+	date = { day = 8 month = april year = 1378 }
+	offset = 0
+	global = yes
+	action_a = {
+		name = "ACTIONNAME296011A" #The Church is torn asunder!
+		command = { type = flag which = 8 }
+	}
+
+
+}
+
+#Support for the Avignon Papacy
+event = {
+	id = 296002
+	trigger = {
+		NOT = { event = 296001 }
+		continent = Europe
+		religion = catholic
+		NOT = {
+			core_national = { province = 399 data = -1 } #Pope exempt
+		}
+		event = 296011
+	}
+	random = yes
+	name = "EVENTNAME296002" #Support for the Avignon Papacy
+	desc = "EVENTHIST296002"
+
+	action_a = {
+		name = "ACTIONNAME296002A" #Support the Avignon Papacy!
+		command = { type = religion which = avignon_catholic }
+	}
+	action_b = {
+		name = "ACTIONNAME296002B" #My allegiance is to Rome!
+		command = { type = relation which = PAP value = 50 }
+		command = { }
+	}
+}
+
+#Support for the Avignon Papacy
+event = {
+	id = 296005
+	trigger = {
+		NOT = { event = 296001 }
+		continent = Europe
+		religion = catholic
+		NOT = {
+			core_national = { province = 399 data = -1 } #Pope exempt
+		}
+		event = 296011
+	}
+	random = yes
+	name = "EVENTNAME296002" #Support for the Avignon Papacy
+	desc = "EVENTHIST296002"
+
+	action_a = {
+		name = "ACTIONNAME296002A" #Support the Avignon Papacy!
+		command = { type = religion which = avignon_catholic }
+	}
+	action_b = {
+		name = "ACTIONNAME296002B" #My allegiance is to Rome!
+		command = { type = relation which = PAP value = 50 }
+		command = { }
+	}
+}
+
+#Support for the Avignon Papacy
+event = {
+	id = 296006
+	trigger = {
+		NOT = { event = 296001 }
+		continent = Europe
+		religion = catholic
+		NOT = {
+			core_national = { province = 399 data = -1 } #Pope exempt
+		}
+		event = 296011
+	}
+	random = yes
+	name = "EVENTNAME296002" #Support for the Avignon Papacy
+	desc = "EVENTHIST296002"
+
+	action_a = {
+		name = "ACTIONNAME296002A" #Support the Avignon Papacy!
+		command = { type = religion which = avignon_catholic }
+	}
+	action_b = {
+		name = "ACTIONNAME296002B" #My allegiance is to Rome!
+		command = { type = relation which = PAP value = 50 }
+		command = { }
+	}
+}
+
+#Support for the Avignon Papacy
+event = {
+	id = 296007
+	trigger = {
+		NOT = { event = 296001 }
+		continent = Europe
+		religion = catholic
+		NOT = {
+			core_national = { province = 399 data = -1 } #Pope exempt
+		}
+		event = 296011
+	}
+	random = yes
+	name = "EVENTNAME296002" #Support for the Avignon Papacy
+	desc = "EVENTHIST296002"
+
+	action_a = {
+		name = "ACTIONNAME296002A" #Support the Avignon Papacy!
+		command = { type = religion which = avignon_catholic }
+	}
+	action_b = {
+		name = "ACTIONNAME296002B" #My allegiance is to Rome!
+		command = { type = relation which = PAP value = 50 }
+		command = { }
+	}
+}
+
+#Support for the Avignon Papacy
+event = {
+	id = 296008
+	trigger = {
+		NOT = { event = 296001 }
+		continent = Europe
+		religion = avignon_catholic
+		NOT = {
+			core_national = { province = 399 data = -1 } #Pope exempt
+			core_national = { province = 429 data = -1 } #Aragon exempt
+		}
+		event = 296011
+	}
+	random = yes
+	name = "EVENTNAME296002" #Support for the Avignon Papacy
+	desc = "EVENTHIST296002"
+
+	action_a = {
+		name = "ACTIONNAME296002B" #My allegiance is to Rome!
+		command = { type = relation which = PAP value = 50 }
+		command = { }
+	}
+	action_b = {
+		name = "ACTIONNAME296002A" #Support the Avignon Papacy!
+		command = { type = religion which = avignon_catholic }
+	}
+}
+
+#Support for the Avignon Papacy
+event = {
+	id = 296009
+	trigger = {
+		NOT = { event = 296001 }
+		continent = Europe
+		religion = avignon_catholic
+		NOT = {
+			core_national = { province = 399 data = -1 } #Pope exempt
+			core_national = { province = 429 data = -1 } #Aragon exempt
+		}
+		event = 296011
+	}
+	random = yes
+	name = "EVENTNAME296002" #Support for the Avignon Papacy
+	desc = "EVENTHIST296002"
+
+	action_a = {
+		name = "ACTIONNAME296002B" #My allegiance is to Rome!
+		command = { type = relation which = PAP value = 50 }
+		command = { }
+	}
+	action_b = {
+		name = "ACTIONNAME296002A" #Support the Avignon Papacy!
+		command = { type = religion which = avignon_catholic }
+	}
+}
+
+#Support for the Avignon Papacy
+event = {
+	id = 296010
+	trigger = {
+		NOT = { event = 296001 }
+		continent = Europe
+		religion = avignon_catholic
+		NOT = {
+			core_national = { province = 399 data = -1 } #Pope exempt
+			core_national = { province = 429 data = -1 } #Aragon exempt
+		}
+		event = 296011
+	}
+	random = yes
+	name = "EVENTNAME296002" #Support for the Avignon Papacy
+	desc = "EVENTHIST296002"
+
+	action_a = {
+		name = "ACTIONNAME296002B" #My allegiance is to Rome!
+		command = { type = relation which = PAP value = 50 }
+		command = { }
+	}
+	action_b = {
+		name = "ACTIONNAME296002A" #Support the Avignon Papacy!
+		command = { type = religion which = avignon_catholic }
+	}
+}
+
+#The Council of Pisa
+event = { 
+
+	id = 296012
+	name = "EVENTNAME296012"
+	desc = "EVENTHIST296012"
+	style = "C09"
+	date = { day = 4 month = june year = 1409 }
+	offset = 10
+	global = yes
+	action_a = {
+		name = "ACTIONNAME296012A"
+		command = { type = flag which = 9 }
+	}
+}
+
+#Support for the Pisan Papacy
+event = {
+	id = 296013
+	trigger = {
+		NOT = { event = 296001 }
+		continent = Europe
+		OR = {
+			religion = avignon_catholic
+			religion = catholic
+		}
+		NOT = {
+			core_national = { province = 399 data = -1 } #Pope exempt
+			core_national = { province = 429 data = -1 } #Aragon exempt
+		}
+		event = 296012
+	}
+	random = yes
+	name = "EVENTNAME296013" #Support for the Pisan Papacy
+	desc = "EVENTHIST296013"
+
+	action_a = {
+		name = "ACTIONNAME296013A" #Support the Pisan Papacy!
+		command = { type = religion which = pisan_catholic }
+	}
+	action_b = {
+		name = "ACTIONNAME296013B" #He is not the Vicar of Christ!
+		command = { }
+	}
+}
+
+#Support for the Pisan Papacy
+event = {
+	id = 296014
+	trigger = {
+		NOT = { event = 296001 }
+		continent = Europe
+		OR = {
+			religion = avignon_catholic
+			religion = catholic
+		}
+		NOT = {
+			core_national = { province = 399 data = -1 } #Pope exempt
+			core_national = { province = 429 data = -1 } #Aragon exempt
+		}
+		event = 296012
+	}
+	random = yes
+	name = "EVENTNAME296013" #Support for the Pisan Papacy
+	desc = "EVENTHIST296013"
+
+	action_a = {
+		name = "ACTIONNAME296013A" #Support the Pisan Papacy!
+		command = { type = religion which = pisan_catholic }
+	}
+	action_b = {
+		name = "ACTIONNAME296013B" #He is not the Vicar of Christ!
+		command = { }
+	}
+}
+
+#Support for the Pisan Papacy
+event = {
+	id = 296015
+	trigger = {
+		NOT = { event = 296001 }
+		continent = Europe
+		OR = {
+			religion = avignon_catholic
+			religion = catholic
+		}
+		NOT = {
+			core_national = { province = 399 data = -1 } #Pope exempt
+			core_national = { province = 429 data = -1 } #Aragon exempt
+		}
+		event = 296012
+	}
+	random = yes
+	name = "EVENTNAME296013" #Support for the Pisan Papacy
+	desc = "EVENTHIST296013"
+
+	action_a = {
+		name = "ACTIONNAME296013A" #Support the Pisan Papacy!
+		command = { type = religion which = pisan_catholic }
+	}
+	action_b = {
+		name = "ACTIONNAME296013B" #He is not the Vicar of Christ!
+		command = { }
+	}
+}
+
+#  The Council of Constance
+event = { 
+
+	id = 296001
+	name = "EVENTNAME296001"
+	desc = "EVENTHIST296001"
+	style = "C07"
+	date = { day = 3 month = july year = 1415 }
+	offset = 0
+	global = yes
+	action_a = {
+		name = "ACTIONNAME296001A"
+		command = { type = flag which = 7 }
+	}
+}
+
+#First free ID 296025

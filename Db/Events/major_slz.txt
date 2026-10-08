@@ -1,0 +1,38 @@
+#The Purge of the Archbishop of Salzburg#
+event = {
+
+	id = 3755
+	trigger = {
+			NOT = {
+				OR = {
+					religion = protestant
+					religion = reformed
+					}
+				event = 3203
+				}
+		}
+	random = no
+	country = SLZ
+	name = "EVENTNAME3755"
+	desc = "EVENTHIST3755"
+
+	date = { day = 1 month = january year = 1731 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1732 }
+
+	action_a ={			#Purge the Protestants#
+		name = "ACTIONNAME3755A"
+		command = { type = domestic which = INNOVATIVE value = -3 }
+		command = { type = provincereligion which = 350 value = catholic }
+		command = { type = populationpercent which = 350 value = -25 }
+		command = { type = stability value = -1 }
+		command = { type = trigger which = 3543 }
+	}
+
+	action_b ={			#Leave the Protestants alone#
+		name = "ACTIONNAME3755B"
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = provincereligion which = 350 value = protestant }
+		command = { type = stability value = 1 }
+	}
+}

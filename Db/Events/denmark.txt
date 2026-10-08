@@ -1,0 +1,84 @@
+##Denmark Events##
+
+#(1340) The Assassination of Gerhard III - (by Brian Roastbeef)
+event = {
+	id = 104000
+	random = no
+	country = DAN
+	name = "The Assassination of Gerhard III"
+	desc = "With the rule of Gerhard III, brother of Johann the Mild, the Danish lands have been under the thumb of Holstein since 1332. Despite the economic benefits of controlling the Sund, this came at the expense of near constant rebellion from unhappy Danish subjects. In the Spring of 1340, the beleagured Count Gerhard travelled into Randers, with the intention of crushing a lingering band of rebels. It was there that he was assassinated in his bed on the night of April 1 by Niels Ebbesen and his followers. Pressure from neighboring princes, and the inability of Gerhard's successors to maintain control of the region forced Johann to give his backing to Valdemar IV in exchange for some minor financial gain."
+	
+	date = { day = 1 month = april year = 1340 }
+
+	action_a ={
+		name = "Finally rid of the German tyrant!"
+		command = { type = stability value = -1 }
+	}
+}
+
+#(1340) The Crowning of Valdemar Atterdag - (by Brian Roastbeef)
+event = {
+	id = 104001
+	random = no
+	country = DAN
+	name = "The Crowning of Valdemar Atterdag"
+	desc = "With the assassination of Gerhard III by Danish patriot Niels Ebbesen on April 1, 1340, the eight year interregnum in Denmark was almost at an end. Valdemar Atterdag, the son of the last Danish monarch Christopher II, had waited as a claimant to the throne since his father's death in 1332. The power vacuum created with the removal of the German tyrant Gerhard gave Valdemar the much awaited opportunity to make good on this claim. Valdemar made an arrangement with Count Johann the Mild of Holstein, in which Valdemar would be crowned King of Denmark, while Holstein was to gain economically. This arrangement was, however, the effective end of German power in Denmark. Valdemar Atterdag, now Valdemar IV used his foothold and this new received legitimacy to consolidate his power throughout all of the Danish lands, beginning a path that would reestablish the strength of Denmark, and eventually lead to the Kalmar Union."
+	
+	date = { day = 20 month = june year = 1340 }
+	
+	action_a = { name = "It's morning again in Denmark"
+		command = { type = breakvassal which = SHL }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = treasury value = -150 }
+	}
+}
+
+#(1340-1346) The Reclaiming of Jutland - (by Brian Roastbeef)
+event = {
+	id = 104002 #triggered by SHL_109001
+	random = no
+	country = DAN
+	name = "The Reclaiming of Jutland"
+	desc = "Once on the throne, Danish King Valdemar IV routinely set about ridding Denmark of the remnants of German control. The campaign in Jutland began in November 1340, just months after his coronation, with the siege of Skanderborg Castle. After this Valdemar IV slowly began to buy, or when money was lacking, conquer Denmark piece by piece, consolidating his control over the kingdom. In 1344, the spoils of conquest and heavy taxation allowed Valdemar to repay his debts in Southern Jutland thoroughly establishing his complete control over the region. By 1347, the lands of Denmark were utterly free of their previous German masters."
+	
+	action_a = { 
+		name = "Well worth the cost!"
+		command = { type = stability value = 1 }
+		command = { type = treasury value = -70 }
+	}
+}
+
+#(1345-1346) The Sale of Estonia - (by Brian Roastbeef, edited by Ayeshteni)
+event = {
+	id = 104003
+	trigger = {
+		owned = { province = 276 data = -1 }
+		exists = LAT
+		NOT = {
+			exists = LIV
+		}
+	}
+	random = no
+	country = DAN
+	name = "The Sale of Estonia"
+	desc = "After gaining titular control over Denmark, Valdemar IV Atterdag methodically and determinedly began reclaiming Danish lands through conquest or through purchase. While he was successful in doing so, thoroughly ridding both Sjaelland and Jutland of the Holsteiners by 1347, this endeavor placed him deeply in debt. Some of this debt was financed through extra taxation on the newly conquered peasants. Nevertheless, excessive taxation caused greater rebellion hindering his ability to consolidate power. In order to relieve some of this economic pressure on himself and his countrymen, Valdemar made a deal in 1346 to sell Denmark's piece of Estonia to the Teutonic Order, allowing him to pay off debts in parts of Denmark that were culturally Danish. Had Valdemar elected to keep control of Estonia, his financial troubles likely would have deepened, as he struggled to reclaim complete control in this relatively distant province."
+	
+	date = { day = 1 month = april year = 1345 }
+	offset = 200
+	deathdate = { day = 1 month = july year = 1346 }
+
+	action_a ={	 
+		name = "The money is of more value to us"
+		command = { type = treasury value = 190 }
+		command = { type = cedeprovince which = LAT value = 276 }
+		command = { type = relation which = LAT value = 50 }
+		command = { type = sleepevent which = 195004 }
+	}
+	action_b ={	 
+		name = "No, we may need the land later"
+		command = { type = treasury value = -150 }
+		command = { type = relation which = LAT value = -100 }
+	}
+}
+
+#first free ID: 104004

@@ -1,0 +1,303 @@
+##Aragon Events##
+
+#(1345-1380) Revolts in Sardinia
+event = {
+	id = 1100000
+	trigger = { 
+		owned = { province = 397 data = -1 } 
+	}
+	random = no
+	country = ARG
+
+	name = "Revolts in Sardinia"
+	desc = "During many years after its conquest Sardinia became a major problem for the crown of Aragon. The very mountainous terrain and the strength of the ancient lordships which governed the islands before the aragonese occupation made very difficult to control the kingdom. Revolts arose on a regular basis and until the end of the century the island didn't became fully pacified."
+
+	date = { day = 20 month = march year = 1345 }
+	offset = 360
+	deathdate = { day = 20 month = march year = 1380 }
+
+	action_a = {	
+		name = "Darn !"
+ 		command = { type = revolt which = 397 }
+ 		command = { type = revolt which = 397 }
+ 		command = { type = revolt which = 397 }
+ 	}
+}
+
+
+#(1355) The hHuse of Barcelona in Athens - (by Obelixeke)
+event = {
+	id = 1100002 #triggered by ATH_113560A
+	random = no
+	country = ARG
+	name = "The House of Barcelona in Athens"
+	desc = "In 1355, the Catalan Company asked the royal house of Catalonia-Aragon to provide them with a Duke as a figurehead; during the next years they were ruled by a succession of four absentee Dukes first from Sicily and then from Aragon, none of which seem to have ever set foot in their Duchy."
+
+	action_a ={
+		name = "Great!"
+		command = { type = vassal which = ATH }
+		command = { type = relation which = ATH value = 50 }
+		command = { type = relation which = BYZ value = -25 }
+		command = { type = relation which = VEN value = -25 }
+		command = { type = relation which = FRA value = -25 }
+		command = { type = DIP which = 1 value = 30 }
+		command = { type = trade value = 250 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#(1356-1363) War of the Two Pedros - (by Corleone)
+event = {
+	id = 1100001 #triggered by CAS_101002A
+	random = no
+	country = ARG
+
+	name = "War of the Two Pedros"
+	desc = "A naval incident in Sanlúcar de Barrameda, where some Catalan ships en route to France were involved, was used as a war pretext by Pedro I to resurrect an old Castilian reivindication. He wanted back the region of Alicante so the dream of a Castilian Mediterranen port in Valencia could come true at last. Pedro I attacked Argonese king Pedro IV 'el Ceromoniós' and war lasted until 1363, when the peace of Murviedro sanctionated Castilian supremacy."
+
+	action_a = { 
+		name = "Damned Castilians!"
+		command = { type = casusbelli which = CAS value = 60 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = CAS value = -50 }
+	}	
+}
+
+#(1381-1387) Pere IV annexes Athens - (by Obelixeke)
+event = {
+	id = 1100003 #triggered by ATH_113561A
+	random = no
+	country = ARG
+	name = "Pere IV annexes Athens"
+	desc = "The French feudal culture disappeared after the conquest by the Catalans, and Athens sank into insignificance and poverty, particularly after 1377, when the succession was contested in civil war. Pere IV of Aragon then assumed sovereignty in 1381 but ruled from Barcelona."
+
+	action_a ={
+		name = "Great!"
+		command = { type = inherit which = ATH }
+		command = { type = revolt which = 359 }
+		command = { type = revolt which = 359 }
+	}
+}
+
+#(1381-1387) Pere IV assumes sovereignty of Athens - (by Obelixeke)
+event = {
+	id = 1100004 #triggered by ATH_113561C
+	random = no
+	country = ARG
+	name = "Pere IV assumes sovereignty of Athens"
+	desc = "The French feudal culture disappeared after the conquest by the Catalans, and Athens sank into insignificance and poverty, particularly after 1377, when the succession was contested in civil war. Pere IV of Aragon then assumed sovereignty in 1381 but ruled from Barcelona."
+
+	action_a ={
+		name = "Great!"
+		command = { type = vassal which = ATH }
+		command = { type = relation which = ATH value = 50 }
+		command = { type = cash value = -100 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#(1381-1386) Albanians settle in Hellas
+event = {
+	id = 1100005
+	trigger = {
+		owned = { province = 359 data = -1 }
+		NOT = { 
+			event = 113563 #ATH: Albanians settle in Hellas
+		}
+	}
+	random = no
+	country = ARG
+	name = "Albanians settle in Hellas"
+	desc = "On Pere IV initiative, the devastated lands of the former Duchy of Athens was settled by Albanians."
+	
+	date = { day = 1 month = january year = 1381 }
+	offset = 150
+	deathdate = { day = 30 month = december year = 1386 }
+
+	action_a ={
+		name = "Yes, we must"
+		command = { type = population which = 359 value = 1500 }
+		command = { type = provincetax which = 359 value = 1 }
+		command = { type = provincemanpower which = 359 value = 1 }
+		command = { type = relation which = ALB value = 25 }
+		command = { type = revolt which = 359 }
+		command = { type = revolt which = 359 }
+		command = { type = cash value = -50 } #charting expenses
+	}
+	action_b ={
+		name = "Not a good idea"
+		command = { type = cash value = 25 }
+		command = { type = vp value = -5 }
+	}
+}
+
+#(1388-1420) The Acciajuoli conquer Athens (by Obelixeke)
+event = {
+	id = 1100006
+	trigger = {
+		owned = { province = 359 data = -1 }
+		NOT = { exists = ATH }
+	}
+	random = no
+	country = ARG
+	name = "The Acciajuoli conquer Athens"
+	desc = "In 1379 another force from the Iberian peninsula, the Navarrese Company, moved on from its efforts to conquer Albania and attacked the Catalan Duchy of Athens in concert with a Florentine force led by Nerio The Acciajuoli. Finally, in 1388 the Florentine army defeated the Catalans in a decisive battle at Kaledes (a.k.a. Peritheorion or Anastasioupolis), at the far end of Lake Vistonis on the road from Xanthi to Komotini. Following this defeat and the subsequent loss of their Duchy, the Catalan Grand Company disbanded."
+
+	date = { day = 1 month = january year = 1388 }
+	offset = 150
+	deathdate = { day = 30 month = december year = 1420 }
+
+	action_a ={
+		name = "We can't do anything"
+		command = { type = independence which = ATH }
+		command = { type = relation which = FLO value = 50 }
+		command = { type = badboy value = -1 }
+		command = { type = trigger which = 113567 } #ATH: The Florentine Duchy of Athens
+	}
+	action_b ={
+		name = "Fight them!"
+		command = { type = province_revoltrisk which = 359 value = 10 }
+		command = { type = provincetax which = 359 value = -1 }
+		command = { type = provincemanpower which = 359 value = -1 }
+		command = { type = relation which = FLO value = -50 }
+		command = { type = revolt which = 359 }
+		command = { type = revolt which = 359 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#(1412) Compromise of Caspe
+event = {
+	id = 1100007
+	random = no
+	country = ARG
+
+	name = "The compromise of Caspe"
+	desc = "In 1410 the king Martí I died without heir. It was the end of the dinasty of Barcelona and a new king had to be chosen. The first candidates were Louis d'Anjou and Jaume d'Urgell, but soon the castilian Fernando (Ferran) of Trastámara became interested in the possibility. Unable to find a solution and confronted with the possibility of a civil war ('ad evitandum rupturam manifestissime imminentem') the parliaments of the three kingdoms (Catalunya, València and Aragón) decided to appoint nine representatives (three for each kingdom), who were to be met in the aragonese town of Caspe in 1412, in order to choose the new king. The result of the election was, the three aragonese voted for Ferran of Trastamara, the valencians voted two for Ferran and one abstention, and the catalans voted one for Ferran and two for Jaume d'Urgell, so Ferran of Trastamara 6 votes, Jaume d'Urgell 2 votes, one abstention."
+	style = "26001"
+
+	date = { day = 1 month = june year = 1410 }
+	offset = 60
+	deathdate = { day = 1 month = july year = 1412 }
+
+	action_a = {
+		name = "Accept the decision and crown Ferran of Trastamara as our new king"
+		command = { type = relation which = CAS value = 100 }
+		command = { type = relation which = PAP value = 50 }
+		command = { type = relation which = NAP value = -200 }
+		command = { type = relation which = PRO value = -200 }
+		command = { type = stability value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = trigger which = 190090 } #sicily
+	}
+	action_b = {
+		name = "No, Jaume d'Urgell will be our new king !"
+		command = { type = wakemonarch which = 04190 } # Jaume III *
+		command = { type = wakemonarch which = 04191 } # Felip I *
+		command = { type = wakemonarch which = 04192 } # Jaume IV *
+		command = { type = wakemonarch which = 04193 } # Pere Alfons *
+		command = { type = wakemonarch which = 04194 } # Jaume V *
+		command = { type = wakemonarch which = 04195 } # Felip II *
+		command = { type = sleepmonarch which = 04189 } # Ferran I
+		command = { type = sleepmonarch which = 04170 } # Alfons V
+		command = { type = sleepmonarch which = 04182 } # Juan II
+		command = { type = sleepmonarch which = 04171 } # Ferran II
+		command = { type = sleepleader which = 010800 } # Alfons V
+		command = { type = sleepleader which = 010831 } # Juan II
+		command = { type = sleepleader which = 010821 } # Ferran II
+		command = { type = cash value = 100 }
+		command = { type = stability value = -2 }
+		command = { type = relation which = NAP value = 50 }
+		command = { type = relation which = PRO value = 50 }
+		command = { type = relation which = CAS value = -100 }
+		command = { type = relation which = PAP value = -50 }
+		command = { type = domestic which = OFFENSIVE value = 2 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = sleepevent which = 1100008 }  ## revolt of Jaume d'urgell
+	}
+
+	action_c = {
+		name = "The House of Barcelona will provide our kings"
+		command = { type = wakemonarch which = 04196 } # Frederic I *
+		command = { type = wakemonarch which = 04197 } # Frederic II *
+		command = { type = wakemonarch which = 04198 } # Ramiro III *
+		command = { type = wakemonarch which = 04199 } # Caterina *
+		command = { type = sleepmonarch which = 04189 } # Ferran I
+		command = { type = sleepmonarch which = 04170 } # Alfons V
+		command = { type = sleepmonarch which = 04182 } # Juan II
+		command = { type = sleepmonarch which = 04171 } # Ferran II
+		command = { type = sleepleader which = 010800 } # Alfons V
+		command = { type = sleepleader which = 010831 } # Juan II
+		command = { type = sleepleader which = 010821 } # Ferran II
+		command = { type = infra value = 400 }
+		command = { type = stability value = 1 }
+		command = { type = relation which = NAP value = 100 }
+		command = { type = relation which = PRO value = 100 }
+		command = { type = relation which = CAS value = -50 }
+		command = { type = relation which = PAP value = -200 }
+		command = { type = domestic which = OFFENSIVE value = -1 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+	}
+}
+
+#(1413) - Revolt of Jaume d'Urgell
+event = {
+	id = 1100008
+	random = no
+	country = ARG
+
+	name = "The revolt of Jaume d'Urgell"
+	desc = "The defeated candidate of the compromise of Caspe, Jaume d'Urgell, organized a revolt..."
+
+	date = { day = 1 month = march year = 1413 }
+	offset = 120
+
+	action_a = {
+		name = "Darn !"
+		command = { type = revolt which = 429 }
+		command = { type = revolt which = 429 }
+		command = { type = revolt which = 429 }
+	}
+}
+
+# Incorporation of Sicily (triggered by SIC 100155a)
+
+#event = {
+#	id = 100103
+#	random = no
+#	country = ARG
+
+#	name = "The incorporation of Sicily"
+#	desc = "The last monarch of the catalan dinasty of Sicily, Maria I, married with the heir to the crown of Aragon, #Martí 'the young'. At her death the kingdom went to Martí, but he died in 1409, leaving the kingdom to his father Martí I of #Aragon and in this way incorporating the kingdom of Sicily to the crown of Aragon."
+
+#	action_a = {
+#		name = "Great!"
+#		command = { type = inherit which = SIC }
+#		command = { type = addcore_national which = 396 }
+#		command = { type = addcore_national which = 395 }
+#		command = { type = relation which = NAP value = -10 }
+#		command = { type = relation which = FRA value = -10 }
+#	}
+#}
+
+
+# Incorporation of Sicily (triggered by SIC 100155b) - Ahistorical
+
+#event = {
+#	id = 100104
+#	random = no
+#	country = ARG
+
+#	name = "The incorporation of Sicily"
+#	desc = "The last monarch of the catalan dinasty of Sicily, Maria I, married with the heir to the crown of Aragon, #Martí 'the young'. At her death the kingdom went to Martí, but he died in 1409, leaving the kingdom to his father Martí I of #Aragon and in this way incorporating the kingdom of Sicily to the crown of Aragon. But the sicilian nobles have chosen a #local noble as their king..."
+
+#	action_a = {name = "We have the dynastic rights !"
+#		command = { type = casusbelli which = SIC value = 36 }
+#		command = { type = addcore_national which = 396 }
+#		command = { type = addcore_national which = 395 }
+#	}
+#}
+
+#first free ID: 100009

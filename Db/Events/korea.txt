@@ -1,0 +1,235 @@
+##Korea Events##
+
+#(1389-1391) The End of the Koryo Dynasty
+	event = {
+	id = 110003
+	random = no
+	country = KOR
+	name = "The End of the Koryo Dynasty"
+	desc = "Near the end of the Koryo Dynasty in 1389, General Yi Song-gye seized political and military power, deposing King Sin-Ch'ang and placing King Kongyang on the throne. In fact, he headed the fight against the declining Koryo monarchy and the nobility that did not accept the new monarch." 
+
+	date = { day = 1 month = february year = 1389 }
+	offset = 20
+	deathdate = { day = 30 month = december year = 1391 }
+
+	action_a = { 
+		name = "Fight the Koryo nobility"
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revoltrisk value = 5 }
+		command = { type = domestic which = aristocracy value = -1 }
+		command = { type = ADM which = -2 value = 24 }
+		command = { type = MIL which = 2 value = 24 }
+	}
+	action_b = { 
+		name = "Put them in the government"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = aristocracy value = 1 }
+		command = { type = ADM which = 1 value = 24 }
+		command = { type = MIL which = -2 value = 24 }
+		command = { type = DIP which = 1 value = 24 }
+	}
+}
+
+#(1392-1420) A Confucian State
+event = {
+	id = 110001
+	trigger = { 
+		monarch = 20680 
+		NOT = { religion = confucianism } 
+	}
+	random = no
+	country = KOR
+	name = "A Confucian State"
+	desc = "The establishment of institutions of Confucian learning was given top priority in Choson times in order to institute a Confucian state. A college and five municipal schools were set up in Hanyang, and local schools were established in all the magistracies. From these schools, Confucian-oriented scholar-officials were recruited for government office." 
+
+	date = { day = 1 month = january year = 1392 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1420 }
+
+	action_a = { 
+		name = "We must change our religion"
+		command = { type = religion which = confucianism }
+		command = { type = ADM which = 2 value = 48 }
+		command = { type = infra value = 200 }
+		command = { type = stability value = -2 } # always hard to change religion!
+	}
+	action_b = { 
+		name = "Relay on Buddhism"
+		command = { type = stability value = 1 } # people don't like changes
+		command = { type = sleepevent which = 104161 } #what event is this?
+		command = { type = vp value = -5 }
+	}
+}
+
+#(1394-1420) T'aejo II's land reforms
+event = {
+	id = 110000
+	trigger = { domestic = { type = aristocracy value = 2 } }
+	random = no
+	country = KOR
+	name = "The 'Kwajonpop'"
+	desc = "In T'aejo II's times, the 'Kwajonpop' (rank land law) was instituted, providing not only land for him to distribute but also the power to rule the country. He and his group were well aware that the ability to bring order and to end the decadent Koryo Dynasty lay in the land tenure system. Under the terms of status land system, land was ordinarily distributed for life only, on the basis of one's status or rank. Recipients were given the right to collect rents, while the peasant was given the right to cultivate. The customary rent amounted to half the crop and was usually paid as rent-tax to the state. Since the peasant, as tenant, was guaranteed land tenure in terms of cultivation rights, not subject to confiscation, his livelihood was improved."
+
+	date = { day = 1 month = january year = 1394 }
+	offset = 90
+	deathdate = { day = 30 month = december year = 1420 }
+
+	action_a = {
+		 name = "Institute the 'Kwajonpop'"
+		 command = { type = cash value = -150 }
+		 command = { type = revoltrisk which = 36 value = -2 }
+		 command = { type = provincetax which = 641 value = 2 }
+		 command = { type = provincetax which = 642 value = 1 }
+		 command = { type = domestic which = serfdom value = -1 }
+		 command = { type = stability value = -2 } # old landowners
+		}
+	action_b = { 
+		name = "No, we're fine"
+		command = { type = domestic which = aristocracy value = 1 }
+		command = { type = revoltrisk which = 36 value = 2 }
+	}
+}
+
+#(1400-1405) Promotion of Confucian Studies
+event = {
+	id = 110002
+	trigger = { 
+		domestic = { type = innovative value = 5 } 
+		event = 110001 #KOR: A Confucian State
+	}
+	random = no
+	country = KOR
+	name = "Promotion of Confucian Studies"
+	desc = "In order to enhance Confucian learning, movable metal type was cast for the printing of Confucian classics and historical literature in 1403. Typography was developed and improved by the repeated casting of new fonts as a means of promoting Confucian studies for the welfare and prosperity of the state." #http://www.asianinfo.org/
+
+	date = { day = 1 month = january year = 1400 }
+	offset = 120
+	deathdate = { day = 30 month = december year = 1405 }
+
+	action_a = { 
+		name = "Yes, we must"
+		command = { type = cash value = -100 }
+		command = { type = conversion which = 641 }
+		command = { type = infra value = 200 }
+		command = { type = stability value = -1 }
+	}
+	action_b = { 
+		name = "No, invest in the military"
+		command = { type = cash value = -150 }
+		command = { type = land value = 200 }
+		command = { type = naval value = 200 }
+	}
+	action_c = { 
+		name = "Don't do anything"
+		command = { type = vp value = -2 } #just if you want to save money
+	}
+}
+
+### RANDOM EVENTS
+
+#Mongol Raids!
+event = {
+id = 110004
+	trigger = { 
+		neighbour = CHI
+		NOT = { 
+			alliance = { country = KOR country = CHI } 
+			vassal = { country = CHI country = KOR }
+			year = 1350 
+		}
+	}
+	random = yes
+	country = KOR
+	name = "Mongol Raids!"
+	desc = "Once the mongols conquered the Jin (Jurchen) lands north and west of the Korean peninsula, more or less devastating mongol and khitan raids began to take place. The most severe of these destructive incursions came in 1254, when Mongols under the command of General Jalairtai sacked every major city on the Korean peninsula, inflicted a massive slaughter of peasants, and permitted the indiscriminate destruction of numerous temples and palaces."
+
+	action_a = { 
+		name = "Damn them!"
+		command = { type = population which = -1 value = -600 }
+		command = { type = provincetax which = -3 value = -1 }
+		command = { type = casusbelli which = MOG value = 12 }
+	}
+}
+
+
+#Mongol Raids!
+event = {
+	id = 110005
+	trigger = { 
+		neighbour = CHI
+		NOT = { 
+			alliance = { country = KOR country = CHI } 
+			vassal = { country = CHI country = KOR }
+			year = 1350 
+		}
+	}
+	random = yes
+	country = KOR
+	name = "Mongol raids!"
+	desc = "Once the mongols conquered the Jin (Jurchen) lands north and west of the Korean peninsula, more or less devastating mongol and khitan raids began to take place. The most severe of these destructive incursions came in 1254, when Mongols under the command of General Jalairtai sacked every major city on the Korean peninsula, inflicted a massive slaughter of peasants, and permitted the indiscriminate destruction of numerous temples and palaces."
+
+	action_a = { 
+		name = "Damn them!"
+		command = { type = population which = -1 value = -300 }
+	}
+}
+
+
+#Subak contest
+event = {
+	id = 110006
+	random = yes
+	country = KOR
+	name = "Subak contest"
+	desc = "The value of Subak (taekwondo or taekkyeon) as a martial art for the defense and prosperity of the nation was acknowledged, and as a consequence, its standards were raised, leading to further systemization and popularity. Kings like Uijong usually watched Subak contests at Hwabi Palace, Sang-chun Pavillion or Maam. So Subak in the Koryo dynasty was not only a martial art but also a sport which was well organized enough to be considered a spectator sport."
+
+	action_a = { 
+		name = "Great !"
+		command = { type = stability value = 1 }
+		command = { type = land value = 100 }
+		command = { type = MIL which = 1 value = 24 }
+	}
+}
+
+
+#Japanese pirates!
+event = {
+	id = 110007
+	trigger = { 
+		exists = NIP 
+		year = 1350 
+	}
+	random = yes
+	country = KOR
+	name = "Japanese pirates!"
+	desc = "From the 13th century japanese pirates based at the island of Tsushima and on the Inland Sea, began to harass trade in the fishing villages of Korea. The first recorded raid of japanese raids occurred in 1223, when a small band attacked Kumju. These early raids were minor in scale and occurred on sporadic intervals. In the one hundred and five years between 1223 and 1328, Japanese pirate raids averaged less than one every ten years. Pirate raids during the first half of the fourteenth century were little more than a minor nuisance and in the twenty-four years between 1350 and 1374, pirate raids averaged about three a year. By the reign of King Kongmin however, coastal pirate raids had become a devastating problem. At the height of their activity between 1375 and 1388, pirates conducted a total of 378 raids against Koryo, averaging more than 27 a year."
+
+	action_a = { 
+		name = "Damn them!"
+		command = { type = trade value = -50 }
+		command = { type = population which = 641 value = -300 }
+	}
+}
+
+#Japanese pirates!
+event = {
+	id = 110008
+	trigger = { 
+		exists = NIP 
+		year = 1375 
+	}
+	random = yes
+	country = KOR
+	name = "Japanese pirates !"
+	desc = "From the 13th century japanese pirates based at the island of Tsushima and on the Inland Sea, began to harass trade in the fishing villages of Korea. The first recorded raid of japanese raids occurred in 1223, when a small band attacked Kumju. These early raids were minor in scale and occurred on sporadic intervals. In the one hundred and five years between 1223 and 1328, Japanese pirate raids averaged less than one every ten years. Pirate raids during the first half of the fourteenth century were little more than a minor nuisance and in the twenty-four years between 1350 and 1374, pirate raids averaged about three a year. By the reign of King Kongmin however, coastal pirate raids had become a devastating problem. At the height of their activity between 1375 and 1388, pirates conducted a total of 378 raids against Koryo, averaging more than 27 a year."
+
+	action_a = { 
+		name = "Damn them!"
+		command = { type = trade value = -70 }
+		command = { type = population which = 641 value = -500 }
+		command = { type = provincetax which = 641 value = -1 }
+	}
+}
+
+#first free ID: 110009

@@ -1,0 +1,116 @@
+#######Fez Major Events#########
+#By Joakim 'Greven' Bergqwist###
+################################
+
+#Moor Refugees from Al-Andalus#
+event = {
+
+	id = 3654					#Triggered by SPA3150#
+	random = no
+	country = FEZ
+	name = "EVENTNAME3654"
+	desc = "EVENTHIST3654"
+
+	action_a ={					#Al-Andalus has fallen#
+		name = "ACTIONNAME3654A"
+		command = { type = populationpercent which = -1 value = 10 }
+		command = { type = populationpercent which = -4 value = 10 }
+		command = { type = relation which = GRA value = 150 }
+		command = { type = relation which = MOR value = 100 }
+		command = { type = relation which = TLE value = 100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = trade value = 800 }
+		command = { type = land value = 800 }
+		command = { type = treasury value = 500 }
+		command = { type = inflation value = -2 }
+	}
+}
+
+#Moor Exodus from Al-Andalus#
+event = {
+
+	id = 3728					#Triggered by SPA3150#
+	random = no
+	country = FEZ
+	name = "EVENTNAME3728"
+	desc = "EVENTHIST3728"
+
+	action_a ={					#This means Holy War#
+		name = "ACTIONNAME3728A"
+		command = { type = populationpercent which = -1 value = 15 }
+		command = { type = populationpercent which = -4 value = 15 }
+		command = { type = relation which = GRA value = 180 }
+		command = { type = relation which = MOR value = 150 }
+		command = { type = relation which = TLE value = 150 }
+		command = { type = relation which = SPA value = -150 }
+		command = { type = trade value = 1200 }
+		command = { type = land value = 1200 }
+		command = { type = treasury value = 700 }
+		command = { type = stability value = 1 }
+		command = { type = casusbelli which = SPA value = 36 }
+		command = { type = dynastic which = MOR }
+		command = { type = dynastic which = TLE }
+		command = { type = dynastic which = GRA }
+		command = { type = alliance which = MOR }
+		command = { type = alliance which = TLE }
+		command = { type = alliance which = GRA }
+	}
+
+	action_b ={					#Unfortenantely our hands are bound#
+		name = "ACTIONNAME3728B"
+		command = { type = populationpercent which = -1 value = 10 }
+		command = { type = populationpercent which = -4 value = 10 }
+		command = { type = relation which = GRA value = -50 }
+		command = { type = relation which = MOR value = -50 }
+		command = { type = relation which = TLE value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = trade value = 1200 }
+		command = { type = land value = 1200 }
+		command = { type = treasury value = 700 }
+		command = { type = stability value = -2 }
+		command = { type = inflation value = -3 }
+	}
+}
+
+#Morisque Refugees from Al-Andalus#
+event = {
+
+	id = 3655				#Triggered by SPA3160#
+	random = no
+	country = FEZ
+	name = "EVENTNAME3655"
+	desc = "EVENTHIST3655"
+
+	action_a ={				#Our Kindren are being murdered!#
+		name = "ACTIONNAME3655A"
+		command = { type = populationpercent which = -1 value = 10 }
+		command = { type = populationpercent which = -4 value = 10 }
+		command = { type = trade value = 800 }
+		command = { type = land value = 600 }
+		command = { type = treasury value = 300 }
+		command = { type = stability value = -1 }
+		command = { type = inflation value = -1 }
+	}
+}
+
+#Morisque Refugees from Al-Andalus#
+event = {
+
+	id = 3656					#Triggered by SPA3167#
+	random = no
+	country = FEZ
+	name = "EVENTNAME3656"
+	desc = "EVENTHIST3656"
+
+	action_a ={				#This is a Black Day for Islam!#
+		name = "ACTIONNAME3656A"
+		command = { type = populationpercent which = -1 value = 15 }
+		command = { type = populationpercent which = -4 value = 15 }
+		command = { type = trade value = 1200 }
+		command = { type = land value = 1200 }
+		command = { type = merchants value = 6 }
+		command = { type = treasury value = 500 }
+		command = { type = stability value = -2 }
+		command = { type = inflation value = -1 }
+	}
+}

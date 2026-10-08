@@ -1,0 +1,1409 @@
+#-----------------------------------------------------------------------------
+# Byzantine Renaissance Events
+
+#(1453-1820) The Byzantine Renaissance
+event = {
+	id = 3001106 #id = 90900
+	trigger = {
+		OR = {
+			countrysize = 8
+			year = 1453
+		}
+		owned = { province = 357 data = -1 } #Thrace
+		owned = { province = 358 data = -1 } #Macedonia
+		owned = { province = 359 data = -1 } #Hellas
+		owned = { province = 360 data = -1 } #Morea
+		owned = { province = 478 data = -1 } #Smyrna
+	}
+	random = NO
+	country = BYZ
+	name = "The Byzantine Renaissance Begins" #The Byzantine Renaissance Begins
+	desc = "Having weathered the Ottoman storm, the Byzantines slowly began to win back ground. They eventually succeeded in retaking the Aegean seaboard, restoring the Empire to the small but stable condition it was in during the days of Michael VIII Paleologus in the mid-13th century. Finally having some breathing room, the Emperors were able to take stock of their situation and make much needed reforms."
+	#-#Having weathered the Ottoman storm, the Byzantines slowly began to win back ground. They eventually succeeded in retaking the Aegean seaboard, restoring the Empire to the small but stable condition it was in during the days of Michael VIII Paleologus in the mid-13th century. Finally having some breathing room, the Emperors were able to take stock of their situation and make much needed reforms.
+
+	date = { day = 1 month = june year = 1419 }
+	offset = 1 #1 day
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Begin the Renaissance" #Begin the Renaissance
+		command = { type = loansize which = 200 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = relation which = SER value = 50 }
+		command = { type = relation which = BOS value = 50 }
+		command = { type = relation which = CRO value = 50 }
+		command = { type = relation which = HUN value = 50 }
+		command = { type = relation which = RAG value = 50 }
+		command = { type = relation which = MOL value = 50 }
+		command = { type = relation which = WAL value = 50 }
+		command = { type = relation which = NVG value = 50 }
+		command = { type = relation which = MOS value = 50 }
+		command = { type = provincetax which = 321 value = 1 } #Rumelia
+		command = { type = provincetax which = 356 value = 1 } #Bulgaria
+		command = { type = provincetax which = 357 value = 1 } #Thrace
+		command = { type = provincetax which = 358 value = 1 } #Macedonia
+		command = { type = provincetax which = 359 value = 1 } #Athens
+		command = { type = provincetax which = 360 value = 1 } #Morea
+		command = { type = provincetax which = 361 value = 1 } #Albania
+		command = { type = provincetax which = 478 value = 1 } #Smyrna
+		command = { type = sleepevent which = 3001125 } #BYZ: Catholic Mercenaries Desert
+		command = { type = sleepevent which = 3001126 } #BYZ: Mercenary Contracts
+		command = { type = sleepevent which = 3001127 } #BYZ: Mercenary Contracts
+		command = { type = sleepevent which = 3001128 } #BYZ: Mercenary Contracts
+		command = { type = sleepevent which = 3001129 } #BYZ: Mercenary Contracts
+		command = { type = sleepevent which = 3001130 } #BYZ: Our Mercenaries Abandon Us!
+		}
+	action_b = {
+		name = "The only thing missing was our piety (and me)!" #consolidates the "leave it alone options"
+		command = { type = stability value = 2 }
+		command = { type = treasury value = 750 }
+		command = { type = domestic which = QUALITY value = -1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = 5 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = domestic which = LAND value = 4 }
+		command = { type = domestic which = MERCANTILISM value = -4 }
+		command = { type = infra value = 500 }
+		command = { type = land value = 250 }
+		command = { type = naval value = 250 }
+		command = { type = trade value = 2000 }
+		command = { type = loansize which = 400 }
+		command = { type = populationpercent which = -2 value = 10 }
+		command = { type = provincetax which = -2 value = 5 }
+		command = { type = revoltrisk which = 48 value = 1 }
+		command = { type = relation which = VEN value = 300 }
+		command = { type = relation which = GEN value = 300 }
+		command = { type = wakeleader which = 027850 } #Scelto (BYZ)
+		command = { type = wakeleader which = 027851 } #Marzio (BYZ)
+		command = { type = wakeleader which = 027852 } #Cambino (BYZ)
+		command = { type = wakeleader which = 027853 } #Fronte (BYZ)
+		command = { type = wakeleader which = 027854 } #Tamerighi (BYZ)
+		command = { type = wakeleader which = 027855 } #Konstantinos Gidos (BYZ)
+		command = { type = sleepleader which = 027823 } #Paulos Burtzes (BYZ)
+		command = { type = sleepleader which = 027826 } #Ignatios Narses (BYZ)
+		command = { type = sleepevent which = 3001136 } #BYZ: The Great Naval Reform
+		command = { type = sleepevent which = 3001107 } #BYZ: Restoration of Hagia Sophia
+		command = { type = sleepevent which = 3001122 } #BYZ: The Themata
+		command = { type = sleepevent which = 3001141 } #BYZ: Land not sold
+		command = { type = sleepevent which = 3001112 } #BYZ: Office of Barbarians
+		command = { type = sleepevent which = 3001131 } #BYZ: Imperial Land Policy
+		command = { type = sleepevent which = 3001132 } #BYZ: Reclaiming Control of Imperial Trade
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+	}
+}
+
+#(1460-1495) Restoration of Hagia Sophia
+event = {
+	id = 3001107
+	trigger = {
+		event = 3001106 #BYZ: The Byzantine Renaissance
+		atwar = no
+		domestic = { type = QUALITY value = 4 }
+	}
+	random = NO
+	country = BYZ
+	name = "The Restoration of Hagia Sophia" #The Restoration of Hagia Sophia
+	desc = "Hagia Sophia, the Church of Holy Wisdom, was built by the Emperor Justinian I in the mid-6th century and stood as the largest and most impressive church built until it was used as the inspiration for St. Peter's Basilica during the Renaissance. However, the last millenium had not been good to it and the Emperors were more often than not too poor to maintain it properly. However, the newly prosperous nobles, private citizens, and the Orthodox Church have pledged donations. Now the time has come to make use of the cultural revival of the 14th century and the Byzantine resurgence of the 15th century and restore the Hagia Sophia."
+	#-#Hagia Sophia, the Church of Holy Wisdom, was built by the Emperor Justinian I in the mid-6th century and stood as the largest and most impressive church built until it was used as the inspiration for St. Peter's Basilica during the Renaissance. However, the last millenium had not been good to it and the Emperors were more often than not too poor to maintain it properly. However, the newly prosperous nobles, private citizens, and the Orthodox Church have pledged donations. Now the time has come to make use of the cultural revival of the 14th century and the Byzantine resurgence of the 15th century and restore the Hagia Sophia.
+
+	date = { day = 1 month = january year = 1455 }
+	offset = 1800 #5 years
+	deathdate = { day = 1 month = january year = 1495 }
+
+	action_a = {
+		name = "Kyrie eleison!" #O Lord, have mercy on us sinners! Restore it!
+		command = { type = badboy value = -1 }
+		command = { type = stability value = 2 }
+		command = { type = gainmanufactory which = -2 value = luxury }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = infra value = 500 }
+		command = { type = treasury value = -500 }
+		command = { type = relation which = TOS value = 100 }
+		command = { type = relation which = PAP value = 100 }
+		command = { type = relation which = PIS value = 100 }
+		command = { type = relation which = PAR value = 100 }
+		command = { type = relation which = MLO value = 100 }
+	}
+	action_b = {
+		name = "No need for relics of the past" # What a waste
+		command = { type = stability value = -2 }
+		command = { type = treasury value = 250 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = land value = 250 }
+		command = { type = naval value = 250 }
+	}
+}
+
+#(1453-1500) Reforming the bureaucracy
+event = {
+	id = 3001108
+	trigger = {
+		event = 3001106 #BYZ: The Byzantine Renaissance
+	}
+	random = NO
+	country = BYZ
+	name = "Reforming the Bureaucracy"
+	desc = "The Byzantine Empire, in all its thousand years and all its changes, never did become a true feudal aristocracy. Government was managed by an extensive bureaucracy, posts were termed and alternated among candidates, and honors were never made hereditary. Unfortunately, it was never a meritocracy either - instead, a kind of nepotacracy filled the most important positions with the Emperor's favorites, those socialites chose the dignitaries under them, and so on. Worse still, because of the importance of access, the Emperor's cup-bearer could be more important than a strategos. Considering how unsuccessful this tack has been of late, it might be time to change that around, either by establishing a more orderly system of hereditary dignities or by reviving the old law schools and beginning to train officials."
+
+	date = { day = 1 month = june year = 1453 }
+	offset = 90 #3 months
+	deathdate = { day = 1 month = january year = 1500 }
+
+	action_a = {
+		name = "Security is more important right now"
+		command = { type = stability value = 3 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = sleepevent which = 3001109 } #BYZ: Protecting the Meritocracy
+		command = { type = sleepevent which = 3001110 } #BYZ: A Slighted Lord I
+		command = { type = sleepevent which = 3001111 } #BYZ: A Slighted Lord II
+		command = { type = sleepleader which = 027828 } #Alexandros Belisarios (BYZ)
+	}
+	action_b = {
+		name = "The nobles will pay for these privileges"
+		command = { type = treasury value = 250 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = SERFDOM value = 3 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = CAV which = -2 value = 5000 }
+		command = { type = sleepevent which = 3001109 } #BYZ: Protecting the Meritocracy
+		command = { type = sleepevent which = 3001110 } #BYZ: A Slighted Lord I
+		command = { type = sleepevent which = 3001111 } #BYZ: A Slighted Lord II
+	}
+	action_c = {
+		name = "God will only protect the just..."
+		command = { type = stability value = -3 }
+		command = { type = provincetax which = -2 value = -2 } #increased overhead
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = SERFDOM value = -3 }
+		command = { type = treasury value = -100 }
+	}
+}
+
+#(1465-1500) Protecting the Meritocracy
+event = {
+	id = 3001109
+	trigger = {
+		event = 3001108 #BYZ: Reforming the Bureaucracy
+	}
+	random = NO
+	country = BYZ
+	name = "Protecting the Meritocracy"
+	desc = "The investment in sound government has paid off handsomely - with less corruption and more capable functionaries, all the government's purchases are less costly and there is more gold flowing into the Vestarion than ever. Trade flourishes and savings have allowed upward mobility for the first time in generations. Unfortunately, it is a less manageable world and a slighted noble has raised his standard against the Emperor. More flock to his cause than one might hope."
+
+	date = { day = 1 month = june year = 1465 }
+	offset = 1795 #5 years
+	deathdate = { day = 1 month = january year = 1500 }
+
+	action_a = {
+		name = "Stand by our reforms..."
+		command = { type = stability value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = trade value = 500 }
+		command = { type = inflation value = -5 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -3 }
+		command = { type = revolt which = -3 }
+		command = { type = provincetax which = -2 value = 3 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = sleepleader which = 027812 } #Leontos Katakalon (BYZ)
+		command = { type = sleepleader which = 027827 } #Ioannes Murtzuphlos (BYZ)
+		command = { type = sleepleader which = 027832 } #Doukas (BYZ)
+		command = { type = sleepleader which = 027865 } #Alexius (BYZ)
+		command = { type = sleepleader which = 027838 } #Ashot (BYZ)
+		command = { type = sleepevent which = 3001217 } #BYZ: Demotion of Ashot
+		command = { type = wakeleader which = 027881 } #Ashot (BYZ)
+	}
+}
+
+#(1419-1820) A Slighted Lord I
+event = {
+	id = 3001110
+	trigger = {
+		event = 3001141 #BYZ: Land not sold
+		NOT = { event = 3001111 } #BYZ: A Slighted Lord II
+	}
+	random = YES
+	country = BYZ
+	name = "A Slighted Lord"
+	desc = "One of the new men, the class of technocrats elevated to serve the Emperor, has ruined the career and honor of a noble in a court case. Rather than allow his lands and dignities to be stripped away from him, though, he has raised his standard against the Empire. Unfortunately, he has been able to enlist the local thematic forces to support him."
+
+	date = { year = 1419 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Everyone's a critic"
+		command = { type = stability value = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -3 }
+	}
+	action_b = {
+		name = "Intervene"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+	}
+}
+
+#(1419-1820) A Slighted Lord II
+event = {
+	id = 3001111
+	trigger = {
+		event = 3001108 #BYZ: Reforming the Bureaucracy
+		event = 3001123 #BYZ: Revolt of the Themata
+	}
+	random = YES
+	country = BYZ
+	name = "A Slighted Lord"
+	desc = "One of the new men, the class of technocrats elevated to serve the Emperor, has ruined the career and honor of a noble in a court case. Rather than allow his lands and dignities to be stripped away from him, though, he has raised his standard against the Empire. Unfortunately, he has been able to enlist the local thematic forces to support him."
+
+	date = { year = 1419 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Everyone's a critic"
+		command = { type = stability value = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -3 }
+		command = { type = revolt which = -3 }
+		command = { type = revolt which = -3 }
+	}
+	action_b = {
+		name = "Intervene"
+		command = { type = stability value = 1 }
+		command = { type = treasury value = -50 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+	}
+}
+
+#(1465-1475) Office of Barbarians
+event = {
+	id = 3001112
+	trigger = {
+		event = 3001106 #BYZ: The Byzantine Renaissance
+	}
+	random = NO
+	country = BYZ
+	name = "Office of Barbarians"
+	desc = "In one of the oddities of the Empire's ad-hocery, the Postmaster General (Logothetes tou Dromou) also doubled as the secretary of state. One of the departments essential to this job was the Office of Barbarians, the Imperial spy agency. Although it had its ups and downs (on one notable occasion, Emperor Constans II gave the Bulgar king, who was claiming to be in fear of his life as an Imperial ally, the name of every spy in Bulgaria - only to see them all executed within the month) reinstituting the agency could prove vital in the future, especially as we spread further from home."
+
+	date = { day = 1 month = january year = 1465 }
+	offset = 360 #1 year
+	deathdate = { day = 1 month = january year = 1475 }
+
+	action_a = {
+		name = "Reinstitute the Office"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = provincetax which = -2 value = -1 }
+		command = { type = diplomats value = 6 }
+		command = { type = treasury value = -200 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 100 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 100 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 100 }
+	}
+	action_b = {
+		name = "Follow a more modest design"
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = diplomats value = 3 }
+		command = { type = treasury value = -30 }
+		command = { type = sleepevent which = 3001114 } #BYZ: Trade Secrets
+		command = { type = sleepevent which = 3001115 } #BYZ: Naval Secrets
+		command = { type = sleepevent which = 3001116 } #BYZ: Military Secrets
+		command = { type = sleepevent which = 3001117 } #BYZ: State Secrets
+		command = { type = sleepevent which = 3001118 } #BYZ: Counter-Espionage
+		command = { type = sleepevent which = 3001119 } #BYZ: Spy Compromised
+		command = { type = sleepevent which = 3001120 } #BYZ: Our Fearful Friend I
+		command = { type = sleepevent which = 3001445 } #BYZ: The Persian Rebellion
+	}
+	action_c = {
+		name = "God will protect us"
+		command = { type = treasury value = 50 }
+		command = { type = domestic which = QUALITY value = -1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = sleepevent which = 3001113 } #BYZ: Spy Network
+		command = { type = sleepevent which = 3001114 } #BYZ: Trade Secrets
+		command = { type = sleepevent which = 3001115 } #BYZ: Naval Secrets
+		command = { type = sleepevent which = 3001116 } #BYZ: Military Secrets
+		command = { type = sleepevent which = 3001117 } #BYZ: State Secrets
+		command = { type = sleepevent which = 3001118 } #BYZ: Counter-Espionage
+		command = { type = sleepevent which = 3001119 } #BYZ: Spy Compromised
+		command = { type = sleepevent which = 3001120 } #BYZ: Our Fearful Friend I
+		command = { type = sleepevent which = 3001445 } #BYZ: The Persian Rebellion
+	}
+}
+
+#(1465-1820) Spy Network
+event = {
+	id = 3001113
+	trigger = {
+		event = 3001112 #BYZ: Office of Barbarians
+	}
+	random = YES
+	country = BYZ
+	name = "Spy Network"
+	desc = "The Logothetes tou Dromou is pleased to report that the Office of Barbarians has been able to enlist the support of dissatisfied nobles and sway the governors in a number of countries. The goose squawks at midnight!"
+
+	date = { year = 1465 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Yes, but does she carry an umbrella?"
+		command = { type = DIP which = 3 value = 72 }
+		command = { type = diplomats value = 3 }
+		command = { type = relation which = -1 value = 100 }
+		command = { type = relation which = -1 value = 100 }
+		command = { type = relation which = -1 value = 100 }
+	}
+}
+
+#(1465-1820) Trade Secrets
+event = {
+	id = 3001114
+	trigger = {
+		event = 3001112 #BYZ: Office of Barbarians
+	}
+	random = YES
+	country = BYZ
+	name = "Trade Secrets"
+	desc = "The Logothetes tou Dromou is pleased to report that the Office of Barbarians has been able to bring us manifests and course plans for many of our rivals' merchant marine. This will be very helpful in directing our own trade. At three, the bar will close!"
+
+	date = { year = 1465 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "But will the hippogryph dance alone?"
+		command = { type = trade value = 500 }
+	}
+}
+
+#(1465-1820) Naval Secrets
+event = {
+	id = 3001115
+	trigger = {
+		event = 3001112 #BYZ: Office of Barbarians
+	}
+	random = YES
+	country = BYZ
+	name = "Naval Secrets"
+	desc = "The Logothetes tou Dromou is pleased to report that the Office of Barbarians has been able to bring us details on the construction used in our rivals' fleets. The Megas Doux (Lord High Admiral) and his boys with the Basilikon Ploumon (Imperial Fleet) are already combing over the reports. The wind is west by south-west!"
+
+	date = { year = 1465 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "But who am I to tell a hawk from a handsaw?"
+		command = { type = MIL which = 1 value = 36 }
+		command = { type = naval value = 500 }
+	}
+}
+
+#(1465-1820) Military Secrets
+event = {
+	id = 3001116
+	trigger = {
+		event = 3001112 #BYZ: Office of Barbarians
+	}
+	random = YES
+	country = BYZ
+	name = "Military Secrets"
+	desc = "The Logothetes tou Dromou is pleased to report that the Office of Barbarians has been able to bring us details on the plans, composition, and order of battle for our enemies' armies - even some of their weaponry. The Megas Domestikos and his boys in the Skholai are already combing over the reports. The eagle spreads her wings!"
+
+	date = { year = 1465 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "But the minnow cannot tell its spit from the water"
+		command = { type = MIL which = 1 value = 36 }
+		command = { type = land value = 500 }
+	}
+}
+
+#(1465-1820) State Secrets
+event = {
+	id = 3001117
+	trigger = {
+		event = 3001112 #BYZ: Office of Barbarians
+	}
+	random = YES
+	country = BYZ
+	name = "State Secrets"
+	desc = "The Logothetes tou Dromou is pleased to report that the Office of Barbarians has been able to bring us details on our rivals' economic and industrial technology. The Logothetes ton Oikeiakon (Secretary of the Interior) and his boys are already combing over the reports. I'm eating chicken tonight!"
+
+	date = { year = 1465 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Do you want to bouncy-bouncy?"
+		command = { type = infra value = 500 }
+	}
+}
+
+#(1465-1820) Counter-Espionage
+event = {
+	id = 3001118
+	trigger = {
+		event = 3001112 #BYZ: Office of Barbarians
+	}
+	random = YES
+	country = BYZ
+	name = "Counter-Espionage"
+	desc = "The Logothetes tou Dromou is saddened to report that the Office of Barbarians has been able to ferret out a number of traitors and spies in our own capital. Unfortunately, some of them are members of powerful noble families. Should Iakobos climb the ladder?"
+
+	date = { year = 1465 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "He's liable to fall and break something"
+		command = { type = stability value = -1 }
+		command = { type = revoltrisk which = 36 value = -3 } #from 144 months
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -3 }
+	}
+	action_b = {
+		name = "The poor ye have with ye always"
+		command = { type = revoltrisk which = 24 value = 3 }
+		command = { type = infra value = -500 }
+		command = { type = trade value = -500 }
+	}
+}
+
+#(1465-1820) Spy Compromised
+event = {
+	id = 3001119
+	trigger = {
+		event = 3001112 #BYZ: Office of Barbarians
+	}
+	random = YES
+	country = BYZ
+	name = "Spy Compromised"
+	desc = "The Logothetes tou Dromou is saddened to report that a foreign lord in the pay of the Office of Barbarians has broken under torture and admitted our involvement in a recent attempt on a minister's life. The government is outraged and demanding satisfaction, which appears to consist largely of a sizeable bribe. Does a man hide his light under a bushel?"
+
+	date = { year = 1465 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Not with hemorrhoids like mine, he doesn't"
+		command = { type = treasury value = -50 }
+		command = { type = relation which = -1 value = -100 }
+	}
+	action_b = {
+		name = "Don't fear the Reaper"
+		command = { type = relation which = -1 value = -300 }
+	}
+}
+
+#(1465-1820) Our Fearful Friend I
+event = {
+	id = 3001120
+	trigger = {
+		event = 3001112 #BYZ: Office of Barbarians
+	}
+	random = YES
+	country = BYZ
+	name = "Our Fearful Friend"
+	desc = "The Logothetes tou Dromou reports that the ruler of a friendly state is in fear for his life from his nobles. He's asking for the names of some of our agents in his country in case of a coup. Are you going to eat that?"
+
+	date = { year = 1465 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "What I do not eat, you may have"
+		command = { type = trigger which = 3001121 }
+	}
+	action_b = {
+		name = "My hovercraft is full of eels"
+		command = { type = relation which = -1 value = -100 }
+	}
+}
+
+#(1465-1820) Our Fearful Friend II
+event = {
+	id = 3001121 #triggered by BYZ_3001120 A
+	random = NO
+	country = BYZ
+	name = "Our Fearful Friend"
+	desc = "The Logothetes tou Dromou has sent a lower-level flunky to deliver some humiliating news. The ruler... remember? the one who was in fear for his life? Well, he took the lives of those spies we told him about... Apparently, all of them. Our policy in his country is flying blind, and it will be harder to recruit for our cause for years. Sometimes, people just don't learn from history..."
+
+	action_a = {
+		name = "D'oh!"
+		command = { type = trade value = -100 }
+		command = { type = land value = -1000 }
+		command = { type = naval value = -1000 }
+	}
+}
+
+# Establishment of the Themata #
+event = {
+	id = 3001122
+	trigger = {
+		event = 3001107 #BYZ: The Restoration of Hagia Sophia
+	}
+	random = NO
+	country = BYZ
+	name = "The Themata" #The Themata
+	desc = "To counter the expense of defending a threatened empire in the 7th century, Emperor Constans II replaced the traditional Roman provinces with a new system of themes, whose leaders (strategos) held both civil and military power. Soldiers were enrolled in each theme and given a grant of land from which to maintain themselves in addition to a stipend. The grants were large enough for infantry to support themselves and their families, while cavalry and sailors could afford to hire tenant farmers to work the land. Besides their annual spring training and occasional offensives, they were always on call for defensive duties. Unlike mercenaries, the system presumed they would fight very fiercely to protect their land. It worked very well, increasing the size and effectiveness of the military, raising the prosperity of the countryside by creating a class of small freeholding farmers, and reducing government expenses."
+	#-#To counter the expense of defending a threatened empire in the 7th century, Emperor Constans II replaced the traditional Roman provinces with a new system of themes, whose leaders (strategos) held both civil and military power. Soldiers were enrolled in each theme and given a grant of land from which to maintain themselves in addition to a stipend. The grants were large enough for infantry to support themselves and their families, while cavalry and sailors could afford to hire tenant farmers to work the land. Besides their annual spring training and occasional offensives, they were always on call for defensive duties. Unlike mercenaries, the system presumed they would fight very fiercely to protect their land. It worked very well, increasing the size and effectiveness of the military, raising the prosperity of the countryside by creating a class of small freeholding farmers, and reducing government expenses.
+
+	date = { day = 1 month = january year = 1460 }
+	offset = 1800 #5 years
+	deathdate = { day = 1 month = january year = 1495 }
+
+	action_a = {
+		name = "Reestablish the themes!" #Reestablish the themes!
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = QUALITY value = -1 }
+		command = { type = provincetax which = 321 value = 1 } #Rumelia
+		command = { type = provincemanpower which = 321 value = 1 } #Rumelia
+		command = { type = provincetax which = 478 value = 1 } #Smyrna
+		command = { type = provincemanpower which = 478 value = 1 } #Smyrna
+		command = { type = provincetax which = 356 value = 1 } #Bulgaria
+		command = { type = provincemanpower which = 356 value = 1 } #Bulgaria
+		command = { type = provincetax which = 357 value = 1 } #Thrace
+		command = { type = provincemanpower which = 357 value = 1 } #Thrace
+		command = { type = provincetax which = 358 value = 1 } #Macedonia
+		command = { type = provincemanpower which = 358 value = 1 } #Macedonia
+		command = { type = provincetax which = 359 value = 1 } #Hellas
+		command = { type = provincemanpower which = 359 value = 1 } #Hellas
+		command = { type = provincetax which = 360 value = 1 } #Morea
+		command = { type = provincemanpower which = 360 value = 1 } #Morea
+		command = { type = provincetax which = 361 value = 1 } #Albania
+		command = { type = provincemanpower which = 361 value = 1 } #Albania
+		command = { type = sleepevent which = 3001125 } #BYZ: Catholic Mercenaries Desert
+		command = { type = sleepevent which = 3001126 } #BYZ: Mercenary Contracts
+		command = { type = sleepevent which = 3001127 } #BYZ: Mercenary Contracts
+		command = { type = sleepevent which = 3001128 } #BYZ: Mercenary Contracts
+		command = { type = sleepevent which = 3001129 } #BYZ: Mercenary Contracts
+		command = { type = sleepevent which = 3001130 } #BYZ: Our Mercenaries Abandon Us!
+	}
+	action_b = { # No thanks
+		name = "Stick with the professionals"
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = QUALITY value = 3 }
+		command = { type = treasury value = 200 }
+		command = { type = stability value = -1 }
+		command = { type = sleepevent which = 3001123 } #BYZ: Revolt of the Themata
+		command = { type = sleepevent which = 3001124 } #BYZ: The Tagmata
+	}
+}
+
+#(1480-1510) Revolt of the Themata (edited by Sute]{h)
+event = {
+	id = 3001123
+	trigger = {
+		event = 3001122 #BYZ: The Themata
+	}
+	random = NO
+	country = BYZ
+	name = "Revolt of the themata" #Revolt of the themata
+	desc = "The strength of the themata system was that they provided a large, cheap, effective military. It was however also a problem, as more than one Emperor found out at the wrong end of a sword. A large army that could appear next to capital on short notice is especially devastating when they are also the ones supposed to put down revolts."
+	#-#The strength of the themata system was that they provided a large, cheap, effective military. It was however also a problem, as more than one Emperor found out at the wrong end of a sword. A large army that could appear next to capital on short notice is especially devastating when they are also the ones supposed to put down revolts.
+
+	date = { day = 1 month = january year = 1480 }
+	offset = 7200 #20 years
+	deathdate = { day = 1 month = january year = 1510 }
+
+	action_a = {
+		name = "The themata are revolting!" #The themata are revolting!
+		command = { type = stability value = -2 }
+		command = { type = revoltrisk which = 12 value = 3 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = revolt which = -1 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = revolt which = -1 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = revolt which = -1 }
+	}
+}
+
+#(1500-1530) Reform of the Tagmata by Llywelyn and Mistwraithe
+event = {
+	id = 3001124
+	trigger = {
+		event = 3001122 #BYZ: The Themata
+		event = 3001123 #BYZ: Revolt of the Themata
+	}
+	random = NO
+	country = BYZ
+	name = "Reform of the Tagmata" #Reform of the Tagmata
+	desc = "Rattled by the danger posed by rebellious themata, Manuel III created the Tagmata, or Regiments. Each tagma was a small, elite armed force which drew income from land in a theme like ordinary soldiers, but remained permanently on duty in the Emperor's service. They were heavily geared towards offensive operations, making them a strong core for foreign expeditions. At the same time, the Themata were also broken into smaller units to reduce the size of potential revolts. However, Manuel III's Megas Domestikos and his staff suggested that as the Empire was forced to oppose the truly great armies of Europe that it would be well served to also establish an academy for the advancement of siegecraft and warfare."
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 3600 #10 years
+	deathdate = { day = 1 month = january year = 1530 }
+
+	action_a = {
+		name = "Establish a Great Academy."
+		command = { type = treasury value = -500 }
+		command = { type = stability value = 1 }
+		command = { type = gainbuilding which = -2 value = barrack }
+		command = { type = CAV which = -2 value = 5000 }
+		command = { type = domestic which = QUALITY value = 2 }
+		command = { type = domestic which = OFFENSIVE value = 2 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = wakeleader which = 027802 } #Alexandros Makrienos (BYZ)
+		command = { type = wakeleader which = 027820 } #Anastasios Argyros (BYZ)
+		command = { type = wakeleader which = 027825 } #Basil Palaiologos (BYZ)
+		command = { type = wakeleader which = 027834 } #Leontos Palaiologos (BYZ)
+	}
+	action_b = {
+		name = "Create the Tagmata" #Create the Tagmata
+		command = { type = treasury value = -100 }
+		command = { type = stability value = 1 }
+		command = { type = domestic which = QUALITY value = 2 }
+		command = { type = domestic which = OFFENSIVE value = 2 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+	}
+	action_c = {
+		name = "Just make the boys drill a little more"
+		command = { type = domestic which = QUALITY value = 1 }
+	}
+	action_d = {
+		name = "We don't need training - we need bodies"
+		command = { type = treasury value = 150 }
+		command = { type = domestic which = QUALITY value = -2 }
+		command = { type = sleepleader which = 027823 } #Paulos Burtzes (BYZ)
+		command = { type = sleepleader which = 027826 } #Ignatios Narses (BYZ)
+	}
+}
+
+#(1419-1820) Catholic Mercenaries Desert (by AngryRusski)
+event = {
+	id = 3001125
+	trigger = {
+		event = 3001106 #BYZ: The Byzantine Renaissance
+		war = { country = BYZ country = PAP }
+	}
+	random = YES
+	country = BYZ
+	name = "Catholic Mercenaries Desert"
+	desc = "Since we are at war with the Holy Father in Rome, some of our Catholic mercenaries have deserted our ranks. On the bright side, we don't have to pay them..."
+
+	date = { year = 1419 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "I knew I should've reformed the army..."
+		command = { type = desertion which = -2 value = 5000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = treasury value = 25 }
+	}
+	action_b = {
+		name = "Draft replacements"
+		command = { type = stability value = -1 }
+		command = { type = domestic which = QUALITY value = -2 }
+		command = { type = revolt which = -1 }
+		command = { type = desertion which = -2 value = 2000 }
+		command = { type = desertion which = -1 value = 1000 }
+		command = { type = desertion which = -1 value = 1000 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincemanpower which = -1 value = -1 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincemanpower which = -1 value = -1 }
+	}
+}
+
+#(1419-1820) Mercenary Contracts I (by AngryRusski)
+event = {
+	id = 3001126
+	trigger = {
+		atwar = yes
+	}
+	random = YES
+	country = BYZ
+	name = "Mercenary Contracts"
+	desc = "The middle of a war was always a good time for a mercenary to renegotiate his contract."
+
+	date = { year = 1419 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Well, they're worth it"
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = treasury value = -100 }
+	}
+	action_b = {
+		name = "I knew I should've reformed the army..."
+		command = { type = desertion which = -2 value = 5000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = domestic which = QUALITY value = -2 }
+		command = { type = treasury value = 5 }
+	}
+	action_c = {
+		name = "Draft replacements"
+		command = { type = domestic which = QUALITY value = -3 }
+		command = { type = desertion which = -2 value = 2000 }
+		command = { type = desertion which = -1 value = 1000 }
+		command = { type = desertion which = -1 value = 1000 }
+		command = { type = desertion which = -1 value = 1000 }
+		command = { type = revolt which = -1 }
+		command = { type = stability value = -1 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincemanpower which = -1 value = -1 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincemanpower which = -1 value = -1 }
+	}
+}
+
+#(1419-1820) Mercenary Contracts II (by AngryRusski)
+event = {
+	id = 3001127
+	trigger = {
+		atwar = yes
+	}
+	random = YES
+	country = BYZ
+	name = "Mercenary Contracts"
+	desc = "The middle of a war was always a good time for a mercenary to renegotiate his contract."
+
+	date = { year = 1419 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Well, they're worth it"
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = treasury value = -100 }
+	}
+	action_b = {
+		name = "I knew I should've reformed the army..."
+		command = { type = desertion which = -2 value = 5000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = domestic which = QUALITY value = -2 }
+		command = { type = treasury value = 5 }
+	}
+	action_c = {
+		name = "Draft replacements"
+		command = { type = domestic which = QUALITY value = -3 }
+		command = { type = desertion which = -2 value = 2000 }
+		command = { type = desertion which = -1 value = 1000 }
+		command = { type = desertion which = -1 value = 1000 }
+		command = { type = desertion which = -1 value = 1000 }
+		command = { type = revolt which = -1 }
+		command = { type = stability value = -1 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincemanpower which = -1 value = -1 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincemanpower which = -1 value = -1 }
+	}
+}
+
+#(1419-1820) Mercenary Contracts III (by AngryRusski)
+event = {
+	id = 3001128
+	trigger = {
+		atwar = yes
+	}
+	random = YES
+	country = BYZ
+	name = "Mercenary Contracts"
+	desc = "The middle of a war was always a good time for a mercenary to renegotiate his contract."
+
+	date = { year = 1419 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Well, they're worth it"
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = treasury value = -100 }
+	}
+	action_b = {
+		name = "I knew I should've reformed the army..."
+		command = { type = desertion which = -2 value = 5000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = domestic which = QUALITY value = -2 }
+		command = { type = treasury value = 5 }
+	}
+	action_c = {
+		name = "Draft replacements"
+		command = { type = domestic which = QUALITY value = -3 }
+		command = { type = desertion which = -2 value = 2000 }
+		command = { type = desertion which = -1 value = 1000 }
+		command = { type = desertion which = -1 value = 1000 }
+		command = { type = desertion which = -1 value = 1000 }
+		command = { type = revolt which = -1 }
+		command = { type = stability value = -1 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincemanpower which = -1 value = -1 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincemanpower which = -1 value = -1 }
+	}
+}
+
+#(1419-1820) Mercenary Contracts IV (by AngryRusski)
+event = {
+	id = 3001129
+	trigger = {
+		atwar = yes
+	}
+	random = YES
+	country = BYZ
+	name = "Mercenary Contracts"
+	desc = "The middle of a war was always a good time for a mercenary to renegotiate his contract. Sometimes, they even bled the state treasury dry with the threat of laying down their arms or joining the other side." #The History of the Catalan gang could go here
+
+	date = { year = 1419 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "How many loans can I take out?"
+		command = { type = domestic which = QUALITY value = 2 }
+		command = { type = treasury value = -500 }
+	}
+	action_b = {
+		name = "I knew I should've reformed the army..."
+		command = { type = desertion which = -2 value = 50000 }
+		command = { type = desertion which = -1 value = 7500 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = domestic which = QUALITY value = -2 }
+		command = { type = treasury value = 25 }
+	}
+	action_c = {
+		name = "Draft replacements"
+		command = { type = domestic which = QUALITY value = -5 }
+		command = { type = desertion which = -2 value = 15000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = revolt which = -1 }
+		command = { type = stability value = -1 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincemanpower which = -1 value = -1 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincemanpower which = -1 value = -1 }
+	}
+}
+
+#(1419-1820) Our Mercenaries Abandon Us (by AngryRusski)
+event = {
+	id = 3001130
+	trigger = {
+		NOT = { control = { province = 357 data = -1 } } #Thrace
+		#NOT = { control = { province = -2 data = -1 } }
+	}
+	random = YES
+	country = BYZ
+	name = "Our Mercenaries Abandon Us!"
+	desc = "With the capital and the state treasury falling into enemy hands, the mercenary forces in our armies have abandoned us and begun looting our provinces!"
+
+	date = { year = 1419 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+	name = "Ouch"
+		command = { type = domestic which = QUALITY value = -2 }
+		command = { type = desertion which = -2 value = 20000 } #from 50k
+		command = { type = desertion which = -1 value = 8000 } #from 17.5k
+		command = { type = desertion which = -1 value = 5000 } #from 15k
+		command = { type = desertion which = -1 value = 5000 } #from 15k
+		command = { type = desertion which = -1 value = 5000 } #from 15k
+		command = { type = desertion which = -1 value = 5000 } #from 15k
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+	}
+	action_b = {
+		name = "Quick, draft replacements!"
+		command = { type = desertion which = -2 value = 10000 } #from 40k
+		command = { type = desertion which = -1 value = 4000 } #from 10k
+		command = { type = desertion which = -1 value = 4000 } #from 10k
+		command = { type = desertion which = -1 value = 4000 } #from 10k
+		command = { type = desertion which = -1 value = 4000 } #from 10k
+		command = { type = desertion which = -1 value = 4000 } #from 10k
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = QUALITY value = -5 }
+		command = { type = stability value = -1 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincemanpower which = -1 value = -1 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincemanpower which = -1 value = -1 }
+	}
+}
+
+#(1450-1550) Imperial Land Policy
+event = {
+	id = 3001131
+	trigger = {
+		event = 3001106 #BYZ: The Byzantine Renaissance
+		owned = { province = 358 data = -1 } #Macedonia
+		owned = { province = 359 data = -1 } #Hellas
+		owned = { province = 478 data = -1 } #Smyrna
+	}
+	random = NO
+	country = BYZ
+	name = "Imperial Land Policy"
+	desc = "Recovering lands lost to the Turk for a century, the question arises what to do with them. The powerful nobles assume that their great estates will be restored, but it might be more beneficial to the empire in the long run to provide smaller land grants for our veterans and the foreign soldiers who aided us in our great victory. One of the logothetes even suggests whole-sale redistribution of land to the poor: they would almost certainly be less capable farmers, but it would be an enormously popular policy. Only a few academics support allowing the Turks to remain a free people."
+
+	date = { day = 1 month = january year = 1450 }
+	offset = 3600 #10 years
+	deathdate = { day = 1 month = january year = 1550 }
+
+	action_a = {
+		name = "Parcel it out to the lords" #kills off some provincetax and manpower
+		command = { type = domestic which = ARISTOCRACY value = 3 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = stability value = 2 }
+		command = { type = infra value = 500 }
+		command = { type = treasury value = 200 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincemanpower which = -1 value = -1 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincemanpower which = -1 value = -1 }
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+	}
+	action_b = {
+		name = "Parcel it out to veterans and recruits" #builds manpower
+		command = { type = stability value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = provincemanpower which = -1 value = 1 }
+		command = { type = provincemanpower which = -1 value = 1 }
+		command = { type = provincemanpower which = -1 value = 1 }
+		command = { type = provincemanpower which = -1 value = 1 }
+		command = { type = infra value = 500 }
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+	}
+	action_c = { #kills off some provincetax, builds manpower
+		name = "Parcel it out to the poor"
+		command = { type = domestic which = ARISTOCRACY value = -3 }
+		command = { type = domestic which = SERFDOM value = -3 }
+		command = { type = stability value = -3 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = infra value = 1000 }
+		command = { type = revoltrisk which = 24 value = 6 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincemanpower which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincemanpower which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincemanpower which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincemanpower which = -1 value = 1 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -3 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -3 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -3 }
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+	}
+	action_d = { #only option allowing turkish culture, if prince didn't go native
+		name = "Let the beys stay" #no innov. bonus
+		command = { type = stability value = -6 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = revoltrisk which = 72 value = 6 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -2 }
+		command = { type = sleepevent which = 3001185 } #BYZ: Jihad in Anatolia
+		command = { type = sleepevent which = 3001186 } #BYZ: Ottoman Pretender
+		command = { type = sleepevent which = 3001187 } #BYZ: Last Stand of the House of Osman
+	}
+}
+
+#(1419-1600) Reclaiming Control of Imperial Trade
+#was Control of the Bosporus + Economic Reforms
+event = {
+	id = 3001132
+	trigger = {
+		#event = 337808 #CoTs: Control of the Bosporus - event does not exist in Gloriana1337
+		NOT = {
+			exists = TUR
+		}
+	}
+	random = NO
+	country = BYZ
+
+	name = "Reclaiming Control of Imperial Trade" #replaces EVENTNAME338008, which is not appropriate
+	desc = "With power comes opportunity. For centuries now, the Empire has allowed the Venetians and Genovese to regulate trade throughout the empire in exchange for a steady stipend and naval assistance. That, and Venice would periodically burn our fleet... Now that we have fought back the Turk, we are powerful enough to close and tax the Bosphorus and reclaim the Black Sea trade for our own merchants. However, if we do, we will do more than anger nobles related by blood to the Emperor - we risk war against the great naval powers of the Mediterranean."
+
+	date = { day = 1 month = january year = 1419 }
+	offset = 360 #1 year
+	deathdate = { year = 1600 }
+
+	action_a = {
+		name = "We will be our own masters!" #Reform trade
+		command = { type = stability value = -1 }
+		command = { type = treasury value = -100 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = badboy value = -1 }
+		command = { type = trade value = 1000 }
+		command = { type = sleepevent which = 3001135 } #BYZ: The Italians
+		command = { type = trigger which = 3001133 } #VEN: Byzantium Closes its Ports
+		command = { type = trigger which = 3001134 } #GEN: Byzantium Closes its Ports
+	}
+	action_b = { # Continue as before
+		name = "As long as I get my money, who cares?"
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 250 }
+		command = { type = trade value = 2000 }
+		command = { type = relation which = VEN value = 150 }
+		command = { type = relation which = GEN value = 100 }
+		command = { type = wakeleader which = 027850 } #Scelto (BYZ)
+		command = { type = wakeleader which = 027851 } #Marzio (BYZ)
+		command = { type = wakeleader which = 027852 } #Cambino (BYZ)
+		command = { type = wakeleader which = 027853 } #Fronte (BYZ)
+		command = { type = wakeleader which = 027854 } #Tamerighi (BYZ)
+		command = { type = wakeleader which = 027855 } #Konstantinos Gidos (BYZ)
+		command = { type = sleepevent which = 3001136 } #BYZ: The Great Naval Reform
+		command = { type = trigger which = 3001135 } #BYZ: The Italians
+	}
+}
+
+#(1419-1600) Byzantium Closes its Ports - Venice
+event = {
+	id = 3001133
+	trigger = {
+		event = 3001132 #BYZ: Reclaiming Control of Imperial Trade
+		}
+	random = NO
+	country = VEN
+	name = "Byzantium closes its ports!"
+	desc = "The Emperor in Constantinople has closed the Black Sea to trade in foreign ships and raised enormous taxes on our merchants in the Golden Horn. Surely, we must teach him a lesson!"
+
+	action_a = {
+		name = "At least Genoa suffers too..." # Pay the tax
+		command = { type = domestic which = MERCANTILISM value = -1 }
+		command = { type = provincetax which = 370 value = -3 }
+		command = { type = relation which = GEN value = -100 }
+	}
+	action_b = {
+		name = "I can't believe we're fighting along-side Genoa!" # War!
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 100 }
+		command = { type = war which = BYZ }
+		command = { type = alliance which = GEN }
+		command = { type = relation which = GEN value = 100 }
+	}
+}
+
+#(1419-1600) Byzantium Closes its Ports - Genoa
+event = {
+	id = 3001134
+	trigger = {
+		event = 3001132 #BYZ: Reclaiming Control of Imperial Trade
+		}
+	random = NO
+	country = GEN
+	name = "Byzantium closes its ports!"
+	desc = "The Emperor in Constantinople has closed the Black Sea to trade in foreign ships and raised enormous taxes on our merchants in the Golden Horn. Surely, we must teach him a lesson!"
+
+	action_a = {
+		name = "At least Venice suffers too..." # Pay the tax
+		command = { type = domestic which = MERCANTILISM value = -1 }
+		command = { type = provincetax which = 403 value = -3 }
+		command = { type = relation which = VEN value = -100 }
+	}
+	action_b = {
+		name = "I can't believe we're fighting along-side Venice!" # War!
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 100 }
+		command = { type = war which = BYZ }
+		command = { type = alliance which = GEN }
+		command = { type = relation which = VEN value = 100 }
+	}
+}
+
+#(1419-1820) The Italians
+event = {
+	id = 3001135
+	trigger = {
+		event = 3001106 #BYZ: The Byzantine Renaissance
+		religion = catholic
+	}
+	random = NO
+	country = BYZ
+	name = "The Italians"
+	desc = "After the disaster of the Fourth Crusade, there could not be a less popular policy among our people than cozying up to the Italians and accepting their heretical doctrines, but that is precisely what our monarchs have done. Thousands of them throng the streets of Constantinople; thousands of our ducats gather in their district and leave in their galleys. Now the question comes whether to grow still closer to our Western friends or, realizing our folly, to use their trust to prey upon their ships and expand to the east."
+
+	date = { day = 1 month = january year = 1419 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Mi amici!"
+		command = { type = technology which = latin }
+		command = { type = add_countryculture which = italian }
+		command = { type = populationpercent which = -2 value = 10 }
+		command = { type = relation which = GEN value = 100 }
+		command = { type = relation which = VEN value = 100 }
+		command = { type = revoltrisk which = 360 value = 6 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -2 }
+		command = { type = sleepevent which = 3001155 } #BYZ: Victory in the Balkans
+		command = { type = sleepevent which = 3001156 } #BYZ: Victory in Anatolia
+		command = { type = sleepevent which = 3001157 } #BYZ: Victory in Italy
+		command = { type = sleepevent which = 3001158 } #BYZ: The Empire of Basil II
+		command = { type = sleepevent which = 3001159 } #BYZ: Victory in Egypt
+		command = { type = sleepevent which = 3001160 } #BYZ: Conquest of Egypt
+		command = { type = sleepevent which = 3001161 } #BYZ: The Empire of the East
+		command = { type = sleepevent which = 3001162 } #BYZ: Conquest of Africa
+		command = { type = sleepevent which = 3001163 } #BYZ: The Balkan Campaign
+		command = { type = sleepevent which = 3001164 } #BYZ: The Anatolian Campaign
+		command = { type = sleepevent which = 3001165 } #BYZ: The Italian Campaign
+		command = { type = sleepevent which = 3001166 } #BYZ: The Egyptian Campaign
+			#command = { type = sleepevent which = 3001167 } #BYZ: The Restoration Is Complete (replaced by decision 6040)
+			command = { type = setflag which = byz_restoration_complete_blocked } #BYZ: blocks decision 6040 (The Restoration is Complete)
+	}
+	action_b = {
+		name = "Commission pirates on their trade"
+		command = { type = treasury value = 200 }
+		command = { type = relation which = VEN value = -50 }
+		command = { type = relation which = GEN value = -50 }
+	}
+	action_c = {
+		name = "What was I thinking?"
+		command = { type = religion which = orthodox }
+		command = { type = stability value = 3 }
+		command = { type = treasury value = 200 }
+		command = { type = relation which = VEN value = -200 }
+		command = { type = relation which = GEN value = -200 }
+		command = { type = relation which = PAP value = -200 }
+	}
+}
+
+#(1454-1550) The Naval reforms (original event by Idiotboy)
+event = {
+	id = 3001136 #id = 90939
+	random = NO
+	country = BYZ
+	trigger = {
+		event = 3001132 #BYZ: Reclaiming Control of Imperial Trade
+		NOT = { exists = TUR }
+		owned = { province = 479 data = -1 } #Ionia
+		owned = { province = 820 data = -1 } #Corfu
+		OR = {
+			owned = { province = 480 data = -1 } #Crete
+			owned = { province = 481 data = -1 } #Rhodes
+			owned = { province = 484 data = -1 } #Cyprus
+		}
+	}
+	name = "The Great Naval Reform" #The Great Naval Reform
+	desc = "As Byzantium expanded its territory, it was once again obligated to turn its attention to the sea. Though Byzantine merchants had once dominated Mediterranean trade from their island bases throughout the Sea, Venetians, Genoans, and other Italians had long since wrested control of trade from them. Should Byzantium attempt to reclaim its rightful naval and commercial position at the risk of offending the rich Italian city-states?"
+	#-#As Byzantium expanded its territory, it was once again obligated to turn its attention to the sea. Though Byzantine merchants had once dominated Mediterranean trade from their island bases throughout the Sea, Venetians, Genoans, and other Italians had long since wrested control of trade from them. Should Byzantium attempt to reclaim its rightful naval and commercial position at the risk of offending the rich Italian city-states?
+
+	date = { day = 1 month = january year = 1454 }
+	offset = 7200 #20 years
+	deathdate = { day = 1 month = january year = 1550 }
+
+	action_a = {
+		name = "Initiate Great Naval Reforms!" #Initiate Great Naval Reforms!
+		command = { type = stability value = 1 }
+		command = { type = domestic which = LAND value = -3 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = MERCANTILISM value = 1 }
+		command = { type = relation which = VEN value = -100 }
+		command = { type = relation which = GEN value = -100 }
+		command = { type = naval value = 1000 }
+		command = { type = treasury value = -400 }
+		command = { type = wakeleader which = 027806 } #Bardas Phokas (BYZ)
+		command = { type = wakeleader which = 027807 } #Nikephoros Doukas (BYZ)
+		command = { type = wakeleader which = 027808 } #Romanos Kommenos (BYZ)
+		command = { type = wakeleader which = 027813 } #Samuel Palaiologos (BYZ)
+	}
+	action_b = {
+		name = "We can only afford small investments" #We can only afford small investments
+		command = { type = domestic which = LAND value = -1 }
+		command = { type = relation which = VEN value = -50 }
+		command = { type = relation which = GEN value = -50 }
+		command = { type = naval value = 500 }
+		command = { type = wakeleader which = 027806 } #Bardas Phokas (BYZ)
+		command = { type = sleepevent which = 3001137 } #BYZ: The Great Shipyard
+	}
+	action_c = {
+		name = "No the army needs the resources!" #No the army needs the resources!
+		command = { type = domestic which = LAND value = 2 }
+		command = { type = relation which = VEN value = 50 }
+		command = { type = relation which = GEN value = 50 }
+		command = { type = sleepevent which = 3001137 } #BYZ: The Great Shipyard
+	}
+}
+
+#(1475-1550) The Great Shipyard (by Idiotboy)
+event = {
+	id = 3001137 #id = 90907
+	trigger = {
+		event = 3001136 #BYZ: The Great Naval Reform
+	}
+	random = NO
+	country = BYZ
+	name = "The Great Shipyard" #The Great Shipyard
+	desc = "The next step in Byzantium's naval expansion was to rebuild its great military and commercial fleet. Gone were the days when the ports of Constantinople along the Golden Harbor were without peer so the call went out to the Italian city-states for shipwrights. Many answered, but they did not come cheap and their home cities were unhappy to see them depart."
+	#-#The next step in Byzantium's naval expansion was to rebuild its great military and commercial fleet. Gone were the days when the ports of Constantinople along the Golden Harbor were without peer so the call went out to the Italian city-states for shipwrights. Many answered, but they did not come cheap and their home cities were unhappy to see them depart.
+
+	date = { day = 1 month = january year = 1475 }
+	offset = 3600 #10 years
+	deathdate = { day = 1 month = january year = 1550 }
+
+	action_a = {
+		name = "Let´s become the ruler of the Mediterranean!" #Let´s become the ruler of the Mediterranean!
+		command = { type = domestic which = LAND value = -2 }
+		command = { type = relation which = VEN value = -50 }
+		command = { type = relation which = GEN value = -50 }
+		command = { type = domestic which = MERCANTILISM value = 1 }
+		command = { type = gainbuilding which = -2 value = shipyard }
+		command = { type = naval value = 2000 }
+		command = { type = treasury value = -500 }
+		command = { type = wakeleader which = 027809 } #Melias Laskaris (BYZ)
+		command = { type = wakeleader which = 027811 } #Basil Angelos (BYZ)
+	}
+	action_b = {
+		name = "It's a waste of our resources" #It's a waste of our resources
+		command = { type = relation which = VEN value = 50 }
+		command = { type = relation which = GEN value = 50 }
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = sleepevent which = 3001138 } #BYZ: The Genoan Land Purchase
+	}
+}
+
+#(1500-1600) The Genoan Land Purchase
+event = {
+	id = 3001138
+	trigger = {
+		event = 3001137 #BYZ: The Great Shipyard
+		NOT = { war = { country = BYZ country = GEN } }
+		OR = {
+			owned = { province = 464 data = GEN } #Kerch
+			owned = { province = 465 data = GEN } #Kaffa
+			owned = { province = 469 data = GEN } #Abkhazia
+			owned = { province = 470 data = GEN } #Kolkhis
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "The Genoan Land Purchase" #The Genoan Land Purchase
+	desc = "A reinvigorated Byzantium has been spreading out of its base in the Aegean, first into the Eastern Mediterranean, now into the Black Sea. But no Black Sea trading empire can be complete without Genoa's colonies in the north, guarding the Sea of Azov. Perhaps this is a matter where the purse shall prove mightier than the sword..."
+	#-#A reinvigorated Byzantium has been spreading out of its base in the Aegean, first into the Eastern Mediterranean, now into the Black Sea. But no Black Sea trading empire can be complete without Genoa's colonies in the north, guarding the Sea of Azov. Perhaps this is a matter where the purse shall prove mightier than the sword...
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 90 #3 months
+	deathdate = { day = 1 month = january year = 1600 }
+
+	action_a = {
+		name = "1000 ducats is a fair price" #1000 ducats is a fair price
+		command = { type = trigger which = 3001139 } #GEN: The Byzantine Land Purchase
+	}
+	action_b = {
+		name = "Ha, what shall we do with that worthless land?" #Ha, what shall we do with that worthless land?
+		command = { type = relation which = VEN value = 50 }
+		command = { type = domestic which = LAND value = 1 }
+	}
+}
+
+#(1500-1600) The Byzantine Land Purchase
+event = {
+	id = 3001139 #triggered by BYZ_3001138 A
+	random = NO
+	country = GEN
+	name = "The Byzantine Land Purchase" #The Byzantine Land Purchase
+	desc = "A reinvigorated Byzantium has been spreading out of its base in the Aegean, first into the Eastern Mediterranean, now into the Black Sea. Now they want to buy our Black Sea provinces!"
+	#-#A reinvigorated Byzantium has been spreading out of its base in the Aegean, first into the Eastern Mediterranean, now into the Black Sea. Now they want to buy our Black Sea provinces!
+
+	action_a = {
+		name = "We cannot hold on to them, they are too far away" #We cannot hold on to them, they are too far away
+		command = { type = treasury value = 1000 }
+		command = { type = cedeprovince which = BYZ value = 464 } #Kaffa
+		command = { type = cedeprovince which = BYZ value = 465 } #Kerch
+		command = { type = cedeprovince which = BYZ value = 469 } #Abkhazia
+		command = { type = cedeprovince which = BYZ value = 470 } #Kolkhis
+		command = { type = relation which = BYZ value = 150 }
+		#command = { type = removecore which = 464 } #Kaffa
+		#command = { type = removecore which = 465 } #Kerch
+		#command = { type = removecore which = 469 } #Abkhazia
+		#command = { type = removecore which = 470 } #Kolkhis
+		command = { type = trigger which = 3001140 } #BYZ: Land sold
+	}
+	action_b = {
+		name = "We shall die before giving up our land!" #We shall die before giving up our land!
+		command = { type = relation which = BYZ value = -150 }
+		command = { type = trigger which = 3001141 } #BYZ: Land not sold
+	}
+}
+
+#(1500-1600) Land sold
+event = {
+	id = 3001140 #triggered by GEN_3001139 A
+	random = no
+	country = BYZ
+	name = "Land sold" #Land sold
+	desc = "The Genoans have agreed to sell the land."
+	#-#The Genoans have agreed to sell the land.
+
+	action_a = {
+		name = "Finish the deal" #Finish the deal
+		command = { type = treasury value = -1000 }
+		command = { type = badboy value = -1 }
+		command = { type = addcore_national which = 464 } #Kaffa
+		command = { type = addcore_national which = 465 } #Kerch
+		command = { type = addcore_national which = 469 } #Abkhazia
+		command = { type = addcore_national which = 470 } #Kolkhis
+	}
+}
+
+#(1500-1600) Land not sold
+event = {
+	id = 3001141 #triggered by GEN_3001139 B
+	random = NO
+	country = BYZ
+	name = "Land not sold" #Land not sold
+	desc = "The Genoans did not agree to our proposal."
+	#-#The Genoans did not agree to our proposal.
+
+	action_a = {
+		name = "If they don´t accept payment in gold, they will pay us in blood." #If they don´t accept payment in gold, they will pay us in blood.
+		command = { type = casusbelli which = GEN value = 240 }
+	}
+}

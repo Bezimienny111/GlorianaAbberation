@@ -1,0 +1,45 @@
+#Royalists/Jacobites
+
+#Royalists become 'Jacobites' after the Glorious Revolution
+event = {
+
+	id = 220000
+	trigger = {
+		event = 3033
+		exists = ENG
+	}
+	random = no
+	country = ROY
+
+	name = "The Stuarts still have Support"
+	desc = "The Glorious Revolution was the deposition of King James II in November 1688. He was replaced by his daughter Mary II and her Dutch husband, James's nephew William III of Orange. The two ruled as joint monarchs of England, Scotland, and Ireland until Mary's death in 1694, when William became ruler in his own right. Jacobitism, the political movement that aimed to restore the exiled James or his descendants of the House of Stuart to the throne, persisted into the late 18th century. Some historians consider it the last successful invasion of England. However support for the Stuarts are still strong in various counties, we will not allow this slur on our lineage to continue."
+
+	date = { day = 16 month = february year = 1688 }
+	offset = 10
+	deathdate = { day = 1 month = december year = 1837 }	
+
+	action_a ={
+		name = "Fight On!"
+		command = { type = relation which = HOL value = -150 }
+		command = { type = relation which = ENG value = -150 }
+		command = { type = flagname which = "" }
+		command = { type = countryname value = "Jacobites" }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = stability value = -1 }
+		command = { type = addcore_national which = 236 }
+		command = { type = addcore_national which = 237 }
+		command = { type = addcore_national which = 238 }
+		command = { type = addcore_national which = 239 }
+		command = { type = addcore_national which = 240 }
+		command = { type = addcore_national which = 241 }
+		command = { type = addcore_national which = 242 }
+		command = { type = addcore_national which = 243 }
+		command = { type = addcore_national which = 244 }
+		command = { type = addcore_national which = 245 }
+		command = { type = addcore_national which = 246 }
+		command = { type = addcore_national which = 247 }
+		command = { type = addcore_national which = 248 }
+		command = { type = addcore_national which = 249 }
+		command = { type = addcore_national which = 250 }
+	}
+}

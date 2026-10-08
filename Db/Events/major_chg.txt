@@ -1,0 +1,45 @@
+#####Chagatai Major Events#####
+#  By Demetrios and Havard    #
+#                             #
+#  altered a bit by Doomdark  #
+#                             #
+###############################
+
+# The City on the Silk Road
+event = {
+	id = 3831
+	trigger = { 
+		owned = { 
+			province = 1600
+			data = -1
+		}
+	}
+	random = no
+	country = CHG
+	name = "EVENTNAME3831"
+	desc = "EVENTHIST3831"
+	style = "3831"
+	
+	date = { day = 1 month = january year = 1682 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1683 }
+
+	action_a ={ # Move throne to Kashgar
+		name = "ACTIONNAME3831A"
+		command = { type = capital which = 1600 }
+		command = { type = addcore_claim which = 1592 } 
+		command = { type = addcore_claim which = 1594 } 
+		command = { type = addcore_claim which = 1598 } 
+		command = { type = addcore_claim which = 1599 } 
+		command = { type = domestic which = CENTRALIZATION  value = 1 }
+		command = { type = stability value = -2 }
+		command = { type = treasury value = -200 }
+		command = { type = trade value = 1000 }
+		command = { type = setflag which = Kashgar }
+	}
+	action_b ={ # Rule from the old capital
+		name = "ACTIONNAME3831B"
+		command = { type = domestic which = CENTRALIZATION  value = -1 }
+		command = { type = stability value = 2 }
+	}
+}

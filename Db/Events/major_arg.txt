@@ -1,0 +1,117 @@
+#####Castillian Major Events#####
+#By Joakim 'Greven' Bergqwist   #
+#   Thomas 'Besuchov' Johansson #
+#   Henrik 'Doomdark' Fåhraeus  #
+#################################
+
+#Viva España#
+event = {
+
+	id = 3554
+	trigger = {
+		owned = {
+			province = 436
+			data = -1
+		}
+		NOT = {
+			exists = SPA
+		}
+	}
+	random = no
+	country = ARG
+	name = "EVENTNAME3554"
+	desc = "EVENTHIST3554"
+
+	date = { day = 1 month = june year = 1476 }
+	offset = 150
+	deathdate = { day = 1 month = january year = 1490 }
+
+	action_a ={				#Let us claim the name Kingdom of Spain#
+		name = "ACTIONNAME3554A"
+		command = { type = country which = SPA }
+	        command = { type = remove_countryculture which = italian }
+		command = { type = add_countryculture which = iberian }
+		command = { type = addcore which = 428 }
+		}
+
+	action_b ={				#Let us keep the name Kingdom of Aragon instead#
+		name = "ACTIONNAME3554B"
+		command = { type = stability value = -3 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = GEN value = 100 }
+		command = { type = relation which = VEN value = 100 }
+		command = { type = relation which = POR value = -100 }
+		command = { type = domestic which = CENTRALIZATION value = -5 }
+		command = { type = desertion which = -1 value = 5000 }
+	}
+}
+
+#The Aragon Inheritance of Napoli#
+event = {
+
+	id = 3555				#Triggered by NAP3660#
+	random = no
+	country = ARG
+	name = "EVENTNAME3555"
+	desc = "EVENTHIST3555"
+
+	action_a ={				#Rule it as an independent Kingdom#
+		name = "ACTIONNAME3555A"
+		command = { type = vassal which = NAP }
+		command = { type = stability value = 2 }
+		command = { type = relation which = PAP value = 100 }
+		command = { type = relation which = TOS value = 100 }
+		command = { type = relation which = VEN value = 100 }
+		command = { type = relation which = GEN value = 100 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = PRO value = -100 }
+	}
+
+	action_b ={				#Rule it as an autonomous part of Aragon#
+		name = "ACTIONNAME3555B"
+		command = { type = addcore which = 393 }
+		command = { type = addcore which = 394 }
+		command = { type = inherit which = NAP }
+		command = { type = stability value = -2 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = TOS value = -100 }
+		command = { type = relation which = VEN value = -100 }
+		command = { type = relation which = GEN value = -100 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = PRO value = -200 }
+	}
+}
+
+event = {
+	id = 3850
+	random = no
+	country = ARG
+	name = "EVENTNAME3850"
+	desc = "EVENTHIST3850"
+	
+	trigger = {
+		vassal = { country = SPA country = ARG }
+	}
+
+	date = { day = 24  month = january year = 1516 } # The day that Carlos I inherits the throne.
+	offset = 30
+	deathdate = { day = 24  month = april year = 1516 }
+
+	action_a = { #The Kingdoms are one!#
+		name = "ACTIONNAME3850A"
+		command = { type = trigger which = 3848 } # Spain inherits Aragon
+	}
+	action_b = { #Force Carlos to make concessions.#
+		name = "ACTIONNAME3850B"
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = FRA value = 20 }
+	}
+	action_c = { #No! Let us elect our own king instead.#
+		name = "ACTIONNAME3850C"
+		command = { type = breakvassal which = SPA }
+		command = { type = relation which = SPA value = -150 }
+		command = { type = relation which = HAB value = -150 }
+		command = { type = relation which = FRA value = 50 }
+	} 
+}

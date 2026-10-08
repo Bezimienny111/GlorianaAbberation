@@ -1,0 +1,1115 @@
+#####Denmark Major Events#####
+#		By	     #
+# Joakim 'Greven' Bergqwist  #
+#			     #
+# 		and	     #
+#			     #
+# Henrik 'Doomdark' Fåhraeus #
+##############################
+
+#The Engelbrekt Rebellion#
+event = {
+	id = 3283
+	trigger = 
+	{
+		vassal = {
+			country = DAN
+			country = SWE
+		}
+	}
+	random = no
+	country = DAN
+	name = "EVENTNAME3283"
+	desc = "EVENTHIST3283"
+	style = 1
+	
+	date = { day = 1 month = january year = 1434 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1437 }
+	
+	action_a ={ # Replace Jösse Eriksson with Hans von Eberstein
+		name = "ACTIONNAME3283A"
+		command = { type = trigger which = 3217 } # Engelbrekt's rebellion in Sweden.
+		command = { type = relation which = SWE value = -100 }
+		command = { type = domestic which = CENTRALIZATION  value = 1 }
+	}
+	action_b ={ # Replace Jösse with a lenient sheriff
+		name = "ACTIONNAME3283B"
+		command = { type = treasury value = -100 } # Lost taxes
+		command = { type = domestic which = CENTRALIZATION  value = -1 }
+		command = { type = stability value = -2 } # Angry noblemen
+	}
+}
+
+#The Rebellion spreads#
+event = {
+	id = 3756
+	random = no
+	country = DAN
+	name = "EVENTNAME3756"
+	desc = "EVENTHIST3756"
+	style = 1
+	
+	# Triggered by the Swedish Engelbrekt event.
+	
+	action_a ={ # Ok
+		name = "ACTIONNAME3756A"
+		command = { type = revolt which = 251 } # Skåne
+		command = { type = revolt which = 251 }
+		command = { type = revolt which = 308 } # Gotland
+	}
+}
+
+#The Sound Due#
+event = {
+	id = 3284
+	random = no
+	country = DAN
+	name = "EVENTNAME3284"
+	desc = "EVENTHIST3284"
+	style = 1
+	
+	date = { day = 1 month = january year = 1429 }
+	offset = 364
+
+	action_a ={ # Impose the Sound Due
+		name = "ACTIONNAME3284A"
+		command = { type = domestic which = MERCANTILISM  value = 2 }
+		command = { type = provincetax which = 307 value = 10 } # Perhaps more.
+		command = { type = relation which = NVG value = -50 }
+		command = { type = relation which = SWE value = -50 }
+		command = { type = relation which = MEC value = -50 }
+		command = { type = relation which = BRE value = -50 }
+		command = { type = relation which = SHL value = -50 }
+		command = { type = relation which = POM value = -50 }
+		command = { type = relation which = PRL value = -50 }
+		command = { type = relation which = STT value = -50 }
+		command = { type = relation which = BRA value = -50 }
+		command = { type = relation which = OLD value = -50 }
+		command = { type = relation which = LAT value = -50 }
+		command = { type = relation which = LIV value = -50 }
+		command = { type = relation which = ENG value = -50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = treasury value = 200 }
+	}
+	action_b ={ # Let trade flow freely
+		name = "ACTIONNAME3284B"
+		command = { type = domestic which = MERCANTILISM  value = -3 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = relation which = NVG value = 50 }
+		command = { type = relation which = SWE value = 50 }
+		command = { type = relation which = MEC value = 50 }
+		command = { type = relation which = BRE value = 50 }
+		command = { type = relation which = SHL value = 50 }
+		command = { type = relation which = POM value = 50 }
+		command = { type = relation which = PRL value = 50 }
+		command = { type = relation which = STT value = 50 }
+		command = { type = relation which = BRA value = 50 }
+		command = { type = relation which = OLD value = 50 }
+		command = { type = relation which = LAT value = 50 }
+		command = { type = relation which = LIV value = 50 }
+		command = { type = relation which = ENG value = 50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = trade value = 1000 }
+		command = { type = stability value = 2 }
+	}
+	action_c ={ # Cripple the Hansa monopoly
+		name = "Cripple the Hansa monopoly"
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = MERCANTILISM  value = -5 }
+		command = { type = pirates which = 876 value = 3 }
+		command = { type = pirates which = 878 value = 3 }
+		command = { type = cot which = 307 }
+		command = { type = removecot which = 305 }
+		command = { type = relation which = NVG value = -100 }
+		command = { type = relation which = SWE value = -100 }
+		command = { type = relation which = MEC value = -100 }
+		command = { type = relation which = BRE value = -100 }
+		command = { type = relation which = SHL value = -100 }
+		command = { type = relation which = POM value = -100 }
+		command = { type = relation which = PRL value = -100 }
+		command = { type = relation which = STT value = -100 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = OLD value = -100 }
+		command = { type = relation which = LAT value = -100 }
+		command = { type = relation which = LIV value = -100 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = treasury value = -500 }
+		command = { type = badboy value = 5 }
+		command = { type = stability value = -3 }
+		command = { type = sleepevent which = 3231 }
+	}
+}
+
+#The Pluralistic Reforms of Christian II#
+event = {
+	id = 3285
+	random = no
+	country = DAN 
+	name = "EVENTNAME3285"
+	desc = "EVENTHIST3285"
+	style = "3285"
+	
+	date = { day = 1 month = january year = 1517 }
+	offset = 720
+
+	action_a ={ # Reform the Government
+		name = "ACTIONNAME3285A"
+		command = { type = domestic which = MERCANTILISM  value = -2 }
+		command = { type = domestic which = ARISTOCRACY  value = -2 }
+		command = { type = stability value = -3 }
+		command = { type = revoltrisk which = 72 value = 3 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+	}
+	action_b ={ # Maintain Status Quo
+		name = "ACTIONNAME3285B"
+		command = { type = stability value = 2 }
+	}
+}
+
+#Vornedskab#
+event = {
+	id = 3286
+	random = no
+	country = DAN
+	name = "EVENTNAME3286"
+	desc = "EVENTHIST3286"
+	style = 1
+	
+	date = { day = 1 month = february year = 1493 }
+	offset = 720
+
+	action_a = { # Adopt Vornedskab
+		name = "ACTIONNAME3286A"
+		command = { type = domestic which = SERFDOM value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = revoltrisk which = 120 value = 3 }
+	}
+	action_b ={ # Leave the peasants their freedom
+		name = "ACTIONNAME3286B"
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = stability value = -4 }
+	}
+}
+
+#The Scandinavian Constitution#
+event = {
+	id = 3287
+	trigger = {
+		exists = SWE
+		vassal = {
+			country = DAN
+			country = SWE
+		}
+	}
+	random = no
+	country = DAN
+	name = "EVENTNAME3287"
+	desc = "EVENTHIST3287"
+	style = 1
+	
+	date = { day = 1 month = february year = 1483 }
+	offset = 364
+	deathdate = { day = 1 month = february year = 1485 }
+
+	action_a ={ # Draft the Scandinavian Constitution
+		name = "ACTIONNAME3287A"
+		command = { type = relation which = SWE value = 50 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = stability value = 2 }
+	}
+	action_b ={ # Drop the whole idea.
+		name = "ACTIONNAME3287B"
+		command = { type = stability value = -1 }
+	}
+}
+
+#The Great Naval Reform#
+event = {
+	id = 3288
+	random = no
+	country = DAN
+	name = "EVENTNAME3288"
+	desc = "EVENTHIST3288"
+	style = 2
+	
+	date = { day = 1 month = february year = 1509 }
+	offset = 364
+
+	action_a ={ # Reform the Navy
+		name = "ACTIONNAME3288A"
+		command = { type = domestic which = LAND value = -2 }
+		command = { type = naval value = 2000 }
+	}
+	action_b ={ # Reform the Army
+		name = "ACTIONNAME3288B"
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = land value = 1500 }
+	}
+	action_c ={ # Build fortifications
+		name = "ACTIONNAME3288C"
+		command = { type = fortress which = -2 value = 1 } # Capital
+		command = { type = fortress which = -4 value = 1 } # Random province
+		command = { type = fortress which = -4 value = 1 } # Random province
+		command = { type = fortress which = -4 value = 1 } # Random province
+	}
+}
+
+#The End of the Kalmar Union#
+event = {
+	id = 3289
+	random = no
+	country = DAN
+	name = "EVENTNAME3289"
+	desc = "EVENTHIST3289"
+	style = 2
+	
+	# Triggered by Swedish events 3219 or 3234
+	
+	action_a ={ # Ok
+		name = "ACTIONNAME3289A"
+		command = { type = relation which = SWE value = -50 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+	}
+}
+
+## Norway declares independence!
+event = {
+	id = 3847
+	trigger = {
+		exists = NOR
+		NOT = {
+			vassal = {
+				country = DAN
+				country = NOR
+			}
+		}
+	}
+	random = no
+	country = DAN
+	name = "EVENTNAME3847"
+	desc = "EVENTHIST3847"
+	style = 2
+
+	action_a = { # Curses!
+		name = "ACTIONNAME3847A"
+		command = { type = relation which = NOR value = -150 }
+		command = { type = addcore_claim which = 255 }
+		command = { type = addcore_claim which = 256 }
+		command = { type = addcore_claim which = 258 }
+		command = { type = addcore_claim which = 259 }
+		command = { type = addcore_claim which = 261 }
+		command = { type = addcore_claim which = 381 }
+		command = { type = addcore_claim which = 1466 }
+		command = { type = addcore_claim which = 1537 }
+		command = { type = addcore_claim which = 1538 }
+		command = { type = sleepevent which = 03846 } # Norwegian End of Kalmar Union.
+	}
+}
+
+# Norway requests annexation.
+event = {
+	id = 5848
+	
+	# Triggered by NOR 3846
+	
+	random = no
+	country = DAN
+	name = "EVENTNAME5848"
+	desc = "EVENTHIST5848"
+	style = 2
+
+	action_a = { # Excellent!
+		name = "ACTIONNAME5848A"
+		command = { type = flagname which = NOR }
+		command = { type = countryname value = "Denmark-Norway" }
+		command = { type = inherit which = NOR }
+		command = { type = addcore_national which = 255 }
+		command = { type = addcore_national which = 256 }
+		command = { type = addcore_national which = 258 }
+		command = { type = addcore_national which = 259 }
+		command = { type = addcore_national which = 261 }
+		command = { type = addcore_national which = 381 }
+		command = { type = addcore_national which = 1466 }
+		command = { type = addcore_national which = 1537 }
+		command = { type = addcore_national which = 1538 }
+		command = { type = add_countryculture which = norwegian }
+	}
+}
+
+#The Fate of the Teutonic Order#
+event = {
+
+	id = 3290					#Triggered by LAT3620#
+	random = no
+	country = DAN
+	name = "EVENTNAME3290"
+	desc = "EVENTHIST3290"
+	style = 2
+
+	action_a ={					#Accept the Agreement#	
+		name = "ACTIONNAME3290A"
+		command = { type = relation which = KUR value = 150 }
+		command = { type = relation which = RUS value = -50 }
+		command = { type = relation which = SWE value = 100 }
+		command = { type = relation which = POL value = 100 }
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 200 }
+	}
+
+	action_b ={					#Defy the Agreement#
+		name = "ACTIONNAME3290B"
+		command = { type = addcore_claim which = 282 }
+		command = { type = addcore_claim which = 281 }
+		command = { type = relation which = KUR value = -50 }
+		command = { type = relation which = RUS value = 150 }
+		command = { type = relation which = SWE value = -150 }
+		command = { type = relation which = POL value = -150 }
+		command = { type = casusbelli which = SWE value = 60 } 
+		command = { type = casusbelli which = POL value = 60 } 
+		command = { type = stability value = -2 }
+	}
+}
+
+#The Fate of the Teutonic Order#
+event = {
+
+	id = 3291					#Triggered by LAT3620#
+	random = no
+	country = DAN
+	name = "EVENTNAME3291"
+	desc = "EVENTHIST3291"
+	style = 2
+
+	action_a ={					#Accept Agreement#
+		name = "ACTIONNAME3291A"
+		command = { type = vassal which = KUR }
+		command = { type = addcore_claim which = 282 }
+		command = { type = addcore_claim which = 281 }
+		command = { type = relation which = KUR value = 150 }
+		command = { type = relation which = RUS value = 100 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={					#Only Accept your part of the Agreement#
+		name = "ACTIONNAME3291B"
+		command = { type = vassal which = KUR }
+		command = { type = addcore_claim which = 282 }
+		command = { type = addcore_claim which = 281 }
+		command = { type = addcore_claim which = 276 }
+		command = { type = addcore_claim which = 275 }
+		command = { type = relation which = KUR value = -100 }
+		command = { type = relation which = RUS value = -100 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#The Fate of the Teutonic Order#
+event = {
+
+	id = 3292					#Triggered by LAT3620#
+	random = no
+	country = DAN
+	name = "EVENTNAME3292"
+	desc = "EVENTHIST3292"
+	style = 2
+
+	action_a ={					#Defy the Knights#
+		name = "ACTIONNAME3292A"
+		command = { type = addcore_claim which = 282 }
+		command = { type = addcore_claim which = 281 }
+		command = { type = casusbelli which = LAT value = 60 }
+		command = { type = stability value = -2 }
+		command = { type = relation which = LAT value = -150 }
+		command = { type = relation which = SWE value = 50 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = relation which = POL value = 50 }
+	}
+
+	action_b ={					#Accept this Government#
+		name = "ACTIONNAME3292B"
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 200 }
+		command = { type = relation which = LAT value = 150 }
+		command = { type = relation which = SWE value = -50 }
+		command = { type = relation which = RUS value = -50 }
+		command = { type = relation which = POL value = -50 }
+	}
+}
+
+#Count's Feud#
+event = {
+	id = 3293
+	random = no
+	country = DAN
+	name = "EVENTNAME3293"
+	desc = "EVENTHIST3293"
+	style = "3293"
+ 	
+ 	date = { day = 11 month = april year = 1533 }
+	offset = 364
+
+	action_a ={ # Support Christian of Holstein
+		name = "ACTIONNAME3293A"
+		command = {
+			trigger = { religion = catholic }
+			type = religion which = protestant
+		}
+		command = { type = addcore_claim which = 306 }
+		command = { type = vassal which = SHL }
+		command = { type = domestic which = MERCANTILISM value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = 3 }
+		command = { type = relation which = SWE value = 100 }
+		command = { type = relation which = SHL value = 100 }
+		command = { type = revoltrisk which = 72 value = 3 }
+		command = { type = stability value = -3 }
+		command = { type = add_countryculture which = westphalian }
+	}
+	action_b ={ # Support Christian II
+		name = "ACTIONNAME3293B"
+		command = {
+			trigger = { religion = catholic }
+			type = conversion which = -1
+		}
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = sleepmonarch which = 06346 }
+		command = { type = wakemonarch which = 06356 } # His line ends with him anyway.
+		command = { type = relation which = MEC value = 100 }
+		command = { type = relation which = POM value = 100 }
+		command = { type = revoltrisk which = 48 value = 2 }
+		command = { type = stability value = -6 }
+	}
+}
+
+#Peder Oxe#
+event = {
+	id = 3294
+	random = no
+	country = DAN
+	name = "EVENTNAME3294"
+	desc = "EVENTHIST3294"
+	style = "3294"
+	
+	date = { day = 1 month = january year = 1566 }
+	offset = 364
+
+	action_a ={			#An Excellent Minister!#
+		name = "ACTIONNAME3294A"
+		command = { type = DIP which = 2 value = 120 }
+		command = { type = ADM which = 4 value = 120 }
+		command = { type = MIL which = 2 value = 120 }
+		command = { type = infra value = 500 }
+		command = { type = stability value = 2 }
+	}
+}
+
+#Danish East Indian Company#
+event = {
+	id = 3295
+	random = no
+	country = DAN
+	name = "EVENTNAME3295"
+	desc = "EVENTHIST3295"
+	style = "3295"
+	
+	date = { day = 1 month = january year = 1616 }
+	offset = 364
+
+	action_a ={ # Found an East Indian Company
+		name = "ACTIONNAME3295A"
+		command = { type = treasury value = -500 }
+		command = { type = domestic which = LAND value = -1 }
+		command = { type = colonists value = 6 }
+		command = { type = merchants value = 6 }
+		command = { type = explorer which = -1 } # for 500 ducats, seems only fair...
+		command = { type = trade value = 1000 }
+		command = { type = naval value = 1000 }
+	}
+	action_b ={ # It is a useless venture
+		name = "ACTIONNAME3295B"
+		command = {  } # Nothing happens
+	}
+}
+
+#The Mercantile Reforms of Christian IV#
+event = {
+	id = 3296
+	random = no
+	country = DAN
+	name = "EVENTNAME3296"
+	desc = "EVENTHIST3296"
+	style = "3296"
+	
+	date = { day = 1 month = january year = 1625 }
+	offset = 3649
+
+	action_a = { # Mercantilist Reforms
+		name = "ACTIONNAME3296A"
+		command = { type = domestic which = MERCANTILISM value = 2 }
+		command = { type = trade value = 1000 }
+		command = { type = naval value = 500 }
+	}
+	action_b ={ # Free Trade Reforms
+		name = "ACTIONNAME3296B"
+		command = { type = stability value = -3 }
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = trade value = 1000 }
+		command = { type = naval value = 500 }
+	}
+}
+
+#The Absolutism#
+event = {
+	id = 3297
+	random = no
+	country = DAN
+	name = "EVENTNAME3297"
+	desc = "EVENTHIST3297"
+	style = "3297"
+	
+	date = { day = 1 month = january year = 1660 }
+	offset = 720
+
+	action_a ={ # Establish Absolutism
+		name = "ACTIONNAME3297A"
+		command = { type = stability value = -3 }
+		command = { type = domestic which = ARISTOCRACY value = -4 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+	}
+	action_b ={ # Maintain the present system
+		name = "ACTIONNAME3297B"
+		command = { type = stability value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+	}
+}
+
+#The Modernisation of the Navy#
+event = {
+	id = 3298
+	random = no
+	country = DAN
+	name = "EVENTNAME3298"
+	desc = "EVENTHIST3298"
+	style = "3298"
+
+	date = { day = 1 month = february year = 1610 }
+	offset = 364
+
+	action_a ={ # Reform the Navy
+		name = "ACTIONNAME3298A"
+		command = { type = domestic which = LAND value = -2 }
+		command = { type = naval value = 2000 }
+	}
+	action_b ={ # Reform the Army
+		name = "ACTIONNAME3298B"
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = land value = 1500 }
+	}
+	action_c ={ # Build fortifications
+		name = "ACTIONNAME3298C"
+		command = { type = fortress which = -1 value = 1 } # Random province
+		command = { type = fortress which = -4 value = 1 } # Random province
+		command = { type = fortress which = -4 value = 1 } # Random province
+		command = { type = fortress which = -4 value = 1 } # Random province
+	}
+}
+
+#Peder Griffenfeld#
+event = {
+	id = 3299
+	random = no
+	country = DAN
+	name = "EVENTNAME3299"
+	desc = "EVENTHIST3299"
+	style = "3299"
+	
+	date = { day = 1 month = february year = 1673 }
+	offset = 364
+
+	action_a ={	# Ok
+		name = "ACTIONNAME3299A"
+		command = { type = DIP which = 3 value = 120 }
+		command = { type = ADM which = 2 value = 120 }
+		command = { type = MIL which = 2 value = 120 }
+		command = { type = stability value = 2 }
+	}
+}
+
+#The Great Northern Conflict#
+event = {
+	id = 3300
+	trigger = {
+		OR = {
+			exists = SHL
+			owned = { province = 309 data =SWE }
+			owned = { province = 251 data =SWE }
+			owned = { province = 255 data =SWE }
+			owned = { province = 256 data =SWE }
+			owned = { province = 258 data =SWE }
+			owned = { province = 259 data =SWE }
+			owned = { province = 261 data =SWE }
+			owned = { province = 381 data =SWE }
+			owned = { province = 308 data =SWE }
+		}
+	}
+	random = no
+	country = DAN
+	name = "EVENTNAME3300"
+	desc = "EVENTHIST3300"
+	style = "3300"
+
+	date = { day = 15 month = june year = 1697 }
+	offset = 0
+	deathdate = { day = 1 month = april year = 1700 }
+
+	action_a ={				#Try to balance things#
+		name = "ACTIONNAME3300A"
+		command = { type = casusbelli which = SWE value = 36 }
+		command = { type = casusbelli which = SHL value = 36 }
+		command = { type = stability value = -2 }
+		command = { type = INF which = -1 value = 5000 }
+		command = { type = warships which = -2 value = 10 }
+		command = { type = relation which = SHL value = -150 }
+		command = { type = relation which = SWE value = -150 }
+		command = { type = relation which = RUS value = 150 }
+		command = { type = relation which = POL value = 100 }
+		command = { type = relation which = SAC value = 100 }
+	}
+	action_b ={				#The naval adequate founds#
+		name = "ACTIONNAME3300B"
+		command = { type = casusbelli which = SWE value = 36 }
+		command = { type = casusbelli which = SHL value = 36 }
+		command = { type = stability value = -1 }
+		command = { type = warships which = -2 value = 30 }
+		command = { type = relation which = SHL value = -150 }
+		command = { type = relation which = SWE value = -150 }
+		command = { type = relation which = RUS value = 150 }
+		command = { type = relation which = POL value = 100 }
+		command = { type = relation which = SAC value = 100 }
+	}
+	action_c ={				#The Army adequate founds#
+		name = "ACTIONNAME3300C"
+		command = { type = casusbelli which = SWE value = 36 }
+		command = { type = casusbelli which = SHL value = 36 }
+		command = { type = stability value = -1 }
+		command = { type = INF which = -1 value = 15000 }
+		command = { type = CAV which = -3 value = 2000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = relation which = SHL value = -150 }
+		command = { type = relation which = SWE value = -150 }
+		command = { type = relation which = RUS value = 150 }
+		command = { type = relation which = POL value = 100 }
+		command = { type = relation which = SAC value = 100 }
+	}
+}
+#Den Danske Lov#
+event = {
+	id = 3301
+	random = no
+	country = DAN
+	name = "EVENTNAME3301"
+	desc = "EVENTHIST3301"
+	style = 3
+	
+	date = { day = 1 month = february year = 1683 }
+	offset = 364
+
+	action_a ={ # Sign the Law
+		name = "ACTIONNAME3301A"
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = stability value = -2 }
+	}
+	action_b ={ # Maintain the present system
+		name = "ACTIONNAME3301B"
+		command = { type = stability value = 2 }
+	}
+}
+
+#The Effects of the Pragmatic Sanction#
+event = {
+
+	id = 3302
+	trigger = { event = 3205 }
+	random = no
+	country = DAN
+	name = "EVENTNAME3302"
+	desc = "EVENTHIST3302"
+
+	date = { day = 1 month = january year = 1741 }
+	offset = 10
+	deathdate = { day = 1 month = june year = 1741 }
+
+	action_a ={				#Neutral#
+		name = "ACTIONNAME3302A"
+		command = { type = relation which = BAY value = 50 }
+		command = { type = relation which = SAC value = 50 }
+		command = { type = relation which = PRU value = 50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = ENG value = 50 }
+		command = { type = relation which = RUS value = -50 }
+		command = { type = relation which = HES value = 50 }
+		command = { type = relation which = HAN value = 50 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = relation which = SWE value = 50 }
+		command = { type = stability value = 2 }
+	}
+	action_b ={				#Pro-Habsburg#
+		name = "ACTIONNAME3302B"
+		command = { type = relation which = BAY value = -150 }
+		command = { type = relation which = SAC value = -150 }
+		command = { type = relation which = PRU value = -150 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = RUS value = 150 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = HAN value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = SWE value = -150 }
+		command = { type = stability value = -1 }
+		command = { type = casusbelli which = SWE value = 12 }
+	}
+	action_c ={				#Anti-Habsburg#
+		name = "ACTIONNAME3302C"
+		command = { type = relation which = BAY value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = PRU value = 150 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = ENG value = -150 }
+		command = { type = relation which = RUS value = -150 }
+		command = { type = relation which = HES value = -150 }
+		command = { type = relation which = HAN value = -150 }
+		command = { type = relation which = HAB value = -150 }
+		command = { type = stability value = -3 }
+		command = { type = casusbelli which = HAB value = 12 }
+	}
+}
+
+#The Election of a Swedish Crownprince#		#Russian Candidate#
+event = {
+	id = 3303				#Triggered by SWE3252#
+	random = no
+	country = DAN
+	name = "EVENTNAME3303"
+	desc = "EVENTHIST3303"
+	style = 4
+
+	action_a ={				#We have been insulted#
+		name = "ACTIONNAME3303A"
+		command = { type = casusbelli which = SWE value = 12 }
+		command = { type = relation which = SWE value = -200 }
+		command = { type = relation which = RUS value = -100 }
+		command = { type = stability value = 1 }
+	}
+	action_b ={				#They are not worth the trouble#
+		name = "ACTIONNAME3303B"
+		command = { type = relation which = SWE value = 100 }
+		command = { type = relation which = RUS value = 100 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#The Election of a Swedish Crownprince#		#Danish Candidate#
+event = {
+	id = 3304				#Triggered by SWE3252#
+	random = no
+	country = DAN
+	name = "EVENTNAME3304"
+	desc = "EVENTHIST3304"
+	style = 4
+
+	action_a ={				#The Union of Kalmar Reinstituted#
+		name = "ACTIONNAME3304A"
+		command = { type = relation which = SWE value = 200 }
+		command = { type = dynastic which = SWE }
+		command = { type = alliance which = SWE }
+		command = { type = vassal which = SWE }
+		command = { type = stability value = 3 }
+		command = { type = trigger which = 3538 }
+	}
+}
+
+#The Mercantile Reforms of Christian VI#
+event = {
+	id = 3305
+	random = no
+	country = DAN
+	name = "EVENTNAME3305"
+	desc = "EVENTHIST3305"
+	style = "3305"
+	
+	date = { day = 1 month = january year = 1730 }
+	offset = 3649
+
+	action_a ={ # Mercantilist reforms
+		name = "ACTIONNAME3305A"
+		command = { type = treasury value = -600 }
+		command = { type = gainbuilding which = 307 value = shipyard }
+		command = { type = gainmanufactory which = -1 value = navalequipment }
+		command = { type = gainmanufactory which = -1 value = goods }
+		command = { type = domestic which = MERCANTILISM value = 4 }
+		command = { type = provincetax which = -2 value = 2 }
+		command = { type = provincetax which = 251 value = 2 } # Skåne
+		command = { type = provincetax which = 309 value = 2 } # Jylland
+	}
+	action_b ={ # No reforms
+		name = "ACTIONNAME3305B"
+		command = {  }
+	}
+	action_c ={ # Free trade reforms
+		name = "ACTIONNAME3305C"
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = trade value = 1000 }
+		command = { type = merchants value = 6 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#The 'Stavnsbåndet' Law#
+event = {
+	id = 3306
+	random = no
+	country = DAN
+	name = "EVENTNAME3306"
+	desc = "EVENTHIST3306"
+	style = "3306"
+	
+	date = { day = 1 month = january year = 1733 }
+	offset = 364
+
+	action_a ={ # Pass the Law
+		name = "ACTIONNAME3306A"
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = SERFDOM value = 3 }
+		command = { type = revoltrisk which = 120 value = 3 }
+		command = { type = provincemanpower which = -1 value = 2 }
+		command = { type = provincemanpower which = -4 value = 2 }
+		command = { type = provincemanpower which = -4 value = 2 }
+		command = { type = provincemanpower which = -4 value = 2 }
+		command = { type = provincetax which = -1 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+	}
+	action_b ={ # Drop the Law
+		name = "ACTIONNAME3306B"
+		command = { type = stability value = -3 }
+	}
+}
+
+#Pietism#
+event = {
+	id = 3307
+	random = no
+	country = DAN
+	name = "EVENTNAME3307"
+	desc = "EVENTHIST3307"
+	style = 4
+	
+	date = { day = 1 month = january year = 1735 }
+	offset = 720
+
+	action_a ={ # Endorse Pietism
+		name = "ACTIONNAME3307A"
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = stability value = 1 }
+	}
+	action_b ={ # Outlaw Pietism
+		name = "ACTIONNAME3307B"
+		command = { type = revoltrisk which = 120 value = 1 }
+		command = { type = revoltrisk which = 24 value = 2 }
+	}
+}
+
+#The Regency of J.H.E. Bernstorff#
+event = {
+	id = 3308
+	random = no
+	country = DAN
+	name = "EVENTNAME3308"
+	desc = "EVENTHIST3308"
+	style = "3308"
+	
+	date = { day = 16 month = january year = 1766 }
+	offset = 30
+
+	action_a = { # Ok
+		name = "ACTIONNAME3308A"
+		command = { type = DIP which = 4 value = 50 }
+		command = { type = ADM which = 3 value = 50 }
+		command = { type = MIL which = 3 value = 50 }
+		command = { type = relation which = RUS value = 100 }
+	}
+}
+
+#The Regency of Struensee#
+event = {
+	id = 3309
+	random = no
+	country = DAN
+	name = "EVENTNAME3309"
+	desc = "EVENTHIST3309"
+	style = "3309"
+	
+	date = { day = 1 month = may year = 1770 }
+	offset = 30
+
+	action_a ={
+		name = "ACTIONNAME3309A"
+		command = { type = DIP which = 1 value = 24 }
+		command = { type = ADM which = 4 value = 24 }
+		command = { type = MIL which = 1 value = 24 }
+		command = { type = infra value = 500 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+	}
+}
+
+#The Landbo Commission#
+event = {
+	id = 3310
+	random = no
+	country = DAN
+	name = "EVENTNAME3310"
+	desc = "EVENTHIST3310"
+	style = 4
+	
+	date = { day = 1 month = may year = 1784 }
+	offset = 364
+
+	action_a ={ # Assign the commission
+		name = "ACTIONNAME3310A"
+		command = { type = stability value = -3 } # Upset nobles
+		command = { type = domestic which = SERFDOM value = -3 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+	}
+	action_b ={ # Stavnsbåndet works well
+		name = "ACTIONNAME3310B"
+		command = { type = revoltrisk which = 120 value = 4 } # Upset serfs
+	}
+}
+#The Great Agricultural Reform#
+event = {
+	id = 3311
+	random = no
+	country = DAN
+	name = "EVENTNAME3311"
+	desc = "EVENTHIST3311"
+	style = 4
+	
+	date = { day = 1 month = january year = 1781 }
+	offset = 364
+
+	action_a ={ # Reform the agriculture
+		name = "ACTIONNAME3311A"
+		command = { type = infra value = 250 }
+		command = { type = provincetax which = -1 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = revoltrisk which = 48 value = 3 } # Upset peasants
+	}
+	action_b ={ # Do not upset the people
+		name = "ACTIONNAME3311B"
+		command = {  } # Nothing happens
+	}
+}
+
+#The Regency of Ove Hoeg-Guldberg#
+event = {
+	id = 3312
+	random = no
+	country = DAN
+	name = "EVENTNAME3312"
+	desc = "EVENTHIST3312"
+	style = 4
+	
+	date = { day = 1 month = january year = 1773 }
+	offset = 30
+
+	action_a ={ # Ok
+		name = "ACTIONNAME3312A"
+		command = { type = DIP which = 3 value = 120 }
+		command = { type = ADM which = 2 value = 120 }
+		command = { type = MIL which = 2 value = 120 }
+	}
+}
+
+#The Regency of A.P.Bernstorff#
+event = {
+	id = 3313
+	random = no
+	country = DAN
+	name = "EVENTNAME3313"
+	desc = "EVENTHIST3313"
+	style = 4
+	
+	date = { day = 1 month = january year = 1784 }
+	offset = 80
+
+	action_a ={
+		name = "ACTIONNAME3313A"
+		command = { type = DIP which = 5 value = 156 }
+		command = { type = ADM which = 3 value = 156 }
+		command = { type = MIL which = 3 value = 156 }
+		command = { type = stability value = 2 }
+		command = { type = domestic which = SERFDOM value = -1 }
+	}
+}
+
+#The Great Fire of Oslo#
+event = {
+	id = 4170
+	trigger = {
+		owned = { province = 255 data = DAN }
+	}
+	random = no
+	country = DAN
+	name = "The Great Fire of Oslo"
+	desc = "The Great Fire of Oslo, also known as the Oslo Fire of 1624, was a devastating event that profoundly impacted the capital of Norway. Raging from the 17th - 20th August 1624, the fire razed a significant portion of the city to the ground, leaving in its wake a trail of destruction. The flames, fueled by strong winds and dry weather, consumed approximately 90 percent of the city's buildings, including historical and cultural landmarks. This catastrophic event led to the decision to relocate and rebuild the city, resulting in the founding of Christiania (now Oslo) on more strategically located ground nearby. The new city was meticulously planned, incorporating a grid pattern that contrasted with the medieval layout of the previous Oslo. The Great Fire of Oslo remains a pivotal event in the city's history, symbolizing both destruction and rebirth, as the rebuilt Christiania went on to become the modern capital of Norway."
+	
+	style = "4170"
+
+	date = { day = 1 month = august year = 1624 }
+	offset = 5
+	deathdate = { day = 1 month = december year = 1624 }
+
+	action_a ={			# Rebuild the city as Christiania
+		name = "Rebuild the city as Christiania"
+		command = { type = cityname which = 255 value = "Christiania" }
+		command = { type = populationpercent which = 255 value = 15 }
+		command = { type = provincetax which = 255 value = 2 }
+		command = { type = provincemanpower which = 255 value = 1 }
+		command = { type = fortress which = 255 value = 1 }
+		command = { type = infra value = 250 }
+		command = { type = treasury value = -500 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={			# We cannot afford to invest in Norway
+		name = "We cannot afford to invest in Norway"
+		command = { type = populationpercent which = 255 value = -25 }
+		command = { type = provincetax which = 255 value = -2 }
+		command = { type = provincemanpower which = 255 value = -1 }
+		command = { type = losebuilding which = 255 value = shipyard }
+		command = { type = losemanufactory which = 255 }
+		command = { type = fortress which = 255 value = -2 }
+		command = { type = infra value = -750 }
+		command = { type = vp value = -100 }
+		command = { type = stability value = -2 }
+	}
+}
+

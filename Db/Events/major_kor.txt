@@ -1,0 +1,101 @@
+#####Korea Major Events########
+#        By Aetius            #
+###############################
+
+#Creation of Hangul characters
+event = {
+	id = 3890
+	random = no
+	country = KOR
+	name = "EVENTNAME3890"
+	desc = "EVENTHIST3890"
+	style = "3890"
+
+	date = { day = 1 month = june year = 1446}
+	offset = 180
+
+	action_a ={#Replace the Chinese Characters with Hangul
+		name = "ACTIONNAME3890A"
+		command = { type = domestic which = serfdom value = -2 }
+		command = { type = domestic which = innovative value = 2 }
+		command = { type = domestic which = aristocracy value = -1 }
+		command = { type = domestic which = centralization value = -1 }
+		command = { type = treasury value = -200}
+		command = { type = provincetax which = 642 value = 2}
+		command = { type = stability value = -1}
+		command = {type = relation which = CHI value = -50}
+	}
+	action_b ={#Keep Chinese Characters
+		name = "ACTIONNAME3890B"
+		command = { type = stability value = -1}
+	}
+}
+
+#Construction of Turtle Ships
+event = {
+	id = 3891
+	trigger = {
+		war = { country = NIP country = KOR }
+		leader = 8940 # Admiral Yi
+	}
+	random = no
+	country = KOR
+	name = "EVENTNAME3891"
+	desc = "EVENTHIST3891"
+	style = "3891"
+
+	date = { year = 1588 }
+	offset = 60
+	deathdate = { year = 1600 }
+
+	action_a ={#Provide Funds
+		name = "ACTIONNAME3891A"
+		command = { type = domestic which = land value = -2 }
+		command = { type = treasury value = -200 }
+		command = { type = naval value = 500 }
+		command = { type = warships which = -1 value = 50 }
+	}
+	action_b ={ #Refuse funding
+		name = "ACTIONNAME3891B"
+		command = { type = sleepleader which = 08940 } # Yi Sun-sin
+		command = { type = sleepleader which = 08944 } # Yi Eok-gi
+	}
+}
+
+#Hyo-jong's northern expedition
+event = {
+	id = 3892
+	trigger = {
+		exists = MCH  #Manchus still exist as separate nation
+	}
+	random = no
+	country = KOR
+	name = "EVENTNAME3892"
+	desc = "EVENTHIST3892"
+
+	date = { day = 1 month = july year = 1654 }
+
+	offset = 600
+
+	action_a ={#Ok
+		name = "ACTIONNAME3892A"
+		command = { type = domestic which = land value = 1 }
+		command = { type = domestic which = quality value = 1 }
+		command = { type = land value = 300 }
+		command = { type = fortress which = 641 value = 1 }
+		command = { type = fortress which = 642 value = 1 }
+		command = { type = provincemanpower which = 641 value = 1 }
+		command = { type = provincemanpower which = 642 value = 1 }
+		command = { type = INF which = 642 value = 30000 }
+		command = { type = CAV which = 642 value = 15000 }
+		command = { type = casusbelli which = MCH value = 60 }
+		command = { type = relation which = MCH value = -50 }
+		command = { type = treasury value = -200 }
+	}
+
+	action_b ={ #Refuse funding
+		name = "ACTIONNAME3892B"
+		command = { type = sleepleader which = 08949 } # Shin Ryu
+		command = { type = relation which = MCH value = 50 }
+	}
+}

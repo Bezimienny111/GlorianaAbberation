@@ -1,0 +1,133 @@
+#-----------------------------------------------------------------------------
+# Serbian Events
+
+#A troubled Serbia calls on Byzantium for help
+event = {
+	id = 3001381
+	trigger = {
+		event = 3001359
+		NOT = { event = 3001382 }
+		OR = {
+			vassal = { country = HUN country = SER }
+			vassal = { country = TUR country = SER }
+			vassal = { country = DUL country = SER }
+			vassal = { country = ALB country = SER }
+			vassal = { country = HAB country = SER }
+			vassal = { country = POL country = SER }
+			vassal = { country = BOS country = SER }
+			vassal = { country = CAN country = SER }
+			vassal = { country = CRO country = SER }
+			vassal = { country = KAR country = SER }
+			vassal = { country = VEN country = SER }
+		}
+	}
+	random = NO
+	country = SER
+	name = "Imperial influence on the Danube"
+	desc = "Serbia has found itself dependent on foreign powers. Now Imperial influence has grown, and an Orthodox protector presents itself. This protection, however, will surely have a price."
+	date = { day = 1 month = january year = 1450 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = { # Let us call for help whatever it costs.
+		name = "If we will be slaves, let us have better masters"
+		command = { type = stability value = 2 }
+		command = { type = breakvassal which = HUN }
+		command = { type = breakvassal which = TUR }
+		command = { type = breakvassal which = DUL }
+		command = { type = breakvassal which = ALB }
+		command = { type = breakvassal which = HAB }
+		command = { type = breakvassal which = POL }
+		command = { type = breakvassal which = BOS }
+		command = { type = breakvassal which = CAN }
+		command = { type = breakvassal which = CRO }
+		command = { type = breakvassal which = KAR }
+		command = { type = breakvassal which = VEN }
+		command = { type = treasury value = -200 }
+		command = { type = trigger which = 3001383 }
+	}
+	action_b = { # Refuse to give our precious independence.
+		name = "Let us keep the evil we know"
+		command = { type = stability value = -1 }
+	}
+}
+
+#A troubled Serbia calls on Byzantium for help
+event = {
+	id = 3001382
+	trigger = {
+		exists = BYZ
+		atwar = yes
+		NOT = {
+			event = 3001381
+			war = { country = BYZ country = SER }
+			vassal = { country = RUS country = SER }
+			alliance = { country = RUS country = SER }
+			alliance = { country = HUN country = SER }
+			alliance = { country = TUR country = SER }
+			alliance = { country = DUL country = SER }
+			alliance = { country = ALB country = SER }
+			alliance = { country = HAB country = SER }
+			alliance = { country = POL country = SER }
+			alliance = { country = BOS country = SER }
+			alliance = { country = CAN country = SER }
+			alliance = { country = CRO country = SER }
+			alliance = { country = KAR country = SER }
+			alliance = { country = VEN country = SER }
+			alliance = { country = SER country = SER }
+			alliance = { country = MOL country = SER }
+			alliance = { country = BOH country = SER }
+		}
+	}
+	random = NO
+	country = SER
+	name = "An appeal to Constantinople"
+	desc = "Constantly embroiled in many wars, Serbia was sometimes left alone. Now Imperial influence has grown, and Byzantium is an obvious protector. This protection, however, will surely have a price."
+	date = { day = 1 month = january year = 1450 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = { # Let us call for help whatever it costs.
+		name = "Let us call for help whatever it costs."
+		command = { type = stability value = 2 }
+		command = { type = treasury value = -200 }
+		command = { type = breakvassal which = HUN }
+		command = { type = breakvassal which = TUR }
+		command = { type = breakvassal which = DUL }
+		command = { type = breakvassal which = ALB }
+		command = { type = breakvassal which = HAB }
+		command = { type = breakvassal which = POL }
+		command = { type = breakvassal which = BOS }
+		command = { type = breakvassal which = CAN }
+		command = { type = breakvassal which = CRO }
+		command = { type = breakvassal which = KAR }
+		command = { type = breakvassal which = VEN }
+		command = { type = trigger which = 3001383 }
+	}
+	action_b = { # Refuse to give our precious independence.
+		name = "Refuse to give our precious independence."
+		command = { type = stability value = -1 }
+	}
+}
+
+#Byzantium's reply to Serbia
+event = {
+	id = 3001383
+	random = NO
+	country = BYZ
+	name = "An appeal from Serbia"
+	desc = "Serbia has sent us a call for help. The generals think the Serbs should more appropriately be conquered than protected, but the Patriarch is mindful to protect its Orthodoxy against the Magyars and Venetians."
+
+	action_a = { # Take the money and run
+		name = "Thank the envoys for their time"
+		command = { type = treasury value = 200 }
+	}
+	action_b = { # Take what you can get
+		name = "We shall not refuse them succor"
+		command = { type = stability value = -1 }
+		command = { type = vassal which = SER }
+		command = { type = dynastic which = SER }
+		command = { type = alliance which = SER }
+		command = { type = relation which = SER value = 300 }
+	}
+}

@@ -1,0 +1,76 @@
+# Argentina #
+
+# The Uruguayan Civil War #
+event = {
+
+	id = 3592
+	trigger = {
+		owned = { province = 215 data = LAP }
+		NOT = { exists = URG }
+	}
+	random = no
+	country = LAP
+	name = "The Uruguayan Civil War"
+	desc = "EVENTHIST3592"
+
+	date = { day = 1 month = january year = 1828 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1838 }
+
+	action_a ={
+		name = "Crush the rebels"		#Crush the rebels#
+		command = { type = revoltrisk which = 36 value = 4 }
+		command = { type = revolt which = 215 }
+		command = { type = revolt which = 215 }
+		command = { type = revolt which = 216 }
+		command = { type = relation which = BRZ value = -150 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={
+		name = "Grant independence to Uruguay"		#Grant independence to Uruguay#
+		command = { type = free which = URG }
+		command = { type = removecore_national which = 215 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# The May Revolution #
+event = {
+
+	id = 250052 #3593
+	trigger = {
+		owned = { province = 218 data = LAP }
+		NOT = { exists = PRG }
+	}
+	random = no
+	country = LAP
+	name = "The May Revolution"
+	desc = "EVENTHIST250052"
+
+	date = { day = 1 month = may year = 1810 }
+	offset = 10
+	deathdate = { day = 1 month = june year = 1810 }
+
+	action_a ={
+		name = "Crush the rebels"		#Crush the rebels#
+		command = { type = revoltrisk which = 36 value = 4 }
+		command = { type = revolt which = 216 }
+		command = { type = revolt which = 217 }
+		command = { type = revolt which = 218 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={
+		name = "Grant independence to Paraguay"		#Grant independence to Paraguay#
+		command = { type = free which = PRG }
+		command = { type = removecore_national which = 216 }
+		command = { type = removecore_national which = 217 }
+		command = { type = removecore_national which = 218 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = stability value = 1 }
+	}
+}

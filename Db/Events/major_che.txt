@@ -1,0 +1,113 @@
+#################################
+##### Cherokee Major Events #####
+#################################
+
+#Missionaries in Echota#
+event = {
+	id = 7000
+	trigger = {
+		exists = USA
+		neighbour = USA
+		NOT = { technology = latin }
+	}
+	random = no
+	country = CHE
+	name = "Missionaries in Echota"
+	desc = "By the turn of the 19th century, there had been many years of contact between Cherokee and European settlers. Christian missionaries had long seen Native Americans as a fertile mission field, and missionaries were often the primary peaceful contact between the cultures. The first permanent mission in Cherokee lands was built in 1801 by Moravian missionaries. It was soon followed by Presbyterian and Congregational missions among others. Most missions also included a school - which the Cherokee were very interested in. Here they could learn the white man's way of thinking, and even learn to read and write. But not all Cherokee agreed on how much to accept the ways of the missionaries."
+	
+	date = { day = 1 month = january year = 1800 }
+	offset = 720
+	deathdate = { day = 1 month = january year = 1820 }
+	
+	action_a = { # They have some useful things to teach us
+		name = "They have some useful things to teach us"
+		command = { type = stability value = -1 }
+		command = { type = technology which = african }
+		command = { type = relation which = USA value = 50 }
+		command = { type = domestic which = centralization value = 1 }
+	}
+	action_b = { # Let us turn entirely to their ways
+		name = "Let us turn entirely to their ways"
+		command = { type = stability value = -4 }
+		command = { type = technology which = asian }
+		command = {
+			trigger = { USA = { religion = protestant } }
+			type = religion which = protestant
+		}
+		command = {
+			trigger = { USA = { religion = reformed } }
+			type = religion which = reformed
+		}
+		command = {
+			trigger = { USA = { religion = catholic } }
+			type = religion which = catholic
+		}
+		command = { type = relation which = USA value = 100 }
+		command = { type = domestic which = centralization value = 3 }
+	}
+	action_c = { # No, let us reject them completely!
+		name = "No, let us reject them completely!"
+		command = { type = stability value = 3 }
+		command = { type = relation which = USA value = -100 }
+		command = { type = sleepevent which = 7001 } # CHE: Sequoyah and the Cherokee Alphabet
+	}
+}
+
+#Sequoyah and the Written Cherokee Language#
+event = {
+	id = 7001
+	trigger = {
+		OR = {
+			event = 7000
+			neighbour = USA
+			neighbour = ENG
+			neighbour = FRA
+			neighbour = SPA
+		}
+	}
+	random = no
+	country = CHE
+	name = "Sequoyah and the Written Cherokee Language"
+	desc = "EVENTHIST7001"
+
+	style = "7001"
+
+	date = { day = 1 month = january year = 1810 }
+	offset = 720
+	deathdate = { day = 1 month = january year = 1825 }
+	
+	action_a = { # A great man!
+		name = "A great man!"
+		command = { type = stability value = 1 }
+		command = { type = technology which = latin }
+		command = { type = domestic which = innovative value = 3 }
+		command = { type = infra value = 1000 }
+	}
+}
+
+#Treaty of New Echota#
+event = {
+	id = 7002
+	trigger = {
+		event = 50003 # USA: Indian Removal Act
+	}
+	random = no
+	country = CHE
+	name = "Treaty of New Echota"
+	desc = "EVENTHIST7002"
+
+	date = { day = 1 month = january year = 1832 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a = { # We have no choice but to negotiate (delayed game over)
+		name = "We have no choice but to negotiate (delayed game over)"
+		command = { type = stability value = -2 }
+		command = { type = revolt which = -1 }
+	}
+	action_b = { # No compromise!
+		name = "No compromise!"
+		command = { type = war which = USA }
+		command = { type = sleepevent which = 50004 } # USA: Trail of Tears
+	}
+}

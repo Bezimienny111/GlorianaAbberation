@@ -1,0 +1,98 @@
+#####Korea Flavor Events#######
+#        By Aetius            #
+###############################
+
+#Chiphyonjon, the hall of assembled worthies, founded
+event = {
+	id = 3885
+	random = no
+	country = KOR
+	name = "EVENTNAME3885"
+	desc = "EVENTHIST3885"
+
+	date = { day = 1 month = june year = 1420 }
+	offset = 180
+
+	action_a ={#Great!
+		name = "OK"
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = infra value = 200 }
+	}
+}
+
+#First Literati Purge
+event = {
+	id = 3886
+	random = no
+	country = KOR
+	name = "EVENTNAME3886"
+	desc = "EVENTHIST3886"
+
+	date = { day = 1 month = june year = 1498}
+	offset = 180
+
+	action_a ={ #Oops.
+		name = "OK"
+		command = { type = domestic which = innovative value = -1}
+		command = { type = infra value = -200 }
+	}
+}
+
+#Second Literati Purge
+event = {
+	id = 3887
+	random = no
+	country = KOR
+	name = "EVENTNAME3887"
+	desc = "EVENTHIST3887"
+
+	date = { day = 1 month = september year = 1504 }
+	offset = 30
+
+	action_a ={ #Ooops.
+		name = "OK"
+		command = { type = domestic which = innovative value = -2 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = domestic which = serfdom value = 1 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#Third Literati Purge
+	event = {
+		id = 3888
+		random = no
+		country = KOR
+		name = "EVENTNAME3888"
+		desc = "EVENTHIST3888"
+	
+		date = { day = 1 month = june year = 1519 }
+		offset = 180
+
+		action_a ={ #Oops.
+			name = "OK"
+			command = { type = domestic which = innovative value = -1 }
+			command = { type = stability value = -3 }
+			command = { type = revolt which = -1 }
+	}
+}
+
+#Introduction of Uniform Land Tax Law
+event = {
+	id = 3889
+	random = no
+	country = KOR
+	name = "EVENTNAME3889"
+	desc = "EVENTHIST3889"
+
+	date = { day = 1 month = june year = 1608}
+	offset = 180
+
+	action_a ={#Great!
+	name = "OK"
+		command = { type = domestic which = serfdom value = -1 }
+		command = { type = domestic which = mercantilism value = -1 }
+		command = { type = provincetax which = 641 value = 2 }
+		command = { type = provincetax which = 642 value = 2 }
+	}
+}

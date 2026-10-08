@@ -1,0 +1,53 @@
+#####Prussia Flavor Events######
+#By Henrik 'Doomdark' Fåhraeus#
+###############################
+
+#Immanuel Kant#
+event = {
+	id = 5140
+	random = no
+	country = PRU
+	name = "EVENTNAME5140"
+	desc = "EVENTHIST5140"
+	date = { day = 1 month = january year = 1781 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5140A"
+		command = { type = domestic which = INNOVATIVE value = 1 }
+	}
+}
+
+#Karl von Clausewitz publishes 'Vom Kriege'#
+event = {
+	id = 5141
+	random = no
+	country = PRU
+	name = "EVENTNAME5141"
+	desc = "EVENTHIST5141"
+	date = { day = 7 month = may year = 1832 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5141A"
+		command = { type = domestic which = OFFENSIVE value = -1 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = land value = 1000 }
+	}
+}
+
+#David Friedrich Strauss#
+event = {
+	id = 5142
+	random = no
+	country = PRU
+	name = "EVENTNAME5142"
+	desc = "EVENTHIST5142"
+	date = { day = 15 month = august year = 1835 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5142A"
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = stability value = -1 } 
+	}
+}
+
+# Ids free to 5159

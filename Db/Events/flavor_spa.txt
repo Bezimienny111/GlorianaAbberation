@@ -1,0 +1,56 @@
+#####Spain Flavor Events#######
+#By Henrik 'Doomdark' Fåhraeus#
+###############################
+
+#Cervantes publishes 'Don Quixote'#
+event = {
+	id = 5250
+	random = no
+	country = SPA
+	name = "EVENTNAME5250"
+	desc = "EVENTHIST5250"
+	date = { day = 1 month = june year = 1605 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5250A"
+		command = { type = stability value = 1 }
+	}
+}
+#Tomás de Torquemada#
+event = {
+	id = 5251
+	random = no
+	trigger = {
+		OR = {
+			tag = CAS
+			tag = SPA
+		}
+	}
+	name = "EVENTNAME5251"
+	desc = "EVENTHIST5251"
+	date = { day = 1 month = august year = 1484 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5251A"
+		command = { type = stability value = 2 }
+		command = { type = domestic which = INNOVATIVE value = -2 }
+	}
+}
+
+#The Spanish Tercio#
+event = {
+	id = 5252
+	random = no
+	country = SPA
+	name = "The Spanish Tercio"
+	desc = "The Spanish Tercio, a formidable military formation that emerged in the 16th century, played a pivotal role in shaping the course of European warfare and exerted a profound impact on military tactics of the time. Comprising a unique combination of pike and shot, with infantry armed with long pikes and muskets, the Tercio was a highly adaptable and effective force. Its significance lay in its ability to counter both traditional cavalry charges and infantry formations, making it a versatile and resilient unit on the battlefield. The Tercio's innovative tactics and disciplined structure influenced military strategies across Europe, contributing to the evolution of modern warfare. Its success in conflicts such as the Eighty Years' War and the Thirty Years' War showcased the importance of tactical flexibility and disciplined coordination, leaving an enduring legacy in military history."
+	date = { day = 1 month = january year = 1534 }
+
+	action_a ={				#Ok#
+		name = "Ok"
+		command = { type = land value = 1500 }
+		command = { type = domestic which = QUALITY value = 1 }
+	}
+}
+
+# Ids free to 5279

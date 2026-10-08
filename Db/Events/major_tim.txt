@@ -1,0 +1,382 @@
+#####Timurid Major Events######
+#By Joakim 'Greven' Bergqwist #
+#                             #
+#            and              #
+#                             #
+# Henrik 'Doomdark' Fåhraeus  #
+###############################
+
+#The Disintegration of the Timurid Empire#
+event = {
+
+	id = 3688
+	random = no 
+	country = TIM
+	name = "EVENTNAME3688"
+	desc = "EVENTHIST3688"
+	
+	date = { day = 1 month = october year = 1450 }
+	offset = 364
+	deathdate = { day = 1 month = may year = 1490 }
+
+	action_a ={
+		name = "ACTIONNAME3688A"	#Attack all traitors#
+		command = { type = revoltrisk which = 588 value = 8 } # Tough!
+		command = { type = revolt which = 534 }
+		command = { type = revolt which = 534 }
+		command = { type = revolt which = 535 }
+		command = { type = revolt which = 535 }
+		command = { type = revolt which = 1529 }
+		command = { type = revolt which = 1530 }
+		command = { type = desertion which = -1 value = 8000 }
+		command = { type = desertion which = -4 value = 10000 }
+		command = { type = desertion which = -4 value = 7000 }
+		command = { type = stability value = -8 }
+		command = { type = vp value = 600 }
+		command = { type = relation which = AKK value = -400 }
+		command = { type = relation which = QAR value = -400 }
+		command = { type = relation which = UZB value = -400 }
+	}
+	action_b ={
+		name = "ACTIONNAME3688B"	#Bribe all traitors#
+		command = { type = revoltrisk which = 36 value = 5 }
+		command = { type = treasury value = -1500 }
+		command = { type = inflation value = 20 }
+		command = { type = stability value = -6 }
+		command = { type = relation which = AKK value = -400 }
+		command = { type = relation which = QAR value = -400 }
+		command = { type = relation which = UZB value = -400 }
+	}
+#	action_c ={
+#		name = "ACTIONNAME3688C"	#Focus on Transoxiana
+#		trigger = { 
+#			NOT = { exists = TOX }
+#		}
+#		command = { type = revoltrisk which = 60 value = 3 }
+#		command = { type = addcore_national which = 521 }
+#		command = { type = addcore_national which = 522 }
+#		command = { type = addcore_national which = 523 }
+#		command = { type = addcore_national which = 524 }
+#		command = { type = addcore_national which = 1533 }
+#		command = { type = addcore_national which = 1594 }
+#		command = { type = addcore_national which = 1599 }
+#		command = { type = free which = FAR }
+#		command = { type = free which = KHO }
+#		command = { type = free which = KAB }
+#		command = { type = free which = BAL }
+#		command = { type = treasury value = -600 }
+#		command = { type = inflation value = 5 }
+#		command = { type = stability value = -4 }
+#		command = { type = relation which = NOG value = -400 }
+#		command = { type = relation which = KZK value = -400 }
+#		command = { type = relation which = UZB value = -400 }
+#		command = { type = breakoverlord which = -1 } # just in case
+#		command = { type = breakoverlord which = -4 }
+#		command = { type = breakoverlord which = -4 }
+#		command = { type = breakoverlord which = -4 }
+#		command = { type = breakoverlord which = -4 }
+#		command = { type = breakoverlord which = -4 }
+#		command = { type = breakoverlord which = -4 }
+#		command = { type = breakoverlord which = -4 }
+#		command = { type = capital which = 1592 } # Samarkand
+#		command = { type = flagname which = "" }
+#		command = { type = country which = TOX }
+#		command = { type = sleepevent which = 3804 }
+#	}
+}
+
+#Ismail's Resurrection of Persia#
+# If Persia is still held by the Timurids around 1500.
+event = {
+	id = 3558
+	trigger = {
+		owned = {
+			province = 529 # Tabaristan
+			data = -1
+		}
+		NOT = {
+			exists = PER
+			stability = 1 # Lower than 1
+		}
+	}
+	random = no
+	country = TIM
+	name = "EVENTNAME3558"
+	desc = "EVENTHIST3558"
+
+	date = { day = 1 month = january year = 1497 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1530 }
+
+	action_a ={ # Crush the Shiite rebels
+		name = "ACTIONNAME3558A"
+		command = { type = revolt which = 508 }
+		command = { type = revolt which = 525 }
+		command = { type = revolt which = 526 }
+		command = { type = revolt which = 527 }
+		command = { type = revolt which = 528 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 531 }
+		command = { type = revolt which = 532 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 534 }
+		command = { type = revolt which = 535 }
+		command = { type = revolt which = 1529 }
+		command = { type = revolt which = 1530 }
+		command = { type = stability value = -2 }
+	}
+	action_b ={ # Negotiate with Ismail
+		name = "ACTIONNAME3558B"
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 529 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 530 }
+		command = { type = revolt which = 531 }
+		command = { type = revolt which = 532 }
+		command = { type = revolt which = 533 }
+		command = { type = revolt which = 533 }
+		command = { type = stability value = -6 }
+	}
+	action_c ={ # Take up the Safavid cause
+		name = "ACTIONNAME4000A"
+		command = { type = religion which = shia }
+		command = { type = missionaries value = 6 }
+		command = { type = land value = 3000 }
+		command = { type = add_countryculture which = persian }
+		command = { type = add_countryculture which = kurdish }
+		command = { type = remove_countryculture which = mongol }
+		command = { type = remove_countryculture which = uighur }
+		command = { type = addcore_national which = 471 }
+		command = { type = addcore_national which = 487 }
+		command = { type = addcore_national which = 525 }
+		command = { type = addcore_national which = 526 }
+		command = { type = addcore_national which = 527 }
+		command = { type = addcore_national which = 528 }
+		command = { type = addcore_national which = 529 }
+		command = { type = addcore_national which = 530 }
+		command = { type = addcore_national which = 531 }
+		command = { type = addcore_national which = 532 }
+		command = { type = addcore_national which = 533 }
+		command = { type = addcore_national which = 534 }
+		command = { type = addcore_national which = 535 }
+		command = { type = addcore_national which = 1529 }
+		command = { type = addcore_national which = 1530 }
+		command = { type = revolt which = 1530 }
+		command = { type = revolt which = 1530 }
+		command = { type = revolt which = 1531 }
+		command = { type = revolt which = 1531 }
+		command = { type = revolt which = 1532 }
+		command = { type = revolt which = 1532 }
+		command = { type = revolt which = 1533 }
+		command = { type = revolt which = 1533 }
+		command = { type = revolt which = 1592 }
+		command = { type = revolt which = 1592 }
+		command = { type = revolt which = 1592 }
+		command = { type = revolt which = 1592 }
+		command = { type = stability value = -4 }
+		command = { type = breakoverlord which = -1 } # just in case
+		command = { type = breakoverlord which = -4 }
+		command = { type = breakoverlord which = -4 }
+		command = { type = breakoverlord which = -4 }
+		command = { type = breakoverlord which = -4 }
+		command = { type = breakoverlord which = -4 }
+		command = { type = breakoverlord which = -4 }
+		command = { type = breakoverlord which = -4 }
+		command = { type = capital which = 529 } # Tehran
+		command = { type = conversion which = 529 }
+		command = { type = flagname which = "" }
+		command = { type = country which = PER }
+		command = { type = sleepevent which = 3804 }
+		command = { type = setflag which = tehran }
+	}
+}
+
+# Babur's Ambition
+event = {
+	id = 3804
+	trigger = { 
+		NOT = { 
+			exists = KAB 
+			exists = MOG
+		}
+	}
+	random = no
+	country = TIM
+	name = "EVENTNAME3804"
+	desc = "EVENTHIST3804"
+	style = "3804"
+	
+	date = { day = 1 month = may year = 1504 }
+	offset = 30
+	deathdate = { day = 1 month = december year = 1529 }
+
+	action_a = { # Ok
+		name = "ACTIONNAME3804A"
+		command = { type = land value = 3000 }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = CAV which = -2 value = 20000 }
+		command = { type = ART which = -2 value = 10 }
+		command = { type = add_countryculture which = afghani }
+		command = { type = add_countryculture which = hindi }
+		command = { type = remove_countryculture which = mongol }
+		command = { type = remove_countryculture which = uighur }
+		command = { type = relation which = DLH value = -400 }
+		command = { type = relation which = GUJ value = -400 }
+		command = { type = removecore_national which = 1528 } # Timurid cores
+		command = { type = removecore_national which = 1531 }
+		command = { type = removecore_national which = 1532 }
+		command = { type = removecore_national which = 1591 }
+		command = { type = removecore_national which = 1592 }
+		command = { type = removecore_national which = 1598 }
+		command = { type = addcore_national which = 539 } # Mughal cores
+		command = { type = addcore_national which = 540 }
+		command = { type = addcore_national which = 541 }
+		command = { type = addcore_national which = 542 }
+		command = { type = addcore_national which = 543 }
+		command = { type = addcore_national which = 544 }
+		command = { type = addcore_national which = 545 }
+		command = { type = addcore_national which = 546 }
+		command = { type = addcore_national which = 547 }
+		command = { type = addcore_national which = 548 }
+		command = { type = addcore_national which = 549 }
+		command = { type = addcore_national which = 550 }
+		command = { type = addcore_national which = 551 }
+		command = { type = addcore_national which = 552 }
+		command = { type = addcore_national which = 553 }
+		command = { type = addcore_national which = 554 }
+		command = { type = addcore_national which = 555 }
+		command = { type = addcore_national which = 556 }
+		command = { type = addcore_national which = 557 }
+		command = { type = addcore_national which = 558 }
+		command = { type = addcore_national which = 559 }
+		command = { type = addcore_national which = 560 }
+		command = { type = addcore_national which = 561 }
+		command = { type = addcore_national which = 562 }
+		command = { type = addcore_national which = 563 }
+		command = { type = addcore_national which = 564 }
+		command = { type = addcore_national which = 565 }
+		command = { type = addcore_national which = 566 }
+		command = { type = addcore_national which = 567 }
+		command = { type = addcore_national which = 1520 }
+		command = { type = addcore_national which = 1521 }
+		command = { type = addcore_national which = 1522 }
+		command = { type = addcore_national which = 1523 }
+		command = { type = addcore_national which = 1524 } # Kabul's cores
+		command = { type = addcore_national which = 1525 }
+		command = { type = addcore_national which = 1527 }
+		command = { type = capital which = 1527 } # Kabul
+		command = { type = domestic which = QUALITY value = 3 }
+		command = { type = flagname which = "" }
+		command = { type = country which = MOG }
+	}
+
+	action_b = {	# Remain as we are #
+		name = "Remain as we are"
+		command = { type = provincetax which = -2 value = 3 }
+		command = { type = populationpercent which = -2 value = 5 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -4 value = 50 }
+		command = { type = relation which = -4 value = 50 }
+		command = { type = relation which = -4 value = 50 }
+		command = { type = relation which = -4 value = 50 }
+		command = { type = treasury value = 250 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# Persia is Resurrected
+event = {
+	id = 3818
+	trigger = {
+		exists = PER
+		OR = {
+			owned = { province = 525 data = -1 }
+			owned = { province = 526 data = -1 }
+			owned = { province = 527 data = -1 }
+			owned = { province = 528 data = -1 }
+			owned = { province = 529 data = -1 }
+			owned = { province = 530 data = -1 }
+			owned = { province = 531 data = -1 }
+			owned = { province = 532 data = -1 }
+			owned = { province = 533 data = -1 }
+			owned = { province = 534 data = -1 }
+			owned = { province = 535 data = -1 }
+			owned = { province = 536 data = -1 }
+			owned = { province = 1529 data = -1 }
+			owned = { province = 1530 data = -1 }
+		}
+	}
+	random = no
+	country = TIM
+	name = "EVENTNAME3818"
+	desc = "EVENTHIST3818"
+	
+	date = { day = 1 month = january year = 1497 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1530 }
+
+	action_a = { # No, we can be allies
+		name = "ACTIONNAME3818A"
+		command = { type = dynastic which = PER }
+		command = { type = relation which = PER value = 400 }
+		command = { type = cedeprovince which = PER value = 525 }
+		command = { type = cedeprovince which = PER value = 526 }
+		command = { type = cedeprovince which = PER value = 527 }
+		command = { type = cedeprovince which = PER value = 528 }
+		command = { type = cedeprovince which = PER value = 529 }
+		command = { type = cedeprovince which = PER value = 530 }
+		command = { type = cedeprovince which = PER value = 531 }
+		command = { type = cedeprovince which = PER value = 532 }
+		command = { type = cedeprovince which = PER value = 533 }
+		command = { type = cedeprovince which = PER value = 534 }
+		command = { type = cedeprovince which = PER value = 535 }
+		command = { type = cedeprovince which = PER value = 536 }
+		command = { type = cedeprovince which = PER value = 1529 }
+		command = { type = cedeprovince which = PER value = 1530 }
+	}
+	action_b = { # Yes, burn them all!
+		name = "ACTIONNAME3818B"
+		command = { type = relation which = PER value = -200 }
+		command = { type = revoltrisk which = 120 value = 6 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = stability value = -6 }
+	}
+}
+
+#Ulugh Beg's Observitory#
+# By Demetrios and Håvard
+
+event = {
+	id = 3920
+	random = no
+	country = TIM
+	name = "EVENTNAME3920"
+	desc = "EVENTHIST3920"
+	style = "3920"
+	
+	date = { day = 1 month = january year = 1448 }
+	offset = 300
+	deathdate = { day = 1 month = january year = 1449 }
+	
+	action_a ={        #Build it!#
+		name = "ACTIONNAME3920A"
+		command = { type = gainmanufactory  which = 1592 value = luxury }
+		command = { type = stability value = -3 }
+		command = { type = cash value = -300 }
+		command = { type = domestic which = innovative value = 1 }
+	}
+	
+	action_b = {     #We don't have the time or the money for such foolishness!#
+		name = "ACTIONNAME3920B"
+		command = { type = stability value = 2 }
+		command = { type = domestic which = innovative value = -3 }
+	}
+}

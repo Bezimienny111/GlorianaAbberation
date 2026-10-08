@@ -1,0 +1,152 @@
+#####Milano Major Events######
+#By Joakim 'Greven' Bergqwist#
+##############################
+
+#The Fall of the Visconti#
+event = {
+
+	id = 4224
+	trigger = {
+		NOT = {
+			owned = { province = 390 data = MLO }
+			owned = { province = 391 data = MLO }
+			owned = { province = 401 data = MLO }
+		}
+	}
+	random = no
+	country = MLO
+	name = "EVENTNAME4224"
+	desc = "EVENTHIST4224"
+
+	style = "4224"
+
+	date = { day = 13 month = august year = 1447 }
+
+	action_a ={		#Our claims are worthless#
+		name = "ACTIONNAME4224A"
+		command = { type = domestic which = ARISTOCRACY value = -4 }
+		command = { type = domestic which = OFFENSIVE value = -2 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = removecore_national which = 390 }
+		command = { type = removecore_national which = 391 }
+		command = { type = removecore_national which = 401 }
+		command = { type = badboy value = -5 }
+		command = { type = relation which = FLO value = 50 }
+		command = { type = relation which = GEN value = 50 }
+		command = { type = relation which = VEN value = 50 }
+		command = { type = relation which = BOL value = 50 }
+		command = { type = relation which = SIE value = 50 }
+		command = { type = relation which = URB value = 50 }
+		command = { type = relation which = NAP value = 50 }
+		command = { type = relation which = PAP value = 50 }
+		command = { type = relation which = SAV value = 50 }
+		command = { type = relation which = MOD value = 50 }
+		command = { type = relation which = MAN value = 50 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#The Inheritance of Milano#
+event = {
+
+	id = 3706
+	trigger = {
+			exists = HAB
+			exists = FRA
+		}
+	random = no
+	country = MLO
+	name = "EVENTNAME3706"
+	desc = "EVENTHIST3706"
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1501 }
+
+	action_a ={					#Let the Habsburgs Inherit#
+		name = "ACTIONNAME3706A"
+		trigger = { 
+			ai = yes
+		}
+		command = { type = trigger which = 3181 }
+		command = { type = trigger which = 50046 }
+		command = { type = dynastic which = HAB }
+#		command = { type = alliance which = HAB }
+		command = { type = stability value = 1 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = sleepevent which = 3702 }
+	}
+
+	action_b ={					#Let the French Inherit#
+		name = "ACTIONNAME3706B"
+		trigger = { 
+			ai = yes
+		}
+		command = { type = trigger which = 3718 }
+		command = { type = trigger which = 50047 }
+		command = { type = dynastic which = FRA }
+#		command = { type = alliance which = FRA }
+		command = { type = treasury value = 200 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = sleepevent which = 3702 }
+	}
+
+	action_c ={					#Let the Sforzas keep it#
+		name = "ACTIONNAME3706C"
+		command = { type = stability value = -2 }
+		command = { type = treasury value = -500 }
+		command = { type = relation which = HAB value = -150 }
+		command = { type = relation which = FRA value = -150 }
+	}
+
+}
+
+# The League of Cambrai #
+event = {
+
+	id = 3702
+	trigger = { event = 3545 }
+	random = no
+	country = MLO
+	name = "The League of Cambrai"
+	desc = "In 1508, Pope Julius II set-up a league against the Republic of Venice which he disliked and found too powerful in Italy. He enlisted support of Florence, France and even of Emperor Maximilian. French troops decimated the Venetian army at the battle of Agnadel in 1509, but the Republic managed to break the league by concluding separate peace with her opponents."
+
+	date = { day = 1 month = january year = 1508 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1510 }
+
+	action_a ={
+		name = "Express Hostility"		#Express Hostility#
+		command = { type = relation which = VEN value = 150 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = ENG value = -50 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = SCO value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = HEL value = -50 }
+		command = { type = relation which = FLO value = -50 }
+	}
+
+	action_b ={
+		name = "Ignore"		#Ignore#
+		command = { type = relation which = VEN value = 50 }
+		command = { type = relation which = PAP value = -50 }
+	}
+
+	action_c ={
+		name = "Express Support"		#Express Support#
+		command = { type = casusbelli which = VEN value = 72 }
+		command = { type = relation which = VEN value = -150 }
+		command = { type = relation which = PAP value = 100 }
+		command = { type = relation which = ENG value = 50 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = SCO value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = HEL value = 50 }
+		command = { type = relation which = FLO value = 50 }
+	}
+}

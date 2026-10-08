@@ -1,0 +1,494 @@
+#-----------------------------------------------------------------------------
+#Rise of the Magnates Events
+
+#(1470-1499) Rise of the Magnates I
+event = {
+	id = 3001142 #id = 90906
+	trigger = {
+		NOT = { domestic = { type = centralization value = 8 } }
+		OR = {
+			domestic = { type = aristocracy value = 5 }
+			domestic = { type = serfdom value = 5 }
+		}
+	}
+	random = no
+	country = BYZ
+	name = "Rise of the Magnates" #Rise of the Magnates
+	desc = "The system of small freeholding farmers was always open to exploitation by the rich and even a typical officer's position in the army could bring nice profits from taxing tenants. Consequently families began amassing large holdings of land in Anatolia and Thrace, which they then used to buy out soldiers with small plots. These families put their own interests ahead of that of the Empire or the peasantry, but had a strong following and were an effective military force."
+	#-#The system of small freeholding farmers was always open to exploitation by the rich and even a typical officer's position in the army could bring nice profits from taxing tenants. Consequently families began amassing large holdings of land in Anatolia and Thrace, which they then used to buy out soldiers with small plots. These families put their own interests ahead of that of the Empire or the peasantry, but had a strong following and were an effective military force.
+
+	date = { day = 1 month = january year = 1470 }
+	offset = 3600 #10 years
+	deathdate = { day = 29 month = december year = 1499 }
+
+	action_a = {
+		name = "Let us leave our friends, the magnates, in peace" #Let us leave our friends, the magnates, in peace
+		command = { type = stability value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = QUALITY value = -1 }
+	}
+	action_b = {
+		name = "These magnates will be trouble one day! Break up their holdings" #These magnates will be trouble one day! Break up their holdings
+		command = { type = stability value = -6 }
+		command = { type = revoltrisk which = 24 value = 6 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+	}
+}
+
+#(1500-1529) Rise of the Magnates II
+event = {
+	id = 3001143 #id = 90911
+	trigger = {
+		NOT = { domestic = { type = centralization value = 8 } }
+		OR = {
+			domestic = { type = aristocracy value = 5 }
+			domestic = { type = serfdom value = 5 }
+		}
+	}
+	random = no
+	country = BYZ
+	name = "Rise of the Magnates" #Rise of the Magnates
+	desc = "The system of small freeholding farmers was always open to exploitation by the rich and even a typical officer's position in the army could bring nice profits from taxing tenants. Consequently families began amassing large holdings of land in Anatolia and Thrace, which they then used to buy out soldiers with small plots. These families put their own interests ahead of that of the Empire or the peasantry, but had a strong following and were an effective military force."
+	#-#The system of small freeholding farmers was always open to exploitation by the rich and even a typical officer's position in the army could bring nice profits from taxing tenants. Consequently families began amassing large holdings of land in Anatolia and Thrace, which they then used to buy out soldiers with small plots. These families put their own interests ahead of that of the Empire or the peasantry, but had a strong following and were an effective military force.
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 3600 #10 years
+	deathdate = { day = 29 month = december year = 1529 }
+
+	action_a = {
+		name = "Let us leave our friends, the magnates, in peace" #Let us leave our friends, the magnates, in peace
+		command = { type = stability value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = QUALITY value = -1 }
+	}
+	action_b = {
+		name = "These magnates will be trouble one day! Break up their holdings" #These magnates will be trouble one day! Break up their holdings
+		command = { type = stability value = -6 }
+		command = { type = revoltrisk which = 24 value = 6 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+	}
+}
+
+#(1530-1559) Rise of the Magnates III
+event = {
+	id = 3001144 #id = 90912
+	trigger = {
+		NOT = { domestic = { type = centralization value = 8 } }
+		OR = {
+			domestic = { type = aristocracy value = 5 }
+			domestic = { type = serfdom value = 5 }
+		}
+	}
+	random = no
+	country = BYZ
+	name = "Rise of the Magnates" #Rise of the Magnates
+	desc = "The system of small freeholding farmers was always open to exploitation by the rich and even a typical officer's position in the army could bring nice profits from taxing tenants. Consequently families began amassing large holdings of land in Anatolia and Thrace, which they then used to buy out soldiers with small plots. These families put their own interests ahead of that of the Empire or the peasantry, but had a strong following and were an effective military force."
+	#-#The system of small freeholding farmers was always open to exploitation by the rich and even a typical officer's position in the army could bring nice profits from taxing tenants. Consequently families began amassing large holdings of land in Anatolia and Thrace, which they then used to buy out soldiers with small plots. These families put their own interests ahead of that of the Empire or the peasantry, but had a strong following and were an effective military force.
+
+	date = { day = 1 month = january year = 1530 }
+	offset = 3600 #10 years
+	deathdate = { day = 29 month = december year = 1559 }
+
+	action_a = {
+		name = "Let us leave our friends, the magnates, in peace" #Let us leave our friends, the magnates, in peace
+		command = { type = stability value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = QUALITY value = -1 }
+	}
+	action_b = {
+		name = "These magnates will be trouble one day! Break up their holdings" #These magnates will be trouble one day! Break up their holdings
+		command = { type = stability value = -6 }
+		command = { type = revoltrisk which = 24 value = 6 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+	}
+}
+
+#(1560-1589) Rise of the Magnates IV
+event = {
+	id = 3001145 #id = 90913
+	trigger = {
+		NOT = { domestic = { type = centralization value = 8 } }
+		OR = {
+			domestic = { type = aristocracy value = 5 }
+			domestic = { type = serfdom value = 5 }
+		}
+	}
+	random = no
+	country = BYZ
+	name = "Rise of the Magnates" #Rise of the Magnates
+	desc = "The system of small freeholding farmers was always open to exploitation by the rich and even a typical officer's position in the army could bring nice profits from taxing tenants. Consequently families began amassing large holdings of land in Anatolia and Thrace, which they then used to buy out soldiers with small plots. These families put their own interests ahead of that of the Empire or the peasantry, but had a strong following and were an effective military force."
+	#-#The system of small freeholding farmers was always open to exploitation by the rich and even a typical officer's position in the army could bring nice profits from taxing tenants. Consequently families began amassing large holdings of land in Anatolia and Thrace, which they then used to buy out soldiers with small plots. These families put their own interests ahead of that of the Empire or the peasantry, but had a strong following and were an effective military force.
+
+	date = { day = 1 month = january year = 1560 }
+	offset = 3600 #10 years
+	deathdate = { day = 29 month = december year = 1589 }
+
+	action_a = {
+		name = "Let us leave our friends, the magnates, in peace" #Let us leave our friends, the magnates, in peace
+		command = { type = stability value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = QUALITY value = -1 }
+	}
+	action_b = {
+		name = "These magnates will be trouble one day! Break up their holdings" #These magnates will be trouble one day! Break up their holdings
+		command = { type = stability value = -6 }
+		command = { type = revoltrisk which = 24 value = 6 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+	}
+}
+
+#(1590-1619) Rise of the Magnates V
+event = {
+	id = 3001146 #id = 90914
+	trigger = {
+		NOT = { domestic = { type = centralization value = 8 } }
+		OR = {
+			domestic = { type = aristocracy value = 5 }
+			domestic = { type = serfdom value = 5 }
+		}
+	}
+	random = no
+	country = BYZ
+	name = "Rise of the Magnates" #Rise of the Magnates
+	desc = "The system of small freeholding farmers was always open to exploitation by the rich and even a typical officer's position in the army could bring nice profits from taxing tenants. Consequently families began amassing large holdings of land in Anatolia and Thrace, which they then used to buy out soldiers with small plots. These families put their own interests ahead of that of the Empire or the peasantry, but had a strong following and were an effective military force."
+	#-#The system of small freeholding farmers was always open to exploitation by the rich and even a typical officer's position in the army could bring nice profits from taxing tenants. Consequently families began amassing large holdings of land in Anatolia and Thrace, which they then used to buy out soldiers with small plots. These families put their own interests ahead of that of the Empire or the peasantry, but had a strong following and were an effective military force.
+
+	date = { day = 1 month = january year = 1590 }
+	offset = 3600 #10 years
+	deathdate = { day = 29 month = december year = 1619 }
+
+	action_a = {
+		name = "Let us leave our friends, the magnates, in peace" #Let us leave our friends, the magnates, in peace
+		command = { type = stability value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = QUALITY value = -1 }
+	}
+	action_b = {
+		name = "These magnates will be trouble one day! Break up their holdings" #These magnates will be trouble one day! Break up their holdings
+		command = { type = stability value = -6 }
+		command = { type = revoltrisk which = 24 value = 6 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+	}
+}
+
+#(1620-1649) Rise of the Magnates VI
+event = {
+	id = 3001147 #id = 90915
+	trigger = {
+		NOT = { domestic = { type = centralization value = 8 } }
+		OR = {
+			domestic = { type = aristocracy value = 5 }
+			domestic = { type = serfdom value = 5 }
+		}
+	}
+	random = no
+	country = BYZ
+	name = "Rise of the Magnates" #Rise of the Magnates
+	desc = "The system of small freeholding farmers was always open to exploitation by the rich and even a typical officer's position in the army could bring nice profits from taxing tenants. Consequently families began amassing large holdings of land in Anatolia and Thrace, which they then used to buy out soldiers with small plots. These families put their own interests ahead of that of the Empire or the peasantry, but had a strong following and were an effective military force."
+	#-#The system of small freeholding farmers was always open to exploitation by the rich and even a typical officer's position in the army could bring nice profits from taxing tenants. Consequently families began amassing large holdings of land in Anatolia and Thrace, which they then used to buy out soldiers with small plots. These families put their own interests ahead of that of the Empire or the peasantry, but had a strong following and were an effective military force.
+
+	date = { day = 1 month = january year = 1620 }
+	offset = 3600 #10 years
+	deathdate = { day = 29 month = december year = 1649 }
+
+	action_a = {
+		name = "Let us leave our friends, the magnates, in peace" #Let us leave our friends, the magnates, in peace
+		command = { type = stability value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = QUALITY value = -1 }
+	}
+	action_b = {
+		name = "These magnates will be trouble one day! Break up their holdings" #These magnates will be trouble one day! Break up their holdings
+		command = { type = stability value = -6 }
+		command = { type = revoltrisk which = 24 value = 6 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+	}
+}
+
+#(1650-1679) Rise of the Magnates VII
+event = {
+	id = 3001148 #id = 90916
+	trigger = {
+		NOT = { domestic = { type = centralization value = 8 } }
+		OR = {
+			domestic = { type = aristocracy value = 5 }
+			domestic = { type = serfdom value = 5 }
+		}
+	}
+	random = no
+	country = BYZ
+	name = "Rise of the Magnates" #Rise of the Magnates
+	desc = "The system of small freeholding farmers was always open to exploitation by the rich and even a typical officer's position in the army could bring nice profits from taxing tenants. Consequently families began amassing large holdings of land in Anatolia and Thrace, which they then used to buy out soldiers with small plots. These families put their own interests ahead of that of the Empire or the peasantry, but had a strong following and were an effective military force."
+	#-#The system of small freeholding farmers was always open to exploitation by the rich and even a typical officer's position in the army could bring nice profits from taxing tenants. Consequently families began amassing large holdings of land in Anatolia and Thrace, which they then used to buy out soldiers with small plots. These families put their own interests ahead of that of the Empire or the peasantry, but had a strong following and were an effective military force.
+
+	date = { day = 1 month = january year = 1650 }
+	offset = 3600 #10 years
+	deathdate = { day = 29 month = december year = 1679 }
+
+	action_a = {
+		name = "Let us leave our friends, the magnates, in peace" #Let us leave our friends, the magnates, in peace
+		command = { type = stability value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = QUALITY value = -1 }
+	}
+	action_b = {
+		name = "These magnates will be trouble one day! Break up their holdings" #These magnates will be trouble one day! Break up their holdings
+		command = { type = stability value = -6 }
+		command = { type = revoltrisk which = 24 value = 6 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+	}
+}
+
+#(1680-1709) Rise of the Magnates VIII
+event = {
+	id = 3001149 #id = 90917
+	trigger = {
+		NOT = { domestic = { type = centralization value = 8 } }
+		OR = {
+			domestic = { type = aristocracy value = 5 }
+			domestic = { type = serfdom value = 5 }
+		}
+	}
+	random = no
+	country = BYZ
+	name = "Rise of the Magnates" #Rise of the Magnates
+	desc = "The system of small freeholding farmers was always open to exploitation by the rich and even a typical officer's position in the army could bring nice profits from taxing tenants. Consequently families began amassing large holdings of land in Anatolia and Thrace, which they then used to buy out soldiers with small plots. These families put their own interests ahead of that of the Empire or the peasantry, but had a strong following and were an effective military force."
+	#-#The system of small freeholding farmers was always open to exploitation by the rich and even a typical officer's position in the army could bring nice profits from taxing tenants. Consequently families began amassing large holdings of land in Anatolia and Thrace, which they then used to buy out soldiers with small plots. These families put their own interests ahead of that of the Empire or the peasantry, but had a strong following and were an effective military force.
+
+	date = { day = 1 month = january year = 1680 }
+	offset = 3600 #10 years
+	deathdate = { day = 29 month = december year = 1709 }
+
+	action_a = {
+		name = "Let us leave our friends, the magnates, in peace" #Let us leave our friends, the magnates, in peace
+		command = { type = stability value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = QUALITY value = -1 }
+	}
+	action_b = {
+		name = "These magnates will be trouble one day! Break up their holdings" #These magnates will be trouble one day! Break up their holdings
+		command = { type = stability value = -6 }
+		command = { type = revoltrisk which = 24 value = 6 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+	}
+}
+
+#(1710-1739) Rise of the Magnates IX
+event = {
+	id = 3001150 #id = 90918
+	trigger = {
+		NOT = { domestic = { type = centralization value = 8 } }
+		OR = {
+			domestic = { type = aristocracy value = 5 }
+			domestic = { type = serfdom value = 5 }
+		}
+	}
+	random = no
+	country = BYZ
+	name = "Rise of the Magnates" #Rise of the Magnates
+	desc = "The system of small freeholding farmers was always open to exploitation by the rich and even a typical officer's position in the army could bring nice profits from taxing tenants. Consequently families began amassing large holdings of land in Anatolia and Thrace, which they then used to buy out soldiers with small plots. These families put their own interests ahead of that of the Empire or the peasantry, but had a strong following and were an effective military force."
+	#-#The system of small freeholding farmers was always open to exploitation by the rich and even a typical officer's position in the army could bring nice profits from taxing tenants. Consequently families began amassing large holdings of land in Anatolia and Thrace, which they then used to buy out soldiers with small plots. These families put their own interests ahead of that of the Empire or the peasantry, but had a strong following and were an effective military force.
+
+	date = { day = 1 month = january year = 1710 }
+	offset = 3600 #10 years
+	deathdate = { day = 29 month = december year = 1739 }
+
+	action_a = {
+		name = "Let us leave our friends, the magnates, in peace" #Let us leave our friends, the magnates, in peace
+		command = { type = stability value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = QUALITY value = -1 }
+	}
+	action_b = {
+		name = "These magnates will be trouble one day! Break up their holdings" #These magnates will be trouble one day! Break up their holdings
+		command = { type = stability value = -6 }
+		command = { type = revoltrisk which = 24 value = 6 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+	}
+}
+
+#(1740-1760) Rise of the Magnates X
+event = {
+	id = 3001151 #id = 90919
+	trigger = {
+		NOT = { domestic = { type = centralization value = 8 } }
+		OR = {
+			domestic = { type = aristocracy value = 5 }
+			domestic = { type = serfdom value = 5 }
+		}
+	}
+	random = no
+	country = BYZ
+	name = "Rise of the Magnates" #Rise of the Magnates
+	desc = "The system of small freeholding farmers was always open to exploitation by the rich and even a typical officer's position in the army could bring nice profits from taxing tenants. Consequently families began amassing large holdings of land in Anatolia and Thrace, which they then used to buy out soldiers with small plots. These families put their own interests ahead of that of the Empire or the peasantry, but had a strong following and were an effective military force."
+	#-#The system of small freeholding farmers was always open to exploitation by the rich and even a typical officer's position in the army could bring nice profits from taxing tenants. Consequently families began amassing large holdings of land in Anatolia and Thrace, which they then used to buy out soldiers with small plots. These families put their own interests ahead of that of the Empire or the peasantry, but had a strong following and were an effective military force.
+
+	date = { day = 1 month = january year = 1740 }
+	offset = 3600 #10 years
+	deathdate = { day = 29 month = december year = 1769 }
+
+	action_a = {
+		name = "Let us leave our friends, the magnates, in peace" #Let us leave our friends, the magnates, in peace
+		command = { type = stability value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = QUALITY value = -1 }
+	}
+	action_b = {
+		name = "These magnates will be trouble one day! Break up their holdings" #These magnates will be trouble one day! Break up their holdings
+		command = { type = stability value = -6 }
+		command = { type = revoltrisk which = 24 value = 6 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+	}
+}
+
+#(1770-1799) Rise of the Magnates XI
+event = {
+	id = 3001152 #id = 90920
+	trigger = {
+		NOT = { domestic = { type = centralization value = 8 } }
+		OR = {
+			domestic = { type = aristocracy value = 5 }
+			domestic = { type = serfdom value = 5 }
+		}
+	}
+	random = no
+	country = BYZ
+	name = "Rise of the Magnates" #Rise of the Magnates
+	desc = "The system of small freeholding farmers was always open to exploitation by the rich and even a typical officer's position in the army could bring nice profits from taxing tenants. Consequently families began amassing large holdings of land in Anatolia and Thrace, which they then used to buy out soldiers with small plots. These families put their own interests ahead of that of the Empire or the peasantry, but had a strong following and were an effective military force."
+	#-#The system of small freeholding farmers was always open to exploitation by the rich and even a typical officer's position in the army could bring nice profits from taxing tenants. Consequently families began amassing large holdings of land in Anatolia and Thrace, which they then used to buy out soldiers with small plots. These families put their own interests ahead of that of the Empire or the peasantry, but had a strong following and were an effective military force.
+
+	date = { day = 1 month = january year = 1770 }
+	offset = 3600 #10 years
+	deathdate = { day = 29 month = december year = 1799 }
+
+	action_a = {
+		name = "Let us leave our friends, the magnates, in peace" #Let us leave our friends, the magnates, in peace
+		command = { type = stability value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = QUALITY value = -1 }
+	}
+	action_b = {
+		name = "These magnates will be trouble one day! Break up their holdings" #These magnates will be trouble one day! Break up their holdings
+		command = { type = stability value = -6 }
+		command = { type = revoltrisk which = 24 value = 6 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+	}
+}
+
+#(1800-1820) Rise of the Magnates XII
+event = {
+	id = 3001153 #id = 90921
+	trigger = {
+		NOT = { domestic = { type = centralization value = 8 } }
+		OR = {
+			domestic = { type = aristocracy value = 5 }
+			domestic = { type = serfdom value = 5 }
+		}
+	}
+	random = no
+	country = BYZ
+	name = "Rise of the Magnates" #Rise of the Magnates
+	desc = "The system of small freeholding farmers was always open to exploitation by the rich and even a typical officer's position in the army could bring nice profits from taxing tenants. Consequently families began amassing large holdings of land in Anatolia and Thrace, which they then used to buy out soldiers with small plots. These families put their own interests ahead of that of the Empire or the peasantry, but had a strong following and were an effective military force."
+	#-#The system of small freeholding farmers was always open to exploitation by the rich and even a typical officer's position in the army could bring nice profits from taxing tenants. Consequently families began amassing large holdings of land in Anatolia and Thrace, which they then used to buy out soldiers with small plots. These families put their own interests ahead of that of the Empire or the peasantry, but had a strong following and were an effective military force.
+
+	date = { day = 1 month = january year = 1800 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Let us leave our friends, the magnates, in peace" #Let us leave our friends, the magnates, in peace
+		command = { type = stability value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = QUALITY value = -1 }
+	}
+	action_b = {
+		name = "These magnates will be trouble one day! Break up their holdings" #These magnates will be trouble one day! Break up their holdings
+		command = { type = stability value = -6 }
+		command = { type = revoltrisk which = 24 value = 6 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+	}
+}

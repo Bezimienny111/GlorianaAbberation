@@ -1,0 +1,595 @@
+###################################################
+### events for the caliphate and Jalayirids	###
+### for NAJF scenario				###
+### by Alex 'Ayeshteni' Fowler			###
+###################################################
+
+#Qara Koyunlu continuing the attack?
+event = {
+
+	id = 150100
+	trigger = {
+		NOT = {
+			relation = { country = ABB data = 0 }
+			alliance = { country = MAM country = ABB }
+		}
+	}
+	random = no
+	country = QAR
+
+	name = "Jalayirid Treachery"
+	desc = "Ahmad of the Jalayrids broke his bargain with Qara Koyunlu by invading Azerbaijan, briefly occupying Tabriz until Qara Koyunlu defeated the Jalayirids in August 1410. Ahmad was either captured and executed or assassinated. Yusuf named his son Shah Muhammad to rule in Baghdad in 1412 AD. The remnants of the Jalayirid dynasty were pushed south into lower Iraq, ruling over the towns of Al-Hillah, Wasit, and Basra until extinguished by the Qara Qoyunlu in 1432. Will we complete the extinction by wiping out Ahmad's heirs?"
+	style = 0
+
+	date = { day = 1 month = january year = 1419 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1517 }
+
+	action_a = {
+		name = "Yes, Ahmad's sins must be punished to its logical conclusion"
+		command = { type = casusbelli which = ABB value = 240 }
+		command = { type = relation which = ABB value = -200 }
+	}
+
+	action_b = {
+		name = "No, they are not worth it. We have bigger fish to fry"
+		command = { type = relation which = ABB value = 50 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#Jalayirid capture Baghdad.
+event = {
+
+	id = 150101
+	trigger = {
+		owned = { province = 489 data = ABB }
+	}
+	random = no
+	country = ABB
+
+	name = "We have recaptured Baghdad"
+	desc = "Baghdad is once again in our hands. However we are in a very precarious situation. Some advise we reinstate the Caliphs currently in Cairo. Others think we should declare ourselves the caliphate ourselves. However these are radical choices. We could just move our capital back to Baghdad and hope for the best."
+	style = 0
+
+	date = { day = 1 month = january year = 1419 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1517 }
+
+	action_a = {
+		name = "Invite the Caliph back to Baghdad"
+		command = { type = independence which = CAL }
+		command = { type = relation which = MAM value = -100 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 20 }
+	}
+
+	action_b = {
+		name = "Just move to Baghdad"
+		command = { type = stability value = 1 }
+		command = { type = treasury value = -50 }
+		command = { type = capital which = 489 }
+		command = { type = vp value = -10 }
+		command = { type = relation which = MAM value = 100 }
+		command = { type = relation which = QAR value = -100 }
+		command = { type = relation which = -1 value = 25 }
+		command = { type = relation which = -1 value = 25 }
+	}
+
+	action_c = {
+		name = "Declare ourselves Caliph!"
+		command = { type = country which = CAL }
+		command = { type = capital which = 489 }
+		command = { type = treasury value = -100 }
+		command = { type = vp value = 50 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = MAM value = -100 }
+		command = { type = relation which = -1 value = -50 }
+		command = { type = relation which = -1 value = -50 }
+		command = { type = relation which = -1 value = -50 }
+		command = { type = add_countryculture which = turkish }
+	}
+}
+
+#caliphate eventy-poos fictional
+#caliphate claims - greater mesopotamia.
+event = {
+
+	id = 150102
+	trigger = {
+		stability = 2
+	}
+	random = no
+	country = CAL
+
+	name = "The Caliphate Claims on Greater Mesopotamia"
+	desc = "With a growing sense of temporal power and vision, the Caliphs laid claim to old parts of the Caliphate. In this instance Mesopotamia, western Persia and Azerbaijan."
+	style = 0
+
+	date = { day = 1 month = january year = 1419 }
+	offset = 100
+	deathdate = { day = 1 month = january year = 1820 }
+
+	action_a = {
+		name = "Make the Claim"
+		command = { type = vp value = 10 }
+		command = { type = treasury value = -20 }
+		command = { type = stability value = -1 }
+		command = { type = addcore which = 487 } #azerbaijan
+		command = { type = addcore which = 488 } #kirkuk
+		command = { type = addcore which = 508 } #basrah
+		command = { type = addcore which = 530 } #tabriz
+		command = { type = addcore which = 531 } #hamadan
+		command = { type = addcore which = 532 } #awazh
+	}
+
+	action_b = {
+		name = "Let it rest"
+		command = { type = vp value = -20 }
+		command = { type = treasury value = 10 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#caliphate claims - holyland
+event = {
+
+	id = 150103
+	trigger = {
+		stability = 2
+	}
+	random = no
+	country = CAL
+
+	name = "The Caliphate Claims on Al-Mubarakah"
+	desc = "With a growing sense of temporal power and vision, the Caliphs laid claim to old parts of the Caliphate. In this instance the Holy Land."
+	style = 0
+
+	date = { day = 1 month = january year = 1419 }
+	offset = 100
+	deathdate = { day = 1 month = january year = 1820 }
+
+	action_a = {
+		name = "Make the Claim"
+		command = { type = vp value = 15 }
+		command = { type = treasury value = -20 }
+		command = { type = stability value = -1 }
+		command = { type = addcore which = 485 } #aleppo
+		command = { type = addcore which = 490 } #syria
+		command = { type = addcore which = 491 } #lebanon
+		command = { type = addcore which = 492 } #samaria
+		command = { type = addcore which = 493 } #judea
+		command = { type = addcore which = 494 } #sinai
+	}
+
+	action_b = {
+		name = "Let it rest"
+		command = { type = vp value = -25 }
+		command = { type = treasury value = 10 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#caliphate claims - arabia
+event = {
+
+	id = 150104
+	trigger = {
+		stability = 2
+	}
+	random = no
+	country = CAL
+
+	name = "The Caliphate Claims on Arabia"
+	desc = "With a growing sense of temporal power and vision, the Caliphs laid claim to old parts of the Caliphate. In this instance Jordan and Western Arabia with the important cities of Medinah and Makkah."
+	style = 0
+
+	date = { day = 1 month = january year = 1419 }
+	offset = 100
+	deathdate = { day = 1 month = january year = 1820 }
+
+	action_a = {
+		name = "Make the Claim"
+		command = { type = vp value = 30 }
+		command = { type = treasury value = -20 }
+		command = { type = stability value = -1 }
+		command = { type = addcore which = 495 } #jordan
+		command = { type = addcore which = 496 } #arabia
+		command = { type = addcore which = 497 } #medinah
+		command = { type = addcore which = 498 } #makkah
+	}
+
+	action_b = {
+		name = "Let it rest"
+		command = { type = vp value = -50 }
+		command = { type = treasury value = 10 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#caliphate claims - egypt -these sets are not 'free'
+event = {
+
+	id = 150105
+	trigger = {
+		OR = {
+			owned = { province = 741 data = CAL }
+			owned = { province = 742 data = CAL }
+			owned = { province = 743 data = CAL }
+			owned = { province = 744 data = CAL }
+			owned = { province = 745 data = CAL }
+			owned = { province = 746 data = CAL }
+			owned = { province = 747 data = CAL }
+		}
+		stability = 2
+	}
+	random = no
+	country = CAL
+
+	name = "The Caliphate Claims on Egypt"
+	desc = "With a growing sense of temporal power and vision, the Caliphs laid claim to old parts of the Caliphate. In this instance Egypt."
+	style = 0
+
+	date = { day = 1 month = january year = 1419 }
+	offset = 100
+	deathdate = { day = 1 month = january year = 1820 }
+
+	action_a = {
+		name = "Make the Claim"
+		command = { type = vp value = 20 }
+		command = { type = treasury value = -20 }
+		command = { type = stability value = -1 }
+		command = { type = addcore which = 741 } #cyrenaica
+		command = { type = addcore which = 742 } #quattara
+		command = { type = addcore which = 743 } #cataract
+		command = { type = addcore which = 744 } #alexandria
+		command = { type = addcore which = 745 } #delta
+		command = { type = addcore which = 746 } #egypt
+		command = { type = addcore which = 747 } #nile
+	}
+
+	action_b = {
+		name = "Let it rest"
+		command = { type = vp value = -20 }
+		command = { type = treasury value = 10 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#caliphate claims - anatolia -these sets are not 'free'
+event = {
+
+	id = 150106
+	trigger = {
+		OR = {
+			owned = { province = 476 data = CAL }
+			owned = { province = 477 data = CAL }
+			owned = { province = 478 data = CAL }
+			owned = { province = 482 data = CAL }
+			owned = { province = 483 data = CAL }
+			owned = { province = 1609 data = CAL }
+			owned = { province = 1610 data = CAL }
+			owned = { province = 1611 data = CAL }
+		}
+		stability = 2
+	}
+	random = no
+	country = CAL
+
+	name = "The Caliphate Claims on Anatolia"
+	desc = "With a growing sense of temporal power and vision, the Caliphs laid claim to old parts of the Caliphate. In this instance Anatolia."
+	style = 0
+
+	date = { day = 1 month = january year = 1419 }
+	offset = 100
+	deathdate = { day = 1 month = january year = 1820 }
+
+	action_a = {
+		name = "Make the Claim"
+		command = { type = vp value = 10 }
+		command = { type = treasury value = -20 }
+		command = { type = stability value = -1 }
+		command = { type = addcore which = 476 } #angora
+		command = { type = addcore which = 477 } #anatolia
+		command = { type = addcore which = 478 } #smyrna
+		command = { type = addcore which = 482 } #konya
+		command = { type = addcore which = 483 } #adana
+		command = { type = addcore which = 1609 } #kastamanou
+		command = { type = addcore which = 1610 } #antalya
+		command = { type = addcore which = 1611 } #taurus
+	}
+
+	action_b = {
+		name = "Let it rest"
+		command = { type = vp value = -15 }
+		command = { type = treasury value = 10 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#caliphate claims - caucus -these sets are not 'free'
+event = {
+
+	id = 150107
+	trigger = {
+		OR = {
+			owned = { province = 471 data = CAL }
+			owned = { province = 472 data = CAL }
+			owned = { province = 473 data = CAL }
+			owned = { province = 474 data = CAL }
+			owned = { province = 475 data = CAL }
+			owned = { province = 486 data = CAL }
+		}
+		stability = 2
+	}
+	random = no
+	country = CAL
+
+	name = "The Caliphate Claims on the Caucauses"
+	desc = "With a growing sense of temporal power and vision, the Caliphs laid claim to old parts of the Caliphate. In this instance the Caucauses."
+	style = 0
+
+	date = { day = 1 month = january year = 1419 }
+	offset = 100
+	deathdate = { day = 1 month = january year = 1820 }
+
+	action_a = {
+		name = "Make the Claim"
+		command = { type = vp value = 10 }
+		command = { type = treasury value = -20 }
+		command = { type = stability value = -1 }
+		command = { type = addcore which = 471 } #daghestan
+		command = { type = addcore which = 472 } #armenia
+		command = { type = addcore which = 473 } #kurdistan
+		command = { type = addcore which = 474 } #sivas
+		command = { type = addcore which = 475 } #trabzon
+		command = { type = addcore which = 486 } #nuyssaybin
+	}
+
+	action_b = {
+		name = "Let it rest"
+		command = { type = vp value = -15 }
+		command = { type = treasury value = 10 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#caliphate claims - north africa -these sets are not 'free'
+event = {
+
+	id = 150108
+	trigger = {
+		OR = {
+			owned = { province = 732 data = CAL }
+			owned = { province = 733 data = CAL }
+			owned = { province = 734 data = CAL }
+			owned = { province = 735 data = CAL }
+			owned = { province = 736 data = CAL }
+			owned = { province = 737 data = CAL }
+			owned = { province = 738 data = CAL }
+			owned = { province = 739 data = CAL }
+			owned = { province = 740 data = CAL }
+			owned = { province = 805 data = CAL }
+			owned = { province = 806 data = CAL }
+		}
+		stability = 2
+	}
+	random = no
+	country = CAL
+
+	name = "The Caliphate Claims on North Africa"
+	desc = "With a growing sense of temporal power and vision, the Caliphs laid claim to old parts of the Caliphate. In this instance North Africa, specifically Morocco, Algiers, Tunisia and Tripolitania."
+	style = 0
+
+	date = { day = 1 month = january year = 1419 }
+	offset = 100
+	deathdate = { day = 1 month = january year = 1820 }
+
+	action_a = {
+		name = "Make the Claim"
+		command = { type = vp value = 15 }
+		command = { type = treasury value = -20 }
+		command = { type = stability value = -1 }
+		command = { type = addcore which = 732 } #tangiers
+		command = { type = addcore which = 733 } #fez
+		command = { type = addcore which = 734 } #orania
+		command = { type = addcore which = 735 } #atlas
+		command = { type = addcore which = 736 } #aures
+		command = { type = addcore which = 737 } #al-djazair
+		command = { type = addcore which = 738 } #kabylia
+		command = { type = addcore which = 739 } #tunisia
+		command = { type = addcore which = 740 } #tripolitania
+		command = { type = addcore which = 805 } #sahara
+		command = { type = addcore which = 806 } #toubkal
+		
+	}
+
+	action_b = {
+		name = "Let it rest"
+		command = { type = vp value = -15 }
+		command = { type = treasury value = 10 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#caliphate claims - persia -these sets are not 'free'
+event = {
+
+	id = 150109
+	trigger = {
+		OR = {
+			owned = { province = 525 data = CAL }
+			owned = { province = 526 data = CAL }
+			owned = { province = 527 data = CAL }
+			owned = { province = 528 data = CAL }
+			owned = { province = 529 data = CAL }
+			owned = { province = 533 data = CAL }
+			owned = { province = 534 data = CAL }
+			owned = { province = 535 data = CAL }
+			owned = { province = 536 data = CAL }
+			owned = { province = 1529 data = CAL }
+			owned = { province = 1530 data = CAL }
+		}
+		stability = 2
+	}
+	random = no
+	country = CAL
+
+	name = "The Caliphate Claims on Persia"
+	desc = "With a growing sense of temporal power and vision, the Caliphs laid claim to old parts of the Caliphate. In this instance Persia."
+	style = 0
+
+	date = { day = 1 month = january year = 1419 }
+	offset = 100
+	deathdate = { day = 1 month = january year = 1820 }
+
+	action_a = {
+		name = "Make the Claim"
+		command = { type = vp value = 25 }
+		command = { type = treasury value = -20 }
+		command = { type = stability value = -1 }
+		command = { type = addcore which = 525 } #elbruz
+		command = { type = addcore which = 526 } #meched
+		command = { type = addcore which = 527 } #kerman
+		command = { type = addcore which = 528 } #lut
+		command = { type = addcore which = 529 } #tabaristan
+		command = { type = addcore which = 533 } #isfahan
+		command = { type = addcore which = 534 } #fars
+		command = { type = addcore which = 535 } #hormouz
+		command = { type = addcore which = 536 } #mekran
+		command = { type = addcore which = 1529 } #birjand
+		command = { type = addcore which = 1530 } #khorasan
+		
+	}
+
+	action_b = {
+		name = "Let it rest"
+		command = { type = vp value = -40 }
+		command = { type = treasury value = 10 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#caliphate claims - the east -these sets are not 'free'
+event = {
+
+	id = 150110
+	trigger = {
+		OR = {
+			owned = { province = 537 data = CAL }
+			owned = { province = 538 data = CAL }
+			owned = { province = 1524 data = CAL }
+			owned = { province = 1525 data = CAL }
+			owned = { province = 1526 data = CAL }
+			owned = { province = 1527 data = CAL }
+			owned = { province = 1528 data = CAL }
+			owned = { province = 1531 data = CAL }
+			owned = { province = 1532 data = CAL }
+			owned = { province = 1591 data = CAL }
+			owned = { province = 1592 data = CAL }
+		}
+		stability = 2
+	}
+	random = no
+	country = CAL
+
+	name = "The Caliphate Claims The East"
+	desc = "With a growing sense of temporal power and vision, the Caliphs laid claim to old parts of the Caliphate. In this instance The East, specifically, Eastern persia, Afghanistan, Bukhara and Samarkhand."
+	style = 0
+
+	date = { day = 1 month = january year = 1419 }
+	offset = 100
+	deathdate = { day = 1 month = january year = 1820 }
+
+	action_a = {
+		name = "Make the Claim"
+		command = { type = vp value = 25 }
+		command = { type = treasury value = -20 }
+		command = { type = stability value = -1 }
+		command = { type = addcore which = 537 } #baluchistan
+		command = { type = addcore which = 538 } #kalat
+		command = { type = addcore which = 1524 } #quetta
+		command = { type = addcore which = 1525 } #qandahar
+		command = { type = addcore which = 1526 } #zahedan
+		command = { type = addcore which = 1527 } #kabul
+		command = { type = addcore which = 1528 } #kushka
+		command = { type = addcore which = 1531 } #herat
+		command = { type = addcore which = 1532 } #bukhara
+		command = { type = addcore which = 1591 } #surkhandarya
+		command = { type = addcore which = 1592 } #samarkand
+		
+	}
+
+	action_b = {
+		name = "Let it rest"
+		command = { type = vp value = -40 }
+		command = { type = treasury value = 10 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#jalayrid dynasty dies out. Abbassid dynasty invited in.
+event = {
+
+	id = 150111
+	trigger = {}
+	random = no
+	country = ABB
+
+	name = "Last of the Jalayirid line"
+	desc = "Husayn II died in 1432 with no issue, leaving the state in turmoil. With the Black Sheep ready to pounce a solution was found in the forms of the Abbasid Caliphs in Cairo. An invitation was sent out for them to rule. Both the Jalayirids and the Caliphs held claim to Baghdad and this was seen as a suitable solution to both. The Caliphs accepted and slipped out of Cairo and took up residence in Basrah. This did not please the mamluqs however as they wanted the caliphs as their 'guests' to increase their own reputation."
+	style = 0
+
+	date = { day = 30 month = december year = 1431 }
+
+	action_a = {
+		name = "Abbasids back in Iraq"
+		command = { type = relation which = MAM value = -100 }
+		command = { type = trigger which = 150112 }
+	}
+}
+
+#mamluqs pissed
+event = {
+
+	id = 150112
+	trigger = {}
+	random = no
+	country = MAM
+
+	name = "Caliph slips out of Cairo"
+	desc = "Husayn II died in 1432 with no issue, leaving the state in turmoil. With the Black Sheep ready to pounce a solution was found in the forms of the Abbasid Caliphs in Cairo. An invitation was sent out for them to rule. Both the Jalayirids and the Caliphs held claim to Baghdad and this was seen as a suitable solution to both. The Caliphs accepted and slipped out of Cairo and took up residence in Basrah. This did not please the mamluqs however as they wanted the caliphs as their 'guests' to increase their own reputation."
+	style = 0
+
+	action_a = {
+		name = "Curses!"
+		command = { type = relation which = ABB value = -50 }
+		command = { type = casusbelli which = ABB value = 240 }
+	}
+}
+
+#unite the jalayrids with the Kaliphs
+event = {
+
+	id = 150113
+	trigger = {
+		exists = ABB
+	}
+	random = no
+	country = CAL
+
+	name = "Incorporation of the Jalayrids"
+	desc = "With the Kaliph sitting in Baghdad as head of the Muslim world and head of the Jalayrids, it was only a matter of time before the Jalayrids were subsumed into the Kaliphate."
+	style = 0
+
+	date = { day = 30 month = december year = 1431 }
+	offset = 360
+	deathdate = { day = 30 month = december year = 1820 }
+
+	action_a = {
+		name = "Incorporate them"
+		command = { type = inherit which = ABB }
+	}
+}

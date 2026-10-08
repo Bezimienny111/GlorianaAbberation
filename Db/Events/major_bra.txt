@@ -1,0 +1,650 @@
+#####Brandenburg Major Events#####
+###By Joakim 'Greven' Bergqwist ##
+###   Stefan Huszics            ##
+###   Håvard Moe                ##
+###   Tom 'Demetrios' Rinschler ##
+##################################
+
+#The League of Schmalkalden#
+event = {
+
+	id = 3633
+	trigger = {
+		 exists = HAB
+		 	AND = {
+				OR = {
+					religion = protestant
+					religion = reformed
+						}
+			}
+	}
+	random = no
+	country = BRA
+	name = "EVENTNAME3633"
+	desc = "EVENTHIST3633"
+
+	date = { day = 1 month = january year = 1527 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1529 }
+
+	action_a ={					#Give it your support#
+		name = "ACTIONNAME3633A"
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = BAD value = 150 }
+		command = { type = relation which = HAN value = 150 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = PFA value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = THU value = 150 }
+		command = { type = relation which = KLE value = 100 }
+		command = { type = relation which = KOL value = 50 }
+		command = { type = relation which = BAY value = 50 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={					#Ignore it#
+		name = "ACTIONNAME3633B"
+		command = { type = relation which = BAD value = -100 }
+		command = { type = relation which = HAN value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = PFA value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = relation which = THU value = -100 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#The Evangelic Union#
+event = {
+
+	id = 3634
+	trigger = {
+		 OR = {
+			religion = protestant
+			religion = reformed
+				}
+			}
+	random = no
+	country = BRA
+	name = "EVENTNAME3634"
+	desc = "EVENTHIST3634"
+
+	date = { day = 1 month = january year = 1605 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a ={					#Prepare to Join#
+		name = "ACTIONNAME3634A"
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = BAD value = 150 }
+		command = { type = relation which = HAN value = 150 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = PFA value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = THU value = 150 }
+		command = { type = relation which = SHL value = 150 }
+		command = { type = relation which = KLE value = 100 }
+		command = { type = relation which = KOL value = 50 }
+		command = { type = relation which = BAY value = 50 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={					#Stay Neutral#
+		name = "ACTIONNAME3634B"
+		command = { type = relation which = BAD value = -100 }
+		command = { type = relation which = HAN value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = PFA value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = relation which = THU value = -100 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#The Catholic League#
+event = {
+
+	id = 3635
+	trigger = {
+		 OR = {
+			religion = catholic
+			religion = counterreform
+				}
+			}
+	random = no
+	country = BRA
+	name = "EVENTNAME3635"
+	desc = "EVENTHIST3635"
+
+	date = { day = 1 month = january year = 1607 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+
+	action_a ={					#Prepare to Join#
+		name = "ACTIONNAME3635A"
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = BAD value = -150 }
+		command = { type = relation which = HAN value = -150 }
+		command = { type = relation which = HES value = -150 }
+		command = { type = relation which = PFA value = -150 }
+		command = { type = relation which = SAC value = -150 }
+		command = { type = relation which = THU value = -150 }
+		command = { type = relation which = SHL value = -150 }
+		command = { type = relation which = KLE value = 50 }
+		command = { type = relation which = KOL value = 100 }
+		command = { type = relation which = BAY value = 100 }
+		command = { type = relation which = PAP value = 100 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = HAB value = 150 }
+	}
+
+	action_b ={					#Stay Neutral#
+		name = "ACTIONNAME3635B"
+		command = { type = relation which = BAD value = 50 }
+		command = { type = relation which = HAN value = 50 }
+		command = { type = relation which = HES value = 50 }
+		command = { type = relation which = PFA value = 50 }
+		command = { type = relation which = SAC value = 50 }
+		command = { type = relation which = THU value = 50 }
+		command = { type = relation which = BAY value = -50 }
+		command = { type = relation which = KLE value = -50 }
+		command = { type = relation which = KOL value = -50 }
+		command = { type = relation which = HAB value = -100 }
+	}
+}
+
+#The incorporation of Prussia into Brandenburg#
+event = {
+	id = 3636				#Triggerd by PRU 3517#
+	random = no
+	country = BRA
+	name = "EVENTNAME3636"
+	desc = "EVENTHIST3636"
+
+	action_a ={				#Keep Polish sovereignty#
+		name = "ACTIONNAME3636A"
+		command = { type = inherit which = PRU }
+		command = { type = addcore_national which = 289 }
+		command = { type = addcore_national which = 290 }
+		command = { type = relation which = POL value = -25 }
+		command = { type = provinceculture which = 289 value = wendish }
+		command = { type = provinceculture which = 290 value = wendish }
+		command = { type = treasury value = 250 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={				#Defy Polish sovereignty#
+		name = "ACTIONNAME3636B"
+		command = { type = inherit which = PRU }
+		command = { type = addcore_national which = 289 }
+		command = { type = addcore_national which = 290 }
+		command = { type = relation which = POL value = -100 }
+		command = { type = breakvassal which = POL } #just in case
+		command = { type = provinceculture which = 289 value = wendish }
+		command = { type = provinceculture which = 290 value = wendish }
+		command = { type = treasury value = 100 }
+		command = { type = stability value = -2 }
+	}
+}
+# Remember make triggered event for POL command = { type = casusbelli which = BRA value = 12}
+
+
+#Reform of the Brandenburg Army#
+event = {
+
+	id = 3518
+	random = no
+	country = BRA
+	name = "EVENTNAME3518"
+	desc = "EVENTHIST3518"
+
+	date = { day = 1 month = january year = 1640 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1660 }
+
+	action_a ={				#Offensive Army Reform#
+		name = "ACTIONNAME3518A"
+		command = { type = domestic which = LAND value = 2 }
+		command = { type = domestic which = OFFENSIVE value = 2 }
+		command = { type = domestic which = QUALITY value = 3 }
+		command = { type = land value = 800 }
+		command = { type = provincemanpower which = -1 value = 3 }
+		command = { type = provincemanpower which = -4 value = 3 }
+		command = { type = provincemanpower which = -4 value = 3 }
+		command = { type = provincemanpower which = -4 value = 3 }
+		command = { type = provincemanpower which = -4 value = 3 }
+		command = { type = INF which = -1 value = 8000 }
+		command = { type = CAV which = -3 value = 6000 }
+		command = { type = ART which = -3 value = 20 }
+	}
+
+	action_b ={				#Defensive Army Reform#
+		name = "ACTIONNAME3518B"
+		command = { type = domestic which = LAND value = 2 }
+		command = { type = domestic which = OFFENSIVE value = -2 }
+		command = { type = domestic which = QUALITY value = 3 }
+		command = { type = land value = 800 }
+		command = { type = fortress which = 312 value = 1 }
+		command = { type = fortress which = -1 value = 1 }
+		command = { type = provincemanpower which = -1 value = 3 }
+		command = { type = provincemanpower which = -4 value = 3 }
+		command = { type = provincemanpower which = -4 value = 3 }
+		command = { type = provincemanpower which = -4 value = 3 }
+		command = { type = provincemanpower which = -4 value = 3 }
+
+	}
+
+	action_c ={				#Navy Reform#
+		name = "ACTIONNAME3518C"
+		command = { type = domestic which = LAND value = -2 }
+		command = { type = domestic which = QUALITY value = 3 }
+		command = { type = naval value = 800 }
+		command = { type = provincemanpower which = -1 value = 3 }
+		command = { type = provincemanpower which = -4 value = 3 }
+		command = { type = provincemanpower which = -4 value = 3 }
+		command = { type = provincemanpower which = -4 value = 3 }
+		command = { type = provincemanpower which = -4 value = 3 }
+		command = { type = warships which = -1 value = 10 }
+		command = { type = transports which = -3 value = 3 }
+	}
+
+}
+
+#The Constitutional Struggle# <-- ancient event from EU2 v1.02 re-added with text
+event = {
+
+	id = 3757
+	random = no
+	country = BRA
+	name = "The Constitutional Struggle"
+	desc = "The mid 17th-century witnessed a significant struggle between the Junkers and the Burghers in the Electorate of Brandenburg, arising from a perceived shift in the balance of power between the two groups. The Junkers were the landed aristocracy, primarily large landowners and the old German nobility, whilst the Burghers were the urban bourgeoisie and merchant class. This conflict revolved around power, taxation and influence within the Electorate. The Junkers, who had traditionally held significant sway, sought to increase their control over state affairs and agrarian resources, often at the expense of the Burghers, who demanded a greater role in governance and sought to protect their economic interests. Ultimately, Brandenburg's transition into the Kingdom of Prussia in the following century allowed for a more centralized state that managed to balance the interests of both groups - paving the way for the era of Prussian Absolutism."
+
+	date = { day = 1 month = january year = 1640 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1670 }
+
+	action_a ={			#Support Junkers#
+		name = "Support Junkers"
+		command = { type = domestic which = SERFDOM value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = treasury value = 150 }
+	}
+
+	action_b ={			#Support Burghers#
+		name = "Support Burghers"
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = stability value = 1 }
+	}
+
+	action_c ={			#Move towards Autocracy#
+		name = "Move towards Autocracy"
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = trade value = 200 }
+		command = { type = infra value = 200 }
+		command = { type = stability value = -1 }
+	}
+
+}
+
+#Taxation Reform# <-- ancient event from EU2 v1.02 re-added with text
+event = {
+
+	id = 3758
+	random = no
+	country = BRA
+	name = "Taxation Reform"
+	desc = "As with the struggle between the Junkers and the Burghers, Brandenburg was marked by tensions between advocates of taxation reform and those demanding free trade. The ruling Hohenzollern dynasty sought to modernize the state's economy and strengthen its fiscal base through taxation reform, which included efforts to impose more equitable and efficient tax levies. At the same time, they faced resistance from the urban Burghers who advocated free trade policies that would reduce taxation and stimulate commerce. This struggle underscored the tension between the state's need for revenue and the desire for economic freedom and prosperity."
+
+	date = { day = 1 month = january year = 1650 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1670 }
+
+	action_a ={			#Increase taxes#
+		name = "Increase taxes"
+		command = { type = domestic which = MERCANTILISM value = 2 }
+		command = { type = trade value = 400 }
+	}
+
+	action_b ={			#Support free trade#
+		name = "Support free trade"
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = trade value = 600 }
+	}
+
+}
+
+#Protestants expelled from France#
+event = {
+
+	id = 3521				#Triggered by FRA3128#
+	trigger = {
+		OR = {
+			religion = protestant
+			religion = reformed
+		}
+	}
+	random = no
+	country = BRA
+	name = "Protestants expelled from France"
+	desc = "On April 13th, 1598 Henri IV issued the Edict of Nantes, a new law granting French Huguenots a large degree of religious toleration. Almost a hundred years later his grandson Louis XIV, a fervent Catholic despot striving for complete religious and political unity within France, viewed the coexistence of the Roman and Calvinist churches as a potential catalyst for renewed civil war. Having already encouraged the persecution of France's Lutherans and Calvinists for over a decade, in October 1685 Louis issued the Edict of Fontainebleau - essentially a complete revocation of his grandfather's Edict of Nantes. Within a few years, more than half a million Huguenots had fled to Great Britain, the Dutch Republic and parts of Germany and North America, thereby depriving France of her most industrious commercial class."
+
+	action_a ={				#We welcome you with open arms#
+		name = "We welcome you with open arms"
+		command = { type = populationpercent which = -1 value = 10 }
+		command = { type = provincetax which = -3 value = 1 }
+		command = { type = populationpercent which = -4 value = 10 }
+		command = { type = provincetax which = -3 value = 1 }
+		command = { type = populationpercent which = -4 value = 10 }
+		command = { type = provincetax which = -3 value = 1 }
+		command = { type = populationpercent which = -4 value = 10 }
+		command = { type = provincetax which = -3 value = 1 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#The League of Augsburg#
+event = {
+
+	id = 3522				#triggered by FRA3127#
+	random = no
+	country = BRA
+	name = "EVENTNAME3522"
+	desc = "EVENTHIST3522"
+
+	action_a ={				#Defy French claims#
+		name = "ACTIONNAME3522A"
+		command = { type = casusbelli which = FRA value = 72 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = SPA value = 150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = HAN value = 100 }
+		command = { type = relation which = BAD value = 100 }
+		command = { type = relation which = HES value = 100 }
+		command = { type = relation which = KLE value = 100 }
+		command = { type = relation which = KOL value = 100 }
+		command = { type = relation which = PFA value = 100 }
+		command = { type = relation which = THU value = 100 }
+	}
+
+	action_b ={				#Ignore it#
+		name = "ACTIONNAME3522B"
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = HAN value = -50 }
+		command = { type = relation which = BAD value = -50 }
+		command = { type = relation which = HES value = -50 }
+		command = { type = relation which = KLE value = -50 }
+		command = { type = relation which = KOL value = -50 }
+		command = { type = relation which = PFA value = -50 }
+		command = { type = relation which = THU value = -50 }
+	}
+}
+
+#The Brandenburg African Trade Company#
+
+event = {
+
+	id = 3523
+	random = no
+	country = BRA
+	name = "EVENTNAME3523"
+	desc = "EVENTHIST3523"
+
+	style = "3523"
+
+	date = { day = 1 month = january year = 1682 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1683 }
+
+	action_a ={				#We will exploit this!#
+		name = "ACTIONNAME3523A"
+		command = { type = gainmanufactory which = -1 value = goods }
+		command = { type = merchants value = 5 }
+		command = { type = explorer which = -1 }
+		command = { type = trade value = 400 }
+	}
+}
+
+
+#The Kingdom of Prussia#
+
+event = {
+	id = 3524
+	trigger = {
+		isvassal = no
+		atwar = no
+		event = 3636
+		NOT = { exists = PRU } # could have revolted somewhere in the meantime
+		someof = {
+			number = 4
+			owned = { province = 289 data = -1 } # Prussia's cores
+			owned = { province = 290 data = -1 }
+			owned = { province = 311 data = -1 } # Brandenburg's cores
+			owned = { province = 312 data = -1 }
+			owned = { province = 313 data = -1 }
+		}
+
+	}
+	random = no
+	country = BRA
+	name = "EVENTNAME3524"
+	desc = "EVENTHIST3524"
+
+	style = "3524"
+
+	date = { day = 1 month = january year = 1701 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1760 }
+
+	action_a ={				#The Kingdom of Prussia is born!#
+		name = "ACTIONNAME3524A"
+		command = { type = country which = PRU }
+		command = { type = flagname which = KNG }
+		command = { type = cityname which = 312 value = "Berlin-Cölln" }
+		command = { type = relation which = -6 value = -100 }
+		command = { type = relation which = -9 value = -50 }
+		command = { type = relation which = -9 value = -50 }
+		command = { type = relation which = -9 value = -50 }
+		command = { type = relation which = -9 value = -50 }
+		command = { type = relation which = -9 value = -50 }
+		command = { type = diplomats value = 3 }
+		command = { type = stability value = -1 }
+		command = { type = setflag which = berlin }
+	}
+
+	action_b ={				#Stay Elector-Prince!#
+		name = "ACTIONNAME3524B"
+		command = { type = relation which = -6 value = 100 }
+		command = { type = relation which = -9 value = 50 }
+		command = { type = relation which = -9 value = 50 }
+		command = { type = relation which = -9 value = 50 }
+		command = { type = relation which = -9 value = 50 }
+		command = { type = relation which = -9 value = 50 }
+		command = { type = treasury value = 250 }
+		command = { type = stability value = 2 }
+	}
+}
+
+## The Kleve Inheritance ##
+event = {
+    id = 3855
+
+    # Triggered by KLE 3854
+
+    random = no
+    country = BRA
+    name = "EVENTNAME3855"
+    desc = "EVENTHIST3855"
+
+    action_a ={        #Inherit Kleves#
+        name = "ACTIONNAME3855A"
+        command = { type = inherit which = KLE }
+        command = { type = cityname which = 343 value = "Düsseldorf" }
+        command = { type = addcore_national which = 343 }
+        command = { type = trigger which = 3859 }
+    }
+}
+
+event = {
+	id = 3856
+
+	# Triggered by PFA 3858
+
+	random = no
+	country = BRA
+	name = "EVENTNAME3856"
+	desc = "EVENTHIST3856"
+
+	action_a ={		#No inheritance of Kleves#
+		name = "ACTIONNAME3856A"
+		command = { type = addcore_claim which = 343 }
+		command = { type = relation which = PFA value = -100 }
+	}
+}
+
+event = {
+	id = 3857
+
+	# Triggered by KLE 3854
+
+	random = no
+	country = BRA
+	name = "EVENTNAME3856" # Re-use text.
+	desc = "EVENTHIST3856"
+
+	action_a ={		#No inheritance of Kleves#
+		name = "ACTIONNAME3856A"
+		command = { type = addcore_claim which = 343 }
+		command = { type = relation which = KLE value = -50 }
+	}
+}
+
+## The Pomeranian Inheritence (BRA) ##
+event = {
+	id = 4207
+
+	# Triggered by POM 3895A
+
+	random = no
+	country = BRA
+	name = "EVENTNAME3896"
+	desc = "EVENTHIST4207"
+
+	action_a ={        #Great!#
+		name = "ACTIONNAME3896A"
+		command = { type = inherit which = POM }
+		command = { type = addcore_national which = 301 }
+		command = { type = addcore_national which = 302 }
+		command = { type = relation which = SWE value = -50 }
+	}
+}
+
+## The Pommern Inheritence ##
+event = {
+    id = 3896
+
+	# Triggered by POM 3895B
+
+	random = no
+	country = BRA
+	name = "EVENTNAME3896"
+	desc = "EVENTHIST3896"
+
+	action_a ={        #Great!#
+		name = "ACTIONNAME3896A"
+	command = { type = inherit which = POM }
+	command = { type = addcore_national which = 301 }
+	command = { type = addcore_national which = 302 }
+	command = { type = addcore_national which = 304 }	
+	command = { type = relation which = SWE value = -100 }
+
+    }
+}
+
+#Philip of Anjou succeeds Carlos II in Spain#	#Bourbon#
+event = {
+
+	id = 4137		#Triggered by SPA3173#
+	random = no
+	country = BRA
+	name = "EVENTNAME3035"
+	desc = "EVENTHIST3035"
+
+	action_a ={				#Fight him#
+		name = "ACTIONNAME3035A"
+		command = { type = casusbelli which = FRA value = 36 }
+		command = { type = casusbelli which = SPA value = 36 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = HOL value = 100 }
+		command = { type = relation which = SPA value = -150 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = stability value = 3 }
+	}
+
+	action_b ={				#Accept it#
+		name = "ACTIONNAME3035B"
+		command = { type = relation which = SPA value = 150 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = HAB value = -150 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#Charles of Habsburg succeeds Carlos II in Spain#	#Habsburg#
+event = {
+
+	id = 4138		#Triggered by SPA3173#
+	random = no
+	country = BRA
+	name = "EVENTNAME3036"
+	desc = "EVENTHIST3036"
+
+	action_a ={				#Accept it conditionally#
+		name = "ACTIONNAME3036A"
+		command = { type = casusbelli which = HAB value = 36 }
+		command = { type = casusbelli which = FRA value = 36 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={				#Fight him#
+		name = "ACTIONNAME3036B"
+		command = { type = casusbelli which = HAB value = 36 }
+		command = { type = casusbelli which = SPA value = 36 }
+		command = { type = relation which = SPA value = -150 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = HAB value = -150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = stability value = 3 }
+	}
+
+	action_c ={				#Accept it#
+		name = "ACTIONNAME3036C"
+		command = { type = relation which = SPA value = 150 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = stability value = -1 }
+	}
+}

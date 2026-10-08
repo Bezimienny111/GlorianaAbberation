@@ -1,0 +1,174 @@
+# New 1.3 multi tag events #
+
+# Note: most of the events from this file have now been converted to decisions, so please check DB/Decisions.
+
+# The Peace of Westphalia #
+event = {
+	id = 25005
+	global = yes
+	trigger = {
+		AND = {
+			exists = HEL
+			NOT = { war = { country = -6 country = HEL } }
+		}
+		AND = {
+			exists = HOL
+			NOT = { war = { country = -6 country = HOL } }
+		}
+		continent = Europe
+	}
+
+	name = "EVENTNAME25005"
+	desc = "EVENTHIST25005"
+	
+	style = "25005"
+
+	date = { day = 1 month = january year = 1640 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1680 }
+
+	action_a = {	# The Empire's borders have been redrawn #
+		name = "ACTIONNAME25005A"
+		command = { type = vp value = 50 }
+		command = { type = diplomats value = 1 }
+		command = { type = hre which = 337 value = no } # Dutch Republic
+		command = { type = hre which = 338 value = no }
+		command = { type = hre which = 339 value = no }
+		command = { type = hre which = 340 value = no }
+		command = { type = hre which = 388 value = no } # Italy, Provence and Switzerland
+		command = { type = hre which = 389 value = no }
+		command = { type = hre which = 390 value = no }
+		command = { type = hre which = 400 value = no }
+		command = { type = hre which = 401 value = no }
+		command = { type = hre which = 402 value = no }
+		command = { type = hre which = 403 value = no }
+		command = { type = hre which = 404 value = no }
+		command = { type = hre which = 405 value = no }
+		command = { type = hre which = 406 value = no }
+		command = { type = hre which = 1612 value = no }
+		command = { type = elector which = FRI value = 0 }
+		command = { type = elector which = GEL value = 0 }
+		command = { type = elector which = HLL value = 0 }
+		command = { type = elector which = ZEE value = 0 }
+		command = { type = elector which = HAU value = 0 }
+		command = { type = elector which = FLA value = 0 }
+		command = { type = elector which = ART value = 0 }
+		command = { type = elector which = HEL value = 0 }
+		command = { type = elector which = GEN value = 0 }
+		command = { type = elector which = LUC value = 0 }
+		command = { type = elector which = MAN value = 0 }
+		command = { type = elector which = MLO value = 0 }
+		command = { type = elector which = MOD value = 0 }
+		command = { type = elector which = PAR value = 0 }
+		command = { type = elector which = PIS value = 0 }
+		command = { type = elector which = PRO value = 0 }
+		command = { type = elector which = SAV value = 0 }
+		command = { type = elector which = TOS value = 0 }
+		command = { type = elector which = VER value = 0 }
+		command = { type = elector which = PIA value = 0 }
+		command = { type = elector which = FLO value = 0 }
+	}
+}
+
+# Pirates sack our capital! #
+event = {
+	id = 25009
+	trigger = {
+		NOT = { countrysize = 3 }
+	}
+	random = no
+	persistent = yes
+
+	name = "Pirates sack our capital!"
+	desc = "Sire, pirate raiders have taken our capital and demand an outrageous ransom in exchange for their withdrawal. Shall we pay or not?"
+
+	action_a = {	# Pay them off #
+		name = "Pay them off"
+		command = { type = treasury value = -100 }
+		command = { type = disbandrebels which = -2 }
+		command = { type = control which = -2 value = -1 }
+		command = { type = infantry which = -2 value = 5000 }
+	}
+
+	action_b = {	# We can handle this #
+		name = "We can handle this"
+		command = { type = vp value = 10 }
+	}
+}
+
+# Mongols! #
+event = {
+	id = 25020
+	trigger = {
+		OR = {
+			tag = CHG # Chagatai
+			tag = CHI # China
+			tag = MCH # Manchu
+			tag = MNG # Ming
+			tag = QNG # Qing
+			tag = SNG # Song
+			tag = DHN # Han
+			tag = FUJ # Fujiang
+			tag = GUA # Guangdong
+			tag = GXI # Guangxi
+			tag = HEN # Henan
+			tag = HNA # Hanan
+			tag = HSI # Xsia
+			tag = LIA # Liang
+			tag = SXA # Shaanxi
+			tag = SXI # Shanxi
+			tag = TIA # Tianwen
+			tag = TWN # Tiawan
+			tag = XIN # Xianning
+			tag = YUN # Yunnan
+			tag = ZHE # Zhennang
+			tag = ZHO # Zhou
+			neighbour = NYN
+	}
+		exists = NYN
+		NOT = { relation = { country = NYN data = 100 } }
+		NOT = { year = 1600 }
+	}
+	random = yes
+
+	name = "EVENTNAME25020"
+	desc = "EVENTHIST25020"
+
+	action_a = {	# Damn! #
+		name = "ACTIONNAME25020A"
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -4 value = 2500 }
+		command = { type = relation which = NYN value = -50 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {	# Pay them off #
+		name = "ACTIONNAME25020B"
+		command = { type = cash value = -250 }
+		command = { type = relation which = NYN value = 50 }
+		command = { type = stability value = -1 }
+	}
+}
+
+# Wild Jurchens! #
+#event = {
+#	id = 25058
+#	trigger = {
+#		exists = MCH
+#		neighbour = MCH
+#	}
+#	random = yes
+#
+#	name = "Wild Jurchens!"
+#	desc = "Wild Jurchens from the Manchu lands on our border have begun raiding our territory! These wicked nomads are killing our #subjects and kidnapping others to sell as slaves - we must send troops to drive back the barbarians and restore order to the region."
+#
+#	action_a = {	# Damn! #
+#		name = "Damn!"
+#		command = { type = revolt which = -1019 where = border }
+#		command = { type = populationpercent which = -3 value = -1 }
+#		command = { type = treasury value = -50 }
+#		command = { type = stability value = -1 }
+#	}
+#}

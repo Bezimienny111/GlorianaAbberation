@@ -1,0 +1,37 @@
+# Bosnia Major Events
+# by Håvard Moe and Tom 'Demetrios' Rinschler
+
+#The Bogomil Heresy#
+event = {
+	id = 3873
+	random = no
+	country = BOS
+	name = "EVENTNAME3873"
+	desc = "EVENTHIST3873"
+
+	date = { day = 1 month = january year = 1420 }
+	offset = 200
+
+	action_a ={		#Stop the Heretics#
+		name = "ACTIONNAME3873A"
+		command = { type = revoltrisk which = 364 value = 3 }
+		command = { type = stability value = -2 }
+		command = { type = treasury value = -50 }
+		command = { type = relation which = PAP value = 100 }
+		command = { type = relation which = HUN value = 100 }
+		command = { type = relation which = CRO value = 50 }
+		command = { type = relation which = SER value = 50 }
+		command = { type = relation which = HAB value = 50 }
+	}
+
+	action_b ={		#Let them be#
+		name = "ACTIONNAME3873B"
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = HUN value = -100 }
+		command = { type = relation which = CRO value = -50 }
+		command = { type = relation which = SER value = -50 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = treasury value = 50 }
+		command = { type = provincetax which = 364 value = 1 }
+	}
+}

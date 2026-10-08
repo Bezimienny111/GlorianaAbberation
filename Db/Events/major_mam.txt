@@ -1,0 +1,183 @@
+#####Mamluk Major Events########
+#By Håvard Moe                 #
+#   Tom 'Demetrios' Rinschler  #
+#   Henrik 'Doomdark' Fåhraeus #
+################################
+
+## The Mameluk Nobility ##
+event = {
+	id = 3861
+	random = no
+	country = MAM
+	name = "EVENTNAME3861"
+	desc = "EVENTHIST3861"
+
+	date = { day = 1 month = november year = 1465 }
+	offset = 3000
+
+	action_a ={		#Give them power#
+		name = "ACTIONNAME3861A"
+		command = { type = domestic which = centralization value = -4 }
+		command = { type = domestic which = innovative value = -2 }
+		command = { type = domestic which = aristocracy value = 2 }
+		command = { type = domestic which = quality value = -1 }
+		command = { type = breakoverlord which = NUB }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={		#No!#
+		name = "ACTIONNAME3861B"
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = domestic which = aristocracy value = -1 }
+		command = { type = domestic which = quality value = 1 }
+		command = { type = stability value = -7 }
+	}
+}
+
+## The Massacre of the Mameluks ##
+event = {
+
+	id = 3862
+	random = no
+	country = MAM
+	name = "EVENTNAME3862"
+	desc = "EVENTHIST3862"
+
+	date = { day = 1 month = march year = 1811 }
+
+	action_a ={		#Die!#
+		name = "ACTIONNAME3862A"
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = domestic which = aristocracy value = -2 }
+		command = { type = stability value = -3 }
+		command = { type = relation which = TUR value = -100 }
+		command = { type = countryname value = "Egypt" }
+	}
+
+	action_b ={		#No!#
+		name = "ACTIONNAME3862B"
+		command = { type = domestic which = centralization value = -1 }
+		command = { type = domestic which = innovative value = -1 }
+		command = { type = domestic which = aristocracy value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = sleepevent which = 3863 }
+	}
+}
+
+## Muhammad Ali's Reforms ##
+event = {
+
+	id = 3863
+	random = no
+	country = MAM
+	name = "EVENTNAME3863"
+	desc = "EVENTHIST3863"
+
+	date = { day = 1 month = january year = 1812 }
+	offset = 300
+
+	action_a ={		#Yes, reforms!#
+		name = "ACTIONNAME3863A"
+		command = { type = flagname which = ALI }
+		command = { type = domestic which = quality value = 1 }
+		command = { type = land value = 500 }
+		command = { type = infra value = 500 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={		#No!#
+		name = "ACTIONNAME3863B"
+		command = { type = domestic which = centralization value = -1 }
+		command = { type = domestic which = quality value = -1 }
+		command = { type = stability value = -1 }
+	}
+}
+
+## Muhammad Ali's Ambition ##
+event = {
+
+	id = 50029 #triggered by TUR_50026A
+	random = no
+	country = MAM
+	name = "EVENTNAME50029"
+	desc = "EVENTHIST50029"
+
+	style = "50029"
+
+	action_a ={
+		name = "ACTIONNAME50029A"		#Break free and claim the Levant#
+		command = { type = breakvassal which = TUR }
+		command = { type = relation which = TUR value = -150 }
+		command = { type = addcore_claim which = 480 }
+		command = { type = addcore_claim which = 483 }
+		command = { type = addcore_claim which = 484 }
+		command = { type = addcore_claim which = 485 }
+		command = { type = addcore_claim which = 490 }
+		command = { type = addcore_claim which = 491 }
+		command = { type = addcore_claim which = 492 }
+		command = { type = addcore_claim which = 493 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = diplomats value = 3 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={
+		name = "ACTIONNAME50029B"		#Remain loyal and support the Sultan#
+		command = { type = dynastic which = TUR }
+		command = { type = relation which = TUR value = 150 }
+		command = { type = relation which = ENG value = -50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = RUS value = -50 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = treasury value = 300 }
+		command = { type = stability value = 1 }
+		command = { type = sleepevent which = 50030 }
+	}
+}
+
+## Egyptian Conquest of Sudan ##
+event = {
+
+	id = 50030
+	trigger = {
+		neighbour = SUD
+		NOT = {
+			alliance = { country = MAM country = SUD }
+			vassal = { country = MAM country = SUD }
+			war = { country = MAM country = SUD }
+		}
+	}
+	random = no
+	country = MAM
+	name = "EVENTNAME50030"
+	desc = "EVENTHIST50030"
+
+	date = { day = 1 month = january year = 1820 }
+	offset = 50
+
+	action_a ={		#Annex their lands into Egypt#
+		name = "ACTIONNAME50030A"
+		command = { type = addcore_claim which = 750 }
+		command = { type = addcore_claim which = 751 }
+		command = { type = addcore_claim which = 752 }
+		command = { type = casusbelli which = SUD value = 72 }
+		command = { type = relation which = SUD value = -150 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={		#Leave the Sudanese in peace#
+		name = "ACTIONNAME50030B"
+		command = { type = dynastic which = SUD }
+		command = { type = relation which = SUD value = 200 }
+		command = { type = cedeprovince which = SUD value = 750 }
+		command = { type = cedeprovince which = SUD value = 751 }
+		command = { type = cedeprovince which = SUD value = 752 }
+		command = { type = domestic which = OFFENSIVE value = -1 }
+		command = { type = stability value = 2 }
+	}
+}

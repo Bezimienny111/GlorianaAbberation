@@ -1,0 +1,1043 @@
+#####Persia Major Events#####
+#		By          #
+# Joakim 'Greven' Bergqwist #
+#			    #
+# 		and	    #
+#			    #
+# Henrik 'Doomdark' Fåhraeus #
+##############################
+
+#The Reforms of Ismail#
+event = {
+	id = 3559
+	trigger = { owned = { province = 533 data = -1 } } # Isfahan
+	random = no
+	country = PER
+	name = "EVENTNAME3559"
+	desc = "EVENTHIST3559"
+	style = "3559"
+	
+	date = { day = 1 month = january year = 1510 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1515 }
+	
+	action_a ={ # Reform trade and infrastructure
+		name = "ACTIONNAME3559A"
+		command = { type = cot which = 533 }
+		command = { type = removecot which = 1592 }
+		command = { type = infra value = 1000 }
+		command = { type = trade value = 1000 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = provincetax which = -2 value = 3 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+	}
+	action_b ={ # Reform the army
+		name = "ACTIONNAME3559B"
+		command = { type = domestic which = QUALITY value = 2 }
+		command = { type = land value = 2500 }
+		command = { type = manpower value = 25 }
+	}
+	action_c ={ # Fortify the realm.
+		name = "ACTIONNAME3559C"
+		command = { type = domestic which = OFFENSIVE value = -2 }
+		command = { type = fortress which = -1 value = 1 } # Random province
+		command = { type = fortress which = -4 value = 1 } # Random province
+		command = { type = fortress which = -4 value = 1 } # Random province
+		command = { type = fortress which = -4 value = 1 } # Random province
+		command = { type = fortress which = -4 value = 1 } # Random province
+		command = { type = fortress which = -4 value = 1 } # Random province
+		command = { type = fortress which = -4 value = 1 } # Random province
+	}
+}
+
+#The Turko-Persian Conflicts: Shiite rebels.#
+event = {
+	id = 3560
+	trigger = {
+		exists = TUR
+		neighbour = TUR
+		NOT = {
+			alliance = { country = TUR country = PER }
+			vassal = { country = TUR country = PER }
+		}
+		countrysize = 8
+	}
+	random = no
+	country = PER
+	name = "EVENTNAME3560"
+	desc = "EVENTHIST3560"
+	
+	date = { day = 1 month = january year = 1510 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1515 }
+	
+	action_a ={	# Support the Turkish Shiites.
+		name = "Support the Anatolian Shi'as."
+		command = { type = trigger which = 3360 }
+		command = { type = relation which = TUR value = -100 }
+		command = { type = stability value = 1 }
+		command = { type = land value = 200 }
+		command = { type = casusbelli which = TUR value = 120 }
+	}
+	action_b ={ # Ignore them.
+		name = "Leave them to their fate."
+		command = { type = stability value = -1 }
+	}
+	action_c ={ # Betray the Turkish rebels.
+		name = "Betray the rebels to please the Sultan."
+		command = { type = relation which = TUR value = 150 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#The Turko-Persian Conflicts: Prince Beyazid flees to Persia.#
+event = {
+	id = 3561
+	random = no
+	country = PER
+	name = "EVENTNAME3561"
+	desc = "EVENTHIST3561"
+
+# Triggered by Turkish event 3361
+
+	action_a ={ # Deliver Prince Beyazid to the Turks.
+		name = "ACTIONNAME3561A"
+		command = { type = treasury value = 200 }
+		command = { type = DIP which = 8 value = 24 }
+	}
+	action_b ={ # Refuse to hand him over.
+		name = "ACTIONNAME3561B"
+		command = { type = relation which = TUR value = -100 }
+		command = { type = stability value = 1 }
+	}
+	action_c ={ # Actively support Beyazid's claim.
+		name = "ACTIONNAME3561C"
+		command = { type = casusbelli which = TUR value = 120 }
+		command = { type = relation which = TUR value = -200 }
+		command = { type = land value = 200 }
+	}
+}
+
+#The Turko-Persian Conflicts: Murad III's campaigns against Persia.#
+event = {
+
+	id = 3562
+	random = no
+	country = PER
+	name = "EVENTNAME3562"
+	desc = "EVENTHIST3562"
+
+# Triggered by Turkish event 3362
+
+	action_a ={ # Teach the Sultan a lesson!
+		name = "ACTIONNAME3562A"
+		command = { type = war which = TUR }
+		command = { type = land value = 200 }
+		command = { type = stability value = 1 }
+	}
+	action_b ={ # Ignore the Turkish threats.
+		name = "ACTIONNAME3562B"
+		command = { type = casusbelli which = TUR value = 60 }
+		command = { type = stability value = -1 }
+	}
+	action_c ={ # Seek diplomatic solution.
+		name = "ACTIONNAME3562C"
+		command = { type = DIP which = 8 value = 24 }
+		command = { type = relation which = TUR value = 50 }
+	}
+}
+
+#The Turko-Persian Conflicts: Persians take advantage of Ottoman instability.#
+event = {
+	id = 3563
+	trigger = {
+		exists = TUR
+		neighbour = TUR
+		NOT = {
+			alliance = { country = TUR country = PER }
+			vassal = { country = TUR country = PER }
+		}
+		countrysize = 8
+	}
+	random = no
+	country = PER
+	name = "EVENTNAME3563"
+	desc = "EVENTHIST3563"
+	
+	date = { day = 1 month = january year = 1600 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1605 }
+
+	action_a ={ # Support the Turkish rebels and prepare for war.
+		name = "ACTIONNAME3563A"
+		command = { type = casusbelli which = TUR value = 120 }
+		command = { type = relation which = TUR value = -200 }
+		command = { type = land value = 200 }
+		command = { type = trigger which = 3363 }
+	}
+	action_b ={ # Concentrate on internal issues.
+		name = "ACTIONNAME3563B"
+		command = { type = infra value = 300 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#The Reforms of Abbas the Great#
+event = {
+	id = 3564
+	trigger = { owned = { province = 533 data = -1 } } # Isfahan
+	random = no
+	country = PER
+	name = "EVENTNAME3564"
+	desc = "EVENTHIST3564"
+	
+	style = "3565"
+
+	date = { day = 1 month = january year = 1590 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1595 }
+
+
+	action_a ={ # Move the Capital to Isfahan
+		name = "ACTIONNAME3564A"
+		command = { type = populationpercent which = -2 value = -25 }
+		command = { type = capital which = 533 }
+		command = { type = populationpercent which = 533 value = 25 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = infra value = 1000 }
+		command = { type = trade value = 1000 }
+		command = { type = land value = 1000 }
+		command = { type = naval value = 1000 }
+		command = { type = provincetax which = -2 value = 3 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = stability value = -2 }
+		command = { type = setflag which = isfahan }
+	}
+	action_b ={ # Retain the old capital
+		name = "ACTIONNAME3564B"
+		command = { type = infra value = 1000 }
+		command = { type = trade value = 1000 }
+		command = { type = land value = 1000 }
+		command = { type = naval value = 1000 }
+		command = { type = provincetax which = -2 value = 3 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = stability value = 2 }
+	}
+}
+
+#The Advisors of Abbas the Great#
+event = {
+	id = 3565
+	random = no
+	country = PER
+	name = "EVENTNAME3565"
+	desc = "EVENTHIST3565"
+	
+	date = { day = 1 month = january year = 1595 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1600 }
+
+	action_a ={ # Hire the English advisors
+		name = "ACTIONNAME3565A"
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = revoltrisk which = 48 value = 4 }
+		command = { type = stability value = -1 }
+		command = { type = land value = 1000 }
+		command = { type = naval value = 1000 }
+	}
+	action_b ={ # Rely on domestic ones
+		name = "ACTIONNAME3565B"
+		command = { type = gainbuilding which = -1 value = bailiff }
+		command = { type = gainbuilding which = -4 value = bailiff }
+		command = { type = gainbuilding which = -4 value = bailiff }
+		command = { type = gainbuilding which = -4 value = bailiff }
+		command = { type = gainbuilding which = -4 value = bailiff }
+		command = { type = gainbuilding which = -4 value = bailiff }
+		command = { type = stability value = 2 }
+	}
+}
+
+#Political Turmoil#
+event = {
+	id = 3566
+	random = no
+	country = PER
+	name = "EVENTNAME3566"
+	desc = "EVENTHIST3566"
+
+	date = { day = 1 month = january year = 1590 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1595 }
+
+	action_a ={
+		name = "ACTIONNAME3566A"	#Let the Clans fight#
+		command = { type = revoltrisk which = 48 value = 5 }
+		command = { type = stability value = -2 }
+	}
+	action_b ={
+		name = "ACTIONNAME3566B"	#Buy the loyalty of the Clans#
+		command = { type = treasury value = -500 }
+	}
+}
+
+#Political Turmoil#
+event = {
+	id = 3567
+	random = no
+	country = PER
+	name = "EVENTNAME3567"
+	desc = "EVENTHIST3567"
+
+	date = { day = 1 month = january year = 1610 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1615 }
+
+	action_a ={
+		name = "ACTIONNAME3567A"	#Let the Clans fight#
+		command = { type = revoltrisk which = 48 value = 5 }
+		command = { type = stability value = -2 }
+	}
+	action_b ={
+		name = "ACTIONNAME3567B"	#Buy the loyalty of the Clans#
+		command = { type = treasury value = -500 }
+	}
+}
+
+#Political Turmoil#
+event = {
+
+	id = 3568
+	random = no
+	country = PER
+	name = "EVENTNAME3568"
+	desc = "EVENTHIST3568"
+	
+	date = { day = 1 month = january year = 1630 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1635 }
+	
+	action_a ={
+		name = "ACTIONNAME3568A"	#Let the Clans fight#
+		command = { type = revoltrisk which = 48 value = 5 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={
+		name = "ACTIONNAME3568B"	#Buy the loyalty of the Clans#
+		command = { type = treasury value = -500 }
+	}
+}
+
+#Political Turmoil#
+event = {
+
+	id = 3569
+	random = no
+	country = PER
+	name = "EVENTNAME3569"
+	desc = "EVENTHIST3569"
+	
+	date = { day = 1 month = january year = 1650 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1655 }
+
+	action_a ={
+		name = "ACTIONNAME3569A"	#Let the Clans fight#
+		command = { type = revoltrisk which = 48 value = 5 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={
+		name = "ACTIONNAME3569B"	#Buy the loyalty of the Clans#
+		command = { type = treasury value = -500 }
+	}
+}
+
+#Political Turmoil#
+event = {
+	id = 3570
+	random = no
+	country = PER
+	name = "EVENTNAME3570"
+	desc = "EVENTHIST3570"
+	
+	date = { day = 1 month = january year = 1670 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1675 }
+
+	action_a ={
+		name = "ACTIONNAME3570A"	#Let the Clans fight#
+		command = { type = revoltrisk which = 48 value = 5 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={
+		name = "ACTIONNAME3570B"	#Buy the loyalty of the Clans#
+		command = { type = treasury value = -500 }
+	}
+}
+
+#Political Turmoil#
+event = {
+	id = 3571
+	random = no
+	country = PER
+	name = "EVENTNAME3571"
+	desc = "EVENTHIST3571"
+	
+	date = { day = 1 month = january year = 1690 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1695 }
+
+	action_a ={
+		name = "ACTIONNAME3571A"	#Let the Clans fight#
+		command = { type = revoltrisk which = 48 value = 5 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={
+		name = "ACTIONNAME3571B"	#Buy the loyalty of the Clans#
+		command = { type = treasury value = -500 }
+	}
+}
+
+#Political Turmoil#
+event = {
+	id = 3572
+	random = no
+	country = PER
+	name = "EVENTNAME3572"
+	desc = "EVENTHIST3572"
+	
+	date = { day = 1 month = january year = 1710 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1715 }
+
+	action_a ={
+		name = "ACTIONNAME3572A"	#Let the Clans fight#
+		command = { type = revoltrisk which = 48 value = 5 }
+		command = { type = stability value = -2 }
+	}
+	action_b ={
+		name = "ACTIONNAME3572B"	#Buy the loyalty of the Clans#
+		command = { type = treasury value = -500 }
+	}
+}
+
+#Political Turmoil#
+event = {
+	id = 3573
+	random = no
+	country = PER
+	name = "EVENTNAME3573"
+	desc = "EVENTHIST3573"
+	
+	date = { day = 1 month = january year = 1730 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1735 }
+
+	action_a ={
+		name = "ACTIONNAME3573A"	#Let the Clans fight#
+		command = { type = revoltrisk which = 48 value = 5 }
+		command = { type = stability value = -2 }
+	}
+	action_b ={
+		name = "ACTIONNAME3573B"	#Buy the loyalty of the Clans#
+		command = { type = treasury value = -500 }
+	}
+}
+
+#Political Fragmentation#
+event = {
+	id = 3574
+	random = no
+	country = PER
+	name = "EVENTNAME3574"
+	desc = "EVENTHIST3574"
+	
+	date = { day = 1 month = january year = 1660 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1665 }
+
+	action_a ={ # Let the factions conspire
+		name = "ACTIONNAME3574A"
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = ADM which = -2 value = 48 }
+		command = { type = DIP which = -2 value = 48 }
+		command = { type = MIL which = -2 value = 48 }
+		command = { type = provincetax which = -1 value = -2 }
+	}
+	action_b ={ # Tighten state control
+		name = "ACTIONNAME3574B"
+		command = { type = stability value = -3 }
+		command = { type = revoltrisk which = 48 value = 4 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = ADM which = 1 value = 48 }
+		command = { type = DIP which = 1 value = 48 }
+		command = { type = MIL which = 1 value = 48 }
+		command = { type = provincetax which = -1 value = 1 }
+	}
+}
+
+#Political Fragmentation#
+event = {
+	id = 3575
+	random = no
+	country = PER
+	name = "EVENTNAME3575"
+	desc = "EVENTHIST3575"
+	
+	date = { day = 1 month = january year = 1680 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1685 }
+	
+	action_a ={ # Tighten state control
+		name = "ACTIONNAME3575A"
+		command = { type = stability value = -3 }
+		command = { type = revoltrisk which = 48 value = 4 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = ADM which = 1 value = 48 }
+		command = { type = DIP which = 1 value = 48 }
+		command = { type = MIL which = 1 value = 48 }
+		command = { type = provincetax which = -1 value = 1 }
+	}
+	action_b ={ # Let the factions conspire
+		name = "ACTIONNAME3575B"
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = ADM which = -2 value = 48 }
+		command = { type = DIP which = -2 value = 48 }
+		command = { type = MIL which = -2 value = 48 }
+		command = { type = provincetax which = -1 value = -2 }
+	}
+}
+
+#Political Fragmentation#
+event = {
+	id = 3576
+	random = no
+	country = PER
+	name = "EVENTNAME3576"
+	desc = "EVENTHIST3576"
+	
+	date = { day = 1 month = january year = 1700 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1705 }
+
+	action_a ={ # Let the factions conspire
+		name = "ACTIONNAME3576A"
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = ADM which = -2 value = 48 }
+		command = { type = DIP which = -2 value = 48 }
+		command = { type = MIL which = -2 value = 48 }
+		command = { type = provincetax which = -1 value = -2 }
+	}
+	action_b ={ # Tighten state control
+		name = "ACTIONNAME3576B"
+		command = { type = stability value = -3 }
+		command = { type = revoltrisk which = 48 value = 4 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = ADM which = 1 value = 48 }
+		command = { type = DIP which = 1 value = 48 }
+		command = { type = MIL which = 1 value = 48 }
+		command = { type = provincetax which = -1 value = 1 }
+	}
+}
+
+#Political Fragmentation#
+event = {
+	id = 3577
+	random = no
+	country = PER
+	name = "EVENTNAME3577"
+	desc = "EVENTHIST3577"
+	
+	date = { day = 1 month = january year = 1720 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1725 }
+
+	action_a ={ # Let the factions conspire
+		name = "ACTIONNAME3577A"
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = ADM which = -2 value = 48 }
+		command = { type = DIP which = -2 value = 48 }
+		command = { type = MIL which = -2 value = 48 }
+		command = { type = provincetax which = -1 value = -2 }
+	}
+	action_b ={ # Tighten state control
+		name = "ACTIONNAME3577B"
+		command = { type = stability value = -3 }
+		command = { type = revoltrisk which = 48 value = 4 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = ADM which = 1 value = 48 }
+		command = { type = DIP which = 1 value = 48 }
+		command = { type = MIL which = 1 value = 48 }
+		command = { type = provincetax which = -1 value = 1 }
+	}
+}
+
+#Political Fragmentation#
+event = {
+	id = 3578
+	random = no
+	country = PER
+	name = "EVENTNAME3578"
+	desc = "EVENTHIST3578"
+
+	date = { day = 1 month = january year = 1740 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1745 }
+
+	action_a ={ # Let the factions conspire
+		name = "ACTIONNAME3578A"
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = ADM which = -2 value = 48 }
+		command = { type = DIP which = -2 value = 48 }
+		command = { type = MIL which = -2 value = 48 }
+		command = { type = provincetax which = -1 value = -2 }
+	}
+	action_b ={ # Tighten state control
+		name = "ACTIONNAME3578B"
+		command = { type = stability value = -3 }
+		command = { type = revoltrisk which = 48 value = 4 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = ADM which = 1 value = 48 }
+		command = { type = DIP which = 1 value = 48 }
+		command = { type = MIL which = 1 value = 48 }
+		command = { type = provincetax which = -1 value = 1 }
+	}
+}
+
+#Political Fragmentation#
+event = {
+	id = 3579
+	random = no
+	country = PER
+	name = "EVENTNAME3579"
+	desc = "EVENTHIST3579"
+	
+	date = { day = 1 month = january year = 1760 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1765 }
+
+	action_a ={ # Tighten state control
+		name = "ACTIONNAME3579A"
+		command = { type = stability value = -3 }
+		command = { type = revoltrisk which = 48 value = 4 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = ADM which = 1 value = 48 }
+		command = { type = DIP which = 1 value = 48 }
+		command = { type = MIL which = 1 value = 48 }
+		command = { type = provincetax which = -1 value = 1 }
+	}
+	action_b ={ # Let the factions conspire
+		name = "ACTIONNAME3579B"
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = ADM which = -2 value = 48 }
+		command = { type = DIP which = -2 value = 48 }
+		command = { type = MIL which = -2 value = 48 }
+		command = { type = provincetax which = -1 value = -2 }
+	}
+}
+
+#Political Fragmentation#
+event = {
+	id = 3580
+	random = no
+	country = PER
+	name = "EVENTNAME3580"
+	desc = "EVENTHIST3580"
+	
+	date = { day = 1 month = january year = 1780 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1785 }
+
+	action_a ={ # Let the factions conspire
+		name = "ACTIONNAME3580A"
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = ADM which = -2 value = 48 }
+		command = { type = DIP which = -2 value = 48 }
+		command = { type = MIL which = -2 value = 48 }
+		command = { type = provincetax which = -1 value = -2 }
+	}
+	action_b ={ # Tighten state control
+		name = "ACTIONNAME3580B"
+		command = { type = stability value = -3 }
+		command = { type = revoltrisk which = 48 value = 4 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = ADM which = 1 value = 48 }
+		command = { type = DIP which = 1 value = 48 }
+		command = { type = MIL which = 1 value = 48 }
+		command = { type = provincetax which = -1 value = 1 }
+	}
+}
+
+#Political Fragmentation#
+event = {
+	id = 3581
+	random = no
+	country = PER
+	name = "EVENTNAME3581"
+	desc = "EVENTHIST3581"
+	
+	date = { day = 1 month = january year = 1800 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1805 }
+
+	action_a ={ # Let the factions conspire
+		name = "ACTIONNAME3581A"
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = ADM which = -2 value = 48 }
+		command = { type = DIP which = -2 value = 48 }
+		command = { type = MIL which = -2 value = 48 }
+		command = { type = provincetax which = -1 value = -2 }
+	}
+	action_b ={ # Tighten state control
+		name = "ACTIONNAME3581B"
+		command = { type = stability value = -3 }
+		command = { type = revoltrisk which = 48 value = 4 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = ADM which = 1 value = 48 }
+		command = { type = DIP which = 1 value = 48 }
+		command = { type = MIL which = 1 value = 48 }
+		command = { type = provincetax which = -1 value = 1 }
+	}
+}
+
+#Political Fragmentation#
+event = {
+	id = 6970
+	random = no
+	country = PER
+	name = "EVENTNAME3579"
+	desc = "EVENTHIST3579"
+	
+	date = { day = 1 month = january year = 1820 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1825 }
+
+	action_a ={ # Tighten state control
+		name = "ACTIONNAME3579A"
+		command = { type = stability value = -3 }
+		command = { type = revoltrisk which = 48 value = 4 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = ADM which = 1 value = 48 }
+		command = { type = DIP which = 1 value = 48 }
+		command = { type = MIL which = 1 value = 48 }
+		command = { type = provincetax which = -1 value = 1 }
+	}
+	action_b ={ # Let the factions conspire
+		name = "ACTIONNAME3579B"
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = ADM which = -2 value = 48 }
+		command = { type = DIP which = -2 value = 48 }
+		command = { type = MIL which = -2 value = 48 }
+		command = { type = provincetax which = -1 value = -2 }
+	}
+}
+
+#The Afghan Rebellions#
+event = {
+	id = 6907
+	trigger = {          
+		OR = {  
+			owned = { province = 1524 data = -1 }
+			owned = { province = 1525 data = -1 }
+			owned = { province = 1527 data = -1 }
+			owned = { province = 1528 data = -1 }
+		}
+		NOT = {
+			exists = AFG
+		}
+	}
+	
+	random = no
+	country = PER
+	name = "EVENTNAME6907"
+	desc = "EVENTHIST6907"
+	
+	date = { day = 1 month = january year = 1707 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1715 }
+	
+	action_a = {     #Curses!#
+		name = "ACTIONNAME6907A"
+		command = { type = province_revoltrisk which = 1524 value = 5 }
+		command = { type = revolt which = 1524 }
+		command = { type = province_revoltrisk which = 1525 value = 5 }
+		command = { type = revolt which = 1525 }
+		command = { type = province_revoltrisk which = 1527 value = 5 }
+		command = { type = revolt which = 1527 }
+		command = { type = province_revoltrisk which = 1528 value = 5 }
+		command = { type = revolt which = 1528 }
+	}
+}
+
+#The Afghan Rebellions End#
+event = {
+	id = 6908
+	trigger = {          
+		OR = {  
+			owned = { province = 1524 data = -1 }
+			owned = { province = 1525 data = -1 }
+			owned = { province = 1527 data = -1 }
+			owned = { province = 1528 data = -1 }
+		}
+	}
+	
+	random = no
+	country = PER
+	name = "EVENTNAME6908"
+	desc = "EVENTHIST6908"
+	
+	date = { day = 1 month = january year = 1730 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1735 }
+	
+	action_a = {     #Great!#
+		name = "ACTIONNAME6908A"
+		command = { type = province_revoltrisk which = 1524 value = -5 }
+		command = { type = provincetax which = 1524 value = 1 }
+		command = { type = province_revoltrisk which = 1525 value = -5 }
+		command = { type = provincetax which = 1525 value = 1 }
+		command = { type = province_revoltrisk which = 1527 value = -5 }
+		command = { type = provincetax which = 1527 value = 1 }
+		command = { type = province_revoltrisk which = 1528 value = -5 }
+		command = { type = provincetax which = 1528 value = 1 }
+	}
+}
+
+#The Commissioning of the Masjed-e Shah#
+event = {
+
+	id = 4147
+	trigger = { owned = { province = 533 data = -1 } } # Isfahan
+	random = no
+	country = PER
+	name = "The Commissioning of the Masjed-e Shah"
+	desc = "EVENTHIST4147"
+
+	date = { day = 1 month = january year = 1611 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1612 }
+
+	action_a ={		#Build the mosque#
+		name = "Build the mosque"
+		command = { type = stability value = -1 }
+		command = { type = treasury value = -500 }
+	}
+
+	action_b ={		#Concentrate on worldly matters#
+		name = "Concentrate on worldly matters"
+		command = { type = domestic which = INNOVATIVE value = 3 }
+		command = { type = treasury value = 200 }
+		command = { type = infra value = 500 }
+		command = { type = trade value = 500 }
+		command = { type = sleepevent which = 4148 }
+	}
+}
+
+#The Masjed-e Shah stands in Unearthly Glory#
+event = {
+
+	id = 4148
+	trigger = {
+		event = 4147
+	}
+	random = no
+	country = PER
+	name = "The Masjed-e Shah stands in Unearthly Glory"
+	desc = "After almost two decades of work, the beautiful Masjed-e Shah is finally complete."
+
+	style = "3564"
+
+	date = { day = 1 month = january year = 1629 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1630 }
+
+	action_a ={				#The Safavids are the envy of the world!#
+		name = "The Safavids are the envy of the world!"
+		command = { type = gainmanufactory which = 533 value = luxury }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = ADM which = 2 value = 120 }
+		command = { type = DIP which = 2 value = 120 }
+		command = { type = missionaries value = 6 }
+		command = { type = vp value = 200 }
+		command = { type = stability value = 3 }
+	}
+}
+
+#The Fall of the Safavids#
+event = {
+	id = 4202
+	random = no
+	country = PER
+	name = "EVENTNAME4202"
+	desc = "EVENTHIST4202"
+
+	date = { day = 8 month = march year = 1736 }
+	offset = 30
+	deathdate = { day = 19 month = june year = 1747 }
+
+	action_a ={ # The new order arises!
+		name = "ACTIONNAME4202A"
+		command = { type = flagname which = EMP }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = DIP which = 3 value = 240 }
+		command = { type = ADM which = 3 value = 240 }
+		command = { type = MIL which = 3 value = 240 }
+		command = { type = casusbelli which = TUR value = 120 }
+		command = { type = casusbelli which = MOG value = 120 }
+		command = { type = relation which = TUR value = -100 }
+		command = { type = relation which = MOG value = -100 }
+		command = { type = land value = 500 }
+		command = { type = naval value = 500 }
+		command = { type = stability value = 2 }
+	}
+}
+
+#The Reforms of Karim Khan#
+event = {
+	id = 4203
+	trigger = {
+		OR = {
+			owned = { province = 534 data = -1 } # Fars
+			owned = { province = 529 data = -1 } # Tabaristan
+			owned = { province = 1530 data = -1 } # Khorasan
+		}
+	}
+	random = no
+	country = PER
+	name = "EVENTNAME4203"
+	desc = "EVENTHIST4203"
+
+	style = "4203"
+
+	date = { day = 1 month = january year = 1756 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1773 }
+
+	action_a ={ # Move the capital to Shiraz
+		name = "ACTIONNAME4203A"
+		trigger = { 
+			owned = { province = 534 data = -1 } # Fars
+		}
+		command = { type = populationpercent which = -2 value = -25 }
+		command = { type = capital which = 534 }
+		command = { type = populationpercent which = 534 value = 25 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = infra value = 1000 }
+		command = { type = trade value = 1000 }
+		command = { type = land value = 1000 }
+		command = { type = naval value = 1000 }
+		command = { type = inflation value = -5 }
+		command = { type = provincetax which = 534 value = 3 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = stability value = -2 }
+		command = { type = setflag which = shiraz }
+	}
+	action_b ={ # Move the capital to Tehran
+		name = "ACTIONNAME4203B"
+		trigger = { 
+			owned = { province = 529 data = -1 } # Tabaristan
+		}
+		command = { type = populationpercent which = -2 value = -25 }
+		command = { type = capital which = 529 }
+		command = { type = populationpercent which = 529 value = 25 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = infra value = 1000 }
+		command = { type = trade value = 1000 }
+		command = { type = land value = 1000 }
+		command = { type = naval value = 1000 }
+		command = { type = inflation value = -5 }
+		command = { type = provincetax which = 529 value = 3 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = stability value = -2 }
+		command = { type = setflag which = tehran }
+	}
+	action_c ={ # Move the capital to Mashhad
+		name = "ACTIONNAME4203C"
+		trigger = { 
+			owned = { province = 1530 data = -1 } # Khorasan
+		}
+		command = { type = populationpercent which = -2 value = -25 }
+		command = { type = capital which = 1530 }
+		command = { type = populationpercent which = 1530 value = 25 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = infra value = 1000 }
+		command = { type = trade value = 1000 }
+		command = { type = land value = 1000 }
+		command = { type = naval value = 1000 }
+		command = { type = inflation value = -5 }
+		command = { type = provincetax which = 1530 value = 3 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = stability value = -2 }
+		command = { type = setflag which = mashhad }
+	}
+	action_d ={ # Retain the old capital
+		name = "ACTIONNAME4203D"
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = infra value = 1000 }
+		command = { type = trade value = 1000 }
+		command = { type = land value = 1000 }
+		command = { type = naval value = 1000 }
+		command = { type = inflation value = -5 }
+		command = { type = provincetax which = -2 value = 3 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = stability value = 2 }
+	}
+}

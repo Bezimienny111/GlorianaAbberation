@@ -1,0 +1,1276 @@
+#(1615-1710) Dutch sailors reach Indonesia
+event = {
+	id = 338193
+	trigger = {
+		OR = {
+			religion = hinduism
+			religion = sunni
+			religion = shia
+			religion = pagan
+			religion = buddhism
+			religion = sikh
+		}
+		countrysize = 2
+		NOT = { countrysize = 15 } #big country will not be intimidated
+		continent = asia
+		event = 186052 #HOL: Dutch sailors reach Indonesia
+		exists = HOL
+	}
+	random = no
+	province = 702 #Jakarta
+	name = "EVENTNAME186052" #Dutch sailors reach Indonesia
+	desc = "EVENTHIST186052"
+	#-#Verenigde Oost-Indische Compagnie (Dutch East India Company or VOC) was founded, with the goal of sharing the costs of the exploration of the East Indies and ultimately re-establishing the spice trade, a vital source of income to the new Republic of the Seven United Provinces. The first expeditions were successful in bypassing Portuguese dominion of the Cape of Good Hope and the Indian Ocean in general. The Dutch also managed to break the Portuguese monopoly of the spice trade. As the Dutch fleets grew in size, so did their interference with Portuguese trade, and the first skirmishes took place. By 1619, the Dutch conquered Jayakarta which they rename Batavia and make it their EastIndies capital. For the next twenty years the two cities of Goa and Batavia would fight each other relentlessly, since they stood as the capital of the Portuguese India State (or the Indian Vice-Royalty) and the Dutch EastIndia Company's base of operations.
+
+	date = { day = 1 month = january year = 1615 }
+	offset = 100
+	deathdate = { day = 1 month = january year = 1710 }
+
+	action_a = {
+		name = "ACTIONNAME338193A" #Another bunch of foreigners lust after our land
+		command = { type = vp value = -1 }
+	}
+}
+#(1615-1720) Dutch offer
+event = {
+	id = 338194
+	trigger = {
+		event = 186053 #HOL: Capture of Jakarta
+		exists = HOL
+	}
+	random = no
+	province = 702 #Jakarta
+	name = "EVENTNAME338194" #Dutch offer
+	desc = "EVENTHIST338194"
+	#-#The Dutch commander offers us weapons in exchange for land around the city of Jakarta to build their trade and military establishment.
+
+	date = { day = 1 month = january year = 1615 }
+	offset = 100
+	deathdate = { day = 1 month = january year = 1720 }
+
+	action_a = {
+		name = "ACTIONNAME338194A" #Accept the offer
+		command = { type = cityname which = 702 value = "Batavia" }
+		command = { type = cedeprovince which = HOL value = 702 } #Jakarta
+		command = { type = relation which = HOL value = 50 }
+		command = { type = treasury value = 50 }
+		command = { type = land value = 1000 }
+		command = { type = domestic which = mercantilism value = -1 }
+		command = { type = trigger which = 186054 } #HOL: The infidel yield to our demands
+	}
+	action_b = {
+		name = "ACTIONNAME338194B" #Refuse the offer and face the consequences
+		command = { type = treasury value = 50 }
+		command = { type = relation which = HOL value = -200 }
+		command = { type = domestic which = mercantilism value = 1 }
+		command = { type = casusbelli which = HOL value = 10 }
+		command = { type = war which = HOL }
+		command = { type = trigger which = 186055 } #HOL: The infidel refuses our offer
+	}
+}
+
+
+#(1630-1700) The Sale of Tondaimandalam
+event = {
+	id = 338013 #triggered by ENG_164600 A
+	trigger = {
+		continent = asia
+	}
+	random = no
+	province = 571 #Madras
+	name = "EVENTNAME338013" #The Sale of Tondaimandalam
+	desc = "EVENTHIST338013"
+	#-#In 1640, the British offered to buy a stretch of land in the Tondaimandalam region, so that they could form a trading post on the Bay of Bengal. To a nation strapped for cash, this opportunity would prove too good to pass up.
+
+	action_a = {
+		name = "ACTIONNAME338013A" #Sell it to them
+		command = { type = cityname which = 571 value = "Madras" }
+		command = { type = treasury value = 200 }
+		command = { type = trigger which = 164601 } #ENG: The Founding of Madras
+		command = { type = relation which = ENG value = 100 }
+		command = { type = cedeprovince which = ENG value = 571 } #Madras
+		command = { type = removecore_national which = 571 } #Madras
+	}
+	action_b = {
+		name = "ACTIONNAME338013B" #We do not want them as neighbors!
+		command = { type = relation which = ENG value = -100 }
+		command = { type = trigger which = 164602 } #ENG: Our Offer Was Rejected
+	}
+}
+
+#(1693-1750) British Traders near the Ganges
+event = {
+	id = 338012
+	trigger = {
+		exists = ENG
+		continent = asia
+		OR = {
+			owned = { province = 571 data = ENG } #Madras
+			event = 164600 #ENG: An Opportunity in India
+		}
+		NOT = {
+			owned = { province = 557 data = ENG } #Ganges
+		}
+	}
+	random = no
+	province = 557 #Ganges
+	name = "EVENTNAME338012" #British Traders near the Ganges
+	desc = "EVENTHIST338012"
+	#-#In August of 1690, Job Charnok, an agent of the East India Company settled in Calcutta. A few years later, the EIC would approach to purchase three outlying villages to being a settlement.
+
+	date = { day = 1 month = january year = 1693 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1750 }
+
+	action_a = {
+		name = "ACTIONNAME338012A" #Allow them to settle in the region for a tribute
+		command = { type = cityname which = 557 value = "Calcutta" }
+		command = { type = relation which = ENG value = 25 }
+		command = { type = cedeprovince which = ENG value = 557 } #Ganges
+		command = { type = trigger which = 164603 } #ENG: Trade in Calcutta
+	}
+	action_b = {
+		name = "ACTIONNAME338012B" #We do not want them as neighbors!
+		command = { type = relation which = ENG value = -200 }
+		command = { type = trigger which = 164604 } #ENG: Trade in Calcutta
+	}
+}
+
+#(1700-1820) Telugu in Hyderabad
+event = {
+	id = 338294
+	trigger = {
+		OR = {
+			owned = { province = 563 data = -1 } #Bastar
+			owned = { province = 564 data = -1 } #Yanam
+			owned = { province = 565 data = -1 } #Palakimedi
+			AND = {
+				owned = { province = 571 data = -1 } #Madras
+				event = 338295 #ProvinceSpec*571: Telugu in Madras
+			}
+		}
+	}
+	random = no
+	province = 566 #Hyderabad
+	name = "EVENTNAME338294" #Telugu in Hyderabad
+	desc = "EVENTHIST338294"
+	#-#During the course of the 18th century, the rise of various states and small population migrations led to the Telugu language becoming predominant in the eastern portion of Central India.
+
+	date = { day = 0 month = january year = 1700 }
+	offset = 3000
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "ACTIONNAME338294A" #Telugu becomes influential in this province
+		command = { type = populationpercent which = 566 value = 5 }
+		command = { type = provinceculture which = 566 value = telugu } #Hyderabad
+	}
+}
+
+#(1700-1820) Telugu in Madras
+event = {
+	id = 338295
+	trigger = {
+		OR = {
+			owned = { province = 563 data = -1 } #Bastar
+			owned = { province = 564 data = -1 } #Yanam
+			owned = { province = 565 data = -1 } #Palakimedi
+			AND = {
+				owned = { province = 566 data = -1 } #Madras
+				event = 338294 #ProvinceSpec*566: Telugu in Hyderabad
+			}
+		}
+	}
+	random = no
+	province = 571 #Madras
+	name = "EVENTNAME338295" #Telugu in Madras
+	desc = "EVENTHIST338294"
+	#-#During the course of the 18th century, the rise of various states and small population migrations led to the Telugu language becoming predominant in the eastern portion of Central India.
+
+	date = { day = 0 month = january year = 1700 }
+	offset = 3000
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "ACTIONNAME338294A" #Telugu becomes influential in this province
+		command = { type = populationpercent which = 571 value = 5 }
+		command = { type = provinceculture which = 571 value = telugu } #Madras
+	}
+}
+
+#(1510-1660) Submission of Goa for Muslim and Buddhist countries
+event = {
+	id = 338005
+	trigger = {
+		OR = {
+			religion = sunni
+			religion = shia
+			religion = buddhism
+		}
+		OR = {
+			discovered = 434 #Oporto
+			discovered = 441 #Tago
+			discovered = 442 #Algarve
+		}
+		event = 18038 #POR: The gates of India
+		exists = POR
+	}
+	random = no
+	province = 549
+	name = "EVENTNAME338005" #Portuguese demand Goa
+	desc = "EVENTHIST338005"
+	#-#The commander of the Portuguese navy demands Goa as the military base for their fleet. Should we give in to their demands, or refuse them and face consequences?\n \n If we refuse and Portuguese take control of Goa by force, they may keep it for long...
+
+	date = { day = 1 month = february year = 1510 }
+	offset = 250
+	deathdate = { day = 1 month = january year = 1660 }
+
+	action_a = {
+		name = "ACTIONNAME338005A" #Defy the Portuguese
+		command = { type = war which = POR }
+		command = { type = stability value = 1 }
+		command = { type = relation which = POR value = -100 }
+		command = { type = trigger which = 18041 } #POR: The infidel refuses our offer
+	}
+	action_b = {
+		name = "ACTIONNAME338005B" #Agree to vassalship
+		command = { type = cityname which = 549 value = "Goa" }
+		command = { type = cedeprovince which = POR value = 549 } #Goa
+		command = { type = stability value = -2 }
+		command = { type = treasury value = -100 }
+		command = { type = trigger which = 18040 } #POR: The infidel yield to our demands
+	}
+}
+#(1510-1660) Submission of Goa for Hindu countries
+event = {
+	id = 338006
+	trigger = {
+		OR = {
+			religion = hinduism
+			religion = sikh
+		}
+		event = 18062
+		control = { province = 549 data = -1 }
+		exists = POR
+	}
+	random = no
+	province = 549
+	name = "EVENTNAME338006" #Portuguese offer
+	desc = "EVENTHIST338006"
+	#-#The Portuguese commander offers us weapons in exchange for land around the city of Goa to build their trade and military establishment. It would be a smart idea to accept it, in order to deliver a crushing blow to hated Muslims.\n \n If we refuse and Portuguese take control of Goa by force, they may keep it for long...
+
+	date = { day = 1 month = february year = 1510 }
+	offset = 250
+	deathdate = { day = 1 month = january year = 1660 }
+
+	action_a = {
+		name = "ACTIONNAME338006A" #Accept the offer
+		command = { type = cityname which = 549 value = "Goa" }
+		command = { type = cedeprovince which = POR value = 549 } #Goa
+		command = { type = relation which = POR value = 50 }
+		command = { type = treasury value = 50 }
+		command = { type = land value = 1000 }
+		command = { type = domestic which = mercantilism value = -1 }
+		command = { type = trigger which = 18040 } #POR: The infidel yield to our demands
+	}
+	action_b = {
+		name = "ACTIONNAME338006B" #Refuse the offer and face the consequences
+		command = { type = treasury value = 50 }
+		command = { type = relation which = POR value = -200 }
+		command = { type = domestic which = mercantilism value = 1 }
+		command = { type = war which = POR }
+		command = { type = trigger which = 18041 } #POR: The infidel refuses our offer
+	}
+}
+#(1510-1660) Submission of Goa
+event = {
+	id = 338007
+	trigger = {
+		event = 18041
+		control = { province = 549 data = POR }
+		NOT = { core_national = { province = 441 data = -1 } } #Tago, Portugal should of course be exempt
+	}
+	random = no
+	province = 549
+	name = "EVENTNAME338007" #Goa is lost
+	desc = "EVENTHIST338007"
+	#-#The treacherous Portuguese has captured the port of Goa, there is nothing we can do about it.
+
+	date = { day = 1 month = february year = 1510 }
+	offset = 250
+	deathdate = { day = 1 month = january year = 1660 }
+
+	action_a = {
+		name = "ACTIONNAME338007A" #We are helpless
+		command = { type = cityname which = 549 value = "Goa" }
+		command = { type = cedeprovince which = POR value = 549 } #Goa
+		command = { type = trigger which = 18043 } #POR: Goa is ours
+	}
+}
+
+#(1550-1820) Sikhism in Panjab
+event = {
+	id = 338055
+	trigger = {
+		NOT = {
+			provincereligion = { province = 1521 data = sikh } #Panjab
+		}
+	}
+	random = no
+	province = 1521 #Panjab
+	name = "EVENTNAME338055" # Sikhism in Panjab
+	desc = "EVENTHIST338055"
+
+	date = { day = 0 month = january year = 1550 }
+	offset = 1000
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "ACTIONNAME338055A" #A new religion!;
+		command = { type = provincereligion which = 1521 value = sikh }
+	}
+}
+
+#(1550-1820) Sikhism in Chandigahr
+event = {
+	id = 338056
+	trigger = {
+		NOT = {
+			provincereligion = { province = 1520 data = sikh } #Chandigahr
+		}
+	}
+	random = no
+	province = 1520 #Chandigahr
+	name = "EVENTNAME338056" # Sikhism in Chandigahr
+	desc = "EVENTHIST338055"
+
+	date = { day = 0 month = january year = 1550 }
+	offset = 1000
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "ACTIONNAME338055A" #A new religion!
+		command = { type = cityname which = 1520 value = "Amritsar" }
+		command = { type = provincereligion which = 1520 value = sikh }
+	}
+}
+
+##############new
+
+#(1430-1837) Dai Viet Rebellion Collapses in Hanoi
+event = {
+	id = 338057
+	trigger = {
+		tag = CHI # really only needs to be for China as the RR will disappear if the province changes hands
+		control = { province = 662 data = -1 }
+		NOT = { exists = DAI }
+	}
+	random = no
+	province = 662 #Hanoi
+	name = "EVENTNAME338057" # Dai Viet Rebellion Collapses in Hanoi
+	desc = "EVENTHIST338057"
+	#-#The Vietnamese uprising against Imperial rule has failed in the province of Hanoi, with the peasants having finally been routed by the Emperor's occupation army and forced to flee to the mountains and valleys further south. Let us hope this unhappy saga is now finally at an end.
+
+	date = { day = 1 month = january year = 1430 }
+	offset = 300
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a = {
+		name = "ACTIONNAME338057A" #Victory!
+		command = { type = province_revoltrisk which = 662 value = -30 }
+	}
+}
+
+#(1430-1837) Dai Viet Rebellion Collapses in Tanh Noah
+event = {
+	id = 338058
+	trigger = {
+		tag = CHI # really only needs to be for China as the RR will disappear if the province changes hands
+		control = { province = 663 data = -1 }
+		NOT = { exists = DAI }
+	}
+	random = no
+	province = 663 #Tanh Noah
+	name = "EVENTNAME338058" # Dai Viet Rebellion Collapses in Tanh Noah
+	desc = "EVENTHIST338058"
+	#-#The Vietnamese uprising against Imperial rule has failed in the province of Tanh Noah, with the peasants having finally been routed by the Emperor's occupation army and forced to flee to the mountains and valleys further south. Let us hope this unhappy saga is now finally at an end.
+
+	date = { day = 1 month = january year = 1430 }
+	offset = 300
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a = {
+		name = "ACTIONNAME338058A" #Victory!
+		command = { type = province_revoltrisk which = 663 value = -30 }
+	}
+}
+
+#(1430-1837) Dai Viet Rebellion Collapses in Lao Cai
+event = {
+	id = 338059
+	trigger = {
+		tag = CHI # really only needs to be for China as the RR will disappear if the province changes hands
+		control = { province = 1554 data = -1 }
+		NOT = { exists = DAI }
+	}
+	random = no
+	province = 1554 #Lao Cai
+	name = "EVENTNAME338059" # Dai Viet Rebellion Collapses in Lao Cai
+	desc = "EVENTHIST338059"
+	#-#The Vietnamese uprising against Imperial rule has failed in the province of Lao Cai, with the peasants having finally been routed by the Emperor's occupation army and forced to flee to the mountains and valleys further south. Let us hope this unhappy saga is now finally at an end.
+
+	date = { day = 1 month = january year = 1430 }
+	offset = 300
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a = {
+		name = "ACTIONNAME338059A" #Victory!
+		command = { type = province_revoltrisk which = 1554 value = -30 }
+	}
+}
+
+#(1399-1837) Restoration of the Holy See
+event = {
+	id = 338060
+	trigger = {
+		atwar = no
+		control = { province = 399 data = -1 }
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+		NOT = { exists = PAP }
+	}
+	random = no
+	province = 399 #Roma
+	name = "Restoration of the Holy See" # Restoration of the Holy See
+	desc = "With His Holiness the Pope our virtual prisoner in the Vatican, many across the Catholic world call for us to release him and grant independence to the Papal States. For the sake of peace with our neighbours we probably ought to acquiesce to these demands, even if that means giving up the great city of Rome."
+	#-#With His Holiness the Pope our virtual prisoner in the Vatican, many across the Catholic world call for us to release him and grant independence to the Papal States. For the sake of peace with our neighbours we probably ought to acquiesce to these demands, even if that means giving up the great city of Rome.
+
+	date = { day = 1 month = january year = 1399 }
+	offset = 300
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a = {
+		name = "We shall restore him to St. Peter's throne" # We shall restore him to St. Peter's throne #
+		command = { type = free which = PAP }
+	}
+	action_b = {
+		name = "No, Rome is ours!" # No, Rome is ours! #
+		command = { type = stability value = -1 }
+	}
+}
+
+#(1720-1837) Baluchi settlers found Karachi
+event = {
+	id = 338061
+	trigger = {
+		OR = {
+			owned = { province = 536 data = -1 } #Mekran
+			owned = { province = 537 data = -1 } #Baluchistan
+			owned = { province = 538 data = -1 } #Kalat
+			owned = { province = 1526 data = -1 } #Zahedan
+			culture = baluchi
+			neighbour = BAL
+			neighbour = SIN
+		}
+	}
+	random = no
+	province = 539 #Indus
+	name = "Baluchi settlers found Karachi" #Baluchi settlers found Karachi
+	desc = "During the early 18th century waves of Baluchi settlers began moving east into the Indus Valley in order to escape droughts and tribal feuds, and by the middle of the century had founded the port town of Karachi. Further waves of settlers arrived over the following decades, encouraged by the ruling Talpur dynasty, who in turn constructed the Manora Fort in order to defend the region from Arab pirates."
+	#-#During the early 18th century waves of Baluchi settlers began moving east into the Indus Valley in order to escape droughts and tribal feuds, and by the middle of the century had founded the port town of Karachi. Further waves of settlers arrived over the following decades, encouraged by the ruling Talpur dynasty, who in turn constructed the Manora Fort in order to defend the region from Arab pirates.
+
+	date = { day = 0 month = january year = 1720 }
+	offset = 3000
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "The Indus valley has changed forever" #The Indus valley has changed forever
+		command = { type = cityname which = 539 value = "Karachi" }
+		command = { type = fortress which = 539 value = 1 }
+		command = { type = populationpercent which = 539 value = 5 }
+		command = { type = provincereligion which = 539 value = shia }
+		command = { type = provinceculture which = 539 value = baluchi } #Indus
+	}
+}
+
+#(1600-1837) Vietnamese settlers in Da Nang
+event = {
+	id = 338062
+	trigger = {
+		OR = {
+			owned = { province = 663 data = -1 } #Tanh Noah
+			culture = vietnamese
+			neighbour = ANN
+			neighbour = DAI
+		}
+		OR = {
+			NOT = { exists = CHA }
+			CHA = { isvassal = yes }
+		}
+	}
+	random = no
+	province = 664 #Da Nang
+	name = "Vietnamese settlers in Da Nang" #Vietnamese settlers in Da Nang
+	desc = "The encroachment of Vietnamese settlers from the northern realm of Annam into the former territory of the Champa kingdom has changed the nature of Da Nang, which is now considered to be Vietnamese in character and language."
+	#-#The encroachment of Vietnamese settlers from the northern realm of Annam into the former territory of the Champa kingdom has changed the nature of Da Nang, which is now considered to be Vietnamese in character and language.
+
+	date = { day = 0 month = january year = 1600 }
+	offset = 3000
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "The Cham have been displaced from Da Nang" #The Cham have been displaced from Da Nang
+		command = { type = cityname which = 664 value = "Hue" }
+		command = { type = populationpercent which = 664 value = 5 }
+		command = { type = provincereligion which = 664 value = buddhism }
+		command = { type = provinceculture which = 664 value = vietnamese } #Da Nang
+	}
+}
+
+#(1600-1837) Vietnamese settlers in Da Lat
+event = {
+	id = 338063
+	trigger = {
+		owned = { province = 664 data = -1 } #Da Nang
+		event = 338062 #ProvinceSpec*664: Vietnamese settlers in Da Nang
+		OR = {
+			culture = vietnamese
+			neighbour = ANN
+			neighbour = DAI
+		}
+		OR = {
+			NOT = { exists = CHA }
+			CHA = { isvassal = yes }
+		}
+	}
+	random = no
+	province = 665 #Da Lat
+	name = "Vietnamese settlers in Da Lat" #Vietnamese settlers in Da Lat
+	desc = "The encroachment of Vietnamese settlers from the northern realm of Annam into the former territory of the Champa kingdom has changed the nature of Da Lat, which is now considered to be Vietnamese in character and language."
+	#-#The encroachment of Vietnamese settlers from the northern realm of Annam into the former territory of the Champa kingdom has changed the nature of Da Lat, which is now considered to be Vietnamese in character and language.
+
+	date = { day = 0 month = january year = 1600 }
+	offset = 3000
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "The Cham have been displaced from Da Lat" #The Cham have been displaced from Da Lat
+		command = { type = cityname which = 665 value = "Da Lat" }
+		command = { type = populationpercent which = 665 value = 5 }
+		command = { type = provincereligion which = 665 value = buddhism }
+		command = { type = provinceculture which = 665 value = vietnamese } #Da Lat
+	}
+}
+
+#(1600-1837) Vietnamese settlers in Mekong Delta
+event = {
+	id = 338064
+	trigger = {
+		owned = { province = 665 data = -1 } #Da Lat
+		event = 338063 #ProvinceSpec*665: Vietnamese settlers in Da Lat
+		OR = {
+			culture = vietnamese
+			neighbour = ANN
+			neighbour = DAI
+		}
+		OR = {
+			NOT = { exists = CAM }
+			CAM = { isvassal = yes }
+		}
+	}
+	random = no
+	province = 666 #Mekong Delta
+	name = "Vietnamese settlers in Mekong Delta" #Vietnamese settlers in Mekong Delta
+	desc = "The encroachment of Vietnamese settlers from the northern realm of Annam into the former territory of the Khmer kingdom has changed the nature of Mekong Delta, which is now considered to be Vietnamese in character and language."
+	#-#The encroachment of Vietnamese settlers from the northern realm of Annam into the former territory of the Khmer kingdom has changed the nature of Mekong Delta, which is now considered to be Vietnamese in character and language.
+
+	date = { day = 0 month = january year = 1600 }
+	offset = 3000
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "The Khmer have been displaced from Mekong Delta" #The Khmer have been displaced from Mekong Delta
+		command = { type = cityname which = 666 value = "Gia Dinh" }
+		command = { type = populationpercent which = 666 value = 5 }
+		command = { type = provincereligion which = 666 value = buddhism }
+		command = { type = provinceculture which = 666 value = vietnamese } #Mekong Delta
+	}
+}
+
+#(1550-1680) The Lease of Macau
+event = {
+	id = 338065 #triggered by POR_164605 A
+	trigger = {
+		continent = Asia
+	}
+	random = no
+	province = 659 #Guangdong
+	name = "The Lease of Macau" #The Lease of Macau
+	desc = "In 1557, following several decades of exploring and attempts at fort building along the Chinese coast (Ming armies would promptly raze any forts that Europeans managed to build), the Portuguese finally negotiated a settlement with the local Ming authorities whereby the port of Macau would be leased by China to Portugal in exchange for several taels of silver every year. Incredibly, this agreement would hold for 350 years."
+	#-#In 1557, following several decades of exploring and attempts at fort building along the Chinese coast (Ming armies would promptly raze any forts that Europeans managed to build), the Portuguese finally negotiated a settlement with the local Ming authorities whereby the port of Macau would be leased by China to Portugal in exchange for several taels of silver every year. Incredibly, this agreement would hold for 350 years.
+
+	action_a = {
+		name = "Lease it to them" #Lease it to them
+		command = { type = treasury value = 300 }
+		command = { type = trigger which = 164606 } #POR: Portuguese Macau
+		command = { type = relation which = POR value = 100 }
+		command = { type = cedeprovince which = POR value = 659 } #Guangdong
+	}
+	action_b = {
+		name = "We do not need to pawn our territories" #We do not need to pawn our territories
+		command = { type = relation which = POR value = -100 }
+		command = { type = trigger which = 164607 } #POR: Our Offer Was Rejected
+	}
+}
+
+###########################
+## Ooooh new ones!	###
+###########################
+
+#(1550-1837) Russian settlers in Kazan
+event = {
+	id = 338066
+	trigger = {
+		culture = russian
+		someof = {
+			number = 4
+			owned = { province = 447 data = -1 } #Tambow
+			owned = { province = 451 data = -1 } #Bogutjar
+			owned = { province = 452 data = -1 } #Saratow
+			owned = { province = 453 data = -1 } #Ufa
+			owned = { province = 454 data = -1 } #Samara
+			owned = { province = 455 data = -1 } #Uralsk
+			owned = { province = 456 data = -1 } #Orenburg
+			owned = { province = 457 data = -1 } #Astrakhan
+			owned = { province = 458 data = -1 } #Volgograd
+			owned = { province = 459 data = -1 } #Lugansk
+		}
+	}
+	random = no
+	province = 446 #Kazan
+	name = "EVENTNAME338066" #Russian settlers in Kazan
+	desc = "EVENTHIST338066"
+	#-#The disintegration of the Golden Horde and the ensuing collapse of Tatar domination of the Steppe has led to its predominantly Muslim population being marginalized under the new regime. As Russian settlers move into the province of Kazan, many Tatars are now fleeing south to the relative safety of Crimea - as those who stay behind know they risk conversion by the sword.
+
+	date = { year = 1550 }
+	offset = 3000
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "ACTIONNAME338066A" #The Tatars are now a minority in Kazan
+		command = { type = conversion which = 446 }
+		command = { type = populationpercent which = 446 value = -15 }
+		command = { type = provinceculture which = 446 value = russian } #Kazan
+	}
+}
+
+#(1550-1837) Russian settlers in Ufa
+event = {
+	id = 338067
+	trigger = {
+		culture = russian
+		someof = {
+			number = 4
+			owned = { province = 446 data = -1 } #Kazan
+			owned = { province = 447 data = -1 } #Tambow
+			owned = { province = 451 data = -1 } #Bogutjar
+			owned = { province = 452 data = -1 } #Saratow
+			owned = { province = 454 data = -1 } #Samara
+			owned = { province = 455 data = -1 } #Uralsk
+			owned = { province = 456 data = -1 } #Orenburg
+			owned = { province = 457 data = -1 } #Astrakhan
+			owned = { province = 458 data = -1 } #Volgograd
+			owned = { province = 459 data = -1 } #Lugansk
+		}
+	}
+	random = no
+	province = 453 #Ufa
+	name = "EVENTNAME338067" #Russian settlers in Ufa
+	desc = "EVENTHIST338067"
+	#-#The disintegration of the Golden Horde and the ensuing collapse of Tatar domination of the Steppe has led to its predominantly Muslim population being marginalized under the new regime. As Russian settlers move into the province of Ufa, many Tatars are now fleeing south to the relative safety of Crimea - as those who stay behind know they risk conversion by the sword.
+
+	date = { year = 1550 }
+	offset = 3000
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "ACTIONNAME338067A" #The Tatars are now a minority in Ufa
+		command = { type = cityname which = 453 value = "Ufa" }
+		command = { type = conversion which = 453 }
+		command = { type = populationpercent which = 453 value = -15 }
+		command = { type = provinceculture which = 453 value = russian } #Ufa
+	}
+}
+
+#(1550-1837) Russian settlers in Samara
+event = {
+	id = 338068
+	trigger = {
+		culture = russian
+		someof = {
+			number = 4
+			owned = { province = 446 data = -1 } #Kazan
+			owned = { province = 447 data = -1 } #Tambow
+			owned = { province = 451 data = -1 } #Bogutjar
+			owned = { province = 452 data = -1 } #Saratow
+			owned = { province = 453 data = -1 } #Ufa
+			owned = { province = 455 data = -1 } #Uralsk
+			owned = { province = 456 data = -1 } #Orenburg
+			owned = { province = 457 data = -1 } #Astrakhan
+			owned = { province = 458 data = -1 } #Volgograd
+			owned = { province = 459 data = -1 } #Lugansk
+		}
+	}
+	random = no
+	province = 454 #Samara
+	name = "EVENTNAME338068" #Russian settlers in Samara
+	desc = "EVENTHIST338068"
+	#-#The disintegration of the Golden Horde and the ensuing collapse of Tatar domination of the Steppe has led to its predominantly Muslim population being marginalized under the new regime. As Russian settlers move into the province of Samara, many Tatars are now fleeing south to the relative safety of Crimea - as those who stay behind know they risk conversion by the sword.
+
+	date = { year = 1550 }
+	offset = 3000
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "ACTIONNAME338068A" #The Tatars are now a minority in Samara
+		command = { type = cityname which = 454 value = "Samara" }
+		command = { type = conversion which = 454 }
+		command = { type = populationpercent which = 454 value = -15 }
+		command = { type = provinceculture which = 454 value = russian } #Samara
+	}
+}
+
+#(1550-1837) Russian settlers in Uralsk
+event = {
+	id = 338069
+	trigger = {
+		culture = russian
+		someof = {
+			number = 4
+			owned = { province = 446 data = -1 } #Kazan
+			owned = { province = 447 data = -1 } #Tambow
+			owned = { province = 451 data = -1 } #Bogutjar
+			owned = { province = 452 data = -1 } #Saratow
+			owned = { province = 453 data = -1 } #Ufa
+			owned = { province = 454 data = -1 } #Samara
+			owned = { province = 456 data = -1 } #Orenburg
+			owned = { province = 457 data = -1 } #Astrakhan
+			owned = { province = 458 data = -1 } #Volgograd
+			owned = { province = 459 data = -1 } #Lugansk
+		}
+	}
+	random = no
+	province = 455 #Uralsk
+	name = "EVENTNAME338069" #Russian settlers in Uralsk
+	desc = "EVENTHIST338069"
+	#-#The disintegration of the Golden Horde and the ensuing collapse of Tatar domination of the Steppe has led to its predominantly Muslim population being marginalized under the new regime. As Russian settlers move into the province of Uralsk, many Tatars are now fleeing south to the relative safety of Crimea - as those who stay behind know they risk conversion by the sword.
+
+	date = { year = 1550 }
+	offset = 3000
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "ACTIONNAME338069A" #The Tatars are now a minority in Uralsk
+		command = { type = cityname which = 455 value = "Uralsk" }
+		command = { type = conversion which = 455 }
+		command = { type = populationpercent which = 455 value = -15 }
+		command = { type = provinceculture which = 455 value = russian } #Uralsk
+	}
+}
+
+#(1550-1837) Russian settlers in Orenburg
+event = {
+	id = 338070
+	trigger = {
+		culture = russian
+		someof = {
+			number = 4
+			owned = { province = 446 data = -1 } #Kazan
+			owned = { province = 447 data = -1 } #Tambow
+			owned = { province = 451 data = -1 } #Bogutjar
+			owned = { province = 452 data = -1 } #Saratow
+			owned = { province = 453 data = -1 } #Ufa
+			owned = { province = 454 data = -1 } #Samara
+			owned = { province = 455 data = -1 } #Uralsk
+			owned = { province = 457 data = -1 } #Astrakhan
+			owned = { province = 458 data = -1 } #Volgograd
+			owned = { province = 459 data = -1 } #Lugansk
+		}
+	}
+	random = no
+	province = 456 #Orenburg
+	name = "EVENTNAME338070" #Russian settlers in Orenburg
+	desc = "EVENTHIST338070"
+	#-#The disintegration of the Golden Horde and the ensuing collapse of Tatar domination of the Steppe has led to its predominantly Muslim population being marginalized under the new regime. As Russian settlers move into the province of Orenburg, many Tatars are now fleeing south to the relative safety of Crimea - as those who stay behind know they risk conversion by the sword.
+
+	date = { year = 1550 }
+	offset = 3000
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "ACTIONNAME338070A" #The Tatars are now a minority in Orenburg
+		command = { type = conversion which = 456 }
+		command = { type = populationpercent which = 456 value = -15 }
+		command = { type = provinceculture which = 456 value = russian } #Orenburg
+	}
+}
+
+#(1550-1837) Russian settlers in Astrakhan
+event = {
+	id = 338071
+	trigger = {
+		culture = russian
+		someof = {
+			number = 4
+			owned = { province = 446 data = -1 } #Kazan
+			owned = { province = 447 data = -1 } #Tambow
+			owned = { province = 451 data = -1 } #Bogutjar
+			owned = { province = 452 data = -1 } #Saratow
+			owned = { province = 453 data = -1 } #Ufa
+			owned = { province = 454 data = -1 } #Samara
+			owned = { province = 455 data = -1 } #Uralsk
+			owned = { province = 456 data = -1 } #Orenburg
+			owned = { province = 458 data = -1 } #Volgograd
+			owned = { province = 459 data = -1 } #Lugansk
+		}
+	}
+	random = no
+	province = 457 #Astrakhan
+	name = "EVENTNAME338071" #Russian settlers in Astrakhan
+	desc = "EVENTHIST338071"
+	#-#The disintegration of the Golden Horde and the ensuing collapse of Tatar domination of the Steppe has led to its predominantly Muslim population being marginalized under the new regime. As Russian settlers move into the province of Astrakhan, many Tatars are now fleeing south to the relative safety of Crimea - as those who stay behind know they risk conversion by the sword.
+
+	date = { year = 1550 }
+	offset = 3000
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "ACTIONNAME338071A" #The Tatars are now a minority in Astrakhan
+		command = { type = cityname which = 457 value = "Astrakhan" }
+		command = { type = conversion which = 457 }
+		command = { type = populationpercent which = 457 value = -15 }
+		command = { type = provinceculture which = 457 value = russian } #Astrakhan
+	}
+}
+
+#(1550-1837) Russian settlers in Volgograd
+event = {
+	id = 338072
+	trigger = {
+		culture = russian
+		someof = {
+			number = 4
+			owned = { province = 446 data = -1 } #Kazan
+			owned = { province = 447 data = -1 } #Tambow
+			owned = { province = 451 data = -1 } #Bogutjar
+			owned = { province = 452 data = -1 } #Saratow
+			owned = { province = 453 data = -1 } #Ufa
+			owned = { province = 454 data = -1 } #Samara
+			owned = { province = 455 data = -1 } #Uralsk
+			owned = { province = 456 data = -1 } #Orenburg
+			owned = { province = 457 data = -1 } #Astrakhan
+			owned = { province = 459 data = -1 } #Lugansk
+		}
+	}
+	random = no
+	province = 458 #Volgograd
+	name = "EVENTNAME338072" #Russian settlers in Volgograd
+	desc = "EVENTHIST338072"
+	#-#The disintegration of the Golden Horde and the ensuing collapse of Tatar domination of the Steppe has led to its predominantly Muslim population being marginalized under the new regime. As Russian settlers move into the province of Volgograd, many Tatars are now fleeing south to the relative safety of Crimea - as those who stay behind know they risk conversion by the sword.
+
+	date = { year = 1550 }
+	offset = 3000
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "ACTIONNAME338072A" #The Tatars are now a minority in Volgograd
+		command = { type = cityname which = 458 value = "Tsaritsyn" }
+		command = { type = conversion which = 458 }
+		command = { type = populationpercent which = 458 value = -15 }
+		command = { type = provinceculture which = 458 value = russian } #Volgograd
+	}
+}
+
+#(1550-1837) Russian settlers in Lugansk
+event = {
+	id = 338073
+	trigger = {
+		culture = russian
+		someof = {
+			number = 4
+			owned = { province = 446 data = -1 } #Kazan
+			owned = { province = 447 data = -1 } #Tambow
+			owned = { province = 451 data = -1 } #Bogutjar
+			owned = { province = 452 data = -1 } #Saratow
+			owned = { province = 453 data = -1 } #Ufa
+			owned = { province = 454 data = -1 } #Samara
+			owned = { province = 455 data = -1 } #Uralsk
+			owned = { province = 456 data = -1 } #Orenburg
+			owned = { province = 457 data = -1 } #Astrakhan
+			owned = { province = 458 data = -1 } #Volgograd
+		}
+	}
+	random = no
+	province = 459 #Lugansk
+	name = "EVENTNAME338073" #Russian settlers in Lugansk
+	desc = "EVENTHIST338073"
+	#-#The disintegration of the Golden Horde and the ensuing collapse of Tatar domination of the Steppe has led to its predominantly Muslim population being marginalized under the new regime. As Russian settlers move into the province of Lugansk, many Tatars are now fleeing south to the relative safety of Crimea - as those who stay behind know they risk conversion by the sword.
+
+	date = { year = 1550 }
+	offset = 3000
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "ACTIONNAME338073A" #The Tatars are now a minority in Lugansk
+		command = { type = cityname which = 459 value = "Lugansk" }
+		command = { type = conversion which = 459 }
+		command = { type = populationpercent which = 459 value = -15 }
+		command = { type = provinceculture which = 459 value = russian } #Lugansk
+	}
+}
+
+#(1550-1837) Russian settlers in Tambow
+event = {
+	id = 338080
+	trigger = {
+		culture = russian
+		someof = {
+			number = 4
+			owned = { province = 446 data = -1 } #Kazan
+			owned = { province = 451 data = -1 } #Bogutjar
+			owned = { province = 452 data = -1 } #Saratow
+			owned = { province = 453 data = -1 } #Ufa
+			owned = { province = 454 data = -1 } #Samara
+			owned = { province = 455 data = -1 } #Uralsk
+			owned = { province = 456 data = -1 } #Orenburg
+			owned = { province = 457 data = -1 } #Astrakhan
+			owned = { province = 458 data = -1 } #Volgograd
+			owned = { province = 459 data = -1 } #Lugansk
+		}
+	}
+	random = no
+	province = 447 #Tambow
+	name = "EVENTNAME338080" #Russian settlers in Tambow
+	desc = "EVENTHIST338080"
+	#-#The disintegration of the Golden Horde and the ensuing collapse of Tatar domination of the Steppe has led to its predominantly Muslim population being marginalized under the new regime. As Russian settlers move into the province of Tambow, many Tatars are now fleeing south to the relative safety of Crimea - as those who stay behind know they risk conversion by the sword.
+
+	date = { year = 1550 }
+	offset = 3000
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "ACTIONNAME338080A" #The Tatars are now a minority in Tambow
+		command = { type = cityname which = 447 value = "Tambov" }
+		command = { type = conversion which = 447 }
+		command = { type = populationpercent which = 447 value = -15 }
+		command = { type = provinceculture which = 447 value = russian } #Tambow
+	}
+}
+
+#(1550-1837) Russian settlers in Saratow
+event = {
+	id = 338081
+	trigger = {
+		culture = russian
+		someof = {
+			number = 4
+			owned = { province = 446 data = -1 } #Kazan
+			owned = { province = 447 data = -1 } #Tambow
+			owned = { province = 451 data = -1 } #Bogutjar
+			owned = { province = 453 data = -1 } #Ufa
+			owned = { province = 454 data = -1 } #Samara
+			owned = { province = 455 data = -1 } #Uralsk
+			owned = { province = 456 data = -1 } #Orenburg
+			owned = { province = 457 data = -1 } #Astrakhan
+			owned = { province = 458 data = -1 } #Volgograd
+			owned = { province = 459 data = -1 } #Lugansk
+		}
+	}
+	random = no
+	province = 452 #Saratow
+	name = "EVENTNAME338081" #Russian settlers in Saratow
+	desc = "EVENTHIST338081"
+	#-#The disintegration of the Golden Horde and the ensuing collapse of Tatar domination of the Steppe has led to its predominantly Muslim population being marginalized under the new regime. As Russian settlers move into the province of Saratow, many Tatars are now fleeing south to the relative safety of Crimea - as those who stay behind know they risk conversion by the sword.
+
+	date = { year = 1550 }
+	offset = 3000
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "ACTIONNAME338081A" #The Tatars are now a minority in Saratow
+		command = { type = cityname which = 452 value = "Saratov" }
+		command = { type = conversion which = 452 }
+		command = { type = populationpercent which = 452 value = -15 }
+		command = { type = provinceculture which = 452 value = russian } #Saratow
+	}
+}
+
+#(1550-1837) Russian settlers in Bogutjar
+event = {
+	id = 338082
+	trigger = {
+		culture = russian
+		someof = {
+			number = 4
+			owned = { province = 446 data = -1 } #Kazan
+			owned = { province = 447 data = -1 } #Tambow
+			owned = { province = 452 data = -1 } #Saratow
+			owned = { province = 453 data = -1 } #Ufa
+			owned = { province = 454 data = -1 } #Samara
+			owned = { province = 455 data = -1 } #Uralsk
+			owned = { province = 456 data = -1 } #Orenburg
+			owned = { province = 457 data = -1 } #Astrakhan
+			owned = { province = 458 data = -1 } #Volgograd
+			owned = { province = 459 data = -1 } #Lugansk
+		}
+	}
+	random = no
+	province = 451 #Bogutjar
+	name = "EVENTNAME338082" #Russian settlers in Bogutjar
+	desc = "EVENTHIST338082"
+	#-#The disintegration of the Golden Horde and the ensuing collapse of Tatar domination of the Steppe has led to its predominantly Muslim population being marginalized under the new regime. As Russian settlers move into the province of Bogutjar, many Tatars are now fleeing south to the relative safety of Crimea - as those who stay behind know they risk conversion by the sword.
+
+	date = { year = 1550 }
+	offset = 3000
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "ACTIONNAME338082A" #The Tatars are now a minority in Bogutjar
+		command = { type = cityname which = 451 value = "Boguchar" }
+		command = { type = conversion which = 451 }
+		command = { type = populationpercent which = 451 value = -15 }
+		command = { type = provinceculture which = 451 value = russian } #Bogutjar
+	}
+}
+
+#(1750-1837) Ruthenian settlers in Jedisan
+event = {
+	id = 338074
+	trigger = {
+		OR = {
+			culture = ruthenian
+			owned = { province = 295 data = -1 } #Ukraina
+			owned = { province = 297 data = -1 } #Podolia
+			owned = { province = 462 data = -1 } #Krementjug
+			owned = { province = 463 data = -1 } #Crimea
+			neighbour = RUS
+			neighbour = UKR
+		}
+	}
+	random = no
+	province = 296 #Jedisan
+	name = "EVENTNAME338074" #Ruthenian settlers in Jedisan
+	desc = "EVENTHIST338074"
+	#-#Jedisan was originally a Roman colony, and in turn became a Vlach settlement based around the town of Vozia. The territory changed hands numerous times over the centuries, alternating between Moldavian, Lithuanian, Tatar and Ottoman rule - with each conquest bringing new waves of settlers. For most of its early history, the region was populated by Vlachs (the rural peasantry) and Greeks (Byzantine and Genoese colonists along the coast), but by the 18th century Slavic settlers from Ruthenia and the expanding Russian Empire had begun to leave their mark.
+
+	date = { year = 1750 }
+	offset = 1000
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "ACTIONNAME338074A" #The Vlachs are now a minority in Jedisan
+		trigger = { 
+			NOT = { culture = tatar }
+		}
+		command = { type = cityname which = 296 value = "Ochakov" }
+		command = { type = populationpercent which = 296 value = 5 }
+		command = { type = provinceculture which = 296 value = ruthenian } #Jedisan
+	}
+	action_b = {
+		name = "ACTIONNAME338074B" #No, send in the Cossacks instead
+		trigger = { 
+			culture = tatar
+		}
+		command = { type = cityname which = 296 value = "Kara Kerman" }
+		command = { type = populationpercent which = 296 value = 5 }
+		command = { type = provinceculture which = 296 value = tatar } #Jedisan
+	}
+}
+
+#(1450-1750) Polish settlers in Danzig
+event = {
+	id = 338075
+	trigger = {
+		culture = polish
+		owned = { province = 300 data = -1 } #Wielkopolska
+		owned = { province = 303 data = -1 } #Poznan
+		OR = {
+			NOT = { exists = PRU }
+			PRU = { isvassal = yes }
+		}
+		ai = no
+	}
+	random = no
+	province = 301 #Danzig
+	name = "EVENTNAME338075" #Polish settlers in Danzig
+	desc = "EVENTHIST338075"
+	#-#Danzig was a key Hansa port city on the Baltic, and for centuries was fought over by both German and Slavic rulers, who desired its commanding position over trade between the Holy Roman Empire and Poland. Wealthy and influential, the city was known to the Poles as Gdansk (from the old river Gdania) but had been heavily colonized by the Teutonic Order during the 14th century, leaving it with predominantly Germanic characteristics until the modern era.
+
+	date = { year = 1450 }
+	offset = 3000
+	deathdate = { year = 1750 }
+
+	action_a = {
+		name = "ACTIONNAME338075A" #The Germans are now a minority in Danzig
+		command = { type = cityname which = 301 value = "Gdansk" }
+		command = { type = populationpercent which = 301 value = 5 }
+		command = { type = provinceculture which = 301 value = polish } #Danzig
+	}
+	action_b = {
+		name = "ACTIONNAME338075B" #No, the people there have served us well
+		command = { type = conversion which = 301 }
+		command = { type = provincetax which = 301 value = 2 }
+		command = { type = provincemanpower which = 301 value = 1 }
+		command = { type = province_revoltrisk which = 301 value = -3 }
+	}
+}
+
+#(1450-1750) Polish settlers in Küstrin
+event = {
+	id = 338076
+	trigger = {
+		culture = polish
+		owned = { province = 302 data = -1 } #Hinterpommern
+		owned = { province = 303 data = -1 } #Poznan
+		OR = {
+			NOT = { exists = BRA }
+			BRA = { isvassal = yes }
+		}
+		ai = no
+	}
+	random = no
+	province = 313 #Küstrin
+	name = "EVENTNAME338076" #Polish settlers in Küstrin
+	desc = "EVENTHIST338076"
+	#-#Küstrin was a fortified town in the Neumark which had been held by the Piast dynasty until 1223, when it had been granted to the Knights Templar. It subsequently changed hands a number of times during the 14th century, being leased or conquered by various Polish, German and Pomeranian lords until eventually sold to Brandenburg in 1454. Küstrin had a mixed population of Germans, Poles and (at times) Czechs, and was a classic example of a 'march' (border) territory - a nexus between different cultural regions.
+
+	date = { year = 1450 }
+	offset = 3000
+	deathdate = { year = 1750 }
+
+	action_a = {
+		name = "ACTIONNAME338076A" #The Germans are now a minority in Küstrin
+		command = { type = cityname which = 313 value = "Kostrzyn" }
+		command = { type = populationpercent which = 313 value = 5 }
+		command = { type = provinceculture which = 313 value = polish } #Küstrin
+	}
+	action_b = {
+		name = "ACTIONNAME338075B" #No, the people there have served us well
+		command = { type = conversion which = 313 }
+		command = { type = provincetax which = 313 value = 2 }
+		command = { type = provincemanpower which = 313 value = 1 }
+		command = { type = province_revoltrisk which = 313 value = -3 }
+	}
+}
+
+#(1450-1750) Polish settlers in Silesia
+event = {
+	id = 338077
+	trigger = {
+		culture = polish
+		owned = { province = 299 data = -1 } #Krakow
+		owned = { province = 300 data = -1 } #Wielkopolska
+		owned = { province = 303 data = -1 } #Poznan
+		owned = { province = 313 data = -1 } #Küstrin
+		OR = {
+			event = 25040 #LAT: Poland Agrees to Purchase Küstrin
+			event = 338076 #ProvinceSpec*313: Polish settlers in Küstrin
+		}
+		ai = no
+	}
+	random = no
+	province = 314 #Silesia
+	name = "EVENTNAME338077" #Polish settlers in Silesia
+	desc = "EVENTHIST338077"
+	#-#Silesia was a wealthy region of the Bohemian crownlands that had once been a part of the Kingdom of Poland, with the Polish kings having only renounced their hereditary rights to the province in 1335. Even then, a number of Polish ducal families continued to rule parts of Silesia as Bohemian vassals. Owing to its great political and economic significance, Silesia was highly fragmented and had a complicated constitutional position and vague borders. As a result, it was frequently fought over until its annexation by Prussia in 1742.
+
+	date = { year = 1450 }
+	offset = 3000
+	deathdate = { year = 1750 }
+
+	action_a = {
+		name = "ACTIONNAME338077A" #The Germans are now a minority in Silesia
+		command = { type = cityname which = 314 value = "Wroclaw" }
+		command = { type = populationpercent which = 314 value = 5 }
+		command = { type = provinceculture which = 314 value = polish } #Silesia
+	}
+	action_b = {
+		name = "ACTIONNAME338075B" #No, the people there have served us well
+		command = { type = conversion which = 314 }
+		command = { type = provincetax which = 314 value = 2 }
+		command = { type = provincemanpower which = 314 value = 1 }
+		command = { type = province_revoltrisk which = 314 value = -3 }
+	}
+}
+
+#(1700-1837) Slovak settlers in Presburg
+event = {
+	id = 338078
+	trigger = {
+		OR = {
+			culture = slovak
+			owned = { province = 316 data = -1 } #Carpathia
+			neighbour = HUN
+			neighbour = SLO
+		}
+	}
+	random = no
+	province = 326 #Presburg
+	name = "EVENTNAME338078" #Slovak settlers in Presburg
+	desc = "EVENTHIST338078"
+	#-#Pressburg's history is interwoven with that of the Kingdom of Hungary, of which - as Pozsony - it was the ceremonial capital and coronation site during the two centuries in which the east of the country was under Ottoman occupation. It was populated by a wide range of peoples over many centuries, but until the modern era the majority had always been either German or Magyar (Hungarian). The turmoil of the Ottoman-Habsburg Wars led many Slovaks to migrate south, a process which hastened with the disintegration of the Austro-Hungarian Empire, by which time the city had become known as Bratislava and most of its people had become Slovak.
+
+	date = { year = 1700 }
+	offset = 1000
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "ACTIONNAME338078A" #The Magyars are now a minority in Presburg
+		ai_chance = 70
+		command = { type = cityname which = 326 value = "Bratislava" }
+		command = { type = populationpercent which = 326 value = 5 }
+		command = { type = provinceculture which = 326 value = slovak } #Presburg
+	}
+	action_b = {
+		name = "ACTIONNAME338078B" #No, send in more German settlers instead
+		ai_chance = 30
+		trigger = { 
+			culture = bavarian
+		}
+		command = { type = cityname which = 326 value = "Pressburg" }
+		command = { type = populationpercent which = 326 value = 5 }
+		command = { type = provinceculture which = 326 value = bavarian } #Presburg
+	}
+}
+
+#(1550-1837) Vlach settlers in Transylvania
+event = {
+	id = 338079
+	trigger = {
+		culture = romanian
+		owned = { province = 318 data = -1 } #Moldova
+		owned = { province = 322 data = -1 } #Wallachia
+		OR = {
+			NOT = { exists = HUN }
+			HUN = { isvassal = yes }
+		}
+	}
+	random = no
+	province = 323 #Transylvania
+	name = "EVENTNAME338079" #Vlach settlers in Transylvania
+	desc = "EVENTHIST338079"
+	#-#Like many European settlements, Transylvania began life as a Roman fort, but the true history of the region began with its settlement by Saxon colonists during the 12th century. Its capital was the prosperous market town of Hermannstadt, which the ruling Magyar elite called Nagyszeben. For much of its history, Transylvania was dominated by German and Hungarian interests and existed as a vassal state of either Hungary or the Ottoman Empire. By the 19th century it had been partly repopulated by Vlachs of the Romanian principalities, and Nagyszeben had become known as Sibiiu.
+
+	date = { year = 1550 }
+	offset = 3000
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "ACTIONNAME338079A" #The Magyars are now a minority in Transylvania
+		command = { type = cityname which = 323 value = "Sibiiu" }
+		command = { type = populationpercent which = 323 value = 5 }
+		command = { type = provinceculture which = 323 value = romanian } #Transylvania
+	}
+}

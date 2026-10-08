@@ -1,0 +1,1795 @@
+#####Scottish Major Events#####
+#By Joakim 'Greven' Bergqwist##
+###   and Stefan Huszics    ###
+###############################
+
+########################################
+#EEP Version Organized by Johnny Canuck#
+#Contributions from Count Six, btg,    #
+# nelly664, George Borges, Pishtaco,   #
+# and Isaac Brock                      #
+########################################
+
+##################################
+# alterations and additions      #
+# by Ayehsteni for the AJF	 #
+# all authors credited		 #
+##################################
+
+
+##Original EU2 Events##
+
+#The Ransoming of the King and Purge of the Highland Chiefs#
+# Edited by George Borges and Johnny Canuck                #
+event = {
+
+	id = 3069
+	random = no
+	country = SCO
+	name = "The Ransoming of the king and Purge of the Highland Chiefs"
+	desc = "The rightful king of the Scots, James I, had been imprisoned in England since 1406. During his imprisonment the country was ruled by this Uncle Robert Stewart (1406-1420), 1st duke of Albany, and later his son Murdoch (1420-1424). Neither of the two, nor the majority of the Scottish nobility, had any real interest in seeing the return of a strong king back on the throne. It thus took until 1424, 18 years, before the ransom was collected and finally sent to England to have the king freed. Historically James I took his revenge by executing Murdoch and a few other noblemen and taking a lot of actions to reduce the power of the Scottish nobility. He also managed to introduce a lot of other good reforms to strengthen Scotland as a country"
+	style = 1
+	
+	date = { day = 1 month = january year = 1424 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1425 }
+
+
+	action_a ={		#The king is ransomed and takes revenge on the nobility#
+		name = "The king is ransomed and takes revenge on the nobility"
+		command = { type = domestic  which = ARISTOCRACY  value = -2 }
+		command = { type = domestic  which = CENTRALIZATION  value = 2 }
+		command = { type = stability  value = -2 } 
+		command = { type = ADM  which = 2  value = 156 }
+		command = { type = treasury  value = -200 }
+		command = { type = province_revoltrisk which = 236 value = 2 } 
+		command = { type = province_revoltrisk which = 237 value = 2 } 
+		command = { type = province_revoltrisk which = 238 value = 2 } 
+		command = { type = province_revoltrisk which = 239 value = 2 } 
+		command = { type = sleepmonarch which = 17001 } #Murdoch Stuart
+		command = { type = wakemonarch which = 04820 } #James I 
+	}
+
+	action_b ={		#The king is ransomed but forgives the nobility#
+		name = "The king is ransomed but forgives the nobility"
+		command = { type = domestic  which = ARISTOCRACY  value = -1 }
+		command = { type = domestic  which = CENTRALIZATION  value = 1 }
+		command = { type = treasury  value = -200 }
+		command = { type = sleepevent which = 20412 } 
+		command = { type = sleepevent which = 20413 } 
+		command = { type = sleepmonarch which = 17001 } #Murdoch Stuart
+		command = { type = wakemonarch which = 04820 } #James I 
+	}
+
+	action_c ={		#The king is not ransomed#
+		name = "The king is not ransomed"
+		command = { type = domestic  which = ARISTOCRACY  value = 1 }
+		command = { type = sleepevent which = 20412 } 
+		command = { type = sleepevent which = 20413 } 
+		command = { type = revoltrisk which = 60 value = 1 } 
+	}
+
+}
+
+#The Assassination of James I#
+# Edited by Johnny Canuck    #
+event = {
+
+	id = 3070
+	random = no
+	country = SCO
+	name = "The assassination of James I"
+	desc = "In February 1437 James I was assassinated by conspirators within the nobility looking to gain control of the crown for Walter Stewart, earl of Atholl. James I's wife however quickly saw to it that those responsible where tortured to death. However James son was only 6 years old and the Scottish kingdom was thrown into a time of power struggle between mainly 3 families (the Crichtons, the Livingstons, and the Douglas') for control of the young Scottish king and realm"
+	style = 1
+
+	date = { day = 21 month = february year = 1437 } #Formerly 1 Feb. 1437, & Removed Offset & Deathdate
+
+	action_a ={		#Rats!#
+		name = "Rats!"
+		command = { type = domestic  which = CENTRALIZATION  value = -2 }
+		command = { type = stability  value = -2 }
+	}
+
+}
+
+#The Breaking of the Douglases#
+# Edited by Johnny Canuck     #
+event = {
+
+	id = 3071
+	random = no
+	country = SCO
+	name = "The Breaking of the Douglas'"
+	desc = "In 1449 the king James II was old enough to marry and reclaim control of his kingdom. He immediately seized the Livingston estates, but was a bit more lenient against the Douglas'. In a quarrel in 1452 however he himself stabbed William, 8th Earl of Douglas, to death. Historically this was the end of the power of the Douglas family and 3 years later all their land was confiscated and their castles demolished"
+	style = 1
+
+	date = { day = 1 month = january year = 1452 }
+	offset = 180
+	deathdate = { day = 1 month = january year = 1456 }
+
+
+	action_a ={		#Destroy the castles and confiscate the lands of Douglases.#
+		name = "ACTIONNAME3071A"
+		command = { type = domestic  which = CENTRALIZATION  value = 3 }
+		command = { type = domestic  which = ARISTOCRACY  value = -1 }
+		command = { type = stability  value = -2 }
+		command = { type = treasury  value = 150 }
+	}
+
+	action_b ={		#Make peace with the Douglas family#
+		name = "ACTIONNAME3071B"
+		command = { type = domestic  which = CENTRALIZATION  value = 1 }
+		command = { type = INF  which = 238  value = 8000 }
+		command = { type = CAV  which = 238  value = 2000 }
+	}
+
+}
+
+#The Auld Alliance#
+event = {
+
+	id = 3072
+	trigger = {	
+		exists = FRA
+		exists = ENG
+		NOT = {
+			war = { country = SCO country = FRA }
+			alliance = { country = SCO country = ENG }
+		}
+	}
+	random = no
+	country = SCO
+	name = "The Auld Alliance"
+	desc = "In 1512 France and Scotland renewed their ''Auld Alliance'' as a counterbalance to England's involvement in the anti-French schemes of Pope Julius II. By the terms of this treaty all Scots became French and vise versa. This later drew the Scottish into a disastrous war against the English."
+	style = 2
+
+	date = { day = 1 month = january year = 1512 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1514 }
+
+
+	action_a ={		#Ally with France#
+		name = "Renew the Alliance"
+		command = { type = trigger which = 20433 } #-AJF#
+		command = { type = giveaccess which = FRA }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = ENG value = -75 }
+		command = { type = INF which = -2 value = 5000 }
+		command = { type = ART which = -2 value = 5 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = stability value = 1 }
+		#command = { type = trigger which = 4134 }
+	}
+
+	action_b ={		#Don't ally with France#
+		name = "ACTIONNAME3072B"
+		command = { type = breakvassal which = FRA }
+		command = { type = relation which = FRA value = -75 }
+		command = { type = relation which = ENG value = 50 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = stability value = -1 }
+	}
+
+}
+
+#the auld alliance - FRA -AJF#
+event = {
+
+	id = 20433
+	random = no
+	country = FRA
+	name = "The Auld Alliance"
+	desc = "In 1512 France and Scotland renewed their ''Auld Alliance'' as a counterbalance to England's involvement in the anti-French schemes of Pope Julius II. By the terms of this treaty all Scots became French and vise versa. The Treaty provide a thorn in Englands Northern border and release the pressure on France."
+	style = 2
+
+	action_a ={		#Ally with France#
+		name = "Renew the Alliance"
+		command = { type = trigger which = 20434 }
+		command = { type = relation  which = SCO  value = 50 }
+		command = { type = relation  which = ENG  value = -75 }
+	}
+
+	action_b ={		#Don't ally with France#
+		name = "Don't ally with Scotland"
+		command = { type = relation  which = SCO  value = -75 }
+		command = { type = relation  which = ENG  value = 50 }
+	}
+
+}
+
+#the auld alliance - FRA accepts - AJF#
+event = {
+
+	id = 20434
+	random = no
+	country = SCO
+	name = "France accepts the renewal"
+	desc = "France has accepted to renew the Auld Alliance, truly they are our brothers in arms!"
+	style = 2
+
+	action_a = {
+		name = "Braw"
+		command = { type = alliance which = FRA }
+		command = { type = relation which = ENG value = -50 }
+	}
+}
+
+#breaking the auld alliance -AJF#
+event = {
+
+	id = 20436
+	trigger = {
+		exists = ENG
+		exists = FRA
+		event = 20434
+		war = { country = SCO country = FRA }
+		}
+	random = no
+	country = SCO
+	name = "The Alliance is broken"
+	desc = "In 1512 France and Scotland renewed their ''Auld Alliance'' as a counterbalance to England's involvement in the anti-French schemes of Pope Julius II. By the terms of this treaty all Scots became French and vise versa. However, it has come to pass that the alliance of our forefathers has been broken! There will never be the same level of trust and co-operation between our two peoples again. The Auld alliance has failed, though no doubt it will still remain in our hearts, a time may come again when it will re-emerge."
+	style = 3
+
+	date = { day = 1 month = january year = 1512 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1838 }
+
+	action_a = {
+		name = "A dark day"
+		command = { type = trigger which = 20437 }
+		command = { type = vp value = -10 }
+	}
+}
+
+#breaking the auld alliance -AJF#
+event = {
+
+	id = 20437
+	random = no
+	country = FRA
+	name = "The Alliance is broken"
+	desc = "In 1512 France and Scotland renewed their ''Auld Alliance'' as a counterbalance to England's involvement in the anti-French schemes of Pope Julius II. By the terms of this treaty all Scots became French and vise versa. However, it has come to pass that the alliance of our forefathers has been broken! There will never be the same level of trust and co-operation between our two peoples again. The Auld alliance has failed, though no doubt it will still remain in our hearts, a time may come again when it will re-emerge."
+	style = 3
+
+	action_a = {
+		name = "A dark day"
+		command = { type = vp value = -5 }
+	}
+}
+	
+
+#Cardinal Beaton         #
+# Edited by Johnny Canuck#
+event = {
+
+	id = 3073
+	trigger = {	
+		exists = FRA
+			AND = {
+				NOT = { war = { country = SCO  country = FRA }	}
+			}
+	}
+	random = no
+	country = SCO
+	name = "Cardinal Beaton"
+	desc = "As a trusted advisor of James V, Cardinal Daibhidh Beaton managed to make sure that Scotland did not follow in England's footsteps and become Protestant. Instead he worked to strengthen the bond to catholic France and even managed to arrange two marriages with French noblewomen which both brought considerable dowries in gold to the Scottish courts treasury"
+	style = "3073"
+
+	date = { day = 1 month = january year = 1529 }
+	offset = 720
+	deathdate = { day = 1 month = january year = 1546 }
+
+
+	action_a ={
+		name = "An Excellent minister"
+		command = { type = DIP which = 3 value = 180 } 
+		command = { type = ADM which = 2 value = 180 } 
+		command = { type = MIL which = 2 value = 180 } 
+		command = { type = stability value = 2 }
+		command = { type = dynastic  which = FRA }
+		command = { type = treasury  value = 100 }
+	}
+
+}
+
+#John Knox and the Religious Strife (3074) Removed#
+
+#The First Covenant (3075) Removed#
+
+#The Fate of Mary Stuart#
+# Edited by Count Six   #
+event = {
+
+	id = 3076
+	random = no
+	country = SCO
+	name = "The Fate of Mary Stuart"
+	desc = "EVENTHIST3076N" #new
+	style = 2
+
+	date = { day = 14 month = july year = 1567 }
+	offset = 0
+	deathdate = { day = 15 month = july year = 1567 }
+
+	action_a ={			#Force her to Abdicate#
+		name = "Force her to Abdicate"
+		command = { type = trigger which = 3077 }
+		command = { type = sleepmonarch which = 04825 }
+		command = { type = stability value = 2 }
+	}
+
+	action_b ={			#Support the Queen#
+		name = "Support the Queen"
+		command = { type = DIP which = 3 value = 480 }
+		command = { type = ADM which = 2 value = 480 }
+		command = { type = revoltrisk which = 36 value = 6 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#The Time of the Regents#
+# Edited by Count Six   #
+event = { 
+
+	id = 3077 #Triggered by 3076A
+	random = no 
+	country = SCO 
+	name = "The Time of the Regents" 
+	desc = "From the abdication of Mary Stuart a regency ruled Scotland in the name of the young King James VI. When the regent James Stewart earl of Moray, the protestant and very pro-English bastard brother of Mary Stuart, was murdered in January 1570, the country plunged into a power struggle between the supporters of the Queen and the supporters of the regency." 
+	style = 2 
+
+	action_a ={ #Support the Regent# 
+		name = "Support the Regent" 
+		command = { type = relation which = ENG value = 100 } 
+		command = { type = relation which = FRA value = -100 } 
+		command = { type = relation which = SPA value = -100 } 
+		command = { type = relation which = BUR value = -100 } 
+		command = { type = relation which = HAB value = -100 } 
+		command = { type = relation which = PAP value = -100 } 
+		command = { type = revoltrisk which = 24 value = 3 } 
+		command = { type = breakdynastic which = FRA } 
+		command = { type = breakdynastic which = SPA } 
+		command = { type = breakdynastic which = HAB } 
+		command = { type = breakdynastic which = BUR } 
+		command = { type = breakdynastic which = PAP } 
+		command = { type = breakvassal which = FRA } 
+		command = { type = breakvassal which = SPA } 
+		command = { type = breakvassal which = BUR } 
+		command = { type = breakvassal which = DAN } 
+		command = { type = breakvassal which = SWE } 
+		command = { type = dynastic which = ENG } 
+	} 
+
+	action_b ={ #Support the Queen# 
+		name = "Support the Queen" 
+		command = { type = relation which = FRA value = 100 } 
+		command = { type = stability value = -2 } 
+	} 
+} 
+
+#The Crown of England#
+# Edited by Count Six#
+event = { 
+
+	id = 3078 
+	random = no 
+	country = SCO 
+	name = "The Crown of England" 
+	desc = "Having Tudor blood on his mother's side, King James VI inherited his mother's claim to the English throne when she was executed by Elizabeth I. Maintaining good relations with the English, even though they had executed his mother, would put him within reach of the English crown, and while a policy of revenge might have earned him respect among many of his noblemen it ran the risk of squandering any opportunity to gain the English crown peacefully." 
+	style = "3078"
+
+	date = { day = 8 month = february year = 1587 }
+	offset = 0
+	deathdate = { day = 25 month = march year = 1603 }
+
+	action_a ={ #Close policy with England# 
+		name = "Close policy with England" 
+		command = { type = domestic which = aristocracy value = -1 } 
+		command = { type = domestic which = centralization value = 1 } 
+		command = { type = domestic which = innovative value = -1 } 
+		command = { type = relation which = ENG value = 200 } 
+		command = { type = relation which = FRA value = -100 } 
+		command = { type = relation which = SPA value = -100 } 
+		command = { type = relation which = BUR value = -100 } 
+		command = { type = relation which = PAP value = -100 } 
+		command = { type = dynastic which = ENG } 
+		command = { type = breakdynastic which = FRA } 
+		command = { type = breakdynastic which = SPA } 
+		command = { type = breakdynastic which = BUR } 
+		command = { type = breakdynastic which = PAP } 
+		command = { type = breakvassal which = FRA } 
+		command = { type = breakvassal which = SPA } 
+		command = { type = breakvassal which = BUR } 
+		command = { type = breakvassal which = DAN } 
+		command = { type = breakvassal which = SWE } 
+		command = { type = stability value = 1 } 
+		command = { type = trigger which = 21133 } 
+	} 
+
+	action_b ={ #Fuzzy Friendliness# 
+		name = "Fuzzy Friendliness" 
+		command = { type = domestic which = aristocracy value = -1 } 
+		command = { type = domestic which = centralization value = 3 } 
+		command = { type = domestic which = innovative value = -3 } 
+		command = { type = relation which = ENG value = 100 } 
+		command = { type = dynastic which = ENG } 
+	} 
+
+	action_c ={ #Furious Outrage# 
+		name = "Furious Outrage" 
+		command = { type = domestic which = aristocracy value = -1 } 
+		command = { type = domestic which = centralization value = 3 } 
+		command = { type = domestic which = innovative value = -3 } 
+		command = { type = relation which = ENG value = -100 } 
+		command = { type = dynastic which = ENG } 
+		command = { type = stability value = -1 } 
+	} 
+}
+
+#The Civil War down South#		#REF-PRO#
+event = {
+
+	id = 3079
+	trigger = {
+			event = 3025
+			OR = {
+				religion = protestant
+				religion = reformed
+				}
+			}
+	random = no
+	country = SCO
+	name = "The Civil War down South"
+	desc = "The English Civil War (1642-1648) was the result of a long power struggle between the Stuart monarchs and the Puritan-led Parliament. Intensification of royal judicial procedures (Star Chamber) and demands for taxes (1635, ship money for naval construction) was faced by Parliamentary opposition (summary of grievances in the 1641 Grand Remonstrance) and execution of royal advisors. The arrest of John Pym, the Puritan leader and the Catholic uprising in Ulster (1641) sparked the war between the Royalists and the Parliament. The decisive reform and new model army of Oliver Cromwell (1599-1658) led to the capture and execution of king Charles I (1649) and the establishment of the English Commonwealth, a military dictatorship controlled by a Lord Protector (Cromwell - 1653) and a reduced (Rump) Parliament. Following successful wars against Holland (1652-1654) and Spain (1654-1659), the monarchy would be re-established by General Monk in 1658, to the profit of Charles II Stuart (1660-1688), a fervent absolutist"
+	style = 3
+
+	date = { day = 29 month = january year = 1649 }
+
+	action_a ={				#Declare the King's position forfeit#
+		name = "Declare the King's position forfeit"
+		command = { type = wakemonarch which = 04828 }
+		command = { type = wakeleader which = 08571 } # Monck
+		command = { type = sleepleader which = 09278 } # Monck (ENG)
+		command = { type = sleepleader which = 08567 } # Hamilton
+		command = { type = sleepleader which = 08568 } # Leven
+		command = { type = sleepleader which = 08569 } # Montrose
+		command = { type = sleepleader which = 08570 } # Newark
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = SERFDOM value = -3 }
+		command = { type = domestic which = MERCANTILISM value = -4 }
+		command = { type = revolt which = 236 }
+		command = { type = revolt which = 236 }
+		command = { type = revolt which = 237 }
+		command = { type = revolt which = 237 }
+		command = { type = provincereligion which = 236 value = reformed }
+		command = { type = provincereligion which = 237 value = reformed }
+		command = { type = relation which = HOL value = 100 }
+		command = { type = relation which = SWE value = 100 }
+		command = { type = revoltrisk which = 60 value = 3 }
+		command = { type = stability value = 2 }
+	}
+
+	action_b ={				#Accept the King, but crave concessions#
+		name = "Accept the King, but crave concessions"
+		command = { type = sleepevent which = 3081 }
+		command = { type = wakeleader which = 08572 } # Prince Charles
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = MERCANTILISM value = -3 }
+		command = { type = revolt which = 238 }
+		command = { type = revolt which = 239 }
+		command = { type = provincereligion which = 237 value = reformed }
+		command = { type = relation which = HOL value = 50 }
+		command = { type = relation which = SWE value = 50 }
+		command = { type = revoltrisk which = 60 value = 3 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#The Civil War down South#		#CAT-CRC#
+event = {
+
+	id = 3080
+	trigger = {
+			event = 3025
+			OR = {
+				religion = catholic
+				religion = counterreform
+				}
+			}
+	random = no
+	country = SCO
+	name = "The Civil War down South"
+	desc = "The English Civil War (1642-1648) was the result of a long power struggle between the Stuart monarchs and the Puritan-led Parliament. Intensification of royal judicial procedures (Star Chamber) and demands for taxes (1635, ship money for naval construction) was faced by Parliamentary opposition (summary of grievances in the 1641 Grand Remonstrance) and execution of royal advisors. The arrest of John Pym, the Puritan leader and the Catholic uprising in Ulster (1641) sparked the war between the Royalists and the Parliament. The decisive reform and new royal army of the led to the routing and destruction of the puritan cause (1649) and the establishment of the English Monarchy, a religious peace enforced by royal military dictatorship controlled by the King and a reduced (Rump) Parliament. Following successful wars against Holland (1652-1654) and Spain (1654-1659), the monarchy would establish Absolutism in 1688, to the profit of the Stuart Dynasty, fervent absolutists"
+	style = "3080"
+
+	date = { day = 29 month = january year = 1649 }
+
+	action_a ={				#Exterminate the Puritan Opposition#
+		name = "Exterminate the Puritan Opposition"
+		command = { type = sleepevent which = 3081 }
+		command = { type = sleepevent which = 3082 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = domestic which = MERCANTILISM value = 5 }
+		command = { type = revolt which = 238 }
+		command = { type = revolt which = 239 }
+		command = { type = provincereligion which = 238 value = catholic }
+		command = { type = provincereligion which = 239 value = catholic }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = revoltrisk which = 60 value = 3 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={				#Let them live, but forfeit their rights#
+		name = "Let them live, but forfeit their rights"
+		command = { type = sleepevent which = 3081 }
+		command = { type = sleepevent which = 3082 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = domestic which = MERCANTILISM value = 3 }
+		command = { type = revolt which = 239 }
+		command = { type = provincereligion which = 238 value = catholic }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = revoltrisk which = 60 value = 3 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#The Restoration of the Stuarts#
+event = {
+
+	id = 3081			
+	random = no
+	country = SCO
+	name = "The Restoration of the Stuarts"
+	desc = "After years of chaotic civil war in the commonwealth and the death of basically the only person that could realistically receive support from all sides, Cromwell, the situation was, if possible, more confused then ever before. When one group of officers determined to dissolve the remains of the Long Parliament, called the Rump, a former royalist and commander of the largest force in Britain, George Monck, decided that enough was enough. He promptly marched his army down from Scotland to reinstitute the Rump. However once there he realized that probably the only real long-term solution to the mess was to restore Charles II as king. In February 1660 Monck reversed Pride's Purge, inviting all of the secluded members of the Long Parliament to return to their seats under army protection. A month later the Long Parliament dissolved itself, paving the way for the return of the king"
+	style = "3028"
+
+	date = { day = 28 month = may year = 1660 }
+
+	action_a ={			#King Charles II#
+		name = "ACTIONNAME3081A"
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={			#David Leslie#
+		name = "Daibhidh Leslie"
+		command = { type = wakemonarch which = 04840 }
+		command = { type = relation which = ENG value = -250 }
+		command = { type = domestic which = LAND value = 2 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = stability value = 2 }
+	}
+}
+
+#The Glorious Revolution#
+event = {
+
+	id = 3082			#Triggered by ENG3031#
+	random = no
+	country = SCO
+	name = "The Glorious Revolution"
+	desc = "EVENTHIST3082N"
+	style = "3031"
+
+	action_a ={			#Oranien Dynasty#
+		name = "Oranien Dynasty"
+		command = { type = wakemonarch which = 04831 }
+		command = { type = wakemonarch which = 04832 }
+		command = { type = wakemonarch which = 04833 }
+		command = { type = wakemonarch which = 04834 }
+		command = { type = wakemonarch which = 04835 }
+		command = { type = wakemonarch which = 124210 }
+		command = { type = wakemonarch which = 124211 }
+		command = { type = sleepmonarch which = 04830 }
+		command = { type = sleepmonarch which = 04836 }
+		command = { type = sleepmonarch which = 04837 }
+		command = { type = sleepmonarch which = 04838 }
+		command = { type = sleepmonarch which = 04839 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = stability value = 1 }
+
+	}
+
+	action_b ={			#Stuart Dynasty#
+		name = "Stuart Dynasty"
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = stability value = 1 }
+	}
+	
+}
+
+#The Scottish East Indian Company#
+event = {
+
+	id = 3083
+	random = no
+	country = SCO
+	name = "The Scottish East Indian Company"
+	desc = "As all other nations in this time with a coastline also the Scottish tried to duplicate the efforts of the highly successful English East Indian Company"
+	style = "3083"
+
+	date = { day = 1 month = january year = 1695 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1699 }
+
+	action_a ={				#We will exploit this!#
+		name = "We will exploit this!"
+		command = { type = gainmanufactory which = -1 value = goods }
+		command = { type = merchants value = 5 }
+		command = { type = treasury  value = 250 }
+		command = { type = trade value = 400 }
+	}
+}
+
+
+#Major Road Constructions in the Highlands#
+event = {
+
+	id = 3084
+	random = no
+	country = SCO
+	name = "Major Road Constructions in the Highlands"
+	desc = "The improving of roads and trade routes in northern Scotland had a great impact on Scottish economy in these areas, leading to increased trade and thus also higher tax incomes"
+	style = 4
+
+	date = { day = 1 month = january year = 1725 }
+	offset = 720
+	deathdate = { day = 1 month = january year = 1727 }
+
+	action_a ={		#Medium Investment#
+		name = "ACTIONNAME3084A"
+		command = { type = provincetax  which = 237  value = 1 }
+		command = { type = provincetax  which = 236  value = 1 }
+		command = { type = infra value = 500 }
+		command = { type = treasury value = -350 }
+	}
+
+	action_b ={		#Large investment#
+		name = "ACTIONNAME3084B"
+		command = { type = provincetax  which = 237  value = 1 }
+		command = { type = provincetax  which = 236  value = 2 }
+		command = { type = infra value = 800 }
+		command = { type = treasury value = -500 }
+	}
+
+	action_c ={		#Small investment#
+		name = "ACTIONNAME3084C"
+		command = { type = provincetax  which = 237  value = 1 }
+		command = { type = infra  value = 300 }
+		command = { type = treasury value = -200 }
+		
+	}
+
+}
+
+#The Glasgow Chamber of Commerce#
+event = {
+
+	id = 3085
+	random = no
+	country = SCO
+	name = "The Glasgow Chamber of Commerce"
+	desc = "The opening of the Scottish Chamber of Commerce did a lot for helping Scottish pre-industrial trade and was one of the many factors behind keeping the Scottish economy Scottish"
+	style = 4
+
+	date = { day = 1 month = january year = 1783 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1784 }
+
+	action_a ={		#Tradereform#
+		name = "Trade reform"
+		command = { type = domestic  which = MERCANTILISM  value = -1 }
+		command = { type = trade  value = 300 }
+		command = { type = merchants value = 4 }
+	}
+
+	action_b ={		#Protective Tradereform#
+		name = "Protective Trade reform"
+		command = { type = domestic  which = MERCANTILISM  value = 1 }
+		command = { type = trade  value = 300 }
+		command = { type = merchants value = 3 }
+	}
+	
+	action_c ={		#Free trade#
+		name = "Free trade"
+		command = { type = domestic  which = MERCANTILISM  value = -3 }
+		command = { type = trade  value = 300 }
+		command = { type = merchants value = 5 }
+	}
+
+}
+
+#The Highlands and The Isles#
+event = {
+
+	id = 25018
+	trigger = {
+		owned = { province = 236 data = -1 } # The Highlands
+		OR = {
+			exists = DAN
+			exists = NOR
+		}
+		NOT = {
+			war = { country = SCO country = DAN }
+			war = { country = SCO country = NOR }
+		}
+	}
+	random = no
+	country = SCO
+	name = "The Highlands and The Isles"
+	desc = "The history of the Highlands and the Isles is long and complex, during which various overlords from across Ireland, Scotland and Scandinavia laid claim to the region. By the middle of the 15th century, Norway's colonial holdings in the British Isles had been eroded away to the ancient Earldom of Orkney, the last vestige of a once sprawling domain known as the Kingdom of the Isles. Though reduced to the Orkney and Shetland isles and a coastal strip of northern Scotland, several Norwegian kings had previously campaigned in Orkney - and at least one, Haakon IV, had died there. The province had become less relevant in subsequent years, and by the 14th century it was a nominally Norwegian vassal ruled by Scottish lords of the Sinclair family. In the 1460s, both Orkney and Shetland were finally ceded to Scotland by the Danish king Christian I as recompense for the unpaid dowry of his daughter Margaret, then engaged to the future James III of Scotland. In 1472, James offered to trade the Sinclair family's domains for Caithness, a lordship on the mainland, and henceforth the Earldom of Orkney was absorbed into the Scottish crown."
+
+	style = "25018"
+
+	date = { day = 1 month = january year = 1460 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1490 }
+
+	action_a ={		#Purchase the Earldom of Orkney#
+		name = "Purchase the Earldom of Orkney"
+		command = { type = add_countryculture which = gaelic }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = relation which = DAN value = 50 }
+		command = { type = relation which = NOR value = 50 }
+		command = { type = treasury value = -300 }
+		command = { type = provincetax which = 236 value = 1 }
+		command = { type = populationpercent which = 236 value = 5 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={		#Just collect the dowry we're owed#
+		name = "Just collect the dowry we're owed"
+		command = { type = domestic which = MERCANTILISM value = 1 }
+		command = { type = dynastic which = DAN }
+		command = { type = dynastic which = NOR }
+		command = { type = treasury value = 300 }
+		command = { type = infra value = 500 }
+		command = { type = trade value = 500 }
+		command = { type = stability value = 1 }
+	}
+
+	action_c ={		#Let the Norse-Gaels settle their own affairs#
+		name = "Let the Norse-Gaels settle their own affairs"
+		command = { type = independence which = ISL }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = domestic which = OFFENSIVE value = -1 }
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = manpower value = 10 }
+		command = { type = treasury value = 100 }
+		command = { type = stability value = 2 }
+	}
+
+	action_d ={		#Exacerbate the issue to settle old scores#
+		name = "Exacerbate the issue to settle old scores"
+		command = { type = domestic which = OFFENSIVE value = 2 }
+		command = { type = domestic which = LAND value = -1 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = warships which = -1 value = 5 }
+		command = { type = transports which = -3 value = 10 }
+		command = { type = casusbelli which = DAN value = 72 }
+		command = { type = casusbelli which = NOR value = 72 }
+		command = { type = relation which = DAN value = -100 }
+		command = { type = relation which = NOR value = -100 }
+		command = { type = relation which = ENG value = 50 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#The Darien Scheme#
+event = {
+
+	id = 25019
+	trigger = {
+		event = 3083
+		#discovered = 1043
+	}
+	random = no
+	country = SCO
+	name = "The Darien Scheme"
+	desc = "As the 17th century draws to a close, Scotland finds itself increasingly cut off from the world stage, with the French Auld Alliance faltering and other European powers leaving us behind in terms of innovation and influence. If we wish to avoid becoming a poor and backwards nation forever at the mercy of the English then we should dare to emulate the successs of other maritime powers and forge a colonial empire overseas. Though a hefty investment, such an expedition would allow us to build on the progress of the Scottish East India Company and finally make us a European power to be reckoned with."
+
+	date = { day = 1 month = january year = 1700 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1705 }
+
+	action_a ={				#Yes, we need our own place in the sun#
+		name = "Yes, we need our own place in the sun"
+		command = { type = explorer which = -1 }
+		command = { type = conquistador which = -1 }
+		command = { type = warships which = -1 value = 5 }
+		command = { type = transports which = -3 value = 10 }
+		command = { type = INF which = -2 value = 5000 }
+		command = { type = colonists value = 3 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = LAND value = -1 }
+		command = { type = provincetax which = 238 value = -1 }
+		command = { type = provincetax which = 239 value = -1 }
+		command = { type = infra value = 400 }
+		command = { type = treasury value = -500 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={				#No, it is too big a risk#
+		name = "No, it is too big a risk"
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = relation which = ENG value = 50 }
+		command = { type = relation which = DAN value = 50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = POR value = 50 }
+		command = { type = relation which = HOL value = 50 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# The League of Cambrai #
+event = {
+
+	id = 3701
+	trigger = { event = 3545 }
+	random = no
+	country = SCO
+	name = "The League of Cambrai"
+	desc = "In 1508, Pope Julius II set-up a league against the Republic of Venice which he disliked and found too powerful in Italy. He enlisted support of Florence, France and even of Emperor Maximilian. French troops decimated the Venetian army at the battle of Agnadel in 1509, but the Republic managed to break the league by concluding separate peace with her opponents."
+
+	date = { day = 1 month = january year = 1508 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1510 }
+
+	action_a ={
+		name = "Ignore"		#Ignore#
+		command = { type = relation which = VEN value = 50 }
+		command = { type = relation which = PAP value = -50 }
+	}
+
+	action_b ={
+		name = "Express Support"		#Express Support#
+		command = { type = casusbelli which = VEN value = 72 }
+		command = { type = relation which = VEN value = -150 }
+		command = { type = relation which = PAP value = 100 }
+		command = { type = relation which = ENG value = 50 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = MLO value = 50 }
+		command = { type = relation which = HEL value = 50 }
+		command = { type = relation which = FLO value = 50 }
+	}
+
+	action_c ={
+		name = "Express Hostility"		#Express Hostility#
+		command = { type = relation which = VEN value = 150 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = ENG value = -50 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = MLO value = -50 }
+		command = { type = relation which = HEL value = -50 }
+		command = { type = relation which = FLO value = -50 }
+	}
+}
+
+# Scotland and the Renaissance #
+event = {
+	id = 4157
+	random = no
+	country = SCO
+	name = "Scotland and the Renaissance"
+	desc = "Scotland emerged as a serious regional power during the Renaissance, becoming a key ally of France and exerting diplomatic influence far beyond its means. Both James IV and James V were named 'Defender of the Faith' by Popes Julius II and Paul III respectively, and successive kings of the Stewart dynasty made strident efforts to further centralize the monarchy and increase the royal coffers. James II helped modernize the Army along continental lines, purchasing new firearms and experimental artillery (such as 'Mons Meg' in 1449) from Burgundy, but was accidentally killed whilst testing a new cannon at Roxburgh Castle in 1460. Wary of the expansion of the Royal Navy under the Tudors, James IV sought to enlarge the Scots fleet with vessels such as the thousand-ton 'Great Michael' - a ship so large that it had to be built at its own brand new shipyard at Newhaven in 1507. Ultimately, dynastic disputes and religious turmoil undid much of the Stewarts kings' work."
+	
+	style = "4157"
+
+	date = { day = 1 month = january year = 1495 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1505 }
+
+	action_a ={			# Invest in new artillery
+		name = "Invest in new artillery"
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = ART which = -2 value = 30 }
+		command = { type = land value = 500 }
+		command = { type = treasury value = -100 }
+	}
+
+	action_b ={			# Invest in new warships
+		name = "Invest in new warships"
+		command = { type = domestic which = LAND value = -2 }
+		command = { type = warships which = -1 value = 5 }
+		command = { type = naval value = 1000 }
+		command = { type = treasury value = -150 }
+	}
+
+	action_c ={			# Invest in new border fortifications
+		name = "Invest in new border fortifications"
+		command = { type = domestic which = OFFENSIVE value = -2 }
+		command = { type = relation which = ENG value = -50 }
+		command = { type = fortress which = 238 value = 1 }
+		command = { type = fortress which = 239 value = 1 }
+		command = { type = treasury value = -300 }
+	}
+
+	action_d ={			# Focus on diplomacy
+		name = "Focus on diplomacy"
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = DAN value = 50 }
+		command = { type = relation which = NOR value = 50 }
+		command = { type = DIP which = 2 value = 60 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#########################
+###EEP Scottish Events###
+#########################
+
+##Flavour Events##
+
+
+#The Stone of Destiny      #
+# Created by Lambert Simnel#
+event = {
+
+	id = 20402
+	trigger = {
+		control = { province = 247 data = -1 }
+		NOT = { monarch   = 04828 } #Republic#
+		NOT = { monarch   = 04840 } #Republic#
+		}
+	random = no
+	country = SCO
+	name = "The Stone of Destiny"
+	desc = "In 1296 Edward I of England invaded Scotland and took from Scone Abbey the Stone of Destiny, upon which the Scotish kings had been crowned since time immemorial, which he took to London and placed under the English throne. In capturing London the Scots recovered this most important symbol of Kingship, leading to an increase in Royal legitimacy"
+	style = 1
+
+	date = { day = 1 month = january year = 1419 }
+	offset = 0
+	deathdate = { day = 6 month = july year = 1820 }
+
+	action_a ={				#Ok#
+		name = "Let us consolidate our rule"
+		command = { type = stability   value = 1 } 
+	}
+}
+
+#William Dunbar #
+# Created by btg# 
+event = { 
+
+	id = 20405
+	random = no 
+	country = SCO 
+	name = "William Dunbar" 
+	desc = "A poet attached to the court of James IV, William Dunbar (1460-before 1530) was the dominant figure among the Scottish Chaucerians in the golden age of Scottish poetry. He was at ease in hymn and satire, morality and obscene comedy, panegyric and begging complaint, elegy and lampoon. He wrote with uncommon frankness and wit, manipulating old themes and forms with imagination and originality. In artistry and range, though not in humanity, he was the finest of Scotland's poets." 
+	style = 1 
+
+	date = { day = 1 month = january year = 1501 } 
+
+	action_a ={ 
+		name = "Ok" 
+		command = { type = infra value = 50 } 
+	} 
+} 
+
+#Robert Adam    # 
+# Created by btg# 
+event = { 
+
+	id = 20406
+	random = no 
+	country = SCO 
+	name = "Robert Adam" 
+	desc = "Scottish architect and designer, Robert Adam (1728-1792) with his brother James transformed Palladian Neoclassicism into the airy, light, elegant style that bears their name. Adam's major architectural works included public buildings, and his designs were used for the interiors of country mansions." 
+	style = 4 
+
+	date = { day = 1 month = january year = 1758 } 
+
+	action_a ={ 
+		name = "Ok" 
+		command = { type = infra value = 50 } 
+	} 
+} 
+
+#Robert Burns   # 
+# Created by btg# 
+event = { 
+
+	id = 20407 
+	random = no 
+	country = SCO 
+	name = "Rabbie Burns" 
+	desc = "Rabbie Burns, the national poet of Scotland, wrote lyrics and songs in the Scots dialect of English, was also famous for his amours and his rebellion against orthodox religion and morality. His first volume of poetry, 'Poems, Chiefly in the Scottish Dialect', was published at Kilmarnock in 1786. Its success was immediate and overwhelming." 
+	style = 4 
+
+	date = { day = 1 month = january year = 1786 } 
+
+	action_a ={ 
+		name = "Ok" 
+		command = { type = infra value = 250 } 
+	} 
+} 
+
+#The University of Glasglow# 
+# Created by btg           # 
+event = { 
+
+	id = 20408
+	random = no 
+	country = SCO 
+	name = "The University of Glasgow" 
+	desc = "Among the cultural advances of the reign of James II was the founding, in 1451 by Bishop William Turnbull, of the University of Glasgow, Scotland's second university." 
+	style = 1 
+
+date = { day = 1 month = january year = 1451 } 
+
+	action_a = { 
+		name = "Ok" 
+		command = { type = infra value = 150 } 
+	} 
+} 
+
+#King's College, Aberdeen# 
+# Created by btg         # 
+event = { 
+
+	id = 20409 
+	random = no 
+	country = SCO 
+	name = "King's College, Aberdeen" 
+	desc = "James IV and Bishop William Elphinstone of Aberdeen founded King's College, Scotland's third university, in Aberdeen in 1495." 
+	style = 1 
+
+	date = { day = 1 month = january year = 1495 } 
+
+	action_a = { 
+		name = "Ok" 
+		command = { type = infra value = 150 } 
+	} 
+}
+
+##Pre-Reformation Events##
+
+#The Incompetency of the Duke of Albany#
+# Created by George Borges             #
+# Scripted by Johnny Canuck            #
+event = {
+
+	id = 20410
+	random = no
+	country = SCO
+	name = "The Incompetency of the Duke of Albany"
+	desc = "Murdoch Stuart's gross inefficency and lack of skill in ruling Scotland angered much of the population."
+	style = 0
+
+	date = { day = 2 month = november year = 1420 }
+	offset = 30
+
+	action_a ={
+		name = "There is Unrest Amongst the People"
+		command = { type = revoltrisk which = 12 value = 2 }
+	}
+}
+
+#The Scots Assist the Dauphin		# 
+# Created by Fate            		#
+# Edited by Johnny Canuck and AJF  	#
+event = { 
+
+	id = 20411
+	trigger = {
+		exists = FRA
+		war = { country = FRA country = ENG }
+		NOT = {
+			war = { country = SCO country = FRA }
+			}
+		NOT = {
+			war = { country = SCO country = ENG }
+			}
+		}
+	random = no 
+	country = SCO 
+	name = "The Scots assist the Dauphin" 
+	desc = "The detention of the Scottish King in England had thus far been advantageous to Henry for it preserved during the whole course of the French war the nothern frontier in tranquility. But when intelligence arrived in Scotland of the progress made by Henry they foresaw their own ruin if France was defeated. The regent of Scotland declined to openly war England so he permitted a body of seven thousand Scottish soldiers under the command of the Earl of Buchan to be transported into France for the service of the dauphin"
+	style = 1
+
+	date = { day = 1 month = january year = 1421 } 
+	offset = 30 
+	deathdate = { day = 30 month = january year = 1422 } 
+
+	action_a ={ 
+		name = "Honor the Auld Alliance!" 
+		command = { type = trigger  which = 100065 } 
+		command = { type = relation which = FRA value = 100 }
+ 	}
+	action_b ={ 
+		name = "Dishonor the Auld Alliance!" 
+		command = { type = relation which = FRA value = -50 }
+	} 
+}
+
+#The Restoration of Order  #
+# Created by George Borges #
+# Scripted by Johnny Canuck#
+event = {
+
+	id = 20412
+	trigger = {
+		event = 3069
+		}
+	random = no
+	country = SCO
+	name = "The Restoration of Order"
+	desc = "Shortly after James I's accession, he enacted radical new legislation which punished rebellion and private wars with death and seizure of property for all involved and any noble that did not attempt to stop the offenders."
+	style = 1
+
+	date = { day = 1 month = june year = 1424 }
+	offset = 100
+
+	action_a ={
+		name = "Ok"
+		command = { type = province_revoltrisk which = 238 value = -2 } #Lothian
+		command = { type = province_revoltrisk which = 239 value = -2 } #Strathclyde
+		command = { type = provincetax which = 238 value = 1 } #Lothian
+		command = { type = provincetax which = 239 value = 1 } #Strathclyde
+		command = { type = stability value = 1 }
+	}
+}
+
+#The Purging of the Highland Chiefs#
+# Created by George Borges         #
+# Scripted by Johnny Canuck        #
+event = {
+
+	id = 20413
+	trigger = {
+		event = 3069
+		}
+	random = no
+	country = SCO
+	name = "The Purging of the Highland Chiefs"
+	desc = "The Highland chiefs, who had long disobeyed the crown, were put in order violently by the King at a session of Parliament.  King James had many executed or imprisoned to warn the others of the consequences of rebellion. The Duke of Albany and former regent was also executed along with his sons."
+	style = 1
+
+	date = { day = 1 month = june year = 1425 }
+	offset = 100
+
+	action_a ={
+		name = "Ok"
+		command = { type = province_revoltrisk which = 236 value = -2 } #The Highlands
+		command = { type = province_revoltrisk which = 237 value = -2 } #The Grampians
+		command = { type = provincetax which = 236 value = 1 } #The Highlands
+		command = { type = provincetax which = 237 value = 1 } #The Grampians
+		command = { type = stability value = 1 }
+	}
+}
+
+#The Warring Nobles                #
+# Created by George Borges         #
+# Scripted by Johnny Canuck        #
+event = {
+
+	id = 20414
+	trigger = {
+		event = 3070
+		}
+	random = no
+	country = SCO
+	name = "The Warring Nobles"
+	desc = "While James II was still a boy, Lord Chancellor Crichton, Lieutenant General Douglas, and Lord Livingstone battled for the power behind the throne."
+	style = 1
+
+	date = { day = 1 month = april year = 1437 }
+	offset = 150
+
+	action_a ={
+		name = "Ok"
+		command = { type = province_revoltrisk which = 236 value = 2 } #The Highlands
+	}
+}
+
+#The End of the Fighting Amongst the Nobles#
+# Created by George Borges                 #
+# Scripted by Johnny Canuck                #
+event = {
+
+	id = 20417
+	trigger = {
+		event = 20414
+		monarch = 04821 #James II
+		}
+	random = no
+	country = SCO
+	name = "The End of the Fighting Amongst the Nobles"
+	desc = "Upon his rise to power, James II quickly and effectively dealt with the corruption and feuding that had been plaguing the realm."
+	style = 1
+
+	date = { day = 1 month = december year = 1449 }
+	offset = 100
+
+	action_a ={
+		name = "Ok"
+		command = { type = province_revoltrisk which = 236 value = -2 } #The Highlands
+		command = { type = stability value = 1 }
+	}
+}
+
+#The Marriage of James III            #
+# Created by Georges Borges           #
+# Edited and Scripted by Johnny Canuck#
+event = {
+
+	id = 20418
+	trigger = {
+		owned = { province = 236 data = -1 } #The Highlands
+		exists = DAN
+		NOT = {
+			war = { country = SCO country = DAN }
+			}
+		}
+	random = no
+	country = SCO
+	name = "The Marriage of James III"
+	desc = "King James III married Princess Margaret of Denmark in 1469, receiving the Orkney and Shetland Islands as dowry."
+	style = 1
+
+	date = { day = 13 month = july year = 1469 }
+
+	action_a ={
+		name = "Ok"
+		command = { type = population which = 236 value = 500 } #The Highlands
+	}
+}
+
+
+#The Lennox-Darnley Rebellion#
+# Created by nelly664        #
+event = { 
+
+	id = 20419 
+	random = no 
+	country = SCO 
+	name = "The Lenox-Darnley Rebellion" 
+	desc = "In 1488-89, many of James IV's former allies who had been forgotten in the new parliament rebelled against their new king." 
+	style = 1 
+
+	date = { day = 1 month = october year = 1488 } 
+	offset = 330 
+
+	action_a ={ 
+		name = "Traitors!" 
+		command = { type = revolt which = 238 } #Lothian
+	} 
+} 
+
+#Extending His Rule  #
+# Created by nelly664#
+event = { 
+
+	id = 20420 
+	random = no 
+	country = SCO 
+	name = "Extending His Rule" 
+	desc = "In the 1490's, James IV built up the navy to enforce his power in european courts and to police the Highlands against pirates. This new navy had the warship Great Micheal at pride of place as its flagship." 
+	style = 1 
+
+	date = { day = 1 month = january year = 1494 } 
+	offset = 360 
+
+	action_a ={ 
+		name = "Reform the Navy" 
+		command = { type = naval value = 500 } 
+		command = { type = trade value = 250 } 
+		command = { type = warships which = 236 value = 3 } #The Highlands
+	} 
+
+	action_b = { 
+		name = "Reform the Army" 
+		command = { type = land value = 500 } 
+		command = { type = provincemanpower which = 236 value = 1 } #The Highlands
+	} 
+}
+
+#Margaret Tudor          #
+# Created by nelly664    #
+# Edited by Johnny Canuck#
+event = { 
+
+	id = 20421 
+	random = no 
+	country = SCO 
+	name = "Margaret Tudor" 
+	desc = "In 1503, James IV married Margaret Tudor, daughter of Henry VII.  This brought peace between England and Scotland, as Margaret was second in line to the English throne."
+	style = 2 
+
+	date = { day = 8 month = august year = 1503 } 
+
+	action_a = { 
+		name = "Ok" 
+		command = { type = relation which = ENG value = 200 }
+		command = { type = dynastic which = ENG }
+		command = { type = stability value = 1 } 
+	} 
+} 
+
+#Margaret Bears a Son    #
+# Created by nelly664    #
+# Edited by Johnny Canuck#
+event = { 
+
+	id = 20422 
+	random = no 
+	country = SCO 
+	name = "Margaret bears a son" 
+	desc = "In 1509, Margaret bore a son.  He was a threat to the English crown, but benefited the Scots greatly."
+	style = 2 
+
+	date = { day = 1 month = december year = 1509 } 
+	offset = 360 
+
+	action_a = { 
+		name = "We Shall Call Him James" 
+		command = { type = relation which = ENG value = -150 }
+		command = { type = vp value = 1 } 
+	} 
+}
+
+
+##Scottish Reformation Events##
+
+#Arran's Regency      #
+# Created by Count Six#
+event = { 
+
+	id = 20423 
+	random = no 
+	country = SCO 
+	name = "Arran's Regency" 
+	desc = "With the death of James V, Scotland's sovereign was a six-day-old girl, Mary Queen of Scots.  The direction of affairs was assumed by a committee made up of James Hamilton earl of Arran, Cardinal Beaton, and the earls of Moray, Huntly and Argyll.  Almost immediately, Arran and Beaton fell out with each other, and within a month Beaton was arrested.  Arran then pursued a pro-English and protestant policy, the cornerstone of which was a marriage between the infant queen and Henry VIII's son Edward." 
+	style = 2 
+
+	date = { day = 15 month = december year = 1542 } 
+
+	action_a ={ 
+		name = "Support Arran" 
+		command = { type = relation which = ENG value = 100 } 
+		command = { type = relation which = FRA value = -100 } 
+		command = { type = stability value = -1 } 
+	} 
+
+	action_b ={ 
+		name = "Support Beaton" 
+		command = { type = relation which = FRA value = 100 } 
+	} 
+} 
+
+#Beaton Regains Control  #
+# Created by Count Six   #
+# Edited by Johnny Canuck#
+event = { 
+
+	id = 20424 
+	random = no 
+	country = SCO 
+	name = "Beaton regains control" 
+	desc = "By the end of 1543 Cardinal Beaton, now allied with Mathew Stewart, Earl of Lenox, was once again in charge.  The marriage alliance with England was aborted, and Beaton received artillery and money from France." 
+	style = 2 
+
+	date = { day = 11 month = december year = 1543 } 
+
+	action_a ={ 
+		name = "Support Beaton" 
+		command = { type = relation which = ENG value = -100 } 
+		command = { type = relation which = FRA value = 100 } 
+		command = { type = DIP which = 3 value = 29 } 
+		command = { type = ADM which = 2 value = 29 } 
+		command = { type = MIL which = 2 value = 29 } 
+		command = { type = stability value = -1 } 
+		command = { type = revoltrisk which = 12 value = 2 } 
+	} 
+
+	action_b ={ 
+		name = "Ratify the Marriage Alliance with England" 
+		command = { type = relation which = ENG value = 100 } 
+		command = { type = dynastic which = ENG } 
+		command = { type = sleepevent which = 21131 } #The Rough Wooing
+		command = { type = sleepevent which = 20426 } #Regency of Mary of Guise
+		command = { type = sleepevent which = 20427 } #The First Band of the Lords of Congregation
+		command = { type = sleepevent which = 3076 } #Fate of Mary
+		command = { type = sleepevent which = 3077 } #Time of Regents
+	}	
+} 
+
+#Beaton's Murder      #
+# Created by Count Six#
+event = { 
+
+	id = 20425 
+	trigger = { 
+		event = 21131 #The Rough Wooing (ENG)
+		} 
+	random = no 
+	country = SCO 
+	name = "The Murder of Cardinal Beaton" 
+	desc = "Beaton remained in power during the Rough Wooing, but pro-English and pro-reform religious views continued to spread among the lairds and lesser magnates of lowland Scotland.  In March 1546 an English-sponsored preacher, George Wishart, was burned at the stake for heresy.  Two months later, a band of reform-minded gentlemen and reformer preachers, including John Knox, broke into Beaton's castle at St. Andrews, murdered him, and held the castle against a siege, hoping to be rescued by the English." 
+	style = 2 
+
+	date = { day = 29 month = may year = 1546 } 
+
+	action_a ={ 
+		name = "The Siege of St Andrews Castle" 
+		command = { type = religiousrevolt which = 239 } #Strathclyde?????
+	} 
+
+	action_b ={ 
+		name = "Avoid foreign intervention" 
+		command = { type = sleepevent which = 21132 } #Somerset's Invasion (ENG)
+		command = { type = sleepevent which = 170020 } #The French Alliance and Mary's Marriage to the Dauphin (FRA)
+		command = { type = religiousrevolt which = 239 } #Strathclyde?????
+		command = { type = stability value = -3 } 
+	} 
+} 
+
+#Regency of Mary of Guise#
+# Created by Count Six   #
+# Edited by Johnny Canuck#
+event = { 
+
+	id = 20426
+	trigger = {
+		exists = FRA
+		NOT = {
+			war = { country = SCO country = FRA }
+			}
+		}
+	random = no 
+	country = SCO 
+	name = "Regency of Mary of Guise" 
+	desc = "By early 1554 it was clear that the policies of the earl of Arran, who had resumed control of the government after Beaton's murder, were a failure.  In his place, the Scottish parliament made the Queen Dowager Mary of Guise regent, which cemented relations with France." 
+	style = 2 
+
+	date = { day = 1 month = april year = 1554 } 
+
+	action_a ={ 
+		name = "Mary of Guise" 
+		command = { type = relation which = FRA value = 100 } 
+		command = { type = DIP which = 2 value = 29 } 
+		command = { type = ADM which = 2 value = 29 } 
+		command = { type = stability value = -1 } 
+		command = { type = revoltrisk which = 72 value = 2 } 
+	} 
+} 
+
+#The First Band of the Lords of Congregation#
+# Created by Count Six                      #
+# Edited by Johnny Canuck                   #
+event = { 
+
+	id = 20427
+	trigger = {
+		religion = catholic
+		} 
+	random = no 
+	country = SCO 
+	name = "The First Band of the Lords of Congregation" 
+	desc = "In 1557 a powerful group of nobles calling themselves the Lords of the Congregation drew up a proclamation, the First Band, calling for the expulsion of the Catholic Church from Scotland.  Although an uneasy peace between the Regent and the Congregation was maintained until early 1559, the climate of religious opinion grew more and more heated." 
+	style = 2 
+
+	date = { day = 1 month = december year = 1557 } 
+	offset = 360 
+	deathdate = { day = 1 month = january year = 1560 } 
+
+	action_a ={ #Support the Lords of the Congregation# 
+		name = "Support the Lords of the Congregation" 
+		command = { type = stability value = -2 } 
+		command = { type = revoltrisk which = 12 value = 2 } 
+		command = { type = provincereligion which = 237 value = reformed } 
+	} 
+} 
+
+#John Knox and the Scottish Reformation#
+# Created by Count Six                 #
+# Edited by Johnny Canuck              #
+event = { 
+
+	id = 20428 
+	trigger = {
+		religion = catholic
+		} 
+	random = no 
+	country = SCO 
+	name = "John Knox and the Scottish Reformation" 
+	desc = "From the 1540s protestantism steadily gained adherents in Scotland, especially among the lairds and townsmen of lowland Scotland.  In 1559 John Knox returned to Scotland from exile in France, and the important towns of Perth and Dun Deagh openly declared for the reformed religion.  The following year Edinburgh was occupied by the army of the Lords of Congregation, and in October 1560 the Congregation formally deposed the regent, Mary of Guise. The momentum of religious revolution was now unstoppable, and in January an assembly of nobles and lairds formally accepted the reformed religion." 
+	style = 2 
+
+	date = { day = 27 month = january year = 1561 } 
+
+	action_a ={ #Establish the Reformed Church# 
+		name = "Establish the Reformed Church" 
+		command = { type = religion which = reformed } 
+		command = { type = domestic which = aristocracy value = 1 } 
+		command = { type = domestic which = innovative value = 1 } 
+		command = { type = stability value = 1 }
+	} 
+
+	action_b ={ 
+		name = "Fight the Lords of Congregation" 
+		command = { type = religiousrevolt which = -1 } 
+		command = { type = religiousrevolt which = -1 } 
+		command = { type = religiousrevolt which = -1 } 
+		command = { type = stability value = -3 } 
+	} 
+} 
+
+#The Concordat of Leith#
+# Created by btg       #
+event = { 
+
+	id = 20429 
+	trigger = {
+		OR = {
+			religion = reformed
+			religion = protestant
+			}
+		} 
+	random = no 
+	country = SCO 
+	name = "The Concordat of Leith" 
+	desc = "The government of James VI ratified the reformed church settlement, and more permanent measures of church endowment were taken.  The Concordat of Leith (1572) allowed the crown to appoint bishops with the kirk's approval.  As in Mary's reign, the crown was intervening to prevent the wealth of the old church from being entirely laicized.  And if the bishopric revenues were saved from going the same way as the monastic wealth, the crown expected a share in them for its service" 
+	style = 2 
+
+date = { day = 1 month = january year = 1572 } 
+
+	action_a ={ 
+		name = "Ok" 
+		command = { type = stability value = 2 } 
+		command = { type = treasury value = 100 } 
+		command = { type = domestic which = CENTRALIZATION value = 1 } 
+		command = { type = domestic which = ARISTOCRACY value = -1 } 
+	} 
+} 
+
+#Andrew Melville         #
+# Created by btg         #
+# Edited by Johnny Canuck# 
+event = { 
+
+	id = 20430
+	trigger = {
+		religion = reformed
+		}
+	random = no 
+	country = SCO 
+	name = "Andrew Melville" 
+	desc = "Scholar and reformer, Andrew Melville (1545-1622) succeeded John Knox as a leader of the Scottish Reformed Church, giving it its presbyterian character by replacing bishops with local presbyteries, and gaining international respect for Scottish universities.  As principal of the University of Glasgow, as visitor to Aberdeen, and as principal of St. Mary's College at St. Andrews in Edinburgh, he introduced educational methods he had learned from European scholars.  Under his influence, new students came from abroad, and many returned to teach in Reformed institutions overseas." 
+	style = 2 
+
+	date = { day = 1 month = january year = 1574 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1592 } 
+
+	action_a = { 
+		name = "Ok" 
+		command = { type = domestic which = innovative value = 1 } 
+		command = { type = stability value = -1 } 
+		command = { type = relation which = HOL value = 50 } #The Usual Reformed Suspects
+		command = { type = relation which = HEL value = 100 } 
+		command = { type = relation which = PFA value = 50 } 
+		command = { type = relation which = HES value = 50 } 
+		command = { type = relation which = FPR value = 100 } 
+		command = { type = relation which = SIE value = 50 } 
+	} 
+}
+
+#The Golden Act of 1592  #
+# Created by btg         #
+# Edited by Johnny Canuck#
+event = { 
+
+	id = 20431 
+	trigger = {
+		OR = {
+			religion = reformed
+			religion = protestant
+			}
+		event = 20429
+		} 
+	random = no 
+	country = SCO 
+	name = "The Golden Act of 1592" 
+	desc = "A new presbyterian party in the reformed Church of Scotland, whose members wanted parity of all ministers and freedom from state control, rejected the compromise that James VI struck in the Concordat of Leith.  Led by Andrew Melville, a rigid academic theorist, they demanded that the new church should be run by a hierarchy of courts (kirk sessions, presbyteries, synods, and the General Assembly), not by bishops, and that the state should leave the church alone. James was not politically strong enough for out-and-out resistance immediately, and he sometimes made concessions, as in the Golden Act of 1592, which gave parliamentary sanction to the system of presybterian courts (though the church continued to have bishops as well)." 
+	style = 2 
+
+	date = { day = 1 month = january year = 1592 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1595 }
+
+	action_a ={ 
+		name = "Sanction the System of Presbyterian Courts" 
+		command = { type = stability value = 1 } 
+		command = { type = domestic which = CENTRALIZATION value = -1 } 
+	} 
+
+	action_b ={ 
+		name = "Oppose the Presbyterians" 
+		command = { type = stability value = -1 } 
+		command = { type = domestic which = CENTRALIZATION value = 2 } 
+		command = { type = revoltrisk which = 12 value = 5 } 
+	} 
+}
+
+##Scotland in Ireland Events##
+
+#The Ulster Plantation#
+# Created by btg      #
+event = { 
+
+	id = 20432 
+	trigger = { 
+		owned = { province = 232 data = SCO } #Ulster
+		OR = {
+			religion = protestant
+			religion = reformed
+			} 
+		} 
+	random = no 
+	country = SCO 
+	name = "The Ulster Plantation" 
+	desc = "When the Irish policy of James VI of Scotland became clear, the earls of Tyrone and of Tyrconnel and other Ulster Gaelic lords fled Ireland. Their departure opened the way for the plantation of Ulster by a new protestant landowning class which included Lowland Scots. The plantation also raised money for royal coffers by the sale of Irish baronetcies to Scottish lairds, granting tracts of land in Ulster with the heritable title of baronet in exchange for monies given to the royal purse." 
+	style = 3 
+
+	date = { day = 1 month = january year = 1607 } 
+	offset = 180 
+	deathdate = { day = 1 month = january year = 1620 } 
+
+	action_a ={ 
+		name = "Ok" 
+		command = { type = domestic which = CENTRALIZATION value = 1 } 
+		command = { type = provincereligion which = 232 value = reformed } #Ulster
+		command = { type = population which = 232 value = 3000 } 
+		command = { type = addcore which = 232 }
+		command = { type = treasury value = 200 } 
+	} 
+} 
+
+##Anglo-Scottish Events##
+
+#The Rough Wooing        #
+# Created by Count Six   # 
+# Edited by Johnny Canuck#
+event = { 
+
+	id = 21131 
+	trigger = {
+		event = 20424 #Beaton Regains Control (SCO)
+		}
+	random = no 
+	country = ENG 
+	name = "The Rough Wooing" 
+	desc = "The failure of his marriage alliance with Scotland left Henry VIII furious.  Determined to force the Scots to accept the marriage, he ordered the earl of Hertford to invade." 
+	style = 2 
+
+	date = { day = 1 month = may year = 1544 } 
+
+	action_a ={ 
+		name = "Attack Immediately" 
+		command = { type = relation which = SCO value = -100 } 
+		command = { type = INF which = 240 value = 2000 } #Northumberland
+		command = { type = CAV which = 240 value = 1000 } #Northumberland
+	} 
+
+	action_b ={ 
+		name = "Wait to see how things develop" 
+		command = { type = relation which = SCO value = -25 } 
+	} 
+} 
+
+#Somerset's Invasion     #
+# Created by Count Six   #
+# Edited by Johnny Canuck#
+event = { 
+
+	id = 21132 
+	trigger = { 
+		event = 20425 #Beaton's Murder (SCO)
+		} 
+	random = no 
+	country = ENG 
+	name = "Somerset's Invasion" 
+	desc = "The English government reacted slowly to the siege of St. Andrew's Castle in the aftermath of Cardinal Beaton's murder, but in September 1546 Protector Somerset invaded to support the cause of religious reform, destroying a Scottish army at Pinkie." 
+	style = 2 
+
+	date = { day = 1 month = september year = 1546 } 
+
+	action_a ={ 
+		name = "Attack Scotland" 
+		command = { type = relation which = SCO value = -100 } 
+		command = { type = INF which = 240 value = 2000 } #Northumberland
+		command = { type = CAV which = 240 value = 1000 } #Northumberland
+	} 
+
+	action_b ={ 
+		name = "Wait to see how things develop" 
+		command = { type = relation which = SCO value = -25 } 
+	} 
+} 
+
+#James VI and the English Throne#
+# Created by Count Six          #
+event = { 
+
+	id = 21133 
+	random = no 
+	country = ENG 
+	name = "James VI and the English throne" 
+	desc = "By the later 1580s, with the execution of Mary Stewart and James' twenty-first birthday, it was increasingly evident that James would succeed Elizabeth to the English throne, and a formal alliance between the countries seemed an appropriate first step.  The alliance was actually concluded a year before Mary's execution, but having passed that crisis it grew steadily stronger and led ultimately to James' accession in 1603." 
+	style = 3 
+
+	action_a ={ 
+		name = "Ratify the Alliance" 
+		command = { type = alliance which = SCO } 
+	}
+}
+
+#The French Alliance and Mary's Marriage to the Dauphin#
+# Created by Count Six                                 #
+event = { 
+
+	id = 170020
+	trigger = { 
+		event = 21131 #The Rough Wooing (ENG)
+		OR = { 
+			war = { country = ENG country = SCO }
+			owned = { province = 236 data = ENG } #The Highlands
+			owned = { province = 237 data = ENG } #The Grampians
+			owned = { province = 238 data = ENG } #Lothian
+			owned = { province = 239 data = ENG } #Strathclyde
+			} 
+		} 
+	random = no 
+	country = FRA 
+	name = "The Marriage of Marie and the Dauphin" 
+	desc = "Somerset's invasion of Scotland forced the Scots to look for protection from their auld ally, France.  The result was the marriage of Marie and the Dauphin, and the intervention of a French army in Scotland" 
+	style = 2 
+
+	date = { day = 27 month = january year = 1548 } 
+
+	action_a ={ 
+		name = "Ratify the Alliance" 
+		command = { type = alliance which = SCO } 
+		command = { type = dynastic which = SCO } 
+		command = { type = vassal which = SCO } 
+		command = { type = relation which = SCO value = 200 } 
+		command = { type = casusbelli which = ENG value = 24 } 
+	} 
+
+	action_b ={ 
+		name = "Accept the Marriage Without the Military Alliance" 
+		command = { type = relation which = SCO value = 200 } 
+		command = { type = dynastic which = SCO } 
+	} 
+} 

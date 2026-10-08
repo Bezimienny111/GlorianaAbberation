@@ -1,0 +1,286 @@
+## Major Events for Dai Viet
+#
+# Idea and text: Demetrios
+# Scripting: Havard & Doomdark
+#
+
+#The Vietnamese Rebellion#
+event = {
+	id = 3904
+	random = no
+	country = DAI
+	name = "EVENTNAME3904"
+	desc = "EVENTHIST3904"
+	
+	date = { day = 1 month = january year = 1419 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1432 }
+	
+	action_a = {     #Overthrow Chinese control!#
+		name = "ACTIONNAME3904A"
+		command = { type = breakvassal which = CHI }
+		command = { type = relation which = CHI value = -200 }
+		command = { type = war which = CHI }
+		command = { type = INF which = -1 value = 5000 }
+		command = { type = INF which = -1 value = 5000 }
+		command = { type = CAV which = -3 value = 5000 }
+	}
+	action_b ={        #Remain a vassal#
+		name = "ACTIONNAME3904B"
+		command = { type = stability value = 2 }
+		command = { type = relation which = CHI value = 100 }
+		command = { type = sleepevent which = 3905 } 
+	}
+}
+
+#The Foundation of the Empire of Dai Viet#
+event = {
+	id = 3905
+	trigger = {
+		NOT = {
+			war = { country = DAI country = CHI }
+		}
+	}
+	random = no
+	country = DAI
+	name = "EVENTNAME3905"
+	desc = "EVENTHIST3905"
+	
+	date = { day = 1 month = january year = 1420 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1433}
+	
+	action_a = {     #Found the Empire!#
+		name = "ACTIONNAME3905A"
+		command = { type = relation which = CHI value = 100 }
+		command = { type = domestic which = land value = 1}
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = land value = 200 }
+		command = { type = infra value = 200 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#Le Nghi Dan's Reforms#
+event = {
+	id = 3906
+	random = no
+	country = DAI
+	name = "EVENTNAME3906"
+	desc = "EVENTHIST3906"
+	
+	date = { day = 1 month = january year = 1460 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1470 }
+	
+	action_a ={#Go with the reforms#
+		name = "ACTIONNAME3906A"
+		command = { type = stability value = -2 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = treasury value = -100 }        
+	}
+	action_b ={#Ignore the reform ideas#
+		name = "ACTIONNAME3906B"
+		command = { type = stability value = 1 }   
+		command = { type = domestic which = innovative value = -2 }
+		command = { type = infra value = -200 }
+	}
+}
+
+#The Rivalry of the Mac and Trinh Families#
+event = {
+	id = 3907
+	random = no
+	country = DAI
+	name = "EVENTNAME3907"
+	desc = "EVENTHIST3907"
+	
+	date = { day = 1 month = january year = 1525 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1526 }
+	
+	action_a ={#Curse their interminable feuding!#
+		name = "ACTIONNAME3907A"
+		command = { type = stability value = -5 }
+		command = { type = revoltrisk which = 480 value = 2 }
+	}
+}
+
+#The Revolt of Annam#
+event = {
+	id = 3908
+	trigger = {
+		NOT = {
+			exists = ANN
+		}
+	}
+	random = no
+	country = DAI
+	name = "EVENTNAME3908"
+	desc = "EVENTHIST3908"
+	date = { day = 1 month = january year = 1558 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1559 }
+	
+	action_a ={#Crush the rebels!#
+		name = "ACTIONNAME3908A"
+		command = { type = stability value = -6 }
+		command = { type = revoltrisk value = 6 }
+		command = { type = revolt which = 664 }
+		command = { type = revolt which = 664 }
+		command = { type = revolt which = 665 }
+		command = { type = revolt which = 665 }
+		command = { type = revolt which = 665 }
+	}
+	action_b ={#Negotiate a peaceful settlement#
+		name = "ACTIONNAME3908B"
+		command = { type = stability value = -2 }
+		command = { type = independence which = ANN }
+		command = { type = domestic which = centralization value = -2 }
+	}
+}
+
+#The Tay Son Rebellion#
+event = {
+	id = 3909
+	random = no
+	country = DAI
+	name = "EVENTNAME3909"
+	desc = "EVENTHIST3909"
+	
+	date = { day = 1 month = january year = 1787 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1788 }
+	
+	action_a ={#Crush the rebels!#
+		name = "ACTIONNAME3909A"
+		command = { type = stability value = -6 }
+		command = { type = revoltrisk which = 36 value = 5 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }  
+	}
+	action_b ={#Negotiate a peaceful settlement#
+		name = "ACTIONNAME3909B"
+		command = { type = stability value = -2 }
+		command = { type = revoltrisk value = 2 }
+		command = { type = treasury value = -500 }
+		command = { type = domestic which = centralization value = -2 }
+	}
+}
+
+#The Foundation of the Modern Vietnamese State#
+event = {
+	id = 3910
+	random = no
+	country = DAI
+	name = "EVENTNAME3910"
+	desc = "EVENTHIST3910"
+	date = { day = 1 month = january year = 1802 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1803 }
+	
+	action_a ={#We are one nation!#
+		name = "ACTIONNAME3910A"
+		command = { type = trigger which = 3912 } #Annam event#
+		command = { type = domestic which = centralization value = 2 } 
+		command = { type = stability value = -2 } 
+		command = { type = treasury value = -500 }
+	}
+	action_b ={#Rule Annam separately#
+		name = "ACTIONNAME3910B"
+		command = { type = stability value = 2 }
+		command = { type = vassal which = ANN }
+		command = { type = domestic which = centralization value = -2 }
+	}
+}
+
+#The Foundation of the Modern Vietnamese State#
+event = {
+	id = 3911
+	random = no
+	country = DAI
+	name = "EVENTNAME3911"
+	desc = "EVENTHIST3911"
+	
+	#Triggered by ANN 3912A#
+	
+	action_a ={#Great!#
+		name = "ACTIONNAME3911A"
+		command = { type = countryname value = "Vietnam" }
+		command = { type = inherit which = ANN }
+		command = { type = capital which = 664 } 
+	}
+}
+
+#The State Religion#
+event = {
+	id = 50037
+	trigger = {
+		event = 3911
+	}
+	random = no
+	country = DAI
+	name = "The State Religion"
+	desc = "By the turn of the 19th century the Nguyen dynasty had cemented its rule over Viet Nam and imposed a degree of centralization not seen since ancient times. The ruling Emperor, Gia Long, had successfully reformed the state bureaucracy and brought in French advisors and officers in order to modernize the army. One policy of particular importance was the question of the new state's official religion - the imperial family practiced Ruism (Confucianism) and sought to maintain close ties with China, whereas the majority of their subjects were Buddhist, as the Vietnamese had been for centuries. In addition, the French had brought increasing numbers of Catholic missionaries and teachers with them, whose presence Gia Long tolerated."
+	date = { day = 1 month = january year = 1805 }
+	offset = 30
+	
+	action_a ={ #Ruism, the faith of our court#
+		name = "Ruism, the faith of our court"
+		command = { type = religion which = confucian }
+		command = { type = missionaries value = 3 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = relation which = CHI value = 100 }
+		command = { type = relation which = BRM value = -50 }
+		command = { type = relation which = CAM value = -50 }
+		command = { type = relation which = AYU value = -50 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = treasury value = 300 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={ #Buddhism, the faith of our subjects#
+		name = "Buddhism, the faith of our subjects"
+		command = { type = religion which = buddhism }
+		command = { type = missionaries value = 2 }
+		command = { type = revolt which = -2 }
+		command = { type = relation which = BRM value = 50 }
+		command = { type = relation which = CAM value = 50 }
+		command = { type = relation which = AYU value = 50 }
+		command = { type = relation which = CHI value = -100 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = treasury value = 100 }
+		command = { type = stability value = 1 }
+	}
+
+	action_c ={ #Catholicism, the faith of our friends#
+		name = "Catholicism, the faith of our friends"
+		trigger = { 
+			NOT = {
+				war = { country = DAI country = FRA }
+			}
+		}
+		command = { type = religion which = catholic }
+		command = { type = missionaries value = 4 }
+		command = { type = revoltrisk which = 60 value = 5 }
+		command = { type = INF which = -2 value = 15000 }
+		command = { type = CAV which = -2 value = 5000 }
+		command = { type = ART which = -2 value = 15 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = BRM value = -100 }
+		command = { type = relation which = CAM value = -100 }
+		command = { type = relation which = AYU value = -100 }
+		command = { type = relation which = CHI value = -100 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = domestic which = QUALITY value = 2 }
+		command = { type = treasury value = 400 }
+		command = { type = stability value = -4 }
+	}
+}

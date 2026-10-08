@@ -1,0 +1,238 @@
+# Brunswick #
+
+#The League of Schmalkalden#
+event = {
+
+	id = 250048 #3608
+	trigger = {
+		 exists = HAB  
+		 	AND = { 
+				OR = {
+					religion = protestant
+					religion = reformed
+						}
+			}
+	}
+	random = no
+	country = BRU
+	name = "The League of Schmalkalden"
+	desc = "After Emperor Charles V had rejected the Protestants confessional positions at the Imperial Parliament of Augsburg (1529-1530), the North German Protestant Imperial estates formed the League of Schmalkalden, with a joint army and treasury and seeking ties abroad (France). The League enjoyed early successes in the years 1532-1540 as the Emperor was threaten by Turkish danger and forced to conclude Religious peace settlements in Nuremberg (1532) and Kaaden (1534)."
+
+	date = { day = 1 month = january year = 1527 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1529 }
+
+	action_a ={					#Give it your support#
+		name = "Give it your support"
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = BAD value = 150 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = PFA value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = THU value = 150 }
+		command = { type = relation which = KLE value = 100 }
+		command = { type = relation which = KOL value = 50 }
+		command = { type = relation which = BAY value = 50 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={					#Ignore it#
+		name = "Ignore it"
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = BAD value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = PFA value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = relation which = THU value = -100 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#The Evangelic Union#
+event = {
+
+	id = 250049 #3609
+	trigger = {
+		 OR = {
+			religion = protestant
+			religion = reformed
+		}
+	}
+	random = no
+	country = BRU
+	name = "The Evangelic Union"
+	desc = "The Holy Roman Empire had a fragile balance, split between 10 major and nearly 400 minor states and principalities, as well as two opposing religions. The power of the Emperor is quite limited beyond his direct domains and the erratic and inconsistent behavior of some of them as Rudolph II increases frictions. In 1608, the Protestant city of Donauwerth refused Catholics the right to practice their cult and is banned from the Empire. As a reaction, most German Protestant states form the Evangelic Union to defend their freedom."
+
+	date = { day = 1 month = january year = 1605 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a ={					#Prepare to Join#
+		name = "Prepare to Join"
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = BAD value = 150 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = PFA value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = THU value = 150 }
+		command = { type = relation which = SHL value = 150 }
+		command = { type = relation which = KLE value = 100 }
+		command = { type = relation which = KOL value = 50 }
+		command = { type = relation which = BAY value = 50 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={					#Stay Neutral#
+		name = "Stay Neutral"
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = BAD value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = PFA value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = relation which = THU value = -100 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#The Catholic League#
+event = {
+
+	id = 250050 #3610
+	trigger = {
+		 OR = {
+			religion = catholic
+			religion = counterreform
+		}
+	}
+	random = no
+	country = BRU
+	name = "The Catholic League"
+	desc = "The German Catholic states felt threatened by the 1608 creation of the Evangelic Union of their northern Protestant neighbors, following the Donauwerth exclusion from the Empire. Feeling the urge to unite, they regrouped into a Catholic League that same year. The stage was set for the Thirty Years War."
+
+	date = { day = 1 month = january year = 1607 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a ={					#Prepare to Join#
+		name = "Prepare to Join"
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = BRA value = -150 }
+		command = { type = relation which = BAD value = -150 }
+		command = { type = relation which = HES value = -150 }
+		command = { type = relation which = PFA value = -150 }
+		command = { type = relation which = SAC value = -150 }
+		command = { type = relation which = THU value = -150 }
+		command = { type = relation which = SHL value = -150 }
+		command = { type = relation which = KLE value = 50 }
+		command = { type = relation which = KOL value = 100 }
+		command = { type = relation which = BAY value = 100 }
+		command = { type = relation which = PAP value = 100 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = HAB value = 150 }
+	}
+
+	action_b ={					#Stay Neutral#
+		name = "Stay Neutral"
+		command = { type = relation which = BRA value = 50 }
+		command = { type = relation which = BAD value = 50 }
+		command = { type = relation which = HES value = 50 }
+		command = { type = relation which = PFA value = 50 }
+		command = { type = relation which = SAC value = 50 }
+		command = { type = relation which = THU value = 50 }
+		command = { type = relation which = BAY value = -50 }
+		command = { type = relation which = KLE value = -50 }
+		command = { type = relation which = KOL value = -50 }
+		command = { type = relation which = HAB value = -100 }
+	}
+}
+
+#The League of Augsburg#
+event = {
+
+	id = 250051 #3611			#triggered by FRA3127#
+	random = no
+	country = BRU
+	name = "The League of Augsburg"
+	desc = "The reunion policy of Louis XIV had been forced upon by the Empire in the 1684 by the Truce of Regensburg, mostly because the Emperor was preoccupied by the Turkish menace (siege of Vienna in 1683). The continued French claims and expansion to the detriment of the Habsburg possessions and the German states of the Empire led to the creation of the anti-French League of Augsburg (1686)."
+
+	action_a ={					#Defy French claims#
+		name = "Defy French claims"
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = PRU value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = BAD value = 100 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = HES value = 100 }
+		command = { type = relation which = KLE value = 100 }
+		command = { type = relation which = KOL value = 100 }
+		command = { type = relation which = PFA value = 100 }
+		command = { type = relation which = THU value = 100 }
+	}
+
+	action_b ={					#Ignore it#
+		name = "Ignore it"
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = PRU value = -100 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = BAD value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = HES value = -50 }
+		command = { type = relation which = KLE value = -50 }
+		command = { type = relation which = KOL value = -50 }
+		command = { type = relation which = PFA value = -50 }
+		command = { type = relation which = THU value = -50 }
+	}
+}
+
+# The Electorate of Hanover
+event = {
+
+	id = 15001
+	trigger = {
+		atwar = no
+		isvassal = no
+	}
+	random = no
+	country = BRU
+	name = "The Electorate of Hanover"
+	desc = "EVENTHIST15001"
+	
+	date = { day = 1 month = january year = 1690 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1710 }
+
+	action_a = { # Ascendancy!
+		name = "Ascendancy!"
+		command = { type = cityname which = 310 value = "Hanover" }
+		command = { type = elector which = BRU value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = addcore_national which = 335 }
+		command = { type = addcore_national which = 336 }
+		command = { type = relation which = -6 value = 100 }
+		command = { type = relation which = -7 value = 50 }
+		command = { type = relation which = -7 value = 50 }
+		command = { type = relation which = -7 value = 50 }
+		command = { type = relation which = -7 value = 50 }
+		command = { type = relation which = -7 value = 50 }
+		command = { type = relation which = -7 value = 50 }
+		command = { type = relation which = -7 value = 50 }
+		command = { type = treasury value = 200 }
+		command = { type = flagname which = "" }
+		command = { type = country which = HAN }
+		command = { type = stability value = 3 }
+	}
+}

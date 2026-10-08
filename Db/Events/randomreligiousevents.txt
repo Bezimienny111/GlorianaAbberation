@@ -1,0 +1,367 @@
+##############################
+# Religious conversion events.
+#
+#    By Håvard Moe
+##############################
+
+#########################################################################
+# Catholic influence in w-Africa
+#########################################################################
+event = { 
+	id = 677
+	trigger = { 
+	            year = 1500
+	            continent = Africa
+	            religion = pagan
+                    }
+	random = yes
+	name = "EVENTNAME_A35"
+	desc = "EVENTHIST_A35"
+	action_a = {
+			name = "EVENT_A35_A" # Keep the faith of our fathers
+			command = { type = stability value = 1 }
+		}
+	action_b = {
+			name = "EVENT_A35_B" # Convert to catholics
+			command = { type = religion which = catholic }
+			command = { type = provincereligion which = -1 value = catholic }
+			command = { type = provincereligion which = -1 value = catholic }
+			command = { type = provincereligion which = -1 value = catholic }
+			command = { type = provincereligion which = -1 value = catholic }
+		}
+	}
+
+#########################################################################
+# Christian influence in southern Africa
+#########################################################################
+event = { 
+	id = 678
+	trigger = { 
+	            year = 1750
+	            continent = Africa
+	            religion = pagan
+        	    }
+	random = yes
+	name = "EVENTNAME_A36"
+	desc = "EVENTHIST_A36"
+	action_a = {
+			name = "EVENT_A36_A" # Keep the faith of our fathers
+			command = { type = stability value = 1 }
+		}
+	action_b = {
+			name = "EVENT_A36_B" # Convert to reformed
+			command = { type = religion which = reformed }
+			command = { type = provincereligion which = -1 value = reformed }
+			command = { type = provincereligion which = -1 value = reformed }
+			command = { type = provincereligion which = -1 value = reformed }
+		}
+	}
+
+#########################################################################
+# Mali return to paganism
+#########################################################################
+event = { 
+	id = 679
+	trigger = { 
+	            year = 1600
+	            continent = Africa
+	            religion = sunni
+	            }
+	country = MAL            
+	random = yes
+	name = "EVENTNAME_A37"
+	desc = "EVENTHIST_A37"
+	action_a = {
+		     name = "EVENT_A37_A" # Return to the faith of our fathers
+		     command = { type = religion which = pagan }
+		     }
+	action_b = {
+		     name = "EVENT_A37_B" # Stay islamic
+  			command = { type = stability value = 1 }
+		     }
+	}
+
+#########################################################################
+# Moslem influence in Africa
+#########################################################################
+event = { 
+	id = 680
+	trigger = { 
+	            year = 1500
+	            continent = Africa
+	            religion = pagan
+	            }
+	random = yes
+	name = "EVENTNAME_A38"
+	desc = "EVENTHIST_A38"
+	action_a = {
+			name = "EVENT_A38_A" # Keep the faith of our fathers
+			command = { type = stability value = 1 }
+		}
+	action_b = {
+			name = "EVENT_A38_B" # Convert to islam
+			command = { type = religion which = sunni }
+			command = { type = provincereligion which = -1 value = sunni }
+			command = { type = provincereligion which = -1 value = sunni }
+			command = { type = provincereligion which = -1 value = sunni }
+			command = { type = provincereligion which = -1 value = sunni }
+		}
+	}
+
+#########################################################################
+# Moslem influence in Nubia
+#########################################################################
+event = { 
+	id = 681
+	trigger = { year = 1500 }
+        country =  SUD
+	random = yes
+	name = "EVENTNAME_A39"
+	desc = "EVENTHIST_A39"
+	action_a = {
+			name = "EVENT_A39_A" # Convert to islam
+			command = { type = religion which = sunni }
+			command = { type = add_countryculture which = arabic }
+			command = { type = provincereligion which = -1 value = sunni }
+			command = { type = provincereligion which = -1 value = sunni }
+		}
+	action_b = {
+			name = "EVENT_A39_B" # Keep the faith of our fathers
+			command = { type = stability value = 1 }
+		}
+	}
+
+#########################################################################
+# Catholic influence in South- and Central America
+#########################################################################
+event = { 
+	id = 682
+	trigger = { year = 1600 
+	            continent = America
+		OR = {
+	            	religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			}
+	            }
+	random = yes
+	name = "EVENTNAME_A40"
+	desc = "EVENTHIST_A40"
+	action_a = {
+			name = "EVENT_A40_A" # Keep the faith of our fathers
+			command = { type = stability value = 1 }
+		}
+	action_b = {
+			name = "EVENT_A40_B" # Convert to catholics
+			command = { type = religion which = catholic }
+			command = { type = provincereligion which = -1 value = catholic }
+			command = { type = provincereligion which = -1 value = catholic }
+			command = { type = provincereligion which = -1 value = catholic }
+			command = { type = provincereligion which = -1 value = catholic }
+		}
+	}
+
+
+#########################################################################
+# Protestant influence in North America
+#########################################################################
+event = { 
+	id = 683
+	trigger = { year = 1650 
+	            continent = America
+		OR = {
+	            	religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			}
+	            }
+	random = yes
+	name = "EVENTNAME_A41"
+	desc = "EVENTHIST_A41"
+	action_a = {
+			name = "EVENT_A41_A" # Keep the faith of our fathers
+			command = { type = stability value = 1 }
+		}
+	action_b = {
+			name = "EVENT_A41_B" # Convert to protestants
+			command = { type = religion which = protestant }
+			command = { type = provincereligion which = -1 value = protestant }
+			command = { type = provincereligion which = -1 value = protestant }
+			command = { type = provincereligion which = -1 value = protestant }
+		}
+	}
+
+
+#########################################################################
+# Moslem influence in South East Asia
+#########################################################################
+event = { 
+	id = 684
+	trigger = {
+		year = 1450
+		OR = {
+			religion = hinduism
+			#religion = jain
+			religion = buddhism
+		}
+		OR = {
+			region = Indonesia
+			area = Malaya
+		}
+	}
+	random = yes
+	name = "EVENTNAME_A42"
+	desc = "EVENTHIST_A42"
+
+	action_a = {
+		name = "Embrace the Sunni faith" # Embrace the Sunni faith
+		command = { type = religion which = sunni }
+		command = { type = conversion which = -2 }
+	}
+	action_b = {
+		name = "Embrace the Shi'a faith" # Embrace the Shi'a faith
+		command = { type = religion which = shia }
+		command = { type = conversion which = -2 }
+	}
+	action_c = {
+		name = "Reject the teachings of Islam" # Reject the teachings of Islam
+		command = { type = stability value = 1 }
+	}
+}
+
+###############################
+## NEW
+###############################
+
+#########################################################################
+# Sikh influence in the Punjab
+#########################################################################
+event = { 
+	id = 688
+	trigger = {
+		year = 1550
+		NOT = { religion = sikh }
+		OR = {
+			area = Punjab
+			neighbour = KSH
+		}
+	}
+	random = yes
+	name = "Sikh influence in the Punjab"
+	desc = "The first Sikh missionary was its founder, Guru Nanak, who also became its inaugural guru (the first of ten) and travelled much of India spreading the word of Ik Onkar ('One God'). Though awareness of Sikhism became fairly prevalent during the 16th and 17th centuries, it struggled to compete with the larger established Hindu and Muslim faiths, and as a result its core heartlands remained Guru Nanak's home of the Pubjab. The holiest Sikh city was Amritsar, founded by the fourth guru, Guru Ram Das, in the 1570s."
+
+	action_a = {
+		name = "Reject this heretical dogma" # Reject this heretical dogma
+		command = { type = stability value = 1 }
+	}
+	action_b = {
+		name = "Embrace the teachings of the Gurus" # Embrace the teachings of the Gurus
+		command = { type = religion which = sikh }
+		command = { type = conversion which = -2 }
+	}
+}
+
+#########################################################################
+# Jewish influence in East Africa
+#########################################################################
+#event = { 
+#	id = 689
+#	trigger = {
+#		NOT = { year = 1600 }
+#		NOT = { religion = jewish }
+#		OR = {
+#			region = "East Africa"
+#			neighbour = ETH
+#		}
+#		ETH = { religion = jewish }
+#	}
+#	random = yes
+#	name = "EVENTNAME_A47"
+#	desc = "EVENTHIST_A47"
+#
+#	action_a = {
+#		name = "EVENT_A47_A" # Keep the faith of our ancestors
+#		command = { type = stability value = 1 }
+#	}
+#	action_b = {
+#		name = "EVENT_A47_B" # Return to the teachings of Yahweh
+#		command = { type = religion which = jewish }
+#		command = { type = conversion which = -2 }
+#	}
+#}
+
+#########################################################################
+# Embracing the Reformation
+#########################################################################
+event = { 
+	id = 690
+	trigger = {
+		year = 1550
+		OR = {
+			religion = hussite
+			religion = lollard
+		}
+	}
+	random = yes
+	name = "Embracing the Reformation"
+	desc = "The reformist, anti-clerical teachings of John Wycliffe that swept England in the 14th century were soon adopted by his students across Europe, and none more so than the Czech theologian Jan Hus, whose followers went on to lead the ultra-zealous militarist Hussite movement in his name. Though both of these proto-Reformed branches of Christianity were considered heretical in their day, their immediate impact was regional. However, by the mid-16th century the influential teachings of Wycliffe and Hus had planted the seeds of the Reformation right across Europe, inspiring the radical theologians Martin Luther and John Calvin to preach not only root-and-branch reform of the Church, but advocate separation from Rome itself. As the two new Protestant and Reformed denominations became widespread, the older strands of Lollard and Hussite thought gradually wove into them."
+
+	action_a = {
+		name = "We shall walk with Luther" # We shall walk with Luther
+		command = { type = religion which = protestant }
+		command = { type = conversion which = -2 }
+	}
+	action_b = {
+		name = "Adhere to the teachings of Calvin" # Adhere to the teachings of Calvin
+		command = { type = religion which = reformed }
+		command = { type = conversion which = -2 }
+	}
+	action_c = {
+		name = "Return to the fold" # Return to the fold
+		command = { type = religion which = catholic }
+		command = { type = conversion which = -2 }
+		command = { type = stability value = -1 }
+	}
+	action_d = {
+		name = "Stay the course" # Stay the course
+		command = { type = stability value = 1 }
+	}
+}
+
+#########################################################################
+# Eastern influence in South East Asia
+#########################################################################
+event = { 
+	id = 691
+	trigger = {
+		religion = pagan
+		region = Indonesia
+	}
+	random = yes
+	name = "Eastern influence in South East Asia"
+	desc = "During the 14th and 15th centuries Indonesian rulers converted from their native animist beliefs to the various encroaching Eastern faiths spreading from India and Indochina. Whilst the thalassocratic kingdoms of Java and Sumatra converted fairly quickly, many then gradually adopted Islam spreading from Malaya. In contrast, the rulers of the island of Sulawesi (or Celebes) were much more resistant to foreign influence, with Sultan Murhum of Buton embracing Islam in the 1490s, and the rulers of Gowa and Bone later doing so in the early 1600s."
+
+	action_a = {
+		name = "Embrace the Hindu faith" # Embrace the Hindu faith
+		command = { type = religion which = hinduism }
+		command = { type = conversion which = -2 }
+	}
+	action_b = {
+		name = "Embrace the Buddhist faith" # Embrace the Buddhist faith
+		command = { type = religion which = buddhism }
+		command = { type = conversion which = -2 }
+	}
+#	action_c = {
+#		name = "EVENT_A50_C" # Embrace the Jain faith
+#		command = { type = religion which = jain }
+#		command = { type = conversion which = -2 }
+#	}
+	action_d = {
+		name = "Keep the faith of our ancestors" # Keep the faith of our ancestors
+		command = { type = stability value = 1 }
+	}
+}

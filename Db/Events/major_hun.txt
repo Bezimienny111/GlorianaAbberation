@@ -1,0 +1,418 @@
+#####Hungary Major Events######
+#By Joakim 'Greven' Bergqwist #
+#   Håvard Moe                #
+#   Tom 'Demetrios' Rinschler #
+###############################
+
+#Religious Rebellion#
+event = {
+
+	id = 3641
+	random = no
+	country = HUN
+	name = "EVENTNAME3641"
+	desc = "EVENTHIST3641"
+	style = 3
+
+	date = { day = 1 month = january year = 1604 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1605 }
+
+	action_a ={				#Fight for the cause of the Reformed Faith#
+		name = "ACTIONNAME3641A"
+		command = { type = revoltrisk which = 36 value = 6 }
+		command = { type = religion which = reformed }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = SWE value = 100 }
+		command = { type = relation which = LIT value = 100 }
+		command = { type = relation which = PRU value = 100 }
+		command = { type = relation which = DAN value = 100 }
+		command = { type = relation which = HOL value = 100 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={				#Fight for the cause of the Catholic Faith#
+		name = "ACTIONNAME3641B"
+		command = { type = revoltrisk which = 36 value = 6 }
+		command = { type = religion which = counterreform }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = PAP value = 100 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = SWE value = -100 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = PRU value = -100 }
+		command = { type = relation which = DAN value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = stability value = -2 }
+	}
+}
+
+# The Council of Florence and the Union of the Churches
+event = { 
+	id = 3835
+	
+	# Triggered by BYZ 3833
+	
+	random = no
+	country = HUN
+	name = "EVENTNAME3835"
+	desc = "EVENTHIST3835"
+	style = 1 
+	
+	action_a ={ #Gain CB on Ottomans#
+		name = "ACTIONNAME3835A"
+		command = { type = casusbelli which = TUR value = 60 }
+	}
+}
+
+# The Death of King Vaclav IV
+event = {
+	id = 3851		# Triggered from BOH3801
+	random = no
+	country = HUN
+	name = "EVENTNAME3851"
+	desc = "EVENTHIST3851"
+	style = 1
+
+	action_a ={ # They reject!
+		name = "ACTIONNAME3851A"
+		command = { type = casusbelli which = BOH value = 215 }
+	}
+}
+
+
+
+
+#The Death of King Lajos of Hungary#
+event = {
+
+	id = 3639		#Previous 1526 Hungarian (Siebenburgen exists) event#
+	trigger = {
+		exists = HAB
+		exists = TUR
+		owned = { province = 324 data = HUN }
+		owned = { province = 325 data = HUN }
+		NOT = {
+			control = { province = 324 data = HUN }
+			control = { province = 325 data = HUN }
+		}
+	}
+	random = no
+	country = HUN
+	name = "EVENTNAME3639"
+	desc = "EVENTHIST3184"	#changed the description, more suitable imo :)#
+	style = "3639"
+
+	date = { day = 13 month = march year = 1516 }	#earlier startdate-they year Lajos took the throne#
+	offset = 5
+	deathdate = { day = 21 month = july year = 1540 }	#The death of Janos I Zapolya# 
+
+	action_a ={				#Elect Ferdinand Habsburg of Austria#
+		name = "ACTIONNAME3639B"
+		command = { type = sleepmonarch which = 06267 }#no effect, but i will leave it here.
+		command = { type = sleepmonarch which = 06284 }
+		command = { type = sleepmonarch which = 06285 }
+		command = { type = sleepmonarch which = 06286 }
+		command = { type = sleepmonarch which = 06287 }
+		command = { type = sleepmonarch which = 06288 }
+		command = { type = sleepmonarch which = 06289 }
+		command = { type = sleepmonarch which = 06290 }
+		command = { type = sleepmonarch which = 06291 }
+		command = { type = sleepmonarch which = 06292 }
+		command = { type = sleepmonarch which = 06293 }
+		command = { type = sleepmonarch which = 06294 }
+		command = { type = sleepmonarch which = 06295 }
+		command = { type = sleepmonarch which = 06296 }
+		command = { type = sleepmonarch which = 06297 }
+		command = { type = sleepmonarch which = 06298 }
+		command = { type = wakemonarch which = 06268 }
+		command = { type = wakemonarch which = 06269 }
+		command = { type = wakemonarch which = 06270 }
+		command = { type = wakemonarch which = 06271 }
+		command = { type = wakemonarch which = 06272 }
+		command = { type = wakemonarch which = 06273 }
+		command = { type = wakemonarch which = 06274 }
+		command = { type = wakemonarch which = 06275 }
+		command = { type = wakemonarch which = 06276 }
+		command = { type = wakemonarch which = 06277 }
+		command = { type = wakemonarch which = 06278 }
+		command = { type = wakemonarch which = 06279 }
+		command = { type = wakemonarch which = 06280 }
+		command = { type = cedeprovince which = HAB value = 314 } # Greater Austria, Bohemia, Slovakia and Royal Hungary
+		command = { type = cedeprovince which = HAB value = 315 }
+		command = { type = cedeprovince which = HAB value = 316 }
+		command = { type = cedeprovince which = HAB value = 326 }
+		command = { type = cedeprovince which = HAB value = 327 }
+		command = { type = cedeprovince which = HAB value = 328 }
+		command = { type = cedeprovince which = HAB value = 329 }
+		command = { type = cedeprovince which = HAB value = 330 }
+		command = { type = cedeprovince which = HAB value = 350 }
+		command = { type = cedeprovince which = HAB value = 352 }
+		command = { type = cedeprovince which = HAB value = 367 }
+		command = { type = cedeprovince which = HAB value = 368 }
+		command = { type = cedeprovince which = HAB value = 369 }
+		command = { type = cedeprovince which = HAB value = 371 }
+		command = { type = cedeprovince which = TUR value = 317 } # Bosnia, Serbia, Croatia, Romania and Hungary
+		command = { type = cedeprovince which = TUR value = 318 }
+		command = { type = cedeprovince which = TUR value = 319 }
+		command = { type = cedeprovince which = TUR value = 322 }
+		command = { type = cedeprovince which = TUR value = 323 }
+		command = { type = cedeprovince which = TUR value = 324 }
+		command = { type = cedeprovince which = TUR value = 353 }
+		command = { type = cedeprovince which = TUR value = 354 }
+		command = { type = cedeprovince which = TUR value = 355 }
+		command = { type = cedeprovince which = TUR value = 362 }
+		command = { type = cedeprovince which = TUR value = 363 }
+		command = { type = cedeprovince which = TUR value = 364 }
+		command = { type = cedeprovince which = TUR value = 365 }
+		command = { type = cedeprovince which = TUR value = 366 }
+		command = { type = trigger which = 3645 }
+		command = { type = trigger which = 3185 }
+	}
+
+	action_b ={
+		name = "ACTIONNAME3639A"
+		command = { type = relation which = HAB value = -200 }
+		command = { type = desertion which = -1 value = 15000 }
+		command = { type = desertion which = -4 value = 10000 }
+		command = { type = desertion which = -4 value = 10000 }
+		command = { type = desertion which = -4 value = 5000 }
+		command = { type = desertion which = -4 value = 5000 }
+		command = { type = stability value = -3 }
+	}
+}
+
+#The Habsburg Inheritance of Hungary#	#Habsburg#
+event = {
+
+	id = 3185			#Triggered by HUN3639#
+	random = no
+	country = HAB
+	name = "EVENTNAME3185"
+	desc = "EVENTHIST3185"
+	style = 2
+
+	action_a ={
+		name = "ACTIONNAME3185A"
+		command = { type = flagname which = EMP }
+		command = { type = add_countryculture which = magyar }
+		command = { type = add_countryculture which = slovak }
+		command = { type = addcore_claim which = 316 } # Hungary (kingdom)
+		command = { type = addcore_claim which = 317 }
+		command = { type = addcore_claim which = 323 }
+		command = { type = addcore_claim which = 324 }
+		command = { type = addcore_claim which = 325 }
+		command = { type = addcore_claim which = 326 }
+		command = { type = addcore_claim which = 352 }
+		command = { type = addcore_claim which = 353 }
+		command = { type = addcore_claim which = 354 }
+		command = { type = addcore_claim which = 364 } # Croatia (kingdom)
+		command = { type = addcore_claim which = 365 }
+		command = { type = addcore_claim which = 366 }
+		command = { type = domestic which = CENTRALIZATION value = -3 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = stability value = 3 }
+	}
+}
+
+#The Habsburg Inheritance of Hungary#		#TUR#
+event = {
+
+	id = 3645				#Triggered by HUN3639#
+	random = no
+	country = TUR
+	name = "EVENTNAME3185"
+	desc = "EVENTHIST3639"
+	style = 2
+
+	action_a ={				#Magnificient!#
+		name = "ACTIONNAME3184A"	#gotta love those vague action names ;)#
+		command = { type = inherit which = HUN }
+		command = { type = stability value = 3 }	#well, random goodie command#
+	      command = { type = independence which = SIE }
+		command = { type = trigger which = 3644 }
+	}
+}
+
+#The Death of King Lajos of Hungary#		#TUR#
+event = {
+
+	id = 3644			
+	random = no
+	country = TUR
+	name = "EVENTNAME3639"
+	desc = "EVENTHIST3639"
+	style = 2
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME3744A"
+		command = { type = cedeprovince which = SIE value = 317 }	#Ruthenia. I am not sure what to do with Maros#
+		command = { type = trigger which = 3640 }
+	}
+}
+
+#The Habsburg Inheritance of Hungary#	#Only Heir#
+event = {
+
+	id = 3184
+	trigger = {
+				exists = HUN
+		NOT = {
+			event  = 3639
+			}
+		}
+	random = no
+	country = HAB
+	name = "EVENTNAME3098"
+	desc = "EVENTHIST3098"
+	style = 2
+
+	action_a ={
+		name = "ACTIONNAME3185A"
+		command = { type = flagname which = EMP }
+		command = { type = inherit which = HUN }
+		command = { type = inherit which = CRO }
+		command = { type = add_countryculture which = magyar }
+		command = { type = add_countryculture which = slovak }
+		command = { type = addcore_national which = 316 } # Hungary (kingdom)
+		command = { type = addcore_national which = 317 }
+		command = { type = addcore_national which = 323 }
+		command = { type = addcore_national which = 324 }
+		command = { type = addcore_national which = 325 }
+		command = { type = addcore_national which = 326 }
+		command = { type = addcore_national which = 352 }
+		command = { type = addcore_national which = 353 }
+		command = { type = addcore_national which = 354 }
+		command = { type = addcore_national which = 364 } # Croatia (kingdom)
+		command = { type = addcore_national which = 365 }
+		command = { type = addcore_national which = 366 }
+		command = { type = domestic which = CENTRALIZATION value = -3 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = stability value = 3 }
+	}
+}
+
+#The Death of King Lajos of Hungary#		#SIE#
+event = {
+	id = 3640
+	random = no
+	country = SIE
+	name = "EVENTNAME3639"
+	desc = "EVENTHIST3639"
+	style = 2
+	action_a = { 			#Ok#
+		name = "ACTIONNAME3744A"
+		command = { type = addcore_national which = 317 }
+	}
+}
+
+# The Transylvanian Peasant Revolt #
+event = {
+
+	id = 5300
+	trigger = {
+		owned = { province = 323 data = HUN }
+		NOT = {
+			exists = SIE
+		}
+	}
+	random = no
+	country = HUN
+	name = "EVENTNAME5300"
+	desc = "EVENTHIST5300"
+
+	date = { day = 1 month = january year = 1437 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1438 }
+
+	action_a ={				#Crush the rebels#
+		name = "ACTIONNAME5300A"
+		command = { type = revolt which = 323 }
+		command = { type = revolt which = 323 }
+		command = { type = revolt which = 323 }
+		command = { type = revolt which = 324 }
+		command = { type = revolt which = 324 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={				#Make concessions#
+		name = "ACTIONNAME5300B"
+		command = { type = revolt which = 325 }
+		command = { type = revolt which = 326 }
+		command = { type = revoltrisk which = 48 value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = treasury value = -100 }
+		command = { type = stability value = -3 }
+		command = { type = sleepevent which = 5301 }
+	}
+}
+
+# The Revolt of György Dózsa #
+event = {
+
+	id = 5301
+	trigger = {
+		event = 5300
+		owned = { province = 323 data = HUN }
+		NOT = {
+			exists = SIE
+		}
+	}
+	random = no
+	country = HUN
+	name = "EVENTNAME5301"
+	desc = "EVENTHIST5301"
+
+	style = "5301"
+
+	date = { day = 1 month = january year = 1512 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1514 }
+
+	action_a ={				#Crush the rebels#
+		name = "ACTIONNAME5301A"
+		command = { type = revolt which = 316 }
+		command = { type = revolt which = 326 }
+		command = { type = revolt which = 323 }
+		command = { type = revolt which = 323 }
+		command = { type = revolt which = 354 }
+		command = { type = revolt which = 354 }
+		command = { type = revolt which = 354 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={				#Make concessions#
+		name = "ACTIONNAME5301B"
+		command = { type = revolt which = 325 }
+		command = { type = revolt which = 353 }
+		command = { type = revoltrisk which = 48 value = 5 }
+		command = { type = heretic which = -1 }
+		command = { type = domestic which = ARISTOCRACY value = -4 }
+		command = { type = domestic which = SERFDOM value = -4 }
+		command = { type = treasury value = -200 }
+		command = { type = stability value = -3 }
+	}
+
+	action_c ={				#Give them their lands#
+		name = "ACTIONNAME5301C"
+		command = { type = free which = SIE }
+		command = { type = removecore_national which = 323 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = vp value = -50 }
+		command = { type = stability value = -1 }
+	}
+}

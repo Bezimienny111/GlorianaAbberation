@@ -1,0 +1,83 @@
+#####Venice Major Events######
+#By Joakim 'Greven' Bergqwist#
+##############################
+
+#The Veneto-Turkish Conflict#
+event = {
+
+	id = 3637					#Triggered by TUR3359#
+	random = no
+	country = VEN
+	name = "EVENTNAME3637"
+	desc = "EVENTHIST3637"
+	style = 2
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME3637A"
+		command = { type = casusbelli which = TUR value = 120 }
+		command = { type = stability value = 1 }
+		command = { type = diplomats value = 5 }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = CAV which = -2 value = 500 }
+		command = { type = ART which = -2 value = 20 }
+		command = { type = galleys which = -2 value = 60 }
+	}
+}
+#The Veneto-Turkish Conflict#
+event = {
+
+	id = 3715					#Triggered by TUR3359#
+	random = no
+	country = VEN
+	name = "EVENTNAME3715"
+	desc = "EVENTHIST3715"
+	style = 2
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME3715A"
+		command = { type = stability value = 1 }
+		command = { type = addcore_claim which = 744 } # Alexandria
+		command = { type = merchants value = 6 }
+		command = { type = treasury value = 300 }
+		command = { type = relation which = KNI value = 100 }
+		command = { type = relation which = PAP value = 100 }
+		command = { type = relation which = FLO value = 100 }
+	}
+}
+
+#The Two Queens#
+event = {
+	id = 3844
+	
+	# Triggered by CYP 3842
+	
+	random = no
+	country = VEN
+	name = "EVENTNAME3844"
+	desc = "EVENTHIST3844"
+	style = 1
+
+	action_a ={	#Caterina Cornero becomes Queen of Cyprus#
+		name = "ACTIONNAME3844A"
+		command = { type = vassal which = CYP }
+		command = { type = addcore_claim which = 484 } # Cyprus
+	}
+}
+#The Inheritance of Cyprus#
+event = {
+	id = 3845
+	
+	# Triggered by CYP 3843
+	
+	random = no
+	country = VEN
+	name = "EVENTNAME3845"
+	desc = "EVENTHIST3845"
+	style = 1
+
+	action_a ={	#Caterina Cornero offers Cyprus to Venice#
+		name = "ACTIONNAME3845A"
+		command = { type = inherit which = CYP }
+		command = { type = addcore_national which = 484 } # Cyprus
+	}
+}

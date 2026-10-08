@@ -1,0 +1,29 @@
+#####Friesland Major Events####
+# By Kristof 'BiB' Haekens    #
+###############################
+
+# The Dutch Republic
+event = {
+	id = 3808
+	
+	# Triggered by HOL 3900
+	
+	random = no
+	country = FRI
+	name = "EVENTNAME3808"
+	desc = "EVENTHIST3808"
+	
+	action_a = { # Join
+		name = "ACTIONNAME3808A"
+		trigger = { 
+			ai = yes
+		}
+		command = { type = trigger which = 3809 }
+	}
+
+	action_b = { # Stay out
+		name = "ACTIONNAME3808B"
+		command = { type = relation which = HOL value = -100 }
+		command = { type = stability value = -2 }
+	}
+}

@@ -1,0 +1,99 @@
+## Major Events for Cyprus
+#
+# Idea and text: Demetrios
+# Scripting: Havard & Doomdark
+#
+
+# Charlotte's Web #
+event = {
+	id = 3841
+	random = no
+	country = CYP
+	name = "EVENTNAME3841"
+	desc = "EVENTHIST3841"
+	
+	date = { day = 26 month = september year = 1460 }
+	offset = 0
+
+	action_a ={	#Proclaim King Jacques II!#
+		name = "ACTIONNAME3841A"
+		command = { type = sleepmonarch which = 04872 } # Charlotte
+		command = { type = stability value = 1 }
+		command = { type = relation which = SAV value = -100 }
+		command = { type = domestic which = centralization value = -1 }
+	}
+
+	action_b ={	#Queen Charlotte shall remain our monarch!#
+		name = "ACTIONNAME3841B"
+		command = { type = sleepevent which = 3842 }
+		command = { type = sleepevent which = 3843 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = SAV value = 200 }
+		command = { type = domestic which = centralization value = 2 }
+	}
+}
+          
+#The Two Queens#
+event = {
+	id = 3842
+	random = no
+	country = CYP
+	name = "EVENTNAME3842"
+	desc = "EVENTHIST3842"
+	
+	date = { day = 26 month = august year = 1474 }
+	offset = 0
+
+	action_a ={	#Queen Caterina and the Venetians#
+		name = "ACTIONNAME3842A"
+		command = { type = stability value = 1 }
+		command = { type = relation which = VEN value = 200 }
+		command = { type = relation which = SAV value = -100 }
+		command = { type = domestic which = innovative value = -1 }
+		command = { type = trade value = 200 }
+		command = { type = trigger which = 3844 }
+	}
+
+	action_b ={	#Queen Charlotte and her Savoyard relatives#
+		name = "ACTIONNAME3842B"
+		command = { type = stability value = -1 }
+		command = { type = relation which = VEN value = -100 }
+		command = { type = relation which = SAV value = 200 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = sleepmonarch which = 04875 }
+		command = { type = wakemonarch which = 04872 }
+		command = { type = sleepevent which = 3843 }
+	}
+}
+
+#The Inheritance of Cyprus#
+event = {
+	id = 3843
+	trigger = {
+		vassal   = { country = VEN country = CYP }
+	}
+
+	random = no
+	country = CYP
+	name = "EVENTNAME3843"
+	desc = "EVENTHIST3843"
+	
+	date = { day = 26 month = february year = 1489 }
+	offset = 0
+
+	action_a = {	#Submit to Venice#
+		name = "ACTIONNAME3843A"
+		trigger = {
+			ai = yes
+		}
+		command = { type = trigger which = 3845 } # Venetian inheritance
+	}
+
+	action_b = {	#No!#
+		name = "ACTIONNAME3843B"
+		command = { type = breakvassal which = VEN }
+		command = { type = relation which = VEN value = -200 }
+		command = { type = domestic which = centralization value = 1 }
+	}
+}
+

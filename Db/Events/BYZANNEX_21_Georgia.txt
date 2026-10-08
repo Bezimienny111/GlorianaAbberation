@@ -1,0 +1,249 @@
+#-----------------------------------------------------------------------------
+# Georgian Events
+
+#A troubled Georgia calls on Byzantium for help
+event = {
+	id = 3001360
+	trigger = {
+		event = 3001359
+		atwar = no
+		NOT = { event = 3001361 }
+		OR = {
+			vassal = { country = AKK country = GEO }
+			vassal = { country = TUR country = GEO }
+			vassal = { country = DUL country = GEO }
+			vassal = { country = QAR country = GEO }
+			vassal = { country = IRA country = GEO }
+			vassal = { country = MAM country = GEO }
+			vassal = { country = PER country = GEO }
+			vassal = { country = CAN country = GEO }
+			vassal = { country = CRI country = GEO }
+			vassal = { country = KAR country = GEO }
+			vassal = { country = GEN country = GEO }
+			vassal = { country = UZB country = GEO }
+			vassal = { country = MOG country = GEO }
+			vassal = { country = TIM country = GEO }
+			vassal = { country = ENG country = GEO }
+			vassal = { country = SPA country = GEO }
+			vassal = { country = FRA country = GEO }
+			vassal = { country = ABB country = GEO }
+			vassal = { country = ARL country = GEO }
+			vassal = { country = AYD country = GEO }
+			vassal = { country = BAR country = GEO }
+			vassal = { country = CAL country = GEO }
+			vassal = { country = CHB country = GEO }
+			vassal = { country = ERT country = GEO }
+			vassal = { country = INJ country = GEO }
+			vassal = { country = JLY country = GEO }
+			vassal = { country = KRT country = GEO }
+			vassal = { country = MHR country = GEO }
+			vassal = { country = MUZ country = GEO }
+			vassal = { country = SLD country = GEO }
+		}
+	}
+	random = NO
+	country = GEO
+	name = "Imperial influence in the Caucasus"
+	desc = "Georgia has found itself dependent on foreign powers. Now that Imperial influence has grown, an Orthodox protector presents itself. This protection, however, will surely have a price."
+	date = { day = 1 month = january year = 1450 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = { # Let us call for help whatever it costs.
+		name = "If we will be slaves, let us have better masters"
+		command = { type = stability value = 2 }
+		command = { type = treasury value = -200 }
+		command = { type = breakvassal which = AKK }
+		command = { type = breakvassal which = TUR }
+		command = { type = breakvassal which = DUL }
+		command = { type = breakvassal which = QAR }
+		command = { type = breakvassal which = IRA }
+		command = { type = breakvassal which = MAM }
+		command = { type = breakvassal which = PER }
+		command = { type = breakvassal which = CAN }
+		command = { type = breakvassal which = CRI }
+		command = { type = breakvassal which = KAR }
+		command = { type = breakvassal which = GEN }
+		command = { type = breakvassal which = UZB }
+		command = { type = breakvassal which = MOG }
+		command = { type = breakvassal which = TIM }
+		command = { type = breakvassal which = ENG }
+		command = { type = breakvassal which = SPA }
+		command = { type = breakvassal which = FRA }
+		command = { type = breakvassal which = ABB }
+		command = { type = breakvassal which = ARL }
+		command = { type = breakvassal which = AYD }
+		command = { type = breakvassal which = BAR }
+		command = { type = breakvassal which = CAL }
+		command = { type = breakvassal which = CHB }
+		command = { type = breakvassal which = ERT }
+		command = { type = breakvassal which = INJ }
+		command = { type = breakvassal which = JLY }
+		command = { type = breakvassal which = KRT }
+		command = { type = breakvassal which = MHR }
+		command = { type = breakvassal which = MUZ }
+		command = { type = breakvassal which = SLD }
+		command = { type = trigger which = 3001362 }
+	}
+	action_b = { # Refuse to give our precious independence.
+		name = "Let us keep the evil we know"
+		command = { type = stability value = -1 }
+	}
+}
+
+#A troubled Georgia calls on Byzantium for help
+event = {
+	id = 3001361
+	trigger = {
+		exists = BYZ
+		atwar = yes
+		NOT = {
+			event = 3001360
+			war = { country = BYZ country = GEO }
+		}
+		OR = {
+			vassal = { country = RUS country = GEO }
+			vassal = { country = TRE country = GEO }
+			alliance = { country = RUS country = GEO }
+			alliance = { country = TRE country = GEO }
+			alliance = { country = AKK country = GEO }
+			alliance = { country = TUR country = GEO }
+			alliance = { country = DUL country = GEO }
+			alliance = { country = QAR country = GEO }
+			alliance = { country = IRA country = GEO }
+			alliance = { country = MAM country = GEO }
+			alliance = { country = PER country = GEO }
+			alliance = { country = CAN country = GEO }
+			alliance = { country = CRI country = GEO }
+			alliance = { country = KAR country = GEO }
+			alliance = { country = GEN country = GEO }
+			alliance = { country = UZB country = GEO }
+			alliance = { country = MOG country = GEO }
+			alliance = { country = TIM country = GEO }
+			alliance = { country = ENG country = GEO }
+			alliance = { country = SPA country = GEO }
+			alliance = { country = FRA country = GEO }
+			alliance = { country = MOL country = GEO }
+			alliance = { country = WAL country = GEO }
+			alliance = { country = ALB country = GEO }
+			alliance = { country = ARA country = GEO }
+			alliance = { country = ABB country = GEO }
+			alliance = { country = CAL country = GEO }
+			alliance = { country = CHB country = GEO }
+			alliance = { country = ERT country = GEO }
+		}
+	}
+	random = NO
+	country = GEO
+	name = "An appeal to Constantinople"
+	desc = "Constantly embroiled in many wars, Georgia was sometimes left alone. Now Imperial influence has grown, and Byzantium is an obvious protector. This protection, however, will surely have a price."
+	style = 2
+	date = { day = 1 month = january year = 1450 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = { # Let us call for help whatever it costs.
+		name = "Let us call for help whatever it costs."
+		command = { type = stability value = 2 }
+		command = { type = treasury value = -200 }
+		command = { type = breakvassal which = AKK }
+		command = { type = breakvassal which = TUR }
+		command = { type = breakvassal which = DUL }
+		command = { type = breakvassal which = QAR }
+		command = { type = breakvassal which = IRA }
+		command = { type = breakvassal which = MAM }
+		command = { type = breakvassal which = PER }
+		command = { type = breakvassal which = CAN }
+		command = { type = breakvassal which = CRI }
+		command = { type = breakvassal which = KAR }
+		command = { type = breakvassal which = GEN }
+		command = { type = breakvassal which = UZB }
+		command = { type = breakvassal which = MOG }
+		command = { type = breakvassal which = TIM }
+		command = { type = breakvassal which = ENG }
+		command = { type = breakvassal which = SPA }
+		command = { type = breakvassal which = FRA }
+		command = { type = trigger which = 3001362 }
+	}
+	action_b = { # Refuse to give our precious independence.
+		name = "Refuse to give our precious independence."
+		command = { type = stability value = -1 }
+	}
+}
+
+#Byzantium's reply to Georgia
+event = {
+	id = 3001362
+	random = NO
+	country = BYZ
+	name = "An appeal from Georgia"
+	desc = "Georgia has sent us a call for help. The generals think the region is more trouble than it's worth, but the Patriarch is mindful that as an autocephalous church, the Georgians could easily become schismatic. This may be an excellent opportunity to return them to the fold."
+
+	action_a = { # Demand concessions
+		name = "Demand the Georgians return to proper Orthodoxy"
+		trigger = {
+			religion = orthodox
+			GEO = {
+				NOT = {
+					religion = orthodox
+				}
+			}
+		}
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 200 }
+		command = { type = trigger which = 3001363 }
+	}
+	action_b = { # Take the money and run
+		name = "Thank the envoys for their time"
+		command = { type = treasury value = 200 }
+	}
+	action_c = { # Take what you can get
+		name = "We shall not refuse them succor"
+		command = { type = stability value = -1 }
+		command = { type = vassal which = GEO }
+		command = { type = dynastic which = GEO }
+		command = { type = alliance which = GEO }
+		command = { type = relation which = GEO value = 300 }
+	}
+}
+
+#Georgia's trade-off
+event = {
+	id = 3001363
+	random = NO
+	country = GEO
+	name = "Byzantium's ultimatum"
+	desc = "In typical fashion, the Empire refuses help unless we bow to their heresies. Surely our freedom is not worth our souls."
+
+	action_a = { # Sigh
+		name = "Then we shall fight alone"
+		command = { type = relation which = BYZ value = -300 }
+	}
+	action_b = { # Take what you can get
+		name = "The hell you say"
+		command = { type = religion which = orthodox }
+		command = { type = alliance which = BYZ }
+		command = { type = stability value = -1 }
+		command = { type = trigger which = 3001364 }
+	}
+}
+
+#Georgia submits
+event = {
+	id = 3001364
+	random = NO
+	country = BYZ
+	name = "Georgia has submitted to our Patriarch"
+	desc = "A nation's souls have been saved by your actions and our nation rejoices."
+	style = 2
+
+	action_a = {
+		name = "Hallelujah!"
+		command = { type = stability value = 1 }
+		command = { type = vassal which = GEO }
+		command = { type = dynastic which = GEO }
+		command = { type = alliance which = GEO }
+		command = { type = relation which = GEO value = 300 }
+		#command = { type = vp value = 100 }
+	}
+}

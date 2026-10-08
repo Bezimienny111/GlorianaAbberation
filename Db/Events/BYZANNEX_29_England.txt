@@ -1,0 +1,56 @@
+#-----------------------------------------------------------------------------
+# English Events
+
+#Gibbon flavor event by Lambert Simnel
+event = {
+	id = 3001416
+	trigger = {
+		domestic = { type = offensive value = 6 }
+		NOT = { domestic = { type = serfdom value = 6 } }
+	}
+	random = NO
+	country = BYZ
+	name = "Gibbon's History of the Roman Empire"
+	desc = "Edward Gibbon presents his opus, A History of the Roman Empire, to the Imperial court. While there are choice words for both Basilissas Theodora and Irene, his review of the current dynasty is utterly glowing, and he is retained to be the Imperial archivist."
+	date = { day = 8 month = may year = 1788 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Ok"
+		command = { type = relation which = ENG value = 100 }
+		command = { type = stability value = 1 }
+		command = { type = relation which = -1 value = 25 }
+		command = { type = relation which = -1 value = 25 }
+		command = { type = relation which = -1 value = 25 }
+		command = { type = relation which = -1 value = 25 }
+	}
+}
+
+#Gibbon flavor event based on idea by Driftwood
+event = {
+	id = 3001417
+	trigger = {
+		OR = {
+			NOT = { domestic = { type = offensive value = 6 } }
+			domestic = { type = serfdom value = 6 }
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "Gibbon's History of the Roman Empire"
+	desc = "Edward Gibbon has published his opus, A History of the Roman Empire. Although the Imperial censors do their best to bowdlerize it, the virulance of his criticism of the Empire is an international embarassment."
+	date = { day = 8 month = may year = 1788 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Ok"
+		command = { type = relation which = ENG value = -200 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = -1 value = -50 }
+		command = { type = relation which = -1 value = -50 }
+		command = { type = relation which = -1 value = -50 }
+		command = { type = relation which = -1 value = -50 }
+	}
+}

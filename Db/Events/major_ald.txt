@@ -1,0 +1,127 @@
+#####Al-Djazaïr Major Events#####
+#By Joakim 'Greven' Bergqwist###
+################################
+
+#The Ottoman Vassalization of Al-Djazaïr#
+event = {
+
+	id = 3651
+	trigger = {
+			exists = TUR
+			leader = 08592
+		}
+	random = no
+	country = ALD
+	name = "EVENTNAME3651"
+	desc = "EVENTHIST3651"
+
+	date = { day = 1 month = january year = 1520 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1524 }
+
+	action_a ={					#Accept the Protection of the Grand Sultan#
+		name = "ACTIONNAME3651A"
+		command = { type = trigger which = 3372 }
+		command = { type = dynastic which = TUR }
+		command = { type = treasury value = 500 }
+		command = { type = relation which = TUR value = 100 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={					#Decline the Sultan's Offer#
+		name = "ACTIONNAME3651B"
+		command = { type = sleepleader which = 08592 } # Won't do anything! Leader is alive!
+		command = { type = relation which = TUR value = -100 }
+		command = { type = galleys which = -1 value = 30 }
+		command = { type = transports which = -3 value = 5 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#Moor Refugees from Al-Andalus#
+event = {
+
+	id = 3652					#Triggered by SPA3150#
+	random = no
+	country = ALD
+	name = "EVENTNAME3652"
+	desc = "EVENTHIST3652"
+
+	action_a ={					#Al-Andalus has fallen#
+		name = "ACTIONNAME3652A"
+		command = { type = population which = -1 value = 5000 }
+		command = { type = population which = -4 value = 5000 }
+		command = { type = relation which = GRA value = 150 }
+		command = { type = relation which = MOR value = 100 }
+		command = { type = relation which = FEZ value = 100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = trade value = 800 }
+		command = { type = land value = 800 }
+		command = { type = treasury value = 500 }
+		command = { type = inflation value = -2 }
+	}
+}
+
+#Moor Exodus from Al-Andalus#
+event = {
+
+	id = 3729					#Triggered by SPA3150#
+	random = no
+	country = ALD
+	name = "EVENTNAME3729"
+	desc = "EVENTHIST3729"
+
+	action_a ={					#This means Holy War#
+		name = "ACTIONNAME3729A"
+		command = { type = population which = -1 value = 10000 }
+		command = { type = population which = -4 value = 10000 }
+		command = { type = relation which = GRA value = 180 }
+		command = { type = relation which = MOR value = 150 }
+		command = { type = relation which = FEZ value = 150 }
+		command = { type = relation which = SPA value = -150 }
+		command = { type = trade value = 1200 }
+		command = { type = land value = 1200 }
+		command = { type = treasury value = 700 }
+		command = { type = stability value = 1 }
+		command = { type = casusbelli which = SPA value = 36 }
+		command = { type = dynastic which = MOR }
+		command = { type = dynastic which = GRA }
+	}
+
+	action_b ={					#Unfortenantely our hands are bound#
+		name = "ACTIONNAME3729B"
+		command = { type = population which = -1 value = 10000 }
+		command = { type = population which = -4 value = 10000 }
+		command = { type = relation which = GRA value = -50 }
+		command = { type = relation which = MOR value = -50 }
+		command = { type = relation which = FEZ value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = trade value = 1200 }
+		command = { type = land value = 1200 }
+		command = { type = treasury value = 700 }
+		command = { type = stability value = -2 }
+		command = { type = inflation value = -3 }
+	}
+}
+
+#Morisque Refugees from Al-Andalus#
+event = {
+
+	id = 3653					#Triggered by SPA3167#
+	random = no
+	country = ALD
+	name = "EVENTNAME3653"
+	desc = "EVENTHIST3653"
+
+	action_a ={					#This is a Black Day for Islam!#
+		name = "ACTIONNAME3653A"
+		command = { type = population which = -1 value = 15000 }
+		command = { type = population which = -4 value = 10000 }
+		command = { type = trade value = 1200 }
+		command = { type = land value = 1200 }
+		command = { type = merchants value = 6 }
+		command = { type = treasury value = 500 }
+		command = { type = stability value = -2 }
+		command = { type = inflation value = -1 }
+	}
+}

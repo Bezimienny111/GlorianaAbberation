@@ -1,0 +1,574 @@
+GLORIANA 1337 PROJECT v1.09
+----------------------------------------------------------------
+
+v1.00
+
+Merged Gabon's FTG_Timur v1.12 and my Gloriana v1.05
+Multitude of small tweaks to make the two mods mesh.
+For missing flag/shieldsets - Created Flags and Shieldsets for Rimini (RIM), Sieradz (SRZ), Tianwan (TIA), Henan (HEN), Zhejang (ZHE), Fujian (FUJ), Guangdong (GUA), Hsia (HSI), Yunnan (YUN), Shaanxi (SXI), Shanxi (SXA), Yuan (YUA), Liaotung (LIA).
+Created missing flag for Urbino (URB).
+Gave Blue Horde LightBlue colour in political map.
+Added early Danish (DAN) Monarchs.
+Added shield and flag change commands when Lithuania goes Christian.
+Added early Norwegian (NOR) Monarchs.
+For missing flag/shieldsets - Created Placeholder Flags and Shieldsets for Suldus (SLD), Jalayir (JLY), Arlat (ARL), Barlas (BAR) and Hazaraspid (HAZ).
+BUGFIX: Deleted Sibir (SIB), Gondwana (GON), Siebenburger (SIE), Moldova (MOL) from list of selectable nations (They don't have a country at start).
+Missing flag/shieldset - Created Flag and shieldset for Ko'woj (KOW).
+Added Monarch files for Barlas (BAR), Hokucho (HOK), Nancho (NAN), Blue Horde (BHR).
+Added early Bavarian (BAY), Connaught (CON), Leinster (LEI), Irish Munster (MST) Monarchs.
+Added early Brittany (BRI), Armagnac (AMG), Gelre (GEL) Monarchs.
+Added non-revolter Timurids to revolt file
+Created LINKING.TXT event file for events linking 1337 with Gloriana.
+Added Formation of the Timurids event chain to LINKING.TXT. Timurids can form from Barlas (or if Barlas does not exist, then independence from Chagatai).
+Added early Oldenburger (OLD) Monarchs (and some slight alterations as well).
+Added early Bremen (BRE), Baden (BAD), Brandenburgian (BRA), Bohemian (BOH) Monarchs.
+Added Monarch file for Moravia (MVA).
+Added Unifying Japan event chain to LINKING.TXT. Both Hokucho and Nancho can form Japan by eliminating or vassalising the other before 1392. Hokucho can auto-win if neither have done so by 1392.
+Added Golden Horde event chain to LINKING.TXT. When Tohktamysh is monarch of both White and Blue Horde, tag will change to Golden Horde (and inherit WHR). Also contains event to lead to breakup of the Golden Horde.
+Added Madness of Charles VI event chain to LINKING.TXT to set up the different control of France after Madness of Charles VI for Gloriana HYW setup.
+Altered the Polish Event "The Polish Inheritance of Masovia" to Inherit Masovia (MAS).
+Added Kalmar Union event chain to LINKING.TXT. Denmark can set up the Kalmar Union (vassalising Norway and/or Sweden). major_SWE.txt event startdate altered from 1419 to 1400 (End of Kalmar Union event).
+Added Early elections and Monarchs for Switzerland (HEL), Ragusa (RAG), Hanseatic League (HSA).
+Added the Polish (POL) Monarchs missing from monarch file that were needed for Timur Mod events.
+Added Monarch file for Sieradz (SRZ), Samogita (SAM).
+Added early Suzdal (SUZ) Monarchs.
+Added the Duchy of Athens (ATH) Monarchs missing from monarch file that were needed for Timur Mod events (with event edits).
+Florence (TOS) starting Monarch startdate altered.
+Added early Siena (PIS) Monarchs and altered existing Monarchs.
+Added Monarch file for Rimini (RIM), Verona (VER).
+Created 1337.TXT event file for events from 1337 to 1419.
+Added Galloway event chain to 1337.TXT for Edward Balliol's attempt on the Scottish Crown.
+Added event for Scotland in LINKING.TXT to possibly move their Capital to Edinburgh if they own Lothian.
+Various small alterations to Gloriana HYW events.
+Added Monarch file for Epirus (EPI).
+Made Timurids able to revolt between the years of Timur Lang.
+Made Despotate of Morea revoltable (added revolt.txt entry) from 1337 to 1400.
+Added event for Switzerland in LINKING.TXT to possibly move their Capital to Berne if they own Bern.
+Tweaked the trigger conditions a little on Lambert Simnall's dutchplayer events.
+Added early Bosnian (BOS) Monarchs.
+Added Monarch file for Bulgaria (BUL), Dobrudja (DOB), Aydinids (AYD).
+Added early Mamluk (MAM), Chinese (CHI) Monarchs.
+Added Monarch file for Yuan (YUA), Ming (MNG).
+Added Livonian Order (LIV) at start of game.
+Added early Livonian (LIV) Monarchs.
+Added event in 1337.TXT for Denmark to sell Estonia to Livonian Order. Altered the Danish event to sell Estonia to Teuton Knights.
+Transfered Teuton leader Everhard von Monheim to Livonian Order.
+Added early Swabian (SWA), Almohads (ALM) Monarchs.
+Added event chain in 1337.TXT for the Start of the Hundred Years War.
+Added event in 1337.TXT for the Assassination of Louis of Orleans.
+Added early Franconian (FRC) Monarchs.
+BUGFIX: Franconian monarch list was the same as Bishops of Wurzburg (THU), however stats, dates (and sometimes names) differed. Both lists now standardised the same.
+Added early Byzantine Palestine (PST), Romagna (ROM), Morea (SPR), Stettin (STT), Tarascan (TAR), Normandy (NRM), Champagne (CMG), Istria (IST), Crete (KRE) Monarchs.
+Added Conversion of Samogita event chain to 1337.TXT.
+Added Poland inheriting Sieradz event chain to 1337.TXT.
+BUGFIX: Altered Wallachian leaders ID's as conflict with Franconian (FRC) Monarchs.
+BUGFIX: Altered Karaman leaders ID's as conflict with Franconian (FRC) Monarchs.
+Added early Toulousian (TOU), Auvergne (AUV), Artois (ART), Anjou (ANJ), Provence (PRO), Bourbonnais (BOU), Picardie (PIC), Poitou (POI), Orleans (ORL) Monarchs.
+BUGFIX: Basra didn't have 'revolt = no' in revolt.txt. Culture, Group and Religion also Fixed.
+DB/DEFINES added to mod folder and altered OFFSETS to account for 1337 start.
+Slight alteration to the Treaty of Troyes events.
+BUGFIX: Support for Avignon and Pisan Catholism was still firing after Council of Constance (wrong ID event number in triggers). Now fixed.
+Added AI event for one of the Dutch tags to form Kingdom of the Netherlands (could have just deleted 'ai=no' from dutchplayer.txt events but hey-ho)
+Added early Altmark (ALT), Anhalt (ANH), Asturias (ASU), Bearn (BEA), Cornwall (CNW), Coimbra (COI), Corsica (COR), Kiev (KIE) Monarchs.
+Added Monarch file for Apulia (APU).
+Replaced Mecklemburg with Pommern-Stettin.
+Altered 'Louis of Orleans Assassinated' event for France to release Normandy and Orleans.
+Added event for Byzantium in 1337.TXT to set up the Despotate of Morea.
+Added some Sami leader names to the armynames.txt which will be used by Ume Sami, Kildin Sami and Davvi Sami.
+BUGFIX: Deleted Hedjaz (ARA), Provence (PRO), Hyderabad (HYD), Sindh (SIN) from list of selectable nations (They don't have a country at start).
+Deleted Sieradz (SRZ), White Horde (WHR), Galloway (GLL) from list of selectable nations (they get auto-annexed by event). Will put back in, when suitable later.
+Reintroduced Galloway (GLL) to list of selectable nations (They can survive by defeating Scotland, but it'll be tough).
+Added early Assam (ASS), Aztec Empire (AZT), Benin (BEN), Bengal (BGL), Burma (BRM), Chimu (CHM), Dai Viet (DAI) Monarchs.
+BUGFIX: A fair whack of countries in the countries.txt file were not using their country's assigned leadernames from leadernames.txt. Now fixed.
+
+----------------------------------------------------------------
+
+v1.01
+
+Mod is now FTG1.3 Compliant.
+Added in change of countryname to "United Kingdom" for ENG's Act of Union event.
+Added in change of countryname to "Poland-Lithuania" for POL union event with LIT.
+Added early Genoan (GEN) Monarchs.
+Added mid-game gap 'monarch' for Sardinia (SAR).
+Added AI Event chain in LINKING.TXT for early Persian tribal nations to submit to Timur.
+Added AI Event chain in LINKING.TXT for the Rise of the Sheep Clans after the Rise of Timur.
+Improved Monarch list for Pommern-Stettin (STT).
+Changed the Pommern (POM) Monarch list to Pommern-Wolgast line (was using Pommern-Stettin line monarchs).
+Added Later Monarchs to Chobanids (CHB), Injuids (INJ), Eretnids (ERT).
+Added Later filler Monarch for Candar (CAN), Dulkadir (DUL), Il-Khanate (ILK), Karaman (KAR), Kartids (KRT), Hazaraspids (HAZ), Miharabanids (MHR), Muzaffarids (MUZ), Ak Koyunlu (AKK), Qara Koyunlu (QAR), Golden Horde (STE), Sufids (SUF), Temurids (TEM), Teke (TEK).
+BUGFIX: Added Navaho (APA) to list of selectable nations at game start.
+Gave Siebenburger correct Shieldset and flag after FTG1.3 tag reallocation (SIE in 1.2 and this mod, TRA in 1.3)
+Added event in JEANNE.TXT for France to inherit Burgundian France if Burgundy does not exist.
+Added Early Monarchs for Siebenburger (SIE).
+Added dummy leader file for Siebenburger (SIE).
+Added Monarch file for Song (SNG), Tianwan (TIA), Han (DHN), Hsia (HSI), Yunan (YUN), Zhou (ZHO), Fujian (FUJ), Hunan (HNA).
+Added Event chains in 1337.TXT for the Collapse of Yuan China, the Red Turban Rebellion and the Reconstruction of China.
+Added Early Monarchs for Manchus (MCH).
+Changed start date China can revolt into being to 1419.
+Deleted Dauphine (DAU) from starting line-up, as they get annexed by event early.
+Added dummy monarch file for Arlat (ARL).
+Transposed and/or combined FTG1.3 leadernames.txt, countries_special.txt as well as technologies.csv in the localisation folder.
+Updated countries.txt with existing entries from the above FTG1.3 changes.
+Updated the shieldsets and flags for Navaho (APA), Arlat (ARL), Barlas (BAR), Chobanids (CHB), Gelre (GEL), Genoa (GEN), Hazaraspids (HAZ), Injuids (INJ), Jalayids (JLY), Kartids (KRT), Miharabanids (MHR), Muzaffarids (MUZ), Novgorod-Seversk (NVS), Pereyaslavl (PRY), Suldus (SLD), Sarbadar (SRB), Sufids (SUF), Temurids (TEM), Trebizond (TRE).
+BUGFIX: Duplicate monarch IDs 122502, both in Krete monarch file. Now fixed.
+Transposed FTG1.3 DB/defines.txt with mods modded values.
+Introduced an edited (and heavily hashed out) FTG1.3 event file NEW_EVENTS.TXT (will be integrated a bit more fully later).
+Added an event in 1337.TXT to form China (in the FTG1.3 style for all Chinese tags).
+BUGFIX: Replaced entries 'electors =' to 'elector =' in countries.txt to finally have electors in the game.
+BUGFIX: Added missing bracket in DB\Religions\global_flags.txt
+Added a slew of tags from FTG1.3 to the Database (countries.txt and countries.csv)
+Added the new entries in revolt.txt and updated revolt.txt across the board.
+Updated the graphics for Aydinids (AYD) and Eretnids (ERT), Galloway (GLL).
+Renamed tag 'Galloway' (GLL) to 'House Balliol' (GLL).
+Updated the graphics for Teutonic Order (LAT).
+BUGFIX: Deleted duplicate Daniel II* from Volynia (VOL) monarch file.
+Added ficticious later Monarchs to Bulgaria (BUL).
+Added later filler Monarch to Dobrudja (DOB), Epirus (EPI), Injuids (INJ), Chernigov (CRG), Masovia (MAS), Novgorod (NVG), Novgorod-Seversk (NVS), Peryaslavl (PRY), Ryazan (RYA), Serbia (SER), Sarbadar (SRB), Tver (TVE), Yaroslavl (YRL).
+BUGFIX: Corrected error in monarch.TEM startdate.
+Made the two monarchs in Thessaloniki 'dormant=yes' (Greek monarchs, may make an event about them later).
+Made the Thessaloniki (THE) tag based on Greek Metropolitans of Thessaloniki: Updated shieldset and flag. Filled in Metropolitan 'monarchs' 1337-1820.
+Added later Monarchs for Gelre (GEL).
+Added later filler Monarch to Armenia Minor (AMI), Suzdal (SUZ).
+Deleted the country of Bryansk and gave its province of Kursk to Chernigov.
+Added flagchange commands to several events in JEANNE.TXT for France to dump the Ancient fleur-de-Lys shieldset and flag.
+BUGFIX: Changed the starting date for Yuan (YUA) and Japan (NIP) to be able to revolt to offset possible event discrepancies.
+Altered formation of China events to get rid of Mongol culture should some Chinese tag forms China (Likely redundant with changing Yuan revolt date).
+Added Wurzburg (THU), Apulia (APU) and Thessaloniki (THE) to list of non-dynastic tags (they represents the Archbishopric of Wurzburg, Archbishopric of Lecce and Metropolitan of Thessaloniki).
+Removed the Roman Numerals from the Switzerland (HEL), Hansa (HSA) and Ragusan (RAG) monarchs between 1419-1820.
+Gave Gotland to the Hanseatic League (HSA). Teutonic Order wouldn't own Gotland until 1398.
+Added Monarch list for Gotland (GOT).
+BUGFIX: Fate of the Teutonic Order event now correctly deletes the CoT from Livland as it has been moved from Kurland.
+Added early and late Monarchs for Naxos (NAX).
+Added Naxos (NAX) as a vassal of Venice.
+Added Early Monarchs for Arborea (ARB).
+Added early and late Monarchs for Achaea (ACH).
+Replaced all entries of 'TOS' with 'FLO' in starting files. TOS tag renamed to Tuscany (TOS).
+Re-IDed all Tuscany (TOS) Monarchs due to ID conflict.
+Retagged events in mod to point to FLO not TOS. 
+Added early Monarchs for Lan Na (LNA), Lan Xang (LAX), Mu Bang (MUB).
+Added early filler Monarch for Calicut (CLC), Cochin (COC), Malwa (MLW), Gondwana (GON), Mysore (MYS).
+Added early monarchs for Travancore (TRV) and tweaked vanilla monarchs.
+Added early Monarchs for Sindh (SIN), Rajputana (RAJ), Khandesh (KHA), Hyderabad (HYD), Nepal (NEP), Kamata (KMT).
+Updated Crusader Egypt (EGY) flag and classic shieldset graphics.
+Gloriana 1337 now supports the 'GLORY' shieldset. 'GLORY' shieldsets for every tag included.
+BUGFIX: Changed name of PAR from 'Modena' to 'Parma'. Altered Parma's starting date in revolt.txt. Deleted PAM from revolt.txt.
+BUGFIX: Fixed missing bracket in global_flags.txt that caused CTD with firing of Jean Calvin global event.
+BUGFIX: Major_liv.txt event file was mising from events.txt. Now fixed.
+Tweaked the name of the 'The Fate of the Teutonic Order' event names (for several tags) to 'The Fate of the Baltic Orders'.
+Added Missing 'Glory' Shieldsets for Crusader Aleppo (ALE), Coimbra (COI), Cumania (CUM), Crusader Damascus (DAM), French Ultra-Catholics (FUC), Kustrin (KUS), Lancaster (LAN), Puritans (PUR), Royalists (ROY), York (YOR).
+BUGFIX: Added County of Holland (HLL) that gets events to join the Dutch Republic (for some reason missing from vanilla).
+Reintroduced Monarch files for Huguenots (FPR), French Ultra-Catholics (FUC), Lancaster (LAN), Crusader Damascus (DAM), Puritans (PUR), Royalists (ROY), York (YOR).
+BUGFIX: The Byzantine Annex event file was missing from events.txt. Now fixed. 
+Added early Monarchs for Brunswick (BRU), Lancaster (LAN).
+BUGFIX: Removed the weird (possibly buggy) trigger condition for the English Civil War event for England.
+Added early Monarchs for York (YOR).  
+Tweaked the trigger to the Brandenburg event to form Prussia.
+Added late filler Monarch for Bourbonnais (BOU).
+Added early Monarchs for Friesland (FRI), Ak Koyunlu (AKK), Algiers (ALD), Annam (ANN), Ansbach (ANS), Ashanti (ASH), Atjeh (ATJ), Avignon (AVI), Balearic Emirate (BAE).
+Added early filler Monarch for Baluchistan (BAL).
+Added missing Monarchs for Arakan (ARK).
+Added early Monarchs for Brunei (BEI), Banjar (BJR), Bologna (BOL), Berg (BRG).
+Replaced Bukhara (BUK) Monarch file with vanilla file.
+Added early Monarchs for Bukhara (BUK), Ferrara (FER), Modena (MOD), Fez (FEZ), Hausa (HAS), Iceland (ICE), Inca (INC), The Isles (ISL).
+Reinstated FTG1.2 Jodhpur (JAI) Monarch file and added early Monarchs.
+Added early filler monarch for Kazan (KAZ).
+Added early Monarchs for Kedah (KED), Khmer Empire (KHM), Khorasan (KHO).
+Added early and mid Monarchs for Kilwa (KIL).
+Added early Monarchs for Kongo (KON), Carniola (KRT), Liege (LIE).
+Added Monarch file for K'iche' (KIC).
+Added early Monarchs for Meissen (MEI), Makassar (MKS), Malacca (MLC), Nogai (NOG), Oman (OMA), Oyo (OYO), Pegu (PEG), Ramazan (RAM), Shirvan (SHI), Siak (SIA), Sibir (SIB), Taungoo (TAU), Theodoro (THO), Trent (TNT), Trier (TRR), Ukraine (UKR), Utrecht (UTR), Uzbekhs (UZB), Vientiane (VIE), Zapotec (ZAP), Zeta (ZET), Zimbabwe (ZIM).
+Shirvan (SHI) added to scenario start in the province of Daghestan as vassal of Il-Khanids (ILK).
+Replaced Cambodia (CAM) with Khmer Empire (KHM) at start of scenario.
+Changed the religion in provice 666, and 667 from Buddhism to Hinduism as the Khmer rulers had only converted to Buddhism in the late 1320's.
+Changed Khmer Empire's stability from +2 to -1 (Start of Khmer's collapse).
+Added early Monarchs to Antioch (ANT).
+Added early fantasy monarchs fro the following Crusader States: Arabia (ABA), Cilicia (CIL), Damascus (DAM), Egypt (EGY), Edessa (EDE), Mesopotamia (MES), North Africa (NAF), Petra (PET), Syria (SYR), Tripoli (TRP).
+BUGFIX: Retagged County of Tripoli (TRP) monarch IDs as conflicting with Ethiopia (ETH) monarch ID's.
+Dutchified the County of Holland (HLL) Monarch names.
+BUGFIX: Corrected the startdate of Dutch conquistador Pieter Both in ADVENTURERS.TXT. 
+
+----------------------------------------------------------------
+
+v1.02 (Release Patch)
+
+Mod is now FTG 1.3_APR_23 Compliant.
+
+----------------------------------------------------------------
+
+v1.03
+
+Created shield and flag sets for the rebel factions: Aristocrats, Religious, Colonial, Cultural and Nationalists.
+Added the missing Dutch (HOL) explorers from the FTG1.3 leaders_HOL.txt file to ADVENTURERS.TXT event file.
+BUGFIX: Added no English vassalage of Burgundian France to the 2nd 'Burgundian Influence Destroyed' event trigger.
+Made Dauphine a non-revolter.
+BUGFIX: Corrected outdated tag 'counterreform = no' to 'sreligion = no' in SPANISHCAS_AI.TXT
+Updated a few Classic shieldsets.
+Removed Castile's claim on The Canary Islands (817) at start of game.
+Had the two Florence (FLO) 'The Duchy of Tuscany' events turn Florence into Tuscany (TOS).
+Altered Florence (FLO) events after 1550 to affect Tuscany (TOS) instead.
+Altered events that target Florence (FLO) after 1550 to target Tuscany (TOS) instead.
+Altered Akk Koyunlu's (AKK) events "Ismail's Resurrection of Persia" and "Persia is Ressurected" deathdates to 1576 from 1530
+Added in duplicate events "Ismail's Resurrection of Persia" and "Persia is Ressurected" for pre-Persian tags Qara Koyunlu (QAR), Khorasan (KHO), Jalayrids (ABB), Il-Khanate (ILK), Injuids (INJ), Mihrabanids (MHR), Temurids (TEM), Muzzaranids (MUZ) and Kartids (KRT) in LINKING.TXT.
+A few tweaks to the revolt.txt to take into account what 'no = <tag>' ACTUALLY does.
+BUGFIX: Incorrect tag down for Holland to Join the Dutch Republic event. Now fixed.
+Updated and tweaked ai_events.txt, england_ai.txt, france_ai.txt, SPA_1564_FilipeII.txt, SPA_1586_Habsburgs.txt, SPA_1700_Bourbons.txt, spain_ai.txt, spanishCAS_ai.txt, timurid_ai.txt, TIM_1369.txt, TIM_1399.txt
+Updated inc file 1337_bur.inc
+Created a seperate 1.3 Localisation file (1.3.csv) to differentiate from vanilla 1.3.csv (as I need to delete the 1399 event entries in 1.3.csv vanilla file)
+Begun integrating FTG1.3 Events into the mod via the EXTRAGC.TXT event file (including text entries in EVENTS.CSV file)...
+-Integrated FTG1.3 events from vanilla EXTRAGC.TXT
+-Integrated FTG1.3 events from FLAVOUR_ENG.TXT to EXTRAGC.TXT
+-Integrated FTG1.3 events from MAJOR_ENG.TXT and MAJOR_FRA.TXT to EXTRAGC.TXT
+-Integrated FTG1.3 events from MAJOR_GEN.TXT to EXTRAGC.TXT
+-Integrated FTG1.3 events from MAJOR_HOL.TXT to EXTRAGC.TXT
+-Integrated FTG1.3 events from MAJOR_KHM.TXT to EXTRAGC.TXT
+-Integrated FTG1.3 events from MAJOR_MLC.TXT to EXTRAGC.TXT
+-Integrated FTG1.3 events from MAJOR_MOG.TXT to EXTRAGC.TXT
+-Integrated FTG1.3 events from MAJOR_NAV.TXT to EXTRAGC.TXT
+-Integrated FTG1.3 events from MAJOR_NEP.TXT to EXTRAGC.TXT
+-Integrated FTG1.3 events from MAJOR_NVG.TXT to EXTRAGC.TXT
+-Integrated FTG1.3 events from MAJOR_SCO.TXT to EXTRAGC.TXT
+-Integrated FTG1.3 events from MAJOR_SWE.TXT to EXTRAGC.TXT
+-Integrated FTG1.3 events from MAJOR_TLE.TXT to EXTRAGC.TXT
+-Integrated FTG1.3 events from MAJOR_TUR.TXT to EXTRAGC.TXT
+-Integrated FTG1.3 events from PROVINCESPEC.TXT to EXTRAGC.TXT
+-Integrated FTG1.3 events from RANDOMEVENTS.TXT to RANDOMEVENTS.TXT
+-Integrated FTG1.3 events from EVENTS_TIMUR.TXT to EXTRAGC.TXT
+Tweaked several existing events through several event/leader and monarch files to tie in with event integration.
+Appears I'm having English provinces converting to Lollardy - Added in localisations for events to EVENTS.CSV
+BUGFIX: Made Christian Aleppo a non-revolter.
+Tweaked the 'The End of the Hundred Years War' event for England.
+Added Monarchs for Catalunya (CAT).
+Added Early Monarchs for Algiers (ALD).
+BUGFIX: Corrected a wrong country tag in 'The Beaver Wars' event sequence.
+Reduced the tax malus for vanilla French event "The Fall of Calais", -8 provincetax is steep! 
+Added the nations of Sus (SUS), Hausa (HAS) and Oyo (OYO) to start of scenario.
+Using the FTG1.3 Province file (except for Gloriana cultures and religions and Calais province).
+Reworked the 'Fall of Calais' event sequences to integrate FTG1.3 changes if England capture Calais and to bring correct maluses if England lose Calais to France.
+Renamed the English localisation names for cultures: 'aborigin' to 'aboriginal', 'aka' to 'akan', 'burmanese' to 'burmese', 'cantonese' to 'zhuang', 'filippine' to 'filipino', 'khazak' to 'kazakh', 'madagasque' to 'malagasy', 'melanese' to 'melanesian', 'panjabi' to 'punjabi', 'polynese' to 'polynesian', 'thai' to 'siamese', 'yorumba' to 'yoruba'.
+BUGFIX: Missing 'deathdate = {' in monarchs_AQU.txt. Now fixed.
+Added Early Monarchs for Prussia (PRU).
+Added event sequence 'The Breton War of Succession' to event file 1337.TXT
+Added in alternate monarchs for Breton War of Succession to monarchs_BRI.TXT.
+Added flavour event for England "The Death of Isabella, She-Wolf of France" in event file 1337.TXT
+Added an event picture for all adventurer events (historical conquistadors and explorers) "C03"
+Added event sequence 'The 1st Guelderian Succession' to event file 1337.TXT
+Added an alternate monarch for 1st Guelderian Succession to monarch_GEL.TXT.
+Added an event 'Habsburg inheritance of Hungary' in LINKING.TXT and tweaked existing events for a Hungary player to continue and not be auto-annexed by Habsurgs.
+Gave Flanders (FLA) an AI file (so they can use their colonists and their explorers)
+BUGFIX: Deleted duplicate monarch in monarchs_APU and inserted monarch in same file.
+Retagged THU from Wurzburg to Thuringia.
+Retagged old monarchs.THU file to monarchs.WRZ
+Using vanilla monarchs.THU file
+Added Early and late monarchs to monarchs.THU and improved vanilla file data.
+
+----------------------------------------------------------------
+
+v1.04
+
+1.3.csv in Localisation folder updated to FTG1.3_October_23 Patch.
+decisions.csv transfered from FTG1.3_October_23 Patch to mods localisation folder
+rebels.csv transfered from FTG1.3_October_23 Patch to mods localisation folder
+October Patch Monarch Expansion: 285 tags extended to 1837
+BUGFIX: Extended the deathdates of Moving the Scottish and Swiss capitals in event file LINKING.TXT.
+BUGFIX: Created a setflag to get rid of "Ancien" shieldset tagchange bug when France can be downgraded to Dauphine (DAU). 
+Updated Eretnid classic shieldset and flag.
+BUGFIX: Altered the startdate of POR 'The Expulsion of Marquis de Pombal' event to fire after the death of Jose I. 
+BUGFIX: Updated adj_defs.txt to FTG1.3 version, so that the sprites on the map that show adjacencies are actually adjacent.
+Updated province names (in DB/Provinces.txt and Localisation/Provinces.csv) to get rid of just 'Ocean' names (as in vanilla).
+Updated armynames.txt
+Updated colonynames.txt
+Updated Countries.txt
+Added Circassian culture
+Updated Leadernames.txt
+Updated Navynames.txt
+Updated Rebels.txt
+Updated Revolt.txt
+Retagged Puerto Rico to PUC (As mod has PUE as Pueblo). Retagged GFX.
+Updated ai_events.txt
+Added Socotra to start of scenario.
+Retagged Arles to ARS (As mod has ARL as Arlat). Retagged GFX.
+Added in different shieldsets for Athens at start of scenario and when Acciajuoli take over and when/if they go vassals of Aragon.
+Updated 1.3.csv to new November patch localisation.
+Retagged Kalmyks to KAK (As mod has KMK as Menominee (Kiash Machatiwuk)). Retagged GFX.
+Added a Monarch file for Minsk (MSK).
+Updated Defines.txt
+Added Permia to start of scenario.
+Made Permia Ugric and Eastern Pagan and made "Ural" inlet and North White Sea Coast the same.
+Renamed the Ural River to Ob River, and the Ob River to Tom River.
+Added a monarch file for Permia (PRM).
+Added event "Stephen of Perm" for Permia (PRM) to event file 1337.TXT.
+Retagged monarch_JAI.txt ID's due to ID conflicts.
+Updated ai_events.txt again.
+Gave Portugal and Castille early (1399) ai events file loadup at scenario start.
+Updated Leader files: ARG, BUR, CAS, CHI, DAI, DAN, ENG, FRA, GEN, GRA, HOL, KOR, LAT, LIT, MLO, MOS, NAP, NIP, OHI, PAP, POL, POR, RUS, SAR, SER, SPA, SWE, TIM, TOS, TUR, VEN, VIJ, WAL. 
+Added the cultures of Tatar, Nogai and Uighur to the game.
+Changed Chagatai Khanate and her provinces east of Samarkand to Uighur culture.
+Fiddled with culture around eastern Rus and around Samarkand.
+Added monarch list for Galicia (GAL). 
+Added event commands to break up Mongol and Altai cultures with the first collapse of the Golden Horde event in LINKING.TXT event file. 
+The Great Event Update (AKA 'The Hell on Earth Project'): Added a majority of vanilla 1.3 events (compatibility and amendments notwithstanding)
+Retagged Guatemala to GUT (As mod has GUA as Guangdong). Retagged GFX.
+Hashed out Provincenames.TXT event file, as FTG1.3 does this automatically.
+Added in modified version of vanilla Decisions into the mod.
+Replaced Hannover (HAN) with Brunswick (BRU).
+Added Bone (BON).
+Added early monarchs to Bone (BON).
+Deactivated 1402 explorer for Castile Jean de Béthencourt. Issues with the explorer exploring carribbean irrespective of AI file.
+Seville (SEV) will revolt as a Catholic state.
+New flag and shieldset for the Archdiocese of Seville (SEV).
+Added a monarch list for Seville (SEV).
+
+----------------------------------------------------------------
+
+v1.05
+
+BUGFIX: Added in missing localisation for 'The Spanish Tercio' flavour event for Spain.
+BUGFIX: Deleted duplicate 'The Collapse of the Black Sea Trade' event for Genoa.
+BUGFIX: Deleted duplicate 'The Holy League' event for Genoa.
+BUGFIX: Reduced some Crusader States death dates to 1492.
+BUGFIX: Added the name and description to PUC (Puerto Rico) in the countries.csv localisation file.
+Added a Monarch list for Pomerelia (PRL).
+Updated the Classic shieldset and flag for Cochin (COC), Mahican (MOH), Potawatomi (POT), Powhatan (POW), Quapaw (QUA), Tuscarora (SKN) and Osage (WAZ).
+Updated the Glory shieldset for Tuscarora (SKN).
+BUGFIX: Transposed event descriptions that are too long for event files to Localisation.
+BUGFIX: Created trigger for the regents of Louis XV not to fire if Ultra-Catholics won the French War of Religion (as they have different monarchs).
+BUGFIX: Added missing Kalmyk (KAK) to countries.txt file.
+BUGFIX: Correctly retagged Arles to ARS in countries.txt file; No longer will a Persian HRE elector with an Occitan name help determine the next emperor.
+BUGFIX: Added the name and description to CHL (Chile) in the countries.csv localisation file.
+Updated the Classic shieldset and flag for Hopi (HOP).
+Updated the Classic shieldset for Seminole (SEM).
+BUGFIX: Added a trigger to not fire if Ultra-Catholics won the French War of Religion for 'The Bourbons are Secure' event for France.
+BUGFIX: Added in missing localisation for 'Dissolution of Gran Colombia' for Gran Columbia.
+Updated the Classic shieldset for Abenakis (ALN).
+Updated the Classic and Glory shieldset for Sauk-Fox (SXF).
+Updated the Classic shieldset and flag for Massachusett (WAM).
+Added early monarch for Nubia (NUB).
+Retagged SUD to Sudan.
+Added early monarch for Sudan (SUD).
+Replaced SUD tag with NUB tag at start of scenario and expanded their holdings.
+Monarchs of Butung (BUT) starts from 1337.
+Added early monarch for Dahomey (DAH).
+Retagged Aquitaine (AQU) to Aquillea (AQU).
+Aquitaine becomes Guyenne (GUY). Database, GFX and event files altered accordingly.
+Added early monarchs to Aquilea (AQU).
+
+----------------------------------------------------------------
+
+v1.06
+
+Added and tweaked Tech Cost Modifiers in defines.
+Changed the commands to release French Minors in the 'Dauphin loses control' event from 'independence' to newer (and more correct) 'free' command.
+BUGFIX: Retagged the Cyrenica (CYR) monarchs due to ID conflict with Tripoli (TRI) Monarchs.
+BUGFIX: Added in missing localisation for Decisions 'Restore the Ottoman Empire', 'Ressurect Persia' and 'Unite Spain'.
+Tweaked the third marriage of Lucrezia Borgia event.
+Updated armynames.txt, colonynames.txt, leadernames.txt.
+BUGFIX: Updated rebels.txt.
+Deleted tags Pegu (PEG) and Myanmar (MYA).
+Renamed tag Mon (MON) to Hanthawaddy (MON).
+Updated the Classic shieldset for Hanthawaddy (MON).
+Added mid-game monarch for Hanthawaddy (MON).
+Created a flag and Glory/Classic shieldset for 'Ava Kingdom' period for Burma (BRM).
+Renamed Burma (BRM) at start of scenario to 'Pinya and Sagaing'.
+Created events 'The Foundation of the Ava Kingdom' and 'The Foundation of Burma' events for BRM tag in 1337.TXT file.
+BUGFIX: Transposed event descriptions that are too long for event files from 1337.TXT and LINKING.TXT to Localisation.
+Created the tag Sukhothai (SUK) - including DB and GFX and placed in province Sarakham (1551) at start of scenario as a vassal of Ayutthaya.
+Changed the flag and glory/classic shieldset of Shan States (MUB).
+Added Sukhothai (SUK) to toungoo_AI.TXT.
+BUGFIX: Created a copy of vanilla Kalmyk (KMK) monarch file and renamed it to correct tag (KAK).
+BUGFIX: Created a dummy monarch file for Menominee (KMK).
+BUGFIX: Created a copy of vanilla Arles (ARL) monarch file and renamed it to correct tag (ARS).
+BUGFIX: Added missing localisations for the Industrial Revolution to Religion.csv in the localisation folder.
+Updated religions_special.txt with all the non Royal Marriage tags and HRE bonus tags.
+BUGFIX: Both Industrial Revolution and Council of Constance were sharing global flag 7. Changed Industrial Revolution (and attendent random events) to global flag 10.
+Prussia can no longer revolt from Teutonic Order.
+Added 'Schism Diplomacy' decision which allows Catholic/Avignon Catholic/Pisan Catholic to gain a little gold and increase relations with same religion states for missionaries.
+Added new tag Al-Haasa (AHA), graphics and monarch file and added it to start of scenario.
+Added early monarchs to Yemen (YEM).
+Added Yemen (YEM) to start of scenario.
+*sigh* Added vanilla tag Yemen (YEM) to the mod.
+Added new tag Ormus (ORM), graphics and monarch file and replaced Oman (OMA) at start of scenario.
+Added Hedjaz (ARA) to start of scenario as vassal of Mamluks.
+Added a Decision to Form Oman (OMA).
+Added six Aragonese Conquistadors and Explorers to ADVENTURERS.TXT (already in leaders_arg.txt but dormant) and made some other Aragon leaders in the file dormant = no.
+Updated the AI, Localisation and DB folders to make compatable with new vanilla August beta patch.
+Changed the commands in WHITEBLOB.TXT from 'Independence' to the more appropriate 'free' command. Included a trigger of at least 3 provinces. Changed Palatinate to Trier and Hanover to Brunswick as possible releases.
+BUGFIX: Re-IDed Transylvania (TRA) monarchs due to ID conflict with Siebenburger (SIE).
+Went through the monarch files and making sure all correct (Christian file) monarchs marked 'emperor = no'.
+Added a monarch file for Meath (MEA).
+Added additional vanilla adventurers to ADVENTURERS.TXT for Castille, China, England, France, Netherlands, Japan, Iroquois, Ottawa (from Iroquois), Russia, Spain and Portugal. All conquistadors and explorers to date have an entry.
+BUGFIX: Put in the correct country_forming.txt file and corrected tag (ARL to ARS).
+BUGFIX: Tidied up the Edward Balliol events so Balliol doesn't concede defeat after he's been victorious!
+Hashed out the relations bonuses on the 'Schism Diplomacy' decision as it is not working as intended.
+Retagged Choctaw (CHO) to Choctaw (CHW).
+Updated to new September 2024 FTG1.3 Patch.
+Added early monarchs for Armenia (ARM), Bima (BIM), Bali (BLI), Bastar (BST), Chola (CHO), Fars (FAR), Gupta (GUP), Jaintia (JNT), Parlekhemundi (KHE), Kurdistan (KRD), Kashmir (KSH), Maurya Empire (MAU).
+Added later monarchs to Armenia Minor (AMI).
+
+----------------------------------------------------------------
+
+v1.07
+
+Made China a non-revolter
+Made a Form China decision (Major decision, but not unique).
+BUGFIX: Corrected localisation of Kashmir Sultanate (KSH) from Panjab and made starting date in revolt file 1337.
+BUGFIX: Corrected the incorrect monarch ID for the English Stuart James II in the Polish monarch events in major_pol.txt.
+BUGFIX: Added dormancy to various English leaders in the English Civil War period and altered the English Civil War event to wake and sleep them according to event action.
+Updated a host of AI files with mod specific tags.
+BUGFIX: Fixed the wrong flag and name change for England's first Act of Union event.
+Finally capitalised the culture names.
+Added a monarch file for Pisa (PIA) and added tag to non Royal Marriage file.
+Updated the Classic shieldset for Davvi Sami (DSM), Kildin Sami (KSM), Mordvins (MRD) and Ume Sami (USM). Also included an alternative for Kildin Sami (as ksm2.bmps).
+Redone the Classic Hanover (HAN) shieldset and flag to be the prancing horse rather than the city of Hanover (improved over vanilla).
+Replaced the Classic Siena (PIS) shieldset and flag from the Province of Siena to vanilla city of Siena.
+Added an early event for Sweden to wake their monarchs should Denmark decide not to push for the Kalmar Union.
+Updated the Classic Norway (NOR) Shieldset.
+Updated the awful Classic Gelre (GEL) shieldset I made and included an alternative (as GEL2.bmp).
+Renamed Hyderabad (HYD) to Bahmanid Sultanate (HYD)
+Added two events "The Foundation of Golconda" and "The Foundation of Hyderabad" for Bahmanid Sultanate (HYD)
+Added Classic and Glory shieldsets for Bahmanid Sultanate for when they are renamed to Golconda and when become Hyderabad (added beginning shieldsets as Bahmanid Sultanate.
+Bahmanid Sultanate revolts as Sunni Muslim.
+BUGFIX: Added triggers for the actions in the "Succession in Provence" event (and added a generic action as a catchall).
+BUGFIX: Re-IDed some Parma (PAR) monarch tags as conflicting with Modena (MOD) monarchs.
+Made Bali (BLI) an independent state at start of scenario as it hadn't been invaded by Majapahit (MAJ) until after the start of the scenario.
+BUGFIX: Updated the monarch files of Spain (SPA), Austria (HAB) and Bohemia (BOH).
+Added native names to Kongo (KON) monarch list.
+BUGFIX: Fixed the leader name list for Thessaloniki (had it as 'GRE' which doesn't exist, changed to 'BYZ').
+BUGFIX: Added the localisation for Prussian flavour events that were missing.
+Removed Austria from list that can form Germany. Created (close copy of existing decision) decision for Austria to 'become the Holy Roman Empire' which gives new country name and graphics but retains HAB tag.
+Tweaked tolerance slider values (and shown religions) of Pagan religion countries.
+BUGFIX: Fixed a typo in monarchs_NOR.txt ('emperor = mo'; Mo has been dethroned).
+New Monarch and leader file for Kalmar Union (KAL).
+Added Danish and the single Swedish adventurer to ADVENTURERS.TXT file for Kalmar Union (KAL) if their constituent nations do not exist.
+Made an event file KALMAR.TXT and gave Kalmar Union a slew of events from Denmark flavour and major event files (also Swedish flavour events).
+BUGFIX: Fixed the wrong monarch ID in the Burgundian event 'The Marriage of Mary of Burgundy'.
+Added an event in LINKING.TXT to wake a line of monarchs for Italy if the Form Italy decision is taken (and added monarchs to monarch file).
+Hashed out the vanilla "Wild Jurchens!" event as it's bonkers (lol).
+Created the new tag Northern Yuan (NYN). Created database files and graphics. Added them to start of scenario as vassal of Yuan China.
+Modified the Yuan (YUA), China (CHI) and Northern Yuan (NYN) monarch files to include necessary Personal Unions.
+Added two persistent events in 1337.TXT event file to have China (under Yuan or Ming monarchs) to incorporate Yuan (YUA) (or Ming (MNG) repectively) ancestral lands.
+Unhashed previously hashed vanilla events for vanilla Yuan to fire for Northern Yuan (NVN).
+BUGFIX: Converted Leader and Monarch files in the mod to ANSI encoding (rather than UTF-8) which fixes gobbledegook symbols in-game leaders and monarchs (requires a new game, it will not fix in previous saves).
+Changed the name of Atjeh (ATJ) to Samudera Pasai (ATJ) as Atjeh wasn't founded until around 1520.
+Created a new flag and shieldset for Samudera Pasai (ATJ).
+Added 5 monarchs to monarchs_ATJ.txt.
+Added an event in 1337.TXT event file for Samudera Pasai to change name to Sultanate of Atjeh.
+Split the 'Form China' into 2 versions (one for Yuan (YUA) and one for all other Chinese tags), made some alterations and hashed out similar Form China event.
+Changed the start date Atjeh can revolt to 1517 in revolt.txt.
+Renamed the BRM and ATJ tags to original names in countries.csv (Burma and Atjeh) and put new starting names (Pinya and Sagaing and Samudera Pasai) into the "1337 - The Storm Breaks.eeg" scenario file (better solution for if those tags are revolted back into existence).
+Made an improved set of 'French Minor to France' Classic shieldsets.
+BUGFIX: Gave the correct Buddhism religion name in the event "The Khan Converts" for Northern Yuam (NYN).
+Created and enabled the religion Miaphysite. Unhashed Miaphysite from vanilla events, introduced Miaphysite to various starting provinces, Gave Ethiopia, Nubia, Armenia Minor and Socotra Miaphysite religion at start of scenario. Updated DB and Localisation folders.
+Updated Gloriana colorscales with new entries.
+
+----------------------------------------------------------------
+
+v1.08
+
+BUGFIX: ID conflicts between Pomerelia (PRL), Atje (ATJ) and Northern Yuan (NYN). Now fixed.
+Created and Added the colourised Infantry, Cavalry and Artillery Level 4 Reorganisation pictures to GFX/Interface/Glory and Classic/Reorganisation folders.
+Glory interface has been redone to show a purple marble effect throughout all sidebar interface windows.
+A modded (and full) 'Glorious' shieldset (with all additional mod tags) added FREE OF CHARGE!
+Altered the start date and changed the duration of the MIL boost in the French (FRA) 'Le Tellier and Louvois' event to take the regent period into account.
+Option 'c' in the French (FRA) 'The Fronde in France' event gives you the Regent 'Prince of Conde (Regent)' as option c text states "Appoint the Prince of Condé as Regent". Also tweaked the stats of French (FRA) monarch 'Anne d'Autriche (Regent)'.
+Added a trigger to option_c for the Regent of France after Louis XIV event to have Phillip V of Spain to be on the Spanish throne.
+Set Lan Xang's (LAX) name to Muang Sua at start of scenario with new shieldsets.
+Event to change Muang Sua to Lan Xang in 1353
+Added 2 new monarchs to Lan Xang (LAX) monarch file.
+Made Vijayanagar (VIJ) a playable country ay start of scenario as it was founded in 1336.
+Added a "Fruili Earthquake" event to 1337.TXT event file.
+Altered the elector status of a hooch of tags in the countries.txt file
+"Peace of Westphalia" event now removes elector status from Dutch, Swiss, Italian, Artois and south-eastern French tags.
+Added "Golden Bull of 1356" global event to setup Elector changes.
+Updated the provincespec.txt event file with the new vanilla culture change events.
+Mamluks (MAM) name changes to "Egypt" with the "Massacre of the Mameluks" event and changes shield sets with "Muhammad Ali's Reforms" event.
+Added in the two vanilla events for Egypt, but retagged for Mameluks.
+If Austria inherits Bohemia (BOH) in "The Habsburg Inheritance of Bohemia" event, Austrian electors are set to 2 and Bohemia tag electors set to 1. (May set Austria to 3, don't think it would effect Austrian chance to become Emperor though).
+Changed HRE Special Bonus to +75 (from +25) in DB/Defines.txt
+Updated event picture for Adventurers and provided event pictures for 8 mod specific events.
+Added the low countries ceeded to Burgundy in the "Madness of Charles VI" event if France possessed them.
+Updated Flags folder
+Updated Classic Shieldset folder.
+Added monarch file for Dalmatia (DAL).
+Oman (OMA) will no longer revolt from Ormus (ORM).
+BUGFIX: Copied vanilla leaders_MAN.txt file and Re-IDed the single leader due to ID conflict.
+
+----------------------------------------------------------------
+
+v1.09
+
+Added the vanilla Ragusan Explorer to ADVENTURERS.TXT event file.
+BUGFIX: Made Prince de Conde dormant as he should be.
+BUGFIX: Changed the target in Russian AI files from Yuan (YUA) to the correct Northern Yuan (NYN) tag.
+Not taking Napoleon in 1799 (action_b) sleeps the "Empire of France" event
+BUGFIX: Hashed out 'command = { type = trigger which = 4134 }' in the Scottish 'Auld Alliane' event (shouldn't trigger)
+Bugfixed and tweaked Crusader events in CRUSADERSTATES.TXT event file
+Created a bunch of decisions to release Crusader states as a Eurpean Catholic nation in North Africa, Middle East up to Transoxiania.
+BUGFIX: Added Christian Egypt to revolt.txt as a non-revolter.
+Changed end date to 1836 when Ottoman Turks can to move capital yo Istanbul in "City of Mens Desire" event.
+Created a new Classic Japan shieldset.
+BUGFIX: Corrected deathdate of events and incorrect tag entry in GERMANYUNITED.TXT event file.
+The English "Restoration of the Stuarts" event also inherits the Royalists and Puritns tag for both choices.
+Updated the AMERINDIAN.TXT event file to be affected by all European based Christians rather than specific tags.
+BUGFIX: Fixed duplicate monarch ID within the Kingdom of Cilicia (CIL) monarch file.
+Added a monarch list for Leon (LEO).
+Changed the Class ic shieldset for County of Tripoli (TRP) as it was identical to Damascus (DAM).
+Altered the poiltical map colours of the Crusader States (as they were all set to LightRed).
+Tweaked the "Form Kingdom of Jerusalem" decision and added several more Crusader Kingdom formation decisions.
+Added a new scenario: "1337 - Deus Vult" an alternative history of the Middle East wher the Crusader States hung on. Pure fantasy.
+Added an event for Byzantium to move back to Constantinople should they initially not own it and regain it.
+Added a fantasy monarch list for the Empire of Nicaea based on if the deposed John IV Laskaris had a son in adulthood.
+Added a monarch list for Basra (BAS) consisting of the Grandmasters of the Order of Saint Lazarus of Jerusalem.
+Added a dummy leader file for Basra (BAS).
+Added earlier and later monarchs to the monarch file for Canary Islands (CNY).
+BUGFIX: Fixed duplicate monarch ID within the Meath (MEA) Monarch file.
+Included Ille de France province in the Habsburg and English inheritence of Burgundy events (to secede to France)
+Substantially expanded the Fujian (FUJ) monarch file.
+Substantially expanded the Hunan (HNA) monarch file.
+Gave Yuan China a distinct "Mongol" culture, so city graphics and sprites don't turn Muslim.
+Redone the Chinese mod specific tags flags to get rid of white pixel glitches.
+Added monarch file for Shanxi (SXA).
+Added event "Fall of the Yuan, Rise of the Ming" for China in LINKING.TXT event file and altered triggers for some Chinese events to need Yongle as Emperor.
+Added monarch file for Shaanxi (SXI).
+Added monarch file for Guangxi (GXI).
+Added monarch file for Henan (HEN).
+Substantially expanded the Zhou (ZHO) monarch file.
+BUGFIX: Bugfixed the County of Holland event joining the Dutch Republic. Again.
+Added monarch file for Taiwan (TWN).
+BUGFIX: Bugfixed the Revolt entries for Xinjiang (XIN) due to the Sichuan and Xinjiang province id shenanigans.
+Added decision file CAPITAL.TXT, lets you move your capital back to the standard capital province should you lose it (due to revolts etc), also takes into account events that voluntarily move your capital.
+1st release of the Vanilla map with painted Sea Zone names (currently 22)
+Compatibilty patch with new patch including updated db and Ai folders
+Lots of tweaks I forgot to changelog.
+
+----------------------------------------------------------------
+
+v1.10
+
+BUGFIX: Hashed out the commands that give permanent revolt risk in the random event for Byzantium in the BYZANTIUM_TRIUMPHANT.TXT event file.
+Reworked the early monarchs of Flanders (FLA).
+BUGFIX: Added missing major_eth.txt event file.
+Removed Dutch culture from Burgundy at start of scenario
+BUGFIX: Corrected culture triggers in MAJOR_BUR.TXT event file.
+Added triggers for Burgundy to exist, France not to have their capital in Paris and for Burgunday and France not to be allied in the "Jeanne D'Arc and the French Monarchy" event in JEANNE.TXT file.
+Combined, altered and bugfixed vanilla and mod events about Assassination of Jean of Burgundy.
+Expanded the Joan of Arc event sequence (Applies to Burgundy first who can have England deal with her if ENG at war with France or deal with her themselves), also includes a "Maid of Domremy" event if Joan of Arc event doesn't fire.
+Included an "Inheritence of Flanders" Event sequence if Flanders exists on the Death of Margaret III in 1405.
+BUGFIX: Added ai_chance to all actions of the Byzantine "Gemistos Plethon" event.
+Altered some monarchs and dates in monarchs_sic.txt (Sicily) for possible inheritance of Sicily by Aragon after "The Compromise of Caspe" event.
+Added an event sequence for Aragon (ARG) to inherit Sicily (SIC) with the "Compromise of Caspe" event.
+Altered the text of the option that allows Burgundy to remain independent (as they are fantasy monarchs, not Habsburgs)
+Gave triggers to the command to close Paris centre of trade in the "Burgundy Centre of Trade" event, it now checks if CoT is in paris or Lyonnais and closes the relevant one (technically it would close both if there is a CoT in both - which is unlikely)
+Made seperate decisions for Burgundy to be able to form the Kingdom of either Arles or Lotharingia without changing tags (and go on to unify the HRE).
+BUGFIX: Re-IDed duplicate ID in Zhou (ZHO) monarch file.
+BUGFIX: Added missing Russian event localisation text.
+Added an event file for Royalists (ROY). Created an event for if England goes for the Glorious Revolution and Royalists still exists.
+BUGFIX: Fixed it so if Brandenburg becomes the Kingdom of Prussia or incorperates Prussia, the capital decision is to stay in Berlin.
+Split the Byzantine Annex (Byzantium_Triumphant) event file into smaller manageable files [BYZANNEX_#_(subject).txt]
+Added Byzantine.txt decision file.
+Updated and bugfixed the Byzantine Annex (see seperate changelog).
+Byzantine shieldset changes to the Komnenos shieldset if the Komnenos dynasty take over Byzantium in BYZANNEX_05_Trebizond event file.
+Added Komnenos Shieldsets for Byzantium (BYZ) in all styles (Classic, Glory and Glorious)
+Added Trading Strait decisions and hashed out the Tradingstraits.txt filefrom events.txt as no longer required.
+Added events to set up the Avignon Papacy with the Great Schism.
+Added monarchs for Madagascar (MDG) and made Madagascar revoltable from 1337.
+Another attempt at getting the 'Schism Diplomacy' decisions to work.

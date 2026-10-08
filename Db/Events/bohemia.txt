@@ -1,0 +1,134 @@
+##Bohemia Events##
+
+#(1338) The Second Conference of Visegrad
+event = {
+	id = 117001 #triggered by POL_115000A
+	random = no
+	country = BOH
+	name = "The Second Conference of Visegrad"
+	desc = "In 1338, a conference of monarchs took place in the Hungarian city of Visegrad. Taking part were the kings: Kazimierz of Poland , Karl Robert of Hungary, and Jan of Bohemia. At the first meeting, Jan had given up his claims on the Polish throne in exchange for Kazimierz giving up his claims on the Silesian duchies. The second meeting determined that the Angevins would receive the throne of Poland, in the event of Kazimierz dying without issue."
+	
+	action_a = {
+		ai_chance = 97
+		name = "We are glad the succession is settled fairly"
+		command = { type = relation which = POL value = 50 }
+		command = { type = relation which = HUN value = 50 }
+	}
+	action_b = {
+		ai_chance = 3
+		name = "Wait, don't we still have a claim?"
+		command = { type = relation which = POL value = -200 }
+		command = { type = relation which = HUN value = -100 }
+		command = { type = addcore_claim which = 299 }
+		command = { type = setflag which = [Visegrad_CB] }
+		#Poland should get event about reasserting claims if Bohemia has the above flag
+	}
+}
+
+#(1338) The Second Conference of Visegrad - Ahistorical
+event = {
+	id = 117002 #triggered by HUN_118003A
+	random = no
+	country = BOH
+	name = "The Second Conference of Visegrad"
+	desc = "In 1338, a conference of monarchs took place in the Hungarian city of Visegrad. Taking part were the kings: Kazimierz of Poland , Karl Robert of Hungary, and Jan of Bohemia. At the first meeting, Jan had given up his claims on the Polish throne in exchange for Kazimierz giving up his claims on the Silesian duchies. The second meeting was inconclusive as Kazimierz refused to accept an Angevin succession."
+	
+	action_a = {
+		ai_chance = 70
+		name = "We have no designs on the Polish throne"
+		command = { type = relation which = POL value = 50 }
+		command = { type = relation which = HUN value = 50 }
+	}
+	action_b = {
+		ai_chance = 30
+		name = "A perfect opportunity to assert our claim"
+		command = { type = relation which = POL value = -200 }
+		command = { type = relation which = HUN value = -100 }
+		command = { type = addcore_claim which = 299 }
+		command = { type = setflag which = [Visegrad_CB] }
+	}
+}
+
+#(1338) The Second Conference of Visegrad - Ahistorical
+event = {
+	id = 117003 #triggered by HUN_118003B
+	random = no
+	country = BOH
+	name = "The Second Conference of Visegrad"
+	desc = "In 1338, a conference of monarchs took place in the Hungarian city of Visegrad. Taking part were the kings: Kazimierz of Poland , Karl Robert of Hungary, and Jan of Bohemia. At the first meeting, Jan had given up his claims on the Polish throne in exchange for Kazimierz giving up his claims on the Silesian duchies. The second meeting was inconclusive as Kazimierz refused to accept an Angevin succession."
+	
+	action_a = {
+		ai_chance = 90
+		name = "A perfect opportunity to assert our claim"
+		command = { type = relation which = POL value = -200 }
+		command = { type = addcore_claim which = 299 }
+		command = { type = setflag which = [Visegrad_CB] }
+	}
+	action_b = {
+		ai_chance = 10
+		name = "We have no designs on the Polish throne"
+		command = { type = relation which = POL value = 50 }
+		command = { type = relation which = HUN value = 50 }
+	}
+
+}
+
+#(1348) University of Prague
+event = {
+	id = 117000
+	random = no
+	country = BOH
+	trigger = {  
+ 		owned = { province = 328 data = -1 } #Bohemia
+	}
+	name = "University of Prague"
+	desc = "The rule of Karel IV was a golden age of education in the Czech lands, a time in which education wasn't anymore restricted to clergy. The epochal act in it was the foundation of Prague University on 7 april 1348, consisting of all the traditional faculties including - after a special papal bull from 1347 - the theological one, but it also had special faculties that teached languages like Czech, Polish, Bavarian and Saxon and was meant for administrative purposes. The university observed the customs of the universities like Paris and Bologna and soon became a worthy rival of these. The university of Prague was the first university in Central Europe and also the first modern university in the Germano-Slavic world."
+
+	date = { day = 7 month = april year = 1348 }
+
+	action_a = {
+ 		name = "Commission the university"
+ 		command = { type = ADM which = 2 value = 60 }
+ 		command = { type = domestic which = innovative value = 3 } #It includes the whole educational reform
+ 		command = { type = gainmanufactory which = 328 value = luxury }
+ 		command = { type = provincetax which = 328 value = 1 } #administrative benefit from the university
+ 		command = { type = cash value = -250 }
+	}
+	action_b = {
+		name = "Bah, we don`t need it"
+		command = { type = domestic which = innovative value = -1 }
+		command = { type = ADM which = -1 value = 60 }
+	}
+}
+
+#(1409-1414) Support for the Pisan Papacy
+event = {
+	id = 296018
+	trigger = {
+		NOT = { event = 2296001 }
+		OR = {
+			religion = avignon_catholic
+			religion = catholic
+		}
+		event = 296012
+	}
+	random = no
+	country = BOH
+	name = "EVENTNAME296013" #Support for the Pisan Papacy
+	desc = "EVENTHIST296013"
+
+	date = { year = 1409 }
+	offset = 5
+	deathdate = { year = 1414 }
+
+	action_a = {
+		name = "ACTIONNAME296013A" #Support the Pisan Papacy!
+		command = { type = religion which = pisan_catholic }
+	}
+	action_b = {
+		name = "ACTIONNAME296013B" #He is not the Vicar of Christ!
+		command = { }
+	}
+}
+
+#first free ID: 117004

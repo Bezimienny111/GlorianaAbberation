@@ -1,0 +1,415 @@
+#####Knights of St:John Major Events#####
+#######By Joakim 'Greven' Bergqwist######
+#########################################
+
+#The Siege of Smyrna#
+event = {
+
+	id = 5309
+	trigger = {
+		owned = { province = 481 data = KNI } # just to make sure we don't cede our capital
+		owned = { province = 478 data = KNI }
+	}
+	random = no
+	country = KNI
+	name = "EVENTNAME5309"
+	desc = "EVENTHIST5309"
+
+	date = { day = 1 month = january year = 1403 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1415 }
+
+	action_a ={		#Fortify the citadel#
+		name = "ACTIONNAME5309A"
+		command = { type = fortress which = 478 value = 1 }
+		command = { type = INF which = 478 value = 5000 }
+		command = { type = land value = 500 }
+		command = { type = treasury value = -200 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={		#Cede the fortress to the Turks#
+		name = "ACTIONNAME5309B"
+		trigger = { 
+			neighbour = TUR
+			NOT = {
+				war = { country = KNI country = TUR }
+			}
+		}
+		command = { type = cedeprovince which = TUR value = 478 }
+		command = { type = relation which = TUR value = 150 }
+		command = { type = treasury value = 150 }
+		command = { type = stability value = -2 }
+	}
+
+	action_c ={		#Cede the fortress to the Timurids#
+		name = "ACTIONNAME5309C"
+		trigger = { 
+			neighbour = TIM
+			NOT = {
+				war = { country = KNI country = TIM }
+			}
+		}
+		command = { type = cedeprovince which = TIM value = 478 }
+		command = { type = relation which = TIM value = 150 }
+		command = { type = treasury value = 150 }
+		command = { type = stability value = -2 }
+	}
+
+	action_d ={		#Cede the fortress to the Byzantines#
+		name = "ACTIONNAME5309D"
+		trigger = { 
+			neighbour = BYZ
+			NOT = {
+				war = { country = KNI country = BYZ }
+			}
+		}
+		command = { type = cedeprovince which = BYZ value = 478 }
+		command = { type = relation which = BYZ value = 150 }
+		command = { type = treasury value = 150 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#Pierre d'Aubusson#
+event = {
+
+	id = 3535
+	random = no
+	country = KNI
+	name = "EVENTNAME3535"
+	desc = "EVENTHIST3535"
+	style = "3535"
+
+	date = { day = 1 month = january year = 1483 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1484 }
+
+	action_a ={		#Hostage to Papacy for gold and Cardinal appointment#
+		name = "ACTIONNAME3535A"
+		command = { type = relation  which = PAP  value = 100 }
+		command = { type = relation  which = HUN  value = -20 }
+		command = { type = relation  which = VEN  value = -20 }
+		command = { type = relation  which = TUR  value = -100 }
+		command = { type = treasury  value = 200 }
+		command = { type = domestic  which = ARISTOCRACY  value = 1 }
+	}
+
+	action_b ={		#Hostage to Hungary for gold#
+		name = "ACTIONNAME3535B"
+		command = { type = relation  which = HUN  value = 100 }
+		command = { type = relation  which = PAP  value = -20 }
+		command = { type = relation  which = VEN  value = -20 }
+		command = { type = relation  which = TUR  value = -100 }
+		command = { type = treasury  value = 200 }
+	}
+
+	action_c ={		#Hostage to Vienna for gold and traderights#
+		name = "ACTIONNAME3535C"
+		command = { type = relation  which = PAP  value = -20 }
+		command = { type = relation  which = HUN  value = -20 }
+		command = { type = relation  which = VEN  value = 100 }
+		command = { type = relation  which = TUR  value = -100 }
+		command = { type = treasury  value = 180 }
+		command = { type = merchants  value = 6 }
+	}
+}
+
+#Rhodians and other Greeks accepted into the Order#
+event = {
+
+	id = 3536
+	random = no
+	country = KNI
+	name = "EVENTNAME3536"
+	desc = "EVENTHIST3536"
+
+	date = { day = 1 month = january year = 1501 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1502 }
+
+
+	action_a ={		#OK#
+		name = "ACTIONNAME3536A"
+		command = { type = add_countryculture which = greek }
+		command = { type = domestic  which = QUALITY  value = -2 }
+		command = { type = domestic  which = SERFDOM  value = 2 }
+		command = { type = manpower value = 20 }
+	}
+
+}
+
+#The Great Carrack of Alexandria#
+event = {
+
+	id = 3537
+	trigger = {
+		owned = { province = 744 data = TUR }
+		}
+	random = no
+	country = KNI
+	name = "EVENTNAME3537"
+	desc = "EVENTHIST3537"
+	
+	date = { day = 1 month = january year = 1564 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1570 }
+
+	action_a ={		#Praise the Lord!#
+		name = "Praise the Lord!"
+		command = { type = treasury value = 250 }
+		command = { type = relation which = TUR value = -200 }
+		command = { type = privateers which = 1003 }
+		command = { type = privateers which = 1004 }
+		command = { type = trigger which = 3364 }
+	}
+
+	action_b ={		#We are not pirates...#
+		name = "We are not pirates..."
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = relation which = TUR value = 50 }
+		command = { type = trigger which = 3365 }
+	}
+}
+
+#Gabriele Tadini de Martinengo#
+event = {
+
+	id = 3539
+	random = no
+	country = KNI
+	name = "EVENTNAME3539"
+	desc = "EVENTHIST3539"
+
+	date = { day = 1 month = january year = 1521 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1522 }
+
+	action_a ={		#Improve our defenses#
+		name = "ACTIONNAME3539A"
+		command = { type = fortress  which = -1  value = 1 }
+		command = { type = domestic  which = OFFENSIVE  value = -2 }
+		command = { type = infra  value = 400 }
+	}
+
+}
+
+#Spain give Malta to the Order#
+event = {
+
+	id = 3540			#Triggered by SPA3156#
+	random = no
+	country = KNI
+	name = "EVENTNAME3540"
+	desc = "EVENTHIST3540"
+
+	action_a ={				#Accept Malta and become a Spanish vassal#
+		name = "ACTIONNAME3540A"
+		command = { type = capital which = 819 }
+		command = { type = add_countryculture which = maltese }
+		command = { type = remove_countryculture which = greek }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = PAP value = 100 }
+		command = { type = treasury value = 300 }
+		command = { type = stability value = 3 }
+		command = { type = addcore_national which = 819 } # Malta
+		command = { type = removecore_national which = 481 } # Rhodes
+	}
+
+	action_b ={				#Accept Malta, but not to become a vassal#
+		name = "ACTIONNAME3540B"
+		command = { type = capital which = 819 }
+		command = { type = add_countryculture which = maltese }
+		command = { type = breakvassal which = SPA }
+		command = { type = relation which = SPA value = -150 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = stability value = -1 }
+		command = { type = revolt which = 819 }
+		command = { type = addcore_national which = 819 } # Malta
+#		command = { type = removecore which = 481 }
+	}
+}
+
+#Jean Parisot de la Valette#
+event = {
+
+	id = 3541
+	trigger = {
+		owned = { province = 819 data = KNI }
+	}
+	random = no
+	country = KNI
+	name = "EVENTNAME3541"
+	desc = "EVENTHIST3541"
+	style = "3541"
+
+	date = { day = 1 month = january year = 1565 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1566 }
+
+	action_a ={
+		name = "ACTIONNAME3541A"
+		command = { type = cityname which = 819 value = "Valletta" }
+		command = { type = fortress which = 819 value = 1 }
+		command = { type = populationpercent which = 819 value = 15 }
+		command = { type = domestic which = OFFENSIVE value = -2 }
+	}
+}
+
+#The Holy League#
+event = {
+
+	id = 3542
+	trigger = {
+			exists = TUR
+			AND = {
+				event = 3549 
+				} 
+		}
+	random = no
+	country = KNI
+	name = "EVENTNAME3542"
+	desc = "EVENTHIST3542"
+
+	date = { day = 1 month = january year = 1568 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1571 }
+
+
+	action_a ={					#Support the Holy League#
+		name = "ACTIONNAME3542A"
+		command = { type = casusbelli which = TUR value = 72 }
+		command = { type = relation which = TUR value = -150 }
+		command = { type = relation which = PAP value = 150 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = SPA value = 150 }
+		command = { type = relation which = TOS value = 150 }
+		command = { type = relation which = VEN value = 150 }
+		command = { type = relation which = NAP value = 150 }
+		command = { type = relation which = SAV value = 150 }
+	}
+
+	action_b ={					#Let the matter fall#
+		name = "ACTIONNAME3542B"
+		command = { type = relation which = TUR value = 50 }
+		command = { type = relation which = PAP value = -50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = TOS value = -50 }
+		command = { type = relation which = VEN value = -50 }
+		command = { type = relation which = NAP value = -50 }
+		command = { type = relation which = SAV value = -50 }
+	}
+}
+
+# The End of the Order #
+event = {
+	id = 50056
+	trigger = {
+		event = 3540
+		event = 3145
+		war = { country = FRA country = KNI }
+	}
+	random = no
+	country = KNI
+	name = "The End of the Order"
+	desc = "The chaos of the French Revolutionary Wars brought calamity to the Order of St. John, which for decades had struggled to finance its operations and repair its crumbling citadel on Malta. By the turn of the 19th century the tithes from its various branches across Europe had all but dried up, and the Order was so poor and dilapidated that it even struggled to find candidates for election as Grand Master - a position once considered highly coveted. When Napoleon decided to invade Malta en route to Egypt during his 1798 campaign against the Ottomans, Valletta's antiquated medieval defences did little to hinder the well-disciplined troops of Revolutionary France and their modern heavy artillery. Sensing the gravity of the situation, in September 1806 the Swedish government offered the sovereignty of the island of Gotland to the Order."
+	
+	date = { day = 1 month = january year = 1792 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1815 }
+	
+	action_a ={ # Defend Malta to the last man! #
+		name = "Defend Malta to the last man!"
+		command = { type = fortress which = 819 value = 1 }
+		command = { type = gainbuilding which = 819 value = barrack }
+		command = { type = domestic which = OFFENSIVE value = -2 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = land value = 500 }
+		command = { type = naval value = 500 }
+		command = { type = manpower value = 25 }
+		command = { type = treasury value = -500 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={ # Flee to Gotland #
+		name = "Flee to Gotland"
+		trigger = { 
+			exists = SWE
+			owned = { province = 308 data = SWE }
+			NOT = {
+				war = { country = SWE country = KNI }
+				alliance = { country = SWE country = FRA }
+			}
+		}
+		command = { type = breakvassal which = -1 }
+		command = { type = trigger which = 50057 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = diplomats value = 3 }
+		command = { type = stability value = -1 }
+	}
+}
+
+# The Knights of Gotland #
+event = {
+	id = 50058 #triggered by SWE_50057A
+	random = no
+	country = KNI
+
+	name = "The Knights of Gotland"
+	desc = "My Lord, the benevolent Swedes have answered our plea for help and agreed to cede the island of Gotland to us in exchange for vassalage. We shall sail for Visby at once!"
+
+	action_a ={ # We are saved! #
+		name = "We are saved!"
+		command = { type = capital which = 308 }
+		command = { type = populationpercent which = 308 value = 10 }
+		command = { type = add_countryculture which = danish }
+		command = { type = remove_countryculture which = maltese }
+		command = { type = relation which = SWE value = 200 }
+		command = { type = infra value = 1000 }
+		command = { type = trade value = 1000 }
+		command = { type = addcore_national which = 308 }
+		command = { type = removecore_national which = 819 }
+		command = { type = stability value = 3 }
+	}
+}
+
+# The Order's Last Stand #
+event = {
+	id = 50059 #triggered by SWE_50057B
+	random = no
+	country = KNI
+
+	name = "The Order's Last Stand"
+	desc = "My Lord, though the cautious Swedes have declined to cede us the island of Gotland, they have backed our cause and sent us ships of Swedish gold and mercenaries in order to help defend Valletta."
+
+	action_a ={ # We stand and fight! #
+		name = "We stand and fight!"
+		command = { type = treasury value = 300 }
+		command = { type = relation which = SWE value = 100 }
+		command = { type = land value = 1000 }
+		command = { type = naval value = 1000 }
+		command = { type = domestic which = OFFENSIVE value = -1 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = ART which = -2 value = 25 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# Sweden Rejects Gotland Talks #
+event = {
+	id = 50060 #triggered by SWE_50057C
+	random = no
+	country = KNI
+
+	name = "Sweden Rejects Gotland Talks"
+	desc = "My Lord, the arrogant Swedes have rejected any further talk on 'the Gotland matter' and left us to our fate. No one is coming to help us."
+
+	action_a ={ # We are on our own... #
+		name = "We are on our own..."
+		command = { type = relation which = SWE value = -100 }
+		command = { type = stability value = -2 }
+	}
+}

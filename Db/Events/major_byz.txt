@@ -1,0 +1,299 @@
+###Roman Empire Major Events###
+#                             #
+#  By Demetrios and Havard    #
+#                             #
+###############################
+
+event = { 
+	id = 3833
+	trigger = {
+		exists = TUR
+		religion = orthodox
+	}
+	random = no
+	country = BYZ
+	name = "EVENTNAME3833"
+	desc = "EVENTHIST3833"
+	style = "3833"
+	
+	date = { day = 1 month = january year = 1439 }
+	offset = 300
+	
+	action_a ={ #Laetentur Coeli! We accept!#
+		name = "ACTIONNAME3833A"
+		command = { type = religion which = catholic }
+		command = { type = add_countryculture which = italian }
+		command = { type = domestic which = innovative value = 2 }
+		command = { type = relation which = PAP value = 150 }
+		command = { type = relation which = VEN value = 100 }
+		command = { type = relation which = HUN value = 100 }
+		command = { type = relation which = POL value = 100 }
+		command = { type = relation which = CAS value = 100 }
+		command = { type = relation which = ARG value = 100 }
+		command = { type = relation which = NAP value = 100 }
+		command = { type = relation which = KNI value = 100 }
+		command = { type = relation which = CYP value = 100 }
+		command = { type = relation which = MOS value = -100 }
+		command = { type = relation which = NVG value = -100 }
+		command = { type = relation which = RUS value = -100 }
+		command = { type = relation which = SER value = -100 }
+		command = { type = relation which = TRE value = -100 }
+		command = { type = relation which = GEO value = -100 }
+		command = { type = relation which = EPI value = -100 }
+		command = { type = relation which = SPR value = -100 }
+		command = { type = relation which = THO value = -100 }
+		command = { type = relation which = BUL value = -100 }
+		command = { type = trigger which = 3835 } # Event for HUN
+		command = { type = trigger which = 3836 } # Event for ALB
+		command = { type = trigger which = 3837 } # Event for SER
+		command = { type = trigger which = 3838 } # Event for SIB?
+		command = { type = trigger which = 3839 } # Event for WAL
+		command = { type = trigger which = 3840 } # Event for TUR
+	}
+	action_b ={ #No! Orthodoxy will remain pure and independent!#
+		name = "ACTIONNAME3833B"
+		command = { type = stability value = 3 }
+		command = { type = domestic which = innovative value = -2 }
+		command = { type = relation which = PAP value = -200 }
+		command = { type = relation which = VEN value = -200 }
+		command = { type = relation which = HUN value = -200 }
+		command = { type = relation which = POL value = -200 }
+		command = { type = relation which = CAS value = -200 }
+		command = { type = relation which = ARG value = -200 }
+		command = { type = relation which = NAP value = -200 }
+		command = { type = relation which = KNI value = -200 }
+		command = { type = relation which = CYP value = -200 }
+		command = { type = sleepevent which = 3834 }
+	}
+}
+
+event = { 
+	id = 3834
+	random = no
+	trigger = { 
+		event = 3833
+		religion = catholic 
+	}
+	country = BYZ
+	name = "EVENTNAME3834"
+	desc = "EVENTHIST3834"
+	style = "3833"
+	
+	date = { day = 1 month = january year = 1460 }
+	offset = 300
+	
+	action_a ={ #Yes, the Union serves no purpose!#
+		name = "ACTIONNAME3834A"
+		command = { type = stability value = 2 }
+		command = { type = religion which = orthodox }
+		command = { type = remove_countryculture which = italian }
+		command = { type = domestic which = innovative value = -1 }
+		command = { type = relation which = PAP value = -150 }
+		command = { type = relation which = VEN value = -100 }
+		command = { type = relation which = HUN value = -100 }
+		command = { type = relation which = POL value = -100 }
+		command = { type = relation which = CAS value = -100 }
+		command = { type = relation which = ARG value = -100 }
+		command = { type = relation which = NAP value = -100 }
+		command = { type = relation which = KNI value = -100 }
+		command = { type = relation which = CYP value = -100 }
+		command = { type = relation which = MOS value = 100 }
+		command = { type = relation which = NVG value = 100 }
+		command = { type = relation which = RUS value = 100 }
+		command = { type = relation which = SER value = 100 }
+		command = { type = relation which = TRE value = 100 }
+		command = { type = relation which = GEO value = 100 }
+		command = { type = relation which = EPI value = 100 }
+		command = { type = relation which = SPR value = 100 }
+		command = { type = relation which = THO value = 100 }
+		command = { type = relation which = BUL value = 100 }
+	}
+	action_b ={ #No, we must remain faithful to the Union!#
+		name = "ACTIONNAME3834B"
+		command = { type = stability value = -3 }
+		command = { type = domestic which = innovative value = 1 }
+	}
+}
+
+#The Byzantine Renaissance#
+event = {
+	id = 4180
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		owned = { province = 357 data = -1 }
+		owned = { province = 474 data = -1 }
+		owned = { province = 476 data = -1 }
+		owned = { province = 477 data = -1 }
+		owned = { province = 478 data = -1 }
+		owned = { province = 482 data = -1 }
+		owned = { province = 1609 data = -1 }
+		owned = { province = 1610 data = -1 }
+		owned = { province = 1611 data = -1 }
+		NOT = {
+			event = 3353
+			exists = TUR
+		}
+	}
+	random = no
+	country = BYZ
+	name = "The Byzantine Renaissance"
+	desc = "Basileus, the Empire triumphs! With our traditional Anatolian heartlands finally recovered, we may now focus on repopulating the Empire with its native Greeks, and welcoming our ancient Armenian and Vlach brethren back into the fold. In order to strengthen our position for the future and protect Constantinople, our borders should be pushed further westward, and the old Black Sea colonies secured."
+
+	style = "4180"
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1550 }
+
+	action_a ={			# The world is as it once was!
+		name = "The world is as it once was!"
+		command = { type = add_countryculture which = armenian }
+		command = { type = add_countryculture which = romanian }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = cityname which = 474 value = "Sivasteia" }
+		command = { type = provinceculture which = 474 value = greek }
+		command = { type = conversion which = 474 }
+		command = { type = provinceculture which = 476 value = greek }
+		command = { type = conversion which = 476 }
+		command = { type = cityname which = 482 value = "Iconium" }
+		command = { type = provinceculture which = 482 value = greek }
+		command = { type = conversion which = 482 }
+		command = { type = cityname which = 1609 value = "Kastra Komnenon" }
+		command = { type = provinceculture which = 1609 value = greek }
+		command = { type = conversion which = 1609 }
+		command = { type = cityname which = 1610 value = "Attaleia" }
+		command = { type = provinceculture which = 1610 value = greek }
+		command = { type = conversion which = 1610 }
+		command = { type = cityname which = 1611 value = "Laranda" }
+		command = { type = provinceculture which = 1611 value = greek }
+		command = { type = conversion which = 1611 }
+		command = { type = addcore_claim which = 318 }
+		command = { type = addcore_claim which = 319 }
+		command = { type = addcore_claim which = 322 }
+		command = { type = addcore_claim which = 355 }
+		command = { type = addcore_claim which = 362 }
+		command = { type = addcore_claim which = 363 }
+		command = { type = addcore_claim which = 364 }
+		command = { type = addcore_claim which = 365 }
+		command = { type = addcore_claim which = 464 }
+		command = { type = addcore_claim which = 465 }
+		command = { type = infra value = 500 }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 250 }
+	}
+}
+
+#Gemistos Plethon# -- based on an idea by Cuarah
+event = {
+
+	id = 5303
+	trigger = {
+		owned = { province = 360 data = -1 }
+		OR = {
+			tag = BYZ
+			tag = SPR
+		}
+	}
+	random = no
+	name = "EVENTNAME5303"
+	desc = "EVENTHIST5303"
+
+	style = "5303"
+
+	date = { day = 1 month = january year = 1438 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1452 }
+
+	action_a ={		#No, he's just a madman#
+		name = "ACTIONNAME5303A"
+		ai_chance = 60
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = relation which = TRE value = 50 }
+		command = { type = relation which = GEO value = 50 }
+		command = { type = relation which = EPI value = 50 }
+		command = {
+			trigger = {
+				tag = SPR
+			}
+			type = relation which = BYZ value = 50
+		}
+		command = {
+			trigger = {
+				tag = BYZ
+			}
+			type = relation which = SPR value = 50
+		}
+		command = { type = relation which = THO value = 50 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={		#Implement his saner ideas#
+		name = "ACTIONNAME5303B"
+		ai_chance = 40
+		command = { type = infra value = 250 }
+		command = { type = fortress which = 360 value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = OFFENSIVE value = -1 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = relation which = TRE value = -50 }
+		command = { type = relation which = GEO value = -50 }
+		command = { type = relation which = EPI value = -50 }
+		command = {
+			trigger = {
+				tag = SPR
+			}
+			type = relation which = BYZ value = -50
+		}
+		command = {
+			trigger = {
+				tag = BYZ
+			}
+			type = relation which = SPR value = -50
+		}
+		command = { type = relation which = THO value = -50 }
+		command = { type = treasury value = 100 }
+		command = { type = stability value = -2 }
+	}
+
+	action_c ={		#We have nothing to lose...#
+		name = "ACTIONNAME5303C"
+		ai_chance = 0
+		command = { type = infra value = 750 }
+		command = { type = religion which = pagan }
+		command = { type = missionaries value = 1 }
+		command = { type = INF which = 360 value = 10000 }
+		command = { type = conversion which = 360 }
+		command = { type = provincetax which = 360 value = 2 }
+		command = { type = provincemanpower which = 360 value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -4 }
+		command = { type = domestic which = CENTRALIZATION value = -4 }
+		command = { type = domestic which = INNOVATIVE value = 3 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = domestic which = QUALITY value = -1 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = relation which = TRE value = -150 }
+		command = { type = relation which = GEO value = -150 }
+		command = { type = relation which = EPI value = -150 }
+		command = {
+			trigger = {
+				tag = SPR
+			}
+			type = relation which = BYZ value = -150
+		}
+		command = {
+			trigger = {
+				tag = BYZ
+			}
+			type = relation which = SPR value = -150
+		}
+		command = { type = relation which = THO value = -150 }
+		command = { type = treasury value = 300 }
+		command = { type = stability value = -5 }
+	}
+}

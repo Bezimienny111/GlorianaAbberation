@@ -1,0 +1,718 @@
+##################################
+### byzantine restoration events #
+### for the ajf scenario #########
+### by alex 'ayeshteni' fowler ###
+##################################
+
+#Byzantium regains some of its old glory#
+event = {
+
+	id = 150077
+	trigger = {
+		owned = { province = 357 data = BYZ }
+		owned = { province = 358 data = BYZ }
+		owned = { province = 359 data = BYZ }
+		owned = { province = 360 data = BYZ }
+		owned = { province = 361 data = BYZ }
+		owned = { province = 477 data = BYZ }
+		owned = { province = 478 data = BYZ }
+		owned = { province = 476 data = BYZ }
+		owned = { province = 482 data = BYZ }
+		owned = { province = 483 data = BYZ }
+		owned = { province = 1609 data = BYZ }
+		owned = { province = 1610 data = BYZ }
+		owned = { province = 1611 data = BYZ }
+		OR = {
+			religion = catholic
+			religion = counterreform
+			}
+		}
+	random = no
+	country = BYZ
+	name = "We are growing stronger!"
+	desc = "The Byzantine Empire had been the poor man of Europe since the sacking of Constantinople in 1204 by the members of the Forth Crusade. Nevertheless, in a series of lightning campaigns and shrewd diplomacy, Byzantium found itself regaining its power and its provinces from its enemies. Constantinople prospered and its armies morale soared day by day. Sire, we are regaining the glories of the past, the priests sing your name in their masses!"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 1 month = december year = 1820 }
+
+	action_a = {
+		name = "Deus volt"
+		command = { type = vp value = 10 }
+		command = { type = missionaries value = 6 }
+		command = { type = treasury value = 200 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = conversion which = -1 }
+		command = { type = conversion which = -1 }
+		command = { type = provincetax which = -2 value = 3 }
+		command = { type = gainmanufactory which = -2 value = luxury }
+		command = { type = sleepevent which = 150078 }
+	}
+} 
+
+#Byzantium regains some of its old glory#
+event = {
+
+	id = 150078
+	trigger = {
+		owned = { province = 357 data = BYZ }
+		owned = { province = 358 data = BYZ }
+		owned = { province = 359 data = BYZ }
+		owned = { province = 360 data = BYZ }
+		owned = { province = 361 data = BYZ }
+		owned = { province = 477 data = BYZ }
+		owned = { province = 478 data = BYZ }
+		owned = { province = 476 data = BYZ }
+		owned = { province = 482 data = BYZ }
+		owned = { province = 483 data = BYZ }
+		owned = { province = 1609 data = BYZ }
+		owned = { province = 1610 data = BYZ }
+		owned = { province = 1611 data = BYZ }
+		religion = orthodox
+		}
+	random = no
+	country = BYZ
+	name = "We are growing stronger!"
+	desc = "The Byzantine Empire had been the poor man of Europe since the sacking of Constantinople in 1204 by the members of the Forth Crusade. Nevertheless, in a series of lightning campaigns and shrewd diplomacy, Byzantium found itself regaining its power and its provinces from its enemies. Constantinople prospered and its armies morale soared day by day. Sire, we are regaining the glories of the past, the priests sing your name in their masses!"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 1 month = december year = 1820 }
+
+	action_a = {
+		name = "Deus volt"
+		command = { type = vp value = 10 }
+		command = { type = missionaries value = 6 }
+		command = { type = treasury value = 200 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = conversion which = -1 }
+		command = { type = conversion which = -1 }
+		command = { type = provincetax which = -2 value = 3 }
+		command = { type = gainmanufactory which = -2 value = luxury }
+		command = { type = sleepevent which = 150098 }
+		command = { type = sleepevent which = 150077 }
+	}
+} 
+
+#Byzantium regains some of its old glory#
+event = {
+
+	id = 150098
+	trigger = {
+		owned = { province = 357 data = BYZ }
+		owned = { province = 358 data = BYZ }
+		owned = { province = 359 data = BYZ }
+		owned = { province = 360 data = BYZ }
+		owned = { province = 361 data = BYZ }
+		owned = { province = 477 data = BYZ }
+		owned = { province = 478 data = BYZ }
+		owned = { province = 476 data = BYZ }
+		owned = { province = 482 data = BYZ }
+		owned = { province = 483 data = BYZ }
+		owned = { province = 1609 data = BYZ }
+		owned = { province = 1610 data = BYZ }
+		owned = { province = 1611 data = BYZ }
+		religion = orthodox
+		event = 150077
+		}
+	random = no
+	country = BYZ
+	name = "We are growing stronger!"
+	desc = "The Byzantine Empire had been the poor man of Europe since the sacking of Constantinople in 1204 by the members of the Forth Crusade. Nevertheless, in a series of lightning campaigns and shrewd diplomacy, Byzantium found itself regaining its power and its provinces from its enemies. Constantinople prospered and its armies morale soared day by day. Sire, we are regaining the glories of the past, the priests sing your name in their masses!"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 1 month = december year = 1820 }
+
+	action_a = {
+		name = "Deus volt"
+		command = { type = vp value = 10 }
+		command = { type = missionaries value = 3 }
+		command = { type = treasury value = 100 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = conversion which = -1 }
+	}
+} 
+
+
+#byzantine power too strong, west prepares for conflict#
+event = {
+
+	id = 150079
+	trigger = {
+		event = 150078
+		exists = BYZ
+		}
+	random = no
+	country = PAP
+	name = "Byzantine Resurgence"
+	desc = "The Byzantine Empire had been the poor man of Europe since the sacking of Constantinople in 1204 by the members of the Forth Crusade. Nevertheless, in a series of lightning campaigns and shrewd diplomacy, Byzantium found itself regaining its power and its provinces from their enemies. Unfortunately, the growing power of the Eastern Church threatens our own power base, here in the West. We can not allow the Byzantines to once more become the prevailing power and the ultimate Church, your Eminence, what is to be done?"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 1 month = december year = 1820 }
+
+	action_a = {
+		name = "Call for a Crusade against Constantinople!"
+		command = { type = trigger which = 150080 }
+		command = { type = trigger which = 150081 }
+		command = { type = trigger which = 150082 }
+		command = { type = trigger which = 150083 }
+		command = { type = trigger which = 150084 }
+		command = { type = trigger which = 150085 }
+		command = { type = trigger which = 150086 }
+		command = { type = trigger which = 150087 }
+		command = { type = relation which = BYZ value = -100 }
+	}
+
+	action_a = {
+		name = "They may prove useful to use"
+		command = { type = relation which = BYZ value = 50 }
+		command = { type = vp value = 2 }
+	}
+}
+
+#a crusade has been called against byzantium#
+event = {
+
+	id = 150080
+	random = no
+	country = HUN
+	name = "Holy See calls for a Crusade"
+	desc = "The Papacy has made a call for Crusade against the corrupt and false believers in Constantinople. It would appear that the Pope has vital evidence that shows that the Eastern Emperor has had dealings with the Muslim heretics and is in the process of hammering out a deal that will endanger us all. Sire, will we take up the cross against these traitors?"
+	style = 1
+
+	action_a = {
+		name = "Yes, it may prove beneficial"
+		command = { type = relation which = BYZ value = -200 }
+		command = { type = casusbelli which = BYZ value = 360 }
+		command = { type = relation which = PAP value = 100 }
+	}
+
+	action_b = {
+		name = "No, I will not play his game"
+		command = { type = relation which = BYZ value = 50 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#a crusade has been called against byzantium#
+event = {
+
+	id = 150081
+	random = no
+	country = VEN
+	name = "Holy See calls for a Crusade"
+	desc = "The Papacy has made a call for Crusade against the corrupt and false believers in Constantinople. It would appear that the Pope has vital evidence that shows that the Eastern Emperor has had dealings with the Muslim heretics and is in the process of hammering out a deal that will endanger us all. Sire, will we take up the cross against these traitors?"
+	style = 1
+
+	action_a = {
+		name = "Yes, it may prove beneficial"
+		command = { type = relation which = BYZ value = -200 }
+		command = { type = casusbelli which = BYZ value = 360 }
+		command = { type = relation which = PAP value = 100 }
+	}
+
+	action_b = {
+		name = "No, I will not play his game"
+		command = { type = relation which = BYZ value = 50 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#a crusade has been called against byzantium#
+event = {
+
+	id = 150082
+	random = no
+	country = HAB
+	name = "Holy See calls for a Crusade"
+	desc = "The Papacy has made a call for Crusade against the corrupt and false believers in Constantinople. It would appear that the Pope has vital evidence that shows that the Eastern Emperor has had dealings with the Muslim heretics and is in the process of hammering out a deal that will endanger us all. Sire, will we take up the cross against these traitors?"
+	style = 1
+
+	action_a = {
+		name = "Yes, it may prove beneficial"
+		command = { type = relation which = BYZ value = -200 }
+		command = { type = casusbelli which = BYZ value = 360 }
+		command = { type = relation which = PAP value = 100 }
+	}
+
+	action_b = {
+		name = "No, I will not play his game"
+		command = { type = relation which = BYZ value = 50 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#a crusade has been called against byzantium#
+event = {
+
+	id = 150083
+	random = no
+	country = POL
+	name = "Holy See calls for a Crusade"
+	desc = "The Papacy has made a call for Crusade against the corrupt and false believers in Constantinople. It would appear that the Pope has vital evidence that shows that the Eastern Emperor has had dealings with the Muslim heretics and is in the process of hammering out a deal that will endanger us all. Sire, will we take up the cross against these traitors?"
+	style = 1
+
+	action_a = {
+		name = "Yes, it may prove beneficial"
+		command = { type = relation which = BYZ value = -200 }
+		command = { type = casusbelli which = BYZ value = 360 }
+		command = { type = relation which = PAP value = 100 }
+	}
+
+	action_b = {
+		name = "No, I will not play his game"
+		command = { type = relation which = BYZ value = 50 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#a crusade has been called against byzantium#
+event = {
+
+	id = 150084
+	random = no
+	country = BOH
+	name = "Holy See calls for a Crusade"
+	desc = "The Papacy has made a call for Crusade against the corrupt and false believers in Constantinople. It would appear that the Pope has vital evidence that shows that the Eastern Emperor has had dealings with the Muslim heretics and is in the process of hammering out a deal that will endanger us all. Sire, will we take up the cross against these traitors?"
+	style = 1
+
+	action_a = {
+		name = "Yes, it may prove beneficial"
+		command = { type = relation which = BYZ value = -200 }
+		command = { type = casusbelli which = BYZ value = 360 }
+		command = { type = relation which = PAP value = 100 }
+	}
+
+	action_b = {
+		name = "No, I will not play his game"
+		command = { type = relation which = BYZ value = 50 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#a crusade has been called against byzantium#
+event = {
+
+	id = 150085
+	random = no
+	country = FRA
+	name = "Holy See calls for a Crusade"
+	desc = "The Papacy has made a call for Crusade against the corrupt and false believers in Constantinople. It would appear that the Pope has vital evidence that shows that the Eastern Emperor has had dealings with the Muslim heretics and is in the process of hammering out a deal that will endanger us all. Sire, will we take up the cross against these traitors?"
+	style = 1
+
+	action_a = {
+		name = "Yes, it may prove beneficial"
+		command = { type = relation which = BYZ value = -200 }
+		command = { type = casusbelli which = BYZ value = 360 }
+		command = { type = relation which = PAP value = 100 }
+	}
+
+	action_b = {
+		name = "No, I will not play his game"
+		command = { type = relation which = BYZ value = 50 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#a crusade has been called against byzantium#
+event = {
+
+	id = 150086
+	random = no
+	country = SPA
+	name = "Holy See calls for a Crusade"
+	desc = "The Papacy has made a call for Crusade against the corrupt and false believers in Constantinople. It would appear that the Pope has vital evidence that shows that the Eastern Emperor has had dealings with the Muslim heretics and is in the process of hammering out a deal that will endanger us all. Sire, will we take up the cross against these traitors?"
+	style = 1
+
+	action_a = {
+		name = "Yes, it may prove beneficial"
+		command = { type = relation which = BYZ value = -200 }
+		command = { type = casusbelli which = BYZ value = 360 }
+		command = { type = relation which = PAP value = 100 }
+	}
+
+	action_b = {
+		name = "No, I will not play his game"
+		command = { type = relation which = BYZ value = 50 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#byzantium observes western aggression#
+event = {
+
+	id = 150087
+	random = no
+	country = BYZ
+	name = "Popish Aggression"
+	desc = "During the celebrations to the Emperor, word arrived to the palace of the Popes calling for the Crusade against the Byzantium Empire. As Western forces mustered for the expedition against Constantinople an emergency meeting was called to best resolve this growing matter. Of the many solutions voiced several seemed of sound judgement, one was for to try and appease the Papacy by liberating the Holy Land for Christianity (and to show that Byzantium was not consorting with the Muslims), another solution was to meet the Crusaders by force and to solve the division of the Churches once and for all. The issue was not easily arrived at and the pros and cons of each motion was bandied about for days"
+	style = 1
+
+	action_a = {
+		name = "Consider our options"
+		command = { type = relation which = PAP value = -50 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#byzantium makes its decision#
+event = {
+
+	id = 150088
+	trigger = {
+		owned = { province = 485 data = MAM }
+		owned = { province = 491 data = MAM }
+		owned = { province = 492 data = MAM }
+		owned = { province = 493 data = MAM }
+		event = 150087
+		}
+	random = no
+	country = BYZ
+	name = "Byzantium decides"
+	desc = "During the celebrations to the Emperor, word arrived to the palace of the Popes calling for the Crusade against the Byzantium Empire. As Western forces mustered for the expedition against Constantinople an emergency meeting was called to best resolve this growing matter. Of the many solutions voiced several seemed of sound judgement, one was for to try and appease the Papacy by liberating the Holy Land for Christianity (and to show that Byzantium was not consorting with the Muslims), another solution was to meet the Crusaders by force and to solve the division of the Churches once and for all. The issue was not easily arrived at and the pros and cons of each motion was bandied about for days. Finally the Emperor announced his decision."
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 1 month = december year = 1820 }
+
+	action_a = {
+		name = "Make the offer to the Pope"
+		command = { type = trigger which = 150089 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = sleepevent which = 150099 }
+	}
+
+	action_b = {
+		name = "If it is War they want..."
+		command = { type = relation which = PAP value = -100 }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = CAV which = -2 value = 2000 }
+		command = { type = war which = PAP }
+	}
+}
+
+#byzantium makes its decision#
+event = {
+
+	id = 150099
+	trigger = {
+		event = 150087
+		NOT = {
+			owned = { province = 485 data = MAM }
+			owned = { province = 491 data = MAM }
+			owned = { province = 492 data = MAM }
+			owned = { province = 493 data = MAM }
+			}
+		}
+	random = no
+	country = BYZ
+	name = "Byzantium decides"
+	desc = "During the celebrations to the Emperor, word arrived to the palace of the Popes calling for the Crusade against the Byzantium Empire. As Western forces mustered for the expedition against Constantinople an emergency meeting was called to best resolve this growing matter. Of the many solutions voiced several seemed of sound judgement, one solution was to meet the Crusaders by force and to solve the division of the Churches once and for all. The issue was not easily arrived at and the pros and cons of every motion was bandied about for days. Finally the Emperor announced his decision."
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 1 month = december year = 1820 }
+
+	action_a = {
+		name = "If it is War they want..."
+		command = { type = relation which = PAP value = -100 }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = CAV which = -2 value = 2000 }
+		command = { type = war which = PAP }
+	}
+}
+
+#pope must decide, accept or decline#
+event = {
+
+	id = 150089
+	random = no
+	country = PAP
+	name = "Byzantium's Offer"
+	desc = "In an effort to avoid war, Byzantium has laid an offer on the table to engage in a holy war against the Muslims and to liberate the Holy Land for Christianity. It is an obvious Byzantine ploy to appease us and to gain more territory! Nevertheless, we could agree to come to some compromise or even turn their own Byzantine ploys against them for our gain. Your Eminence, how shall we respond to this offer?"
+	style = 1
+
+	action_a = {
+		name = "We shall play their little game!"
+		command = { type = trigger which = 150090 }
+		command = { type = relation which = BYZ value = 50 }
+		command = { type = vp value = -5 }
+	}
+
+	action_b = {
+		name = "Dont listen to the forked tongue devil"
+		command = { type = war which = BYZ }
+		command = { type = INF which = -2 value = 5000 }
+		command = { type = CAV which = -2 value = 1000 }
+		command = { type = domestic which = innovative value = -1 }
+	}
+}
+
+#byzantium prepare their crusade#
+event = {
+
+	id = 150090
+	random = no
+	country = BYZ
+	name = "Rome accepts our offer"
+	desc = "Rome has accepted our offer to liberate the Holy Land for Christianity. War with the west may yet still be averted. But first we must retake what was ours! to Jerusalem or Hell!"
+	style = 1
+
+	action_a = {
+		name = "excellent!"
+		command = { type = casusbelli which = MAM value = 120 }
+		command = { type = casusbelli which = AKK value = 120 }
+		command = { type = INF which = -1 value = 5000 }
+		command = { type = INF which = -1 value = 5000 }
+	}
+}
+
+#byzantium seizes al-sham and bayt al-maqddis#
+event = {
+
+	id = 150091
+	trigger = {
+		event = 150090
+		control = { province = 485 data = BYZ }
+		control = { province = 491 data = BYZ }
+		control = { province = 492 data = BYZ } 
+		control = { province = 493 data = BYZ }
+		stability = 2
+		war = { country = BYZ country = MAM }
+	}
+	random = no
+	country = MAM
+	name = "Byzantium controls Mubaraka!"
+	desc = "The Byzantines have stormed past our defenses and have taken our Holy Places in al-Sham. Our people are enraged and are joining our soldiers to drive these infidels out!"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 10
+	deathdate = { day = 1 month = december year = 1820 }
+
+	action_a = {
+		name = "Drive the infidels out!"
+		command = { type = INF which = -2 value = 5000 }
+		command = { type = vp value = 1 }
+	}
+}
+
+#byzantium seizes al-sham and bayt al-maqddis#
+event = {
+
+	id = 150092
+	trigger = {
+		event = 150090
+		control = { province = 485 data = BYZ }
+		control = { province = 491 data = BYZ }
+		control = { province = 492 data = BYZ }
+		control = { province = 493 data = BYZ }
+		war = { country = BYZ country = MAM }
+		stability = -1
+		NOT = {
+			stability = 2
+		}
+	}
+	random = no
+	country = MAM
+	name = "Byzantium controls Mubaraka!"
+	desc = "The Byzantines have stormed past our defenses and have taken our Holy Places in al-Sham. Our people are enraged and demand you do something to drive these infidels out!"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 10
+	deathdate = { day = 1 month = december year = 1820 }
+
+	action_a = {
+		name = "Drive the infidels out!"
+		command = { type = INF which = -2 value = 5000 }
+		command = { type = treasury value = -100 }
+		command = { type = revoltrisk which = 12 value = 3 }
+	}
+}
+
+#byzantium seizes al-sham and bayt al-maqddis#
+event = {
+
+	id = 150093
+	trigger = {
+		event = 150090
+		control = { province = 485 data = BYZ }
+		control = { province = 491 data = BYZ }
+		control = { province = 492 data = BYZ }
+		control = { province = 493 data = BYZ }
+		war = { country = BYZ country = MAM }
+		stability = -3
+		NOT = {
+			stability = -1
+		}
+	}
+	random = no
+	country = MAM
+	name = "Byzantium controls Mubaraka!"
+	desc = "The Byzantines have stormed past our defenses and have taken our Holy Places in al-Sham. Our people are enraged and curse your name in the streets! There is talk of revolt against your rule! Make peace with these devils and restore order, whatever the cost may be, else I fear for your person! We can still regroup and drive the infidels out at a later date!"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 10
+	deathdate = { day = 1 month = december year = 1820 }
+
+	action_a = {
+		name = "Argh! If I must!"
+		command = { type = secedeprovince which = BYZ value = 485 }
+		command = { type = secedeprovince which = BYZ value = 491 }
+		command = { type = secedeprovince which = BYZ value = 492 }
+		command = { type = secedeprovince which = BYZ value = 493 }
+		command = { type = revolt which = -2 }
+		command = { type = revoltrisk which = 6 value = 4 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b = {
+		name = "Never! Not as long as I live"
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revoltrisk which = 24 value = 6 }
+		command = { type = desertion which = -1 value = 2000 }
+	}
+}
+
+#byzantium gains Holy Land#
+event = {
+
+	id = 150094
+	trigger = {
+		event = 150090
+		owned = { province = 485 data = BYZ }
+		owned = { province = 491 data = BYZ }
+		owned = { province = 492 data = BYZ }
+		owned = { province = 493 data = BYZ }
+		}
+	random = no
+	country = PAP
+	name = "Byzantium has Succeeded, they must honor the agreement"
+	desc = "The Byzantine Empire has been successful in reclaiming the Holy Land from the Muslims. Now that this is done we must insist that Byzantium hands over Jurisdiction to the Latins or risk war! We will not allow the Holy Land to remain under Byzantine rule."
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 1 month = december year = 1820 }
+
+	action_a = {
+		name = "Demand Byzantium hand over Outremer to Papal jurisdiction"
+		command = { type = trigger which = 150095 }
+		command = { type = vp value = 1 }
+	}
+
+	action_b = {
+		name = "Play safe and demand Outremer's immediate independence"
+		command = { type = trigger which = 150096 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#papal demands - hand over jurisdiction#
+event = {
+
+	id = 150095
+	random = no
+	country = BYZ
+	name = "Papal jurisdiction in Outremer"
+	desc = "We have successfully retaken the Holy Lands from the Muslims. An emmisary from the Vatican informs us that if we do not hand Outremer over to the Holy See, then we shall have broken our agreement and the war against us will result. However, we agreed to liberate Outremer and not to hand it over to Rome. Sire, will we hand over Outremer to the Latins?"
+	style = 1
+
+	action_a = {
+		name = "Release Outremer as OUR vassals"
+		command = { type = independence which = PST }
+		command = { type = vp value = 10 }
+		command = { type = secedeprovince which = PST value = 485 }
+		command = { type = secedeprovince which = PST value = 491 }
+		command = { type = secedeprovince which = PST value = 492 }
+		command = { type = secedeprovince which = PST value = 493 }
+		command = { type = relation which = PAP value = -100 }
+	}
+
+	action_b = {
+		name = "Very well, to prevent war"
+		command = { type = relation which = PAP value = 200 }
+		command = { type = secedeprovince which = PAP value = 485 }
+		command = { type = secedeprovince which = PAP value = 491 }
+		command = { type = secedeprovince which = PAP value = 492 }
+		command = { type = secedeprovince which = PAP value = 493 }
+		command = { type = trigger which = 150097 }
+	}
+
+	action_c = {
+		name = "No let us keep it as ours"
+		command = { type = war which = PAP }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#byzantium hand over outremer#
+event = {
+
+	id = 150097
+	random = no
+	country = PAP
+	name = "Byzantium honors the agreement"
+	desc = "Byzantium has honoured the agreement and has given over control of Outremer to us. Now all that is needed is for us to install the rightful monarchy."
+	style = 1
+
+	action_a = {
+		name = "Deus volt"
+		command = { type = independence which = JER }
+		command = { type = secedeprovince which = JER value = 485 }
+		command = { type = secedeprovince which = JER value = 491 }
+		command = { type = secedeprovince which = JER value = 492 }
+		command = { type = secedeprovince which = JER value = 493 }
+		command = { type = vp value = 50 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#papal demands - grant independence#
+event = {
+
+	id = 150096
+	random = no
+	country = BYZ
+	name = "Grant Independence to Outremer"
+	desc = "We have successfully retaken the Holy Lands from the Muslims. An emmisary from the Vatican informs us that if we do not grant immediate independence to Outremer, then war will result. Sire, will we grant immediate independence to Outremer?"
+	style = 1
+
+	action_a = {
+		name = "Very well, release Outremer"
+		command = { type = independence which = PST }
+		command = { type = vp value = 10 }
+		command = { type = secedeprovince which = PST value = 485 }
+		command = { type = secedeprovince which = PST value = 491 }
+		command = { type = secedeprovince which = PST value = 492 }
+		command = { type = secedeprovince which = PST value = 493 }
+		command = { type = relation which = PAP value = 100 }
+	}
+
+	action_b = {
+		name = "No let us keep it as ours"
+		command = { type = war which = PAP }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = stability value = -1 }
+	}
+}

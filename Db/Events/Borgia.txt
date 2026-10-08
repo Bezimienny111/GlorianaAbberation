@@ -1,0 +1,177 @@
+###########################################
+### Borgia Papal events 		###
+### by Alex J Fowler (Ayeshteni)	###
+### for the New AJF Scenario		###
+###########################################
+
+#borgia events
+#election of Pope Alexander VI (Don Roderigo Borgia)#
+event = {
+
+	id = 120630
+	random = no
+	country = PAP
+	name = "Cardinals elect Alexander VI"
+	desc = "When Pope Innocentius VIII died in 1492 the cardinals were in a dilemma as to who to elect for the pontificate. One group, led by Cardinal Ascanio the brother of Ludovico Sforza, Regent of Milan who with the patronage of French king Charles VIII all wanted a Pope hostile to the Aragonese ruler Ferrante of Naples. The other faction, promoted by the Neapolitan king was controlled and directed by Cardinal della Rovere to secure an Aragonese friendly pontiff. These two groups remained in deadlock, so with numerous bribes a compromise was found in the election of the Spaniard Roderigo Borgia as Pope Alexander VI, which would lead to the pontificate of one of the most infamous individuals in the Papal States history."
+	style = 1
+
+	date = { day = 27 month = july year = 1492 }
+
+	action_a = {
+		name = "OK"
+		command = { type = vp value = 1 }
+	}
+}
+
+#election of Pope pius III#
+event = {
+
+	id = 120631
+	random = no
+	country = PAP
+	name = "Cardinals elect Pius III"
+	desc = "Alexander VI died in August of 1503 with many of his ambitions not yet reaching friution. Alexander VI died of fever though it was rumoured to have been poison. His dynastic aims were ended when Cesare Borgia, who had his own ambitions, was struck down with the same malaise as his father. This allowed the Conclave of Cardinals to elect a Pope without the dominating presence of Cesare. In this they elected another compromise candidate, the old and ailing Cardinal of Siena, Francesco Todeschini Piccolomini as Pope Pius III."
+	style = 2
+
+	date = { day = 19 month = august year = 1503 }
+
+	action_a = {
+		name = "OK"
+		command = { type = vp value = -1 }
+	}
+}
+
+#election of Pope julius II#
+event = {
+
+	id = 120632
+	random = no
+	country = PAP
+	name = "Cardinals elect Julius II"
+	desc = "Pope Pius III ruled for only a short time before he succumbed to the curse of mortality. The Conclave of Cardinals then elected Cardinal Giuliano della Rovere as Pope Julius II. della Rovere was a personal nemesis of Alexander VI and all members of the Borgia family and under his pontificate began the 'crusade' to reign in and destroy the dynastic gains of Alexanders pontificate. Cesare Borgia was arrested and sent to Spain, thereby the Duke of the Romagne's (Cesare) dreams of carving out his own realm in central Italy was over. Julius II brought the rebellious barons of the Papal States into check, cementing Papal control of the Marche of Ancona, Spoleto and the Romagne."
+	style = 2
+
+	date = { day = 10 month = october year = 1503 }
+
+	action_a = {
+		name = "OK"
+		command = { type = stability value = 1 }
+	}
+}
+
+#leader-cesare borgia#
+event = {
+
+	id = 120633
+	random = no
+	country = PAP
+	name = "Cesare Borgia"
+	desc = "EVENTHIST120633"
+	style = 1
+
+	date = { day = 1 month = january year = 1497 }
+
+	action_a = {
+		name = "Cesare Borgia"
+		command = { type = wakeleader which = 2116 }
+	}
+}
+
+#lucrezia's marriages-1st milano#
+event = {
+
+	id = 120634
+	random = no
+	country = PAP
+	name = "1st marriage of Lucrezia Borgia"
+	desc = "Lucrezia Borgia, an infamous name with an infamous past, most of which was Julian propaganda. Lucrezia, an illegitimate daughter of Pope Alexander VI was used as a pawn in Alexander's machivellian plots. In June 1493 the Pope married off Lucrezia to Giovanni Sforza, a relative of the Regent in Milan in an attempt to create close ties to the Milanese. At this time Alexander wished treaties with the French and their lapdogs of Milan. Lucrezia would be the instrument that would achieve this aim."
+	style = 1
+
+	date = { day = 1 month = june year = 1493 }
+	offset = 20
+	deathdate = { day = 31 month = august year = 1493 }
+
+	action_a = {
+		name = "Marry off Lucrezia"
+		command = { type = relation which = MLO value = 50 }
+		command = { type = relation which = FRA value = 25 }
+		command = { type = relation which = ARG value = -25 }
+		command = { type = relation which = NAP value = -50 }
+		command = { type = dynastic which = MLO }
+		command = { type = vp value = 1 }
+	}
+
+	action_b = {
+		name = "No, keep her for later"
+		command = { type = vp value = -10 }
+	}
+}
+
+#lucrezia's 2nd marriage-aragon#
+event = {
+
+	id = 120635
+	trigger = {
+		event = 120634
+		}
+	random = no
+	country = PAP
+	name = "2nd marriage of Lucrezia Borgia"
+	desc = "It soon became obvious that the marriage with Milan was achieving nothing. Alexander's ambitions lay with the Aragonese and a certain (though brief) reproachment existed between the Papacy and Naples. France had invaded Italy in April 1494 and used the Papal States as the main route to Naples. Papal diplomacy therefore became entwined with the Aragonese against the French. Lucrezia's marriage with Giovanni Sforza was annulled and in August 1498 Lucrezia was married to Duke Alfonso of Bisceglia, a noble of Aragon and Naples."
+	style = 1
+
+	date = { day = 1 month = august year = 1498 }
+	offset = 20
+	deathdate = { day = 31 month = september year = 1498 }
+
+	action_a = {
+		name = "Marry off Lucrezia"
+		command = { type = relation which = MLO value = -25 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = ARG value = 50 }
+		command = { type = relation which = NAP value = 50 }
+		command = { type = breakdynastic which = MLO }
+		command = { type = dynastic which = ARG }
+		command = { type = dynastic which = NAP }
+		command = { type = vp value = 2 }
+	}
+
+	action_b = {
+		name = "No, keep her for later"
+		command = { type = vp value = -15 }
+	}
+}
+
+#lucrezia's 3rd marriage-ferrara#
+event = {
+
+	id = 120636
+	trigger = {
+		event = 120635
+		}
+	random = no
+	country = PAP
+	name = "3rd marriage of Lucrezia Borgia"
+	desc = "Duke Alfonso di Bisceglia had by 1500 become useless and had attracted many enemies in Rome. An attempt on his life was made ( probably by the House of Orsini ) and the Duke suspected Cesare and tried to shoot Cesare in the vatican gardens. Cesare burst into Alfonso's house, and brushing his sister Lucrezia aside, strangled the man. This allowed Cesare to continue his diplomacy with the French and for the Pope to once again marry off Lucrezia. Spain and France had come to terms in regards to Naples and had not yet started fighting over the spoils, leaving Alexander the opportunity to consolidate his power in Italy. Lucrezia was to be married off to the son of Duke Ercole of Ferrara, one of the most powerful dukedoms in Italy. After the Dukes reservations (by this time the Borgia's reputation was notorious), it was agreed and Lucrezia married Alfonso d'Este of Ferrara in September of 1501."
+	style = 2
+
+	date = { day = 1 month = september year = 1501 }
+	offset = 20
+	deathdate = { day = 31 month = october year = 1501 }
+
+	action_a = {
+		name = "Marry off Lucrezia"
+		command = { type = relation which = FLO value = -25 }
+		command = { type = relation which = PIS value = -50 }
+		command = { type = relation which = FER value = 50 }
+		command = { type = relation which = MOD value = 50 }
+		command = { type = dynastic which = FER }
+		command = { type = dynastic which = MOD }
+		command = { type = vp value = 3 }
+	}
+
+	action_b = {
+		name = "No, keep her for later"
+		command = { type = vp value = -20 }
+	}
+}

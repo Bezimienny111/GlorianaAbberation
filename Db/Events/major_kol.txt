@@ -1,0 +1,218 @@
+#####Cologne Major Events#####
+#By Joakim 'Greven' Bergqwist#
+##############################
+
+#The League of Augsburg#
+event = {
+
+	id = 3663				#triggered by FRA3127#
+	random = no
+	country = KOL
+	name = "EVENTNAME3663"
+	desc = "EVENTHIST3663"
+
+	action_a ={					#Defy French claims#
+		name = "ACTIONNAME3663A"
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = PRU value = 150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = HAN value = 100 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = HES value = 100 }
+		command = { type = relation which = KLE value = 100 }
+		command = { type = relation which = BAD value = 100 }
+		command = { type = relation which = PFA value = 100 }
+		command = { type = relation which = THU value = 100 }
+	}
+
+	action_b ={					#Ignore it#
+		name = "ACTIONNAME3663B"
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = PRU value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = HAN value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = HES value = -50 }
+		command = { type = relation which = KLE value = -50 }
+		command = { type = relation which = BAD value = -50 }
+		command = { type = relation which = PFA value = -50 }
+		command = { type = relation which = THU value = -50 }
+	}
+}
+#The League of Schmalkalden#
+event = {
+
+	id = 3673
+	trigger = {
+		 exists = HAB  
+		 	AND = { 
+				OR = {
+					religion = protestant
+					religion = reformed
+						}
+			}
+	}
+	random = no
+	country = KOL
+	name = "EVENTNAME3673"
+	desc = "EVENTHIST3673"
+
+	date = { day = 1 month = january year = 1527 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1529 }
+
+	action_a ={					#Give it your support#
+		name = "ACTIONNAME3673A"
+		command = { type = relation which = BRA value = 50 }
+		command = { type = relation which = HAN value = 50 }
+		command = { type = relation which = HES value = 50 }
+		command = { type = relation which = PFA value = 50 }
+		command = { type = relation which = SAC value = 50 }
+		command = { type = relation which = THU value = 50 }
+		command = { type = relation which = BAD value = 50 }
+		command = { type = relation which = PAP value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = HAB value = -100 }
+	}
+
+	action_b ={					#Ignore it#
+		name = "ACTIONNAME3673B"
+		command = { type = relation which = BRA value = -150 }
+		command = { type = relation which = HAN value = -150 }
+		command = { type = relation which = HES value = -150 }
+		command = { type = relation which = PFA value = -150 }
+		command = { type = relation which = SAC value = -150 }
+		command = { type = relation which = THU value = -150 }
+		command = { type = relation which = BAD value = -150 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = relation which = BAY value = 50 }
+	}
+}
+
+# The Bavarian Archbishops #
+event = {
+
+	id = 3852
+	random = no
+	country = KOL
+	name = "EVENTNAME3852"
+	desc = "EVENTHIST3852"
+
+	date = { day = 1 month = april year = 1583 }
+
+	action_a ={		#Allow Bavarian influence#
+		name = "ACTIONNAME3852A"
+		command = { type = trigger which = 3853 }
+		command = { type = relation which = BAY value = 200 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = domestic which = innovative value = -1 }
+	}
+
+	action_b ={		#We will go our own way#
+		name = "ACTIONNAME3852B"
+		command = { type = relation which = BAY value = -50 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#The Evangelic Union#
+event = {
+
+	id = 3674
+	trigger = {
+		 OR = {
+			religion = protestant
+			religion = reformed
+				}
+			}
+	random = no
+	country = KOL
+	name = "EVENTNAME3674"
+	desc = "EVENTHIST3674"
+
+	date = { day = 1 month = january year = 1605 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a ={						#Prepare to Join#
+		name = "ACTIONNAME3674A"
+		command = { type = relation which = BRA value = 50 }
+		command = { type = relation which = HAN value = 50 }
+		command = { type = relation which = HES value = 50 }
+		command = { type = relation which = PFA value = 50 }
+		command = { type = relation which = SAC value = 50 }
+		command = { type = relation which = THU value = 50 }
+		command = { type = relation which = BAD value = 50 }
+		command = { type = relation which = PAP value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = HAB value = -100 }
+	}
+
+	action_b ={						#Stay Neutral#
+		name = "ACTIONNAME3674B"
+		command = { type = relation which = BRA value = -150 }
+		command = { type = relation which = HAN value = -150 }
+		command = { type = relation which = HES value = -150 }
+		command = { type = relation which = PFA value = -150 }
+		command = { type = relation which = SAC value = -150 }
+		command = { type = relation which = THU value = -150 }
+		command = { type = relation which = BAD value = -150 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = relation which = BAY value = 50 }
+	}
+}
+
+#The Catholic League#
+event = {
+
+	id = 3675
+	trigger = {
+		 OR = {
+			religion = catholic
+			religion = counterreform
+				}
+			}
+	random = no
+	country = KOL
+	name = "EVENTNAME3675"
+	desc = "EVENTHIST3675"
+
+	date = { day = 1 month = january year = 1607 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a ={						#Prepare to Join#
+		name = "ACTIONNAME3675A"
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = HAN value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = PFA value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = relation which = THU value = -100 }
+		command = { type = relation which = BAD value = -100 }
+		command = { type = relation which = BAY value = 100 }
+		command = { type = relation which = KLE value = 100 }
+		command = { type = relation which = PAP value = 150 }
+		command = { type = relation which = SPA value = 150 }
+		command = { type = relation which = HAB value = 150 }
+	}
+
+	action_b ={						#Stay Neutral#
+		name = "ACTIONNAME3675B"
+		command = { type = relation which = BRA value = 50 }
+		command = { type = relation which = HAN value = 50 }
+		command = { type = relation which = HES value = 50 }
+		command = { type = relation which = PFA value = 50 }
+		command = { type = relation which = SAC value = 50 }
+		command = { type = relation which = THU value = 50 }
+		command = { type = relation which = BAD value = 50 }
+		command = { type = relation which = PAP value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = HAB value = -100 }
+	}
+}

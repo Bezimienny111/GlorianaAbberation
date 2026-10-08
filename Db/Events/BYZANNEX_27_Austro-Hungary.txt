@@ -1,0 +1,337 @@
+#-----------------------------------------------------------------------------
+# Austrian & Hungarian Events
+
+#Balkan Tensions by Mr. Ouija
+event = {
+	id = 3001394
+	trigger = {
+		event = 3185 #HAB: Habsburg Inheritance of Hungary
+		domestic = { type = aristocracy value = 5 }
+	}
+	random = NO
+	country = BYZ
+	name = "Conflict in the Balkans"
+	desc = "Caught between the Byzantine revival and the Hapsburg inheritance of Hungary, the Balkans had become an area where the two spheres of influence collided. As the Empire's situation improved, local nobles began to agitate for expansion up to the Danube. How shall we respond?"
+	date = { day = 10 month = january year = 1665 }
+	offset = 3600 #10 years
+	deathdate = { day = 10 month = january year = 1666 }
+
+	action_a = { #Fight for it.#
+		name = "The heirs of Charlemagne are unwelcome here"
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = casusbelli which = HUN value = 60 }
+		command = { type = breakvassal which = HUN }
+		command = { type = war which = HUN }
+		command = { type = casusbelli which = HAB value = 60 }
+		command = { type = breakvassal which = HAB }
+		command = { type = war which = HAB }
+	}
+	action_b = { #Why bother?#
+		name = "We will not pander to the ambitions of petty warlords"
+		command = { type = stability value = -1 }
+		command = { type = desertion which = -1 value = 10000 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = relation which = HUN value = 50 }
+	}
+}
+
+#Balkan Tensions by Mr. Ouija
+event = {
+	id = 3001395
+	trigger = {
+		event = 3185 #HAB: Habsburg Inheritance of Hungary
+		event = 3001394
+		domestic = { type = aristocracy value = 5 }
+	}
+	random = NO
+	country = BYZ
+	name = "Renewed Tensions in the Balkans"
+	desc = "As it lacked a powerful independent government of its own, the local lords saw Balkan expeditions as tempting opportunities to increase their power."
+	date = { day = 10 month = january year = 1685 }
+	offset = 3600 #10 years
+	deathdate = { day = 10 month = january year = 1695 }
+
+	action_a = { #Fight for it.#
+		name = "We will reclaim that which once was ours!"
+		command = { type = casusbelli which = HUN value = 60 }
+		command = { type = casusbelli which = HAB value = 60 }
+		command = { type = breakvassal which = HUN }
+		command = { type = war which = HUN }
+		command = { type = breakvassal which = HAB }
+		command = { type = war which = HAB }
+		command = { type = stability value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+	}
+	action_b = { #No way#
+		name = "The Emperor makes these decisions, not the magnates"
+		command = { type = remove_countryculture which = slavonic }
+		command = { type = stability value = -2 }
+		command = { type = desertion which = -1 value = 10000 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = HUN value = 100 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+	}
+}
+
+#Byz supports Zapolya's claim against the Habsburgs
+event = {
+	id = 3001396
+	trigger = {
+		event = 3185 #HAB: Habsburg Inheritance of Hungary
+	}
+	random = NO
+	country = BYZ
+	name = "The Hungarian Election"
+	desc = "Lajos II (Ludwig) king of Hungary and Bohemia (1516-26), son and successor of Vladislaus II, was the last of the Jagiellon dynasty in the two kingdoms. On August, 22, 1526 he was assassinated by a conspiracy of Magyar nobles. Through the marriage treaty concluded by Lajos's father, the heir to the crowns of Hungary and Bohemia would be Louis's brother-in-law, Ferdinand of Habsburg, and he was chosen over the local Transylvanian candidate, Janos Zapolya, by the Hungarian diet."
+	date = { year = 1525 }
+	offset = 30
+	deathdate = { year = 1530 }
+
+	action_a = {
+		name = "Support Zapolya's faction"
+		command = { type = relation which = HUN value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = stability value = 1 }
+		command = { type = treasury value = -150 }
+		command = { type = trigger which = 3001397 }
+		command = { type = trigger which = 3001400 }
+	}
+	action_b = {
+		name = "Take no part in this farce"
+		command = { type = relation which = HUN value = 50 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#Byz supports Zapolya's claim against the Habsburgs
+event = {
+	id = 3001397
+	random = NO
+	country = HUN
+	name = "Byzantine interference"
+	desc = "The Greeks are funding rebels loyal to the defeated candidate Janos Zapolya!"
+
+	action_a = {
+		name = "Grr"
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = stability value = -1 }
+		command = { type = casusbelli which = BYZ value = 60 }
+	}
+}
+
+
+
+#Byz supports Zapolya's claim against the Habsburgs
+event = {
+	id = 3001399 #No event in the Byz Annex triggers this event.
+	random = NO
+	country = BYZ
+	name = "Zapolya wins!"
+	desc = "Through our support, the native Hungarian candidate has defeated the Habsburg Ferdinand. The crowns of Hungary and Germany will remain on separate heads!"
+
+	action_a = {
+		name = "Basileus one, Imperator zerooooo"
+		#command = { type = vp value = 50 }
+		command = { type = relation which = HUN value = 50 }
+		command = { type = relation which = HAB value = -200 }
+	}
+}
+
+#Byz supports Zapolya's claim against the Habsburgs
+event = {
+	id = 3001400
+	random = NO
+	country = HAB
+	name = "Byzantine interference"
+	desc = "The Greeks are funding rebels loyal to the defeated Hungarian candidate Janos Zapolya!"
+
+	action_a = {
+		name = "Grr"
+		command = { type = casusbelli which = BYZ value = 60 }
+	}
+}
+
+#Byz supports Zapolya's claim against the Habsburgs
+event = {
+	id = 3001401
+	trigger = {
+		event = 3184 #HAB: Habsburg Inheritance of Hungary
+	}
+	random = NO
+	country = BYZ
+	name = "The Hungarian Election"
+	desc = "Lajos II (Ludwig,) king of Hungary and Bohemia (1516-26,) son and successor of Vladislaus II, was the last of the Jagiellon dynasty in the two kingdoms. On August, 22, 1526, he was assassinated by a conspiracy of Magyar nobles. Through the marriage treaty concluded by Lajos's father, the heir to the crowns of Hungary and Bohemia would be Louis's brother-in-law, Ferdinand of Habsburg, but Hungary prefered to elect a Transylvanian nobleman, Janos Zapolya."
+	date = { year = 1525 }
+	offset = 30
+	deathdate = { year = 1530 }
+
+	action_a = {
+		name = "Support Zapolya's faction"
+		command = { type = relation which = HUN value = 100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = stability value = 1 }
+		command = { type = treasury value = -150 }
+		command = { type = trigger which = 3001402 }
+		command = { type = trigger which = 3001403 }
+	}
+	action_b = {
+		name = "Take no part in this farce"
+		command = { type = relation which = HUN value = -50 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#Byz supports Zapolya's claim against the Habsburgs
+event = {
+	id = 3001402
+	random = NO
+	country = HUN
+	name = "Byzantine support"
+	desc = "The Greeks have sent us wagonloads of gold to purchase arms and hire soldiers to stave off the Habsburgs!"
+
+	action_a = {
+		name = "I'm not complaining"
+		command = { type = treasury value = 50 }
+		command = { type = CAV which = -2 value = 15000 }
+	}
+}
+
+#Byz supports Zapolya's claim against the Habsburgs
+event = {
+	id = 3001403
+	random = NO
+	country = HAB
+	name = "Byzantine interference"
+	desc = "The Greeks are funding forces loyal to the Hungarian usurper Janos Zapolya!"
+
+	action_a = {
+		name = "Grr"
+		command = { type = casusbelli which = BYZ value = 60 }
+	}
+}
+
+#The Effects of the Pragmatic Sanction#
+event = {
+	id = 3001408
+	trigger = {
+		event = 3205 #HAB: The Effects of the Pragmatic Sanction
+	}
+	random = NO
+	country = BYZ
+	name = "EVENTNAME3205" #The Effects of the Pragmatic Sanction
+	desc = "EVENTHIST3205"
+	#-#The Pragmatic Sanction, solemnly rendered by Emperor Charles VI on 19th April 1713, established the indivisibility of the Habsburg patrimony, and ruled the order of succession by order of first born child, even to a woman. This made Maria-Theresa, born in 1717, the heir of the Empire. The Pragmatic Sanction was recognized by Spain in 1725 (confirmed in 1731), Russia in 1726, Prussia in 1728, the United Provinces in 1731, Hanover in 1732, the Heiliges Reich (except Bavaria) in 1732 and France in 1738 only. Bavarian refusal would lead to the War of the Austrian Succession.
+
+	date = { day = 19 month = april year = 1713 }
+	offset = 90
+	deathdate = { day = 20 month = october year = 1740 }
+
+	action_a = {
+		name = "ACTIONNAME3174A" #Anti-Habsburg#
+		command = { type = casusbelli which = HAB value = 36 }
+		command = { type = stability value = 2 }
+		command = { type = relation which = BAY value = 100 }
+		command = { type = relation which = SAC value = 100 }
+		command = { type = relation which = GEN value = 100 }
+		command = { type = relation which = PRU value = 100 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = ENG value = -150 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = POR value = -100 }
+		command = { type = relation which = RUS value = -50 }
+		command = { type = relation which = HES value = -50 }
+		command = { type = relation which = HAN value = -50 }
+		command = { type = relation which = HAB value = -150 }
+	}
+	action_b = {
+		name = "ACTIONNAME3174B" #Neutral#
+		command = { type = stability value = -1 }
+		command = { type = relation which = BAY value = -50 }
+		command = { type = relation which = SAC value = -50 }
+		command = { type = relation which = GEN value = 50 }
+		command = { type = relation which = PRU value = -50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = ENG value = 50 }
+		command = { type = relation which = HOL value = 100 }
+		command = { type = relation which = POR value = 100 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = relation which = HES value = 50 }
+		command = { type = relation which = HAN value = 50 }
+		command = { type = relation which = HAB value = 100 }
+	}
+	action_c = {
+		name = "ACTIONNAME3174C" #Pro-Habsburg#
+		command = { type = stability value = -3 }
+		command = { type = casusbelli which = FRA value = 36 }
+		command = { type = relation which = BAY value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = relation which = GEN value = -50 }
+		command = { type = relation which = PRU value = -100 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = HOL value = -150 }
+		command = { type = relation which = POR value = 150 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = relation which = HES value = 50 }
+		command = { type = relation which = HAN value = 50 }
+		command = { type = relation which = HAB value = 150 }
+	}
+}
+
+#Imre Tokoll's revolt
+event = {
+	id = 3001409
+	trigger = {
+		event = 3333 #HAB: The Insurrection of Duke Imre Tököl
+	}
+	random = NO
+	country = BYZ
+	name = "EVENTNAME3333" #The Insurrection of Duke Imre Tököll
+	desc = "EVENTHIST3333"
+	#-#A young Transylvanian, Imre Tököll, led a revolt that forced Leopold in 1681 to restore the constitution and revoke many of his harshest measures. The Porte, encouraged by Tököll's successes against the empire, sent into Hungary a vast army that in 1683 reached the walls of Vienna.
+
+	date = { day = 29 month = december year = 1679 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1685 }
+
+	action_a = {
+		name = "Support Tököll"
+		command = { type = treasury value = -300 }
+		command = { type = stability value = 1 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = casusbelli which = HAB value = 60 }
+		command = { type = trigger which = 3001410 }
+	}
+	action_b = {
+		name = "Let the barbaroi kill each other"
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#Imre Tokoll's revolt - Byzantine interference
+event = {
+	id = 3001410 #triggered by BYZ_3001409 A
+	random = NO
+	country = HAB
+	name = "Byzantine interference"
+	desc = "We have reports that the Greeks have channelled funding and arms to Duke Tokoll's revolt. The Magyar nobles have redoubled their efforts."
+
+	action_a = {
+		name = "Prepare my horse!"
+		command = { type = casusbelli which = BYZ value = 240 }
+		command = { type = revolt which = 325 }
+		command = { type = stability value = -2 }
+		command = { type = revolt which = 325 }
+		command = { type = revolt which = 326 }
+		command = { type = revolt which = 326 }
+		command = { type = revolt which = 352 }
+		command = { type = revolt which = 352 }
+		command = { type = revolt which = 353 }
+		command = { type = revolt which = 353 }
+	}
+}

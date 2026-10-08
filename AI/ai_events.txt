@@ -1,0 +1,2696 @@
+#Gloriana: 600500
+
+#Pirate Havens
+event = {
+	id = 600500
+	trigger = { ai = yes }
+	random = no
+	country = PIH
+	name = "AI_EVENT"
+	desc = "Pre-Columbian"
+
+	date = { day = 1 month = january year = 1419 }
+
+	action_a = {
+		name = "My little Island"
+		command = { type = ai which = 1419_PH_ai.txt }
+	}
+}
+
+event = {
+	id = 600501
+	trigger = { ai = yes }
+	random = no
+	country = PIH
+	name = "AI_EVENT"
+	desc = "Post-Columbian"
+
+	date = { day = 1 month = january year = 1492 }
+
+	action_a = {
+		name = "My little Pond"
+		command = { type = ai which = 1492_PH_ai.txt }
+	}
+}
+
+#Castille
+event = {
+	id = 600502
+	trigger = { ai = yes }
+	random = no
+	country = CAS
+	name = "AI_EVENT"
+	desc = "Spanish-like Castille "
+
+	date = { day = 1 month = january year = 1492 }
+
+	action_a = {
+		name = "Off to the New World"
+		command = { type = ai which = spanishCAS_ai.txt }
+	}
+}
+#--------------------------------------------------------------------------
+
+#China (CHI): 600000-600019
+
+event = {
+	id = 600000
+	trigger = { ai = yes }
+	random = no
+	country = CHI
+	name = "AI_EVENT"
+	desc = "Start exploring"
+
+	date = { day = 1 month = january year = 1419 }
+
+	action_a = {
+		name = "Change to Zeng He AI"
+		command = { type = ai which = CHI_1419_ZengHe.txt }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+#Denmark (DAN): 600020-600029
+
+event = {
+	id = 600020
+	trigger = { ai = yes }
+	random = no
+	country = DAN
+	name = "AI_EVENT"
+	desc = "Early AI"
+
+	date = { day = 1 month = january year = 1419 }
+
+	action_a = {
+		name = "Change to Early AI"
+		command = { type = ai which = DAN_1419_Early.txt }
+	}
+}
+event = {
+	id = 600021
+	trigger = { ai = yes }
+	random = no
+	country = DAN
+	name = "AI_EVENT"
+	desc = "Standard AI"
+
+	date = { day = 10 month = april year = 1440 }
+
+	action_a = {
+		name = "Change to Standard AI"
+		command = { type = ai which = DAN_1440_Standard.txt }
+	}
+}
+event = {
+	id = 600022
+	trigger = { ai = yes }
+	random = no
+	country = DAN
+	name = "AI_EVENT"
+	desc = "Start colonizing"
+
+	date = { day = 6 month = january year = 1670 }
+
+	action_a = {
+		name = "Change to Colonizer AI"
+		command = { type = ai which = DAN_1670_Colonizer.txt }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+#England (ENG): 600030-600049
+
+event = {
+	id = 600043
+	trigger = { ai = yes }
+	random = no
+	country = ENG
+	name = "AI_EVENT"
+	desc = "HYW 1413"
+
+	date = { day = 1 month = january year = 1413 }
+
+	action_a = {
+		name = "Change to HYW AI 1413"
+		command = { type = ai which = ENG_1413_HYW.txt }
+	}
+}
+event = {
+	id = 600030
+	trigger = { ai = yes }
+	random = no
+	country = ENG
+	name = "AI_EVENT"
+	desc = "HYW"
+
+	date = { day = 1 month = january year = 1419 }
+
+	action_a = {
+		name = "Change to HYW AI"
+		command = { type = ai which = ENG_1419_HYW.txt }
+	}
+}
+event = {
+	id = 600041
+	trigger = {
+		ai = yes
+		OR = {
+			event = 164190 #ENG: The Loss of France
+			event = 164191 #ENG: The Loss of France
+			event = 164180 #ENG: English Final Victory
+			event = 3004   #ENG: The End of the Hundred Year War (vanilla)
+			year = 1455
+		}
+	}
+	random = no
+	country = ENG
+	name = "AI_EVENT"
+	desc = "End of HYW"
+
+	date = { day = 29 month = april year = 1439 }
+	offset = 10
+	deathdate = { day = 29 month = december year = 1455 }
+
+	action_a = {
+		name = "Change to End of HYW AI"
+		command = { type = ai which = ENG_1439_EndofHYW.txt }
+	}
+}
+event = {
+	id = 600042
+	trigger = {
+		ai = yes
+	}
+	random = no
+	country = ENG
+	name = "AI_EVENT"
+	desc = "Lancastrian"
+
+	date = { day = 1 month = january year = 1471 }
+
+	action_a = {
+		name = "Change to Lancastrian AI"
+		command = { type = ai which = ENG_1471_Lancastrian.txt }
+	}
+}
+event = {
+	id = 600031
+	trigger = { ai = yes }
+	random = no
+	country = ENG
+	name = "AI_EVENT"
+	desc = "Cabot"
+
+	date = { day = 1 month = january year = 1496 }
+
+	action_a = {
+		name = "Change to Cabot AI"
+		command = { type = ai which = ENG_1496_Cabot.txt }
+	}
+}
+event = {
+	id = 600032
+	trigger = { ai = yes }
+	random = no
+	country = ENG
+	name = "AI_EVENT"
+	desc = "Hawkins"
+
+	date = { day = 1 month = january year = 1529 }
+
+	action_a = {
+		name = "Change to Hawkins AI"
+		command = { type = ai which = ENG_1529_Hawkins.txt }
+	}
+}
+event = {
+	id = 600033
+	trigger = { ai = yes }
+	random = no
+	country = ENG
+	name = "AI_EVENT"
+	desc = "Drake"
+
+	date = { day = 1 month = january year = 1570 }
+
+	action_a = {
+		name = "Change to Drake AI"
+		command = { type = ai which = ENG_1570_Drake.txt }
+	}
+}
+event = {
+	id = 600034
+	trigger = { ai = yes }
+	random = no
+	country = ENG
+	name = "AI_EVENT"
+	desc = "Raleigh"
+
+	date = { day = 1 month = january year = 1580 }
+
+	action_a = {
+		name = "Change to Raleigh AI"
+		command = { type = ai which = ENG_1580_Raleigh.txt }
+	}
+}
+event = {
+	id = 600035
+	trigger = { ai = yes }
+	random = no
+	country = ENG
+	name = "AI_EVENT"
+	desc = "Lancaster"
+
+	date = { day = 1 month = january year = 1590 }
+
+	action_a = {
+		name = "Change to Lancaster AI"
+		command = { type = ai which = ENG_1590_Lancaster.txt }
+	}
+}
+event = {
+	id = 600036
+	trigger = { ai = yes }
+	random = no
+	country = ENG
+	name = "AI_EVENT"
+	desc = "1635"
+
+	date = { day = 1 month = january year = 1635 }
+
+	action_a = {
+		name = "Change to 1635 AI"
+		command = { type = ai which = ENG_1635.txt }
+	}
+}
+event = {
+	id = 600038
+	trigger = {
+		ai = yes
+	}
+	random = no
+	country = ENG
+	name = "AI_EVENT"
+	desc = "Union SCO before 1740"
+
+	date = { day = 1 month = january year = 1700 }
+	offset = 60
+	deathdate = { year = 1740 }
+
+	action_a = {
+		name = "Change to 1635 AI"
+		command = { type = ai which = ENG_1635.txt }
+	}
+}
+event = {
+	id = 600039
+	trigger = {
+		ai = yes
+	}
+	random = no
+	country = ENG
+	name = "AI_EVENT"
+	desc = "Union SCO after 1740"
+
+	date = { day = 1 month = january year = 1740 }
+	offset = 60
+	deathdate = { year = 1770 }
+
+	action_a = {
+		name = "Change to 1740 AI"
+		command = { type = ai which = ENG_1740.txt }
+	}
+}
+event = {
+	id = 600040
+	trigger = {
+		ai = yes
+	}
+	random = no
+	country = ENG
+	name = "AI_EVENT"
+	desc = "Cook"
+
+	date = { day = 1 month = january year = 1770 }
+	offset = 60
+	deathdate = { year = 1820 }
+
+	action_a = {
+		name = "Change to 1770 AI"
+		command = { type = ai which = ENG_1770_Cook.txt }
+	}
+}
+event = {
+	id = 600044
+	trigger = {
+		ai = yes
+	}
+	random = no
+	country = ENG
+	name = "AI_EVENT"
+	desc = "1816"
+
+	date = { day = 1 month = january year = 1816 }
+	offset = 60
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "Change to 1816 AI"
+		command = { type = ai which = ENG_1816.txt }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+#France (FRA): 600050-600069
+
+event = {
+	id = 600050
+	trigger = { ai = yes }
+	random = no
+	country = FRA
+	name = "AI_EVENT"
+	desc = "France HYW"
+
+	date = { day = 1 month = january year = 1419 }
+
+	action_a = {
+		name = "Change to HYW AI"
+		command = { type = ai which = FRA_1419_HYW.txt }
+	}
+}
+event = {
+	id = 600051
+	trigger = { ai = yes }
+	random = no
+	country = FRA
+	name = "AI_EVENT"
+	desc = "France 1454"
+
+	date = { day = 1 month = january year = 1454 }
+
+	action_a = {
+		name = "Change to 1454 AI"
+		command = { type = ai which = FRA_1454.txt }
+	}
+}
+event = {
+	id = 600062
+	trigger = { ai = yes }
+	random = no
+	country = FRA
+	name = "AI_EVENT"
+	desc = "France Italian Wars"
+
+	date = { day = 1 month = january year = 1499 }
+
+	action_a = {
+		name = "Change to 1499 AI"
+		command = { type = ai which = FRA_1494_ItalianWars.txt }
+	}
+}
+event = {
+	id = 600053
+	trigger = { ai = yes }
+	random = no
+	country = FRA
+	name = "AI_EVENT"
+	desc = "France Verrazzano"
+
+	date = { day = 1 month = january year = 1523 }
+
+	action_a = {
+		name = "Change to Verrazzano AI"
+		command = { type = ai which = FRA_1523_Verrazzano.txt }
+	}
+}
+event = {
+	id = 600054
+	trigger = { ai = yes }
+	random = no
+	country = FRA
+	name = "AI_EVENT"
+	desc = "France Cartier"
+
+	date = { day = 1 month = january year = 1533 }
+
+	action_a = {
+		name = "Change to Cartier AI"
+		command = { type = ai which = FRA_1533_Cartier.txt }
+	}
+}
+event = {
+	id = 600055
+	trigger = { ai = yes }
+	random = no
+	country = FRA
+	name = "AI_EVENT"
+	desc = "France Ribault"
+
+	date = { day = 1 month = january year = 1562 }
+
+	action_a = {
+		name = "Change to Ribault AI"
+		command = { type = ai which = FRA_1562_Ribault.txt }
+	}
+}
+event = {
+	id = 600056
+	trigger = { ai = yes }
+	random = no
+	country = FRA
+	name = "AI_EVENT"
+	desc = "France Champlain"
+
+	date = { day = 1 month = january year = 1580 }
+
+	action_a = {
+		name = "Change to Champlain AI"
+		command = { type = ai which = FRA_1580_Champlain.txt }
+	}
+}
+event = {
+	id = 600057
+	trigger = { ai = yes }
+	random = no
+	country = FRA
+	name = "AI_EVENT"
+	desc = "France Nicolet"
+
+	date = { day = 1 month = january year = 1633 }
+
+	action_a = {
+		name = "Change to Nicolet AI"
+		command = { type = ai which = FRA_1633_Nicolet.txt }
+	}
+}
+event = {
+	id = 600058
+	trigger = { ai = yes }
+	random = no
+	country = FRA
+	name = "AI_EVENT"
+	desc = "France LaSalle"
+
+	date = { day = 1 month = january year = 1655 }
+
+	action_a = {
+		name = "Change to LaSalle AI"
+		command = { type = ai which = FRA_1655_LaSalle.txt }
+	}
+}
+event = {
+	id = 600059
+	trigger = { ai = yes }
+	random = no
+	country = FRA
+	name = "AI_EVENT"
+	desc = "France 1700"
+
+	date = { day = 1 month = january year = 1700 }
+
+	action_a = {
+		name = "Change to 1700 AI"
+		command = { type = ai which = FRA_1700.txt }
+	}
+}
+event = {
+	id = 600063
+	trigger = { ai = yes }
+	random = no
+	country = FRA
+	name = "AI_EVENT"
+	desc = "France 1715"
+
+	date = { day = 1 month = january year = 1715 }
+
+	action_a = {
+		name = "Change to 1715 AI"
+		command = { type = ai which = FRA_1715.txt }
+	}
+}
+event = {
+	id = 600060
+	trigger = { ai = yes }
+	random = no
+	country = FRA
+	name = "AI_EVENT"
+	desc = "France 1750"
+
+	date = { day = 1 month = january year = 1750 }
+
+	action_a = {
+		name = "Change to 1750 AI"
+		command = { type = ai which = FRA_1750.txt }
+	}
+}
+event = {
+	id = 600061
+	trigger = {
+		ai = yes
+		OR = {
+			monarch = 4016
+			monarch = 4017
+		}
+	}
+	random = no
+	country = FRA
+	name = "AI_EVENT"
+	desc = "France Revolution"
+
+	date = { day = 1 month = january year = 1794 }
+
+	action_a = {
+		name = "Change to Revolution AI"
+		command = { type = ai which = FRA_1794_Revolution.txt }
+	}
+}
+event = {
+	id = 600065
+	trigger = {
+		ai = yes
+		OR = {
+			monarch = 4018
+			monarch = 4020
+		}
+		OR = {
+			war = { country = FRA country = ENG }
+			war = { country = FRA country = SPA }
+			war = { country = FRA country = HAB }
+			AND = {
+				war = { country = FRA country = PRU }
+				event = 3524
+			}
+			war = { country = FRA country = RUS }
+		}
+	}
+	random = no
+	country = FRA
+	name = "AI_EVENT"
+	desc = "France Napoleon"
+
+	date = { day = 18 month = may year = 1804 }
+	offset = 10
+	deathdate = { year = 1820 }
+
+	action_a = {
+		name = "Change to Napoleon AI"
+		command = { type = ai which = FRA_1804_Napoleon.txt }
+	}
+}
+event = {
+	id = 600066
+	trigger = {
+		ai = yes
+		monarch = 04021
+	}
+	random = no
+	country = FRA
+	name = "AI_EVENT"
+	desc = "France Restoration"
+
+	date = { day = 1 month = january year = 1810 }
+	offset = 10
+	deathdate = { year = 1820 }
+
+	action_a = {
+		name = "Change to Restoration AI"
+		command = { type = ai which = FRA_1816_Restoration.txt }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+#Austria (HAB): 600070-600089
+
+event = {
+	id = 600070
+	trigger = { ai = yes }
+	random = no
+	country = HAB
+	name = "AI_EVENT"
+	desc = "Small AI"
+
+	date = { year = 1419 }
+
+	action_a = {
+		name = "Change to Small AI"
+		command = { type = ai which = HAB_1419_Small.txt }
+	}
+}
+event = {
+	id = 600071
+	trigger = { ai = yes }
+	random = no
+	country = HAB
+	name = "AI_EVENT"
+	desc = "Maximilian I takes the throne"
+
+	date = { day = 20 month = august year = 1493 }
+	offset = 360
+	deathdate = { day = 12 month = january year = 1519 }
+
+	action_a = {
+		name = "Change to Maximilian I AI"
+		command = { type = ai which = HAB_1493_MaximilianI.txt }
+	}
+}
+event = {
+	id = 600072
+	trigger = { ai = yes }
+	random = no
+	country = HAB
+	name = "AI_EVENT"
+	desc = "Imperial AI"
+
+	date = { year = 1519 month = january day = 13 }
+	offset = 360
+	deathdate = { year = 1564 month = july day = 25 }
+
+	action_a = {
+		name = "Change to Imperial AI"
+		command = { type = ai which = HAB_1519_Imperial.txt }
+	}
+}
+event = {
+	id = 600073
+	trigger = { ai = yes }
+	random = no
+	country = HAB
+	name = "AI_EVENT"
+	desc = "Empire AI"
+
+	date = { day = 26 month = july year = 1564 }
+	offset = 360
+	deathdate = { day = 12 month = october year = 1576 }
+
+	action_a = {
+		name = "Change to Empire AI"
+		command = { type = ai which = HAB_1564_Empire.txt }
+	}
+}
+event = {
+	id = 600074
+	trigger = { ai = yes }
+	random = no
+	country = HAB
+	name = "AI_EVENT"
+	desc = "Empire AI"
+
+	date = { day = 26 month = july year = 1712 }
+	offset = 360
+	deathdate = { day = 12 month = october year = 1714 }
+
+	action_a = {
+		name = "Change to Empire AI"
+		command = { type = ai which = HAB_1712_Empire.txt }
+	}
+}
+
+event = {
+	id = 600075
+	trigger = { ai = yes }
+	random = no
+	country = HAB
+	name = "AI_EVENT"
+	desc = "Empire AI"
+
+	date = { day = 26 month = july year = 1816 }
+	offset = 60
+	deathdate = { day = 12 month = october year = 1818 }
+
+	action_a = {
+		name = "Change to late Empire AI"
+		command = { type = ai which = HAB_1816_Empire.txt }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+
+#Mughal Empire (MOG): 600100-600109
+
+event = {
+	id = 600100
+	trigger = { ai = yes }
+	random = no
+	country = MOG
+	name = "AI_EVENT"
+	desc = "AI check"
+
+	date = { month = january year = 1470 }
+	offset = 90
+	deathdate = { month = january year = 1503 }
+
+	action_a = {
+		name = "AI check"
+		command = { type = ai which = MOG_1469.txt }
+	}
+}
+event = {
+	id = 600101
+	trigger = { ai = yes }
+	random = no
+	country = MOG
+	name = "AI_EVENT"
+	desc = "AI check"
+
+	date = { year = 1504 day = 1 month = january }
+	offset = 20
+	deathdate = { day = 29 month = december year = 1514 }
+
+	action_a = {
+		name = "AI check"
+		command = { type = ai which = MOG_1504_Kabul.txt }
+	}
+}
+event = {
+	id = 600102
+	trigger = { ai = yes }
+	random = no
+	country = MOG
+	name = "AI_EVENT"
+	desc = "AI help"
+
+	date = { year = 1515 }
+	offset = 400
+	deathdate = { day = 1 month = january year = 1525 }
+
+	action_a = {
+		name = "AI check"
+		command = { type = ai which = MOG_1515_Hindustan.txt }
+	}
+}
+event = {
+	id = 600103
+	trigger = {
+		ai = yes
+		event = 3921 #MOG: The Battle of Panipat
+	}
+	random = no
+	country = MOG
+	name = "AI_EVENT"
+	desc = "AI help"
+
+	date = { year = 1556 }
+	offset = 20
+	deathdate = { year = 1605 }
+
+	action_a = {
+		name = "AI check"
+		command = { type = ai which = MOG_1556_Akbar.txt }
+	}
+}
+event = {
+	id = 600104
+	trigger = {
+		ai = yes
+		event = 3921 #MOG: The Battle of Panipat
+	}
+	random = no
+	country = MOG
+	name = "AI_EVENT"
+	desc = "AI help"
+
+	date = { year = 1605 }
+	offset = 20
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "AI check"
+		command = { type = ai which = MOG_1605_India.txt }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+#Morocco (MOR): 600110-600119
+
+event = {
+	id = 600110
+	trigger = { ai = yes }
+	random = no
+	country = MOR
+	name = "AI_EVENT"
+	desc = "Wattasid AI"
+
+	date = { day = 1 month = january year = 1472 }
+
+	action_a = {
+		name = "Change to Wattasid AI"
+		command = { type = ai which = MOR_1472_wattasid.txt }
+	}
+}
+event = {
+	id = 600111
+	trigger = { ai = yes }
+	random = no
+	country = MOR
+	name = "AI_EVENT"
+	desc = "Antisudan AI"
+
+	date = { day = 1 month = january year = 1570 }
+	offset = 25
+	deathdate = { day = 1 month = january year = 1590 }
+
+	action_a = {
+		name = "Change to Antisudan AI"
+		command = { type = ai which = MOR_1570_Sudan.txt }
+	}
+}
+event = {
+	id = 600112
+	trigger = { ai = yes }
+	random = no
+	country = MOR
+	name = "AI_EVENT"
+	desc = "Large AI"
+
+	date = { day = 1 month = january year = 1650 }
+
+	action_a = {
+		name = "Change to Large AI"
+		command = { type = ai which = default_ai.txt }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+#Oman (OMA): 600120-600129
+
+event = {
+	id = 600120
+	trigger = { ai = yes }
+	random = no
+	country = OMA
+	name = "AI_EVENT"
+	desc = "AI help for new Oman."
+
+	date = { day = 1 month = january year = 1638 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1661 }
+
+	action_a = {
+		name = "AI help for new Oman"
+		command = { type = ai which = "OMA_1638_Revolt.txt" }
+	}
+}
+event = {
+	id = 600121
+	trigger = { ai = yes }
+	random = no
+	country = OMA
+	name = "AI_EVENT"
+	desc = "Switch to OMA_1650.txt"
+
+	date = { day = 1 month = january year = 1650 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1700 }
+
+	action_a = {
+		name = "Switch to OMA_1650.txt"
+		command = { type = ai which = "OMA_1650.txt" }
+	}
+}
+event = {
+	id = 600122
+	trigger = { ai = yes }
+	random = no
+	country = OMA
+	name = "AI_EVENT"
+	desc = "Switch to default_ai.txt"
+
+	date = { day = 1 month = january year = 1720 }
+
+	action_a = {
+		name = "Switch to default_ai.txt"
+		command = { type = ai which = "default_ai.txt" }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+#Aden (ADE): 600010-600019
+
+event = {
+	id = 600010
+	trigger = {
+		ai = yes
+		owned = { province = 756 data = -1 }
+	}
+	random = no
+	country = ADE
+	name = "AI_EVENT"
+	desc = "Switch to default_ai.txt"
+
+	date = { day = 1 month = january year = 1450 }
+	offset = 30
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "Switch to default_ai.txt"
+		command = { type = ai which = "default_ai.txt" }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+#Portugal (POR): 600130-600149
+
+event = {
+	id = 600130
+	trigger = { ai = yes }
+	random = no
+	country = POR
+	name = "AI_EVENT"
+	desc = "Joao I takes the throne"
+
+	date = { day = 1 month = january year = 1419 }
+
+	action_a = {
+		name = "Change to Joao I AI"
+		command = { type = ai which = POR_1419_JoaoI.txt }
+	}
+}
+event = {
+	id = 600131
+	trigger = { ai = yes }
+	random = no
+	country = POR
+	name = "AI_EVENT"
+	desc = "Duarte takes the throne"
+
+	date = { day = 14 month = august year = 1433 }
+
+	action_a = {
+		name = "Change to Duarte AI"
+		command = { type = ai which = POR_1433_Duarte.txt }
+	}
+}
+event = {
+	id = 600132
+	trigger = { ai = yes }
+	random = no
+	country = POR
+	name = "AI_EVENT"
+	desc = "Afonso V takes the throne"
+
+	date = { day = 9 month = september year = 1438 }
+
+	action_a = {
+		name = "Change to Afonso V AI"
+		command = { type = ai which = POR_1438_AfonsoV.txt }
+	}
+}
+event = {
+	id = 600133
+	trigger = { ai = yes }
+	random = no
+	country = POR
+	name = "AI_EVENT"
+	desc = "Joao Vaz Corte Real"
+
+	date = { year = 1468 }
+
+	action_a = {
+		name = "Change to Joao Vaz Corte Real AI"
+		command = { type = ai which = POR_1468_JVCorteReal.txt }
+	}
+}
+event = {
+	id = 600134
+	trigger = { ai = yes }
+	random = no
+	country = POR
+	name = "AI_EVENT"
+	desc = "Cao"
+
+	date = { day = 1 month = january year = 1469 }
+
+	action_a = {
+		name = "Change to Cao AI"
+		command = { type = ai which = POR_1469_Cao.txt }
+	}
+}
+event = {
+	id = 600135
+	trigger = { ai = yes }
+	random = no
+	country = POR
+	name = "AI_EVENT"
+	desc = "Bartolemeu Diaz"
+
+	date = { day = 28 month = august year = 1481 }
+
+	action_a = {
+		name = "Change to Diaz AI"
+		command = { type = ai which = POR_1481_Diaz.txt }
+	}
+}
+event = {
+	id = 600136
+	trigger = { ai = yes }
+	random = no
+	country = POR
+	name = "AI_EVENT"
+	desc = "Gaspar and Miguel Corte Real"
+
+	date = { day = 1 month = may year = 1500 }
+
+	action_a = {
+		name = "Change to CorteReal AI"
+		command = { type = ai which = POR_1500_CorteReal.txt }
+	}
+}
+event = {
+	id = 600137
+	trigger = { ai = yes }
+	random = no
+	country = POR
+	name = "AI_EVENT"
+	desc = "Manuel A takes the throne"
+
+	date = { day = 1 month = january year = 1504 }
+
+	action_a = {
+		name = "Change to Manuel AI"
+		command = { type = ai which = POR_1504_Manuel.txt }
+	}
+}
+event = {
+	id = 600138
+	trigger = { ai = yes }
+	random = no
+	country = POR
+	name = "AI_EVENT"
+	desc = "Manuel B takes the throne"
+
+	date = { day = 1 month = january year = 1514 }
+
+	action_a = {
+		name = "Change to 3 explorers AI"
+		command = { type = ai which = POR_1514_3explorers.txt }
+	}
+}
+event = {
+	id = 600139
+	trigger = { ai = yes }
+	random = no
+	country = POR
+	name = "AI_EVENT"
+	desc = "Joao III takes the throne"
+
+	date = { day = 16 month = december year = 1521 }
+
+	action_a = {
+		name = "Change to Generic AI"
+		command = { type = ai which = POR_1521_JoaoIII.txt }
+	}
+}
+event = {
+	id = 600140
+	trigger = { ai = yes }
+	random = no
+	country = POR
+	name = "AI_EVENT"
+	desc = "Sebastiano takes the throne"
+
+	date = { day = 12 month = june year = 1557 }
+
+	action_a = {
+		name = "Change to Sebastiano AI"
+		command = { type = ai which = POR_1557_Sebastiano.txt }
+	}
+}
+event = {
+	id = 600141
+	trigger = { ai = yes }
+	random = no
+	country = POR
+	name = "AI_EVENT"
+	desc = "Change to vassal AI"
+
+	date = { day = 1 month = february year = 1580 }
+
+	action_a = {
+		name = "Change to vassal AI"
+		command = { type = ai which = POR_1580_vassal.txt }
+	}
+}
+
+event = {
+	id = 600142
+	trigger = {
+		ai = yes
+		exists = BRZ
+		event = 3590 #POR: The Empire of Brazil
+	}
+	random = no
+	country = POR
+	name = "AI_EVENT"
+	desc = "Change to No Brazil AI"
+
+	date = { day = 1 month = january year = 1823 }
+	offset = 90
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "Change to No Brazil AI"
+		command = { type = ai which = POR_1823_NoBrazil.txt }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+#Qara Koyunlu (QAR): 600150-600159
+
+event = {
+	id = 600152
+	trigger = {
+		ai = yes
+		NOT = { owned = { province = 508 data = -1 } }
+	}
+	random = no
+	country = QAR
+	name = "AI_EVENT"
+	desc = "Change to Basrah AI"
+
+	date = { day = 21 month = december year = 1429 }
+	offset = 30
+
+	action_a = {
+		name = "Change to Basrah AI"
+		command = { type = ai which = "QAR_1429_Basrah.txt" }
+	}
+}
+event = {
+	id = 600153
+	trigger = {
+		ai = yes
+	}
+	random = no
+	country = QAR
+	name = "AI_EVENT"
+	desc = "Change to 1stsheep AI"
+
+	date = { day = 1 month = january year = 1445 }
+	offset = 50
+	deathdate = { day = 1 month = december year = 1450 }
+
+	action_a = {
+		name = "Change to 1stsheep AI"
+		command = { type = ai which = "QAR_1445_1stsheep.txt" }
+	}
+}
+event = {
+	id = 600151
+	trigger = {
+		ai = yes
+		exists = TIM
+		OR = {
+			owned = { province = 530 data = -1 }
+			owned = { province = 531 data = -1 }
+		}
+	}
+	random = no
+	country = QAR
+	name = "AI_EVENT"
+	desc = "Change to Fars AI"
+
+	date = { day = 1 month = january year = 1449 }
+	offset = 300
+	deathdate = { day = 1 month = january year = 1600 }
+
+	action_a = {
+		name = "Change to Fars AI"
+		command = { type = ai which = "QAR_1449_Fars.txt" }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+#Ak Koyunlu (AKK): 600160-600169
+
+event = {
+	id = 600161
+	trigger = {
+		ai = yes
+		NOT = { exists = QAR }
+	}
+	random = no
+	country = AKK
+	name = "AI_EVENT"
+	desc = "Change to QAR Fars AI"
+
+	date = { day = 1 month = february year = 1445 }
+
+	action_a = {
+		name = "Change to QAR Fars AI"
+		command = { type = ai which = "QAR_1449_Fars.txt" }
+		command = { type = sleepevent which = 600160 } #AI change: AKK_1456_Usun.txt
+	}
+}
+event = {
+	id = 600160
+	trigger = { ai = yes }
+	random = no
+	country = AKK
+	name = "AI_EVENT"
+	desc = "Change to Usun AI"
+
+	date = { day = 1 month = february year = 1456 }
+
+	action_a = {
+		name = "Change to Usun AI"
+		command = { type = ai which = "AKK_1456_Usun.txt" }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+#Russia (RUS): 600170-600189
+
+event = {
+	id = 600175
+	trigger = { ai = yes }
+	random = no
+	country = RUS
+	name = "AI_EVENT"
+	desc = "AI help"
+
+	date = { month = april year = 1480 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1555 }
+
+	action_a = {
+		name = "AI help"
+		command = { type = ai which = "RUS_1480.txt" }
+	}
+}
+event = {
+	id = 600170
+	trigger = { ai = yes }
+	random = no
+	country = RUS
+	name = "AI_EVENT"
+	desc = "AI help"
+
+	date = { month = april year = 1555 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1600 }
+
+	action_a = {
+		name = "AI help"
+		command = { type = ai which = "RUS_1555.txt" }
+	}
+}
+event = {
+	id = 600171
+	trigger = { ai = yes }
+	random = no
+	country = RUS
+	name = "AI_EVENT"
+	desc = "AI help"
+
+	date = { month = april year = 1600 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1650 }
+
+	action_a = {
+		name = "AI help"
+		command = { type = ai which = "RUS_1600.txt" }
+	}
+}
+event = {
+	id = 600172
+	trigger = { ai = yes }
+	random = no
+	country = RUS
+	name = "AI_EVENT"
+	desc = "AI help"
+
+	date = { month = april year = 1650 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1750 }
+
+	action_a = {
+		name = "AI help"
+		command = { type = ai which = "RUS_1650.txt" }
+	}
+}
+event = {
+	id = 600173
+	trigger = { ai = yes }
+	random = no
+	country = RUS
+	name = "AI_EVENT"
+	desc = "AI help"
+
+	date = { month = april year = 1750 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1770 }
+
+	action_a = {
+		name = "AI help"
+		command = { type = ai which = "RUS_1750.txt" }
+	}
+}
+event = {
+	id = 600174
+	trigger = { ai = yes }
+	random = no
+	country = RUS
+	name = "AI_EVENT"
+	desc = "AI help"
+
+	date = { month = april year = 1770 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1816 }
+
+	action_a = {
+		name = "AI help"
+		command = { type = ai which = "RUS_1770.txt" }
+	}
+}
+event = {
+	id = 600176
+	trigger = { ai = yes }
+	random = no
+	country = RUS
+	name = "AI_EVENT"
+	desc = "AI help"
+
+	date = { month = april year = 1816 }
+	offset = 360
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "AI help"
+		command = { type = ai which = "RUS_1816.txt" }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+#Spain (SPA): 600200-600219
+
+event = {
+	id = 600200
+	trigger = { ai = yes }
+	random = no
+	country = SPA
+	name = "AI_EVENT"
+	desc = "Change to Santa Fe AI"
+
+	date = { day = 3 month = january year = 1479 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1491 }
+
+	action_a = {
+		name = "Change to Santa Fe AI"
+		command = { type = ai which = SPA_1479_SantaFe.txt }
+	}
+}
+event = {
+	id = 600201
+	trigger = { ai = yes }
+	random = no
+	country = SPA
+	name = "AI_EVENT"
+	desc = "Columbus AI"
+
+	date = { day = 2 month = january year = 1491 }
+
+	action_a = {
+		name = "Change to Columbus AI"
+		command = { type = ai which = SPA_1491_Columbus.txt }
+	}
+}
+event = {
+	id = 600202
+	trigger = { ai = yes }
+	random = no
+	country = SPA
+	name = "AI_EVENT"
+	desc = "Fernando AI"
+
+	date = { day = 2 month = january year = 1499 }
+
+	action_a = {
+		name = "Change to Fernando AI"
+		command = { type = ai which = SPA_1499_Fernando.txt }
+	}
+}
+event = {
+	id = 600203
+	trigger = { ai = yes }
+	random = no
+	country = SPA
+	name = "AI_EVENT"
+	desc = "Cortes AI"
+
+	date = { day = 2 month = january year = 1518 }
+
+	action_a = {
+		name = "Change to Cortes AI"
+		command = { type = ai which = SPA_1518_Cortes.txt }
+	}
+}
+event = {
+	id = 600204
+	trigger = { ai = yes }
+	random = no
+	country = SPA
+	name = "AI_EVENT"
+	desc = "Pizarro AI"
+
+	date = { day = 2 month = january year = 1530 }
+
+	action_a = {
+		name = "Change to Pizarro AI"
+		command = { type = ai which = SPA_1530_Pizarro.txt }
+	}
+}
+event = {
+	id = 600205
+	trigger = { ai = yes }
+	random = no
+	country = SPA
+	name = "AI_EVENT"
+	desc = "CarlosI AI"
+
+	date = { day = 2 month = january year = 1545 }
+
+	action_a = {
+		name = "Change to CarlosI AI"
+		command = { type = ai which = SPA_1545_CarlosI.txt }
+	}
+}
+event = {
+	id = 600206
+	trigger = { ai = yes }
+	random = no
+	country = SPA
+	name = "AI_EVENT"
+	desc = "FelipeII AI"
+
+	date = { day = 2 month = january year = 1564 }
+
+	action_a = {
+		name = "Change to FelipeII AI"
+		command = { type = ai which = SPA_1564_FelipeII.txt }
+	}
+}
+event = {
+	id = 600207
+	trigger = { ai = yes }
+	random = no
+	country = SPA
+	name = "AI_EVENT"
+	desc = "Habsburgs AI"
+
+	date = { day = 2 month = january year = 1586 }
+
+	action_a = {
+		name = "Change to Habsburgs AI"
+		command = { type = ai which = SPA_1586_Habsburgs.txt }
+	}
+}
+event = {
+	id = 600208
+	trigger = { ai = yes }
+	random = no
+	country = SPA
+	name = "AI_EVENT"
+	desc = "Bourbons AI"
+
+	date = { day = 2 month = january year = 1701 }
+
+	action_a = {
+		name = "Change to Bourbons AI"
+		command = { type = ai which = SPA_1700_Bourbons.txt }
+	}
+}
+event = {
+	id = 600209
+	trigger = {
+		ai = yes
+		monarch = 04156 #Fernando VII
+	}
+	random = no
+	country = SPA
+	name = "AI_EVENT"
+	desc = "Restoration AI"
+
+	date = { day = 2 month = january year = 1816 }
+
+	action_a = {
+		name = "Change to Restoration AI"
+		command = { type = ai which = SPA_1816_Restoration.txt }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+#Sweden (SWE): 600220-600239
+
+event = {
+	id = 600220
+	trigger = { ai = yes }
+	random = no
+	country = SWE
+	name = "AI_EVENT"
+	desc = "Union AI"
+
+	date = { day = 2 month = january year = 1397 }
+
+	action_a = {
+		name = "Change to Union AI"
+		command = { type = ai which = SWE_1419_Union.txt }
+	}
+}
+event = {
+	id = 600221
+	trigger = { ai = yes }
+	random = no
+	country = SWE
+	name = "AI_EVENT"
+	desc = "Vasa AI"
+
+	date = { day = 2 month = january year = 1550 }
+
+	action_a = {
+		name = "Change to Vasa AI"
+		command = { type = ai which = SWE_1550_Vasa.txt }
+	}
+}
+event = {
+	id = 600222
+	trigger = { ai = yes }
+	random = no
+	country = SWE
+	name = "AI_EVENT"
+	desc = "KarlIX AI"
+
+	date = { day = 2 month = january year = 1595 }
+
+	action_a = {
+		name = "Change to Karl IX AI"
+		command = { type = ai which = SWE_1595_KarllX.txt } # Should be IX, but filename is wrong
+	}
+}
+event = {
+	id = 600223
+	trigger = { ai = yes }
+	random = no
+	country = SWE
+	name = "AI_EVENT"
+	desc = "G2A AI"
+
+	date = { day = 2 month = january year = 1630 }
+
+	action_a = {
+		name = "Change to G2A AI"
+		command = { type = ai which = SWE_1630_G2A.txt }
+	}
+}
+event = {
+	id = 600224
+	trigger = { ai = yes }
+	random = no
+	country = SWE
+	name = "AI_EVENT"
+	desc = "Pfalz AI"
+
+	date = { day = 2 month = january year = 1660 }
+
+	action_a = {
+		name = "Change to Pfalz AI"
+		command = { type = ai which = SWE_1660_Pfalz.txt }
+	}
+}
+event = {
+	id = 600225
+	trigger = { ai = yes }
+	random = no
+	country = SWE
+	name = "AI_EVENT"
+	desc = "18th AI"
+
+	date = { day = 2 month = january year = 1719 }
+
+	action_a = {
+		name = "Change to 1719 AI"
+		command = { type = ai which = SWE_1719.txt }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+#Ottoman Empire (TUR): 600240-600259
+
+event = {
+	id = 600254
+	trigger = { ai = yes }
+	random = no
+	country = TUR
+	name = "AI_EVENT"
+	desc = "TUR_MehmedI"
+
+	date = { day = 1 month = january year = 1419 }
+	offset = 20
+	deathdate = { day = 29 month = december year = 1419 }
+
+	action_a = {
+		name = "TUR_MehmedI"
+		command = { type = ai which = TUR_1419_MehmedI.txt }
+	}
+}
+event = {
+	id = 600240
+	trigger = { ai = yes }
+	random = no
+	country = TUR
+	name = "AI_EVENT"
+	desc = "TUR_MuradII"
+
+	date = { day = 1 month = january year = 1429 }
+	offset = 20
+	deathdate = { day = 29 month = december year = 1429 }
+
+	action_a = {
+		name = "TUR_MuradII"
+		command = { type = ai which = TUR_1429_MuradII.txt }
+	}
+}
+event = {
+	id = 600241
+	trigger = { ai = yes }
+	random = no
+	country = TUR
+	name = "AI_EVENT"
+	desc = "TUR_MehmedII"
+
+	date = { day = 1 month = august year = 1444 }
+
+	action_a = {
+		name = "TUR_MehmedII"
+		command = { type = ai which = TUR_1444_MehmedII.txt }
+	}
+}
+event = {
+	id = 600242
+	trigger = { ai = yes }
+	random = no
+	country = TUR
+	name = "AI_EVENT"
+	desc = "TUR_BayezidII"
+
+	date = { day = 3 month = may year = 1481 }
+
+	action_a = {
+		name = "TUR_BayezidII"
+		command = { type = ai which = TUR_1481_BayezidII.txt }
+	}
+}
+event = {
+	id = 600243
+	trigger = { ai = yes }
+	random = no
+	country = TUR
+	name = "AI_EVENT"
+	desc = "TUR_SelimI"
+
+	date = { day = 1 month = may year = 1512 }
+
+	action_a = {
+		name = "TUR_SelimI"
+		command = { type = ai which = TUR_1512_SelimI.txt }
+	}
+}
+event = {
+	id = 600244
+	trigger = {
+		ai = yes
+		war = { country = TUR country = MAM }
+		NOT = {
+			war = { country = TUR country = VEN }
+			war = { country = TUR country = POL }
+			war = { country = TUR country = HUN }
+			war = { country = TUR country = RUS }
+			war = { country = TUR country = HAB }
+			war = { country = TUR country = SPA }
+		}
+	}
+	random = no
+	country = TUR
+	name = "AI_EVENT"
+	desc = "War against the Mamluks"
+
+	date = { year = 1515 }
+	offset = 30
+	deathdate = { year = 1565 }
+
+	action_a = {
+		name = "War against the Mamluks"
+		command = { type = ai which = TUR_AntiMAM.txt }
+	}
+}
+event = {
+	id = 600250
+	trigger = {
+		ai = yes
+		event = 600244 #War against the Mamluks
+		OR = {
+			NOT = { war = { country = TUR country = MAM } }
+			OR = {
+				war = { country = TUR country = VEN }
+				war = { country = TUR country = POL }
+				war = { country = TUR country = HUN }
+				war = { country = TUR country = RUS }
+				war = { country = TUR country = HAB }
+				war = { country = TUR country = SPA }
+			}
+		}
+	}
+	random = no
+	country = TUR
+	name = "AI_EVENT"
+	desc = "Back to normal after the Mamluk war or if OE involved in major war after war against Mamluks started"
+
+	date = { year = 1515 }
+	offset = 0
+	deathdate = { year = 1565 }
+
+	action_a = {
+		name = "Revert to non-ferocious"
+		command = { type = ai which = TUR_1520_SuleymanI.txt }
+	}
+}
+#Second try
+event = {
+	id = 600251
+	trigger = {
+		ai = yes
+		event = 600250 #back to non ferocious
+		war = { country = TUR country = MAM }
+		NOT = {
+			war = { country = TUR country = VEN }
+			war = { country = TUR country = POL }
+			war = { country = TUR country = HUN }
+			war = { country = TUR country = RUS }
+			war = { country = TUR country = HAB }
+			war = { country = TUR country = SPA }
+		}
+	}
+	random = no
+	country = TUR
+	name = "AI_EVENT"
+	desc = "War against the Mamluks"
+
+	date = { year = 1515 }
+	offset = 30
+	deathdate = { year = 1565 }
+
+	action_a = {
+		name = "War against the Mamluks"
+		command = { type = ai which = TUR_AntiMAM.txt }
+	}
+}
+event = {
+	id = 600252
+	trigger = {
+		ai = yes
+		event = 600251 #War against the Mamluks
+		OR = {
+			NOT = { war = { country = TUR country = MAM } }
+			OR = {
+				war = { country = TUR country = VEN }
+				war = { country = TUR country = POL }
+				war = { country = TUR country = HUN }
+				war = { country = TUR country = RUS }
+				war = { country = TUR country = HAB }
+				war = { country = TUR country = SPA }
+			}
+		}
+	}
+	random = no
+	country = TUR
+	name = "AI_EVENT"
+	desc = "Back to normal after the Mamluk war or if OE involved in major war after war against Mamluks started"
+
+	date = { year = 1515 }
+	offset = 0
+	deathdate = { year = 1565 }
+
+	action_a = {
+		name = "Revert to non-ferocious"
+		command = { type = ai which = TUR_1520_SuleymanI.txt }
+	}
+}
+event = {
+	id = 600245
+	trigger = {
+		ai = yes
+		NOT = { exists = MAM }
+	}
+	random = no
+	country = TUR
+	name = "AI_EVENT"
+	desc = "TUR_SuleymanI"
+
+	date = { day = 22 month = september year = 1520 }
+	offset = 30
+	deathdate = { year = 1565 }
+
+	action_a = {
+		name = "TUR_SuleymanI"
+		command = { type = ai which = TUR_1520_SuleymanI.txt }
+	}
+}
+event = {
+	id = 600246
+	trigger = { ai = yes }
+	random = no
+	country = TUR
+	name = "AI_EVENT"
+	desc = "TUR_SelimII"
+
+	date = { day = 7 month = september year = 1566 }
+
+	action_a = {
+		name = "TUR_SelimII"
+		command = { type = ai which = TUR_1566_SelimII.txt }
+	}
+}
+event = {
+	id = 600247
+	trigger = { ai = yes }
+	random = no
+	country = TUR
+	name = "AI_EVENT"
+	desc = "TUR_MuradIII"
+
+	date = { day = 1 month = december year = 1574 }
+
+	action_a = {
+		name = "TUR_MuradIII"
+		command = { type = ai which = TUR_1574_MuradIII.txt }
+	}
+}
+event = {
+	id = 600248
+	trigger = { ai = yes }
+	random = no
+	country = TUR
+	name = "AI_EVENT"
+	desc = "TUR_MehmedIII"
+
+	date = { day = 15 month = january year = 1595 }
+
+	action_a = {
+		name = "TUR_MehmedIII"
+		command = { type = ai which = TUR_1595_MehmedIII.txt }
+	}
+}
+event = {
+	id = 600249
+	trigger = { ai = yes }
+	random = no
+	country = TUR
+	name = "AI_EVENT"
+	desc = "TUR_IbrahimI"
+
+	date = { day = 8 month = february year = 1640 }
+
+	action_a = {
+		name = "TUR_IbrahimI"
+		command = { type = ai which = TUR_1640_IbrahimI.txt }
+	}
+}
+event = {
+	id = 600253
+	trigger = { ai = yes }
+	random = no
+	country = TUR
+	name = "AI_EVENT"
+	desc = "TUR_Late"
+
+	date = { day = 1 month = april year = 1718 }
+	offset = 200
+	deathdate = { day = 29 month = december year = 1718 }
+
+	action_a = {
+		name = "TUR_Late"
+		command = { type = ai which = TUR_1718_Late.txt }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+#Uzbek (UZB): 600260-600269
+
+#Shaibani's Ambition
+event = {
+	id = 600261
+	random = no
+	trigger = {
+		ai = yes
+		OR = {
+			owned = { province = 1533 data = -1 } #Khiva
+			owned = { province = 1534 data = -1 } #Kyzylkum
+		}
+	}
+	country = UZB
+	name = "AI_EVENT"
+	desc = "UZB_Shaibani AI"
+
+	date = { day = 1 month = january year = 1488 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1510 }
+
+	action_a = {
+		name = "UZB_Shaibani AI"
+		command = { type = ai which = "UZB_1488_Shaibani.txt" }
+	}
+}
+event = {
+	id = 600262
+	random = no
+	trigger = {
+		ai = yes
+		owned = { province = 1592 data = -1 } #Samarkand
+		NOT = {
+			event = 600263 #AI change: UZB_1510.txt
+		}
+	}
+	country = UZB
+	name = "AI_EVENT"
+	desc = "UZB_Samarkand AI"
+
+	date = { day = 1 month = january year = 1496 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1530 }
+
+	action_a = {
+		name = "UZB_Samarkand AI"
+		command = { type = ai which = "UZB_1496_Samarkand.txt" }
+	}
+}
+event = {
+	id = 600263
+	random = no
+	trigger = {
+		ai = yes
+		event = 325013 #UZB: Shaibani's Ambition
+		OR = {
+			event = 600262 #AI change: UZB_1496_Samarkand.txt
+			NOT = { owned = { province = 1592 data = -1 } } #Samarkand
+		}
+	}
+	country = UZB
+	name = "AI_EVENT"
+	desc = "UZB_1510 AI"
+
+	date = { day = 1 month = january year = 1510 }
+	offset = 200
+	deathdate = { year = 1820 }
+
+	action_a = {
+		name = "UZB_1510 AI"
+		command = { type = ai which = "UZB_1510.txt" }
+		command = { type = sleepevent which = 600262 } #AI change: UZB_1496_Samarkand.txt
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+#Poland (POL): 600270-600279
+
+event = {
+	id = 600270
+	random = no
+	trigger = { ai = yes }
+	country = POL
+	name = "AI_EVENT"
+	desc = "POL_1419 AI"
+
+	date = { day = 25 month = january year = 1419 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1423 }
+
+	action_a = {
+		name = "POL_1419 AI"
+		command = { type = ai which = "POL_1419.txt" }
+	}
+}
+event = {
+	id = 600271
+	random = no
+	trigger = { ai = yes }
+	country = POL
+	name = "AI_EVENT"
+	desc = "default_ai.txt"
+
+	date = { day = 1 month = january year = 1450 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1451 }
+
+	action_a = {
+		name = "default_ai.txt"
+		command = { type = ai which = "default_ai.txt" }
+	}
+}
+
+
+#-----------------------------------------------------------------------------------------------
+#Persia (PER): 600320-600329
+
+event = {
+	id = 600320
+	trigger = {
+		countrysize = 12
+		ai = yes
+	}
+	random = no
+	country = PER
+	name = "AI_EVENT"
+	desc = "Shah Tahmasp"
+
+	date = { day = 23 month = may year = 1524 }
+	offset = 10
+	deathdate = { year = 1586 }
+
+	action_a = {
+		name = "Change to Tahmasp AI"
+		command = { type = ai which = "PER_1524_Tahmasp.txt" }
+	}
+}
+event = {
+	id = 600321
+	trigger = { ai = yes }
+	random = no
+	country = PER
+	name = "AI_EVENT"
+	desc = "Shah Abbas"
+
+	date = { year = 1587 month = december day = 10 }
+
+	action_a = {
+		name = "Change to Abbas AI"
+		command = { type = ai which = "PER_1587_Abbas.txt" }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+#Malacca (MLC): 600330-600339
+
+event = {
+	id = 600330
+	trigger = { ai = yes }
+	random = no
+	country = MLC
+	name = "AI_EVENT"
+	desc = "Change to MLC_1450_Mansur AI"
+
+	date = { day = 1 month = january year = 1450 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1451 }
+
+	action_a = {
+		name = "MLC_1450_Mansur AI"
+		command = { type = ai which = "MLC_1450_Mansur.txt" }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+#Hungary (HUN): 600340-600349
+
+event = {
+	id = 600340
+	trigger = {
+		ai = yes
+		monarch = 06264 #Mátyás Corvin
+	}
+	random = no
+	country = HUN
+	name = "AI_EVENT"
+	desc = "Change to HUN_1458_Corvinus AI"
+
+	date = { day = 20 month = january year = 1458 }
+	offset = 30
+	deathdate = { day = 5 month = april year = 1490 }
+
+	action_a = {
+		name = "HUN_1458_Corvinus AI"
+		command = { type = ai which = "HUN_1458_Corvinus.txt" }
+	}
+}
+event = {
+	id = 600341
+	trigger = { ai = yes }
+	random = no
+	country = HUN
+	name = "AI_EVENT"
+	desc = "Back to default HUN AI after Corvinus' death"
+
+	date = { day = 6 month = april year = 1490 }
+	offset = 30
+	deathdate = { day = 6 month = april year = 1491 }
+
+	action_a = {
+		name = "HUN_1419 AI"
+		command = { type = ai which = "HUN_1419.txt" }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+#Prussia (PRU): 600370-600379
+
+event = {
+	id = 600370
+	trigger = {
+		ai = yes
+		event = 3524
+	}
+	random = no
+	country = PRU
+	name = "AI_EVENT"
+	desc = "Kingdom of Prussia"
+
+	date = { day = 1 month = january year = 1701 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1761 }
+
+	action_a = {
+		name = "PRU_1701_Kingdom AI"
+		command = { type = ai which = "PRU_1701_Kingdom.txt" }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+#Kurland (KUR):
+
+event = {
+	id = 600378
+	trigger = {
+		ai = yes
+	}
+	random = no
+	country = KUR
+	name = "AI_EVENT"
+	desc = "Colonization"
+
+	date = { day = 1 month = january year = 1650 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1701 }
+
+	action_a = {
+		name = "KUR Colonization AI"
+		command = { type = ai which = "KUR_1650.txt" }
+	}
+}
+
+event = {
+	id = 600379
+	trigger = {
+		ai = yes
+	}
+	random = no
+	country = KUR
+	name = "AI_EVENT"
+	desc = "End of Colonization"
+
+	date = { day = 1 month = january year = 1701 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a = {
+		name = "Peaceful AI"
+		command = { type = ai which = "peaceful_ai.txt" }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+#Mysore (MYS): 600380-600389
+
+event = {
+	id = 600380
+	trigger = {
+		ai = yes
+	}
+	random = no
+	country = MYS
+	name = "AI_EVENT"
+	desc = "Haydar Ali"
+
+	date = { day = 1 month = january year = 1760 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1799 }
+
+	action_a = {
+		name = "MYS_1760_Haydar_Ali AI"
+		command = { type = ai which = "MYS_1760_Haydar_Ali.txt" }
+	}
+}
+event = {
+	id = 600381
+	trigger = {
+		ai = yes
+		NOT = { countrysize = 3 }
+	}
+	random = no
+	country = MYS
+	name = "AI_EVENT"
+	desc = "Wodeyar AI"
+
+	date = { day = 1 month = january year = 1800 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a = {
+		name = "MYS_1800_Wodeyar AI"
+		command = { type = ai which = "MYS_1800_Wodeyar.txt" }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+#United States of America (USA): 600390-600399
+
+event = {
+	id = 600390
+	trigger = {
+		ai = yes
+		atwar = no
+	}
+	random = no
+	country = USA
+	name = "AI_EVENT"
+	desc = "Start colonizing"
+
+	date = { day = 1 month = january year = 1774 }
+	offset = 20
+	deathdate = { year = 1800 }
+
+	action_a = {
+		name = "Change to Independence AI"
+		command = { type = ai which = "USA_1774_Independence.txt" }
+	}
+}
+
+event = {
+	id = 600391
+	trigger = {
+		ai = yes
+	}
+	random = no
+	country = USA
+	name = "AI_EVENT"
+	desc = "Start expanding into Florida and the Louisiana territory"
+
+	date = { day = 1 month = january year = 1801 }
+	offset = 20
+	deathdate = { year = 1824 }
+
+	action_a = {
+		name = "Change to Jeffersonian AI"
+		command = { type = ai which = "USA_1801_Jeffersonian.txt" }
+	}
+}
+
+event = {
+	id = 600392
+	trigger = {
+		ai = yes
+	}
+	random = no
+	country = USA
+	name = "AI_EVENT"
+	desc = "Start expanding into Texas and the Oregon territory"
+
+	date = { day = 1 month = january year = 1825 }
+	offset = 20
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "Change to Texan AI"
+		command = { type = ai which = "USA_1825_Texan.txt" }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+#Scotland (SCO): 600398-600399
+
+event = {
+	id = 600398
+	trigger = {
+		ai = yes
+	}
+	random = no
+	country = SCO
+	name = "AI_EVENT"
+	desc = "Colonization"
+
+	date = { day = 1 month = january year = 1615 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1701 }
+
+	action_a = {
+		name = "SCO Colonization AI"
+		command = { type = ai which = "SCO_1615.txt" }
+	}
+}
+
+event = {
+	id = 600399
+	trigger = {
+		ai = yes
+	}
+	random = no
+	country = SCO
+	name = "AI_EVENT"
+	desc = "End of Colonization"
+
+	date = { day = 1 month = january year = 1701 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a = {
+		name = "Default AI"
+		command = { type = ai which = "default_ai.txt" }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+#Afghanistan (AFG): 600400-600409
+
+event = {
+	id = 600402
+	trigger = {
+		ai = yes
+	}
+	random = no
+	country = AFG
+	name = "AI_EVENT"
+	desc = "Sur AI"
+
+	date = { day = 1 month = january year = 1538 }
+	offset = 10
+	deathdate = { day = 1 month = december year = 1545 }
+
+	action_a = {
+		name = "Change to Sur AI"
+		command = { type = ai which = "AFG_1538_Sur.txt" }
+	}
+}
+event = {
+	id = 600403
+	trigger = {
+		ai = yes
+	}
+	random = no
+	country = AFG
+	name = "AI_EVENT"
+	desc = "Default AI"
+
+	date = { day = 1 month = january year = 1560 }
+	offset = 10
+	deathdate = { day = 1 month = december year = 1706 }
+
+	action_a = {
+		name = "Default AI"
+		command = { type = ai which = "default_ai.txt" }
+	}
+}
+event = {
+	id = 600400
+	trigger = {
+		ai = yes
+	}
+	random = no
+	country = AFG
+	name = "AI_EVENT"
+	desc = "Hotaki AI"
+
+	date = { day = 1 month = january year = 1707 }
+	offset = 10
+	deathdate = { day = 1 month = december year = 1746 }
+
+	action_a = {
+		name = "Change to Hotaki AI"
+		command = { type = ai which = "AFG_1707_Hotaki.txt" }
+	}
+}
+event = {
+	id = 600401
+	trigger = {
+		ai = yes
+	}
+	random = no
+	country = AFG
+	name = "AI_EVENT"
+	desc = "Durrani AI"
+
+	date = { day = 1 month = january year = 1747 }
+	offset = 10
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "Change to Durrani AI"
+		command = { type = ai which = "AFG_1747_Durrani.txt" }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+#Aragon (ARG): 600410-600419
+
+event = {
+	id = 600410
+	trigger = {
+		ai = yes
+	}
+	random = no
+	country = ARG
+	name = "AI_EVENT"
+	desc = "Start exploring"
+
+	date = { day = 1 month = march year = 1515 }
+	offset = 10
+	deathdate = { day = 1 month = march year = 1558 }
+
+	action_a = {
+		name = "Change to de Olid AI"
+		command = { type = ai which = "ARG_1515_de Olid.txt" }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+#Netherlands (HOL): 600090-600099
+
+event = {
+	id = 600090
+	trigger = { ai = yes }
+	random = no
+	country = HOL
+	name = "AI_EVENT"
+	desc = "1568 AI"
+
+	date = { year = 1568 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1590 }
+
+	action_a = {
+		name = "change to 1568 AI"
+		command = { type = ai which = HOL_1568.txt }
+	}
+}
+event = {
+	id = 600091
+	trigger = { ai = yes }
+	random = no
+	country = HOL
+	name = "AI_EVENT"
+	desc = "1590 AI"
+
+	date = { day = 1 month = june year = 1590 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1605 }
+
+	action_a = {
+		name = "change to 1590 AI"
+		command = { type = ai which = "HOL_1590.txt" }
+	}
+}
+event = {
+	id = 600094
+	trigger = { ai = yes }
+	random = no
+	country = HOL
+	name = "AI_EVENT"
+	desc = "1605 AI"
+
+	date = { day = 1 month = june year = 1605 }
+	offset = 30
+	deathdate = { day = 1 month = december year = 1649 }
+
+	action_a = {
+		name = "change to 1605 AI"
+		command = { type = ai which = "HOL_1605.txt" }
+	}
+}
+event = {
+	id = 600092
+	trigger = { ai = yes }
+	random = no
+	country = HOL
+	name = "AI_EVENT"
+	desc = "HOL_1650 AI"
+
+	date = { year = 1650 }
+	offset = 60
+	deathdate = { year = 1699 }
+
+	action_a = {
+		name = "change to HOL_1650 AI"
+		command = { type = ai which = "HOL_1650.txt" }
+	}
+}
+event = {
+	id = 600093
+	trigger = { ai = yes }
+	random = no
+	country = HOL
+	name = "AI_EVENT"
+	desc = "HOL_1700 AI"
+
+	date = { day = 1 month = june year = 1700 }
+	offset = 30
+	deathdate = { year = 1815 }
+
+	action_a = {
+		name = "change to HOL_1700 AI"
+		command = { type = ai which = "HOL_1700.txt" }
+	}
+}
+event = {
+	id = 600095
+	trigger = { ai = yes }
+	random = no
+	country = HOL
+	name = "AI_EVENT"
+	desc = "HOL_1816 AI"
+
+	date = { year = 1816 }
+	offset = 30
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "change to HOL_1816 AI"
+		command = { type = ai which = "HOL_1816.txt" }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+#Burgundy (BUR): 610010-600019
+
+event = {
+	id = 610010
+	trigger = { ai = yes }
+	random = no
+	country = BUR
+	name = "AI_EVENT"
+	desc = "BUR 1419"
+
+	date = { day = 1 month = january year = 1419 }
+
+	action_a = {
+		name = "Change to 1419 AI"
+		command = { type = ai which = BUR_1419.txt }
+	}
+}
+event = {
+	id = 610011
+	trigger = { ai = yes }
+	random = no
+	country = BUR
+	name = "AI_EVENT"
+	desc = "BUR 1465"
+
+	date = { day = 1 month = january year = 1465 }
+
+	action_a = {
+		name = "Change to 1465 AI"
+		command = { type = ai which = BUR_1465.txt }
+	}
+}
+event = {
+	id = 610012
+	trigger = { ai = yes }
+	random = no
+	country = BUR
+	name = "AI_EVENT"
+	desc = "Switch to default_ai.txt"
+
+	date = { day = 5 month = january year = 1477 }
+
+	action_a = {
+		name = "Switch to default_ai.txt"
+		command = { type = ai which = "default_ai.txt" }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+#Sikh Empire (SKH): 610020-610029
+
+event = {
+	id = 610020
+	trigger = {
+		ai = yes
+	}
+	random = no
+	country = SKH
+	name = "AI_EVENT"
+	desc = "SKH 1753 Empire"
+
+	date = { day = 1 month = january year = 1753 }
+	offset = 30
+	deathdate = { year = 1837 }
+
+	action_a = {
+		name = "Change to 1753 Empire AI"
+		command = { type = ai which = "SKH_1753_Empire.txt" }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+#Brittany (BRI): 610030-610039
+
+event = {
+	id = 610030
+	trigger = {
+		ai = yes
+		event = 4172 #BRI: Brittany and the New World
+	}
+	random = no
+	country = BRI
+	name = "AI_EVENT"
+	desc = "BRI 1510 Ango"
+
+	date = { day = 1 month = january year = 1510 }
+	offset = 30
+	deathdate = { year = 1540 }
+
+	action_a = {
+		name = "Change to BRI 1510 Ango AI"
+		command = { type = ai which = "BRI_1510_Ango.txt" }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+#Lithuania (LIT): 610040-610049
+
+event = {
+	id = 610040
+	random = no
+	trigger = { ai = yes }
+	country = LIT
+	name = "AI_EVENT"
+	desc = "Default AI"
+
+	date = { day = 1 month = january year = 1450 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1451 }
+
+	action_a = {
+		name = "Switch to default_ai.txt"
+		command = { type = ai which = "default_ai.txt" }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------

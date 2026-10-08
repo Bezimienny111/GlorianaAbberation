@@ -1,0 +1,1329 @@
+# MAJOR EVENTS FOR JAPAN
+#
+# By Aetius
+#
+
+
+event = {
+	id = 6930 #Shocho Ikki#
+	random = no
+	country = NIP
+	trigger = { domestic = { type = Serfdom value = 5 } }
+	name = "EVENTNAME6930"
+	desc = "EVENTHIST6930"
+	date = { day = 15 month = september year = 1428}
+	offset = 30
+	action_a = {
+		name = "ACTIONNAME6930A" #Reduce taxes and annul debts#
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = trade value = -250}
+		command = { type = infra value = -250 }
+		command = { type = provincetax which = 686 value = -1}
+		command = { type = stability value = -1}
+		command = { type = sleepevent which = 6931 }
+		}
+
+	action_b = {
+		name = "ACTIONNAME6930B" #Crush the ikki#
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = stability value = -3 }
+		command = { type = revolt which = 686}
+		command = { type = revoltrisk which = 12 value = 8}
+		}
+
+}
+
+
+event = {
+	id = 6931 #Harima Ikki#
+	random = no
+	country = NIP
+	trigger = { domestic = { type = Serfdom value = 5 } }
+	name = "EVENTNAME6931"
+	desc = "EVENTHIST6931"
+	date = { day = 15 month = january year = 1429}
+	action_a = {
+		name = "ACTIONNAME6931A" #Reduce taxes and annul debts#
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = trade value = -250}
+		command = { type = infra value = -250 }
+		command = { type = provincetax which = 686 value = -1}
+		command = { type = stability value = -1}
+		}
+
+	action_b = {
+		name = "ACTIONNAME6931B" #Crush the ikki#
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = stability value = -3 }
+		command = { type = revolt which = 686}
+		command = { type = revoltrisk which = 12 value = 6}
+		}
+}
+
+
+event = {
+	id = 6932 #The Eikyo war#
+	random = no
+	country = NIP
+	trigger = {
+				owned = { province = 685 data = -1 }
+				owned = { province = 684 data = -1 }
+		}
+	name = "EVENTNAME6932"
+	desc = "EVENTHIST6932"
+	date = { day = 1 month = august year = 1438}
+	offset = 364
+	action_a = {
+		name = "ACTIONNAME6932A" #Call for Uesugi Norizane`s help#
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = stability value = -3}
+		command = { type = infantry which = 684 value = 15000 }
+		command = { type = cavalry which = 684 value = 7500 }
+		command = { type = revolt which = 685}
+		command = { type = province_revoltrisk which = 685 value = 10}
+		command = { type = sleepevent which = 6933 }
+		}
+
+	action_b = {
+		name = "ACTIONNAME6932B" #Deal with them alone#
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = stability value = -5}
+		command = { type = revolt which = 684}
+		command = { type = revolt which = 685}
+		command = { type = province_revoltrisk which = 684 value = 15}
+		command = { type = province_revoltrisk which = 685 value = 15}
+		command = { type = revoltrisk which = 24 value = 6}
+		command = { type = sleepevent which = 6934}
+		command = { type = sleepevent which = 6937 } #kyotoku
+		}
+}
+
+event = {
+	id = 6933 #The Eikyo war without#
+	random = no
+	country = NIP
+	trigger = { event = 6932 }
+	name = "EVENTNAME6933"
+	desc = "EVENTHIST6933"
+	date = { day = 1 month = january year = 1440}
+	offset = 180
+	action_a = {
+		name = "OK"
+		command = { type = stability value = -1}
+		command = { type = revolt which = 684}
+		command = { type = revolt which = 685}
+		command = { type = province_revoltrisk which = 684 value = -15}
+		command = { type = province_revoltrisk which = 685 value = -15}
+	}
+}
+
+
+event = {
+	id = 6934 #The Eikyo war with#
+	random = no
+	country = NIP
+	trigger = { event = 6932 }
+	name = "EVENTNAME6934"
+	desc = "EVENTHIST6934"
+	date = { day = 1 month = march year = 1440}
+	offset = 180
+	action_a = {
+		name = "OK"
+		command = { type = stability value = -1}
+		command = { type = revolt which = 685}
+		command = { type = province_revoltrisk which = 685 value = -10}
+		}
+}
+
+
+event = {
+	id = 6935 #Shogun Ashikaga Yoshinori assassinated!#
+	random = no
+	country = NIP
+	name = "EVENTNAME6935"
+	desc = "EVENTHIST6935"
+	date = { day = 12 month = july year = 1441}
+	offset = 30
+	action_a = {
+		name = "OK"
+		command = { type = revolt which = 686}
+		command = { type = stability value = -5}
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = sleepmonarch which = 07373}
+		##command = { type = sleepleader which = 07373}#Ashikaga Yoshinori#
+	}
+}
+
+event = {
+	id = 6915 #Kakitsu Ikki#
+	random = no
+	country = NIP
+	trigger = { domestic = { type = Serfdom value = 5 } }
+	name = "EVENTNAME6915"
+	desc = "EVENTHIST6915"
+	date = { day = 15 month = august year = 1441}
+	action_a = {
+		name = "ACTIONNAME6915A" #Reduce taxes and annul debts#
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = trade value = -250}
+		command = { type = infra value = -250 }
+		command = { type = provincetax which = 686 value = -1}
+		command = { type = stability value = -1}
+		}
+	action_b = {
+		name = "ACTIONNAME6915B" #Crush the ikki#
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = stability value = -3 }
+		command = { type = revolt which = 686}
+		command = { type = revoltrisk which = 12 value = 6}
+		}
+}
+
+
+event = {
+	id = 6936 #Infighting in the Hatakeyama family#
+	random = no
+	country = NIP
+	name = "EVENTNAME6936"
+	desc = "EVENTHIST6936"
+	date = { day = 15 month = april year = 1454}
+	offset = 15
+	action_a = {
+		name = "ACTIONNAME6936A" #Chastise Hosokawa#
+		command = { type = revolt which = 685 }
+		command = { type = revolt which = 686 }
+		command = { type = revolt which = 687 }
+		command = { type = stability value = -5 }
+		command = { type = revoltrisk which = 60 value = 8 }
+		command = { type = infantry which = 688 value = 25000 }
+		command = { type = cavalry which = 688 value = 10000 }
+		command = { type = wakeleader which = 2252 } # Yamana Souzen
+		command = { type = wakeleader which = 2254 } # Ouchi Masahiro
+		command = { type = sleepevent which = 6939 }
+		command = { type = sleepevent which = 6941 }
+		command = { type = sleepevent which = 6958 }
+		command = { type = sleepevent which = 6959 }
+		command = { type = sleepevent which = 6946 }
+		}
+	action_b = {
+		name = "ACTIONNAME6936B" #Chastise Yamana#
+		command = { type = revolt which = 685 }
+		command = { type = revolt which = 686 }
+		command = { type = revolt which = 688 }
+		command = { type = stability value = -4 }
+		command = { type = revoltrisk which = 60 value = 8 }
+		command = { type = infantry which = 687 value = 20000 }
+		command = { type = cavalry which = 687 value = 10000 }
+		command = { type = wakeleader which = 2251 } # Hosokawa Katsumoto
+		command = { type = wakeleader which = 2253 } # Akamatsu Masanori
+		command = { type = sleepevent which = 6939 }
+		command = { type = sleepevent which = 6940 }
+		command = { type = sleepevent which = 6958 }
+		command = { type = sleepevent which = 6959 }
+		command = { type = sleepevent which = 6948 }
+		}
+	action_c = {
+		name = "ACTIONNAME6936C" #Don't get involved#
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = stability value = -1}
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = sleepevent which = 6940 }
+		command = { type = sleepevent which = 6941 }
+		command = { type = sleepevent which = 6920}
+		}
+}
+
+event = {
+	id = 6937 #The Kyotoku War#
+	random = no
+	country = NIP
+	trigger = {
+				owned = { province = 685 data = -1 }
+				owned = { province = 684 data = -1 }
+			}
+	name = "EVENTNAME6937"
+	desc = "EVENTHIST6937"
+	date = { day = 27 month = december year = 1454}
+	action_a = {
+		name = "ACTIONNAME6937A" #Order Ashikaga Shigeuji to commit seppuku#
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = QUALITY value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = stability value = -1}
+		command = { type = revoltrisk which = 12 value = 5}
+		}
+	action_b = {
+		name = "ACTIONNAME6937B" #Refuse the Uesugi's demands#
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = stability value = -3}
+		command = { type = revolt which = 684}
+		command = { type = revolt which = 685}
+		command = { type = sleepevent which = 6920}
+	}
+}
+
+event = {
+	id = 6938 # Koshamain#
+	random = no
+	country = NIP
+	trigger = {
+		owned = { province = 683 data = -1 }
+		owned = { province = 684 data = -1 }
+	}
+	name = "EVENTNAME6938"
+	desc = "EVENTHIST6938"
+
+	date = { day = 1 month = may year = 1457 }
+	offset = 364
+
+	action_a = {
+		name = "ACTIONNAME6938A" #Accept the demands#
+		command = { type = populationpercent which = 683 value = -10 }
+		command = { type = provincetax which = 683 value = -1 }
+		command = { type = provincemanpower which = 683 value = 1 }
+		command = { type = province_revoltrisk which = 683 value = 1 }
+		command = { type = populationpercent which = 684 value = -10 }
+		command = { type = provincetax which = 684 value = -1 }
+		command = { type = provincemanpower which = 684 value = 1 }
+		command = { type = province_revoltrisk which = 684 value = 1 }
+		command = { type = stability value = -3 }
+		command = { type = treasury value = -100 }
+		command = { type = vp value = -10 }
+		command = { type = sleepevent which = 94141 }
+	}
+	action_b = {
+		name = "ACTIONNAME6938B" # Crush the Koshamain rebellion#
+		command = { type = revolt which = 683 }
+		command = { type = stability value = -1}
+		command = { type = provincetax which = 683 value = -1 }
+		command = { type = provincemanpower which = 683 value = -1 }
+		command = { type = province_revoltrisk which = 683 value = 3}
+		}
+	action_c = {
+		name = "ACTIONNAME6938C" # Annihilate the Ezo#
+		command = { type = vp value = -30 }
+		command = { type = populationpercent which = 683 value = -15 }
+		command = { type = provincetax which = 683 value = -3 }
+		command = { type = provincemanpower which = 683 value = -1 }
+		command = { type = stability value = -2 }
+		command = { type = revolt which = 683 }
+		command = { type = sleepevent which = 94141 }
+	}
+}
+
+
+
+
+event = {
+	id = 6939 #The Onin War# #left kyoto completely destroyed thus the high province revolt#
+	random = no
+	country = NIP
+	name = "EVENTNAME6939"
+	desc = "EVENTHIST6939"
+	date = { day = 15 month = may year = 1467}
+	offset = 15
+	action_a = {
+		name = "ACTIONNAME6939A" #Yoshimi i.e. Yamana#
+		command = { type = revolt which = 685}
+		command = { type = province_revoltrisk which = 685 value = 15}
+		command = { type = revolt which = 686}
+		command = { type = province_revoltrisk which = 686 value = 20}
+		command = { type = revolt which = 687}
+		command = { type = province_revoltrisk which = 687 value = 15}
+		command = { type = stability value = -4}
+		command = { type = revoltrisk which = 60 value = 6} #hosokawa is the kanrei after all#
+		command = { type = infantry which = 688 value = 50000 }
+		command = { type = cavalry which = 688 value = 25000 }
+		command = { type = sleepevent which = 6946}
+		command = { type = sleepevent which = 6920}
+	}
+	action_b = {
+		name = "ACTIONNAME6939B" #Yoshihisa i.e. Hosokawa#
+		command = { type = revolt which = 685}
+		command = { type = province_revoltrisk which = 685 value = 15}
+		command = { type = revolt which = 686}
+		command = { type = province_revoltrisk which = 686 value = 20}
+		command = { type = revolt which = 688}
+		command = { type = province_revoltrisk which = 688 value = 15}
+		command = { type = stability value = -5}
+		command = { type = infantry which = 687 value = 50000 }
+		command = { type = cavalry which = 687 value = 25000 }
+		command = { type = sleepevent which = 6948}
+	}
+	action_c = {
+		name = "ACTIONNAME6939C" #Don't choose sides#
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = stability value = -3}
+		command = { type = province_revoltrisk which = 686 value = 30}
+		command = { type = domestic which = CENTRALIZATION value = -3 }
+		command = { type = sleepevent which = 6920}
+	}
+}
+
+event = {
+	id = 6940 #The Onin War#
+	random = no
+	country = NIP
+	name = "EVENTNAME6940"
+	desc = "EVENTHIST6940"
+	date = { day = 15 month = may year = 1467}
+	offset = 15
+	action_a = {
+		name = "ACTIONNAME6940A" #Yoshimi i.e. Yamana#
+		command = { type = revolt which = 685}
+		command = { type = province_revoltrisk which = 685 value = 7}
+		command = { type = revolt which = 686}
+		command = { type = province_revoltrisk which = 686 value = 10}
+		command = { type = revolt which = 687}
+		command = { type = province_revoltrisk which = 687 value = 7}
+		command = { type = stability value = -2}
+		command = { type = infantry which = 688 value = 50000 }
+		command = { type = cavalry which = 688 value = 25000 }
+		command = { type = sleepevent which = 6946}
+	}
+	action_b = {
+		name = "ACTIONNAME6940B" #Yoshihisa i.e. Hosokawa#
+		command = { type = revolt which = 685}
+		command = { type = province_revoltrisk which = 685 value = 15}
+		command = { type = revolt which = 686}
+		command = { type = province_revoltrisk which = 686 value = 20}
+		command = { type = revolt which = 688}
+		command = { type = province_revoltrisk which = 688 value = 15}
+		command = { type = stability value = -5}
+		command = { type = revoltrisk which = 60 value = 6} #yamana will be the kanrei or at least de facto#
+		command = { type = infantry which = 687 value = 25000 }
+		command = { type = cavalry which = 687 value = 10000 }
+		command = { type = sleepevent which = 6948}
+		command = { type = sleepevent which = 6920}
+	}
+	action_c = {
+		name = "ACTIONNAME6940C" #Don't choose sides#
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = stability value = -3}
+		command = { type = province_revoltrisk which = 686 value = 15}
+		command = { type = domestic which = CENTRALIZATION value = -3 }
+		command = { type = sleepevent which = 6920}
+	}
+}
+
+event = { id = 6941 #The Onin War#
+	random = no
+	country = NIP
+	name = "EVENTNAME6941"
+	desc = "EVENTHIST6941"
+	date = { day = 15 month = may year = 1467}
+	offset = 15
+	action_a = {
+		name = "ACTIONNAME6941A" #Yoshimi i.e. Ouchi#
+		command = { type = revolt which = 685}
+		command = { type = province_revoltrisk which = 685 value = 15}
+		command = { type = revolt which = 686}
+		command = { type = province_revoltrisk which = 686 value = 20}
+		command = { type = revolt which = 687}
+		command = { type = province_revoltrisk which = 687 value = 15}
+		command = { type = revoltrisk which = 60 value = 6} #hosokawa will be the kanrei#
+		command = { type = stability value = -5}
+		command = { type = infantry which = 688 value = 15000 }
+		command = { type = cavalry which = 688 value = 5000 }
+		command = { type = sleepevent which = 6946}
+		command = { type = sleepevent which = 6948}
+		command = { type = sleepevent which = 6920}
+	}
+	action_b = {
+		name = "ACTIONNAME6941B" #Yoshihisa i.e. Hosokawa#
+		command = { type = revolt which = 686}
+		command = { type = province_revoltrisk which = 686 value = 10}
+		command = { type = revolt which = 688}
+		command = { type = province_revoltrisk which = 688 value = 10}
+		command = { type = stability value = -2}
+		command = { type = revoltrisk which = 60 value = 8}
+		command = { type = infantry which = 687 value = 25000 }
+		command = { type = cavalry which = 687 value = 10000 }
+		command = { type = sleepevent which = 6946}
+		command = { type = sleepevent which = 6948}
+		command = { type = sleepevent which = 6920}
+	}
+	action_c = {
+		name = "ACTIONNAME6941C" #Don't choose sides#
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = stability value = -3}
+		command = { type = province_revoltrisk which = 686 value = 15}
+		command = { type = domestic which = CENTRALIZATION value = -3 }
+		command = { type = sleepevent which = 6946}
+		command = { type = sleepevent which = 6948}
+		command = { type = sleepevent which = 6920}
+	}
+}
+
+
+event = {
+	id = 6942 #The Onin War cools down#
+	random = no
+	country = NIP
+	name = "EVENTNAME6942"
+	desc = "EVENTHIST6942"
+	date = { day = 15 month = june year = 1473}
+	offset = 60
+	action_a = {
+		name = "OK"
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = province_revoltrisk which = 685 value = -20}
+		command = { type = province_revoltrisk which = 686 value = -5}
+		command = { type = province_revoltrisk which = 687 value = -20}
+		command = { type = province_revoltrisk which = 688 value = -20}
+	}
+}
+
+event = {
+	id = 6943 #The Onin War ends#
+	random = no
+	country = NIP
+	name = "EVENTNAME6943"
+	desc = "EVENTHIST6943"
+	date = { day = 15 month = june year = 1477}
+	offset = 60
+	action_a = {
+		name = "OK"
+		command = { type = province_revoltrisk which = 686 value = -25}
+		}
+}
+
+
+event = {
+	id = 6944 #Kaga Ikko-ikki#
+	random = no
+	country = NIP
+	trigger = {
+		domestic = { type = INNOVATIVE value = 3}
+		}
+	name = "EVENTNAME6944"
+	desc = "EVENTHIST6944"
+	date = { day = 1 month = june year = 1488 }
+	offset = 364
+	action_a = {
+		name = "ACTIONNAME6944A" #Enforce the ancient Japanese values#
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = trade value = -300}
+		command = { type = stability value = -1}
+	}
+	action_b = {
+		name = "ACTIONNAME6944B" #Crush the Ikko-ikki #
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = stability value = -3 }
+		command = { type = religiousrevolt which = 685}
+		command = { type = revoltrisk which = 48 value = 6}
+		}
+}
+
+event = {
+	id = 6945 #Ise Shinkuro takes Odawara Castle#
+	random = no
+	country = NIP
+	trigger = { owned = { province = 685 data = -1}}
+	name = "EVENTNAME6945"
+	desc = "EVENTHIST6945"
+	date = { day = 1 month = july year = 1495} #must check the exact date#
+	offset = 90
+	action_a = {
+		name = "OK"
+		command = { type = province_revoltrisk which = 684 value = 10}
+		command = { type = province_revoltrisk which = 685 value = 10}
+		command = { type = province_revoltrisk which = 686 value = 10}
+		command = { type = province_revoltrisk which = 687 value = 10}
+		command = { type = province_revoltrisk which = 688 value = 10}
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = stability value = -1}
+		command = { type = provincetax which = 685 value = 2 }
+		}
+}
+
+
+event = { id = 6946 #Takeda Alliance begins reunification#
+	random = no
+	country = NIP
+	trigger = {
+		owned = { province = 685 data = -1 }
+		NOT = {
+			event = 6948
+			event = 6920
+		}
+	}
+	name = "EVENTNAME6946"
+	desc = "EVENTHIST6946"
+	date = { day = 1 month = july year = 1544} #real one in 1554 not entirely unhistoric#
+	offset = 90
+	action_a = {
+		name = "OK"
+		command = { type = province_revoltrisk which = 685 value = -10}
+		command = { type = sleepevent which = 6922 }
+	}
+}
+
+event = {
+	id = 6947 #Takeda Alliance Wins!#
+	random = no
+	country = NIP
+	trigger = { event = 6946 }
+	name = "EVENTNAME6947"
+	desc = "EVENTHIST6947"
+	date = { day = 1 month = july year = 1564} #Takeda Shingen dies 1573#
+	offset = 90
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = centralization value = -3 }
+		command = { type = domestic which = serfdom value = -3 }
+		command = {type = capital which = 685}
+		command = { type = province_revoltrisk which = 684 value = -10}
+		command = { type = province_revoltrisk which = 686 value = -10}
+		command = { type = province_revoltrisk which = 687 value = -10}
+		command = { type = province_revoltrisk which = 688 value = -10}
+	}
+}
+
+event = {
+	id = 6948 #Kyushu Daimyo start reunification#
+	random = no
+	country = NIP
+
+	trigger = {
+		owned = { province = 687 data = -1 }
+		NOT = {
+			event = 6946
+			event = 6920
+		}
+	}
+	name = "EVENTNAME6948"
+	desc = "EVENTHIST6948"
+	date = { day = 1 month = july year = 1522} #completely unhistoric but motonari was on the way up#
+	offset = 90
+	action_a = {
+		name = "OK"
+		command = { type = province_revoltrisk which = 688 value = -10}
+		command = { type = sleepevent which = 6922 }
+	}
+}
+
+
+event = { id = 6949 #Kyushu Daimyo Win!#
+	random = no
+    country = NIP
+	trigger = { event = 6948 }
+	name = "EVENTNAME6949"
+	desc = "EVENTHIST6949"
+	date = { day = 1 month = july year = 1542} #Mori Motonari dies 1571#
+	offset = 90
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = land value = -3 }
+		command = { type = domestic which = offensive value = -3}
+		command = { type = domestic which = mercantilism value = -3 }
+		command = { type = province_revoltrisk which = 684 value = -10}
+		command = { type = province_revoltrisk which = 685 value = -10}
+		command = { type = province_revoltrisk which = 686 value = -10}
+		command = { type = province_revoltrisk which = 687 value = -10}
+		command = {type = capital which = 688}
+	}
+}
+
+
+event = {
+	id = 6920 #Uesugi and Date drive south#
+	random = no
+	country = NIP
+	trigger = {
+		owned = { province = 687 data = -1 }
+		NOT = {
+			event = 6946
+			event = 6948
+		}
+	}
+	name = "EVENTNAME6920"
+	desc = "EVENTHIST6920"
+	date = { day = 1 month = july year = 1547} #kenshin wasn't called uesugi until 1455 but hey	:}#
+	offset = 90
+	action_a = {
+		name = "OK"
+		command = { type = province_revoltrisk which = 684 value = -10}
+		command = { type = sleepevent which = 6922 }
+		}
+}
+
+event = {
+	id = 6921 #Uesugi Kenshin Wins!#
+	random = no
+	country = NIP
+	trigger = { event = 6920 }
+	name = "EVENTNAME6921"
+	desc = "EVENTHIST6921"
+	date = { day = 1 month = july year = 1567} #Uesugi Kenshin dies 1579#
+	offset = 90
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = ARISTOCRACY value = 3 }
+		command = { type = domestic which = serfdom value = 3 }
+		command = { type = domestic which = offensive value = 3 }
+		command = { type = domestic which = innovative value = -3 }
+		command = { type = province_revoltrisk which = 685 value = -10}
+		command = { type = province_revoltrisk which = 686 value = -10}
+		command = { type = province_revoltrisk which = 687 value = -10}
+		command = { type = province_revoltrisk which = 688 value = -10}
+		command = {type = capital which = 684}
+		}
+}
+
+
+event = {
+	id = 6922 #Oda has taken Capital#
+	random = no
+	country = NIP
+	trigger = {
+		NOT = {
+			event = 6946
+			event = 6948
+			event = 6920
+		}
+	}
+	name = "EVENTNAME6922"
+	desc = "EVENTHIST6922"
+	date = { day = 1 month = march year = 1568}
+	offset = 90
+	action_a = {
+		name = "OK"
+		command = { type = province_revoltrisk which = 686 value = -10 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = stability value = -1}
+		command = { type = provincetax which = 685 value = 2 }
+	}
+}
+
+event = {
+	id = 6914 #Toyotomi carries out the great Sword Hunt#
+	random = no
+	country = NIP
+	trigger = { event = 6922 }
+	name = "EVENTNAME6914"
+	desc = "EVENTHIST6914"
+	date = { day = 1 month = july year = 1588}
+	offset = 90
+
+	action_a = {
+		name = "ACTIONNAME6914A" #split the groups#
+		command = { type = province_revoltrisk which = 684 value = -10}
+		command = { type = province_revoltrisk which = 685 value = -10}
+		command = { type = province_revoltrisk which = 687 value = -10}
+		command = { type = province_revoltrisk which = 688 value = -10}
+		command = { type = domestic which = Quality value = 3 }
+		command = { type = domestic which = Serfdom value = 3 }
+		command = { type = stability value = 3}
+	## command = { type = sleepevent which = 94138 }
+	}
+	action_b = {
+		name = "ACTIONNAME6914B" #don't split#
+		command = { type = province_revoltrisk which = 684 value = -10}
+		command = { type = province_revoltrisk which = 685 value = -10}
+		command = { type = province_revoltrisk which = 687 value = -10}
+		command = { type = province_revoltrisk which = 688 value = -10}
+		command = { type = domestic which = Quality value = -3 }
+		command = { type = domestic which = Serfdom value = -3 }
+		command = { type = stability value = 3}
+	}
+}
+
+event = { id = 6953 #War against the Yuki#
+	random = no
+	country = NIP
+	trigger = { event = 6932 }
+	name = "EVENTNAME6953"
+	desc = "EVENTHIST6953"
+	date = { day = 1 month = january year = 1441} #must check the exact date#
+	offset = 30
+	action_a = {	name = "OK"
+			command = { type = stability value = -1}
+			command = { type = revolt which = 685}}}
+
+#Francis Xavier arrives in Japan#
+event = {
+	id = 6968
+	random = no
+	country = NIP
+	name = "EVENTNAME6968"
+	desc = "EVENTHIST6968"
+
+	date = { day = 15 month = august year = 1549 }
+	offset = 30
+
+	action_a = {
+		name = "ACTIONNAME6968A" #The Jesuits Establish Themselves and Portuguese Merchants Arrive#
+		command = { type = domestic which = mercantilism value = -2}
+		command = { type = domestic which = innovative value = 1}
+		command = { type = land value = 500}
+		command = { type = relation which = POR value = 100}
+		command = { type = relation which = PAP value = 100}
+	}
+}
+
+#Hideyoshi's Anti-Christian Edict#
+event = {
+	id = 3877
+	random = no
+	country = NIP
+	name = "EVENTNAME3877"
+	desc = "EVENTHIST3877"
+
+	date = { day = 23 month = july year = 1587 }
+	offset = 30
+
+	action_a = {
+		name = "ACTIONNAME3877A" #Issue the Edict#
+		command = { type = relation which = POR value = -100}
+		command = { type = relation which = PAP value = -100}
+		command = { type = domestic which = innovative value = -1}
+		command = { type = domestic which = mercantilism value = 1}
+		command = { type = relation which = POL value = -50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = stability value = 1 }
+		command = { type = sleepevent which = 3879 }
+	}
+	action_b = {
+		name = "ACTIONNAME3877B" #Don't Issue the Edict#
+		command = { type = stability value = -2 }
+		command = { type = provincereligion which = 688 value = catholic }
+		command = { type = trade value = 1000 }
+		command = { type = provincetax which = 688 value = 2 }
+		command = { type = sleepevent which = 3878 }
+	}
+}
+
+#Tokugawa's Edict of Expulsion#
+event = {
+	id = 3878
+	random = no
+	country = NIP
+	name = "EVENTNAME3878"
+	desc = "EVENTHIST3878"
+
+	date = { day = 14 month = february year = 1614 }
+	offset = 0
+
+	action_a = {
+		name = "ACTIONNAME3878A" #Christianity Has No Place in the Land of the Gods#
+		command = { type = province_revoltrisk which = 688 value = 10}
+		command = { type = stability value = 3}
+		command = { type = domestic which = innovative value = -1}
+		command = { type = domestic which = mercantilism value = 1}
+		command = { type = relation which = POR value = -300}
+		command = { type = relation which = PAP value = -300}
+		command = { type = relation which = POL value = -200}
+		command = { type = relation which = FRA value = -200}
+		command = { type = relation which = SPA value = -200}
+		command = { type = relation which = HAB value = -200}
+		command = { type = relation which = ENG value =  100}
+		command = { type = relation which = HOL value =  200}
+	}
+	action_b = {
+		name = "ACTIONNAME3878B" #Continue to tolerate Christians#
+		command = { type = provincereligion which = 688 value = catholic }
+		command = { type = stability value = -2 }
+		command = { type = provincetax which = 688 value = 2 }
+		command = { type = relation which = POR value = 100 }
+		command = { type = relation which = PAP value = 100 }
+		command = { type = relation which = ENG value = -50 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = POL value = 50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = sleepevent which = 3880 }
+	}
+}
+
+#Tokugawa's Edict of Expulsion#
+event = {
+	id = 3879
+
+	random = no
+	country = NIP
+	name = "EVENTNAME3879"
+	desc = "EVENTHIST3879"
+
+	date = { day = 14 month = april year = 1614 }
+	offset = 30
+
+	action_a = {
+		name = "ACTIONNAME3879A" #Christianity Has No Place in the Land of the Gods#
+		command = { type = province_revoltrisk which = 688 value = 20}
+		command = { type = conversion which = 688 }
+		command = { type = stability value = 3}
+		command = { type = domestic which = innovative value = -1}
+		command = { type = domestic which = mercantilism value = 1}
+		command = { type = relation which = POR value = -300}
+		command = { type = relation which = PAP value = -300}
+		command = { type = relation which = POL value = -200}
+		command = { type = relation which = FRA value = -200}
+		command = { type = relation which = SPA value = -200}
+		command = { type = relation which = HAB value = -200}
+		command = { type = relation which = ENG value =  100}
+		command = { type = relation which = HOL value =  200}
+	}
+	action_b = {
+		name = "ACTIONNAME3879B" #Continue to Tolerate Christians#
+		command = { type = stability value = -1}
+		command = { type = relation which = POR value = 100}
+		command = { type = relation which = PAP value = 100}
+		command = { type = relation which = ENG value = -50}
+		command = { type = relation which = HOL value = -100}
+		command = { type = relation which = POL value = 50}
+		command = { type = relation which = FRA value = 50}
+		command = { type = relation which = SPA value = 50}
+		command = { type = relation which = HAB value = 50}
+		command = { type = sleepevent which = 3880}
+	}
+	action_c = {
+		name = "ACTIONNAME3879C" #Convert to Catholicism#
+		command = { type = religion which = counterreform }
+		command = { type = missionaries value = 6 }
+		command = { type = stability value = -6 }
+		command = { type = provincereligion which = 686 value = catholic }
+		command = { type = provincereligion which = 687 value = catholic }
+		command = { type = technology which = muslim }
+		command = { type = relation which = POR value = 400 }
+		command = { type = relation which = PAP value = 400 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = HOL value = -200 }
+		command = { type = relation which = POL value = 200 }
+		command = { type = relation which = FRA value = 200 }
+		command = { type = relation which = SPA value = 200 }
+		command = { type = relation which = HAB value = 200 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -4 }
+		command = { type = religiousrevolt which = -4 }
+		command = { type = revoltrisk which = 120 value = 10 }
+		command = { type = sleepevent which = 3880 }
+	}
+}
+
+#Policy of Sakoku Implemented#
+event = {
+	id = 3880
+	random = no
+	country = NIP
+	trigger = {
+		atwar = no
+		NOT = {
+			owned = { province = 641 data = -1 }
+			owned = { province = 642 data = -1 }
+		}
+	}
+	name = "EVENTNAME3880"
+	desc = "EVENTHIST3880"
+
+	date = { day = 4 month = august year = 1639}
+	offset = 30
+	deathdate = { day = 1 month = january year = 1699 }
+
+	action_a = {
+		name = "Permit limited trade" #Permit limited trade#
+		command = { type = province_revoltrisk which = 688 value = -20 }
+		command = { type = domestic which = innovative value = -2 }
+		command = { type = domestic which = mercantilism value = 3 }
+		command = { type = domestic which = land value = 3 }
+		command = { type = domestic which = aristocracy value = 1 }
+		command = { type = treasury value = 150 }
+		command = { type = trade value = 500 }
+		command = { type = merchants value = 2 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = CHI value = 100 }
+		command = { type = relation which = POR value = -150 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = stability value = 2 }
+	}
+	action_b = {
+		name = "Close Japan to foreigners" #Close Japan to foreigners#
+		command = { type = removecore_national which = 641 } # Korea
+		command = { type = removecore_national which = 642 }
+		command = { type = province_revoltrisk which = 688 value = -20 }
+		command = { type = domestic which = innovative value = -6 }
+		command = { type = domestic which = mercantilism value = 7 }
+		command = { type = domestic which = land value = 8 }
+		command = { type = domestic which = aristocracy value = 3 }
+		command = { type = domestic which = quality value = -4 }
+		command = { type = treasury value = 800 }
+		command = { type = trade value = -1500 }
+		command = { type = merchants value = -6 }
+		command = { type = inflation value = -15 }
+		command = { type = provincetax which = -2 value = 3 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = relation which = HOL value = -150 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = CHI value = -100 }
+		command = { type = relation which = POR value = -150 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = revoketrade which = -1 } # just in case
+		command = { type = revoketrade which = -4 }
+		command = { type = revoketrade which = -4 }
+		command = { type = revoketrade which = -4 }
+		command = { type = revoketrade which = -4 }
+		command = { type = technology which = african }
+		command = { type = stability value = 6 }
+	}
+	action_c = {
+		name = "Open up Japan to the world" #Open up Japan to the world#
+		command = { type = revoltrisk which = 240 value = 3 }
+		command = { type = gainbuilding which = 685 value = shipyard }
+		command = { type = explorer which = 685 }
+		command = { type = conquistador which = 685 }
+		command = { type = province_revoltrisk which = 688 value = -20 }
+		command = { type = domestic which = innovative value = 3 }
+		command = { type = domestic which = mercantilism value = -4 }
+		command = { type = domestic which = land value = -2 }
+		command = { type = domestic which = aristocracy value = -2 }
+		command = { type = domestic which = quality value = 2 }
+		command = { type = treasury value = 300 }
+		command = { type = naval value = 1500 }
+		command = { type = infra value = 1500 }
+		command = { type = trade value = 3000 }
+		command = { type = merchants value = 6 }
+		command = { type = diplomats value = 6 }
+		command = { type = vp value = 300 }
+		command = { type = stability value = -3 }
+	}
+}
+
+#Toyotomi Hideyoshi Plans to Invade Korea#
+event = {
+	id = 3881
+	random = no
+	country = NIP
+	trigger = { exists = KOR }
+	name = "EVENTNAME3881"
+	desc = "EVENTHIST3881"
+
+	date = { day = 1 month = january year = 1592 }
+	offset = 300
+
+	action_a = { # Invade Korea
+		name = "ACTIONNAME3881A"
+		command = { type = addcore which = 641 }
+		command = { type = addcore which = 642 }
+		command = { type = relation which = KOR value = -200 }
+		command = { type = war which = KOR }
+		command = { type = casusbelli which = CHI value = 72 }
+	}
+	action_b = { # Provoke Korea
+		name = "ACTIONNAME3881B"
+		command = { type = casusbelli which = KOR value = 120 }
+		command = { type = relation which = KOR value = -100 }
+		command = { type = casusbelli which = CHI value = 36 }
+	}
+	action_c = { # Abandon Plans
+		name = "ACTIONNAME3881C"
+		command = { type = relation which = KOR value = 50 }
+	}
+}
+
+#Toyotomi carries out the Taiko Kenchi#
+event = {
+	id = 6974
+	random = no
+	country = NIP
+	trigger = { event = 6922 }
+	name = "EVENTNAME6974"
+	desc = "EVENTHIST6974"
+
+	date = { day = 1 month = july year = 1582}
+	offset = 30
+
+	action_a = {
+		name = "OK"
+		command = { type = provincetax which = 683 value = 1}
+		command = { type = provincetax which = 684 value = 2}
+		command = { type = provincetax which = 685 value = 4}
+		command = { type = provincetax which = 686 value = 4}
+		command = { type = provincetax which = 687 value = 2}
+		command = { type = provincetax which = 688 value = 4}
+		command = { type = domestic which = Serfdom value = 3}
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = infra value = 300 }
+		command = { type = trade value = 300 }
+	}
+}
+
+event = { id = 6975 #Enryakuji#
+ random = no
+ country = NIP
+ name = "EVENTNAME6975"
+ desc = "EVENTHIST6975"
+ date = { day = 12 month = september year = 1571}
+ offset = 15
+ action_a = { name = "ACTIONNAME6975A" #Burn it down
+	command = { type = domestic which = Innovative value = 2}
+	command = { type = infra value = -100 }
+	command = { type = stability value = 2}
+	command = {type = losemanufactory which = 686}
+	command = { type = sleepevent which = 94139}}
+ action_b = { name = "ACTIONNAME6975B" #Cooperate
+	command = { type = domestic which = Innovative value = -4}
+	command = { type = infantry which = 686 value = 15000 }}}
+
+event = { id = 6976 #Assasination of Hosokawa Masamoto#
+ random = no
+ country = NIP
+ trigger = { event = 6943 }
+ name = "EVENTNAME6976"
+ desc = "EVENTHIST6976"
+ date = { day = 15 month = june year = 1507}
+ offset = 90
+ action_a = { name = "OK"
+	command = { type = stability value = -1}
+ 	command = { type = domestic which = centralization value = -1}
+	command = { type = domestic which = ARISTOCRACY value = -1 }}}
+
+event = { id = 6977 #Hosokawa Masamoto chases out the Shogun Ashikaga Yoshitane#
+ random = no
+ country = NIP
+ trigger = { event = 6943 }
+ name = "EVENTNAME6977"
+ desc = "EVENTHIST6977"
+ date = { day = 15 month = april year = 1493}
+ offset = 15
+ action_a = { name = "OK"
+	command = { type = stability value = -1}
+	command = { type = sleepmonarch which = 07378 } ##Yoshitane#
+	command = { type = monarch which = 07379 } ##Yoshizumi#
+ 	command = { type = domestic which = centralization value = -1}}}
+
+event = { id = 6978 #Ashikaga Yoshitane chases out Shogun Ashikaga Yoshizumi#
+ random = no
+ country = NIP
+ trigger = { event = 6943 }
+ name = "EVENTNAME6978"
+ desc = "EVENTHIST6978"
+ date = { day = 28 month = july year = 1508}
+  action_a = { name = "OK"
+	command = { type = stability value = -1}
+	command = { type = monarch which = 07378 } ##Yoshitane#
+	command = { type = sleepmonarch which = 07379 } ##Yoshizumi#
+ 	command = { type = domestic which = centralization value = -1}}}
+
+event = { id = 6979 #Assasination of Shogun Ashikaga Yoshiteru#
+ random = no
+ country = NIP
+ trigger = { event = 6922 }
+ name = "EVENTNAME6979"
+ desc = "EVENTHIST6979"
+ date = { day = 17 month = may year = 1565}
+ action_a = { name = "OK"
+	command = { type = stability value = -1}
+ 	command = { type = domestic which = centralization value = -1}
+	command = { type = sleepmonarch which = 07382 } ##Yoshiteru#
+	command = { type = domestic which = ARISTOCRACY value = -1 }}}
+
+event = { id = 6980 #Last Ashikaga Shogun deposed by Oda#
+ random = no
+ country = NIP
+ trigger = { event = 6922 }
+ name = "EVENTNAME6980"
+ desc = "EVENTHIST6980"
+ date = { day = 15 month = july year = 1573}
+ offset = 15
+ action_a = { name = "OK"
+	command = { type = domestic which = ARISTOCRACY value = -1 }}}
+
+event = { id = 6981 #Sekigahara#
+ random = no
+ country = NIP
+ name = "EVENTNAME6981"
+ desc = "EVENTHIST6981"
+ date = { day = 15 month = september year = 1600}
+ action_a = { name = "OK"
+	command = { type = sleepevent which = 94140 }
+	command = { type = sleepevent which = 94142 }
+	command = { type = sleepevent which = 94143 }
+	command = { type = sleepevent which = 94144 }
+	command = { type = sleepevent which = 94145 }
+	command = { type = sleepevent which = 94146 }
+	command = { type = sleepevent which = 94147 }
+	command = { type = revolt which = 685}
+	command = { type = revolt which = 685}
+	command = { type = revolt which = 685}
+	command = { type = revolt which = 685}}}
+
+event = { id = 6982 #Shimazu Status#
+ random = no
+ country = NIP
+ trigger = { NOT = { event = 6948 } }
+ name = "EVENTNAME6982"
+ desc = "EVENTHIST6982"
+ date = { day = 15 month = february year = 1603}
+ action_a = { name = "ACTIONNAME6982A" ##Reduce
+	command = { type = domestic which = centralization value = 1}
+	command = { type = domestic which = ARISTOCRACY value = -1 }
+	command = { type = treasury value = 100 }}
+ action_b = { name = "ACTIONNAME6982B" ##Let them be
+	command = { type = domestic which = mercantilism value = -1 }
+	command = { type = trade value = 100 }
+	command = { type = domestic which = centralization value = -1}
+	command = { type = domestic which = ARISTOCRACY value = 1 }}}
+
+event = { id = 6983 #Mori Status#
+ random = no
+ country = NIP
+ trigger = { NOT = { event = 6948 }}
+ name = "EVENTNAME6983"
+ desc = "EVENTHIST6983"
+ date = { day = 15 month = february year = 1603}
+ action_a = { name = "ACTIONNAME6983A" ##Reduce
+	command = { type = domestic which = ARISTOCRACY value = -1 }
+	command = { type = domestic which = centralization value = 1}
+	command = { type = treasury value = 200 }}
+ action_b = { name = "ACTIONNAME6983B" ##Let them be
+	command = { type = domestic which = land value = -1 }
+	command = { type = domestic which = ARISTOCRACY value = 1 }
+	command = { type = domestic which = centralization value = -1}
+	command = { type = naval value = 200 }}}
+
+event = { id = 6984 #Chosokabe Status#
+ random = no
+ country = NIP
+ name = "EVENTNAME6984"
+ desc = "EVENTHIST6984"
+ date = { day = 15 month = february year = 1603}
+ action_a = { name = "ACTIONNAME6984A" ##Reduce
+	command = { type = domestic which = ARISTOCRACY value = -1 }
+	command = { type = domestic which = centralization value = 1}
+	command = { type = treasury value = 100 }}
+ action_b = { name = "ACTIONNAME6984B" ##Let them be
+	command = { type = infra value = 100 }
+	command = { type = domestic which = centralization value = -1}
+	command = { type = domestic which = ARISTOCRACY value = 1 }}}
+
+event = { id = 6985 #Date Status#
+ random = no
+ country = NIP
+ trigger = { NOT = { event = 6921 }}
+ name = "EVENTNAME6985"
+ desc = "EVENTHIST6985"
+ date = { day = 15 month = february year = 1603}
+ action_a = { name = "ACTIONNAME6985A" ##Reduce
+	command = { type = domestic which = ARISTOCRACY value = -1 }
+	command = { type = domestic which = centralization value = 1}
+	command = { type = treasury value = 100 }}
+ action_b = { name = "ACTIONNAME6985B" ##Let them be
+	command = { type = explorer which = 685}
+	command = { type = warships which = 685 value = 2}
+	command = { type = transports which = 685 value = 2}
+	command = { type = domestic which = centralization value = -1}
+	command = { type = domestic which = ARISTOCRACY value = 1 }}}
+
+event = { id = 6986 #Uesugi Status#
+ random = no
+ country = NIP
+ trigger = { NOT = { event = 6921 }}
+ name = "EVENTNAME6986"
+ desc = "EVENTHIST6986"
+ date = { day = 15 month = february year = 1603}
+ action_a = { name = "ACTIONNAME6986A" ##Reduce
+	command = { type = domestic which = ARISTOCRACY value = -1 }
+	command = { type = domestic which = centralization value = 1}
+	command = { type = treasury value = 200 }}
+ action_b = { name = "ACTIONNAME6986B" ##Let them be
+	command = { type = domestic which = land value = 1 }
+	command = { type = domestic which = ARISTOCRACY value = 1 }
+	command = { type = domestic which = centralization value = -1}
+	command = { type = land value = 200 }}}
+
+event = { id = 6987 #Oda Status#
+ random = no
+ country = NIP
+ name = "EVENTNAME6987"
+ desc = "EVENTHIST6987"
+ date = { day = 15 month = february year = 1603}
+ action_a = { name = "ACTIONNAME6987A" ##Reduce
+	command = { type = domestic which = ARISTOCRACY value = -1 }
+	command = { type = domestic which = centralization value = 1}
+	command = { type = treasury value = 200 }}
+ action_b = { name = "ACTIONNAME6987B" ##Let them be
+	command = { type = domestic which = quality value = 1 }
+	command = { type = domestic which = ARISTOCRACY value = 1 }
+	command = { type = domestic which = centralization value = -1}
+	command = { type = infra value = 200 }}}
+
+
+
+event = { id = 6988 #Akechi Mitsuhide kills Oda#
+ random = no
+ country = NIP
+ name = "EVENTNAME6988"
+ desc = "EVENTHIST6988"
+ date = { day = 17 month = june year = 1581}
+ action_a = { name = "OK"
+	command = { type = stability value = -1}
+ 	command = { type = domestic which = centralization value = -1}
+	command = { type = sleepleader which =	2181} ##Oda
+	command = { type = sleepmonarch which = 07384 } ##Oda#
+	command = { type = revolt which = 686}}}
+
+# Ikokusen Uchiharairei #
+event = {
+	id = 50045
+	trigger = {
+		event = 3880
+	}
+	random = no
+	country = NIP
+	name = "Ikokusen Uchiharairei"
+	desc = "The Edict to Repel Foreign Vessels ('Ikokusen Uchiharairei') was a law passed by the Tokugawa Shogunate in 1825 to the effect that all foreign vessels should be driven away from Japanese waters. At the expense of seizing foreign goods and money, Japan's trading relations were further hampered, and its political and cultural isolation became even more entrenched. An example of the law being put into practice was the Morrison Incident of 1837, in which an American merchant vessel attempting to use the return of Japanese castaways as leverage to initiate trading was fired upon. The Edict was repealed in 1842."
+
+	date = { day = 1 month = january year = 1825 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1826 }
+
+	action_a = { # Pass the Edict #
+		name = "Pass the Edict"
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = POR value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = USA value = -100 }
+		command = { type = revoketrade which = -1 } # just in case
+		command = { type = revoketrade which = -4 }
+		command = { type = revoketrade which = -4 }
+		command = { type = revoketrade which = -4 }
+		command = { type = revoketrade which = -4 }
+		command = { type = domestic which = MERCANTILISM value = 2 }
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = trade value = -400 }
+		command = { type = treasury value = 600 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b = { # Maintain our trade relations #
+		name = "Maintain our trade relations"
+		command = { type = revoltrisk which = 60 value = 3 }
+		command = { type = relation which = ENG value = 50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = HOL value = 50 }
+		command = { type = relation which = POR value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = USA value = 50 }
+		command = { type = diplomats value = 2 }
+		command = { type = merchants value = 4 }
+		command = { type = domestic which = MERCANTILISM value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = stability value = -1 }
+	}
+}

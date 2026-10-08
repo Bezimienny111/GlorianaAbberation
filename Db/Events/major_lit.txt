@@ -1,0 +1,1214 @@
+#####Lithuanian Major Events#####
+###By Joakim 'Greven' Bergqwist##
+#################################
+
+#The Statute of Lithuania#
+event = {
+
+	id = 3445
+	random = no
+	country = LIT
+	name = "EVENTNAME3445"
+	desc = "EVENTHIST3445"
+
+	date = { day = 1 month = january year = 1428 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1430 }
+
+	action_a ={				#Domestic Balance of Power#
+		name = "ACTIONNAME3445A"
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = stability value = -1 }
+		command = { type = treasury value = 200 }
+	}
+
+	action_b ={				#Royal Prerogative#
+		name = "ACTIONNAME3445B"
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = stability value = -4 }
+		command = { type = revoltrisk which = 12 value = 6 }
+	}
+
+	action_c ={				#Magnate Republicanism#
+		name = "ACTIONNAME3445C"
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = provincetax which = -1 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = stability value = 3 }
+		command = { type = inflation value = -5 }
+		command = { type = trade value = 800 }
+		command = { type = gainmanufactory which = -1 value = refinery }
+	}
+
+}
+
+#Nemiem Captivabus extended to Lithuania#
+event = {
+
+	id = 3446
+	random = no
+	country = LIT
+	name = "EVENTNAME3446"
+	desc = "EVENTHIST3446"
+
+	trigger = {
+		event = 3466
+		exists = POL
+		domestic = {
+			type = ARISTOCRACY
+			value = 7
+		}
+		NOT = {
+			domestic = {
+				type = CENTRALIZATION
+				value = 5
+			}
+		}
+	}
+
+	date = { day = 1 month = january year = 1432 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1437 }
+
+	action_a ={				#Accept the Magnates demands#
+		name = "ACTIONNAME3446A"
+		command = { type = provincetax which = -1 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={				#Limit the Magnates demands#
+		name = "ACTIONNAME3446B"
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = revoltrisk which = 12 value = 6 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#The Act of Union with Poland#
+event = {
+
+	id = 3447
+	trigger = {
+		OR = {
+			alliance = { country = POL country = LIT }
+			vassal = { country = POL country = LIT }
+			union = { country = POL country = LIT }
+			AND = {
+				owned = { province = 291 data = -1 }
+				owned = { province = 292 data = -1 }
+				NOT = { exists = POL }
+			}
+		}
+	}
+	random = no
+	country = LIT
+	name = "EVENTNAME3447"
+	desc = "EVENTHIST3447"
+	style = "3447"
+
+	date = { day = 1 month = january year = 1567 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1572 }
+
+	action_a ={				#Poland inherits Lithuania#
+		name = "ACTIONNAME3447A"
+		trigger = {
+			ai = yes
+			exists = POL
+		}
+		command = { type = trigger which = 3475 }
+	}
+
+	action_b ={				#Lithuania breaks with Poland#
+		name = "ACTIONNAME3447B"
+		command = {
+			trigger = {
+				exists = POL
+			}
+			type = trigger which = 3476
+		}
+		command = {
+			trigger = {
+				exists = POL
+			}
+			type = breakvassal which = POL
+		}
+		command = { type = stability value = 1 }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = CAV which = -2 value = 10000 }
+		command = { type = ART which = -2 value = 30 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+	}
+	action_c ={				#Lithuania turns to Moscow#
+		name = "ACTIONNAME3447C"
+		trigger = { 
+			OR = {
+				exists = MOS
+				exists = RUS
+			}
+			NOT = {
+				war = { country = LIT country = MOS }
+				war = { country = LIT country = RUS }
+			}
+		}
+		command = {
+			trigger = {
+				exists = POL
+			}
+			type = trigger which = 3476
+		}
+		command = {
+			trigger = {
+				exists = POL
+			}
+			type = breakvassal which = POL
+		}
+		command = { type = stability value = -2 }
+		command = { type = add_countryculture which = ruthenian }
+		command = { type = religion which = orthodox }
+		command = { type = conversion which = -1 }
+		command = { type = conversion which = -4 }
+		command = { type = missionaries value = 3 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = relation which = MOS value = 150 }
+		command = { type = relation which = RUS value = 150 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = MERCANTILISM value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+	}
+}
+
+#Wave of Protestantism#
+event = {
+
+	id = 3448
+	trigger = {
+		NOT = {
+			vassal = { country = POL country = LIT }
+			union = { country = POL country = LIT }
+		}
+	}
+	random = no
+	country = LIT
+	name = "EVENTNAME3448"
+	desc = "EVENTHIST3448"
+
+	date = { day = 1 month = january year = 1580 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1600 }
+
+	action_a ={				#Accept the Movement#
+		name = "ACTIONNAME3448A"
+		command = { type = provincereligion which = -1 value = protestant }
+		command = { type = provincereligion which = -4 value = protestant }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = trade value = 800 }
+		command = { type = relation which = POL value = 50 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = PAP value = -50 }
+		command = { type = relation which = ENG value = 50 }
+		command = { type = relation which = SCO value = 50 }
+		command = { type = relation which = HOL value = 50 }
+		command = { type = relation which = DAN value = 50 }
+		command = { type = relation which = SWE value = 50 }
+	}
+
+	action_b ={				#Support it and change State Religion#
+		name = "ACTIONNAME3448B"
+		command = { type = provincereligion which = -1 value = protestant }
+		command = { type = provincereligion which = -4 value = protestant }
+		command = { type = provincereligion which = -4 value = protestant }
+		command = { type = provincereligion which = -4 value = protestant }
+		command = { type = domestic which = INNOVATIVE value = 3 }
+		command = { type = trade value = 500 }
+		command = { type = infra value = 1000 }
+		command = { type = religion which = protestant }
+		command = { type = treasury value = 300 }
+		command = { type = relation which = POL value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = PAP value = -200 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = SCO value = 100 }
+		command = { type = relation which = HOL value = 100 }
+		command = { type = relation which = DAN value = 100 }
+		command = { type = relation which = SWE value = 100 }
+		command = { type = revoltrisk which = 60 value = 6 }
+	}
+
+	action_c ={				#Crush the Movement#
+		name = "ACTIONNAME3448C"
+		command = { type = provincereligion which = -1 value = protestant }
+		command = { type = domestic which = INNOVATIVE value = -3 }
+		command = { type = land value = 500 }
+		command = { type = relation which = POL value = 100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = PAP value = 150 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = SCO value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = DAN value = -100 }
+		command = { type = relation which = SWE value = -100 }
+		command = { type = revoltrisk which = 60 value = 6 }
+	}
+
+}
+
+#Wave of Calvinism#
+event = {
+
+	id = 3449
+	trigger = {
+		NOT = {
+			vassal = { country = POL country = LIT }
+			union = { country = POL country = LIT }
+		}
+	}
+	random = no
+	country = LIT
+	name = "EVENTNAME3449"
+	desc = "EVENTHIST3449"
+
+	date = { day = 1 month = january year = 1590 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1610 }
+
+	action_a ={					#Accept the Movement#
+		name = "ACTIONNAME3449A"
+		command = { type = provincereligion which = -1 value = reformed }
+		command = { type = provincereligion which = -4 value = reformed }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = trade value = 800 }
+		command = { type = relation which = POL value = 50 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = PAP value = -50 }
+		command = { type = relation which = ENG value = 50 }
+		command = { type = relation which = SCO value = 50 }
+		command = { type = relation which = HOL value = 50 }
+		command = { type = relation which = DAN value = 50 }
+		command = { type = relation which = SWE value = 50 }
+	}
+
+	action_b ={
+		name = "ACTIONNAME3449B"		#Support it and change State Religion#
+		command = { type = provincereligion which = -1 value = reformed }
+		command = { type = provincereligion which = -4 value = reformed }
+		command = { type = provincereligion which = -4 value = reformed }
+		command = { type = provincereligion which = -4 value = reformed }
+		command = { type = domestic which = INNOVATIVE value = 3 }
+		command = { type = trade value = 500 }
+		command = { type = infra value = 1000 }
+		command = { type = religion which = reformed }
+		command = { type = treasury value = 300 }
+		command = { type = relation which = POL value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = PAP value = -200 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = SCO value = 100 }
+		command = { type = relation which = HOL value = 100 }
+		command = { type = relation which = DAN value = 100 }
+		command = { type = relation which = SWE value = 100 }
+		command = { type = revoltrisk which = 60 value = 6 }
+	}
+
+	action_c ={
+		name = "ACTIONNAME3449C"		#Crush the Movement#
+		command = { type = provincereligion which = -1 value = reformed }
+		command = { type = domestic which = INNOVATIVE value = -3 }
+		command = { type = land value = 500 }
+		command = { type = relation which = POL value = 100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = PAP value = 150 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = SCO value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = DAN value = -100 }
+		command = { type = relation which = SWE value = -100 }
+		command = { type = revoltrisk which = 60 value = 6 }
+	}
+
+}
+
+#Strategic Axis with Sweden#
+event = {
+
+	id = 3450
+	trigger = {
+		exists = SWE
+		NOT = {
+			war = { country = SWE country = LIT }
+			vassal = { country = POL country = LIT }
+			union = { country = POL country = LIT }
+			religion = catholic
+			religion = counterreform
+		}
+	}
+	random = no
+	country = LIT
+	name = "EVENTNAME3450"
+	desc = "EVENTHIST3450"
+
+	date = { day = 1 month = january year = 1604 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1618 }
+
+	action_a ={				#Create Axis#
+		name = "ACTIONNAME3450A"
+		command = { type = relation which = POL value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = RUS value = -100 }
+		command = { type = relation which = DAN value = -50 }
+		command = { type = relation which = SWE value = 150 }
+		command = { type = dynastic which = SWE }
+		command = { type = alliance which = SWE }
+		command = { type = stability value = 2 }
+	}
+
+	action_b ={				#Offer Friendliness#
+		name = "ACTIONNAME3450B"
+		command = { type = relation which = SWE value = 50 }
+		command = { type = relation which = POL value = -50 }
+		command = { type = relation which = RUS value = -50 }
+		command = { type = stability value = 1 }
+		command = { type = merchants value = 6 }
+	}
+
+	action_c ={				#Decline Cooperation#
+		name = "ACTIONNAME3450C"
+		command = { type = relation which = SWE value = -100 }
+		command = { type = relation which = POL value = 50 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = stability value = -2 }
+	}
+
+}
+
+#Strategic Axis with Prussia#
+event = {
+
+	id = 3451
+	trigger = {
+		event = 3636
+		exists = BRA
+		NOT = {
+			war = { country = BRA country = LIT }
+			vassal = { country = POL country = LIT }
+			union = { country = POL country = LIT }
+			religion = catholic
+			religion = counterreform
+		}
+	}
+	random = no
+	country = LIT
+	name = "EVENTNAME3451"
+	desc = "EVENTHIST3451"
+
+	date = { day = 1 month = january year = 1618 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1626 }
+
+	action_a ={				#Offer Friendliness#
+		name = "ACTIONNAME3451A"
+		command = { type = relation which = POL value = -50 }
+		command = { type = relation which = BRA value = 100 }
+		command = { type = stability value = 1 }
+		command = { type = merchants value = 6 }
+	}
+
+	action_b ={				#Create Axis#
+		name = "ACTIONNAME3451B"
+		command = { type = relation which = POL value = -100 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = SWE value = 50 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = dynastic which = BRA }
+		command = { type = alliance which = BRA }
+		command = { type = stability value = 1 }
+	}
+
+	action_c ={				#Decline Cooperation#
+		name = "ACTIONNAME3451C"
+		command = { type = relation which = SWE value = -50 }
+		command = { type = relation which = POL value = 50 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = stability value = -2 }
+	}
+
+}
+
+#Strategic Axis with Austria#
+event = {
+
+	id = 3452
+	trigger = {
+		exists = HAB
+		NOT = {
+			war = { country = HAB country = LIT }
+			vassal = { country = POL country = LIT }
+			union = { country = POL country = LIT }
+			religion = protestant
+			religion = reformed
+		}
+	}
+	random = no
+	country = LIT
+	name = "EVENTNAME3452"
+	desc = "EVENTHIST3452"
+
+	date = { day = 1 month = january year = 1570 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1576 }
+
+	action_a ={				#Create Axis#
+		name = "ACTIONNAME3452A"
+		command = { type = relation which = POL value = -100 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = RUS value = -100 }
+		command = { type = relation which = SWE value = -100 }
+		command = { type = dynastic which = HAB }
+		command = { type = alliance which = HAB }
+		command = { type = stability value = 2 }
+	}
+
+	action_b ={				#Offer Friendliness#
+		name = "ACTIONNAME3452B"
+		command = { type = relation which = SWE value = -50 }
+		command = { type = relation which = POL value = -50 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = stability value = 1 }
+		command = { type = merchants value = 6 }
+	}
+
+	action_c ={				#Decline Cooperation#
+		name = "ACTIONNAME3452C"
+		command = { type = relation which = SWE value = 50 }
+		command = { type = relation which = POL value = 50 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = stability value = -2 }
+	}
+
+}
+
+#Strategic Axis with Austria#
+event = {
+
+	id = 3453
+	trigger = {
+		exists = HAB
+		NOT = {
+			war = { country = HAB country = LIT }
+			vassal = { country = POL country = LIT }
+			union = { country = POL country = LIT }
+			religion = protestant
+			religion = reformed
+		}
+	}
+	random = no
+	country = LIT
+	name = "EVENTNAME3453"
+	desc = "EVENTHIST3453"
+
+	date = { day = 1 month = january year = 1618 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1631 }
+
+	action_a ={					#Create Axis#
+		name = "ACTIONNAME3453A"
+		command = { type = relation which = POL value = -100 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = RUS value = -100 }
+		command = { type = relation which = SWE value = -100 }
+		command = { type = dynastic which = HAB }
+		command = { type = alliance which = HAB }
+		command = { type = stability value = 2 }
+	}
+
+	action_b ={					#Offer Friendliness#
+		name = "ACTIONNAME3453B"
+		command = { type = relation which = SWE value = -50 }
+		command = { type = relation which = POL value = -50 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = stability value = 1 }
+		command = { type = merchants value = 6 }
+	}
+
+	action_c ={					#Decline Cooperation#
+		name = "ACTIONNAME3453C"
+		command = { type = relation which = SWE value = 50 }
+		command = { type = relation which = POL value = 50 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = stability value = -2 }
+	}
+
+}
+
+#Conflict over Religious Tolerance#
+event = {
+
+	id = 3454
+	trigger = {
+		NOT = {
+			vassal = { country = POL country = LIT }
+			union = { country = POL country = LIT }
+			domestic = {
+				type = INNOVATIVE
+				value = 6
+			}
+			religion = protestant
+			religion = reformed
+		}
+	}
+	random = no
+	country = LIT
+	name = "EVENTNAME3454"
+	desc = "EVENTHIST3454"
+
+	date = { day = 1 month = january year = 1630 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1646 }
+
+	action_a ={				#Enforce the State Religion#
+		name = "ACTIONNAME3454A"
+		command = { type = conversion which = -1 }
+		command = { type = conversion which = -4 }
+		command = { type = missionaries value = 6 }
+		command = { type = stability value = -2 }
+		command = { type = relation which = RUS value = -150 }
+		command = { type = relation which = SWE value = -150 }
+		command = { type = domestic which = INNOVATIVE value = -3 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = revoltrisk which = 24 value = 8 }
+	}
+
+	action_b ={				#Support One-Church Faction#
+		name = "ACTIONNAME3454B"
+		command = { type = conversion which = -1 }
+		command = { type = missionaries value = 1 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = RUS value = -100 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = revoltrisk which = 24 value = 6 }
+	}
+
+	action_c ={				#Support Tolerant Faction#
+		name = "ACTIONNAME3454C"
+		command = { type = heretic which = -1 }
+		command = { type = missionaries value = -6 }
+		command = { type = stability value = 2 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = relation which = POL value = 100 }
+		command = { type = domestic which = INNOVATIVE value = 3 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = revoltrisk which = 24 value = 4 }
+	}
+
+}
+
+#Conflict over Religious Tolerance#
+event = {
+
+	id = 3455
+	trigger = {
+		NOT = {
+			vassal = { country = POL country = LIT }
+			union = { country = POL country = LIT }
+			domestic = {
+				type = INNOVATIVE
+				value = 6
+			}
+			religion = catholic
+			religion = counterreform
+			religion = reformed
+		}
+	}
+	random = no
+	country = LIT
+	name = "EVENTNAME3455"
+	desc = "EVENTHIST3455"
+
+	date = { day = 1 month = january year = 1630 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1646 }
+
+	action_a ={				#Enforce the State Religion#
+		name = "ACTIONNAME3455A"
+		command = { type = conversion which = -1 }
+		command = { type = conversion which = -4 }
+		command = { type = missionaries value = 6 }
+		command = { type = stability value = -2 }
+		command = { type = relation which = RUS value = -150 }
+		command = { type = relation which = POL value = -150 }
+		command = { type = domestic which = INNOVATIVE value = -3 }
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = revoltrisk which = 24 value = 8 }
+	}
+
+	action_b ={				#Support One-Church Faction#
+		name = "ACTIONNAME3455B"
+		command = { type = conversion which = -1 }
+		command = { type = missionaries value = 1 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = RUS value = -100 }
+		command = { type = relation which = POL value = -100 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = revoltrisk which = 24 value = 6 }
+	}
+
+	action_c ={				#Support Tolerant Faction#
+		name = "ACTIONNAME3455C"
+		command = { type = heretic which = -1 }
+		command = { type = missionaries value = -6 }
+		command = { type = stability value = 2 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = relation which = POL value = 100 }
+		command = { type = domestic which = INNOVATIVE value = 3 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = revoltrisk which = 24 value = 4 }
+	}
+
+}
+
+#Conflict over Religious Tolerance#
+event = {
+
+	id = 3456
+	trigger = {
+		NOT = {
+			vassal = { country = POL country = LIT }
+			union = { country = POL country = LIT }
+			domestic = {
+				type = INNOVATIVE
+				value = 6
+			}
+			religion = catholic
+			religion = counterreform
+			religion = protestant
+		}
+	}
+	random = no
+	country = LIT
+	name = "EVENTNAME3456"
+	desc = "EVENTHIST3456"
+
+	date = { day = 1 month = january year = 1630 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1646 }
+
+	action_a ={				#Enforce the State Religion#
+		name = "ACTIONNAME3456A"
+		command = { type = conversion which = -1 }
+		command = { type = conversion which = -4 }
+		command = { type = conversion which = -4 }
+		command = { type = missionaries value = 3 }
+		command = { type = stability value = -2 }
+		command = { type = relation which = RUS value = -150 }
+		command = { type = relation which = POL value = -150 }
+		command = { type = domestic which = INNOVATIVE value = -3 }
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = revoltrisk which = 24 value = 8 }
+	}
+
+	action_b ={				#Support One-Church Faction#
+		name = "ACTIONNAME3456B"
+		command = { type = conversion which = -1 }
+		command = { type = missionaries value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = relation which = RUS value = -100 }
+		command = { type = relation which = POL value = -100 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = revoltrisk which = 24 value = 6 }
+	}
+
+	action_c ={				#Support Tolerant Faction#
+		name = "ACTIONNAME3456C"
+		command = { type = heretic which = -1 }
+		command = { type = missionaries value = -6 }
+		command = { type = stability value = 2 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = relation which = POL value = 100 }
+		command = { type = domestic which = INNOVATIVE value = 3 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = ARISTOCRACY value = 3 }
+		command = { type = revoltrisk which = 24 value = 4 }
+	}
+
+}
+
+#Magnates crave 'Polish Rights'#
+event = {
+
+	id = 3457
+	trigger = {
+		exists = POL
+		NOT = {
+			vassal = { country = POL country = LIT }
+			union = { country = POL country = LIT }
+		}
+	}
+	random = no
+	country = LIT
+	name = "EVENTNAME3457"
+	desc = "EVENTHIST3457"
+
+	date = { day = 1 month = january year = 1570 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1601 }
+
+	action_a ={				#More Rights than Duties#
+		name = "ACTIONNAME3457A"
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = MERCANTILISM value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = provincetax which = -1 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = stability value = 3 }
+		command = { type = treasury value = 500 }
+		command = { type = wakeleader which = 09500 }
+		command = { type = wakeleader which = 09501 }
+		command = { type = wakeleader which = 09502 }
+		command = { type = wakeleader which = 09503 }
+		command = { type = wakeleader which = 09504 }
+		command = { type = wakeleader which = 09505 }
+		command = { type = wakeleader which = 09506 }
+		command = { type = wakeleader which = 09507 }
+		command = { type = wakeleader which = 09508 }
+		command = { type = wakeleader which = 09509 }
+	}
+
+	action_b ={				#Balance Rights and Duties#
+		name = "ACTIONNAME3457B"
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 200 }
+		command = { type = wakeleader which = 09500 }
+		command = { type = wakeleader which = 09501 }
+		command = { type = wakeleader which = 09502 }
+		command = { type = wakeleader which = 09503 }
+		command = { type = wakeleader which = 09504 }
+		command = { type = wakeleader which = 09505 }
+		command = { type = wakeleader which = 09506 }
+		command = { type = wakeleader which = 09507 }
+		command = { type = wakeleader which = 09508 }
+		command = { type = wakeleader which = 09509 }
+	}
+
+	action_c ={				#More Duties than Rights#
+		name = "ACTIONNAME3457C"
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = stability value = -3 }
+		command = { type = revoltrisk which = 60 value = 5 }
+		command = { type = wakeleader which = 09500 }
+		command = { type = wakeleader which = 09501 }
+		command = { type = wakeleader which = 09502 }
+		command = { type = wakeleader which = 09503 }
+		command = { type = wakeleader which = 09504 }
+		command = { type = wakeleader which = 09505 }
+		command = { type = wakeleader which = 09506 }
+		command = { type = wakeleader which = 09507 }
+		command = { type = wakeleader which = 09508 }
+		command = { type = wakeleader which = 09509 }
+	}
+}
+
+#Magnates crave 'Polish Rights'#
+event = {
+
+	id = 3458
+	trigger = {
+		exists = POL
+		NOT = {
+			vassal = { country = POL country = LIT }
+			union = { country = POL country = LIT }
+		}
+	}
+	random = no
+	country = LIT
+	name = "EVENTNAME3458"
+	desc = "EVENTHIST3458"
+
+	date = { day = 1 month = january year = 1601 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1631 }
+
+	action_a ={				#Balance Rights and Duties#
+		name = "ACTIONNAME3458A"
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 200 }
+	}
+
+	action_b ={				#More Rights than Duties#
+		name = "ACTIONNAME3458B"
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = MERCANTILISM value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = provincetax which = -1 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = stability value = 3 }
+		command = { type = treasury value = 500 }
+	}
+
+	action_c ={				#More Duties than Rights#
+		name = "ACTIONNAME3458C"
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = stability value = -3 }
+		command = { type = revoltrisk which = 60 value = 5 }
+	}
+
+}
+
+#Magnates crave 'Polish Rights'#
+event = {
+
+	id = 3459
+	trigger = {
+		exists = POL
+		NOT = {
+			vassal = { country = POL country = LIT }
+			union = { country = POL country = LIT }
+		}
+	}
+	random = no
+	country = LIT
+	name = "EVENTNAME3459"
+	desc = "EVENTHIST3459"
+
+	date = { day = 1 month = january year = 1631 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1651 }
+
+	action_a ={					#More Duties than Rights#
+		name = "ACTIONNAME3459A"
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = stability value = -3 }
+		command = { type = revoltrisk which = 60 value = 5 }
+	}
+
+	action_b ={					#More Rights than Duties#
+		name = "ACTIONNAME3459B"
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = MERCANTILISM value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = provincetax which = -1 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = stability value = 3 }
+		command = { type = treasury value = 500 }
+	}
+
+	action_c ={					#Balance Rights and Duties#
+		name = "ACTIONNAME3459C"
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 200 }
+	}
+
+}
+
+#Royal Reaction on the Polish Librum Veto#
+event = {
+
+	id = 3460
+	trigger = {
+		OR = {
+			event = 3482
+			event = 3483
+		}
+		exists = POL
+		NOT = {
+			vassal = { country = POL country = LIT }
+			union = { country = POL country = LIT }
+		}
+	}
+	random = no
+	country = LIT
+	name = "EVENTNAME3460"
+	desc = "EVENTHIST3460"
+
+	date = { day = 1 month = january year = 1652 }
+	offset = 5
+	deathdate = { day = 1 month = january year = 1653 }
+
+	action_a ={				#Move against the 'Magnate-Republic'#
+		name = "ACTIONNAME3460A"
+		command = { type = trigger which = 3461 }
+		command = { type = stability value = -3 }
+		command = { type = casusbelli which = POL value = 48 }
+		command = { type = INF which = -1 value = 20000 }
+		command = { type = CAV which = -3 value = 10000 }
+		command = { type = ART which = -3 value = 30 }
+	}
+
+	action_b ={				#Give Concessions to the Lithuanian Magnates#
+		name = "ACTIONNAME3460B"
+		command = { type = domestic which = ARISTOCRACY value = 3 }
+		command = { type = domestic which = CENTRALIZATION value = -3 }
+		command = { type = domestic which = MERCANTILISM value = 3 }
+		command = { type = domestic which = SERFDOM value = 5 }
+		command = { type = provincetax which = -1 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = stability value = -3 }
+		command = { type = revoltrisk which = 60 value = 3 }
+	}
+}
+
+#Civil War in Lithuania#
+event = {
+
+	id = 3461			#Triggered by LIT3460#
+	random = no
+	country = LIT
+	name = "EVENTNAME3461"
+	desc = "EVENTHIST3461"
+
+	action_a ={				#Try to buy the Magnates off#
+		name = "ACTIONNAME3461A"
+		command = { type = treasury value = -1200 }
+		command = { type = revoltrisk which = 24 value = 3 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={				#Let war come to their homes#
+		name = "ACTIONNAME3461B"
+		command = { type = revoltrisk which = 80 value = 6 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = fortress which = -1 value = -1 }
+		command = { type = fortress which = -4 value = -1 }
+	}
+}
+
+#The Horrible Plague in Lithuania#
+event = {
+
+	id = 3462
+	random = no
+	country = LIT
+	name = "EVENTNAME3462"
+	desc = "EVENTHIST3462"
+
+	date = { day = 1 month = january year = 1709 }
+	offset = 5
+	deathdate = { day = 1 month = january year = 1711 }
+
+	action_a ={				#Arghhh!#
+		name = "ACTIONNAME3462A"
+		command = { type = populationpercent which = 284 value = -15 }
+		command = { type = populationpercent which = 287 value = -15 }
+		command = { type = populationpercent which = 288 value = -15 }
+		command = { type = populationpercent which = 293 value = -15 }
+		command = { type = populationpercent which = 294 value = -15 }
+		command = { type = desertion which = -1 value = 7321 }
+		command = { type = desertion which = -4 value = 5478 }
+		command = { type = desertion which = -4 value = 3934 }
+	}
+}
+
+#The Anti-Russian Pact#
+event = {
+
+	id = 3463
+	trigger = {
+		exists = RUS
+		NOT = {
+			alliance = { country = RUS country = LIT }
+			vassal = { country = POL country = LIT }
+			union = { country = POL country = LIT }
+		}
+	}
+	random = no
+	country = LIT
+	name = "EVENTNAME3463"
+	desc = "EVENTHIST3463"
+
+	date = { day = 1 month = january year = 1698 }
+	offset = 5
+	deathdate = { day = 1 month = january year = 1699 }
+
+	action_a ={				#Support Sweden#
+		name = "ACTIONNAME3463A"
+		command = { type = casusbelli which = RUS value = 36 }
+		command = { type = relation which = SWE value = 150 }
+		command = { type = relation which = RUS value = -150 }
+		command = { type = relation which = POL value = -100 }
+		command = { type = relation which = DAN value = -50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = TUR value = 50 }
+		command = { type = stability value = 3 }
+		command = { type = land value = 800 }
+	}
+
+	action_b ={				#Support Russia#
+		name = "ACTIONNAME3463B"
+		command = { type = casusbelli which = SWE value = 36 }
+		command = { type = relation which = SWE value = -150 }
+		command = { type = relation which = RUS value = 150 }
+		command = { type = relation which = POL value = 100 }
+		command = { type = relation which = DAN value = 50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = TUR value = -150 }
+		command = { type = stability value = -2 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = treasury value = 300 }
+	}
+
+	action_c ={				#Support the Poland#
+		name = "ACTIONNAME3463C"
+		command = { type = relation which = SWE value = -150 }
+		command = { type = relation which = RUS value = -50 }
+		command = { type = relation which = POL value = 150 }
+		command = { type = relation which = DAN value = 50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = TUR value = -150 }
+		command = { type = stability value = 1 }
+	}
+
+}
+
+#Pietism#
+event = {
+
+	id = 3464
+	trigger = {
+		NOT = {
+			vassal = { country = POL country = LIT }
+			union = { country = POL country = LIT }
+		}
+	}
+	random = no
+	country = LIT
+	name = "EVENTNAME3464"
+	desc = "EVENTHIST3464"
+
+	date = { day = 1 month = january year = 1720 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1728 }
+
+	action_a ={				#Encourage it#
+		name = "ACTIONNAME3464A"
+		command = { type = domestic which = INNOVATIVE value = 3 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -4 }
+	}
+
+	action_b ={				#Stop it#
+		name = "ACTIONNAME3464B"
+		command = { type = domestic which = INNOVATIVE value = -3 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -4 }
+	}
+}
+
+#The Murder of Karol II Stanislovas#
+event = {
+
+	id = 3465
+	trigger = {
+		monarch = 04308
+		NOT = {
+			vassal = { country = POL country = LIT }
+			union = { country = POL country = LIT }
+		}
+	}
+	random = no
+	country = LIT
+	name = "EVENTNAME3465"
+	desc = "EVENTHIST3465"
+
+	date = { day = 20 month = november year = 1790 }
+	offset = 0
+	deathdate = { day = 21 month = november year = 1790 }
+
+	action_a ={				#This Great Nation craves Revenge!#
+		name = "ACTIONNAME3465A"
+		command = { type = casusbelli which = HAB value = 24 }
+		command = { type = casusbelli which = RUS value = 24 }
+		command = { type = casusbelli which = PRU value = 24 }
+		command = { type = relation which = HAB value = -150 }
+		command = { type = relation which = RUS value = -150 }
+		command = { type = relation which = PRU value = -150 }
+		command = { type = relation which = POL value = 150 }
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = treasury value = 500 }
+	}
+}

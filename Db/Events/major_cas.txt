@@ -1,0 +1,130 @@
+#####Castillian Major Events#####
+#By Joakim 'Greven' Bergqwist   #
+#   Thomas 'Besuchov' Johansson #
+#   Henrik 'Doomdark' Fåhraeus  #
+#################################
+
+#Viva España#
+event = {
+
+	id = 3556
+	trigger = {
+		owned = {
+			province = 436
+			data = -1
+		}
+		NOT = {
+			exists = SPA
+		}
+	}
+	random = no
+	country = CAS
+	name = "EVENTNAME3556"
+	desc = "EVENTHIST3556"
+
+	date = { day = 1 month = june year = 1476 }
+	offset = 150
+	deathdate = { day = 1 month = january year = 1490 }
+
+	action_a ={				#Let us claim the name Kingdom of Spain#
+		name = "ACTIONNAME3556A"
+		command = { type = add_countryculture which = catalan }
+		command = { type = add_countryculture which = italian }
+		command = { type = add_countryculture which = maltese }
+		command = { type = addcore_national which = 393 }  # Aragon, Navarra, Naples, Sicily, Sardinia and Malta
+		command = { type = addcore_national which = 394 }
+		command = { type = addcore_national which = 395 }
+		command = { type = addcore_national which = 396 }
+		command = { type = addcore_national which = 397 }
+		command = { type = addcore_national which = 426 }
+		command = { type = addcore_national which = 427 }
+		command = { type = addcore_national which = 428 }
+		command = { type = addcore_national which = 429 }
+		command = { type = addcore_national which = 430 }
+		command = { type = addcore_national which = 437 }
+		command = { type = addcore_national which = 819 }
+		command = { type = addcore_national which = 821 }
+		command = { type = flagname which = "" }
+		command = { type = country which = SPA }
+		command = { type = stability value = 1 }
+	       }
+
+	action_b ={				#Let us keep the name Kingdom of Castille instead#
+		name = "ACTIONNAME3556B"
+		command = { type = stability value = -3 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = NAV value = 100 }
+		command = { type = relation which = PRO value = 100 }
+		command = { type = relation which = POR value = -100 }
+		command = { type = domestic which = CENTRALIZATION value = -5 }
+		command = { type = desertion which = -1 value = 5000 }
+	}
+}
+
+#Civil War in Castile#
+event = {
+	id = 3557	
+	random = no
+	country = CAS
+	name = "EVENTNAME3557"
+	desc = "EVENTHIST3557"
+	style = "3557"
+
+	date = { day = 1 month = june year = 1438 }
+	offset = 150
+
+	action_a = { # Support Álvaro de Luna
+		name = "ACTIONNAME3557A"
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revoltrisk which = 48 value = 5 }
+		command = { type = stability value = 1 }
+		command = { type = DIP which = 2 value = 120 }
+		command = { type = ADM which = 2 value = 120 }
+		command = { type = MIL which = 2 value = 120 }
+	}
+
+	action_b = { # Support the sons of Ferdinand
+		name = "ACTIONNAME3557B"
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = treasury value = 200 }
+		command = { type = sleepleader which = 08580 } # de Luna
+		command = { type = stability value = -1 }
+	}
+}
+
+# The Ascendancy of Carlos I #
+event = {
+	id = 3849
+	random = no
+	country = CAS
+	name = "EVENTNAME3849"
+	desc = "EVENTHIST3849"
+	
+	trigger = {
+		vassal = { country = SPA country = CAS } 
+	}
+
+	date = { day = 24  month = january year = 1516 } # The day that Carlos I inherits the throne.
+	offset = 30
+	deathdate = { day = 24  month = april year = 1516 }
+
+	action_a = { #The Kingdoms are one!#
+		name = "ACTIONNAME3849A"
+		command = { type = trigger which = 3848 } # Spain inherits Castille
+	}
+	action_b = { #Force Carlos to make concessions.#
+		name = "ACTIONNAME3849B"
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = FRA value = 20 }
+	}
+	action_c ={ #No! Let us elect our own king instead.#
+		name = "ACTIONNAME3849C"
+		command = { type = breakvassal which = SPA }
+		command = { type = relation which = SPA value = -150 }
+		command = { type = relation which = HAB value = -150 }
+		command = { type = relation which = FRA value = 50 }
+	} 
+}

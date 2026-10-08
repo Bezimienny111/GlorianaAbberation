@@ -1,0 +1,88 @@
+#####Brabant Major Events#####
+# By Kristof 'BiB' Haekens   #
+##############################
+
+#The Succession in Brabant#
+event = {
+
+	id = 3775
+	trigger = {
+			exists = BUR
+		}
+	random = no
+	country = HAU
+	name = "EVENTNAME3775"
+	desc = "EVENTHIST3775"
+
+	date = { day = 1 month = august year = 1430 }
+	offset = 0
+	deathdate = { day = 2 month = august year = 1430 }
+
+	action_a ={				#Let us be a part of Great Burgundy#
+		name = "ACTIONNAME3775A"
+		trigger = { 
+			ai = yes
+		}
+		command = { type = trigger which = 3776 }
+	}
+
+	action_b ={				#Let the Burgundian monarch become our Duke#
+		name = "ACTIONNAME3775B"
+		command = { type = trigger which = 3777 }
+		command = { type = dynastic which = BUR }
+		command = { type = alliance which = BUR }
+		command = { type = stability value = 3 }
+	}
+
+	action_c ={				#Let us elect a local Count as Duke#
+		name = "ACTIONNAME3775C"
+		command = { type = trigger which = 3778 }
+		command = { type = stability value = -3 }
+		command = { type = revolt which = -1 }
+	}
+
+}
+
+#The Succession in Holland#
+event = {
+
+	id = 4183				#Triggered by HLL 4182A#
+	random = no
+	country = HAU
+	name = "The Succession in Holland"
+	desc = "My Lord, the county of Holland has been willed to us following the succession dispute between Jacqueline of Bavaria and her uncle, John the Pitiless. With both sides exhausted, Jacqueline has agreed to let Brabant inherit her domains - though she will retain the nominal title of Countess of Holland until her death."
+
+	action_a ={				#Incorporate them#
+		name = "Incorporate them"
+		command = { type = inherit which = HLL }
+		command = { type = addcore_national which = 339 }
+		command = { type = addcore_national which = 340 }
+		command = { type = stability value = 2 }
+	}
+}
+
+# The Dutch Republic
+event = {
+	id = 3812
+	
+	# Triggered by HOL 3900
+	
+	random = no
+	country = HAU
+	name = "EVENTNAME3812"
+	desc = "EVENTHIST3812"
+	
+	action_a = { # Join
+		name = "ACTIONNAME3812A"
+		trigger = { 
+			ai = yes
+		}
+		command = { type = trigger which = 3813 }
+	}
+
+	action_b = { # Stay out
+		name = "ACTIONNAME3812B"
+		command = { type = relation which = HOL value = -100 }
+		command = { type = stability value = -2 }
+	}
+}

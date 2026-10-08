@@ -1,0 +1,431 @@
+###########################################
+### additional napoleonic events	###
+### for the NAJF scenario		###
+### by Ayeshteni AJFowler		###
+###########################################
+
+#founding the republics
+#batavian republic netherlands
+event = {
+	id = 120750
+	trigger = {
+		event = 3148
+		owned = { province = 339 data = FRA }
+		control = { province = 339 data = FRA }
+		NOT = {
+			exists = HOL
+		}
+	}
+	random = no
+	country = FRA
+	name = "The Batavian Republic"
+	desc = "Revolutionary tendencies spread after the fall of the French Bourbons and the founding of the First French Republic. French military gains by Napoleon Bonaparte and other commanders saw the founding of puppet Republics by France in her newly aquired territories. The Batavian Republic was one such puppet. It covered the old Kingdom of the Netherlands and would see Napoleons brother Louis Banaparte as its king when Napoleon became Emperor of France."
+	style = 4
+
+	date = { day = 1 month = january year = 1790 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1814 }
+
+	action_a = {
+		name = "Create the Republic"
+		command = { type = independence which = HOL }
+		command = { type = vp value = 10 }
+		command = { type = sleepevent which = 3515 }
+		command = { type = trigger which = 120753 }
+		command = { type = trigger which = 120759 }
+	}
+
+	action_b = {
+		name = "Rule it from Paris"
+		command = { type = domestic which = centralization value = -1 }
+		command = { type = vp value = 5 }
+	}
+}
+
+#transalpine republic
+event = {
+	id = 120751
+	trigger = {
+		event = 3148
+		owned = { province = 389 data = FRA }
+		control = { province = 389 data = FRA }
+		NOT = {
+			exists = ITA
+		}
+	}
+	random = no
+	country = FRA
+	name = "The Trans-Alpine Republic"
+	desc = "Revolutionary tendencies spread after the fall of the French Bourbons and the founding of the First French Republic. French military gains by Napoleon Bonaparte and other commanders saw the founding of puppet Republics by France in her newly aquired territories. The Trans-Alpine Republic was one such puppet. It covered the old Kingdom of Italy and its flag and coat of arms would be those of Italy in the 1860s"
+	style = 4
+
+	date = { day = 1 month = january year = 1790 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1814 }
+
+	action_a = {
+		name = "Create the Republic"
+		command = { type = independence which = ITA } #need to trigger italian rupublic monarch
+		command = { type = vp value = 10 }
+		command = { type = trigger which = 120760 }
+	}
+
+	action_b = {
+		name = "Rule it from Paris"
+		command = { type = domestic which = centralization value = -1 }
+		command = { type = vp value = 5 }
+	}
+}
+
+#helvetian republic
+event = {
+	id = 120752
+	trigger = {
+		event = 3148
+		owned = { province = 388 data = FRA }
+		control = { province = 388 data = FRA }
+		NOT = {
+			exists = HEL
+		}
+	}
+	random = no
+	country = FRA
+	name = "The Helvetian Republic"
+	desc = "Revolutionary tendencies spread after the fall of the French Bourbons and the founding of the First French Republic. French military gains by Napoleon Bonaparte and other commanders saw the founding of puppet Republics by France in her newly aquired territories. The Helvetian Republic was one such puppet. It covered the region of Switzerland in the Alps."
+	style = 4
+
+	date = { day = 1 month = january year = 1790 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1814 }
+
+	action_a = {
+		name = "Create the Republic"
+		command = { type = independence which = HEL } #need to trigger helvetian republic monarch
+		command = { type = vp value = 10 }
+		command = { type = trigger which = 120761 }
+	}
+
+	action_b = {
+		name = "Rule it from Paris"
+		command = { type = domestic which = centralization value = -1 }
+		command = { type = vp value = 5 }
+	}
+}
+
+#confederation of the rhine -seperate event file will be needed (quite complex)
+
+#duchy of warsaw -part of the rhine confederation setup
+
+#netherland dp shift
+event = {
+	id = 120753
+	trigger = {
+		event = 120750
+	}
+	random = no
+	country = HOL
+	name = "Batavian Republic Proclaimed"
+	desc = "Revolutionary tendencies spread after the fall of the French Bourbons and the founding of the First French Republic. French military gains by Napoleon Bonaparte and other commanders saw the founding of puppet Republics by France in her newly aquired territories. The Batavian Republic was one such puppet. It covered the old Kingdom of the Netherlands and would see Napoleons brother Louis Banaparte as its king when Napoleon became Emperor of France."
+	style = 4
+
+	date = { day = 1 month = january year = 1790 }
+	offset = 15
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = aristocracy value = -4 }
+		command = { type = domestic which = innovative value = 2 }
+		command = { type = domestic which = serfdom value = -4 }
+		command = { type = flagname which = NAP }
+	}
+}
+
+#########################################
+#new restoration of the bourbons events
+#########################################
+
+#french empire lose control of paris
+event = {
+	id = 120754
+	trigger = {
+		monarch = 04018
+		control = { province = 385 data = PRU }
+	}
+	random = no
+	country = FRA
+	name = "Prussian Troops enter Paris"
+	desc = "All is lost, Napoleons Gambit has failed. Enemy troops have entered our capital."
+	style = 5
+
+	date = { day = 1 month = january year = 1809 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "All is lost"
+		command = { type = trigger which = 3784 }
+	}
+}
+
+
+#The Restoration of the French Monarchy -prussia#
+event = {
+
+	id = 3784
+	random = no
+	country = PRU
+	name = "EVENTNAME3784"
+	desc = "EVENTHIST3784"
+	style = 5
+
+	action_a ={				#The Bourbons are reinstalled#
+		name = "ACTIONNAME3784A"
+		command = { type = vp value = 500 }
+		command = { type = treasury value = 500 }
+		command = { type = relation which = FRA value = 200 }
+		command = { type = stability value = 3 }
+		command = { type = trigger which = 3788 }
+	}
+}
+
+#french empire lose control of paris
+event = {
+	id = 120755
+	trigger = {
+		monarch = 04018
+		control = { province = 385 data = RUS }
+	}
+	random = no
+	country = FRA
+	name = "Russian Troops enter Paris"
+	desc = "All is lost, Napoleons Gambit has failed. Enemy troops have entered our capital."
+	style = 5
+
+	date = { day = 1 month = january year = 1809 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "All is lost"
+		command = { type = trigger which = 3783 }
+	}
+}
+
+#The Restoration of the French Monarchy -russia#
+event = {
+
+	id = 3783
+	random = no
+	country = RUS
+	name = "EVENTNAME3783"
+	desc = "EVENTHIST3783"
+	style = 5
+	
+	action_a ={				#The Bourbons are reinstalled#
+		name = "ACTIONNAME3783A"
+		command = { type = vp value = 500 }
+		command = { type = treasury value = 500 }
+		command = { type = relation which = FRA value = 200 }
+		command = { type = stability value = 3 }
+		command = { type = trigger which = 3789 }
+	}
+}
+
+#french empire lose control of paris
+event = {
+	id = 120756
+	trigger = {
+		monarch = 04018
+		control = { province = 385 data = ENG }
+	}
+	random = no
+	country = FRA
+	name = "British Troops enter Paris"
+	desc = "All is lost, Napoleons Gambit has failed. Enemy troops have entered our capital."
+	style = 5
+
+	date = { day = 1 month = january year = 1809 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "All is lost"
+		command = { type = trigger which = 3086 }
+	}
+}
+
+#The Restoration of the French Monarchy -england#
+event = {
+
+	id = 3086
+	random = no
+	country = ENG
+	name = "EVENTNAME3086"
+	desc = "EVENTHIST3086"
+	style = 5
+
+	action_a ={				#The Bourbons are reinstalled#
+		name = "ACTIONNAME3086A"
+		command = { type = vp value = 500 }
+		command = { type = treasury value = 500 }
+		command = { type = relation which = FRA value = 200 }
+		command = { type = stability value = 3 }
+		command = { type = trigger which = 3785 }
+	}
+}
+
+#french empire lose control of paris
+event = {
+	id = 120757
+	trigger = {
+		monarch = 04018
+		control = { province = 385 data = HAB }
+	}
+	random = no
+	country = FRA
+	name = "Austrian Troops enter Paris"
+	desc = "All is lost, Napoleons Gambit has failed. Enemy troops have entered our capital."
+	style = 5
+
+	date = { day = 1 month = january year = 1809 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "All is lost"
+		command = { type = trigger which = 3209 }
+	}
+}
+
+#The Restoration of the French Monarchy -austria#
+event = {
+
+	id = 3209
+	random = no
+	country = HAB
+	name = "EVENTNAME3209"
+	desc = "EVENTHIST3209"
+	style = 5
+
+	action_a ={				#The Bourbons are reinstalled#
+		name = "ACTIONNAME3209A"
+		command = { type = vp value = 500 }
+		command = { type = treasury value = 500 }
+		command = { type = relation which = FRA value = 200 }
+		command = { type = stability value = 3 }
+		command = { type = trigger which = 3787 }
+	}
+}
+
+#french empire lose control of paris
+event = {
+	id = 120758
+	trigger = {
+		monarch = 04018
+		control = { province = 385 data = SPA }
+	}
+	random = no
+	country = FRA
+	name = "Spanish Troops enter Paris"
+	desc = "All is lost, Napoleons Gambit has failed. Enemy troops have entered our capital."
+	style = 5
+
+	date = { day = 1 month = january year = 1809 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "All is lost"
+		command = { type = trigger which = 3177 }
+	}
+}
+
+#The Restoration of the French Monarchy -spain#
+event = {
+
+	id = 3177
+	random = no
+	country = SPA
+	name = "EVENTNAME3177"
+	desc = "EVENTHIST3177"
+	style = 4
+
+	action_a ={				#The Bourbons are reinstalled#
+		name = "ACTIONNAME3177A"
+		command = { type = vp value = 500 }
+		command = { type = treasury value = 500 }
+		command = { type = relation which = FRA value = 200 }
+		command = { type = stability value = 3 }
+		command = { type = trigger which = 3786 }
+	}
+}
+
+#fixes to get republics into french alliance
+event = {
+	id = 120759
+	random = no
+	country = FRA
+	name = "Batavian Republic join the French Alliance"
+	desc = "Revolutionary tendencies spread after the fall of the French Bourbons and the founding of the First French Republic. French military gains by Napoleon Bonaparte and other commanders saw the founding of puppet Republics by France in her newly aquired territories. The Batavian Republic was one such puppet. It covered the old Kingdom of the Netherlands and would see Napoleons brother Louis Banaparte as its king when Napoleon became Emperor of France."
+	style = 4
+
+	action_a = {
+		name = "excellent"
+		command = { type = alliance which = HOL }
+	}
+}
+
+event = {
+	id = 120760
+	random = no
+	country = FRA
+	name = "Trans-Alpine Republic join the French Alliance"
+	desc = "Revolutionary tendencies spread after the fall of the French Bourbons and the founding of the First French Republic. French military gains by Napoleon Bonaparte and other commanders saw the founding of puppet Republics by France in her newly aquired territories. The Trans-Alpine Republic was one such puppet. It covered the old Kingdom of Italy and its flag and coat of arms would be those of Italy in the 1860s"
+	style = 4
+
+	action_a = {
+		name = "excellent"
+		command = { type = alliance which = ITA }
+	}
+}
+
+event = {
+	id = 120761
+	random = no
+	country = FRA
+	name = "Helvetian Republic join the French Alliance"
+	desc = "Revolutionary tendencies spread after the fall of the French Bourbons and the founding of the First French Republic. French military gains by Napoleon Bonaparte and other commanders saw the founding of puppet Republics by France in her newly aquired territories. The Helvetian Republic was one such puppet. It covered the region of Switzerland in the Alps."
+	style = 4
+
+	action_a = {
+		name = "excellent"
+		command = { type = alliance which = HEL }
+	}
+}
+
+#event to prevent louis popping up when nappy is doing well
+event = {
+	id = 120762
+	trigger = {
+		event = 3780
+		NOT = {
+			event = 3774
+		}
+	}
+	random = no
+	country = FRA
+	name = "The Bourbons are Secured"
+	desc = "With the peoples revolts put down and order relatively restored, the Bourbon's tenuous grasp on power was secured."
+	style = 4
+
+	date = { day = 1 month = january year = 1790 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1795 }
+
+	action_a = {
+		name = "OK"
+		command = { type = wakemonarch which = 04019 }
+		command = { type = stability value = 1 }
+	}
+}

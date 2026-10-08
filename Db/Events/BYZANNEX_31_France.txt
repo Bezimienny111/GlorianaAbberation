@@ -1,0 +1,351 @@
+#-----------------------------------------------------------------------------
+# French Events
+
+#French support
+event = {
+	id = 3001427
+	trigger = {
+		exists = FRA
+		countrysize = 15
+		neighbour = HAB
+	}
+	random = NO
+	country = BYZ
+	name = "L'alliance française"
+	desc = "The death of the infant Miguel da Paz, the child whose birth killed Isabella of Portugal, has put an end to French hopes that Spain would be divided between the Portugese Aviz and the Aragonese Trastamara. The infanta Juana has given birth to a son of Filips Habsburg. This boy - if he lives - will be King of Castille, Aragon, and Burgundy, archduke of Austria, and quite probably Holy Roman Emperor. The Valois of France are in a panic - to break up this encirclement, they have decided to try bankrolling a second front in the Balkans.	They have sent one of St. Louis's shards of the True Cross - one of the holiest relics in Christendom, one discovered by the mother of Megas Konstantinos and then recovered by Heraklios - enclosed in a beautiful reliquary and, more usefully, a galley full of bullion and modern arms. All that they ask in return is that we keep enough troops to our northwest to keep Austria from committing itself fully in Germany. Oh, and allow French trade into the Black Sea..."
+	date = { day = 1 month = march year = 1500 }
+	offset = 360 #1 year
+	deathdate = { day = 1 month = march year = 1501 }
+
+	action_a = {
+		name = "Mes amis!" #Pals!
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = ART which = -2 value = 30 }
+		command = { type = treasury value = 250 }
+		command = { type = relation which = FRA value = 250 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HAB value = -200 }
+		command = { type = casusbelli which = HAB value = 120 }
+	}
+	action_b = {
+		name = "Merci, mais non..."
+		command = { type = relation which = FRA value = -25 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = HAB value = 100 }
+	}
+}
+
+#French support Charles V in 24 january 1516
+event = {
+	id = 3001428
+	trigger = {
+		exists = FRA
+		countrysize = 15
+		neighbour = HAB
+	}
+	random = NO
+	country = BYZ
+	name = "L'alliance française"
+	desc = "The boy survived. The personal union of the Spanish and Holy Roman crown under Karl V is France's worst fears come true. The Valois are quietly kicking themselves for not having simply assassinated the child during his many visits to Paris. As quickly as they can, they look for alliances anywhere they can, offering exorbitant sums to anyone who will promise to humble House Habsburg's hegemony."
+	date = { year = 1519 }
+	offset = 1440 #4 years
+	deathdate = { year = 1523 }
+
+	action_a = {
+		name = "Mes amis!"
+		command = { type = treasury value = 500 }
+		command = { type = ART value = 50 }
+		command = { type = casusbelli which = SPA value = 60 }
+		command = { type = casusbelli which = HAB value = 60 }
+		command = { type = domestic which = MERCANTILISM value = -1 }
+		command = { type = relation which = FRA value = 300 }
+		command = { type = relation which = SPA value = -300 }
+		command = { type = relation which = HAB value = -300 }
+	}
+	action_b = {
+		name = "Merci, mais non..."
+		command = { type = relation which = FRA value = -25 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = HAB value = 100 }
+	}
+}
+
+#French support during 30 Yrs War
+event = {
+	id = 3001429
+	trigger = {
+		exists = FRA
+		countrysize = 15
+		neighbour = HAB
+		OR = {
+			war = { country = HAB country = FRA }
+			war = { country = HAB country = DAN }
+			war = { country = HAB country = SWE }
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "La grande guerre des trente années"
+	desc = "Once again, the French are looking to open a second front against the Habsburgs. Since Austria is already heavily committed to their war in Germany, we might be at the gates of Vienna before they can react..."
+	date = { year = 1618 }
+	offset = 30
+	deathdate = { year = 1648 }
+
+	action_a = {
+		name = "Mes amis!"
+		command = { type = treasury value = 500 }
+		command = { type = ART value = 50 }
+		command = { type = alliance which = FRA }
+		command = { type = domestic which = MERCANTILISM value = -1 }
+		command = { type = casusbelli which = SPA value = 60 }
+		command = { type = casusbelli which = HAB value = 60 }
+		command = { type = relation which = FRA value = 300 }
+		command = { type = relation which = SPA value = -300 }
+		command = { type = relation which = HAB value = -300 }
+	}
+	action_b = {
+		name = "Merci, mais non..."
+		command = { type = relation which = FRA value = -25 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = HAB value = 100 }
+	}
+}
+
+#The French Revolution
+event = {
+	id = 3001430
+	trigger = {
+		exists = FRA
+		OR = {
+			event = 3342 #FRA: The French Revolution: Radical Republic
+			event = 3779 #FRA: The French Revolution: Republican Monarchy
+		}
+		OR = {
+			domestic = { type = innovative value = 1 }
+			NOT = { domestic = { type = serfdom value = 1 } }
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "The French Revolution"
+	desc = "As if the problems from the American example weren't bad enough, now France, one of the world's great powers, has thrown off its aristocracy and traditions itself. The penetes (the urban poor) are thronging the streets of Constantinople, Alexandria, Ierosolumon. Our restive provinces are about to get a little more restive."
+	date = { year = 1785 }
+	offset = 30
+	deathdate = { year = 1815 }
+
+	action_a = {
+		name = "Merde" #Aww
+		command = { type = revoltrisk which = 600 value = 3 }
+	}
+}
+
+#The French revolution
+event = {
+	id = 3001431
+	trigger = {
+		event = 3001430
+		exists = FRA
+		OR = {
+			owned = { province = 363 data = -1 } #serbia,croatia,bosnia
+			owned = { province = 354 data = -1 }
+			owned = { province = 355 data = -1 }
+			owned = { province = 487 data = -1 } #daghestan, azerbaijan, tabriz
+			owned = { province = 530 data = -1 }
+			owned = { province = 471 data = -1 }
+			owned = { province = 737 data = -1 } #maghreb
+			owned = { province = 735 data = -1 }
+			owned = { province = 736 data = -1 }
+			owned = { province = 741 data = -1 }
+			owned = { province = 733 data = -1 }
+			owned = { province = 738 data = -1 }
+			owned = { province = 734 data = -1 }
+			owned = { province = 732 data = -1 }
+			owned = { province = 806 data = -1 }
+			owned = { province = 740 data = -1 }
+			owned = { province = 739 data = -1 }
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "The French shadow"
+	desc = "Nationalities long accommodated to our rule have become emboldened following the success of the French revolution. Secret societies are proliferating in Serbia and local government offices have been bombed. Some of our more Muslim provinces have begun having mujahadeen appear in the mosques and madrasas to preach jihad against our Christian empire."
+	date = { year = 1785 }
+	offset = 30
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "This is going to be painful"
+		command = { type = province_revoltrisk which = 363 value = 15 } #serbia
+		command = { type = province_revoltrisk which = 354 value = 15 } #serbia
+		command = { type = province_revoltrisk which = 355 value = 15 } #serbia
+		command = { type = province_revoltrisk which = 487 value = 15 } #azerbaijan
+		command = { type = province_revoltrisk which = 530 value = 15 } #azerbaijan
+		command = { type = province_revoltrisk which = 471 value = 15 } #azerbaijan
+		command = { type = province_revoltrisk which = 496 value = 15 } #hedjaz
+		command = { type = province_revoltrisk which = 497 value = 15 } #hedjaz
+		command = { type = province_revoltrisk which = 498 value = 15 } #hedjaz
+		command = { type = province_revoltrisk which = 737 value = 15 } #maghreb
+		command = { type = province_revoltrisk which = 735 value = 15 } #maghreb
+		command = { type = province_revoltrisk which = 736 value = 15 } #maghreb
+		command = { type = province_revoltrisk which = 741 value = 15 } #maghreb
+		command = { type = province_revoltrisk which = 733 value = 15 } #maghreb
+		command = { type = province_revoltrisk which = 738 value = 15 } #maghreb
+		command = { type = province_revoltrisk which = 734 value = 15 } #maghreb
+		command = { type = province_revoltrisk which = 732 value = 15 } #maghreb
+		command = { type = province_revoltrisk which = 806 value = 15 } #maghreb
+		command = { type = province_revoltrisk which = 740 value = 15 } #maghreb
+		command = { type = province_revoltrisk which = 739 value = 15 } #maghreb
+	}
+}
+
+#(1785-1820) French Shadows over Bulgaria
+event = {
+	id = 3001432
+	trigger = {
+		event = 3001430
+		event = 3001168 #didn't replace or accommodate bulgars
+		exists = FRA
+		OR = {
+			owned = { province = 320 data = -1 } #dobrudj
+			owned = { province = 321 data = -1 } #rumelia
+			owned = { province = 356 data = -1 } #Bulgaria
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "The French shadow"
+	desc = "Nationalities long accommodated to our rule have become emboldened following the success of the French revolution. In Bulgaria, one of the old nobility has proclaimed himself Tsar and is leading a guerilla war against the loyal populace. His corps's terroristic attacks sell newspapers, but are causing widespread panic and seriously impeding local governance."
+	date = { year = 1785 }
+	offset = 30
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "This is going to be painful"
+		command = { type = province_revoltrisk which = 320 value = 15 } #Bulgaria
+		command = { type = province_revoltrisk which = 321 value = 15 } #Bulgaria
+		command = { type = province_revoltrisk which = 356 value = 15 } #Bulgaria
+	}
+}
+
+#(1785-1820) French Shadow over Armenia
+event = {
+	id = 3001433
+	trigger = {
+		event = 3001430
+		event = 3001214 #BYZ: The Armenian Question
+		exists = FRA
+		OR = {
+			owned = { province = 473 data = -1 } #kurdistan
+			owned = { province = 472 data = -1 } #armenia
+			owned = { province = 483 data = -1 } #adana
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "French Shadow over Armenia"
+	desc = "Nationalities long accommodated to our rule have become emboldened following the success of the French revolution. Long one of the most restive peoples in the Empire, the Armenians have redoubled their efforts to be free of us and our church."
+	date = { year = 1785 }
+	offset = 30
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "This is going to be painful"
+		command = { type = province_revoltrisk which = 473 value = 15 } #armenia
+		command = { type = province_revoltrisk which = 472 value = 15 } #armenia
+		command = { type = province_revoltrisk which = 483 value = 15 } #armenia
+	}
+}
+
+#The French revolution
+event = {
+	id = 3001434
+	trigger = {
+		event = 3001430
+		event = 3001267 #didn't colonize sicily w/greeks
+		exists = FRA
+		OR = {
+			owned = { province = 394 data = -1 } #apulia
+			owned = { province = 395 data = -1 } #messina
+			owned = { province = 396 data = -1 } #sicily
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "The French shadow"
+	desc = "Nationalities long accommodated to our rule have become emboldened following the success of the French revolution. The native population of the Sikilias thema has banded into groups called Mafia to oppose our rule there."
+	date = { year = 1785 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Stugots!"
+		command = { type = province_revoltrisk which = 394 value = 15 } #sicily
+		command = { type = province_revoltrisk which = 395 value = 15 } #sicily
+		command = { type = province_revoltrisk which = 396 value = 15 } #sicily
+	}
+}
+
+#Rebelliousness dies down
+event = {
+
+	id = 3101428
+	trigger = {
+		OR = {
+			event = 3001431
+			event = 3001432
+			event = 3001433
+			event = 3001434
+		}
+		stability = 3
+		atwar = no
+		domestic = { type = innovative value = 7 }
+		domestic = { type = serfdom value = 8 }
+	}
+	random = no
+	country = BYZ
+
+	name = "Revolutionary Tendencies Subside"
+	desc = "The push for independence has been quashed throughout the Empire. For now."
+
+	date = { year = 1820 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Finally!"
+		command = { type = province_revoltrisk which = 363 value = -10 } #serbia
+		command = { type = province_revoltrisk which = 354 value = -10 } #serbia
+		command = { type = province_revoltrisk which = 355 value = -10 } #serbia
+		command = { type = province_revoltrisk which = 487 value = -10 } #azerbaijan
+		command = { type = province_revoltrisk which = 530 value = -10 } #azerbaijan
+		command = { type = province_revoltrisk which = 471 value = -10 } #azerbaijan
+		command = { type = province_revoltrisk which = 496 value = -10 } #hedjaz
+		command = { type = province_revoltrisk which = 497 value = -10 } #hedjaz
+		command = { type = province_revoltrisk which = 498 value = -10 } #hedjaz
+		command = { type = province_revoltrisk which = 737 value = -10 } #maghreb
+		command = { type = province_revoltrisk which = 735 value = -10 } #maghreb
+		command = { type = province_revoltrisk which = 736 value = -10 } #maghreb
+		command = { type = province_revoltrisk which = 741 value = -10 } #maghreb
+		command = { type = province_revoltrisk which = 733 value = -10 } #maghreb
+		command = { type = province_revoltrisk which = 738 value = -10 } #maghreb
+		command = { type = province_revoltrisk which = 734 value = -10 } #maghreb
+		command = { type = province_revoltrisk which = 732 value = -10 } #maghreb
+		command = { type = province_revoltrisk which = 806 value = -10 } #maghreb
+		command = { type = province_revoltrisk which = 740 value = -10 } #maghreb
+		command = { type = province_revoltrisk which = 739 value = -10 } #maghreb
+		command = { type = province_revoltrisk which = 320 value = -10 } #Dobrudja
+		command = { type = province_revoltrisk which = 321 value = -10 } #Rumelia
+		command = { type = province_revoltrisk which = 356 value = -10 } #Bulgaria
+		command = { type = province_revoltrisk which = 473 value = -10 } #armenia
+		command = { type = province_revoltrisk which = 472 value = -10 } #armenia
+		command = { type = province_revoltrisk which = 483 value = -10 } #armenia
+		command = { type = province_revoltrisk which = 394 value = -10 } #sicily
+		command = { type = province_revoltrisk which = 395 value = -10 } #sicily
+		command = { type = province_revoltrisk which = 396 value = -10 } #sicily
+		command = { type = province_revoltrisk which = 600 value = -10 } 
+		command = { type = sleepevent which = 3001431 } #french revolution
+		command = { type = sleepevent which = 3001432 } #french revolution
+		command = { type = sleepevent which = 3001433 } #french revolution
+		command = { type = sleepevent which = 3001434 } #french revolution
+	}
+}

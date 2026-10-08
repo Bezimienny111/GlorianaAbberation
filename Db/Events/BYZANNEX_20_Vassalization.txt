@@ -1,0 +1,89 @@
+#-----------------------------------------------------------------------------
+# Vassalization events - Orthodox Byzantium resurgent
+
+event = {
+	id = 3001359
+	trigger = {
+		atwar = NO
+		religion = orthodox
+		countrysize = 20
+	}
+	random = NO
+	country = BYZ
+	name = "Orthodoxy resurgent"
+	desc = "The Empire has thrown off the shackles of her bondage and again straddles the continents. Shall we use our new-found power to protect our Orthodox kinsmen, or enslave them?"
+	date = { day = 1 month = january year = 1450 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Let them grovel before us!"
+		command = { type = treasury value = 400 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = land value = 2000 }
+		command = { type = naval value = 500 }
+		command = { type = MIL which = 4 value = 240 }
+		command = { type = badboy value = 2 }
+		command = { type = relation which = MOS value = -100 }
+		command = { type = relation which = WAL value = -100 }
+		command = { type = relation which = MOL value = -100 }
+		command = { type = relation which = GEO value = -100 }
+		command = { type = sleepevent which = 3001360 }
+		command = { type = sleepevent which = 3001361 }
+		#command = { type = sleepevent which = 3001365 } #Not found in the Annex
+		#command = { type = sleepevent which = 3001366 } #Not found in the Annex
+		#command = { type = sleepevent which = 3001370 } #Not found in the Annex
+		#command = { type = sleepevent which = 3001371 } #Not found in the Annex
+		command = { type = sleepevent which = 3001378 }
+		command = { type = sleepevent which = 3001379 }
+		command = { type = sleepevent which = 3001384 }
+		command = { type = sleepevent which = 3001385 }
+		command = { type = sleepevent which = 3001375 }
+		command = { type = sleepevent which = 3001376 }
+		command = { type = sleepevent which = 3001381 }
+		command = { type = sleepevent which = 3001382 }
+	}
+	action_b = {
+		name = "Let us reach out to our brethren"
+		command = { type = DIP which = 4 value = 240 }
+		command = { type = treasury value = -200 }
+		command = { type = badboy value = -2 }
+		command = { type = relation which = MOS value = 100 }
+		command = { type = relation which = RUS value = 100 }
+		command = { type = relation which = ETH value = 200 }
+		command = { type = relation which = WAL value = 200 }
+		command = { type = relation which = MOL value = 200 }
+		command = { type = relation which = GEO value = 200 }
+		command = { type = relation which = SER value = 200 }
+		command = { type = relation which = TRE value = 200 }
+		command = { type = relation which = SPR value = 200 }
+		command = { type = relation which = SUD value = 200 }
+	}
+	action_c = {
+		name = "Let us tend to our own affairs"
+		command = { type = treasury value = 200 }
+		command = { type = domestic which = MERCANTILISM value = 1 }
+		command = { type = infra value = 1000 }
+		command = { type = trade value = 1000 }
+		command = { type = ADM which = 4 value = 240 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = sleepevent which = 3001360 }
+		command = { type = sleepevent which = 3001361 }
+		#command = { type = sleepevent which = 3001365 } #Not found in the Annex
+		#command = { type = sleepevent which = 3001366 } #Not found in the Annex
+		#command = { type = sleepevent which = 3001370 } #Not found in the Annex
+		#command = { type = sleepevent which = 3001371 } #Not found in the Annex
+		command = { type = sleepevent which = 3001375 }
+		command = { type = sleepevent which = 3001376 }
+		command = { type = sleepevent which = 3001381 }
+		command = { type = sleepevent which = 3001382 }
+		command = { type = sleepevent which = 3001378 }
+		command = { type = sleepevent which = 3001379 }
+		command = { type = sleepevent which = 3001384 }
+		command = { type = sleepevent which = 3001385 }
+	}
+}

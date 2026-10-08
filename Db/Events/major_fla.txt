@@ -1,0 +1,178 @@
+#####Flanders Major Events######
+#By Joakim 'Greven' Bergqwist ##
+#	Kristof 'BiB' Haekens     ##
+################################
+
+#The Crown of France#
+#event = {
+#
+#	id = 3594
+#	trigger = {
+#		owned = {
+#				province = 385
+#				data = -1
+#		}
+#		NOT = {
+#			exists = FRA
+#		}
+#	}
+#	random = no
+#	country = FLA
+#	name = "EVENTNAME3594"
+#	desc = "EVENTHIST3594"
+#
+#	date = { day = 1 month = january year = 1420 }
+#	offset = 30
+#	deathdate = { day = 1 month = january year = 1515 }
+#
+#	action_a ={					#France is reborn with me#
+#		name = "ACTIONNAME3594A"
+#		command = { type = vp value = 200 }
+#		command = { type = stability value = 3 }
+#		command = { type = country which = FRA }
+#		command = { type = INF which = 385 value = 15000 }
+#		command = { type = CAV which = 385 value = 10000 }
+#		command = { type = ART which = 385 value = 30 }
+#		command = { type = add_countryculture which = french }
+#	}
+#
+#	action_b ={					#Let France rest in peace#
+#		name = "ACTIONNAME3594B"
+#		command = { type = vp value = -100 }
+#		command = { type = stability value = -3 }
+#		command = { type = relation which = ENG value = 150 }
+#		command = { type = relation which = BUR value = 150 }
+#		command = { type = relation which = HAB value = 150 }
+#		command = { type = relation which = SPA value = 150 }
+#	}
+#}
+
+#Pieter Roose#
+event = {
+
+	id = 3595
+	random = no
+	country = FLA
+	name = "EVENTNAME3595"
+	desc = "EVENTHIST3595"
+
+	date = { day = 1 month = january year = 1630 }
+	offset = 10
+	deathdate = { day = 30 month = december year = 1630 }
+
+
+	action_a ={			#An Excellent Minister!#
+		name = "ACTIONNAME3595A"
+		command = { type = DIP which = 2 value = 240 }
+		command = { type = ADM which = 3 value = 240 }
+		command = { type = MIL which = 1 value = 240 }
+		command = { type = domestic which = SERFDOM value = -2 }
+	}
+}
+
+#Pieter Paul Rubens#
+event = {
+
+	id = 3772
+	random = no
+	country = FLA
+	name = "EVENTNAME3772"
+	desc = "EVENTHIST3772"
+
+	date = { day = 1 month = january year = 1610 }
+	offset = 10
+	deathdate = { day = 30 month = december year = 1610 }
+
+
+	action_a ={			#Beautiful!#
+		name = "ACTIONNAME3772A"
+		command = { type = domestic which = SERFDOM value = -2 }
+	}
+}
+
+#Revolutionary fever strikes#
+event = {
+
+	id = 3773
+	trigger = {
+		OR = {
+			event = 3342
+			event = 3779
+			event = 3780
+		}
+	}
+	random = no
+	country = FLA
+	name = "EVENTNAME3773"
+	desc = "EVENTHIST3773"
+
+	date = { day = 13 month = july year = 1789 }
+	offset = 1
+	deathdate = { day = 22 month = december year = 1795 }
+
+
+	action_a ={			#A Revolution has struck us, Sire#
+		name = "ACTIONNAME3773A"
+		command = { type = domestic which = ARISTOCRACY value = -5 }
+		command = { type = domestic which = SERFDOM value = -5 }
+		command = { type = domestic which = INNOVATIVE value = 5 }
+		command = { type = domestic which = OFFENSIVE value = 3 }
+		command = { type = desertion which = -1 value = 10000 }
+		command = { type = desertion which = -1 value = 10000 }
+		command = { type = stability value = -6 }
+	}
+}
+
+
+#Foundation of the Verenigde Oostendse Compagnie#
+event = {
+
+	id = 3596
+	random = no
+	country = FLA
+	name = "EVENTNAME3596"
+	desc = "EVENTHIST3596"
+
+	date = { day = 1 month = january year = 1716 }
+	offset = 100
+	deathdate = { day = 1 month = january year = 1726 }
+
+	action_a ={			#We will exploit this!#
+		name = "ACTIONNAME3596A"
+		command = { type = sleepevent which = 3202 }
+		command = { type = sleepevent which = 4122 }
+		command = { type = treasury value = 200 }
+		command = { type = merchants value = 6 }
+		command = { type = explorer which = -1 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = trade value = 1000 }
+		command = { type = gainmanufactory which = -1 value = refinery }
+		command = { type = stability value = 1 }
+	}
+}
+
+# The Dutch Republic
+event = {
+	id = 3810
+
+	# Triggered by HOL 3900
+
+	random = no
+	country = FLA
+	name = "EVENTNAME3810"
+	desc = "EVENTHIST3810"
+
+	action_a = { # Join
+		name = "ACTIONNAME3810A"
+		trigger = { 
+			ai = yes
+		}
+		command = { type = trigger which = 3811 }
+	}
+
+	action_b = { # Stay out
+		name = "ACTIONNAME3810B"
+		command = { type = relation which = HOL value = -100 }
+		command = { type = stability value = -2 }
+	}
+}

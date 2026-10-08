@@ -1,0 +1,76 @@
+##Lithuania Events##
+
+#(1386-1396) The Christianization of Lithuania
+event = {
+	id = 1111000
+	trigger = {
+		OR = {
+			AND = {
+				exists = POL
+				NOT = { war = { country = LIT country = POL } }
+			}
+			AND = {
+				exists = MOS
+				NOT = { war = { country = LIT country = MOS } }
+			}
+		}
+	}
+	random = no
+	country = LIT
+	name = "The Christianization of Lithuania"
+	desc = "Jogailia had a strong preference to marry a Christian princess pursuant to his talks with Teutonic Order, in exhange for their assistance in a domestic squabble. His mother encouraged him to marry Sofia of Moscovy. Prince Dmitri required that Jogaila convert to Orthodoxy and sumbit himself to the authority of Moscow. Unwilling to become a vassal and noting that converting to Orthodoxy would not improve relations with the Teutonic Order, Jogailia looked towards Poland. His marriage to Jadwiga of Poland ensured that Lithuania became a Catholic country and entered the duchy and kingdom into a personal union."
+
+	date = { day = 1 month = october year = 1386 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1396 }
+
+	action_a ={
+		trigger = {
+			exists = POL
+			NOT = { war = { country = LIT country = POL } }
+		}
+		name = "Marry Jadwiga and convert to Catholicism"
+		command = { type = stability value = -1 }
+		command = { type = dynastic which = POL }
+		command = { type = alliance which = POL }
+		command = { type = relation which = POL value = 150 }
+		command = { type = relation which = LAT value = 50 }
+		command = { type = relation which = MOS value = -100 }
+		command = { type = religion which = catholic }
+		command = { type = conversion which = -2 }
+		command = { type = conversion which = -1 }
+		command = { type = conversion which = -1 }
+		command = { type = flagname which = "" }
+	}
+	action_b ={
+		trigger = {
+			exists = MOS
+			NOT = { war = { country = LIT country = MOS } }
+		}
+		name = "Marry Sofia and convert to Orthodoxy"
+		command = { type = stability value = -2 }
+		command = { type = dynastic which = MOS }
+		command = { type = alliance which = MOS }
+		command = { type = relation which = MOS value = 150 }
+		command = { type = relation which = POL value = -100 }
+		command = { type = relation which = LAT value = -50 }
+		command = { type = religion which = orthodox }
+		command = { type = conversion which = -2 }
+		command = { type = conversion which = -1 }
+		command = { type = flagname which = "" }
+		#Add Muscovy event that vassalizes Lithuania
+	}
+	action_c ={
+		name = "Marry a local Lithuanian noble"
+		command = { type = stability value = 2 }
+		command = { type = relation which = SAM value = 150 }
+		command = { type = relation which = POL value = -150 }
+		command = { type = relation which = MOS value = -150 }
+		command = { type = relation which = LAT value = -75 }
+		command = { type = dynastic which = SAM }
+		command = { type = alliance which = SAM }
+		command = { type = diplomats value = -6 }
+	}
+}
+
+#first free ID: 111001

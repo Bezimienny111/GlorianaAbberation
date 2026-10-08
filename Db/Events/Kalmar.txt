@@ -1,0 +1,1017 @@
+#Tycho Brahe.#
+event = {
+	id = 101028
+	trigger = {
+		NOT = {
+			exists = DAN
+		}
+	}
+	random = no
+	country = KAL
+	name = "EVENTNAME5080"
+	desc = "EVENTHIST5080"
+	date = { day = 1 month = january year = 1576 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5080A"
+		command = { type = domestic which = INNOVATIVE value = 1 }
+	}
+}
+
+#Erik Dahlberg.#
+event = {
+	id = 101029
+	trigger = {
+		NOT = {
+			exists = SWE
+		}
+	}
+	random = no
+	country = KAL
+	name = "EVENTNAME5030"
+	desc = "EVENTHIST5030"
+
+	style = "5030"
+
+	date = { day = 1 month = january year = 1679 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5030A"
+		command = { type = fortress which = -2 value = 1 } # Dalarö
+		command = { type = fortress which = 253 value = 1 } # Gothenburg
+		command = { type = fortress which = 251 value = 1 } # Varberg
+		command = { type = fortress which = -4 value = 1 } # Random province
+	}
+}
+#Olof Rudbeck publishes 'Atlantica'.#
+event = {
+	id = 101030
+	trigger = {
+		NOT = {
+			exists = SWE
+		}
+	}
+	random = no
+	country = KAL
+	name = "EVENTNAME5031"
+	desc = "EVENTHIST5031"
+	date = { day = 1 month = january year = 1702 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5031A"
+		command = { type = stability value = 1 }
+		command = { type = relation which = ENG value = 30 }
+		command = { type = relation which = FRA value = 30 }
+		command = { type = relation which = -1 value = 30 }
+		command = { type = relation which = -4 value = 30 }
+	}
+}
+#Emanuel Swedenborg.#
+event = {
+	id = 101031
+	trigger = {
+		NOT = {
+			exists = SWE
+		}
+	}
+	random = no
+	country = KAL
+	name = "EVENTNAME5032"
+	desc = "EVENTHIST5032"
+	date = { day = 1 month = january year = 1758 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5032A"
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = revoltrisk value = 1 }
+	}
+}
+#Carl von Linné.#
+event = {
+	id = 101032
+	trigger = {
+		NOT = {
+			exists = SWE
+		}
+	}
+	random = no
+	country = KAL
+	name = "EVENTNAME5033"
+	desc = "EVENTHIST5033"
+	date = { day = 1 month = january year = 1753 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5033A"
+		command = { type = domestic which = INNOVATIVE value = 1 }
+	}
+}
+
+#culture setup.#
+event = {
+	id = 101033
+	trigger = {
+		decision = 1017
+	}
+	random = no
+	country = KAL
+	name = "We are one people!"
+	desc = "All shall share in the benefits of our Union."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 2
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={				#Ok#
+		name = "Jolly good!"
+		trigger = { culture = danish }
+		command = { type = add_countryculture which = norwegian }
+		command = { type = add_countryculture which = scandinavian }
+	}
+
+	action_b ={				#Ok#
+		name = "Jolly good!"
+		trigger = { culture = norwegian }
+		command = { type = add_countryculture which = danish }
+		command = { type = add_countryculture which = scandinavian }
+	}
+
+	action_c ={				#Ok#
+		name = "Jolly good!"
+		trigger = { culture = scandinavian }
+		command = { type = add_countryculture which = norwegian }
+		command = { type = add_countryculture which = danish }
+	}
+}
+
+#capital move.#
+event = {
+	id = 101034
+	trigger = {
+		decision = 1017
+		NOT = {
+			capital = 252
+		}
+	}
+	random = no
+	country = KAL
+	name = "The Capital of The Kalmar Union"
+	desc = "We have the option to move our capital to Kalmar, should we move or stay where we are?"
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 2
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={				#Ok#
+		name = "Move to Kalmar"
+		command = { type = capital which = 252 }
+	}
+
+	action_b ={				#Ok#
+		name = "Stay where we are"
+		command = { }
+	}
+}
+
+#The Sound Due#
+event = {
+	id = 101005
+	trigger = {
+		NOT = {
+			exists = DAN
+		}
+	}
+	random = no
+	country = KAL
+	name = "EVENTNAME3284"
+	desc = "EVENTHIST3284"
+	style = 1
+	
+	date = { day = 1 month = january year = 1429 }
+	offset = 364
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={ # Impose the Sound Dues
+		name = "ACTIONNAME3284A"
+		command = { type = domestic which = MERCANTILISM  value = 2 }
+		command = { type = provincetax which = -2 value = 10 } # Perhaps more.
+		command = { type = relation which = SWE value = -50 }
+		command = { type = relation which = MEC value = -50 }
+		command = { type = relation which = POM value = -50 }
+		command = { type = relation which = LAT value = -50 }
+		command = { type = relation which = ENG value = -50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = sleepevent which = 3284 }
+	}
+	action_b ={ # Let trade flow freely
+		name = "ACTIONNAME3284B"
+		command = { type = domestic which = MERCANTILISM  value = -2 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = relation which = SWE value = 50 }
+		command = { type = relation which = MEC value = 50 }
+		command = { type = relation which = POM value = 50 }
+		command = { type = relation which = LAT value = 50 }
+		command = { type = relation which = ENG value = 50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = trade value = 1000 }
+		command = { type = stability value = 2 }
+		command = { type = sleepevent which = 3284 }
+	}
+}
+
+#The Pluralistic Reforms of Christian II#
+event = {
+	id = 101006
+	trigger = {
+		NOT = {
+			exists = DAN
+		}
+	}
+	random = no
+	country = KAL
+	name = "EVENTNAME3285"
+	desc = "EVENTHIST3285"
+	style = "3285"
+	
+	date = { day = 1 month = january year = 1517 }
+	offset = 720
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={ # Reform the Government
+		name = "ACTIONNAME3285A"
+		command = { type = domestic which = MERCANTILISM  value = -2 }
+		command = { type = domestic which = ARISTOCRACY  value = -2 }
+		command = { type = stability value = -3 }
+		command = { type = revoltrisk which = 72 value = 3 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = sleepevent which = 3285 }
+	}
+	action_b ={ # Maintain Status Quo
+		name = "ACTIONNAME3285B"
+		command = { type = stability value = 2 }
+		command = { type = sleepevent which = 3285 }
+	}
+}
+
+#Vornedskab#
+event = {
+	id = 101007
+	trigger = {
+		NOT = {
+			exists = DAN
+		}
+	}
+	random = no
+	country = KAL
+	name = "EVENTNAME3286"
+	desc = "EVENTHIST3286"
+	style = 1
+	
+	date = { day = 1 month = february year = 1493 }
+	offset = 720
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a = { # Adopt Vornedskab
+		name = "ACTIONNAME3286A"
+		command = { type = domestic which = SERFDOM value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = revoltrisk which = 120 value = 3 }
+		command = { type = sleepevent which = 3286 }
+	}
+	action_b ={ # Leave the peasants their freedom
+		name = "ACTIONNAME3286B"
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = stability value = -4 }
+		command = { type = sleepevent which = 3286 }
+	}
+}
+
+#The Scandinavian Constitution#
+event = {
+	id = 101008
+	trigger = {
+		exists = SWE
+		vassal = {
+			country = KAL
+			country = SWE
+			}
+		NOT = {
+			exists = DAN
+		}
+	}
+	random = no
+	country = KAL
+	name = "EVENTNAME3287"
+	desc = "EVENTHIST3287"
+	style = 1
+	
+	date = { day = 1 month = february year = 1483 }
+	offset = 364
+	deathdate = { day = 1 month = february year = 1485 }
+
+	action_a ={ # Draft the Scandinavian Constitution
+		name = "ACTIONNAME3287A"
+		command = { type = relation which = SWE value = 50 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = stability value = 2 }
+		command = { type = sleepevent which = 3287 }
+	}
+	action_b ={ # Drop the whole idea.
+		name = "ACTIONNAME3287B"
+		command = { type = stability value = -1 }
+		command = { type = sleepevent which = 3287 }
+	}
+}
+
+#The Great Naval Reform#
+event = {
+	id = 101009
+	trigger = {
+		NOT = {
+			exists = DAN
+		}
+	}
+	random = no
+	country = KAL
+	name = "EVENTNAME3288"
+	desc = "EVENTHIST3288"
+	style = 2
+	
+	date = { day = 1 month = february year = 1509 }
+	offset = 364
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={ # Reform the Navy
+		name = "ACTIONNAME3288A"
+		command = { type = domestic which = LAND value = -2 }
+		command = { type = naval value = 2000 }
+		command = { type = sleepevent which = 3288 }
+	}
+	action_b ={ # Reform the Army
+		name = "ACTIONNAME3288B"
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = land value = 1500 }
+		command = { type = sleepevent which = 3288 }
+	}
+	action_c ={ # Build fortifications
+		name = "ACTIONNAME3288C"
+		command = { type = fortress which = -2 value = 1 } # Capital
+		command = { type = fortress which = -4 value = 1 } # Random province
+		command = { type = fortress which = -4 value = 1 } # Random province
+		command = { type = fortress which = -4 value = 1 } # Random province
+		command = { type = sleepevent which = 3288 }
+	}
+}
+
+#Peder Oxe#
+event = {
+	id = 101010
+	trigger = {
+		NOT = {
+			exists = DAN
+		}
+	}
+	random = no
+	country = KAL
+	name = "EVENTNAME3294"
+	desc = "EVENTHIST3294"
+	style = "3294"
+	
+	date = { day = 1 month = january year = 1566 }
+	offset = 364
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={			#An Excellent Minister!#
+		name = "ACTIONNAME3294A"
+		command = { type = DIP which = 2 value = 120 }
+		command = { type = ADM which = 4 value = 120 }
+		command = { type = MIL which = 2 value = 120 }
+		command = { type = infra value = 500 }
+		command = { type = stability value = 2 }
+		command = { type = sleepevent which = 3294 }
+	}
+}
+
+#Danish East Indian Company#
+event = {
+	id = 101011
+	trigger = {
+		NOT = {
+			exists = DAN
+		}
+	}
+	random = no
+	country = KAL
+	name = "EVENTNAME3295"
+	desc = "EVENTHIST3295"
+	style = "3295"
+	
+	date = { day = 1 month = january year = 1616 }
+	offset = 364
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={ # Found an East Indian Company
+		name = "ACTIONNAME3295A"
+		command = { type = treasury value = -500 }
+		command = { type = domestic which = LAND value = -1 }
+		command = { type = colonists value = 6 }
+		command = { type = merchants value = 6 }
+		command = { type = trade value = 1000 }
+		command = { type = naval value = 1000 }
+		command = { type = sleepevent which = 3295 }
+	}
+	action_b ={ # It is a useless venture
+		name = "ACTIONNAME3295B"
+		command = {  } # Nothing happens
+		command = { type = sleepevent which = 3295 }
+	}
+}
+
+#The Mercantile Reforms of Christian IV#
+event = {
+	id = 101012
+	trigger = {
+		NOT = {
+			exists = DAN
+		}
+	}
+	random = no
+	country = KAL
+	name = "EVENTNAME3296"
+	desc = "EVENTHIST3296"
+	style = "3296"
+	
+	date = { day = 1 month = january year = 1625 }
+	offset = 3649
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a = { # Mercantilist Reforms
+		name = "ACTIONNAME3296A"
+		command = { type = domestic which = MERCANTILISM value = 2 }
+		command = { type = trade value = 1000 }
+		command = { type = naval value = 500 }
+		command = { type = sleepevent which = 3296 }
+	}
+	action_b ={ # Free Trade Reforms
+		name = "ACTIONNAME3296B"
+		command = { type = stability value = -3 }
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = trade value = 1000 }
+		command = { type = naval value = 500 }
+		command = { type = sleepevent which = 3296 }
+	}
+}
+
+#The Absolutism#
+event = {
+	id = 101013
+	trigger = {
+		NOT = {
+			exists = DAN
+		}
+	}
+	random = no
+	country = KAL
+	name = "EVENTNAME3297"
+	desc = "EVENTHIST3297"
+	style = "3297"
+	
+	date = { day = 1 month = january year = 1660 }
+	offset = 720
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={ # Establish Absolutism
+		name = "ACTIONNAME3297A"
+		command = { type = stability value = -3 }
+		command = { type = domestic which = ARISTOCRACY value = -4 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = sleepevent which = 3297 }
+	}
+	action_b ={ # Maintain the present system
+		name = "ACTIONNAME3297B"
+		command = { type = stability value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = sleepevent which = 3297 }
+	}
+}
+
+#The Modernisation of the Navy#
+event = {
+	id = 101014
+	trigger = {
+		NOT = {
+			exists = DAN
+		}
+	}
+	random = no
+	country = KAL
+	name = "EVENTNAME3298"
+	desc = "EVENTHIST3298"
+	style = "3298"
+
+	date = { day = 1 month = february year = 1610 }
+	offset = 364
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={ # Reform the Navy
+		name = "ACTIONNAME3298A"
+		command = { type = domestic which = LAND value = -2 }
+		command = { type = naval value = 2000 }
+		command = { type = sleepevent which = 3298 }
+	}
+	action_b ={ # Reform the Army
+		name = "ACTIONNAME3298B"
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = land value = 1500 }
+		command = { type = sleepevent which = 3298 }
+	}
+	action_c ={ # Build fortifications
+		name = "ACTIONNAME3298C"
+		command = { type = fortress which = -1 value = 1 } # Random province
+		command = { type = fortress which = -4 value = 1 } # Random province
+		command = { type = fortress which = -4 value = 1 } # Random province
+		command = { type = fortress which = -4 value = 1 } # Random province
+		command = { type = sleepevent which = 3298 }
+	}
+}
+
+#Peder Griffenfeld#
+event = {
+	id = 101015
+	trigger = {
+		NOT = {
+			exists = DAN
+		}
+	}
+	random = no
+	country = KAL
+	name = "EVENTNAME3299"
+	desc = "EVENTHIST3299"
+	style = "3299"
+	
+	date = { day = 1 month = february year = 1673 }
+	offset = 364
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={	# Ok
+		name = "ACTIONNAME3299A"
+		command = { type = DIP which = 3 value = 120 }
+		command = { type = ADM which = 2 value = 120 }
+		command = { type = MIL which = 2 value = 120 }
+		command = { type = stability value = 2 }
+		command = { type = sleepevent which = 3299 }
+	}
+}
+
+#Den Danske Lov#
+event = {
+	id = 101016
+	trigger = {
+		NOT = {
+			exists = DAN
+		}
+	}
+	random = no
+	country = KAL
+	name = "EVENTNAME3301"
+	desc = "EVENTHIST3301"
+	style = 3
+	
+	date = { day = 1 month = february year = 1683 }
+	offset = 364
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={ # Sign the Law
+		name = "ACTIONNAME3301A"
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = stability value = -2 }
+		command = { type = sleepevent which = 3301 }
+	}
+	action_b ={ # Maintain the present system
+		name = "ACTIONNAME3301B"
+		command = { type = stability value = 2 }
+		command = { type = sleepevent which = 3301 }
+	}
+}
+
+#The Effects of the Pragmatic Sanction#
+event = {
+	id = 101017
+	trigger = {
+		NOT = {
+			exists = DAN
+		}
+	}
+	random = no
+	country = KAL
+	name = "EVENTNAME3302"
+	desc = "EVENTHIST3302"
+	style = 4
+
+	date = { day = 1 month = july year = 1740 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1741 }
+
+	action_a ={				#Neutral#
+		name = "ACTIONNAME3302A"
+		command = { type = relation which = BAY value = 50 }
+		command = { type = relation which = SAC value = 50 }
+		command = { type = relation which = PRU value = 50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = ENG value = 50 }
+		command = { type = relation which = RUS value = -50 }
+		command = { type = relation which = HES value = 50 }
+		command = { type = relation which = HAN value = 50 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = relation which = SWE value = 50 }
+		command = { type = stability value = 2 }
+		command = { type = sleepevent which = 3302 }
+	}
+	action_b ={				#Pro-Habsburg#
+		name = "ACTIONNAME3302B"
+		command = { type = relation which = BAY value = -150 }
+		command = { type = relation which = SAC value = -150 }
+		command = { type = relation which = PRU value = -150 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = RUS value = 150 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = HAN value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = SWE value = -150 }
+		command = { type = stability value = -1 }
+		command = { type = casusbelli which = SWE value = 12 }
+		command = { type = sleepevent which = 3302 }
+	}
+	action_c ={				#Anti-Habsburg#
+		name = "ACTIONNAME3302C"
+		command = { type = relation which = BAY value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = PRU value = 150 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = ENG value = -150 }
+		command = { type = relation which = RUS value = -150 }
+		command = { type = relation which = HES value = -150 }
+		command = { type = relation which = HAN value = -150 }
+		command = { type = relation which = HAB value = -150 }
+		command = { type = stability value = -3 }
+		command = { type = casusbelli which = HAB value = 12 }
+		command = { type = sleepevent which = 3302 }
+	}
+}
+
+#The Mercantile Reforms of Christian VI#
+event = {
+	id = 101018
+	trigger = {
+		NOT = {
+			exists = DAN
+		}
+	}
+	random = no
+	country = KAL
+	name = "EVENTNAME3305"
+	desc = "EVENTHIST3305"
+	style = "3305"
+	
+	date = { day = 1 month = january year = 1730 }
+	offset = 3649
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={ # Mercantilist reforms
+		name = "ACTIONNAME3305A"
+		command = { type = treasury value = -600 }
+		command = { type = gainbuilding which = 307 value = shipyard }
+		command = { type = gainmanufactory which = -1 value = navalequipment }
+		command = { type = gainmanufactory which = -1 value = goods }
+		command = { type = domestic which = MERCANTILISM value = 4 }
+		command = { type = provincetax which = -2 value = 2 }
+		command = { type = provincetax which = 251 value = 2 } # Skåne
+		command = { type = provincetax which = 309 value = 2 } # Jylland
+		command = { type = sleepevent which = 3305 }
+	}
+	action_b ={ # No reforms
+		name = "ACTIONNAME3305B"
+		command = {  }
+	}
+	action_c ={ # Free trade reforms
+		name = "ACTIONNAME3305C"
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = trade value = 1000 }
+		command = { type = merchants value = 6 }
+		command = { type = stability value = -2 }
+		command = { type = sleepevent which = 3305 }
+	}
+}
+
+#The 'Stavnsbåndet' Law#
+event = {
+	id = 101019
+	trigger = {
+		NOT = {
+			exists = DAN
+		}
+	}
+	random = no
+	country = KAL
+	name = "EVENTNAME3306"
+	desc = "EVENTHIST3306"
+	style = "3306"
+	
+	date = { day = 1 month = january year = 1733 }
+	offset = 364
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={ # Pass the Law
+		name = "ACTIONNAME3306A"
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = SERFDOM value = 3 }
+		command = { type = revoltrisk which = 120 value = 3 }
+		command = { type = provincemanpower which = -1 value = 2 }
+		command = { type = provincemanpower which = -4 value = 2 }
+		command = { type = provincemanpower which = -4 value = 2 }
+		command = { type = provincemanpower which = -4 value = 2 }
+		command = { type = provincetax which = -1 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = sleepevent which = 3306 }
+	}
+	action_b ={ # Drop the Law
+		name = "ACTIONNAME3306B"
+		command = { type = stability value = -3 }
+		command = { type = sleepevent which = 3306 }
+	}
+}
+
+#Pietism#
+event = {
+	id = 101020
+	trigger = {
+		NOT = {
+			exists = DAN
+		}
+	}
+	random = no
+	country = KAL
+	name = "EVENTNAME3307"
+	desc = "EVENTHIST3307"
+	style = 4
+	
+	date = { day = 1 month = january year = 1735 }
+	offset = 720
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={ # Endorse Pietism
+		name = "ACTIONNAME3307A"
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = stability value = 1 }
+		command = { type = sleepevent which = 3307 }
+	}
+	action_b ={ # Outlaw Pietism
+		name = "ACTIONNAME3307B"
+		command = { type = revoltrisk which = 120 value = 1 }
+		command = { type = revoltrisk which = 24 value = 2 }
+		command = { type = sleepevent which = 3307 }
+	}
+}
+
+#The Regency of J.H.E. Bernstorff#
+event = {
+	id = 101021
+	trigger = {
+		NOT = {
+			exists = DAN
+		}
+	}
+	random = no
+	country = KAL
+	name = "EVENTNAME3308"
+	desc = "EVENTHIST3308"
+	style = "3308"
+	
+	date = { day = 16 month = january year = 1766 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a = { # Ok
+		name = "ACTIONNAME3308A"
+		command = { type = DIP which = 4 value = 50 }
+		command = { type = ADM which = 3 value = 50 }
+		command = { type = MIL which = 3 value = 50 }
+		command = { type = relation which = RUS value = 100 }
+		command = { type = sleepevent which = 3308 }
+	}
+}
+
+#The Regency of Struensee#
+event = {
+	id = 101022
+	trigger = {
+		NOT = {
+			exists = DAN
+		}
+	}
+	random = no
+	country = KAL
+	name = "EVENTNAME3309"
+	desc = "EVENTHIST3309"
+	style = "3309"
+	
+	date = { day = 1 month = may year = 1770 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={
+		name = "ACTIONNAME3309A"
+		command = { type = DIP which = 1 value = 24 }
+		command = { type = ADM which = 4 value = 24 }
+		command = { type = MIL which = 1 value = 24 }
+		command = { type = infra value = 500 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = sleepevent which = 3309 }
+	}
+}
+
+#The Landbo Commission#
+event = {
+	id = 101023
+	trigger = {
+		NOT = {
+			exists = DAN
+		}
+	}
+	random = no
+	country = KAL
+	name = "EVENTNAME3310"
+	desc = "EVENTHIST3310"
+	style = 4
+	
+	date = { day = 1 month = may year = 1784 }
+	offset = 364
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={ # Assign the commission
+		name = "ACTIONNAME3310A"
+		command = { type = stability value = -3 } # Upset nobles
+		command = { type = domestic which = SERFDOM value = -3 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = sleepevent which = 3310 }
+	}
+	action_b ={ # Stavnsbåndet works well
+		name = "ACTIONNAME3310B"
+		command = { type = revoltrisk which = 120 value = 4 } # Upset serfs
+		command = { type = sleepevent which = 3310 }
+	}
+}
+
+#The Great Agricultural Reform#
+event = {
+	id = 101024
+	trigger = {
+		NOT = {
+			exists = DAN
+		}
+	}
+	random = no
+	country = KAL
+	name = "EVENTNAME3311"
+	desc = "EVENTHIST3311"
+	style = 4
+	
+	date = { day = 1 month = january year = 1781 }
+	offset = 364
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={ # Reform the agriculture
+		name = "ACTIONNAME3311A"
+		command = { type = infra value = 250 }
+		command = { type = provincetax which = -1 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = revoltrisk which = 48 value = 3 } # Upset peasants
+		command = { type = sleepevent which = 3311 }
+	}
+	action_b ={ # Do not upset the people
+		name = "ACTIONNAME3311B"
+		command = {  } # Nothing happens
+		command = { type = sleepevent which = 3311 }
+	}
+}
+
+#The Regency of Ove Hoeg-Guldberg#
+event = {
+	id = 101025
+	trigger = {
+		NOT = {
+			exists = DAN
+		}
+	}
+	random = no
+	country = KAL
+	name = "EVENTNAME3312"
+	desc = "EVENTHIST3312"
+	style = 4
+	
+	date = { day = 1 month = january year = 1773 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={ # Ok
+		name = "ACTIONNAME3312A"
+		command = { type = DIP which = 3 value = 120 }
+		command = { type = ADM which = 2 value = 120 }
+		command = { type = MIL which = 2 value = 120 }
+		command = { type = sleepevent which = 3312 }
+	}
+}
+
+#The Regency of A.P.Bernstorff#
+event = {
+	id = 101026
+	trigger = {
+		NOT = {
+			exists = DAN
+		}
+	}
+	random = no
+	country = KAL
+	name = "EVENTNAME3313"
+	desc = "EVENTHIST3313"
+	style = 4
+	
+	date = { day = 1 month = january year = 1784 }
+	offset = 80
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={
+		name = "ACTIONNAME3313A"
+		command = { type = DIP which = 5 value = 156 }
+		command = { type = ADM which = 3 value = 156 }
+		command = { type = MIL which = 3 value = 156 }
+		command = { type = stability value = 2 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = sleepevent which = 3313 }
+	}
+}
+
+#The Great Fire of Oslo#
+event = {
+	id = 101027
+	trigger = {
+		owned = { province = 255 data = KAL }
+		NOT = {
+			exists = DAN
+		}
+	}
+	random = no
+	country = KAL
+	name = "The Great Fire of Oslo"
+	desc = "The Great Fire of Oslo, also known as the Oslo Fire of 1624, was a devastating event that profoundly impacted the capital of Norway. Raging from the 17th - 20th August 1624, the fire razed a significant portion of the city to the ground, leaving in its wake a trail of destruction. The flames, fueled by strong winds and dry weather, consumed approximately 90 percent of the city's buildings, including historical and cultural landmarks. This catastrophic event led to the decision to relocate and rebuild the city, resulting in the founding of Christiania (now Oslo) on more strategically located ground nearby. The new city was meticulously planned, incorporating a grid pattern that contrasted with the medieval layout of the previous Oslo. The Great Fire of Oslo remains a pivotal event in the city's history, symbolizing both destruction and rebirth, as the rebuilt Christiania went on to become the modern capital of Norway."
+	
+	style = "4170"
+
+	date = { day = 1 month = august year = 1624 }
+	offset = 5
+	deathdate = { day = 1 month = december year = 1624 }
+
+	action_a ={			# Rebuild the city as Christiania
+		name = "Rebuild the city as Christiania"
+		command = { type = cityname which = 255 value = "Christiania" }
+		command = { type = populationpercent which = 255 value = 15 }
+		command = { type = provincetax which = 255 value = 2 }
+		command = { type = provincemanpower which = 255 value = 1 }
+		command = { type = fortress which = 255 value = 1 }
+		command = { type = infra value = 250 }
+		command = { type = treasury value = -500 }
+		command = { type = stability value = 1 }
+		command = { type = sleepevent which = 4170 }
+	}
+
+	action_b ={			# We cannot afford to invest in Norway
+		name = "We cannot afford to invest in Norway"
+		command = { type = populationpercent which = 255 value = -25 }
+		command = { type = provincetax which = 255 value = -2 }
+		command = { type = provincemanpower which = 255 value = -1 }
+		command = { type = losebuilding which = 255 value = shipyard }
+		command = { type = losemanufactory which = 255 }
+		command = { type = fortress which = 255 value = -2 }
+		command = { type = infra value = -750 }
+		command = { type = vp value = -100 }
+		command = { type = stability value = -2 }
+		command = { type = sleepevent which = 4170 }
+	}
+}

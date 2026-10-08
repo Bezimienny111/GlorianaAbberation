@@ -1,0 +1,631 @@
+#-----------------------------------------------------------------------------
+# Turkish State Events by Louis-Philippe
+
+#(1419-1500) Submission of the Sultan - Byzantium
+event = {
+	id = 3001173
+	trigger = {
+		vassal = { country = BYZ country = TUR }
+		NOT = { war = { country = TUR country = BYZ } }
+	}
+	random = NO
+	country = BYZ
+	name = "Submission of the Sultan"
+	desc = "The Roman Empire, after a miraculous campaign of reconquest against the Turk, succeeds at last in seizing the enemy capital at Bursa. The Ottoman Sultan submits himself to the mercy of the Emperor and offers his realm to the New Rome."
+	date = { day = 1 month = january year = 1337 }
+	offset = 30 #1 month
+	deathdate = { year = 1500 }
+
+	action_a = {
+		name = "Accept the Turks' submission"
+		command = { type = treasury value = 150 }
+		command = { type = trigger which = 3001174 } #TUR: Submission of The Sultan
+		#command = { type = vp value = 10 }
+	}
+	action_b = {
+		name = "Let the walking dead alone"
+		command = { type = badboy value = -2 }
+		command = { type = treasury value = 250 }
+		command = { type = INf which = -2 value = 5000 }
+		command = { type = INf which = -2 value = 3000 }
+	}
+}
+#changed startdate, vp value
+
+#(1419-1500) Submission of the Sultan - Turks
+event = {
+	id = 3001174
+	random = NO
+	country = TUR
+	name = "Submission of the Sultan"
+	desc = "The Roman Empire, after a miraculous campaign of reconquest against the Turk, succeeds at last in seizing the enemy capital at Bursa. The Ottoman Sultan submits himself to the mercy of the Emperor and offers his realm to the New Rome."
+
+	action_a = {
+		name = "Yes, we submit..."
+		trigger = {
+			ai = yes
+		}
+		command = { type = trigger which = 3001175 } #BYZ: The Sultan Submits to the Empire
+		command = { type = trigger which = 3001176 } #SPR: Submission of the Sultan
+	}
+	action_b = {
+		name = "No! We fight to the death!"
+		command = { type = stability value = -6 }
+		command = { type = treasury value = -500 }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+	}
+}
+
+#(1419-1500) The Sultan Submits to the Empire
+event = {
+	id = 3001175
+	random = NO
+	country = BYZ
+	name = "The Sultan Submits to the Empire"
+	desc = "The Ottoman Sultan has finally accepted his fate! The Empire alone dominates the region once more!"
+
+	action_a = {
+		name = "O goody!"
+		command = { type = inherit which = TUR }
+		command = { type = badboy value = -2 }
+	}
+}
+
+#(1419-1500) Submission of the Sultan - Morea
+event = {
+	id = 3001176
+	random = NO
+	country = SPR
+	name = "Submission of the Sultan"
+	desc = "The Roman Empire, after a miraculous campaign of reconquest against the Turk, succeeds at last in seizing the enemy capital at Bursa. The Ottoman Sultan submitted himself to the mercy of the Emperor and offered his realm to the New Rome."
+
+	action_a = {
+		name = "Good news!"
+		command = { type = relation which = BYZ value = 200 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#(1419-1520) Candar Submits to the Empire
+event = {
+	id = 3001177 #Candar
+	trigger = {
+		vassal = { country = BYZ country = CAN }
+		NOT = {
+			exists = TUR
+			war = { country = CAN country = BYZ }
+		}
+	}
+	random = NO
+	country = CAN
+	name = "Candar Submits to the Empire"
+	desc = "After the fall of the Ottoman Sultan, the Roman Empire began to recover one by one the Anatolian provinces fallen to the Turks' hands since the 13th century. The Turks, unable to save themselves and organize against the Imperial offensive, accept defeat at last and yield their lands to the lord of Constantinople."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 1 #immediate
+	deathdate = { day = 29 month = december year = 1520 }
+
+	action_a = {
+		name = "We submit..."
+		trigger = {
+			ai = yes
+		}
+		command = { type = trigger which = 3001181 } #BYZ: Candar has Submitted to the Empire
+	}
+	action_b = {
+		name = "No! To your tents, O Candar!"
+		command = { type = stability value = -6 }
+		command = { type = revolt which = -1 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+	}
+}
+
+#(1419-1520) Karaman Submits to the Empire
+event = {
+	id = 3001178 #Karaman
+	trigger = {
+		vassal = { country = BYZ country = KAR }
+		NOT = {
+			exists = TUR
+			war = { country = KAR country = BYZ }
+		}
+	}
+	random = NO
+	country = KAR
+	name = "Karaman Submits to the Empire"
+	desc = "After the fall of the Ottoman Sultan, the Roman Empire began to recover one by one the Anatolian provinces fallen to the Turks' hands since the 13th century. The Turks, unable to save themselves and organize against the Imperial offensive, accept defeat at last and yield their lands to the lord of Constantinople."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 1 #immediate
+	deathdate = { day = 29 month = december year = 1520 }
+
+	action_a = {
+		name = "We submit..."
+		trigger = {
+			ai = yes
+		}
+		command = { type = trigger which = 3001182 } #BYZ: Karaman has Submitted to the Empire
+	}
+	action_b = {
+		name = "No! To your tents, O Karaman!"
+		command = { type = stability value = -6 }
+		command = { type = revolt which = -1 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+	}
+}
+
+#(1419-1520) White Sheep Submit to the Empire
+event = {
+	id = 3001179
+	trigger = {
+		vassal = { country = BYZ country = AKK }
+		NOT = {
+			countrysize = 3
+			exists = TUR
+			war = { country = AKK country = BYZ }
+		}
+	}
+	random = NO
+	country = AKK
+	name = "White Sheep Submits to the Empire"
+	desc = "After the fall of the Ottoman Sultan, the Roman Empire began to recover one by one the Anatolian provinces fallen to the Turks' hands since the 13th century. The Turks, unable to save themselves and organize against the Imperial offensive, accept defeat at last and yield their lands to the lord of Constantinople."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 1 #immediate
+	deathdate = { day = 29 month = december year = 1520 }
+
+	action_a = {
+		name = "We submit..."
+		trigger = {
+			ai = yes
+		}
+		command = { type = trigger which = 3001183 } #BYZ: White Sheep have Submitted to the Empire
+	}
+	action_b = {
+		name = "No! To your tents, O White Sheep!"
+		command = { type = stability value = -6 }
+		command = { type = revolt which = -1 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+	}
+}
+
+#(1419-1520) Dulkadir Submits to the Empire
+event = {
+	id = 3001180 #Dulkadir
+	trigger = {
+		vassal = { country = BYZ country = DUL }
+		NOT = {
+			exists = TUR
+			war = { country = DUL country = BYZ }
+		}
+	}
+	random = NO
+	country = DUL
+	name = "Dulkadir Submits to the Empire"
+	desc = "After the fall of the Ottoman Sultan, the Roman Empire began to recover one by one the Anatolian provinces fallen to the Turks' hands since the 13th century. The Turks, unable to save themselves and organize against the Imperial offensive, accept defeat at last and yield their lands to the lord of Constantinople."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 1 #immediate
+	deathdate = { day = 29 month = december year = 1520 }
+
+	action_a = {
+		name = "We submit..."
+		trigger = {
+			ai = yes
+		}
+		command = { type = trigger which = 3001184 } #BYZ: Dulkadir has Submitted to the Empire
+	}
+	action_b = {
+		name = "No! To your tents, O Dulkadir!"
+		command = { type = stability value = -6 }
+		command = { type = revolt which = -1 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+	}
+}
+
+#(1419-1520) Ghazi Submits to the Empire
+event = {
+	id = 3001496 #Ghazi
+	trigger = {
+		vassal = { country = BYZ country = TEK }
+		NOT = {
+			exists = TUR
+			war = { country = TEK country = BYZ }
+		}
+	}
+	random = NO
+	country = TEK
+	name = "Ghazi Submits to the Empire"
+	desc = "After the fall of the Ottoman Sultan, the Roman Empire began to recover one by one the Anatolian provinces fallen to the Turks' hands since the 13th century. The Turks, unable to save themselves and organize against the Imperial offensive, accept defeat at last and yield their lands to the lord of Constantinople."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 1 #immediate
+	deathdate = { day = 29 month = december year = 1520 }
+
+	action_a = {
+		name = "We submit..."
+		trigger = {
+			ai = yes
+		}
+		command = { type = trigger which = 3001497 } #BYZ: Ghazi has Submitted to the Empire
+	}
+	action_b = {
+		name = "No! To your tents, O Ghazi!"
+		command = { type = stability value = -6 }
+		command = { type = revolt which = -1 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = war which = BYZ }
+	}
+}
+
+#(1419-1520) Black Sheep Submit to the Empire
+event = {
+	id = 3001500 #Kara Koyunlu
+	trigger = {
+		vassal = { country = BYZ country = QAR }
+		NOT = {
+			countrysize = 3
+			exists = TUR
+			war = { country = QAR country = BYZ }
+		}
+	}
+	random = NO
+	country = QAR
+	name = "Black Sheep Submit to the Empire"
+	desc = "After the fall of the Ottoman Sultan, the Roman Empire began to recover one by one the Anatolian provinces fallen to the Turks' hands since the 13th century. The Turks, unable to save themselves and organize against the Imperial offensive, accept defeat at last and yield their lands to the lord of Constantinople."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 1 #immediate
+	deathdate = { day = 29 month = december year = 1520 }
+
+	action_a = {
+		name = "We submit..."
+		trigger = {
+			ai = yes
+		}
+		command = { type = trigger which = 3001501 } #BYZ: Black Sheep have Submitted to the Empire
+	}
+	action_b = {
+		name = "No! To your tents, O Black Sheep!"
+		command = { type = stability value = -6 }
+		command = { type = revolt which = -1 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+	}
+}
+
+#(1419-1520) Candar has Submitted to the Empire
+event = {
+	id = 3001181
+	random = NO
+	country = BYZ
+	name = "Candar has submitted to the Empire"
+	desc = "After the fall of the Ottoman Sultan, the Roman Empire began to recover one by one the Anatolian provinces fallen to the Turks' hands since the 13th century. The Turks, unable to save themselves and organize against the Imperial offensive, accept defeat at last and yield their lands to the lord of Constantinople."
+
+	action_a = {
+		name = "Huzzah!"
+		command = { type = inherit which = CAN }
+		command = { type = badboy value = -1 }
+	}
+	action_b = {
+		name = "Keep them as allies"
+		command = { type = stability value = 3 }
+		command = { type = badboy value = -1 }
+		command = { type = treasury value = 150 }
+	}
+}
+
+#(1419-1520) Karaman has Submitted to the Empire
+event = {
+	id = 3001182
+	random = NO
+	country = BYZ
+	name = "Karaman has submitted to the Empire"
+	desc = "After the fall of the Ottoman Sultan, the Roman Empire began to recover one by one the Anatolian provinces fallen to the Turks' hands since the 13th century. The Turks, unable to save themselves and organize against the Imperial offensive, accept defeat at last and yield their lands to the lord of Constantinople."
+
+	action_a = {
+		name = "Huzzah!"
+		command = { type = inherit which = KAR }
+		command = { type = badboy value = -1 }
+	}
+	action_b = {
+		name = "Keep them as allies"
+		command = { type = stability value = 3 }
+		command = { type = badboy value = -1 }
+		command = { type = treasury value = 150 }
+	}
+}
+
+#(1419-1520) White Sheep have Submitted to the Empire
+event = {
+	id = 3001183
+	random = NO
+	country = BYZ
+	name = "White Sheep have submitted to the Empire!"
+	desc = "After the fall of the Ottoman Sultan, the Roman Empire began to recover one by one the Anatolian provinces fallen to the Turks' hands since the 13th century. The Turks, unable to save themselves and organize against the Imperial offensive, accept defeat at last and yield their lands to the lord of Constantinople."
+
+	action_a = {
+		name = "Huzzah! Mutton!"
+		command = { type = inherit which = AKK }
+		command = { type = badboy value = -1 }
+	}
+	action_b = {
+		name = "Keep them as allies"
+		command = { type = badboy value = -1 }
+		command = { type = stability value = 3 }
+		command = { type = treasury value = 150 }
+	}
+}
+
+#(1419-1520) Dulkadir has Submitted to the Empire
+event = {
+	id = 3001184
+	random = NO
+	country = BYZ
+	name = "Dulkadir has Submitted to the Empire"
+	desc = "After the fall of the Ottoman Sultan, the Roman Empire began to recover one by one the Anatolian provinces fallen to the Turks' hands since the 13th century. The Turks, unable to save themselves and organize against the Imperial offensive, accept defeat at last and yield their lands to the lord of Constantinople."
+
+	action_a = {
+		name = "Who? Anyway, huzzah!"
+		command = { type = inherit which = DUL }
+		command = { type = badboy value = -1 }
+	}
+	action_b = {
+		name = "Keep them as allies"
+		command = { type = badboy value = -1 }
+		command = { type = stability value = 3 }
+		command = { type = treasury value = 150 }
+	}
+}
+
+#(1419-1520) Ghazi has Submitted to the Empire
+event = {
+	id = 3001497
+	random = NO
+	country = BYZ
+	name = "Ghazi has submitted to the Empire"
+	desc = "After the fall of the Ottoman Sultan, the Roman Empire began to recover one by one the Anatolian provinces fallen to the Turks' hands since the 13th century. The Turks, unable to save themselves and organize against the Imperial offensive, accept defeat at last and yield their lands to the lord of Constantinople."
+
+	action_a = {
+		name = "Huzzah!"
+		command = { type = inherit which = TEK }
+		command = { type = badboy value = -1 }
+	}
+	action_b = {
+		name = "Keep them as allies"
+		command = { type = badboy value = -1 }
+		command = { type = stability value = 3 }
+		command = { type = treasury value = 150 }
+	}
+}
+
+#(1419-1520) Black Sheep have Submitted to the Empire
+event = {
+	id = 3001501
+	random = NO
+	country = BYZ
+	name = "Black Sheep have Submitted to the Empire"
+	desc = "After the fall of the Ottoman Sultan, the Roman Empire began to recover one by one the Anatolian provinces fallen to the Turks' hands since the 13th century. The Turks, unable to save themselves and organize against the Imperial offensive, accept defeat at last and yield their lands to the lord of Constantinople."
+
+	action_a = {
+		name = "Huzzah! Mutton!"
+		command = { type = inherit which = QAR }
+		command = { type = badboy value = -1 }
+	}
+	action_b = {
+		name = "Keep them as allies"
+		command = { type = badboy value = -1 }
+		command = { type = stability value = 3 }
+		command = { type = treasury value = 150 }
+	}
+}
+
+#(1419-1520) Aydin Submits to the Empire
+event = {
+	id = 3101177 #Aydin
+	trigger = {
+		vassal = { country = BYZ country = AYD }
+		NOT = {
+			exists = TUR
+			war = { country = AYD country = BYZ }
+		}
+	}
+	random = NO
+	country = AYD
+	name = "Aydin Submits to the Empire"
+	desc = "After the fall of the Ottoman Sultan, the Roman Empire began to recover one by one the Anatolian provinces fallen to the Turks' hands since the 13th century. The Turks, unable to save themselves and organize against the Imperial offensive, accept defeat at last and yield their lands to the lord of Constantinople."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 1 #immediate
+	deathdate = { day = 29 month = december year = 1520 }
+
+	action_a = {
+		name = "We submit..."
+		trigger = {
+			ai = yes
+		}
+		command = { type = trigger which = 3101181 } #BYZ: Aydin has Submitted to the Empire
+	}
+	action_b = {
+		name = "No! To your tents, O Aydin!"
+		command = { type = stability value = -6 }
+		command = { type = revolt which = -1 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+	}
+}
+
+#(1419-1520) Aydin has Submitted to the Empire
+event = {
+	id = 3101181
+	random = NO
+	country = BYZ
+	name = "Aydin has submitted to the Empire"
+	desc = "After the fall of the Ottoman Sultan, the Roman Empire began to recover one by one the Anatolian provinces fallen to the Turks' hands since the 13th century. The Turks, unable to save themselves and organize against the Imperial offensive, accept defeat at last and yield their lands to the lord of Constantinople."
+
+	action_a = {
+		name = "Huzzah!"
+		command = { type = inherit which = AYD }
+		command = { type = badboy value = -1 }
+	}
+	action_b = {
+		name = "Keep them as allies"
+		command = { type = stability value = 3 }
+		command = { type = badboy value = -1 }
+		command = { type = treasury value = 150 }
+	}
+}
+
+#(1419-1520) Eretnids Submits to the Empire
+event = {
+	id = 3101178 #Candar
+	trigger = {
+		vassal = { country = BYZ country = ERT }
+		NOT = {
+			exists = TUR
+			war = { country = ERT country = BYZ }
+		}
+	}
+	random = NO
+	country = ERT
+	name = "Eretnids Submits to the Empire"
+	desc = "After the fall of the Ottoman Sultan, the Roman Empire began to recover one by one the Anatolian provinces fallen to the Turks' hands since the 13th century. The Turks, unable to save themselves and organize against the Imperial offensive, accept defeat at last and yield their lands to the lord of Constantinople."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 1 #immediate
+	deathdate = { day = 29 month = december year = 1520 }
+
+	action_a = {
+		name = "We submit..."
+		trigger = {
+			ai = yes
+		}
+		command = { type = trigger which = 3101182 } #BYZ: Candar has Submitted to the Empire
+	}
+	action_b = {
+		name = "No! To your tents, O Eretnids!"
+		command = { type = stability value = -6 }
+		command = { type = revolt which = -1 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+	}
+}
+
+#(1419-1520) Eretnids has Submitted to the Empire
+event = {
+	id = 3101182
+	random = NO
+	country = BYZ
+	name = "Eretnids have submitted to the Empire"
+	desc = "After the fall of the Ottoman Sultan, the Roman Empire began to recover one by one the Anatolian provinces fallen to the Turks' hands since the 13th century. The Turks, unable to save themselves and organize against the Imperial offensive, accept defeat at last and yield their lands to the lord of Constantinople."
+
+	action_a = {
+		name = "Huzzah!"
+		command = { type = inherit which = ERT }
+		command = { type = badboy value = -1 }
+	}
+	action_b = {
+		name = "Keep them as allies"
+		command = { type = stability value = 3 }
+		command = { type = badboy value = -1 }
+		command = { type = treasury value = 150 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Turkish Province Events
+
+#(1450-1500) Jihad in Anatolia
+event = {
+	id = 3001185
+	trigger = {
+		NOT = { exists = TUR }
+		owned = { province = 477 data = -1 } #Anatolia
+		owned = { province = 478 data = -1 } #Smyrna
+	}
+	random = NO
+	country = BYZ
+	name = "Jihad in Anatolia"
+	desc = "A relative of the former Ottoman Sultan has declared jihad against the conquerors! He has burnt several villages to the ground and is moving on Bursa."
+
+	date = { year = 1450 }
+	offset = 3600 #10 years
+	deathdate = { year = 1500 }
+
+	action_a = {
+		name = "Ever'body saddle up!"
+		command = { type = revolt which = 477 } #Anatolia
+		command = { type = revolt which = 477 } #Anatolia
+		command = { type = revolt which = 477 } #Anatolia
+	}
+}
+
+#(1460-1500) Ottoman Pretender
+event = {
+	id = 3001186
+	trigger = {
+		event = 3001185 #BYZ: Jihad in Anatolia
+		NOT = { exists = TUR }
+		owned = { province = 477 data = -1 } #Anatolia
+		owned = { province = 476 data = -1 } #Angora
+	}
+	random = NO
+	country = BYZ
+	name = "Ottoman Pretender"
+	desc = "A pretender claiming to be the former Ottoman Sultan has declared jihad against the Romans! We know he's a fake, since the old Sultan is buried in a mosque outside the walls near the Blakhernai Palace, but the rebels don't seem to notice..."
+
+	date = { year = 1460 }
+	offset = 3600 #10 years
+	deathdate = { year = 1500 }
+
+	action_a = {
+		name = "Anyone remember where we posted the infantry?"
+		command = { type = revolt which = 476 } #Angora
+		command = { type = revolt which = 476 } #Angora
+		command = { type = revolt which = 476 } #Angora
+		command = { type = revolt which = 477 } #Anatolia
+	}
+}
+
+#(1470-1500) Last Stand of the House of Osman
+event = {
+	id = 3001187
+	trigger = {
+		event = 3001186 #BYZ: Ottoman Pretender
+		NOT = { exists = TUR }
+		owned = { province = 477 data = -1 } #anatolia
+		owned = { province = 476 data = -1 } #angora
+		owned = { province = 483 data = -1 } #adana
+	}
+	random = NO
+	country = BYZ
+	name = "Last Stand of the House of Osman"
+	desc = "The aga of one of the smaller Turkish tribes has taken up the mantle of the Ottoman Turks and begun attacking the Greek villages near Adana. The strategos has sent a mandator begging for reinforcements."
+
+	date = { year = 1470 }
+	offset = 3600 #10 years
+	deathdate = { year = 1500 }
+
+	action_a = {
+		name = "Where are they digging up these guys?"
+		command = { type = revolt which = 483 } #Adana
+		command = { type = revolt which = 483 } #Adana
+		command = { type = revolt which = 483 } #Adana
+		command = { type = revolt which = 477 } #Anatolia
+		command = { type = revolt which = 476 } #Angora
+	}
+}

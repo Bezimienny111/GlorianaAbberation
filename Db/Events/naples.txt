@@ -1,0 +1,112 @@
+##Naples Events##
+
+
+#(1345) The Assassination of the Duke of Calabria
+event = {
+	id = 119000
+	trigger = {
+		monarch = 160124 #Giovanna I
+	}
+	random = no
+	country = NAP
+	name = "The Assassination of the Duke of Calabria"
+	desc = "Depsite his betrothal to his cousin, Giovanna, in 1334, Andrew, Duke of Calabria, found himself without a crown when in 1344, Giovanna was crowned as sole monarch of Naples.  Andrew's mother, Elizabeth of Hungary, petitioned the Pope to reverse himself and permit the coronation of Andrew. Fearful of what Andrew's coronation might mean to their influence, a group of courtiers set upon the would-be king during the night. After a brief scuffle, Andrew was strangled and his body unceremoniously tossed out the window of the castle. His death did nothing to improve relations with Giovanna's Hungarian relations."
+
+	date = { day = 12 month = september year = 1345 }
+	offset = 5
+	deathdate = { day = 29 month = december year = 1345  }
+
+	action_a = {
+		name = "A horrific development!"
+		command = { type = badboy value = 2 }
+		command = { type = relation which = PAP value = -50 }
+		command = { type = relation which = HUN value = -100 }
+		command = { type = trigger which = 118005 } #HUN: The Assassination of the Duke of Calabria
+	}
+}
+
+#(1345) The Hungarian Invasion of Naples
+event = {
+	id = 119001
+	trigger = {
+		war = { country = NAP country = HUN }
+		monarch = 160124 #Giovanna I
+		OR = {
+			owned = { province = 406 data = -1 } #Provence
+			AND = {
+				owned = { province = 395 data = -1 } #Messina
+				owned = { province = 396 data = -1 } #Sicily
+			}
+		}
+		NOT = { 
+			countrysize = 10 
+			relation = { country = HUN data = 100 }
+		}
+	}
+	random = no
+	country = NAP
+	name = "The Hungarian Invasion of Naples"
+	desc = "Using the assassination of his brother, Andrew, as provocation, Louis of Hungary invaded Naples. After several of her nobles lost their nerve and turned to support the invader, Giovanna quickly realized that her cause was lost. She chose to flee the capital with the plan to return when she could raise a suitable army. Fearing for his safety on her flight, Giovanna chose to leave her young heir, Charles Martel, born posthumously of her husband,Andre, in the capital. Recognizing his importance to the Angevins of Hungary, Giovanna trusted that his uncle, Louis, would protect the child. Her trust was to prove unfounded as the young princeling was to die while being transported back to Hungary."
+
+	date = { day = 12 month = september year = 1345 }
+	offset = 5
+	deathdate = { day = 29 month = december year = 1345  }
+
+	action_a = {
+		trigger = {
+			owned = { province = 406 data = -1 } #Provence
+		}
+		name = "Plot our return in Provence!"
+		command = { type = capital which = 406 }
+		command = { type = relation which = HUN value = -100 }
+		command = { type = cedeprovince which = HUN value = 393 } #Napoli
+		command = { type = cedeprovince which = HUN value = 394 } #Apulia
+	}
+	action_b = {
+		trigger = {
+			AND = {
+				owned = { province = 395 data = -1 } #Messina
+				owned = { province = 396 data = -1 } #Sicily
+			}
+		}
+		name = "Plot our return in Sicily!"
+		command = { type = capital which = 396 }
+		command = { type = relation which = HUN value = -100 }
+		command = { type = cedeprovince which = HUN value = 393 } #Napoli
+		command = { type = cedeprovince which = HUN value = 394 } #Apulia
+	}
+}
+
+
+
+#(1409-1414) Support for the Pisan Papacy
+event = {
+	id = 296020
+	trigger = {
+		NOT = { event = 2296001 }
+		OR = {
+			religion = avignon_catholic
+			religion = catholic
+		}
+		event = 296012
+	}
+	random = no
+	country = NAP
+	name = "EVENTNAME296013" #Support for the Pisan Papacy
+	desc = "EVENTHIST296013"
+
+	date = { year = 1409 }
+	offset = 5
+	deathdate = { year = 1414 }
+
+	action_a = {
+		name = "ACTIONNAME296013A" #Support the Pisan Papacy!
+		command = { type = religion which = pisan_catholic }
+	}
+	action_b = {
+		name = "ACTIONNAME296013B" #He is not the Vicar of Christ!
+		command = { }
+	}
+}
+
+#first free ID: 119002

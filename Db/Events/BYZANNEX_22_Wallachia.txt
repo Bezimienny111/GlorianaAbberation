@@ -1,0 +1,133 @@
+#-----------------------------------------------------------------------------
+# Wallachian Events
+
+#A troubled Wallachia calls on Byzantium for help
+event = {
+	id = 3001375
+	trigger = {
+		event = 3001359
+		atwar = no
+		NOT = { event = 3001376 }
+		OR = {
+			vassal = { country = HUN country = WAL }
+			vassal = { country = TUR country = WAL }
+			vassal = { country = DUL country = WAL }
+			vassal = { country = ALB country = WAL }
+			vassal = { country = HAB country = WAL }
+			vassal = { country = POL country = WAL }
+			vassal = { country = BOS country = WAL }
+			vassal = { country = CAN country = WAL }
+			vassal = { country = CRO country = WAL }
+			vassal = { country = KAR country = WAL }
+			vassal = { country = VEN country = WAL }
+		}
+	}
+	random = NO
+	country = WAL
+	name = "Imperial influence on the Danube"
+	desc = "wallachia has found itself dependent on foreign powers. Now Imperial influence has grown, and an Orthodox protector presents itself. This protection, however, will surely have a price."
+	date = { day = 1 month = january year = 1450 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = { # Let us call for help whatever it costs.
+		name = "If we will be slaves, let us have better masters"
+		command = { type = stability value = 2 }
+		command = { type = breakvassal which = HUN }
+		command = { type = breakvassal which = TUR }
+		command = { type = breakvassal which = DUL }
+		command = { type = breakvassal which = ALB }
+		command = { type = breakvassal which = HAB }
+		command = { type = breakvassal which = POL }
+		command = { type = breakvassal which = BOS }
+		command = { type = breakvassal which = CAN }
+		command = { type = breakvassal which = CRO }
+		command = { type = breakvassal which = KAR }
+		command = { type = breakvassal which = VEN }
+		command = { type = treasury value = -200 }
+		command = { type = trigger which = 3001377 }
+	}
+	action_b = { # Refuse to give our precious independence.
+		name = "Let us keep the evil we know"
+		command = { type = stability value = -1 }
+	}
+}
+
+#A troubled Wallachia calls on Byzantium for help
+event = {
+	id = 3001376
+	trigger = {
+		exists = BYZ
+		atwar = yes
+		NOT = {
+			event = 3001375
+			war = { country = BYZ country = WAL }
+			alliance = { country = RUS country = WAL }
+			alliance = { country = HUN country = WAL }
+			alliance = { country = TUR country = WAL }
+			alliance = { country = DUL country = WAL }
+			alliance = { country = ALB country = WAL }
+			alliance = { country = HAB country = WAL }
+			alliance = { country = POL country = WAL }
+			alliance = { country = BOS country = WAL }
+			alliance = { country = CAN country = WAL }
+			alliance = { country = CRO country = WAL }
+			alliance = { country = KAR country = WAL }
+			alliance = { country = VEN country = WAL }
+			alliance = { country = SER country = WAL }
+			alliance = { country = MOL country = WAL }
+			alliance = { country = BOH country = WAL }
+		}
+	}
+	random = NO
+	country = WAL
+	name = "An appeal to Constantinople"
+	desc = "Constantly embroiled in many wars, Wallachia was sometimes left alone. Now Imperial influence has grown, and Byzantium is an obvious protector. This protection, however, will surely have a price."
+	date = { day = 1 month = january year = 1450 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = { # Let us call for help whatever it costs.
+		name = "Let us call for help whatever it costs."
+		command = { type = stability value = 2 }
+		command = { type = treasury value = -200 }
+		command = { type = breakvassal which = HUN }
+		command = { type = breakvassal which = TUR }
+		command = { type = breakvassal which = DUL }
+		command = { type = breakvassal which = ALB }
+		command = { type = breakvassal which = HAB }
+		command = { type = breakvassal which = POL }
+		command = { type = breakvassal which = BOS }
+		command = { type = breakvassal which = CAN }
+		command = { type = breakvassal which = CRO }
+		command = { type = breakvassal which = KAR }
+		command = { type = breakvassal which = VEN }
+		command = { type = trigger which = 3001377 }
+	}
+	action_b = { # Refuse to give our precious independence.
+		name = "Refuse to give our precious independence."
+		command = { type = stability value = -1 }
+	}
+}
+
+#Byzantium's reply to Wallachia
+event = {
+	id = 3001377
+	random = NO
+	country = BYZ
+	name = "An appeal from Wallachia"
+	desc = "Wallachia has sent us a call for help. The generals think the Trans-Danube region is more trouble than it's worth, but the Patriarch is mindful to protect its Orthodoxy against the Magyars and Germans."
+
+	action_a = { # Take the money and run
+		name = "Thank the envoys for their time"
+		command = { type = treasury value = 200 }
+	}
+	action_b = { # Take what you can get
+		name = "We shall not refuse them succor"
+		command = { type = stability value = -1 }
+		command = { type = vassal which = WAL }
+		command = { type = dynastic which = WAL }
+		command = { type = alliance which = WAL }
+		command = { type = relation which = WAL value = 300 }
+	}
+}

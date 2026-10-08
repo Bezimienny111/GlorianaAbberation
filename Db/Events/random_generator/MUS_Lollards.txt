@@ -1,0 +1,105 @@
+##MUS Events##
+
+#(1390-1410) Lollards in Kent
+event = {
+	id = 210000
+	trigger = {
+		event = 105589 #ENG: Wyclif's Bible
+	}
+	random = no
+	country = MUS
+	name = "AI_EVENT"
+	desc = "Lollards?"
+
+	date = { day = 0 month = january year = 1390 }
+	offset = 100
+	deathdate = { day = 0 month = january year = 1410 }
+
+	action_a = {
+		ai_chance = 50
+		name = "OK"
+		#Kent converts to Lollard
+		command = { type = trigger which = 105598 } #ENG: Lollards in Kent
+	}
+	action_b = {
+		ai_chance = 50
+		name = "OK"
+		#Kent remains Catholic
+		command = { }
+	}
+}
+
+#(1390-1410) Lollards in Bristol
+event = {
+	id = 210001
+	trigger = {
+		event = 105589 #ENG: Wyclif's Bible
+	}
+	random = no
+	country = MUS
+	name = "AI_EVENT"
+	desc = "Lollards?"
+
+	date = { day = 0 month = january year = 1390 }
+	offset = 100
+	deathdate = { day = 0 month = january year = 1410 }
+
+	action_a = {
+		ai_chance = 50
+		name = "OK"
+		#Bristol converts to Lollard
+		command = { type = trigger which = 105599 } #ENG: Lollards in Bristol
+	}
+	action_b = {
+		ai_chance = 50
+		name = "OK"
+		#Bristol remains Catholic
+		command = { }
+	}
+}
+
+#(1377-1380) Lollards in Bristol
+event = {
+	id = 210002 #trigger by ENG_105587_B
+	random = no
+	country = MUS
+	name = "AI_EVENT"
+	desc = "Lollards?"
+
+	action_a = {
+		ai_chance = 15
+		name = "OK"
+		#Bristol converts to Lollard
+		command = { type = trigger which = 105597 } #ENG: Lollards in Bristol
+	}
+	action_b = {
+		ai_chance = 85
+		name = "OK"
+		#Bristol remains Catholic
+		command = { }
+	}
+}
+
+#(1377-1380) Lollards in Kent
+event = {
+	id = 210003 #trigger by ENG_105587_B
+	random = no
+	country = MUS
+	name = "AI_EVENT"
+	desc = "Lollards?"
+
+	action_a = {
+		ai_chance = 15
+		name = "OK"
+		#Kent converts to Lollard
+		command = { type = trigger which = 105596 } #ENG: Lollards in Kent
+	}
+	action_b = {
+		ai_chance = 85
+		name = "OK"
+		#Kent remains Catholic
+		command = { }
+	}
+}
+
+#First free ID: 210004

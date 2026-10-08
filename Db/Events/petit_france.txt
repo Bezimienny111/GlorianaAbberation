@@ -1,0 +1,1380 @@
+###################################################################
+### Events for Burgundy or French minors becoming France	###
+### For the New AJF Scenario					###
+### by Alexander 'Ayeshteni' Fowler				###
+###################################################################
+
+#Altered vanilla French minor becomes france events
+#The Crown of France#
+event = {
+
+	id = 3588
+	trigger = {
+			owned = {
+					province = 385
+					data = -1
+				}
+			NOT = {
+				exists = FRA
+				}
+		}
+	random = no
+	country = GUY
+	name = "EVENTNAME3589"
+	desc = "EVENTHIST3589"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1515 }
+
+	action_a ={					#France is reborn with me#
+		name = "ACTIONNAME3589A"
+		command = { type = vp value = 200 }
+		command = { type = stability value = 3 }
+		command = { type = country which = FRA }
+		command = { type = INF which = 385 value = 15000 }
+		command = { type = CAV which = 385 value = 10000 }
+		command = { type = ART which = 385 value = 30 }
+		command = { type = setflag which = aqufra }
+	}
+
+	action_b ={					#Let France rest in peace#
+		name = "ACTIONNAME3589B"
+		command = { type = vp value = -100 }
+		command = { type = stability value = -3 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = BUR value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = SPA value = 150 }
+	}
+}
+
+#The Crown of France#
+event = {
+
+	id = 3593
+	trigger = {
+			owned = {
+					province = 385
+					data = -1
+				}
+			NOT = {
+				exists = FRA
+				}
+		}
+	random = no
+	country = AUV
+	name = "EVENTNAME3593"
+	desc = "EVENTHIST3593"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1515 }
+
+	action_a ={					#France is reborn with me#
+		name = "ACTIONNAME3593A"
+		command = { type = vp value = 200 }
+		command = { type = stability value = 3 }
+		command = { type = country which = FRA }
+		command = { type = INF which = 385 value = 15000 }
+		command = { type = CAV which = 385 value = 10000 }
+		command = { type = ART which = 385 value = 30 }
+		command = { type = setflag which = auvfra }
+	}
+
+	action_b ={					#Let France rest in peace#
+		name = "ACTIONNAME3593B"
+		command = { type = vp value = -100 }
+		command = { type = stability value = -3 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = BUR value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = SPA value = 150 }
+	}
+}
+
+#The Crown of France#
+event = {
+
+	id = 3590
+	trigger = {
+			owned = {
+					province = 385
+					data = -1
+				}
+			NOT = {
+				exists = FRA
+				}
+		}
+	random = no
+	country = BOU
+	name = "EVENTNAME3590"
+	desc = "EVENTHIST3590"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1515 }
+
+	action_a ={				#France is reborn with me#
+		name = "ACTIONNAME3590A"
+		command = { type = vp value = 200 }
+		command = { type = stability value = 3 }
+		command = { type = country which = FRA }
+		command = { type = INF which = 385 value = 15000 }
+		command = { type = CAV which = 385 value = 10000 }
+		command = { type = ART which = 385 value = 30 }
+	}
+
+	action_b ={				#Let France rest in peace#
+		name = "ACTIONNAME3590B"
+		command = { type = vp value = -100 }
+		command = { type = stability value = -3 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = BUR value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = SPA value = 150 }
+	}
+}
+
+#The Crown of France#
+event = {
+
+	id = 3601
+	trigger = {
+			owned = {
+					province = 385
+					data = -1
+				}
+			NOT = {
+				exists = FRA
+				}
+		}
+	random = no
+	country = BRI
+	name = "EVENTNAME3601"
+	desc = "EVENTHIST3601"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1515 }
+
+	action_a ={					#France is reborn with me#
+		name = "ACTIONNAME3601A"
+		command = { type = vp value = 200 }
+		command = { type = stability value = 3 }
+		command = { type = country which = FRA }
+		command = { type = INF which = 385 value = 15000 }
+		command = { type = CAV which = 385 value = 10000 }
+		command = { type = ART which = 385 value = 30 }
+		command = { type = setflag which = brifra }
+	}
+
+	action_b ={					#Let France rest in peace#
+		name = "ACTIONNAME3601B"
+		command = { type = vp value = -100 }
+		command = { type = stability value = -3 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = BUR value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = SPA value = 150 }
+	}
+}
+
+#The Crown of France#
+event = {
+
+	id = 3591
+	trigger = {
+			owned = {
+					province = 385
+					data = -1
+				}
+			NOT = {
+				exists = FRA
+				}
+		}
+	random = no
+	country = ORL
+	name = "EVENTNAME3591"
+	desc = "EVENTHIST3591"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1515 }
+
+	action_a ={					#France is reborn with me#
+		name = "ACTIONNAME3591A"
+		command = { type = vp value = 200 }
+		command = { type = stability value = 3 }
+		command = { type = country which = FRA }
+		command = { type = INF which = 385 value = 15000 }
+		command = { type = CAV which = 385 value = 10000 }
+		command = { type = ART which = 385 value = 30 }
+		command = { type = setflag which = orlfra }
+	}
+
+	action_b ={					#Let France rest in peace#
+		name = "ACTIONNAME3591B"
+		command = { type = vp value = -100 }
+		command = { type = stability value = -3 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = BUR value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = SPA value = 150 }
+	}
+}
+
+#The Crown of France#
+event = {
+
+	id = 3606
+	trigger = {
+			owned = {
+					province = 385
+					data = -1
+				}
+			NOT = {
+				exists = FRA
+				}
+		}
+	random = no
+	country = PRO
+	name = "EVENTNAME3606"
+	desc = "EVENTHIST3606"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1515 }
+
+	action_a ={					#France is reborn with me#
+		name = "ACTIONNAME3606A"
+		command = { type = vp value = 200 }
+		command = { type = stability value = 3 }
+		command = { type = country which = FRA }
+		command = { type = INF which = 385 value = 15000 }
+		command = { type = CAV which = 385 value = 10000 }
+		command = { type = ART which = 385 value = 30 }
+		command = { type = setflag which = profra }
+	}
+
+	action_b ={					#Let France rest in peace#
+		name = "ACTIONNAME3606B"
+		command = { type = vp value = -100 }
+		command = { type = stability value = -3 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = BUR value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = SPA value = 150 }
+	}
+}
+
+#Petit-France Monarch events.
+#d'Aquataine dynasty
+event = {
+
+	id = 140000
+	trigger = {
+		flag = aqufra
+	}
+	random = no
+	country = FRA
+	name = "The d'Aquitaine's rule France"
+	desc = "With the disolution of the French state it was up to the various french vassal dynasties to try and preserve the Kingdom of the Franks. Through war and diplomacy, the struggle was long and arduous. Nevertheless, the Kingdom of France was restored under the guise of the d'Aquitaine dynasty from Aquitaine. Long may they rule!"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 5
+	deathdate = { day = 1 month = january year = 1515 }
+
+	action_a = {
+		name = "Vive la France!"
+		command = { type = flagname which = france }
+		command = { type = sleepmonarch which = 04001 }
+		command = { type = sleepmonarch which = 04003 }
+		command = { type = sleepmonarch which = 04004 }
+		command = { type = sleepmonarch which = 04005 }
+		command = { type = sleepmonarch which = 04006 }
+		command = { type = sleepmonarch which = 04007 }
+		command = { type = sleepmonarch which = 04008 }
+		command = { type = sleepmonarch which = 13041 }
+		command = { type = sleepmonarch which = 04009 }
+		command = { type = sleepmonarch which = 04010 }
+		command = { type = sleepmonarch which = 04011 }
+		command = { type = wakemonarch which = 13050 }
+		command = { type = wakemonarch which = 13051 }
+		command = { type = wakemonarch which = 13052 }
+		command = { type = wakemonarch which = 13053 }
+		command = { type = wakemonarch which = 13054 }
+		command = { type = wakemonarch which = 13055 }
+		command = { type = wakemonarch which = 13056 }
+		command = { type = wakemonarch which = 13057 }
+		command = { type = wakemonarch which = 13058 }
+		command = { type = wakemonarch which = 13059 }
+		command = { type = vp value = 10 }
+	}
+}
+
+#d'Auvergne dynasty
+event = {
+
+	id = 140001
+	trigger = {
+		flag = auvfra
+	}
+	random = no
+	country = FRA
+	name = "The d'Auvergne's rule France"
+	desc = "With the disolution of the French state it was up to the various french vassal dynasties to try and preserve the Kingdom of the Franks. Through war and diplomacy, the struggle was long and arduous. Nevertheless, the Kingdom of France was restored under the guise of the d'Auvergne dynasty from Auvergne. Long may they rule!"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 5
+	deathdate = { day = 1 month = january year = 1515 }
+
+	action_a = {
+		name = "Vive la France!"
+		command = { type = flagname which = france }
+		command = { type = sleepmonarch which = 04001 }
+		command = { type = sleepmonarch which = 04003 }
+		command = { type = sleepmonarch which = 04004 }
+		command = { type = sleepmonarch which = 04005 }
+		command = { type = sleepmonarch which = 04006 }
+		command = { type = sleepmonarch which = 04007 }
+		command = { type = sleepmonarch which = 04008 }
+		command = { type = sleepmonarch which = 13041 }
+		command = { type = sleepmonarch which = 04009 }
+		command = { type = sleepmonarch which = 04010 }
+		command = { type = sleepmonarch which = 04011 }
+		command = { type = sleepmonarch which = 13042 }
+		command = { type = sleepmonarch which = 04012 }
+		command = { type = sleepmonarch which = 13043 }
+		command = { type = sleepmonarch which = 04013 }
+		command = { type = sleepmonarch which = 04014 }
+		command = { type = sleepmonarch which = 04015 }
+		command = { type = wakemonarch which = 13060 }
+		command = { type = wakemonarch which = 13061 }
+		command = { type = wakemonarch which = 13062 }
+		command = { type = wakemonarch which = 13063 }
+		command = { type = wakemonarch which = 13064 }
+		command = { type = wakemonarch which = 13065 }
+		command = { type = wakemonarch which = 13066 }
+		command = { type = wakemonarch which = 13067 }
+		command = { type = wakemonarch which = 13068 }
+		command = { type = wakemonarch which = 13069 }
+		command = { type = wakemonarch which = 13070 }
+		command = { type = wakemonarch which = 13071 }
+		command = { type = wakemonarch which = 13072 }
+		command = { type = wakemonarch which = 13073 }
+		command = { type = wakemonarch which = 13074 }
+		command = { type = wakemonarch which = 13075 }
+		command = { type = wakemonarch which = 13076 }
+		command = { type = vp value = 10 }
+	}
+}
+
+#de Bourbon dynasty
+event = {
+
+	id = 140002
+	trigger = {
+		flag = boufra
+	}
+	random = no
+	country = FRA
+	name = "The de Bourbon's rule France"
+	desc = "With the disolution of the French state it was up to the various french vassal dynasties to try and preserve the Kingdom of the Franks. Through war and diplomacy, the struggle was long and arduous. Nevertheless, the Kingdom of France was restored under the guise of the de Bourbon dynasty from Bourbonnais. Long may they rule!"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 5
+	deathdate = { day = 1 month = january year = 1515 }
+
+	action_a = {
+		name = "Vive la France!"
+		command = { type = flagname which = france }
+		command = { type = sleepmonarch which = 04001 }
+		command = { type = sleepmonarch which = 04003 }
+		command = { type = sleepmonarch which = 04004 }
+		command = { type = sleepmonarch which = 04005 }
+		command = { type = sleepmonarch which = 04006 }
+		command = { type = sleepmonarch which = 04007 }
+		command = { type = sleepmonarch which = 04008 }
+		command = { type = sleepmonarch which = 13041 }
+		command = { type = sleepmonarch which = 04009 }
+		command = { type = sleepmonarch which = 04010 }
+		command = { type = sleepmonarch which = 04011 }
+		command = { type = wakemonarch which = 13077 }
+		command = { type = wakemonarch which = 13078 }
+		command = { type = wakemonarch which = 13079 }
+		command = { type = wakemonarch which = 13080 }
+		command = { type = wakemonarch which = 13081 }
+		command = { type = wakemonarch which = 13082 }
+		command = { type = wakemonarch which = 13083 }
+		command = { type = wakemonarch which = 13084 }
+		command = { type = wakemonarch which = 13085 }
+		command = { type = wakemonarch which = 13086 }
+		command = { type = vp value = 10 }
+	}
+}
+
+#de Bretagne dynasty
+event = {
+
+	id = 140003
+	trigger = {
+		flag = brifra
+	}
+	random = no
+	country = FRA
+	name = "The de Bretagne's rule France"
+	desc = "With the disolution of the French state it was up to the various french vassal dynasties to try and preserve the Kingdom of the Franks. Through war and diplomacy, the struggle was long and arduous. Nevertheless, the Kingdom of France was restored under the guise of the de Bretagne dynasty from Brittany. Long may they rule!"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 5
+	deathdate = { day = 1 month = january year = 1515 }
+
+	action_a = {
+		name = "Vive la France!"
+		command = { type = flagname which = france }
+		command = { type = sleepmonarch which = 04001 }
+		command = { type = sleepmonarch which = 04003 }
+		command = { type = sleepmonarch which = 04004 }
+		command = { type = sleepmonarch which = 04005 }
+		command = { type = sleepmonarch which = 04006 }
+		command = { type = wakemonarch which = 13087 }
+		command = { type = wakemonarch which = 13088 }
+		command = { type = wakemonarch which = 13089 }
+		command = { type = wakemonarch which = 13090 }
+		command = { type = wakemonarch which = 13091 }
+		command = { type = wakemonarch which = 13092 }
+		command = { type = wakemonarch which = 13093 }
+		command = { type = wakemonarch which = 13094 }
+		command = { type = vp value = 10 }
+	}
+}
+
+#d'Orleans dynasty
+event = {
+
+	id = 140004
+	trigger = {
+		flag = orlfra
+	}
+	random = no
+	country = FRA
+	name = "The d'Orleans' rule France"
+	desc = "With the disolution of the French state it was up to the various french vassal dynasties to try and preserve the Kingdom of the Franks. Through war and diplomacy, the struggle was long and arduous. Nevertheless, the Kingdom of France was restored under the guise of the d'orleans dynasty from Orleannais. Long may they rule!"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 5
+	deathdate = { day = 1 month = january year = 1515 }
+
+	action_a = {
+		name = "Vive la France!"
+		command = { type = sleepmonarch which = 04001 }
+		command = { type = sleepmonarch which = 04003 }
+		command = { type = sleepmonarch which = 04004 }
+		command = { type = sleepmonarch which = 04005 }
+		command = { type = sleepmonarch which = 04006 }
+		command = { type = sleepmonarch which = 04007 }
+		command = { type = sleepmonarch which = 04008 }
+		command = { type = sleepmonarch which = 13041 }
+		command = { type = sleepmonarch which = 04009 }
+		command = { type = sleepmonarch which = 04010 }
+		command = { type = sleepmonarch which = 04011 }
+		command = { type = sleepmonarch which = 13042 }
+		command = { type = sleepmonarch which = 04012 }
+		command = { type = sleepmonarch which = 13043 }
+		command = { type = sleepmonarch which = 04013 }
+		command = { type = sleepmonarch which = 04014 }
+		command = { type = sleepmonarch which = 04015 }
+		command = { type = wakemonarch which = 13095 }
+		command = { type = wakemonarch which = 13096 }
+		command = { type = wakemonarch which = 13097 }
+		command = { type = wakemonarch which = 13098 }
+		command = { type = wakemonarch which = 13099 }
+		command = { type = wakemonarch which = 13100 }
+		command = { type = wakemonarch which = 13101 }
+		command = { type = wakemonarch which = 13102 }
+		command = { type = wakemonarch which = 13103 }
+		command = { type = wakemonarch which = 13104 }
+		command = { type = wakemonarch which = 13105 }
+		command = { type = wakemonarch which = 13106 }
+		command = { type = wakemonarch which = 13107 }
+		command = { type = wakemonarch which = 13108 }
+		command = { type = wakemonarch which = 13109 }
+		command = { type = wakemonarch which = 13110 }
+		command = { type = vp value = 10 }
+	}
+}
+
+#de Provence dynasty
+event = {
+
+	id = 140005
+	trigger = {
+		flag = profra
+	}
+	random = no
+	country = FRA
+	name = "The de Provence's rule France"
+	desc = "With the disolution of the French state it was up to the various french vassal dynasties to try and preserve the Kingdom of the Franks. Through war and diplomacy, the struggle was long and arduous. Nevertheless, the Kingdom of France was restored under the guise of the de Provence dynasty from Provence. Long may they rule!"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 5
+	deathdate = { day = 1 month = january year = 1515 }
+
+	action_a = {
+		name = "Vive la France!"
+		command = { type = flagname which = france }
+		command = { type = sleepmonarch which = 04001 }
+		command = { type = sleepmonarch which = 04003 }
+		command = { type = wakemonarch which = 13111 }
+		command = { type = wakemonarch which = 13112 }
+		command = { type = wakemonarch which = 13113 }
+		command = { type = vp value = 10 }
+	}
+}
+
+#The Crown of France#
+event = {
+
+	id = 140006
+	trigger = {
+			owned = {
+					province = 385
+					data = -1
+				}
+			NOT = {
+				exists = FRA
+				}
+		}
+	random = no
+	country = ANJ
+	name = "EVENTNAME3606"
+	desc = "EVENTHIST3606"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1515 }
+
+	action_a ={					#France is reborn with me#
+		name = "ACTIONNAME3606A"
+		command = { type = vp value = 200 }
+		command = { type = stability value = 3 }
+		command = { type = country which = FRA }
+		command = { type = INF which = 385 value = 15000 }
+		command = { type = CAV which = 385 value = 10000 }
+		command = { type = ART which = 385 value = 30 }
+		command = { type = setflag which = anjfra }
+	}
+
+	action_b ={					#Let France rest in peace#
+		name = "ACTIONNAME3606B"
+		command = { type = vp value = -100 }
+		command = { type = stability value = -3 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = BUR value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = SPA value = 150 }
+	}
+}
+
+#d'Anjou dynasty
+event = {
+
+	id = 140007
+	trigger = {
+		flag = anjfra
+	}
+	random = no
+	country = FRA
+	name = "The d'Anjou's rule France"
+	desc = "With the disolution of the French state it was up to the various french vassal dynasties to try and preserve the Kingdom of the Franks. Through war and diplomacy, the struggle was long and arduous. Nevertheless, the Kingdom of France was restored under the guise of the d'Anjou dynasty from Anjou. Long may they rule!"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 5
+	deathdate = { day = 1 month = january year = 1515 }
+
+	action_a = {
+		name = "Vive la France!"
+		command = { type = flagname which = france }
+		command = { type = sleepmonarch which = 04001 }
+		command = { type = sleepmonarch which = 04003 }
+		command = { type = sleepmonarch which = 04004 }
+		command = { type = sleepmonarch which = 04005 }
+		command = { type = sleepmonarch which = 04006 }
+		command = { type = sleepmonarch which = 04007 }
+		command = { type = sleepmonarch which = 04008 }
+		command = { type = sleepmonarch which = 13041 }
+		command = { type = sleepmonarch which = 04009 }
+		command = { type = sleepmonarch which = 04010 }
+		command = { type = sleepmonarch which = 04011 }
+		command = { type = sleepmonarch which = 13042 }
+		command = { type = sleepmonarch which = 04012 }
+		command = { type = sleepmonarch which = 13043 }
+		command = { type = sleepmonarch which = 04013 }
+		command = { type = sleepmonarch which = 04014 }
+		command = { type = sleepmonarch which = 04015 }
+		command = { type = wakemonarch which = 13114 }
+		command = { type = wakemonarch which = 13115 }
+		command = { type = wakemonarch which = 13116 }
+		command = { type = wakemonarch which = 13117 }
+		command = { type = wakemonarch which = 13118 }
+		command = { type = wakemonarch which = 13119 }
+		command = { type = wakemonarch which = 13120 }
+		command = { type = wakemonarch which = 13121 }
+		command = { type = wakemonarch which = 13122 }
+		command = { type = wakemonarch which = 13123 }
+		command = { type = wakemonarch which = 13124 }
+		command = { type = wakemonarch which = 13125 }
+		command = { type = wakemonarch which = 13126 }
+		command = { type = wakemonarch which = 13127 }
+		command = { type = wakemonarch which = 13128 }
+		command = { type = wakemonarch which = 13129 }
+		command = { type = wakemonarch which = 13130 }
+		command = { type = vp value = 10 }
+	}
+}
+
+#The Crown of France#
+event = {
+
+	id = 140008
+	trigger = {
+			owned = {
+					province = 385
+					data = -1
+				}
+			NOT = {
+				exists = FRA
+				}
+		}
+	random = no
+	country = AMG
+	name = "EVENTNAME3606"
+	desc = "EVENTHIST3606"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1515 }
+
+	action_a ={					#France is reborn with me#
+		name = "ACTIONNAME3606A"
+		command = { type = vp value = 200 }
+		command = { type = stability value = 3 }
+		command = { type = country which = FRA }
+		command = { type = INF which = 385 value = 15000 }
+		command = { type = CAV which = 385 value = 10000 }
+		command = { type = ART which = 385 value = 30 }
+		command = { type = setflag which = amgfra }
+	}
+
+	action_b ={					#Let France rest in peace#
+		name = "ACTIONNAME3606B"
+		command = { type = vp value = -100 }
+		command = { type = stability value = -3 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = BUR value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = SPA value = 150 }
+	}
+}
+
+#d'Armagnac dynasty
+event = {
+
+	id = 140009
+	trigger = {
+		flag = amgfra
+	}
+	random = no
+	country = FRA
+	name = "The d'Armagnac's rule France"
+	desc = "With the disolution of the French state it was up to the various french vassal dynasties to try and preserve the Kingdom of the Franks. Through war and diplomacy, the struggle was long and arduous. Nevertheless, the Kingdom of France was restored under the guise of the d'Armagnac dynasty from Armagnac. Long may they rule!"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 5
+	deathdate = { day = 1 month = january year = 1515 }
+
+	action_a = {
+		name = "Vive la France!"
+		command = { type = flagname which = france }
+		command = { type = sleepmonarch which = 04001 }
+		command = { type = sleepmonarch which = 04003 }
+		command = { type = sleepmonarch which = 04004 }
+		command = { type = sleepmonarch which = 04005 }
+		command = { type = sleepmonarch which = 04006 }
+		command = { type = sleepmonarch which = 04007 }
+		command = { type = sleepmonarch which = 04008 }
+		command = { type = sleepmonarch which = 13041 }
+		command = { type = sleepmonarch which = 04009 }
+		command = { type = sleepmonarch which = 04010 }
+		command = { type = sleepmonarch which = 04011 }
+		command = { type = sleepmonarch which = 13042 }
+		command = { type = sleepmonarch which = 04012 }
+		command = { type = sleepmonarch which = 13043 }
+		command = { type = sleepmonarch which = 04013 }
+		command = { type = sleepmonarch which = 04014 }
+		command = { type = sleepmonarch which = 04015 }
+		command = { type = wakemonarch which = 13131 }
+		command = { type = wakemonarch which = 13132 }
+		command = { type = wakemonarch which = 13133 }
+		command = { type = wakemonarch which = 13134 }
+		command = { type = wakemonarch which = 13135 }
+		command = { type = wakemonarch which = 13136 }
+		command = { type = wakemonarch which = 13137 }
+		command = { type = wakemonarch which = 13138 }
+		command = { type = wakemonarch which = 13139 }
+		command = { type = wakemonarch which = 13140 }
+		command = { type = wakemonarch which = 13141 }
+		command = { type = wakemonarch which = 13142 }
+		command = { type = wakemonarch which = 13143 }
+		command = { type = wakemonarch which = 13144 }
+		command = { type = wakemonarch which = 13145 }
+		command = { type = wakemonarch which = 13146 }
+		command = { type = wakemonarch which = 13147 }
+		command = { type = vp value = 10 }
+	}
+}
+
+#The Crown of France#
+event = {
+
+	id = 140010
+	trigger = {
+			owned = {
+					province = 385
+					data = -1
+				}
+			NOT = {
+				exists = FRA
+				}
+		}
+	random = no
+	country = ART
+	name = "EVENTNAME3606"
+	desc = "EVENTHIST3606"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1515 }
+
+	action_a ={					#France is reborn with me#
+		name = "ACTIONNAME3606A"
+		command = { type = vp value = 200 }
+		command = { type = stability value = 3 }
+		command = { type = country which = FRA }
+		command = { type = INF which = 385 value = 15000 }
+		command = { type = CAV which = 385 value = 10000 }
+		command = { type = ART which = 385 value = 30 }
+		command = { type = setflag which = artfra }
+	}
+
+	action_b ={					#Let France rest in peace#
+		name = "ACTIONNAME3606B"
+		command = { type = vp value = -100 }
+		command = { type = stability value = -3 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = BUR value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = SPA value = 150 }
+	}
+}
+
+#d'Artois dynasty
+event = {
+
+	id = 140011
+	trigger = {
+		flag = artfra
+	}
+	random = no
+	country = FRA
+	name = "The d'Artois's rule France"
+	desc = "With the disolution of the French state it was up to the various french vassal dynasties to try and preserve the Kingdom of the Franks. Through war and diplomacy, the struggle was long and arduous. Nevertheless, the Kingdom of France was restored under the guise of the d'Artois dynasty from Artois. Long may they rule!"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 5
+	deathdate = { day = 1 month = january year = 1515 }
+
+	action_a = {
+		name = "Vive la France!"
+		command = { type = flagname which = france }
+		command = { type = sleepmonarch which = 04001 }
+		command = { type = sleepmonarch which = 04003 }
+		command = { type = sleepmonarch which = 04004 }
+		command = { type = sleepmonarch which = 04005 }
+		command = { type = sleepmonarch which = 04006 }
+		command = { type = sleepmonarch which = 04007 }
+		command = { type = sleepmonarch which = 04008 }
+		command = { type = sleepmonarch which = 13041 }
+		command = { type = sleepmonarch which = 04009 }
+		command = { type = sleepmonarch which = 04010 }
+		command = { type = sleepmonarch which = 04011 }
+		command = { type = sleepmonarch which = 13042 }
+		command = { type = sleepmonarch which = 04012 }
+		command = { type = sleepmonarch which = 13043 }
+		command = { type = sleepmonarch which = 04013 }
+		command = { type = sleepmonarch which = 04014 }
+		command = { type = wakemonarch which = 13148 }
+		command = { type = wakemonarch which = 13149 }
+		command = { type = wakemonarch which = 13150 }
+		command = { type = wakemonarch which = 13151 }
+		command = { type = wakemonarch which = 13152 }
+		command = { type = wakemonarch which = 13153 }
+		command = { type = wakemonarch which = 13154 }
+		command = { type = wakemonarch which = 13155 }
+		command = { type = wakemonarch which = 13156 }
+		command = { type = wakemonarch which = 13157 }
+		command = { type = wakemonarch which = 13158 }
+		command = { type = wakemonarch which = 13159 }
+		command = { type = wakemonarch which = 13160 }
+		command = { type = wakemonarch which = 13161 }
+		command = { type = vp value = 10 }
+	}
+}
+
+#The Crown of France#
+event = {
+
+	id = 140012
+	trigger = {
+			owned = {
+					province = 385
+					data = -1
+				}
+			NOT = {
+				exists = FRA
+				}
+		}
+	random = no
+	country = CMG
+	name = "EVENTNAME3606"
+	desc = "EVENTHIST3606"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1515 }
+
+	action_a ={					#France is reborn with me#
+		name = "ACTIONNAME3606A"
+		command = { type = vp value = 200 }
+		command = { type = stability value = 3 }
+		command = { type = country which = FRA }
+		command = { type = INF which = 385 value = 15000 }
+		command = { type = CAV which = 385 value = 10000 }
+		command = { type = ART which = 385 value = 30 }
+	}
+
+	action_b ={					#Let France rest in peace#
+		name = "ACTIONNAME3606B"
+		command = { type = vp value = -100 }
+		command = { type = stability value = -3 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = BUR value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = SPA value = 150 }
+	}
+}
+
+#The Crown of France#
+event = {
+
+	id = 140013
+	trigger = {
+			owned = {
+					province = 385
+					data = -1
+				}
+			NOT = {
+				exists = FRA
+				}
+		}
+	random = no
+	country = DAU
+	name = "EVENTNAME3606"
+	desc = "EVENTHIST3606"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1515 }
+
+	action_a ={					#France is reborn with me#
+		name = "ACTIONNAME3606A"
+		command = { type = vp value = 200 }
+		command = { type = stability value = 3 }
+		command = { type = country which = FRA }
+		command = { type = INF which = 385 value = 15000 }
+		command = { type = CAV which = 385 value = 10000 }
+		command = { type = ART which = 385 value = 30 }
+	}
+
+	action_b ={					#Let France rest in peace#
+		name = "ACTIONNAME3606B"
+		command = { type = vp value = -100 }
+		command = { type = stability value = -3 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = BUR value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = SPA value = 150 }
+	}
+}
+
+#The Crown of France#
+event = {
+
+	id = 140014
+	trigger = {
+			owned = {
+					province = 385
+					data = -1
+				}
+			NOT = {
+				exists = FRA
+				}
+		}
+	random = no
+	country = LGD
+	name = "EVENTNAME3606"
+	desc = "EVENTHIST3606"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1515 }
+
+	action_a ={					#France is reborn with me#
+		name = "ACTIONNAME3606A"
+		command = { type = vp value = 200 }
+		command = { type = stability value = 3 }
+		command = { type = country which = FRA }
+		command = { type = INF which = 385 value = 15000 }
+		command = { type = CAV which = 385 value = 10000 }
+		command = { type = ART which = 385 value = 30 }
+	}
+
+	action_b ={					#Let France rest in peace#
+		name = "ACTIONNAME3606B"
+		command = { type = vp value = -100 }
+		command = { type = stability value = -3 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = BUR value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = SPA value = 150 }
+	}
+}
+
+#The Crown of France#
+event = {
+
+	id = 140015
+	trigger = {
+			owned = {
+					province = 385
+					data = -1
+				}
+			NOT = {
+				exists = FRA
+				}
+		}
+	random = no
+	country = NRM
+	name = "EVENTNAME3606"
+	desc = "EVENTHIST3606"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1515 }
+
+	action_a ={					#France is reborn with me#
+		name = "ACTIONNAME3606A"
+		command = { type = vp value = 200 }
+		command = { type = stability value = 3 }
+		command = { type = country which = FRA }
+		command = { type = INF which = 385 value = 15000 }
+		command = { type = CAV which = 385 value = 10000 }
+		command = { type = ART which = 385 value = 30 }
+		command = { type = setflag which = nrmfra }
+	}
+
+	action_b ={					#Let France rest in peace#
+		name = "ACTIONNAME3606B"
+		command = { type = vp value = -100 }
+		command = { type = stability value = -3 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = BUR value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = SPA value = 150 }
+	}
+}
+
+#de normandy dynasty
+event = {
+
+	id = 140016
+	trigger = {
+		flag = nrmfra
+	}
+	random = no
+	country = FRA
+	name = "The de Normandie's rule France"
+	desc = "With the disolution of the French state it was up to the various french vassal dynasties to try and preserve the Kingdom of the Franks. Through war and diplomacy, the struggle was long and arduous. Nevertheless, the Kingdom of France was restored under the guise of the de Normandy dynasty from Normandy. Long may they rule!"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 5
+	deathdate = { day = 1 month = january year = 1515 }
+
+	action_a = {
+		name = "Vive la France!"
+		command = { type = flagname which = france }
+		command = { type = sleepmonarch which = 04001 }
+		command = { type = sleepmonarch which = 04003 }
+		command = { type = sleepmonarch which = 04004 }
+		command = { type = sleepmonarch which = 04005 }
+		command = { type = sleepmonarch which = 04006 }
+		command = { type = sleepmonarch which = 04007 }
+		command = { type = sleepmonarch which = 04008 }
+		command = { type = sleepmonarch which = 13041 }
+		command = { type = sleepmonarch which = 04009 }
+		command = { type = sleepmonarch which = 04010 }
+		command = { type = sleepmonarch which = 04011 }
+		command = { type = sleepmonarch which = 13042 }
+		command = { type = sleepmonarch which = 04012 }
+		command = { type = sleepmonarch which = 13043 }
+		command = { type = sleepmonarch which = 04013 }
+		command = { type = sleepmonarch which = 04014 }
+		command = { type = sleepmonarch which = 04015 }
+		command = { type = wakemonarch which = 13162 }
+		command = { type = wakemonarch which = 13163 }
+		command = { type = wakemonarch which = 13164 }
+		command = { type = wakemonarch which = 13165 }
+		command = { type = wakemonarch which = 13166 }
+		command = { type = wakemonarch which = 13167 }
+		command = { type = wakemonarch which = 13168 }
+		command = { type = wakemonarch which = 13169 }
+		command = { type = wakemonarch which = 13170 }
+		command = { type = wakemonarch which = 13171 }
+		command = { type = wakemonarch which = 13172 }
+		command = { type = vp value = 10 }
+	}
+}
+
+#The Crown of France#
+event = {
+
+	id = 140017
+	trigger = {
+			owned = {
+					province = 385
+					data = -1
+				}
+			NOT = {
+				exists = FRA
+				}
+		}
+	random = no
+	country = PIC
+	name = "EVENTNAME3606"
+	desc = "EVENTHIST3606"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1515 }
+
+	action_a ={					#France is reborn with me#
+		name = "ACTIONNAME3606A"
+		command = { type = vp value = 200 }
+		command = { type = stability value = 3 }
+		command = { type = country which = FRA }
+		command = { type = INF which = 385 value = 15000 }
+		command = { type = CAV which = 385 value = 10000 }
+		command = { type = ART which = 385 value = 30 }
+		command = { type = setflag which = picfra }
+	}
+
+	action_b ={					#Let France rest in peace#
+		name = "ACTIONNAME3606B"
+		command = { type = vp value = -100 }
+		command = { type = stability value = -3 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = BUR value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = SPA value = 150 }
+	}
+}
+
+#de picardie dynasty
+event = {
+
+	id = 140018
+	trigger = {
+		flag = picfra
+	}
+	random = no
+	country = FRA
+	name = "The de Picardie's rule France"
+	desc = "With the disolution of the French state it was up to the various french vassal dynasties to try and preserve the Kingdom of the Franks. Through war and diplomacy, the struggle was long and arduous. Nevertheless, the Kingdom of France was restored under the guise of the de Picardie dynasty from Picardy. Long may they rule!"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 5
+	deathdate = { day = 1 month = january year = 1515 }
+
+	action_a = {
+		name = "Vive la France!"
+		command = { type = flagname which = france }
+		command = { type = sleepmonarch which = 04001 }
+		command = { type = sleepmonarch which = 04003 }
+		command = { type = sleepmonarch which = 04004 }
+		command = { type = sleepmonarch which = 04005 }
+		command = { type = sleepmonarch which = 04006 }
+		command = { type = sleepmonarch which = 04007 }
+		command = { type = sleepmonarch which = 04008 }
+		command = { type = sleepmonarch which = 13041 }
+		command = { type = sleepmonarch which = 04009 }
+		command = { type = sleepmonarch which = 04010 }
+		command = { type = sleepmonarch which = 04011 }
+		command = { type = sleepmonarch which = 13042 }
+		command = { type = sleepmonarch which = 04012 }
+		command = { type = sleepmonarch which = 13043 }
+		command = { type = sleepmonarch which = 04013 }
+		command = { type = wakemonarch which = 13173 }
+		command = { type = wakemonarch which = 13174 }
+		command = { type = wakemonarch which = 13175 }
+		command = { type = wakemonarch which = 13176 }
+		command = { type = wakemonarch which = 13177 }
+		command = { type = wakemonarch which = 13178 }
+		command = { type = wakemonarch which = 13179 }
+		command = { type = wakemonarch which = 13181 }
+		command = { type = wakemonarch which = 13182 }
+		command = { type = wakemonarch which = 13183 }
+		command = { type = wakemonarch which = 13184 }
+		command = { type = wakemonarch which = 13185 }
+		command = { type = wakemonarch which = 13186 }
+		command = { type = vp value = 10 }
+	}
+}
+
+#The Crown of France#
+event = {
+
+	id = 140019
+	trigger = {
+			owned = {
+					province = 385
+					data = -1
+				}
+			NOT = {
+				exists = FRA
+				}
+		}
+	random = no
+	country = POI
+	name = "EVENTNAME3606"
+	desc = "EVENTHIST3606"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1515 }
+
+	action_a ={					#France is reborn with me#
+		name = "ACTIONNAME3606A"
+		command = { type = vp value = 200 }
+		command = { type = stability value = 3 }
+		command = { type = country which = FRA }
+		command = { type = INF which = 385 value = 15000 }
+		command = { type = CAV which = 385 value = 10000 }
+		command = { type = ART which = 385 value = 30 }
+	}
+
+	action_b ={					#Let France rest in peace#
+		name = "ACTIONNAME3606B"
+		command = { type = vp value = -100 }
+		command = { type = stability value = -3 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = BUR value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = SPA value = 150 }
+	}
+}
+
+#The Crown of France#
+event = {
+
+	id = 140020
+	trigger = {
+			owned = {
+					province = 385
+					data = -1
+				}
+			NOT = {
+				exists = FRA
+				}
+		}
+	random = no
+	country = TOU
+	name = "EVENTNAME3606"
+	desc = "EVENTHIST3606"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1515 }
+
+	action_a ={					#France is reborn with me#
+		name = "ACTIONNAME3606A"
+		command = { type = vp value = 200 }
+		command = { type = stability value = 3 }
+		command = { type = country which = FRA }
+		command = { type = INF which = 385 value = 15000 }
+		command = { type = CAV which = 385 value = 10000 }
+		command = { type = ART which = 385 value = 30 }
+		command = { type = setflag which = toufra }
+	}
+
+	action_b ={					#Let France rest in peace#
+		name = "ACTIONNAME3606B"
+		command = { type = vp value = -100 }
+		command = { type = stability value = -3 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = BUR value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = SPA value = 150 }
+	}
+}
+
+#de toulouse dynasty
+event = {
+
+	id = 140021
+	trigger = {
+		flag = toufra
+	}
+	random = no
+	country = FRA
+	name = "The de Toulouse's rule France"
+	desc = "With the disolution of the French state it was up to the various french vassal dynasties to try and preserve the Kingdom of the Franks. Through war and diplomacy, the struggle was long and arduous. Nevertheless, the Kingdom of France was restored under the guise of the de Toulouse dynasty from Toulouse. Long may they rule!"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 5
+	deathdate = { day = 1 month = january year = 1515 }
+
+	action_a = {
+		name = "Vive la France!"
+		command = { type = flagname which = france }
+		command = { type = sleepmonarch which = 04001 }
+		command = { type = sleepmonarch which = 04003 }
+		command = { type = sleepmonarch which = 04004 }
+		command = { type = sleepmonarch which = 04005 }
+		command = { type = sleepmonarch which = 04006 }
+		command = { type = sleepmonarch which = 04007 }
+		command = { type = sleepmonarch which = 04008 }
+		command = { type = sleepmonarch which = 13041 }
+		command = { type = sleepmonarch which = 04009 }
+		command = { type = sleepmonarch which = 04010 }
+		command = { type = sleepmonarch which = 04011 }
+		command = { type = sleepmonarch which = 13042 }
+		command = { type = sleepmonarch which = 04012 }
+		command = { type = sleepmonarch which = 13043 }
+		command = { type = sleepmonarch which = 04013 }
+		command = { type = sleepmonarch which = 04014 }
+		command = { type = sleepmonarch which = 04015 }
+		command = { type = wakemonarch which = 13187 }
+		command = { type = wakemonarch which = 13188 }
+		command = { type = wakemonarch which = 13189 }
+		command = { type = wakemonarch which = 13190 }
+		command = { type = wakemonarch which = 13191 }
+		command = { type = wakemonarch which = 13192 }
+		command = { type = wakemonarch which = 13193 }
+		command = { type = wakemonarch which = 13194 }
+		command = { type = wakemonarch which = 13195 }
+		command = { type = wakemonarch which = 13196 }
+		command = { type = wakemonarch which = 13197 }
+		command = { type = wakemonarch which = 13198 }
+		command = { type = wakemonarch which = 13199 }
+		command = { type = wakemonarch which = 13200 }
+		command = { type = wakemonarch which = 13201 }
+		command = { type = wakemonarch which = 13202 }
+		command = { type = wakemonarch which = 13203 }
+		command = { type = wakemonarch which = 13204 }
+		command = { type = wakemonarch which = 13205 }
+		command = { type = wakemonarch which = 13206 }
+		command = { type = wakemonarch which = 13207 }
+		command = { type = wakemonarch which = 13208 }
+		command = { type = wakemonarch which = 13209 }
+		command = { type = wakemonarch which = 13210 }
+		command = { type = vp value = 10 }
+	}
+}
+
+#choice of capital to paris or not#
+event = {
+
+	id = 140022
+	trigger = {
+		owned = { province = 385 data = FRA }
+		control = { province = 385 data = FRA }
+			OR = {
+				flag = aqufra
+				flag = auvfra
+				flag = boufra
+				flag = brifra
+				flag = orlfra
+				flag = profra
+				flag = anjfra
+				flag = amgfra
+				flag = artfra
+				flag = nrmfra
+				flag = picfra
+				flag = toufra
+				}
+	}
+	random = no
+	country = FRA
+	name = "We Hold Paris"
+	desc = "With the old capital of France back in our hands we have the choice of moving our court to Paris to cement old traditions, or rule from our ancestral home to create a new France."
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "Move the Court to Paris"
+		command = { type = capital which = 385 }
+		command = { type = stability value = 2 }
+		command = { type = diplomats value = 2 }
+		command = { type = setflag which = paris }
+	}
+
+	action_b = {
+		name = "A New France from Home"
+		command = { type = gainmanufactory which = -1 value = -1 }
+		command = { type = vp value = 50 }
+		command = { type = infra value = 100 }
+		command = { type = trade value = 100 }
+	}
+}

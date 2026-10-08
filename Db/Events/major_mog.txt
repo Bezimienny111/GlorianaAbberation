@@ -1,0 +1,588 @@
+#####Mughal Major Events#########
+# By Henrik 'Doomdark' Fåhraeus #
+# &  Tom Rinschler              #
+#################################
+
+# Conquest of Delhi
+event = {
+	id = 3805
+	trigger = {
+		owned = {
+			province = 543
+			data = -1
+		}
+		NOT = {
+			exists = DLH
+		}
+	}
+	random = no
+	country = MOG
+	name = "EVENTNAME3805"
+	desc = "EVENTHIST3805"
+	
+	date = { day = 1 month = january year = 1500 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={ # Move throne to Delhi
+		name = "ACTIONNAME3805A"
+		command = { type = capital which = 543 }
+		command = { type = domestic which = CENTRALIZATION  value = 2 }
+		command = { type = stability value = -2 }
+		command = { type = setflag which = delhi }
+	}
+	action_b ={ # Rule from the old capital
+		name = "ACTIONNAME3805B"
+		command = { type = domestic which = CENTRALIZATION  value = -2 }
+		command = { type = stability value = 2 }
+	}
+}
+
+# The Marathi Revolt
+event = {
+	id = 3820
+	trigger = {
+		owned = {
+			province = 550
+			data = -1
+		}
+		NOT = {
+			exists = MAH
+		}
+	}
+	random = no
+	country = MOG
+	name = "EVENTNAME3820"
+	desc = "EVENTHIST3820"
+	
+	date = { day = 1 month = january year = 1660 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1680 }
+
+	action_a = { # Crush the rebels.
+		name = "ACTIONNAME3820A"
+		command = { type = revolt which = 550 }
+		command = { type = revolt which = 550 }
+		command = { type = revolt which = 550 }
+		command = { type = revolt which = 551 }
+		command = { type = revolt which = 551 }
+		command = { type = stability value = -3 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -2 }
+	}
+	action_b = { # Give in to their demands.
+		name = "ACTIONNAME3820B"
+		command = { type = stability value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = -3 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+	}
+}
+
+# The Collapse of the Mughal Empire
+event = {
+	
+	id = 3822
+	random = no
+	country = MOG
+	name = "EVENTNAME3822"
+	desc = "EVENTHIST3822"
+	
+	date = { day = 1 month = january year = 1720 }
+	offset = 300
+
+	action_a = { # Attempt to retake control from the Nawabs and Nizams
+		name = "ACTIONNAME3822A"
+		command = { type = stability value = -8 }
+		command = { type = revoltrisk which = 48 value = 8 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+	}
+	action_b = { # Let them be
+		name = "ACTIONNAME3822B"
+		command = { type = stability value = -6 }
+		command = { type = domestic which = CENTRALIZATION value = -5 }
+	}
+}
+
+#The Battle of Panipat#
+event = {
+    id = 3921
+    random = no
+    country = MOG
+    name = "EVENTNAME3921"
+    desc = "EVENTHIST3921"
+
+   	#Triggered by DLH event 3919#
+
+    action_a ={        #Great!#
+        name = "ACTIONNAME3921A"
+        command = { type = annex which = DLH }
+        command = { type = revoltrisk value = 5 }
+	}
+}
+
+#Akbar's Reforms#
+event = {
+	id = 3899
+	random = no
+	country = MOG
+	name = "EVENTNAME3899"
+	desc = "EVENTHIST3899"
+	
+	style = "3899"
+
+	date = { day = 1 month = january year = 1570 }
+	offset = 150
+	deathdate = { day = 1 month = january year = 1575 }
+	
+	action_a ={        #Implement the reforms#
+		name = "ACTIONNAME3899A"
+		command = { type = stability value = -4 }
+		command = { type = cash value = -300 }
+		command = { type = domestic which = quality value = 1 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = domestic which = land value = 1 }
+		command = { type = provincetax which = -2 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+	}
+	
+	action_b = {     #No, such restructuring would be too rash!#
+		name = "ACTIONNAME3899B"
+		command = { type = stability value = 2 }
+		command = { type = domestic which = quality value = -1 }
+		command = { type = domestic which = centralization value = -1 }
+	}
+}
+
+#Akbar's Religious Tolerance#
+event = {
+   id = 6900
+   random = no
+   country = MOG
+   name = "EVENTNAME6900"
+   desc = "EVENTHIST6900"
+
+	style = "6900"
+
+   date = { day = 1 month = january year = 1580 }
+   offset = 150
+   deathdate = { day = 1 month = january year = 1585 }
+
+   action_a ={        #Tolerate other beliefs#
+       name = "ACTIONNAME6900A"
+       command = { type = stability value = -4 }
+       command = { type = revoltrisk which = 60 value = -5 }
+       command = { type = domestic which = innovative value = 2 }
+   }
+
+   action_b = {     #No, we will not tolerate the idol-worshipers!#
+       name = "ACTIONNAME6900B"
+       command = { type = stability value = 2 }
+	command = { type = missionaries value = 3 }
+       command = { type = religiousrevolt which = -1 }
+       command = { type = religiousrevolt which = -4 }
+       command = { type = religiousrevolt which = -4 }
+       command = { type = domestic which = innovative value = -1 }
+   }
+}
+
+#The Taj Mahal#
+event = {
+   id = 6901
+	trigger = { owned = { province = 544 data = -1 }
+		}
+   random = no
+   country = MOG
+   name = "EVENTNAME6901"
+   desc = "EVENTHIST6901"
+
+   date = { day = 1 month = january year = 1630 }
+   offset = 30
+   deathdate = { day = 1 month = january year = 1631 }
+
+   action_a ={        #Build it!#
+       name = "ACTIONNAME6901A"
+       command = { type = stability value = -3 }
+       command = { type = cash value = -500 }
+	}
+
+   action_b = {     #No, we will not waste money on such useless things!#
+       name = "ACTIONNAME6901B"
+       command = { type = stability value = 2 }
+       command = { type = vp value = -200 }
+	command = { type = sleepevent which = 4149 }
+	}
+}
+
+#Aurangzib's Religious Intolerance#
+event = {
+   id = 6902
+   random = no
+   country = MOG
+   name = "EVENTNAME6902"
+   desc = "EVENTHIST6902"
+	style = "6902"
+
+   date = { day = 1 month = january year = 1669 }
+   offset = 10
+   deathdate = { day = 1 month = january year = 1670 }
+
+   action_a = {     #No, we will not tolerate the idol-worshipers!#
+       name = "ACTIONNAME6902A"
+       command = { type = stability value = 2 }
+	command = { type = missionaries value = 3 }
+       command = { type = religiousrevolt which = -1 }
+       command = { type = religiousrevolt which = -4 }
+       command = { type = religiousrevolt which = -4 }
+       command = { type = religiousrevolt which = -4 }
+       command = { type = religiousrevolt which = -4 }
+       command = { type = religiousrevolt which = -4 }
+       command = { type = domestic which = innovative value = -4 }
+       command = { type = domestic which = centralization value = 1 }
+       command = { type = revoltrisk which = 480 value = 5 }
+    }
+    action_b ={        #Tolerate other beliefs#
+       name = "ACTIONNAME6902B"
+       command = { type = stability value = -4 }
+       command = { type = domestic which = innovative value = 1 }
+       command = { type = domestic which = centralization value = -4 }
+    }
+}
+
+#The Sikh Rebellions#
+event = {
+	
+	id = 6903
+	trigger = {          
+		OR = {  
+			owned = { province = 1520 data = -1 }
+			owned = { province = 1521 data = -1 }
+		}
+		NOT = {
+			exists = SKH
+		}
+	}
+	
+	random = no
+	country = MOG
+	name = "EVENTNAME6903"
+	desc = "EVENTHIST6903"
+	
+	date = { day = 27 month = november year = 1675 }
+	offset = 30
+	deathdate = { day = 28 month = november year = 1685 }
+	
+	action_a = {     #Execute the Guru as a heretic!#
+		name = "Execute the Guru as a heretic!"
+		command = { type = stability value = 1 }
+		command = { type = revolt which = 1520 }
+		command = { type = revolt which = 1520 }
+		command = { type = revolt which = 1521 }
+		command = { type = revolt which = 1521 }
+		command = { type = domestic which = innovative value = -1 }
+		command = { type = domestic which = centralization value = 2 }
+	}
+	action_b ={        #Let him and his movement be#
+		name = "Let him and his movement be"
+		command = { type = stability value = -2 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = domestic which = centralization value = -3 }
+	}
+	action_c ={        #Let the Sikhs settle their own affairs#
+		name = "Let the Sikhs settle their own affairs"
+		command = { type = stability value = -4 }
+		command = { type = free which = SKH }
+		command = { type = domestic which = innovative value = 2 }
+		command = { type = domestic which = quality value = 1 }
+	}
+	action_d ={        #Embrace their teachings#
+		name = "Embrace their teachings"
+		command = { type = stability value = -6 }
+		command = { type = religion which = sikh }
+		command = { type = conversion which = -2 }
+		command = { type = conversion which = -4 }
+		command = { type = missionaries value = 3 }
+		command = { type = domestic which = innovative value = 4 }
+		command = { type = domestic which = quality value = 2 }
+	}
+}
+
+#The Succession Crisis of 1707#
+event = {
+
+   id = 6904
+   random = no
+   country = MOG
+   name = "EVENTNAME6904"
+   desc = "EVENTHIST6904"
+
+   date = { day = 14 month = march year = 1707 }
+
+    action_a = {     #Let them fight it out #
+       name = "ACTIONNAME6904A"
+       command = { type = stability value = -3 }
+       command = { type = domestic which = centralization value = -3 }
+       command = { type = revoltrisk value = 3 }
+    }
+	action_b ={        #Support the rightful heir#
+       name = "ACTIONNAME6904B"
+       command = { type = stability value = -1 }
+       command = { type = revoltrisk value = 5 }
+       command = { type = revolt which = -1 }
+       command = { type = revolt which = -4 }
+       command = { type = revolt which = -4 }
+       command = { type = revolt which = -4 }
+       command = { type = revolt which = -4 }
+    }
+}
+
+#The Afghan Rebellions#
+event = {
+	id = 6905
+	trigger = {          
+		OR = {  
+			owned = { province = 1524 data = -1 }
+			owned = { province = 1525 data = -1 }
+			owned = { province = 1527 data = -1 }
+			owned = { province = 1528 data = -1 }
+		}
+		NOT = {
+			exists = AFG
+		}
+	}
+	
+	random = no
+	country = MOG
+	name = "EVENTNAME6905"
+	desc = "EVENTHIST6905"
+	
+	date = { day = 1 month = january year = 1707 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1708 }
+	
+	action_a = {     #Curses!#
+		name = "ACTIONNAME6905A"
+		command = { type = province_revoltrisk which = 1524 value = 5 }
+		command = { type = province_revoltrisk which = 1525 value = 5 }
+		command = { type = province_revoltrisk which = 1527 value = 5 }
+		command = { type = province_revoltrisk which = 1528 value = 5 }
+	}
+}
+
+#The Afghan Rebellions End#
+event = {
+	id = 6906
+	trigger = {          
+		OR = {  
+			owned = { province = 1524 data = -1 }
+			owned = { province = 1525 data = -1 }
+			owned = { province = 1527 data = -1 }
+			owned = { province = 1528 data = -1 }
+		}
+	}
+	
+	random = no
+	country = MOG
+	name = "EVENTNAME6906"
+	desc = "EVENTHIST6906"
+	
+	date = { day = 1 month = january year = 1730 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1731 }
+	
+	action_a = {     #Great!#
+		name = "ACTIONNAME6906A"
+		command = { type = province_revoltrisk which = 1524 value = -5 }
+		command = { type = province_revoltrisk which = 1525 value = -5 }
+		command = { type = province_revoltrisk which = 1527 value = -5 }
+		command = { type = province_revoltrisk which = 1528 value = -5 }
+	}
+}
+
+#The Succession Crisis of 1712#
+event = {
+
+   id = 6909
+   random = no
+   country = MOG
+   name = "EVENTNAME6909"
+   desc = "EVENTHIST6909"
+
+   date = { day = 28 month = february year = 1712 }
+
+	action_a = {     #Let them fight it out #
+       name = "ACTIONNAME6909A"
+       command = { type = stability value = -3 }
+       command = { type = domestic which = centralization value = -3 }
+       command = { type = revoltrisk value = 3 }
+    }
+    action_b ={        #Support the rightful heir#
+       name = "ACTIONNAME6909B"
+       command = { type = stability value = -1 }
+       command = { type = revoltrisk value = 5 }
+       command = { type = revolt which = -1 }
+       command = { type = revolt which = -4 }
+       command = { type = revolt which = -4 }
+       command = { type = revolt which = -4 }
+       command = { type = revolt which = -4 }
+    }
+}
+
+# The Sur Empire #
+event = {
+	id = 25022
+	trigger = {
+		NOT = {
+			exists = AFG
+			exists = KAB
+		}
+		someof = {
+			number = 2
+			owned = { province = 1524 data = -1 }
+			owned = { province = 1525 data = -1 }
+			owned = { province = 1527 data = -1 }
+		}
+	}
+	random = no
+	country = MOG
+
+	name = "EVENTNAME25022"
+	desc = "EVENTHIST25022"
+	
+	style = "25022"
+
+	date = { day = 1 month = january year = 1538 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1545 }
+
+	action_a = { # Crush them!
+		name = "ACTIONNAME25022A"
+		command = { type = revoltrisk which = 120 value = 6 }
+		command = { type = revolt which = 1524 }
+		command = { type = revolt which = 1524 }
+		command = { type = revolt which = 1525 }
+		command = { type = revolt which = 1525 }
+		command = { type = revolt which = 1527 }
+		command = { type = revolt which = 1527 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = stability value = -6 }
+	}
+	action_b = { # Let them rule their homelands
+		name = "ACTIONNAME25022B"
+		command = { type = free which = AFG }
+		command = { type = remove_countryculture which = afghani }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = stability value = -3 }
+	}
+}
+
+# The Road Back #
+event = {
+	id = 25023
+	trigger = {
+		stability = 1
+		event = 25022
+		exists = PER
+		OR = {
+			alliance = { country = PER country = MOG }
+			vassal = { country = PER country = MOG }
+		}
+		NOT = {
+			owned = { province = 543 data = -1 }
+			owned = { province = 544 data = -1 }
+			owned = { province = 559 data = -1 }
+		}
+	}
+	random = no
+	country = MOG
+
+	name = "EVENTNAME25023"
+	desc = "EVENTHIST25023"
+	
+	style = "25023"
+
+	date = { day = 1 month = january year = 1555 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1575 }
+
+	action_a = { # Make vague promises to convert
+		name = "ACTIONNAME25023A"
+		command = { type = cash value = 150 }
+		command = { type = INF which = -2 value = 12000 }
+		command = { type = CAV which = -2 value = 5000 }
+		command = { type = ART which = -2 value = 15 }
+		command = { type = casusbelli which = AFG value = 72 }
+		command = { type = relation which = AFG value = -200 }
+		command = { type = relation which = PER value = 100 }
+		command = { type = relation which = BAL value = 50 }
+		command = { type = relation which = OMA value = 50 }
+		command = { type = relation which = YEM value = 50 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = stability value = 1 }
+	}
+	action_b = { # Reject any talk of conversion
+		name = "ACTIONNAME25023B"
+		command = { type = breakvassal which = PER }
+		command = { type = casusbelli which = AFG value = 72 }
+		command = { type = relation which = AFG value = -200 }
+		command = { type = relation which = PER value = -100 }
+		command = { type = relation which = SIN value = 50 }
+		command = { type = relation which = GUJ value = 50 }
+		command = { type = relation which = RAJ value = 50 }
+		command = { type = relation which = MUL value = 50 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = stability value = -1 }
+	}
+	action_c = { # Fully embrace the Shi'a faith
+		name = "ACTIONNAME25023C"
+		command = { type = religion which = shia }
+		command = { type = conversion which = -2 }
+		command = { type = missionaries value = 6 }
+		command = { type = cash value = 400 }
+		command = { type = INF which = -2 value = 36000 }
+		command = { type = CAV which = -2 value = 15000 }
+		command = { type = ART which = -2 value = 45 }
+		command = { type = casusbelli which = AFG value = 72 }
+		command = { type = relation which = AFG value = -200 }
+		command = { type = relation which = PER value = 200 }
+		command = { type = relation which = BAL value = 100 }
+		command = { type = relation which = OMA value = 100 }
+		command = { type = relation which = YEM value = 100 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = stability value = -3 }
+	}
+}
+
+#The Taj Mahal stands in Unearthly Glory#
+event = {
+   id = 4149
+	trigger = { event = 6901
+	}
+   random = no
+   country = MOG
+   name = "The Taj Mahal stands in Unearthly Glory"
+   desc = "After over two decades of work, the majestic Taj Mahal is finally complete."
+
+	style = "6901"
+
+   date = { day = 1 month = january year = 1653 }
+   offset = 30
+   deathdate = { day = 1 month = january year = 1654 }
+
+   action_a ={        #The Mughals are the envy of the world!#
+       name = "The Mughals are the envy of the world!"
+       command = { type = cityname which = 544 value = "Agra" }
+       command = { type = gainmanufactory  which = 544 value = luxury }
+       command = { type = domestic which = CENTRALIZATION value = 1 }
+       command = { type = domestic which = ARISTOCRACY value = 1 }
+       command = { type = vp value = 300 }
+       command = { type = stability value = 3 }
+	}
+}

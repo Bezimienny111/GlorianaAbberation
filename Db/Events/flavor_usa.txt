@@ -1,0 +1,116 @@
+#####USA Flavor Events######
+
+#John Paul Jones#
+event = {
+	id = 5181
+	trigger = {
+		leader = 0538 # J. Paul Jones
+	}
+	random = no
+	country = USA
+	name = "John Paul Jones"
+	desc = "EVENTHIST5181"
+	date = { day = 17 month = april year = 1778 }
+
+	action_a ={				#Ok#
+		name = "Ok"
+		command = { type = warships which = -1 value = 3 }
+		command = { type = domestic which = LAND value = -1 }
+		command = { type = naval value = 500 }
+	}
+}
+
+#Benjamin Franklin#
+event = {
+	id = 5182
+	random = no
+	country = USA
+	name = "Benjamin Franklin"
+	desc = "It is almost pointless to list the accomplishments of Benjamin Franklin. There is no part of the early American nation that he did not impact. As a newspaper editor, inventor, scientist, diplomat, governor, scholar, abolitionist, and even postmaster-general, Franklin's influence is still felt to this day."
+	date = { day = 23 month = march year = 1779 }
+
+	action_a ={				#Ok#
+		name = "Ok"
+		command = { type = diplomats value = 2 }
+		command = { type = DIP which = 2 value = 60 }
+		command = { type = relation which = -1 value = 25 where = Europe }
+		command = { type = relation which = -4 value = 25 where = Europe }
+		command = { type = relation which = -4 value = 25 where = Europe }
+		command = { type = relation which = -4 value = 25 where = Europe }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+	}
+}
+
+#Monrovia Founded#
+event = {
+	id = 5183
+	trigger = {
+		owned = { province = 797 data = -1 } # Casamance
+		OR = {
+			monarch = 04065 # James Monroe
+			monarch = 043013
+		}
+	}
+	random = no
+	country = USA
+	name = "Monrovia Founded"
+	desc = "EVENTHIST5183"
+	date = { day = 25 month = april year = 1822 }
+
+	action_a ={				#Ok#
+		name = "Ok"
+		# if a colony, should already be called Monrovia
+		command = {
+			trigger = {
+				NOT = { tradingpost = 797 }
+			}
+			type = population which = 797 value = 3000
+		}
+		#command = {
+		#	trigger = {
+		#		NOT = { tradingpost = 797 }
+		#	}
+		#	type = provinceculture which = 797 value = jola
+		#}
+		command = {
+			trigger = {
+				NOT = { tradingpost = 797 }
+			}
+			type = province_revoltrisk which = 797 value = -5
+		}
+		command = {
+			trigger = {
+				NOT = { tradingpost = 797 }
+			}
+			type = provincetax which = 797 value = 3
+		}
+		command = { type = domestic which = INNOVATIVE value = 1 }
+	}
+}
+
+#Erie Canal Completed#
+event = {
+	id = 5184
+	trigger = {
+		owned = { province = 88 data = -1 } # Catskill
+		owned = { province = 89 data = -1 } # Oswego
+		owned = { province = 91 data = -1 } # Onondaga
+	}
+	random = no
+	country = USA
+	name = "Erie Canal Completed"
+	desc = "At 363 miles long, the Erie Canal, connecting the Hudson River (at Albany) to the Great Lakes (at Buffalo), was the second-longest canal in the world when it was completed in 1821. The ability to move ships to and from the Ohio region was a major benefit for the US, as it was previously difficult or impossible to transport large quantities of Ohio grain to the East Coast without first distilling it into whiskey. The new canal reduced the trip from Cleveland to New York by about half. New York City in particular benefited from the new canal, as grain from Ohio could now be easily transported to its ports and sold on its markets."
+	date = { day = 17 month = may year = 1821 }
+
+	action_a ={				#Ok#
+		name = "Ok"
+		command = { type = provincetax which = 88 value = 2 }
+		command = { type = provincetax which = 89 value = 2 }
+		command = { type = provincetax which = 91 value = 2 }
+		command = { type = domestic which = MERCANTILISM value = -1 }
+		command = { type = infra value = 100 }
+		command = { type = trade value = 200 }
+	}
+}
+
+# IDs free: 5185 - 5189

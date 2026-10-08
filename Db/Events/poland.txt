@@ -1,0 +1,270 @@
+##Poland Events##
+
+#(1338) The Second Conference of Visegrad
+#we're in a bad need of an alternative dynasty in case Angevins don't ascend the throne.
+event = {
+	id = 115000
+	trigger = {
+		exists = HUN
+		NOT = { war = { country = POL country = HUN } }		
+	}
+	random = no
+	country = POL
+	name = "The Second Conference of Visegrad"
+	desc = "In 1338, a conference of monarchs took place in the Hungarian city of Visegrad. Taking part were the kings: Kazimierz of Poland , Karl Robert of Hungary, and Jan of Bohemia. At the first meeting, Jan had given up his claims on the Polish throne in exchange for Kazimierz giving up his claims on the Silesian duchies. The second meeting's main point was to determine the Angevin succession to the throne of Poland, in the event of Kazimierz dying without issue."
+
+	date = { day = 1 month = february year = 1338 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1338 }
+
+	action_a ={
+		trigger = {
+			NOT = { war = { country = HUN country = POL } }
+		}
+		name = "The Angevins will rule Poland"
+		command = { type = stability value = 1 }
+		command = { type = dynastic which = HUN }
+		command = { type = setflag which = [hungarian_succession] }
+		command = { type = relation which = HUN value = 50 }
+		command = { type = relation which = BOH value = 30 }
+		command = { type = badboy value = -1 } 
+		command = { type = trigger which = 117001 } #BOH: The Second Conference of Visegrad
+		command = { type = trigger which = 118002 } #HUN: The Second Conference of Visegrad
+	}
+	action_b ={
+		name = "Why should an Angevin take our throne?"
+		command = { type = stability value = -2 }
+		command = { type = breakdynastic which = HUN }
+		command = { type = relation which = HUN value = -50 }
+		command = { type = relation which = BOH value = -30 }
+		command = { type = badboy value = 2 } 
+		command = { type = trigger which = 118003 } #HUN: The Second Conference of Visegrad
+		command = { type = setflag which = [no_succession] }
+	}
+}
+
+#(1340) Polish Designs on Volhynia
+event = {
+	id = 115001
+	trigger = {
+		exists = VOL
+		NOT = { 
+			vassal = { country = POL country = VOL }
+		}
+	}
+	random = no
+	country = POL
+	name = "Polish Designs on Volhynia"
+	desc = "Following the death of Boleslaw Jerzy, prince of Volhynia, who was of Polish descent, the Polish king Kazimierz asserted his claim to those lands by raiding the province regularly. Volhynia wasn't fully subdued until late 1350s."
+
+	date = { day = 1 month = february year = 1340 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1340 }
+
+	action_a ={
+		name = "Volhynia belongs to us"
+		command = { type = relation which = VOL value = -50 }
+		command = { type = casusbelli which = VOL value = 120 }
+		command = { type = INF which = 299 value = 2000 }
+		command = { type = CAV which = 299 value = 500 }
+	}
+	action_b ={
+		name = "We've no designs on Volhynia"
+		command = { type = relation which = VOL value = 50 }
+		command = { type = MIL which = -2 value = 24 }
+	}
+}
+
+#(1343-1350) Peace of Kalisz
+event = {
+	id = 115002
+	trigger = {
+		NOT = { 
+			war = { country = POL country = LAT } 
+			vassal = { country = POL country = LAT } 
+			alliance = { country = POL country = LAT } 
+		}
+		exists = LAT
+	}
+	random = no
+	country = POL
+	name = "Peace of Kalisz"
+	desc = "The conflict between Poland and the Teutonic Order dates back to 1308, when the Teutons, after asked by the Poles for assistance in defending Danzig against the Brandenburgians, took the city and massacred part of its population. They defended their actions by stating that Polish prince, Wladyslaw Lokietek, had not paid them for their help. All of Pomerelia soon fell into their hands, which resulted in a long state of conflict and many short wars between Poland and the Order, one of which (1329-1332) led almost to the collapse of Wladyslaw's reign. His son, Kazimierz III sought to improve relations with his neighbours and arranged a 'perpetual peace' with the Teutons. Under the terms of the treaty, Danzig would be recognized as the Order's 'perpetual alms' from the Polish king, for which the Order would hand over Cujavia and Dobrinia. The treaty was signed in Kalisz on 8 July, 1343."
+
+	date = { day = 8 month = june year = 1343 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1350 }
+
+	action_a ={
+		name = "Peace will strengthen us"
+		command = { type = relation which = LAT value = 150 }
+		command = { type = dynastic which = LAT }
+		command = { type = cedeprovince which = LAT value = 301 }
+		command = { type = provincetax which = 300 value = 2 } #Cujavia and Dobrinia lie in northern part of Wielkopolska prov on vanilla map; this is to symbolise their inclusion into Poland proper
+	}
+}
+
+#(1345-1348) War against Bohemia
+event = {
+	id = 115003
+	trigger = {
+		NOT = { 
+			alliance = { country = POL country = BOH } 
+		}		
+	}
+	random = no
+	country = POL
+	name = "War against Bohemia"
+	desc = "Despite the agreements from Visegrad, Kazimierz wanted to regain the long lost control of Silesia. Poland was, however, too weak to face the power of the king of Bohemia and Holy Roman Emperor Karl of Luxembourg. The peace treaty of Namyslow, signed in 1348, confirmed the Czech rights to Silesia."
+
+	date = { day = 1 month = january year = 1345 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1348 }
+
+	action_a ={
+		name = "We will try to take what which should be ours"
+		command = { type = relation which = BOH value = -75 } 
+		command = { type = casusbelli which = BOH value = 36 }
+	}
+}
+
+#(1355-1360) The Privilege of Buda
+event = {
+	id = 115004
+	trigger = {
+		exists = HUN
+		NOT = { war = { country = POL country = HUN } }		
+	}
+	random = no
+	country = POL
+	name = "The Privilege of Buda"
+	desc = "Issued by Kazimierz III of Poland and Louis of Hungary in 1355 in Buda, capital of Hungary, the privilege guaranteed Louis's (and his male heirs') succession upon the event of Kazimierz's childless death. The Polish nobles allowed this only under the condition that Louis wouldn't introduce any new taxes upon his ascension. This was one of the first events that eventually led to a severe reduction of the royal prerogative in Poland, noticeable already in the 2nd half of the 15th century."
+
+	date = { day = 1 month = january year = 1355 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1360 }
+
+	action_a ={
+		name = "We need a worthy heir to our throne"
+		command = { type = relation which = HUN value = 25 } 
+		command = { type = domestic which = aristocracy value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = provincetax which = -1 value = -1 } 
+		command = { type = setflag which = [hungarian_succession] }
+ 	}
+	action_b ={
+		name = "The Angevins will rule and the nobles' demands are irrelevant"
+		command = { type = relation which = HUN value = 25 } 
+		command = { type = domestic which = aristocracy value = -1 }
+		command = { type = stability value = -2 }
+		command = { type = revoltrisk which = 36 value = 4 }
+		command = { type = setflag which = [hungarian_succession] }
+	}
+	action_c ={
+		name = "Why should an Angevin take our throne?"
+		command = { type = relation which = HUN value = -150 } 
+		command = { type = breakdynastic which = HUN }
+		command = { type = domestic which = aristocracy value = -1 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = stability value = -2 }
+		command = { type = revoltrisk which = 36 value = 4 }
+		command = { type = trigger which = 118004 } #HUN: The Privilege of Buda 
+		command = { type = clrflag which = [hungarian_succession] }
+		command = { type = setflag which = [no_succession] }
+	}
+}
+
+#(1364) The Academy of Krakow
+event = {
+	id = 115005
+	trigger = {
+		stability = 1
+		monarch = 15297 #Kazimierz III
+	}
+	random = no
+	country = POL
+	name = "The Academy of Krakow"
+	desc = "Seeking to improve the prestige of his capital city, Kazimierz III founded in Krakow a university under the name Studium Generale, later called Academy of Krakow and finally (after its re-establishment in 1400) Jagiellonian University. It was the second such foundation in Central Europe (after Prague, 1348). The Academy's structure was based on the University of Bologna, it comprised of three faculties: the Liberal Arts, Medicine and Law. The Academy declined after the death of its founder, but was brought back to life in 1400 thanks to the will of the queen of Poland Jadwiga of Anjou, daughter of Louis king of Hungary and Poland. Since then, it has functioned almost uninterrupted."
+
+	date = { day = 12 month = may year = 1364 }
+	offset = 200
+	deathdate = { day = 12 month = may year = 1370 }
+
+	action_a ={
+		name = "Found the Academy for the glory!"
+		command = { type = relation which = HUN value = 25 } 
+		command = { type = domestic which = innovative value = 1 }
+		#command = { type = cash value = -250 }
+		#command = { type = gainmanufactory which = 299 type = luxury }
+ 	}
+	action_b ={
+		name = "We cannot afford it"
+		command = { }
+	}
+}
+
+#(1370) The End of the Piast Dynasty
+event = {
+	id = 115006
+	random = no
+	country = POL
+	trigger = {
+		flag = [hungarian_succession]
+		exists = HUN
+ 	}
+	name = "The End of the Piast Dynasty"
+	desc = "Although Kazimierz the Great remarried many times, none of his wives delievered him a male heir. During his life he tried to work hard on the establishment of a peaceful succession on his death. Originally it was intended that his grandson, Kazimierz, prince of Slupsk, would succed him, but as the result of eventually the choice fell on his nephew, Louis, King of Hungary. Kazimierz died following an accident with a horse during a hunt in November of 1370 and although Kazimierz was initially granted a great allotment of lands in his will, Louis quickly moved to have the will nullified."  
+
+	date = { day = 4 month = november year = 1370 }
+ 
+	action_a ={
+		name = "Louis d'Anjou of Hungary rules Poland"
+		command = { type = dynastic which = HUN }
+		command = { type = relation which = HUN value = 100 }
+		command = { type = relation which = POM value = -50 }
+		command = { type = trigger which = 118000 } #HUN: Succession of Louis d'Anjou I in Poland
+		command = { type = domestic which = centralization value = -2 }
+		command = { type = domestic which = aristocracy value = -1 }
+		command = { type = stability value = -1 }
+		command = { type = revoltrisk which = 48 value = 3 }
+	}
+	action_b ={
+ 		name = "Kazimierz of Slupsk rules Poland"
+ 		command = { type = relation which = HUN value = -100 }
+ 		command = { type = relation which = POM value = 50 }
+ 		command = { type = sleepmonarch which = 15298 } #Ludwik
+ 		command = { type = sleepmonarch which = 15325 } #Jadwiga
+ 		command = { type = sleepmonarch which = 04110 } #Jagiello
+ 		command = { type = wakemonarch which = 122200 } #Kazko Slupski 
+ 		command = { type = wakemonarch which = 122201 } #Boguslaw VIII 
+ 		command = { type = wakemonarch which = 122202 } #Boguslaw IX - not in monarch file
+ 		#command = { type = trigger which = xxxx } #event for Pommerania similar to that for Hungary
+ 		command = { type = trigger which = 118001 } #HUN: Succession of Kazimierz of Slupsk in Poland
+ 		command = { type = domestic which = centralization value = -1 }
+ 		command = { type = domestic which = aristocracy value = 2 }
+ 		command = { type = stability value = -3 }
+ 		command = { type = revoltrisk which = 48 value = 10 }
+ 		#command = { type = sleepevent which = 100716 } #secession of Halich
+ 		#command = { type = sleepevent which = 100714 } #1st uprising of Wladyslaw Bialy
+ 		#command = { type = sleepevent which = 100715 } #2nd uprising of Wladyslaw Bialy
+	}
+	#action_c ={
+ 	#	name = "Wladyslaw Bialy of Gniew will rule Poland."
+ 	#	command = { type = relation which = HUN value = -100 }
+ 	#	command = { type = relation which = POM value = -50 }
+ 	#	command = { type = sleepmonarch which = 15298 } #Ludwik
+	#	command = { type = sleepmonarch which = 15325 } #Jadwiga
+ 	#	command = { type = sleepmonarch which = 15299 } #Jagiello
+	#	command = { type = wakemonarch which = 15327 } #Wladyslaw Bialy
+	#	command = { type = wakemonarch which = 15328 }
+	#	command = { type = sleepevent which = 100714 } #1st uprising of Wladyslaw Bialy
+	#	command = { type = sleepevent which = 100715 } #2nd uprising of Wladyslaw Bialy
+	#	command = { type = sleepevent which = 100716 } #secession of Halich
+	#	command = { type = domestic which = centralization value = 1 }
+	#	command = { type = domestic which = aristocracy value = 1 }
+	#	command = { type = stability value = -3 }
+	#	command = { type = revoltrisk which = 72 value = 5 }
+	# }
+}
+
+#first free ID: 115007

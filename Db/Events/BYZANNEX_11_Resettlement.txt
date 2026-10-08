@@ -1,0 +1,1097 @@
+#-----------------------------------------------------------------------------------------------
+#Resettlement Events
+
+#(1440-1640) The Reclamation of Anatolia
+event = {
+	id = 3001188 #id = 90910
+	trigger = {
+		owned = { province = 474 data = -1 } #Sivas
+		owned = { province = 476 data = -1 } #Angora
+		owned = { province = 477 data = -1 } #Anatolia
+		owned = { province = 478 data = -1 } #Smyrna
+		owned = { province = 482 data = -1 } #Konya
+		owned = { province = 483 data = -1 } #Adana
+		owned = { province = 1609 data = -1 } #Kastamonu
+		owned = { province = 1610 data = -1 } #Antalya
+		owned = { province = 1611 data = -1 } #Taurus
+		OR = {
+			vassal = { country = BYZ country = TRE }
+			owned = { province = 475 data = -1 } # Trabzon - already Greek
+		}
+	}
+	random = no
+	country = BYZ
+	name = "The Reclamation of Anatolia" #The Reclamation of Anatolia
+	desc = "It took the Turks only a few centuries to permanently alter the composition of Asia Minor. Yet now the revitalized Empire had reconquered all of Anatolia, and the questio was what needed to be done regarding the native population of the reconquered regions. They were a hodgepodge of Turk and old Greek, with the latter having become like the former over the course of several centuries. Should reforms be undertaken?"
+	#-#It took the Turks only a few centuries to permanently alter the composition of Asia Minor. Yet now the revitalized Empire had reconquered all of Anatolia, and the questio was what needed to be done regarding the native population of the reconquered regions. They were a hodgepodge of Turk and old Greek, with the latter having become like the former over the course of several centuries. Should reforms be undertaken?
+
+	date = { day = 1 month = january year = 1440 }
+	offset = 10 #1 week
+	deathdate = { day = 1 month = january year = 1640 }
+
+	action_a = {
+		name = "Yes, let us look at each province in turn" #Yes, let us look at each province in turn
+		command = { type = domestic which = INNOVATIVE value = 2 }
+	}
+	action_b = {
+		name = "Things are fine as they are" #Things are fine as they are
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = sleepevent which = 3001189 } #BYZ: The Turks in Sivas
+		command = { type = sleepevent which = 3001191 } #BYZ: The Turks in Smyrna
+		command = { type = sleepevent which = 3001193 } #BYZ: The Turks in Angora
+		command = { type = sleepevent which = 3001195 } #BYZ: The Turks in Anatolia
+		command = { type = sleepevent which = 3001197 } #BYZ: The Turks in Konya
+		command = { type = sleepevent which = 3001199 } #BYZ: The Turks in Kastamonu
+		command = { type = sleepevent which = 3001201 } #BYZ: The Turks in Antalya
+		command = { type = sleepevent which = 3001203 } #BYZ: The Turks in Taurus
+		command = { type = sleepevent which = 3001205 } #BYZ: The Turks in Adana
+		command = { type = sleepevent which = 3001190 } #BYZ: Byzantine Settlers - Sivas
+		command = { type = sleepevent which = 3001192 } #BYZ: Byzantine Settlers - Smyrna
+		command = { type = sleepevent which = 3001194 } #BYZ: Byzantine Settlers - Angora
+		command = { type = sleepevent which = 3001196 } #BYZ: Byzantine Settlers - Anatolia
+		command = { type = sleepevent which = 3001198 } #BYZ: Byzantine Settlers - Konya
+		command = { type = sleepevent which = 3001200 } #BYZ: Byzantine Settlers - Kastamonu
+		command = { type = sleepevent which = 3001202 } #BYZ: Byzantine Settlers - Antalya
+		command = { type = sleepevent which = 3001204 } #BYZ: Byzantine Settlers - Taurus
+		command = { type = sleepevent which = 3001206 } #BYZ: Byzantine Settlers - Adana
+	}
+}
+
+#(1440-1640) Reclamation of Anatolia - Sivas
+event = {
+	id = 3001189 #id = 90923
+	trigger = {
+		event = 3001188 #BYZ: Reclamation of Anatolia
+		owned = { province = 474 data = -1 } #Sivas
+	}
+	random = no
+	country = BYZ
+	name = "The Turks in Sivas" #The Turks in Sivas
+	desc = "As time went on, pressure grew for the Court in Constantinople to take decisive action in Sivas, which remained largely Turkish. The Court was however inclined to do nothing at all even though that would hurt the long term growth of the region. The next most popular option, inspired by the Iberian kingdoms was to simply expel the Turks at great cost to the province. While the bureaucrats liked such a simple solution, the military thought it would be better to resettle the area with true Byzantines drawn from the excess population of Thrace and Constantinople over the course of many decades. Finally, a minority of intellectuals wondered why the Turks couldn't simply be accepted as valued subjects of the Emperor, but to do that would require reconciling the Turks in each province in Anatolia."
+	#-#As time went on, pressure grew for the Court in Constantinople to take decisive action in Sivas, which remained largely Turkish. The Court was however inclined to do nothing at all even though that would hurt the long term growth of the region. The next most popular option, inspired by the Iberian kingdoms was to simply expel the Turks at great cost to the province. While the bureaucrats liked such a simple solution, the military thought it would be better to resettle the area with true Byzantines drawn from the excess population of Thrace and Constantinople over the course of many decades. Finally, a minority of intellectuals wondered why the Turks couldn't simply be accepted as valued subjects of the Emperor, but to do that would require reconciling the Turks in each province in Anatolia.
+
+	date = { day = 1 month = january year = 1440 }
+	offset = 1080 #3 years
+	deathdate = { day = 1 month = january year = 1640 }
+
+	action_a = {
+		name = "As long as the taxes come in, who cares who's doing the paying?" #As long as the taxes come in, who cares who's doing the paying?
+		command = { type = stability value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = treasury value = 100 }
+		command = { type = provincemanpower which = 474 value = -1 } #Sivas
+		command = { type = provincetax which = 474 value = -1 } #Sivas
+		command = { type = sleepevent which = 3001190 } #BYZ: Byzantine Settlers - Sivas
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+	}
+	action_b = {
+		name = "Expel the foreign infidels!" #Expel the foreign infidels!
+		command = { type = stability value = 1 }
+		command = { type = revolt which = 474 } #Sivas
+		command = { type = populationpercent which = 474 value = -7 } #Sivas
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = provinceculture which = 474 value = armenian } #Sivas
+		command = { type = conversion which = 474 }
+		command = { type = sleepevent which = 3001190 } #BYZ: Byzantine Settlers - Sivas
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+		command = { type = trigger which = 3001209 } #QAR: Turkish refugees from Rum
+		command = { type = trigger which = 3001210 } #MAM: Turkish refugees from Rum
+		command = { type = trigger which = 3001211 } #AKK: Turkish refugees from Rum
+		command = { type = trigger which = 3001212 } #PER: Turkish refugees from Rum
+	}
+	action_c = {
+		name = "Resettle Constantinopolitans in Sivas" #Resettle Constantinopolitans in Sivas
+		command = { type = stability value = -1 }
+		command = { type = revolt which = -2 } #Thrace
+		command = { type = revoltrisk which = 24 value = 2 }
+		command = { type = missionaries value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = populationpercent which = -2 value = -5 }
+		command = { type = populationpercent which = 474 value = 5 }
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+	}
+	action_d = {
+		name = "Accept the Turks" #Accept the Turks
+		command = { type = stability value = -1 }
+		command = { type = revoltrisk which = 24 value = 2 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = SPA value = -20 }
+		command = { type = relation which = HAB value = -20 }
+		command = { type = relation which = PAP value = -20 }
+		command = { type = provincemanpower which = 474 value = 1 } #Sivas
+		command = { type = provincetax which = 474 value = 2 } #Sivas
+		command = { type = sleepevent which = 3001190 } #BYZ: Byzantine Settlers - Sivas
+	}
+}
+
+#(1500-1710) Byzantine Settlers - Sivas
+event = {
+	id = 3001190 #id = 90931
+	trigger = {
+		event = 3001189 #BYZ: The Turks in Sivas
+	}
+	random = no
+	country = BYZ
+	name = "Byzantine settlers prosper in Sivas" #Byzantine settlers prosper in Sivas
+	desc = "After many decades, the settlers placed so long ago have integrated with the local Turks, and won them over to Byzantine culture. As a result the productivity and population of Sivas have risen."
+	#-#After many decades, the settlers placed so long ago have integrated with the local Turks, and won them over to Byzantine culture. As a result the productivity and population of Sivas have risen.
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 3600 #10 years
+	deathdate = { day = 1 month = january year = 1710 }
+
+	action_a = {
+		name = "Prosperity in Sivas" #Prosperity in Sivas
+		command = { type = provinceculture which = 474 value = -1 } #Sivas
+		command = { type = populationpercent which = 474 value = 5 } #Sivas
+	}
+}
+
+#(1492-1620) Reclamation of Anatolia - Smyrna
+event = {
+	id = 3001191 #id = 90961
+	trigger = {
+		event = 3001188 #BYZ: Reclamation of Anatolia
+		owned = { province = 478 data = -1 } #Smyrna
+	}
+	random = no
+	country = BYZ
+	name = "The Turks in Smyrna" #The Turks in Smyrna
+	desc = "As time went on, pressure grew for the Court in Constantinople to take decisive action in Smyrna, which remained largely Turkish. The Court was however inclined to do nothing at all even though that would hurt the long term growth of the region. The next most popular option, inspired by the Iberian kingdoms was to simply expel the Turks at great cost to the province. While the bureaucrats liked such a simple solution, the military thought it would be better to resettle the area with true Byzantines drawn from the excess population of Thrace and Constantinople over the course of many decades. Finally, a minority of intellectuals wondered why the Turks couldn't simply be accepted as valued subjects of the Emperor, but to do that would require reconciling the Turks in each province in Anatolia."
+	#-#As time went on, pressure grew for the Court in Constantinople to take decisive action in Smyrna, which remained largely Turkish. The Court was however inclined to do nothing at all even though that would hurt the long term growth of the region. The next most popular option, inspired by the Iberian kingdoms was to simply expel the Turks at great cost to the province. While the bureaucrats liked such a simple solution, the military thought it would be better to resettle the area with true Byzantines drawn from the excess population of Thrace and Constantinople over the course of many decades. Finally, a minority of intellectuals wondered why the Turks couldn't simply be accepted as valued subjects of the Emperor, but to do that would require reconciling the Turks in each province in Anatolia.
+
+	date = { day = 1 month = january year = 1440 }
+	offset = 1080 #3 years
+	deathdate = { day = 1 month = january year = 1640 }
+
+	action_a = {
+		name = "As long as the taxes come in, who cares who's doing the paying?" #As long as the taxes come in, who cares who's doing the paying?
+		command = { type = stability value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = treasury value = 100 }
+		command = { type = provincemanpower which = 478 value = -1 } #Smyrna
+		command = { type = provincetax which = 478 value = -1 } #Smyrna
+		command = { type = sleepevent which = 3001192 } #BYZ: Byzantine Settlers - Smyrna
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+	}
+	action_b = {
+		name = "Expel the foreign infidels!" #Expel the foreign infidels!
+		command = { type = stability value = 1 }
+		command = { type = revolt which = 478 } #Smyrna
+		command = { type = populationpercent which = 478 value = -7 } #Smyrna
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = provinceculture which = 478 value = -1 } #Smyrna
+		command = { type = conversion which = 478 }
+		command = { type = sleepevent which = 3001192 } #BYZ: #BYZ: Byzantine Settlers - Smyrna
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+		command = { type = trigger which = 3001209 } #QAR: Turkish refugees from Rum
+		command = { type = trigger which = 3001210 } #MAM: Turkish refugees from Rum
+		command = { type = trigger which = 3001211 } #AKK: Turkish refugees from Rum
+		command = { type = trigger which = 3001212 } #PER: Turkish refugees from Rum
+	}
+	action_c = {
+		name = "Resettle Constantinopolitans in Smyrna" #Resettle Constantinopolitans in Smyrna
+		command = { type = stability value = -1 }
+		command = { type = revolt which = -2 }
+		command = { type = revoltrisk which = 24 value = 2 }
+		command = { type = missionaries value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = populationpercent which = -2 value = -5 }
+		command = { type = populationpercent which = 478 value = 5 }
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+	}
+	action_d = {
+		name = "Accept the Turks" #Accept the Turks
+		command = { type = stability value = -1 }
+		command = { type = revoltrisk which = 24 value = 2 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = SPA value = -20 }
+		command = { type = relation which = HAB value = -20 }
+		command = { type = relation which = PAP value = -20 }
+		command = { type = provincemanpower which = 478 value = 1 } #Smyrna
+		command = { type = provincetax which = 478 value = 2 } #Smyrna
+		command = { type = sleepevent which = 3001192 } #BYZ: Byzantine Settlers - Smyrna
+	}
+}
+
+#(1500-1710) Byzantine settlers - Smyrna
+event = {
+	id = 3001192 #id = 90962
+	trigger = {
+		event = 3001191 #BYZ: The Turks in Smyrna
+	}
+	random = no
+	country = BYZ
+	name = "Byzantine settlers prosper in Smyrna" #Byzantine settlers prosper in Smyrna
+	desc = "After many decades, the settlers placed so long ago have integrated with the local Turks, and won them over to Byzantine culture. As a result the productivity and population of Smyrna have risen."
+	#-#After many decades, the settlers placed so long ago have integrated with the local Turks, and won them over to Byzantine culture. As a result the productivity and population of Smyrna have risen.
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 3600 #10 years
+	deathdate = { day = 1 month = january year = 1710 }
+
+	action_a = {
+		name = "Prosperity in Smyrna" #Prosperity in Smyrna
+		command = { type = provinceculture which = 478 value = -1 } #Smyrna
+		command = { type = populationpercent which = 478 value = 5 } #Smyrna
+	}
+}
+
+#(1440-1640) Reclamation of Anatolia - Angora
+event = {
+	id = 3001193 #id = 90924
+	trigger = {
+		event = 3001188 #BYZ: Reclamation of Anatolia
+		owned = { province = 476 data = -1 } #Angora
+	}
+	random = no
+	country = BYZ
+	name = "The Turks in Angora" #The Turks in Angora
+	desc = "As time went on, pressure grew for the Court in Constantinople to take decisive action in Angora, which remained largely Turkish. The Court was however inclined to do nothing at all even though that would hurt the long term growth of the region. The next most popular option, inspired by the Iberian kingdoms was to simply expel the Turks at great cost to the province. While the bureaucrats liked such a simple solution, the military thought it would be better to resettle the area with true Byzantines drawn from the excess population of Thrace and Constantinople over the course of many decades. Finally, a minority of intellectuals wondered why the Turks couldn't simply be accepted as valued subjects of the Emperor, but to do that would require reconciling the Turks in each province in Anatolia."
+	#-#As time went on, pressure grew for the Court in Constantinople to take decisive action in Angora, which remained largely Turkish. The Court was however inclined to do nothing at all even though that would hurt the long term growth of the region. The next most popular option, inspired by the Iberian kingdoms was to simply expel the Turks at great cost to the province. While the bureaucrats liked such a simple solution, the military thought it would be better to resettle the area with true Byzantines drawn from the excess population of Thrace and Constantinople over the course of many decades. Finally, a minority of intellectuals wondered why the Turks couldn't simply be accepted as valued subjects of the Emperor, but to do that would require reconciling the Turks in each province in Anatolia.
+
+	date = { day = 1 month = january year = 1440 }
+	offset = 1080 #3 years
+	deathdate = { day = 1 month = january year = 1640 }
+
+	action_a = {
+		name = "As long as the taxes come in, who cares who's doing the paying?" #As long as the taxes come in, who cares who's doing the paying?
+		command = { type = stability value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = treasury value = 100 }
+		command = { type = provincemanpower which = 476 value = -1 } #Angora
+		command = { type = provincetax which = 476 value = -1 } #Angora
+		command = { type = sleepevent which = 3001194 } #BYZ: Byzantine Settlers - Angora
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+	}
+	action_b = {
+		name = "Expel the foreign infidels!" #Expel the foreign infidels!
+		command = { type = stability value = 1 }
+		command = { type = revolt which = 476 } #Angora
+		command = { type = populationpercent which = 476 value = -7 } #Angora
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = provinceculture which = 476 value = -1 } #Angora
+		command = { type = conversion which = 476 }
+		command = { type = sleepevent which = 3001194 } #BYZ: Byzantine Settlers - Angora
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+		command = { type = trigger which = 3001209 } #QAR: Turkish refugees from Rum
+		command = { type = trigger which = 3001210 } #MAM: Turkish refugees from Rum
+		command = { type = trigger which = 3001211 } #AKK: Turkish refugees from Rum
+		command = { type = trigger which = 3001212 } #PER: Turkish refugees from Rum
+	}
+	action_c = {
+		name = "Resettle Constantinopolitans in Angora" #Resettle Constantinopolitans in Angora
+		command = { type = stability value = -1 }
+		command = { type = revolt which = -2 }
+		command = { type = revoltrisk which = 24 value = 2 }
+		command = { type = missionaries value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = populationpercent which = -2 value = -5 }
+		command = { type = populationpercent which = 476 value = 5 }
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+	}
+	action_d = {
+		name = "Accept the Turks" #Accept the Turks
+		command = { type = stability value = -1 }
+		command = { type = revoltrisk which = 24 value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = SPA value = -20 }
+		command = { type = relation which = HAB value = -20 }
+		command = { type = relation which = PAP value = -20 }
+		command = { type = provincemanpower which = 476 value = 1 } #Angora
+		command = { type = provincetax which = 476 value = 2 } #Angora
+		command = { type = sleepevent which = 3001194 } #BYZ: Byzantine Settlers - Angora
+	}
+}
+
+#(1500-1710) Byzantine settlers - Angora
+event = {
+	id = 3001194 #id = 90932
+	trigger = {
+		event = 3001193 #BYZ: The Turks in Angora
+	}
+	random = no
+	country = BYZ
+	name = "Byzantine settlers prosper in Angora" #BYZ: Byzantine Settlers - Angora
+	desc = "After many decades the settlers placed so long ago have integrated with the local Turks and won them over to Byzantine culture. As a result the productivity and population of Angora have risen."
+	#-#After many decades the settlers placed so long ago have integrated with the local Turks and won them over to Byzantine culture. As a result the productivity and population of Angora have risen.
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 3600 #10 years
+	deathdate = { day = 1 month = january year = 1710 }
+
+	action_a = {
+		name = "Prosperity in Angora" #Prosperity in Angora
+		command = { type = provinceculture which = 476 value = -1 } #Angora
+		command = { type = populationpercent which = 476 value = 5 } #Angora
+	}
+}
+
+#(1440-1640) Reclamation of Anatolia - Anatolia
+event = {
+	id = 3001195 #id = 90925
+	trigger = {
+		event = 3001188 #BYZ: Reclamation of Anatolia
+		owned = { province = 477 data = -1 } #Anatolia
+	}
+	random = no
+	country = BYZ
+	name = "The Turks in Anatolia" #The Turks in Anatolia
+	desc = "As time went on, pressure grew for the Court in Constantinople to take decisive action in Anatolia, which remained largely Turkish. The Court was however inclined to do nothing at all even though that would hurt the long term growth of the region. The next most popular option, inspired by the Iberian kingdoms was to simply expel the Turks at great cost to the province. While the bureaucrats liked such a simple solution, the military thought it would be better to resettle the area with true Byzantines drawn from the excess population of Thrace and Constantinople over the course of many decades. Finally, a minority of intellectuals wondered why the Turks couldn't simply be accepted as valued subjects of the Emperor, but to do that would require reconciling the Turks in each province in Anatolia."
+	#-#As time went on, pressure grew for the Court in Constantinople to take decisive action in Anatolia, which remained largely Turkish. The Court was however inclined to do nothing at all even though that would hurt the long term growth of the region. The next most popular option, inspired by the Iberian kingdoms was to simply expel the Turks at great cost to the province. While the bureaucrats liked such a simple solution, the military thought it would be better to resettle the area with true Byzantines drawn from the excess population of Thrace and Constantinople over the course of many decades. Finally, a minority of intellectuals wondered why the Turks couldn't simply be accepted as valued subjects of the Emperor, but to do that would require reconciling the Turks in each province in Anatolia.
+
+	date = { day = 1 month = january year = 1440 }
+	offset = 1080 #3 years
+	deathdate = { day = 1 month = january year = 1640 }
+
+	action_a = {
+		name = "As long as the taxes come in, who cares who's doing the paying?" #As long as the taxes come in, who cares who's doing the paying?
+		command = { type = stability value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = treasury value = 100 }
+		command = { type = provincemanpower which = 477 value = -1 } #Anatolia
+		command = { type = provincetax which = 477 value = -1 } #Anatolia
+		command = { type = sleepevent which = 3001196 } #BYZ: Byzantine Settlers - Anatolia
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+	}
+	action_b = {
+		name = "Expel the foreign infidels!" #Expel the foreign infidels!
+		command = { type = stability value = 1 }
+		command = { type = revolt which = 477 } #Anatolia
+		command = { type = populationpercent which = 477 value = -20 } #Anatolia
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = provinceculture which = 477 value = -1 } #Anatolia
+		command = { type = conversion which = 477 }
+		command = { type = sleepevent which = 3001196 } #BYZ: Byzantine Settlers - Anatolia
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+		command = { type = trigger which = 3001209 } #QAR: Turkish refugees from Rum
+		command = { type = trigger which = 3001210 } #MAM: Turkish refugees from Rum
+		command = { type = trigger which = 3001211 } #AKK: Turkish refugees from Rum
+		command = { type = trigger which = 3001212 } #PER: Turkish refugees from Rum
+	}
+	action_c = {
+		name = "Resettle Constantinopolitans in Anatolia" #Resettle Constantinopolitans in Anatolia
+		command = { type = stability value = -1 }
+		command = { type = revolt which = -2 }
+		command = { type = revoltrisk which = 24 value = 2 }
+		command = { type = missionaries value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = populationpercent which = -2 value = -5 }
+		command = { type = populationpercent which = 477 value = 5 }
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+	}
+	action_d = {
+		name = "Accept the Turks" #Accept the Turks
+		command = { type = stability value = -1 }
+		command = { type = revoltrisk which = 24 value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = SPA value = -20 }
+		command = { type = relation which = HAB value = -20 }
+		command = { type = relation which = PAP value = -20 }
+		command = { type = provincemanpower which = 477 value = 1 } #Anatolia
+		command = { type = provincetax which = 477 value = 2 } #Anatolia
+		command = { type = sleepevent which = 3001196 } #BYZ: Byzantine Settlers - Anatolia
+	}
+}
+
+#(1500-1710) Byzantine settlers - Anatolia
+event = {
+	id = 3001196 #id = 90933
+	trigger = {
+		event = 3001195 #BYZ: The Turks in Anatolia
+	}
+	random = no
+	country = BYZ
+	name = "Byzantine settlers prosper in Anatolia" #Byzantine settlers prosper in Anatolia
+	desc = "After many decades the settlers placed so long ago have integrated with the local Turks and won them over to Byzantine culture. As a result, the productivity and population of Anatolia have gone up."
+	#-#After many decades the settlers placed so long ago have integrated with the local Turks and won them over to Byzantine culture. As a result, the productivity and population of Anatolia have gone up.
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 3600 #10 years
+	deathdate = { day = 1 month = january year = 1710 }
+
+	action_a = {
+		name = "Prosperity in Anatolia" #Prosperity in Anatolia
+		command = { type = provinceculture which = 477 value = -1 } #Anatolia
+		command = { type = populationpercent which = 477 value = 5 } #Anatolia
+	}
+}
+
+#(1440-1640) Reclamation of Anatolia - Konya
+event = {
+	id = 3001197 #id = 90926
+	trigger = {
+		event = 3001188 #BYZ: Reclamation of Anatolia
+		owned = { province = 482 data = -1 } #Konya
+	}
+	random = no
+	country = BYZ
+	name = "The Turks in Konya" #The Turks in Konya
+	desc = "As time went on, pressure grew for the Court in Constantinople to take decisive action in Konya, which remained largely Turkish. The Court was however inclined to do nothing at all even though that would hurt the long term growth of the region. The next most popular option, inspired by the Iberian kingdoms was to simply expel the Turks at great cost to the province. While the bureaucrats liked such a simple solution, the military thought it would be better to resettle the area with true Byzantines drawn from the excess population of Thrace and Constantinople over the course of many decades. Finally, a minority of intellectuals wondered why the Turks couldn't simply be accepted as valued subjects of the Emperor, but to do that would require reconciling the Turks in each province in Anatolia."
+	#-#As time went on, pressure grew for the Court in Constantinople to take decisive action in Konya, which remained largely Turkish. The Court was however inclined to do nothing at all even though that would hurt the long term growth of the region. The next most popular option, inspired by the Iberian kingdoms was to simply expel the Turks at great cost to the province. While the bureaucrats liked such a simple solution, the military thought it would be better to resettle the area with true Byzantines drawn from the excess population of Thrace and Constantinople over the course of many decades. Finally, a minority of intellectuals wondered why the Turks couldn't simply be accepted as valued subjects of the Emperor, but to do that would require reconciling the Turks in each province in Anatolia.
+
+	date = { day = 1 month = january year = 1440 }
+	offset = 1080 #3 years
+	deathdate = { day = 1 month = january year = 1640 }
+
+	action_a = {
+		name = "As long as the taxes come, who cares who's doing the paying?" #As long as the taxes come, who cares who's doing the paying?
+		command = { type = stability value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = treasury value = 100 }
+		command = { type = provincemanpower which = 482 value = -1 } #Konya
+		command = { type = provincetax which = 482 value = -1 } #Konya
+		command = { type = sleepevent which = 3001198 } #BYZ: Byzantine Settlers - Konya
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+	}
+	action_b = {
+		name = "Expel the foreign infidels!" #Expel the foreign infidels!
+		command = { type = stability value = 1 }
+		command = { type = revolt which = 482 } #Konya
+		command = { type = populationpercent which = 482 value = -10 } #Konya
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = provinceculture which = 482 value = -1 } #Konya
+		command = { type = conversion which = 482 }
+		command = { type = sleepevent which = 3001198 } #BYZ: Byzantine Settlers - Konya
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+		command = { type = trigger which = 3001209 } #QAR: Turkish refugees from Rum
+		command = { type = trigger which = 3001210 } #MAM: Turkish refugees from Rum
+		command = { type = trigger which = 3001211 } #AKK: Turkish refugees from Rum
+		command = { type = trigger which = 3001212 } #PER: Turkish refugees from Rum
+	}
+	action_c = {
+		name = "Resettle Constantinopolitans in Konya" #Resettle Constantinopolitans in Konya
+		command = { type = stability value = -1 }
+		command = { type = revolt which = -2 }
+		command = { type = revoltrisk which = 24 value = 2 }
+		command = { type = missionaries value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = populationpercent which = -2 value = -5 }
+		command = { type = populationpercent which = 482 value = 5 }
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+	}
+	action_d = {
+		name = "Accept the Turks" #Accept the Turks
+		command = { type = stability value = -1 }
+		command = { type = revoltrisk which = 24 value = 2 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = SPA value = -20 }
+		command = { type = relation which = HAB value = -20 }
+		command = { type = relation which = PAP value = -20 }
+		command = { type = provincemanpower which = 482 value = 1 } #Konya
+		command = { type = provincetax which = 482 value = 2 } #Konya
+		command = { type = sleepevent which = 3001198 } #BYZ: Byzantine Settlers - Konya
+	}
+}
+
+#(1500-1710) Byzantine settlers - Konya
+event = {
+	id = 3001198 #id = 90934
+	trigger = {
+		event = 3001197 #BYZ: The Turks in Konya
+	}
+	random = no
+	country = BYZ
+	name = "Byzantine settlers prosper in Konya" #Byzantine settlers prosper in Konya
+	desc = "After many decades the settlers placed so long ago have integrated with the local Turks and won them over to Byzantine culture. As a result the productivity and population of Konya have risen."
+	#-#After many decades the settlers placed so long ago have integrated with the local Turks and won them over to Byzantine culture. As a result the productivity and population of Konya have risen.
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 3600 #10 years
+	deathdate = { day = 1 month = january year = 1710 }
+
+	action_a = {
+		name = "Prosperity in Konya" #Prosperity in Konya
+		command = { type = provinceculture which = 482 value = -1 } #Konya
+		command = { type = populationpercent which = 482 value = 5 } #Konya
+	}
+}
+
+#(1440-1640) Reclamation of Anatolia - Kastamonu
+event = {
+	id = 3001199 #id = 90928
+	trigger = {
+		event = 3001188 #BYZ: Reclamation of Anatolia
+		owned = { province = 1609 data = -1 } #Kastamonu
+	}
+	random = no
+	country = BYZ
+	name = "The Turks in Kastamonu" #The Turks in Kastamonu
+	desc = "As time went on, pressure grew for the Court in Constantinople to take decisive action in Kastamonu, which remained largely Turkish. The Court was however inclined to do nothing at all even though that would hurt the long term growth of the region. The next most popular option, inspired by the Iberian kingdoms was to simply expel the Turks at great cost to the province. While the bureaucrats liked such a simple solution, the military thought it would be better to resettle the area with true Byzantines drawn from the excess population of Thrace and Constantinople over the course of many decades. Finally, a minority of intellectuals wondered why the Turks couldn't simply be accepted as valued subjects of the Emperor, but to do that would require reconciling the Turks in each province in Anatolia."
+	#-#As time went on, pressure grew for the Court in Constantinople to take decisive action in Kastamonu, which remained largely Turkish. The Court was however inclined to do nothing at all even though that would hurt the long term growth of the region. The next most popular option, inspired by the Iberian kingdoms was to simply expel the Turks at great cost to the province. While the bureaucrats liked such a simple solution, the military thought it would be better to resettle the area with true Byzantines drawn from the excess population of Thrace and Constantinople over the course of many decades. Finally, a minority of intellectuals wondered why the Turks couldn't simply be accepted as valued subjects of the Emperor, but to do that would require reconciling the Turks in each province in Anatolia.
+
+	date = { day = 1 month = january year = 1440 }
+	offset = 1080 #3 years
+	deathdate = { day = 1 month = january year = 1640 }
+
+	action_a = {
+		name = "As long as the taxes come, who cares who's doing the paying?" #As long as the taxes come, who cares who's doing the paying?
+		command = { type = stability value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = treasury value = 100 }
+		command = { type = provincemanpower which = 1609 value = -1 } #Kastamonu
+		command = { type = provincetax which = 1609 value = -1 } #Kastamonu
+		command = { type = sleepevent which = 3001200 } #BYZ: Byzantine Settlers - Kastamonu
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+	}
+	action_b = {
+		name = "Expel the foreign infidels!" #Expel the foreign infidels!
+		command = { type = stability value = 1 }
+		command = { type = revolt which = 1609 } #Kastamonu
+		command = { type = populationpercent which = 1609 value = -7 } #Kastamonu
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = provinceculture which = 1609 value = -1 } #Kastamonu
+		command = { type = conversion which = 1609 }
+		command = { type = sleepevent which = 3001200 } #BYZ: Byzantine Settlers - Kastamonu
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+		command = { type = trigger which = 3001209 } #QAR: Turkish refugees from Rum
+		command = { type = trigger which = 3001210 } #MAM: Turkish refugees from Rum
+		command = { type = trigger which = 3001211 } #AKK: Turkish refugees from Rum
+		command = { type = trigger which = 3001212 } #PER: Turkish refugees from Rum
+	}
+	action_c = {
+		name = "Resettle Constantinopolitans in Kastamonu" #Resettle Constantinopolitans in Kastamonu
+		command = { type = stability value = -1 }
+		command = { type = revolt which = -2 }
+		command = { type = revoltrisk which = 24 value = 2 }
+		command = { type = missionaries value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = populationpercent which = -2 value = -5 }
+		command = { type = populationpercent which = 1609 value = 5 }
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+	}
+	action_d = {
+		name = "Accept the Turks" #Accept the Turks
+		command = { type = stability value = -1 }
+		command = { type = revoltrisk which = 24 value = 2 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = SPA value = -20 }
+		command = { type = relation which = HAB value = -20 }
+		command = { type = relation which = PAP value = -20 }
+		command = { type = provincemanpower which = 1609 value = 1 } #Kastamonu
+		command = { type = provincetax which = 1609 value = 2 } #Kastamonu
+		command = { type = sleepevent which = 3001200 } #BYZ: Byzantine Settlers - Kastamonu
+	}
+}
+
+#(1500-1710) Byzantine settlers - Kastamonu
+event = {
+	id = 3001200 #id = 90936
+	trigger = {
+		event = 3001199 #BYZ: The Turks in Kastamonu
+	}
+	random = no
+	country = BYZ
+	name = "Byzantine settlers prosper in Kastamonu" #Byzantine settlers prosper in Kastamonu
+	desc = "After many decades the settlers placed so long ago have integrated with the local Turks and won them over to Byzantine culture. As a result the productivity and population of Kastamonu have risen."
+	#-#After many decades the settlers placed so long ago have integrated with the local Turks and won them over to Byzantine culture. As a result the productivity and population of Kastamonu have risen.
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 3600 #10 years
+	deathdate = { day = 1 month = january year = 1710 }
+
+	action_a = {
+		name = "Prosperity in Kastamonu" #Prosperity in Kastamonu
+		command = { type = provinceculture which = 1609 value = -1 } #Kastamonu
+		command = { type = populationpercent which = 1609 value = 5 } #Kastamonu
+	}
+}
+
+#(1440-1640) Reclamation of Anatolia - Antalya
+event = {
+	id = 3001201 #id = 90929
+	trigger = {
+		event = 3001188 #BYZ: Reclamation of Anatolia
+		owned = { province = 1610 data = -1 } #Antalya
+	}
+	random = no
+	country = BYZ
+	name = "The Turks in Antalya" #The Turks in Antalya
+	desc = "As time went on, pressure grew for the Court in Constantinople to take decisive action in Antalya, which remained largely Turkish. The Court was however inclined to do nothing at all even though that would hurt the long term growth of the region. The next most popular option, inspired by the Iberian kingdoms was to simply expel the Turks at great cost to the province. While the bureaucrats liked such a simple solution, the military thought it would be better to resettle the area with true Byzantines drawn from the excess population of Thrace and Constantinople over the course of many decades. Finally, a minority of intellectuals wondered why the Turks couldn't simply be accepted as valued subjects of the Emperor, but to do that would require reconciling the Turks in each province in Anatolia."
+	#-#As time went on, pressure grew for the Court in Constantinople to take decisive action in Antalya, which remained largely Turkish. The Court was however inclined to do nothing at all even though that would hurt the long term growth of the region. The next most popular option, inspired by the Iberian kingdoms was to simply expel the Turks at great cost to the province. While the bureaucrats liked such a simple solution, the military thought it would be better to resettle the area with true Byzantines drawn from the excess population of Thrace and Constantinople over the course of many decades. Finally, a minority of intellectuals wondered why the Turks couldn't simply be accepted as valued subjects of the Emperor, but to do that would require reconciling the Turks in each province in Anatolia.
+
+	date = { day = 1 month = january year = 1440 }
+	offset = 1080 #3 years
+	deathdate = { day = 1 month = january year = 1640 }
+
+	action_a = {
+		name = "As long as the taxes come, who cares who's doing the paying?" #As long as the taxes come, who cares who's doing the paying?
+		command = { type = stability value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = treasury value = 100 }
+		command = { type = provincemanpower which = 1610 value = -1 } #Antalya
+		command = { type = provincetax which = 1610 value = -1 } #Antalya
+		command = { type = sleepevent which = 3001202 } #BYZ: Byzantine Settlers - Antalya
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+	}
+	action_b = {
+		name = "Expel the foreign infidels!" #Expel the foreign infidels!
+		command = { type = stability value = 1 }
+		command = { type = revolt which = 1610 } #Antalya
+		command = { type = populationpercent which = 1610 value = -7 } #Antalya
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = provinceculture which = 1610 value = -1 } #Antalya
+		command = { type = conversion which = 1610 }
+		command = { type = sleepevent which = 3001202 } #BYZ: Byzantine Settlers - Antalya
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+		command = { type = trigger which = 3001209 } #QAR: Turkish refugees from Rum
+		command = { type = trigger which = 3001210 } #MAM: Turkish refugees from Rum
+		command = { type = trigger which = 3001211 } #AKK: Turkish refugees from Rum
+		command = { type = trigger which = 3001212 } #PER: Turkish refugees from Rum
+	}
+	action_c = {
+		name = "Resettle Constantinopolitans in Antalya" #Resettle Constantinopolitans in Antalya
+		command = { type = stability value = -1 }
+		command = { type = revolt which = -2 }
+		command = { type = revoltrisk which = 24 value = 2 }
+		command = { type = missionaries value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = populationpercent which = -2 value = -5 }
+		command = { type = populationpercent which = 1610 value = 5 }
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+	}
+	action_d = {
+		name = "Accept the Turks" #Accept the Turks
+		command = { type = stability value = -1 }
+		command = { type = revoltrisk which = 24 value = 2 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = SPA value = -20 }
+		command = { type = relation which = HAB value = -20 }
+		command = { type = relation which = PAP value = -20 }
+		command = { type = provincemanpower which = 1610 value = 1 } #Antalya
+		command = { type = provincetax which = 1610 value = 2 } #Antalya
+		command = { type = sleepevent which = 3001202 } #BYZ: Byzantine Settlers - Antalya
+	}
+}
+
+#(1500-1710) Byzantine settlers - Antalya
+event = {
+	id = 3001202 #id = 90937
+	trigger = {
+		event = 3001201 #BYZ: The Turks in Antalya
+	}
+	random = no
+	country = BYZ
+	name = "Byzantine settlers prosper in Antalya" #Byzantine settlers prosper in Antalya
+	desc = "After many decades the settlers placed so long ago have integrated with the local Turks and won them over to Byzantine culture. As a result the productivity and population of Antalya have risen."
+	#-#After many decades the settlers placed so long ago have integrated with the local Turks and won them over to Byzantine culture. As a result the productivity and population of Antalya have risen.
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 3600 #10 years
+	deathdate = { day = 1 month = january year = 1710 }
+
+	action_a = {
+		name = "Prosperity in Antalya" #Prosperity in Antalya
+		command = { type = provinceculture which = 1610 value = -1 } #Antalya
+		command = { type = populationpercent which = 1610 value = 5 } #Antalya
+	}
+}
+
+#(1440-1640) Reclamation of Anatolia - Taurus
+event = {
+	id = 3001203 #id = 90930
+	trigger = {
+		event = 3001188 #BYZ: Reclamation of Anatolia
+		owned = { province = 1611 data = -1 } #Tarsus
+	}
+	random = no
+	country = BYZ
+	name = "The Turks in Taurus" #The Turks in Taurus
+	desc = "As time went on, pressure grew for the Court in Constantinople to take decisive action in Taurus, which remained largely Turkish. The Court was however inclined to do nothing at all even though that would hurt the long term growth of the region. The next most popular option, inspired by the Iberian kingdoms was to simply expel the Turks at great cost to the province. While the bureaucrats liked such a simple solution, the military thought it would be better to resettle the area with true Byzantines drawn from the excess population of Thrace and Constantinople over the course of many decades. Finally, a minority of intellectuals wondered why the Turks couldn't simply be accepted as valued subjects of the Emperor, but to do that would require reconciling the Turks in each province in Anatolia."
+	#-#As time went on, pressure grew for the Court in Constantinople to take decisive action in Taurus, which remained largely Turkish. The Court was however inclined to do nothing at all even though that would hurt the long term growth of the region. The next most popular option, inspired by the Iberian kingdoms was to simply expel the Turks at great cost to the province. While the bureaucrats liked such a simple solution, the military thought it would be better to resettle the area with true Byzantines drawn from the excess population of Thrace and Constantinople over the course of many decades. Finally, a minority of intellectuals wondered why the Turks couldn't simply be accepted as valued subjects of the Emperor, but to do that would require reconciling the Turks in each province in Anatolia.
+
+	date = { day = 1 month = january year = 1440 }
+	offset = 1080 #3 years
+	deathdate = { day = 1 month = january year = 1640 }
+
+	action_a = {
+		name = "As long as the taxes come, who cares who's doing the paying?" #As long as the taxes come, who cares who's doing the paying?
+		command = { type = stability value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = treasury value = 100 }
+		command = { type = provincemanpower which = 1611 value = -1 } #Taurus
+		command = { type = provincetax which = 1611 value = -1 } #Taurus
+		command = { type = sleepevent which = 3001204 } #BYZ: Byzantine Settlers - Tarsus
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+	}
+	action_b = {
+		name = "Expel the foreign infidels!" #Expel the foreign infidels!
+		command = { type = stability value = 1 }
+		command = { type = revolt which = 1611 } #Taurus
+		command = { type = populationpercent which = 1611 value = -5 } #Taurus
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = provinceculture which = 1611 value = -1 } #Taurus
+		command = { type = conversion which = 1611 }
+		command = { type = sleepevent which = 3001204 } #BYZ: Byzantine Settlers - Tarsus
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+		command = { type = trigger which = 3001209 } #QAR: Turkish refugees from Rum
+		command = { type = trigger which = 3001210 } #MAM: Turkish refugees from Rum
+		command = { type = trigger which = 3001211 } #AKK: Turkish refugees from Rum
+		command = { type = trigger which = 3001212 } #PER: Turkish refugees from Rum
+	}
+	action_c = {
+		name = "Resettle Constantinopolitans in Taurus" #Resettle Constantinopolitans in Taurus
+		command = { type = stability value = -1 }
+		command = { type = revolt which = -2 }
+		command = { type = revoltrisk which = 24 value = 2 }
+		command = { type = missionaries value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = populationpercent which = -2 value = -5 }
+		command = { type = populationpercent which = 1611 value = 5 }
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+	}
+	action_d = {
+		name = "Accept the Turks" #Accept the Turks
+		command = { type = stability value = -1 }
+		command = { type = revoltrisk which = 24 value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = SPA value = -20 }
+		command = { type = relation which = HAB value = -20 }
+		command = { type = relation which = PAP value = -20 }
+		command = { type = provincemanpower which = 1611 value = 1 } #Taurus
+		command = { type = provincetax which = 1611 value = 2 } #Taurus
+		command = { type = sleepevent which = 3001204 } #BYZ: Byzantine Settlers - Tarsus
+	}
+}
+
+#(1500-1715) Byzantine settlers - Taurus
+event = {
+	id = 3001204 #id = 90938
+	trigger = {
+		event = 3001203 #BYZ: The Turks in Taurus
+	}
+	random = no
+	country = BYZ
+	name = "Byzantine settlers prosper in Taurus" #Byzantine settlers prosper in Taurus
+	desc = "After many decades the settlers placed so long ago have integrated with the local Turks and won them over to Byzantine culture. As a result the productivity and population of Taurus have risen."
+	#-#After many decades the settlers placed so long ago have integrated with the local Turks and won them over to Byzantine culture. As a result the productivity and population of Taurus have risen.
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 3600 #10 years
+	deathdate = { day = 1 month = january year = 1710 }
+
+	action_a = {
+		name = "Prosperity in Taurus" #Prosperity in Taurus
+		command = { type = provinceculture which = 1611 value = -1 } #Taurus
+		command = { type = populationpercent which = 1611 value = 5 } #Taurus
+	}
+}
+
+#(1440-1640) Reclamation of Anatolia - Adana
+event = {
+	id = 3001205 #id = 90927
+	trigger = {
+		event = 3001188 #BYZ: Reclamation of Anatolia
+		owned = { province = 483 data = -1 } #Adana
+	}
+	random = no
+	country = BYZ
+	name = "The Turks in Adana" #The Turks in Adana
+	desc = "As time went on, pressure grew for the Court in Constantinople to take decisive action in Adana, which remained largely Turkish. The Court was however inclined to do nothing at all even though that would hurt the long term growth of the region. The next most popular option, inspired by the Iberian kingdoms was to simply expel the Turks at great cost to the province. While the bureaucrats liked such a simple solution, the military thought it would be better to resettle the area with true Byzantines drawn from the excess population of Thrace and Constantinople over the course of many decades. Finally, a minority of intellectuals wondered why the Turks couldn't simply be accepted as valued subjects of the Emperor, but to do that would require reconciling the Turks in each province in Anatolia."
+	#-#As time went on, pressure grew for the Court in Constantinople to take decisive action in Adana, which remained largely Turkish. The Court was however inclined to do nothing at all even though that would hurt the long term growth of the region. The next most popular option, inspired by the Iberian kingdoms was to simply expel the Turks at great cost to the province. While the bureaucrats liked such a simple solution, the military thought it would be better to resettle the area with true Byzantines drawn from the excess population of Thrace and Constantinople over the course of many decades. Finally, a minority of intellectuals wondered why the Turks couldn't simply be accepted as valued subjects of the Emperor, but to do that would require reconciling the Turks in each province in Anatolia.
+
+	date = { day = 1 month = january year = 1440 }
+	offset = 1080 #3 years
+	deathdate = { day = 1 month = january year = 1640 }
+
+	action_a = {
+		name = "As long as the taxes come, who cares who's doing the paying?" #As long as the taxes come, who cares who's doing the paying?
+		command = { type = stability value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = treasury value = 100 }
+		command = { type = provincemanpower which = 483 value = -1 } #Adana
+		command = { type = provincetax which = 483 value = -1 } #Adana
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+		command = { type = sleepevent which = 3001206 } #BYZ: Byzantine Settlers - Adana
+	}
+	action_b = {
+		name = "Expel the foreign infidels!" #Expel the foreign infidels!
+		command = { type = stability value = 1 }
+		command = { type = revolt which = 483 } #Adana
+		command = { type = populationpercent which = 483 value = -7 } #Adana
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = provinceculture which = 483 value = armenian } #Adana
+		command = { type = conversion which = 483 }
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+		command = { type = sleepevent which = 3001206 } #BYZ: Byzantine Settlers - Adana
+		command = { type = trigger which = 3001209 } #QAR: Turkish refugees from Rum
+		command = { type = trigger which = 3001210 } #MAM: Turkish refugees from Rum
+		command = { type = trigger which = 3001211 } #AKK: Turkish refugees from Rum
+		command = { type = trigger which = 3001212 } #PER: Turkish refugees from Rum
+	}
+	action_c = {
+		name = "Resettle Constantinopolitans in Adana" #Resettle Constantinopolitans in Adana
+		command = { type = stability value = -1 }
+		command = { type = revolt which = -2 }
+		command = { type = revoltrisk which = 24 value = 2 }
+		command = { type = missionaries value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = populationpercent which = -2 value = -5 }
+		command = { type = populationpercent which = 483 value = 5 }
+		command = { type = sleepevent which = 3001207 } #BYZ: The Assimilation of the Turks
+	}
+	action_d = {
+		name = "Accept the Turks" #Accept the Turks
+		command = { type = stability value = -1 }
+		command = { type = revoltrisk which = 24 value = 2 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = SPA value = -20 }
+		command = { type = relation which = HAB value = -20 }
+		command = { type = relation which = PAP value = -20 }
+		command = { type = provincemanpower which = 483 value = 1 } #Adana
+		command = { type = provincetax which = 483 value = 2 } #Adana
+		command = { type = sleepevent which = 3001206 } #BYZ: Byzantine Settlers - Adana
+	}
+}
+
+#(1500-1710) Byzantine settlers - Adana
+event = {
+	id = 3001206 #id = 90935
+	trigger = {
+		event = 3001205 #BYZ: The Turks in Adana
+	}
+	random = no
+	country = BYZ
+	name = "Byzantine settlers prosper in Adana" #Byzantine settlers prosper in Adana
+	desc = "After many decades the settlers placed so long ago have integrated with the local Turks and won them over to Byzantine culture. As a result the productivity and population of Adana have risen."
+	#-#After many decades the settlers placed so long ago have integrated with the local Turks and won them over to Byzantine culture. As a result the productivity and population of Adana have risen.
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 3600 #10 years
+	deathdate = { day = 1 month = january year = 1710 }
+
+	action_a = {
+		name = "Prosperity in Adana" #Prosperity in Adana
+		command = { type = provinceculture which = 483 value = -1 } #Adana
+		command = { type = populationpercent which = 483 value = 5 } #Adana
+	}
+}
+
+#(1475-1710) The Assimilation of the Turks
+event = {
+	id = 3001207 #id = 90943
+	trigger = {
+		event = 3001189 #BYZ: The Turks in Sivas
+		event = 3001191 #BYZ: The Turks in Smyrna
+		event = 3001193 #BYZ: The Turks in Angora
+		event = 3001195 #BYZ: The Turks in Anatolia
+		event = 3001197 #BYZ: The Turks in Konya
+		event = 3001199 #BYZ: The Turks in Kastamonu
+		event = 3001201 #BYZ: The Turks in Antalya
+		event = 3001203 #BYZ: The Turks in Taurus
+		event = 3001205 #BYZ: The Turks in Adana
+		owned = { province = 474 data = -1 } #Sivas
+		owned = { province = 476 data = -1 } #Angora
+		owned = { province = 477 data = -1 } #Anatolia
+		owned = { province = 478 data = -1 } #Smyrna
+		owned = { province = 482 data = -1 } #Konya
+		owned = { province = 483 data = -1 } #Adana
+		owned = { province = 1609 data = -1 } #Kastamonu
+		owned = { province = 1610 data = -1 } #Antalya
+		owned = { province = 1611 data = -1 } #Taurus
+		NOT = { exists = TUR }
+	}
+	random = NO
+	country = BYZ
+	name = "The Assimilation of the Turks" #The Assimilation of the Turks
+	desc = "A remarkable policy of reconciliation was followed with all the Turks in the Empire. With the old Ottoman Empire gone they were prepared to become loyal subjects of the Emperor. While the future might eventually see a strong marriage of Byzantine and Turkish strengths, at the time there was a strong reaction against 'the Turkish surrender'."
+	#-#A remarkable policy of reconciliation was followed with all the Turks in the Empire. With the old Ottoman Empire gone they were prepared to become loyal subjects of the Emperor. While the future might eventually see a strong marriage of Byzantine and Turkish strengths, at the time there was a strong reaction against 'the Turkish surrender'.
+
+	date = { day = 1 month = january year = 1475 }
+	offset = 1800 #5 years
+	deathdate = { day = 1 month = january year = 1710 }
+
+	action_a = {
+		name = "The nobles question the Emperor's policy" #The nobles question the Emperor's policy
+		command = { type = add_countryculture which = turkish }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = revoltrisk which = 60 value = 6 }
+		command = { type = stability value = -3 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+	}
+}
+
+#(1475-1710) The Acceptance of the Turks
+event = {
+	id = 3001208
+	trigger = {
+		NOT = { exists = TUR }
+		event = 3001190 #BYZ: Byzantine Settlers - Sivas
+		event = 3001192 #BYZ: Byzantine Settlers - Smyrna
+		event = 3001194 #BYZ: Byzantine Settlers - Angora
+		event = 3001196 #BYZ: Byzantine Settlers - Anatolia
+		event = 3001198 #BYZ: Byzantine Settlers - Konya
+		event = 3001200 #BYZ: Byzantine Settlers - Kastamonu
+		event = 3001202 #BYZ: Byzantine Settlers - Antalya
+		event = 3001204 #BYZ: Byzantine Settlers - Taurus
+		event = 3001206 #BYZ: Byzantine Settlers - Adana
+	}
+	random = NO
+	country = BYZ
+	name = "The Acceptance of the Turks"
+	desc = "A remarkable policy of reconciliation had been followed with all the Turks in the Empire. Almost incredibly, Greek culture spreads once more along the length of Asia Minor. One last rebellion marked the end of Turkish influence on the peninsula."
+
+	date = { day = 1 month = january year = 1475 }
+	offset = 1800 #5 years
+	deathdate = { day = 1 month = january year = 1710 }
+
+	action_a = {
+		name = "Fantastic!"
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = stability value = 1 }
+		command = { type = populationpercent which = 357 value = 15 } #Thrace
+		command = { type = provincetax which = 357 value = 1 } #Thrace
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		#command = { type = vp value = 100 }
+	}
+}
+
+#(1440-1640) Turkish Refugees from Rum - Black Sheep
+event = {
+	id = 3001209 #id = 90941
+	random = no
+	country = QAR
+	name = "Turkish refugees from Rum" #Turkish refugees from Rum
+	desc = "The cruel Christians of Rum (Byzantium) have expelled some of their Muslim Turks! They will contribute much to our nation."
+	#-#The cruel Christians of Rum (Byzantium) have expelled some of their Muslim Turks! They will contribute much to our nation.
+
+	action_a = {
+		name = "Accept them" #Accept them
+		command = { type = populationpercent which = -1 value = 5 }
+		command = { type = populationpercent which = -1 value = 5 }
+		command = { type = relation which = BYZ value = -400 }
+		command = { type = infra value = 200 }
+		command = { type = land value = 200 }
+		command = { type = treasury value = 200 }
+		command = { type = inflation value = -3 }
+		command = { type = casusbelli which = BYZ value = 240 }
+	}
+}
+
+#(1440-1640) Turkish Refugees from Rum - Mamluks
+event = {
+	id = 3001210 #id = 90942
+	random = no
+	country = MAM
+	name = "Turkish refugees from Rum" #Turkish refugees from Rum
+	desc = "The cruel Christians of Rum (Byzantium) have expelled some of their Sunni Turks! They will contribute much to our nation, but perhaps they should be shown the true faith first."
+	#-#The cruel Christians of Rum (Byzantium) have expelled some of their Sunni Turks! They will contribute much to our nation, but perhaps they should be shown the true faith first.
+
+	action_a = {
+		name = "ACTIONNAME90942A" #Accept them as Sunnis
+		command = { type = populationpercent which = -1 value = 5 }
+		command = { type = populationpercent which = -1 value = 5 }
+		command = { type = relation which = BYZ value = -400 }
+		command = { type = infra value = 200 }
+		command = { type = land value = 200 }
+		command = { type = treasury value = 200 }
+		command = { type = inflation value = -3 }
+		command = { type = casusbelli which = BYZ value = 240 }
+	}
+}
+
+#(1440-1640) Turkish Refugees from Rum - White Sheep
+event = {
+	id = 3001211 #id = 90940
+	random = no
+	country = AKK
+	name = "Turkish refugees from Rum" #Turkish refugees from Rum
+	desc = "The cruel Christians of Rum (Byzantium) have expelled some of their Muslim Turks! They will contribute much to our nation."
+	#-#The cruel Christians of Rum (Byzantium) have expelled some of their Muslim Turks! They will contribute much to our nation.
+
+	action_a = {
+		name = "Accept them" #Accept them
+		command = { type = populationpercent which = -1 value = 5 }
+		command = { type = populationpercent which = -1 value = 5 }
+		command = { type = relation which = BYZ value = -400 }
+		command = { type = infra value = 200 }
+		command = { type = land value = 200 }
+		command = { type = treasury value = 200 }
+		command = { type = inflation value = -3 }
+		command = { type = casusbelli which = BYZ value = 240 }
+	}
+}
+
+#(1440-1640) Turkish Refugees from Rum - Persia
+event = {
+	id = 3001212
+	random = NO
+	country = PER
+	name = "Turkish refugees from Rum" #Turkish refugees from Rum
+	desc = "The cruel Christians of Rum (Byzantium) have expelled some of their Muslim Turks! They will contribute much to our nation."
+	#-#The cruel Christians of Rum (Byzantium) have expelled some of their Muslim Turks! They will contribute much to our nation.
+
+	action_a = {
+		name = "Accept them" #Accept them
+		command = { type = populationpercent which = -1 value = 5 }
+		command = { type = populationpercent which = -1 value = 5 }
+		command = { type = relation which = BYZ value = -400 }
+		command = { type = infra value = 200 }
+		command = { type = land value = 200 }
+		command = { type = treasury value = 200 }
+		command = { type = inflation value = -3 }
+		command = { type = casusbelli which = BYZ value = 240 }
+	}
+}
+
+#(1419-1820) Turkish Tribes Accept Christianity
+event = {
+	id = 3001213
+	trigger = {
+		NOT = { exists = TUR }
+	}
+	random = YES
+	country = BYZ
+	name = "Turkish Tribes Accept Christianity"
+	desc = "Overwhelmed by our success and obvious favor in the eyes of the Almighty, some of the Turkish tribes have converted en masse to our faith! No doubt, there will be many with confused or heretical ideas, but the mother church will be there to guide them ... with torches, if need be."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Praise be to the Theotokos!" #Mary
+		command = { type = conversion which = -1 }
+	}
+}

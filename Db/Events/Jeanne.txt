@@ -1,0 +1,866 @@
+###########################################
+### la pucelle d'orleans events		###
+### for the New AJF scenario		###
+### By Ayeshteni			###
+###########################################
+
+#Jeanne D'Arc and the French Monarchy#
+event = {
+
+	id = 3101
+	trigger = {
+		exists = BUR
+		NOT = {
+			alliance = { country = FRA country = BUR }
+			capital = 385
+			OR = {
+				flag = aqufra
+				flag = auvfra
+				flag = boufra
+				flag = brifra
+				flag = orlfra
+				flag = profra
+				}
+			}
+		}
+	random = no
+	country = FRA
+	name = "EVENTNAME3101"
+	desc = "EVENTHIST3101"
+	style = "3101"
+
+	date = { day = 1 month = january year = 1429 } #1429#
+	offset = 10
+	deathdate = { day = 1 month = january year = 1430 }
+
+	action_a ={				#Heed the Advise of Jeanne D'Arc#
+		name = "ACTIONNAME3101A"
+		command = {  }
+		command = { type = wakeleader which = 20001 } #joan of arc#
+		command = { type = wakeleader which = 05916 } # de Xaintrailles
+		command = { type = setflag which = heedjoan }
+		command = { type = war which = BFR }
+		command = { type = war which = BUR } #Gloriana 1337
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = OFFENSIVE value = 2 }
+		command = { type = domestic which = QUALITY value = 2 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = land value = 500 }
+		command = { type = infra value = 500 }
+		command = { type = INF which = -2 value = 5000 }
+		command = { type = stability value = 2 }
+	}
+
+	action_b ={				#Ignore the Advise of Jeanne D'Arc#
+		name = "ACTIONNAME3101B"
+		command = {  }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = domestic which = LAND value = 2 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = fortress which = -2 value = 1 }
+		command = { type = CAV which = -2 value = 5000 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#The  capture of joan of arc#
+event = {
+
+	id = 100041
+	trigger = {
+		flag = heedjoan
+		}
+	random = no
+	country = FRA
+	name = "Jeanne d'Arc is betrayed"
+	desc = "On the 23rd of may 1430, Jeanne d'Arc failed to best the English and Burgundian troops around Margny. Falling back to Compiegne, de Flavy, seeing that the enemy were close behind closed the gates of the city. Jeanne d'Arc was shut out and was captured by the Burgundians. Should we shut the gates to Jeanne?"
+	style = 1
+
+	date = { day = 23 month = may year = 1430 } #1430#
+
+	action_a = {
+		name = "Close the gates!"
+		command = { type = sleepleader which = 20001 } #joan of arc#
+		command = { type = trigger which = 100061 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = -10 }
+	}
+
+	action_b = {
+		name = "Protect the maid!"
+		command = { type = wakeleader which = 20002 } #joan of arc2#
+		command = { type = stability value = -1 }
+		command = { type = vp value = 10 }
+	}
+}
+
+#Jeanne held prisoner#
+event = {
+
+	id = 100061
+	random = no
+	country = BUR
+	name = "Jeanne d'Arc Captured!"
+	desc = "We have captured the witch, Jeanne d'Arc, this is great news. We must decide what we are to do with her."
+	style = 1
+
+	action_a = {
+		name = "Let the English deal with her"
+		trigger = {
+			war = { country = ENG country = FRA }
+		}
+		command = { type = trigger which = 100043 }
+		command = { type = relation which = ENG value = 50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = DIP which = 1 value = 24 }
+		command = { type = badboy value = -2 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b = {
+		name = "Rejoice! We'll deal with her ourselves."
+		command = { type = vp value = 5 }
+		command = { type = setflag which = BURjoandead }
+	}
+}
+
+#Burgundians hold Jeanne
+event = {
+
+	id = 10062
+	trigger = {
+		flag = BURjoandead
+		}
+	random = no
+	country = BUR
+	name = "The Fate of Jeanne d'Arc"
+	desc = ""After her capture, Jeanne d'Arc was held prisoner in Brancion Castle outside Dijon from the 25th of december 1430 to the 30th of may 1431. The Burgundians charged her with treason on the 3rd of january 1431. By the 30th of may Jeanne was found guilty. The Archbishop of Besançon made a surprise plea for clemency, concerned that she was touched by God."
+	style = 1
+
+	date = { day = 30 month = may year = 1431 } #1431#"
+	style = 1
+
+	action_a = {
+		name = "Confine her to a convent"
+		command = { type = relation which = ENG value = -25 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = domestic which = innovative value = 1 } #ironic neh#
+		command = { type = stability value = 1 }
+	}
+
+	action_b = {
+		name = "Imprison her"
+		command = { type = relation which = ENG value = 25 }
+		command = { type = relation which = FRA value = 25 }
+	}
+
+	action_c = {
+		name = "Burn the witch"
+		command = { type = relation which = ENG value = 50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = domestic which = innovative value = -1 }
+		command = { type = stability value = -1 }
+	}
+
+}
+
+#Jeanne held prisoner#
+event = {
+
+	id = 100043
+	random = no
+	country = ENG
+	name = "We have Jeanne d'Arc!"
+	desc = "Sire, we have the French witch, Joan of Arc held prisoner in Rouen, this is great news."
+	style = 1
+
+	action_a = {
+		name = "Rejoice!"
+		command = { type = vp value = 10 }
+		command = { type = setflag which = joandead }
+	}
+}
+
+#Jeanne d'Arc is executed#
+event = {
+
+	id = 100042
+	trigger = {
+		flag = joandead
+		}
+	random = no
+	country = ENG
+	name = "Jeanne d'Arc is executed"
+	desc = "After her capture, Jeanne d'Arc was held prisoner in a tower at the castle of Phillipe Auguste in Rouen from the 25th of december 1430 to the 30th of may 1431. The English handed her over to the inquisition on the 3rd of january 1431. By the 30th of may Jeanne was found guilty and burned at the stake. la Pucelle, the Maid of Orleans was dead."
+	style = 1
+
+	date = { day = 30 month = may year = 1431 } #1431#
+
+	action_a = {
+		name = "Burn the witch"
+		command = { type = relation which = BUR value = 50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = domestic which = innovative value = -1 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b = {
+		name = "Imprison her"
+		command = { type = relation which = BUR value = 25 }
+		command = { type = relation which = FRA value = 25 }
+	}
+
+	action_c = {
+		name = "Confine her to a convent"
+		command = { type = relation which = BUR value = -25 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = domestic which = innovative value = 1 } #ironic neh#
+		command = { type = stability value = 1 }
+	}
+}
+
+#The Domremny Girl
+event = {
+
+	id = 100063
+	trigger = {
+		NOT = {
+			event = 3101
+		}
+	}
+	random = no
+	country = FRA
+	name = "The Maid of Domrémy"
+	desc = "News has reached us of a peasant girl from Domrémy who seems to be able to heal the sick and has convinced many men to fight for France. Many are saying she is a saint!"
+	style = 1
+
+	date = { day = 30 month = may year = 1431 } #1431#
+	offset = 10
+	deathdate = { day = 1 month = january year = 1440 }
+
+	action_a = {
+		name = "I wish we heard of this earlier!"
+		command = { type = manpower value = 5 }
+		command = { type = missionaries value = 1 }
+		command = { type = INF which = 410 value = 2000 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#######################################################
+########Hundred Year War Sequence		#######
+########by Ayeshteni for the NAJF Scenario	#######
+########Note FRA = Dauphin's Struggle		#######
+########Note BFR = Burgundian France		#######
+#######################################################
+
+#The Bridge and the assassination of Jean.
+event = {
+
+	id = 100054
+	trigger = {
+		event = 296004
+		NOT = {
+			alliance = { country = FRA country = BUR }
+		}
+	}
+	random = no
+	country = BUR
+	name = "Jean of Burgundy assassinated!"
+	desc = "On September the 10th 1419, agents of the Duke of Orleans get revenge for the Burgundian murder of Louis of Orleans in 1407. Jean is assassinated while meeting with the Dauphine of France. The assassination is the catalyst of an Anglo-Burgundian alliance."
+	style = "26020"
+
+	date = { day = 9 month = september year = 1419 }
+
+	action_a = {
+		name = "That does it!"
+		command = { type = breakvassal which = FRA }
+		command = { type = alliance which = ENG } #usually allies beforehand#
+		command = { type = war which = ORL } #usually already at war with orl#
+		command = { type = war which = AMG } #Gloriana 1337
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = casusbelli which = ORL value = 36 }
+		command = { type = casusbelli which = FRA value = 12 }
+		command = { type = casusbelli which = AMG value = 12 } #Gloriana 1337
+		command = { type = relation which = FRA value = -100 } #Gloriana 1337
+		command = { type = relation which = ORL value = -100 } #Gloriana 1337
+		command = { type = relation which = AMG value = -100 } #Gloriana 1337
+		command = { type = relation which = ENG value = 100 } #Gloriana 1337
+		command = { type = stability value = -1 }
+	}
+}
+
+#treaty of troyes#
+event = {
+
+	id = 100044
+	trigger = {
+		exists = BUR
+		exists = BFR
+		exists = FRA
+		vassal = { country = BUR country = BFR } #Gloriana 1337		
+		NOT = {
+			OR = {
+				flag = aqufra
+				flag = auvfra
+				flag = boufra
+				flag = brifra
+				flag = orlfra
+				flag = profra
+				}
+			}
+		}
+	random = no
+	country = ENG
+	name = "The Treaty of Troyes"
+	desc = "On the 21st of May 1420 the English, French and Burgundians signed the Treaty of Troyes which stipulated that the crown of France would pass to Henry V of England upon the death of Charles VI of France. Henry married Charles VI daughter Catherine de Valois to make the succession legitimate. Burgundy accepted the terms of the treaty. Also in the treaty was the removal of all rights to Charles VI son, the Dauphin Charles (VII), who was effectively deemed 'illigitimate'."
+	style = 1
+
+	date = { day = 1 month = may year = 1420 }
+	offset = 15
+	deathdate = { day = 31 month = june year = 1420 }
+
+	action_a = {
+		name = "Sign the Treaty of Troyes"
+		command = { type = trigger which = 100045 } #u02 who decides their action
+		command = { type = vp value = 2 }
+	}
+
+	action_b = {
+		name = "Let us give up our claim on France"
+		command = { type = trigger which = 100049 } #FRA annexes u02
+		command = { type = relation which = BUR value = -100 }
+		command = { type = relation which = FRA value = 200 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = -20 }
+		command = { type = cedeprovince which = FRA value = 411 }
+		command = { type = cedeprovince which = FRA value = 412 }
+		command = { type = cedeprovince which = FRA value = 417 }
+		command = { type = cedeprovince which = FRA value = 419 }
+		command = { type = cedeprovince which = FRA value = 420 }
+		command = { type = cedeprovince which = FRA value = 421 }
+		command = { type = cedeprovince which = FRA value = 422 }
+		command = { type = cedeprovince which = FRA value = 423 }
+		command = { type = cedeprovince which = FRA value = 406 }
+		command = { type = cedeprovince which = FRA value = 407 }
+		command = { type = cedeprovince which = FRA value = 408 }
+	}
+}
+
+#treaty of troyes - burgundian france#
+event = {
+
+	id = 100045
+	random = no
+	country = BFR
+	name = "The Treaty of Troyes"
+	desc = "On the 21st of May 1420 the English, French and Burgundians signed the Treaty of Troyes which stipulated that the crown of France would pass to Henry V of England upon the death of Charles VI of France. Henry married Charles VI daughter Catherine de Valois to make the succession legitimate. Burgundy accepted the terms of the treaty. Also in the treaty was the removal of all rights to Charles VI son, the Dauphin Charles (VII), who was effectively deemed 'illigitimate'."
+	style = 1
+
+	action_a = {
+		name = "Sign the Treaty of Troyes"
+		command = { type = trigger which = 100046 } #BUR annexes u02
+	}
+
+	action_b = {
+		name = "Do not sign it!"
+		command = { type = trigger which = 100050 } #FRA annexes u02
+	}
+}
+
+#treaty of troyes - burgundy choses#
+event = {
+
+	id = 100046
+	random = no
+	country = BUR
+	name = "The Treaty of Troyes"
+	desc = "On the 21st of May 1420 the English, French and Burgundians signed the Treaty of Troyes which stipulated that the crown of France would pass to Henry V of England upon the death of Charles VI of France. Henry married Charles VI daughter Catherine de Valois to make the succession legitimate. Burgundy accepted the terms of the treaty. Also in the treaty was the removal of all rights to Charles VI son, the Dauphin Charles (VII), who was effectively deemed 'illigitimate'."
+	style = 1
+
+	action_a = {
+		name = "Sign the Treaty of Troyes"
+		command = { type = inherit which = BFR }
+		command = { type = setflag which = francia }
+	}
+
+	action_b = {
+		name = "No we shall keep it for ourselves"
+		command = { type = inherit which = BFR }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = breakdynastic which = ENG }
+		command = { type = breakvassal which = ENG }
+		command = { type = stability value = -1 }
+	}
+
+	action_c = {
+		name = "No! The Dauphin is the rightful heir!"
+		command = { type = trigger which = 100047 } #FRA annexes u02
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = ENG value = -150 }
+		command = { type = breakdynastic which = ENG }
+		command = { type = breakvassal which = ENG }
+	}
+}
+
+#bur seceeds france to eng
+event = {
+
+	id = 100055
+	trigger = {
+		flag = francia
+		}
+	random = no
+	country = BUR
+	name = "Burgundy Secedes Francia to England"
+	desc = "With Charles VI and the Burgundians both signing the Treaty of Troyes, the French court was effectively tied to the English until the time when Henry V of England would inherit at the death of the mad old Charles VI."
+	style = 1
+
+	date = { day = 1 month = may year = 1420 }
+	offset = 15
+	deathdate = { day = 1 month = may year = 1421 }
+
+	action_a = {
+		name = "Hand it over"
+		command = { type = cedeprovince which = ENG value = 382 }
+		command = { type = cedeprovince which = ENG value = 383 }
+		command = { type = cedeprovince which = ENG value = 384 }
+		command = { type = cedeprovince which = ENG value = 385 }
+		command = { type = cedeprovince which = ENG value = 386 }
+		command = { type = cedeprovince which = ENG value = 376 }
+		command = { type = trigger which = 100051 }
+	}
+}
+
+#france reclaims il de france#
+event = {
+
+	id = 100047
+	random = no
+	country = FRA
+	name = "We have reclaimed our Heartland!"
+	desc = "The Burgundians have recognised the Dauphin as the legitimate heir of France and has curbed the King of Englands ambition to take our throne. The rightful line will be renewed in France. Viva la France!"
+	style = 1
+
+	action_a = {
+		name = "Long live the Valois!"
+		command = { type = flagname which = "" }
+		command = { type = inherit which = BFR }
+		command = { type = vp value = 10 }
+		command = { type = stability value = 1 }
+#		command = { type = wakemonarch which = 04002 }
+	}
+}
+
+#capital to paris#
+event = {
+
+	id = 100048
+	trigger = {
+		owned = { province = 385 data = FRA }
+		control = { province = 385 data = FRA }
+		NOT = {
+			OR = {
+				flag = aqufra
+				flag = auvfra
+				flag = boufra
+				flag = brifra
+				flag = orlfra
+				flag = profra
+				}
+			}
+	}
+	random = no
+	country = FRA
+	name = "Court to Paris"
+	desc = "With the old capital back in Valois hands the court of France retook its rightful place back in Paris."
+	style = 1
+
+	date = { day = 1 month = january year = 1419 }
+	offset = 30
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "Let it be so"
+		command = { type = flagname which = "" }
+		command = { type = capital which = 385 }
+		command = { type = stability value = 1 }
+		command = { type = setflag which = paris }
+	}
+}
+
+#france reclaims il de france#
+event = {
+
+	id = 100049
+	random = no
+	country = FRA
+	name = "We have reclaimed our Heartland!"
+	desc = "The English have recognised the Dauphin as the legitimate heir of France and have given up the hope of stealing our throne. The rightful line will be renewed in France. Viva la France!"
+	style = 1
+
+	action_a = {
+		name = "Long live the Valois!"
+		command = { type = flagname which = "" }
+		command = { type = inherit which = BFR }
+		command = { type = vp value = 10 }
+		command = { type = stability value = 1 }
+#		command = { type = wakemonarch which = 04002 }
+	}
+}
+
+#france reclaims il de france#
+event = {
+
+	id = 100050
+	random = no
+	country = FRA
+	name = "We have reclaimed our Heartland!"
+	desc = "Charles VI and Isebeau de Baviere have recognised their son, the Dauphin as the legitimate heir of France. The rightful line will continue in France. Viva la France!"
+	style = 1
+
+	action_a = {
+		name = "Long live the Valois!"
+		command = { type = flagname which = "" }
+		command = { type = inherit which = BFR }
+		command = { type = vp value = 10 }
+		command = { type = stability value = 1 }
+#		command = { type = wakemonarch which = 04002 }
+	}
+}
+
+#england control charles vi#
+event = {
+
+	id = 100051
+	random = no
+	country = ENG
+	name = "England controls the French court"
+	desc = "With Charles VI and the Burgundians both signing the Treaty of Troyes, the French court was effectively tied to the English until the time when Henry V of England would inherit at the death of the mad old Charles VI."
+	style = 1
+
+	action_a = {
+		name = "Our destiny draws near"
+		command = { type = independence which = BFR }
+		command = { type = vp value = 5 }
+	}
+}
+
+#dauphine captures Rheims#
+event = {
+
+	id = 100052
+	trigger = {
+		owned = { province = 376 data = BFR }
+		control = { province = 376 data = FRA }
+		NOT = {
+			OR = {
+				flag = aqufra
+				flag = auvfra
+				flag = boufra
+				flag = brifra
+				flag = orlfra
+				flag = profra
+				}
+			}
+		}
+	random = no
+	country = FRA
+	name = "We have been crowned King of France!"
+	desc = "It was here in the Cathedral of Rheims on the 17th of July 1429 that Charles VII was crowned King of France with the aid of la Pucelle d'Orleans, Joan of Arc. Shall we crown you King of France and restore the rightful French monarchy?"
+	style = 1
+
+	date = { day = 1 month = june year = 1421 }
+	offset = 30
+	deathdate = { day = 31 month = december year = 1461 }
+
+	action_a = {
+		name = "Viva le Roi de France!"
+		command = { type = inherit which = BFR }
+		command = { type = vp value = 2 }
+#		command = { type = wakemonarch which = 04002 }
+	}
+}
+
+#marriage of henry v and catherine de valois#
+event = {
+
+	id = 100053
+	trigger = {
+		event = 100051
+		}
+	random = no
+	country = ENG
+	name = "The marriage of Catherine de Valois"
+	desc = "To further strengthen his claims on the French throne and in accordance with the Treaty of Troyes, King Henry V of England marries Catherine de Valois, the daughter of the French king, Charles VI"
+	style = 1
+
+	date = { day = 1 month = june year = 1420 }
+	offset = 10
+	deathdate = { day = 31 month = july year = 1420 }
+
+	action_a = {
+		name = "Ding Dong!"
+		command = { type = relation which = BFR value = 25 }
+		command = { type = dynastic which = BFR }
+		command = { type = alliance which = BFR }
+	}
+}
+
+#england annex faux france
+event = {
+
+	id = 100056
+	trigger = {
+		vassal = { country = ENG country = BFR }
+		relation = { country = BFR value = 150 }
+		exists = BFR
+	}
+	random = no
+	country = ENG
+	name = "Henry claims his Prize"
+	desc = "When Henry VI reached his majority he was able to consolidate those French lands enfeofed to him and still under his control in accordance with the Treaty of Troyes."
+	style = 1
+
+	date = { day = 2 month = june year = 1437 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1460 }
+
+	action_a = {
+		name = "Claim the prize"
+		command = { type = inherit which = BFR }
+		command = { type = vp value = 15 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#Dauphin takes his rightful place.
+event = {
+
+	id = 100057
+	trigger = {
+		event = 3004
+		exists = BFR
+		NOT = {
+			event = 100056
+			}
+		NOT = {
+			OR = {
+				flag = aqufra
+				flag = auvfra
+				flag = boufra
+				flag = brifra
+				flag = orlfra
+				flag = profra
+				}
+			}
+		}
+	random = no
+	country = FRA
+	name = "French nobles pledge to France"
+	desc = "The English were unable to secure their claims to the throne of France and the nobles quickly saw which side their bread was buttered on and bended their knee to the King of France once more."
+	style = 1
+
+	date = { day = 2 month = january year = 1460 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1470 }
+
+	action_a = {
+		name = "Claim the prize"
+		command = { type = inherit which = BFR }
+		command = { type = vp value = 15 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#weak dauphin loses control
+event = {
+
+	id = 100058
+	trigger = {
+		event = 100056
+		NOT = {
+			owned = { province = 385 data = FRA }
+			countrysize = 10
+			exists = DAU
+		}
+	}
+	random = no
+	country = FRA
+	name = "French Nobles Conspire Against Louis"
+	desc = "With most of France in either foreign control or in the hands of powerful French dukes, Charles struggled to hold on to the reins of power. With his death in 1461 a cabal of nobles formed against the new king Louis XI. Whilst most of the nobles in time refused to pledge fealty to Louis, the cabal broke up into several factions as they all laid the claim to reunite France and throw the invaders out. Louis found the biggest crisis of his reign - a French civil war."
+	style = 1
+		
+	date = { day = 22 month = july year = 1461 }
+	offset = 1
+	deathdate = { day = 1 month = january year = 1483 }
+
+	action_a = {
+		name = "C'est la Vie"
+		command = { type = flagname which = "" }
+		command = { type = country which = DAU }
+		command = { type = free which = BRI }
+		command = { type = free which = BUR }
+		command = { type = free which = PRO }
+		command = { type = free which = ORL }
+		command = { type = free which = GUY }
+		command = { type = free which = BOU }
+		command = { type = free which = AUV }
+		command = { type = free which = ANJ }
+		command = { type = free which = AMG }
+		command = { type = free which = ART }
+		command = { type = free which = CMG }
+		command = { type = free which = LGD }
+		command = { type = free which = NRM }
+		command = { type = free which = PIC }
+		command = { type = free which = POI }
+		command = { type = free which = TOU }
+		command = { type = stability value = -1 }
+	}
+}
+
+#breakvassals
+event = {
+
+	id = 100059
+	trigger = {
+		event = 100058
+	}
+	random = no
+	country = DAU
+	name = "Nobles Strike!"
+	desc = "The rebellious French nobles refuse to acknowledge Louis."
+	style = 1
+
+	date = { day = 22 month = july year = 1461 }
+	offset = 5
+	deathdate = { day = 1 month = january year = 1483 }
+
+	action_a = {
+		name = "Merde!"
+		command = { type = breakvassal which = BRI }
+		command = { type = breakvassal which = BUR }
+		command = { type = breakvassal which = PRO }
+		command = { type = breakvassal which = ORL }
+		command = { type = breakvassal which = GUY }
+		command = { type = breakvassal which = BOU }
+		command = { type = breakvassal which = AUV }
+		command = { type = breakvassal which = ANJ }
+		command = { type = breakvassal which = AMG }
+		command = { type = breakvassal which = ART }
+		command = { type = breakvassal which = CMG }
+		command = { type = breakvassal which = LGD }
+		command = { type = breakvassal which = NRM }
+		command = { type = breakvassal which = PIC }
+		command = { type = breakvassal which = POI }
+		command = { type = breakvassal which = TOU }
+		command = { type = relation which = BRI value = -300 }
+		command = { type = relation which = BUR value = -300 }
+		command = { type = relation which = PRO value = -300 }
+		command = { type = relation which = ORL value = -300 }
+		command = { type = relation which = GUY value = -300 }
+		command = { type = relation which = BOU value = -300 }
+		command = { type = relation which = AUV value = -300 }
+		command = { type = relation which = ANJ value = -300 }
+		command = { type = relation which = AMG value = -300 }
+		command = { type = relation which = ART value = -300 }
+		command = { type = relation which = CMG value = -300 }
+		command = { type = relation which = LGD value = -300 }
+		command = { type = relation which = NRM value = -300 }
+		command = { type = relation which = PIC value = -300 }
+		command = { type = relation which = POI value = -300 }
+		command = { type = relation which = TOU value = -300 }
+		command = { type = casusbelli which = BRI value = 60 }
+		command = { type = casusbelli which = BUR value = 60 }
+		command = { type = casusbelli which = PRO value = 60 }
+		command = { type = casusbelli which = ORL value = 60 }
+		command = { type = casusbelli which = GUY value = 60 }
+		command = { type = casusbelli which = BOU value = 60 }
+		command = { type = casusbelli which = AUV value = 60 }
+		command = { type = casusbelli which = ANJ value = 60 }
+		command = { type = casusbelli which = AMG value = 60 }
+		command = { type = casusbelli which = ART value = 60 }
+		command = { type = casusbelli which = CMG value = 60 }
+		command = { type = casusbelli which = LGD value = 60 }
+		command = { type = casusbelli which = NRM value = 60 }
+		command = { type = casusbelli which = PIC value = 60 }
+		command = { type = casusbelli which = POI value = 60 }
+		command = { type = casusbelli which = TOU value = 60 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#No Treaty of Troyes if BUR no longer exists. BFR goes to FRA.
+event = {
+
+	id = 100060
+
+	trigger = {
+		exists = FRA
+		exists = BFR
+		NOT = {
+			exists = BUR
+			OR = {
+				flag = aqufra
+				flag = auvfra
+				flag = boufra
+				flag = brifra
+				flag = orlfra
+				flag = profra
+				}
+		}
+	}
+	random = no
+	country = FRA
+	name = "Burgundian Influence Destroyed"
+	desc = "With the Duchy of Burgundy gone, the Duke no longer has power over the French court. The French court bows to Charles VII."
+	style = 1
+
+	date = { day = 1 month = may year = 1420 }
+	offset = 15
+	deathdate = { day = 22 month = july year = 1461 }
+
+	action_a = {
+		name = "As it Should Be!"
+		command = { type = inherit which = BFR }
+	}
+}
+
+event = {
+
+	id = 100064
+
+	trigger = {
+		exists = FRA
+		exists = BFR
+		NOT = {
+			OR = {
+				vassal = { country = BUR country = BFR } #Gloriana 1337
+				vassal = { country = ENG country = BFR } #Gloriana 1337	
+				}
+			OR = {
+				flag = aqufra
+				flag = auvfra
+				flag = boufra
+				flag = brifra
+				flag = orlfra
+				flag = profra
+				}
+		}
+	}
+	random = no
+	country = FRA
+	name = "Burgundian Influence Destroyed"
+	desc = "With neither England or the Duchy of Burgundy no longer in control over the French court, The French court bows to Charles VII."
+	style = 1
+
+	date = { day = 1 month = may year = 1420 }
+	offset = 15
+	deathdate = { day = 22 month = july year = 1461 }
+
+	action_a = {
+		name = "As it Should Be!"
+		command = { type = inherit which = BFR }
+	}
+}		

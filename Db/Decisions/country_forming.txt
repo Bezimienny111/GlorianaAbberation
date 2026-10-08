@@ -1,0 +1,3343 @@
+# Country unification decisions
+# By MichaelM & mandead
+# Initial version created for For the Glory v1.3
+# ID range: 1000 - 1030 (free to 1999)
+
+# tags covered: BYZ, LTN, FRA, RUS, KIE, EIR, ARL, GER, ITA, LTR, HEI, CAL, TWO, RMN, HAB, HOL
+# KAL, JER, SAC, PFA, HSA, CRD, ILK, TUR, PER, SPA, CHO, GUP, MAU
+
+#############################
+#Reform the Byzantine Empire#
+#############################
+decision = {
+	id = 1000
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = EPI # Epirus
+			tag = SPR # Morea
+			tag = NIC # Nicaea
+			tag = THO # Theodoro
+			tag = TRE # Trebizond
+			tag = BUL # Bulgaria
+			tag = THE # Thessalonica
+		}
+		NOT = { exists = BYZ }
+		NOT = { LTN = { flag = decision1001 } }
+		owned = { province = 357 data = -1 } # Thrace
+		NOT = { year = 1492 }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		religion = orthodox
+		someof = {
+			number = 6
+			owned = { province = 320 data = -1 }
+			owned = { province = 321 data = -1 }
+			owned = { province = 356 data = -1 }
+			owned = { province = 357 data = -1 }
+			owned = { province = 358 data = -1 }
+			owned = { province = 359 data = -1 }
+			owned = { province = 360 data = -1 }
+			owned = { province = 361 data = -1 }
+			owned = { province = 474 data = -1 }
+			owned = { province = 475 data = -1 }
+			owned = { province = 476 data = -1 }
+			owned = { province = 477 data = -1 }
+			owned = { province = 478 data = -1 }
+			owned = { province = 479 data = -1 }
+			owned = { province = 480 data = -1 }
+			owned = { province = 481 data = -1 }
+			owned = { province = 482 data = -1 }
+			owned = { province = 483 data = -1 }
+			owned = { province = 484 data = -1 }
+			owned = { province = 820 data = -1 }
+			owned = { province = 1609 data = -1 }
+			owned = { province = 1610 data = -1 }
+			owned = { province = 1611 data = -1 }
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1000"
+	desc = "DECISIONHIST1000"
+
+	action = {
+		command = { type = vp value = 200 }
+		command = { type = capital which = 357 }
+		command = { type = conversion which = 357 }
+		command = { type = provinceculture which = 357 value = greek }
+		command = { type = add_countryculture which = slavonic }
+		command = { type = diplomats value = 3 }
+		command = { type = addcore_national which = 320 } # Byzantium (1419 cores)
+		command = { type = addcore_national which = 321 }
+		command = { type = addcore_national which = 356 }
+		command = { type = addcore_national which = 357 }
+		command = { type = addcore_national which = 358 }
+		command = { type = addcore_national which = 359 }
+		command = { type = addcore_national which = 360 }
+		command = { type = addcore_national which = 361 }
+		command = { type = addcore_national which = 474 }
+		command = { type = addcore_national which = 475 }
+		command = { type = addcore_national which = 476 }
+		command = { type = addcore_national which = 477 }
+		command = { type = addcore_national which = 478 }
+		command = { type = addcore_national which = 479 }
+		command = { type = addcore_national which = 480 }
+		command = { type = addcore_national which = 481 }
+		command = { type = addcore_national which = 482 }
+		command = { type = addcore_national which = 483 }
+		command = { type = addcore_national which = 484 }
+		command = { type = addcore_national which = 820 }
+		command = { type = addcore_national which = 1609 }
+		command = { type = addcore_national which = 1610 }
+		command = { type = addcore_national which = 1611 }
+		command = { type = flagname which = "" }
+		command = { type = country which = BYZ }
+		command = { type = setflag which = decision1000 }
+	}
+}
+
+#########################
+#Reform the Latin Empire#
+#########################
+decision = {
+	id = 1001
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = ACH # Achaea
+			tag = ATH # Athens
+			tag = CFU # Cephalonia
+			tag = KRE # Crete
+			tag = NAX # Naxos
+		}
+		NOT = { exists = LTN }
+		NOT = { BYZ = { flag = decision1000 } }
+		owned = { province = 357 data = -1 } # Thrace
+		NOT = { year = 1492 }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		religion = catholic
+		someof = {
+			number = 6
+			owned = { province = 320 data = -1 }
+			owned = { province = 321 data = -1 }
+			owned = { province = 356 data = -1 }
+			owned = { province = 357 data = -1 }
+			owned = { province = 358 data = -1 }
+			owned = { province = 359 data = -1 }
+			owned = { province = 360 data = -1 }
+			owned = { province = 361 data = -1 }
+			owned = { province = 474 data = -1 }
+			owned = { province = 475 data = -1 }
+			owned = { province = 476 data = -1 }
+			owned = { province = 477 data = -1 }
+			owned = { province = 478 data = -1 }
+			owned = { province = 479 data = -1 }
+			owned = { province = 480 data = -1 }
+			owned = { province = 481 data = -1 }
+			owned = { province = 482 data = -1 }
+			owned = { province = 483 data = -1 }
+			owned = { province = 484 data = -1 }
+			owned = { province = 820 data = -1 }
+			owned = { province = 1609 data = -1 }
+			owned = { province = 1610 data = -1 }
+			owned = { province = 1611 data = -1 }
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1001"
+	desc = "DECISIONHIST1001"
+
+	action = {
+		command = { type = vp value = 200 }
+		command = { type = capital which = 357 }
+		command = { type = conversion which = 357 }
+		command = { type = provinceculture which = 357 value = greek }
+		command = { type = add_countryculture which = greek }
+		command = { type = add_countryculture which = slavonic }
+		command = { type = diplomats value = 3 }
+		command = { type = addcore_national which = 320 } # Byzantium (1419 cores)
+		command = { type = addcore_national which = 321 }
+		command = { type = addcore_national which = 356 }
+		command = { type = addcore_national which = 357 }
+		command = { type = addcore_national which = 358 }
+		command = { type = addcore_national which = 359 }
+		command = { type = addcore_national which = 360 }
+		command = { type = addcore_national which = 361 }
+		command = { type = addcore_national which = 474 }
+		command = { type = addcore_national which = 475 }
+		command = { type = addcore_national which = 476 }
+		command = { type = addcore_national which = 477 }
+		command = { type = addcore_national which = 478 }
+		command = { type = addcore_national which = 479 }
+		command = { type = addcore_national which = 480 }
+		command = { type = addcore_national which = 481 }
+		command = { type = addcore_national which = 482 }
+		command = { type = addcore_national which = 483 }
+		command = { type = addcore_national which = 484 }
+		command = { type = addcore_national which = 820 }
+		command = { type = addcore_national which = 1609 }
+		command = { type = addcore_national which = 1610 }
+		command = { type = addcore_national which = 1611 }
+		command = { type = flagname which = "" }
+		command = { type = country which = LTN }
+		command = { type = setflag which = decision1001 }
+	}
+}
+
+##############################
+#Reform the Kingdom of France#
+##############################
+decision = {
+	id = 1002
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = AMG # Armagnac
+			tag = ANJ # Anjou
+			tag = ART # Artois
+			tag = AUV # Auvergne
+			tag = BEA # Béarn
+			tag = BOU # Bourbon
+			tag = BRI # Brittany
+			tag = BUR # Burgundy
+			tag = CMG # Champagne
+			tag = DAU # Dauphiné
+			tag = FLA # Flanders
+			tag = GUY # Guyenne
+			tag = NRM # Normandy
+			tag = ORL # Orléans
+			tag = PIC # Picardy
+			tag = POI # Poitou
+			tag = PRO # Provence
+			tag = TOU # Toulouse
+		}
+		owned = { province = 385 data = -1 } # Ile-de-France
+		hre = no
+		NOT = { exists = FRA }
+		NOT = { NAV = { flag = decision1003 } }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		someof = {
+			number = 10
+			owned = { province = 376 data = -1 }
+			owned = { province = 382 data = -1 }
+			owned = { province = 383 data = -1 }
+			owned = { province = 384 data = -1 }
+			owned = { province = 385 data = -1 }
+			owned = { province = 407 data = -1 }
+			owned = { province = 408 data = -1 }
+			owned = { province = 409 data = -1 }
+			owned = { province = 410 data = -1 }
+			owned = { province = 411 data = -1 }
+			owned = { province = 412 data = -1 }
+			owned = { province = 413 data = -1 }
+			owned = { province = 417 data = -1 }
+			owned = { province = 418 data = -1 }
+			owned = { province = 419 data = -1 }
+			owned = { province = 420 data = -1 }
+			owned = { province = 421 data = -1 }
+			owned = { province = 422 data = -1 }
+			owned = { province = 423 data = -1 }
+			owned = { province = 424 data = -1 }
+			owned = { province = 425 data = -1 }
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1002"
+	desc = "DECISIONHIST1002"
+
+	action = {
+		command = { type = vp value = 200 }
+		command = { type = capital which = 385 }
+		command = { type = conversion which = 385 }
+		command = { type = diplomats value = 3 }
+		command = { type = addcore_national which = 376 } # France (1419 cores)
+		command = { type = addcore_national which = 382 }
+		command = { type = addcore_national which = 383 }
+		command = { type = addcore_national which = 384 }
+		command = { type = addcore_national which = 385 }
+		command = { type = addcore_national which = 407 }
+		command = { type = addcore_national which = 408 }
+		command = { type = addcore_national which = 409 }
+		command = { type = addcore_national which = 410 }
+		command = { type = addcore_national which = 411 }
+		command = { type = addcore_national which = 412 }
+		command = { type = addcore_national which = 413 }
+		command = { type = addcore_national which = 417 }
+		command = { type = addcore_national which = 418 }
+		command = { type = addcore_national which = 419 }
+		command = { type = addcore_national which = 420 }
+		command = { type = addcore_national which = 421 }
+		command = { type = addcore_national which = 422 }
+		command = { type = addcore_national which = 423 }
+		command = { type = addcore_national which = 424 }
+		command = { type = addcore_national which = 425 }
+		command = { type = flagname which = "" }
+		command = { type = country which = FRA }
+		command = { type = setflag which = decision1002 }
+	}
+}
+
+############################
+#Proclaim the Dual Monarchy#
+############################
+decision = {
+	id = 1003
+	major = yes
+	unique = yes
+	potential = {
+		tag = NAV # Navarre
+		NOT = { exists = FRA }
+		NOT = { FRA = { flag = decision1002 } }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		owned = { province = 385 data = -1 } # Ile-de-France
+		someof = {
+			number = 10
+			owned = { province = 376 data = -1 }
+			owned = { province = 382 data = -1 }
+			owned = { province = 383 data = -1 }
+			owned = { province = 384 data = -1 }
+			owned = { province = 385 data = -1 }
+			owned = { province = 407 data = -1 }
+			owned = { province = 408 data = -1 }
+			owned = { province = 409 data = -1 }
+			owned = { province = 410 data = -1 }
+			owned = { province = 411 data = -1 }
+			owned = { province = 412 data = -1 }
+			owned = { province = 413 data = -1 }
+			owned = { province = 417 data = -1 }
+			owned = { province = 418 data = -1 }
+			owned = { province = 419 data = -1 }
+			owned = { province = 420 data = -1 }
+			owned = { province = 421 data = -1 }
+			owned = { province = 422 data = -1 }
+			owned = { province = 423 data = -1 }
+			owned = { province = 424 data = -1 }
+			owned = { province = 425 data = -1 }
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1003"
+	desc = "DECISIONHIST1003"
+
+	action = {
+		command = { type = vp value = 200 }
+		command = { type = capital which = 385 }
+		command = { type = conversion which = 385 }
+		command = { type = provinceculture which = 424 value = basque }
+		command = { type = provinceculture which = 425 value = basque }
+		command = { type = add_countryculture which = french }
+		command = { type = diplomats value = 3 }
+		command = { type = addcore_national which = 376 } # France (1419 cores)
+		command = { type = addcore_national which = 382 }
+		command = { type = addcore_national which = 383 }
+		command = { type = addcore_national which = 384 }
+		command = { type = addcore_national which = 385 }
+		command = { type = addcore_national which = 407 }
+		command = { type = addcore_national which = 408 }
+		command = { type = addcore_national which = 409 }
+		command = { type = addcore_national which = 410 }
+		command = { type = addcore_national which = 411 }
+		command = { type = addcore_national which = 412 }
+		command = { type = addcore_national which = 413 }
+		command = { type = addcore_national which = 417 }
+		command = { type = addcore_national which = 418 }
+		command = { type = addcore_national which = 419 }
+		command = { type = addcore_national which = 420 }
+		command = { type = addcore_national which = 421 }
+		command = { type = addcore_national which = 422 }
+		command = { type = addcore_national which = 423 }
+		command = { type = addcore_national which = 424 }
+		command = { type = treasury value = 200 }
+		command = { type = setflag which = decision1003 }
+	}
+}
+
+############################
+#Found the Empire of Russia#
+############################
+decision = {
+	id = 1004
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = MOS # Moscow
+			tag = NVG # Novgorod
+			tag = PRM # Permia
+			tag = PSK # Pskov
+			tag = RYA # Ryazan
+			tag = SUZ # Vladimir-Suzdal
+			tag = TVE # Tver
+			tag = YRL # Yaroslavl
+			tag = NVS # Novgorod-Seversk
+			tag = PRY # Peryaslavl
+		}
+		NOT = { exists = RUS }
+		year = 1500
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		owned = { province = 270 data = -1 } # Moskva
+		someof = {
+			number = 10
+			owned = { province = 262 data = -1 }
+			owned = { province = 266 data = -1 }
+			owned = { province = 267 data = -1 }
+			owned = { province = 268 data = -1 }
+			owned = { province = 269 data = -1 }
+			owned = { province = 270 data = -1 }
+			owned = { province = 271 data = -1 }
+			owned = { province = 272 data = -1 }
+			owned = { province = 274 data = -1 }
+			owned = { province = 275 data = -1 }
+			owned = { province = 276 data = -1 }
+			owned = { province = 277 data = -1 }
+			owned = { province = 278 data = -1 }
+			owned = { province = 279 data = -1 }
+			owned = { province = 282 data = -1 }
+			owned = { province = 447 data = -1 }
+			owned = { province = 448 data = -1 }
+			owned = { province = 452 data = -1 }
+			owned = { province = 1470 data = -1 }
+		}
+		NOT = { exists = KIE }
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1004"
+	desc = "DECISIONHIST1004"
+
+	action = {
+		command = { type = vp value = 200 }
+		command = { type = capital which = 270 }
+		command = { type = conversion which = 270 }
+		command = { type = diplomats value = 3 }
+		command = { type = addcore_national which = 262 } # Russia
+		command = { type = addcore_national which = 266 }
+		command = { type = addcore_national which = 267 }
+		command = { type = addcore_national which = 268 }
+		command = { type = addcore_national which = 269 }
+		command = { type = addcore_national which = 270 }
+		command = { type = addcore_national which = 271 }
+		command = { type = addcore_national which = 272 }
+		command = { type = addcore_national which = 274 }
+		command = { type = addcore_national which = 275 }
+		command = { type = addcore_national which = 276 }
+		command = { type = addcore_national which = 277 }
+		command = { type = addcore_national which = 278 }
+		command = { type = addcore_national which = 279 }
+		command = { type = addcore_national which = 282 }
+		command = { type = addcore_national which = 447 }
+		command = { type = addcore_national which = 448 }
+		command = { type = addcore_national which = 452 }
+		command = { type = addcore_national which = 1470 }
+		command = { type = flagname which = "" }
+		command = { type = country which = RUS }
+	}
+}
+
+####################
+#Reform Kievan Rus'#
+####################
+decision = {
+	id = 1005
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = CRG # Chernigov
+			tag = HAL # Halych
+			tag = MSK # Minsk
+			tag = POK # Polotsk
+			tag = SMO # Smolensk
+			tag = VOL # Volhynia
+		}
+		NOT = { exists = KIE }
+		NOT = { year = 1500 }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		owned = { province = 295 data = -1 } # Ukraina
+		someof = {
+			number = 6
+			owned = { province = 280 data = -1 }
+			owned = { province = 281 data = -1 }
+			owned = { province = 284 data = -1 }
+			owned = { province = 285 data = -1 }
+			owned = { province = 286 data = -1 }
+			owned = { province = 287 data = -1 }
+			owned = { province = 293 data = -1 }
+			owned = { province = 294 data = -1 }
+			owned = { province = 295 data = -1 }
+			owned = { province = 297 data = -1 }
+			owned = { province = 298 data = -1 }
+			owned = { province = 449 data = -1 }
+			owned = { province = 450 data = -1 }
+			owned = { province = 451 data = -1 }
+			owned = { province = 460 data = -1 }
+			owned = { province = 461 data = -1 }
+			owned = { province = 462 data = -1 }
+		}
+		NOT = { exists = RUS }
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1005"
+	desc = "DECISIONHIST1005"
+
+	action = {
+		command = { type = vp value = 200 }
+		command = { type = capital which = 295 }
+		command = { type = conversion which = 295 }
+		command = { type = add_countryculture which = ruthenian }
+		command = { type = diplomats value = 3 }
+		command = { type = addcore_national which = 280 } # Rus
+		command = { type = addcore_national which = 281 }
+		command = { type = addcore_national which = 284 }
+		command = { type = addcore_national which = 285 }
+		command = { type = addcore_national which = 286 }
+		command = { type = addcore_national which = 287 }
+		command = { type = addcore_national which = 293 }
+		command = { type = addcore_national which = 294 }
+		command = { type = addcore_national which = 295 }
+		command = { type = addcore_national which = 297 }
+		command = { type = addcore_national which = 298 }
+		command = { type = addcore_national which = 449 }
+		command = { type = addcore_national which = 450 }
+		command = { type = addcore_national which = 451 }
+		command = { type = addcore_national which = 460 }
+		command = { type = addcore_national which = 461 }
+		command = { type = addcore_national which = 462 }
+		command = { type = flagname which = "" }
+		command = { type = country which = KIE }
+	}
+}
+
+###################################
+#Unite the High Kingdom of Ireland#
+###################################
+decision = {
+	id = 1006
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = CON # Connacht
+			tag = MST # Irish Munster
+			tag = LEI # Leinster
+			tag = MEA # Meath
+			tag = ULS # Ulster
+		}
+		NOT = { exists = EIR }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		owned = { province = 233 data = -1 } # Meath
+		someof = {
+			number = 5
+			owned = { province = 231 data = -1 }
+			owned = { province = 232 data = -1 }
+			owned = { province = 233 data = -1 }
+			owned = { province = 234 data = -1 }
+			owned = { province = 235 data = -1 }
+		}
+		NOT = { event = 3582 } # ENG: The Second Act of Union
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1006"
+	desc = "DECISIONHIST1006"
+
+	action = {
+		command = { type = vp value = 100 }
+		command = { type = capital which = 233 }
+		command = { type = diplomats value = 2 }
+		command = { type = addcore_national which = 231 }
+		command = { type = addcore_national which = 232 }
+		command = { type = addcore_national which = 233 }
+		command = { type = addcore_national which = 234 }
+		command = { type = addcore_national which = 235 }
+		command = { type = flagname which = "" }
+		command = { type = country which = EIR }
+	}
+}
+
+#############################
+#Reform the Kingdom of Arles#
+#############################
+decision = {
+	id = 1007
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			#tag = BUR # Burgundy
+			tag = DAU # Dauphiné
+			tag = LOR # Lorraine
+			tag = PRO # Provence
+			tag = SAV # Savoy
+		}
+		NOT = { exists = ARS }
+		NOT = { year = 1700 }
+	}
+	trigger = {
+		OR = {
+			emperor = yes
+			AND = {
+				emperor = no
+				relation = { country = -6 data = 150 }
+			}
+		}
+		atwar = no
+		isvassal = no
+		stability = 2
+		owned = { province = 406 data = -1 } # Provence
+		someof = {
+			number = 4
+			owned = { province = 387 data = -1 }
+			owned = { province = 388 data = -1 }
+			owned = { province = 405 data = -1 }
+			owned = { province = 406 data = -1 }
+			owned = { province = 407 data = -1 }
+			owned = { province = 408 data = -1 }
+		}
+		NOT = { event = 25005 } # Global: Peace of Westphalia
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1007"
+	desc = "DECISIONHIST1007"
+
+	action = {
+		command = { type = vp value = 200 }
+		command = { type = capital which = 406 }
+		command = { type = diplomats value = 3 }
+		command = { type = relation which = FRA value = -200 }
+		command = { type = relation which = HEL value = -200 }
+		command = { type = addcore_national which = 387 } # Arles (HRE borders)
+		command = { type = addcore_national which = 388 }
+		command = { type = addcore_national which = 405 }
+		command = { type = addcore_national which = 406 }
+		command = { type = addcore_national which = 407 }
+		command = { type = addcore_national which = 408 }
+		command = { type = flagname which = "" }
+		command = { type = country which = ARS }
+	}
+}
+
+###############################
+#Reform the Kingdom of Germany#
+###############################
+decision = {
+	id = 1008
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = ALT # Altmark
+			tag = ANH # Anhalt
+			tag = ANS # Ansbach
+			tag = BAD # Baden
+			tag = BAY # Bavaria
+			tag = BRA # Brandenburg
+			tag = BRE # Bremen
+			tag = BRG # Berg
+			tag = BRU # Brunswick
+			tag = FRC # Franconia
+			tag = FRI # Friesland
+			#tag = HAB # Austria
+			tag = HAN # Hanover
+			tag = HES # Hesse
+			tag = HSA # Hansa
+			tag = KLE # Cleves
+			tag = KOL # Cologne
+			tag = KRN # Carniola
+			tag = LOR # Lorraine
+			tag = LUX # Luxemburg
+			tag = MAG # Magdeburg
+			tag = MAI # Mainz
+			tag = MEC # Mecklenburg
+			tag = MEI # Meissen
+			tag = MUN # Münster
+			tag = OLD # Oldenburg
+			tag = PFA # Palatinate
+			tag = SAC # Saxony
+			tag = SEI # Styria
+			tag = SHL # Holstein
+			tag = SLZ # Salzburg
+			tag = STR # Strassburg
+			tag = SWA # Swabia
+			tag = THU # Thuringia
+			tag = TRR # Trier
+			tag = TYR # Tyrol
+			tag = WRZ # Würzburg
+			tag = WUR # Württemberg
+		}
+		NOT = { exists = GER }
+		NOT = { year = 1700 }
+	}
+	trigger = {
+		OR = {
+			emperor = yes
+			AND = {
+				emperor = no
+				relation = { country = -6 data = 150 }
+			}
+		}
+		atwar = no
+		isvassal = no
+		stability = 2
+		someof = {
+			number = 12
+			owned = { province = 304 data = -1 }
+			owned = { province = 305 data = -1 }
+			owned = { province = 306 data = -1 }
+			owned = { province = 310 data = -1 }
+			owned = { province = 311 data = -1 }
+			owned = { province = 312 data = -1 }
+			owned = { province = 327 data = -1 }
+			owned = { province = 331 data = -1 }
+			owned = { province = 332 data = -1 }
+			owned = { province = 333 data = -1 }
+			owned = { province = 334 data = -1 }
+			owned = { province = 335 data = -1 }
+			owned = { province = 336 data = -1 }
+			owned = { province = 337 data = -1 }
+			owned = { province = 338 data = -1 }
+			owned = { province = 339 data = -1 }
+			owned = { province = 340 data = -1 }
+			owned = { province = 343 data = -1 }
+			owned = { province = 344 data = -1 }
+			owned = { province = 345 data = -1 }
+			owned = { province = 346 data = -1 }
+			owned = { province = 347 data = -1 }
+			owned = { province = 348 data = -1 }
+			owned = { province = 349 data = -1 }
+			owned = { province = 350 data = -1 }
+			owned = { province = 351 data = -1 }
+			owned = { province = 367 data = -1 }
+			owned = { province = 369 data = -1 }
+			owned = { province = 371 data = -1 }
+			owned = { province = 372 data = -1 }
+			owned = { province = 373 data = -1 }
+			owned = { province = 374 data = -1 }
+			owned = { province = 375 data = -1 }
+			owned = { province = 377 data = -1 }
+			owned = { province = 378 data = -1 }
+			owned = { province = 1612 data = -1 }
+		}
+		NOT = { event = 25005 } # Global: Peace of Westphalia
+	}
+	ai_trigger = {
+		NOT = { tag = HAB }
+	}
+
+	name = "DECISIONNAME1008"
+	desc = "DECISIONHIST1008"
+
+	action = {
+		command = { type = vp value = 200 }
+		command = { type = diplomats value = 3 }
+		command = { type = relation which = FRA value = -200 }
+		command = { type = relation which = HEL value = -200 }
+		command = { type = relation which = POL value = -200 }
+		command = { type = relation which = DAN value = -200 }
+		command = { type = addcore_national which = 304 } # Germany (HRE borders)
+		command = { type = addcore_national which = 305 }
+		command = { type = addcore_national which = 306 }
+		command = { type = addcore_national which = 310 }
+		command = { type = addcore_national which = 311 }
+		command = { type = addcore_national which = 312 }
+		command = { type = addcore_national which = 327 }
+		command = { type = addcore_national which = 331 }
+		command = { type = addcore_national which = 332 }
+		command = { type = addcore_national which = 333 }
+		command = { type = addcore_national which = 334 }
+		command = { type = addcore_national which = 335 }
+		command = { type = addcore_national which = 336 }
+		command = { type = addcore_national which = 337 }
+		command = { type = addcore_national which = 338 }
+		command = { type = addcore_national which = 339 }
+		command = { type = addcore_national which = 340 }
+		command = { type = addcore_national which = 343 }
+		command = { type = addcore_national which = 344 }
+		command = { type = addcore_national which = 345 }
+		command = { type = addcore_national which = 346 }
+		command = { type = addcore_national which = 347 }
+		command = { type = addcore_national which = 348 }
+		command = { type = addcore_national which = 349 }
+		command = { type = addcore_national which = 350 }
+		command = { type = addcore_national which = 351 }
+		command = { type = addcore_national which = 367 }
+		command = { type = addcore_national which = 369 }
+		command = { type = addcore_national which = 371 }
+		command = { type = addcore_national which = 372 }
+		command = { type = addcore_national which = 373 }
+		command = { type = addcore_national which = 374 }
+		command = { type = addcore_national which = 375 }
+		command = { type = addcore_national which = 377 }
+		command = { type = addcore_national which = 378 }
+		command = { type = addcore_national which = 1612 }
+		command = { type = flagname which = "" }
+		command = { type = country which = GER }
+	}
+}
+
+#############################
+#Reform the Kingdom of Italy#
+#############################
+decision = {
+	id = 1009
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = AQU # Aquileia
+			tag = BOL # Bologna
+			tag = FER # Ferrara
+			tag = FLO # Florence
+			tag = GEN # Genoa
+			tag = IST # Istria
+			tag = LUC # Lucca
+			tag = MAN # Mantua
+			tag = MLO # Milan
+			tag = MOD # Modena
+			tag = PAR # Parma
+			#tag = PIS # Pisa
+			tag = ROM # Romagna
+			tag = SAV # Savoy
+			tag = PIS # Siena
+			tag = TNT # Trent
+			tag = TOS # Tuscany
+			tag = URB # Urbino
+			tag = VEN # Venice
+			tag = VER # Verona
+			tag = RIM # Rimini
+		}
+		NOT = { exists = ITA }
+		NOT = { year = 1700 }
+	}
+	trigger = {
+		OR = {
+			emperor = yes
+			AND = {
+				emperor = no
+				relation = { country = -6 data = 150 }
+			}
+		}
+		atwar = no
+		isvassal = no
+		stability = 2
+		owned = { province = 389 data = -1 } # Lombardia
+		someof = {
+			number = 8
+			owned = { province = 368 data = -1 }
+			owned = { province = 370 data = -1 }
+			owned = { province = 389 data = -1 }
+			owned = { province = 390 data = -1 }
+			owned = { province = 391 data = -1 }
+			owned = { province = 392 data = -1 }
+			owned = { province = 399 data = -1 }
+			owned = { province = 400 data = -1 }
+			owned = { province = 401 data = -1 }
+			owned = { province = 402 data = -1 }
+			owned = { province = 403 data = -1 }
+			owned = { province = 404 data = -1 }
+		}
+		NOT = { event = 25005 } # Global: Peace of Westphalia
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1009"
+	desc = "DECISIONHIST1009"
+
+	action = {
+		command = { type = vp value = 200 }
+		command = { type = capital which = 389 }
+		command = { type = diplomats value = 3 }
+		command = { type = relation which = FRA value = -200 }
+		command = { type = relation which = HEL value = -200 }
+		command = { type = relation which = PAP value = -200 }
+		command = { type = relation which = NAP value = -200 }
+		command = { type = addcore_national which = 368 } # Italy (HRE borders)
+		command = { type = addcore_national which = 370 }
+		command = { type = addcore_national which = 389 }
+		command = { type = addcore_national which = 390 }
+		command = { type = addcore_national which = 391 }
+		command = { type = addcore_national which = 392 }
+		command = { type = addcore_national which = 399 }
+		command = { type = addcore_national which = 400 }
+		command = { type = addcore_national which = 401 }
+		command = { type = addcore_national which = 402 }
+		command = { type = addcore_national which = 403 }
+		command = { type = addcore_national which = 404 }
+		command = { type = flagname which = "" }
+		command = { type = country which = ITA }
+	}
+}
+
+###################################
+#Reform the Kingdom of Lotharingia#
+###################################
+decision = {
+	id = 1010
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = ART # Artois
+			#tag = BUR # Burgundy
+			tag = FRI # Friesland
+			tag = GEL # Guelders
+			tag = HAU # Brabant
+			tag = HLL # Holland
+			tag = KOL # Cologne
+			tag = LIE # Liège
+			tag = LOR # Lorraine
+			tag = LUX # Luxemburg
+			tag = STR # Strassburg
+			tag = TRR # Trier
+			tag = UTR # Utrecht
+			tag = ZEE # Zeeland
+		}
+		NOT = { exists = LTR }
+		NOT = { year = 1700 }
+	}
+	trigger = {
+		OR = {
+			emperor = yes
+			AND = {
+				emperor = no
+				relation = { country = -6 data = 150 }
+			}
+		}
+		atwar = no
+		isvassal = no
+		stability = 2
+		owned = { province = 375 data = -1 } # Lorraine
+		someof = {
+			number = 6
+			owned = { province = 337 data = -1 }
+			owned = { province = 338 data = -1 }
+			owned = { province = 339 data = -1 }
+			owned = { province = 340 data = -1 }
+			owned = { province = 344 data = -1 }
+			owned = { province = 345 data = -1 }
+			owned = { province = 374 data = -1 }
+			owned = { province = 375 data = -1 }
+			owned = { province = 377 data = -1 }
+			owned = { province = 378 data = -1 }
+			owned = { province = 379 data = -1 }
+		}
+		NOT = { event = 25005 } # Global: Peace of Westphalia
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1010"
+	desc = "DECISIONHIST1010"
+
+	action = {
+		command = { type = vp value = 200 }
+		command = { type = capital which = 375 }
+		command = { type = diplomats value = 3 }
+		command = { type = relation which = FRA value = -200 }
+		command = { type = relation which = HEL value = -200 }
+		command = { type = addcore_national which = 337 } # Lotharingia (HRE borders)
+		command = { type = addcore_national which = 338 }
+		command = { type = addcore_national which = 339 }
+		command = { type = addcore_national which = 340 }
+		command = { type = addcore_national which = 344 }
+		command = { type = addcore_national which = 345 }
+		command = { type = addcore_national which = 374 }
+		command = { type = addcore_national which = 375 }
+		command = { type = addcore_national which = 377 }
+		command = { type = addcore_national which = 378 }
+		command = { type = addcore_national which = 379 }
+		command = { type = flagname which = "" }
+		command = { type = country which = LTR }
+	}
+}
+
+#############################
+#Unify the Holy Roman Empire#
+#############################
+decision = {
+	id = 1011
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = ARS # Arles
+			tag = GER # Germany
+			tag = ITA # Italy
+			tag = LTR # Lotharingia
+			OR  = {
+				tag = BUR # Burgundy
+				OR = {
+					flag = arles
+					flag = loth
+				}
+			}
+		}
+		NOT = { exists = HEI }
+	}
+	trigger = {
+		emperor = yes
+		atwar = no
+		isvassal = no
+		stability = 3
+		OR = {
+			vassal = PAP
+			AND = {
+				NOT = { exists = PAP }
+				owned = { province = 399 data = -1 } # Roma
+			}
+		}
+		OR = {
+			NOT = { exists = BOH }
+			AND = {
+				vassal = BOH
+				relation = { country = BOH data = 150 }
+			}
+		}
+		OR = {
+			NOT = { exists = BRA }
+			AND = {
+				vassal = BRA
+				relation = { country = BRA data = 150 }
+			}
+		}
+		OR = {
+			NOT = { exists = KOL }
+			AND = {
+				vassal = KOL
+				relation = { country = KOL data = 150 }
+			}
+		}
+		OR = {
+			NOT = { exists = MAI }
+			AND = {
+				vassal = MAI
+				relation = { country = MAI data = 150 }
+			}
+		}
+		OR = {
+			NOT = { exists = PFA }
+			AND = {
+				vassal = PFA
+				relation = { country = PFA data = 150 }
+			}
+		}
+		OR = {
+			NOT = { exists = SAC }
+			AND = {
+				vassal = SAC
+				relation = { country = SAC data = 150 }
+			}
+		}
+		OR = {
+			NOT = { exists = TRR }
+			AND = {
+				vassal = TRR
+				relation = { country = TRR data = 150 }
+			}
+		}
+		someof = {
+			number = 35
+			owned = { province = 302 data = -1 }
+			owned = { province = 304 data = -1 }
+			owned = { province = 305 data = -1 }
+			owned = { province = 306 data = -1 }
+			owned = { province = 310 data = -1 }
+			owned = { province = 311 data = -1 }
+			owned = { province = 312 data = -1 }
+			owned = { province = 313 data = -1 }
+			owned = { province = 314 data = -1 }
+			owned = { province = 315 data = -1 }
+			owned = { province = 327 data = -1 }
+			owned = { province = 328 data = -1 }
+			owned = { province = 329 data = -1 }
+			owned = { province = 330 data = -1 }
+			owned = { province = 331 data = -1 }
+			owned = { province = 332 data = -1 }
+			owned = { province = 333 data = -1 }
+			owned = { province = 334 data = -1 }
+			owned = { province = 335 data = -1 }
+			owned = { province = 336 data = -1 }
+			owned = { province = 337 data = -1 }
+			owned = { province = 338 data = -1 }
+			owned = { province = 339 data = -1 }
+			owned = { province = 340 data = -1 }
+			owned = { province = 343 data = -1 }
+			owned = { province = 344 data = -1 }
+			owned = { province = 345 data = -1 }
+			owned = { province = 346 data = -1 }
+			owned = { province = 347 data = -1 }
+			owned = { province = 348 data = -1 }
+			owned = { province = 349 data = -1 }
+			owned = { province = 350 data = -1 }
+			owned = { province = 351 data = -1 }
+			owned = { province = 367 data = -1 }
+			owned = { province = 369 data = -1 }
+			owned = { province = 371 data = -1 }
+			owned = { province = 372 data = -1 }
+			owned = { province = 373 data = -1 }
+			owned = { province = 374 data = -1 }
+			owned = { province = 375 data = -1 }
+			owned = { province = 377 data = -1 }
+			owned = { province = 378 data = -1 }
+			owned = { province = 379 data = -1 }
+			owned = { province = 380 data = -1 }
+			owned = { province = 387 data = -1 }
+			owned = { province = 388 data = -1 }
+			owned = { province = 389 data = -1 }
+			owned = { province = 390 data = -1 }
+			owned = { province = 400 data = -1 }
+			owned = { province = 401 data = -1 }
+			owned = { province = 402 data = -1 }
+			owned = { province = 403 data = -1 }
+			owned = { province = 404 data = -1 }
+			owned = { province = 405 data = -1 }
+			owned = { province = 406 data = -1 }
+			owned = { province = 1612 data = -1 }
+		}
+		NOT = { event = 25005 } # Global: Peace of Westphalia
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1011"
+	desc = "DECISIONHIST1011"
+
+	action = {
+		command = { type = vp value = 1000 }
+		command = { type = badboy value = 15 }
+		command = { type = diplomats value = 3 }
+		command = { type = merchants value = 3 }
+		command = { type = missionaries value = 3 }
+		command = { type = relation which = FRA value = -200 }
+		command = { type = relation which = HEL value = -200 }
+		command = { type = addcore_national which = 302 } # Holy Roman Empire
+		command = { type = addcore_national which = 304 }
+		command = { type = addcore_national which = 305 }
+		command = { type = addcore_national which = 306 }
+		command = { type = addcore_national which = 310 }
+		command = { type = addcore_national which = 311 }
+		command = { type = addcore_national which = 312 }
+		command = { type = addcore_national which = 313 }
+		command = { type = addcore_national which = 314 }
+		command = { type = addcore_national which = 315 }
+		command = { type = addcore_national which = 327 }
+		command = { type = addcore_national which = 328 }
+		command = { type = addcore_national which = 329 }
+		command = { type = addcore_national which = 330 }
+		command = { type = addcore_national which = 331 }
+		command = { type = addcore_national which = 332 }
+		command = { type = addcore_national which = 333 }
+		command = { type = addcore_national which = 334 }
+		command = { type = addcore_national which = 335 }
+		command = { type = addcore_national which = 336 }
+		command = { type = addcore_national which = 337 }
+		command = { type = addcore_national which = 338 }
+		command = { type = addcore_national which = 339 }
+		command = { type = addcore_national which = 340 }
+		command = { type = addcore_national which = 343 }
+		command = { type = addcore_national which = 344 }
+		command = { type = addcore_national which = 345 }
+		command = { type = addcore_national which = 346 }
+		command = { type = addcore_national which = 347 }
+		command = { type = addcore_national which = 348 }
+		command = { type = addcore_national which = 349 }
+		command = { type = addcore_national which = 350 }
+		command = { type = addcore_national which = 351 }
+		command = { type = addcore_national which = 367 }
+		command = { type = addcore_national which = 369 }
+		command = { type = addcore_national which = 371 }
+		command = { type = addcore_national which = 372 }
+		command = { type = addcore_national which = 373 }
+		command = { type = addcore_national which = 374 }
+		command = { type = addcore_national which = 375 }
+		command = { type = addcore_national which = 377 }
+		command = { type = addcore_national which = 378 }
+		command = { type = addcore_national which = 379 }
+		command = { type = addcore_national which = 380 }
+		command = { type = addcore_national which = 387 }
+		command = { type = addcore_national which = 388 }
+		command = { type = addcore_national which = 389 }
+		command = { type = addcore_national which = 390 }
+		command = { type = addcore_national which = 400 }
+		command = { type = addcore_national which = 401 }
+		command = { type = addcore_national which = 402 }
+		command = { type = addcore_national which = 403 }
+		command = { type = addcore_national which = 404 }
+		command = { type = addcore_national which = 405 }
+		command = { type = addcore_national which = 406 }
+		command = { type = addcore_national which = 1612 }
+		command = { type = flagname which = "" }
+		command = { type = country which = HEI }
+	}
+}
+
+#########################
+#Resurrect the Caliphate#
+#########################
+decision = {
+	id = 1012
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = ABB # Jalayirids
+			tag = ADE # Aden
+			tag = ALD # Algeria
+			tag = ARA # Hejaz
+			tag = BAE # Balearic Islands
+			tag = BAH # Bahrain
+			tag = CRD # Córdoba
+			tag = CYR # Cyrenaica
+			tag = FEZ # Fez
+			tag = GRA # Granada
+			tag = IRA # Iraq
+			tag = MOR # Morocco
+			tag = OMA # Oman
+			tag = SUS # Sus
+			tag = TLE # Tlemcen
+			tag = TRI # Tripolitania
+			tag = TUN # Tunisia
+		}
+		OR = {
+			religion = sunni
+			religion = shia
+		}
+		NOT = { exists = CAL }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		owned = { province = 489 data = -1 } # Iraq -- need to control core Caliphate lands & holy cities
+		owned = { province = 490 data = -1 } # Syria
+		owned = { province = 493 data = -1 } # Judea
+		owned = { province = 497 data = -1 } # Medina
+		owned = { province = 498 data = -1 } # Mekkah
+		someof = {
+			number = 20
+			owned = { province = 471 data = -1 }
+			owned = { province = 472 data = -1 }
+			owned = { province = 473 data = -1 }
+			owned = { province = 474 data = -1 }
+			owned = { province = 483 data = -1 }
+			owned = { province = 484 data = -1 }
+			owned = { province = 485 data = -1 }
+			owned = { province = 486 data = -1 }
+			owned = { province = 487 data = -1 }
+			owned = { province = 488 data = -1 }
+			owned = { province = 489 data = -1 }
+			owned = { province = 490 data = -1 }
+			owned = { province = 491 data = -1 }
+			owned = { province = 492 data = -1 }
+			owned = { province = 493 data = -1 }
+			owned = { province = 494 data = -1 }
+			owned = { province = 495 data = -1 }
+			owned = { province = 496 data = -1 }
+			owned = { province = 497 data = -1 }
+			owned = { province = 498 data = -1 }
+			owned = { province = 499 data = -1 }
+			owned = { province = 500 data = -1 }
+			owned = { province = 501 data = -1 }
+			owned = { province = 502 data = -1 }
+			owned = { province = 503 data = -1 }
+			owned = { province = 504 data = -1 }
+			owned = { province = 505 data = -1 }
+			owned = { province = 506 data = -1 }
+			owned = { province = 507 data = -1 }
+			owned = { province = 508 data = -1 }
+			owned = { province = 509 data = -1 }
+			owned = { province = 529 data = -1 }
+			owned = { province = 530 data = -1 }
+			owned = { province = 531 data = -1 }
+			owned = { province = 532 data = -1 }
+			owned = { province = 533 data = -1 }
+			owned = { province = 732 data = -1 }
+			owned = { province = 733 data = -1 }
+			owned = { province = 734 data = -1 }
+			owned = { province = 735 data = -1 }
+			owned = { province = 736 data = -1 }
+			owned = { province = 737 data = -1 }
+			owned = { province = 738 data = -1 }
+			owned = { province = 739 data = -1 }
+			owned = { province = 740 data = -1 }
+			owned = { province = 741 data = -1 }
+			owned = { province = 742 data = -1 }
+			owned = { province = 743 data = -1 }
+			owned = { province = 744 data = -1 }
+			owned = { province = 745 data = -1 }
+			owned = { province = 746 data = -1 }
+			owned = { province = 747 data = -1 }
+			owned = { province = 805 data = -1 }
+			owned = { province = 806 data = -1 }
+			owned = { province = 1595 data = -1 }
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1012"
+	desc = "DECISIONHIST1012"
+
+	action = {
+		command = { type = vp value = 1000 }
+		command = { type = badboy value = 25 }
+		command = { type = capital which = 489 }
+		command = { type = conversion which = 489 }
+		command = { type = diplomats value = 3 }
+		command = { type = merchants value = 3 }
+		command = { type = missionaries value = 3 }
+		command = { type = addcore_national which = 471 }
+		command = { type = addcore_national which = 472 }
+		command = { type = addcore_national which = 473 }
+		command = { type = addcore_national which = 474 }
+		command = { type = addcore_national which = 483 }
+		command = { type = addcore_national which = 484 }
+		command = { type = addcore_national which = 485 }
+		command = { type = addcore_national which = 486 }
+		command = { type = addcore_national which = 487 }
+		command = { type = addcore_national which = 488 }
+		command = { type = addcore_national which = 489 }
+		command = { type = addcore_national which = 490 }
+		command = { type = addcore_national which = 491 }
+		command = { type = addcore_national which = 492 }
+		command = { type = addcore_national which = 493 }
+		command = { type = addcore_national which = 494 }
+		command = { type = addcore_national which = 495 }
+		command = { type = addcore_national which = 496 }
+		command = { type = addcore_national which = 497 }
+		command = { type = addcore_national which = 498 }
+		command = { type = addcore_national which = 499 }
+		command = { type = addcore_national which = 500 }
+		command = { type = addcore_national which = 501 }
+		command = { type = addcore_national which = 502 }
+		command = { type = addcore_national which = 503 }
+		command = { type = addcore_national which = 504 }
+		command = { type = addcore_national which = 505 }
+		command = { type = addcore_national which = 506 }
+		command = { type = addcore_national which = 507 }
+		command = { type = addcore_national which = 508 }
+		command = { type = addcore_national which = 509 }
+		command = { type = addcore_national which = 529 }
+		command = { type = addcore_national which = 530 }
+		command = { type = addcore_national which = 531 }
+		command = { type = addcore_national which = 532 }
+		command = { type = addcore_national which = 533 }
+		command = { type = addcore_national which = 732 }
+		command = { type = addcore_national which = 733 }
+		command = { type = addcore_national which = 734 }
+		command = { type = addcore_national which = 735 }
+		command = { type = addcore_national which = 736 }
+		command = { type = addcore_national which = 737 }
+		command = { type = addcore_national which = 738 }
+		command = { type = addcore_national which = 739 }
+		command = { type = addcore_national which = 740 }
+		command = { type = addcore_national which = 741 }
+		command = { type = addcore_national which = 742 }
+		command = { type = addcore_national which = 743 }
+		command = { type = addcore_national which = 744 }
+		command = { type = addcore_national which = 745 }
+		command = { type = addcore_national which = 746 }
+		command = { type = addcore_national which = 747 }
+		command = { type = addcore_national which = 805 }
+		command = { type = addcore_national which = 806 }
+		command = { type = addcore_national which = 1595 }
+		command = { type = flagname which = "" }
+		command = { type = country which = CAL }
+	}
+}
+
+#######################################
+#Found the Kingdom of the Two Sicilies#
+#######################################
+decision = {
+	id = 1013
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = APU # Apulia
+			tag = NAP # Naples
+			tag = SIC # Sicily
+		}
+		NOT = { exists = TWO }
+		year = 1800
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		owned = { province = 393 data = -1 } # Napoli
+		someof = {
+			number = 3
+			owned = { province = 393 data = -1 }
+			owned = { province = 394 data = -1 }
+			owned = { province = 395 data = -1 }
+			owned = { province = 396 data = -1 }
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1013"
+	desc = "DECISIONHIST1013"
+
+	action = {
+		command = { type = vp value = 100 }
+		command = { type = capital which = 393 }
+		command = { type = diplomats value = 2 }
+		command = { type = addcore_national which = 393 }
+		command = { type = addcore_national which = 394 }
+		command = { type = addcore_national which = 395 }
+		command = { type = addcore_national which = 396 }
+		command = { type = flagname which = "" }
+		command = { type = country which = TWO }
+	}
+}
+
+##############################
+#Found the Kingdom of Romania#
+##############################
+decision = {
+	id = 1014
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = MOL # Moldavia
+			tag = WAL # Wallachia
+		}
+		NOT = { exists = RMN }
+		year = 1800
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		someof = {
+			number = 4
+			owned = { province = 318 data = -1 }
+			owned = { province = 319 data = -1 }
+			owned = { province = 320 data = -1 }
+			owned = { province = 322 data = -1 }
+			owned = { province = 323 data = -1 }
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1014"
+	desc = "DECISIONHIST1014"
+
+	action = {
+		command = { type = vp value = 100 }
+		command = { type = diplomats value = 2 }
+		command = {
+			trigger = { owned = { province = 320 data = -1 } }
+			type = provinceculture which = 320 value = romanian
+		}
+		command = {
+			trigger = { owned = { province = 320 data = -1 } }
+			type = conversion which = 320
+		}
+		command = { type = addcore_national which = 318 }
+		command = { type = addcore_national which = 319 }
+		command = { type = addcore_national which = 320 }
+		command = { type = addcore_national which = 322 }
+		command = { type = addcore_national which = 323 }
+		command = { type = flagname which = "" }
+		command = { type = country which = RMN }
+	}
+}
+
+################################
+#Found the Archduchy of Austria#
+################################
+decision = {
+	id = 1015
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = KRN # Carniola
+			tag = SEI # Styria
+			tag = SLZ # Salzburg
+			tag = TYR # Tyrol
+		}
+		NOT = { exists = HAB }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		owned = { province = 351 data = -1 } # Austria
+		someof = {
+			number = 4
+			owned = { province = 327 data = -1 }
+			owned = { province = 350 data = -1 }
+			owned = { province = 351 data = -1 }
+			owned = { province = 367 data = -1 }
+			owned = { province = 369 data = -1 }
+			owned = { province = 371 data = -1 }
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1015"
+	desc = "DECISIONHIST1015"
+
+	action = {
+		command = { type = vp value = 100 }
+		command = { type = capital which = 351 }
+		command = { type = diplomats value = 2 }
+		command = { type = addcore_national which = 327 }
+		command = { type = addcore_national which = 350 }
+		command = { type = addcore_national which = 351 }
+		command = { type = addcore_national which = 367 }
+		command = { type = addcore_national which = 369 }
+		command = { type = addcore_national which = 371 }
+		command = { type = flagname which = "" }
+		command = { type = country which = HAB }
+	}
+}
+
+##########################
+#Found the Dutch Republic#
+##########################
+decision = {
+	id = 1016
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = FLA # Flanders
+			tag = FRI # Friesland
+			tag = GEL # Guelders
+			tag = HAU # Brabant
+			tag = HLL # Holland
+			tag = UTR # Utrecht
+			tag = ZEE # Zeeland
+		}
+		NOT = { exists = HOL }
+		year = 1550
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		someof = {
+			number = 4
+			owned = { province = 337 data = -1 }
+			owned = { province = 338 data = -1 }
+			owned = { province = 339 data = -1 }
+			owned = { province = 340 data = -1 }
+			owned = { province = 378 data = -1 }
+			owned = { province = 380 data = -1 }
+		}
+		NOT = { event = 3900 } # HOL: Creation of the Dutch Republic
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1016"
+	desc = "DECISIONHIST1016"
+
+	action = {
+		command = { type = vp value = 150 }
+		command = { type = diplomats value = 2 }
+		command = { type = conversion which = -2 }
+		command = { type = cot which = -2 }
+		command = { type = removecot which = 380 }
+		command = { type = addcore_national which = 337 }
+		command = { type = addcore_national which = 338 }
+		command = { type = addcore_national which = 339 }
+		command = { type = addcore_national which = 340 }
+		command = { type = addcore_national which = 378 }
+		command = { type = addcore_national which = 380 }
+		command = { type = sleepevent which = 3900 }
+		command = { type = flagname which = "" }
+		command = { type = country which = HOL }
+	}
+}
+
+########################
+#Unify the Kalmar Union#
+########################
+decision = {
+	id = 1017
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = DAN # Denmark
+			tag = NOR # Norway
+			tag = SWE # Sweden
+			tag = ICE # Iceland
+			tag = GRN # Greenland
+		}
+		NOT = { exists = KAL }
+		NOT = { year = 1700 }
+		NOT = {
+			event = 3289 # DAN: The End of the Kalmar Union (fires if SWE leaves)
+			event = 3846 # NOR: The End of the Kalmar Union
+		}
+	}
+	trigger = {
+		# ICE and GRN are not required but can still form KAL
+		stability = 1
+		isvassal = no
+		domestic = { type = centralization value = 7 }
+		OR = {
+			AND = {
+				owned = { province = 307 data = -1 } # Sjælland
+				ownerchange = { province = 307 years = 10 }
+				owned = { province = 309 data = -1 } # Jutland
+				ownerchange = { province = 309 years = 10 }
+			}
+			vassal = DAN
+		}
+		OR = {
+			AND = {
+				owned = { province = 255 data = -1 } # Østlandet
+				ownerchange = { province = 255 years = 10 }
+				owned = { province = 256 data = -1 } # Bergenshus
+				ownerchange = { province = 256 years = 10 }
+				owned = { province = 258 data = -1 } # Trøndelag
+				ownerchange = { province = 258 years = 10 }
+			}
+			vassal = NOR
+		}
+		OR = {
+			AND = {
+				owned = { province = 252 data = -1 } # Småland
+				ownerchange = { province = 252 years = 10 }
+				owned = { province = 253 data = -1 } # Västergötland
+				ownerchange = { province = 253 years = 10 }
+				owned = { province = 254 data = -1 } # Svealand
+				ownerchange = { province = 254 years = 10 }
+				owned = { province = 342 data = -1 } # Finland
+				ownerchange = { province = 342 years = 10 }
+			}
+			vassal = SWE
+		}
+	}
+	ai_trigger = {
+		countrysize = 20
+	}
+
+	name = "DECISIONNAME1017"
+	desc = "DECISIONHIST1017"
+
+	action = {
+		command = { type = vp value = 200 }
+		command = { type = inherit which = DAN }
+		command = { type = inherit which = NOR }
+		command = { type = inherit which = SWE }
+		command = {
+			trigger = {
+				OR = {
+					AND = {
+						owned = { province = 1466 data = -1 } # Iceland
+						ownerchange = { province = 1466 years = 10 }
+					}
+					vassal = ICE
+				}
+			}
+			type = inherit which = ICE
+		}
+		command = {
+			trigger = {
+				OR = {
+					AND = {
+						owned = { province = 1538 data = -1 } # Eiriksfjord
+						ownerchange = { province = 1538 years = 10 }
+					}
+					vassal = GRN
+				}
+			}
+			type = inherit which = GRN
+		}
+		command = { type = addcore_national which = 251 } # Denmark
+		command = { type = addcore_national which = 306 }
+		command = { type = addcore_national which = 307 }
+		command = { type = addcore_national which = 308 }
+		command = { type = addcore_national which = 309 }
+		command = { type = addcore_national which = 255 } # Norway
+		command = { type = addcore_national which = 256 }
+		command = { type = addcore_national which = 258 }
+		command = { type = addcore_national which = 259 }
+		command = { type = addcore_national which = 261 }
+		command = { type = addcore_national which = 252 } # Sweden
+		command = { type = addcore_national which = 253 }
+		command = { type = addcore_national which = 254 }
+		command = { type = addcore_national which = 257 }
+		command = { type = addcore_national which = 260 }
+		command = { type = addcore_national which = 263 }
+		command = { type = addcore_national which = 264 }
+		command = { type = addcore_national which = 265 }
+		command = { type = addcore_national which = 273 }
+		command = { type = addcore_national which = 341 }
+		command = { type = addcore_national which = 342 }
+		command = { type = addcore_national which = 381 }
+		command = { type = addcore_national which = 1469 }
+		command = { type = addcore_national which = 1466 } # Iceland
+		command = { type = addcore_national which = 1537 } # Greenland
+		command = { type = addcore_national which = 1538 }
+		command = { type = provincetax which = -1 value = 2 where = Denmark }
+		command = { type = provincetax which = -4 value = 1 where = Denmark }
+		command = { type = provincetax which = -1 value = 2 where = Norway }
+		command = { type = provincetax which = -4 value = 1 where = Norway }
+		command = { type = provincetax which = -1 value = 2 where = Sweden }
+		command = { type = provincetax which = -4 value = 1 where = Sweden }
+		command = { type = provincetax which = -4 value = 1 where = Sweden }
+		command = { type = provincetax which = -4 value = 1 where = Sweden }
+		command = {
+			trigger = { cot = 305 }
+			type = removecot which = 305
+		}
+		command = {
+			trigger = {
+				NOT = { cot = 254 }
+			}
+			type = cot which = 252
+		}
+		command = {
+			trigger = { technology = orthodox } # Greenland starts in orthodox tech group
+			type = technology which = latin
+		}
+		command = { type = capital which = 252 } # Småland
+		command = { type = flagname which = "" }
+		command = { type = country which = KAL }
+	}
+}
+
+###################################
+#Proclaim the Kingdom of Jerusalem#
+###################################
+decision = {
+	id = 1018
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = ANT # Antioch
+			tag = BAS # Basra
+			tag = CYP # Cyprus
+			tag = DAM # Damascus
+			tag = EDE # Edessa
+			tag = KNI # Order of St. John
+			tag = PET # Petra
+			tag = TRP # Tripoli
+		}
+		religion = catholic
+		NOT = { exists = JER }
+		NOT = { year = 1600 }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		owned = { province = 492 data = -1 } # Samaria
+		owned = { province = 493 data = -1 } # Judea
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1018"
+	desc = "DECISIONHIST1018"
+
+	action = {
+		command = { type = vp value = 100 }
+		command = { type = capital which = 493 }
+		command = { type = conversion which = 493 }
+		command = { type = add_countryculture which = arabic }
+		command = { type = diplomats value = 2 }
+		command = { type = addcore_national which = 484 }
+		command = { type = addcore_national which = 485 }
+		command = { type = addcore_national which = 491 }
+		command = { type = addcore_national which = 492 }
+		command = { type = addcore_national which = 493 }
+		command = { type = addcore_national which = 494 }
+		command = { type = flagname which = "" }
+		command = { type = country which = JER }
+	}
+}
+
+##############
+#Unite Saxony#
+##############
+decision = {
+	id = 1019
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = ANH # Anhalt
+			tag = MEI # Meissen
+		}
+		NOT = { exists = SAC }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		owned = { province = 331 data = -1 } # Sachsen
+		owned = { province = 332 data = -1 } # Anhalt
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1019"
+	desc = "DECISIONHIST1019"
+
+	action = {
+		command = { type = vp value = 50 }
+		command = { type = capital which = 331 }
+		command = { type = diplomats value = 2 }
+		command = { type = addcore_national which = 331 }
+		command = { type = addcore_national which = 332 }
+		command = { type = flagname which = "" }
+		command = { type = country which = SAC }
+	}
+}
+
+######################
+#Unite the Palatinate#
+######################
+decision = {
+	id = 1020
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = MAI # Mainz
+			tag = TRR # Trier
+		}
+		NOT = { exists = PFA }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		owned = { province = 345 data = -1 } # Pfalz
+		owned = { province = 346 data = -1 } # Mainz
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1020"
+	desc = "DECISIONHIST1020"
+
+	action = {
+		command = { type = vp value = 50 }
+		command = { type = capital which = 346 }
+		command = { type = diplomats value = 2 }
+		command = { type = addcore_national which = 345 }
+		command = { type = cityname which = 345 value = "Frankfurt" }
+		command = { type = addcore_national which = 346 }
+		command = { type = cityname which = 346 value = "Heidelberg" }
+		command = { type = flagname which = "" }
+		command = { type = country which = PFA }
+	}
+}
+
+#################
+#Unite the Hansa#
+#################
+decision = {
+	id = 1021
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = BRE # Bremen
+			tag = MEC # Mecklenburg
+			tag = SHL # Holstein
+		}
+		NOT = { exists = HSA }
+		NOT = { year = 1700 }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		owned = { province = 305 data = -1 } # Mecklemburg
+		owned = { province = 306 data = -1 } # Holstein
+		owned = { province = 336 data = -1 } # Bremen
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1021"
+	desc = "DECISIONHIST1021"
+
+	action = {
+		command = { type = vp value = 150 }
+		command = { type = capital which = 305 }
+		command = { type = gainbuilding which = 305 value = shipyard }
+		command = { type = trade value = 3000 }
+		command = { type = merchants value = 6 }
+		command = { type = addcore_national which = 304 }
+		command = { type = addcore_national which = 305 }
+		command = { type = addcore_national which = 306 }
+		command = { type = addcore_national which = 336 }
+		command = { type = provincetax which = -2 value = 5 where = Hansa }
+		command = { type = provincetax which = -4 value = 2 where = Hansa }
+		command = { type = provincetax which = -4 value = 2 where = Hansa }
+		command = { type = provincetax which = -4 value = 2 where = Hansa }
+		command = { type = flagname which = "" }
+		command = { type = country which = HSA }
+	}
+}
+
+##################################
+#Restore the Caliphate of Córdoba#
+##################################
+decision = {
+	id = 1022
+	major = yes
+	unique = yes
+	potential = {
+		tag = GRA # Granada
+		OR = {
+			religion = sunni
+			religion = shia
+		}
+		NOT = { exists = CRD }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		owned = { province = 436 data = -1 } # Castilla
+		owned = { province = 437 data = -1 } # Valencia
+		owned = { province = 438 data = -1 } # Murcia
+		owned = { province = 439 data = -1 } # Toledo
+		owned = { province = 440 data = -1 } # Estramadura
+		owned = { province = 442 data = -1 } # Algarve
+		owned = { province = 443 data = -1 } # Andalusia
+		owned = { province = 444 data = -1 } # Granada
+		owned = { province = 445 data = -1 } # Gibraltar
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1022"
+	desc = "DECISIONHIST1022"
+
+	action = {
+		command = { type = vp value = 300 }
+		command = { type = badboy value = 5 }
+		command = { type = capital which = 443 }
+		command = { type = diplomats value = 2 }
+		command = { type = merchants value = 2 }
+		command = { type = missionaries value = 2 }
+		command = { type = addcore_national which = 427 }
+		command = { type = addcore_national which = 428 }
+		command = { type = addcore_national which = 429 }
+		command = { type = addcore_national which = 430 }
+		command = { type = addcore_national which = 431 }
+		command = { type = addcore_national which = 432 }
+		command = { type = addcore_national which = 433 }
+		command = { type = addcore_national which = 434 }
+		command = { type = addcore_national which = 435 }
+		command = { type = addcore_national which = 441 }
+		command = { type = addcore_national which = 821 }
+		command = {
+			trigger = {
+				NOT = { cot = 443 }
+			}
+			type = cot which = 443
+		}
+		command = {
+			trigger = { cot = 441 }
+			type = removecot which = 441
+		}
+		command = {
+			trigger = { cot = 429 }
+			type = removecot which = 429
+		}
+		command = { type = flagname which = "" }
+		command = { type = country which = CRD }
+	}
+}
+
+########################
+#Restore the Il-Khanate#
+########################
+decision = {
+	id = 1023
+	major = yes
+	unique = yes
+	potential = {
+		tag = ABB # Jalayirids
+		NOT = { exists = ILK }
+		NOT = { year = 1700 }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		owned = { province = 487 data = -1 } # Azerbaijan
+		owned = { province = 488 data = -1 } # Kirkuk
+		owned = { province = 489 data = -1 } # Iraq
+		owned = { province = 508 data = -1 } # Basrah
+		owned = { province = 530 data = -1 } # Tabriz
+		owned = { province = 531 data = -1 } # Hamadan
+		owned = { province = 532 data = -1 } # Ahwaz
+		NOT = { exists = PER }
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1023"
+	desc = "DECISIONHIST1023"
+
+	action = {
+		command = { type = vp value = 300 }
+		command = { type = badboy value = 10 }
+		command = { type = capital which = 530 }
+		command = { type = add_countryculture which = persian }
+		command = { type = diplomats value = 2 }
+		command = { type = missionaries value = 2 }
+		command = { type = addcore_national which = 471 }
+		command = { type = addcore_national which = 472 }
+		command = { type = addcore_national which = 473 }
+		command = { type = addcore_national which = 474 }
+		command = { type = addcore_national which = 485 }
+		command = { type = addcore_national which = 486 }
+		command = { type = addcore_national which = 487 }
+		command = { type = addcore_national which = 490 }
+		command = { type = addcore_national which = 525 }
+		command = { type = addcore_national which = 526 }
+		command = { type = addcore_national which = 527 }
+		command = { type = addcore_national which = 528 }
+		command = { type = addcore_national which = 529 }
+		command = { type = addcore_national which = 530 }
+		command = { type = addcore_national which = 533 }
+		command = { type = addcore_national which = 534 }
+		command = { type = addcore_national which = 535 }
+		command = { type = addcore_national which = 536 }
+		command = { type = addcore_national which = 537 }
+		command = { type = addcore_national which = 538 }
+		command = { type = addcore_national which = 1526 }
+		command = { type = addcore_national which = 1528 }
+		command = { type = addcore_national which = 1529 }
+		command = { type = addcore_national which = 1530 }
+		command = { type = addcore_national which = 1531 }
+		command = {
+			trigger = {
+				NOT = { cot = 533 }
+			}
+			type = cot which = 530
+		}
+		command = {
+			trigger = {
+				NOT = { cot = 533 }
+			}
+			type = removecot which = 1592
+		}
+		command = { type = flagname which = "" }
+		command = { type = country which = ILK }
+	}
+}
+
+############################
+#Restore the Ottoman Empire#
+############################
+decision = {
+	id = 1024
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = CAN # Candar
+			tag = DUL # Dulkadir
+			tag = KAR # Karaman
+			tag = RAM # Ramazan
+			tag = TEK # Teke
+			tag = ERT # Eretnid
+			tag = AYD # Aydin
+		}
+		OR = {
+			religion = sunni
+			religion = shia
+		}
+		NOT = { exists = TUR }
+		NOT = { year = 1550 }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		someof = {
+			number = 6
+			owned = { province = 474 data = -1 }
+			owned = { province = 475 data = -1 }
+			owned = { province = 476 data = -1 }
+			owned = { province = 477 data = -1 }
+			owned = { province = 478 data = -1 }
+			owned = { province = 482 data = -1 }
+			owned = { province = 483 data = -1 }
+			owned = { province = 1609 data = -1 }
+			owned = { province = 1610 data = -1 }
+			owned = { province = 1611 data = -1 }
+		}
+		NOT = { event = 3353 } # TUR: The City of Men's Desire
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1024"
+	desc = "DECISIONHIST1024"
+
+	action = {
+		command = { type = vp value = 200 }
+		command = {
+			trigger = {
+				owned = { province = 357 data = -1 }
+			}
+			type = capital which = 357
+		}
+		command = {
+			trigger = {
+				owned = { province = 357 data = -1 }
+			}
+			type = cityname which = 357 value = "Istanbul"
+		}
+		command = {
+			trigger = {
+				owned = { province = 357 data = -1 }
+			}
+			type = provinceculture which = 357 value = turkish
+		}
+		command = {
+			trigger = {
+				owned = { province = 477 data = -1 }
+			}
+			type = provinceculture which = 477 value = turkish
+		}
+		command = {
+			trigger = {
+				owned = { province = 478 data = -1 }
+			}
+			type = provinceculture which = 478 value = turkish
+		}
+		command = { type = conversion which = -2 }
+		command = { type = diplomats value = 2 }
+		command = {
+			trigger = {
+				owned = { province = 357 data = -1 }
+			}
+			type = addcore_national which = 357
+		}
+		command = { type = addcore_national which = 474 } # Anatolia
+		command = { type = addcore_national which = 475 }
+		command = { type = addcore_national which = 476 }
+		command = { type = addcore_national which = 477 }
+		command = { type = addcore_national which = 478 }
+		command = { type = addcore_national which = 482 }
+		command = { type = addcore_national which = 483 }
+		command = { type = addcore_national which = 1609 }
+		command = { type = addcore_national which = 1610 }
+		command = { type = addcore_national which = 1611 }
+		command = { type = sleepevent which = 3353 }
+		command = { type = flagname which = "" }
+		command = { type = country which = TUR }
+	}
+}
+
+##################
+#Resurrect Persia#
+##################
+decision = {
+	id = 1025
+	major = yes
+	unique = yes
+	potential = {
+		year = 1500
+		OR = {
+			tag = FAR # Fars
+			tag = KHO # Khorasan
+			tag = SHI # Shirvan
+			tag = BAR # Barlas
+			tag = HAZ # Hazaraspids
+			tag = SUF # Sufids
+			tag = MUZ # Muzzaffarids
+			tag = SLD # Suldus
+			tag = MHR # Mihrabanids
+			tag = INJ # Injuids
+			tag = TEM # Temurids
+			tag = CHB # Chobanids
+			tag = KRT # Kartids
+		}
+		OR = {
+			religion = sunni
+			religion = shia
+		}
+		NOT = { exists = PER }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		owned = { province = 530 data = -1 } # Tabriz
+		someof = {
+			number = 8
+			owned = { province = 471 data = -1 }
+			owned = { province = 487 data = -1 }
+			owned = { province = 525 data = -1 }
+			owned = { province = 526 data = -1 }
+			owned = { province = 527 data = -1 }
+			owned = { province = 528 data = -1 }
+			owned = { province = 529 data = -1 }
+			owned = { province = 530 data = -1 }
+			owned = { province = 531 data = -1 }
+			owned = { province = 532 data = -1 }
+			owned = { province = 533 data = -1 }
+			owned = { province = 534 data = -1 }
+			owned = { province = 535 data = -1 }
+			owned = { province = 1529 data = -1 }
+			owned = { province = 1530 data = -1 }
+			owned = { province = 1531 data = -1 }
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1025"
+	desc = "DECISIONHIST1025"
+
+	action = {
+		command = { type = vp value = 200 }
+		command = { type = capital which = 530 }
+		command = { type = conversion which = 530 }
+		command = { type = diplomats value = 2 }
+		command = { type = missionaries value = 6 }
+		command = { type = addcore_national which = 471 } # Persia
+		command = { type = addcore_national which = 487 }
+		command = { type = addcore_national which = 525 }
+		command = { type = addcore_national which = 526 }
+		command = { type = addcore_national which = 527 }
+		command = { type = addcore_national which = 528 }
+		command = { type = addcore_national which = 529 }
+		command = { type = addcore_national which = 530 }
+		command = { type = addcore_national which = 531 }
+		command = { type = addcore_national which = 532 }
+		command = { type = addcore_national which = 533 }
+		command = { type = addcore_national which = 534 }
+		command = { type = addcore_national which = 535 }
+		command = { type = addcore_national which = 1529 }
+		command = { type = addcore_national which = 1530 }
+		command = { type = addcore_national which = 1531 }
+		command = { type = flagname which = "" }
+		command = { type = country which = PER }
+	}
+}
+
+#############
+#Unite Spain#
+#############
+decision = {
+	id = 1026
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = ARG # Aragon
+			tag = ASU # Asturias
+			tag = CAS # Castile
+			tag = CAT # Catalonia
+			tag = CNY # Canary Islands
+			tag = GAL # Galicia
+			tag = LEO # León
+			tag = MLL # Mallorca
+			tag = SEV # Seville
+			tag = VAL # Valencia
+		}
+		NOT = {
+			religion = sunni
+			religion = shia
+		}
+		NOT = { exists = SPA }
+		year = 1492
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		owned = { province = 439 data = -1 } # Toledo
+		someof = {
+			number = 8
+			owned = { province = 426 data = -1 }
+			owned = { province = 427 data = -1 }
+			owned = { province = 428 data = -1 }
+			owned = { province = 429 data = -1 }
+			owned = { province = 430 data = -1 }
+			owned = { province = 431 data = -1 }
+			owned = { province = 432 data = -1 }
+			owned = { province = 433 data = -1 }
+			owned = { province = 435 data = -1 }
+			owned = { province = 436 data = -1 }
+			owned = { province = 437 data = -1 }
+			owned = { province = 438 data = -1 }
+			owned = { province = 439 data = -1 }
+			owned = { province = 440 data = -1 }
+			owned = { province = 443 data = -1 }
+			owned = { province = 444 data = -1 }
+			owned = { province = 445 data = -1 }
+			owned = { province = 817 data = -1 }
+			owned = { province = 821 data = -1 }
+		}
+		NOT = {
+			event = 3554 # ARG: Viva España
+			event = 3556 # CAS: Viva España
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1026"
+	desc = "DECISIONHIST1026"
+
+	action = {
+		command = { type = vp value = 200 }
+		command = { type = capital which = 439 }
+		command = { type = conversion which = 439 }
+		command = { type = diplomats value = 2 }
+		command = { type = missionaries value = 2 }
+		command = { type = addcore_national which = 426 } # Spain
+		command = { type = addcore_national which = 427 }
+		command = { type = addcore_national which = 428 }
+		command = { type = addcore_national which = 429 }
+		command = { type = addcore_national which = 430 }
+		command = { type = addcore_national which = 431 }
+		command = { type = addcore_national which = 432 }
+		command = { type = addcore_national which = 433 }
+		command = { type = addcore_national which = 435 }
+		command = { type = addcore_national which = 436 }
+		command = { type = addcore_national which = 437 }
+		command = { type = addcore_national which = 438 }
+		command = { type = addcore_national which = 439 }
+		command = { type = addcore_national which = 440 }
+		command = { type = addcore_national which = 443 }
+		command = { type = addcore_national which = 444 }
+		command = { type = addcore_national which = 445 }
+		command = { type = addcore_national which = 817 }
+		command = { type = addcore_national which = 821 }
+		command = { type = flagname which = "" }
+		command = { type = country which = SPA }
+	}
+}
+
+##########################
+#Restore the Chola Empire#
+##########################
+decision = {
+	id = 1027
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = CLC # Calicut
+			tag = COC # Cochin
+			tag = LNK # Lanka
+			tag = MAD # Madurai
+			tag = MYS # Mysore
+			tag = TRV # Travancore
+			tag = VIJ # Vijayanagar
+		}
+		OR = {
+			religion = buddhism
+			#religion = jain
+			religion = hinduism
+			religion = sikh
+			religion = sunni
+			religion = shia
+		}
+		NOT = { exists = CHO }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		owned = { province = 575 data = -1 } # Madurai
+		someof = {
+			number = 8
+			owned = { province = 549 data = -1 }
+			owned = { province = 565 data = -1 }
+			owned = { province = 567 data = -1 }
+			owned = { province = 568 data = -1 }
+			owned = { province = 569 data = -1 }
+			owned = { province = 570 data = -1 }
+			owned = { province = 571 data = -1 }
+			owned = { province = 572 data = -1 }
+			owned = { province = 573 data = -1 }
+			owned = { province = 574 data = -1 }
+			owned = { province = 575 data = -1 }
+			owned = { province = 576 data = -1 }
+			owned = { province = 577 data = -1 }
+		}
+	}
+	ai_trigger = {
+		NOT = { tag = VIJ }
+	}
+
+	name = "DECISIONNAME1027"
+	desc = "DECISIONHIST1027"
+
+	action = {
+		command = { type = vp value = 300 }
+		command = { type = capital which = 575 }
+		command = { type = conversion which = 575 }
+		command = {
+			trigger = {
+				NOT = { culture = tamil }
+			}
+			type = add_countryculture which = tamil
+		}
+		command = { type = diplomats value = 2 }
+		command = { type = missionaries value = 2 }
+		command = { type = addcore_national which = 549 }
+		command = { type = addcore_national which = 565 }
+		command = { type = addcore_national which = 567 }
+		command = { type = addcore_national which = 568 }
+		command = { type = addcore_national which = 569 }
+		command = { type = addcore_national which = 570 }
+		command = { type = addcore_national which = 571 }
+		command = { type = addcore_national which = 572 }
+		command = { type = addcore_national which = 573 }
+		command = { type = addcore_national which = 574 }
+		command = { type = addcore_national which = 575 }
+		command = { type = addcore_national which = 576 }
+		command = { type = addcore_national which = 577 }
+		command = { type = flagname which = "" }
+		command = { type = country which = CHO }
+	}
+}
+
+##########################
+#Restore the Gupta Empire#
+##########################
+decision = {
+	id = 1028
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = AHM # Ahmadnagar
+			tag = BIJ # Bijapur
+			#tag = DLH # Delhi
+			tag = GUJ # Gujarat
+			tag = HYD # Hyderabad
+			tag = JAI # Jaunpur
+			tag = KHA # Khandesh
+			tag = KSH # Kashmir
+			tag = MLW # Malwa
+			tag = MUL # Multan
+			tag = RAJ # Rajputana
+			tag = SIN # Sindh
+		}
+		OR = {
+			religion = buddhism
+			#religion = jain
+			religion = hinduism
+			religion = sikh
+			religion = sunni
+			religion = shia
+		}
+		NOT = { exists = GUP }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		owned = { province = 546 data = -1 } # Malwa
+		someof = {
+			number = 12
+			owned = { province = 539 data = -1 }
+			owned = { province = 540 data = -1 }
+			owned = { province = 541 data = -1 }
+			owned = { province = 542 data = -1 }
+			owned = { province = 543 data = -1 }
+			owned = { province = 544 data = -1 }
+			owned = { province = 545 data = -1 }
+			owned = { province = 546 data = -1 }
+			owned = { province = 547 data = -1 }
+			owned = { province = 548 data = -1 }
+			owned = { province = 550 data = -1 }
+			owned = { province = 551 data = -1 }
+			owned = { province = 566 data = -1 }
+			owned = { province = 1520 data = -1 }
+			owned = { province = 1521 data = -1 }
+			owned = { province = 1522 data = -1 }
+			owned = { province = 1523 data = -1 }
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1028"
+	desc = "DECISIONHIST1028"
+
+	action = {
+		command = { type = vp value = 300 }
+		command = { type = capital which = 546 }
+		command = { type = conversion which = 546 }
+		command = {
+			trigger = {
+				NOT = { culture = hindi }
+			}
+			type = add_countryculture which = hindi
+		}
+		command = { type = diplomats value = 2 }
+		command = { type = missionaries value = 2 }
+		command = { type = addcore_national which = 539 }
+		command = { type = addcore_national which = 540 }
+		command = { type = addcore_national which = 541 }
+		command = { type = addcore_national which = 542 }
+		command = { type = addcore_national which = 543 }
+		command = { type = addcore_national which = 544 }
+		command = { type = addcore_national which = 545 }
+		command = { type = addcore_national which = 546 }
+		command = { type = addcore_national which = 547 }
+		command = { type = addcore_national which = 548 }
+		command = { type = addcore_national which = 550 }
+		command = { type = addcore_national which = 551 }
+		command = { type = addcore_national which = 566 }
+		command = { type = addcore_national which = 1520 }
+		command = { type = addcore_national which = 1521 }
+		command = { type = addcore_national which = 1522 }
+		command = { type = addcore_national which = 1523 }
+		command = { type = flagname which = "" }
+		command = { type = country which = GUP }
+	}
+}
+
+###########################
+#Restore the Maurya Empire#
+###########################
+decision = {
+	id = 1029
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = ARK # Arakan
+			tag = ASS # Assam
+			tag = BGL # Bengal
+			tag = BST # Bastar
+			tag = GON # Gondwana
+			tag = JNT # Jaintia
+			tag = KHE # Khemundi
+			tag = KMT # Kamata
+			tag = NEP # Nepal
+			tag = ORI # Orissa
+		}
+		OR = {
+			religion = buddhism
+			#religion = jain
+			religion = hinduism
+			religion = sikh
+			religion = sunni
+			religion = shia
+		}
+		NOT = { exists = MAU }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		owned = { province = 559 data = -1 } # Bihar
+		someof = {
+			number = 12
+			owned = { province = 552 data = -1 }
+			owned = { province = 553 data = -1 }
+			owned = { province = 554 data = -1 }
+			owned = { province = 555 data = -1 }
+			owned = { province = 556 data = -1 }
+			owned = { province = 557 data = -1 }
+			owned = { province = 558 data = -1 }
+			owned = { province = 559 data = -1 }
+			owned = { province = 560 data = -1 }
+			owned = { province = 561 data = -1 }
+			owned = { province = 562 data = -1 }
+			owned = { province = 563 data = -1 }
+			owned = { province = 564 data = -1 }
+			owned = { province = 671 data = -1 }
+			owned = { province = 672 data = -1 }
+			owned = { province = 1539 data = -1 }
+			owned = { province = 1546 data = -1 }
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1029"
+	desc = "DECISIONHIST1029"
+
+	action = {
+		command = { type = vp value = 300 }
+		command = { type = capital which = 559 }
+		command = { type = conversion which = 559 }
+		command = {
+			trigger = {
+				NOT = { culture = bengali }
+			}
+			type = add_countryculture which = bengali
+		}
+		command = { type = diplomats value = 2 }
+		command = { type = missionaries value = 2 }
+		command = { type = addcore_national which = 552 }
+		command = { type = addcore_national which = 553 }
+		command = { type = addcore_national which = 554 }
+		command = { type = addcore_national which = 555 }
+		command = { type = addcore_national which = 556 }
+		command = { type = addcore_national which = 557 }
+		command = { type = addcore_national which = 558 }
+		command = { type = addcore_national which = 559 }
+		command = { type = addcore_national which = 560 }
+		command = { type = addcore_national which = 561 }
+		command = { type = addcore_national which = 562 }
+		command = { type = addcore_national which = 563 }
+		command = { type = addcore_national which = 564 }
+		command = { type = addcore_national which = 671 }
+		command = { type = addcore_national which = 672 }
+		command = { type = addcore_national which = 1539 }
+		command = { type = addcore_national which = 1546 }
+		command = { type = flagname which = "" }
+		command = { type = country which = MAU }
+	}
+}
+
+#####################
+#Unite Great Britain#
+#####################
+decision = {
+	id = 1030
+	major = yes
+	unique = yes
+	potential = {
+		tag = SCO # Scotland
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		owned = { province = 247 data = -1 } # Anglia
+		someof = {
+			number = 6
+			owned = { province = 240 data = -1 }
+			owned = { province = 241 data = -1 }
+			owned = { province = 242 data = -1 }
+			owned = { province = 243 data = -1 }
+			owned = { province = 244 data = -1 }
+			owned = { province = 245 data = -1 }
+			owned = { province = 246 data = -1 }
+			owned = { province = 247 data = -1 }
+			owned = { province = 248 data = -1 }
+			owned = { province = 249 data = -1 }
+			owned = { province = 250 data = -1 }
+		}
+		NOT = { exists = ENG }
+		NOT = { event = 3037 } # ENG: The Act of Union
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1030"
+	desc = "DECISIONHIST1030"
+
+	action = {
+		command = { type = vp value = 200 }
+		command = { type = provincetax which = 238 value = 3 }
+		command = { type = provincemanpower which = 238 value = 1 }
+		command = {
+			trigger = {
+				NOT = { culture = gaelic }
+			}
+			type = add_countryculture which = gaelic
+		}
+		command = { type = diplomats value = 2 }
+		command = { type = merchants value = 2 }
+		command = { type = missionaries value = 2 }
+		command = { type = addcore_national which = 240 }
+		command = { type = addcore_national which = 241 }
+		command = { type = addcore_national which = 242 }
+		command = { type = addcore_national which = 243 }
+		command = { type = addcore_national which = 244 }
+		command = { type = addcore_national which = 245 }
+		command = { type = addcore_national which = 246 }
+		command = { type = addcore_national which = 247 }
+		command = { type = addcore_national which = 248 }
+		command = { type = addcore_national which = 249 }
+		command = { type = addcore_national which = 250 }
+		command = {
+			trigger = { cot = 247 }
+			type = removecot which = 247
+		}
+		command = {
+			trigger = {
+				NOT = { cot = 238 }
+			}
+			type = cot which = 238
+		}
+		command = { type = sleepevent which = 3037 }
+		command = { type = flagname which = GBR }
+		command = { type = countryname value = "Great Britain" }
+	}
+}
+
+##################
+#Create Oman	 #
+##################
+decision = {
+	id = 1100
+	major = yes
+	unique = yes
+	potential = {
+		year = 1400
+		OR = {
+			tag = ORM # Ormus
+			tag = AHA # Al-Haasa
+		}
+		OR = {
+			religion = sunni
+			religion = shia
+		}
+		NOT = { exists = OMA }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		owned = { province = 504 data = -1 } # Mascate
+		someof = {
+			number = 5
+			owned = { province = 502 data = -1 }
+			owned = { province = 503 data = -1 }
+			owned = { province = 504 data = -1 }
+			owned = { province = 505 data = -1 }
+			owned = { province = 506 data = -1 }
+			owned = { province = 507 data = -1 }
+			owned = { province = 509 data = -1 }
+			owned = { province = 756 data = -1 }
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Form Oman"
+	desc = "We can form the State of Oman."
+
+	action = {
+		command = { type = vp value = 200 }
+		command = { type = capital which = 504 }
+		command = { type = conversion which = 504 }
+		command = { type = diplomats value = 2 }
+		command = { type = missionaries value = 6 }
+		command = { type = addcore_national which = 502 } # Oman
+		command = { type = addcore_national which = 503 }
+		command = { type = addcore_national which = 504 }
+		command = { type = addcore_national which = 505 }
+		command = { type = addcore_national which = 506 }
+		command = { type = addcore_national which = 507 }
+		command = { type = addcore_national which = 509 }
+		command = { type = addcore_national which = 756 }
+		command = { type = flagname which = "" }
+		command = { type = country which = OMA }
+	}
+}
+
+#################
+#Form China	#
+#################
+decision = {
+	id = 1101
+	major = yes
+	unique = no
+	potential = {
+		OR = {
+			tag = ZHO # Zhou
+			tag = MNG # Ming
+			tag = DHN # Han
+			tag = TIA # Tianwan
+			tag = SNG # Song
+			tag = HEN # Henan
+			tag = ZHE #Zhejang
+			tag = FUJ # Fujian
+			tag = GUA # Guangdong
+			tag = HSI # Hsia
+			tag = YUN # Yunnan
+			tag = SXI # Shanxi
+			tag = SXA # Shaanxi
+			tag = LIA # Liaotung
+			tag = HNA # Hunan
+			tag = GXI # Guangxi
+			tag = XIN # Xinjiang
+		}
+		NOT = { exists = CHI }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		owned = { province = 650 data = -1 } # Nanjing
+		someof = {
+			number = 18
+			owned = { province = 649 data = -1 }
+			owned = { province = 651 data = -1 }
+			owned = { province = 652 data = -1 }
+			owned = { province = 653 data = -1 }
+			owned = { province = 654 data = -1 }
+			owned = { province = 655 data = -1 }
+			owned = { province = 656 data = -1 }
+			owned = { province = 657 data = -1 }
+			owned = { province = 658 data = -1 }
+			owned = { province = 659 data = -1 }
+			owned = { province = 660 data = -1 }
+			owned = { province = 661 data = -1 }
+			owned = { province = 1545 data = -1 }
+			owned = { province = 1555 data = -1 }
+			owned = { province = 1556 data = -1 }
+			owned = { province = 1557 data = -1 }
+			owned = { province = 1558 data = -1 }
+			owned = { province = 1559 data = -1 }
+			owned = { province = 1560 data = -1 }
+			owned = { province = 1561 data = -1 }
+			owned = { province = 1562 data = -1 }
+			owned = { province = 1563 data = -1 }
+			owned = { province = 1564 data = -1 }
+			owned = { province = 1565 data = -1 }
+			owned = { province = 1566 data = -1 }
+			owned = { province = 1567 data = -1 }
+			owned = { province = 1606 data = -1 }
+		}
+		NOT = { exists = CHI }
+	}
+	ai_trigger = {
+	}
+
+	name = "We are China"
+	desc = "Order has been restored and our Dynasty is triumphant! For a while."
+
+	action = {
+		command = { type = remove_countryculture which = mongolc }
+		command = { type = vp value = 100 }
+		command = { type = capital which = 650 }
+		command = { type = diplomats value = 2 }
+		command = { type = addcore_national which = 649 }
+		command = { type = addcore_national which = 650 }
+		command = { type = addcore_national which = 651 }
+		command = { type = addcore_national which = 652 }
+		command = { type = addcore_national which = 653 }
+		command = { type = addcore_national which = 654 }
+		command = { type = addcore_national which = 655 }
+		command = { type = addcore_national which = 656 }
+		command = { type = addcore_national which = 657 }
+		command = { type = addcore_national which = 658 }
+		command = { type = addcore_national which = 659 }
+		command = { type = addcore_national which = 660 }
+		command = { type = addcore_national which = 661 }
+		command = { type = addcore_national which = 1545 }
+		command = { type = addcore_national which = 1555 }
+		command = { type = addcore_national which = 1556 }
+		command = { type = addcore_national which = 1557 }
+		command = { type = addcore_national which = 1558 }
+		command = { type = addcore_national which = 1559 }
+		command = { type = addcore_national which = 1560 }
+		command = { type = addcore_national which = 1561 }
+		command = { type = addcore_national which = 1562 }
+		command = { type = addcore_national which = 1563 }
+		command = { type = addcore_national which = 1564 }
+		command = { type = addcore_national which = 1565 }
+		command = { type = addcore_national which = 1566 }
+		command = { type = addcore_national which = 1567 }
+		command = { type = addcore_national which = 1606 }
+		command = { type = flagname which = "Ming" }
+		command = { type = country which = CHI }
+	}
+}
+
+###################
+#Form China (Yuan)#
+###################
+decision = {
+	id = 1103
+	major = yes
+	unique = yes
+	potential = {
+			tag = YUA # Yuan
+			year = 1381
+		NOT = { exists = CHI }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		owned = { province = 650 data = -1 } # Nanjing
+		someof = {
+			number = 18
+			owned = { province = 649 data = -1 }
+			owned = { province = 651 data = -1 }
+			owned = { province = 652 data = -1 }
+			owned = { province = 653 data = -1 }
+			owned = { province = 654 data = -1 }
+			owned = { province = 655 data = -1 }
+			owned = { province = 656 data = -1 }
+			owned = { province = 657 data = -1 }
+			owned = { province = 658 data = -1 }
+			owned = { province = 659 data = -1 }
+			owned = { province = 660 data = -1 }
+			owned = { province = 661 data = -1 }
+			owned = { province = 1545 data = -1 }
+			owned = { province = 1555 data = -1 }
+			owned = { province = 1556 data = -1 }
+			owned = { province = 1557 data = -1 }
+			owned = { province = 1558 data = -1 }
+			owned = { province = 1559 data = -1 }
+			owned = { province = 1560 data = -1 }
+			owned = { province = 1561 data = -1 }
+			owned = { province = 1562 data = -1 }
+			owned = { province = 1563 data = -1 }
+			owned = { province = 1564 data = -1 }
+			owned = { province = 1565 data = -1 }
+			owned = { province = 1566 data = -1 }
+			owned = { province = 1567 data = -1 }
+			owned = { province = 1606 data = -1 }
+		}
+		NOT = { exists = CHI }
+	}
+	ai_trigger = {
+	}
+
+	name = "We are China"
+	desc = "Order has been restored and our Dynasty is triumphant! For a while."
+
+	action = {
+		command = { type = remove_countryculture which = mongolc }
+		command = { type = vp value = 100 }
+		command = { type = capital which = 650 }
+		command = { type = diplomats value = 2 }
+		command = { type = addcore_national which = 649 }
+		command = { type = addcore_national which = 650 }
+		command = { type = addcore_national which = 651 }
+		command = { type = addcore_national which = 652 }
+		command = { type = addcore_national which = 653 }
+		command = { type = addcore_national which = 654 }
+		command = { type = addcore_national which = 655 }
+		command = { type = addcore_national which = 656 }
+		command = { type = addcore_national which = 657 }
+		command = { type = addcore_national which = 658 }
+		command = { type = addcore_national which = 659 }
+		command = { type = addcore_national which = 660 }
+		command = { type = addcore_national which = 661 }
+		command = { type = addcore_national which = 1545 }
+		command = { type = addcore_national which = 1555 }
+		command = { type = addcore_national which = 1556 }
+		command = { type = addcore_national which = 1557 }
+		command = { type = addcore_national which = 1558 }
+		command = { type = addcore_national which = 1559 }
+		command = { type = addcore_national which = 1560 }
+		command = { type = addcore_national which = 1561 }
+		command = { type = addcore_national which = 1562 }
+		command = { type = addcore_national which = 1563 }
+		command = { type = addcore_national which = 1564 }
+		command = { type = addcore_national which = 1565 }
+		command = { type = addcore_national which = 1566 }
+		command = { type = addcore_national which = 1567 }
+		command = { type = addcore_national which = 1606 }
+		command = { type = flagname which = "" }
+		command = { type = country which = CHI }
+		command = { type = trigger which = 195029 }
+	}
+}
+
+#############################
+#Unify the Holy Roman Empire#
+#############################
+decision = {
+	id = 1102
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = HAB
+		}
+		NOT = { exists = HEI }
+	}
+	trigger = {
+		emperor = yes
+		atwar = no
+		isvassal = no
+		stability = 3
+		OR = {
+			vassal = PAP
+			AND = {
+				NOT = { exists = PAP }
+				owned = { province = 399 data = -1 } # Roma
+			}
+		}
+		OR = {
+			NOT = { exists = BOH }
+			AND = {
+				vassal = BOH
+				relation = { country = BOH data = 150 }
+			}
+		}
+		OR = {
+			NOT = { exists = BRA }
+			AND = {
+				vassal = BRA
+				relation = { country = BRA data = 150 }
+			}
+		}
+		OR = {
+			NOT = { exists = KOL }
+			AND = {
+				vassal = KOL
+				relation = { country = KOL data = 150 }
+			}
+		}
+		OR = {
+			NOT = { exists = MAI }
+			AND = {
+				vassal = MAI
+				relation = { country = MAI data = 150 }
+			}
+		}
+		OR = {
+			NOT = { exists = PFA }
+			AND = {
+				vassal = PFA
+				relation = { country = PFA data = 150 }
+			}
+		}
+		OR = {
+			NOT = { exists = SAC }
+			AND = {
+				vassal = SAC
+				relation = { country = SAC data = 150 }
+			}
+		}
+		OR = {
+			NOT = { exists = TRR }
+			AND = {
+				vassal = TRR
+				relation = { country = TRR data = 150 }
+			}
+		}
+		someof = {
+			number = 35
+			owned = { province = 302 data = -1 }
+			owned = { province = 304 data = -1 }
+			owned = { province = 305 data = -1 }
+			owned = { province = 306 data = -1 }
+			owned = { province = 310 data = -1 }
+			owned = { province = 311 data = -1 }
+			owned = { province = 312 data = -1 }
+			owned = { province = 313 data = -1 }
+			owned = { province = 314 data = -1 }
+			owned = { province = 315 data = -1 }
+			owned = { province = 327 data = -1 }
+			owned = { province = 328 data = -1 }
+			owned = { province = 329 data = -1 }
+			owned = { province = 330 data = -1 }
+			owned = { province = 331 data = -1 }
+			owned = { province = 332 data = -1 }
+			owned = { province = 333 data = -1 }
+			owned = { province = 334 data = -1 }
+			owned = { province = 335 data = -1 }
+			owned = { province = 336 data = -1 }
+			owned = { province = 337 data = -1 }
+			owned = { province = 338 data = -1 }
+			owned = { province = 339 data = -1 }
+			owned = { province = 340 data = -1 }
+			owned = { province = 343 data = -1 }
+			owned = { province = 344 data = -1 }
+			owned = { province = 345 data = -1 }
+			owned = { province = 346 data = -1 }
+			owned = { province = 347 data = -1 }
+			owned = { province = 348 data = -1 }
+			owned = { province = 349 data = -1 }
+			owned = { province = 350 data = -1 }
+			owned = { province = 351 data = -1 }
+			owned = { province = 367 data = -1 }
+			owned = { province = 369 data = -1 }
+			owned = { province = 371 data = -1 }
+			owned = { province = 372 data = -1 }
+			owned = { province = 373 data = -1 }
+			owned = { province = 374 data = -1 }
+			owned = { province = 375 data = -1 }
+			owned = { province = 377 data = -1 }
+			owned = { province = 378 data = -1 }
+			owned = { province = 379 data = -1 }
+			owned = { province = 380 data = -1 }
+			owned = { province = 387 data = -1 }
+			owned = { province = 388 data = -1 }
+			owned = { province = 389 data = -1 }
+			owned = { province = 390 data = -1 }
+			owned = { province = 400 data = -1 }
+			owned = { province = 401 data = -1 }
+			owned = { province = 402 data = -1 }
+			owned = { province = 403 data = -1 }
+			owned = { province = 404 data = -1 }
+			owned = { province = 405 data = -1 }
+			owned = { province = 406 data = -1 }
+			owned = { province = 1612 data = -1 }
+		}
+		NOT = { event = 25005 } # Global: Peace of Westphalia
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1011"
+	desc = "DECISIONHIST1011"
+
+	action = {
+		command = { type = vp value = 1000 }
+		command = { type = badboy value = 15 }
+		command = { type = diplomats value = 3 }
+		command = { type = merchants value = 3 }
+		command = { type = missionaries value = 3 }
+		command = { type = relation which = FRA value = -200 }
+		command = { type = relation which = HEL value = -200 }
+		command = { type = addcore_national which = 302 } # Holy Roman Empire
+		command = { type = addcore_national which = 304 }
+		command = { type = addcore_national which = 305 }
+		command = { type = addcore_national which = 306 }
+		command = { type = addcore_national which = 310 }
+		command = { type = addcore_national which = 311 }
+		command = { type = addcore_national which = 312 }
+		command = { type = addcore_national which = 313 }
+		command = { type = addcore_national which = 314 }
+		command = { type = addcore_national which = 315 }
+		command = { type = addcore_national which = 327 }
+		command = { type = addcore_national which = 328 }
+		command = { type = addcore_national which = 329 }
+		command = { type = addcore_national which = 330 }
+		command = { type = addcore_national which = 331 }
+		command = { type = addcore_national which = 332 }
+		command = { type = addcore_national which = 333 }
+		command = { type = addcore_national which = 334 }
+		command = { type = addcore_national which = 335 }
+		command = { type = addcore_national which = 336 }
+		command = { type = addcore_national which = 337 }
+		command = { type = addcore_national which = 338 }
+		command = { type = addcore_national which = 339 }
+		command = { type = addcore_national which = 340 }
+		command = { type = addcore_national which = 343 }
+		command = { type = addcore_national which = 344 }
+		command = { type = addcore_national which = 345 }
+		command = { type = addcore_national which = 346 }
+		command = { type = addcore_national which = 347 }
+		command = { type = addcore_national which = 348 }
+		command = { type = addcore_national which = 349 }
+		command = { type = addcore_national which = 350 }
+		command = { type = addcore_national which = 351 }
+		command = { type = addcore_national which = 367 }
+		command = { type = addcore_national which = 369 }
+		command = { type = addcore_national which = 371 }
+		command = { type = addcore_national which = 372 }
+		command = { type = addcore_national which = 373 }
+		command = { type = addcore_national which = 374 }
+		command = { type = addcore_national which = 375 }
+		command = { type = addcore_national which = 377 }
+		command = { type = addcore_national which = 378 }
+		command = { type = addcore_national which = 379 }
+		command = { type = addcore_national which = 380 }
+		command = { type = addcore_national which = 387 }
+		command = { type = addcore_national which = 388 }
+		command = { type = addcore_national which = 389 }
+		command = { type = addcore_national which = 390 }
+		command = { type = addcore_national which = 400 }
+		command = { type = addcore_national which = 401 }
+		command = { type = addcore_national which = 402 }
+		command = { type = addcore_national which = 403 }
+		command = { type = addcore_national which = 404 }
+		command = { type = addcore_national which = 405 }
+		command = { type = addcore_national which = 406 }
+		command = { type = addcore_national which = 1612 }
+		command = { type = flagname which = "adler" }
+		command = { type = countryname value = "Holy Roman Empire" }
+	}
+}
+
+#############################
+#Reform the Kingdom of Arles#
+#############################
+decision = {
+	id = 1104
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = BUR # Burgundy
+		}
+		NOT = { exists = ARS }
+		NOT = { year = 1700 }
+		NOT = { flag = loth }
+	}
+	trigger = {
+		OR = {
+			emperor = yes
+			AND = {
+				emperor = no
+				relation = { country = -6 data = 150 }
+			}
+		}
+		atwar = no
+		isvassal = no
+		stability = 2
+		owned = { province = 406 data = -1 } # Provence
+		someof = {
+			number = 4
+			owned = { province = 387 data = -1 }
+			owned = { province = 388 data = -1 }
+			owned = { province = 405 data = -1 }
+			owned = { province = 406 data = -1 }
+			owned = { province = 407 data = -1 }
+			owned = { province = 408 data = -1 }
+		}
+		NOT = { event = 25005 } # Global: Peace of Westphalia
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1007"
+	desc = "DECISIONHIST1007"
+
+	action = {
+		command = { type = vp value = 200 }
+		command = { type = capital which = 406 }
+		command = { type = diplomats value = 3 }
+		command = { type = relation which = FRA value = -200 }
+		command = { type = relation which = HEL value = -200 }
+		command = { type = addcore_national which = 387 } # Arles (HRE borders)
+		command = { type = addcore_national which = 388 }
+		command = { type = addcore_national which = 405 }
+		command = { type = addcore_national which = 406 }
+		command = { type = addcore_national which = 407 }
+		command = { type = addcore_national which = 408 }
+		command = { type = flagname which = "arles" }
+		command = { type = countryname value = "Arles" }
+		command = { type = setflag which = arles }
+	}
+}
+
+###################################
+#Reform the Kingdom of Lotharingia#
+###################################
+decision = {
+	id = 1105
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = BUR # Burgundy
+		}
+		NOT = { exists = LTR }
+		NOT = { year = 1700 }
+		NOT = { flag = arles }
+	}
+	trigger = {
+		OR = {
+			emperor = yes
+			AND = {
+				emperor = no
+				relation = { country = -6 data = 150 }
+			}
+		}
+		atwar = no
+		isvassal = no
+		stability = 2
+		owned = { province = 375 data = -1 } # Lorraine
+		someof = {
+			number = 6
+			owned = { province = 337 data = -1 }
+			owned = { province = 338 data = -1 }
+			owned = { province = 339 data = -1 }
+			owned = { province = 340 data = -1 }
+			owned = { province = 344 data = -1 }
+			owned = { province = 345 data = -1 }
+			owned = { province = 374 data = -1 }
+			owned = { province = 375 data = -1 }
+			owned = { province = 377 data = -1 }
+			owned = { province = 378 data = -1 }
+			owned = { province = 379 data = -1 }
+		}
+		NOT = { event = 25005 } # Global: Peace of Westphalia
+	}
+	ai_trigger = {
+	}
+
+	name = "DECISIONNAME1010"
+	desc = "DECISIONHIST1010"
+
+	action = {
+		command = { type = vp value = 200 }
+		command = { type = capital which = 375 }
+		command = { type = diplomats value = 3 }
+		command = { type = relation which = FRA value = -200 }
+		command = { type = relation which = HEL value = -200 }
+		command = { type = addcore_national which = 337 } # Lotharingia (HRE borders)
+		command = { type = addcore_national which = 338 }
+		command = { type = addcore_national which = 339 }
+		command = { type = addcore_national which = 340 }
+		command = { type = addcore_national which = 344 }
+		command = { type = addcore_national which = 345 }
+		command = { type = addcore_national which = 374 }
+		command = { type = addcore_national which = 375 }
+		command = { type = addcore_national which = 377 }
+		command = { type = addcore_national which = 378 }
+		command = { type = addcore_national which = 379 }
+		command = { type = flagname which = "loth" }
+		command = { type = countryname value = "Lotharingia" }
+		command = { type = setflag which = loth }
+	}
+}

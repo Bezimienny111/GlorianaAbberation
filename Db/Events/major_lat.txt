@@ -1,0 +1,63 @@
+###########################
+##Teutonic Order events	###
+##incl. vanilla	events	###
+##and by Ayeshteni	###
+###########################
+
+
+
+#Hohenzollern Prussia become Polish Duchy#
+event = {
+
+	id = 3516
+	trigger = {
+		 exists = POL  
+		 	AND = { 
+				OR = {
+					religion = protestant
+					religion = reformed
+						}
+			}
+	}
+	random = no
+	country = LAT
+	name = "EVENTNAME3516"
+	desc = "EVENTHIST3516"
+	style = 2
+
+	date = { day = 1 month = january year = 1524 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1550 }
+
+	action_a ={				#Secularize as Polish vassal#
+		name = "ACTIONNAME3516A"
+		command = { type = breakvassal which = LIV }
+		command = { type = country which = PRU }
+		command = { type = relation which = LIV value = -50 }
+		command = { type = relation which = POL value = 50 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = dynastic which = BRA }
+		command = { type = provinceculture   which = 289 value = wendish }
+		command = { type = provinceculture   which = 290 value = wendish }
+		command = { type = trigger which = 3474 }
+		command = { type = trigger which = 3619 }
+		command = { type = trigger which = 4196 }
+		command = { type = stability value = 1 }
+		}
+
+#Possible problem area, see comments to the right#
+#I guess we will find out when we test, Johan didn't know =)#
+
+	action_b ={				#Secularize as independent country#
+		name = "ACTIONNAME3516B"
+		command = { type = breakvassal which = LIV }
+		command = { type = country which = PRU }
+		command = { type = relation which = LAT value = -150 }
+		command = { type = relation which = POL value = -150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = dynastic which = BRA }
+		command = { type = provinceculture   which = 289 value = wendish }
+		command = { type = provinceculture   which = 290 value = wendish }
+		command = { type = stability value = -2 }
+	}
+}

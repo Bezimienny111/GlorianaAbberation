@@ -1,0 +1,83 @@
+#-----------------------------------------------------------------------------
+# Theodoro Events
+
+event = {
+	id = 3001326
+	trigger = {
+		event = 3001137 #undertook great naval reforms
+		atwar = no
+		owned = { province = 478 data = -1 } # Smyrna
+		owned = { province = 477 data = -1 } # Anatolia
+		owned = { province = 479 data = -1 } # Ionia
+		countrysize = 10
+	}
+	random = NO
+	country = BYZ
+	name = "Crimea returned to the Empire?"
+	desc = "With her maritime power restored, the Empire can again project her might into the old Black Sea provinces. However, this requires further investment in the merchant marine, which can be costly."
+	style = 2
+	date = { day = 1 month = january year = 1450 }
+	offset = 360
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Let us rule the Friendly Sea again" #translation of the Greek name Pontos Euxenios
+		command = { type = addcore_national which = 464 } #Kaffa
+		command = { type = addcore_national which = 465 } #Kerch
+		command = { type = addcore_national which = 469 } #Abkhazia
+		command = { type = addcore_national which = 470 } #Kolkhis
+		command = { type = treasury value = -400 }
+		command = { type = domestic which = LAND value = -1 }
+		command = { type = naval value = 2000 }
+		command = { type = galleys which = -1 value = 5 }
+	}
+}
+
+# Massacre on the Crimean Coast by Mr. Ouija
+event = {
+	id = 3001331
+	trigger = {
+		owned = { province = 465 data = -1 } #Kaffa & Kerch
+		owned = { province = 464 data = -1 }
+	}
+	random = NO
+	country = BYZ
+	name = "Massacre on the Crimean Coast"
+	desc = "Emboldened by our reclamation of Kaffa and Kerch, our Greek brethren, long an oppressed minority in that coastal region, have taken it upon themselves to expel the hated Mongols and Muslims. It has been said that widespread killing has taken place, and the local strategos is asking for our intervention. What shall we do?"
+	date = { day = 1 month = january year = 1530 }
+	offset = 1800 #5 years
+	deathdate = { year = 1838 }
+
+	action_a = { # Do nothing
+		name = "Who remembers the Armenians?" #Hitler quote
+		command = { type = stability value = -2 }
+		command = { type = addcore_national which = 464 } #Kaffa
+		command = { type = addcore_national which = 465 } #Kerch
+		command = { type = addcore_national which = 469 } #Abkhazia
+		command = { type = addcore_national which = 470 } #Kolkhis
+		command = { type = populationpercent which = 465 value = -20 }
+		command = { type = populationpercent which = 464 value = -20 }
+		command = { type = provincemanpower which = 465 value = -1 }
+		command = { type = provincemanpower which = 464 value = -1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = relation which = CRI value = -200 } #crimea
+		command = { type = relation which = STE value = -200 } #golden horde
+	}
+	action_b = { # Stop the massacre
+		name = "Send in the legions"
+		command = { type = treasury value = -200 }
+		command = { type = revolt which = 465 }
+		command = { type = revolt which = 464 }
+		command = { type = addcore_national which = 464 } #Kaffa
+		command = { type = addcore_national which = 465 } #Kerch
+		command = { type = addcore_national which = 469 } #Abkhazia
+		command = { type = addcore_national which = 470 } #Kolkhis
+		command = { type = relation which = CRI value = 200 } #crimea
+		command = { type = relation which = STE value = 200 } #golden horde
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+	}
+}
+#changed the effects to mirror the action - the legion is being sent to protect the mongols, not kill them

@@ -1,0 +1,138 @@
+##Hungary Events##
+
+#(1338) The Second Conference of Visegrad
+event = {
+	id = 118002 #triggered by POL_115000A
+	random = no
+	country = HUN
+	name = "The Second Conference of Visegrad"
+	desc = "In 1338, a conference of monarchs took place in the Hungarian city of Visegrad. Taking part were the kings: Kazimierz of Poland , Karl Robert of Hungary, and Jan of Bohemia. The meeting determined that Louis d'Anjou would receive the throne of Poland, in the event of Kazimierz dying without issue."
+
+	action_a = {
+		name = "How fortunate!"
+		command = { type = relation which = POL value = 50 }
+		command = { type = relation which = BOH value = 25 }
+	}
+}
+
+#(1338) The Second Conference of Visegrad - Ahistorical
+event = {
+	id = 118003 #triggered by POL_115000B
+	random = no
+	country = HUN
+	name = "The Second Conference of Visegrad"
+	desc = "In 1338, a conference of monarchs took place in the Hungarian city of Visegrad. Taking part were the kings: Kazimierz of Poland , Karl Robert of Hungary, and Jan of Bohemia. At the first meeting, Jan had given up his claims on the Polish throne in exchange for Kazimierz giving up his claims on the Silesian duchies. The second meeting was inconclusive as Kazimierz refused to accept an Angevin succession."
+
+	action_a = {
+		name = "We won't forget this insult"
+		command = { type = relation which = POL value = -150 }
+		command = { type = addcore_claim which = 299 }
+		command = { type = setflag which = [Visegrad_CB] }
+		command = { type = trigger which = 117002 } #BOH: The Second Conference of Visegrad
+	}
+	action_b = {
+		name = "We never wanted Poland anyway"
+		command = { type = relation which = POL value = -100 }
+		command = { type = relation which = BOH value = 50 }
+		command = { type = trigger which = 117003 } #BOH: The Second Conference of Visegrad
+	}
+}
+
+#(1345) The Assassination of the Duke of Calabria
+event = {
+	id = 118005 #triggered by NAP_119000
+	random = no
+	country = HUN
+	name = "The Assassination of the Duke of Calabria"
+	desc = "Depsite his betrothal to his cousin, Giovanna, in 1334, Andrew, Duke of Calabria, found himself without a crown when in 1344, Giovanna was crowned as sole monarch of Naples.  Andrew's mother, Elizabeth of Hungary, petitioned the Pope to reverse himself and permit the coronation of Andrew. Fearful of what Andrew's coronation might mean to their influence, a group of courtiers set upon the would-be king during the night. After a brief scuffle, Andrew was strangled and his body unceremoniously tossed out the window of the castle. His death did nothing to improve relations with Giovanna's Hungarian relations."
+
+	action_a = {
+		name = "That monstrous woman will pay!"
+		command = { type = relation which = NAP value = -150 }
+	}
+}
+
+
+#(1355-1360) The Privilege of Buda - Ahistorical
+event = {
+	id = 118004 #triggered by POL_115004C
+	random = no
+	country = HUN
+	name = "The Second Conference of Visegrad"
+	desc = "In 1338, a conference of monarchs took place in the Hungarian city of Visegrad. Taking part were the kings: Kazimierz of Poland , Karl Robert of Hungary, and Jan of Bohemia. At the first meeting, Jan had given up his claims on the Polish throne in exchange for Kazimierz giving up his claims on the Silesian duchies. The second meeting was inconclusive as Kazimierz refused to accept an Angevin succession."
+
+	action_a = {
+		name = "We won't forget this insult"
+		command = { type = relation which = POL value = -150 }
+		command = { type = addcore_claim which = 299 }
+		command = { type = setflag which = [Buda_CB] }
+		command = { type = trigger which = 117002 } #BOH: The Second Conference of Visegrad
+	}
+	action_b = {
+		name = "We never wanted Poland anyway"
+		command = { type = relation which = POL value = -100 }
+	}
+}
+
+#(1370) Succession of Louis d'Anjou I in Poland
+event = {
+	id = 118000 #triggered by POL_115006A
+	random = no
+	country = HUN
+	name = "Succession of Louis d'Anjou I in Poland"
+	desc = "Louis d'Anjou (Lajos I) was, through his mother, a nephew of the Polish king, Kazimierz III. When the latter died childless in 1370, he established Louis as his successor in Poland. Louis never governed directly in Poland and rarely visited the country having more attention for the wellbeing and southern expansion of Hungary. He was represented in Poland by various, quite unpopular, regents. Hungary gained from the union the control of Halich, but the Polish kingdom fell apart into two fighting entities, while the semi-independant Mazovia regained full independance."  
+
+	action_a = {
+		name = "One king, two separate kingdoms"
+		command = { type = relation which = POL value = 50 }
+		command = { type = alliance which = POL }
+	}
+	action_b = {
+		trigger = {
+			NOT = {
+				vassal = { country = POL country = HUN }
+			}
+		}
+ 		name = "One king, one kingdom"
+ 		command = { type = vassal which = POL }
+ 		command = { type = relation which = POL value = -50 }
+ 		command = { type = domestic which = centralization value = -2 }
+		command = { type = alliance which = POL }
+	}
+}
+
+#(1370) Succession of Kazimierz of Slupsk in Poland
+event = {
+	id = 118001 #triggered by POL_115006B
+	random = no
+	country = HUN
+	name = "Succession of Kazimierz of Slupsk in Poland"
+	desc = "Despite his close ties with his nephew, Louis d'Anjou (Lajos I) of Hungary, the Polish king, Kazimierz III, chose to leave his kingdom to Kazimierz of Slupsk.  Robbed of what he felt was rightfully his, Louis armed for battle."  
+
+	action_a = {
+		trigger = {
+			NOT = {
+				vassal = { country = POL country = HUN }
+				alliance = { country = POL country = HUN }
+			}
+		}
+		name = "To battle!"
+		command = { type = relation which = POL value = -300 }
+		command = { type = war which = POL }
+	}
+	action_b = {
+ 		name = "This will not be forgotten"
+		command = { type = casusbelli which = POL value = 60 }
+ 		command = { type = relation which = POL value = -150 }
+		command = { type = ADM which = -2 value = 12 }
+	}
+	action_c ={
+ 		name = "We've no designs on Poland"
+ 		command = { type = relation which = POL value = 50 }
+		command = { type = MIL which = -2 value = 24 }
+	}
+}
+
+#if 118001 occurred, Louis is still ruling Hungary and control Polish capital, have instatement of Angevin dynasty in Poland
+
+#first free ID: 118006

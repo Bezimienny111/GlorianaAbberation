@@ -1,0 +1,464 @@
+#####Bayern Major Events########
+#By Joakim 'Greven' Bergqwist  #
+#   Håvard Moe                 #
+#   Tom 'Demetrios' Rinschler  #
+#   Henrik 'Doomdark' Fåhraeus #
+################################
+
+#The League of Schmalkalden#
+event = {
+
+	id = 3613
+	trigger = {
+		 exists = HAB
+		 	AND = {
+				OR = {
+					religion = protestant
+					religion = reformed
+						}
+			}
+	}
+	random = no
+	country = BAY
+	name = "EVENTNAME3613"
+	desc = "EVENTHIST3613"
+
+	date = { day = 1 month = january year = 1527 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1529 }
+
+	action_a ={					#Give it your support#
+		name = "ACTIONNAME3613A"
+		command = { type = relation which = BRA value = 50 }
+		command = { type = relation which = HAN value = 50 }
+		command = { type = relation which = HES value = 50 }
+		command = { type = relation which = PFA value = 50 }
+		command = { type = relation which = SAC value = 50 }
+		command = { type = relation which = THU value = 50 }
+		command = { type = relation which = BAD value = 50 }
+		command = { type = relation which = PAP value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = HAB value = -100 }
+	}
+
+	action_b ={					#Ignore it#
+		name = "ACTIONNAME3613B"
+		command = { type = relation which = BRA value = -150 }
+		command = { type = relation which = HAN value = -150 }
+		command = { type = relation which = HES value = -150 }
+		command = { type = relation which = PFA value = -150 }
+		command = { type = relation which = SAC value = -150 }
+		command = { type = relation which = THU value = -150 }
+		command = { type = relation which = BAD value = -150 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = relation which = KOL value = 50 }
+	}
+}
+
+#The Evangelic Union#
+event = {
+
+	id = 3614
+	trigger = {
+		 OR = {
+			religion = protestant
+			religion = reformed
+				}
+			}
+	random = no
+	country = BAY
+	name = "EVENTNAME3614"
+	desc = "EVENTHIST3614"
+
+	date = { day = 1 month = january year = 1605 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a ={					#Prepare to Join#
+		name = "ACTIONNAME3614A"
+		command = { type = relation which = BRA value = 50 }
+		command = { type = relation which = HAN value = 50 }
+		command = { type = relation which = HES value = 50 }
+		command = { type = relation which = PFA value = 50 }
+		command = { type = relation which = SAC value = 50 }
+		command = { type = relation which = THU value = 50 }
+		command = { type = relation which = BAD value = 50 }
+		command = { type = relation which = PAP value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = HAB value = -100 }
+	}
+
+	action_b ={					#Stay Neutral#
+		name = "ACTIONNAME3614B"
+		command = { type = relation which = BRA value = -150 }
+		command = { type = relation which = HAN value = -150 }
+		command = { type = relation which = HES value = -150 }
+		command = { type = relation which = PFA value = -150 }
+		command = { type = relation which = SAC value = -150 }
+		command = { type = relation which = THU value = -150 }
+		command = { type = relation which = BAD value = -150 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = relation which = KOL value = 50 }
+	}
+}
+
+#The Catholic League#
+event = {
+
+	id = 3615
+	trigger = {
+		 OR = {
+			religion = catholic
+			religion = counterreform
+				}
+			}
+	random = no
+	country = BAY
+	name = "EVENTNAME3615"
+	desc = "EVENTHIST3615"
+
+	date = { day = 1 month = january year = 1607 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a ={					#Prepare to Join#
+		name = "ACTIONNAME3615A"
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = HAN value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = PFA value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = relation which = THU value = -100 }
+		command = { type = relation which = BAD value = -100 }
+		command = { type = relation which = KOL value = 100 }
+		command = { type = relation which = KLE value = 100 }
+		command = { type = relation which = PAP value = 150 }
+		command = { type = relation which = SPA value = 150 }
+		command = { type = relation which = HAB value = 150 }
+	}
+
+	action_b ={					#Stay Neutral#
+		name = "ACTIONNAME3615B"
+		command = { type = relation which = BRA value = 50 }
+		command = { type = relation which = HAN value = 50 }
+		command = { type = relation which = HES value = 50 }
+		command = { type = relation which = PFA value = 50 }
+		command = { type = relation which = SAC value = 50 }
+		command = { type = relation which = THU value = 50 }
+		command = { type = relation which = BAD value = 50 }
+		command = { type = relation which = PAP value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = HAB value = -100 }
+	}
+}
+
+#The Effects of the Pragmatic Sanction#
+event = {
+
+	id = 3616
+	trigger = { event = 3205 }
+	random = no
+	country = BAY
+	name = "EVENTNAME3616"
+	desc = "EVENTHIST3616"
+
+	date = { day = 1 month = january year = 1741 }
+	offset = 10
+	deathdate = { day = 1 month = june year = 1741 }
+
+	action_a ={				#Anti-Habsburg#
+		name = "ACTIONNAME3616A"
+		command = { type = casusbelli which = HAB value = 36 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = PRU value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = GEN value = 50 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = RUS value = -100 }
+		command = { type = relation which = HES value = -50 }
+		command = { type = relation which = HAN value = -50 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={				#Neutral#
+		name = "ACTIONNAME3616B"
+		command = { type = relation which = PRU value = -50 }
+		command = { type = relation which = SAC value = -50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = HOL value = 100 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = relation which = HES value = 100 }
+		command = { type = relation which = HAN value = 100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = stability value = 1 }
+	}
+	action_c ={				#Pro-Habsburg#
+		name = "ACTIONNAME3616C"
+		command = { type = relation which = PRU value = -150 }
+		command = { type = relation which = SAC value = -150 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HOL value = 100 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = HAN value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = stability value = -2 }
+		command = { type = casusbelli which = PRU value = 12 }
+	}
+}
+
+#The Bavarian Succession of 1777#
+event = {
+
+	id = 3617				#Triggered by HAB3207#
+	random = no
+	country = BAY
+	name = "EVENTNAME3617"
+	desc = "EVENTHIST3617"
+
+	action_a ={				#Defend you Throne#
+		name = "ACTIONNAME3617A"
+		command = { type = casusbelli which = HAB value = 24 }
+		command = { type = casusbelli which = PFA value = 24 }
+		command = { type = relation which = HAB value = -150 }
+		command = { type = relation which = PFA value = -150 }
+		command = { type = relation which = PRU value = 200 }
+		command = { type = dynastic which = PRU }
+		command = { type = stability value = 1 }
+		command = { type = inflation value = -2 }
+		command = { type = treasury value = 300 }
+		command = { type = INF which = -1 value = 25000 }
+		command = { type = CAV which = -3 value = 12000 }
+		command = { type = ART which = -3 value = 35 }
+	}
+}
+
+event = {
+	id = 3853
+
+	# Triggered by COL 3852
+
+	random = no
+	country = BAY
+	name = "EVENTNAME3853"
+	desc = "EVENTHIST3853"
+
+	action_a = {		#Bavarian influence in Cologne#
+		name = "ACTIONNAME3853A"
+		command = { type = vassal which = KOL }
+		command = { type = dynastic which = KOL }
+	}
+}
+
+# The Electorate of Bavaria
+event = {
+
+	id = 15002
+	trigger = {
+		atwar = no
+		isvassal = no
+	}
+	random = no
+	country = BAY
+	name = "The Electorate of Bavaria"
+	desc = "EVENTHIST15002"
+	
+	date = { day = 1 month = january year = 1620 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1640 }
+
+	action_a = { # Ascendancy!
+		name = "Ascendancy!"
+		command = { type = stability value = 3 }
+		command = { type = elector which = BAY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = addcore_claim which = 345 }
+		command = { type = addcore_claim which = 346 }
+		command = { type = relation which = -6 value = 100 }
+		command = { type = relation which = -7 value = 50 }
+		command = { type = relation which = -7 value = 50 }
+		command = { type = relation which = -7 value = 50 }
+		command = { type = relation which = -7 value = 50 }
+		command = { type = relation which = -7 value = 50 }
+		command = { type = relation which = -7 value = 50 }
+		command = { type = relation which = -7 value = 50 }
+		command = { type = treasury value = 200 }
+	}
+}
+
+# The Cultural Capital of Munich #
+event = {
+	id = 50048
+	trigger = {
+		monarch = 124040 #Ludwig I
+	}
+	random = no
+	country = BAY
+	name = "The Cultural Capital of Munich"
+	desc = "King Ludwig was renowned for his patronage of the Bavarian city of Munich, which he successfully nurtured as the cultural capital of Germany. Among other projects he commissioned the Walhalla temple, the Befreiungshalle, the Villa Ludwigshöhe, the Pompejanum, the Ludwigstraße, the Bavaria statue, the Ruhmeshalle, the Glyptothek, and both the Old and the New Pinakothek. He moved the Ludwig-Maximilians-Universität from Landshut to Munich in 1826. Ludwig also encouraged Bavaria's industrialization, and initiated the Ludwig Canal between the Main and the Danube. In 1835 the first German railway was constructed in his domain, between the cities of Fürth and Nuremberg."
+
+	date = { day = 1 month = january year = 1825 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a = { # Invest in Munich #
+		name = "Invest in Munich"
+		command = { type = provincetax which = 349 value = 5 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = infra value = 1000 }
+		command = { type = trade value = 1000 }
+		command = { type = gainmanufactory which = 349 value = luxury }
+		command = { type = treasury value = -400 }
+		command = { type = stability value = 2 }
+	}
+
+	action_b = { # Improve the forts in Ansbach #
+		name = "Improve the forts in Ansbach"
+		trigger = { 
+			owned = { province = 348 data = -1 } # Ansbach
+		}
+		command = { type = provincemanpower which = 348 value = 2 }
+		command = { type = domestic which = OFFENSIVE value = -1 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = land value = 500 }
+		command = { type = fortress which = 348 value = 1 }
+		command = { type = treasury value = -400 }
+		command = { type = stability value = 1 }
+	}
+
+	action_c = { # These projects are too expensive #
+		name = "These projects are too expensive"
+		command = { type = vp value = -25 }
+	}
+}
+
+# The Reactionary Policies of Ludwig I #
+event = {
+	id = 50049
+	trigger = {
+		event = 3519
+		monarch = 124040 #Ludwig I
+	}
+	random = no
+	country = BAY
+	name = "The Reactionary Policies of Ludwig I"
+	desc = "EVENTHIST50049"
+
+	style = "50049"
+
+	date = { day = 1 month = january year = 1830 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a = { # Stay the course #
+		name = "Stay the course"
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = MERCANTILISM value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = relation which = PRU value = 50 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = DIP which = -1 value = 120 }
+		command = { type = ADM which = 1 value = 120 }
+		command = { type = MIL which = 1 value = 120 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b = { # Appease the Liberals #
+		name = "Appease the Liberals"
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = relation which = ENG value = 50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = HOL value = 50 }
+		command = { type = DIP which = 1 value = 120 }
+		command = { type = ADM which = 1 value = 120 }
+		command = { type = MIL which = -1 value = 120 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#Philip of Anjou succeeds Carlos II in Spain#	#Bourbon#
+event = {
+
+	id = 4141		#Triggered by SPA3173#
+	random = no
+	country = BAY
+	name = "Philip of Anjou succeeds Carlos II in Spain"
+	desc = "On November 1st, 1700, the last Habsburg king Charles II of Spain died heirless. Both Louis XIV of France and Leopold I of Austria had married the defunct king's sisters and had thus direct and legitimate claims to the succession. To prevent that the chosen heir reigned over too powerful a kingdom, the European had anticipated the crisis and agreed in 1697 and again in early 1700 to a partition that would retain the Balance of Power in Europe. However, Carlos II and the Spanish Government was greatly upset by the other countries meddling in strictly Spanish affairs and thus named Philip of Anjou, grandson of the Sun-King, the heir to the Spanish throne. This solution endangered the European balance of power and led to the formation of the Grand Alliance against France and Spain. Thus when French forces occupied the Spanish Netherlands the War of Spanish Succession broke out."
+
+	action_a ={				#Accept it#
+		name = "Accept it"
+		command = { type = relation which = SPA value = 150 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = HAB value = -150 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = stability value = 2 }
+	}
+
+	action_b ={				#Fight him#
+		name = "Fight him"
+		command = { type = casusbelli which = FRA value = 36 }
+		command = { type = casusbelli which = SPA value = 36 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = HOL value = 100 }
+		command = { type = relation which = BRA value = 100 }
+		command = { type = relation which = SPA value = -150 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#Charles of Habsburg succeeds Carlos II in Spain#	#Habsburg#
+event = {
+
+	id = 4142		#Triggered by SPA3173#
+	random = no
+	country = BAY
+	name = "Charles of Habsburg succeeds Carlos II in Spain"
+	desc = "EVENTHIST4142A"
+
+	action_a ={				#Accept it conditionally#
+		name = "Accept it conditionally"
+		command = { type = casusbelli which = HAB value = 36 }
+		command = { type = casusbelli which = FRA value = 36 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={				#Fight him#
+		name = "Fight him"
+		command = { type = casusbelli which = HAB value = 36 }
+		command = { type = casusbelli which = SPA value = 36 }
+		command = { type = relation which = SPA value = -150 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = HAB value = -150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = stability value = 3 }
+	}
+
+	action_c ={				#Accept it#
+		name = "Accept it"
+		command = { type = relation which = SPA value = 150 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = stability value = -1 }
+	}
+}

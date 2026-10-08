@@ -1,0 +1,227 @@
+#-----------------------------------------------------------------------------
+# Armenian Events
+
+#(1430-1820) The Armenian Question
+event = {
+	id = 3001214
+	trigger = {
+		owned = { province = 473 data = -1 } #Kurdistan
+		owned = { province = 472 data = -1 } #Armenia
+		owned = { province = 483 data = -1 } #Adana
+	}
+	random = NO
+	country = BYZ
+	name = "The Armenian Question"
+	desc = "When the Byzantine army first overran the Turk's holdings in Anatolia, the Greek nobles divided the spoils among themselves. Now, the former Armenian lords have appealed to the Emperor to be restored to their lands. They say that their people will not accept absent and foreign nobles, and they're probably right. Moreover, before its loss, Armenia's great families have long provided the Empire with its most experienced and trained generals. Having fought for the lords of Trebizond and Abkhazia against Timur and the Mongols, the situation now is likely no different."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 1800 #5 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Armenia for Armenians!"
+		command = { type = provincereligion which = 473 value = miaphysite } #Kurdistan
+		command = { type = provinceculture which = 473 value = armenian } #Kurdistan
+		command = { type = provincereligion which = 472 value = miaphysite } #Armenia
+		command = { type = provinceculture which = 472 value = armenian } #Armenia
+		command = { type = provincereligion which = 483 value = miaphysite } #Adana
+		command = { type = provinceculture which = 483 value = armenian } #Adana
+		command = { type = stability value = -1 }
+		command = { type = revolt which = 356 } #Bulgaria
+		command = { type = revolt which = 357 } #Thrace
+		command = { type = revolt which = 478 } #Smyrna
+		command = { type = treasury value = 50 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = sleepevent which = 3001452 } #PER: The Swift and the Silent
+		command = { type = sleepevent which = 3001425 } #BYZ: American Shadow over Armenia
+		command = { type = sleepevent which = 3001433 } #BYZ: French Shadow over Armenia
+	}
+	action_b = {
+		name = "Compensate the nobles for their lost land"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = treasury value = -200 }
+		command = { type = provincereligion which = 473 value = miaphysite } #Kurdistan
+		command = { type = provinceculture which = 473 value = armenian } #Kurdistan
+		command = { type = provincereligion which = 472 value = miaphysite } #Armenia
+		command = { type = provinceculture which = 472 value = armenian } #Armenia
+		command = { type = provincereligion which = 483 value = miaphysite } #Adana
+		command = { type = provinceculture which = 483 value = armenian } #Adana
+		command = { type = sleepevent which = 3001452 } #PER: The Swift and the Silent
+	}
+	action_c = {
+		name = "They will no doubt learn Greek faster with a lash"
+		command = { type = stability value = 2 }
+		command = { type = treasury value = 50 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = revolt which = 473 } #Kurdistan
+		command = { type = revolt which = 472 } #Armenia
+		command = { type = revolt which = 483 } #Adana
+		command = { type = sleepevent which = 3001215 } #BYZ: The Armenian Orthodox Church
+		command = { type = sleepevent which = 3001216 } #BYZ: Armenian Uprising
+		command = { type = sleepevent which = 3001217 } #BYZ: Demotion of Ashot
+		command = { type = sleepevent which = 3001218 } #BYZ: The Great Armenian Revolt
+		command = { type = sleepevent which = 3001392 } #BYZ: The Southern Front
+	}
+}
+
+#(1419-1820) The Armenian Orthodox Church
+event = {
+	id = 3001215
+	trigger = {
+		event = 3001214 #BYZ: The Armenian Question
+		religion = orthodox
+	}
+	random = YES
+	country = BYZ
+	name = "The Armenian Orthodox Church"
+	desc = "The Armenians, like the Copts and the Syrians, never accepted the Council of Chalcedon and its condemnation of Pope Demetrios of Alexandria as a heretic. Infelicitous phrasing and power politics were certainly more evident at the time than any false doctrine. Yet, because Chalcedon ratified the powers of the Patriarch at Constantinople, we cannot simply accept them into the mother church as they are. We could, however, convene a council to approve of their, in fact orthodox, assertion that the divine and human natures of our Lord are 'incarnate in one God the Logos.'"
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Yerevan is well worth a rephrasing" #with apologies to Henri Quatre
+		command = { type = religion which = miaphysite }
+		command = { type = add_countryculture which = armenian }
+		command = { type = add_countryculture which = georgian }
+		command = { type = wakeleader which = 027837 } #Ashot (BYZ)
+		command = { type = wakeleader which = 027839 } #Sembat (BYZ)
+		command = { type = wakeleader which = 027840 } #Hovhannes (BYZ)
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = provincetax which = 473 value = 1 } #Kurdistan
+		command = { type = provincetax which = 472 value = 1 } #Armenia
+		command = { type = provincetax which = 483 value = 1 } #Adana
+		command = { type = provincemanpower which = 473 value = 1 } #Kurdistan
+		command = { type = provincemanpower which = 472 value = 1 } #Armenia
+		command = { type = provincemanpower which = 483 value = 1 } #Adana
+		command = { type = revoltrisk which = 1200 value = 1 } #+1 for a century
+		command = { type = stability value = -1 }
+		command = { type = sleepevent which = 3001282 } #MAM: Coptic Revolts I
+		command = { type = sleepevent which = 3001386 } #BYZ: Nubia Appeals to the Empire for Aid I
+	}
+	action_b = {
+		name = "If hating them was good enough for my father..."
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 200 } #confiscated ecclesiastical wealth
+		command = { type = revolt which = 473 } #Kurdistan
+		command = { type = revolt which = 472 } #Armenia
+		command = { type = revolt which = 483 } #Adana
+		command = { type = sleepevent which = 3001217 } #BYZ: Demotion of Ashot
+		command = { type = sleepevent which = 3001283 } #MAM: Coptic Revolts II
+		command = { type = sleepevent which = 3001387 } #BYZ: Nubia Appeals to the Empire for Aid II
+		command = { type = sleepevent which = 3001392 } #BYZ: The Southern Front
+	}
+}
+
+#(1520-1820) Armenian Uprising
+event = {
+	id = 3001216
+	trigger = {
+		event = 3001214 #BYZ: The Armenian Question
+		owned = { province = 472 data = -1 } #Armenia
+		NOT = { domestic = { type = aristocracy value = 5 } }
+		NOT = { domestic = { type = serfdom value = 5 } }
+		NOT = { domestic = { type = centralization value = 8 } }
+	}
+	random = YES
+	country = BYZ
+	name = "Armenian Uprising"
+	desc = "An Armenian lord has risen up in defense of his noble rights. He demands satisfaction and marches at the head of an army!"
+
+	date = { day = 1 month = january year = 1520 }
+	offset = 7200 #20 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Give them an inch..."
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = domestic which = CENTRALIZATION value= -1 }
+	}
+	action_b = {
+		name = "Never!"
+		command = { type = revolt which = 472 } #Armenia
+		command = { type = revolt which = 472 } #Armenia
+		command = { type = revolt which = 472 } #Armenia
+	}
+	action_c = {
+		name = "Crush the Armenian lords"
+		command = { type = revolt which = 473 } #Kurdistan
+		command = { type = revolt which = 472 } #Armenia
+		command = { type = revolt which = 472 } #Armenia
+		command = { type = revolt which = 472 } #Armenia
+		command = { type = revolt which = 483 } #Adana
+		command = { type = sleepevent which = 3001216 } #BYZ: Armenian Uprising
+		command = { type = sleepevent which = 3001218 } #BYZ: The Great Armenian Revolt
+		command = { type = remove_countryculture which = armenian }
+	}
+}
+
+#(1492-1820) Demotion of Ashot
+event = {
+	id = 3001217
+	trigger = {
+		event = 3001214 #BYZ: The Armenian Question
+	}
+	random = NO
+	country = BYZ
+	name = "Demotion of General Ashot"
+	desc = "Always unpopular with the Greek court, the Armenian sparapet (general) Ashot has ended up on the wrong side of the Megas Domestikos and been demoted. His clan in Armenia is furious."
+
+	date = { day = 13 month = june year = 1492 }
+	offset = 1 #immediate
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Sorry, man"
+		command = { type = revolt which = 472 } #Armenia
+		command = { type = wakeleader which = 027838 } #Ashot (BYZ)
+		command = { type = sleepleader which = 027881 } #Ashot (BYZ)
+	}
+}
+
+#(1720-1730) The Great Armenian Revolt
+event = {
+	id = 3001218
+	trigger = {
+		event = 3001214 #BYZ: The Armenian Question
+		owned = { province = 472 data = -1 } #Armenia
+		NOT = { domestic = { type = aristocracy value = 5 } }
+		NOT = { domestic = { type = serfdom value = 5 } }
+		NOT = { domestic = { type = centralization value = 8 } }
+	}
+	random = NO
+	country = BYZ
+	name = "The Great Armenian Revolt"
+	desc = "The good thing about Armenia being within the Empire was that it was a fecund source for soldiers, especially cavalrymen, and their generals. The bad thing, as more than one Emperor discovered, is that Armenian generals tended to view their job less as the culmination of their career and more as an entry-level position in the empire business. One of our Armenian strategoi has gathered a cadre of supporters among the top brass and is now trying to stage a coup!"
+
+	date = { year = 1720 }
+	offset = 3600 #10 years
+	deathdate = { year = 1730 }
+
+	action_a = {
+		name = "Buy him off. We can kill him later"
+		command = { type = stability value = -1 }
+		command = { type = badboy value = -1 }
+		command = { type = treasury value = -1000 }
+		command = { type = revoltrisk which = 240 value = 2 }
+		command = { type = domestic which = CENTRALIZATION value= -1 }
+	}
+	action_b = {
+		name = "Let's head this off"
+		command = { type = desertion which = -1 value = -10000 }
+		command = { type = desertion which = -1 value = -10000 }
+		command = { type = desertion which = -1 value = -10000 }
+		command = { type = revoltrisk which = 240 value = 1 }
+		command = { type = revolt which = 472 }
+		command = { type = revolt which = 472 }
+		command = { type = revolt which = 472 }
+		command = { type = revolt which = 472 }
+		command = { type = revolt which = 472 }
+		command = { type = stability value = -2 }
+	}
+}

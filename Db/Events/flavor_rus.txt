@@ -1,0 +1,30 @@
+### Russia Flavor Events ###
+#                          #
+############################
+
+
+#(1539-1570) St. Basil's Cathedral
+event = {
+	id = 1507
+	trigger = {
+		religion = orthodox
+		owned = { province = 446 data = -1 } #Kazan
+	}
+	random = no
+	country = RUS
+	name = "ENAME_F_1507" #St. Basil's Cathedral
+	desc = "EDESC_F_1507"
+	#-#St. Basil's is the beautiful orthodox church dominating Red Square in Moscow. The most famous and important of old Russia's memorial buildings, Ivan IV (the Terrible) commissioned Postnik and Barma to build the church to commemorate Russia's annexation of Kazan. It was completed in 1560.
+
+  style = "1507"
+
+	date = { day = 1 month = january year = 1539 }
+	offset = 130
+	deathdate = { day = 1 month = january year = 1570 }
+
+	action_a = {
+		name = "OK"
+		command = { type = stability value = 1 }
+		command = { type = infra value = 250 }
+	}
+}

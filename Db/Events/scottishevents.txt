@@ -1,0 +1,253 @@
+###########################################
+### Scottish events for the New AJF	###
+### by Alex Ayeshteni J Fowler		###
+###########################################
+
+
+#Adam Smith publishes 'The Wealth of Nations' -AJF#
+# Created by Johnny Canuck                   #
+event = {
+
+	id = 120400
+	trigger = {
+		OR = {
+			NOT = { event = 3037 }
+			NOT = { exists = ENG }
+			}
+		}
+	random = no
+	country = SCO
+	name = "Adam Smith publishes 'The Wealth of Nations'"
+	desc = "'The Wealth of Nations' was the first great work in political economy and the corner-stone of what later became known as laissez-faire capitalism (Smith called it the system of perfect liberty). The Scotsman introduced the concept of the 'invisible hand' - the intrinsic ability of a system of perfect liberty to control itself and still give rise to an orderly society through the mechanism of competition"
+	style = 4
+	date = { day = 1 month = january year = 1776 }
+
+	action_a ={				#Ok#
+		name = "Ok"
+		command = { type = domestic which = MERCANTILISM value = -2 }
+	}
+}
+
+#David Hume               -AJF#
+# Created by Johnny Canuck#
+event = {
+
+	id = 120401
+	trigger = {
+		OR = {
+			NOT = { event = 3037 }
+			NOT = { exists = ENG }
+			}
+		}
+	random = no
+	country = SCO
+	name = "David Hume"
+	desc = "Scotsman David Hume was one of the foremost philosophers of his day who is best known for his philosophical empiricism and skepticism. Taking the scientific method of the English physicist Sir Isaac Newton as his model and building on the epistemology of the English philosopher John Locke Hume tried to describe how the mind works in acquiring what is called knowledge. He concluded that no theory of reality is possible - there can be no knowledge of anything beyond experience"
+	style = 4
+	date = { day = 1 month = january year = 1750 }
+
+	action_a ={				#Ok#
+		name = "Ok"
+		command = { type = domestic which = INNOVATIVE value = 1 }
+	}
+}
+#Adam Smith publishes 'The Wealth of Nations'.-AJF#
+event = {
+	id = 5051
+	trigger = {
+		NOT = {	exists = SCO }
+		}
+	random = no
+	country = ENG
+	name = "EVENTNAME5051"
+	desc = "EVENTHIST5051"
+	style = 4
+	date = { day = 1 month = january year = 1776 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5051A"
+		command = { type = domestic which = MERCANTILISM value = -2 }
+	}
+}
+#David Hume. -AJF#
+event = {
+	id = 5052
+	trigger = {
+		NOT = {	exists = SCO }
+		}
+	random = no
+	country = ENG
+	name = "EVENTNAME5052"
+	desc = "EVENTHIST5052"
+	style = 4
+	date = { day = 1 month = january year = 1750 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5052A"
+		command = { type = domestic which = INNOVATIVE value = 1 }
+	}
+}
+#university of dun eideann -AJF#
+event = {
+
+	id = 120402
+	random = no
+	country = SCO
+	name = "University of Edinburgh"
+	desc = "in 1582 One of Scotland's most presigious Univerities was founded in the nations capital of Edinburgh."
+	style = 2
+
+	date = { day = 1 month = january year = 1582 }
+
+	action_a = { 
+		name = "Ok" 
+		command = { type = infra value = 150 } 
+	} 
+}
+
+#the massacre of glencoe -AJF#
+event = {
+
+	id = 120403
+	random = no
+	country = SCO
+	name = "The Masacre of Glencoe"
+	desc = "In one of the blackest days in all of Scottish history, the massacre of Glencoe is an event that still reverbrates through the Scotish psyche. In the middle of a snowstorm, elements of the clan of Campbell sought sanctuary with their enemies the McDonald Clan. The McDonalds honoured the code of hospitality and provided lodgings and sustenence to the Campbells. After Dinner and when the McDonald's had retired to bed, the Campbell's rose and massacred those who had given them sanctuary. It later emerged that the Campbells were siding with the King and that it was a premeditated act. The massacre of Glencoe is still remembered by most Scots, never mind that of the McDonalds, who remember the treachery to this day."
+	style = 3
+
+	date = { day = 1 month = january year = 1692 }
+	offset = 30
+	date = { day = 31 month = december year = 1694 }
+
+	action_a = {
+		name = "The Blackest Day!"
+		command = { type = revolt which = 237 }
+		command = { type = vp value = -10 }
+	}
+}
+
+#the Bank of Scotland -AJF#
+event = {
+
+	id = 120404
+	random = no
+	country = SCO
+	name = "the Bank of Scotland"
+	desc = "In 1695 the Bank of Scotland, Scotland's first national bank was opened in Edinburgh. The Bank still operates to this day, and is one of three that has the ability to print their own notes seperately from the Bank of England. (the other two being the Royal Bank of Scotland (also from Edinburgh) and the Glasgow Clydesdale Bank)."
+	style = 3
+
+	date = { day = 1 month = january year = 1695 }
+	offset = 60
+	deathdate = { day = 1 month = december year = 1697 }
+
+	action_a = {
+		name = "Ok"
+		command = { type = trade value = 50 }
+		command = { type = loansize which = 500 }
+	}
+}
+
+#the clyde trust -AJF#
+event = {
+
+	id = 120405
+	random = no
+	country = SCO
+	name = "The Clyde Trust"
+	desc = "The Clyde Trust was created to convert the River Clyde, which was at that time an insignificant river, into a major thoroughfare for maritime communications. This required a major programme of excavation and dredging. The success of this operation, and that of the Industrial revolution would catapult Glasgow into Scotland's major city and it became an essential port for the North American trade into Scotland, and of Scotlands ship-building enterprise."
+	style = 4
+
+	date = { day = 1 month = january year = 1770 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1775 }
+
+	action_a = {
+		name = "Open up the Clyde!"
+		command = { type = treasury value = -300 }
+		command = { type = gainbuilding which = 239 value = shipyard }
+		command = { type = gainmanufactory which = 239 value = navalequipment }
+		command = { type = provincetax which = 239 value = 5 }
+	}
+}
+#debasement of coins by seumas III -AJF#
+event = {
+
+	id = 120406
+	random = no
+	country = SCO
+	name = "The Blak Pennyis"
+	desc = "James III was by no means an economical ruler and was wont to spend money considerably. He attempted to solve the problem of a floundering economy by the introduction of what were called 'Blak Pennyis' (or black pennies), which were cheap copper coins. Unfortunately this only confounded the situation as inflation mounted and the coinage of Scotland was debased."
+	style = 1
+
+	date = { day = 1 month = january year = 1470 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1488 }
+
+	action_a = {
+		name = "make a mint!"
+		command = { type = treasury value = 100 }
+		command = { type = inflation value = 5 }
+	}
+
+	action_b = {
+		name = "tax the clansmen"
+		command = { type = revoltrisk which = 120 value = 6 }
+		command = { type = revolt which = -1 }
+		command = { type = gainbuilding which = -1 value = bailiff }
+		command = { type = ADM which = -2 value = 120 }
+	}
+}
+#Seumas IV, the builder, the lawgiver and patron -AJF#
+event = {
+
+	id = 120407
+	random = no
+	country = SCO
+	name = "The great reign of James IV"
+	desc = "James IV helped to overthrow his father and this lay heavy on his heart. He wore heavy chains for penance and advocated a crusade against the Turks. Nevertheless, he had a good reign, in which he built palaces at Falkland and Hollyrood. He also brought law and order with the Court of Sessions, reduced the power of Parliament, forfeitured the Lordship of the Isles from the clan chiefs and established extra sheriffs throughout Scotland. he was a great patron of academia, becoming the patron of a college of surgeons (1505-6), Aberdeen University (1512-13) and established Scotlands first printing press in 1507."
+	style = 2
+
+	date = { day = 1 month = january year = 1505 }
+	offset = 360
+	deathdate = { day = 1 month = december year = 1515 }
+
+	action_a = {
+		name = "Builder, Lawgiver and Patron"
+		command = { type = gainmanufactory which = -2 value = luxury }
+		command = { type = fortress which = 238 value = 1 }
+		command = { type = treasury value = -250 }
+		command = { type = domestic which = aristocracy value = -2 }
+		command = { type = domestic which = centralization value = 2 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = domestic which = serfdom value = -1 }
+		command = { type = gainbuilding which = -2 value = courthouse }
+		command = { type = gainbuilding which = -1 value = bailiff }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = infra value = 200 }
+	}
+
+	action_b = {
+		name = "concentrate on Palaces"
+		command = { type = gainmanufactory which = -1 value = luxury }
+		command = { type = fortress which = 238 value = 1 }
+		command = { type = treasury value = -150 }
+	}
+
+	action_c = {
+		name = "Reform the Laws only"
+		command = { type = treasury value = -100 }
+		command = { type = domestic which = aristocracy value = -2 }
+		command = { type = domestic which = centralization value = 2 }
+		command = { type = domestic which = serfdom value = -1 }
+		command = { type = gainbuilding which = -2 value = courthouse }
+		command = { type = gainbuilding which = -1 value = bailiff }
+		command = { type = provincetax which = -1 value = 1 }
+	}
+
+	action_d = {
+		name = "Patron of Academia"
+		command = { type = treasury value = -50 } 
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = infra value = 200 }
+	}
+}

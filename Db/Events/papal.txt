@@ -1,0 +1,16 @@
+##Papal States Events##
+
+#(1349) The Purchase of Dauphiné - Alternate
+event = {
+	id = 296023 # Triggered by DAU_296021_B
+	random = no
+	country = PAP
+	name = "The Purchase of Dauphiné"
+	desc = "Humbert II of Dauphiné, heirless and deeply in debt, elected to sell his title and lands in 1349. Historically, these went to Philip VI of France, but before making that sale, Humbert had attempted to broker a deal with Pope Benedict XII. If the Papal Sale had gone through, this would have given the Papacy an even stronger footing in Avignon."
+
+	action_a = { 
+		name = "Splendid!"
+		command = { type = inherit which = DAU }
+		command = { type = treasury value = -25 }
+	}
+}

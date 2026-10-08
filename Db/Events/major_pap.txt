@@ -1,0 +1,337 @@
+#####Papal Major Events#######
+#By Joakim 'Greven' Bergqwist#
+##############################
+
+#The League of Cambrai#
+#event = {
+#
+#	id = 3545		#Triggered by VEN3594A#
+#	random = no
+#	country = PAP
+#	name = "EVENTNAME3545"
+#	desc = "EVENTHIST3545"
+#
+#	action_a ={
+#		name = "Form a league to fight Venice"		#Form a league to fight Venice#
+#		command = { type = casusbelli which = VEN value = 72 }
+#		command = { type = relation which = VEN value = -150 }
+#		command = { type = relation which = SPA value = 50 }
+#		command = { type = relation which = ENG value = 50 }
+#		command = { type = relation which = HAB value = 50 }
+#		command = { type = relation which = FRA value = 50 }
+#		command = { type = relation which = SCO value = 50 }
+#		command = { type = relation which = MLO value = 50 }
+#		command = { type = relation which = HEL value = 50 }
+#		command = { type = relation which = FLO value = 50 }
+#	}
+#
+#	action_b ={
+#		name = "Ignore Venice"		#Ignore Venice -CHECK EVENT IDS!!!!!!#
+#		trigger = { 
+#			NOT = {
+#				war = { country = PAP country = VEN }
+#			}
+#		}
+#		command = { type = relation which = VEN value = 50 }
+#		command = { type = DIP which = -2 value = 60 }
+#		command = { type = stability value = -2 }
+#		command = { type = vp value = -25 }
+#		command = { type = sleepevent which = 250046 } # SPA
+#		command = { type = sleepevent which = 250032 } # ENG
+#		command = { type = sleepevent which = 3182 } # HAB
+#		command = { type = sleepevent which = 3107 } # FRA
+#		command = { type = sleepevent which = 3701 } # SCO
+#		command = { type = sleepevent which = 3702 } # MLO
+#		command = { type = sleepevent which = 3587 } # HEL
+#		command = { type = sleepevent which = 3649 } # FLO
+#	}
+#}
+
+#The Commissioning of the Saint Peter's Basilica#
+event = {
+
+	id = 3546
+	random = no
+	country = PAP
+	name = "EVENTNAME3546"
+	desc = "EVENTHIST3546"
+	style = 2
+
+	date = { day = 1 month = october year = 1505 }
+	offset = 10
+	deathdate = { day = 1 month = may year = 1506 }
+
+	action_a ={		#Build the Basilica#
+		name = "ACTIONNAME3546A"
+		command = { type = treasury value = -500 }
+	}
+
+	action_b ={		#Concentrate on worldly matters#
+		name = "ACTIONNAME3546B"
+		command = { type = domestic  which = INNOVATIVE  value = 3 }
+		command = { type = treasury  value = 200 }
+		command = { type = infra  value = 300 }
+		command = { type = trade  value = 300 }
+		command = { type = sleepevent which = 3551 }
+	}
+
+}
+
+#The Foundation of Societas Jesu#
+event = {
+
+	id = 3547
+	trigger = {
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+	}
+	random = no
+	country = PAP
+	name = "EVENTNAME3547"
+	desc = "EVENTHIST3547"
+	style = "3547"
+
+	date = { day = 1 month = january year = 1540 }
+	offset = 200
+	deathdate = { day = 1 month = may year = 1546 }
+	
+	action_a ={
+		name = "ACTIONNAME3547A"
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = colonists  value = 4 }
+		command = { type = missionaries  value = 4 }
+		command = { type = trigger which = 3270 } # POR
+		command = { type = trigger which = 4150 } # SPA
+	}
+
+}
+
+#Reorganisation of the Holy Inquisition# #should trigger events in other italian kingdoms#
+event = {
+
+	id = 3548
+	trigger = {
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+	}
+	random = no
+	country = PAP
+	name = "EVENTNAME3548"
+	desc = "EVENTHIST3548"
+	style = "3548"
+
+	date = { day = 1 month = january year = 1542 }
+	offset = 200
+	deathdate = { day = 1 month = may year = 1546 }
+
+	action_a ={		#Draconian Inquisition#
+		name = "Draconian Inquisition"
+		command = { type = domestic which = INNOVATIVE value = -4 }
+		command = { type = populationpercent which = 391 value = -15 }
+		command = { type = conversion which = 391 }
+		command = { type = populationpercent which = 392 value = -15 }
+		command = { type = conversion which = 392 }
+		command = { type = populationpercent which = 393 value = -15 }
+		command = { type = conversion which = 393 }
+		command = { type = populationpercent which = 394 value = -15 }
+		command = { type = conversion which = 394 }
+		command = { type = populationpercent which = 399 value = -15 }
+		command = { type = conversion which = 399 }
+		command = { type = populationpercent which = 400 value = -15 }
+		command = { type = conversion which = 400 }
+		command = { type = populationpercent which = 401 value = -15 }
+		command = { type = conversion which = 401 }
+		command = { type = populationpercent which = 402 value = -15 }
+		command = { type = conversion which = 402 }
+		command = { type = stability value = -2 }
+		command = { type = trigger which = 3269 } # POR
+		command = { type = trigger which = 4151 } # SPA
+	}
+
+	action_b ={		#Moderate Inquisition#
+		name = "ACTIONNAME3548B"
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = populationpercent which = 391 value = -5 }
+		command = { type = populationpercent which = 392 value = -5 }
+		command = { type = conversion which = 392 }
+		command = { type = populationpercent which = 393 value = -5 }
+		command = { type = populationpercent which = 394 value = -5 }
+		command = { type = populationpercent which = 399 value = -5 }
+		command = { type = conversion which = 399 }
+		command = { type = populationpercent which = 400 value = -5 }
+		command = { type = populationpercent which = 401 value = -5 }
+		command = { type = populationpercent which = 402 value = -5 }
+		command = { type = stability value = -1 }
+	}
+
+}
+
+#The Holy League#
+event = {
+
+	id = 3549
+	trigger = {
+		exists = TUR
+		owned = { province = 357 data = TUR }
+		TUR = { countrysize = 12 }
+	}
+	random = no
+	country = PAP
+	name = "EVENTNAME3549"
+	desc = "EVENTHIST3549"
+	style = 2
+
+	date = { day = 1 month = january year = 1565 }
+	offset = 120
+	deathdate = { day = 1 month = january year = 1568 }
+
+	action_a ={				#Create the Holy League#
+		name = "ACTIONNAME3549A"
+		command = { type = casusbelli which = TUR value = 72 }
+		command = { type = relation which = TUR value = -150 }
+		command = { type = relation which = KNI value = 50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = TOS value = 50 }
+		command = { type = relation which = VEN value = 50 }
+		command = { type = relation which = NAP value = 50 }
+		command = { type = relation which = SAV value = 50 }
+		command = { type = relation which = GEN value = 50 }
+		command = { type = relation which = POR value = 50 }
+		command = { type = relation which = HAB value = 50 }
+	}
+
+	action_b ={				#We need not anger the Turks#
+		name = "We need not anger the Turks"
+		trigger = { 
+			NOT = {
+				war = { country = PAP country = TUR }
+			}
+		}
+		command = { type = relation which = TUR value = 50 }
+		command = { type = DIP which = -2 value = 60 }
+		command = { type = stability value = -2 }
+		command = { type = vp value = -25 }
+		command = { type = sleepevent which = 3161 } # SPA
+		command = { type = sleepevent which = 3638 } # VEN
+		command = { type = sleepevent which = 3765 } # HAB
+		command = { type = sleepevent which = 3112 } # FRA
+		command = { type = sleepevent which = 3764 } # POR
+		command = { type = sleepevent which = 3661 } # NAP
+		command = { type = sleepevent which = 174014 } # GEN
+		command = { type = sleepevent which = 3542 } # KNI
+		command = { type = sleepevent which = 3647 } # SAV
+		command = { type = sleepevent which = 3650 } # TOS
+		command = { type = sleepevent which = 20095 } # ENG
+	}
+}
+
+#Giordano Bruno#
+event = {
+
+	id = 3550
+	random = no
+	country = PAP
+	name = "EVENTNAME3550"
+	desc = "EVENTHIST3550"
+	style = 3
+
+	date = { day = 1 month = january year = 1600 }
+	offset = 200
+	deathdate = { day = 1 month = may year = 1605 }
+
+	action_a ={		#Burn the heretic#
+		name = "ACTIONNAME3550A"
+		command = { type = domestic  which = INNOVATIVE  value = -1 }
+		command = { type = revoltrisk value = 2 }
+	}
+
+	action_b ={		#Spare his life#
+		name = "ACTIONNAME3550B"
+		command = { type = domestic  which = INNOVATIVE  value = 1 }
+		command = { type = stability  value = -2 }
+	}
+
+}
+
+#The Saint Peter's Basilica stand in Unearthly Glory#
+event = {
+
+	id = 3551
+	trigger = {
+		event = 3546
+	}
+	random = no
+	country = PAP
+	name = "EVENTNAME3551"
+	desc = "EVENTHIST3551"
+	style = "3551"
+
+	date = { day = 1 month = january year = 1613 }
+	offset = 60
+	deathdate = { day = 1 month = may year = 1617 }
+
+	action_a ={
+		name = "ACTIONNAME3551A"
+		command = { type = gainmanufactory  which = 399 value = luxury }
+		command = { type = vp value = 200 }
+		command = { type = relation which = -11 value = 50 }
+		command = { type = relation which = -11 value = 50 }
+		command = { type = relation which = -11 value = 50 }
+		command = { type = relation which = -11 value = 50 }
+		command = { type = relation which = -11 value = 50 }
+		command = { type = stability  value = 3 }
+	}
+
+}
+
+#The Cleansing of the Pontinian Marches#
+event = {
+
+	id = 3552
+	random = no
+	country = PAP
+	name = "EVENTNAME3552"
+	desc = "EVENTHIST3552"
+	style = 4
+
+	date = { day = 1 month = january year = 1778 }
+	offset = 600
+	deathdate = { day = 1 month = may year = 1780 }
+
+	action_a ={
+		name = "ACTIONNAME3552A"
+		command = { type = domestic  which = INNOVATIVE  value = 2 }
+		command = { type = provincetax  which = 399 value = 2 }
+		command = { type = provincemanpower  which = 399  value = 1 }
+	}
+
+}
+
+#The Counter-Reformation and the Reformation of the Catholic Faith#
+event = {
+
+	id = 3553
+	trigger = { religion = catholic flag = 3 }
+	random = no
+	country = PAP
+	name = "EVENTNAME3553"
+	desc = "EVENTHIST3553"
+	style = 4
+
+	date = { day = 1 month = january year = 1545 }
+	offset = 200
+	deathdate = { day = 1 month = may year = 1563 }
+
+	action_a ={		#Attend the Council of Trent#
+		name = "ACTIONNAME3553A"
+		command = { type = religion which = counterreform }
+		command = { type = revoltrisk which = 216 value = 3 }
+		command = { type = stability  value = -2 }
+	}
+
+}

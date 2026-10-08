@@ -1,0 +1,81 @@
+#####Holland Flavor Events######
+#By Henrik 'Doomdark' Fåhraeus#
+###############################
+
+#Erasmus#
+event = {
+	id = 5120
+	random = no
+	country = ENG
+	name = "EVENTNAME5120"
+	desc = "EVENTHIST5120"
+	date = { day = 1 month = january year = 1500 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5120A"
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+	}
+}
+#Hugo Grotius#
+event = {
+	id = 5121
+	random = no
+	country = HOL
+	name = "EVENTNAME5121"
+	desc = "EVENTHIST5121"
+	date = { day = 1 month = january year = 1625 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5121A"
+		command = { type = infra value = 100 }
+		command = { type = diplomats value = 3 }
+		command = { type = relation which = ENG value = 30 }
+		command = { type = relation which = FRA value = 30 }
+		command = { type = relation which = SWE value = 30 }
+		command = { type = relation which = DAN value = 30 }
+		command = { type = relation which = -1 value = 10 }
+		command = { type = relation which = -4 value = 10 }
+	}
+}
+#Christiaan Huygens#
+event = {
+	id = 5122
+	random = no
+	country = HOL
+	name = "EVENTNAME5122"
+	desc = "EVENTHIST5122"
+	date = { day = 1 month = january year = 1690 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5122A"
+		command = { type = domestic which = INNOVATIVE value = 2 }
+	}
+}
+
+
+
+#########################################################################
+#  Mercator
+#		written by Johan Andersson
+#########################################################################
+
+event = { 
+	id = 1506
+	random = no
+	country = HOL
+	date = { year = 1568 }
+	offset = 300
+	name = "ENAME_F_1506"
+	desc = "EDESC_F_1506"
+	action_a = {
+			name = "OK"
+			command = { type = naval value = 500 }
+		}
+	}
+
+
+
+
+
+# Ids free to 5139

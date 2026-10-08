@@ -1,0 +1,404 @@
+###################
+##Crusader Events##
+####by Annibale####
+## by AGCEEP ######
+###################
+
+
+#Fall of Constantinople# 
+event = { 
+
+	id = 201000 
+	trigger = { 
+		control = { province = 357 data = TUR } 
+	} 
+	random = no 
+	country = KNI 
+	name = "Fall of Constantinople" 
+	desc = "Constantinople, long our bulwark against the East, has fallen. We have the chance to Declare a Crusade, a Holy War..." 
+	style = 1 
+
+	date = { day = 1 month = january year = 1337 } 
+	deathdate = { day = 1 month = january year = 1570 }
+
+	action_a ={ #Encourage Other Nations to Crusade# 
+		name = "Encourage Other Nations to Crusade" 
+		command = { type = relation which = TUR value = -20 } 
+		command = { type = relation which = MAM value = -20 } 
+		command = { type = relation which = MOR value = -20 } 
+		command = { type = relation which = FEZ value = -20 } 
+		command = { type = relation which = ALD value = -20 } 
+		command = { type = relation which = ARA value = -20 } 
+		command = { type = relation which = TUN value = -20 } 
+		command = { type = relation which = GRA value = -20 } 
+		command = { type = relation which = PER value = -20 }
+		command = { type = sleepevent  which = 201001 }
+		command = { type = sleepevent  which = 201002 }
+		command = { type = sleepevent  which = 201003 }
+		command = { type = sleepevent  which = 201004 }
+		command = { type = sleepevent  which = 201005 }
+		command = { type = sleepevent  which = 201007 }
+ 		command = { type = sleepevent  which = 201008 }
+ 
+	}
+	action_b ={ #Let there be Peace with Muslim nations# 
+		name = "Let there be Peace with Muslim nations" 
+		command = { type = relation which = TUR value = 20 } 
+		command = { type = relation which = MAM value = 20 } 
+		command = { type = relation which = MOR value = 20 } 
+		command = { type = relation which = FEZ value = 20 } 
+		command = { type = relation which = ALD value = 20 } 
+		command = { type = relation which = ARA value = 20 } 
+		command = { type = relation which = TUN value = 20 } 
+		command = { type = relation which = GRA value = 20 } 
+		command = { type = relation which = PER value = 20 }
+		command = { type = sleepevent  which = 201001 }
+		command = { type = sleepevent  which = 201002 }
+		command = { type = sleepevent  which = 201003 }
+		command = { type = sleepevent  which = 201004 }
+		command = { type = sleepevent  which = 201005 }
+		command = { type = sleepevent  which = 201007 }
+ 		command = { type = sleepevent  which = 201008 }
+	} 
+	action_c ={ #Let there be War with the Infidel# 
+		name = "Let there be War with the Infidel" 
+		command = { type = relation which = TUR value = -200 } 
+		command = { type = relation which = MAM value = -200 } 
+		command = { type = relation which = MOR value = -200 } 
+		command = { type = relation which = FEZ value = -200 } 
+		command = { type = relation which = ALD value = -200 } 
+		command = { type = relation which = ARA value = -200 } 
+		command = { type = relation which = TUN value = -200 } 
+		command = { type = relation which = GRA value = -200 } 
+		command = { type = relation which = PER value = -200 } 
+		command = { type = casusbelli which = TUR value = 2000 } 
+		command = { type = casusbelli which = MAM value = 2000 } 
+		command = { type = casusbelli which = MOR value = 2000 } 
+		command = { type = casusbelli which = FEZ value = 2000 } 
+		command = { type = casusbelli which = ALD value = 2000 } 
+		command = { type = casusbelli which = ARA value = 2000 } 
+		command = { type = casusbelli which = TUN value = 2000 } 
+		command = { type = casusbelli which = GRA value = 2000 } 
+		command = { type = casusbelli which = PER value = 2000 }
+		command = { type = addcore  which = 485 }
+		command = { type = addcore  which = 491 }
+		command = { type = addcore  which = 492 }
+		command = { type = addcore  which = 493 }  
+		command = { type = relation which = FRA value = 50 } 
+		command = { type = relation which = ENG value = 50 } 
+		command = { type = relation which = SPA value = 50 } 
+		command = { type = relation which = POR value = 50 } 
+		command = { type = relation which = PAP value = 50 } 
+		command = { type = relation which = HAB value = 50 } 
+		command = { type = relation which = CAS value = 50 } 
+		command = { type = relation which = HUN value = 50 } 
+		command = { type = relation which = ARG value = 50 }
+		command = { type = fortress  which = -2  value = 1 } 
+	} 
+} 
+
+#Reconquest of County of Tripoli (Lebanon)#
+event = {
+
+	id = 201001
+	trigger = {
+		event = 201000
+		owned = { province = 491 data = -1 }
+	}
+	random = no
+	country = KNI
+	name = "Reconquest of County of Tripoli (Lebanon)"
+	desc = "The Knights have reconquered the County of Tripoli (Lebanon), shall we relocate to Lebanon? There is certain to be unrest as we are foreign invaders with a far different culture and religion than many of the inhabitants."
+	style = 1
+	
+	date = { day = 1 month = january year = 1337 }
+	deathdate = { day = 1 month = january year = 1571 }	
+
+	action_a ={		#Stay in Rhodes#
+		name = "Stay in Rhodes"
+		command = { type = vp  value = 10 }
+		command = { type =  stability  value = 3 }
+		command = { type =  domestic  which = CENTRALIZATION value = 1 }
+		command = { type = population  which = 491  value = -2000 }
+		command = { type = losebuilding  which = 491  value = bailiff }
+		command = { type = province_revoltrisk  which = 491 value = 6 }
+	}
+
+	action_b ={		#Move to Beirut#
+		name = "Move to Beirut"
+		command = { type = vp  value = 10 }
+		command = { type = capital  which = 491 }
+		command = { type = addcore  which = 491 }
+		command = { type = fortress  which = 491 value = 1 }
+		command = { type = stability  value = -2 }
+		command = { type =  domestic  which = CENTRALIZATION value = -1 }
+		command = { type = population  which = 491  value = -2000 }
+		command = { type = losebuilding  which = 491  value = bailiff }
+		command = { type = province_revoltrisk  which = 491 value = 6 }
+	}
+}
+
+#Reconquest of County of Edessa (Aleppo)#
+event = {
+
+	id = 201002
+	trigger = {
+		event = 201000
+		owned = { province = 485 data = -1 }
+	}
+	random = no
+	country = KNI
+	name = "Reconquest of County of Edessa (Aleppo)"
+	desc = "The Knights have reconquered the County of Edessa (Aleppo). There is certain to be unrest as we are foreign invaders with a far different culture and religion than many of the inhabitants."
+	style = 1
+	
+	date = { day = 1 month = january year = 1337 }
+	deathdate = { day = 1 month = january year = 1571 }	
+
+	action_a ={		#Praise the Lord!#
+		name = "Praise the Lord!"
+		command = { type = vp  value = 10 }
+		command = { type = population  which = 485  value = -2000 }
+		command = { type = losebuilding  which = 485  value = bailiff }
+		command = { type = province_revoltrisk  which = 485 value = 6 }
+	}
+}
+
+#Reconquest of Samaria (Sidon, Tyre, and Acre)#
+event = {
+
+	id = 201003
+	trigger = {
+		event = 201000
+		owned = { province = 492 data = -1 }
+	}
+	random = no
+	country = KNI
+	name = "Reconquest of Samaria (Sidon, Tyre, and Acre)"
+	desc = "The Knights have reconquered Samaria (Sidon, Tyre, and Acre). There is certain to be unrest as we are foreign invaders with a far different culture and religion than many of the inhabitants."
+	style = 1
+	
+	date = { day = 1 month = january year = 1337 }
+	deathdate = { day = 1 month = january year = 1571 }	
+
+	action_a ={		#Praise the Lord!#
+		name = "Praise the Lord!"
+		command = { type = vp  value = 10 }
+		command = { type = population  which = 492  value = -2000 }
+		command = { type = losebuilding  which = 492  value = bailiff }
+		command = { type = province_revoltrisk  which = 492 value = 6 }
+	}
+}
+
+#Reconquest of Judea (Jaffa, Ascalon, and Jerusalem)#
+event = {
+
+	id = 201004
+	trigger = {
+		event = 201000
+		owned = { province = 493 data = -1 }
+	}
+	random = no
+	country = KNI
+	name = "Reconquest of Judea (Jaffa, Ascalon, and Jerusalem)"
+	desc = "The Knights have reconquered Judea, including Caesarea, Jaffa, Ascalon, Gaza, Kerak, and the Holy City of Jerusalem. There is certain to be unrest as we are foreign invaders with a far different culture and religion than many of the inhabitants."
+	style = 1
+	
+	date = { day = 1 month = january year = 1337 }
+	deathdate = { day = 1 month = january year = 1571 }	
+
+	action_a ={		#Praise the Lord!#
+		name = "Praise the Lord!"
+		command = { type = vp  value = 50 }
+		command = { type = population  which = 493  value = -2000 }
+		command = { type = losebuilding  which = 493  value = bailiff }
+		command = { type = province_revoltrisk  which = 493 value = 6 }
+	}
+}
+
+#Reconquest of Outremer#
+event = {
+
+	id = 201005
+	trigger = {
+		owned = { province = 485 data = -1 }		
+		owned = { province = 491 data = -1 }
+		owned = { province = 492 data = -1 }
+		owned = { province = 493 data = -1 }
+		}
+	random = no
+	country = KNI
+	name = "Reconquest of Outremer"
+	desc = "The Knights have reconquered the Old Crusader Kingdom of Outremer, including the County of Edessa (Aleppo), County of Tripoli (Lebanon), Sidon, Tyre, Acre (Samaria), Caesarea, Jaffa, Ascalon, Gaza, Kerak, and the Holy City of Jerusalem (in Judea). Money is flowing in from European nations and from the Papacy, ostensibly to fund pilgrims and missionaries. Let us show the temperance and wisdom which our forbears did not.  But let us also re-fortify Acre, Jerusalem, and our former castles of Margat and Krak des Chevaliers."
+	style = 1
+	
+	date = { day = 1 month = january year = 1337 }
+	deathdate = { day = 1 month = january year = 1571 }
+
+	action_a ={		#Praise the lord!!#
+		name = "Praise the lord!"
+		command = { type = vp  value = 80 }
+		command = { type = treasury  value = 800 }
+		command = { type = relation  which = TUR  value = -200 }
+		command = { type = relation  which = MAM  value = -200 }
+		command = { type = relation  which = MOR  value = -200 }
+		command = { type = relation  which = FEZ  value = -200 }
+		command = { type = relation  which = ALD  value = -200 }
+		command = { type = relation  which = ARA  value = -200 }
+		command = { type = relation  which = TUN  value = -200 }
+		command = { type = relation  which = GRA  value = -200 }
+		command = { type = relation  which = PER  value = -200 }
+		command = { type = relation  which = CYP  value = 50 }
+		command = { type = relation  which = FRA  value = 50 }
+		command = { type = relation  which = ENG  value = 50 }
+		command = { type = relation  which = SPA  value = 50 }
+		command = { type = relation  which = POR  value = 50 }
+		command = { type = relation  which = PAP  value = 50 }
+		command = { type = relation  which = HAB  value = 50 }
+		command = { type = relation  which = CAS  value = 50 }
+		command = { type = relation  which = HUN  value = 50 }
+		command = { type = relation  which = ARG  value = 50 }
+		command = { type = relation  which = VEN  value = 50 }
+		command = { type = relation  which = AUV  value = 50 }
+		command = { type = relation  which = PRO  value = 50 }
+		command = { type = INF  which = -1  value = 8000 }
+		command = { type = CAV  which = -1  value = 2000 }
+		command = { type = fortress  which = 493 value = 1 }
+	}
+}
+
+#Kingdom of Jerusalem#
+event = {
+
+	id = 201006
+	trigger = {
+		owned = { province = 493 data = -1 }
+		event =  201005 
+		}
+	random = no
+	country = KNI
+	name = "Kingdom of Jerusalem"
+	desc = "Following the reconquest of the Holy City of Jerusalem, the Knights have been put under tremendous pressure from Europe to re-instate the Kingdom of Jerusalem."
+	style = 1
+
+	date = { day = 1 month = january year = 1480 }
+	deathdate = { day = 1 month = january year = 1599 }
+
+	action_a ={		#Re-instate Kingdom of Jerusalem#
+		name = "Re-instate Kingdom of Jerusalem"
+		command = { type = independence  which = JER }
+		command = { type = relation  which = CYP  value = 50 }
+		command = { type = relation  which = FRA  value = 50 }
+		command = { type = relation  which = ENG  value = 50 }
+		command = { type = relation  which = SPA  value = 50 }
+		command = { type = relation  which = POR  value = 50 }
+		command = { type = relation  which = PAP  value = 50 }
+		command = { type = relation  which = HAB  value = 50 }
+		command = { type = relation  which = CAS  value = 50 }
+		command = { type = relation  which = HUN  value = 50 }
+		command = { type = relation  which = ARG  value = 50 }
+		command = { type = relation  which = VEN  value = 50 }
+	}
+
+	action_b ={		#Keep Jerusalem for the Order#
+		name = "Keep Jerusalem for the Order"
+		command = { type = relation  which = CYP  value = -200 }
+		command = { type = war  which = CYP }
+		command = { type = relation  which = FRA  value = -20 }
+		command = { type = relation  which = ENG  value = -20 }
+		command = { type = relation  which = SPA  value = -20 }
+		command = { type = relation  which = POR  value = -20 }
+		command = { type = relation  which = PAP  value = -100 }
+		command = { type = relation  which = HAB  value = -20 }
+		command = { type = relation  which = CAS  value = -20 }
+		command = { type = relation  which = HUN  value = -20 }
+		command = { type = relation  which = ARG  value = -20 }
+		command = { type = relation  which = VEN  value = -20 }
+	}
+
+	action_c ={		#Proclaim Ourselves the Kingdom of Jerusalem#
+		name = "Proclaim Ourselves the Kingdom of Jerusalem"
+		command = { type = country  which = JER }
+		command = { type = addcore  which = 484 }
+		command = { type = addcore  which = 485 }
+		command = { type = addcore  which = 491 }
+		command = { type = addcore  which = 492 }
+		command = { type = addcore  which = 493 }
+           	command = { type = capital  which = 493 }
+		command = { type = stability  value = -2 }
+		command = { type =  domestic  which = CENTRALIZATION value = -1 }
+		command = { type = relation  which = CYP  value = -200 }
+		command = { type = war  which = CYP }
+		command = { type = relation  which = FRA  value = -50 }
+		command = { type = relation  which = ENG  value = -50 }
+		command = { type = relation  which = SPA  value = -50 }
+		command = { type = relation  which = POR  value = -50 }
+		command = { type = relation  which = PAP  value = -100 }
+		command = { type = relation  which = HAB  value = -50 }
+		command = { type = relation  which = CAS  value = -50 }
+		command = { type = relation  which = HUN  value = -50 }
+		command = { type = relation  which = ARG  value = -50 }
+		command = { type = relation  which = VEN  value = -50 }
+#		command = { type = sleepevent which = 3156 }
+#		command = { type = sleepevent which = 24002 }
+#		command = { type = sleepevent which = 111010 } 
+	}
+}
+
+#End of Internal Strife in Outremer#
+event = {
+
+	id = 201007
+	trigger = { event = 201000
+		OR = {
+			owned = { province = 485 data = -1 }
+			owned = { province = 491 data = -1 }
+			owned = { province = 492 data = -1 }
+			owned = { province = 493 data = -1 }
+			}
+		}
+	random = no
+	country = KNI
+	name = "End of Internal Strife in Outremer"
+	desc = ""
+	style = 1
+	
+	date = { day = 1 month = january year = 1600 }
+
+	action_a ={		#Praise the Lord!#
+		name = "Praise the Lord!"
+		command = { type = province_revoltrisk  which = 485 value = -6 }
+		command = { type = province_revoltrisk  which = 491 value = -6 }
+		command = { type = province_revoltrisk  which = 492 value = -6 }
+		command = { type = province_revoltrisk  which = 493 value = -6 }
+	}
+}
+
+#End of Internal Strife in Outremer#
+event = {
+
+	id = 201008
+	trigger = { event = 201000
+		OR = {
+			owned = { province = 485 data = -1 }
+			owned = { province = 491 data = -1 }
+			owned = { province = 492 data = -1 }
+			owned = { province = 493 data = -1 }
+			}
+		}
+	random = no
+	country = JER
+	name = "End of Internal Strife in Outremer"
+	desc = ""
+	style = 1
+	
+	date = { day = 1 month = january year = 1600 }
+
+	action_a ={		#Praise the Lord!#
+		name = "Praise the Lord!"
+		command = { type = province_revoltrisk  which = 485 value = -6 }
+		command = { type = province_revoltrisk  which = 491 value = -6 }
+		command = { type = province_revoltrisk  which = 492 value = -6 }
+		command = { type = province_revoltrisk  which = 493 value = -6 }
+	}
+}

@@ -1,0 +1,24 @@
+#####Kurland Major Events#####
+#By Joakim 'Greven' Bergqwist#
+##############################
+
+#The Courland Succession of 1726#
+event = {
+
+	id = 3618
+	random = no
+	country = KUR
+	name = "EVENTNAME3618"
+	desc = "EVENTHIST3618"
+
+	date = { day = 13 month = january year = 1726 }
+	offset = 0
+	deathdate = { day = 14 month = january year = 1726 }
+
+	action_a ={				#Fight for Freedom#
+		name = "ACTIONNAME3618A"
+		command = { type = stability value = 3 }
+		command = { type = treasury value = 300 }
+		command = { type = INF which = -2 value = 10000 }
+	}
+}

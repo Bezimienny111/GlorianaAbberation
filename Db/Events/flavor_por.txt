@@ -1,0 +1,25 @@
+#####Portugal Flavor Events#####
+
+#Prince Henry the Navigator#
+event = {
+	id = 5280
+	random = no
+	country = POR
+	name = "Prince Henry the Navigator"
+	desc = "EVENTHIST5280"
+	date = { day = 6 month = october year = 1438 }
+
+	action_a ={				#Ok#
+		name = "Ok"
+		command = { type = warships which = -1 value = 3 }
+		command = { type = domestic which = LAND value = -1 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = gainmanufactory which = -1 value = navalequipment }
+		command = { type = ADM which = 2 value = 120 }
+		command = { type = naval value = 800 }
+		command = { type = trade value = 400 }
+		command = { type = treasury value = 200 }
+	}
+}
+
+# IDs free: 5281 - 5289

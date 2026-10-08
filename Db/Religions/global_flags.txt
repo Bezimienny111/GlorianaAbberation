@@ -1,0 +1,5643 @@
+#Global flags
+
+#Each flag only modifies mentioned settings. flag_start is mandatory and initialize settings at the beginning of the game.
+
+#enable_religion = { }            List of enabled religions
+#disable_religion_ai = { }        List of religions AI will not try to convert to (even if allowed) and revert to default in the same subgroup if possible.
+#casusbelli = { }                 List of religions that have a permanent casus belli against some other religions.
+#religious_restricts = { }        List of religions that cannot have relations (dynastic, vassalization and annexation).
+#religious_enemies = { }          List of religions that are enemies for AI decisions.
+#tolerance = { }                  In the information window, tolerance slider displayed or not, under which name (can be group or subgroup) and with default tolerance value or, if not displayed, with automatic same value as specified religion.
+#defender = yes/no                Enable/Disable defender of the faith rules for religions that can have a defender (default is no if not specified in start).
+#predominance_tolerance = yes/no  Enable/Disable tolerance rules for predominant religions.
+#enable_tot = yes/no              Enable/Disable ToT rules for involved countries (default is no if not specified in start).
+
+#-----------------------------------------------------------------------------------------------
+
+flag_start = {
+	enable_religion = {
+		catholic
+		orthodox
+		miaphysite
+		sunni
+		shia
+		buddhism
+		confucianism
+		hinduism
+		pagan
+		shinto
+		sikh
+		thunderbird
+		gorgetism
+		medicinewheel
+		peyote
+		e_pagan
+	}
+	casusbelli = {
+		sunni = {
+			shia
+		}
+		shia = {
+			sunni
+		}
+	}
+	religious_restricts = {
+		catholic = {
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		orthodox = {
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		miaphysite = {
+			catholic
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		sunni = {
+			catholic
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		shia = {
+			catholic
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		buddhism = {
+			catholic
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		confucianism = {
+			catholic
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		hinduism = {
+			catholic
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		shinto = {
+			catholic
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		sikh = {
+			catholic
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		pagan = {
+			catholic
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+		}
+		e_pagan = {
+			catholic
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+		}
+		thunderbird = {
+			catholic
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			e_pagan
+		}
+		gorgetism = {
+			catholic
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			e_pagan
+		}
+		medicinewheel = {
+			catholic
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			e_pagan
+		}
+		peyote = {
+			catholic
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			e_pagan
+		}
+	}
+	religious_enemies = {
+		catholic = {
+			sunni
+			shia
+			e_pagan
+		}
+		orthodox = {
+			sunni
+			shia
+			e_pagan
+		}
+		sunni = {
+			catholic
+			orthodox
+			miaphysite
+		}
+		shia = {
+			catholic
+			orthodox
+			miaphysite
+		}
+		pagan = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		thunderbird = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		gorgetism = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		medicinewheel = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		peyote = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+	}
+	tolerance = {
+		catholic = {
+			catholic = { display = yes name = catholic default = 10 }
+			orthodox = { display = yes name = orthodox default = -3 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -5 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		orthodox = {
+			catholic = { display = yes name = catholic default = -4 }
+			orthodox = { display = yes name = orthodox default = 10 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -4 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		miaphysite = {
+			catholic = { display = yes name = chalcedonian default = 0 }
+			miaphysite = { display = yes name = miaphysite default = 10 }
+			orthodox = { display = no value = catholic }
+			sunni = { display = yes name = muslim default = -10 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		sunni = {
+			catholic = { display = yes name = catholic default = -3 }
+			orthodox = { display = yes name = orthodox default = -1 }
+			miaphysite = { display = no value = catholic }
+			sunni = { display = yes name = sunni default = 10 }
+			shia = { display = yes name = shia default = -6 }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		shia = {
+			catholic = { display = yes name = catholic default = -3 }
+			orthodox = { display = yes name = orthodox default = -1 }
+			miaphysite = { display = no value = catholic }
+			sunni = { display = yes name = sunni default = -6 }
+			shia = { display = yes name = shia default = 10 }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		buddhism = {
+			catholic = { display = yes name = christian default = 0 }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		confucianism = {
+			catholic = { display = yes name = christian default = 0 }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		hinduism = {
+			catholic = { display = yes name = christian default = 0 }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		shinto = {
+			catholic = { display = yes name = christian default = 0 }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		pagan = {
+			catholic = { display = yes name = christian default = 0 }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = yes name = heretic default = 0 }
+			gorgetism = { display = no value = thunderbird }
+			medicinewheel = { display = no value = thunderbird }
+			peyote = { display = no value = thunderbird }
+			e_pagan = { display = no value = thunderbird }
+		}
+		e_pagan = {
+			catholic = { display = yes name = christian default = 0 }
+			orthodox = { display = yes name = orthodox default = 0 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = yes name = pagan default = 10 }
+		}
+		sikh = {
+			catholic = { display = yes name = christian default = 0 }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = yes name = sikh default = 10 }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		thunderbird = {
+			catholic = { display = yes name = christian default = 0 }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = yes name = thunderbird default = 0 }
+			gorgetism = { display = no value = pagan }
+			medicinewheel = { display = no value = pagan }
+			peyote = { display = no value = pagan }
+			e_pagan = { display = no }
+		}
+		gorgetism = {
+			catholic = { display = yes name = christian default = 0 }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = no value = pagan }
+			gorgetism = { display = yes name = gorgetism default = 0 }
+			medicinewheel = { display = no value = pagan }
+			peyote = { display = no value = pagan }
+			e_pagan = { display = no }
+		}
+		medicinewheel = {
+			catholic = { display = yes name = christian default = 0 }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = no value = pagan }
+			gorgetism = { display = no value = pagan }
+			medicinewheel = { display = yes name = medicinewheel default = 0 }
+			peyote = { display = no value = pagan }
+			e_pagan = { display = no }
+		}
+		peyote = {
+			catholic = { display = yes name = christian default = 0 }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = no value = pagan }
+			gorgetism = { display = no value = pagan }
+			medicinewheel = { display = no value = pagan }
+			peyote = { display = yes name = peyote default = 0 }
+			e_pagan = { display = no }
+		}
+	}
+	defender = yes
+	predominance_tolerance = no
+}
+
+#-----------------------------------------------------------------------------------------------
+
+flag_8 = {
+	enable_religion = {
+		catholic
+		orthodox
+		miaphysite
+		sunni
+		shia
+		buddhism
+		confucianism
+		hinduism
+		pagan
+		avignon_catholic
+		shinto
+		sikh
+		thunderbird
+		gorgetism
+		medicinewheel
+		peyote
+		e_pagan
+	}
+	casusbelli = {
+	}
+	religious_restricts = {
+		catholic = {
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		avignon_catholic = {
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		orthodox = {
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		miaphysite = {
+			catholic
+			avignon_catholic
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		sunni = {
+			catholic
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+			avignon_catholic
+		}
+		shia = {
+			catholic
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+			avignon_catholic
+		}
+		buddhism = {
+			catholic
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+			avignon_catholic
+		}
+		confucianism = {
+			catholic
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+			avignon_catholic
+		}
+		hinduism = {
+			catholic
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+			avignon_catholic
+		}
+		shinto = {
+			catholic
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+			avignon_catholic
+		}
+		sikh = {
+			catholic
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+			avignon_catholic
+		}
+		pagan = {
+			catholic
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			avignon_catholic
+		}
+		e_pagan = {
+			catholic
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			avignon_catholic
+		}
+		thunderbird = {
+			catholic
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			e_pagan
+			avignon_catholic
+		}
+		gorgetism = {
+			catholic
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			e_pagan
+			avignon_catholic
+		}
+		medicinewheel = {
+			catholic
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			e_pagan
+			avignon_catholic
+		}
+		peyote = {
+			catholic
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			e_pagan
+			avignon_catholic
+		}
+	}
+	religious_enemies = {
+		catholic = {
+			sunni
+			shia
+			e_pagan
+		}
+		avignon_catholic = {
+			sunni
+			shia
+			e_pagan
+		}
+		orthodox = {
+			sunni
+			shia
+			e_pagan
+		}
+		sunni = {
+			catholic
+			orthodox
+			miaphysite
+			avignon_catholic
+		}
+		shia = {
+			catholic
+			orthodox
+			miaphysite
+			avignon_catholic
+		}
+		pagan = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		thunderbird = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		gorgetism = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		medicinewheel = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		peyote = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+	}
+	tolerance = {
+		catholic = {
+			catholic = { display = yes name = catholic default = 7 }
+			avignon_catholic = { display = yes name = avignon_catholic default = 3 }
+			orthodox = { display = yes name = orthodox default = -3 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -7 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		avignon_catholic = {
+			catholic = { display = yes name = catholic default = 3 }
+			avignon_catholic = { display = yes name = avignon_catholic default = 7 }
+			orthodox = { display = yes name = orthodox default = -3 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -7 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		orthodox = {
+			catholic = { display = yes name = catholic default = -4 }
+			avignon_catholic = { display = no value = catholic }
+			orthodox = { display = yes name = orthodox default = 10 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -6 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		miaphysite = {
+			catholic = { display = yes name = chalcedonian default = 0 }
+			avignon_catholic = { display = no value = catholic }
+			miaphysite = { display = yes name = miaphysite default = 10 }
+			orthodox = { display = no value = catholic }
+			sunni = { display = yes name = muslim default = -10 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		sunni = {
+			catholic = { display = yes name = catholic default = -3 }
+			avignon_catholic = { display = no value = catholic }
+			orthodox = { display = yes name = orthodox default = -1 }
+			miaphysite = { display = no value = catholic }
+			sunni = { display = yes name = sunni default = 10 }
+			shia = { display = yes name = shia default = -6 }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		shia = {
+			catholic = { display = yes name = catholic default = -3 }
+			avignon_catholic = { display = no value = catholic }
+			orthodox = { display = yes name = orthodox default = -1 }
+			miaphysite = { display = no value = catholic }
+			sunni = { display = yes name = sunni default = -6 }
+			shia = { display = yes name = shia default = 10 }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		buddhism = {
+			catholic = { display = yes name = christian default = 0 }
+			avignon_catholic = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		confucianism = {
+			catholic = { display = yes name = christian default = 0 }
+			avignon_catholic = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		hinduism = {
+			catholic = { display = yes name = christian default = 0 }
+			avignon_catholic = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		shinto = {
+			catholic = { display = yes name = christian default = 0 }
+			avignon_catholic = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		pagan = {
+			catholic = { display = yes name = christian default = 0 }
+			avignon_catholic = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = yes name = heretic default = 0 }
+			gorgetism = { display = no value = thunderbird }
+			medicinewheel = { display = no value = thunderbird }
+			peyote = { display = no value = thunderbird }
+			e_pagan = { display = no value = thunderbird }
+		}
+		e_pagan = {
+			catholic = { display = yes name = christian default = 0 }
+			avignon_catholic = { display = no value = catholic }
+			orthodox = { display = yes name = orthodox default = 0 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = yes name = pagan default = 10 }
+		}
+		sikh = {
+			catholic = { display = yes name = christian default = 0 }
+			avignon_catholic = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = yes name = sikh default = 10 }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		thunderbird = {
+			catholic = { display = yes name = christian default = 0 }
+			avignon_catholic = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = yes name = thunderbird default = 0 }
+			gorgetism = { display = no value = pagan }
+			medicinewheel = { display = no value = pagan }
+			peyote = { display = no value = pagan }
+			e_pagan = { display = no }
+		}
+		gorgetism = {
+			catholic = { display = yes name = christian default = 0 }
+			avignon_catholic = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = no value = pagan }
+			gorgetism = { display = yes name = gorgetism default = 0 }
+			medicinewheel = { display = no value = pagan }
+			peyote = { display = no value = pagan }
+			e_pagan = { display = no }
+		}
+		medicinewheel = {
+			catholic = { display = yes name = christian default = 0 }
+			avignon_catholic = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = no value = pagan }
+			gorgetism = { display = no value = pagan }
+			medicinewheel = { display = yes name = medicinewheel default = 0 }
+			peyote = { display = no value = pagan }
+			e_pagan = { display = no }
+		}
+		peyote = {
+			catholic = { display = yes name = christian default = 0 }
+			avignon_catholic = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = no value = pagan }
+			gorgetism = { display = no value = pagan }
+			medicinewheel = { display = no value = pagan }
+			peyote = { display = yes name = peyote default = 0 }
+			e_pagan = { display = no }
+		}
+	}
+	defender = yes
+	predominance_tolerance = no
+}
+
+flag_9 = {
+	enable_religion = {
+		catholic
+		orthodox
+		miaphysite
+		sunni
+		shia
+		buddhism
+		confucianism
+		hinduism
+		pagan
+		avignon_catholic
+		pisan_catholic
+		shinto
+		sikh
+		thunderbird
+		gorgetism
+		medicinewheel
+		peyote
+		e_pagan
+	}
+	casusbelli = {
+	}
+	religious_restricts = {
+		catholic = {
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		avignon_catholic = {
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		pisan_catholic = {
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		orthodox = {
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		miaphysite = {
+			catholic
+			avignon_catholic
+			pisan_catholic
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		sunni = {
+			catholic
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			avignon_catholic
+			pisan_catholic
+		}
+		shia = {
+			catholic
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			avignon_catholic
+			pisan_catholic
+		}
+		buddhism = {
+			catholic
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			avignon_catholic
+			pisan_catholic
+		}
+		confucianism = {
+			catholic
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			avignon_catholic
+			pisan_catholic
+		}
+		hinduism = {
+			catholic
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			avignon_catholic
+			pisan_catholic
+		}
+		shinto = {
+			catholic
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			avignon_catholic
+			pisan_catholic
+		}
+		sikh = {
+			catholic
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			avignon_catholic
+			pisan_catholic
+		}
+		pagan = {
+			catholic
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			avignon_catholic
+			pisan_catholic
+		}
+		e_pagan = {
+			catholic
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			avignon_catholic
+			pisan_catholic
+		}
+		thunderbird = {
+			catholic
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			e_pagan
+			avignon_catholic
+			pisan_catholic
+		}
+		gorgetism = {
+			catholic
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			e_pagan
+			avignon_catholic
+			pisan_catholic
+		}
+		medicinewheel = {
+			catholic
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			e_pagan
+			avignon_catholic
+			pisan_catholic
+		}
+		peyote = {
+			catholic
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			e_pagan
+			avignon_catholic
+			pisan_catholic
+		}
+	}
+	religious_enemies = {
+		catholic = {
+			sunni
+			shia
+			e_pagan
+		}
+		avignon_catholic = {
+			sunni
+			shia
+			e_pagan
+		}
+		pisan_catholic = {
+			sunni
+			shia
+			e_pagan
+		}
+		orthodox = {
+			sunni
+			shia
+			e_pagan
+		}
+		sunni = {
+			catholic
+			orthodox
+			miaphysite
+			avignon_catholic
+			pisan_catholic
+		}
+		shia = {
+			catholic
+			orthodox
+			miaphysite
+			avignon_catholic
+			pisan_catholic
+		}
+		pagan = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		thunderbird = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		gorgetism = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		medicinewheel = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		peyote = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+	}
+	tolerance = {
+		catholic = {
+			catholic = { display = yes name = catholic default = 7 }
+			avignon_catholic = { display = yes name = avignon_catholic default = 3 }
+			pisan_catholic = { display = yes name = pisan_catholic default = 0 }
+			orthodox = { display = yes name = orthodox default = -3 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -7 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		avignon_catholic = {
+			catholic = { display = yes name = catholic default = 3 }
+			avignon_catholic = { display = yes name = avignon_catholic default = 7 }
+			pisan_catholic = { display = yes name = pisan_catholic default = 0 }
+			orthodox = { display = yes name = orthodox default = -3 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -7 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		pisan_catholic = {
+			catholic = { display = yes name = catholic default = 0 }
+			avignon_catholic = { display = yes name = avignon_catholic default = 0 }
+			pisan_catholic = { display = yes name = pisan_catholic default = 10 }
+			orthodox = { display = yes name = orthodox default = -3 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -7 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		orthodox = {
+			catholic = { display = yes name = catholic default = -4 }
+			avignon_catholic = { display = no value = catholic }
+			pisan_catholic = { display = no value = catholic }
+			orthodox = { display = yes name = orthodox default = 10 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -6 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		miaphysite = {
+			catholic = { display = yes name = chalcedonian default = 0 }
+			avignon_catholic = { display = no value = catholic }
+			pisan_catholic = { display = no value = catholic }
+			miaphysite = { display = yes name = miaphysite default = 10 }
+			orthodox = { display = no value = catholic }
+			sunni = { display = yes name = muslim default = -10 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		sunni = {
+			catholic = { display = yes name = catholic default = -3 }
+			avignon_catholic = { display = no value = catholic }
+			pisan_catholic = { display = no value = catholic }
+			orthodox = { display = yes name = orthodox default = -1 }
+			miaphysite = { display = no value = catholic }
+			sunni = { display = yes name = sunni default = 10 }
+			shia = { display = yes name = shia default = -6 }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		shia = {
+			catholic = { display = yes name = catholic default = -3 }
+			avignon_catholic = { display = no value = catholic }
+			pisan_catholic = { display = no value = catholic }
+			orthodox = { display = yes name = orthodox default = -1 }
+			miaphysite = { display = no value = catholic }
+			sunni = { display = yes name = sunni default = -6 }
+			shia = { display = yes name = shia default = 10 }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		buddhism = {
+			catholic = { display = yes name = christian default = 0 }
+			avignon_catholic = { display = no value = catholic }
+			pisan_catholic = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		confucianism = {
+			catholic = { display = yes name = christian default = 0 }
+			avignon_catholic = { display = no value = catholic }
+			pisan_catholic = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		hinduism = {
+			catholic = { display = yes name = christian default = 0 }
+			avignon_catholic = { display = no value = catholic }
+			pisan_catholic = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		shinto = {
+			catholic = { display = yes name = christian default = 0 }
+			avignon_catholic = { display = no value = catholic }
+			pisan_catholic = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		pagan = {
+			catholic = { display = yes name = christian default = 0 }
+			avignon_catholic = { display = no value = catholic }
+			pisan_catholic = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = yes name = heretic default = 0 }
+			gorgetism = { display = no value = thunderbird }
+			medicinewheel = { display = no value = thunderbird }
+			peyote = { display = no value = thunderbird }
+			e_pagan = { display = no value = thunderbird }
+		}
+		e_pagan = {
+			catholic = { display = yes name = christian default = 0 }
+			avignon_catholic = { display = no value = catholic }
+			pisan_catholic = { display = no value = catholic }
+			orthodox = { display = yes name = orthodox default = 0 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = yes name = pagan default = 10 }
+		}
+		sikh = {
+			catholic = { display = yes name = christian default = 0 }
+			avignon_catholic = { display = no value = catholic }
+			pisan_catholic = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = yes name = sikh default = 10 }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		thunderbird = {
+			catholic = { display = yes name = christian default = 0 }
+			avignon_catholic = { display = no value = catholic }
+			pisan_catholic = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = yes name = thunderbird default = 0 }
+			gorgetism = { display = no value = pagan }
+			medicinewheel = { display = no value = pagan }
+			peyote = { display = no value = pagan }
+			e_pagan = { display = no }
+		}
+		gorgetism = {
+			catholic = { display = yes name = christian default = 0 }
+			avignon_catholic = { display = no value = catholic }
+			pisan_catholic = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = no value = pagan }
+			gorgetism = { display = yes name = gorgetism default = 0 }
+			medicinewheel = { display = no value = pagan }
+			peyote = { display = no value = pagan }
+			e_pagan = { display = no }
+		}
+		medicinewheel = {
+			catholic = { display = yes name = christian default = 0 }
+			avignon_catholic = { display = no value = catholic }
+			pisan_catholic = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = no value = pagan }
+			gorgetism = { display = no value = pagan }
+			medicinewheel = { display = yes name = medicinewheel default = 0 }
+			peyote = { display = no value = pagan }
+			e_pagan = { display = no }
+		}
+		peyote = {
+			catholic = { display = yes name = christian default = 0 }
+			avignon_catholic = { display = no value = catholic }
+			pisan_catholic = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = no value = pagan }
+			gorgetism = { display = no value = pagan }
+			medicinewheel = { display = no value = pagan }
+			peyote = { display = yes name = peyote default = 0 }
+			e_pagan = { display = no }
+		}
+	}
+	defender = yes
+	predominance_tolerance = no
+}
+
+flag_7 = {
+	enable_religion = {
+		catholic
+		hussite
+		orthodox
+		miaphysite
+		sunni
+		shia
+		buddhism
+		confucianism
+		hinduism
+		shinto
+		sikh
+		pagan
+		thunderbird
+		gorgetism
+		medicinewheel
+		peyote
+		e_pagan
+	}
+	disable_religion_ai = {
+		avignon_catholic
+		pisan_catholic
+	}
+	casusbelli = {
+	}
+	religious_restricts = {
+		catholic = {
+			miaphysite
+			hussite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		hussite = {
+			catholic
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		orthodox = {
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		miaphysite = {
+			catholic
+			hussite
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		sunni = {
+			catholic
+			hussite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		shia = {
+			catholic
+			hussite
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		buddhism = {
+			catholic
+			hussite
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		confucianism = {
+			catholic
+			hussite
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		hinduism = {
+			catholic
+			hussite
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		shinto = {
+			catholic
+			hussite
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		sikh = {
+			catholic
+			hussite
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		pagan = {
+			catholic
+			hussite
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+		}
+		e_pagan = {
+			catholic
+			hussite
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+		}
+		thunderbird = {
+			catholic
+			hussite
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			e_pagan
+		}
+		gorgetism = {
+			catholic
+			hussite
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			e_pagan
+		}
+		medicinewheel = {
+			catholic
+			hussite
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			e_pagan
+		}
+		peyote = {
+			catholic
+			hussite
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			e_pagan
+		}
+	}
+	religious_enemies = {
+		catholic = {
+			hussite
+			sunni
+			shia
+			e_pagan
+		}
+		hussite = {
+			catholic
+			sunni
+			shia
+		}
+		orthodox = {
+			sunni
+			shia
+			e_pagan
+		}
+		sunni = {
+			catholic
+			orthodox
+			miaphysite
+			hussite
+		}
+		shia = {
+			catholic
+			orthodox
+			miaphysite
+			hussite
+		}
+		pagan = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		thunderbird = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		gorgetism = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		medicinewheel = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		peyote = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+	}
+	tolerance = {
+		catholic = {
+			catholic = { display = yes name = catholic default = 10 }
+			hussite = { display = no }
+			orthodox = { display = yes name = orthodox default = -3 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -5 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		avignon_catholic = {
+			catholic = { display = yes name = catholic default = 3 }
+			avignon_catholic = { display = yes name = avignon_catholic default = 7 }
+			hussite = { display = no }
+			orthodox = { display = yes name = orthodox default = -3 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -7 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		pisan_catholic = {
+			catholic = { display = yes name = catholic default = 0 }
+			avignon_catholic = { display = yes name = avignon_catholic default = 0 }
+			pisan_catholic = { display = yes name = pisan_catholic default = 10 }
+			hussite = { display = no }
+			orthodox = { display = yes name = orthodox default = -3 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -7 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		hussite = {
+			catholic = { display = yes name = catholic default = -2 }
+			hussite = { display = yes name = hussite default = 10 }
+			orthodox = { display = yes name = orthodox default = -3 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -5 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		orthodox = {
+			catholic = { display = yes name = catholic default = -4 }
+			hussite = { display = no }
+			orthodox = { display = yes name = orthodox default = 10 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -4 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		miaphysite = {
+			catholic = { display = yes name = chalcedonian default = 0 }
+			avignon_catholic = { display = no value = catholic }
+			pisan_catholic = { display = no value = catholic }
+			miaphysite = { display = yes name = miaphysite default = 10 }
+			orthodox = { display = no value = catholic }
+			hussite = { display = no value = catholic }
+			sunni = { display = yes name = muslim default = -10 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		sunni = {
+			catholic = { display = yes name = catholic default = -3 }
+			hussite = { display = no value = catholic }
+			orthodox = { display = yes name = orthodox default = -1 }
+			miaphysite = { display = no value = catholic }
+			sunni = { display = yes name = sunni default = 10 }
+			shia = { display = yes name = shia default = -6 }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		shia = {
+			catholic = { display = yes name = catholic default = -3 }
+			hussite = { display = no value = catholic }
+			orthodox = { display = yes name = orthodox default = -1 }
+			miaphysite = { display = no value = catholic }
+			sunni = { display = yes name = sunni default = -6 }
+			shia = { display = yes name = shia default = 10 }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		buddhism = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		confucianism = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		hinduism = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		shinto = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		pagan = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = yes name = heretic default = 0 }
+			gorgetism = { display = no value = thunderbird }
+			medicinewheel = { display = no value = thunderbird }
+			peyote = { display = no value = thunderbird }
+			e_pagan = { display = no value = thunderbird }
+		}
+		e_pagan = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			orthodox = { display = yes name = orthodox default = 0 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = yes name = pagan default = 10 }
+		}
+		sikh = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = yes name = sikh default = 10 }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		thunderbird = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = yes name = thunderbird default = 0 }
+			gorgetism = { display = no value = pagan }
+			medicinewheel = { display = no value = pagan }
+			peyote = { display = no value = pagan }
+			e_pagan = { display = no }
+		}
+		gorgetism = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = no value = pagan }
+			gorgetism = { display = yes name = gorgetism default = 0 }
+			medicinewheel = { display = no value = pagan }
+			peyote = { display = no value = pagan }
+			e_pagan = { display = no }
+		}
+		medicinewheel = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = no value = pagan }
+			gorgetism = { display = no value = pagan }
+			medicinewheel = { display = yes name = medicinewheel default = 0 }
+			peyote = { display = no value = pagan }
+			e_pagan = { display = no }
+		}
+		peyote = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = no value = pagan }
+			gorgetism = { display = no value = pagan }
+			medicinewheel = { display = no value = pagan }
+			peyote = { display = yes name = peyote default = 0 }
+			e_pagan = { display = no }
+		}
+	}
+	defender = yes
+	predominance_tolerance = no
+}
+
+flag_0 = { #Treaty of Tordesillas
+	enable_tot = yes
+}
+
+flag_1 = { #Protestantism
+	enable_religion = {
+		catholic
+		hussite
+		protestant
+		orthodox
+		miaphysite
+		sunni
+		shia
+		buddhism
+		confucianism
+		hinduism
+		shinto
+		sikh
+		pagan
+		thunderbird
+		gorgetism
+		medicinewheel
+		peyote
+		e_pagan
+	}
+	religious_restricts = {
+		catholic = {
+			protestant
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		hussite = {
+			catholic
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		protestant = {
+			catholic
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		orthodox = {
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		miaphysite = {
+			catholic
+			hussite
+			protestant
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		sunni = {
+			catholic
+			hussite
+			protestant
+			shia
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		shia = {
+			catholic
+			hussite
+			protestant
+			orthodox
+			miaphysite
+			sunni
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		buddhism = {
+			catholic
+			hussite
+			protestant
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		confucianism = {
+			catholic
+			hussite
+			protestant
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		hinduism = {
+			catholic
+			hussite
+			protestant
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		shinto = {
+			catholic
+			hussite
+			protestant
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		sikh = {
+			catholic
+			hussite
+			protestant
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		pagan = {
+			catholic
+			hussite
+			protestant
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+		}
+		e_pagan = {
+			catholic
+			hussite
+			protestant
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+		}
+		thunderbird = {
+			catholic
+			hussite
+			protestant
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+		}
+		gorgetism = {
+			catholic
+			hussite
+			protestant
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+		}
+		medicinewheel = {
+			catholic
+			hussite
+			protestant
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+		}
+		peyote = {
+			catholic
+			hussite
+			protestant
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+		}
+	}
+	religious_enemies = {
+		catholic = {
+			hussite
+			protestant
+			sunni
+			shia
+			e_pagan
+		}
+		hussite = {
+			catholic
+			sunni
+			shia
+		}
+		protestant = {
+			catholic
+			sunni
+			shia
+		}
+		orthodox = {
+			sunni
+			shia
+			e_pagan
+		}
+		sunni = {
+			catholic
+			hussite
+			protestant
+			orthodox
+			miaphysite
+			shia
+		}
+		shia = {
+			catholic
+			hussite
+			protestant
+			orthodox
+			miaphysite
+			sunni
+		}
+		pagan = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		thunderbird = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		gorgetism = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		medicinewheel = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		peyote = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+	}
+	tolerance = {
+		catholic = {
+			catholic = { display = yes name = catholic default = 10 }
+			protestant = { display = yes name = protestant default = -5 }
+			hussite = { display = no value = protestant }
+			orthodox = { display = yes name = orthodox default = 2 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -7 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		avignon_catholic = {
+			catholic = { display = yes name = catholic default = 3 }
+			avignon_catholic = { display = yes name = avignon_catholic default = 7 }
+			orthodox = { display = yes name = orthodox default = -3 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -7 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		pisan_catholic = {
+			catholic = { display = yes name = catholic default = 0 }
+			avignon_catholic = { display = yes name = avignon_catholic default = 0 }
+			pisan_catholic = { display = yes name = pisan_catholic default = 10 }
+			orthodox = { display = yes name = orthodox default = -3 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -7 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		protestant = {
+			catholic = { display = yes name = catholic default = 0 }
+			protestant = { display = yes name = protestant default = 5 }
+			hussite = { display = yes name = hussite default = 1 }
+			orthodox = { display = yes name = orthodox default = 0 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -6 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		hussite = {
+			catholic = { display = yes name = catholic default = -2 }
+			protestant = { display = yes name = protestant default = 3 }
+			hussite = { display = yes name = hussite default = 5 }
+			orthodox = { display = yes name = orthodox default = 0 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -6 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		orthodox = {
+			catholic = { display = yes name = catholic default = -2 }
+			hussite = { display = no value = protestant }
+			protestant = { display = yes name = protestant default = -2 }
+			orthodox = { display = yes name = orthodox default = 10 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -6 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		miaphysite = {
+			catholic = { display = yes name = chalcedonian default = 0 }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = yes name = miaphysite default = 10 }
+			sunni = { display = yes name = muslim default = -10 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		sunni = {
+			catholic = { display = yes name = catholic default = -2 }
+			hussite = { display = no value = protestant }
+			protestant = { display = yes name = protestant default = -2 }
+			orthodox = { display = yes name = orthodox default = 0 }
+			miaphysite = { display = no value = catholic }
+			sunni = { display = yes name = sunni default = 10 }
+			shia = { display = yes name = shia default = -6 }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		shia = {
+			catholic = { display = yes name = catholic default = -2 }
+			hussite = { display = no value = protestant }
+			protestant = { display = yes name = protestant default = -2 }
+			orthodox = { display = yes name = orthodox default = 0 }
+			miaphysite = { display = no value = catholic }
+			sunni = { display = yes name = sunni default = -6 }
+			shia = { display = yes name = shia default = 10 }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		buddhism = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		confucianism = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		hinduism = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		shinto = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		pagan = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = yes name = heretic default = 0 }
+			gorgetism = { display = no value = thunderbird }
+			medicinewheel = { display = no value = thunderbird }
+			peyote = { display = no value = thunderbird }
+			e_pagan = { display = no value = thunderbird }
+		}
+		e_pagan = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			orthodox = { display = yes name = orthodox default = 0 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = yes name = pagan default = 10 }
+		}
+		sikh = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = yes name = sikh default = 10 }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		thunderbird = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = yes name = thunderbird default = 0 }
+			gorgetism = { display = no value = pagan }
+			medicinewheel = { display = no value = pagan }
+			peyote = { display = no value = pagan }
+			e_pagan = { display = no }
+		}
+		gorgetism = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = no value = pagan }
+			gorgetism = { display = yes name = gorgetism default = 0 }
+			medicinewheel = { display = no value = pagan }
+			peyote = { display = no value = pagan }
+			e_pagan = { display = no }
+		}
+		medicinewheel = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = no value = pagan }
+			gorgetism = { display = no value = pagan }
+			medicinewheel = { display = yes name = medicinewheel default = 0 }
+			peyote = { display = no value = pagan }
+			e_pagan = { display = no }
+		}
+		peyote = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = no value = pagan }
+			gorgetism = { display = no value = pagan }
+			medicinewheel = { display = no value = pagan }
+			peyote = { display = yes name = peyote default = 0 }
+			e_pagan = { display = no }
+		}
+	}
+}
+
+flag_2 = { #Reformation
+	enable_religion = {
+		catholic
+		hussite
+		protestant
+		reformed
+		orthodox
+		miaphysite
+		sunni
+		shia
+		buddhism
+		confucianism
+		hinduism
+		shinto
+		sikh
+		pagan
+		thunderbird
+		gorgetism
+		medicinewheel
+		peyote
+		e_pagan
+	}
+	religious_restricts = {
+		catholic = {
+			hussite
+			protestant
+			reformed
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		hussite = {
+			catholic
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		protestant = {
+			catholic
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		reformed = {
+			catholic
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		orthodox = {
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		miaphysite = {
+			catholic
+			hussite
+			protestant
+			reformed
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		sunni = {
+			catholic
+			hussite
+			protestant
+			reformed
+			shia
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		shia = {
+			catholic
+			hussite
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			sunni
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		buddhism = {
+			catholic
+			hussite
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		confucianism = {
+			catholic
+			hussite
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		hinduism = {
+			catholic
+			hussite
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		shinto = {
+			catholic
+			hussite
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		sikh = {
+			catholic
+			hussite
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		pagan = {
+			catholic
+			hussite
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+		}
+		thunderbird = {
+			catholic
+			hussite
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+		}
+		gorgetism = {
+			catholic
+			hussite
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+		}
+		medicinewheel = {
+			catholic
+			hussite
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+		}
+		peyote = {
+			catholic
+			hussite
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+		}
+		e_pagan = {
+			catholic
+			hussite
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			sikh
+			shinto
+		}
+	}
+	religious_enemies = {
+		catholic = {
+			hussite
+			protestant
+			reformed
+			sunni
+			shia
+			e_pagan
+		}
+		hussite = {
+			catholic
+			sunni
+			shia
+		}
+		protestant = {
+			catholic
+			sunni
+			shia
+		}
+		reformed = {
+			catholic
+			sunni
+			shia
+		}
+		orthodox = {
+			shia
+			e_pagan
+		}
+		miaphysite = {
+			sunni
+			shia
+		}
+		sunni = {
+			catholic
+			hussite
+			miaphysite
+			protestant
+			reformed
+			shia
+		}
+		shia = {
+			catholic
+			hussite
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			sunni
+		}
+		pagan = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		thunderbird = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		gorgetism = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		medicinewheel = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		peyote = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+	}
+	tolerance = {
+		catholic = {
+			catholic = { display = yes name = catholic default = 10 }
+			protestant = { display = yes name = protestant default = -3 }
+			hussite = { display = no value = protestant }
+			reformed = { display = yes name = reformed default = -3 }
+			orthodox = { display = yes name = orthodox default = 2 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -6 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		avignon_catholic = {
+			catholic = { display = yes name = catholic default = 3 }
+			avignon_catholic = { display = yes name = avignon_catholic default = 7 }
+			orthodox = { display = yes name = orthodox default = -3 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -7 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		pisan_catholic = {
+			catholic = { display = yes name = catholic default = 0 }
+			avignon_catholic = { display = yes name = avignon_catholic default = 0 }
+			pisan_catholic = { display = yes name = pisan_catholic default = 10 }
+			orthodox = { display = yes name = orthodox default = -3 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -7 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		hussite = {
+			catholic = { display = yes name = catholic default = -3 }
+			hussite = { display = yes name = hussite default = 5 }
+			protestant = { display = yes name = protestant default = 2 }
+			reformed = { display = yes name = reformed default = 2 }
+			orthodox = { display = yes name = orthodox default = 0 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -6 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		protestant = {
+			catholic = { display = yes name = catholic default = -2 }
+			hussite = { display = yes name = hussite default = 2 }
+			protestant = { display = yes name = protestant default = 7 }
+			reformed = { display = yes name = reformed default = -1 }
+			orthodox = { display = yes name = orthodox default = 0 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -6 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		reformed = {
+			catholic = { display = yes name = catholic default = -2 }
+			hussite = { display = yes name = hussite default = 2 }
+			protestant = { display = yes name = protestant default = -1 }
+			reformed = { display = yes name = reformed default = 7 }
+			orthodox = { display = yes name = orthodox default = 0 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -6 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		orthodox = {
+			catholic = { display = yes name = catholic default = 0 }
+			protestant = { display = yes name = protestant default = -3 }
+			hussite = { display = no value = protestant }
+			reformed = { display = yes name = reformed default = -3 }
+			orthodox = { display = yes name = orthodox default = 10 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -4 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		miaphysite = {
+			catholic = { display = yes name = chalcedonian default = 0 }
+			protestant = { display = no value = catholic }
+			hussite = { display = no value = catholic }
+			reformed = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = yes name = miaphysite default = 10 }
+			sunni = { display = yes name = muslim default = -10 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		sunni = {
+			catholic = { display = yes name = catholic default = -2 }
+			protestant = { display = yes name = protestant default = -2 }
+			hussite = { display = no value = protestant }
+			reformed = { display = no value = protestant }
+			orthodox = { display = yes name = orthodox default = 0 }
+			miaphysite = { display = no value = catholic }
+			sunni = { display = yes name = sunni default = 10 }
+			shia = { display = yes name = shia default = -6 }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		shia = {
+			catholic = { display = yes name = catholic default = -2 }
+			protestant = { display = yes name = protestant default = -2 }
+			hussite = { display = no value = protestant }
+			reformed = { display = no value = protestant }
+			orthodox = { display = yes name = orthodox default = 0 }
+			miaphysite = { display = no value = catholic }
+			sunni = { display = yes name = sunni default = -6 }
+			shia = { display = yes name = shia default = 10 }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		buddhism = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			reformed = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		confucianism = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			reformed = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		hinduism = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			reformed = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		shinto = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			reformed = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		pagan = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			reformed = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = yes name = heretic default = 0 }
+			gorgetism = { display = no value = thunderbird }
+			medicinewheel = { display = no value = thunderbird }
+			peyote = { display = no value = thunderbird }
+			e_pagan = { display = no value = thunderbird }
+		}
+		e_pagan = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			reformed = { display = no value = catholic }
+			orthodox = { display = yes name = orthodox default = 0 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = yes name = pagan default = 10 }
+		}
+		sikh = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			reformed = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = yes name = sikh default = 10 }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		thunderbird = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			reformed = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = yes name = thunderbird default = 0 }
+			gorgetism = { display = no value = pagan }
+			medicinewheel = { display = no value = pagan }
+			peyote = { display = no value = pagan }
+			e_pagan = { display = no }
+		}
+		gorgetism = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			reformed = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = no value = pagan }
+			gorgetism = { display = yes name = gorgetism default = 0 }
+			medicinewheel = { display = no value = pagan }
+			peyote = { display = no value = pagan }
+			e_pagan = { display = no }
+		}
+		medicinewheel = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			reformed = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = no value = pagan }
+			gorgetism = { display = no value = pagan }
+			medicinewheel = { display = yes name = medicinewheel default = 0 }
+			peyote = { display = no value = pagan }
+			e_pagan = { display = no }
+		}
+		peyote = {
+			catholic = { display = yes name = christian default = 0 }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			reformed = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = no value = pagan }
+			gorgetism = { display = no value = pagan }
+			medicinewheel = { display = no value = pagan }
+			peyote = { display = yes name = peyote default = 0 }
+			e_pagan = { display = no }
+		}
+	}
+}
+
+flag_3 = { #Council of Trent
+	enable_religion = {
+		catholic
+		hussite
+		counterreform
+		protestant
+		reformed
+		orthodox
+		miaphysite
+		sunni
+		shia
+		buddhism
+		confucianism
+		hinduism
+		shinto
+		sikh
+		pagan
+		thunderbird
+		gorgetism
+		medicinewheel
+		peyote
+		e_pagan
+	}
+	casusbelli = {
+		counterreform = {
+			hussite
+			protestant
+			reformed
+		}
+		hussite = {
+			counterreform
+		}
+		protestant = {
+			counterreform
+		}
+		reformed = {
+			counterreform
+		}
+		sunni = {
+			shia
+		}
+		shia = {
+			sunni
+		}
+	}
+	religious_restricts = {
+		catholic = {
+			hussite
+			protestant
+			reformed
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		counterreform = {
+			hussite
+			protestant
+			reformed
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		hussite = {
+			catholic
+			counterreform
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		protestant = {
+			catholic
+			counterreform
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		reformed = {
+			catholic
+			counterreform
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		orthodox = {
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		miaphysite = {
+			catholic
+			counterreform
+			hussite
+			protestant
+			reformed
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		sunni = {
+			catholic
+			counterreform
+			hussite
+			protestant
+			reformed
+			shia
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		shia = {
+			catholic
+			counterreform
+			hussite
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			sunni
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		buddhism = {
+			catholic
+			counterreform
+			hussite
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		confucianism = {
+			catholic
+			counterreform
+			hussite
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		hinduism = {
+			catholic
+			counterreform
+			hussite
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		shinto = {
+			catholic
+			counterreform
+			hussite
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		sikh = {
+			catholic
+			counterreform
+			hussite
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		pagan = {
+			catholic
+			counterreform
+			hussite
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+		}
+		e_pagan = {
+			catholic
+			counterreform
+			hussite
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			sikh
+			shinto
+		}
+		thunderbird = {
+			catholic
+			counterreform
+			hussite
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+		}
+		gorgetism = {
+			catholic
+			counterreform
+			hussite
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+		}
+		medicinewheel = {
+			catholic
+			counterreform
+			hussite
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+		}
+		peyote = {
+			catholic
+			counterreform
+			hussite
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+		}
+	}
+	religious_enemies = {
+		catholic = {
+			hussite
+			protestant
+			reformed
+			sunni
+			shia
+			e_pagan
+		}
+		counterreform = {
+			hussite
+			protestant
+			reformed
+			sunni
+			shia
+			e_pagan
+		}
+		hussite = {
+			catholic
+			counterreform
+			sunni
+			shia
+		}
+		protestant = {
+			catholic
+			counterreform
+			sunni
+			shia
+		}
+		reformed = {
+			catholic
+			counterreform
+			sunni
+			shia
+		}
+		orthodox = {
+			sunni
+			shia
+			e_pagan
+		}
+		miaphysite = {
+			sunni
+			shia
+		}
+		sunni = {
+			catholic
+			counterreform
+			hussite
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			shia
+		}
+		shia = {
+			catholic
+			counterreform
+			hussite
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			sunni
+		}
+		pagan = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		thunderbird = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		gorgetism = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		medicinewheel = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		peyote = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+	}
+	tolerance = {
+		catholic = {
+			catholic = { display = yes name = catholic default = 10 }
+			counterreform = { display = no value = catholic }
+			protestant = { display = yes name = protestant default = -3 }
+			hussite = { display = no value = protestant }
+			reformed = { display = yes name = reformed default = -3 }
+			orthodox = { display = yes name = orthodox default = 2 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -6 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		avignon_catholic = {
+			catholic = { display = yes name = catholic default = 3 }
+			avignon_catholic = { display = yes name = avignon_catholic default = 7 }
+			orthodox = { display = yes name = orthodox default = -3 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -7 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		pisan_catholic = {
+			catholic = { display = yes name = catholic default = 0 }
+			avignon_catholic = { display = yes name = avignon_catholic default = 0 }
+			pisan_catholic = { display = yes name = pisan_catholic default = 10 }
+			orthodox = { display = yes name = orthodox default = -3 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -7 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		counterreform = {
+			catholic = { display = yes name = catholic default = 10 }
+			counterreform = { display = no value = catholic }
+			protestant = { display = yes name = protestant default = -5 }
+			hussite = { display = no value = protestant }
+			reformed = { display = yes name = reformed default = -5 }
+			orthodox = { display = yes name = orthodox default = 3 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -3 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		hussite = {
+			catholic = { display = yes name = catholic default = -3 }
+			counterreform = { display = no value = catholic }
+			hussite = { display = yes name = hussite default = 5 }
+			protestant = { display = yes name = protestant default = 2 }
+			reformed = { display = yes name = reformed default = 2 }
+			orthodox = { display = yes name = orthodox default = 0 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -6 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		protestant = {
+			catholic = { display = yes name = catholic default = -2 }
+			counterreform = { display = no value = catholic }
+			hussite = { display = no value = protestant }
+			protestant = { display = yes name = protestant default = 6 }
+			reformed = { display = yes name = reformed default = 0 }
+			orthodox = { display = yes name = orthodox default = 0 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -6 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		reformed = {
+			catholic = { display = yes name = catholic default = -2 }
+			counterreform = { display = no value = catholic }
+			hussite = { display = no value = protestant }
+			protestant = { display = yes name = protestant default = 0 }
+			reformed = { display = yes name = reformed default = 6 }
+			orthodox = { display = yes name = orthodox default = 0 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -6 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		orthodox = {
+			catholic = { display = yes name = catholic default = 0 }
+			counterreform = { display = no value = catholic }
+			protestant = { display = yes name = protestant default = -3 }
+			hussite = { display = no value = protestant }
+			reformed = { display = yes name = reformed default = -3 }
+			orthodox = { display = yes name = orthodox default = 10 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = -4 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		miaphysite = {
+			catholic = { display = yes name = chalcedonian default = 0 }
+			counterreform = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			hussite = { display = no value = catholic }
+			reformed = { display = no value = catholic }
+			miaphysite = { display = yes name = miaphysite default = 10 }
+			orthodox = { display = no value = catholic }
+			sunni = { display = yes name = muslim default = -10 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		sunni = {
+			catholic = { display = yes name = catholic default = -2 }
+			counterreform = { display = no value = catholic }
+			protestant = { display = yes name = protestant default = -2 }
+			hussite = { display = no value = protestant }
+			reformed = { display = no value = protestant }
+			orthodox = { display = yes name = orthodox default = 0 }
+			miaphysite = { display = no value = catholic }
+			sunni = { display = yes name = sunni default = 10 }
+			shia = { display = yes name = shia default = -6 }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		shia = {
+			catholic = { display = yes name = catholic default = -2 }
+			counterreform = { display = no value = catholic }
+			protestant = { display = yes name = protestant default = -2 }
+			hussite = { display = no value = protestant }
+			reformed = { display = no value = protestant }
+			orthodox = { display = yes name = orthodox default = 0 }
+			miaphysite = { display = no value = catholic }
+			sunni = { display = yes name = sunni default = -6 }
+			shia = { display = yes name = shia default = 10 }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		buddhism = {
+			catholic = { display = yes name = christian default = 0 }
+			counterreform = { display = no value = catholic }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			reformed = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		confucianism = {
+			catholic = { display = yes name = christian default = 0 }
+			counterreform = { display = no value = catholic }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			reformed = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		hinduism = {
+			catholic = { display = yes name = christian default = 0 }
+			counterreform = { display = no value = catholic }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			reformed = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		shinto = {
+			catholic = { display = yes name = christian default = 0 }
+			counterreform = { display = no value = catholic }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			reformed = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		pagan = {
+			catholic = { display = yes name = christian default = 0 }
+			counterreform = { display = no value = catholic }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			reformed = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = yes name = heretic default = 0 }
+			gorgetism = { display = no value = thunderbird }
+			medicinewheel = { display = no value = thunderbird }
+			peyote = { display = no value = thunderbird }
+			e_pagan = { display = no value = thunderbird }
+		}
+		e_pagan = {
+			catholic = { display = yes name = christian default = 0 }
+			counterreform = { display = no value = catholic }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			reformed = { display = no value = catholic }
+			orthodox = { display = yes name = orthodox default = 0 }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = no }
+			confucianism = { display = no }
+			hinduism = { display = no }
+			shinto = { display = no }
+			sikh = { display = no }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = yes name = pagan default = 10 }
+		}
+		sikh = {
+			catholic = { display = yes name = christian default = 0 }
+			counterreform = { display = no value = catholic }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			reformed = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = buddhism default = 0 }
+			confucianism = { display = yes name = confucianism default = 0 }
+			hinduism = { display = yes name = hinduism default = 0 }
+			shinto = { display = yes name = shinto default = 0 }
+			sikh = { display = yes name = sikh default = 10 }
+			pagan = { display = no }
+			thunderbird = { display = no }
+			gorgetism = { display = no }
+			medicinewheel = { display = no }
+			peyote = { display = no }
+			e_pagan = { display = no }
+		}
+		thunderbird = {
+			catholic = { display = yes name = christian default = 0 }
+			counterreform = { display = no value = catholic }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			reformed = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = yes name = thunderbird default = 0 }
+			gorgetism = { display = no value = pagan }
+			medicinewheel = { display = no value = pagan }
+			peyote = { display = no value = pagan }
+			e_pagan = { display = no }
+		}
+		gorgetism = {
+			catholic = { display = yes name = christian default = 0 }
+			counterreform = { display = no value = catholic }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			reformed = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = no value = pagan }
+			gorgetism = { display = yes name = gorgetism default = 0 }
+			medicinewheel = { display = no value = pagan }
+			peyote = { display = no value = pagan }
+			e_pagan = { display = no }
+		}
+		medicinewheel = {
+			catholic = { display = yes name = christian default = 0 }
+			counterreform = { display = no value = catholic }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			reformed = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = no value = pagan }
+			gorgetism = { display = no value = pagan }
+			medicinewheel = { display = yes name = medicinewheel default = 0 }
+			peyote = { display = no value = pagan }
+			e_pagan = { display = no }
+		}
+		peyote = {
+			catholic = { display = yes name = christian default = 0 }
+			counterreform = { display = no value = catholic }
+			hussite = { display = no value = catholic }
+			protestant = { display = no value = catholic }
+			reformed = { display = no value = catholic }
+			orthodox = { display = no value = catholic }
+			miaphysite = { display = no }
+			sunni = { display = yes name = muslim default = 0 }
+			shia = { display = no value = sunni }
+			buddhism = { display = yes name = eastern default = 0 }
+			confucianism = { display = no value = buddhism }
+			hinduism = { display = no value = buddhism }
+			shinto = { display = no value = buddhism }
+			sikh = { display = no }
+			pagan = { display = yes name = pagan default = 0 }
+			thunderbird = { display = no value = pagan }
+			gorgetism = { display = no value = pagan }
+			medicinewheel = { display = no value = pagan }
+			peyote = { display = yes name = peyote default = 0 }
+			e_pagan = { display = no }
+		}
+	}
+}
+
+flag_4 = { #Predominance tolerance
+	predominance_tolerance = yes
+}
+
+flag_5 = { #Edict of Tolerance
+	enable_tot = no
+	disable_religion_ai = {
+		counterreform
+		hussite
+	}
+	casusbelli = {
+		sunni = {
+			shia
+		}
+		shia = {
+			sunni
+		}
+	}
+	religious_restricts = {
+		catholic = {
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		counterreform = {
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		protestant = {
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		reformed = {
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		orthodox = {
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		miaphysite = {
+			catholic
+			counterreform
+			hussite
+			protestant
+			reformed
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		sunni = {
+			catholic
+			counterreform
+			protestant
+			reformed
+			shia
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		shia = {
+			catholic
+			counterreform
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			sunni
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		buddhism = {
+			catholic
+			counterreform
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		confucianism = {
+			catholic
+			counterreform
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		hinduism = {
+			catholic
+			counterreform
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		shinto = {
+			catholic
+			counterreform
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		sikh = {
+			catholic
+			counterreform
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		pagan = {
+			catholic
+			counterreform
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+		}
+		e_pagan = {
+			catholic
+			counterreform
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+		}
+		thunderbird = {
+			catholic
+			counterreform
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+		}
+		gorgetism = {
+			catholic
+			counterreform
+			hussite
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+		}
+		medicinewheel = {
+			catholic
+			counterreform
+			hussite
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+		}
+		peyote = {
+			catholic
+			counterreform
+			hussite
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			sunni
+			shia
+			buddhism
+			confucianism
+			hinduism
+			shinto
+			sikh
+		}
+	}
+	religious_enemies = {
+		catholic = {
+			sunni
+			shia
+			e_pagan
+		}
+		counterreform = {
+			sunni
+			shia
+		}
+		protestant = {
+			sunni
+			shia
+		}
+		reformed = {
+			sunni
+			shia
+		}
+		orthodox = {
+			sunni
+			shia
+			e_pagan
+		}
+		miaphysite = {
+			sunni
+			shia
+		}
+		sunni = {
+			catholic
+			counterreform
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			shia
+		}
+		shia = {
+			catholic
+			counterreform
+			protestant
+			reformed
+			orthodox
+			miaphysite
+			sunni
+		}
+		pagan = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		thunderbird = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		gorgetism = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		medicinewheel = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+		peyote = {
+			pagan
+			thunderbird
+			gorgetism
+			medicinewheel
+			peyote
+			e_pagan
+		}
+	}
+	defender = no
+}
+
+flag_6 = { #More tolerance
+	religious_enemies = {
+		sunni = {
+			shia
+		}
+		shia = {
+			sunni
+		}
+		pagan = {
+			pagan
+		}
+	}
+}
+
+#-----------------------------------------------------------------------------------------------

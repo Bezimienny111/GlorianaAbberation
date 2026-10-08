@@ -1,0 +1,226 @@
+#-----------------------------------------------------------------------------
+# Nubian Events
+
+#A troubled Nubia calls on Byzantium for help
+event = {
+	id = 3001384
+	trigger = {
+		event = 3001359
+		OR = {
+			religion = orthodox
+			religion = miaphysite
+		}
+		owned = { province = 744 data = BYZ } #Alexandria
+		NOT = { vassal = { country = ETH country = NUB } }
+		NOT = { event = 3001385 }
+		OR = {
+			vassal = { country = MAM country = NUB }
+			vassal = { country = CYR country = NUB }
+			vassal = { country = TUN country = NUB }
+			vassal = { country = ADE country = NUB }
+			vassal = { country = ARA country = NUB }
+			vassal = { country = ARM country = NUB }
+		}
+	}
+	random = NO
+	country = NUB
+	name = "Imperial influence in Nubia"
+	desc = "Nubia has found itself dependent on foreign powers. Now the Empire's influence is felt in Egypt, and an Orthodox protector presents itself. This protection, however, will surely have a price."
+	date = { day = 1 month = january year = 1450 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = { # Let us call for help whatever it costs.
+		name = "If we will be slaves, let us have better masters"
+		command = { type = stability value = 2 }
+		command = { type = breakvassal which = MAM }
+		command = { type = breakvassal which = CYR }
+		command = { type = breakvassal which = TUN }
+		command = { type = breakvassal which = ADE }
+		command = { type = breakvassal which = ARA }
+		command = { type = breakvassal which = ARM }
+		command = { type = treasury value = -200 }
+	}
+	action_b = { # Refuse to give our precious independence.
+		name = "Let us keep the devil we know"
+		command = { type = stability value = -1 }
+		command = { type = sleepevent which = 3001386 } #BYZ: Nubia Appeals to the Empire for Aid I
+		command = { type = sleepevent which = 3001387 } #BYZ: Nubia Appeals to the Empire for Aid II
+	}
+}
+
+#A troubled Nubia calls on Byzantium for help
+event = {
+	id = 3001385
+	trigger = {
+		exists = BYZ
+		atwar = yes
+		OR = {
+			religion = orthodox
+			religion = miaphysite
+		}
+		NOT = {
+			event = 3001384
+			war = { country = BYZ country = NUB }
+			vassal = { country = ETH country = NUB }
+			alliance = { country = MAM country = NUB }
+			alliance = { country = ETH country = NUB }
+			alliance = { country = TUN country = NUB }
+			alliance = { country = CYR country = NUB }
+			alliance = { country = ADE country = NUB }
+			alliance = { country = ARA country = NUB }
+			alliance = { country = ARM country = NUB }
+		}
+	}
+	random = NO
+	country = NUB
+	name = "An appeal to Constantinople"
+	desc = "Stranded at the edge of the known world, Nubia was sometimes left alone. Now Imperial influence has grown, and Byzantium could be its savior. This protection, however, will surely have a price."
+	date = { day = 1 month = january year = 1450 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = { # Let us call for help whatever it costs.
+		name = "Let us call for help whatever it costs."
+		command = { type = stability value = 2 }
+		command = { type = breakvassal which = MAM }
+		command = { type = breakvassal which = CYR }
+		command = { type = breakvassal which = TUN }
+		command = { type = breakvassal which = ADE }
+		command = { type = breakvassal which = ARA }
+		command = { type = breakvassal which = ARM }
+		command = { type = treasury value = -200 }
+	}
+	action_b = { # Refuse to give our precious independence.
+		name = "Refuse to give our precious independence."
+		command = { type = stability value = -1 }
+		command = { type = sleepevent which = 3001386 } #BYZ: Nubia Appeals to the Empire for Aid I
+		command = { type = sleepevent which = 3001387 } #BYZ: Nubia Appeals to the Empire for Aid II
+	}
+}
+
+#(1419-1820) Nubia Appeals to the Empire for Aid I (no Council of Alexandria)
+event = {
+	id = 3001386
+	trigger = {
+		OR = {
+			event = 3001384
+			event = 3001385
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "Nubia Appeals to the Empire for Aid"
+	desc = "Nubia has sent us a call for help. The generals think the region is more trouble than it's worth, but the Patriarch is mindful that as a non-Chalcedonian church, the Nubians are still schismatics. This may be an excellent opportunity to return them to the fold."
+
+	date = { year = 1337 }
+	offset = 180 #6 months
+	deathdate = { year = 1838 }
+
+	action_a = {
+	name = "Demand the Nubians return to proper Orthodoxy" # Demand concessions
+		trigger = {
+			religion = orthodox
+			NUB = {
+				NOT = {
+					religion = orthodox
+				}
+			}
+		}
+		command = { type = treasury value = 200 }
+		command = { type = stability value = 1 }
+		command = { type = trigger which = 3001388 }
+	}
+	action_b = {
+		name = "Thank the envoys for their time" # Take the money and run
+		command = { type = treasury value = 200 }
+	}
+	action_c = {
+		name = "We shall not refuse them succor" # Take what you can get
+		command = { type = stability value = -1 }
+		command = { type = vassal which = NUB }
+		command = { type = dynastic which = NUB }
+		command = { type = alliance which = NUB }
+		command = { type = relation which = NUB value = 300 }
+		#command = { type = sleepevent which = 289000 } #NUB: Fall of Alodia - event does not exist in Gloriana1337
+	}
+}
+
+#(1419-1820) Nubia Appeals to the Empire for Aid II (Council of Alexandria)
+event = {
+	id = 3001387
+	trigger = {
+		OR = {
+			event = 3001384
+			event = 3001385
+		}
+		OR = {
+			event = 3001215
+			event = 3001435
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "Nubia Appeals to the Empire for Aid"
+	name = "An appeal from Nubia"
+	desc = "Nubia has sent us a call for help. The generals think the region is more trouble than it's worth, but the Patriarch is mindful that as a non-Chalcedonian church, the Nubians are still officially schismatics. Still, it is likely we can reach an agreement similar to those already pursued and rejoin them to the mother church."
+
+	date = { year = 1337 }
+	offset = 180 #6 months
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Thank the envoys for their time" # Take the money and run
+		command = { type = treasury value = 200 }
+	}
+	action_b = {
+		name = "We shall not refuse them succor" # Take what you can get
+		command = { type = stability value = -1 }
+		command = { type = vassal which = NUB }
+		command = { type = dynastic which = NUB }
+		command = { type = alliance which = NUB }
+		command = { type = relation which = NUB value = 300 }
+		#command = { type = sleepevent which = 289000 } #NUB: Fall of Alodia - event does not exist in Gloriana1337
+	}
+}
+
+#Nubia's trade-off
+event = {
+	id = 3001388
+	random = NO
+	country = NUB
+	name = "Byzantium's ultimatum"
+	desc = "In typical fashion, the Empire refuses help unless we bow to their heresies. Surely our freedom is not worth our souls."
+
+	action_a = { # Sigh
+		name = "Then we shall fight alone"
+		command = { type = relation which = BYZ value = -300 }
+	}
+	action_b = { # Take what you can get
+		name = "We'll take what we can get"
+		command = { type = alliance which = BYZ }
+		command = { type = stability value = -1 }
+		command = { type = religion which = orthodox }
+		#command = { type = sleepevent which = 289000 } #NUB: Fall of Alodia - event does not exist in Gloriana1337
+		command = { type = trigger which = 3001389 }
+	}
+}
+
+#Nubia submits
+event = {
+	id = 3001389
+	random = NO
+	country = BYZ
+	name = "Nubia has submitted to our Patriarch"
+	desc = "A nation's souls have been saved by your actions and our nation rejoices."
+
+	action_a = {
+		name = "Hallelujah!"
+		command = { type = stability value = 1 }
+		command = { type = vassal which = NUB }
+		command = { type = dynastic which = NUB }
+		command = { type = alliance which = NUB }
+		command = { type = relation which = NUB value = 300 }
+		#command = { type = vp value = 100 }
+	}
+}

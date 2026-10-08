@@ -1,0 +1,216 @@
+#-----------------------------------------------------------------------------
+# Macedonian Events
+
+#(1419-1500) The Citizens of Constantinople Flee
+event = {
+	id = 3001498
+	trigger = {
+		NOT = { countrysize = 7 }
+		war = { country = BYZ country = TUR }
+		TUR = {
+			countrysize = 5
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "The Citizens of Constantinople Flee"
+	desc = "With war come at last between the Empire and the Turks, the citizens of Constantinople flee to their relatives' until the contest is decided."
+
+	date = { year = 1337 }
+	offset = 1 #immediate
+	deathdate = { year = 1500 }
+
+	action_a = {
+		name = "I'm still charging rent"
+		command = { type = populationpercent which = 357 value = -20 } #Thrace
+		command = { type = provincemanpower which = 357 value = -1 } #Thrace
+		command = { type = provincetax which = 357 value = -7 } #Thrace
+	}
+}
+
+#(1419-1500) The Thracian Hinterland
+event = {
+	id = 3001087
+	trigger = {
+		atwar = no
+		owned = { province = 357 data = -1 } #Thrace
+		owned = { province = 358 data = -1 } #Macedonia
+	}
+	random = NO
+	country = BYZ
+	name = "The Thracian Hinterland"
+	desc = "By 1419, the Empire had left only the bit of land they could protect from the city walls of Constantinople. With the success of the latest war, it has gained the rest of the former theme of Thrace, including Adrianople, boosting tax revenue and manpower in the province."
+
+	date = { year = 1337 }
+	offset = 360 #1 year
+	deathdate = { year = 1500 }
+
+	action_a = {
+		name = "We have recovered the theme of Thrace"
+		command = { type = populationpercent which = 357 value = 10 } #Thrace
+		command = { type = provincetax which = 357 value = 3 } #Thrace
+		command = { type = provincemanpower which = 357 value = 3 } #Thrace
+	}
+}
+
+#(1419-1500) Queen of Cities I
+event = {
+	id = 3001088
+	trigger = {
+		NOT = { exists = TUR }
+	}
+	random = NO
+	country = BYZ
+	name = "Queen of Cities"
+	desc = "Greeks still call Constantinople Basileuousa, 'The Queen of Cities.' With the final destruction of the Turks, the title is made good as Greeks from throughout the Aegean return to her, thronging her streets and rebuilding her homes, propelling Constantinople back into the first rank of European cities."
+
+	date = { year = 1337 }
+	offset = 360 #1 year
+	deathdate = { year = 1500 }
+
+	action_a = {
+		name = "Now, about that backrent"
+		command = { type = populationpercent which = 357 value = 18 } #Thrace
+		command = { type = provincetax which = 357 value = 7 } #Thrace
+		command = { type = provincetax which = 357 value = 7 } #Thrace
+		command = { type = provincemanpower which = 357 value = 1 } #Thrace
+	}
+}
+
+#(1419-1500) Queen of Cities II
+event = {
+	id = 3001089
+	trigger = {
+		NOT = { exists = BYZ }
+		NOT = { event = 3001087 } #BYZ: The Thracian Hinterland
+		NOT = { event = 3001088 } #BYZ: Queen of Cities I
+		owned = { province = 357 data = -1 } #Thrace
+		owned = { province = 358 data = -1 } #Macedonia
+	}
+	random = NO
+	province = 357
+	name = "Queen of Cities"
+	desc = "Greeks still call Constantinople Basileuousa, 'The Queen of Cities.' Now, the title is made good as Greeks, Turks, and Slavs from throughout the Aegean return to her, thronging her streets and rebuilding her homes, propelling Constantinople back into the first rank of European cities."
+
+	date = { year = 1337 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Fantastic!"
+		command = { type = populationpercent which = 357 value = 15 } #Thrace
+		command = { type = provincetax which = 357 value = 7 } #Thrace
+		command = { type = provincetax which = 357 value = 7 } #Thrace
+		command = { type = provincemanpower which = 357 value = 4 } #Thrace
+	}
+}
+
+#(1419-1820) Queen of Cities III
+event = {
+	id = 3001090
+	trigger = {
+		event = 3001089 #ALL: Queen of Cities II
+		NOT = { exists = BYZ }
+		owned = { province = 357 data = -1 } #Thrace
+		owned = { province = 358 data = -1 } #Macedonia
+	}
+	random = NO
+	province = 357
+	name = "Queen of Cities"
+	desc = "Greeks still call Constantinople Basileuousa, 'The Queen of Cities.' Now, the title is made good as Greeks, Turks, and Slavs from throughout the Aegean return to her, thronging her streets and rebuilding her homes, propelling Constantinople back into the first rank of European cities."
+
+	date = { year = 1337 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Fantastic!"
+		command = { type = populationpercent which = 357 value = 12 } #Thrace
+		command = { type = provincetax which = 357 value = 7 } #Thrace
+		command = { type = provincetax which = 357 value = 4 } #Thrace
+		command = { type = provincemanpower which = 357 value = 1 } #Thrace
+	}
+}
+
+#(1424) Venice Gains Thessaloniki
+event = {
+	id = 3001091
+	trigger = {
+		owned = { province = 358 data = TUR } #Macedonia
+	}
+	random = NO
+	country = VEN
+	name = "Venice Gains Thessaloniki"
+	desc = "Murad rapidly put down Mustafa's revolt and angrily attacked Byzantium. Manuel released another pretender, also named Mustafa, also Murad's brother, but this one fared no better. In 1423, the Turks invaded Morea, smashing through the Hexamilium (6 mile wall) that Manuel II had built across the Isthmus of Corinth for protection in 1414. They also pressed Thessaloniki, still a Byzantine city, so hard that the governor turned it over to the Venetians and wished them better luck. By 1424, with no help forthcoming, the Byzantines sadly accepted vassalage to the Turks. Venice held onto Thessaloniki until 1430."
+
+	date = { year = 1424 }
+	offset = 30 #1 month
+	deathdate = { year = 1425 }
+
+	action_a = {
+		name = "I'll take it while I can" # Take control of Thessalonica
+		command = { type = addcore_national which = 358 } #Macedonia
+		command = { type = provincetax which = 370 value = 1 } #Veneto
+		command = { type = treasury value = 100 }
+		#command = { type = vp value = 10 }
+	}
+	action_b = {
+		name = "Hand it over to the Turks" # Hand it over to the Turks
+		command = { type = relation which = TUR value = 100 }
+		command = { type = sleepevent which = 3001092 } #VEN: Fall of Thessaloniki
+		command = { type = sleepevent which = 3001093 } #ALL: Recovery of Thessaloniki
+	}
+}
+
+#(1430) Fall of Thessaloniki
+event = {
+	id = 3001092 #triggered by BYZ_3001093 A
+	trigger = {
+		event = 3001093 #ALL: Recovery of Thessaloniki
+	}
+	random = NO
+	country = VEN
+	name = "Fall of Thessaloniki"
+	desc = "In 1430, Murad II's Turkish forces finally overcame the Venetians who had held Thessalonica since 1423. The loss of the rich trading city stung Venice's pockets and pride."
+
+	date = { year = 1430 }
+	offset = 30 #1 month
+	deathdate = { year = 1431 }
+
+	action_a = {
+		name = "Thessalonica is lost" #OK
+		command = { type = stability value = -1 }
+		command = { type = provincetax which = 370 value = -1 } #Veneto
+		command = { type = removecore_national which = 358 } #Macedonia
+		#command = { type = vp value = -10 }
+	}
+}
+
+#(1419-1500) Recovery of Thessaloniki
+event = {
+	id = 3001093
+	trigger = {
+		event = 3001091 #VEN: Venice Gains Thessaloniki
+		owned = { province = 357 data = -1 } #Thrace
+		owned = { province = 358 data = -1 } #Macedonia
+	}
+	random = NO
+	province = 358 #Macedonia
+	#country = BYZ
+	name = "Recovery of Thessaloniki"
+	desc = "Thessaloniki has been reunited with the province of Macedonia proper."
+
+	date = { year = 1337 }
+	offset = 360 #1 year
+	deathdate = { year = 1500 }
+
+	action_a = { #Ok
+		name = "Whee! More taxes"
+		command = { type = stability value = 1 }
+		command = { type = populationpercent which = 358 value = 10 } #Macedonia
+		command = { type = provincetax which = 358 value = 3 } #Macedonia
+		command = { type = provincemanpower which = 358 value = 1 } #Macedonia
+		#command = { type = vp value = 10 }
+		command = { type = trigger which = 3001092 } #VEN: Fall of Thessaloniki
+	}
+}

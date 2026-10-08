@@ -1,0 +1,1617 @@
+#####Portuguese Major Events#####
+###By Joakim 'Greven' Bergqwist##
+#################################
+
+#The Social Revolution of João I#
+event = {
+
+	id = 3265
+	random = no
+	country = POR
+	name = "EVENTNAME3265"
+	desc = "EVENTHIST3265"
+
+	date = { day = 1 month = january year = 1420 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1433 }
+
+
+	action_a ={		#For the trade & people!#
+		name = "ACTIONNAME3265A"
+		command = { type = domestic which = centralization	value = 3 }
+		command = { type = domestic  which = ARISTOCRACY  value = -2 }
+		command = { type = domestic  which = SERFDOM  value = -1 }
+		command = { type = trade  value = 250 }
+		command = { type = revoltrisk  value = 3 }
+	}
+
+	action_b ={		#Support the Aristocracy#
+		name = "ACTIONNAME3265B"
+		command = { type = domestic  which = ARISTOCRACY  value = 1 }
+		command = { type = domestic  which = QUALITY  value = 1 }
+		command = { type = land  value = 250 }
+	}
+
+}
+
+#The Afonsine Ordinances#
+event = {
+
+	id = 3266
+	random = no
+	country = POR
+	name = "EVENTNAME3266"
+	desc = "EVENTHIST3266"
+
+	date = { day = 1 month = january year = 1446 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1481 }
+
+	action_a ={		#Every man make his own fortune#
+		name = "ACTIONNAME3266A"
+		command = { type = domestic  which = centralization  value = -2 }
+		command = { type = stability  value = 2 }
+	}
+
+	action_b ={		#Demand less corruption#
+		name = "ACTIONNAME3266B"
+		command = { type = domestic  which = centralization  value = 2 }
+		command = { type = revoltrisk  value = 5 }
+		command = { type = stability  value = -2 }
+		command = { type = provincetax  which = -1 value = 1 }
+		command = { type = provincetax  which = -4 value = 1 }
+	}
+
+}
+
+
+#The Duke of Coimbra#
+event = {
+
+	id = 3267
+	random = no
+	country = POR
+	name = "EVENTNAME3267"
+	desc = "EVENTHIST3267"
+
+	date = { day = 1 month = january year = 1448 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1450 }
+
+	action_a ={				#King is tricked#
+		name = "ACTIONNAME3267A"
+		
+		command = { type = domestic which = centralization value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={				#Duke survives & assists king#
+		name = "ACTIONNAME3267B"
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#The Centralizing Reforms of John II#
+event = {
+
+	id = 5307
+	random = no
+	country = POR
+	name = "EVENTNAME5307"
+	desc = "EVENTHIST5307"
+
+	date = { day = 1 month = january year = 1485 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1495 }
+
+	action_a ={		#Strip them of their assets#
+		name = "ACTIONNAME5307A"
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = ARISTOCRACY value = -3 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = ADM which = 3 value = 60 }
+		command = { type = infra value = 400 }
+		command = { type = trade value = 400 }
+		command = { type = treasury value = 300 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={		#Show leniency#
+		name = "ACTIONNAME5307B"
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = provincetax which = 434 value = 1 }
+		command = { type = provincetax which = 441 value = 1 }
+		command = { type = provincetax which = 442 value = 1 }
+		command = { type = provincetax which = 823 value = 2 }
+		command = { type = revoltrisk which = 60 value = 3 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#Commercial Conflict in the Indian Ocean#
+event = {
+
+	id = 3268
+	trigger = {
+		discovered = 504 # Mascate
+	}
+	random = no
+	country = POR
+	name = "EVENTNAME3268"
+	desc = "EVENTHIST3268"
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1513 }
+
+	action_a ={		#Forcefully control spice trade#
+		name = "ACTIONNAME3268A"
+		#command = { type = wakeleader which = 09616 } # António Correia
+		command = { type = gainbuilding which = 441 value = shipyard }
+		command = { type = relation  which = OMA  value = -400 }
+		command = { type = relation  which = TUR  value = -100 }
+		command = { type = relation  which = GUJ  value = -100 }
+		command = { type = domestic  which = MERCANTILISM  value = 2 }
+		# Mascate is now a ToT core for POR
+	}
+
+	action_b ={		#Negotiate trading rights#
+		name = "ACTIONNAME3268B"
+		trigger = { 
+			NOT = { war = { country = POR country = OMA } }
+		}
+		command = { type = treasury value = 200 }
+		command = { type = gainbuilding which = 441 value = shipyard }
+		command = { type = relation  which = OMA  value = 100 }
+		command = { type = givetrade which = OMA }
+		command = { type = relation  which = TUR  value = 50 }
+		command = { type = relation  which = GUJ  value = 50 }
+		command = { type = domestic  which = MERCANTILISM  value = -2 }
+	}
+}
+
+#The Holy Inquisition#
+event = {
+
+	id = 3269
+	trigger = {
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+	}
+	random = no
+	country = POR
+	name = "EVENTNAME3269"
+	desc = "EVENTHIST3269"
+	style = "3548"
+
+	action_a ={		#Institute them!#
+		name = "ACTIONNAME3269A"
+		command = { type = domestic  which = INNOVATIVE  value = -3 }
+		command = { type = conversion which = -1001 } #Africa
+		command = { type = revolt which = -3 }
+		command = { type = conversion which = -1003 } #Asia
+		command = { type = revolt which = -3 }
+	}
+
+	action_b ={		#Do not institute them!#
+		name = "ACTIONNAME3269B"
+		command = { type = domestic  which = INNOVATIVE  value = 1 }
+		command = { type = relation  which = SPA  value = -75 }
+		command = { type = relation  which = PAP  value = -75 }
+	}
+
+}
+
+#The Societas Jesu#
+event = {
+
+	id = 3270
+	trigger = {
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+	}
+	random = no
+	country = POR
+	name = "EVENTNAME3270"
+	desc = "EVENTHIST3270"
+	style = "3547"
+
+	action_a ={				#Institute them!#
+		name = "ACTIONNAME3270A"
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = colonists  value = 4 }
+		command = { type = missionaries  value = 4 }
+	}
+
+	action_b ={				#Do not institute them!#
+		name = "ACTIONNAME3270B"
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = sleepevent which = 100306 } # Francisco Xavier
+		command = { type = relation  which = SPA  value = -50 }
+		command = { type = relation  which = PAP  value = -50 }
+		command = { type = relation  which = NAP  value = -50 }
+	}
+}
+
+#Governor Martim Afonso de Sousa in Brazil#
+event = {
+
+	id = 3271
+	trigger = {
+		OR = {
+			any_owned = "Recife"
+			any_owned = "Bahia"
+		}
+	}
+	random = no
+	country = POR
+	name = "EVENTNAME3271"
+	desc = "EVENTHIST3271"
+	style = "3271"
+
+	date = { day = 1 month = january year = 1531 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1560 }
+
+	action_a ={		#Appoint de Sousa#
+		name = "ACTIONNAME3271A"
+		command = { type = stability  value = 2 }
+		#command = { type = conquistador  which = -1 }
+		command = { type = warships  which = -1  value = 10 }
+		command = { type = colonists value = 2 }
+	}
+
+}
+
+#King Sebastião's Expedition to North Africa#
+event = {
+
+	id = 3272
+	random = no
+	trigger = {
+		monarch = 06756 #Sebastião I
+		OR = {
+			exists = MOR
+			exists = FEZ
+			exists = TLE
+			exists = ALD
+		}
+		owned = { province = 732 data = POR }
+	}
+	country = POR
+	name = "EVENTNAME3272"
+	desc = "EVENTHIST3272"
+	style = "3272"
+
+	date = { day = 20 month = january year = 1572 } # 18, becomes a leader
+
+	action_a ={			#A Crusade against the Heretics in Africa#
+		name = "ACTIONNAME3272A"
+		command = { type = wakeleader which = 09621 } # Sebastião I
+		command = { type = casusbelli which = MOR value = 60 }
+		command = { type = casusbelli which = FEZ value = 60 }
+		command = { type = casusbelli which = TLE value = 60 }
+		command = { type = casusbelli which = ALD value = 60 }
+		command = { type = treasury value = 300 }
+		command = { type = INF which = 732 value = 10000 }
+		command = { type = CAV which = 732 value = 5000 }
+		command = { type = ART which = 732 value = 10 }
+		command = { type = stability value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -3 }
+	}
+
+	action_b ={			#Declare the King insane and lock him up for good#
+		name = "ACTIONNAME3272B"
+		command = { type = wakemonarch which = 06768 }
+		command = { type = sleepmonarch which = 06757 }
+		command = { type = sleepmonarch which = 06806 }
+		command = { type = sleepleader which = 06809 } # António I
+		command = { type = sleepevent which = 3274 }
+		command = { type = trade value = 800 }
+		command = { type = naval value = 800 }
+		command = { type = stability value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+	}
+}
+
+#Epidemic Plague#
+event = {
+
+	id = 3273			#Triggered by SPA3165#
+	random = no
+	country = POR
+	name = "EVENTNAME3273"
+	desc = "EVENTHIST3273"
+
+	action_a ={				#Arrgh!#
+		name = "ACTIONNAME3273A"
+		command = { type = stability value = -1 }
+		command = { type = populationpercent which = -1 value = -15 }
+		command = { type = provincetax which = -3 value = -1 }
+		command = { type = populationpercent which = -4 value = -15 }
+		command = { type = provincetax which = -3 value = -1 }
+		command = { type = populationpercent which = -4 value = -15 }
+		command = { type = provincetax which = -3 value = -1 }
+	}
+}
+
+#Filipe II Claim to the Throne# 
+event = {
+
+	id = 3274
+	random = no
+	trigger = {
+		exists = SPA # no Spain, no problem
+	}
+	country = POR
+	name = "The Succession Crisis of 1580"
+	desc = "After the Portuguese king had died without an heir, the Portuguese were forced to elect Filipe II of Spain as king of Portugal. He would rule both kingdoms effectively, and was mourned not only by the Spanish but also the Portuguese at his death. His two successors, however, did a far less effective job of ruling Portugal - a fact that would later result in the National Uprising. Disputing the Spanish Habsburg claim was that of António, a bastard grandson of Manuel I, a previous king of Portugal. António had a degree of popular support and would prove a figurehead of resistance once Filipe had been crowned."
+	style = "3274"
+
+	date = { day = 1 month = february year = 1580 }
+
+	action_a ={				#Accept Filipe's claim#
+		name = "Accept Filipe's claim"
+		trigger = { 
+			NOT = { war = { country = POR country = SPA } }
+		}
+		command = { type = stability value = 1 }
+		command = { type = wakemonarch which = 06758 }
+		command = { type = wakemonarch which = 06759 }
+		command = { type = wakemonarch which = 06760 }
+		command = { type = sleepmonarch which = 06806 }
+		command = { type = sleepmonarch which = 06807 }
+		command = { type = sleepmonarch which = 06808 }
+		command = { type = sleepleader which = 06809 } # António I
+		command = { type = relation which = SPA value = 50 }
+		command = { type = trigger which = 3162 }
+	}
+
+	action_b ={				#Crown António and resist the Spanish#
+		name = "Crown António and resist the Spanish"
+		command = { type = stability value = -1 }
+		command = { type = INF which = -2 value = 15000 }
+		command = { type = CAV which = -2 value = 5000 }
+		command = { type = ART which = -2 value = 15 }
+		command = { type = breakvassal which = SPA }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = casusbelli which = SPA value = 6 }
+		command = { type = trigger which = 3163 }
+	}
+}
+
+#The Meuthen Agreement#
+event = {
+
+	id = 3275
+	trigger = {
+		atwar = no
+		isvassal = no
+		exists = ENG
+		relation = { country = ENG data = 50 }
+	}
+	random = no
+	country = POR
+	name = "EVENTNAME3275"
+	desc = "EVENTHIST3275"
+
+	date = { day = 1 month = january year = 1703 }
+	offset = 10
+	deathdate = { day = 1 month = july year = 1750 }
+
+
+	action_a ={			#Offer the Agreement#
+		name = "ACTIONNAME3275A"
+		command = { type = trigger which = 3093 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = gainmanufactory which = -1 value = refinery }
+		command = { type = gainmanufactory which = -4 value = refinery }
+		command = { type = gainmanufactory which = -4 value = refinery }
+		command = { type = gainmanufactory which = -4 value = goods }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={			#Don't Offer the Agreement#
+		name = "ACTIONNAME3275B"
+		command = { type = domestic which = MERCANTILISM value = -3 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = stability value = 2 }
+	}
+}
+
+#Count da Ericeira#
+event = {
+
+	id = 3276
+	random = no
+	country = POR
+	name = "EVENTNAME3276"
+	desc = "EVENTHIST3276"
+
+	date = { day = 1 month = january year = 1676 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1706 }
+
+	action_a ={				#An Excellent Minister!#
+		name = "ACTIONNAME3276A"
+		command = { type = domestic which = MERCANTILISM value = 3 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = DIP which = 3 value = 240 }
+		command = { type = ADM which = 3 value = 240 }
+		command = { type = MIL which = 3 value = 240 }
+		command = { type = stability value = 3 }
+	}
+}
+
+
+#The Effects of the Pragmatic Sanction#
+event = {
+
+	id = 3277
+	trigger = { event = 3205 }
+	random = no
+	country = POR
+	name = "EVENTNAME3277"
+	desc = "EVENTHIST3277"
+
+	date = { day = 1 month = january year = 1741 }
+	offset = 10
+	deathdate = { day = 1 month = june year = 1741 }
+
+	action_a ={				#Neutral#
+		name = "ACTIONNAME3277A"
+		command = { type = stability value = 2 }
+		command = { type = relation which = BAY value = 50 }
+		command = { type = relation which = SAC value = 50 }
+		command = { type = relation which = GEN value = 50 }
+		command = { type = relation which = PRU value = 50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = ENG value = -50 }
+		command = { type = relation which = HOL value = 50 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = relation which = HES value = 50 }
+		command = { type = relation which = HAN value = 50 }
+		command = { type = relation which = HAB value = 50 }
+
+	}
+
+	action_b ={				#Pro-Habsburg#
+		name = "ACTIONNAME3277B"
+		command = { type = casusbelli which = SPA value = 36 }
+		command = { type = relation which = BAY value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = relation which = PRU value = -100 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = relation which = HES value = 100 }
+		command = { type = relation which = HAN value = 100 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = stability value = -1 }
+
+	}
+	action_c ={				#Anti-Habsburg#
+		name = "ACTIONNAME3277C"
+		command = { type = casusbelli which = HOL value = 12 }
+		command = { type = casusbelli which = ENG value = 12 }
+		command = { type = relation which = BAY value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = PRU value = 150 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = SPA value = 150 }
+		command = { type = relation which = HOL value = -150 }
+		command = { type = relation which = RUS value = -50 }
+		command = { type = relation which = ENG value = -150 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = HAN value = -100 }
+		command = { type = relation which = HAB value = -150 }
+		command = { type = stability value = -1 }
+
+	}
+}
+
+#Earthquake destroy Lisboa#
+
+event = {
+
+	id = 3278
+	random = no
+	country = POR
+	name = "EVENTNAME3278"
+	desc = "EVENTHIST3278"
+	style = "3278"
+
+	date = { day = 1 month = november year = 1755 }
+
+	action_a ={
+		name = "ACTIONNAME3278A"
+		command = {
+			trigger = { owned = { province = 209 data = -1 } }
+			type = cot which = 209
+		}
+		command = { type = removecot which = 441 }
+		command = { type = populationpercent which = 441 value = -25 }
+		command = { type = losebuilding which = 441 value = shipyard }
+		command = { type = losemanufactory which = 441 }
+		command = { type = fortress which = 441 value = -3 }
+		command = { type = provincetax which = 441 value = -4 }
+		command = { type = stability value = -3 }
+	}
+}
+
+
+#Marquis de Pombal#
+event = {
+
+	id = 3279
+	random = no
+	country = POR
+	name = "EVENTNAME3279"
+	desc = "EVENTHIST3279"
+	style = "3279"
+
+	date = { day = 3 month = august year = 1750 }
+	offset = 10
+	deathdate = { day = 1 month = april year = 1777 }
+
+	action_a ={				#An Excellent Minister!#
+		name = "ACTIONNAME3279A"
+		command = { type = DIP which = 3 value = 240 }
+		command = { type = ADM which = 4 value = 240 }
+		command = { type = MIL which = 2 value = 240 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = MERCANTILISM value = 3 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = land value = 750 }
+		command = { type = naval value = 750 }
+		command = { type = stability value = 3 }
+	}
+}
+
+
+
+#The Tavoras Conspiracy#
+event = {
+
+	id = 3280
+	random = no
+	country = POR
+	name = "EVENTNAME3280"
+	desc = "EVENTHIST3280"
+
+	date = { day = 3 month = september year = 1758 }
+	offset = 0
+	deathdate = { day = 4 month = september year = 1758 }
+
+	action_a ={				#Crush the Opposition#
+		name = "ACTIONNAME3280A"
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -3 }
+		command = { type = revoltrisk which = 60 value = 3 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={				#Be Lenient#
+		name = "ACTIONNAME3280B"
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#The Expulsion of Marquis José da Pombal#
+event = {
+
+	id = 3281
+	random = no
+	country = POR
+	name = "EVENTNAME3281"
+	desc = "EVENTHIST3281"
+	style = "3281"
+
+	date = { day = 1 month = march year = 1777 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1778 }
+
+	action_a ={				#Expell him#
+		name = "ACTIONNAME3281A"
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = INNOVATIVE value = -3 }
+		command = { type = treasury value = 500 }
+		command = { type = stability value = 2 }
+	}
+
+	action_b ={				#Let the 'Great Marquis' rule#
+		name = "ACTIONNAME3281B"
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = DIP which = 3 value = 60 }
+		command = { type = ADM which = 4 value = 60 }
+		command = { type = MIL which = 2 value = 60 }
+		command = { type = revoltrisk which = 60 value = 3 }
+		command = { type = stability value = -1 }
+	}
+}
+
+
+#The Liberal Opposition#
+event = {
+
+	id = 3282
+	random = no
+	country = POR
+	name = "EVENTNAME3282"
+	desc = "EVENTHIST3282"
+
+	date = { day = 1 month = january year = 1816 }
+	offset = 10
+	deathdate = { day = 30 month = december year = 1820 }
+
+	action_a ={		#Growing opposition#
+		name = "ACTIONNAME3282A"
+		command = { type = stability  value = -3 }
+		command = { type = revoltrisk  value = 5 }
+	}
+
+	action_b ={		#King consede to liberal ideas#
+		name = "ACTIONNAME3282B"
+		command = { type = stability  value = -2 }
+		command = { type = revoltrisk  value = 2 }
+		command = { type = domestic  which = ARISTOCRACY  value = -2 }
+		command = { type = domestic  which = INNOVATIVE  value = 1 }
+		command = { type = domestic  which = SERFDOM  value = -2 }
+	}
+
+}
+
+
+event = {
+	id = 18038
+	trigger = {
+		NOT = {
+			owned = { province = 549 data = MYS }
+			owned = { province = 549 data = VIJ }
+			owned = { province = 549 data = ORI }
+			owned = { province = 549 data = CHA }
+			owned = { province = 549 data = JAI }
+			owned = { province = 549 data = MTR }
+			owned = { province = 549 data = MKS }
+			owned = { province = 549 data = -1 }
+		}
+		discovered = 549
+	}
+	random = no
+	country = POR
+	name = "EVENTNAME18038" 
+	desc = "EVENTHIST18038"
+
+	date = { day = 1 month = february year = 1510 }
+	offset = 250
+	deathdate = { day = 1 month = january year = 1660 }
+
+	action_a = {
+		name = "ACTIONNAME18038A"
+		command = { type = relation which = VIJ value = 50 }
+		command = { type = relation which = MYS value = 50 }
+		command = { type = sleepevent which = 18062 }
+		command = { type = sleepevent which = 338006 }
+	}
+}
+
+event = {
+	id = 18062
+	trigger = {
+		OR = {
+			owned = { province = 549 data = MYS }
+			owned = { province = 549 data = VIJ }
+			owned = { province = 549 data = ORI }
+			owned = { province = 549 data = CHA }
+			owned = { province = 549 data = JAI }
+			owned = { province = 549 data = MTR }
+			owned = { province = 549 data = MKS }
+		}
+		discovered = 549
+	}
+	random = no
+	country = POR
+	name = "EVENTNAME18038"
+	desc = "EVENTHIST18062"
+
+	date = { day = 1 month = february year = 1510 }
+	offset = 250
+	deathdate = { day = 1 month = january year = 1660 }
+
+	action_a = {
+		name = "ACTIONNAME18062A"
+		command = { type = treasury value = -50 }
+		command = { type = sleepevent which = 18038 }
+		command = { type = sleepevent which = 338005 }
+	}
+}
+
+event = {
+	id = 18040 #triggered by Provincespec_338005 B / Provincespec_338006 A
+	random = no
+	country = POR
+	name = "EVENTNAME18040" 
+	desc = "EVENTHIST18040"
+	#-#
+
+	action_a = {
+		name = "ACTIONNAME18040A"
+		command = { type = treasury value = 100 }
+		command = { type = inf which = 549 value = 5000 } #Goa
+		command = { type = cav which = 549 value = 5000 } #Goa
+		command = { type = addcore_claim which = 549 } #Goa
+		command = { type = losebuilding which = 549 value = bailiff } #Goa
+	}
+}
+
+event = {
+	id = 18041 #triggered by Provincespec_338005 A / Provincespec_338006 B
+	random = no
+	country = POR
+	name = "EVENTNAME18041"
+	desc = "EVENTHIST18041"
+
+	action_a = {
+		name = "ACTIONNAME18041A"
+		command = { type = addcore_claim which = 549 } #Goa
+	}
+}
+event = {
+	id = 18043 #triggered by ProvinceSpec_338007
+	random = no
+	country = POR
+	name = "EVENTNAME18043" 
+	desc = "EVENTHIST18043"
+
+	action_a = {
+		name = "ACTIONNAME18043A"
+		command = { type = cav which = 549 value = 5000 } #Goa
+		command = { type = warships which = 549 value = 5 }
+		command = { type = addcore_claim which = 549 } #Goa
+		command = { type = losebuilding which = 549 value = bailiff } #Goa
+		command = { type = populationpercent which = 549 value = -5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+# In the Face of Napoleon #
+event = {
+
+	id = 250040 #3588
+	trigger = {
+		event = 3148
+		owned = { province = 209 data = POR }
+		owned = { province = 441 data = POR }
+		war = { country = POR country = FRA }
+	}
+	random = no
+	country = POR
+	name = "In the Face of Napoleon"
+	desc = "EVENTHIST250040"
+
+	date = { day = 1 month = january year = 1803 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1820 }
+
+	action_a ={
+		name = "Move the court to Rio de Janeiro"		#Move the court to Rio de Janeiro#
+		command = { type = capital which = 209 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = stability value = 1 }
+		command = { type = setflag which = rio }
+	}
+
+	action_b ={
+		name = "Remain in Lisbon"		#Remain in Lisbon#
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = stability value = -1 }
+		command = { type = sleepevent which = 250041 }
+	}
+}
+
+# The Return to Portugal #
+event = {
+
+	id = 250041 #3589
+	trigger = {
+		event = 250040
+		owned = { province = 209 data = POR }
+		owned = { province = 441 data = POR }
+		atwar = no
+	}
+	random = no
+	country = POR
+	name = "The Return to Portugal"
+	desc = "The end of the Napoleonic Wars in Europe did not bring peace to Portugal, which had been crippled by social and economic neglect during years of far-flung rule from Brazil - most notably the 'Liberal Revolution' which broke out in Porto on 24 August 1820. After over a decade abroad, the royal family had become attached to their new capital in Rio de Janeiro, and it was only under great duress that in 1821 King John VI returned to Lisbon in order to adhere to the needs of his other realm. In doing so, he left his eldest son and heir, Dom Pedro, as regent of Brazil."
+
+	date = { day = 1 month = january year = 1821 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={
+		name = "Move the court back to Lisbon"		#Move the court back to Lisbon#
+		command = { type = capital which = 441 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = stability value = 2 }
+		command = { type = setflag which = lisbon }
+	}
+
+	action_b ={
+		name = "Remain in Rio de Janeiro"		#Remain in Rio de Janeiro#
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = stability value = -1 }
+	}
+}
+
+# The Empire of Brazil #
+event = {
+
+	id = 250042 #3590
+	trigger = {
+		owned = { province = 209 data = POR }
+		NOT = { exists = BRZ }
+	}
+	random = no
+	country = POR
+	name = "The Empire of Brazil"
+	desc = "In 1815, the Portuguese crown prince Dom John (later King John VI), acting as regent, created the United Kingdom of Portugal, Brazil and the Algarves - an act which raised the status of Brazil from colony to kingdom. He ascended the Portuguese throne the following year, following the death of his mother, Maria I, and returned to Portugal in 1821, leaving behind his son and heir, Dom Pedro, to rule Brazil as regent. The Portuguese government immediately moved to revoke the political autonomy that Brazil had been granted since 1808, with the threat of losing their limited control over local affairs igniting widespread opposition among Brazilians. In September 1822, Brazilian leaders led by the influential magnate José Bonifácio de Andrada convinced Dom Pedro to declare Brazil's independence from Portugal, and on 12 October he was proclaimed Pedro I, Emperor of Brazil."
+
+	style = "3590"
+
+	date = { day = 1 month = january year = 1823 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1827 }
+
+	action_a ={
+		name = "Grant independence to Brazil"		#Grant independence to Brazil#
+		trigger = { 
+			capital = 441
+		}
+		command = { type = free which = BRZ }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = sleepleader which = 06772 } # Pedro IV (POR)
+		command = { type = sleepleader which = 06775 } # Napier (POR)
+		command = { type = sleepevent which = 3691 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={
+		name = "Maintain Brazil as part of Portugal"		#Maintain Brazil as part of Portugal#
+		command = { type = revoltrisk which = 120 value = 3 }
+		command = { type = revolt which = -1017 }
+		command = { type = revolt which = -1017 }
+		command = { type = revolt which = -1017 }
+		command = { type = revolt which = -1017 }
+		command = { type = sleepleader which = 23098 } # Pedro I (BRZ)
+		command = { type = sleepleader which = 23099 } # Napier (BRZ)
+		command = { type = sleepevent which = 3690 }
+		command = { type = stability value = -2 }
+	}
+}
+
+# The Liberal Wars #
+event = {
+	id = 3690
+	trigger = {
+		event = 3282
+		event = 3590
+		NOT = { event = 3691 }
+		exists = BRZ
+	}
+	random = no
+	country = POR
+	name = "The Liberal Wars"
+	desc = "EVENTHIST3690"
+
+	style = "3690"
+
+	date = { day = 1 month = january year = 1827 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1832 }
+
+	action_a = { # Support Dom Pedro #
+		name = "Support Dom Pedro"
+		command = { type = wakemonarch which = 06770 } # Maria II
+		command = { type = revoltrisk which = 60 value = 3 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = relation which = ENG value = 50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b = { # Support Dom Miguel #
+		name = "Support Dom Miguel"
+		command = { type = wakemonarch which = 06771 } # Miguel I
+		command = { type = wakeleader which = 06776 } # Miguel I
+		command = { type = wakeleader which = 06777 } # Luís Guedes
+		command = { type = wakeleader which = 06778 } # M. de Sousa
+		command = { type = wakeleader which = 06779 } # Álvaro Póvoas
+		command = { type = sleepleader which = 06772 } # Pedro IV
+		command = { type = sleepleader which = 06773 } # da Terceira
+		command = { type = sleepleader which = 06774 } # de Saldanha
+		command = { type = sleepleader which = 06775 } # Napier
+		command = { type = revoltrisk which = 60 value = 5 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = stability value = -3 }
+	}
+}
+
+# Dom Miguel's Rebellion #
+event = {
+	id = 3691
+	trigger = {
+		event = 3282
+		event = 3590
+		NOT = { event = 3690 }
+		NOT = { exists = BRZ }
+		capital = 209
+	}
+	random = no
+	country = POR
+	name = "Dom Miguel's Rebellion"
+	desc = "EVENTHIST3691"
+
+	date = { day = 1 month = january year = 1827 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1832 }
+
+	action_a = { # We must secure the old country! #
+		name = "We must secure the old country!"
+		command = { type = wakemonarch which = 08327 } # Maria II (alt.)
+		command = { type = revoltrisk which = 60 value = 4 }
+		command = { type = revolt which = 434 }
+		command = { type = revolt which = 441 }
+		command = { type = revolt which = 441 }
+		command = { type = revolt which = 442 }
+		command = { type = domestic which = OFFENSIVE value = -1 }
+		command = { type = domestic which = QUALITY value = -1 }
+		command = { type = treasury value = -200 }
+		command = { type = stability value = -3 }
+	}
+}
+
+#(1550-1680) An Opportunity in China
+event = {
+	id = 164605
+	trigger = {
+		OR = {
+			discovered = 659
+			discovered = 1082
+		}
+		NOT = {
+			owned = { province = 659 data = POR } #Guangdong
+		}
+	}
+	random = no
+	country = POR
+	name = "An Opportunity in China"
+	desc = "The discovery of the Chinese province of Guangdong has presented the Portuguese with a unique opportunity for peaceful expansion in the East. It has been suggested to us by a friendly foreign diplomat active in the region that the port of Macau would be up for discussion as a possible leasehold venture from the Chinese state, as they are keen to pawn territory in exchange for Western technology and trading rights. Should we investigate this matter further?"
+
+	date = { day = 1 month = january year = 1550 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1680 }
+
+	action_a = {
+		name = "Yes, make them an offer for Macau" #Yes, make them an offer for Macau
+		command = { type = treasury value = -300 }
+		command = { type = trigger which = 338065 } 
+	}
+	action_b = {
+		name = "No, we are not interested" #No, we are not interested
+		command = { type = infra value = 200 }
+	}
+}
+
+#(1550-1680) Portuguese Macau
+event = {
+	id = 164606 #triggered by ProvinceSpec_338065 A
+	random = no
+	country = POR
+	name = "Portuguese Macau" 
+	desc = "Fortunately, our generous offer to purchase a lease on the port of Macau has been accepted. The port and its garrison have been handed over to us, and so we may now use Macau as a base of operations in the Orient."
+
+	action_a = {
+		name = "Our gateway to the East!" #Our gateway to the East!
+		command = { type = INF which = 659 value = 5000 } 
+		command = { type = ART which = 659 value = 5 } 
+		command = { type = provincetax which = 659 value = 2 } 
+		command = { type = addcore_claim which = 659 } 
+	}
+}
+
+#(1550-1680) Our Offer Was Rejected
+event = {
+	id = 164607 #triggered by ProvinceSpec_338065 B
+	random = no
+	country = POR
+	name = "Our Offer Was Rejected" 
+	desc = "Sadly, our generous offer to purchase a lease on the port of Macau has been rejected - although thankfully our money has been safely returned."
+
+	action_a = {
+		name = "Oh well..." #Oh well...
+		command = { type = treasury value = 300 }
+	}
+}
+
+#The Holy League#
+event = {
+	id = 3764
+	trigger = {
+		exists = TUR
+		event = 3549
+	}
+	random = no
+	country = POR
+	name = "EVENTNAME3112"
+	desc = "EVENTHIST3112"
+
+	date = { day = 1 month = january year = 1568 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1571 }
+
+	action_a ={			#Let the matter fall#
+		name = "ACTIONNAME3112B"
+		command = { type = relation which = TUR value = 50 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = KNI value = -50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = TOS value = -50 }
+		command = { type = relation which = VEN value = -50 }
+		command = { type = relation which = NAP value = -50 }
+		command = { type = relation which = SAV value = -50 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = GEN value = -50 }
+	}
+
+	action_b ={			#Support the Holy League#
+		name = "ACTIONNAME3112A"
+		command = { type = casusbelli which = TUR value = 72 }
+		command = { type = relation which = TUR value = -150 }
+		command = { type = relation which = PAP value = 100 }
+		command = { type = relation which = KNI value = 50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = TOS value = 50 }
+		command = { type = relation which = VEN value = 50 }
+		command = { type = relation which = NAP value = 50 }
+		command = { type = relation which = SAV value = 50 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = relation which = GEN value = 50 }
+	}
+}
+
+#Philip of Anjou succeeds Carlos II in Spain#	#Bourbon#
+event = {
+
+	id = 4139		#Triggered by SPA3173#
+	random = no
+	country = POR
+	name = "EVENTNAME3035"
+	desc = "EVENTHIST3035"
+
+	action_a ={				#Fight him#
+		name = "ACTIONNAME3035A"
+		command = { type = casusbelli which = FRA value = 36 }
+		command = { type = casusbelli which = SPA value = 36 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = HOL value = 100 }
+		command = { type = relation which = BRA value = 100 }
+		command = { type = relation which = SPA value = -150 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = stability value = 3 }
+	}
+
+	action_b ={				#Accept it#
+		name = "ACTIONNAME3035B"
+		command = { type = relation which = SPA value = 150 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = HAB value = -150 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#Charles of Habsburg succeeds Carlos II in Spain#	#Habsburg#
+event = {
+
+	id = 4140		#Triggered by SPA3173#
+	random = no
+	country = POR
+	name = "EVENTNAME3036"
+	desc = "EVENTHIST3036"
+
+	action_a ={				#Accept it conditionally#
+		name = "ACTIONNAME3036A"
+		command = { type = casusbelli which = HAB value = 36 }
+		command = { type = casusbelli which = FRA value = 36 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={				#Fight him#
+		name = "ACTIONNAME3036B"
+		command = { type = casusbelli which = HAB value = 36 }
+		command = { type = casusbelli which = SPA value = 36 }
+		command = { type = relation which = SPA value = -150 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = HAB value = -150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = stability value = 3 }
+	}
+
+	action_c ={				#Accept it#
+		name = "ACTIONNAME3036C"
+		command = { type = relation which = SPA value = 150 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = stability value = -1 }
+	}
+}
+
+# The Holy Prince #
+event = {
+	id = 4155
+	trigger = {
+		OR = {
+			truce = { country = MOR country = POR }
+			truce = { country = FEZ country = POR }
+		}
+		owned = { province = 732 data = POR }
+	}
+	random = no
+	country = POR
+	name = "The Holy Prince"
+	desc = "EVENTHIST4155"
+	
+	style = "4155"
+
+	date = { day = 1 month = january year = 1420 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1450 }
+
+	action_a ={			# We dare not lose our foothold in Africa
+		name = "We dare not lose our foothold in Africa"
+		command = { type = relation which = MOR value = -50 }
+		command = { type = relation which = FEZ value = -50 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={			# Pay the young Prince's ransom
+		name = "Pay the young Prince's ransom"
+		command = { type = treasury value = -200 }
+		command = { type = wakeleader which = 02774 } # D. Fernando
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = relation which = MOR value = 100 }
+		command = { type = relation which = FEZ value = 100 }
+		command = { type = DIP which = 2 value = 60 }
+		command = { type = ADM which = 2 value = 60 }
+		command = { type = MIL which = 2 value = 60 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#Feitorias#
+event = {
+
+	id = 4158
+	trigger = {
+		stability = 1
+		countrysize = 6
+	}
+	random = no
+	country = POR
+	name = "Feitorias"
+	desc = "Feitorias were fortified trading posts or factories established by Portugal during the Age of Exploration, primarily in the 15th and 16th centuries. These strategic outposts played a crucial role in Portugal's global expansion by facilitating trade and commerce in key locations. The feitorias served as bases for Portuguese merchants, where they could store goods, engage in trade with local populations, and maintain a presence in foreign territories. They were established along trade routes acoss the globe, but primarily from West Africa to the Indian Ocean, and along the coast of Brazil. The Portuguese feitorias not only contributed to the flourishing spice trade but also served as platforms for the dissemination of culture, ideas and technology. Their legacy is significant in the history of early globalization, as they paved the way for Portugal's role as a major maritime and trading power during the Age of Exploration."
+
+	style = "4158"
+
+	date = { day = 1 month = january year = 1455 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1485 }
+
+	action_a ={			#Invest in local trading arrangements#
+		name = "Invest in local trading arrangements"
+		command = { type = merchants value = 2 }
+		command = { type = trade value = 300 }
+		command = { type = treasury value = 150 }
+	}
+
+	action_b ={			#Build a Feitoria#
+		name = "Build a Feitoria"
+		command = { type = fortress which = -1001 value = 1 } #Africa
+		command = { type = gainbuilding which = -3 value = bailiff }
+		command = { type = provincetax which = -3 value = 1 }
+		command = { type = populationpercent which = -3 value = 10 }
+		command = { type = infra value = 100 }
+		command = { type = treasury value = -250 }
+	}
+}
+
+#Feitorias#
+event = {
+
+	id = 4159
+	trigger = {
+		stability = 1
+		countrysize = 12
+	}
+	random = no
+	country = POR
+	name = "Feitorias"
+	desc = "Feitorias were fortified trading posts or factories established by Portugal during the Age of Exploration, primarily in the 15th and 16th centuries. These strategic outposts played a crucial role in Portugal's global expansion by facilitating trade and commerce in key locations. The feitorias served as bases for Portuguese merchants, where they could store goods, engage in trade with local populations, and maintain a presence in foreign territories. They were established along trade routes acoss the globe, but primarily from West Africa to the Indian Ocean, and along the coast of Brazil. The Portuguese feitorias not only contributed to the flourishing spice trade but also served as platforms for the dissemination of culture, ideas and technology. Their legacy is significant in the history of early globalization, as they paved the way for Portugal's role as a major maritime and trading power during the Age of Exploration."
+
+	style = "4158"
+
+	date = { day = 1 month = january year = 1495 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1525 }
+
+	action_a ={			#Invest in local trading arrangements#
+		name = "Invest in local trading arrangements"
+		command = { type = merchants value = 2 }
+		command = { type = trade value = 300 }
+		command = { type = treasury value = 150 }
+	}
+
+	action_b ={			#Build a Feitoria#
+		name = "Build a Feitoria"
+		command = { type = fortress which = -1001 value = 1 } #Africa
+		command = { type = gainbuilding which = -3 value = bailiff }
+		command = { type = provincetax which = -3 value = 1 }
+		command = { type = populationpercent which = -3 value = 10 }
+		command = { type = infra value = 100 }
+		command = { type = treasury value = -250 }
+	}
+}
+
+#Feitorias#
+event = {
+
+	id = 4160
+	trigger = {
+		stability = 1
+		countrysize = 18
+	}
+	random = no
+	country = POR
+	name = "Feitorias"
+	desc = "Feitorias were fortified trading posts or factories established by Portugal during the Age of Exploration, primarily in the 15th and 16th centuries. These strategic outposts played a crucial role in Portugal's global expansion by facilitating trade and commerce in key locations. The feitorias served as bases for Portuguese merchants, where they could store goods, engage in trade with local populations, and maintain a presence in foreign territories. They were established along trade routes acoss the globe, but primarily from West Africa to the Indian Ocean, and along the coast of Brazil. The Portuguese feitorias not only contributed to the flourishing spice trade but also served as platforms for the dissemination of culture, ideas and technology. Their legacy is significant in the history of early globalization, as they paved the way for Portugal's role as a major maritime and trading power during the Age of Exploration."
+
+	style = "4158"
+
+	date = { day = 1 month = january year = 1535 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1565 }
+
+	action_a ={			#Invest in local trading arrangements#
+		name = "Invest in local trading arrangements"
+		command = { type = merchants value = 2 }
+		command = { type = trade value = 300 }
+		command = { type = treasury value = 150 }
+	}
+
+	action_b ={			#Build a Feitoria#
+		name = "Build a Feitoria"
+		command = { type = fortress which = -1002 value = 1 } #America
+		command = { type = gainmanufactory which = -3 value = navalequipment }
+		command = { type = provincetax which = -3 value = 3 }
+		command = { type = populationpercent which = -3 value = 15 }
+		command = { type = infra value = 100 }
+		command = { type = treasury value = -500 }
+	}
+}
+
+#Feitorias#
+event = {
+
+	id = 4161
+	trigger = {
+		stability = 1
+		countrysize = 24
+	}
+	random = no
+	country = POR
+	name = "Feitorias"
+	desc = "Feitorias were fortified trading posts or factories established by Portugal during the Age of Exploration, primarily in the 15th and 16th centuries. These strategic outposts played a crucial role in Portugal's global expansion by facilitating trade and commerce in key locations. The feitorias served as bases for Portuguese merchants, where they could store goods, engage in trade with local populations, and maintain a presence in foreign territories. They were established along trade routes acoss the globe, but primarily from West Africa to the Indian Ocean, and along the coast of Brazil. The Portuguese feitorias not only contributed to the flourishing spice trade but also served as platforms for the dissemination of culture, ideas and technology. Their legacy is significant in the history of early globalization, as they paved the way for Portugal's role as a major maritime and trading power during the Age of Exploration."
+
+	style = "4158"
+
+	date = { day = 1 month = january year = 1575 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1605 }
+
+	action_a ={			#Invest in local trading arrangements#
+		name = "Invest in local trading arrangements"
+		command = { type = merchants value = 2 }
+		command = { type = trade value = 300 }
+		command = { type = treasury value = 150 }
+	}
+
+	action_b ={			#Build a Feitoria#
+		name = "Build a Feitoria"
+		command = { type = fortress which = -1002 value = 1 } #America
+		command = { type = gainmanufactory which = -3 value = refinery }
+		command = { type = provincetax which = -3 value = 3 }
+		command = { type = populationpercent which = -3 value = 15 }
+		command = { type = infra value = 100 }
+		command = { type = treasury value = -500 }
+	}
+}
+
+#Feitorias#
+event = {
+
+	id = 4162
+	trigger = {
+		stability = 1
+		countrysize = 24
+	}
+	random = no
+	country = POR
+	name = "Feitorias"
+	desc = "Feitorias were fortified trading posts or factories established by Portugal during the Age of Exploration, primarily in the 15th and 16th centuries. These strategic outposts played a crucial role in Portugal's global expansion by facilitating trade and commerce in key locations. The feitorias served as bases for Portuguese merchants, where they could store goods, engage in trade with local populations, and maintain a presence in foreign territories. They were established along trade routes acoss the globe, but primarily from West Africa to the Indian Ocean, and along the coast of Brazil. The Portuguese feitorias not only contributed to the flourishing spice trade but also served as platforms for the dissemination of culture, ideas and technology. Their legacy is significant in the history of early globalization, as they paved the way for Portugal's role as a major maritime and trading power during the Age of Exploration."
+
+	style = "4158"
+
+	date = { day = 1 month = january year = 1615 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1645 }
+
+	action_a ={			#Invest in local trading arrangements#
+		name = "Invest in local trading arrangements"
+		command = { type = merchants value = 2 }
+		command = { type = trade value = 300 }
+		command = { type = treasury value = 150 }
+	}
+
+	action_b ={			#Build a Feitoria#
+		name = "Build a Feitoria"
+		command = { type = fortress which = -1003 value = 1 } #Asia
+		command = { type = gainmanufactory which = -3 value = weapons }
+		command = { type = provincetax which = -3 value = 3 }
+		command = { type = populationpercent which = -3 value = 15 }
+		command = { type = infra value = 100 }
+		command = { type = treasury value = -500 }
+	}
+}
+
+#Feitorias#
+event = {
+
+	id = 4163
+	trigger = {
+		stability = 1
+		countrysize = 24
+	}
+	random = no
+	country = POR
+	name = "Feitorias"
+	desc = "Feitorias were fortified trading posts or factories established by Portugal during the Age of Exploration, primarily in the 15th and 16th centuries. These strategic outposts played a crucial role in Portugal's global expansion by facilitating trade and commerce in key locations. The feitorias served as bases for Portuguese merchants, where they could store goods, engage in trade with local populations, and maintain a presence in foreign territories. They were established along trade routes acoss the globe, but primarily from West Africa to the Indian Ocean, and along the coast of Brazil. The Portuguese feitorias not only contributed to the flourishing spice trade but also served as platforms for the dissemination of culture, ideas and technology. Their legacy is significant in the history of early globalization, as they paved the way for Portugal's role as a major maritime and trading power during the Age of Exploration."
+
+	style = "4158"
+
+	date = { day = 1 month = january year = 1655 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1685 }
+
+	action_a ={			#Invest in local trading arrangements#
+		name = "Invest in local trading arrangements"
+		command = { type = merchants value = 2 }
+		command = { type = trade value = 300 }
+		command = { type = treasury value = 150 }
+	}
+
+	action_b ={			#Build a Feitoria#
+		name = "Build a Feitoria"
+		command = { type = fortress which = -1003 value = 1 } #Asia
+		command = { type = gainmanufactory which = -3 value = goods }
+		command = { type = provincetax which = -3 value = 3 }
+		command = { type = populationpercent which = -3 value = 15 }
+		command = { type = infra value = 100 }
+		command = { type = treasury value = -500 }
+	}
+}
+
+#Feitorias#
+event = {
+
+	id = 4164
+	trigger = {
+		stability = 1
+		countrysize = 36
+	}
+	random = no
+	country = POR
+	name = "Feitorias"
+	desc = "Feitorias were fortified trading posts or factories established by Portugal during the Age of Exploration, primarily in the 15th and 16th centuries. These strategic outposts played a crucial role in Portugal's global expansion by facilitating trade and commerce in key locations. The feitorias served as bases for Portuguese merchants, where they could store goods, engage in trade with local populations, and maintain a presence in foreign territories. They were established along trade routes acoss the globe, but primarily from West Africa to the Indian Ocean, and along the coast of Brazil. The Portuguese feitorias not only contributed to the flourishing spice trade but also served as platforms for the dissemination of culture, ideas and technology. Their legacy is significant in the history of early globalization, as they paved the way for Portugal's role as a major maritime and trading power during the Age of Exploration."
+
+	style = "4158"
+
+	date = { day = 1 month = january year = 1695 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1725 }
+
+	action_a ={			#Invest in local trading arrangements#
+		name = "Invest in local trading arrangements"
+		command = { type = merchants value = 2 }
+		command = { type = trade value = 300 }
+		command = { type = treasury value = 150 }
+	}
+
+	action_b ={			#Build a Feitoria#
+		name = "Build a Feitoria"
+		command = { type = fortress which = -1001 value = 1 } #Africa
+		command = { type = gainmanufactory which = -3 value = weapons }
+		command = { type = provincetax which = -3 value = 3 }
+		command = { type = populationpercent which = -3 value = 15 }
+		command = { type = infra value = 100 }
+		command = { type = treasury value = -500 }
+	}
+}
+
+#Feitorias#
+event = {
+
+	id = 4165
+	trigger = {
+		stability = 1
+		countrysize = 36
+	}
+	random = no
+	country = POR
+	name = "Feitorias"
+	desc = "Feitorias were fortified trading posts or factories established by Portugal during the Age of Exploration, primarily in the 15th and 16th centuries. These strategic outposts played a crucial role in Portugal's global expansion by facilitating trade and commerce in key locations. The feitorias served as bases for Portuguese merchants, where they could store goods, engage in trade with local populations, and maintain a presence in foreign territories. They were established along trade routes acoss the globe, but primarily from West Africa to the Indian Ocean, and along the coast of Brazil. The Portuguese feitorias not only contributed to the flourishing spice trade but also served as platforms for the dissemination of culture, ideas and technology. Their legacy is significant in the history of early globalization, as they paved the way for Portugal's role as a major maritime and trading power during the Age of Exploration."
+
+	style = "4158"
+
+	date = { day = 1 month = january year = 1735 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1765 }
+
+	action_a ={			#Invest in local trading arrangements#
+		name = "Invest in local trading arrangements"
+		command = { type = merchants value = 2 }
+		command = { type = trade value = 300 }
+		command = { type = treasury value = 150 }
+	}
+
+	action_b ={			#Build a Feitoria#
+		name = "Build a Feitoria"
+		command = { type = fortress which = -1002 value = 1 } #America
+		command = { type = gainmanufactory which = -3 value = goods }
+		command = { type = provincetax which = -3 value = 3 }
+		command = { type = populationpercent which = -3 value = 15 }
+		command = { type = infra value = 100 }
+		command = { type = treasury value = -500 }
+	}
+}
+
+#Feitorias#
+event = {
+
+	id = 4166
+	trigger = {
+		stability = 1
+		countrysize = 36
+	}
+	random = no
+	country = POR
+	name = "Feitorias"
+	desc = "Feitorias were fortified trading posts or factories established by Portugal during the Age of Exploration, primarily in the 15th and 16th centuries. These strategic outposts played a crucial role in Portugal's global expansion by facilitating trade and commerce in key locations. The feitorias served as bases for Portuguese merchants, where they could store goods, engage in trade with local populations, and maintain a presence in foreign territories. They were established along trade routes acoss the globe, but primarily from West Africa to the Indian Ocean, and along the coast of Brazil. The Portuguese feitorias not only contributed to the flourishing spice trade but also served as platforms for the dissemination of culture, ideas and technology. Their legacy is significant in the history of early globalization, as they paved the way for Portugal's role as a major maritime and trading power during the Age of Exploration."
+
+	style = "4158"
+
+	date = { day = 1 month = january year = 1775 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1805 }
+
+	action_a ={			#Invest in local trading arrangements#
+		name = "Invest in local trading arrangements"
+		command = { type = merchants value = 2 }
+		command = { type = trade value = 300 }
+		command = { type = treasury value = 150 }
+	}
+
+	action_b ={			#Build a Feitoria#
+		name = "Build a Feitoria"
+		command = { type = fortress which = -1003 value = 1 } #Asia
+		command = { type = gainmanufactory which = -3 value = refinery }
+		command = { type = provincetax which = -3 value = 3 }
+		command = { type = populationpercent which = -3 value = 15 }
+		command = { type = infra value = 100 }
+		command = { type = treasury value = -500 }
+	}
+}
+
+#Feitorias#
+event = {
+
+	id = 4167
+	trigger = {
+		stability = 1
+		countrysize = 42
+	}
+	random = no
+	country = POR
+	name = "Feitorias"
+	desc = "Feitorias were fortified trading posts or factories established by Portugal during the Age of Exploration, primarily in the 15th and 16th centuries. These strategic outposts played a crucial role in Portugal's global expansion by facilitating trade and commerce in key locations. The feitorias served as bases for Portuguese merchants, where they could store goods, engage in trade with local populations, and maintain a presence in foreign territories. They were established along trade routes acoss the globe, but primarily from West Africa to the Indian Ocean, and along the coast of Brazil. The Portuguese feitorias not only contributed to the flourishing spice trade but also served as platforms for the dissemination of culture, ideas and technology. Their legacy is significant in the history of early globalization, as they paved the way for Portugal's role as a major maritime and trading power during the Age of Exploration."
+
+	style = "4158"
+
+	date = { day = 1 month = january year = 1815 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1835 }
+
+	action_a ={			#Invest in local trading arrangements#
+		name = "Invest in local trading arrangements"
+		command = { type = merchants value = 2 }
+		command = { type = trade value = 300 }
+		command = { type = treasury value = 150 }
+	}
+
+	action_b ={			#Build a Feitoria#
+		name = "Build a Feitoria"
+		command = { type = fortress which = -1003 value = 1 } #Asia
+		command = { type = gainmanufactory which = -3 value = goods }
+		command = { type = provincetax which = -3 value = 3 }
+		command = { type = populationpercent which = -3 value = 15 }
+		command = { type = infra value = 100 }
+		command = { type = treasury value = -500 }
+	}
+}

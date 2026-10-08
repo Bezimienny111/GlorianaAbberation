@@ -1,0 +1,46 @@
+#
+# Holland Major Events
+#
+
+#The Succession in Holland#
+event = {
+
+	id = 4182
+	random = no
+	country = HLL
+	name = "EVENTNAME4182"
+	desc = "EVENTHIST4182"
+
+	date = { day = 1 month = january year = 1417 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1418 }
+
+	action_a ={		#Support Jacqueline and unite with Brabant#
+		name = "ACTIONNAME4182A"
+		ai_chance = 60
+		trigger = { 
+			ai = yes
+			exists = HAU
+		}
+		command = { type = trigger which = 4183 }
+	}
+
+	action_b ={		#Support John and unite with Burgundy#
+		name = "ACTIONNAME4182B"
+		ai_chance = 40
+		trigger = { 
+			ai = yes
+			exists = BUR
+		}
+		command = { type = trigger which = 4184 }
+	}
+
+	action_c ={		#Let them fight it out#
+		name = "ACTIONNAME4182C"
+		ai_chance = 0
+		command = { type = revoltrisk which = 36 value = 3 }
+		command = { type = relation which = HAU value = -50 }
+		command = { type = relation which = BUR value = -50 }
+		command = { type = stability value = -3 }
+	}
+}

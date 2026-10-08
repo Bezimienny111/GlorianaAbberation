@@ -1,0 +1,70 @@
+# Khmer Empire #
+
+# The Fall of the Khmer Empire
+event = {
+	id = 15000
+	trigger = {
+			owned = { province = 667 data = -1 }
+			owned = { province = 668 data = -1 }
+		NOT = {
+			control = { province = 668 data = -1 }
+			exists = CAM
+		}
+		OR = {
+			# capital taken by rebels or one of the Siamese kingdoms
+			war = { country = AYU country = KHM } # Ayutthaya
+			war = { country = LAX country = KHM } # Lan Xang
+			war = { country = LNA country = KHM } # Lan Na
+			war = { country = LUA country = KHM } # Luang Prabang
+			war = { country = PEG country = KHM } # Sukhothai
+			control = { province = 668 data = REB }
+		}
+	}
+	random = no
+	country = KHM
+	name = "The Fall of the Khmer Empire"
+	desc = "EVENTHIST15000"
+	
+	date = { day = 1 month = january year = 1430 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1600 }
+
+	action_a = { # Retreat and pull back to Phnom Penh
+		name = "Retreat and pull back to Phnom Penh"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = domestic which = OFFENSIVE value = -2 }
+		command = { type = removecore_national which = 669 } # Imperial cores
+		command = { type = removecore_national which = 670 }
+		command = { type = removecore_national which = 675 }
+		command = { type = removecore_national which = 1551 }
+		command = { type = removecore_national which = 1552 }
+		command = { type = cedeprovince which = AYU value = 674 }
+		command = { type = cedeprovince which = AYU value = 675 }
+		command = { type = cedeprovince which = LAX value = 669 }
+		command = { type = cedeprovince which = LAX value = 1551 }
+		command = { type = cedeprovince which = LAX value = 1552 }
+		command = { type = capital which = 667 }
+		command = { type = populationpercent which = 668 value = -25 }
+		command = { type = populationpercent which = 667 value = 15 }
+		command = { type = populationpercent which = 666 value = 10 }
+		command = { type = flagname which = "" }
+		command = { type = country which = CAM }
+	}
+	action_b = { # Throw everything we have at them
+		name = "Throw everything we have at them"
+		command = { type = stability value = -3 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = domestic which = OFFENSIVE value = 2 }
+		command = { type = domestic which = QUALITY value = -2 }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = relation which = AYU value = -400 }
+		command = { type = relation which = LAX value = -400 }
+		command = { type = relation which = LNA value = -400 }
+		command = { type = relation which = LUA value = -400 }
+		command = { type = relation which = PEG value = -400 }
+		command = { type = treasury value = -200 }
+		command = { type = revoltrisk which = 60 value = 8 }
+	}
+}

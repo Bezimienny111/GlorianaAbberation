@@ -1,0 +1,76 @@
+#
+# Europa Universalis.
+#
+#
+# Spanish AI
+# 
+#
+# Henrik Fåhraeus 01-10-2001 
+
+ 
+# preferred areas for expansion
+
+region = { carribean "Central America"}
+area = { Panama Chili Orenoque Ecuador Paraguay "La Plata" Patagonia Falklands "Costa Rica" Inca Nevada Texas California Cuba Azteca Sonora Florida Lucon }
+
+
+# % of the time we prefer to establish a tradingpost if both are good.
+tradingpost = 25
+
+# The amount of provinces we try to colonize at the same time
+expansion = 15
+
+# Bonus for areas to establish colonies adjacent to previous ones.
+neighbour = 100
+
+# Bonus/Penalty for establish colonies adjacent to other countries.
+enemies = 0
+
+# 100 = max trader rate, lesser means slower focus on sending a trader.
+traders = 50
+
+# 100 = Total monopolist, will refuse trade as much as possible.
+monopoly = 100
+
+# 100 = Total warmonger, 0 = absolute pacifist
+war = 75
+ferocity = no
+
+#if possible we WILL go counter reform
+sreligion = yes	
+
+#Which countries to conquer if possible. (to guide nation historically)
+combat = { GRA SPR AZT INC MEX LAP CHM MAA ZAP GEL FRI HOL FLA NAV CAT COL CAD SEM PUE CHU HOP TAR TLX }
+
+#How important is it to gather troops close to base
+base = 0.1
+#How important is it to be as close to target position when gathering troops.
+front = 5.0
+
+
+#Evaluation factors for conquer plans 
+conquer = 
+{ 
+	# multiply enemy province value 
+	enemy = 5.0 
+	# multiplying supply factor 
+	supply = 0.2 
+	# factor for distance to not owner provinces 
+	distance = 7.0 
+	# factor for owned provines 
+	owner = 1.0 
+	# Multiplier for provinces not in supply. 
+	notsupply = 4.0 
+	# Multiplying the base constant for conquer. 
+	base = 5.0 
+} 
+
+# Modifiers for garrison plans 
+garrison = 
+{ 
+	fortress = 1.0 
+	strategic = 3.0 
+	size = 1.0 
+	supply = 2.0 
+	war = 5.0 
+}

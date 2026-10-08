@@ -1,0 +1,463 @@
+# FTG 1.3 Rebels
+
+# Tags in this file (other than REB) do not need to be in countries_special.txt also. They are assumed to be "rebels" type.
+
+# type = <type>			Type of rebels. Valid types are peasants, aristocrats, religious, cultural, colonial, and nationalist. The type determines their AI behavior.
+#				- Peasants are the default and can spawn anywhere that their faction is valid.
+#				- Aristocrats are similar. Their only differences are their army
+#				- Religious rebels will only spawn in a province that does not share a religion with its owner, and will prefer to move to such provinces after winning a siege.
+#				- Cultural rebels will only spawn in a province whose culture is not accepted by the owner, and will prefer to move to such provinces.
+#				- Colonial rebels will spawn in overseas provinces, and will prefer to move to such provinces (they will not move into countries whose capitals are on the same continent).
+#				- Nationalist rebels will attempt to form a new country or defect to an existing one which has cores on the province.
+# morale_base = <value>		Base value for rebel morale.
+#				 Valid values are parent (i.e. the owner of the province the rebel army is in), default (i.e. use the standard calculation that any country would use), or a numerical value.
+# morale_multiplier = <value>	Multiplier for morale. Default is 1.0.
+# tech_base = <value>		Base value for rebel land tech. Valid values are any tech group (will be averaged) or a numerical value.
+#				 Each rebel tag has its own tech, unlike morale which is individual to a rebel army.
+# tech_bonus = <value>		Additive bonus/penalty for tech. Default is 0.
+# min_tech = <value>		Minimum land tech for the rebel tag. Default is 0.
+# retreat = yes/no		If yes, defeated rebel armies will be able to retreat. If no, defeated rebel armies will disband. Default is no.
+# may_defect = yes/no		If yes, provinces held by this rebel faction will eventually defect to a neighboring country if possible. Default is yes.
+# may_declare_independence = yes/no	If yes, this rebel faction will seek to create a new country if allowed to hold provinces long enough.
+#					 Nearby provinces held by "may_declare_independence = no" can join the new country, but there must be at least one
+#					 province held by a "may_declare_independence = yes" faction to form the country.
+# may_overthrow_government = yes/no	If yes, a country's government may fall if its capital is held by this rebel faction.
+# army = { }			Army composition percentages. Must be integers summing to 100.
+#				 Artillery is subject to the normal artillery multiplier, i.e. 10 artillery is counted as 1000 infantry or cavalry.
+#				 There will ALWAYS be enough infantry to besiege a fortress, regardless of these percentages.
+# possible = { <trigger> }	If present, this trigger is evaluated like an event trigger on the parent country.
+#				 If false, the rebel type is not valid and will not spawn. If not present, it is assumed to be true.
+# religion = <value>		If present, this specifies that this rebel faction will only revolt in a province of this religion.
+# culture = <value>		Same for culture.
+# continent = <value>		Same for continent.
+# region = <value>		Same for region.
+# area = <value>		Same for area.
+# weight = <value>		Influences how often this rebel type will appear. If multiple rebel factions are valid in a province, the game will pick randomly between them using these weights.
+#				 E.g. if two factions are valid, one with weight 50 and the other with weight 5, the first has a 50/55 chance of appearing and the second has a 5/55 chance.
+# on_province_capture = <id>	When a province is captured by this faction, the event with this id will be fired.
+#				 Note that for an event to be fired more than once, it must be marked as persistent = yes.
+#				 Note also that this event can be fired for any country in the world, based on its country or province designation.
+#				 But if there is no country or province designated, it will be fired for the country who owns the province.
+# on_capital_capture = <id>	When a capital province is captured by this faction, the event with this id will be fired.
+#				 All the above notes for on_province_capture apply. Note also that the on_province_capture event will NOT be fired
+#				 when a capital is captured. To fire the same event for every province including the capital, use both triggers pointing to the same id.
+
+
+REB = { # Peasant Rebels
+	type = peasants
+	morale_base = parent
+	morale_multiplier = 0.8
+	tech_base = muslim
+	tech_bonus = -1
+	min_tech = 0
+	may_defect = no
+	army = {
+		infantry = 90
+		cavalry = 5
+		artillery = 5
+	}
+	possible = {
+		domestic = { type = serfdom value = 2 } # no peasant revolts if max or almost max free subjects
+	}
+}
+
+R01 = { # Aristocrat Rebels
+	type = aristocrats
+	morale_base = parent
+	tech_base = latin
+	tech_bonus = -1
+	min_tech = 0
+	army = {
+		infantry = 60
+		cavalry = 40
+		artillery = 0
+	}
+	possible = {
+		domestic = { type = aristocracy value = 5 }
+	}
+}
+
+R02 = { # Religious Rebels
+	type = religious
+	morale_base = parent
+	tech_base = latin
+	tech_bonus = -2
+	min_tech = 0
+	army = {
+		infantry = 65
+		cavalry = 20
+		artillery = 15
+	}
+	possible = {
+		NOT = {
+			domestic = { type = innovative value = 9 } # no religious revolts if max or almost max innovative
+		}
+	}
+	weight = 5
+}
+
+R03 = { # Cultural Rebels
+	type = cultural
+	morale_base = parent
+	morale_multiplier = 0.9
+	tech_base = latin
+	tech_bonus = -2
+	min_tech = 0
+	army = {
+		infantry = 70
+		cavalry = 20
+		artillery = 10
+	}
+	weight = 3
+}
+
+R04 = { # Colonial Rebels
+	type = colonial
+	morale_base = parent
+	tech_base = latin
+	tech_bonus = -2
+	min_tech = 0
+	army = {
+		infantry = 80
+		cavalry = 10
+		artillery = 10
+	}
+	possible = {
+		year = 1600
+	}
+	weight = 10
+}
+
+R05 = { # Nationalist Rebels
+	type = nationalist
+	morale_base = default
+	tech_base = latin
+	tech_bonus = 0
+	min_tech = 0
+	army = {
+		infantry = 65
+		cavalry = 25
+		artillery = 10
+	}
+	possible = {
+		domestic = { type = centralization value = 3 } # no nationalist revolts if low centralization
+		year = 1700
+	}
+	weight = 10
+}
+
+R06 = { # Pirate Raiders
+	type = pirates
+	morale_base = default
+	tech_base = latin
+	tech_bonus = -2
+	min_tech = 0
+	may_defect = no
+	may_declare_independence = no
+	may_overthrow_government = no
+	army = {
+		infantry = 95
+		cavalry = 0
+		artillery = 5
+	}
+	possible = {
+		domestic = { type = land value = 3 } # no pirate raids if high naval
+	}
+	weight = 1
+
+	on_capital_capture = 25009
+}
+
+#
+# REGIONAL REBEL TYPES
+#
+
+GRR = { # Greek Rebels
+	type = nationalist
+	morale_base = parent
+	morale_multiplier = 1.5
+	tech_base = latin
+	retreat = yes
+	army = {
+		infantry = 80
+		cavalry = 10
+		artillery = 10
+	}
+	possible = {
+		NOT = {
+			tag = GRE
+			culture = greek
+		}
+		year = 1800
+	}
+	area = Mediterranean
+	weight = 500
+}
+
+HTR = { # Haitian Rebels
+	type = colonial
+	morale_base = parent
+	morale_multiplier = 1.2
+	tech_base = latin
+	retreat = yes
+	army = {
+		infantry = 75
+		cavalry = 15
+		artillery = 10
+	}
+	possible = {
+		NOT = {
+			tag = HAI
+		}
+		culture = french
+		year = 1750
+	}
+	area = Haiti
+	weight = 500
+}
+
+IDR = { # Indian Raiders (of the native American variety)
+	type = aristocrats
+	raid = yes
+	morale_base = default
+	tech_base = pagan
+	tech_bonus = 2
+	min_tech = 0
+	may_defect = no
+	may_declare_independence = no
+	may_overthrow_government = no
+	army = {
+		infantry = 50
+		cavalry = 50
+		artillery = 0
+	}
+	possible = {
+		year = 1700
+		OR = {
+			# either European colonizers or any North American colonial country
+			continent = Europe
+			tag = USA
+			tag = LOU
+			tag = QUE
+			tag = TEX
+			tag = MEX
+		}
+	}
+	region = "North America"
+	weight = 10
+}
+
+NDR = { # Dutch Rebels
+	type = nationalist
+	morale_base = parent
+	morale_multiplier = 1.2
+	tech_base = latin
+	tech_bonus = 1
+	retreat = yes
+	army = {
+		infantry = 70
+		cavalry = 15
+		artillery = 15
+	}
+	possible = {
+		NOT = {
+			tag = HOL
+			culture = dutch
+		}
+		year = 1550
+		OR = {
+			NOT = { exists = HOL }
+			NOT = { year = 1650 }
+		}
+	}
+	area = "Low Countries"
+	weight = 500
+}
+
+USR = { # American Rebels
+	type = colonial
+	morale_base = parent
+	morale_multiplier = 1.1
+	tech_base = latin
+	retreat = yes
+	army = {
+		infantry = 75
+		cavalry = 10
+		artillery = 15
+	}
+	possible = {
+		NOT = {
+			tag = USA
+		}
+		OR = {
+			culture = anglosaxon
+			culture = american
+		}
+		year = 1750
+	}
+	area = { Appalachia Georgia Maine Ohio }
+	culture = american
+	weight = 500
+}
+
+#
+# REGIONAL PIRATE TYPES
+#
+
+BRR = { # Barbary Pirates
+	type = pirates
+	morale_base = default
+	tech_base = muslim
+	tech_bonus = -1
+	min_tech = 0
+	may_defect = no
+	may_declare_independence = no
+	may_overthrow_government = no
+	army = {
+		infantry = 85
+		cavalry = 10
+		artillery = 5
+	}
+	possible = {
+		OR = {
+			region = "British Isles"
+			region = "Western Europe"
+			region = "Southern Europe"
+		}
+		NOT = {
+			religion = sunni
+			religion = shia
+			#religion = eastern_sunni
+			#religion = eastern_shia
+		}
+	}
+	continent = Europe
+	weight = 2
+
+	on_capital_capture = 25009
+}
+
+INR = { # Indonesian Pirates
+	type = pirates
+	morale_base = default
+	tech_base = asian
+	tech_bonus = -1
+	min_tech = 0
+	may_defect = no
+	may_declare_independence = no
+	may_overthrow_government = no
+	army = {
+		infantry = 95
+		cavalry = 0
+		artillery = 5
+	}
+	region = Indonesia
+	weight = 2
+
+	on_capital_capture = 25009
+}
+
+PRR = { # Buccaneers
+	type = pirates
+	morale_base = default
+	tech_base = latin
+	tech_bonus = -2
+	min_tech = 0
+	may_defect = no
+	may_declare_independence = no
+	may_overthrow_government = no
+	army = {
+		infantry = 85
+		cavalry = 0
+		artillery = 15
+	}
+	possible = {
+		year = 1550
+	}
+	region = Caribbean
+	weight = 3
+
+	on_capital_capture = 25009
+}
+
+SMR = { # Somali Pirates
+	type = pirates
+	morale_base = default
+	tech_base = african
+	tech_bonus = -2
+	min_tech = 0
+	may_defect = no
+	may_declare_independence = no
+	may_overthrow_government = no
+	army = {
+		infantry = 85
+		cavalry = 15
+		artillery = 0
+	}
+	region = "East Africa"
+	weight = 2
+
+	on_capital_capture = 25009
+}
+
+VBR = { # Victual Brothers
+	type = pirates
+	morale_base = default
+	tech_base = latin
+	tech_bonus = -1
+	min_tech = 0
+	may_defect = no
+	may_declare_independence = no
+	may_overthrow_government = no
+	army = {
+		infantry = 85
+		cavalry = 10
+		artillery = 5
+	}
+	possible = {
+		OR = {
+			region = Scandinavia
+			region = "British Isles"
+			area = "Low Countries"
+			area = Baltic
+			area = Hansa
+		}
+		NOT = {
+			year = 1450
+		}
+	}
+	continent = Europe
+	weight = 3
+
+	on_capital_capture = 25009
+}
+
+WKR = { # Wokou
+	type = pirates
+	morale_base = default
+	tech_base = asian
+	tech_bonus = -1
+	min_tech = 0
+	may_defect = no
+	may_declare_independence = no
+	may_overthrow_government = no
+	army = {
+		infantry = 95
+		cavalry = 0
+		artillery = 5
+	}
+	possible = {
+		OR = {
+			region = China
+			region = Japan
+			region = Korea
+		}
+		NOT = {
+			year = 1650
+		}
+	}
+	continent = Asia
+	weight = 3
+
+	on_capital_capture = 25009
+}

@@ -1,0 +1,808 @@
+#Religions
+
+#Religions must be uniquely named.
+
+#group = <name>                         Countries that can convert by force each others if force_conversion = yes.
+#subgroup = <name>                      No penalty for switching religion if possible (not different religions) - Common Defender of the Faith if allowed.
+#color = <name>				Color displayed on the map, keyed to colorscales_religions.txt.
+#allowed_conversion = { }               List of religions for possible conversion if not forbidden by global flags.
+#income_bonus = { }                     List of religions that will give an income bonus for first conversion IF to one of them.
+#war = { }                              List of religions to be DoWed if possible.
+#aggressiveness = { }                   List of religions to be Dowed if possible when neighbour and for colonization purpose.
+#conflict = { }                   	List of religions for potential enemies. See global flags religious_enemies definition for complement.
+#heretic = { }                          List of religions for heretic events if not forbidden by global flags.
+#papacy = yes/no                       	If yes, Papacy rules apply:
+#                                       - Monarch can be elected HRE Emperor if capital is located in Europe and even if not Elector (default is no if not specified).
+#                                       - ToT rules can apply. See enable_tot entry for global flags.
+#predominance = yes/no                  If yes, better chance for CoT apparition in provinces and AI specific behaviour (default is no if not specified).
+#force_conversion = yes/no              If no, country cannot convert or be converted by force in the same group (default is yes if not specified).
+#defender = yes/no                      If no, religion cannot have a Defender of the Faith (default is yes if not specified).
+#annexable = yes/no                     If yes, country can always be annexed or converted by force (default is no if not specified).
+#annex_same_penalty = yes/no            If yes, badboy penalty for annexing countries in the same group (default is no if not specified). See _COUNTRY_BB_ANNSAMERELIGION_ in defines.txt.
+#annex_other_penalty = yes/no           If yes, badboy penalty for annexing countries in other groups (default is no if not specified). See _COUNTRY_BB_ANNOTHERRELIGION_ in defines.txt.
+#tech_speed = X.XX                      Global modifier for tech research. Positive values means bonus (default is 0.00 if not specified).
+#reveal_map = yes/no                    If yes, occupying capital or annexing country reveals all maps (default is yes if not specified).
+#whiteman = yes/no                      If yes, whiteman rules apply to provinces for created countries (default is no if not specified).
+#defectprovinceto_penalty = yes/no      If yes, provinces of different religion will have a penalty for possible defection to a country of this religion (default is no if not specified).
+#province_nationalism = yes/no          If no, provinces of this religion have no nationalism (default is yes if not specified).
+#province_religion = <name>             Religion of the provinces for corresponding state religion (default is the name of the religion if not specified).
+#coastalprovince_bonus = yes/no         If yes, provinces of this religion give a colonist bonus if national province of the owner country (default is no if not specified).
+#stability_bonus = X.XX			Amount to subtract from each province's stability cost when computing global stability cost if this is the state religion, regardless of what the province's religion is.
+#stability_cost = X.XX                  Cost of each not state religion province of this religion when computing global stability cost (default is 25.00 if not specified). Cost is doubled for predominant state religions if the religion of the province is not in the same religious group.
+#colonists = X.XX			Number of extra colonists received per year.
+#diplomats = X.XX			Number of extra diplomats received per year.
+#missionaries = X.XX			Number of extra missionaries received per year.
+#missionary_placement_chance = X.XX     Base chance for conversion (default is 0.10 if not specified). Can be negative, although the final conversion chance cannot be less than the monarch's ADM value.
+#missionary_placement_penalty = yes/no  If yes, provinces of this religion give a penalty for missionary placement chance (default is yes if not specified).
+#missionary_sprite = X                  Level of missionary spr file for Missionary Information Window and map display (default is 1 if not specified).
+#land_morale = X.XX			Religion's effects on land morale.
+#naval_morale = X.XX			Religion's effects on naval morale.
+#trade_efficiency = X.XX		Religion's effects on trade efficiency (1.0 = 100%)
+#production_efficiency = X.XX		Religion's effects on production efficiency (1.0 = 100%)
+#global_tax_modifier = X.XX		Religion's effects on the country's taxes (1.0 = 100%)
+#slaves_effect = X.XX                   Influence on slaves demand in provinces owned by corresponding countries (default is 0.10 if not specified).
+
+#Default value is 0.00 for all other numeric entries if the entry is not specified.
+
+#-----------------------------------------------------------------------------------------------
+#Christian
+
+catholic = {
+	group = christian
+	subgroup = catholic
+	color = DarkGray
+	allowed_conversion = {
+		counterreform
+		protestant
+		reformed
+		avignon_catholic
+		pisan_catholic
+	}
+	income_bonus = {
+		protestant
+		reformed
+		lollard
+	}
+	war = {
+		lollard
+		hussite
+		protestant
+		reformed
+		avignon_catholic
+		pisan_catholic
+	}
+	aggressiveness = {
+		pagan
+		thunderbird
+		gorgetism
+		medicinewheel
+		peyote
+		lollard
+		e_pagan
+	}
+	conflict = {
+		sunni
+		shia
+	}
+	heretic = {
+		protestant
+		reformed
+		avignon_catholic
+		pisan_catholic
+	}
+	papacy = yes
+	predominance = yes
+	annex_same_penalty = yes
+	tech_speed = -1.00
+	stability_bonus = 6.00
+	stability_cost = 50.00
+	colonists = 2.00
+	diplomats = 2.00
+	missionaries = 1.00
+	missionary_placement_chance = 0.30
+	missionary_sprite = 1
+	slaves_effect = 1.00
+}
+
+avignon_catholic = {
+	group = christian
+	subgroup = catholic
+	color = Red
+	allowed_conversion = {
+		protestant
+		reformed
+		catholic
+		pisan_catholic
+	}
+	income_bonus = {
+		protestant
+		reformed
+	}
+	war = {
+		lollard
+		hussite
+		protestant
+		reformed
+		catholic
+		pisan_catholic
+	}
+	aggressiveness = {
+		pagan
+		thunderbird
+		gorgetism
+		medicinewheel
+		peyote
+		lollard
+		e_pagan
+	}
+	conflict = {
+		sunni
+		shia
+	}
+	heretic = {
+		protestant
+		reformed
+		catholic
+		pisan_catholic
+	}
+	papacy = yes
+	predominance = yes
+	annex_same_penalty = yes
+	province_religion = catholic
+	tech_speed = -1.00
+	stability_bonus = 6.00
+	stability_cost = 50.00
+	colonists = 2.00
+	diplomats = 3.00
+	missionaries = 1.00
+	missionary_placement_chance = 0.30
+	missionary_sprite = 1
+	slaves_effect = 1.00
+}
+
+pisan_catholic = {
+	group = christian
+	subgroup = catholic
+	color = Mulberry
+	allowed_conversion = {
+		protestant
+		reformed
+		catholic
+		avignon_catholic
+	}
+	income_bonus = {
+		protestant
+		reformed
+	}
+	war = {
+		lollard
+		hussite
+		protestant
+		reformed
+		catholic
+		avignon_catholic
+	}
+	aggressiveness = {
+		pagan
+		thunderbird
+		gorgetism
+		medicinewheel
+		peyote
+		lollard
+		e_pagan
+	}
+	conflict = {
+		sunni
+		shia
+	}
+	heretic = {
+		protestant
+		reformed
+		catholic
+		avignon_catholic
+	}
+	papacy = yes
+	predominance = yes
+	annex_same_penalty = yes
+	province_religion = catholic
+	tech_speed = -1.00
+	stability_bonus = 3.00
+	stability_cost = 60.00
+	colonists = 2.00
+	diplomats = 4.00
+	missionaries = 2.00
+	missionary_placement_chance = 0.50
+	missionary_sprite = 1
+	slaves_effect = 1.00
+}
+
+counterreform = {
+	group = christian
+	subgroup = catholic
+	color = White
+	allowed_conversion = {
+		catholic
+		reformed
+		protestant
+	}
+	income_bonus = {
+		protestant
+		reformed
+	}
+	war = {
+		hussite
+		protestant
+		reformed
+	}
+	aggressiveness = {
+		pagan
+		thunderbird
+		gorgetism
+		medicinewheel
+		peyote
+		e_pagan
+	}
+	conflict = {
+		sunni
+		shia
+	}
+	heretic = {
+		protestant
+		reformed
+		hussite
+	}
+	papacy = yes
+	predominance = yes
+	annex_same_penalty = yes
+	province_religion = catholic
+	tech_speed = -3.00
+	stability_bonus = 6.00
+	stability_cost = 50.00
+	colonists = 2.00
+	diplomats = 2.00
+	missionaries = 2.00
+	missionary_placement_chance = 0.30
+	missionary_sprite = 1
+	land_morale = 0.50
+	naval_morale = 0.50
+	trade_efficiency = -0.10
+	slaves_effect = 1.00
+}
+
+lollard = {
+	group = christian
+	subgroup = early_protestant
+	color = LightGray
+	allowed_conversion = {
+		protestant
+		reformed
+	}
+	aggressiveness = {
+		pagan
+		thunderbird
+		gorgetism
+		medicinewheel
+		peyote
+		e_pagan
+	}
+	conflict = {
+		sunni
+		shia
+	}
+	heretic = {
+		catholic
+		avignon_catholic
+		pisan_catholic
+	}
+	predominance = yes
+	annex_same_penalty = yes
+	tech_speed = 1.00
+	stability_bonus = -3.00
+	stability_cost = 30.00
+	colonists = 1.00
+	coastalprovince_bonus = yes
+	diplomats = -1.00
+	missionaries = 0.30
+	missionary_placement_chance = 0.30
+	missionary_sprite = 1
+	production_efficiency = 0.10
+	global_tax_modifier = 0.20
+	slaves_effect = 1.00
+}
+
+hussite = {
+	group = christian
+	subgroup = early_protestant
+	color = DarkBlue
+	allowed_conversion = {
+		protestant
+		reformed
+	}
+	aggressiveness = {
+		pagan
+		thunderbird
+		gorgetism
+		medicinewheel
+		peyote
+		e_pagan
+	}
+	conflict = {
+		sunni
+		shia
+	}
+	heretic = {
+		catholic
+	}
+	predominance = yes
+	annex_same_penalty = yes
+	province_religion = hussite
+	tech_speed = 1.00
+	stability_bonus = -3.00
+	stability_cost = 50.00
+	colonists = 1.00
+	coastalprovince_bonus = yes
+	diplomats = 1.00
+	missionaries = 0.50
+	missionary_placement_chance = 0.30
+	missionary_sprite = 1
+	land_morale = 0.50
+	production_efficiency = 0.10
+	global_tax_modifier = 0.10
+	slaves_effect = 1.00
+}
+
+protestant = {
+	group = christian
+	subgroup = protestant
+	color = LightBlue
+	allowed_conversion = {
+		catholic
+		counterreform
+		reformed
+	}
+	aggressiveness = {
+		pagan
+		thunderbird
+		gorgetism
+		medicinewheel
+		peyote
+		e_pagan
+	}
+	conflict = {
+		sunni
+		shia
+	}
+	heretic = {
+		catholic
+		avignon_catholic
+	}
+	predominance = yes
+	annex_same_penalty = yes
+	tech_speed = 1.00
+	stability_bonus = -3.00
+	stability_cost = 50.00
+	colonists = 1.00
+	coastalprovince_bonus = yes
+	diplomats = 1.00
+	missionaries = 0.50
+	missionary_placement_chance = 0.30
+	missionary_sprite = 1
+	production_efficiency = 0.10
+	global_tax_modifier = 0.10
+	slaves_effect = 1.00
+}
+
+reformed = {
+	group = christian
+	subgroup = reformed
+	color = Blue
+	allowed_conversion = {
+		catholic
+		counterreform
+		protestant
+	}
+	aggressiveness = {
+		pagan
+		thunderbird
+		gorgetism
+		medicinewheel
+		peyote
+		e_pagan
+	}
+	conflict = {
+		sunni
+		shia
+	}
+	heretic = {
+		catholic
+		avignon_catholic
+	}
+	predominance = yes
+	defender = no
+	annex_same_penalty = yes
+	tech_speed = 2.00
+	stability_bonus = -3.00
+	stability_cost = 50.00
+	colonists = 2.00
+	coastalprovince_bonus = yes
+	diplomats = 1.00
+	missionaries = 0.50
+	missionary_placement_chance = 0.27
+	missionary_sprite = 1
+	trade_efficiency = 0.10
+	global_tax_modifier = -0.10
+	slaves_effect = 1.00
+}
+
+orthodox = {
+	group = christian
+	subgroup = orthodox
+	color = Brown
+	aggressiveness = {
+		pagan
+		thunderbird
+		gorgetism
+		medicinewheel
+		peyote
+		e_pagan
+	}
+	conflict = {
+		sunni
+		shia
+	}
+	heretic = {
+		miaphysite
+	}
+	predominance = yes
+	force_conversion = no
+	annex_same_penalty = yes
+	tech_speed = -1.00
+	stability_bonus = 8.00
+	stability_cost = 50.00
+	colonists = 1.00
+	missionaries = 1.00
+	missionary_placement_chance = 0.30
+	missionary_sprite = 2
+	slaves_effect = 1.00
+}
+
+miaphysite = {
+	group = christian
+	subgroup = miaphysite
+	color = LightYellow
+	aggressiveness = {
+		pagan
+	}
+	conflict = {
+		sunni
+		shia
+	}
+	heretic = {
+		orthodox
+	}
+	predominance = yes
+	force_conversion = no
+	annex_same_penalty = yes
+	tech_speed = -2.00
+	stability_bonus = 4.00
+	stability_cost = 60.00
+	colonists = 1.00
+	missionaries = 2.00
+	missionary_placement_chance = 0.35
+	missionary_sprite = 2
+	land_morale = 0.50
+	trade_efficiency = 0.10
+	slaves_effect = 1.00
+}
+
+#-----------------------------------------------------------------------------------------------
+#Muslim
+
+sunni = {
+	group = muslim
+	subgroup = sunni
+	color = Green
+	heretic = {
+		shia
+	}
+	annex_same_penalty = yes
+	tech_speed = -1.00
+	stability_bonus = 6.00
+	stability_cost = 60.00
+	missionaries = 1.00
+	missionary_placement_chance = 0.30
+	missionary_sprite = 3
+	slaves_effect = 1.00
+}
+
+shia = {
+	group = muslim
+	subgroup = shia
+	color = LightGreen
+	heretic = {
+		sunni
+	}
+	annex_same_penalty = yes
+	tech_speed = -3.00
+	stability_bonus = 6.00
+	stability_cost = 60.00
+	missionaries = 1.00
+	missionary_placement_chance = 0.27
+	missionary_sprite = 3
+	land_morale = 0.50
+	naval_morale = 0.50
+	global_tax_modifier = -0.20
+	slaves_effect = 1.00
+}
+
+#-----------------------------------------------------------------------------------------------
+#Eastern
+
+buddhism = {
+	group = eastern
+	subgroup = buddhism
+	color = Yellow
+	heretic = {
+		hinduism
+	}
+	force_conversion = no
+	tech_speed = -5.00
+	stability_bonus = 5.00
+	stability_cost = 60.00
+	missionaries = 1.00
+	missionary_placement_chance = 0.30
+	missionary_sprite = 4
+	global_tax_modifier = -0.20
+	slaves_effect = 0.10
+}
+
+confucianism = {
+	group = eastern
+	subgroup = confucianism
+	color = Red
+	heretic = {
+		buddhism
+	}
+	force_conversion = no
+	tech_speed = -10.00
+	stability_bonus = 10.00
+	stability_cost = 60.00
+	missionary_placement_chance = 0.20
+	missionary_sprite = 4
+	global_tax_modifier = -0.20
+	slaves_effect = 0.10
+}
+
+hinduism = {
+	group = eastern
+	subgroup = hinduism
+	allowed_conversion = {
+		sunni
+	}
+	color = DarkOrange
+	heretic = {
+		sunni
+	}
+	force_conversion = no
+	tech_speed = -10.00
+	stability_bonus = -3.00
+	stability_cost = 60.00
+	missionary_placement_chance = 0.35
+	missionary_sprite = 4
+	land_morale = 0.50
+	naval_morale = 0.50
+	global_tax_modifier = 0.05
+	slaves_effect = 0.10
+}
+
+shinto = {
+	group = eastern
+	subgroup = confucianism
+	allowed_conversion = {
+		confucianism
+	}
+	color = DarkRed
+	force_conversion = no
+	tech_speed = -10.00
+	stability_bonus = 10.00
+	stability_cost = 60.00
+	missionary_placement_chance = 0.10
+	missionary_sprite = 4
+	global_tax_modifier = -0.20
+	land_morale = 0.10
+	slaves_effect = 0.10
+}
+
+sikh = {
+	group = eastern
+	subgroup = sikh
+	color = DarkPurple
+	heretic = {
+		sunni
+		hinduism
+	}
+	force_conversion = no
+	tech_speed = -15.00
+	stability_bonus = 5.00
+	stability_cost = 70.00
+	missionary_placement_chance = 0.35
+	missionary_sprite = 4
+	global_tax_modifier = -0.05
+	land_morale = 0.65
+	slaves_effect = 0.10
+}
+
+#-----------------------------------------------------------------------------------------------
+#Pagan
+
+e_pagan = {
+	group = christian
+	subgroup = e_pagan
+	color = AvocadoGreen
+	allowed_conversion = {
+	}
+	income_bonus = {
+		catholic
+		orthodox
+	}
+	heretic = {
+		pagan
+		thunderbird
+		gorgetism
+		medicinewheel
+		peyote
+	}
+	annex_same_penalty = yes
+	defectprovinceto_penalty = yes
+	tech_speed = -2.00
+	stability_bonus = 7.00
+	stability_cost = 30.00
+	colonists = 2.00
+	missionaries = -1.00
+	missionary_placement_chance = 0.50
+	missionary_placement_penalty = no
+	missionary_sprite = 1
+	slaves_effect = 0.10
+}
+
+thunderbird = {
+	group = pagan
+	subgroup = thunderbird
+	color = Gray
+	heretic = {
+		pagan
+		thunderbird
+		gorgetism
+		medicinewheel
+		peyote
+		e_pagan
+	}
+	annexable = yes
+	annex_other_penalty = yes
+	defender = no
+	reveal_map = no
+	whiteman = yes
+	defectprovinceto_penalty = yes
+	province_nationalism = no
+	tech_speed = -25.00
+	stability_bonus = -5.00
+	stability_cost = 60.00
+	missionary_placement_chance = 0.50
+	missionary_placement_penalty = no
+	missionary_sprite = 4
+	slaves_effect = 0.10
+}
+
+gorgetism = {
+	group = pagan
+	subgroup = gorgetism
+	color = Gray
+	heretic = {
+		pagan
+		thunderbird
+		gorgetism
+		medicinewheel
+		peyote
+		e_pagan
+	}
+	annexable = yes
+	annex_other_penalty = yes
+	defender = no
+	reveal_map = no
+	whiteman = yes
+	defectprovinceto_penalty = yes
+	province_nationalism = no
+	tech_speed = -25.00
+	stability_bonus = -5.00
+	stability_cost = 60.00
+	missionary_placement_chance = 0.50
+	missionary_placement_penalty = no
+	missionary_sprite = 4
+	slaves_effect = 0.10
+}
+
+medicinewheel = {
+	group = pagan
+	subgroup = medicinewheel
+	color = Gray
+	heretic = {
+		pagan
+		thunderbird
+		gorgetism
+		medicinewheel
+		peyote
+		e_pagan
+	}
+	annexable = yes
+	annex_other_penalty = yes
+	defender = no
+	reveal_map = no
+	whiteman = yes
+	defectprovinceto_penalty = yes
+	province_nationalism = no
+	tech_speed = -25.00
+	stability_bonus = -5.00
+	stability_cost = 60.00
+	missionary_placement_chance = 0.50
+	missionary_placement_penalty = no
+	missionary_sprite = 4
+	slaves_effect = 0.10
+}
+
+peyote = {
+	group = pagan
+	subgroup = peyote
+	color = Gray
+	heretic = {
+		pagan
+		thunderbird
+		gorgetism
+		medicinewheel
+		peyote
+		e_pagan
+	}
+	annexable = yes
+	annex_other_penalty = yes
+	defender = no
+	reveal_map = no
+	whiteman = yes
+	defectprovinceto_penalty = yes
+	province_nationalism = no
+	tech_speed = -25.00
+	stability_bonus = -5.00
+	stability_cost = 60.00
+	missionary_placement_chance = 0.50
+	missionary_placement_penalty = no
+	missionary_sprite = 4
+	slaves_effect = 0.10
+}
+
+pagan = {
+	group = pagan
+	subgroup = pagan
+	color = LightGray
+	heretic = {
+		pagan
+		thunderbird
+		gorgetism
+		medicinewheel
+		peyote
+		e_pagan
+	}
+	annexable = yes
+	annex_other_penalty = yes
+	defender = no
+	reveal_map = no
+	whiteman = yes
+	defectprovinceto_penalty = yes
+	province_nationalism = no
+	tech_speed = -25.00
+	stability_bonus = -5.00
+	stability_cost = 60.00
+	missionary_placement_chance = 0.50
+	missionary_placement_penalty = no
+	missionary_sprite = 4
+	slaves_effect = 0.10
+}
+
+#-----------------------------------------------------------------------------------------------

@@ -1,0 +1,82 @@
+{
+  "folders": [
+    {
+      "path": ".",
+    },
+    {
+      "name": "WtyczkaFTG",
+      "path": "V:/WtyczkaFTG",
+    },
+  ],
+  "settings": {
+    "files.encoding": "windows1252",
+    "files.autoGuessEncoding": false,
+    "files.defaultLanguage": "ftg",
+    "files.associations": {
+      "**/*.txt": "ftg",
+      "AI/**/*.txt": "ftg",
+      "Db/events*.txt": "ftg",
+      "Db/**/*.txt": "ftg",
+      "Db/Events/**/*.txt": "ftg",
+      "Db/Decisions/**/*.txt": "ftg",
+      "Scenarios/**/*.txt": "ftg",
+      "Scenarios/**/*.eug": "ftg",
+      "Scenarios/**/*.inc": "ftg",
+      "*.eue": "ftg",
+    },
+    "editor.tokenColorCustomizations": {
+      "textMateRules": [
+        {
+          "name": "FTG Commands and Triggers",
+          "scope": [
+            "support.function.command.ftg",
+            "support.type.trigger.ftg",
+            "variable.language.definition_tokens.paradox",
+            "variable.language.conditions.paradox",
+            "variable.boolean.paradox",
+          ],
+          "settings": {
+            "fontStyle": "bold",
+          },
+        },
+        {
+          "name": "FTG Structure Keywords",
+          "scope": [
+            "keyword.control.structure.ftg",
+            "keyword.control.logical.ftg",
+            "variable.lhs.paradox",
+            "variable.scope.paradox",
+          ],
+          "settings": {
+            "fontStyle": "bold",
+          },
+        },
+        {
+          "name": "FTG Event and Decision IDs",
+          "scope": [
+            "constant.numeric.event-definition-id.ftg",
+            "constant.numeric.decision-definition-id.ftg",
+            "constant.numeric.decision-id.ftg",
+          ],
+          "settings": {
+            "fontStyle": "bold underline",
+          },
+        },
+        {
+          "name": "FTG Flags",
+          "scope": "variable.other.flag.ftg",
+          "settings": {
+            "fontStyle": "italic",
+          },
+        },
+      ],
+    },
+    "chat.tools.terminal.autoApprove": {
+      "/^python -c \"import json, pathlib; p=pathlib\\.Path\\(r'C:/Users/Bezi/\\.vscode/extensions/local\\.ftg-syntax-highlight-0\\.0\\.1/syntaxes/ftg\\.tmLanguage\\.json'\\); json\\.loads\\(p\\.read_text\\(encoding='utf-8'\\)\\); print\\('OK installed grammar'\\)\"$/": {
+        "approve": true,
+        "matchCommandLine": true,
+      },
+    },
+    "markdown.preview.mermaid": true,
+  },
+}

@@ -1,0 +1,41 @@
+
+#The Succession in Brabant#
+event = {
+
+	id = 3775
+	trigger = {
+			exists = BUR
+		}
+	random = no
+	country = HAU
+	name = "EVENTNAME3775"
+	desc = "EVENTHIST3775"
+	style = 1
+
+	date = { day = 1 month = august year = 1430 }
+	offset = 0
+	deathdate = { day = 2 month = august year = 1430 }
+
+	action_a ={				#Let us be a part of Great Burgundy#
+		name = "ACTIONNAME3775A"
+		command = { type = trigger which = 3776 }
+	}
+
+	action_b ={				#Let the Burgundian monarch become our Duke#
+		name = "ACTIONNAME3775B"
+		command = { type = trigger which = 3777 }
+		command = { type = dynastic which = BUR }
+		command = { type = alliance which = BUR }
+		command = { type = stability value = 3 }
+		command = { type = wakemonarch which = 04643 }
+	}
+
+	action_c ={				#Let us elect a local Count as Duke#
+		name = "ACTIONNAME3775C"
+		command = { type = trigger which = 3778 }
+		command = { type = stability value = -3 }
+		command = { type = revolt which = -1 }
+		command = { type = wakemonarch which = 04643 }
+	}
+
+}

@@ -1,0 +1,56 @@
+##Portugal Events##
+
+#(1383-1385) Juan of Castilla claims the throne - (by Corleone)
+event = {
+	id = 116000 #trigger by 101003A
+	random = no
+	country = POR
+	name = "Juan of Castilla claims the throne"
+	desc = "In 1383, after the death of Portuguese monarch D. Fernando, his daughter Beatriz, who was married to Juan I of Castilla y León, was the rightful heiress to the throne. The Castilian monarch wielded the hereditary rights of his wife and entered Portugal with the support of the Lusitan nobility. In front of him stood an alliance made of the bourgeoisie and the lowtown, supported militarily by the English and headed by the Master of Avís, João. The decisive struggle took place at the battle of Aljubarrota in 1385. The Portuguese nobility and the Castilian cavalry were defeated and the master of Avís, João I of Portugal, was proclaimed king."
+
+	action_a = { 
+		name = "Damned Castilians!"
+		command = { type = relation which = CAS value = -50 }
+		command = { type = casusbelli which = CAS value = 24 }
+		command = { type = land value = 300 }
+		command = { type = MIL which = 3 value = 24 } 
+	}
+}
+
+#(1415-1419) The Start of the Colonial Race - (by Corleone)
+event = {
+	id = 116001
+	trigger = {
+		countrysize = 3
+		NOT = { 
+			owned = { province = 732 data = -1 }
+		}
+	}
+	random = no
+	country = POR
+	name = "The Start of the Colonial Race"
+	desc = "In the early 15th century, the Portuguese wished to upgrade their commerce of wine, fish and salt to a more lucrative goods as slaves, gold ans spices. Their first objective in this military and commercial imperilism was to be the fortified city of Ceuta, in the Northeaster African coast, where a big and prosperous moslem community lived. This 'crusading' campaing, that was organized by João I and led by his son Henrique 'the Sailor' in 1415, ended up as a success for Portugal. João I chose to keep this strategic location instead of burning it to the ground, as it could be the gate for a future colonization of Africa and beyond..."
+
+	date = { day = 1 month = august year = 1415 }
+	offset = 60
+	deathdate = { day = 1 month = august year = 1419 }
+
+	action_a = { name = "We are an Empire!"
+		command = { type = addcore_national which = 732 }
+		command = { type = land value = 100 }
+		command = { type = naval value = 100 }
+		command = { type = stability value = 1 }
+		command = { type = relation which = MOR value = -50 }
+		command = { type = badboy value = 2 }
+	}
+	action_b = { name = "Let us wait a bit"
+		command = { type = stability value = -1 }
+		command = { type = relation which = MOR value = 50 }
+		command = { type = infra value = 100 }
+		command = { type = trade value = 100 }
+		command = { type = vp value = -25 }
+		command = { type = sleepevent which = 26023 } #POR: Distant Shores
+	}
+}
+
+#first free ID: 116002

@@ -1,0 +1,79 @@
+# Babur's Ambition
+event = {
+	id = 375000
+	trigger = { 
+		NOT = { exists = MOG }
+	}
+	random = no
+	country = KAB
+	name = "EVENTNAME3804"
+	desc = "EVENTHIST3804"
+	style = "3804"
+	
+	date = { day = 1 month = may year = 1504 }
+	offset = 30
+	deathdate = { day = 1 month = december year = 1529 }
+
+	action_a = { # Ok
+		name = "Unleash the Tiger!"
+		command = { type = land value = 3000 }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = CAV which = -2 value = 20000 }
+		command = { type = ART which = -2 value = 10 }
+		command = { type = add_countryculture which = afghani }
+		command = { type = add_countryculture which = hindi }
+		command = { type = relation which = DLH value = -400 }
+		command = { type = relation which = GUJ value = -400 }
+		command = { type = casusbelli which = DLH value = 240 }
+		command = { type = addcore_national which = 539 } # Mughal cores
+		command = { type = addcore_national which = 540 }
+		command = { type = addcore_national which = 541 }
+		command = { type = addcore_national which = 542 }
+		command = { type = addcore_national which = 543 }
+		command = { type = addcore_national which = 544 }
+		command = { type = addcore_national which = 545 }
+		command = { type = addcore_national which = 546 }
+		command = { type = addcore_national which = 547 }
+		command = { type = addcore_national which = 548 }
+		command = { type = addcore_national which = 549 }
+		command = { type = addcore_national which = 550 }
+		command = { type = addcore_national which = 551 }
+		command = { type = addcore_national which = 552 }
+		command = { type = addcore_national which = 553 }
+		command = { type = addcore_national which = 554 }
+		command = { type = addcore_national which = 555 }
+		command = { type = addcore_national which = 556 }
+		command = { type = addcore_national which = 557 }
+		command = { type = addcore_national which = 558 }
+		command = { type = addcore_national which = 559 }
+		command = { type = addcore_national which = 560 }
+		command = { type = addcore_national which = 561 }
+		command = { type = addcore_national which = 562 }
+		command = { type = addcore_national which = 563 }
+		command = { type = addcore_national which = 564 }
+		command = { type = addcore_national which = 565 }
+		command = { type = addcore_national which = 566 }
+		command = { type = addcore_national which = 567 }
+		command = { type = addcore_national which = 1520 }
+		command = { type = addcore_national which = 1521 }
+		command = { type = addcore_national which = 1522 }
+		command = { type = addcore_national which = 1523 }
+		command = { type = capital which = 1527 } # Kabul
+		command = { type = domestic which = QUALITY value = 3 }
+		command = { type = flagname which = "" }
+		command = { type = country which = MOG }
+	}
+
+	action_b = {	# Remain as we are #
+		name = "Remain as we are"
+		command = { type = provincetax which = -2 value = 3 }
+		command = { type = populationpercent which = -2 value = 5 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -4 value = 50 }
+		command = { type = relation which = -4 value = 50 }
+		command = { type = relation which = -4 value = 50 }
+		command = { type = relation which = -4 value = 50 }
+		command = { type = treasury value = 250 }
+		command = { type = stability value = 1 }
+	}
+}

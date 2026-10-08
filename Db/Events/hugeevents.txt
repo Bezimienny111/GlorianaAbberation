@@ -1,0 +1,72 @@
+#
+# EU2 - The Huge Epochal Events
+#
+#		written by Johan Andersson
+#
+
+
+
+#########################################################################
+#  Treaty of Tordesillas
+#########################################################################
+event = { 
+
+	id = 110
+	global = yes
+	trigger = {
+		OR = {
+			owned = { province = 141 data = SPA } # Hispaniola
+			owned = { province = 142 data = SPA }
+			owned = { province = 143 data = SPA }
+			owned = { province = 144 data = SPA } # Puerto Rico
+		}
+		OR = {
+			owned = { province = 818 data = POR } # Cape Verde
+			owned = { province = 800 data = POR } # Some of West Africa
+			owned = { province = 801 data = POR }
+		}
+	}
+	name = "EVENTNAME103"
+	desc = "EVENTHIST103"
+	style = "103"
+	date = { year = 1492 }
+	offset = 30
+	deathdate = { year = 1520 }
+	action_a = {
+			name = "OK"
+			command = { type = flag which = 0 }
+		}
+
+	}
+
+#########################################################################
+#  The Industrial Revolution
+#########################################################################
+event = { 
+
+	id = 111
+	global = yes
+	trigger = {
+		continent = Europe
+		infra = 6 #9
+		trade = 6 #9
+		OR = {
+			land = 51
+			naval = 51
+		}
+		stability = 3
+		technology = latin
+		domestic = { type = innovative value = 7 }
+	}
+	name = "The Industrial Revolution"
+	desc = "The Industrial Revolution began in Britain during the late 18th century and extended into Germany and the United States during the 19th century. It was a transformative period in human history, marking the definitive shift from agrarian and craft-based economies to industrial and mechanized production. Key innovations, such as the steam engine and textile machinery, revolutionized manufacturing processes and led to the rise of factories and mass production. This era witnessed rapid urbanization as people moved from rural areas to industrial cities in search of work. Whilst the Industrial Revolution brought about economic growth and technological advancements, it also brought challenges, including poor working conditions, social inequalities, and environmental impacts. It reshaped society, ushering in a new era of industrialization and setting the stage for modern industrial societies."
+	style = "106"
+	date = { year = 1760 }
+	offset = 30
+	deathdate = { year = 1837 }
+	action_a = {
+			name = "OK"
+			command = { type = flag which = 10 }
+		}
+
+	}

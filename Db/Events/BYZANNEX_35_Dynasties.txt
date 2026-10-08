@@ -1,0 +1,835 @@
+#-----------------------------------------------------------------------------
+# Palaiologid Dynasty Events
+
+#(1505-1506) A Lion in Winter
+event = {
+	id = 3001468
+	trigger = {
+		monarch = 027505 #Manuel III (BYZ)
+	}
+	random = NO
+	country = BYZ
+	name = "A Lion in Winter"
+	desc = "Although the history of the Roman Empire had few successful examples of dynasties, it didn't stop people from trying. The Palaiologids have been in power two centuries now and people have begun to attach a mythic significance to its members. The Emperor's son has taken advantage of this fact and, impatient, has raised the banner of revolt against his father and lord. Claiming to oppose his father's 'tyranny and oppression,' he marches on Thessaloniki and the capital..."
+
+	date = { year = 1505 }
+	offset = 360 #1 year
+	deathdate = { year = 1506 }
+
+	action_a = {
+		name = "Crush the rebels and find that boy a monastery..."
+		command = { type = stability value = -1 }
+		command = { type = revolt which = 357 } #Thrace
+		command = { type = revolt which = 357 } #Thrace
+		command = { type = revolt which = 357 } #Thrace
+		command = { type = revolt which = 358 } #Macedonia
+		command = { type = revolt which = 358 } #Macedonia
+		command = { type = revolt which = 358 } #Macedonia
+	}
+	action_b = {
+		name = "Make way for the young blood"
+		command = { type = stability value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = sleepmonarch which = 027505 } #Manuel III (BYZ)
+		command = { type = sleepmonarch which = 027506 } #Andreas II (BYZ)
+		command = { type = wakemonarch which = 027507 } #Ioannes IX * (BYZ)
+	}
+}
+
+#(1542) Power struggle
+event = {
+	id = 3001469 #id = 90958
+	trigger = {
+		monarch = 027509 #Ioannes X * (BYZ)
+	}
+	random = no
+	country = BYZ
+	name = "Power struggle" #Power struggle
+	desc = "After the death of Michael X, his son Ioannes assumed the throne. However, he was extremely unpopular among the nobility due to his views and intents on cutting the power of the nobles and centralizing the Empire to a larger degree. His brother Nikolai on the other hand was considered by many nobles an ideal candidate, as he professed an aggressive policy towards the Empire's neighbors. A power struggle ensued, with Nikolai emerging victorious."
+	#-#After the death of Michael X, his son Ioannes assumed the throne. However, he was extremely unpopular among the nobility due to his views and intents on cutting the power of the nobles and centralizing the Empire to a larger degree. His brother Nikolai on the other hand was considered by many nobles an ideal candidate, as he professed an aggressive policy towards the Empire's neighbors. A power struggle ensued, with Nikolai emerging victorious.
+
+	date = { day = 1 month = january year = 1542 }
+	offset = 360 #1 year
+	deathdate = { day = 1 month = january year = 1543 }
+
+	action_a = {
+		name = "Revolt!" #Revolt!
+		command = { type = stability value = -4 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = revoltrisk which = 36 value = 8 }
+	}
+}
+
+#(1542-1546) Nikolai proclaimed Emperor
+event = {
+	id = 3001470 #id = 90959
+	trigger = {
+		event = 3001469 #BYZ: Power struggle
+		control = { province = 357 data = REB } #Thrace
+	}
+	random = no
+	country = BYZ
+	name = "Nikolai proclaimed Emperor" #Nikolai proclaimed Emperor
+	desc = "After the rebels captured the capital Ioannes was captured and imprisoned. Nikolai was crowned as Emperor and immediately began preparing for a campaign against his neighbors."
+	#-#After the rebels captured the capital Ioannes was captured and imprisoned. Nikolai was crowned as Emperor and immediately began preparing for a campaign against his neighbors.
+
+	date = { day = 1 month = january year = 1542 }
+	offset = 3 #3 days
+	deathdate = { day = 1 month = january year = 1546 }
+
+	action_a = {
+		name = "Long live the Emperor!" #Long live the Emperor!
+		command = { type = sleepmonarch which = 027509 } #Ioannes X *
+		command = { type = wakemonarch which = 027510 } #Nikolai I *
+		command = { type = wakeleader which = 027803 } #Nikolai I (BYZ)
+		command = { type = stability value = 2 }
+		command = { type = revoltrisk value = -8 }
+		command = { type = domestic which = LAND value = 2 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = land value = 500 }
+		command = { type = infra value = -800 }
+		command = { type = inf which = -1 value = 8000 }
+		command = { type = art which = -3 value = 10 }
+		command = { type = casusbelli which = -1 value = 60 }
+		command = { type = casusbelli which = -1 value = 60 }
+		command = { type = casusbelli which = -1 value = 60 }
+	}
+}
+
+#(1550-1565) Reforms of Ioannes X
+event = {
+	id = 3001471 #id = 90960
+	trigger = {
+		event = 3001469 #BYZ: Power struggle
+		NOT = { event = 3001470 } #BYZ: Nikolai proclaimed Emperor
+		monarch = 027509 #Ioannes X * (BYZ)
+	}
+	random = no
+	country = BYZ
+	name = "Centralization efforts of Ioannes X" #Centralization efforts of Ioannes X
+	desc = "Having survived the onslaught of rebellious nobles led by his brother Nikolai, Ioannes went on with his policy of reducing the power of the nobles and centralizing the Empire."
+	#-#Having survived the onslaught of rebellious nobles led by his brother Nikolai, Ioannes went on with his policy of reducing the power of the nobles and centralizing the Empire.
+
+	date = { day = 1 month = january year = 1550 }
+	offset = 3000
+	deathdate = { day = 1 month = january year = 1565 }
+
+	action_a = {
+		name = "Centralize" #Centralize
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = infra value = 800 }
+	}
+}
+
+#(1604) The Sibling Conflict
+event = {
+	id = 3001472 #id = 90946
+	random = NO
+	country = BYZ
+	name = "The Sibling Conflict" #The Sibling Conflict
+	desc = "When an Emperor died his eldest son usually was the successor but the case of Konstantin XIII was different. He was a dimwit that would probably prove to be a disaster on the throne. His only real competitor was his elder sister Zoë, who was considered to be among the sharpest minds at court. However, for all her qualities she was a woman and an Empress on the throne would not be seen favourably by the old guard. Konstantin on the other hand would probably be in the hands of powerful noble families. Fortunately, Zoë had the support of her husband general Alexandros Makrienos."
+	#-#When an Emperor died his eldest son usually was the successor but the case of Konstantin XIII was different. He was a dimwit that would probably prove to be a disaster on the throne. His only real competitor was his elder sister Zoë, who was considered to be among the sharpest minds at court. However, for all her qualities she was a woman and an Empress on the throne would not be seen favourably by the old guard. Konstantin on the other hand would probably be in the hands of powerful noble families. Fortunately, Zoë had the support of her husband general Alexandros Makrienos.
+
+	date = { day = 1 month = january year = 1604 }
+
+	action_a = {
+		name = "The Empire needs qualified leadership, long live the Empress!" #The Empire needs qualified leadership, long live the Empress!
+		command = { type = sleepmonarch which = 027513 } #Konstantinos XIII *
+		command = { type = wakemonarch which = 027514 } #Zoe II
+		command = { type = stability value = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = OFFENSIVE value = -1 }
+		command = { type = sleepevent which = 3001479 } #BYZ: Rebellion of the Cistern
+		}
+	action_b = {
+		name = "Konstantin is the rightful heir!" #Konstantin is the rightful heir!
+		command = { type = stability value = -3 }
+		command = { type = stability value = -3 }
+		command = { type = domestic which = CENTRALIZATION value = -3 }
+		command = { type = domestic which = ARISTOCRACY value = 3 }
+		command = { type = domestic which = SERFDOM value = 3 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -2 }
+		command = { type = sleepleader which = 027802 } #Alexandros Makrienos (BYZ)
+		command = { type = desertion which = -2 value = 10000 } #all the capital guards follow Makrienos
+		command = { type = desertion which = -2 value = 10000 }
+		command = { type = desertion which = -2 value = 10000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = sleepevent which = 3001473 } #BYZ: Removal of a Threat
+		command = { type = sleepevent which = 3001476 }
+		command = { type = sleepevent which = 3001104 }
+		command = { type = sleepevent which = 3001105 }
+	}
+}
+
+#(1604) Removal of a Threat
+event = {
+	id = 3001473 #id = 90947
+	trigger = {
+		event = 3001472 #BYZ: The Sibling Conflict
+	}
+	random = NO
+	country = BYZ
+	name = "Removal of a Threat" #Removal of a Threat
+	desc = "Although invested with the throne, Zoë knew that as long as her brother was alive he would remain a threat to her power."
+	#-#Although invested with the throne, Zoë knew that as long as her brother was alive he would remain a threat to her power.
+
+	date = { day = 29 month = march year = 1604 }
+
+	action_a = { # Kill him in his sleep
+		name = "Execute him"
+		command = { type = stability value = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revoltrisk which = 12 value = 2 }
+		command = { type = sleepevent which = 3001474 } #BYZ: Nobility revolts in favor of Konstantin
+	}
+	action_b = { # Exile him
+		name = "Exile him to Arkangelsk"
+		command = { type = stability value = 1 }
+		command = { type = treasury value = -300 }
+	}
+}
+
+#(1606) Rebellion of the exiled prince
+event = {
+	id = 3001474 #id = 90948
+	trigger = {
+		event = 3001473 #BYZ: Removal of a Threat
+	}
+	random = no
+	country = BYZ
+	name = "Nobility revolts in favor of Konstantin" #Nobility revolts in favor of Konstantin
+	desc = "Although exiled, Konstantin still had a lot of support and when Zoë´s hard hand found the nobility they began open revolt in favor of Konstantin."
+	#-#Although exiled, Konstantin still had a lot of support and when Zoë´s hard hand found the nobility they began open revolt in favor of Konstantin.
+
+	date = { day = 29 month = march year = 1606 }
+
+	action_a = {
+		name = "Crush the revolters!" #Crush the revolters!
+		command = { type = stability value = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revoltrisk which = 12 value = 5 }
+		#command = { type = vp value = 200 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+	}
+	action_b = {
+		name = "Bribe them off" #Bribe them off
+		command = { type = stability value = 1 }
+		command = { type = treasury value = -600 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+	}
+}
+
+#(1606-1610) Nobility Overthrows Zoë II
+event = {
+	id = 3001475
+	trigger = {
+		event = 3001474 #BYZ: Nobility revolts in favor of Konstantin
+		NOT = { control = { province = 357 data = -1 } } #Thrace
+		#NOT = { control = { province = -2 data = -1 } }
+	}
+	random = NO
+	country = BYZ
+	name = "The Nobility Overthrows the Empress!"
+	desc = "The forces raised against Zoë´s rule have succeeded in taking the capital! Konstantin has been restored to his throne. There is celebration in the streets as the rebel Empress and her traitorous husband have been put to death in the forum of Constantine. The Church and the nobility combine in a massive reactionary purge of the former regime."
+
+	date = { day = 29 month = march year = 1606 }
+	offset = 10 #1 week
+	deathdate = { day = 29 month = december year = 1610 }
+
+	action_a = {
+		name = "Restore Konstantin XIII!" #You should have killed him
+		command = { type = stability value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = 6 }
+		command = { type = domestic which = INNOVATIVE value = -6 }
+		command = { type = domestic which = SERFDOM value = 4 }
+		command = { type = remove_countryculture which = arabic }
+		command = { type = remove_countryculture which = kurdish }
+		command = { type = remove_countryculture which = syrian }
+		command = { type = remove_countryculture which = turkish }
+		command = { type = wakemonarch which = 027513 } #Konstantin XIII *
+		command = { type = sleepmonarch which = 027514 } #Zoë II *
+		command = { type = sleepleader which = 027802 } #Alexandros Makrienos (BYZ)
+	}
+}
+
+#(1607) The first nobility revolt of Zoë II´s reign
+event = {
+	id = 3001476 #id = 90949
+	trigger = {
+		event = 3001472 #BYZ: The Sibling Conflict
+		domestic = { type = aristocracy value = 3 }
+	}
+	random = no
+	country = BYZ
+	name = "The nobility revolts" #The nobility revolts
+	desc = "The nobility was never really comfortable with an Empress on the throne and when she started to strengthen central power their distrust turned to hatred."
+	#-#The nobility was never really comfortable with an Empress on the throne and when she started to strengthen central power their distrust turned to hatred.
+
+	date = { day = 29 month = march year = 1607 }
+
+	action_a = {
+		name = "Crush the revolters!" #Crush the revolters!
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = revoltrisk which = 12 value = 7 }
+	}
+}
+
+#(1609) The second nobility revolt of Zoe II´s reign
+event = {
+	id = 3001477 #id = 90950
+	trigger = {
+		event = 3001472 #BYZ: The Sibling Conflict
+		domestic = { type = aristocracy value = 3 }
+	}
+	random = no
+	country = BYZ
+	name = "The nobility revolts" #The nobility revolts
+	desc = "The nobility was never really comfortable with an Empress on the throne and when she started to strengthen central power their distrust turned to hatred."
+	#-#The nobility was never really comfortable with an Empress on the throne and when she started to strengthen central power their distrust turned to hatred.
+
+	date = { day = 29 month = march year = 1609 }
+
+	action_a = {
+		name = "Crush the revolters!" #Crush the revolters!
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = revoltrisk which = 12 value = 7 }
+	}
+}
+
+#(1612-1614) Dealing with the nobility
+event = {
+	id = 3001478 #id = 90952
+	trigger = {
+		OR = {
+			event = 3001104 #Kom revolt
+			event = 3001105 #BYZ: The Great Noble Revolts
+		}
+	}
+	random = no
+	country = BYZ
+	name = "Dealing with the nobility" #Dealing with the nobility
+	desc = "After major revolts, Zoe had had enough and the nobility was reigned in with vengeance. With the nobility sufficiently cowed, reconciling with them provided the opportuning for substantial long term benefits.
+"
+	#-#After major revolts, Zoe had had enough and the nobility was reigned in with vengeance. With the nobility sufficiently cowed, reconciling with them provided the opportuning for substantial long term benefits.
+
+	date = { day = 1 month = may year = 1612 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1614 }
+
+	action_a = {
+		name = "Take a more forgiving attitude" #Take a more forgiving attitude
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 3 }
+		command = { type = domestic which = QUALITY value = 1 }
+	}
+	action_b = {
+		name = "Slaughter them all and confiscate their lands!" #Slaughter them all and confiscate their lands!
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = domestic which = OFFENSIVE value = -2 }
+		command = { type = domestic which = INNOVATIVE value = -6 }
+		command = { type = stability value = 5 }
+		command = { type = treasury value = 1000 }
+		command = { type = sleepevent which = 3001481 } #BYZ: Reformation of the army
+		#command = { type = sleepevent which = 90954 } #BYZ: Reformation of the economy
+		command = { type = sleepevent which = 3001483 } #BYZ: The universal reform
+	}
+	action_c = {
+		name = "Hold their families hostage" #Hold their families hostage
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = stability value = 2 }
+		command = { type = sleepevent which = 3001483 } #BYZ: The universal reform
+	}
+}
+
+#(1604-1610) Rebellion of the Cistern
+event = {
+	id = 3001479
+	trigger = {
+		event = 3001472 #BYZ: The Sibling Conflict
+		NOT = { control = { province = 357 data = -1 } } #Thrace
+		#NOT = { control = { province = -2 data = -1 } }
+	}
+	random = NO
+	country = BYZ
+	name = "Makrienos succeeds!"
+	desc = "The forces raised against Konstantinos´s rule have succeeded in taking the capital! Konstantinos has been blinded and packed away to a monastery. There is celebration in the streets as the victorious Empress and her husband put the defeated nobles to death in the forum of Constantine. Zoë uses the passionate moment to ram through a massive restructuring of the Imperial administration."
+
+	date = { day = 29 month = march year = 1604 }
+	offset = 10 #1 week
+	deathdate = { day = 29 month = december year = 1610 }
+
+	action_a = {
+		name = "Thank God!"
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 500 } #confiscated estates
+		command = { type = domestic which = CENTRALIZATION value = 4 }
+		command = { type = domestic which = ARISTOCRACY value = -6 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = sleepmonarch which = 027513 } #Konstantin XIII *
+		command = { type = wakemonarch which = 027514 } #Zoë II *
+		command = { type = wakeleader which = 027802 } #Alexandros Makrienos (BYZ)
+	}
+}
+
+#The Reign of Konstantin XIII
+event = {
+	id = 3001480
+	trigger = {
+		monarch = 027513
+	}
+	random = NO
+	country = BYZ
+	name = "Konstantinos XIII"
+	desc = "Considering the Basileus's easily manipulated nature, there was a scramble to get access to him and influence him in any number of ways. Still, there was eventually a winner who proved more powerful than the rest during the remainder of his reign."
+
+	date = { day = 29 month = march year = 1610 }
+	offset = 1 #immediate
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "The militant aristocracy"
+		command = { type = MIL which = 4 value = 300 }
+		command = { type = stability value = 3 }
+		command = { type = treasury value = -600 }
+		command = { type = gainmanufactory which = -1 value = navalequipment }
+		command = { type = gainmanufactory which = -1 value = weapons }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+	}
+	action_b = {
+		name = "The Patriarch"
+		command = { type = ADM which = 6 value = 300 }
+		command = { type = stability value = 1 }
+		command = { type = treasury value = -300 } #building program
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = conversion which = -1 }
+		command = { type = conversion which = -1 }
+		command = { type = conversion which = -1 }
+	}
+	action_c = {
+		name = "The merchant aristocracy"
+		command = { type = ADM which = 4 value = 300 }
+		command = { type = stability value = -1 }
+		command = { type = treasury value = 100 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = domestic which = MERCANTILISM value = 2 }
+		command = { type = domestic which = LAND value = -2 }
+		command = { type = galleys which = -2 value = 20 }
+	}
+	action_d = {
+		name = "The Italians"
+		command = { type = DIP which = 4 value = 300 }
+		command = { type = stability value = -3 }
+		command = { type = inflation value = -10 }
+		command = { type = treasury value = 1000 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = domestic which = MERCANTILISM value = -6 }
+		command = { type = relation which = VEN value = 300 }
+		command = { type = relation which = GEN value = 300 }
+		command = { type = relation which = NAP value = 300 }
+	}
+}
+
+#(1613-1620) Reformation of the Army
+event = {
+	id = 3001481 #id = 90953
+	trigger = {
+		event = 3001478 #BYZ: Dealing with the nobility
+	}
+	random = no
+	country = BYZ
+	name = "Reformation of the Army" #Reformation of the Army
+	desc = "After the major revolts in the early years of Zoe's reign, the Byzantine armies were in a sorry shape and major reforms were needed."
+	#-#After the major revolts in the early years of Zoe's reign, the Byzantine armies were in a sorry shape and major reforms were needed.
+
+	date = { day = 1 month = may year = 1613 }
+	offset = 10 #1 week
+	deathdate = { day = 1 month = january year = 1620 }
+
+	action_a = {
+		name = "The Empire is weak and needs to concentrate on defense" #The Empire is weak and needs to concentrate on defense
+		command = { type = domestic which = OFFENSIVE value = -3 }
+		command = { type = domestic which = QUALITY value = 2 }
+		command = { type = land value = 1000 }
+		command = { type = treasury value = -600 }
+		command = { type = INF which = 360 value = 10000 } #Morea
+		command = { type = ART which = 360 value = 50 } #Morea
+		command = { type = fortress which = -2 value = 2 }
+		command = { type = fortress which = -1 value = 1 }
+		command = { type = fortress which = -1 value = 1 }
+		command = { type = fortress which = -1 value = 1 }
+		command = { type = fortress which = -1 value = 1 }
+		command = { type = fortress which = -1 value = 1 }
+		command = { type = fortress which = -1 value = 1 }
+	}
+	action_b = {
+		name = "Offense is the best defense" #Offense is the best defense
+		command = { type = domestic which = OFFENSIVE value = 3 }
+		command = { type = domestic which = LAND value = 2 }
+		command = { type = land value = 1000 }
+		command = { type = treasury value = -400 }
+		command = { type = gainbuilding which = -1 value = barrack }
+		command = { type = INF which = 360 value = 10000 } #Morea
+		command = { type = CAV which = 360 value = 7000 } #Morea
+	}
+	action_c = {
+		name = "Balanced reforms" #Balanced reforms
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = land value = 500 }
+		command = { type = naval value = 500 }
+		command = { type = treasury value = -100 }
+		command = { type = INF which = 360 value = 10000 } #Morea
+		command = { type = CAV which = 360 value = 4000 } #Morea
+		command = { type = ART which = 360 value = 30 } #Morea
+	}
+	action_d = {
+		name = "Save the money to rebuild the state." #Save the money to rebuild the state.
+		command = { type = stability value = -1 }
+		command = { type = infra value = 1000 }
+		command = { type = treasury value = 200 }
+	}
+}
+
+#(1613-1630) Reformation of the economy
+event = {
+	id = 3001482 #id = 90954
+	trigger = {
+		event = 3001478 #BYZ: Dealing with the nobility
+	}
+	random = no
+	country = BYZ
+	name = "Reformation of the economy" #Reformation of the economy
+	desc = "The turbulence in Byzantium had turned the economy into a shipwreck. The empress didn´t even have enough money to pay her army or dignitaries. The situation desperately needed to be rectified."
+	#-#The turbulence in Byzantium had turned the economy into a shipwreck. The empress didn´t even have enough money to pay her army or dignitaries. The situation desperately needed to be rectified.
+
+	date = { day = 1 month = may year = 1613 }
+	offset = 10 #1 week
+	deathdate = { day = 1 month = january year = 1630 }
+
+	action_a = {
+		name = "Confiscate land from the nobility" #Confiscate land from the nobility
+		command = { type = stability value = -3 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = treasury value = 1500 }
+	}
+	action_b = {
+		name = "Expand trade" #Expand trade
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = LAND value = 2 }
+		command = { type = loansize which = 500 }
+		command = { type = treasury value = 200 }
+		command = { type = merchants value = 6 }
+		command = { type = stability value = 1 }
+		command = { type = trade value = 3000 }
+	}
+	action_c = {
+		name = "Internal tax reform" #Internal tax reform
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+	}
+}
+
+#(1618-1630) The universal reform
+event = {
+	id = 3001483 #id = 90955
+	trigger = {
+		event = 3001478 #BYZ: Dealing with the nobility
+	}
+	random = no
+	country = BYZ
+	name = "The universal reform" #The universal reform
+	desc = "Centuries of warfare had led the Empire, once renowned for it´s art and learning, to become a second class society in those regards. Zoe was always a patron of the arts and wished for Byzantium to become the light of the world it had once been. However, if that road was to be followed, it would take a monumental effort and the choice would be an unpopular one among the people."
+	#-#Centuries of warfare had led the Empire, once renowned for it´s art and learning, to become a second class society in those regards. Zoe was always a patron of the arts and wished for Byzantium to become the light of the world it had once been. However, if that road was to be followed, it would take a monumental effort and the choice would be an unpopular one among the people.
+
+	date = { day = 1 month = may year = 1618 }
+	offset = 360 #1 year
+	deathdate = { day = 1 month = january year = 1630 }
+
+	action_a = {
+		name = "Learning and the arts shall flourish" #Learning and the arts shall flourish
+		command = { type = gainmanufactory which = -1 value = luxury }
+		command = { type = domestic which = INNOVATIVE value = 5 }
+		command = { type = stability value = -3 }
+		command = { type = treasury value = -500 }
+		command = { type = revoltrisk which = 24 value = 5 }
+	}
+	action_b = {
+		name = "Industry is the future" #Industry is the future
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = gainmanufactory which = -1 value = goods }
+		command = { type = gainmanufactory which = -1 value = refinery }
+		command = { type = stability value = -1 }
+		command = { type = treasury value = -500 }
+		command = { type = trade value = 1000 }
+		command = { type = infra value = 1000 }
+	}
+	action_c = {
+		name = "The past should be valued" #The past should be valued
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = stability value = 3 }
+		command = { type = land value = 1000 }
+		command = { type = naval value = 1000 }
+	}
+}
+
+#(1642-1700) Age of Enlightenment (was University of Constantinople)
+event = {
+	id = 3001484 #id = 90956
+	trigger = {
+		event = 3001483 #BYZ: The universal reform
+		domestic = { type = innovative value = 8 }
+	}
+	random = no
+	country = BYZ
+	name = "Age of Enlightenment" #Age of Enlightenment
+	desc = "After decades of hard work to rebuild Byzantium into a center of culture and arts, things looked to be on the road to success."
+	#-#After decades of hard work to rebuild Byzantium into a center of culture and arts, things looked to be on the road to success.
+
+	date = { day = 1 month = may year = 1616 }
+	offset = 360 #1 year
+	deathdate = { day = 1 month = january year = 1700 }
+
+	action_a = {
+		name = "Continue on the way forward" #Continue on the way forward
+		command = { type = stability value = -4 }
+		command = { type = treasury value = -500 }
+		command = { type = revoltrisk which = 12 value = 10 }
+		command = { type = technology which = latin }
+	}
+	action_b = {
+		name = "We don't need art, we need the army" #We don´t need art, we need the army
+		command = { type = domestic which = INNOVATIVE value = -5 }
+		command = { type = stability value = 3 }
+		command = { type = treasury value = -100 }
+		command = { type = land value = 3000 }
+		command = { type = naval value = 3000 }
+		command = { type = gainbuilding which = -1 value = barrack }
+	}
+}
+
+#(1613-1630) Dealing with the merchants
+event = {
+	id = 3001485 #id = 90957
+	trigger = {
+		event = 3001478 #BYZ: Dealing with the nobility
+		NOT = {	domestic = { type = aristocracy value = 5 } }
+	}
+	random = no
+	country = BYZ
+	name = "Dealing with the merchants" #Dealing with the merchants
+	desc = "Having to bear a large part of the Empress' efforts to reform, the merchants grew unruly. Although merchants didn´t control armies, they did control the finances of the government and its subjects, especially the banking system. Upsetting them could prove very dangerous."
+	#-#Having to bear a large part of the Empress' efforts to reform, the merchants grew unruly. Although merchants didn´t control armies, they did control the finances of the government and its subjects, especially the banking system. Upsetting them could prove very dangerous.
+
+	date = { day = 1 month = january year = 1613 }
+	offset = 10 #1 week
+	deathdate = { day = 1 month = january year = 1630 }
+
+	action_a = {
+		name = "Refuse to give in to their demands" #Refuse to give in to their demands
+		command = { type = domestic which = MERCANTILISM value = -3 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = stability value = -3 }
+		command = { type = loansize which = 200 }
+		command = { type = revoltrisk which = 12 value = 5 }
+		command = { type = sleepevent which = 3001486 }
+	}
+	action_b = {
+		name = "Lower taxes on trade" #Lower taxes on trade
+		command = { type = domestic which = MERCANTILISM value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = merchants value = 6 }
+		command = { type = stability value = -1 }
+		command = { type = revoltrisk which = 12 value = 4 }
+		command = { type = sleepevent which = 3001486 }
+	}
+	action_c = {
+		name = "Lower all taxes" #Lower all taxes
+		command = { type = domestic which = MERCANTILISM value = 3 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = treasury value = -200 }
+		command = { type = merchants value = 6 }
+		command = { type = stability value = 3 }
+	}
+}
+
+#(1640-1650) The Laffer Curve
+event = {
+	id = 3001486
+	trigger = {
+		event = 3001485 #BYZ: Dealing with the Merchants
+	}
+	random = NO
+	country = BYZ
+	name = "The Laffer Curve"
+	desc = "Not universally but often enough that attention should be paid, a government reduction in its taxation can produce such growth in the domestic economy that its revenue actually increases. The tax cut provided to the merchants a few decades ago has paid off handsomely - the freeholds have expanded agricultural production, the merchant marine has doubled its fleet, our manufacturing sector is constantly petitioning for new incorporations. Since everyone wants a piece of the action, it's even improved our relations with some of our neighbours!"
+
+	date = { year = 1640 }
+	offset = 360 #1 year
+	deathdate = { year = 1650 }
+
+	action_a = {
+		name = "The economy is booming!"
+		command = { type = treasury value = 100 }
+		command = { type = domestic which = LAND value = -1 }
+		command = { type = provincetax which = -2 value = 1 }
+		command = { type = provincetax which = -1 value = 2 }
+		command = { type = provincetax which = -1 value = 2 }
+		command = { type = provincetax which = -1 value = 2 }
+		command = { type = provincetax which = -1 value = 2 }
+		command = { type = provincetax which = -1 value = 2 }
+		command = { type = provincetax which = -1 value = 2 }
+		command = { type = provincetax which = -1 value = 2 }
+		command = { type = provincetax which = -1 value = 2 }
+		command = { type = provincetax which = -1 value = 2 }
+		command = { type = provincetax which = -1 value = 2 }
+		command = { type = provincetax which = -1 value = 2 }
+		command = { type = provincetax which = -1 value = 2 }
+		command = { type = provincetax which = -1 value = 2 }
+		command = { type = provincetax which = -1 value = 2 }
+		command = { type = provincetax which = -1 value = 2 }
+		command = { type = relation which = VEN value = 50 }
+		command = { type = relation which = GEN value = 50 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+	}
+}
+
+# Changes might favor a reunion later, so re-examine Council of Florence
+# NOTE: Removed monarch check, to allow any dynasty to reconsider Florence
+#(1419-1820) A Papal Envoy
+event = {
+	id = 3001487
+	trigger = {
+		religion = orthodox
+		event = 3833 #BYZ:Council of Florence
+		countrysize = 10
+		relation = { country = PAP data = 125 }
+	}
+	random = YES
+	country = BYZ
+	name = "A Papal envoy"
+	desc = "A Papal legate has arrived in the Imperial court. The Pope wonders, now that the Palaiologid throne is more secure, if the Emperor cared to rethink the dynasty's position on the Council of Florence. He is, of course, only concerned for the eternal souls of His Majesty, his children, and his subjects, all of whom are surely condemned to everlasting torment currently."
+
+	date = { year = 1419 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = { #No
+		name = "Better a turban than a miter"
+		ai_chance = 90
+		command = { type = stability value = 1 }
+		command = { type = relation which = MOS value = 50 }
+		command = { type = relation which = NVG value = 50 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = relation which = MOR value = 50 }
+		command = { type = relation which = WAL value = 50 }
+		command = { type = relation which = SPR value = 50 }
+		command = { type = relation which = SER value = 50 }
+		command = { type = relation which = GEO value = 50 }
+		command = { type = relation which = BAE value = 50 }
+		command = { type = relation which = SEV value = 50 }
+		command = { type = relation which = KAL value = 50 }
+	}
+	action_b = { #Yes
+		name = "Semper discere Latinam vobam!" #"I always wanted to learn Latin!"
+		ai_chance = 10
+		command = { type = stability value = -6 }
+		command = { type = desertion which = -2 value = 10000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = religion which = catholic }
+		command = { type = religiousrevolt which = -2 }
+		command = { type = religiousrevolt which = -2 }
+		command = { type = religiousrevolt which = -2 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = relation which = PAP value = 300 }
+		command = { type = relation which = VEN value = 150 }
+		command = { type = relation which = GEN value = 150 }
+		command = { type = relation which = NAP value = 50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = SPA value = 150 }
+		command = { type = relation which = CAS value = 50 }
+		command = { type = relation which = POR value = 50 }
+		command = { type = relation which = ARG value = 50 }
+		command = { type = relation which = MOS value = -50 }
+		command = { type = relation which = NVG value = -50 }
+		command = { type = relation which = RUS value = -150 }
+		command = { type = relation which = MOR value = -50 }
+		command = { type = relation which = WAL value = -50 }
+		command = { type = relation which = SPR value = -150 }
+		command = { type = relation which = SER value = -50 }
+		command = { type = relation which = GEO value = -50 }
+		command = { type = relation which = BAE value = -50 }
+		command = { type = relation which = SEV value = -50 }
+		command = { type = relation which = KAL value = -50 }
+		#command = { type = trigger which = 3001338 } #RUS: The Roman Empire is no more
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Kommenid Dynasty Events (surely there are some)

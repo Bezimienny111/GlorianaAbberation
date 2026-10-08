@@ -1,0 +1,73 @@
+#####Sweden Flavor Events######
+#By Henrik 'Doomdark' Fåhraeus#
+###############################
+
+#Erik Dahlberg.#
+event = {
+	id = 5030
+	random = no
+	country = SWE
+	name = "EVENTNAME5030"
+	desc = "EVENTHIST5030"
+
+	style = "5030"
+
+	date = { day = 1 month = january year = 1679 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5030A"
+		command = { type = fortress which = -2 value = 1 } # Dalarö
+		command = { type = fortress which = 253 value = 1 } # Gothenburg
+		command = { type = fortress which = 251 value = 1 } # Varberg
+		command = { type = fortress which = -4 value = 1 } # Random province
+	}
+}
+#Olof Rudbeck publishes 'Atlantica'.#
+event = {
+	id = 5031
+	random = no
+	country = SWE
+	name = "EVENTNAME5031"
+	desc = "EVENTHIST5031"
+	date = { day = 1 month = january year = 1702 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5031A"
+		command = { type = stability value = 1 }
+		command = { type = relation which = ENG value = 30 }
+		command = { type = relation which = FRA value = 30 }
+		command = { type = relation which = -1 value = 30 }
+		command = { type = relation which = -4 value = 30 }
+	}
+}
+#Emanuel Swedenborg.#
+event = {
+	id = 5032
+	random = no
+	country = SWE
+	name = "EVENTNAME5032"
+	desc = "EVENTHIST5032"
+	date = { day = 1 month = january year = 1758 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5032A"
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = revoltrisk value = 1 }
+	}
+}
+#Carl von Linné.#
+event = {
+	id = 5033
+	random = no
+	country = SWE
+	name = "EVENTNAME5033"
+	desc = "EVENTHIST5033"
+	date = { day = 1 month = january year = 1753 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5033A"
+		command = { type = domestic which = INNOVATIVE value = 1 }
+	}
+}
+
+# Ids free to 5049

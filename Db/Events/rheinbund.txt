@@ -1,0 +1,1105 @@
+###########################################
+### confederation of the rhine events 	###
+### for the NAJF scenario		###
+### by Ayeshteni AJFowler		###
+###########################################
+
+#french proclaim the rheinbund
+event = {
+	id = 120800
+	trigger = {
+		OR = {
+			AND = {
+				event = 3148
+				owned = { province = 345 data = FRA }
+				control = { province = 345 data = FRA }
+				NOT = {
+					exists = RHB
+					}
+				}
+			AND = {
+				event = 3148
+				owned = { province = 346 data = FRA }
+				control = { province = 346 data = FRA }
+				NOT = {
+					exists = RHB
+					}
+				}
+			}
+		}
+	random = no
+	country = FRA
+	name = "The Confederation of the Rhine"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	date = { day = 1 month = january year = 1806 }
+	offset = 15
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Create the Confederation"
+		command = { type = independence which = RHB }
+		command = { type = vp value = 10 }
+		command = { type = trigger which = 120842 }
+	}
+
+	action_b = {
+		name = "Rule it from Paris"
+		command = { type = domestic which = centralization value = -1 }
+		command = { type = vp value = 5 }
+	}
+}
+
+event = {
+	id = 120842
+	random = no
+	country = FRA
+	name = "Create the Confederation of the Rhine"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	action_a = {
+		name = "excellent"
+		command = { type = alliance which = RHB }
+	}
+}
+
+#confed proclaimed
+event = {
+	id = 120801
+	random = no
+	country = RHB
+	name = "Confederation of the Rhine Proclaimed"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	date = { day = 1 month = january year = 1806 }
+	offset = 2
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "OK"
+		command = { type = independence which = WUR }
+		command = { type = independence which = WPH }
+		command = { type = independence which = SAC }
+		command = { type = independence which = BAY }
+		command = { type = independence which = POL }
+		command = { type = independence which = THU }
+		command = { type = independence which = BAD }
+		command = { type = independence which = KLE }
+		command = { type = independence which = OLD }
+		command = { type = independence which = MEC }
+		command = { type = independence which = HES }
+		command = { type = independence which = BRE }
+		command = { type = stability value = 1 }
+	}
+}
+
+#non-vassals can join the confed -wur
+event = {
+	id = 120802
+	trigger = {
+		event = 120801
+		NOT = {
+			vassal = { country = RHB country = WUR }
+			war = { country = FRA country = WUR }
+		}
+	}
+	random = no
+	country = WUR
+	name = "The Confederation of the Rhine"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	date = { day = 1 month = january year = 1806 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Join the Confederation"
+		command = { type = breakvassal which = HAB }
+		command = { type = trigger which = 120803 }
+	}
+
+	action_b = {
+		name = "Nothing to do with us"
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = stability value = -1 }
+	}
+}
+
+event = {
+	id = 120803
+	random = no
+	country = RHB
+	name = "Member joins the Confederation"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	action_a = {
+		name = "OK"
+		command = { type = vassal which = WUR }
+	}
+}
+
+#non-vassals can join the confed -sac
+event = {
+	id = 120804
+	trigger = {
+		event = 120801
+		NOT = {
+			vassal = { country = RHB country = SAC }
+			war = { country = FRA country = SAC }
+		}
+	}
+	random = no
+	country = SAC
+	name = "The Confederation of the Rhine"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	date = { day = 1 month = january year = 1806 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Join the Confederation"
+		command = { type = breakvassal which = HAB }
+		command = { type = trigger which = 120805 }
+	}
+
+	action_b = {
+		name = "Nothing to do with us"
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = stability value = -1 }
+	}
+}
+
+event = {
+	id = 120805
+	random = no
+	country = RHB
+	name = "Member joins the Confederation"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	action_a = {
+		name = "OK"
+		command = { type = vassal which = SAC }
+	}
+}
+
+#non-vassals can join the confed -bay
+event = {
+	id = 120806
+	trigger = {
+		event = 120801
+		NOT = {
+			vassal = { country = RHB country = BAY }
+			war = { country = FRA country = BAY }
+		}
+	}
+	random = no
+	country = BAY
+	name = "The Confederation of the Rhine"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	date = { day = 1 month = january year = 1806 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Join the Confederation"
+		command = { type = breakvassal which = HAB }
+		command = { type = trigger which = 120807 }
+	}
+
+	action_b = {
+		name = "Nothing to do with us"
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = stability value = -1 }
+	}
+}
+
+event = {
+	id = 120807
+	random = no
+	country = RHB
+	name = "Member joins the Confederation"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	action_a = {
+		name = "OK"
+		command = { type = vassal which = BAY }
+	}
+}
+
+#non-vassals can join the confed -thu
+event = {
+	id = 120808
+	trigger = {
+		event = 120801
+		NOT = {
+			vassal = { country = RHB country = THU }
+			war = { country = FRA country = THU }
+		}
+	}
+	random = no
+	country = THU
+	name = "The Confederation of the Rhine"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	date = { day = 1 month = january year = 1806 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Join the Confederation"
+		command = { type = breakvassal which = HAB }
+		command = { type = trigger which = 120809 }
+	}
+
+	action_b = {
+		name = "Nothing to do with us"
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = stability value = -1 }
+	}
+}
+
+event = {
+	id = 120809
+	random = no
+	country = RHB
+	name = "Member joins the Confederation"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	action_a = {
+		name = "OK"
+		command = { type = vassal which = THU }
+	}
+}
+
+#non-vassals can join the confed -bad
+event = {
+	id = 120810
+	trigger = {
+		event = 120801
+		NOT = {
+			vassal = { country = RHB country = BAD }
+			war = { country = FRA country = BAD }
+		}
+	}
+	random = no
+	country = BAD
+	name = "The Confederation of the Rhine"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	date = { day = 1 month = january year = 1806 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Join the Confederation"
+		command = { type = breakvassal which = HAB }
+		command = { type = trigger which = 120811 }
+	}
+
+	action_b = {
+		name = "Nothing to do with us"
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = stability value = -1 }
+	}
+}
+
+event = {
+	id = 120811
+	random = no
+	country = RHB
+	name = "Member joins the Confederation"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	action_a = {
+		name = "OK"
+		command = { type = vassal which = BAD }
+	}
+}
+
+#non-vassals can join the confed -kle
+event = {
+	id = 120812
+	trigger = {
+		event = 120801
+		NOT = {
+			vassal = { country = RHB country = KLE }
+			war = { country = FRA country = KLE }
+		}
+	}
+	random = no
+	country = KLE
+	name = "The Confederation of the Rhine"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	date = { day = 1 month = january year = 1806 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Join the Confederation"
+		command = { type = breakvassal which = HAB }
+		command = { type = trigger which = 120813 }
+	}
+
+	action_b = {
+		name = "Nothing to do with us"
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = stability value = -1 }
+	}
+}
+
+event = {
+	id = 120813
+	random = no
+	country = RHB
+	name = "Member joins the Confederation"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	action_a = {
+		name = "OK"
+		command = { type = vassal which = KLE }
+	}
+}
+
+#non-vassals can join the confed -old
+event = {
+	id = 120814
+	trigger = {
+		event = 120801
+		NOT = {
+			vassal = { country = RHB country = OLD }
+			war = { country = FRA country = OLD }
+		}
+	}
+	random = no
+	country = OLD
+	name = "The Confederation of the Rhine"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	date = { day = 1 month = january year = 1806 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Join the Confederation"
+		command = { type = breakvassal which = HAB }
+		command = { type = trigger which = 120815 }
+	}
+
+	action_b = {
+		name = "Nothing to do with us"
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = stability value = -1 }
+	}
+}
+
+event = {
+	id = 120815
+	random = no
+	country = RHB
+	name = "Member joins the Confederation"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	action_a = {
+		name = "OK"
+		command = { type = vassal which = OLD }
+	}
+}
+
+#non-vassals can join the confed -mec
+event = {
+	id = 120816
+	trigger = {
+		event = 120801
+		NOT = {
+			vassal = { country = RHB country = MEC }
+			war = { country = FRA country = MEC }
+		}
+	}
+	random = no
+	country = MEC
+	name = "The Confederation of the Rhine"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	date = { day = 1 month = january year = 1806 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Join the Confederation"
+		command = { type = breakvassal which = HAB }
+		command = { type = trigger which = 120817 }
+	}
+
+	action_b = {
+		name = "Nothing to do with us"
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = stability value = -1 }
+	}
+}
+
+event = {
+	id = 120817
+	random = no
+	country = RHB
+	name = "Member joins the Confederation"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	action_a = {
+		name = "OK"
+		command = { type = vassal which = MEC }
+	}
+}
+
+#non-vassals can join the confed -hes
+event = {
+	id = 120818
+	trigger = {
+		event = 120801
+		NOT = {
+			vassal = { country = RHB country = HES }
+			war = { country = FRA country = HES }
+		}
+	}
+	random = no
+	country = HES
+	name = "The Confederation of the Rhine"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	date = { day = 1 month = january year = 1806 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Join the Confederation"
+		command = { type = breakvassal which = HAB }
+		command = { type = trigger which = 120819 }
+	}
+
+	action_b = {
+		name = "Nothing to do with us"
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = stability value = -1 }
+	}
+}
+
+event = {
+	id = 120819
+	random = no
+	country = RHB
+	name = "Member joins the Confederation"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	action_a = {
+		name = "OK"
+		command = { type = vassal which = HES }
+	}
+}
+
+#non-vassals can join the confed -bre
+event = {
+	id = 120820
+	trigger = {
+		event = 120801
+		NOT = {
+			vassal = { country = RHB country = BRE }
+			war = { country = FRA country = BRE }
+		}
+	}
+	random = no
+	country = BRE
+	name = "The Confederation of the Rhine"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	date = { day = 1 month = january year = 1806 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Join the Confederation"
+		command = { type = breakvassal which = HAB }
+		command = { type = trigger which = 120821 }
+	}
+
+	action_b = {
+		name = "Nothing to do with us"
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = stability value = -1 }
+	}
+}
+
+event = {
+	id = 120821
+	random = no
+	country = RHB
+	name = "Member joins the Confederation"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	action_a = {
+		name = "OK"
+		command = { type = vassal which = BRE }
+	}
+}
+
+#non-vassals can join the confed -mun
+event = {
+	id = 120822
+	trigger = {
+		event = 120801
+		NOT = {
+			vassal = { country = RHB country = MUN }
+			war = { country = FRA country = MUN }
+		}
+	}
+	random = no
+	country = MUN
+	name = "The Confederation of the Rhine"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	date = { day = 1 month = january year = 1806 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Join the Confederation"
+		command = { type = breakvassal which = HAB }
+		command = { type = trigger which = 120823 }
+	}
+
+	action_b = {
+		name = "Nothing to do with us"
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = stability value = -1 }
+	}
+}
+
+event = {
+	id = 120823
+	random = no
+	country = RHB
+	name = "Member joins the Confederation"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	action_a = {
+		name = "OK"
+		command = { type = vassal which = MUN }
+	}
+}
+
+#confed formed -remove core event
+event = {
+	id = 120824
+	trigger = {
+		event = 120801
+	}
+	random = no
+	country = RHB
+	name = "Confederation Formed"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	date = { day = 1 month = january year = 1806 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "OK"
+		command = { type = removecore which = 291 }
+		command = { type = removecore which = 292 }
+		command = { type = removecore which = 299 }
+		command = { type = removecore which = 300 }
+		command = { type = removecore which = 303 }
+		command = { type = removecore which = 305 }
+		command = { type = removecore which = 310 }
+		command = { type = removecore which = 331 }
+		command = { type = removecore which = 332 }
+		command = { type = removecore which = 333 }
+		command = { type = removecore which = 334 }
+		command = { type = removecore which = 335 }
+		command = { type = removecore which = 336 }
+		command = { type = removecore which = 343 }
+		command = { type = removecore which = 344 }
+		command = { type = removecore which = 347 }
+		command = { type = removecore which = 348 }
+		command = { type = removecore which = 349 }
+		command = { type = removecore which = 372 }
+		command = { type = removecore which = 373 }
+	}
+}
+
+#confed states enter french alliance -wur
+event = {
+	id = 120825
+	trigger = {
+		alliance = { country = FRA country = RHB }
+		vassal = { country = RHB country = WUR }
+	}
+	random = no
+	country = FRA
+	name = "Confederation member state enters Grand Alliance"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	date = { day = 1 month = january year = 1806 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "OK"
+		command = { type = alliance which = WUR }
+		command = { type = vp value = 1 }
+	}
+}
+
+#confed states enter french alliance -u03
+event = {
+	id = 120826
+	trigger = {
+		alliance = { country = FRA country = RHB }
+		vassal = { country = RHB country = WPH }
+	}
+	random = no
+	country = FRA
+	name = "Confederation member state enters Grand Alliance"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	date = { day = 1 month = january year = 1806 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "OK"
+		command = { type = alliance which = WPH }
+		command = { type = vp value = 1 }
+	}
+}
+
+#confed states enter french alliance -sac
+event = {
+	id = 120827
+	trigger = {
+		alliance = { country = FRA country = RHB }
+		vassal = { country = RHB country = SAC }
+	}
+	random = no
+	country = FRA
+	name = "Confederation member state enters Grand Alliance"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	date = { day = 1 month = january year = 1806 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "OK"
+		command = { type = alliance which = SAC }
+		command = { type = vp value = 1 }
+	}
+}
+
+#confed states enter french alliance -bay
+event = {
+	id = 120828
+	trigger = {
+		alliance = { country = FRA country = RHB }
+		vassal = { country = RHB country = BAY }
+	}
+	random = no
+	country = FRA
+	name = "Confederation member state enters Grand Alliance"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	date = { day = 1 month = january year = 1806 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "OK"
+		command = { type = alliance which = BAY }
+		command = { type = vp value = 1 }
+	}
+}
+
+#confed states enter french alliance -pol
+event = {
+	id = 120829
+	trigger = {
+		alliance = { country = FRA country = RHB }
+		vassal = { country = RHB country = POL }
+	}
+	random = no
+	country = FRA
+	name = "Confederation member state enters Grand Alliance"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	date = { day = 1 month = january year = 1806 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "OK"
+		command = { type = alliance which = POL }
+		command = { type = vp value = 1 }
+	}
+}
+
+#confed states enter french alliance -thu
+event = {
+	id = 120830
+	trigger = {
+		alliance = { country = FRA country = RHB }
+		vassal = { country = RHB country = THU }
+	}
+	random = no
+	country = FRA
+	name = "Confederation member state enters Grand Alliance"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	date = { day = 1 month = january year = 1806 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "OK"
+		command = { type = alliance which = THU }
+		command = { type = vp value = 1 }
+	}
+}
+
+#confed states enter french alliance -bad
+event = {
+	id = 120831
+	trigger = {
+		alliance = { country = FRA country = RHB }
+		vassal = { country = RHB country = BAD }
+	}
+	random = no
+	country = FRA
+	name = "Confederation member state enters Grand Alliance"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	date = { day = 1 month = january year = 1806 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "OK"
+		command = { type = alliance which = BAD }
+		command = { type = vp value = 1 }
+	}
+}
+
+#confed states enter french alliance -kle
+event = {
+	id = 120832
+	trigger = {
+		alliance = { country = FRA country = RHB }
+		vassal = { country = RHB country = KLE }
+	}
+	random = no
+	country = FRA
+	name = "Confederation member state enters Grand Alliance"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	date = { day = 1 month = january year = 1806 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "OK"
+		command = { type = alliance which = KLE }
+		command = { type = vp value = 1 }
+	}
+}
+
+#confed states enter french alliance -old
+event = {
+	id = 120833
+	trigger = {
+		alliance = { country = FRA country = RHB }
+		vassal = { country = RHB country = OLD }
+	}
+	random = no
+	country = FRA
+	name = "Confederation member state enters Grand Alliance"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	date = { day = 1 month = january year = 1806 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "OK"
+		command = { type = alliance which = OLD }
+		command = { type = vp value = 1 }
+	}
+}
+
+#confed states enter french alliance -mec
+event = {
+	id = 120834
+	trigger = {
+		alliance = { country = FRA country = RHB }
+		vassal = { country = RHB country = MEC }
+	}
+	random = no
+	country = FRA
+	name = "Confederation member state enters Grand Alliance"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	date = { day = 1 month = january year = 1806 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "OK"
+		command = { type = alliance which = MEC }
+		command = { type = vp value = 1 }
+	}
+}
+
+#confed states enter french alliance -hes
+event = {
+	id = 120835
+	trigger = {
+		alliance = { country = FRA country = RHB }
+		vassal = { country = RHB country = HES }
+	}
+	random = no
+	country = FRA
+	name = "Confederation member state enters Grand Alliance"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	date = { day = 1 month = january year = 1806 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "OK"
+		command = { type = alliance which = HES }
+		command = { type = vp value = 1 }
+	}
+}
+
+#confed states enter french alliance -bre
+event = {
+	id = 120836
+	trigger = {
+		alliance = { country = FRA country = RHB }
+		vassal = { country = RHB country = BRE }
+	}
+	random = no
+	country = FRA
+	name = "Confederation member state enters Grand Alliance"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	date = { day = 1 month = january year = 1806 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "OK"
+		command = { type = alliance which = BRE }
+		command = { type = vp value = 1 }
+	}
+}
+
+#confed states enter french alliance -mun
+event = {
+	id = 120837
+	trigger = {
+		alliance = { country = FRA country = RHB }
+		vassal = { country = RHB country = MUN }
+	}
+	random = no
+	country = FRA
+	name = "Confederation member state enters Grand Alliance"
+	desc = "Napoleon created the Confederation of the Rhine after his military sucesses in Germany in 1806. After the defeat of Prussia in the same year more member states threw their lot in with the Confederation. The Prince President of the Federation was the former Archbishop of Mainz Karl Theodor Anton Marie von Dalberg. The Confederation would last until the defeat of Napoleon around 1813-4 when many of the states turned and joined the allies. Nevertheless, the Treaty that ended the war in 1815 after the hundred days would see the German states borders pretty much fixed at those of the member states under the Confederation."
+	style = 4
+
+	date = { day = 1 month = january year = 1806 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "OK"
+		command = { type = alliance which = MUN }
+		command = { type = vp value = 1 }
+	}
+}
+
+#duchy of warsaw granted to saxony
+event = {
+	id = 120838
+	trigger = {
+		alliance = { country = FRA country = POL }
+		vassal = { country = RHB country = POL }
+		exists = SAC
+	}
+	random = no
+	country = POL
+	name = "Duchy of Warsaw pledged to Kingdom of Saxony"
+	desc = "The people of Poland prayed to once more become citizens of a Polish Kingdom and they saw their saviour in the personage of Napoleon Bonaparte. But Napoleon did not wish to give too much to the people of Poland and wished to be able to use the resources of Poland in his struggle against the vast territory of Imperial Russia. So the territory of Warsaw was granted the status of a Duchy under the Kingship of their last dynasty of Sas, that of the Kingdom of Saxony."
+	style = 4
+
+	date = { day = 1 month = january year = 1806 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "OK"
+		command = { type = breakvassal which = RHB }
+		command = { type = stability value = 4 }
+		command = { type = trigger which = 120839 }
+		command = { type = flagname which = NAP }
+	}
+}
+
+event = {
+	id = 120839
+	random = no
+	country = SAC
+	name = "Duchy of Warsaw pledged to Kingdom of Saxony"
+	desc = "The people of Poland prayed to once more become citizens of a Polish Kingdom and they saw their saviour in the personage of Napoleon Bonaparte. But Napoleon did not wish to give too much to the people of Poland and wished to be able to use the resources of Poland in his struggle against the vast territory of Imperial Russia. So the territory of Warsaw was granted the status of a Duchy under the Kingship of their last dynasty of Sas, that of the Kingdom of Saxony."
+	style = 4
+
+	action_a = {
+		name = "OK"
+		command = { type = vassal which = POL }
+		command = { type = vp value = 25 }
+	}
+}
+
+event = {
+	id = 120840
+	trigger = {
+		monarch = 04021
+		vassal = { country = FRA country = RHB }
+	}
+	random = no
+	country = FRA
+	name = "Napoleons Vision Fails"
+	desc = "Napoleons vision of a German Rhinish Confederacy has failed. The French republic has fallen and the Bourbon Kings once more sit on the French throne. In 1813, when Napoleon's campaign in Russia failed and some of its members changed sides, the Confederation of the Rhine collapsed. On 30 May 1814 the Treaty of Paris declared the German states independent, in 1815 the Congress of Vienna redrew the continent's political map. In fact, only minor changes were made to inner-German borders, and the resulting German Confederation consisted more or less of the same members as the Confederation of the Rhine."
+	style = 5
+
+	date = { day = 1 month = january year = 1806 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Dissolve the Confederation of the Rhine"
+		command = { type = inherit which = RHB }
+		command = { type = independence which = WUR }
+		command = { type = independence which = SAC }
+		command = { type = independence which = BAY }
+		command = { type = independence which = THU }
+		command = { type = independence which = BAD }
+		command = { type = independence which = KLE }
+		command = { type = independence which = OLD }
+		command = { type = independence which = MEC }
+		command = { type = independence which = HES }
+		command = { type = independence which = BRE }
+		command = { type = independence which = MUN }
+		command = { type = independence which = HAN }
+		command = { type = independence which = PFA }
+		command = { type = relation which = WUR value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = relation which = BAY value = -100 }
+		command = { type = relation which = POL value = -100 }
+		command = { type = relation which = THU value = -100 }
+		command = { type = relation which = BAD value = -100 }
+		command = { type = relation which = KLE value = -100 }
+		command = { type = relation which = OLD value = -100 }
+		command = { type = relation which = MEC value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = BRE value = -100 }
+		command = { type = relation which = MUN value = -100 }
+		command = { type = relation which = ENG value = 50 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = PRU value = 50 }
+		command = { type = cedeprovince which = 345 value = PFA }
+	}
+}
+
+#duchy of warsaw annexed
+event = {
+	id = 120841
+	trigger = {
+		event = 120840
+		exists = HAB
+		exists = PRU
+		exists = RUS
+		alliance = { country = POL country = FRA }
+	}
+	random = no
+	country = POL
+	name = "Duchy of Warsaw dissolved"
+	desc = "After the dissolution of the Confederation of the Rhine the major powers begun the fourth partition of Poland. Russia gained the eastern marches of the Duchy of Warsaw, the Austrians gained Galicia while the Prussians gained the North including Warsaw itself. Poland itself was reduced to an area around Krakow."
+	style = 5
+
+	date = { day = 1 month = january year = 1814 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Poland carved up once more"
+		command = { type = capital which = 299 }
+		command = { type = secedeprovince which = 292 value = RUS }
+		command = { type = secedeprovince which = 298 value = HAB }
+		command = { type = secedeprovince which = 300 value = PRU }
+		command = { type = secedeprovince which = 303 value = PRU }
+		command = { type = secedeprovince which = 291 value = PRU }
+		command = { type = stability value = -1 }
+	}
+}

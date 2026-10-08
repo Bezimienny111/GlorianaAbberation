@@ -1,0 +1,93 @@
+#####Golden Horde Major Events#####
+###By Joakim 'Greven' Bergqwist####
+###################################
+
+#The Dethronement of Edigu#
+event = {
+
+	id = 4185
+	random = no
+	country = STE
+	name = "The Dethronement of Edigu"
+	desc = "EVENTHIST4185"
+
+	date = { day = 1 month = january year = 1410 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1411 }
+
+	action_a ={ # Everything is collapsing all around us!
+		name = "Everything is collapsing all around us!"
+		command = { type = revoltrisk which = 96 value = 6 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = breakoverlord which = -1 } # just in case
+		command = { type = breakoverlord which = -4 }
+		command = { type = breakoverlord which = -4 }
+		command = { type = breakoverlord which = -4 }
+		command = { type = breakoverlord which = -4 }
+		command = { type = breakoverlord which = -4 }
+		command = { type = breakoverlord which = -4 }
+		command = { type = breakoverlord which = -4 }
+		command = { type = sleepleader which = 10420 } # Edigu
+		command = { type = stability value = -4 }
+	}
+}
+
+#The Disintegration of the Golden Horde#
+event = {
+
+	id = 3689
+	random = no
+	country = STE
+	name = "EVENTNAME3689"
+	desc = "EVENTHIST3689"
+	style = "3689"
+
+	date = { day = 1 month = january year = 1435 }
+	offset = 150
+	deathdate = { day = 1 month = january year = 1475 }
+
+	action_a ={ # Remind them that we are the sons of Genghis Khan!
+		name = "Remind them that we are the sons of Genghis Khan!"
+		command = { type = revoltrisk which = 120 value = 10 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = stability value = -6 }
+		command = { type = vp value = 100 }
+	}
+	action_b ={ # Shut them up with promises of gold and glory
+		name = "Shut them up with promises of gold and glory"
+		command = { type = revoltrisk which = 120 value = 6 }
+		command = { type = casusbelli which = POL value = 72 }
+		command = { type = casusbelli which = LIT value = 72 }
+		command = { type = casusbelli which = HUN value = 72 }
+		command = { type = relation which = POL value = -400 }
+		command = { type = relation which = LIT value = -400 }
+		command = { type = relation which = HUN value = -400 }
+		command = { type = treasury value = -1000 }
+		command = { type = inflation value = 15 }
+		command = { type = stability value = -3 }
+	}
+	action_c ={ # Let the Hordes go their separate ways
+		name = "Let the Hordes go their separate ways"
+		command = { type = countryname value = "Great Horde" }
+		command = { type = revoltrisk which = 120 value = 4 }
+		command = { type = free which = CRI }
+		command = { type = free which = NOG }
+		command = { type = free which = SIB }
+		command = { type = free which = UZB }
+		command = { type = free which = KZK }
+		command = { type = treasury value = -500 }
+		command = { type = inflation value = 10 }
+		command = { type = stability value = -2 }
+	}
+}

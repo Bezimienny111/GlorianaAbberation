@@ -1,0 +1,174 @@
+#####################################
+### John Wyclif and the Lollards  ###
+#####################################
+
+
+#(1377-1380) John Wyclif's theories
+event = {
+	id = 105587
+	trigger = {
+		NOT = { 
+			domestic = { type = innovative value = 8 } 
+		} 
+	}
+	random = no
+	country = ENG
+	name = "John Wyclif's theories"
+	desc = "In 1373, John Wyclif, a doctor of theology from Oxford, began writing ‘De Domino Divinio’ in which he contested Church traditional authority. Wyclif criticized Church corruption under the Avignon pope and event went so far as to propose a random election for the Pope. Two years later he composed ‘De Civili Dominio’ in which he rejected the notion that the Church has any sort of temporal power. While the Church was horrified by his tracts, and demanded censure, he found a receptive audience not only among those at the universities, but also with the nobility who agreed with his criticism of the worldly possessions of the clergy. He was summoned in 1377 and 1378 by the Bishop of London, Guillaume de Courtenay, to explain his views, and although a papal bull was written against him, his relations with John of Gaunt saved him from any serious repercussions. His reputation was so great at that moment that both Parliament and Londoners protected him against the Curia."
+
+	date = { day = 1 month = october year = 1377 }
+	offset = 500
+	deathdate = { day = 1 month = october year = 1380 }
+
+	action_a = {
+		name = "He raises valid points"
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = relation which = PAP value = -50 }
+	}
+	action_b = {
+		name = "Condemn him as heretic immediately!"
+		command = { type = stability value = -2 }
+		command = { type = domestic which = innovative value = -1 }
+		command = { type = revoltrisk which = 36 value = 2 }
+		command = { type = revolt which = 247 }
+		command = { type = desertion which = 247 value = 5000 }
+		command = { type = setflag which = [heretic_wyclif] }
+		command = { type = trigger which = 210002 } #MUS: Lollards in Bristol
+		command = { type = trigger which = 210003 } #MUS: Lollards in Kent
+	}
+}
+
+#(1377-1380) Lollards in Kent
+event = {
+	id = 105596 #trigger by MUS_210003_A
+	random = no
+	country = ENG
+	name = "Lollards in Kent"
+	desc = "Enraged by the Crown’s repressive tactics, the Lollards have gained a great following in this province."
+
+	action_a = {
+		name = "Damn!"
+		command = { type = provincereligion which = 248 value = lollard } #Kent
+	}
+}
+
+#(1377-1380) Lollards in Bristol
+event = {
+	id = 105597 #trigger by MUS_210002_A
+	random = no
+	country = ENG
+	name = "Lollards in Bristol"
+	desc = "Enraged by the Crown’s repressive tactics, the Lollards have gained a great following in this province."
+
+	action_a = {
+		name = "Damn!"
+		command = { type = provincereligion which = 246 value = lollard } #Bristol
+	}
+}
+
+#(1390-1392) Wyclif's Bible
+event = {
+	id = 105589
+	random = no
+	country = ENG
+	name = "Wyclif's Bible"
+	desc = "In 1388, four years after Wyclif's death, his Oxford's followers published clandestinely their English version of the Vulgate. They had been inspired by Wyclif’s insistence that all the Church’s teaching and institutions should be tested rigourously against God’s own words in the Bible. The Lollard movement began as some nobles and members of the gentry approved of doctrines that might lead to the Church surrendering some of its great wealth. However, in an effort to court the favor of the Church, Henry IV moved to imprison the authors of the English Bible."
+
+	date = { day = 1 month = october year = 1390 }
+	offset = 300
+	deathdate = { day = 1 month = october year = 1392 }
+
+	action_a = {
+		name = "Imprison the authors!"
+		command = { type = stability value = -1 }
+		command = { type = revoltrisk which = 24 value = 2 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = sleepevent which = 105592 } #chance for conversion of Kent
+		command = { type = sleepevent which = 105594 } #chance for conversion of Bristol
+
+	}
+	action_b = {
+		trigger = {
+			NOT = { flag = [heretic_wyclif] }
+		}
+	name = "We support the translation"
+		command = { type = stability value = -4 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = badboy value = 1 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = setflag which = [lollard_bible] }	
+	}
+
+}
+
+#(1401-1410) Struggle against Lollard heresy
+event = {
+	id = 105591
+	trigger = {
+		flag = [heretic_wyclif]
+	}
+	random = no
+	country = ENG
+
+	name = "Struggle against Lollard heresy"
+	desc = "Repression against the Lollards began under Richard II but escalated during the reign of Henry IV, as the usurper needed the Church’s support in order to consolidate his legitimacy. The first Lollard marty was William Sawtre, a rector from Norfolk, in 1401. Royal decrees forbade the use of English version of the Bible, and anyone who made the mistake to discuss about the reality of transubtantiation was immediately convinced of heresy. The Lollard movement was forced to move underground."
+
+	date = { day = 1 month = october year = 1401 }
+	offset = 300
+	deathdate = { day = 1 month = october year = 1410 }
+	
+	action_a = {
+		name = "Time to hang some heretics..."
+		command = { type = stability value = 1 }
+		command = { type = revoltrisk which = 24 value = 1 }
+		command = { type = domestic which = innovative value = -1 }
+	}
+}
+
+#(1390-1410) Lollards in Kent
+event = {
+	id = 105598 #trigger by MUS_210000_A
+	random = no
+	country = ENG
+	name = "Lollards in Kent"
+	desc = "Emboldened by the Crown’s lax response, the Lollards have gained a great following in this province."
+
+	action_a = {
+		name = "Damn!"
+		command = { type = provincereligion which = 248 value = lollard } #Kent
+	}
+}
+
+#(1390-1410) Lollards in Bristol
+event = {
+	id = 105599 #trigger by MUS_210001_A
+	random = no
+	country = ENG
+	name = "Lollards in Bristol"
+	desc = "Emboldened by the Crown’s lax response, the Lollards have gained a great following in this province."
+
+	action_a = {
+		name = "Damn!"
+		command = { type = provincereligion which = 246 value = lollard } #Bristol
+	}
+}
+
+event = {
+	id = 105600
+	trigger = {
+		provincereligion = { province = 246 data = lollard } #Bristol
+		provincereligion = { province = 248 data = lollard } #Kent
+	}
+	random = yes
+	country = ENG
+	name = "The Spread of Lollardy"
+	desc = "Lollard doctrines are spreading throughout our lands!"
+
+	action_a ={    
+		name = "This heresy grows unchecked!"
+		command = { type = provincereligion which = -1 value = lollard }
+	}
+}
+

@@ -1,0 +1,67 @@
+##Cyprus Events##
+
+#(1359-1369) King Pierre, The Crusader - (by Sahib)
+ 
+event = {
+	id = 102000
+	trigger = {
+		NOT = {
+			owned = { province = 493 data = -1 } #Jerusalem
+			owned = { province = 492 data = -1 } #Samaria
+		}	
+	}
+	random = no
+	country = CYP
+	name = "King Pierre, The Crusader"
+	desc = "King Pierre I, whose reign was the most brilliant of the Lusignan dynasty, was one of the last crusading kings. Vowing continual war against the Moslems for the recovery of Jerusalem, he revived the old Lusignan order of chivalry called 'Order of the Sword', and always wore a naked sword as a reminder of his vow. Handsome, brave, and impetuous, he was unable, however, to arouse in Europe the old crusading enthusiasm or to obtain sufficient support for his schemes."
+
+	date = { day = 1 month = january year = 1359 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1369 }
+
+	action_a = {
+		name = "Call our own crusade!"
+		command = { type = addcore_national which = 492 } #Samaria
+		command = { type = addcore_national which = 493 } #Jerusalem
+		command = { type = casusbelli which = TUR value = 120 }
+		command = { type = casusbelli which = MAM value = 120 }
+		command = { type = stability value = -1 }
+		command = { type = DIP which = 3 value = 120 }
+		command = { type = treasury value = 100 }
+	}
+	action_b = {
+		name = "This is a crazy idea"
+		command = { type = stability value = 1 }
+		command = { type = ADM which = 1 value = 120 }
+		command = { type = sleepevent which = 101955 }
+	}
+}
+
+#(1369-1370) Death of the Crusader King - (by Sahib)
+
+event = {
+	id = 102001
+	trigger = {
+		event = 102000 #CYP: King Pierre, The Crusader
+		NOT = {
+			owned = { province = 493 data = -1 } #Jerusalem
+			owned = { province = 492 data = -1 } #Samaria
+		}
+	}
+	random = no
+	country = CYP
+	name = "Death of the Crusader King"
+	desc = "Returning from his crusades, the king behaved with such haughtiness and tyranny that he alienated the sympathy of his barons and even of his brothers. In January 1369 he was assassinated by a body of nobles with the concurrence of his brothers. The crusader dream died with him."
+
+	date = { day = 1 month = january year = 1369 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1370 }
+
+	action_a = {
+		name = "We lost an oportunity, M'lord"
+		command = { type = removecore_national which = 492 }
+		command = { type = removecore_national which = 493 }
+	}
+}
+
+#first free ID: 102002

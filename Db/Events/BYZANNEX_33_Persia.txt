@@ -1,0 +1,237 @@
+#-----------------------------------------------------------------------------
+# Persian Events
+
+#(1470-1550) The Persian Rebellion
+event = {
+	id = 3001445
+	trigger = {
+		event = 3001112 #BYZ: Office of Barbarians
+		exists = PER
+	}
+	random = NO
+	country = BYZ
+	name = "The Persian Rebellion"
+	desc = "Our spies and merchants bring word that a vast rebellion has broken out in the lands to our East. Apparently, the Muhammadan heresy has heresies of its own - and one is rising strongly against its lords. Should we support them?"
+
+	date = { year = 1470 }
+	offset = 3600 #10 years
+	deathdate = { year = 1550 }
+
+	action_a = {
+		name = "Is the Pope Catholic?"
+		command = { type = treasury value = -400 }
+		command = { type = relation which = PER value = 300 }
+		command = { type = relation which = AKK value = -100 }
+		command = { type = relation which = QAR value = -100 }
+		command = { type = trigger which = 3001446 }
+	}
+	action_b = {
+		name = "A little, perhaps."
+		command = { type = treasury value = -50 }
+		command = { type = relation which = PER value = 20 }
+		command = { type = sleepevent which = 3001447 }
+	}
+	action_c = {
+		name = "Rebels? Heretics? Have you no honour, good sir?"
+		command = { type = stability value = 1 }
+		command = { type = relation which = AKK value = 50 }
+		command = { type = relation which = QAR value = 50 }
+		command = { type = relation which = IRA value = 50 }
+		command = { type = relation which = MOG value = 50 }
+		command = { type = sleepevent which = 3001447 }
+	}
+}
+
+# Persia
+event = {
+	id = 3001446
+	random = NO
+	country = PER
+	name = "Help from the West"
+	desc = "Misguided as they are in their worship of the prophet 'Isa instead of the one true God, the Romans have provided us a vast treasure to support our struggle against the oppressive Sunni."
+
+	action_a = {
+		name = "God is most merciful!"
+		command = { type = treasury value = 300 }
+		command = { type = INF which = -1 value = 5000 }
+		command = { type = CAV which = -1 value = 2500 }
+	}
+}
+
+# Persia
+event = {
+	id = 3001447
+	trigger = {
+		event = 3001445
+		NOT = { war = { country = BYZ country = PER } }
+	}
+	random = NO
+	country = BYZ
+	name = "The Persian ambassador"
+	desc = "The Persians are nothing if not mindful of the past. Their poets still sing ballads of Alexander's conquest from memory. Now, although our relations have become strained over the years, a new shah has taken power who wishes to thank us again for the support we showed his people at the very birth of the Shia revolt. The times have changed, but, his eloquent messenger says, but for the Romans' help, the Persians would not be part of them at all."
+	date = { year = 1650 }
+	offset = 1080 #3 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "How nice of him!"
+		command = { type = treasury value = 100 }
+		command = { type = relation which = PER value = 300 }
+	}
+}
+
+#Persian raids in the East by Mr. Ouija
+event = {
+	id = 3001448
+	trigger = {
+		neighbour = PER
+		OR = {
+			owned = { province = 487 data = -1 } #azerbaijan
+			owned = { province = 474 data = -1 } #sivas
+			owned = { province = 490 data = -1 } #syria
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "Persian raids in the East"
+	desc = "The Persians are again making incursions into the eastern frontiers, looting and pillaging as they go. The Shah demands a treaty advantageous to his strategic position. How shall we respond?"
+	date = { day = 10 month = january year = 1619 }
+	offset = 3600 #10 years
+	deathdate = { day = 10 month = january year = 1669 }
+
+	action_a = { #Ready the legions, prepare for war!#
+		name = "Ready the legions, prepare for war!"
+		command = { type = casusbelli which = PER value = 60 }
+		command = { type = provincetax which = 487 value = -2 }
+		command = { type = provincetax which = 474 value = -2 }
+		command = { type = provincetax which = 490 value = -2 }
+	}
+	action_b = { #Sign the treaty..#
+		name = "Sign the treaty.."
+		command = { type = treasury value = -100 }
+		command = { type = cedeprovince which = PER value = 487 }
+		command = { type = dynastic which = PER }
+		command = { type = DIP which = -4 value = 12 }
+		command = { type = relation which = PER value = 200 }
+	}
+}
+#adjusted effects
+
+#Persian raids in the East by Mr. Ouija
+event = {
+	id = 3001449
+	trigger = {
+		neighbour = PER
+		OR = {
+			owned = { province = 487 data = -1 } # Azerbaijan
+			owned = { province = 474 data = -1 } # Sivas
+			owned = { province = 490 data = -1 } # Syria
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "Persian raids in the East"
+	desc = "The Persians are again making incursions into the eastern frontiers, looting and pillaging as they go. The Shah demands a treaty advantageous to his strategic position. How shall we respond?"
+	date = { day = 10 month = january year = 1669 }
+	offset = 3600 #10 years
+	deathdate = { day = 10 month = january year = 1719 }
+
+	action_a = { #Ready the legions, prepare for war!#
+		name = "Ready the legions, prepare for war!"
+		command = { type = casusbelli which = PER value = 60 }
+		command = { type = provincetax which = 487 value = -2 } # Azerbaijan
+		command = { type = provincetax which = 474 value = -2 } # Sivas
+		command = { type = provincetax which = 490 value = -2 } # Syria
+	}
+	action_b = { #Sign the treaty..#
+		name = "Sign the treaty.."
+		command = { type = treasury value = -100 }
+		command = { type = cedeprovince which = PER value = 487 }
+		command = { type = dynastic which = PER }
+		command = { type = DIP which = -4 value = 12 }
+		command = { type = relation which = PER value = 200 }
+	}
+}
+#adjusted effects
+
+#Persian raids in the East by Mr. Ouija
+event = {
+	id = 3001450
+	trigger = {
+		neighbour = PER
+		OR = {
+			owned = { province = 487 data = -1 } # Azerbaijan
+			owned = { province = 474 data = -1 } # Sivas
+			owned = { province = 490 data = -1 } # Syria
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "Persian raids in the East"
+	desc = "The Persians are again making incursions into the eastern frontiers, looting and pillaging as they go. The Shah demands a treaty advantageous to his strategic position. How shall we respond?"
+	date = { day = 10 month = january year = 1719 }
+	offset = 3600 #10 years
+	deathdate = { day = 10 month = january year = 1769 }
+
+	action_a = { #Ready the legions, prepare for war!#
+		name = "Ready the legions, prepare for war!"
+		command = { type = casusbelli which = PER value = 60 }
+		command = { type = provincetax which = 487 value = -2 }
+		command = { type = provincetax which = 474 value = -2 }
+		command = { type = provincetax which = 490 value = -2 }
+	}
+	action_b = { #Sign the treaty..#
+		name = "Sign the treaty.."
+		command = { type = treasury value = -100 }
+		command = { type = cedeprovince which = PER value = 487 }
+		command = { type = dynastic which = PER }
+		command = { type = DIP which = -4 value = 12 }
+		command = { type = relation which = PER value = 200 }
+	}
+}
+#adjusted effects
+
+#Thieves in the Night by Mr. Ouija
+event = {
+	id = 3001451
+	trigger = {
+		owned = { province = 472 data = -1 }
+		exists = PER
+	}
+	random = NO
+	country = BYZ
+	name = "Thieves in the Night"
+	desc = "By cover of foul weather and marching only at night, the Persians have seized Armenia, greeted as liberators by the disaffected Armenians. This treachery must be avenged!"
+
+	action_a = { # Drat!
+		name = "Drat!"
+		command = { type = cedeprovince which = PER value = 472 } #Armenia
+		command = { type = casusbelli which = PER value = 60 }
+		command = { type = relation which = PER value = -200 }
+	}
+}
+#adjusted effects
+
+#The Swift and the Silent
+event = {
+	id = 3001452
+	trigger = {
+		event = 3001214 #BYZ: The Armenian Question
+		owned = { province = 487 data = -1 }
+		neighbour = BYZ
+	}
+	random = NO
+	country = PER
+	name = "The Swift and the Silent"
+	desc = "The Shah has authorized an audacious plan to seize the rich lands of Armenia from the hapless Byzantines. We will strike swiftly and we will strike silently, they'll never see us coming."
+	date = { day = 1 month = january year = 1600 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = { # Take it!
+		name = "Yes! Let us cement our position there."
+		command = { type = addcore which = 472 } #Armenia
+		command = { type = fortress which = 487 value = 1 } #changed to Azerbaijan, gloriana1337
+		command = { type = trigger which = 3001451 }
+	}
+}

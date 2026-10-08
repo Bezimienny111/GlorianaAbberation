@@ -1,0 +1,48 @@
+# Bologna #
+
+# The Grand Duchy of Romagna
+event = {
+
+	id = 15004
+	trigger = {
+		atwar = no
+		isvassal = no
+		NOT = { exists = ROM }
+	}
+	random = no
+	country = BOL
+	name = "The Grand Duchy of Romagna"
+	desc = "EVENTHIST15004"
+	
+	style = "15004"
+
+	date = { day = 1 month = january year = 1490 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1510 }
+
+	action_a = { # Grand Duke, eh?
+		name = "Grand Duke, eh?"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = addcore_national which = 392 }
+		command = { type = relation which = PAP value = 150 }
+		command = { type = treasury value = 250 }
+		command = { type = flagname which = "" }
+		command = { type = country which = ROM }
+	}
+
+	action_b = { # Repubblica!
+		name = "Repubblica!"
+		command = { type = stability value = -2 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = relation which = FLO value = 100 }
+		command = { type = relation which = PIS value = 100 }
+		command = { type = relation which = SIE value = 100 }
+	}
+}

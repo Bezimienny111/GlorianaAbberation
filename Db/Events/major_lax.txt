@@ -1,0 +1,98 @@
+###### Lan Xang Major Events ######
+#By Tom Rinschler                 #
+#   Håvard                        #
+###################################
+
+#The Move to Vieng Chan#
+event = {
+	id = 250053 #3902
+	trigger = {
+		NOT = { exists = VIE }
+		owned = { province = 1551 data = -1 } # Sarakham
+	}
+	random = no
+	country = LAX
+	name = "The Move to Vieng Chan"
+	desc = "Our monarch believes that the current capital of Luang Prabang has outlived its usefulness and wishes to make a fresh start in the city of Vieng Chan. Shall we move the capital?"
+
+	style = "3902"
+
+	date = { day = 1 month = january year = 1563 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1564 }
+	
+	action_a ={	#Move to Vieng Chan#
+		name = "Move to Vieng Chan"
+		command = { type = capital which = 1551 }
+		command = { type = domestic which = centralization value = 1 } 
+		command = { type = stability value = -2 }
+		command = { type = provincetax which = 1551 value = 1 }
+		command = { type = cash value = -200 }
+		command = { type = setflag which = viengchan }
+	}
+	action_b ={	#Stay in Luang Prabang#
+		name = "Stay in Luang Prabang"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = innovative value = -1 }
+	}
+}
+
+#The Succession Crisis#
+event = {
+	id = 250054 #3903
+	trigger = {
+		NOT = {
+			exists = CMP
+			exists = LUA
+			exists = VIE
+		}
+	}
+	random = no
+	country = LAX
+	name = "The Succession Crisis"
+	desc = "Since the death of Nan T'arat, the succession has been disputed between our current monarch and his uncle King Kitsarat. It appears that the crisis is coming to a head, and now it appears that we must choose a course of action. What shall we do?"
+	
+	date = { day = 1 month = january year = 1707 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1708 }
+	
+	action_a = {     #Let them fight it out#
+		name = "Let them fight it out"
+		command = { type = stability value = -6 }
+		command = { type = domestic which = centralization value = -3 }
+		command = { type = revoltrisk value = 5 }
+	}
+	action_b ={        #Support the rightful heir#
+		name = "Support the rightful heir"
+		command = { type = stability value = -3 }
+		command = { type = revoltrisk value = 5 }
+		command = { type = revolt which = 1552 }
+		command = { type = revolt which = -1 }
+	}
+	action_c ={        #Accept the division of the kingdom#
+		name = "Accept the division of the kingdom"
+		trigger = { 
+			capital = 1552
+		}
+		command = { type = stability value = -2 }
+		command = { type = removecore_national which = 669 }
+		command = { type = removecore_national which = 1551 }
+		command = { type = free which = CMP }
+		command = { type = free which = VIE }
+		command = { type = flagname which = "" }
+		command = { type = country which = LUA }
+	}
+	action_d ={        #Accept the division of the kingdom#
+		name = "Accept the division of the kingdom"
+		trigger = { 
+			capital = 1551
+		}
+		command = { type = stability value = -2 }
+		command = { type = removecore_national which = 669 }
+		command = { type = removecore_national which = 1552 }
+		command = { type = free which = CMP }
+		command = { type = free which = LUA }
+		command = { type = flagname which = "" }
+		command = { type = country which = VIE }
+	}
+}

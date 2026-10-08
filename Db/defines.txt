@@ -1,0 +1,512 @@
+#Defines
+
+#All following values are intended to be negative or positive according to comments.
+#However, as of For the Glory 1.3, all values can be either positive or negative
+#unless otherwise noted. Negative/positive values may not make sense at all, of course.
+
+#-----------------------------------------------------------------------------------------------
+
+global = {
+	_ABSOLUTE_START_YEAR_ = 1337 # Positive (defaults to 1419 if not present, and can be overridden in scenarios)
+	_ABSOLUTE_END_YEAR_   = 1836 # Positive (defaults to 1819 if not present)
+	_TECHNOLOGY_BASE_FACTOR_      =  200 # Positive: tech base cost is _TECHNOLOGY_BASE_FACTOR_ + (year difference) * _TECHNOLOGY_YEAR_NUMERATOR_ / _TECHNOLOGY_YEAR_DENOMINATOR_
+                                             # (to make the year cost stay constant, set the numerator and denominator to be equal)
+                                             # EU2 base cost was 275 + (year difference + 19)*137/300
+                                             # FTG 1.3 base cost was 260 + (year difference) * 135/240 until November 2023 beta.
+                                             # Moving _ABSOLUTE_START_YEAR_ from 1419 back to 1399 made tech about 4% more expensive in the early game, dwindling to 2.5% more expensive in the late game. New constant factors make the new cost nearly equal to the old cost.
+	_TECHNOLOGY_YEAR_NUMERATOR_   =  100 # Positive
+	_TECHNOLOGY_YEAR_DENOMINATOR_ =  250 # Positive
+}
+
+buildings = {
+	_BUILD_BAILIFF_PRICE_         =   50 #Positive
+	_BUILD_BARRACK_PRICE_         = 1000 #Positive
+	_BUILD_BARRACK_ADDPRICE_      =  250 #Positive
+	_BUILD_CITYRIGHTS_PRICE_      =  100 #Positive
+	_BUILD_COURTHOUSE_PRICE_      =  100 #Positive
+	_BUILD_SHIPYARD_PRICE_        = 1000 #Positive
+	_BUILD_SHIPYARD_ADDPRICE_     =  100 #Positive
+
+	_BUILD_BAILIFF_MONTHS_        =   12 #Positive
+	_BUILD_BARRACK_MONTHS_        =   24 #Positive
+	_BUILD_CITYRIGHTS_MONTHS_     =   24 #Positive
+	_BUILD_COURTHOUSE_MONTHS_     =   24 #Positive
+	_BUILD_SHIPYARD_MONTHS_       =   36 #Positive
+
+	_BUILD_FORTLVL1_PRICE_        =  100 #Positive
+	_BUILD_FORTLVL2_PRICE_        =  200 #Positive
+	_BUILD_FORTLVL3_PRICE_        =  300 #Positive
+	_BUILD_FORTLVL4_PRICE_        =  500 #Positive
+	_BUILD_FORTLVL5_PRICE_        = 1000 #Positive
+	_BUILD_FORTLVL6_PRICE_        = 2000 #Positive
+
+	_BUILD_FORTRESS_MONTHS_       =   12 #Positive
+
+	_BUILD_MANUFACTORY_MONTHS_    =   24 #Positive
+	_BUILD_MANUFACTORY_BASE_PRICE_=  400 #Positive
+	_BUILD_MANUFACTORY_SAMETYPE_EXTRA_ = 100 #Positive: extra price for building the same manufactory type more than once (per factory)
+
+	_BUILD_MAX_FORT_LEVEL_PER_TAX_ =   1.00 #Positive
+	_BUILD_MIN_SHIPYARD_TAX_      =    6 #Positive
+
+	_BUILD_CITYRIGHTS_DEFLATION_  = 0.25 #Positive
+}
+
+cot = {
+	_COT_PROVINCES_PER_CENTER_    = 29 #Positive, average number of provinces per COT before a new one must be created; there can never be more than 512 COTs regardless of this value
+}
+
+country = {
+	_COUNTRY_WARTAX_MONTHS_       = 12 #Positive
+	_COUNTRY_WARTAX_INFLATION_    = 1.00 #Positive
+	_COUNTRY_WARTAX_EXHAUSTION_   = 1.00 #Positive
+	_COUNTRY_WARTAX_INCOME_       = 150 #Positive %
+	_COUNTRY_WARTAX_MANPOWER_     = 200 #Positive %
+
+	_COUNTRY_VASSAL_INCOME_       = 50 #Positive
+
+	_COUNTRY_INVEST_BOOSTSIZE_    = 200 #Positive
+	_COUNTRY_INVEST_BOOSTFACTOR_  =  50 #Positive
+	_COUNTRY_INVEST_BOOSTMONTHS_  =  12 #Positive: less than _COUNTRY_DPCHANGE_MONTHS_
+	_COUNTRY_ISOLATION_PENALTY_   =  19 #Positive
+
+	_COUNTRY_DPCHANGE_MONTHS_     = 120 #Positive
+	_COUNTRY_DPCHANGE_REVOLTRISK_ = 40  #Positive: extra revolt risk for the one-time revolt check when domestic policy is changed
+
+	_COUNTRY_ALLIANCE_MAX_            =   5 #Positive
+	_COUNTRY_ALLIANCE_MONTHS_         = 120 #Positive
+	_COUNTRY_DYNASTIC_MONTHS_         = 300 #Positive
+	_COUNTRY_MINDIPLOANNEX_MONTHS_    = 120 #Positive
+	_COUNTRY_MINREVOLTER_MONTHS_      =  36 #Positive
+
+	_COUNTRY_CB_ANNEX_MONTHS_         = 24 #Positive
+	_COUNTRY_CB_CANCELLOAN_MONTHS_    = 12 #Positive
+	_COUNTRY_CB_CANCELTRADE_MONTHS_   = 12 #Positive
+	_COUNTRY_CB_CLAIMTHRONE_MONTHS_   = 36 #Positive
+	_COUNTRY_CB_DEFECTPROV_MONTHS_    = 60 #Positive
+	_COUNTRY_CB_DISHONOR_MONTHS_      =  6 #Positive
+	_COUNTRY_CB_DOF_MONTHS_           =  3 #Positive
+	_COUNTRY_CB_DOWVASSAL_MONTHS_     = 12 #Positive
+	_COUNTRY_CB_GUARANTEE_MONTHS_     =  6 #Positive
+	_COUNTRY_CB_INSULT_MONTHS_        = 12 #Positive
+	_COUNTRY_CB_LEAVEALLIANCE_MONTHS_ = 12 #Positive
+	_COUNTRY_CB_PRIVATEER_MONTHS_     =  3 #Positive
+	_COUNTRY_CB_REVOKEMA_MONTHS_      = 12 #Positive
+	_COUNTRY_CB_REVOLTER_MONTHS_      = 60 #Positive
+	_COUNTRY_CB_TOT_MONTHS_           = 12 #Positive
+	_COUNTRY_CB_WARNED_MONTHS_        = 24 #Positive
+
+	_COUNTRY_STAB_BREAKALLIANCE_  = 2 #Positive
+	_COUNTRY_STAB_BREAKDYNASTIC_  = 1 #Positive
+	_COUNTRY_STAB_BREAKVASSAL_    = 3 #Positive
+	_COUNTRY_STAB_CANCELLOAN_     = 1 #Positive
+	_COUNTRY_STAB_CANCELMA_       = 1 #Positive
+	_COUNTRY_STAB_CHANGERELIGION_ = 5 #Positive
+	_COUNTRY_STAB_DOWNOCB_        = 2 #Positive
+	_COUNTRY_STAB_DOWRELIGION_    = 1 #Positive
+	_COUNTRY_STAB_DOWTRUCE_       = 5 #Positive
+	_COUNTRY_STAB_DOWVGOODREL_    = 2 #Positive
+	_COUNTRY_STAB_DOWGOODREL_     = 1 #Positive
+	_COUNTRY_STAB_LEAVEALLIANCE_  = 1 #Positive
+	_COUNTRY_STAB_REVOKEMA_       = 1 #Positive
+
+	_COUNTRY_BB_PROVNOEVENT_      = 1.00 #Positive
+	_COUNTRY_BB_PROVEVENT_        = 0.25 #Positive
+	_COUNTRY_BB_PROVTURBO_        = 2.00 #Positive - badboy for provinces taken when an enemy's government falls
+	_COUNTRY_BB_PRIVATEER_        = 1 #Positive
+	_COUNTRY_BB_CHANGERELIGION_   = 1 #Positive
+	_COUNTRY_BB_DOW_              = 1 #Positive
+	_COUNTRY_BB_DOWNOCB_          = 1 #Positive
+	_COUNTRY_BB_DOWGOODREL_       = 2 #Positive
+	_COUNTRY_BB_PLAYERDIVIDER_    = 3 #Positive
+	_COUNTRY_BB_ANNSAMERELIGION_  = 5 #Positive
+	_COUNTRY_BB_ANNOTHERRELIGION_ = 2 #Positive
+	_COUNTRY_BB_LIMITBASE_        =  30 #Positive - badboy limit is base + 1 per 20 years + monarch diplomatic ability
+	_COUNTRY_BB_LIMITRULE_OFFSET_ = 453 #Positive - after this many years in-game, badboy limit begins to increase by 1 per year in addition to the above
+	_COUNTRY_BB_YEARLYREDUCTION_  = 0.25 #Positive - x2/3 on hard, x1/2 on very hard, multiplied by diplomacy/5
+
+	_COUNTRY_MAX_MISSIONARIES_    =  6 #Positive
+	_COUNTRY_YEARLYMER_MAXYEAR_   = 12 #Positive
+	_COUNTRY_MAX_MERCHANTS_       =  6 #Positive
+	_COUNTRY_YEARLYCOL_SHIPYARD_  = 1.00 #Positive
+	_COUNTRY_YEARLYCOL_FRONTIER_  = 1.00 #Positive
+	_COUNTRY_MAX_COLONISTS_       =  6 #Positive
+	_COUNTRY_YEARLYDIP_WAR_       = 1.00 #Positive
+	_COUNTRY_MAX_DIPLOMATS_       =  6 #Positive
+
+	_COUNTRY_BANKLOAN_MAX_STD_       =     2 #Positive
+	_COUNTRY_BANKLOAN_MONTHS_        =    60 #Positive
+	_COUNTRY_BASE_INTEREST_          =    10 #Positive
+	_COUNTRY_NUMCANCELLED_INTEREST_  =  3.00 #Positive - added for each prior cancelled loan
+	_COUNTRY_NUMRUNNING_INTEREST_    =  0.20 #Positive
+	_COUNTRY_NUMEXTENDED_INTEREST_   =  1.00 #Positive
+	_COUNTRY_MONTHLYINCOME_INTEREST_ = -1.00 #Negative - for each 100$ of monthly income
+	_COUNTRY_EXTENDED_ADDINTEREST_   =     3 #Positive - extra interest when extending a loan
+	_COUNTRY_MIN_INTEREST_           =     5 #Positive
+
+	_COUNTRY_BANKRUPTCY_MONTHS_   = 60 #Positive
+	_COUNTRY_BANKRUPTCY_INTEREST_ = 25 #Positive
+
+	_COUNTRY_LOAN_MAX_INTEREST_   =  10 #Positive
+	_COUNTRY_LOAN_MAX_MONTHS_     = 300 #Positive
+
+	_GOLD_INFLATION_THRESHOLD_    = 0.40   #Positive - producing more than this much gold causes gold inflation
+	_GOLD_INFLATION_MULTIPLIER_   = 0.0025 #Positive - this is multiplied by the fraction of gold income to calculate gold inflation
+
+	_COUNTRY_SAFEMANUF_OFFSET_    = 183 #Positive
+
+	_COUNTRY_RANDOMMONARCH_DIP_   =   6 #Positive
+	_COUNTRY_RANDOMMONARCH_ADM_   =   6 #Positive
+	_COUNTRY_RANDOMMONARCH_MIL_   =   6 #Positive
+
+	_RELATION_DEFAULT_                      =  50 # Relation between two countries, all else being equal
+	_RELATION_DIFFERENT_RELIGION_           = -25
+	_RELATION_SAME_PRIMARY_CULTURE_         =  20
+	_RELATION_ACCEPTED_CULTURE_             =  10 # Boost if either accepts the other's primary culture
+	_RELATION_PREDOMINANT_RELIGION_HEATHEN_ = -25 # Catholics hate heathens
+	_RELATION_CASUSBELLI_                   = -100
+	_RELATION_BORDER_FACTOR_                = -250 # Multiplied by the percentage of touching border (from 0-1)
+
+	_DIPLOMACY_CLAIM_THRONE_COST_			=  250.0 # Diplomatic costs are modified by country size and monarch diplomatic skill
+	_DIPLOMACY_INSULT_COST_				=   10.0
+	_DIPLOMACY_GUARANTEE_COST_			=  100.0
+	_DIPLOMACY_WARNING_COST_			=  100.0
+	_DIPLOMACY_STATE_GIFT_COST_			=  250.0
+	_DIPLOMACY_PERSONAL_GIFT_COST_			=  100.0
+	_DIPLOMACY_INTRODUCTION_COST_			=   25.0
+	_DIPLOMACY_STATE_GIFT_RELATION_			=  100.0 # positive relations are also modified by diplomatic skill
+	_DIPLOMACY_PERSONAL_GIFT_RELATION_		=   50.0
+	_DIPLOMACY_INTRODUCTION_RELATION_		=   10.0
+	_DIPLOMACY_WARNING_RELATION_			=  -50.0
+	_DIPLOMACY_CLAIM_THRONE_RELATION_		= -100.0
+	_DIPLOMACY_CANCEL_TRADE_AGREEMENT_RELATION_	=  -20.0
+}
+
+hre = {
+	_HRE_ELECT_ELECTOR_BONUS_     = 100 #Positive
+	_HRE_ELECT_SPECIAL_BONUS_     =  75 #Positive
+	_HRE_ELECT_RANDOM_BONUS_      =  10 #Positive
+
+	_HRE_SUPPORTIVE_RELATION_     = 100 #Positive or negative: minimum relation that an elector must have with the emperor to be considered "supportive" and give the below bonuses
+
+	_HRE_SUPPORTIVE_INCOME_         = 2.00 #Positive: yearly income for emperor per supportive elector
+	_HRE_SUPPORTIVE_MANPOWER_       = 1.00 #Positive: maximum manpower for emperor per supportive elector
+	_HRE_SUPPORTIVE_TECH_COST_      =-0.01 #Negative: tech cost reduction for emperor per supportive elector
+	_HRE_SUPPORTIVE_STABILITY_COST_ =-0.01 #Negative: stability cost reduction for emperor per supportive elector
+}
+
+mercenaries = {
+	_MER_INFANTRY_BASE_PRICE_     =  20 #Positive
+	_MER_CAVALRY_BASE_PRICE_      =  40 #Positive
+	_MER_ARTILLERY_BASE_PRICE_    =  65 #Positive
+
+	_MER_MAXBEFORE_OFFSET_        =   163 #Positive
+	_MER_ARTILLERYAFTER_OFFSET_   =   163 #Positive
+	_MER_CAVALRYAFTER_OFFSET_     =    0 #Positive - by default mercs can have cavalry from game start
+	_MER_MINAFTER_OFFSET_         =  363 #Positive
+}
+
+military = {
+	#Per fortress level
+	_COVER_FORCE_SIZE_            = 1000 #Positive
+	_SIEGE_FORCE_SIZE_            = 5000 #Positive
+	_FORTRESS_INF_SIZE_           = 5000 #Positive
+	_FORTRESS_CAV_SIZE_           =    0 #Positive
+	_FORTRESS_ART_SIZE_           =   10 #Positive
+
+	#Transport Capacity (TPC per unit)
+	_WARSHIP_TPC_                 =    2 #Positive
+	_GALLEY_TPC_                  =    1 #Positive
+	_TRANSPORT_TPC_               =    3 #Positive
+
+	_INFANTRY_BASE_PRICE_         =   9 #Positive
+	_CAVALRY_BASE_PRICE_          =  21 #Positive
+	_ARTILLERY_BASE_PRICE_        =  30 #Positive
+	_WARSHIP_BASE_PRICE_          =  50 #Positive
+	_GALLEY_BASE_PRICE_           =  10 #Positive
+	_TRANSPORT_BASE_PRICE_        =  15 #Positive
+
+	_PRIVATEERS_BASE_PRICE_       =  25 #Positive
+
+	_INFANTRY_BUILDTIME_MONTHS_   =   2 #Positive
+	_CAVALRY_BUILDTIME_MONTHS_    =   3 #Positive
+	_ARTILLERY_BUILDTIME_MONTHS_  =   4 #Positive
+	_WARSHIP_BUILDTIME_MONTHS_    =   9 #Positive + naval era
+	_GALLEY_BUILDTIME_MONTHS_     =   5 #Positive
+	_TRANSPORT_BUILDTIME_MONTHS_  =   6 #Positive
+
+	_ABOVELIMIT_PENALTY_          =   5.00 #Positive
+
+	_PRIVATEER_WARSHIPS_BONUS_    =   3 #Positive
+
+	# If warships*_WARSHIP_BLOCKADE_FACTOR_
+	# + galleys*_GALLEY_BLOCKADE_FACTOR_
+	# + transports*_TRANSPORT_BLOCKADE_FACTOR_
+	# = _NU_BLOCKADE_MINFACTOR_ or greater, then a blockade is in effect.
+
+	_WARSHIP_BLOCKADE_FACTOR_     =  1.00 #Positive
+	_GALLEY_BLOCKADE_FACTOR_      =  1.00 #Positive
+	_TRANSPORT_BLOCKADE_FACTOR_   =  0.00 #Positive
+	_NU_BLOCKADE_MINFACTOR_       =  5.00 #Positive
+	_NU_ATTRITION_BLOCKADE_       =     3 #Negative - attrition for a blockading fleet
+
+	_DAYS_PER_PHASE_              =     5 #Positive
+	_RETREAT_MORALE_              =    40 #Positive
+	_FORTRESS_DAMAGE_CHANCE_      =    20 #Positive: percent chance that the fortress level will be reduced by one (to a minimum level of one) when taken
+	_MANUFACTORY_DESTROY_CHANCE_  =     5 #Positive: percent chance that a manufactory will be destroyed when the province is conquered
+	_LOOT_BASETAX_FACTOR_         =  0.50 #Positive: looting a province gives the province's base tax value * _LOOT_BASETAX_FACTOR_ to monthly income for that month
+	_DOF_MORALE_BONUS_            =    50 #Positive, divided by 100: extra land and naval morale for Defender of the Faith
+	_BANKRUPTCY_MORALE_PENALTY_   =    50 #Positive: percentage that morale of units is reduced if country has gone bankrupt in the last _COUNTRY_BANKRUPTCY_MONTHS_
+
+	_RANDOMLEADER_MAXMONTHS_      =   180 #Positive: how long a random conquistador/explorer will be active for, on average
+	_RANDOMLEADER_BASEFIRE_       =     2 #Positive: base value of all leaders
+	_RANDOMLEADER_BASESHOCK_      =     2 #Positive
+	_RANDOMLEADER_BASEMANEUVER_   =     2 #Positive
+	_RANDOMLEADER_BASESIEGE_      =     0 #Positive: does not affect admirals, explorers, or privateers
+
+	_NAVY_SUPPORT_PORTS_FACTOR_         =   1 # per base tax value point of owned ports on the same continent or with a land connection to the capital
+	_NAVY_SUPPORT_MERCHANTS_FACTOR_     =   5 # per yearly merchant
+	_NAVY_SUPPORT_MANUFACTORIES_FACTOR_ =   5 # per naval equipment manufactory
+	_NAVY_SUPPORT_SHIPYARDS_FACTOR_     =  10 # per shipyard
+
+	# Movement speed is MOVEMENT_BASE_DAYS x any multipliers, divided by the unit movement points
+	_MOVEMENT_BASE_DAYS_          =   30 #Positive: days to reach the next province, modified below
+
+	#Factors in the multiplier: Base cost is terrain movement cost (defined in terrains.txt)
+	#Add province size modifier (per-province in provinces.txt)
+	#Add adjacency modifier
+	#All this is multiplied by the region penalty (movement_penalty in geography.txt)
+	#or by the Arctic penalty (all provinces with arctic climate), whichever is larger
+	#Multiplied again by the exploration penalty if applicable
+	#If embarking from/disembarking to a friendly port, all this is ignored and the port factor is used instead
+
+	_MOVEMENT_RIVER_FACTOR_             =  0.5
+	_MOVEMENT_STRAIT_FACTOR_            =  1.0
+	_MOVEMENT_LAND_FACTOR_              =  1.0 # the "land" adjacency type in adj_defs.txt
+
+	_MOVEMENT_PORT_FACTOR_              =  0.5
+
+	_MOVEMENT_REGION_PENALTY_FACTOR_    =  2.0
+	_MOVEMENT_ARCTIC_FACTOR_            =  2.0
+
+	_MOVEMENT_EXPLORATION_EXPLORER_     =  3.7
+	_MOVEMENT_EXPLORATION_CONQUISTADOR_ =  3.7
+	_MOVEMENT_EXPLORATION_ADMIRAL_      =  5.5
+	_MOVEMENT_EXPLORATION_GENERAL_      =  6.5
+	_MOVEMENT_MANEUVER_FACTOR_          = -0.15 #per leader maneuver rating
+
+	_MOVEMENT_ARTILLERY_   =    1.5 #Movement points when a unit includes artillery
+	_MOVEMENT_INFANTRY_    =    2.0
+	_MOVEMENT_CAVALRY_     =    3.0
+
+	_MOVEMENT_WARSHIPS_    =    3.0
+	_MOVEMENT_GALLEYS_     =    3.0
+	_MOVEMENT_TRANSPORTS_  =    3.0
+
+	_MOVEMENT_WARSHIPS_PER_NAVAL_TECH_   =    0.2381 #extra movement points per naval tech for warships/transports (rounded down to the nearest integer); default is 5/21
+	_MOVEMENT_GALLEYS_PER_NAVAL_TECH_    =    0
+	_MOVEMENT_TRANSPORTS_PER_NAVAL_TECH_ =    0.2381
+
+	# When multiple nations are involved in a siege, who gets to control the province?
+	# Previously it was the siege leader. This behavior can still be achieved by setting all the weights to 0 except _PROVINCE_CONQUER_WEIGHT_SIEGE_LEADER_.
+	_PROVINCE_CONQUER_WEIGHT_NATIONAL_			= 10.0
+	_PROVINCE_CONQUER_WEIGHT_CLAIM_				=  5.0
+	_PROVINCE_CONQUER_WEIGHT_CB_				=  2.5
+	_PROVINCE_CONQUER_WEIGHT_TOT_				=  2.0  # if Treaty of Tordesillas is in force
+	_PROVINCE_CONQUER_WEIGHT_SAME_CULTURE_			=  0.5
+	_PROVINCE_CONQUER_WEIGHT_ACCEPTED_CULTURE_		=  0.4
+	_PROVINCE_CONQUER_WEIGHT_SAME_RELIGION_			=  0.5
+	_PROVINCE_CONQUER_WEIGHT_SAME_RELIGIOUS_SUBGROUP_	=  0.2  # only counted after predominance_tolerance is enabled
+	_PROVINCE_CONQUER_WEIGHT_VASSAL_			= -2.0  # vassals shouldn't steal sieges unless there's a good reason
+	_PROVINCE_CONQUER_WEIGHT_NEIGHBOR_			=  1.0  # neighbor of owned province
+	_PROVINCE_CONQUER_WEIGHT_SIEGE_LEADER_			=  0.5  # tiebreaker goes back to who led the siege
+}
+
+pirates = {
+	_PIR_MAXBEFORE_OFFSET_        =  343 #Positive: year offset from the scenario's absolutestartdate at which pirates start to decline in frequency
+	_PIR_DECLINEAFTER_OFFSET_     =  393 #Positive: year offset after which pirates are quite rare
+
+	_PIR_SMALLSIZEBEFORE_OFFSET_  =  213 #Positive
+	_PIR_MEDIUMSIZEBEFORE_OFFSET_ =  263 #Positive
+	_PIR_MAXSIZEBEFORE_OFFSET_    =  363 #Positive
+	_PIR_MINSIZEAFTER_OFFSET_     =  433 #Positive
+}
+
+province = {
+	_MAP_MAX_PROVINCES_           =      2020 #Positive: maximum number of provinces in the current map. Cannot exceed 10000 and must be equal to the number of provinces in adjacent.tbl.
+
+	_PROV_MIN_COLONY_POP_         =        40 #Positive
+	_PROV_MIN_FORTRESS_POP_       =        25 #Positive
+	_PROV_COLONY_POP_             =       150 #Positive
+	_PROV_COLONIAL_CITY_POP_      =      1000 #Positive
+	_PROV_CITY_POP_               =	     5000 #Positive	# the six city levels are defined as multiples of this define: *1, *2, *4, *8, *16, and *40
+	_PROV_MAX_POPULATION_         = 999999999 #Positive	# so this define must be at least _PROV_CITY_POP_ * 41
+	_PROV_TP_POP_                 =        10 #Positive
+	_PROV_MAX_TP_LEVEL_           =         6 #Positive
+	_PROV_BASE_NATIVES_POP_       =       100 #Positive
+
+	_PROV_SUPPLY_BARRACK_         =  10 #Positive
+	_PROV_SUPPLY_BLOCKADE_        =  10 #Positive
+	_PROV_SUPPLY_WINTER_          = -25 #Negative: _PROV_SUPPLY_WINTER_ + _PROV_SUPPLY_WINTER_OWNED_ + _PROV_SUPPLY_WINTER_CONTROL_ < 0
+	_PROV_SUPPLY_WINTER_OWNED_    =   5 #Positive
+	_PROV_SUPPLY_WINTER_CONTROL_  =  10 #Positive
+	_PROV_SUPPLY_STORMY_          =  10 #Positive
+	_PROV_SUPPLY_ICY_             =  10 #Positive
+	_PROV_SUPPLY_COASTAL_         =  -3 #Negative
+	_PROV_SUPPLY_PORT_            =  -2 #Negative
+	_PROV_SUPPLY_TROPICAL_        =  -5 #Negative
+
+	_PROV_ATTRITION_NOSUPPLY_     =  10 #Positive
+	_PROV_ATTRITION_WINTER_       =  10 #Positive
+	_PROV_ATTRITION_DESERTIC_     =   8 #Positive
+	_PROV_ATTRITION_TROPICAL_     =   5 #Positive
+	_PROV_ATTRITION_LOOTED_       =   5 #Positive
+
+	_PROV_LOOTED_MONTHS_          =  12 #Positive
+
+	_PROV_POPGRWTH_COT_           =   3.0 #Positive
+	_PROV_POPGRWTH_COTN_          =   2.0 #Positive
+	_PROV_POPGRWTH_MANUFACTORY_   =   2.0 #Positive
+	_PROV_POPGRWTH_CITYRIGHTS_    =   1.0 #Positive
+	_PROV_POPGRWTH_SHIPYARD_      =   2.0 #Positive
+	_PROV_POPGRWTH_BARRACKS_      =   2.0 #Positive
+	_PROV_POPGRWTH_COLONY_        =   6.0 #Positive
+	_PROV_POPGRWTH_ENEMY_         = -15.0 #Negative
+	_PROV_POPGRWTH_SIEGE_         =  -5.0 #Negative
+	_PROV_POPGRWTH_OCCU_          =  -3.0 #Negative
+	_PROV_POPGRWTH_LOOTED_        =  -5.0 #Negative
+	_PROV_POPGRWTH_MINIMUM_       = -14.0 #Negative
+	_PROV_POPGRWTH_STAB_          =	  2.0 #Positive
+	_PROV_POPGRWTH_CAP_           =   2.0 #Positive - Capital province
+
+	_PROV_RRISK_MANU_               =  -1 #Negative
+	_PROV_RRISK_CAP_                =  -2 #Negative
+	_PROV_RRISK_OCCU_               =   1 #Positive
+	_PROV_RRISK_REB_                =   2 #Positive
+	_PROV_RRISK_WARTAXES_           =   1 #Positive
+	_PROV_RRISK_BANKRUPTCY_         =   1 #Positive
+	_PROV_RRISK_BAILIFF_            =   3 #Positive
+	_PROV_RRISK_COURTHOUSE_         =  -1 #Negative
+	_PROV_RRISK_DOF_                =   2 #Positive
+	_PROV_RRISK_CULTURE_            =   1 #Positive
+	_PROV_RRISK_CULTUREWAR_         =   1 #Positive
+	_PROV_RRISK_NATIONALISM_MAX_    =   1 #Positive
+	_PROV_RRISK_NATIONALISM_MEDIUM_ =   1 #Positive
+	_PROV_RRISK_NATIONALISM_MIN_    =   1 #Positive
+
+	_PROV_NATIONALISM_MAX_MONTHS_    = 120 #Positive
+	_PROV_NATIONALISM_MEDIUM_MONTHS_ = 120 #Positive
+	_PROV_NATIONALISM_MIN_MONTHS_    = 120 #Positive
+
+	_PROV_CLAIM_TO_NATIONAL_MONTHS_  = 360 #Positive
+
+	_PROV_INCOME_NCULTURE_           = -30 #Negative
+	_PROV_INCOME_NRELIGION_          = -30 #Negative
+	_PROV_INCOME_LANDLOCKED_OVERSEAS_=  10 #Positive - percent penalty (10 = 10% penalty in-game); this is also the base penalty before policy modifiers are applied
+
+	_PROV_MANPOWER_NCULTURE_         = -30 #Negative
+	_PROV_MANPOWER_NATIONALISM_      = -50 #Negative
+
+	_PROV_MIN_DEFECT_MONTHS_	 =  48 #Positive -- Compare to _COUNTRY_MINREVOLTER_MONTHS_
+
+	_PROV_COLONY_BASE_CHANCE_        = 85 #Positive
+	_PROV_COLONY_BASE_YEAR_          = 21 # added to (or subtracted from) the scenario absolute_start_year; used in colonist chance calculations
+}
+
+rebels = {
+	_REB_ARTILLERYAFTER_OFFSET_   =  213 #Positive
+}
+
+religion = {
+	_DEFAULT_STABILITY_COST_      = 25.00 #Positive
+	_RELIGIONCHANGE_BONUSINCOME_  = 25.00 #Positive
+	_DOF_COST_                    =  1000 #Positive
+	_DOF_TECH_PENALTY_            =   115 #Positive - percentage cost multiplier: 100 = no penalty, 200 = double cost
+	_FORCECONVERT_MINMONTHS_     =   120 #Positive - number of months that a force-converted country cannot change religion
+}
+
+vp = {
+	#Economic
+	_VP_PLACE_MERCHANTS_          =  0.05 #Positive
+	_VP_COT_MONOPOLY_             =  0.160000 #Positive - this and the next few are checked monthly
+	_VP_MOST_MANUFACTORIES_       =  0.041666 #Positive
+	_VP_LARGEST_NAVY_             =  0.041666 #Positive
+	_VP_LARGEST_ARMY_             =  0.041666 #Positive
+	_VP_BEST_TECH_                =  0.041666 #Positive - for each tech type
+	_VP_LEADING_NATION_           =  0.083333 #Positive - given to the nation which leads in production of each good
+	_VP_STABILITY_                =  0.013888 #Positive
+	_VP_REVOLT_                   = -0.10 #Negative
+
+	#Peace
+	_VP_CONQ_PROVINCE_            =   1.00 #Positive
+	_VP_LOST_PROVINCE_            =  -1.00 #Negative
+	_VP_PEACE_PDBASE_WON_         =   2.00 #Positive
+	_VP_PEACE_PDBASE_LOST_        =  -2.00 #Negative
+	_VP_DOF_PEACE_WON_            =  15.00 #Positive
+	_VP_CONVERT_MINOR_            =  20.00 #Positive
+	_VP_CONVERT_MAJOR_            = 100.00 #Positive
+	_VP_REJECT_BETTER_            = -25.00 #Negative
+
+	#Battles
+	_VP_MAJOR_BATTLE_WON_         =  4.00 #Positive
+	_VP_MAJOR_BATTLE_LOST_        = -3.00 #Negative
+	_VP_BATTLE_WON_               =  0.50 #Positive
+	_VP_BATTLE_LOST_              = -0.50 #Negative
+	_VP_SIEGE_WON_                =  1.00 #Positive
+	_VP_SIEGE_LOST_               = -1.00 #Negative
+	_VP_LEADER_KILLED_            = -1.00 #Negative
+
+	#Diplomatic
+	_VP_OBTAIN_DYNASTIC_          =   2.00 #Positive
+	_VP_OBTAIN_MILITARY_          =   5.00 #Positive
+	_VP_OBTAIN_VASSAL_            =  20.00 #Positive
+	_VP_ANNEX_                    =  20.00 #Positive
+	_VP_BREAK_DYNASTIC_           =  -5.00 #Negative
+	_VP_BREAK_MILITARY_           =  -5.00 #Negative
+	_VP_BREAK_VASSAL_             =  -5.00 #Negative
+	_VP_BREAK_TRUCE_              = -25.00 #Negative
+	_VP_DECLARE_WAR_              =  -3.00 #Negative
+	_VP_DECLARE_WAR_NOCB_         =  -5.00 #Negative
+	_VP_AT_PEACE_                 =   1.10 #Positive
+	_VP_EMPEROR_                  =  50.00 #Positive
+	_VP_COUNTRY_BREAKS_           =-100.00 #Negative
+
+	#Establishments
+	_VP_BUILD_MANUFACTORY_        = 1.00 #Positive
+	_VP_NEW_COLONY_               = 0.80 #Positive
+	_VP_NEW_TPOST_                = 0.40 #Positive
+
+	#Discoveries
+	_VP_DISCOVER_LANDPROVINCE_FIRST_ = 2.00 #Positive
+	_VP_DISCOVER_LANDPROVINCE_       = 0.30 #Positive
+	_VP_DISCOVER_SEAPROVINCE_FIRST_  = 0.30 #Positive
+	_VP_DISCOVER_SEAPROVINCE_        = 0.00 #Positive
+}
+
+warscore = {
+	_WARSCORE_SIEGE_WON_                  =  1   #Positive: battle warscore from capturing a province
+	_WARSCORE_MAJOR_SIEGE_WON_            =  2   #Positive: battle warscore from capturing a capital
+	_WARSCORE_BATTLE_WON_                 =  1   #Positive
+	_WARSCORE_MAJOR_BATTLE_WON_           =  3   #Positive: warscore for a battle in which both sides had at least 10000 troops, the winner lost half as many as the loser, and the loser lost at least 2/3 of its forces
+	_WARSCORE_CONTROL_PROVINCE_           =  0   # Obsolete
+	_WARSCORE_PROVINCE_TP_                =  1   # Flat rate for controlling a trading post
+	_WARSCORE_PROVINCE_COLONY_            =  2   # Flat rate for controlling a colony regardless of value
+	_WARSCORE_PROVINCE_CITY_              =  1   # Base value for controlling a non-colony city, plus the modifiers below
+	_WARSCORE_PROVINCE_TAX_FACTOR_        =  0.5  # Warscore for controlling a province = tax*factor + mp*factor + fort*factor + cot bonus
+	_WARSCORE_PROVINCE_MANPOWER_FACTOR_   =  0.25
+	_WARSCORE_PROVINCE_COT_               = 10
+	_WARSCORE_PROVINCE_FORTRESS_FACTOR_   =  0.5
+	_WARSCORE_STABHIT_THRESHOLD_          = 40   #Positive: warscore must be above this to allow stability hits on declined peace offers
+	_WARSCORE_STABHIT_OFFER_DIFFERENTIAL_ = 11   #Positive: peace offer must be more than this amount below warscore to stab hit
+
+	_PEACE_VASSAL_COST_           =  70 #Positive
+	_PEACE_RELIGION_COST_         =  50 #Positive
+	_PEACE_ACCESS_COST_           =  20 #Positive
+
+	_PEACE_TREASURY_              =  25 #Positive
+
+	_WHITEPEACE_MONTHS_           =  36 #Positive
+	_TRUCE_MONTHS_                =  61 #Positive
+}
+
+#-----------------------------------------------------------------------------------------------

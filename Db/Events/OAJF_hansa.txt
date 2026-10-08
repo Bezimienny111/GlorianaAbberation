@@ -1,0 +1,1179 @@
+#############################################
+###                                       ###
+### HANSA EVENTS by (Daniel Weaver)       ###
+### modified where stated by AJF Ayeshteni###
+### used with kind permission for AJF     ###
+###                                       ###
+#############################################
+
+# Hansa events
+
+# Hansa provinces
+
+# Bremen (336) contains Bremen
+# Mecklemburg (305) contains Luebeck, Hamburg, Lueneburg, Wismar and Rostock
+# Koeln (344) contains Cologne
+# Kleves (343) contains Dortmund
+# Hannover (310) contains Brunswick
+# Magdeburg (311) contains Magdeburg
+# Danzig (301) contains Danzig
+# Livland (282) contains Riga
+# Estland (276) contains Dorpat
+# Vorpommern (304) contains Stralsund
+# Hinterpommern (302) contains Stettin and Greifswald
+
+# Provinces of interest
+# Oldenburg (335)
+# Jylland (309)
+# Sjaelland (307)
+# Skaone (251)
+
+# Kontors
+# Bergenshus (256) contains Bergen
+# Flandern (380) contains Bruges
+# Anglia (247) contains London
+# Novgorod (274) contains Novgorod
+
+# Ground rules:
+
+# A Hanseatic kontor is worth 5 tax value to its province and 5 tax value to
+#the province of Mecklenburg.  A moved kontor does not damage Mecklenburg tax
+#value.  A closed kontor does damage Mecklenburg tax value.  A move costs -25
+#trade and a close costs -50 trade.  Reopening after a close gains back 25
+#trade.
+
+# Murder of merchants is worth -25 trade value and a loss of 1 merchant.
+
+# Successful imposition or increase of tariffs is Mercantilism +1.  Opening the
+#Sund or lowering tariffs is Mercantilism -1.  Tariff events depend on
+#Mercantilism >= 5.
+
+# Loss of kontor control is worth -2 tax value and -50 trade.
+
+# Loss of a Hansa member or is worth -5 tax value to Mecklenburg and the Hansa
+#member and -100 trade.  Readmission of the member is worth +5 tax value to both
+#and +50 trade.
+
+# The Hansa events are 187xxx.  The Hansa leaders and monarchs are 187xx.
+
+# --The general arc of history--
+
+# 1418-1427: Bremen's conflict with Luebeck re:1418 Hansa diet
+event = {
+	id = 187001 # bremen conflict reminder
+	trigger = {
+		exists = BRE
+		}
+	random = no
+	country = HSA
+	name = "The 1418 Hansa Statutes"
+	desc = "The 1418 Hansa diet drew up a charter of thirty-two articles
+	that reaffirmed earlier decrees dealing with numerous trade and legal
+	matters.  It provided for the arrest of any agitator against the Hansa
+	in any member town and prohibited the removal of any powers from the
+	town council.  This amounted to a considerable centralization of
+	Hanseatic power in Luebeck.  Bremen refused to accept the charter's
+	provisions.  Its citizens murdered a pro-Luebeck burgomaster and
+	installed an anti-Luebeck town council.  If a reconciliation (relations
+	+50 or greater) is not reached, Bremen may be expelled from the Hansa."
+	date = { day = 10 month = january year = 1419 }
+	offset = 0
+	style = 1
+	action_a ={ #OK#
+		name = "Better get cracking on that."
+		command = {}
+	}
+}
+
+event = {
+	id = 187002 # bremen_dispute reconciliation failure
+	trigger = {
+		exists = BRE
+		event = 187001
+		dynastic = {country = BRE  country = HSA}
+		NOT = { relation = { country = BRE value = 50 } }
+	}
+	random = no
+	country = HSA
+	name = "Reconciliation Efforts Fail"
+	desc = "It has proven impossible to reconcile the differences between
+	Bremen and Luebeck.  The Hansa diet is meeting to decide upon a course
+	of action.  Expelling Bremen will harm relations and business
+	interests, but our leadership of the Hansa will appear weak if we do
+	not take a firm line."
+	date = { day = 1 month = january year = 1424 }
+	offset = 500
+	deathdate = { day = 1 month = january year = 1434 }
+	style = 1
+	action_a ={ #OK#
+		name = "Expel Bremen"
+		command = { type = stability value = -1 }
+		command = { type = breakdynastic which = BRE }
+		command = { type = relation which = BRE value = -50 }
+		command = { type = trade value = -100 }
+		command = { type = provincetax which = 305 value = -5 } 
+		command = { type = provincetax which = 336 value = -5 } 
+		command = { type = setflag which = bremen_dispute }
+		command = { type = sleepevent which = 187003 } 
+	}
+	action_b ={ #OK#
+		name = "Let the matter drop"
+		command = { type = stability value = -5 }
+		command = { type = domestic which = centralization value = -2 }
+		command = { type = DIP which = -1 value = 24 }
+		command = { type = relation which = BRE value = 50 }
+		command = { type = sleepevent which = 187003 } 
+	}
+}
+
+event = {
+	id = 187003 # bremen_dispute reconciliation success
+	trigger = {
+		exists = BRE
+		event = 187001
+		dynastic = {country = BRE  country = HSA}
+		relation = { country = BRE value = 50 }
+	}
+	random = no
+	country = HSA
+	name = "Reconciliation Efforts Succeed"
+	desc = "The differences between Bremen and Luebeck have been
+	successfully reconciled.  The integrity of the Hansa has been
+	preserved, although Luebeck's effort at centralizing Hanseatic power
+	has been damaged and the Hansa is likely to be more fractious in the
+	immediate future. 
+	This is an ahistorical result.  Historically, the differences between
+	the two towns could not be reconciled and Bremen was expelled from the
+	Hansa from 1427 to 1433.  You have been awarded 10 victory points for
+	averting Bremen's expulsion."
+	date = { day = 1 month = january year = 1424 }
+	offset = 500
+	deathdate = { day = 1 month = january year = 1434 }
+	style = 1
+	action_a ={ #OK#
+		name = "Great"
+		command = { type = vp value = 10 }
+		command = { type = stability value = 1 }
+		command = { type = domestic which = centralization value = -1 }
+		command = { type = DIP which = -1 value = 24 }
+		command = { type = sleepevent which = 187002 } 
+	}
+}
+
+event = {
+	id = 187004 # bremen_dispute bremen gives up
+	trigger = {
+		exists = BRE
+		flag = bremen_dispute # Hansa chose to expel Bremen
+		event = 187002 # reconciliation failure event
+		dynastic = {country = BRE  country = HSA}
+		relation = { country = BRE value = 0 }
+	}
+	random = no
+	country = HSA
+	name = "Bremen Relents"
+	desc = "Bremen has relented in the face of Hanseatic economic pressure.
+	The integrity of the Hansa has been preserved.  Luebeck's effort at
+	centralizing Hanseatic power has been successful.  Other Hanseatic
+	towns may remember and resent Luebeck's strongarm tactics in the
+	future."
+	date = { day = 1 month = january year = 1430 }
+	offset = 500
+	deathdate = { day = 1 month = january year = 1440 }
+	style = 1
+	action_a ={ #OK#
+		name = "Great"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = DIP which = -1 value = 24 }
+		command = { type = relation which = BRE value = 20 }
+		command = { type = trade value = 50 }
+		command = { type = provincetax which = 305 value = 5 } 
+		command = { type = provincetax which = 336 value = 5 } 
+		command = { type = clrflag which = bremen_dispute }
+	}
+}
+
+# DEVEVENT
+# 1420: English factory in Danzig closed by Grand Master.
+event = {
+	id = 187005
+	random = no
+	country = HSA
+	name = "English Factory Closed In Danzig"
+	desc = "Perceived inequities between Hanseatic trading rights in
+	England and English trading rights in the Baltic were a perennial
+	source of friction between the Hansa and England.  In 1420 a rapid
+	expansion of English trade in Danzig caused the Grand Master of the
+	Teutonic Order to close down the English factory there (the term refers
+	to a trading house) and throw the head of the factory into prison.
+	Support for the Teutons will anger the rich and powerful English, but
+	support for the English merchants will damage relations with the Baltic
+	Hansa towns and possibly loosen your grip on the Luebeck trade."
+	date = { day = 1 month = january year = 1420 }
+	offset = 364
+	deathdate = { day = 1 month = january year = 1425 }
+	style = 1
+	action_a ={
+		name = "Support the Teutonic Order"
+		command = { type = relation which = LAT value = 25 }
+		command = { type = relation which = ENG value = -25 }
+		command = { type = domestic which = mercantilism value = 1 }
+	}
+	action_b ={
+		name = "Support the English"
+		command = { type = relation which = ENG value = 25 }
+		command = { type = relation which = LAT value = -40 } 
+		command = { type = relation which = POM value = -20 }
+		command = { type = relation which = BRA value = -20 } 
+		command = { type = domestic which = mercantilism value = -1 }
+		command = { type = sleepevent which = 187007 } 
+		command = { type = stability value = -2 }
+	}
+}
+
+event = {
+	id = 187006
+	trigger = {
+		exists = HSA
+		exists = LAT
+	}
+	random = no
+	country = HSA
+	name = "Luebeck Loses Control Of Novgorod Contor"
+	desc = "For many years the Livonian towns had been attempting to gain
+	control of the Hanseatic kontor in Novgorod.  They had effectively
+	succeeded by the beginning of Europa Universalis II.  In 1422 Luebeck
+	was finally forced to concede control of the Novgorod kontor to the
+	Livonian town of Dorpat and to allow the Livonian Hansa to decide
+	Novgorod trade issues."
+	date = { day = 1 month = january year = 1422 }
+	offset = 364
+	style = 1
+	action_a ={
+		name = "Those swines!"
+		command = { type = relation which = LAT value = -25 }
+		command = { type = relation which = NVG value = -25 }
+		command = { type = trade value = -50 }
+		command = { type = provincetax which = 305 value = -2 } 
+
+	}
+}
+
+event = { id = 187007
+	trigger = {
+		exists = ENG
+		NOT = {relation = { country = ENG value = 75 }} 
+	}
+	random = no
+	country = HSA
+	name = "English Parliament Demands Additional Duties"
+	desc = "In 1423, the English Parliament voted to impose additional
+	duties on Hanseatic imports of wine, salt, herring and timber - all
+	crucial Hanseatic trade goods.
+	Historically, the Hanseatic merchants in London refused to pay.  In
+	response, England arrested the merchants and briefly closed the
+	Steelyard."
+	date = { day = 1 month = january year = 1423 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1424 }
+	style = 1
+	action_a ={
+		name = "Refuse to pay"
+		command = { type = relation which = ENG value = -20 }
+		command = { type = merchants value = -1 }
+		command = { type = trade value = -25 }
+	}
+	action_b ={
+		name = "Pay the additional duties"
+		command = { type = relation which = ENG value = 20 }
+		command = { type = treasury value = -10 }
+		command = { type = trade value = -20 }
+	}
+}
+
+# 1424: 150 Germans arrested in Novgorod.  36 die in captivity.
+event = {
+	id = 187008 # novg arrest novgorod
+	trigger = {
+		exists = NVG
+		war = { country = HSA country = NVG }
+		owned = { province = 274 data = NVG }
+	}
+	random = no
+	country = HSA
+	name = "German Merchants Arrested In Novgorod - Part I"
+	desc = "In 1424, 150 German merchants were arrested in Novgorod
+	following several sea battles between Hanseatic and Russian ships.  36
+	of the merchants died in captivity."
+	date = { day = 1 month = january year = 1419 }
+	offset = 364
+	deathdate = { day = 1 month = january year = 1440 }
+	style = 1
+	action_a ={
+		name = "Those infidel curs!"
+		command = { type = relation which = NVG value = -50 }
+		command = { type = merchants value = -1 }
+		command = { type = trade value = -25 }
+		command = { type = sleepevent which = 187009 } 
+	}
+}
+
+event = {
+	id = 187009 # novg arrest russia - cover event
+	trigger = {
+		exists = HSA
+		exists = RUS
+		war = { country = HSA country = RUS }
+	       	owned = { province = 274 data = RUS }
+	}
+	random = no
+	country = HSA
+	name = "German Merchants Arrested In Novgorod"
+	desc = "In 1424, 150 German merchants were arrested in Novgorod
+	following several sea battles between Hanseatic and Russian ships.  36
+	of the merchants died in captivity."
+	date = { day = 1 month = january year = 1419 }
+	offset = 364
+	deathdate = { day = 1 month = january year = 1440 }
+	style = 1
+	action_a ={
+		name = "Those infidel curs!"
+		command = { type = relation which = RUS value = -50 }
+		command = { type = merchants value = -1 }
+		command = { type = trade value = -15 }
+		command = { type = sleepevent which = 187008 } 
+	}
+}
+
+event = {
+	id = 187010
+	random = no
+	country = HSA
+	name = "Denmark Institutes The Sound Due"
+	desc = "The duchy of Schleswig is nominally held by the Danish crown,
+	but the counts of Holstein have ruled Schleswig for decades.  Recently
+	the Danes have been attempting to reassert their sovereignty over the
+	duchy, and the Hanseatic towns have helped the counts in thwarting the
+	Danish attempts.  King Eric of the Danes has been attempting to
+	retaliate against us for some time by aiding the Poles against the
+	Teutonic Order, promoting the Dutch and English trade, and harassing
+	our merchants.  His latest attack against the Hansa is the institution
+	of a toll on all ships passing through the Sund."
+	style = 1
+	action_a ={
+		name = "This is intolerable"
+		command = { type = casusbelli which = DAN value = 60}
+		command = { type = warships which = 305 value = 1 }
+		command = { type = setflag which = vordingborg }
+		}
+
+	action_b ={
+		name = "Accept the Sound Due"
+		command = { type = stability value = -3 } 
+		command = { type = relation which = DAN value = 50 }
+		command = { type = provincetax which = 305 value = -5 }
+		command = { type = revoltrisk which = 60 value = 3 }
+		command = { type = clrflag which = vordingborg }
+	}
+}
+
+event = {
+	id = 187011
+	trigger = {
+		exists = ENG
+		exists = BUR
+		NOT = {
+			war = { country = ENG country = HSA } 
+			} 
+		}
+	random = no
+	country = HSA
+	name = "England Reconciles With Hansa"
+	desc = "After Parliament levied fresh import duties in 1431, Hansa
+	merchants were convinced that war was about to break out.  Many fled
+	the London Steelyard for Bruges.  It turned out to be a false alarm.
+	Worried about the Burgundian threat and wishing to mollify potential
+	adversaries, the English confirmed Hanseatic privileges in London and
+	exempted them from additional duties."
+	date = { day = 1 month = january year = 1431 }
+	offset = 364
+	deathdate = { day = 1 month = january year = 1436 }
+	style = 1
+	action_a ={
+		name = "Excellent!"
+		command = { type = relation which = ENG value = 50 }
+		command = { type = sleepevent which = 187012 }
+	}
+}
+
+event = {
+	id = 187012 # ahistorical
+	trigger = {
+		exists = ENG
+		exists = BUR
+		event = 3894
+		NOT = {
+			war = { country = ENG country = BUR }
+			}
+		}
+	random = no
+	country = HSA
+	name = "England Levies New Duties"
+	desc = "After Parliament levied fresh import duties in 1431, Hansa
+	merchants were convinced that war was about to break out.  Many fled
+	the London Steelyard for Bruges.
+	This is an ahistorical event.  Historically, the duties turned out to
+	be a false alarm.  The English were worried about the Burgundian threat
+	after the Treaty of Arras.  They needed to mollify potential
+	adversaries.  The English assuaged the Hansa's fears by confirming the
+	Hanseatic privileges in London and exempting its merchants from
+	additional duties.  You have lost 5 victory points for failing to
+	maintain good trade relations."
+	date = { day = 1 month = january year = 1431 }
+	offset = 364
+	deathdate = { day = 1 month = january year = 1436 }
+	style = 1
+	action_a ={
+		name = "That is the last straw!"
+		command = { type = casusbelli which = ENG value = 24 }
+		command = { type = trade value = -50 } 
+		command = { type = provincetax which = 305 value = -5 } 
+		command = { type = provincetax which = 247 value = -5 } 
+		command = { type = sleepevent which = 187011 }
+		command = { type = vp   value = -5 }
+		command = { type = setflag  which = akclosed }
+	}
+	action_b ={
+		name = "Accept the duties"
+		command = { type = treasury value = -10 } 
+		command = { type = trade value = -20 }
+		command = { type = sleepevent which = 187011 }
+		command = { type = vp   value = -5 }
+	}
+}
+
+event = {
+	id = 187040 # England reopens kontor following closure
+	trigger = {
+		event = 187012
+		exists = ENG
+		relation = { country = ENG value = 50 } 
+		flag = akclosed
+		NOT = { 
+			war = {country = HSA country = ENG} 
+			}
+		}
+	random = no
+	country = HSA
+	name = "England Reopens The Steelyard"
+	desc = "Negotiations between England and the Hansa have allowed the
+	reopening of the London Steelyard.
+	This is an ahistorical event."
+	date = { day = 1 month = january year = 1431 }
+	offset = 364
+	deathdate = { day = 1 month = january year = 1531 }
+	style = 1
+	action_a ={
+		name = "Great!"
+		command = { type = provincetax which = 305 value = 5 } 
+		command = { type = provincetax which = 247 value = 5 } 
+		command = { type = trade value = 25 }
+		command = { type = clrflag which = akclosed }
+		}
+}
+
+event = {
+	id = 187013
+	trigger = {
+		flag = vordingborg
+		event = 187010
+		exists = DAN
+		NOT = { 
+			war = {country = HSA country = DAN} 
+			} 
+		}
+	random = no
+	country = HSA
+	name = "The Peace of Vordingborg"
+	desc = "The war with Denmark has finally ended with the Peace of
+	Vordingborg.  Wendish ships have been exempted from the Sound Due."
+	date = { day = 1 month = january year = 1430 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1440 }
+	style = 1
+	action_a ={
+		name = "Great!"
+		command = { type = trade value = 100 }
+		command = { type = clrflag which = vordingborg }
+	}
+}
+
+event = {
+	id = 187014
+	trigger = {
+		event = 3894
+		war = { country = BUR country = ENG }
+		NOT = {relation = { country = BUR value = 50 }} 
+		}
+	random = no
+	country = HSA
+	name = "The Low Countries Kontor - Part I"
+	desc = "The Flemings suffer greatly from Burgundy's war with England,
+	and suspect us of sympathising with the English and even colluding with
+	them.  Now they have massacred nearly eighty of our merchants at
+	Sluys!"
+	date = { day = 1 month = june year = 1436 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1438 }
+	style = 1
+	action_a ={
+		name = "Good Lord! Move the kontor and suspend all trade!"
+		command = { type = provincetax which = 380 value = -5 } 
+		command = { type = merchants value = -1 }
+		command = { type = trade value = -50 }
+	}
+}
+
+event = {
+	id = 187015
+	trigger = {
+		event = 187014
+		}
+	random = no
+	country = HSA
+	name = "Famine In Flanders"
+	desc = "A terrible famine struck Flanders in 1438 and the price of corn
+	quadrupled.  The Hansa lifted the trade embargo in order to profiteer
+	off grain shipments."
+	date = { day = 1 month = january year = 1438 }
+	offset = 364
+	deathdate = { day = 1 month = january year = 1439 }
+	style = 1
+	action_a ={
+		name = "More money for us."
+		command = { type = merchants value = 1 }
+		command = { type = trade value = 50 }
+		command = { type = treasury value = 25 }
+	}
+}
+
+event = {
+	id = 187016
+	trigger = {
+		domestic = { type = mercantilism value = 5 }
+		}
+	random = no
+	country = HSA
+	name = "Trade Dispute With The Dutch"
+	desc = "The Hollanders have seized a dozen Hansa salt vessels in Brest
+	roads in retaliation for Hansa interference with Livonian trade.  In
+	retaliation, the Hansa has closed the Sund to the Hollanders."
+	date = { day = 1 month = january year = 1438 }
+	offset = 364
+	deathdate = { day = 1 month = january year = 1439 }
+	style = 1
+	action_a ={
+		name = "There are two things I hate: intolerance and the Dutch"
+		command = { type = provincetax which = 339 value = -3 }  
+		command = { type = trade value = -15 }
+	}
+}
+
+event = {
+	id = 187017
+	trigger = {
+		exists = DAN
+		event = 187013 
+		}
+	random = no
+	country = HSA
+	name = "The Danish Succession"
+	desc = "The Danish state council has deposed Eric of Pomerania.  We
+	will be able to have a say in the selection of a new king for Denmark.
+	No matter our choice, we will be able to exact significant concessions
+	from the Danish."
+	date = { day = 1 month = january year = 1438 }
+	offset = 364
+	deathdate = { day = 1 month = january year = 1439 }
+	style = 1
+	action_a ={
+		name = "Great!"
+		command = { type = vp value = 1 } #- added by AJF#
+	}
+}
+
+event = {
+	id = 187018
+	trigger = {
+		event = 187016
+		NOT = {
+			domestic = { type = mercantilism value = 5 }
+			}
+		}
+	random = no
+	country = HSA
+	name = "The Treaty of Copenhagen"
+	desc = "Danish support for the Dutch forced the Hansa to sign the
+	Treaty of Copenhagen in 1441.  It guaranteed the right of the Hansa and
+	the Dutch to trade freely and suspended all obstacles to navigation.
+	The kontor has returned to Bruges."
+	date = { day = 1 month = january year = 1442 }
+	offset = 364
+	deathdate = { day = 1 month = january year = 1444 }
+	style = 1
+	action_a ={
+		name = "Okay."
+		command = { type = provincetax which = 339 value =5 } 
+		command = { type = domestic which = mercantilism value = -1 }
+	}
+}
+
+event = {
+	id = 187019
+	trigger = {
+		cot = 380 
+		}		
+	random = no
+	country = HSA
+	name = "Tariffs In The Low Countries - Part I"
+	desc = "In 1447 Luebeck called a general meeting of the Hansa diet to
+	discuss Hanseatic trade policy in Flanders.  Thirty-nine towns sent
+	delegations, a record figure.  Harassment of the Bruges kontor and
+	monopolistic trade practices on the part of the Flemish were the issues
+	immediately at hand.  The diet deliberated on several courses of
+	action.  Thanks to her lucrative trading interests in the Low
+	Countries, Cologne was strongly opposed to a proposed strengthening of
+	the kontor regulations.  The strengthening, which involved levying
+	additional taxes on certain goods and new duties on others, was passed
+	regardless."
+	date = { day = 1 month = january year = 1447 }
+	offset = 364
+	deathdate = { day = 1 month = january year = 1448 }
+	style = 1
+	action_a ={
+		name = "Strengthen the Bruges kontor over Cologne's objections"
+		command = { type = provincetax which = 305 value = 1 } 
+		command = { type = provincetax which = 344 value = -1 } 
+		command = { type = domestic which = mercantilism value = 1 }
+		command = { type = relation which = KOL value = -50 }
+	}
+	action_b ={
+		name = "Do nothing"
+		command = { type = sleepevent which = 187021 }
+	}
+	action_c ={
+		name = "Relax kontor regulations"
+		command = { type = provincetax which = 305 value = -1 } 
+		command = { type = domestic which = mercantilism value = -1 }
+		command = { type = relation which = KOL value = 50 }
+		command = { type = relation which = BUR value = 50 } 
+		command = { type = sleepevent which = 187021 }
+	}
+}
+
+event = {
+	id = 187020
+	trigger = {
+		exists = ENG
+		NOT = {relation = { country = ENG value = 75 }} 
+		}
+	random = no
+	country = HSA
+	name = "England Seizes Hanseatic Vessels"
+	desc = "England has just seized fifty Hanseatic merchant vessels in the
+	Channel.  The Hansa towns have seized the property of all English
+	merchants in retaliation, and relations with England have reached a new
+	low.  Many of the Wendish town councils demand war."
+	date = { day = 1 month = january year = 1449 }
+	offset = 364
+	deathdate = { day = 1 month = january year = 1450 }
+	style = 1
+	action_a ={
+		name = "The English dogs will pay!"
+		command = { type = trade value = -50 }
+		command = { type = relation which = ENG value = -50 }
+		command = { type = casusbelli which = ENG value = 24 }
+		command = { type = treasury value = 50 }
+	}
+	action_b ={
+		name = "Sod the councils - hostilities are too dangerous"
+		command = { type = trade value = -50 }
+		command = { type = relation which = ENG value = -30 }
+		command = { type = stability value = -2}
+		}
+}
+
+event = {
+	id = 187021
+	trigger = {
+		event = 187014
+		cot = 380 
+		NOT = {
+			relation = { country = BUR value = 50 }
+			}
+		}
+	random = no
+	country = HSA
+	name = "The Low Countries Kontor - Part II"
+	desc = "The Flemish have not reconciled themselves to Hanseatic
+	domination of trade in Flanders.  Trade disputes have continued, with
+	each side accusing the other of monopolist practices and unfair
+	competition.  The German merchants have been instructed to move from
+	Bruges to Deventer in Holland, but Cologne and the Teutonic Order have
+	raised issues with the move.  Deventer is too far off the trade routes
+	for the Teutons and Cologne is as usual interested in maintaining trade
+	links with Flanders."
+	date = { day = 1 month = january year = 1451 }
+	offset = 364
+	deathdate = { day = 1 month = january year = 1452 }
+	style = 1
+	action_a ={
+		name = "Move the kontor to Utrecht instead"
+		command = { type = relation which = BUR value = -50 }
+		command = { type = provincetax which = 380 value = -5 } 
+		command = { type = provincetax which = 340 value = 5 } 
+		command = { type = setflag which = utrecht_kontor }
+	}
+	action_b ={
+		name = "Insist on moving to Deventer"
+		command = { type = relation which = BUR value = -50 }
+		command = { type = relation which = LAT value = -25 }
+		command = { type = relation which = KOL value = -25 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = provincetax which = 380 value = -5 } 
+		command = { type = provincetax which = 338 value = 5 } 
+		command = { type = clrflag which = utrecht_kontor }
+	}
+	action_c ={
+		name = "Negotiate a settlement with the Flemish"
+		command = { type = relation which = BUR value = 25 }
+		command = { type = domestic which = mercantilism value = -1 }
+		command = { type = stability value = -2 }
+		command = { type = provincetax which = 305 value = -2 } 
+		command = { type = sleepevent which = 187024 } 
+	}
+}
+
+event = {
+	id = 187022
+	trigger = {
+		exists = FRA
+		exists = ENG
+		relation = { country = FRA value = -50}
+		NOT = {
+			war = { country = FRA country = HSA}
+			}  
+		}
+	random = no
+	country = HSA
+	name = "France Offers Protection To The Hansa"
+	desc = "Charles VII, the King of France, has offered us protection from
+	privateering attacks in the Channel on the condition that we break all
+	trade ties with England."
+	date = { day = 1 month = january year = 1452 }
+	offset = 364
+	deathdate = { day = 1 month = january year = 1453 }
+	style = 1
+	action_a ={
+		name = "Reject the French offer"
+		command = { type = relation which = FRA value = -25 }
+		command = { type = relation which = ENG value = 25 }
+	}
+	action_b ={
+		name = "Accept the French offer"
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = ENG value = -150 }
+		command = { type = breakdynastic which = ENG }
+		command = { type = dynastic which = FRA }
+		command = { type = stability value = -2 }
+		command = { type = trade value = 25 }
+	}
+}
+
+event = {
+	id = 187023
+	trigger = {
+		exists = NOR
+		exists = PAP
+		NOT = {
+			relation = { country = NOR value = 75}
+			} 
+		}
+	random = no
+	country = HSA
+	name = "The Murder of Olaf Nielsson"
+	desc = "Olaf Nielsson, the Norwegian royal bailiff of Bergen, has
+	worked against the Hansa for years.  Tensions have finally hit a
+	breaking point.  A mob of angry German merchants has broken into a
+	monastery in which Nielsson had been hiding.  They have murdered both
+	Nielsson and the bishop of Bergen in their rage!"
+	date = { day = 1 month = january year = 1455 }
+	offset = 364
+	deathdate = { day = 1 month = january year = 1456 }
+	style = 1
+	action_a ={
+		name = "Zounds!"
+		command = { type = losebuilding which = 256 value = bailiff }
+		command = { type = relation which = NOR value = -100 }
+		command = { type = relation which = PAP value = -50 }
+	}
+}
+
+event = {
+	id = 187024 # Bruges kontor returns from Utrecht
+	trigger = {
+		cot = 380
+		flag = utrecht_kontor
+		event = 187021
+		}
+	random = no
+	country = HSA
+	name = "Kontor Returns To Bruges"
+	desc = "Following negotiations with the Duke of Burgundy, we are
+	considering the return of the Hansa's merchants to Bruges."
+	date = { day = 11 month = august year = 1457 }
+	offset = 0
+	style = 1
+	action_a ={
+		name = "Let them return."
+		command = { type = provincetax which = 380 value = 5 } 
+		command = { type = provincetax which = 340 value = -5 } 
+		command = { type = treasury value = 25 } # indemnities
+	}
+	action_b ={
+		name = "The kontor is fine in Utrecht."
+		command = {}
+	}
+
+}
+
+event = {
+	id = 187025 # Bruges kontor returns from Deventer
+	trigger = {
+		cot = 380
+		event = 187021
+		NOT = {
+			flag = utrecht_kontor
+			}
+		}
+	random = no
+	country = HSA
+	name = "Kontor Returns To Bruges"
+	desc = "Following negotiations with the Duke of Burgundy, we are
+	considering the return of the Hansa's merchants to Bruges."
+	date = { day = 11 month = august year = 1457 }
+	offset = 0
+	style = 1
+	action_a ={
+		name = "Let them return"
+		command = { type = provincetax which = 380 value = 5 } 
+		command = { type = provincetax which = 338 value = -5 } 
+		command = { type = treasury value = 25 } # indemnities
+	}
+	action_b ={
+		name = "The kontor is fine in Deventer"
+		command = {}
+	}
+}
+
+event = {
+	id = 187026
+	trigger = {
+		exists = DAN
+		owned = { province = 306 data = DAN }
+		OR = {	
+			relation = {country = DAN value = -100 }
+			war = {country = DAN country = HSA } 
+			} 
+		}
+	random = no
+	country = HSA
+	name = "The Danish Threat"
+	desc = "The inheritance of Holstein by the Danish crown means that the
+	gates of Luebeck and Hamburg now open onto Danish land.  The Hansa is
+	now gravely threatened by the Danish and we cannot help but sympathize
+	with the good peasantry of Holstein who are terribly oppressed under
+	the savage rule of these latter-day Vikings."
+	date = { day = 1 month = january year = 1459 }
+	offset = 364
+	date = { day = 1 month = august year = 1600 } 
+	style = 1
+	action_a ={
+		name = "Luebeck and Hamburg must remain safe!"
+		command = { type = addcore which = 306 }
+		command = { type = INF which = 305 value = 5000 } #AJF#
+	}
+}
+
+event = {
+	id = 187027
+	trigger = {
+		event = 187019
+		exists = KOL
+		cot = 380 # COT in Flanders
+		NOT = {
+			relation = { country = KOL value = 100 }
+			}
+		}
+	random = no
+	country = HSA
+	name = "Tariffs In The Low Countries - Part II"
+	desc = "The Hansa diet is meeting at Hamburg, and the main subjects of
+	discussion are once again the Bruges kontor and the tariff on goods in
+	the Low Countries.  Currently, import and export tariffs are only
+	levied in Flanders.  The Wendish towns wish to expand the tariff
+	throughout the Low Countries.  Cologne has little influence in the
+	Bruges kontor but extensive trade links with Brabant and Holland.  They
+	stand to lose a great deal of revenue and have refused to pay the
+	tariff for some time."
+	date = { day = 1 month = january year = 1465 }
+	offset = 364
+	deathdate = { day = 1 month = january year = 1466 }
+	style = 1
+	action_a ={
+		name = "Support the Wendish towns"
+		command = { type = relation which = KOL value = -50 }
+		command = { type = provincetax which = 305 value = 1 } 
+		command = { type = provincetax which = 344 value = -1 } 
+		command = { type = domestic which = mercantilism value = 1 }
+	}
+	action_b ={
+		name = "Support Cologne"
+		command = { type = relation which = KOL value = 50 }
+		command = { type = stability value = -2 }
+	}
+}
+
+event = {
+	id = 187028
+	random = no
+	country = HSA
+	name = "A Charter In Antwerp"
+	desc = "During the 1460s Antwerp began to replace Bruges as the center
+	of Hanseatic power in the Low Countries.  In 1467 Hanseatic merchants
+	were granted a new business charter from Antwerp."
+	date = { day = 1 month = january year = 1467 }
+	offset = 364
+	deathdate = { day = 1 month = january year = 1468 }
+	style = 1
+	action_a ={
+		name = "Okay"
+		command = { type = merchants value = 1 }
+		}
+}
+
+event = {
+	id = 187029
+	trigger = {
+		event = 187008
+		exists = NVG #fromRUS - AJF#
+		cot = 274 
+		owned = { province = 274 data = NVG } #-AJF#
+		NOT = {
+			relation = { country = NVG value = 75 }
+			} 
+		}
+	random = no
+	country = HSA
+	name = "German Merchants Arrested In Novgorod - Part II"
+	desc = "In 1468 German merchants were again arrested in Novgorod.  The
+	Novgorod kontor was transferred to Narva."
+	date = { day = 1 month = january year = 1451 }
+	offset = 364
+	deathdate = { day = 1 month = january year = 1452 }
+	style = 1
+	action_a ={
+		name = "Move the kontor to Narva"
+		command = { type = relation which = NVG value = -50 } #-AJF#
+		command = { type = provincetax which = 274 value = -5 } 
+		command = { type = provincetax which = 340 value = 5 } 
+	}
+}
+
+event = {
+	id = 187030 # historical
+	trigger = {
+		exists = ENG
+		exists = KOL
+		NOT = {
+			relation = { country = ENG value = 100 } 
+		 	relation = { country = KOL value = 50 } 
+		 	war = {country = KOL country = ENG}
+			} 
+		}
+	random = no
+	country = HSA
+	name = "The Anglo-Hanseatic War - Part I"
+	desc = "The English and Danish had been contesting trade with Iceland
+	for some time.  In retaliation for an expansion of English trade with
+	the Icelanders, the Danish seized seven English ships in the Sund.  The
+	English encouraged the Hanseatics of having encouraged the Danish.  On
+	28 July 1468 the English Privy Council ordered the arrest of all
+	Hanseatic merchants in England and the seizure of their goods.  A mob
+	has attacked and damaged the London Steelyard.  Worse still, Cologne
+	has dissociated herself from our cause out of bitterness over the
+	tariff disputes."
+	date = { day = 28 month = july year = 1468 }
+	offset = 0
+	style = 1
+	action_a ={
+		name = "The curs!"
+		command = { type = relation which = ENG value = -50 }
+		command = { type = relation which = KOL value = -50 }
+		command = { type = casusbelli which = ENG value = 48 }
+		command = { type = casusbelli which = KOL value = 48 }
+		command = { type = breakdynastic which = KOL }
+		command = { type = provincetax which = 305 value = -10 } 
+		command = { type = provincetax which = 247 value = -5 } 
+		command = { type = provincetax which = 344 value = -5 } 
+		command = { type = trade value = -150 }
+		command = { type = sleepevent which = 187031 }
+		}
+}
+
+event = {
+	id = 187031 # ahistorical
+	trigger = {
+		exists = ENG
+		NOT = {
+			relation = { country = ENG value = 100 }
+			} 
+		}
+	random = no
+	country = HSA
+	name = "The Anglo-Hanseatic War - Part I"
+	desc = "The English and Danish had been contesting trade with Iceland
+	for some time.  In retaliation for an expansion of English trade with
+	the Icelanders, the Danish seized seven English ships in the Sund.  The
+	English encouraged the Hanseatics of having encouraged the Danish.  On
+	28 July 1468 the English Privy Council ordered the arrest of all
+	Hanseatic merchants in England and the seizure of their goods.  A mob
+	has attacked and damaged the London Steelyard.
+	This is an ahistorical event.  Historically, Cologne seceded from the
+	Hansa and joined the English cause thanks to its unhappiness over the
+	Wendish towns' high-handed treatment of its trade interests in the Low
+	Countries.  You have been awarded 10 victory points for maintaining
+	Cologne's friendship."
+	date = { day = 28 month = july year = 1468 }
+	offset = 0
+	style = 1
+	action_a ={
+		name = "The curs!"
+		command = { type = relation which = ENG value = -50 }
+		command = { type = casusbelli which = ENG value = 48 }
+		command = { type = provincetax which = 305 value = -5 } 
+		command = { type = provincetax which = 247 value = -5 } 
+		command = { type = trade value = -50 }
+		command = { type = sleepevent which = 187030 }
+		}
+}
+
+event = {
+	id = 187034
+	trigger = {
+		exists = ENG
+		OR = {	event = 187030
+			event = 187031 }
+		}
+	random = no
+	country = HSA
+	name = "The Anglo-Hanseatic War - Part II"
+	desc = "The Duke of Burgundy joined English business groups in
+	petitioning for the release of Hanseatic merchants imprisoned by the
+	English Privy Council.  The merchants were finally released in April
+	1469."
+	date = { day = 1 month = april year = 1469 }
+	offset = 30
+	deathdate = { day = 1 month = may year = 1469 }
+	style = 1
+	action_a ={
+		name = "Very well"
+		command = { type = merchants  value = 2 }
+		command = { type = trade value = 25 }
+		}
+}
+
+event = {
+	id = 187035
+	trigger = {
+		event = 187034
+		exists = ENG
+		exists = LAT
+		relation = { country = LAT value = 50 } 
+		OR = {	event = 187030
+			event = 187031 }
+		}
+	random = no
+	country = HSA
+	name = "The Anglo-Hanseatic War - Part III"
+	desc = "The French caravel Saint-Pierre de La Rochelle had been lying
+	damaged and unclaimed in Danzig harbor for some time.  Hostilities with
+	England spurred the town to repair her and launch her and another
+	vessel into action against the English.  The privateer Paul Beneke used
+	the caravel, now renamed Der Grote Kraweel, to rack up an impressive
+	record of captured English riches and noblemen."
+	date = { day = 28 month = july year = 1469 }
+	offset = 364
+	deathdate = { day = 29 month = july year = 1470 }
+	style = 1
+	action_a ={
+		name = "Excellent!"
+		command = { type = warships which = 305 value = 1 } 
+		command = { type = relation which = LAT value = 100 }
+		}
+}
+
+event = {
+	id = 187038 # Peace of Utrecht
+	trigger = {
+		exists = ENG
+		OR = {	event = 187030
+			event = 187031 }
+		NOT = { 
+			war = {country = HSA country = ENG} 
+			} 
+		}
+	random = no
+	country = HSA
+	name = "The Peace of Utrecht"
+	desc = "The Peace of Utrecht has ended the Anglo-Hanseatic War.  The
+	London kontor has reopened."
+	date = { day = 28 month = july year = 1468 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1488 }
+
+	style = 1
+	action_a ={
+		name = "Great!"
+		command = { type = provincetax which = 305 value = 5 } 
+		command = { type = provincetax which = 247 value = 5 } 
+		command = { type = trade value = 25 }
+		}
+}
+
+event = {
+	id = 187039 # Cologne accepted again
+	trigger = {
+		event = 187030
+		dynastic = { country = KOL country = HSA }
+		NOT = { 
+			war = {country = HSA country = KOL}
+			} 
+		}
+	random = no
+	country = HSA
+	name = "Cologne Rejoins The Hansa"
+	desc = "Following the conclusion of mutual hostilities and
+	rapprochement from both sides, Cologne has rejoined the Hansa."
+	date = { day = 28 month = july year = 1468 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1488 }
+	style = 1
+	action_a ={
+		name = "Great!"
+		command = { type = provincetax which = 305 value = 5 } 
+		command = { type = provincetax which = 344 value = 5 } 
+		command = { type = trade value = 50 }
+	}
+}

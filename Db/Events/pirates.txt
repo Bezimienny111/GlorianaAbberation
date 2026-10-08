@@ -1,0 +1,451 @@
+#####################################
+### events for the Pirate Havens  ###
+### by Ayeshteni for the NAJF	  ###
+#####################################
+
+#plunder ahoy lads!
+event = {
+
+	id = 1110000
+	trigger = {
+		year = 1419
+		NOT = {
+			year = 1492
+		}
+	}
+	random = yes
+	country = PIH
+	name = "Plunder ahoy lads!"
+	desc = "Pirates roamed the Caribbean at will and accumulated a vast fortune in the process."
+	style = 3
+
+	action_a = {
+		name = "Yo ho ho 'n a bottle 'o rum"
+		command = { type = treasury value = 100 }
+		command = { type = galleys which = -2 value = 1 }
+	}
+}
+
+#Plunder Ahoy lads!
+event = {
+
+	id = 1110001
+	trigger = {
+		year = 1492
+		NOT = {
+			year = 1650
+		}
+	}
+	random = yes
+	country = PIH
+	name = "Plunder ahoy lads!"
+	desc = "Pirates roamed the Caribbean at will and accumulated a vast fortune in the process."
+	style = 3
+
+	action_a = {
+		name = "Yo ho ho 'n a bottle 'o rum"
+		command = { type = treasury value = 100 }
+		command = { type = warships which = -2 value = 1 }
+	}
+}
+
+#Plunder Ahoy lads!
+event = {
+
+	id = 1110002
+	trigger = {
+		year = 1650
+	}
+	random = yes
+	country = PIH
+	name = "Plunder ahoy lads!"
+	desc = "Pirates roamed the Caribbean at will and accumulated a vast fortune in the process."
+	style = 3
+
+	action_a = {
+		name = "Yo ho ho 'n a bottle 'o rum"
+		command = { type = treasury value = 100 }
+		command = { type = warships which = -2 value = 2 }
+	}
+}
+
+#A daring sailor
+event = {
+
+	id = 1110003
+	random = yes
+	country = PIH
+	name = "A Daring Young Sailor!"
+	desc = "Some young bloods have always found ways to gain respect and prestige amongst their peers. One such young blood seems bent on making a name for himself and increasing the notoriety of the Havens!"
+	style = 3
+
+	action_a = {
+		name ="Sent him out to explore!"
+		command = { type = explorer which = -1 }
+		command = { type = vp value = 2 }
+		command = { type = treasury value = -20 }
+	}
+}
+
+#the europeans cometh
+event = {
+
+	id = 1110004
+	trigger = {
+		exists = SPA
+		}
+	random = no
+	country = PIH
+	name = "The Europeans Arrive"
+	desc = "The indigenous raiders of the caribbean had a hard time when Christopher Columbus sailed over the horizon. Columbus traded many things with the caribbeans, but one of those things was new ideas and European thinking. Soon European state sponsored piracy would dominate the region and more nefarious types would move in and exploit the region. Within no time European pirates would be plying their deeds on the Caribbean sea."
+	style = 3
+
+	date = { day = 1 month = january year = 1510 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1650 }
+
+	action_a = {
+		name = "let us deal with these foreigners!"
+		command = { type = setflag which = Spainph }
+		command = { type = trade value = 500 }
+		command = { type = infra value = 100 }
+		command = { type = naval value = 50 }
+		command = { type = land value = 50 }
+		command = { type = treasury value = 100 }
+		command = { type = stability value = -1 }
+		command = { type = ai which = 1492_PH_ai.txt }
+	}
+
+	action_b = {
+		name = "No, send the dogs away!"
+		command = { type = vp value = 5 }
+		command = { type = domestic which = innovative value = -1 }
+	}
+}
+
+#spanish take over
+event = {
+
+	id = 1110005
+	trigger = {
+		flag = spainph
+		NOT = {
+			stability = 3
+		}
+	}
+	random = no
+	country = PIH
+	name = "Spanish Privateers Take Over"
+	desc = "The indigenous raiders of the caribbean had a hard time when Christopher Columbus sailed over the horizon. Columbus traded many things with the caribbeans, but one of those things was new ideas and European thinking. Soon European state sponsored piracy would dominate the region and more nefarious types would move in and exploit the region. Within no time European pirates would be plying their deeds on the Caribbean sea."
+	style = 3
+
+	date = { day = 1 month = january year = 1492 }
+	offset = 120
+	deathdate = { day = 1 month = january year = 1650 }
+
+	action_a = {
+		name = "Viva Hispaniola!"
+		command = { type = stability value = -1 }
+		command = { type = technology which = latin }
+		command = { type = add_countryculture which = iberian }
+		command = { type = remove_countryculture which = caribbean }
+		command = { type = warships which = -1 value = 3 }
+		command = { type = religion which = catholic }
+		command = { type = sleepmonarch which = 12100 }
+		command = { type = sleepmonarch which = 12101 }
+		command = { type = sleepmonarch which = 12102 }
+		command = { type = sleepmonarch which = 12103 }
+		command = { type = sleepmonarch which = 12104 }
+		command = { type = sleepmonarch which = 12105 }
+		command = { type = sleepmonarch which = 12106 }
+		command = { type = sleepmonarch which = 12107 }
+		command = { type = sleepmonarch which = 12108 }
+		command = { type = sleepmonarch which = 12109 }
+		command = { type = wakemonarch which = 12110 }
+		command = { type = wakemonarch which = 12111 }
+		command = { type = wakemonarch which = 12112 }
+		command = { type = wakemonarch which = 12113 }
+		command = { type = wakemonarch which = 12114 }
+		command = { type = wakemonarch which = 12115 }
+		command = { type = wakemonarch which = 12116 }
+		command = { type = wakemonarch which = 12117 }
+		command = { type = wakemonarch which = 12118 }
+		command = { type = wakemonarch which = 12119 }
+		command = { type = wakemonarch which = 12120 }
+		command = { type = wakemonarch which = 12121 }
+		command = { type = wakemonarch which = 12122 }
+	}
+}
+
+#spain utilises hispaniola
+event = {
+
+	id = 1110006
+	trigger = {
+		event = 1110005
+		exists = PIH
+		NOT = {
+			war = { country = SPA country = PIH }
+		}
+	}
+	random = no
+	country = SPA
+	name = "Raiders in the Caribbean"
+	desc = "All trading vessels in the Caribbean were at the mercy of the Raiders from Hispaniola. Every island seemed to hold a cove in which these raiders and smugglers could hide and then terrorise shipping. Spanish governors decided that the best way of protecting their shipping was to try and legitimise Hispaniolan privateering against Spains enemies. Sire, will we try and make a deal with the blackguards in Tortuga?"
+	style = 3
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 240
+	deathdate = { day = 1 month = january year = 1650 }
+
+	action_a = {
+		name = "Try and propose a deal with these...privateers"
+		command = { type = treasury value = -50 }
+		command = { type = trigger which = 110007 }
+	}
+
+	action_b = {
+		name = "Never, we must recalaim these islands for Spain"
+		command = { type = casusbelli which = PIH value = 24 }
+		command = { type = treasury value = -25 } #lost revenue
+	}
+}
+
+#hispaniola decides
+event = {
+
+	id = 1110007
+	random = no
+	country = PIH
+	name = "Spain wishes to grant us Letters of Marque!"
+	desc = "All trading vessels in the Caribbean were at the mercy of the Raiders from Hispaniola. Every island seemed to hold a cove in which these raiders and smugglers could hide and then terrorise shipping. Spanish governors decided that the best way of protecting their shipping was to try and legitimise Hispaniolan privateering against Spains enemies. Will you accept Spains offer?"
+	style = 3
+
+	action_a = {
+		name = "Aye why not!"
+		command = { type = casusbelli which = ENG value = 24 }
+		command = { type = casusbelli which = FRA value = 24 }
+		command = { type = treasury value = 50 }
+		command = { type = relation which = SPA value = 300 }
+		command = { type = trigger which = 1110008 }
+	}
+
+	action_b = {
+		name = "we'll take your bribe, now go swing!"
+		command = { type = treasury value = 50 }
+		command = { type = trigger which = 1110009 }
+	}
+}
+
+#they say yes
+event = {
+
+	id = 1110008
+	random = no
+	country = SPA
+	name = "Hispaniola, they say yes!"
+	desc = "The villians in Tortuga have agreed to not attack Spanish shipping and will attack French and English shipping only. These raiders may prove useful to use after all."
+	style = 3
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = relation which = PIH value = 100 }
+		command = { type = alliance which = PIH }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = ENG value = -75 }
+	}
+}
+
+#they say no
+event = {
+
+	id = 1110009
+	random = no
+	country = SPA
+	name = "The fools mock us!"
+	desc = "The drunken louts have rejected our gracious offer! They will not live long enough to regret their insolence!"
+	style = 3
+
+	action_a = {
+		name = "The Fools!"
+		command = { type = relation which = PIH value = -100 }
+		command = { type = casusbelli which = PIH value = 60 }
+	}
+}
+
+#english pirates move in
+event = {
+
+	id = 1110010
+	trigger = {
+		event = 1110008
+		NOT = {
+			war = { country = SPA country = PIH }
+			}
+		}
+	random = no
+	country = PIH
+	name = "English Bucaneers move in!"
+	desc = "With the rise of English Naval supremecy, the rise of mutineering oppressed english sailors and the slow decline of Spanish authority it was no suprise that the dominant men of the sea - the English started dominating the dark underside of the Caribbean."
+	style = 3
+
+	date = { day = 1 month = january year = 1650 }
+	offset = 120
+	deathdate = { day = 1 month = january year = 1820 }
+
+	action_a = {
+		name = "We now have English Masters!"
+		command = { type = stability value = -1 }
+		command = { type = add_countryculture which = anglosaxon }
+		command = { type = remove_countryculture which = iberian }
+		command = { type = warships which = -1 value = 3 }
+		command = { type = religion which = protestant }
+		command = { type = sleepmonarch which = 12110 }
+		command = { type = sleepmonarch which = 12111 }
+		command = { type = sleepmonarch which = 12112 }
+		command = { type = sleepmonarch which = 12113 }
+		command = { type = sleepmonarch which = 12114 }
+		command = { type = sleepmonarch which = 12115 }
+		command = { type = sleepmonarch which = 12116 }
+		command = { type = sleepmonarch which = 12117 }
+		command = { type = sleepmonarch which = 12118 }
+		command = { type = sleepmonarch which = 12119 }
+		command = { type = sleepmonarch which = 12120 }
+		command = { type = sleepmonarch which = 12121 }
+		command = { type = sleepmonarch which = 12122 }
+		command = { type = wakemonarch which = 12123 }
+		command = { type = wakemonarch which = 12124 }
+		command = { type = wakemonarch which = 12125 }
+		command = { type = wakemonarch which = 12126 }
+		command = { type = wakemonarch which = 12127 }
+		command = { type = wakemonarch which = 12128 }
+		command = { type = wakemonarch which = 12129 }
+		command = { type = wakemonarch which = 12130 }
+		command = { type = wakemonarch which = 12131 }
+		command = { type = wakemonarch which = 12132 }
+		command = { type = setflag which = engleaders }
+	}
+
+	action_b = {
+		name = "Accept Spanish help against these English dogs!"
+		command = { type = trigger which = 110011 }
+		command = { type = stability value = -1 }
+		command = { type = vp value = -1 }
+	}
+}
+
+#spain moves in
+event = {
+
+	id = 1110011
+	random = no
+	country = SPA
+	name = "An Opportunity for Spain"
+	desc = "With the rise of English Naval supremecy, the rise of mutineering oppressed english sailors and the slow decline of Spanish authority it was no suprise that the dominant men of the sea - the English started dominating the dark underside of the Caribbean. The Pirate Masters have asked for Spanish Government help in keeping their stranglehold on the islands. This is a good oppoertunity for Spain to get her foot in the door and control these rebellious scum."
+	style = 3
+
+	action_a = {
+		name = "Let it be so"
+		command = { type = dynastic which = PIH }
+		command = { type = relation which = PIH value = 100 }
+		command = { type = vassal which = PIH }
+	}
+}
+
+#pirate leader events
+event = {
+
+	id = 1110012
+	trigger = {
+		NOT = {
+			event = 1110005
+		}
+	}
+	random = no
+	country = PIH
+	name = "The King-Captain Picanhua I Keeowayo"
+	desc = "The Raiders of Tortuga had managed to resist the influence of the Europeans. Unfortunately the Raiders were led by a string of ineffective rulers until the coming of Picanhua Keeowayo. This bloodthirsty individual terrorised the Caribbean until even the Spanish governors in the region payed tribute to him to stop his devestating raids on their colonies."
+	style = 3
+
+	date = { day = 1 month = january year = 1532 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1550 }
+
+	action_a = {
+		name = "Prepare to set sail!"
+		command = { type = warships which = -2 value = 2 }
+		command = { type = wakeleader which = 20020 }
+	}
+}
+
+#pirate leader events
+event = {
+
+	id = 1110013
+	trigger = {
+		event = 1110005
+	}
+	random = no
+	country = PIH
+	name = "Black Prince Gonzalez Jimenez"
+	desc = "Gonzalez was once the Governor of one of the Spanish colonies until his downfall. The priest of the colony had Gonzalez excommunicated and before Gonzalez fled he exacted retribution on the prude priest. Gonzalez managed to take the title of Black Prince amongst his fellow blackguard and became the dominant terror in the region. Gonzalez's knowledge of the Spanish colonies would see him personally directing his fleet against them in a most organised manner."
+	style = 3
+
+	date = { day = 1 month = january year = 1550 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1570 }
+
+	action_a = {
+		name = "Prepare to set sail!"
+		command = { type = warships which = -2 value = 2 }
+		command = { type = wakeleader which = 20021 }
+	}
+}
+
+#pirate leader events
+event = {
+
+	id = 1110014
+	trigger = {
+		flag = engleaders
+	}
+	random = no
+	country = PIH
+	name = "Captain Orangebeard"
+	desc = "Captain Orangebeard was a notorious Bucaneer who terrorised the Caribbean. Originally born and raised in Lothian in Scotland, Orangebeard was press-ganged by the English Navy while in York. He mutineered while off the Bahamas killing the officers and then sailing to Tortuga, where his violence earned him a high place in that hive of iniquity."
+	style = 3
+
+	date = { day = 1 month = january year = 1672 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1695 }
+
+	action_a = {
+		name = "Prepare to set sail!"
+		command = { type = warships which = -2 value = 2 }
+		command = { type = wakeleader which = 20022 }
+	}
+}
+
+#pirate leader events
+event = {
+
+	id = 1110015
+	trigger = {
+		flag = engleaders
+	}
+	random = no
+	country = PIH
+	name = "Captain Blackbeard"
+	desc = "Captain Blackbeard served on the HMS Neptune before jumping ship off the leeward Islands. he was picked up by a Bucaneer and fought his way to the captaincy of that ship: The Barracuda. Soon he would be making his reputation on the high seas; taking great delight in attacking British ships of the line."
+	style = 3
+
+	date = { day = 1 month = january year = 1723 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1740 }
+
+	action_a = {
+		name = "Prepare to set sail!"
+		command = { type = warships which = -2 value = 2 }
+		command = { type = wakeleader which = 20023 }
+	}
+}

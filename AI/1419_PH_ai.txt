@@ -1,0 +1,78 @@
+#
+# Europa Universalis.
+#
+#
+# Pre-European Pirate Haven AI preferences used by Pirate Havens unless otherwise stated.
+# 
+#
+# Johan Andersson 21-12-98
+#
+#
+# Modified by Ayeshteni 29-08-05
+
+#
+# No preferred areas at all. Default AI does not colonize.
+#
+continent = { }
+region = { carribean }
+
+# The amount of provinces we try to colonize at the same time
+expansion = 1
+
+# % of the time we prefer to establish a tradingpost if both are good.
+tradingpost = 100
+
+# Bonus for areas to establish colonies adjacent to previous ones.
+neighbour = 80
+
+# Bonus/Penalty for establish colonies adjacent to other countries.
+enemies = -50
+
+# 100 = max trader rate, lesser means slower focus on sending a trader.
+traders = 100
+
+# 100 = Total monopolist, will refuse trade as much as possible.
+monopoly = 10
+
+# 100 = Total warmonger, 0 = absolute pacifist
+war = 50
+ferocity = no
+
+#if possible we WILL go counter reform
+counterreform = no
+
+#Which countries to conquer if possible. (to guide nation historically)
+combat = { SPA AZT MAA }
+
+#How important is it to gather troops close to base
+base = 0.1
+#How important is it to be as close to target position when gathering troops.
+front = 5.0
+
+
+#Evaluation factors for conquer plans 
+conquer = 
+{ 
+	# multiply enemy province value 
+	enemy = 5.0 
+	# multiplying supply factor 
+	supply = 0.1 
+	# factor for distance to not owner provinces 
+	distance = 0.5 
+	# factor for owned provines 
+	owner = 2.0 
+	# Multiplier for provinces not in supply. 
+	notsupply = 1.0 
+	# Multiplying the base constant for conquer. 
+	base = 1.0 
+} 
+
+# Modifiers for garrison plans 
+garrison = 
+{ 
+	fortress = 1.0 
+	strategic = 3.0 
+	size = 1.0 
+	supply = 2.0 
+	war = 5.0 
+}

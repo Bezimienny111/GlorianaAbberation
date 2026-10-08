@@ -1,0 +1,139 @@
+##Byzantine Empire Events##
+
+#(1399-1400) Manuel travels to Western Europe - (by Sahib)
+event = {
+	id = 103001
+	trigger = {
+		exists = TUR
+		NOT = { countrysize = 12 }
+	}
+	random = no
+	country = BYZ
+	name = "Manuel travels to Western Europe"
+	desc = "In the late 13th century, the growing presence of the Osmanli (Ottomans) Turks threatened not only the prosperity of Empire, but even its existence. In a desperate act, Manuel left the country and traveled to Western Europe, where he was to beg for the support of the foreign courts in his fight."
+	style = "26008"
+
+	date = { day = 1 month = january year = 1399 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1400 }
+
+	action_a = {
+		name = "We might find friends there"
+		#command = { type = sleepmonarch which = 16232 } #no monarch with this ID
+		#command = { type = wakemonarch which = 16233 } #no monarch with this ID
+		command = { type = stability value = -1 }
+		command = { type = domestic which = innovative value = 1 }
+	}
+	action_b = {
+		name = "Nothing good comes from the West..."
+		command = { type = domestic which = innovative value = -1 }
+		command = { type = stability value = 1 }
+		command = { type = sleepevent which = 103002 } #Manuel's return
+	}
+}
+
+#(1402-1403) Manuel's return - (by Sahib)
+event = {
+	id = 103002
+	#trigger = { monarch = 16233 } #no monarch with this ID
+	random = no
+	country = BYZ
+	name = "Emperor Manuel returns"
+	desc = "First of all, the Emperor visited Italy. In Milan he was lavishly endowed, but the local duke was shocked by poverty of Roman heir. Then he went to France and England where he was treated with great dignity by the local rulers, but he never got the support that he was asking, and hoping, for."
+	style = "26008"
+
+	date = { day = 1 month = january year = 1402 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1403 }
+
+	action_a = {
+		name = "It's good to have him back at home"
+		#command = { type = sleepmonarch which = 16233 } #no monarch with this ID
+		#command = { type = wakemonarch which = 16232 } #no monarch with this ID
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 50 }
+		command = { type = relation which = MLO value = 50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = ENG value = 50 }
+		command = { type = relation which = -1 value = 25 }
+		command = { type = relation which = -1 value = 25 }
+		command = { type = relation which = -1 value = 25 }
+	}
+}
+
+####Random Events####
+
+#Appointing co-emperor
+event = {
+	id = 103003
+	random = yes
+	country = BYZ
+	name = "Appointing co-emperor"
+	desc = "Roman Empire had a long tradition of appointing co-emperors. In the past, such appointments gave the throne of the Empire to such good rulers like generals Ioannes Tzimiskes and Nikephoros Fokas or admiral Romanos Lekaponas."
+
+	action_a = {
+		name = "Crazy idea, it will be dangerous for our current dynasty"
+		command = { }
+	}
+	action_b = {
+		name = "Let's appoint a good administrator"
+		command = { type = ADM which = 2 value = 36 }
+		command = { type = infra value = 50 }
+		command = { type = stability value = -1 }
+		command = { type = revoltrisk which = 2 value = 36 }
+		command = { type = gainbuilding which = -1 value = bailiff }
+	}
+	action_c = {
+		name = "Let's appoint a warmonger!"
+		command = { type = MIL which = 2 value = 36 }
+		command = { type = land value = 50 }
+		command = { type = naval value = 50 }
+		command = { type = stability value = -1 }
+		command = { type = revoltrisk which = 2 value = 36 }
+		command = { type = casusbelli which = -1 value = 6 }
+		command = { type = relation which = -1 value = -25 }
+		command = { type = relation which = -1 value = -25 }
+		command = { type = relation which = -1 value = -25 }
+	}
+}
+
+#Small Theological Debate
+event = {
+	id = 103004
+	random = yes
+	country = BYZ
+	name = "Small Theological Debate"
+	desc = "In the tradition of the philsophers of Athens, the Byzantine educated often debated the finer points of religion. While usually this caused nothing more catastrophic then a little shouting, sometimes these debates could grow into great schisms within the Greek church."
+
+	action_a ={    
+		name = "Let them debate"
+		command = { type = stability value = -1 }
+	}
+	action_b ={    
+		name = "Side with one group"
+		command = { type = revolt which = -2 }
+	}
+}
+
+#Grand Theological Debate
+event = {
+	id = 103005
+	random = yes
+	country = BYZ
+	name = "Grand Theological Debate"
+	desc = "In the tradition of the philsophers of Athens, the Byzantine educated often debated the finer points of religion. While usually this caused nothing more catastrophic then a little shouting, sometimes these debates could grow into great schisms within the Greek church."
+
+	action_a ={    
+		name = "Let them debate"
+		command = { type = stability value = -2 }
+		command = { type = heretic  which = -1 }
+	}
+	action_b ={    
+		name = "Side with one group"
+		command = { type = stability value = 1 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -1 }
+	}
+}
+
+#first free ID: 103006

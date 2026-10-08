@@ -1,0 +1,152 @@
+#####Holstein Major Events#####
+#By Joakim 'Greven' Bergqwist##
+###############################
+
+#The Evangelic Union#
+event = {
+
+	id = 3629
+	trigger = {
+		 OR = {
+			religion = protestant
+			religion = reformed
+				}
+			}
+	random = no
+	country = SHL
+	name = "EVENTNAME3629"
+	desc = "EVENTHIST3629"
+
+	date = { day = 1 month = january year = 1605 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a ={					#Prepare to Join#
+		name = "ACTIONNAME3629A"
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = HAN value = 150 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = PFA value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = THU value = 150 }
+		command = { type = relation which = BAD value = 150 }
+		command = { type = relation which = KLE value = 100 }
+		command = { type = relation which = KOL value = 50 }
+		command = { type = relation which = BAY value = 50 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={					#Stay Neutral#
+		name = "ACTIONNAME3629B"
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = HAN value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = PFA value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = relation which = THU value = -100 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#The Catholic League#
+event = {
+
+	id = 3630
+	trigger = {
+		 OR = {
+			religion = catholic
+			religion = counterreform
+				}
+			}
+	random = no
+	country = SHL
+	name = "EVENTNAME3630"
+	desc = "EVENTHIST3630"
+
+	date = { day = 1 month = january year = 1607 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a ={					#Prepare to Join#
+		name = "ACTIONNAME3630A"
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = BRA value = -150 }
+		command = { type = relation which = HAN value = -150 }
+		command = { type = relation which = HES value = -150 }
+		command = { type = relation which = PFA value = -150 }
+		command = { type = relation which = SAC value = -150 }
+		command = { type = relation which = THU value = -150 }
+		command = { type = relation which = BAD value = -150 }
+		command = { type = relation which = KLE value = 50 }
+		command = { type = relation which = KOL value = 100 }
+		command = { type = relation which = BAY value = 100 }
+		command = { type = relation which = PAP value = 100 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = HAB value = 150 }
+	}
+
+	action_b ={					#Stay Neutral#
+		name = "ACTIONNAME3630B"
+		command = { type = relation which = BRA value = 50 }
+		command = { type = relation which = HAN value = 50 }
+		command = { type = relation which = HES value = 50 }
+		command = { type = relation which = PFA value = 50 }
+		command = { type = relation which = SAC value = 50 }
+		command = { type = relation which = THU value = 50 }
+		command = { type = relation which = BAY value = -50 }
+		command = { type = relation which = KLE value = -50 }
+		command = { type = relation which = KOL value = -50 }
+		command = { type = relation which = HAB value = -100 }
+	}
+}
+
+#The Great Northern Conflict#
+event = {
+
+	id = 3631
+	trigger = {
+			exists = DAN
+			exists = SWE
+		}
+	random = no
+	country = SHL
+	name = "EVENTNAME3631"
+	desc = "EVENTHIST3631"
+
+	date = { day = 15 month = june year = 1697 }
+	offset = 0
+	deathdate = { day = 1 month = april year = 1700 }
+
+	action_a ={			#Mobilize Defenses#
+		name = "ACTIONNAME3631A"
+		command = { type = INF which = -2 value = 8000 }
+		command = { type = CAV which = -2 value = 3000 }
+		command = { type = ART which = -2 value = 10 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = DAN value = -200 }
+		command = { type = relation which = SWE value = 150 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = HOL value = 100 }
+	}
+
+	action_b ={			#Diplomatic Effort#
+		name = "ACTIONNAME3631B"
+		command = { type = stability value = 1 }
+		command = { type = relation which = DAN value = -150 }
+		command = { type = relation which = SWE value = 100 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = PRU value = 100 }
+		command = { type = relation which = HES value = 100 }
+		command = { type = relation which = HAN value = 100 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = diplomats value = 6 }
+		command = { type = treasury value = 200 }
+
+
+	}
+}

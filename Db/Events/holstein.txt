@@ -1,0 +1,48 @@
+##Holstein Events##
+
+#(1340) The Assassination of Gerhard III - (by Brian Roastbeef)
+event = {
+	id = 109000
+	trigger = { exists = DAN }
+	
+	random = no
+	country = SHL
+	name = "The Assassination of Gerhard III"
+	desc = "With the rule of Gerhard III, brother of Johann the Mild, the Danish lands have been under the thumb of Holstein since 1332. Despite the economic benefits of controlling the Sund, this came at the expense of near constant rebellion from unhappy Danish subjects. In the Spring of 1340, the beleagured Count Gerhard travelled into Randers, with the intention of crushing a lingering band of rebels. It was there that he was assassinated in his bed on the night of April 1 by Niels Ebbesen and his followers. Pressure from neighboring princes, and the inability of Gerhard's successors to maintain control of the region forced Johann to give his backing to Valdemar IV in exchange for some minor financial gain."
+	
+	date = { day = 1 month = april year = 1340 }
+
+	action_a ={
+		name = "What can we do but back Valdemar?"
+		command = { type = treasury value = 100 }
+		command = { type = stability value = -2 }
+		command = { type = province_revoltrisk which = 309 value = 10 }
+	}
+}
+
+#(1344-1346) Return of Jutland to Denmark - (by Brian Roastbeef)
+event = {
+	id = 109001
+	trigger = {
+		exists = DAN
+		owned = { province = 309 data = SHL }
+	}
+	random = no
+	country = SHL
+	name = "Return of Jutland to Denmark"
+	desc = "Once on the throne, Danish King Valdemar IV routinely set about ridding Denmark of the remnants of German control. The campaign in Jutland began in November 1340, just months after his coronation, with the siege of Skanderborg Castle. After this Valdemar IV slowly began to buy, or when money was lacking, conquer Denmark piece by piece, consolidating his control over the kingdom. In 1344, the spoils of conquest and heavy taxation allowed Valdemar to repay his debts in Southern Jutland thoroughly establishing his complete control over the region. By 1347, the lands of Denmark were utterly free of their previous German masters."
+	
+	date = { day = 1 month = january year = 1344 }
+	offset = 300
+	deathdate = { day = 1 month = december year = 1346 }
+
+	action_a ={	 
+		name = "We have lost our grip..."
+		command = { type = cedeprovince which = DAN value = 309 }
+		command = { type = removecore_national which = 309 } #Jutland
+		command = { type = treasury value = 70 }
+		command = { type = trigger which = 104002 } #DAN: The Reclaiming of Jutland 
+	}
+}
+
+#first free ID: 109002

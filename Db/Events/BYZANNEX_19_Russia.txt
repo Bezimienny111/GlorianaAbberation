@@ -1,0 +1,704 @@
+#-----------------------------------------------------------------------------
+# Russian Events by Louis-Philippe
+
+event = {
+	id = 3001332
+	trigger = {
+		exists = RUS
+		religion = orthodox
+		OR = {
+			flag = byz_victory_egypt #BYZ: Victory in Egypt (dec. 6034)
+			flag = byz_empire_east #BYZ: The Empire of the East (dec. 6036-6037)
+			flag = byz_conquest_africa #BYZ: Conquest of Africa (dec. 6038-6039)
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "The Pact of the Two Caesars"
+	desc = "The Roman Empire had assured its survival in long and bloody wars. At the same time, the Orthodox Slavs of Muscovy and Novgorod had withstood the Mongols and sewn an immense empire across the steppes, which they call 'Russia.' The Emperor is displeased to find a growing, second Orthodox empire to his north. For this reason, at the end of the 16th century, he proposed that Russia enter the Imperial fold, the Tsar taking the title Basileus Herakles, the Emperor, the title Basileus Zeus, following the dual empire of Diocletianus in the 4th century. The Tsar refused this offer, but signed an eternal Imperial alliance nevertheless."
+	date = { day = 1 month = january year = 1590 }
+	offset = 60 #2 months
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Come to me, my brother"
+		command = { type = trigger which = 3001333 }
+		command = { type = stability value = 1 }
+	}
+	action_b = {
+		name = "Propose an alliance only"
+		command = { type = trigger which = 3001336 }
+		command = { type = relation which = RUS value = 100 }
+	}
+	action_c = {
+		name = "I hate diplomacy"
+		command = { type = stability value = -1 }
+	}
+}
+
+event = {
+	id = 3001333
+	random = NO
+	country = RUS
+	name = "The Pact of the Two Caesars"
+	desc = "The Roman Empire had assured its survival in long and bloody wars. At the same time, the Orthodox Slavs of Muscovy and Novgorod had withstood the Mongols and sewn an immense empire across the steppes, which they call 'Russia.' The Emperor is displeased to find a growing, second Orthodox empire to his north. For this reason, at the end of the 16th century, he proposed that Russia enter the Imperial fold, the Tsar taking the title Basileus Herakles, the Emperor, the title Basileus Zeus, following the dual empire of Diocletianus in the 4th century. The Tsar refused this offer, but signed an eternal Imperial alliance nevertheless."
+	style = 1
+
+	action_a = {
+		name = "Propose a military alliance instead"
+		command = { type = relation which = BYZ value = 150 }
+		command = { type = trigger which = 3001334 }
+	}
+	action_b = {
+		name = "I am Basileus Herakles"
+		command = { type = stability value = -1 }
+		command = { type = relation which = BYZ value = 400 }
+		command = { type = trigger which = 3001335 }
+	}
+	action_c = {
+		name = "I hate diplomacy"
+		command = { type = relation which = BYZ value = -50 }
+	}
+}
+
+event = {
+	id = 3001334
+	random = NO
+	country = BYZ
+	name = "The Pact of the Two Caesars"
+	desc = "Russia has accepted an alliance between our two empires. Even if the Roman Emperor did not obtain everything he wanted, at least he had succeeding in assuring himself an alliance with Moscow."
+
+	action_a = {
+		name = "But he calls himself Tsar!"
+		command = { type = alliance which = RUS }
+		command = { type = relation which = RUS value = 100 }
+	}
+}
+
+event = {
+	id = 3001335
+	random = NO
+	country = BYZ
+	name = "The Pact of the Two Caesars"
+	desc = "The Tsar of Russia has accepted to become a Basileus, reigning from Constantinople! The two empires are no more! This is great news!"
+
+	action_a = {
+		name = "One God! One Church! One Empire!"
+		command = { type = stability value = 2 }
+		command = { type = add_countryculture which = russian }
+		command = { type = vassal which = RUS }
+		command = { type = dynastic which = RUS }
+		command = { type = alliance which = RUS }
+		command = { type = relation which = RUS value = 300 }
+	}
+}
+
+event = {
+	id = 3001336
+	random = NO
+	country = RUS
+	name = "The Pact of the Two Caesars"
+	desc = "The Roman Empire had assured its survival in long and bloody wars. At the same time, the Orthodox Slavs of Muscovy and Novgorod had withstood the Mongols and sewn an immense empire across the steppes, which they call 'Russia.' The Emperor is displeased to find a growing, second Orthodox empire to his north. For this reason, at the end of the 16th century, he proposed that Russia enter the Imperial fold, signing an eternal Imperial alliance."
+
+	action_a = {
+		name = "Accept their military alliance"
+		command = { type = relation which = BYZ value = 150 }
+		command = { type = trigger which = 3001334 }
+	}
+	action_b = {
+		name = "I hate diplomacy"
+		command = { type = stability value = -1 }
+	}
+}
+#last L-P event
+
+#(1450-1550) The Roman Empire is no more - Muscovy
+event = {
+	id = 3001337
+	trigger = {
+		GRE = { flag = byz_crossroads } #BYZ abdykacja -> GRE (dec. 6023)
+		NOT = { exists = RUS }
+		NOT = { exists = BYZ }
+	}
+	random = NO
+	country = MOS
+	name = "The Roman Empire is no more!"
+	desc = "Our brother and lord in Christ, the Roman Emperor in Tsargrad, has abandoned his patrimony and claims to dominion. He has accepted the title of King of the Hellenes and decided to focus inwardly on developing the Aegean. Obviously, he still deserves what little help we can give him, but this also provides up with an opportunity to claim the leadership of the Orthodox faithful. Shall we do so?"
+
+	date = { year = 1450 }
+	offset = 360 #1 year
+	deathdate = { year = 1550 }
+
+	action_a = {
+		name = "We are Imperator of the Third Rome!"
+		command = { type = relation which = GRE value = -50 }
+		command = { type = country which = RUS }
+		command = { type = stability value = 3 }
+		#command = { type = vp value = 100 }
+		command = { type = relation which = ETH value = 100 }
+		command = { type = relation which = WAL value = 100 }
+		command = { type = relation which = MOL value = 100 }
+		command = { type = relation which = GEO value = 100 }
+		command = { type = relation which = SER value = 100 }
+		command = { type = relation which = TRE value = -50 }
+		command = { type = relation which = SPR value = 100 }
+		command = { type = relation which = SUD value = 100 }
+	}
+	action_b = {
+		name = "That would be tasteless"
+		command = { type = relation which = GRE value = 100 }
+		command = { type = badboy value = -2 }
+	}
+}
+
+#(1450-1550) The Roman Empire is no more - Russia
+event = {
+	id = 3001338
+	trigger = {
+		GRE = { flag = byz_crossroads } #BYZ abdykacja -> GRE (dec. 6023)
+		NOT = { event = 3001337 }
+		NOT = { exists = BYZ }
+	}
+	random = NO
+	country = RUS
+	name = "The Roman Empire is no more!"
+	desc = "Our brother and lord in Christ, the Roman Emperor in Tsargrad, has abandoned his patrimony and claims to dominion. He has accepted the title of King of the Hellenes and decided to focus inwardly on developing the Aegean. Obviously, he still deserves what little help we can give him, but this also provides up with an opportunity to claim the leadership of the Orthodox faithful. Shall we do so?"
+
+	date = { year = 1450 }
+	offset = 360 #1 year
+	deathdate = { year = 1550 }
+
+	action_a = {
+		name = "We are Imperator of the Third Rome!"
+		command = { type = relation which = GRE value = -50 }
+		command = { type = relation which = TRE value = -50 }
+		command = { type = stability value = 3 }
+		#command = { type = vp value = 100 }
+		command = { type = relation which = ETH value = 100 }
+		command = { type = relation which = WAL value = 100 }
+		command = { type = relation which = MOL value = 100 }
+		command = { type = relation which = GEO value = 100 }
+		command = { type = relation which = SER value = 100 }
+		command = { type = relation which = SPR value = 100 }
+		command = { type = relation which = SUD value = 100 }
+	}
+	action_b = {
+		name = "That would be tasteless"
+		command = { type = relation which = GRE value = 100 }
+		command = { type = badboy value = -2 }
+	}
+}
+
+event = {
+	id = 3001339
+	trigger = {
+		OR = {
+			exists = RUS
+			exists = MOS
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "Sophia Palaiologos"
+	desc = "In 1472, the unattractive daughter of Thomas Palaiologos, Konstantinos's brother, married Ivan III of Russia. Her influence on the Russian court was instrumental in the elevation of the Muscovite prince to the tsardom and the subjugation of the rowdy boyars. Historically, it was from this marriage that Russia derived her claim to be the Third Rome and her claims to Istanbul and the Straits of the Bosphorus."
+	date = { year = 1472 }
+	offset = 360 #1 year
+	deathdate = { year = 1473 }
+
+	action_a = {
+		name = "Bless their union"
+		command = { type = relation which = RUS value = 150 }
+		command = { type = dynastic which = RUS }
+		command = { type = relation which = MOS value = 150 }
+		command = { type = dynastic which = MOS }
+	}
+	action_b = {
+		name = "Force her to marry someone else"
+		command = { type = diplomats value = 1 }
+		command = { type = relation which = RUS value = -50 }
+	}
+}
+
+event = {
+	id = 3001340
+	trigger = {
+		exists = RUS
+	}
+	random = NO
+	country = BYZ
+	name = "Tsar of All the Russias"
+	desc = "In 1547, Ivan IV abandoned the title Veliki Kniaz Vserossiyski - Grand Duke of the Whole Rus - and took the Slavic title Tsar - Caesar. Luckily for court ceremonial, Byzantium did not have to oppose this move, since Kaisar was a title under both the Basileus (Emperor) and the Despotes (Crown Prince.)"
+	date = { year = 1547 }
+	offset = 360 #1 year
+	deathdate = { year = 1548 }
+
+	action_a = {
+		name = "Congratulate our brother in Orthodoxy, the Tsar"
+		command = { type = relation which = RUS value = 50 }
+	}
+	action_b = {
+		name = "Continue to refer to Ivan as a Megas Doux"
+		command = { type = relation which = RUS value = -100 }
+		command = { type = stability value = 1 }
+	}
+}
+
+event = {
+	id = 3001341
+	trigger = {
+		event = 3418 #RUS: Nikon's Reform and the Raskolniks
+	}
+	random = NO
+	country = BYZ
+	name = "Nikons Reform and the Raskolniks" #Nikons Reform and the Raskolniks
+	desc = "EVENTHIST3418"
+	#-#Nikon was the patriarch of the Russian Orthodox Church from 1652 to 1666. He undertook an extremely vigorous reform of church discipline and ritual with a view to purging accretions and eccentricities from the Russian rites. His reforms, particularly his correction of service books from the Greek (1654), created a schism in the church and inspired the formation of a major opposition sect, the Raskolniki, who retained the older usages banned by Nikon. Heterodox sects such as the Dukhobors formed and attached themselves to the Raskolniki to avoid persecution. By 1658, Nikon had aroused sufficiently powerful opposition to bring about his banishment, and in 1666 he was deposed and degraded. He was a figure unique in Russian church history, for he opposed any interference by the state in church affairs and considered the two institutions to be distinct and separate. His reforms were maintained after he was deposed.
+
+	date = { year = 1652 }
+	offset = 360 #1 year
+	deathdate = { year = 1700 }
+
+	action_a = {
+		name = "Support Nikon's corrections"
+		command = { type = relation which = RUS value = -50 }
+		command = { type = stability value = 1 }
+	}
+	action_b = {
+		name = "Back the Tsar's men"
+		command = { type = relation which = RUS value = 100 }
+		command = { type = stability value = -1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+	}
+}
+
+event = {
+	id = 3001342
+	trigger = {
+		exists = RUS
+		religion = orthodox
+	}
+	random = NO
+	country = BYZ
+	name = "Imperator i Samodyerzhets"
+	desc = "Once again the Russians are adjusting their nomenclature to their size. The dynamic Tsar Pëtr has taken the title 'Emperor and Autocrat of All the Russias.' There's no glossing this one - not only is the title an affront to the Basileus, it frees Pëtr from his obedience to the Russian church. We need to head this off, or he's likely to drive the Patriarch into heterodoxy in the name of reform. The Logothete tou Dromou was right - we should have just assassinated him in London."
+	#Possible gloss on it - in the 500s, the Persian shah and Ethiopian... whateverheis were referred to by the Greek Basileus, but that was before Heraclius adopted the title
+	date = { year = 1717 }
+	offset = 360 #1 year
+	deathdate = { year = 1718 }
+
+	action_a = {
+		name = "Threaten war"
+		command = { type = relation which = RUS value = -200 }
+		command = { type = casusbelli which = RUS value = 60 }
+		command = { type = trigger which = 3001343 }
+	}
+	action_b = {
+		name = "Continue to refer to Pëtr as a Megas Doux"
+		command = { type = relation which = RUS value = -100 }
+		command = { type = stability value = 1 }
+	}
+	action_c = {
+		name = "Welcome our brother in Orthodoxy the Imperator"
+		command = { type = relation which = RUS value = 100 }
+		command = { type = stability value = -1 }
+	}
+}
+
+event = {
+	id = 3001343
+	random = NO
+	country = RUS
+	name = "Imperator i Samodyerzhets"
+	desc = "The Basileus in Constantinople has threatened war along our entire southern border if Pëtr doesn't abandon his new title Imperator and forego any attempt to curtain the freedom of his church. Considering how involved we are with Poland and Sweden, every advisor secretly thinks we should compromise the point in exchange for a subsidy. Since Pëtr is an autocrat, title or not, he doesn't hear much opposition, but he is no fool himself."
+
+	action_a = {
+		name = "Return to the title Tsar"
+		command = { type = relation which = BYZ value = 50 }
+		command = { type = treasury value = 300 }
+		command = { type = stability value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = sleepevent which = 3427 } #RUS: The State takes control of the Russian Church
+		command = { type = trigger which = 3001344 }
+	}
+	action_b = {
+		name = "Show the Greeks who's boss"
+		command = { type = relation which = BYZ value = -100 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+		command = { type = stability value = 1 }
+	}
+}
+
+event = {
+	id = 3001344
+	random = NO
+	country = BYZ
+	name = "Imperator i Samodyerzhets"
+	desc = "Pëtr has conceded the point and returned to his original title of Tsar. Unfortunately, our diplomats were only able to arrange this concession in exchange for a hefty subsidy for his northern wars. Still, what price can you put on being the sole Orthodox Emperor?"
+
+	action_a = {
+		name = "You already sent the cheque?!!"
+		command = { type = relation which = RUS value = 50 }
+		command = { type = treasury value = -300 }
+		command = { type = stability value = 1 }
+	}
+}
+
+event = {
+	id = 3001345
+	trigger = {
+		event = 3427 #RUS: State takes control of Russian Church
+	}
+	random = NO
+	country = BYZ
+	name = "Tsar Peter's reforms"
+	desc = "Many in the Imperial court have looked on with admiration and envy at the expansive and successful reforms our brother, the Imperator Peter of Russia, has undertaken during his reign. Now, however, he has gone too far - he has abolished the Patriarchate of Moscow and replaced it with a synod packed with loyal hangers-on. Even this sham council is overseen by another official - the ober-prokuror - to supervise its activities. The Holy Synod is ferociously persecuting all dissenters, including those defending the Patriarch and his holy office. Something must be done."
+	date = { year = 1719 }
+	offset = 360 #1 year
+	deathdate = { year = 1730 }
+
+	action_a = {
+		name = "Anathemize Peter"
+		command = { type = relation which = RUS value = -200 }
+		command = { type = stability value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+	}
+	action_b = {
+		name = "Support the Imperator"
+		command = { type = relation which = RUS value = 100 }
+		command = { type = stability value = -1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+	}
+}
+
+event = {
+	id = 3001346
+	trigger = {
+		event = 3435 #RUS: The Pugatchev Uprising
+	}
+	random = NO
+	country = BYZ
+	name = "The Pugatchev Uprising" #The Pugatchev Uprising
+	desc = "Our comrade in Orthodoxy, the Tsaritsa Ekaterina of Russia, is facing an enormous rebellion in her Southern provinces. Both to repair our relations after Pëtr's overreaching and to protect our interests in Scythia, the Logothete tou Dromou suggests that we subsidize several new units of Russian troops to crush the threat. Doing so might also give us some say in the aftermath."
+	date = { year = 1770 }
+	offset = 360 #1 year
+	deathdate = { year = 1780 }
+
+	action_a = {
+		name = "Help the Tsaritsa"
+		command = { type = relation which = RUS value = 200 }
+		command = { type = treasury value = -500 }
+		command = { type = trigger which = 3001347 }
+	}
+	action_b = {
+		name = "Let it alone"
+		command = { type = relation which = RUS value = -25 }
+	}
+}
+
+event = {
+	id = 3001347
+	random = NO
+	country = RUS
+	name = "Help from the Romans"
+	desc = "Glad to remind us that they are our friends even after Tsar Pëtr's reforms, the Imperial court at Constantinople has sent us help against Pugachev's forces."
+
+	action_a = {
+		name = "Spasibo!" #thanks!
+		command = { type = treasury value = 100 }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = CAV which = -2 value = 10000 }
+		command = { type = domestic which = QUALITY value = -1 }
+		command = { type = trigger which = 3001348 }
+	}
+	action_b = {
+		name = "Nyet spasibo" #no thanks
+		command = { type = relation which = BYZ value = -50 }
+	}
+}
+
+event = {
+	id = 3001348
+	trigger = {
+		domestic = { type = innovative value = 5 }
+		NOT = { domestic = { type = serfdom value = 5 } }
+	}
+	random = NO
+	country = BYZ
+	name = "Influence"
+	desc = "With our newfound influence in Ekaterina's court, we can influence the Russian reprisal in the face of these revolts. Ekaterina had started out her reign planning to break up the boyar's estates and liberalize treatment of the serfs. She could still be encouraged in this path, but our ambassador suggests that the Pugachev revolt has put her in the mind to bring the serfs even further to heel and to strengthen the ability of her nobles to root out troublemakers. It's a toss-up which one will make our border more stable, but the people would love to a more forward-thinking Russia."
+
+	action_a = {
+		name = "Encourage Ekaterina's new approach"
+		command = { type = relation which = RUS value = 50 }
+	}
+	action_b = {
+		name = "Remind Ekaterina of the value of reform"
+		command = { type = sleepevent which = 3436 } #RUS: The Reactionary Policy
+		command = { type = stability value = 1 }
+		command = { type = relation which = RUS value = -50 }
+	}
+}
+
+event = {
+	id = 3001349
+	trigger = {
+		event = 3499 #POL: Ending the Stagnation
+	}
+	random = NO
+	country = BYZ
+	name = "The First Partition of Poland"
+	desc = "Stanislas II Poniatowsky (1764-1795) had been elected King of Poland under Russian pressure. The favorite of Ekaterina II, he aspired to reform the conditions of his realm, described as 'anarchy tempered by civil war.' Russia placed her supporters in the 1767 Confederation of Slutsk to prevent any curtailment in the Liberum Veto. Civil war occurred in 1768 and by 1772, the powers of Russia, Prussia and Austria, under the inspiration of Frederick II, proceeded to the first partition of Poland, taking border provinces from her and demanding that the Liberum Veto be maintained and all reforms abandoned."
+	date = { year = 1764 }
+	offset = 360 #1 year
+	deathdate = { year = 1772 }
+
+	action_a = { #Poland is trying to reform and it must be stopped#
+		name = "I want some, too"
+		command = { type = casusbelli which = POL value = 60 }
+		command = { type = relation which = POL value = -150 }
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 50 }
+		command = { type = addcore_national which = 319 } #bujak
+		command = { type = addcore_national which = 318 } #moldova
+	}
+}
+
+event = {
+	id = 3001350
+	trigger = {
+		event = 3500 #POL: Ending the Stagnation
+	}
+	random = NO
+	country = BYZ
+	name = "The Second Partition of Poland"
+	desc = "Following the first partition of the country in 1772, the 1788-1791 Fours Years' Diet of Poland took opportunity of the war between Russia and Sweden (1788-1790) to attempt the transformation of Poland into a hereditary constitutional monarchy, which was proclaimed in the Constitution of May 1791. Influenced by Russia, the opposition forced the King to 'join' and called on Russian troops to restore order. This led to a further partition of the country in 1793, between Prussia and Russia, which deprived Poland of most of her territory."
+	date = { year = 1788 }
+	offset = 360 #1 year
+	deathdate = { year = 1792 }
+
+	action_a = { #Poland is trying to reform and it must be stopped#
+		name = "I want some, too"
+		command = { type = casusbelli which = POL value = 60 }
+		command = { type = relation which = POL value = -150 }
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 50 }
+		command = { type = addcore_national which = 297 } #podolia
+		command = { type = addcore_national which = 296 } #jedistan
+	}
+}
+
+event = {
+	id = 3001351
+	trigger = {
+		NOT = { monarch = 027529 } #Roman Republic
+		war = { country = RUS country = FRA }
+	}
+	random = NO
+	country = BYZ
+	name = "Napoleon invades Russia"
+	desc = "On June 23, 1812, Morand's division crossed the river Nemen, soon followed by other divisions. The Grand Armée, 500,000 strong, had commenced the invasion of Russia. A few days later, Napoleon righteously proclaimed: 'I have come to finish off, once and for all, the Colossus of Northern Barbarism. The sword is drawn. They must be thrust back into their snow and ice, so that for a quarter of a century at least they will not be able to interfere with civilized Europe.'"
+	date = { year = 1803 }
+	offset = 360 #1 year
+	deathdate = { year = 1813 }
+
+	action_a = {
+		name = "Alexander can handle it"
+		command = { type = relation which = RUS value = -50 }
+		command = { type = relation which = FRA value = 50 }
+	}
+	action_b = {
+		name = "We will help our brethren"
+		command = { type = casusbelli which = FRA value = 60 }
+		command = { type = relation which = RUS value = 100 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = alliance which = RUS }
+		command = { type = treasury value = -50 }
+		command = { type = stability value = 1 }
+	}
+	action_c = {
+		name = "Invade Russia"
+		command = { type = casusbelli which = RUS value = 60 }
+		command = { type = relation which = RUS value = -200 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = stability value = -2 }
+	}
+}
+
+event = {
+	id = 3001352
+	trigger = {
+		monarch = 027529
+		war = { country = RUS country = FRA }
+	}
+	random = NO
+	country = BYZ
+	name = "Napoleon invades Russia"
+	desc = "On June 23, 1812, Morand's division crossed the river Nemen, soon followed by other divisions. The Grand Armée, 500,000 strong, had commenced the invasion of Russia. A few days later, Napoleon righteously proclaimed: 'I have come to finish off, once and for all, the Colossus of Northern Barbarism. The sword is drawn. They must be thrust back into their snow and ice, so that for a quarter of a century at least they will not be able to interfere with civilized Europe.'"
+	date = { year = 1803 }
+	offset = 360 #1 year
+	deathdate = { year = 1813 }
+
+	action_a = {
+		name = "Napoleon can handle it"
+		command = { type = relation which = RUS value = 50 }
+		command = { type = relation which = FRA value = -50 }
+	}
+	action_b = {
+		name = "Nous aiderons nos amis!" #we will help our brothers!
+		command = { type = casusbelli which = RUS value = 60 }
+		command = { type = relation which = RUS value = -200 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = stability value = -2 }
+	}
+	action_c = {
+		name = "Protect Russia"
+		command = { type = casusbelli which = FRA value = 60 }
+		command = { type = relation which = RUS value = 100 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = treasury value = -50 }
+		command = { type = stability value = 1 } #the people still prefer correligionists
+	}
+}
+
+#RUS abandons claims to lower Crimea if BYZ occupies it
+event = {
+	id = 3001353
+	trigger = {
+	owned = { province = 465 data = -1 } #kerch
+	owned = { province = 464 data = -1 } #kaffa
+	neighbour = RUS
+	}
+	random = NO
+	country = BYZ
+	name = "A Gentleman's Agreement"
+	desc = "The Empire had long held outposts at Cherson and Kaffa on the Crimea and the adjacent peninsula. After nearly a century of conflicting claims, Russia has indicated it would be willing to remove its claims to these provinces in exchange for Byzantium relinquishing any claims or ownership of the upper Crimea and the Georgian coast."
+	date = { year = 1690 }
+	offset = 3600 #10 years
+	deathdate = { year = 1700 }
+
+	action_a = {
+		name = "Propose a final settlement"
+		command = { type = trigger which = 3001354 }
+		command = { type = relation which = RUS value = 25 }
+	}
+	action_b = {
+		name = "Who cares what they claim?"
+		command = { type = relation which = RUS value = -25 }
+	}
+}
+
+event = {
+	id = 3001354
+	random = NO
+	country = RUS
+	name = "A Gentleman's Agreement"
+	desc = "The Empire had long held outposts at Cherson and Kaffa on the Crimea and the adjacent peninsula. After nearly a century of conflicting claims, the Romans have sent ambassadors offering to cede their claims and ownership in the upper Crimea and Georgian coast in exchange for our abandoning our claims on Kaffa and Cherson."
+
+	action_a = {
+		name = "Accept the settlement"
+		command = { type = relation which = BYZ value = 75 }
+		command = { type = removecore_national which = 465 }
+		command = { type = removecore_national which = 464 }
+		command = { type = trigger which = 3001355 }
+	}
+	action_b = {
+		name = "Demand the entire Crimea"
+		command = { type = relation which = BYZ value = -100 }
+	}
+}
+
+event = {
+	id = 3001355
+	random = NO
+	country = BYZ
+	name = "A Gentleman's Agreement"
+	desc = "The Russians have accepted our proposal!"
+
+	action_a = {
+		name = "Well, that's finally settled"
+		command = { type = relation which = RUS value = 50 }
+		command = { type = removecore_national which = 469 } #sochi
+		command = { type = removecore_national which = 470 } #georgia
+		command = { type = cedeprovince which = RUS value = 469 }
+		command = { type = cedeprovince which = RUS value = 470 }
+		command = { type = cedeprovince which = RUS value = 463 } #crimea
+	}
+}
+
+#Conflict in the Caucasus
+event = {
+	id = 3001356
+	trigger = {
+		neighbour = RUS
+		OR = {
+			owned = { province = 469 data = -1 } #sochi
+			owned = { province = 470 data = -1 } #georgia
+			owned = { province = 471 data = -1 } #daghestan
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "A Gentleman's Agreement"
+	desc = "Before its collapse before the Turks, the Empire had long ruled the Caucasus through proxy governments; since its resurgence, it has taken control directly. The Russians, however, have also expanded into the region and propose as a final settlement a border much farther south than Constantinople would like. Rome would cede claims and ownership in Georgia, Abkhazia, and Daghestan in exchange for Russia relinquishing its claims on Azerbaijan and Armenia."
+	date = { year = 1730 }
+	offset = 3600 #10 years
+	deathdate = { year = 1740 }
+
+	action_a = {
+		name = "Who cares what they claim?"
+		command = { type = relation which = RUS value = -25 }
+	}
+	action_b = {
+		name = "Agree to Russia's proposals"
+		command = { type = relation which = RUS value = 25 }
+		command = { type = trigger which = 3001357 }
+	}
+}
+
+event = {
+	id = 3001357
+	random = NO
+	country = RUS
+	name = "A Gentleman's Agreement"
+	desc = "Constantinople has sent ambassadors agreeing to our proposed settlement for the Caucasus. The previous tsar had suggested a border which would provide us with uncontested rights in Abkhazia, Georgia, and Daghestan while ceding our claims to Azerbaijan and Armenia."
+
+	action_a = {
+		name = "Ratify the treaty"
+		command = { type = relation which = BYZ value = 75 }
+		command = { type = removecore_national which = 472 }
+		command = { type = removecore_national which = 473 }
+		command = { type = removecore_national which = 474 }
+		command = { type = removecore_national which = 487 }
+		command = { type = trigger which = 3001358 } #BYZ: A Gentleman's Agreement
+	}
+	action_b = {
+		name = "We don't need no stinkin' treaties"
+		command = { type = relation which = BYZ value = -50 }
+	}
+}
+
+event = {
+	id = 3001358
+	random = NO
+	country = BYZ
+	name = "A Gentleman's Agreement"
+	desc = "Russia has ratified the treaty!"
+
+	action_a = {
+		name = "Well, that's finally settled"
+		command = { type = relation which = RUS value = 50 }
+		command = { type = removecore_national which = 470 }
+		command = { type = removecore_national which = 471 }
+		command = { type = removecore_national which = 469 }
+		command = { type = cedeprovince which = RUS value = 470 }
+		command = { type = cedeprovince which = RUS value = 471 }
+		command = { type = cedeprovince which = RUS value = 469 }
+		command = { type = cedeprovince which = RUS value = 467 }
+		command = { type = cedeprovince which = RUS value = 468 }
+		command = { type = cedeprovince which = RUS value = 466 }
+	}
+}

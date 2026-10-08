@@ -1,0 +1,85 @@
+#####Luxembourgh Major Events#####
+###By Joakim 'Greven' Bergqwist###
+##################################
+
+# Event removed, as historically LUX could never have become FRA, being part of the HRE
+#The Crown of France#
+#event = {
+#
+#	id = 3604
+#	trigger = {
+#			owned = {
+#					province = 385
+#					data = -1
+#				}
+#			NOT = {
+#				exists = FRA
+#				}
+#		}
+#	random = no
+#	country = LUX
+#	name = "EVENTNAME3604"
+#	desc = "EVENTHIST3604"
+##
+#	date = { day = 1 month = january year = 1420 }
+#	offset = 30
+#	deathdate = { day = 1 month = january year = 1515 }
+#
+#	action_a ={					#France is reborn with me#
+#		name = "ACTIONNAME3604A"
+#		command = { type = vp value = 200 }
+#		command = { type = stability value = 3 }
+#		command = { type = country which = FRA }
+#		command = { type = INF which = 385 value = 15000 }
+#		command = { type = CAV which = 385 value = 10000 }
+#		command = { type = ART which = 385 value = 30 }
+#	}
+#	action_b ={					#Let France rest in peace#
+#		name = "ACTIONNAME3604B"
+#		command = { type = vp value = -100 }
+#		command = { type = stability value = -3 }
+#		command = { type = relation which = ENG value = 150 }
+#		command = { type = relation which = BUR value = 150 }
+#		command = { type = relation which = HAB value = 150 }
+#		command = { type = relation which = SPA value = 150 }
+#	}
+#}
+#
+#The Succession in Luxembourgh#
+event = {
+
+	id = 3605
+	trigger = {
+		exists = BUR
+		atwar = no
+	}
+	random = no
+	country = LUX
+	name = "EVENTNAME3605"
+	desc = "EVENTHIST3605"
+
+	date = { day = 1 month = august year = 1451 }
+	offset = 0
+	deathdate = { day = 2 month = august year = 1500 }
+
+	action_a ={				#Let us be a part of Great Burgundy#
+		name = "ACTIONNAME3605A"
+		trigger = { 
+			ai = yes
+		}
+		command = { type = trigger which = 3598 }
+	}
+	action_b ={				#Let the Burgundian monarch become our Duke#
+		name = "ACTIONNAME3605B"
+		command = { type = trigger which = 3599 }
+		command = { type = dynastic which = BUR }
+#		command = { type = alliance which = BUR }
+		command = { type = stability value = 3 }
+	}
+	action_c ={				#Let us elect a local Count as Duke#
+		name = "ACTIONNAME3605C"
+		command = { type = trigger which = 3600 }
+		command = { type = stability value = -3 }
+		command = { type = revolt which = -1 }
+	}
+}

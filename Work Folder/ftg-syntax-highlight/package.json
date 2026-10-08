@@ -1,0 +1,37 @@
+{
+  "name": "ftg-syntax-highlight",
+  "displayName": "FTG Syntax Highlight",
+  "description": "Syntax highlighting for For The Glory event and scenario files",
+  "version": "0.0.1",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "ftg",
+        "aliases": [
+          "FTG",
+          "For The Glory"
+        ],
+        "extensions": [
+          ".eue",
+          ".inc",
+          ".eug"
+        ],
+        "configuration": "./language-configuration/ftg.language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ftg",
+        "scopeName": "source.ftg",
+        "path": "./syntaxes/ftg.tmLanguage.json"
+      }
+    ]
+  }
+}

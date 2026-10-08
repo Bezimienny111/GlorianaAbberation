@@ -1,0 +1,359 @@
+##Formation of the Irish State Events##
+## Concept by Deaghaidh              ##
+## Scripted by Johnny Canuck         ##
+
+#The Foundation of an Irish State#
+event = {
+
+	id = 20605
+	trigger = {
+		atwar = no
+		owned = { province = 231 data = -1 } #Connaught
+		owned = { province = 232 data = -1 } #Ulster
+		owned = { province = 233 data = -1 } #Meath
+		owned = { province = 234 data = -1 } #Leinster
+		owned = { province = 235 data = -1 } #Munster
+		control = { province = 231 data = -1 } #Connaught
+		control = { province = 232 data = -1 } #Ulster
+		control = { province = 233 data = -1 } #Meath
+		control = { province = 234 data = -1 } #Leinster
+		control = { province = 235 data = -1 } #Munster
+		stability = 3
+		NOT = {
+			OR = {
+				vassal = { country = ENG country = EIR }
+				vassal = { country = SCO country = EIR }
+				vassal = { country = WLS country = EIR }
+				vassal = { country = FRA country = EIR }
+				vassal = { country = SPA country = EIR }
+				vassal = { country = ARG country = EIR }
+				vassal = { country = CAS country = EIR }
+				vassal = { country = POR country = EIR }
+				vassal = { country = BUR country = EIR }
+				vassal = { country = DAN country = EIR }
+				vassal = { country = SWE country = EIR }
+				vassal = { country = NOR country = EIR }
+				vassal = { country = BRI country = EIR }
+				}
+			}
+		}
+	random = no
+	country = EIR
+	name = "The Foundation of an Irish State"
+	desc = "With the expulsion of all foreign influence within Ireland, the new Irish state would have to decide whether to centralize authority in Dublin, or to remain as a loose alliance of feudal lords and clan leaders."
+	style = 1
+
+	date = { day = 1 month = january year = 1650 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1820 }
+
+	action_a ={
+		name = "Centralize the Government in Dublin"
+		command = { type = capital which = 233 } #Meath
+		command = { type = provincetax which = 233 value = 1 } #Meath
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = trigger which = 20606 }
+		command = { type = addcore which = 233 }
+			}
+
+	action_b ={
+		name = "Leave Authority with the Earls and Clans"
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = addcore which = 233 }
+		}
+}
+
+#A Question of Laws#
+event = {
+
+	id = 20606
+	random = no
+	country = EIR
+	name = "A Question of Laws"
+	desc = "Due to the influence of the English, Ireland had long had a mixture of Brehon law and English Common Law.  This caused significant confusion and disruptions, particularly with respect to inheritances.  One of the first priorities of the new Irish government in Dublin would be to establish a coherent law code, but a good portion of the country would be violently angry no matter which way they went."
+	style = 1
+
+	action_a ={
+		name = "English Common Law"
+		command = { type = stability value = -3 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = revolt which = 231 } #Connaught
+		command = { type = revolt which = 232 } #Ulster
+		command = { type = revolt which = 235 } #Munster
+	}
+
+	action_b ={
+		name = "Brehon Law"
+		command = { type = stability value = -3 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = revolt which = 233 } #Meath
+		command = { type = revolt which = 234 } #Leinster
+		command = { type = revolt which = 235 } #Munster
+	}
+}
+
+########################
+##Anglo-Welsh Events  ##
+## Created by Pishtaco##
+## by AGCEEP	      ##
+########################
+
+
+#The Marcher Lords#
+event = {
+
+        id = 20800
+        trigger = { atwar = no }
+	random = no
+	country = WLS
+        name = "The Marcher Lords"
+        desc = "Since the time of the Normans, our country has been divided between the Principality of the north and west and the Marches of the south and east. The Marches were granted to English families who have spent their time fighting each other, bringing in English and Flemish settlers and oppressing the native Welsh. Now the Marcher Lords have been weakened by generations of fighting in France and England. We should take this opportunity to reduce their power and to begin to unify our realm."
+
+	style = 1
+
+        date = { day = 1 month = january year = 1473 }
+        offset = 30
+        deathdate = { day = 30 month = december year = 1543 } 
+
+	action_a ={
+        	name = "No. The great families are the backbone of Wales"
+	        command = { type = domestic which = centralization value = -2 }
+        	command = { type = domestic which = aristocracy value = 1 } 
+        	command = { type = relation which = ENG value = 50 }
+	}
+
+	action_b ={
+	        name = "We have spent long enough in the pockets of the Saxons!"
+        	command = { type = domestic which = centralization value = 2 }
+	        command = { type = domestic which = serfdom value = -2 }
+        	command = { type = domestic which = innovative value = -1 }
+	        command = { type = domestic which = aristocracy value = -2 }
+        	command = { type = provincetax which = 243 value = 1 } #Wales
+		command = { type = revolt which = 243 } #Wales
+		command = { type = revoltrisk which = 120 value = 6 } #Ten years
+        	command = { type = stability value = -5 }
+	        command = { type = relation which = ENG value = -100 }
+        	command = { type = treasury value = -50 }
+	}
+}
+
+#The Red Dragon#
+event = {
+        id = 20801
+        trigger = {
+                exists = ENG
+                }
+        random = no
+        country = WLS
+        name = "The Red Dragon"
+        desc = "Henry Tudor, the grandson of the adventurer Owain ap Maredudd ap Tudur ap Goronwy, has landed in Wales and seeks our support in his bid for the throne of England. He has been spreading stories among our people, reminding them of the old prophecies about a hero, an Arthur or an Owain Glyn Dwr come again, who will deliver them from oppression. Now he has come here with an army and unfurled the red dragon battle-flag of Cadwaladr, the last king of all Britannia. If we ignore his presumption and support him he has a good chance of success; King Richard's hold on the throne is weak. But I fear that our nobles will follow him to England, hoping for places in his court as their reward. Our independent Wales could soon become a memory."
+        style = 1
+
+	date = { day = 7 month = august year = 1485 }
+	offset = 0
+	deathdate = { day = 8 month = august year = 1485 }
+
+
+	action_a ={
+        	name = "Support Henry Tudor"
+	        command = { type = treasury value = 100 }
+		command = { type = domestic which = centralization value = -1 }
+	        command = { type = stability value = 1 }
+        	command = { type = sleepevent which = 20802 } #Boar of Cornwall
+        }
+
+	action_b ={
+        	name = "Let Henry Tudor pass"
+	        command = { type = relation which = ENG value = -100 }
+        	command = { type = stability value = -3 }
+	        command = { type = domestic which = aristocracy value = -2 }
+        	command = { type = desertion which = 243 value = 2000 } #Wales
+	        command = { type = desertion which = -1 value = 2000 } #random
+        	command = { type = sleepevent which = 20802 } #Boar of Cornwall
+		command = { type = sleepevent which = 20806 } #Reconciliation with the Welsh
+	}
+
+	action_c = {
+        	name = "I am the heir of Arthur and Cadwaladr; I will test these prophecies myself"
+	        command = { type = relation which = ENG value = -300 }
+        	command = { type = stability value = -5 }
+	        command = { type = treasury value = -200 }
+        	command = { type = domestic which = serfdom value = 1 }
+	        command = { type = domestic which = innovative value = -2 }
+        	command = { type = domestic which = aristocracy value = 2 }
+        	command = { type = domestic which = quality value = 1 }
+	        command = { type = domestic which = land value = 2 }
+        	command = { type = wakeleader which = 29974 } #Maredudd I
+	        command = { type = casusbelli which = ENG value = 284 } #until April 1509, accession of Henry VIII#
+		command = { type = sleepevent which = 20806 } #Reconciliation with the Welsh
+        }
+}
+
+#The Boar of Cornwall#
+event = {
+
+        id = 20802
+        trigger = {
+                event = 20801  #The Red Dragon
+                }
+        random = no
+        country = WLS
+        name =  "The Boar of Cornwall"
+        desc = "My lord, we have interesting news from the West Country. The English are preparing an army to impose the English-language prayer book on our cousins there. The Cornish are afraid of losing what remains of their independence in this drive towards centralization and uniformity. We must go to their aid, just as Arthur, the Boar of Cornwall, came to ours when he trampled the necks of the saxon invaders so long ago."
+        style = 1
+
+        date = { day = 1 month = june year = 1549 }
+        offset = 10
+        deathdate = { day = 30 month = december year = 1550 }
+
+	action_a ={
+        	name = "We are not interested in ancient history and fairy-tales"
+	        command = { type = stability value = 1 }
+        }
+
+	action_b ={
+        	name = "Let us reforge a Welsh nation from the fragments of Britannia!"
+        	command = { type = addcore which = 250 } #Cornwall
+		command = { type = treasury value = -100 }
+	       	command = { type = domestic which = innovative value = -2 }
+	        command = { type = domestic which = centralization value = -2 }
+        	command = { type = domestic which = aristocracy value = 1 }
+	        command = { type = relation which = ENG value = -300 }
+        	command = { type = relation which = SCO value = -100 }
+	        command = { type = relation which = FRA value = -50 }
+        	command = { type = stability value = -5 }
+		command = { type = population which = 246 value = -5000 } #Bristol
+        	command = { type = population which = 244 value = -5000 } #Midlands
+	        command = { type = population which = 242 value = -5000 } #Lancashire
+	        command = { type = revoltrisk which = 60 value = 5 } #5 years revoltrisk
+        }
+}
+
+#The Fall of the Dinefwrs#
+event = {
+
+        id = 20803
+        trigger = {
+                domestic = {
+			type = aristocracy
+			value = 2
+			}
+                }
+        random = no
+        country = WLS
+        name = "The Fall of the Dinefwrs"
+        desc = "We have sad news to report concerning Rhys ap Gruffydd of Dinefwr, the grandson of the late Rhys ap Thomas, may God rest his soul.  My lord, you will recall that we did not give him his grandfather's office of chamberlain of South Wales; the family had already grown far too powerful.  Now we believe that he plans to seek more power by other means, and has been looking for support from abroad.  With the chaotic state of the world at the moment, we cannot tolerate even the possibility of treachery.  We must make this clear to our nobles."
+        style = 2
+
+        date = { day = 1 month = november year = 1531 }
+        offset = 10
+        deathdate = { day = 30 month = december year = 1599 }
+
+	action_a ={
+        	name = "Very well - arrest and execute him"
+	        command = { type = stability value = -4 }
+        	command = { type = domestic which = aristocracy value = -2 }
+	        command = { type = domestic which = centralization value = 1 }
+		command = { type = infra value = -1000 }
+        }
+
+	action_b ={
+        	name = "Young Rhys?  Never!"
+	        command = { type = stability value = -2 }
+	        command = { type = domestic which = centralization value = -2 }
+        	command = { type = revolt which = -1 } #A random province? (Havard says -1)
+	        command = { type = relation which = -1 value = -100 } #A random neighbour?#
+        	command = { type = relation which = -1 value = -100 }
+        }
+}
+
+#The Voyage of Prince Madog#
+event = {
+
+        id = 20804
+        random = no
+        country = WLS
+        name = "The Voyage of Prince Madog"
+        desc = "Other princes are making fortunes and building empires in the new world across the ocean.  My lord, our scholars have discovered records showing that some of this wealth rightfully belongs to us.  They relate to the legend of Madog ab Owain Gwynedd, a distant ancestor, who is said to have founded a colony in the 12th century near what the Spaniards call Florida.  We could exploit this to justify a claim to the new world older than those of France, England or Spain."
+        style = 2
+
+        date = { day = 1 month = january year = 1582 }
+        offset = 300
+        deathdate = { day = 31 month = december year = 1582 }
+
+	action_a ={
+        	name = "I don't believe a word. Our ambitions are on this island"
+	        command = { type = domestic which = land value = 1 }
+        	command = { type = infra value = 400 }
+	        command = { type = land value = 400 }
+        }
+
+	action_b ={
+        	name = "We will make our fortune across the sea"
+		command = { type = treasury value = -100 }
+	        command = { type = domestic which = land value = -4 }
+        	command = { type = domestic which = mercantilism value = 2 }
+	        command = { type = domestic which = innovative value = -1 }
+        	command = { type = naval value = 600 }
+	        command = { type = trade value = 600 }
+        	command = { type = explorer which = -1 }
+	        command = { type = colonists value = 3 }
+	        command = { type = relation which = SPA value = -100 }
+        	command = { type = relation which = ENG value = -100 }
+	        command = { type = relation which = FRA value = -100 }
+        }
+}
+
+#The Bread of Heaven#
+event = {
+
+        id = 20805
+        random = no
+        country = WLS
+        name = "The Bread of Heaven"
+        desc = "Our people have grown tired of the empty formality of the established church.  Evangelical preachers are converting them in their thousands to a new religion, Methodism, that emphasizes simplicity of worship and a personal relationship with God.  Our culture is being re-shaped; the valleys of Wales echo with the new hymns."
+        style = 4
+
+        date = { day = 1 month = january year = 1745 }
+        offset = 300
+        deathdate = { day = 31 month = december year = 1750 }
+
+	action_a ={
+	        name = "Feed me till I want no more"
+	        command = { type = stability value = -1 }
+        	command = { type = domestic which = aristocracy value = -1 }
+	        command = { type = missionaries value = 2 }     
+        	command = { type = provincereligion which = 243 value = reformed } #Wales
+	        command = { type = provincereligion which = 250 value = reformed } #Cornwall
+        }
+}
+
+#Reconciliation with the Welsh#
+event = {
+
+        id = 20806
+	trigger = {
+		event = 20801
+		exists = WLS
+		}
+        random = no
+        country = ENG
+        name = "Reconciliation with the Welsh"
+        desc = "Henry rewarded his companions, including much of the nobility of Wales, with land in England and positions in his court.  The independent authority of the Prince of Wales was inevitably weakened and, in return for promises of equal treatment for Welshmen and Englishmen, he accepted the situation and swore fealty to his new lord."
+        style = 1
+
+	date = { day = 1 month = september year = 1485 }
+	offset = 1
+	deathdate = { day = 1 month = january year = 1500 }
+
+	action_a = {
+	        name = "Excellent"
+		command = { type = relation which = WLS value = 200 }
+	        command = { type = vassal which = WLS }
+	        command = { type = dynastic which = WLS }
+		command = { type = alliance which = WLS } #Does this work?
+	}
+}

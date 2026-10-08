@@ -1,0 +1,52 @@
+#####Brandenburg Major Events#####
+###By Håvard Moe                ##
+###   Tom 'Demetrios' Rinschler ##
+##################################
+
+# The Pommern Inheritance #
+event = {
+    id = 3895
+    random = no
+    country = POM
+    name = "EVENTNAME3895"
+    desc = "EVENTHIST3895"
+
+    date = { day = 10 month = march year = 1637 }
+
+	action_a = {        #Split Pomerania between Sweden and Brandenburg#
+		name = "Split Pomerania between Sweden and Brandenburg"
+		trigger = {
+			ai = yes
+			exists = BRA
+			exists = SWE
+		}
+		command = { type = cedeprovince which = SWE value = 304 } #Vorpommern
+		command = { type = trigger which = 4206 } #SWE
+		command = { type = trigger which = 4207 } #BRA
+	}
+
+	action_b = {        #Let Brandenburg receive the whole of Pomerania#
+		name = "Let Brandenburg receive the whole of Pomerania"
+		trigger = {
+			ai = yes
+			exists = BRA
+		}
+		command = { type = trigger which = 3896 } #BRA
+	}
+
+	action_c = {        #Let Sweden receive the whole of Pomerania#
+		name = "Let Sweden receive the whole of Pomerania"
+		trigger = {
+			ai = yes
+			exists = SWE
+		}
+		command = { type = trigger which = 4208 } #SWE
+	}
+
+	action_d = {        #Remain independent#
+		name = "Remain independent"
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = SWE value = -50 }
+	}
+}

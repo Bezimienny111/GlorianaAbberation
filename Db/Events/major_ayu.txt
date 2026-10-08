@@ -1,0 +1,213 @@
+##### Ayutthaya Major Events#####
+#By Tom Rinschler               #
+#   Håvard                      #
+#################################
+
+#Boromo Trailokanat's Reforms#
+event = {
+	id = 6910
+	random = no
+	country = AYU
+	name = "EVENTNAME6910"
+	desc = "EVENTHIST6910"
+	
+	date = { day = 1 month = january year = 1450 }
+	offset = 3000
+	deathdate = { day = 1 month = january year = 1460 }
+	
+	action_a ={#Go with the reforms#
+		name = "ACTIONNAME6910A"
+		command = { type = stability value = -2 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = domestic which = aristocracy value = 1 }
+		command = { type = domestic which = serfdom value = 1 }
+		command = { type = cash value = -100}          
+	}
+	action_b ={#Ignore the reform ideas#
+		name = "ACTIONNAME6910B"
+		command = { type = stability value = 1 }                     
+		command = { type = domestic which = innovative value = -2 }
+		command = { type = infra value = -200 }
+	}
+}
+
+#Maha Chakkrap'at's Army Reforms#
+event = {
+	id = 6911
+	random = no
+	country = AYU
+	name = "EVENTNAME6911"
+	desc = "EVENTHIST6911"
+	
+	date = { day = 1 month = january year = 1550 }
+	offset = 3000
+	deathdate = { day = 1 month = january year = 1560 }
+	
+	action_a ={#Go with the reforms#
+		name = "ACTIONNAME6911A"
+		command = { type = stability value = -2 }
+		command = { type = domestic which = land value = 1 }
+		command = { type = domestic which = offensive value = 1 }
+		command = { type = CAV which = -2 value = 5000 }
+		command = { type = cash value = -100}          
+	}
+	action_b ={#Ignore the reform ideas#
+		name = "ACTIONNAME6911B"
+		command = { type = stability value = 1 }                     
+		command = { type = domestic which = innovative value = -1}
+		command = { type = land value = -500 }
+	}
+}
+
+#Prasat T'ang's Economic Reforms#
+event = {
+	id = 6912
+	random = no
+	country = AYU
+	name = "EVENTNAME6912"
+	desc = "EVENTHIST6912"
+	
+	date = { day = 1 month = january year = 1630 }
+	offset = 3000
+	deathdate = { day = 1 month = january year = 1640 }
+	
+	action_a ={#Go with the reforms#
+		name = "ACTIONNAME6912A"
+		command = { type = stability value = -2 }
+		command = { type = domestic which = mercantilism value = 1 }
+		command = { type = merchants value = 5 }
+		command = { type = provincetax which = 670 value = 1 }
+		command = { type = provincetax which = 674 value = 1 }
+		command = { type = provincetax which = 675 value = 1 }  
+		command = { type = cash value = -200 }
+	}
+	action_b ={#Ignore the reform ideas#
+		name = "ACTIONNAME6912B"
+		command = { type = stability value = 1 }                     
+		command = { type = domestic which = innovative value = -1}
+		command = { type = trade value = -200 }
+		command = { type = infra value = -200 }
+	}
+}
+
+#King Ekit'at's Incompetence#
+event = {
+	id = 6913
+	random = no
+	country = AYU
+	name = "EVENTNAME6913"
+	desc = "EVENTHIST6913"
+	
+	date = { day = 1 month = january year = 1760 }
+	offset = 300
+	deathdate = { day = 1 month = january year = 1761 }
+	
+	action_a ={#Why are we stuck with such a fool?#
+		name = "ACTIONNAME6913A"
+		command = { type = stability value = -6 }
+		command = { type = revoltrisk which = 120 value = 5 }
+		command = { type = inflation value = 5 }
+		command = { type = relation which =  MYA value = -300 }
+		command = { type = relation which =  TAU value = -300 }   
+		command = { type = desertion which = -1 value = 10000 }
+		command = { type = infra value = -200 } 
+	}
+}
+
+#The Foundation of the Modern Thai State#
+event = {
+	id = 3901
+	random = no
+	country = AYU
+	name = "EVENTNAME3901"
+	desc = "EVENTHIST3901"
+	date = { day = 1 month = january year = 1770 }
+	offset = 30
+	
+	action_a ={ #It is the beginning of a new era!#
+		name = "ACTIONNAME3901A"
+		command = { type = stability value = -2 }
+		command = { type = relation which = BRM value = -50 }
+		command = { type = relation which = DAI value = -50 }
+		command = { type = relation which = ANN value = -50 }
+		command = { type = relation which = CAM value = -50 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = manpower value = 20 }
+		command = { type = cash value = -300 }
+		command = { type = vp value = 50 }
+	}
+	action_b ={ #No, the old ways are the best#
+		name = "ACTIONNAME3901B"
+		command = { type = stability value = 1 }
+		command = { type = relation which = CMP value = 50 }
+		command = { type = relation which = LNA value = 50 }
+		command = { type = relation which = LUA value = 50 }
+		command = { type = relation which = VIE value = 50 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = infra value = -200 }
+		command = { type = sleepevent which = 50032 }
+		command = { type = sleepevent which = 50033 }
+	}
+}
+
+#The Thonburi Kingdom#
+event = {
+	id = 50032
+	trigger = {
+		event = 3901
+	}
+	random = no
+	country = AYU
+	name = "The Thonburi Kingdom"
+	desc = "The Thonburi Kingdom was a major Siamese kingdom which existed in Southeast Asia from 1767 to 1782, centered around the city of Thonburi in Siam. The kingdom was founded by Taksin the Great, who reunited Siam following the collapse of the Ayutthaya Kingdom, which saw the country separate into five warring regional states. The Thonburi Kingdom oversaw the rapid reunification and reestablishment of Siam as a preeminient military power within mainland Southeast Asia, overseeing the country's expansion to its greatest territorial extent up to that point in its history, incorporating Lan Na, the Laotian kingdoms (Luang Prabang, Vientiane, Champassak), and Cambodia under the Siamese sphere of influence. It saw the consolidation and continued growth of Chinese trade from Qing China and the increased influence of the Chinese community in Siam, with Taksin and later monarchs sharing close connections and close family ties with the Sino-Siamese community."
+	date = { day = 1 month = january year = 1771 }
+	offset = 30
+	
+	action_a ={ #Onwards to victory!#
+		name = "Onwards to victory!"
+		command = { type = countryname value = "Thonburi" }
+		command = { type = cityname which = 670 value = "Thonburi" }
+		command = { type = addcore_claim which = 669 }
+		command = { type = addcore_claim which = 1550 }
+		command = { type = addcore_claim which = 1551 }
+		command = { type = addcore_claim which = 1552 }
+		command = { type = provincetax which = 670 value = 1 }
+		command = { type = provincemanpower which = 670 value = 1 }
+		command = { type = relation which = CHI value = 100 }
+		command = { type = infra value = 400 }
+		command = { type = trade value = 800 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#The Rattanakosin Kingdom#
+event = {
+	id = 50033
+	trigger = {
+		event = 3901
+		event = 50032
+	}
+	random = no
+	country = AYU
+	name = "The Rattanakosin Kingdom"
+	desc = "The Rattanakosin Kingdom was founded in 1782 with the establishment of Rattanakosin (Bangkok), which replaced the city of Thonburi as the capital of Siam. The maximum zone of influence of Rattanakosin included the vassal states of Cambodia, Laos, the Shan States, and the northern Malay states. The kingdom was founded by Rama I of the Chakri Dynasty. The Rattanakosin era was characterized by the consolidation of Siamese power in the center of mainland Southeast Asia and was punctuated by contests and wars for regional supremacy with rival powers Burma and Vietnam. Later came engagements with the colonial powers of Britain and France in which Siam remained the only Southeast Asian state to maintain its independence, leading to the Rattanakosin Kingdom developing into a centralized, absolutist nation state with borders defined by interactions with Western powers."
+	date = { day = 1 month = january year = 1785 }
+	offset = 30
+	
+	action_a ={ #Onwards to victory!#
+		name = "Onwards to victory!"
+		command = { type = countryname value = "Rattanakosin" }
+		command = { type = cityname which = 670 value = "Bangkok" }
+		command = { type = addcore_claim which = 667 }
+		command = { type = addcore_claim which = 668 }
+		command = { type = addcore_claim which = 676 }
+		command = { type = provincetax which = 670 value = 1 }
+		command = { type = provincemanpower which = 670 value = 1 }
+		command = { type = fortress which = 670 value = 1 }
+		command = { type = land value = 500 }
+		command = { type = naval value = 500 }
+		command = { type = stability value = 1 }
+	}
+}

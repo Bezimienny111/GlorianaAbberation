@@ -1,0 +1,442 @@
+##England Events##
+
+#(1339-1345) Van Artevelde's Uprising
+event = {
+      id = 105510 #triggered by FLA_106314A
+      random = no
+      country = ENG
+      name = "Van Artevelde's Uprising"
+      desc = "In 1336, viewing Flanders as an important ally, Edward III sent letters expounding upon the treachery of Philip VI and imploring the nobles to rally to his cause.  The Count of Flanders, Louis de Nevers, remained obstinately loyal to the French king and began arresting English merchants in his lands. In response, Edward enacted a trade embargo whereby English wool was forbidden to be sold to Flanders. This was a devastating blow to the Flemish weaving industry and by 1338 the leaders of the Flemish cities and cloth-workers were united by the threat of utter ruin.  In 1339, the rich artisan, Jacob van Artevelde, lead a general uprising against the count and immediately called for the assistance of the King of England."
+
+      action_a = {
+               name = "Agree to support the revolters"
+               command = { type = vassal which = FLA }
+               command = { type = alliance which = FLA }
+               command = { type = relation which = FRA value = -200 }
+      }
+      action_b = {
+               name = "Our hands are full"
+               command = { type = stability value = -1 }
+               command = { type = trade value = -500 }
+               command = { type = relation which = HOL value = -200 }
+               command = { type = relation which = FRA value = 50 }
+      }
+}
+
+#(1345) Van Artevelde's Assassination
+event = {
+      id = 105511 #triggered by FLA_106315A
+      random = no
+      country = ENG
+      name = "Van Artevelde's Assassination"
+      desc = "Despite all hopes, the English alliance didn't ameliorate the economic situation in Flanders. Edward III, having quickly understood the tumultuous situation was reluctant to support permanently a rebel government and eventually recalled his troops after several years of immobilisation. In an act of desperation, Artevelde offered the county to Edward's son, contravening all feudal laws as Louis de Nevers, the legitimate count, was alive and no worse for the wear. The King was intrigued with the offer and came personnaly in Flanders to negotiate with the rebel leader, but Flemish popular opinion changed. Van Artevelde was assassinated on July 17, 1345 at Ghent after a popular rebellion. Viewing the situation as a quagmire Edward III went home to England."
+
+      action_a = {
+               name = "Damn!"
+               command = { }
+      }
+}
+
+#(1340-1360) #Crecy and the Fall of Calais
+event = {
+	id = 105512
+	trigger = {
+		control = { province = 382 data = -1 }
+		NOT = { event = 105513 } #ENG: Calais, An English bridgehead
+		war = { country = FRA country = ENG }
+	}
+	random = no
+	country = ENG
+	
+	name = "Crecy and the Fall of Calais"
+	desc = "On August 26th, the English had a great victory at the Battle of Crecy. French knights, despite their superiority, were unable to disrupt the english line and were slaughtered by bowmen and English Knights' counteroffensive, and during this battle the young Prince of Wales, who will be known as the Black Prince, gained for his courage his spurs. Philippe VI saw a great number of barons and allies dying during this day, and was himself humiliated by being forced to personnaly retreat. This great victory gave to Edward III the time to besiege and conquer the port of Calais."
+
+	date = { year = 1340 }
+	offset = 30
+	deathdate = { year = 1360 }
+
+	action_a = {
+		name = "Saint-George!"
+		command = { type = stability value = 3 }
+		command = { type = cash value = 300 } # value of ransoms #
+		command = { type = DIP which = 3 value = 36 }
+		command = { type = trigger which = 107000 } #FRA: Disaster at Crecy
+	}
+}
+
+#(1340-1420) Calais, An English bridgehead
+event = {
+	id = 105513
+	trigger = {
+		owned = { province = 382 data = -1 }
+	}
+	random = no
+	country = ENG
+
+	name = "Calais, An English bridgehead"
+	desc = "The great victory of Crecy gave to Edward III the time to besiege and conquer the port of Calais : despite a courageous resistance, townsmen didn't receive any help from Philippe VI, now afraid to risk his crown in another battle, and were forced to capitulate during the well-known event of the 'six bourgeois'. Edward was merciful with the citizens, but he forced them to evacuate the town - they will be taken in charge by the King of France. Edward installed here a colony of merchants and other english people, and forced sea trade between England and the continent to have a scale at Calais, in order to receive more taxes. For more than 200 years, Calais will become an english-bridgehead in France."
+
+	date = { year = 1340 }
+	offset = 30
+	deathdate = { year = 1452 }
+
+	action_a = {
+		name = "Make Calais our stronghold in France"
+		command = { type = provinceculture which = 382 value = anglosaxon }
+		command = { type = addcore_national which = 382 }
+		command = { type = population which = -2 value = -1000 }
+		command = { type = population which = 382 value = -3000 }
+		command = { type = provincetax which = 382 value = 8 } #upped number from 5, G1337
+		command = { type = goods which = 382 value = cloth } #G1337
+		command = { type = fortress which = 382 value = 1 }
+		command = { type = cash value = -250 }
+		command = { type = vp value = 50 }
+	}
+	action_b = {
+		name = "Too expensive!"
+		command = { type = population which = 382 value = -4000 }
+		command = { type = sleepevent which = 25057 } #G1337
+	}
+}
+
+#(1356-1360) The King of France is captured!
+event = {
+	id = 105006 #triggered by FRA_107002A
+	random = no
+	country = ENG
+	name = "The King of France is captured!"
+	desc = "Jean le Bon was clearly more a knight than the King which France needed to triumph from Edward and the Black Prince. Having already shown his lack of efficiency during his father's reign, Jean II made numerous mistakes during the campaign of 1356 and the decisive battle of Poitiers. Despite large superiority, he engaged Black Prince's troops at the worst moment, and so lead the major part of royal army to a new terrible disaster ten years after Crecy. Jean II did a last mistake, prefering to stay in than to retreat, and so was personnaly captured. Consequences were of course terrible, in internal crisis as for the course of the war."
+
+	action_a = {
+		name = "What a nice present!"
+		command = { type = stability value = 1 }
+		command = { type = cash value = 150 } # ransoms of prisoners - not including king
+	}
+}
+
+#(1359-1364) London Agreements
+event = {
+	id = 105007
+	trigger = {
+		event = 105006 #ENG: The King of France is captured!
+		NOT = { war = { country = FRA country = ENG } }
+		exists = FRA
+		OR = {
+			control = { province = 383 data = ENG }
+			control = { province = 384 data = ENG }
+			control = { province = 413 data = ENG }
+			control = { province = 411 data = ENG }
+			control = { province = 412 data = ENG }
+			control = { province = 417 data = ENG }
+			control = { province = 410 data = ENG }
+			control = { province = 418 data = ENG }
+			control = { province = 419 data = ENG }
+			control = { province = 420 data = ENG }
+			control = { province = 423 data = ENG }
+			control = { province = 424 data = ENG }
+			control = { province = 382 data = ENG }
+		}
+	}
+	random = no
+	country = ENG
+	name = "London Agreements"
+	desc = "While imprisonned in London, Jean II negotiated his release while his son presided as regent in France. The first agreement, called the Treaty of London, promised to Edward III so much territory and advantages that the Paris Parliament, despite Jean's agreement, refused to recognize this treaty. Finally, Edward accepted to reduce his pretentions. The compromise eventually led to the Treaty of Bretigny, in May of 1360."
+
+	date = { year = 1359 }
+	offset = 10
+	deathdate = { day = 8 month = april year = 1364 }
+
+	action_a = {
+		name = "Accept the territorial agreement"
+		command = { type = stability value = 2 }
+		command = { type = addcore_national which = 425 }
+		command = { type = addcore_national which = 424 }
+		command = { type = addcore_national which = 423 }
+		command = { type = addcore_national which = 418 }
+		command = { type = addcore_national which = 419 }
+		command = { type = addcore_national which = 420 }
+		command = { type = addcore_national which = 417 }
+		command = { type = addcore_national which = 410 }
+		command = { type = addcore_national which = 382 }
+	}
+}
+
+#(1359-1364) Treaty of Bretigny
+event = {
+	id = 105008 #triggered by FRA_107010A
+	random = no
+	country = ENG
+	name = "Treaty of Bretigny"
+	desc = "After the capture of Jean II at Poitiers, only a wonder could have preserved the Kingdom of France to negociate a disastrous peace with Edward III. Internal troubles could have been the lethal kick, but finally the Dauphin preserved the major part of royal authority. Negociations were difficult, and the first attempt of peace with the Treaty of London was rejected by Paris Parliament, despite the agreement of Jean II. Finally, the definitive signing, with the Treaty of Bretigny in may 8, 1360, gave to Edward all the former parts of the great Duchy of Aquitaine, and confirmed the english possession of Calais. The King Jean II could be released at the price of an enormous ransom, and three of the king's sons should stay at London as hostages. All would have been nice for Edward, if a decisive point would had been cleared in this treaty, the King's sovereignty was theorically preserved on those lost lands. Of course, Jean II wasn't able to use this argument now, but in the future..."
+
+	action_a = {
+		name = "Wonder if I have not forgotten something...?"
+		command = { type = stability value = 3 }
+		command = { type = vp value = 100 }
+		command = { type = cash value = 600 }
+	}
+}
+
+#(1359-1364) Negotiations with the regent have failed - Ahistorical
+event = {
+	id = 105009 #triggered by FRA_107010B
+	random = no
+	country = ENG
+	name = "Negotiations with the regent have failed"
+	desc = "Despite the fact that Jean II was imprisonned, and that he had agreed to a treaty, the regent Charles and Paris Parliament refused to accept Edward's propositions. So, war will continue..."
+	
+	action_a = {
+		name = "This means war!"
+		command = { type = war which = FRA }
+		command = { type = stability value = 4 }
+		command = { type = badboy value = -2 }
+	}
+	action_b = {
+		name = "Be careful or we'll keep your King! Why do you laugh?"
+		command = { type = relation which = FRA value = -200 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#(1399) Death of John of Gaunt
+event = {
+	id = 105000
+	random = no
+	country = ENG
+	name = "Death of John of Gaunt"
+	desc = "During the reign of Edward III, John of Lancaster became the richest noble of England and during Richard II's minority, his influence made him the preeminent personage even though he was not actually king.  Despite his ambitions to rule, John was loyal to Richard and supported him through some of the crown's darkest times.  Unforunately as Richard reached his 30s with no heir and a child bride, the King grew suspicious of John and his son, Henry Bolingbroke.  When John of Gaunt died, despite clear promises to uphold his inheritance, Richard II confiscated all of the Lancastrian holdings until such a time as Henry would beg for them."
+
+	date = { day = 3 month = february year = 1399 }
+	offset = 1
+	deathdate = { day = 4 month = february year = 1399 }
+
+	action_a = {
+		name = "A swift maneuver to eliminate a rival!"
+		command = { type = stability value = -1 }
+		command = { type = cash value = 200 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = setflag which = [Bolingbroke] }
+	}
+	action_b = {
+		name = "Bolingbroke is no threat to us"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = centralization value = -1 }
+		command = { type = domestic which = aristocracy value = 1 }
+	}
+}
+
+#(1399) Bolingbroke's Invasion
+event = {
+	id = 105001
+	trigger = {
+		flag = [Bolingbroke]
+		NOT = {
+			domestic = { type = centralization value = 9 }
+		}
+	}
+	random = no
+	country = ENG
+	name = "Bolingbroke's Invasion"
+	desc = "After the confiscation of Henry Bolingbroke's heritage, Richard II seemed more powerful than ever.  Turning to other matters he organised a new expedition in Ireland, leaving London in May 1399. This was his fatal mistake. In July, Henry Bolingbroke debarked in England with a a small contingent of troops and immediatley received the support of his former vassals and numerous other barons fearing for their rights. Richard returned immediatley in England and raised an army to crush the invader."
+
+	date = { day = 4 month = july year = 1399 }
+
+	action_a = {
+		name = "Defend our Crown until death!"
+		command = { type = stability value = -3 }
+		command = { type = revoltrisk which = 120 value = 2 }
+		command = { type = desertion which = -1 value = 10000 }
+		command = { type = desertion which = -1 value = 10000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = independence which = LAN }
+		command = { type = domestic which = centralization value = -2 }
+		command = { type = trigger which = 105002 } #LAN: Bolingbroke's Invasion
+		#command = { type = wakeleader which = 19882 } #no leader with this ID
+	}
+}
+
+#(1399) Bolingbroke's Invasion
+event = {
+	id = 105002 #Triggered by ENG_105001
+	random = no
+	country = LAN
+	name = "Bolingbroke's Invasion"
+	desc = "After the confiscation of Henry Bolingbroke's heritage, Richard II seemed more powerful than ever.  Turning to other matters he organised a new expedition in Ireland, leaving London in May 1399. This was his fatal mistake. In July, Henry Bolingbroke debarked in England with a a small contingent of troops and immediatley received the support of his former vassals and numerous other barons fearing for their rights. Richard returned immediatley in England and raised an army to crush the invader."
+
+	action_a = {
+		name = "We will take what is our and then some!"
+		command = { type = breakvassal which = ENG }
+		command = { type = war which = ENG }
+		command = { type = relation which = ENG value = -400 }
+		command = { type = stability value = 6 }
+		command = { type = cash value = 200 }
+		command = { type = INF which = -1 value = 12000 }
+		command = { type = CAV which = -3 value = 8000 }
+		command = { type = addcore_national which = 240 }
+		command = { type = addcore_national which = 241 }
+		command = { type = addcore_national which = 242 }
+		command = { type = addcore_national which = 244 }
+		command = { type = addcore_national which = 245 }
+		command = { type = addcore_national which = 246 }
+		command = { type = addcore_national which = 247 }
+		command = { type = addcore_national which = 248 }
+		command = { type = addcore_national which = 249 }
+		command = { type = addcore_national which = 250 }
+	}
+}
+
+#(1399) The Deposition of Richard II
+event = {
+	id = 105003
+	trigger = {
+		event = 105002 #LAN: Bolingbroke's Invasion
+		exists = LAN
+		NOT = { 
+			vassal = { country = ENG country = LAN }
+		}
+	}
+	random = no
+	country = ENG
+	name = "The Deposition of Richard II"
+	desc = "Despite his valiant efforts, with the majority of the populace against him, Richard's cause was doomed. Henry IV took the throne."
+
+	date = { day = 5 month = july year = 1399 }
+	offset = 45
+	deathdate = { day = 10 month = october year = 1399 }
+
+	action_a = {
+		name = "Long live, King Henry IV!"
+		command = { type = stability value = 2 }
+		command = { type = desertion which = -1 value = 10000 }
+		command = { type = desertion which = -1 value = 10000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = inherit which = LAN }
+		command = { type = sleepevent which = 105004 } #ENG: The Triumph of Richard II
+	}
+}
+
+#(1399) The Triumph of Richard II
+event = {
+	id = 105004
+	trigger = {
+		event = 105002 #LAN: Bolingbroke's Invasion
+		OR = {
+			NOT = { 
+				exists = LAN 
+				war = { country = ENG country = LAN }
+			}
+			vassal = { country = ENG country = LAN }
+			
+		}
+	}
+	random = no
+	country = ENG
+	name = "The Triumph of Richard II"
+	desc = "Despite being supported by greater portion of the nobility and Parliament, Henry Bolingbroke and his partisans were eventually overcome by the royalists. Although he surrendered with the promise that his life would be preserved, Henry was  murdered in his jail some weeks later. However, no one rose up in protest as Richard II, having crushed his most dangerous opponents, was now the uncontestable master in his Kingdom."
+
+	date = { day = 5 month = july year = 1399 }
+	offset = 1
+	deathdate = { day = 10 month = october year = 1399 }
+
+	action_a = {
+		name = "No one can resist to my will !"
+		command = { type = domestic which = centralization value = 3 }
+		command = { type = domestic which = aristocracy value = -2 }
+		command = { type = domestic which = innovative value = -1 }
+		command = { type = domestic which = serfdom value = 1 }
+		command = { type = inherit which = LAN }
+		command = { type = sleepmonarch which = 00007 } #Henry IV
+		command = { type = sleepevent which = 105003 } #ENG: The Deposition of Richard II
+	}
+}
+
+#(1400) The House of York
+event = {
+	id = 105005
+	trigger = {
+		event = 105004 #ENG: The Triumph of Richard II
+	}
+	random = no
+	country = ENG
+	name = "The House of York"
+	desc = "Richard's victory over Bolingbroke was to be short lived. In February of 1400, he slipped on an icy cobblestone causing major trauma to his brain and days later he was dead. As he was childless, he willed the kingdom to the heirs of one of Edward III's younger son, Edmund of Langely, Duke of York."
+
+	date = { day = 13 month = february year = 1400 }
+	offset = 1
+	deathdate = { day = 14 month = february year = 1400 }
+
+	action_a = {
+		name = "A new dynasty!"
+		command = { type = sleepmonarch which = 04030 } #Henry V
+		command = { type = sleepmonarch which = 04031 } #Henry VI
+		command = { type = wakemonarch which = 00008 } #Richard III
+		command = { type = wakemonarch which = 00009 } #Richard IV
+		command = { }
+	}
+}
+
+#(1413-1415) The Accession of Henry V
+event = {
+	id = 105010
+	trigger = {
+		monarch = 04030 #Henry V
+		atwar = no
+		NOT = {
+				event = 105004 #ENG: The Triumph of Richard II
+		}
+	}
+	random = no
+	country = ENG
+	name = "The Accession of Henry V"
+	desc = "Being constantly in dispute with his father, having probably organised plots against him, Prince Henry was not really the ideal chivalrous noble shown by Shakespeare and contemporary authors. Having finally accepted to wait for his turn (his father's illness helped him to be patient), Henry was crowned in 1413. Kingdom of England was not really in a good situation, but after the constant struggles or threatenings of struggles known during the reigns of Richard II and Henry IV, it appeared that the new King was luckily in a far better position : he was in age to rule, his legitimacy was not contested, he had no more deadly opponents. For the first time since Edward II, almost one century earlier, a succession didn't cause major troubles : the new King could therefore have a new active policy, firstly against Wales and the Lollards, later against France..."
+	style = "26011"
+
+	date = { year = 1413 }
+	offset = 20
+	deathdate = { year = 1415 }
+
+	action_a = {
+		name = "Political horizon is clearer..."
+		command = { type = stability value = 3 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = revoltrisk which = 60 value = -3 }
+	}
+}
+
+
+#(1409-1414) Support for the Pisan Papacy
+event = {
+	id = 296017
+	trigger = {
+		NOT = { event = 2296001 }
+		OR = {
+			religion = avignon_catholic
+			religion = catholic
+		}
+		event = 296012
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME296013" #Support for the Pisan Papacy
+	desc = "EVENTHIST296013"
+
+	date = { year = 1409 }
+	offset = 5
+	deathdate = { year = 1414 }
+
+	action_a = {
+		name = "ACTIONNAME296013A" #Support the Pisan Papacy!
+		command = { type = religion which = pisan_catholic }
+	}
+	action_b = {
+		name = "ACTIONNAME296013B" #He is not the Vicar of Christ!
+		command = { }
+	}
+}
+
+#first free ID: 105011

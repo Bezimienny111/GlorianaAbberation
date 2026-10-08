@@ -1,0 +1,128 @@
+#####Livonian Order Major Events#####
+####By Joakim 'Greven' Bergqwist#####
+####Altered by Ayeshteni	#####
+#####################################
+
+#Hohenzollern Prussia become Polish Duchy#
+event = {
+
+	id = 3619				#Triggered by LAT3516#
+	random = no
+	country = LIV
+	name = "EVENTNAME3619"
+	desc = "EVENTHIST3619"
+	style = 2
+
+	action_a ={				#Accept the act#
+		name = "ACTIONNAME3619A"
+		command = { type = relation which = POL value = -150 }
+		command = { type = relation which = PRU value = 50 }
+		command = { type = treasury value = 250 }
+	}
+
+	action_b ={				#Defy this act of treason#
+		name = "ACTIONNAME3619B"
+		command = { type = casusbelli which = PRU value = 240 }
+		command = { type = casusbelli which = POL value = 60 }
+		command = { type = relation which = PRU value = -150 }
+		command = { type = relation which = POL value = -150 }
+		command = { type = treasury value = -250 }
+	}
+}
+
+#The Fate of the Livonian Order#
+event = {
+
+	id = 3620
+	trigger = {
+		AND = {
+		 	exists = POL
+			exists = SWE
+			exists = DAN
+			exists = RUS 
+			}
+		NOT = {
+			exists = KUR
+			}
+		}
+	random = no
+	country = LIV
+	name = "EVENTNAME3620"
+	desc = "EVENTHIST3620"
+	style = "3620"
+
+	date = { day = 1 month = january year = 1560 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1562 }
+
+	action_a ={
+		name = "ACTIONNAME3620A"	#Polish-Swedish Agreement#
+		command = { type = trigger which = 3470 }
+		command = { type = trigger which = 3220 }
+		command = { type = trigger which = 3290 }
+		command = { type = trigger which = 3407 }
+		command = { type = remove_countryculture which = ugric }
+		command = { type = removecore_national which = 275 }
+		command = { type = removecore_national which = 276 }
+		command = { type = removecore_national which = 277 }
+		command = { type = removecore_national which = 282 }
+		command = { type = removecore_national which = 289 }
+		command = { type = removecore_national which = 290 }
+		command = { type = removecore_national which = 301 }
+		command = { type = removecore_national which = 308 }
+		command = { type = cedeprovince which = SWE value = 275 }
+		command = { type = cedeprovince which = SWE value = 276 }
+		command = { type = cedeprovince which = POL value = 281 }
+		command = { type = cedeprovince which = POL value = 282 }
+		command = { type = flagname which = "" }
+		command = { type = country which = KUR }
+		command = { type = treasury value = 500 }
+		command = { type = religion which = protestant }
+		command = { type = stability value = 6 }
+		command = { type = free  which = PRU }
+		command = { type = removecot which = 282 }
+	}
+
+	action_b ={
+		name = "ACTIONNAME3620B"	#Russo-Danish Agreement#
+		command = { type = trigger which = 3471 }
+		command = { type = trigger which = 3221 }
+		command = { type = trigger which = 3291 }
+		command = { type = trigger which = 3408 }
+		command = { type = remove_countryculture which = ugric }
+		command = { type = removecore_national which = 275 }
+		command = { type = removecore_national which = 276 }
+		command = { type = removecore_national which = 277 }
+		command = { type = removecore_national which = 282 }
+		command = { type = removecore_national which = 289 }
+		command = { type = removecore_national which = 290 }
+		command = { type = removecore_national which = 301 }
+		command = { type = removecore_national which = 308 }
+		command = { type = cedeprovince which = RUS value = 275 }
+		command = { type = cedeprovince which = RUS value = 276 }
+		command = { type = cedeprovince which = DAN value = 281 }
+		command = { type = cedeprovince which = DAN value = 282 }
+		command = { type = flagname which = "" }
+		command = { type = country which = KUR }
+		command = { type = treasury value = 500 }
+		command = { type = religion which = protestant }
+		command = { type = stability value = 6 }
+		command = { type = free  which = PRU }
+		command = { type = removecot which = 282 }
+	}
+
+	action_c ={
+		name = "ACTIONNAME3620C"	#Die-Hard Independence#
+		command = { type = trigger which = 3472 }
+		command = { type = trigger which = 3222 }
+		command = { type = trigger which = 3292 }
+		command = { type = trigger which = 3409 }
+		command = { type = stability value = -3 }
+		command = { type = treasury value = -500 }
+		command = { type = religion which = counterreform }
+		command = { type = domestic which = ARISTOCRACY value = 3 }
+		command = { type = domestic which = INNOVATIVE value = -3 }
+		command = { type = domestic which = SERFDOM value = 3 }
+		command = { type = removecot which = 282 }
+	}
+}

@@ -1,0 +1,30 @@
+# Bali #
+
+# Refugees from Majapahit #
+event = {
+	id = 4200			#Triggered by MAJ 4199A#
+	trigger = {
+		OR = {
+			religion = hinduism
+			religion = buddhism
+			#religion = jain
+		}
+	}
+	random = no
+	country = BLI
+	name = "EVENTNAME4200"
+	desc = "EVENTHIST4200"
+
+	action_a = { # We welcome you with open arms!
+		name = "ACTIONNAME4200A"
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = populationpercent which = -2 value = 25 }
+		command = { type = relation which = -11 value = 50 }
+		command = { type = relation which = -11 value = 50 }
+		command = { type = relation which = -11 value = 50 }
+		command = { type = infra value = 800 }
+		command = { type = trade value = 800 }
+		command = { type = treasury value = 200 }
+		command = { type = stability value = -1 }
+	}
+}

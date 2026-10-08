@@ -1,0 +1,31 @@
+##Austria Events##
+
+#(1409-1414) Support for the Pisan Papacy
+event = {
+	id = 296019
+	trigger = {
+		NOT = { event = 2296001 }
+		OR = {
+			religion = avignon_catholic
+			religion = catholic
+		}
+		event = 296012
+	}
+	random = no
+	country = HAB
+	name = "EVENTNAME296013" #Support for the Pisan Papacy
+	desc = "EVENTHIST296013"
+
+	date = { year = 1409 }
+	offset = 5
+	deathdate = { year = 1414 }
+
+	action_a = {
+		name = "ACTIONNAME296013A" #Support the Pisan Papacy!
+		command = { type = religion which = pisan_catholic }
+	}
+	action_b = {
+		name = "ACTIONNAME296013B" #He is not the Vicar of Christ!
+		command = { }
+	}
+}

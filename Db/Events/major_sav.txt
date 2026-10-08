@@ -1,0 +1,292 @@
+#####Savoy Major Events#######
+#By Joakim 'Greven' Bergqwist#
+##############################
+
+#The Holy League#
+event = {
+
+	id = 3647
+	trigger = {
+				 exists = TUR
+				event = 3549
+			 }
+	random = no
+	country = SAV
+	name = "EVENTNAME3647"
+	desc = "EVENTHIST3647"
+
+	date = { day = 1 month = january year = 1568 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1571 }
+
+	action_a ={					#Support the Holy League#
+		name = "ACTIONNAME3647A"
+		command = { type = casusbelli which = TUR value = 72 }
+		command = { type = relation which = TUR value = -150 }
+		command = { type = relation which = PAP value = 100 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = POR value = 50 }
+		command = { type = relation which = TOS value = 50 }
+		command = { type = relation which = VEN value = 50 }
+		command = { type = relation which = NAP value = 50 }
+		command = { type = relation which = KNI value = 50 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = relation which = GEN value = 50 }
+	}
+
+	action_b ={					#Let the matter fall#
+		name = "ACTIONNAME3647B"
+		command = { type = relation which = TUR value = 50 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = POR value = -50 }
+		command = { type = relation which = TOS value = -50 }
+		command = { type = relation which = VEN value = -50 }
+		command = { type = relation which = NAP value = -50 }
+		command = { type = relation which = KNI value = -50 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = GEN value = -50 }
+	}
+}
+
+#The Sale of Corsica#
+event = {
+
+	id = 3648				#Triggered by GEN3709 or SPA3175#
+	random = no
+	country = SAV
+	name = "EVENTNAME3648"
+	desc = "EVENTHIST3648"
+
+	action_a ={				#Offer to buy Corsica#
+		name = "ACTIONNAME3648A"
+		command = { type = trigger which = 3710 }
+	}
+
+	action_b ={				#Pass the opportunity#
+		name = "ACTIONNAME3648B"
+		command = { type = treasury value = 100 }
+	}
+}
+
+#Genoa accepts offer to buy Corsica#
+event = {
+
+	id = 3725				#Triggered by GEN3710#
+	random = no
+	country = SAV
+	name = "EVENTNAME3725"
+	desc = "EVENTHIST3725"
+
+	action_a ={				#Good#
+		name = "ACTIONNAME3725A"
+		command = { type = relation which = GEN value = 150 }
+		command = { type = treasury value = -800 }
+	}
+}
+
+#Genoa decline offer to buy Corsica#
+event = {
+
+	id = 3726				#Triggered by GEN3710#
+	random = no
+	country = SAV
+	name = "EVENTNAME3726"
+	desc = "EVENTHIST3726"
+
+	action_a ={				#Darn#
+		name = "ACTIONNAME3726A"
+		command = { type = relation which = GEN value = -50 }
+	}
+}
+
+# The Savoyard Court #
+event = {
+
+	id = 3914
+	trigger = {
+		owned = { province = 404 data = SAV }
+	}
+	random = no
+	country = SAV
+	name = "The Savoyard Court"
+	desc = "Chambery had been the capital of Savoy since its elevation from a county to a duchy by the Emperor Sigismund in 1416, but by the mid-16th century French influence had given way to an obvious desire for outright annexation of the Savoyard state. In 1536, King Francis I had ordered the occupation of Savoy by French troops, who essentially set up a police state and governed Savoy as a de facto feudal appanage of the French kingdom. Duke Charles III realized too late the weakness of his state, and tried to fortify the southern city of Turin as a possible alternative seat of power. His son, the far more competent and energetic Emmanuel Philibert, broke off relations with France and moved the capital to Turin in 1562, which he protected with a complex system of fortifications known as the Cittadella. Turin would remain the Savoyard capital until Italian unification in the 19th century and the final acquisition of Rome in September 1870."
+
+	date = { day = 1 month = january year = 1550 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1560 }
+
+	action_a ={
+		name = "Move the court to Turin"		#Move the court to Turin#
+		command = { type = capital which = 404 }
+		command = { type = provincetax which = 404 value = 5 }
+		command = { type = populationpercent which = 404 value = 15 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = breakvassal which = FRA }
+		command = { type = stability value = -1 }
+		command = { type = setflag which = turin }
+	}
+
+	action_b ={
+		name = "Remain in Chambery"		#Remain in Chambéry#
+		command = { type = infra value = 500 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = stability value = 2 }
+		command = { type = sleepevent which = 3584 }
+	}
+}
+
+# The King of Sardinia #
+event = {
+
+	id = 3584
+	trigger = {
+		event = 3914
+		owned = { province = 397 data = SAV }
+		NOT = { exists = SAR }
+	}
+	random = no
+	country = SAV
+	name = "The King of Sardinia"
+	desc = "Following the War of the Spanish succession - in which Savoy had changed sides, initially backing Louis XIV - the island of Sardinia and its title of Kingdom were ceded by the Habsburg and Bourbon claimants to the Spanish throne to the Duke of Savoy, Victor Amadeus II. The Savoyards united it with their historical possessions on the Italian peninsula, and the kingdom came to be progressively identified with the Italian states, which included - besides Savoy and Aosta - dynastic possessions like Piedmont and Nice, both of which the Savoyards had ruled since the 14th century. As a result of this shift, the historically French-aligned duchy of Savoy evolved into the culturally Italian kingdom of Sardinia, which in turn became the founding state of a unified kingdom of Italy in 1861."
+
+	date = { day = 1 month = january year = 1713 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={
+		name = "Let us claim the crown of Sardinia"		#Let us claim the crown of Sardinia#
+		command = { type = country which = SAR }
+		command = { type = flagname which = SAV }
+		command = { type = remove_countryculture which = french }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = addcore_national which = 397 }
+		command = { type = addcore_national which = 403 }
+		command = { type = stability value = 2 }
+	}
+
+	action_b ={
+		name = "We shall remain as we are"		#We shall remain as we are#
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = stability value = -1 }
+	}
+}
+
+# The Polish Succession of 1733 #
+event = {
+	id = 4113				#Triggered by FRA3136#
+	random = no
+	country = SAR
+	name = "EVENTNAME3249"
+	desc = "EVENTHIST3249"
+
+	action_a ={				#Secure Poland for Stanislaus#
+		name = "Secure Poland for Stanislaus"
+		command = { type = casusbelli which = HAB value = 24 }
+		command = { type = stability value = 1 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = PRU value = -100 }
+		command = { type = relation which = POL value = -100 }
+		command = { type = relation which = HAB value = -150 }
+		command = { type = relation which = RUS value = -100 }
+		command = { type = relation which = SAC value = -100 }
+	}
+
+	action_b ={				#Stay out of it#
+		name = "Stay out of it"
+		command = { type = stability value = -1 }
+		command = { type = badboy value = -1 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = PRU value = 50 }
+		command = { type = relation which = POL value = 50 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = relation which = SAC value = 50 }
+	}
+}
+
+#Philip of Anjou succeeds Carlos II in Spain#	#Bourbon#
+event = {
+
+	id = 4143		#Triggered by SPA3173#
+	random = no
+	country = SAV
+	name = "EVENTNAME3035"
+	desc = "EVENTHIST3035"
+
+	action_a ={				#Accept it#
+		name = "ACTIONNAME3035B"
+		command = { type = relation which = SPA value = 150 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = HAB value = -150 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = stability value = 2 }
+	}
+
+	action_b ={				#Fight him#
+		name = "ACTIONNAME3035A"
+		command = { type = casusbelli which = FRA value = 36 }
+		command = { type = casusbelli which = SPA value = 36 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = HOL value = 100 }
+		command = { type = relation which = BRA value = 100 }
+		command = { type = relation which = SPA value = -150 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#Charles of Habsburg succeeds Carlos II in Spain#	#Habsburg#
+event = {
+
+	id = 4144		#Triggered by SPA3173#
+	random = no
+	country = SAV
+	name = "EVENTNAME3036"
+	desc = "EVENTHIST3036"
+
+	action_a ={				#Accept it conditionally#
+		name = "ACTIONNAME3036A"
+		command = { type = casusbelli which = HAB value = 36 }
+		command = { type = casusbelli which = FRA value = 36 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={				#Fight him#
+		name = "ACTIONNAME3036B"
+		command = { type = casusbelli which = HAB value = 36 }
+		command = { type = casusbelli which = SPA value = 36 }
+		command = { type = relation which = SPA value = -150 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = HAB value = -150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = stability value = 3 }
+	}
+
+	action_c ={				#Accept it#
+		name = "ACTIONNAME3036C"
+		command = { type = relation which = SPA value = 150 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = stability value = -1 }
+	}
+}

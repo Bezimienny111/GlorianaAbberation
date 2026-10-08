@@ -1,0 +1,300 @@
+#-----------------------------------------------------------------------------------------------;;x
+#New or reworked text for patch 1.3;x
+#Text with minor changes is still in its original files. This is for changes to the number of interpolation parameters (percent signs).;x
+#-----------------------------------------------------------------------------------------------;x
+#;x
+#-----------------------------------------------------------------------------------------------;x
+#Chances are...;x
+#Note that a double percent sign converts to a single percent sign. This is because the percent sign is normally used for changing color (see Notes.txt).;x
+CHANCE_SURETHING;little doubt;x
+CHANCE_VERYHIGH;a very high chance;x
+CHANCE_HIGH;a high chance;x
+CHANCE_MED;a medium chance;x
+CHANCE_LOW;a low chance;x
+CHANCE_VERYLOW;a very low chance;x
+CHANCE_NONE;no chance;x
+#;x
+POROLLSEND;There is 即%s劬 they will accept our offer.;x
+DIPROLLCHANCE;\n劬There is 即%s劬 they will accept our offer.;x
+#This text was too long to fit chances underneath.;x
+AWEXCHANGE;We will ask %s to exchange all their discoveries with us (provinces with settlement and sea zones).\nThey will share %d provinces and sea zones with us. We will share %d with them.;x
+#Add "here" to autosend text;x
+COT_AUTO;Autosend merchants here;x
+#New strings explaining movement attrition;x
+LU_ATTRITION_I6;+%d (minimum attrition while moving);x
+NU_ATTRITION_I9;+%d (minimum attrition while moving);x
+#Add sign to blockade attrition (can't just write +%d because blockade attrition is a define);x
+NU_ATTRITION_I2;%s%d Blockading\n;x
+###New rebel popup text###;x
+#Note that this is per rebel type, not per rebel tag. That is, two peasant rebel tags will have the same description text.;x
+#The rebel tag is inserted into REVOLT_2 but is not otherwise used.;x
+#For religious and cultural rebels, the religion/culture of the province in which they are revolting is an additional parameter into _4.;x
+REVOLT_1;Revolt in %s!;x
+REVOLT_2;%t,;x
+REVOLT_3;%s\n即%s;x
+REVOLT_4;%s;x
+REVOLT_5;;x
+REVOLT_6;;x
+REVOLT_LOG;%C in %P are revolting!;x
+REVOLT_PEASANTS_3;have taken arms!;x
+REVOLT_PEASANTS_4;If we do not suppress the revolt, there is a risk that it will spread to other provinces.;x
+REVOLT_ARISTOCRATS_3;have taken arms!;x
+REVOLT_ARISTOCRATS_4;If we do not suppress the revolt, there is a risk that it will spread to other provinces. They may even march on our capital in an attempt to force concessions in their favor.;x
+REVOLT_RELIGIOUS_3;have taken arms!;x
+REVOLT_RELIGIOUS_4;If we do not suppress the revolt, they could try to conquer other 劬%s即 provinces and may declare independence.;x
+REVOLT_CULTURAL_3;have taken arms!;x
+REVOLT_CULTURAL_4;If we do not suppress the revolt, they could try to conquer other 劬%s即 provinces and may declare independence.;x
+REVOLT_COLONIAL_3;have taken arms!;x
+REVOLT_COLONIAL_4;If we do not suppress the revolt, they will seek to take other colonies and form a new nation.;x
+REVOLT_NATIONALISTS_3;have taken arms!;x
+REVOLT_NATIONALISTS_4;If we do not suppress the revolt, they are likely to try to form a new nation or defect to a preferable ruler.;x
+REVOLT_PIRATES_3;are scouring the coast!;x
+REVOLT_PIRATES_4;If we do not drive the raiders back, they will sack the towns and cost us valuable gold.;x
+REVOLT_ALIENS_3;are terrorizing the locals!;x
+REVOLT_ALIENS_4;Who are they? Where did they come from? What do they want?;x
+#;x
+RAID_SETUP;When there is a raid in one of our provinces;x
+RAID_HEADER;Our Marshal Reports%s;x
+RAID_1;A raid in %s!;x
+RAID_2;%t,;x
+RAID_3;%s\n即%s;x
+RAID_4;%s;x
+RAID_5;;x
+RAID_6;;x
+RAID_LOG;The peaceful citizens of %P are being raided by %C!;x
+RAID_BTN1;OK;x
+RAID_BTN2;Goto;x
+#;x
+RAIDOTHER_SETUP;When there is a raid in another nation's province;x
+RAIDOTHER_HEADER;Herald from;x
+RAIDOTHER_1;A raid in %s!;x
+RAIDOTHER_2;%t,;x
+RAIDOTHER_3;%s;x
+RAIDOTHER_4;is being raided!;x
+RAIDOTHER_5;;x
+RAIDOTHER_6;;x
+RAIDOTHER_LOG;The province of %s in %s is being raided!;x
+RAIDOTHER_BTN1;OK;x
+RAIDOTHER_BTN2;Goto;x
+#;x
+DECISION_SETUP;When we make a decision.;x
+DECISION_HEADER;Our Governor Reports%s;x
+DECISION_1;A Decision;x
+DECISION_2;%t, we have wisely decided to;x
+DECISION_3;%s;x
+DECISION_4;This will benefit our country in the long run.;x
+DECISION_5;;x
+DECISION_6;;x
+DECISION_LOG;We took the decision 劬%s即.;x
+DECISION_BTN1;OK;x
+DECISION_BTN2;Goto;x
+#;x
+DECISIONOTHER_SETUP;When another country makes a decision.;x
+DECISIONOTHER_HEADER;Herald from%s;x
+DECISIONOTHER_1;%s;x
+DECISIONOTHER_2;They tell us about ;x
+DECISIONOTHER_3;%s;x
+DECISIONOTHER_4;which they recently decided to enact.;x
+DECISIONOTHER_5;;x
+DECISIONOTHER_6;;x
+DECISIONOTHER_LOG;即%s took the decision 劬%s即.;x
+DECISIONOTHER_BTN1;OK;x
+DECISIONOTHER_BTN2;Goto;x
+#;x
+DECISIONMAJOROTHER_SETUP;When another country makes a major decision.;x
+DECISIONMAJOROTHER_HEADER;Herald from%s;x
+DECISIONMAJOROTHER_1;%s;x
+DECISIONMAJOROTHER_2;They tell us about ;x
+DECISIONMAJOROTHER_3;%s;x
+DECISIONMAJOROTHER_4;which they recently decided to enact.;x
+DECISIONMAJOROTHER_5;;x
+DECISIONMAJOROTHER_6;;x
+DECISIONMAJOROTHER_LOG;即%s took the decision 劬%s即.;x
+DECISIONMAJOROTHER_BTN1;OK;x
+DECISIONMAJOROTHER_BTN2;Goto;x
+# New strings for estimating value of buildings #;x
+ALERT_DEL_IMPROVEMENT_VALUE; (即%.2f劬$ monthly/即%.1f劬$ yearly);x
+BUILDING_EFFECTS_LOCAL;即Local Effects:劬\n;x
+BUILDING_EFFECTS_COUNTRY;即Country Effects:劬\n;x
+BE_NOEFFECT_LOCAL;No local effects\n;x
+BE_NOEFFECT_COUNTRY;No country effects\n;x
+BE_MONTHLYTAX;Monthly tax: %.2f$\n;x
+BE_MONTHLYPROD;Monthly production: %.2f$\n;x
+BE_YEARLYINCOME;Total yearly income: %.1f$\n;x
+BE_CENSUSTAX;Yearly census tax: %.1f$\n;x
+BE_MANPOWER;Manpower: %.1f\n;x
+BE_REVOLTRISK;Revolt risk: %s%d\%%\n;x
+BE_INFLATION;Yearly inflation: %s%.3f\%%\n;x
+BE_ARMYBUILD;Army build capacity: %s%d\n;x
+BE_SHIPBUILD;Ship build capacity: %s%d\n;x
+BE_POPGROWTH;Pop growth: %s%.1f\%%\n;x
+BE_FORTLEVEL;Fort level %s%d\n;x
+BE_INVESTMENT;%s investment: %s%d$\n;x
+BE_PROD_EFF;%s%d\%% prod. efficiency\n;x
+BE_TRADE_EFF;%s%d\%% trade efficiency\n;x
+BE_STAB_COST;%s%d\%% stability cost\n;x
+BE_COLONISTS;%s%d yearly colonists\n;x
+BE_NAVY_SUPPORT;%s%d naval support limit\n;x
+BE_ARMY_SUPPORT;%s%d army support limit\n;x
+# New strings for missionary screen;x
+MSW_CONVCUL;If our missionary succeeds in converting this province, the culture will also be converted to our primary culture.;x
+MSW_COST_NOCITY;There is no city to convert here;x
+MSW_COST_BASE;+%d$ base\n;x
+MSW_COST_POP;+%.1f$ from population\n;x
+MSW_COST_DIST;+%d$ distance from capital\n;x
+MSW_COST_BASETAX;+%d$ province base tax\n;x
+MSW_COST_NO_CONNECTION;+%d\%% no land connection\n;x
+MSW_COST_COLONY;%d\%% colony\n;x
+MSW_COST_COLONIAL_CITY_DIFFERENT_CONTINENT;%d\%% colonial city on different continent\n;x
+MSW_COST_INFLATION;+%d\%% inflation\n;
+MSW_TIMEDETAIL;%d months base\n%d months monarch administrative skill\n+%d months distance from capital;x
+MSW_CHANCE_NOCITY;There is no city to convert here;x
+MSW_CHANCE_RELIGION;%s%d from religion\n;x
+MSW_CHANCE_BASETAX;%d province base tax\n;x
+MSW_CHANCE_FORTLEVEL;+%d fort level\n;x
+MSW_CHANCE_POP;%d population\n;x
+MSW_CHANCE_MONARCH;+%d monarch administrative skill\n;x
+MSW_CHANCE_WRONGCULTURE;%d\%% wrong culture\n;x
+# New strings for colonist screen;x
+CCW_COL_COST_BASE;+%.1f$ (base)\n;
+CCW_COL_COST_DISTANCE;+%.1f$ distance\n;
+CCW_COL_COST_COLONYLEVEL;%.1f$ colony level\n;x
+CCW_COL_COST_WILDERNESS;%s%.1f$ province hospitability\n;x
+CCW_COL_COST_TROPICAL;+%.1f$ tropical\n;x
+CCW_COL_COST_INLAND;+%.1f$ inland\n;x
+CCW_COL_COST_ISOLATED;+%.1f$ no neighboring city\n;x
+CCW_COL_COST_DIFFICULTY;%s%.1f$ game difficulty\n;x
+CCW_COL_COST_INFLATION;+%d\%% inflation\n;x
+CCW_COL_CHANCE_BASE;+%d\%% (base)\n;x
+CCW_COL_CHANCE_WILDERNESS;%d\%% wilderness\n;x
+CCW_COL_CHANCE_NATIVES;%d\%% natives\n;x
+CCW_COL_CHANCE_TROPICAL;%d\%% tropical\n;x
+CCW_COL_CHANCE_LEADER;+%d\%% leader bonus\n;x
+CCW_COL_CHANCE_COLONYLEVEL;+%d\%% colony level\n;x
+CCW_COL_CHANCE_TRADINGPOST;+%d\%% trading post\n;x
+CCW_COL_CHANCE_SAME_RELIGION;+%d\%% same religion\n;x
+CCW_COL_CHANCE_SAME_CULTURE;+%d\%% same culture\n;x
+CCW_COL_CHANCE_TOOEARLY;%d\%% current year\n;x
+CCW_COL_CHANCE_EFFICIENCY;+%d\%% production efficiency\n;x
+CCW_COL_CHANCE_TOOMANY;%d\%% too many colonies\n;x
+CCW_COL_CHANCE_TOOFEW;%d\%% colonial attempts\n;x
+CCW_COL_CHANCE_NEIGHBOR;+%d\%% neighboring controlled province\n;x
+CCW_TPOST_COST_BASE;+%.1f$ (base)\n;x
+CCW_TPOST_COST_NATIVES;+%.1f$ natives\n;x
+CCW_TPOST_COST_LEADER;+%.1f$ leader\n;x
+CCW_TPOST_COST_RELIGION;+%.1f$ different religion\n;x
+CCW_TPOST_COST_DIFFICULTY;%s%.1f$ game difficulty\n;x
+CCW_TPOST_COST_TRADINGPOST_MULTIPLIER;%d\%% has trading post\n;x
+CCW_TPOST_COST_TRADINGPOST;%d$ trading post level\n;x
+CCW_TPOST_COST_INFLATION;+%d\%% inflation\n;x
+CCW_TPOST_CHANCE_BASE;+%d\%% (base)\n;x
+CCW_TPOST_CHANCE_NEGOTIATION;%d\%% natives\n;x
+CCW_TPOST_CHANCE_NONATIVES;%d\%% no natives to trade with\n;x
+CCW_TPOST_CHANCE_TROPICAL;%d\%% tropical\n;x
+CCW_TPOST_CHANCE_EFFICIENCY;+%d\%% trade efficiency\n;x
+CCW_TPOST_CHANCE_TRADINGPOST;+%d\%% trading post level\n;x
+CCW_TPOST_CHANCE_WILDERNESS;%d\%% wilderness\n;x
+CCW_TPOST_CHANCE_TOOEARLY;%d\%% current year\n;x
+CCW_TPOST_CHANCE_FEWCITIES;%d\%% too many trading posts\n;x
+CCW_TPOST_CHANCE_MAPPAINT;%d\%% too many small trading posts\n;x
+#;x
+BUTTON_0036;Click to view decisions.;x
+BUTTON_0037;Decisions may give us special bonuses or even allow us to form a new country if we meet the requirements.;x
+TUTORIAL_9_B0_NAME;Decisions;x
+TUTORIAL_9_B0_DESC;During the game you may make certain decisions. These decisions will become visible if you meet certain requirements, and will be available to execute if you meet further requirements. Decisions may grant boosts to your country or might even allow you to form a new country. Click the scroll to the left of the small map to see your potential and available decisions.;x
+TUTORIAL_9_B1_NAME;Potential and Available Decisions;x
+TUTORIAL_9_B1_DESC;In the upper box, you see the decisions that are currently available for your country. You can click them to get detailed information of their effects. In the lower box, you see potential decisions: decisions for which you have fulfilled enough requirements to see, but not enough to enact. Mouse over them to see their requirements, or click them to see more details.\nTo enact one of the available decisions you click it and then click Accept in the right-hand window that opens.;x
+HEAD_DECISION;Decisions;x
+DECAVAILABLE;Available Decisions;x
+DECNOTAVAILABLE;Potential Decisions;x
+ALERT_MAJOR_DECISION;Major decisions available;x
+ALERT_DEL_MAJOR_DECISION;Available major decisions:\n即;x
+# New strings for randomness in decision commands;x
+EE_RANDOM_PROV;a random province;x
+EE_RANDOM_CAPITAL;the capital;x
+EE_RANDOM_LAST_RANDOM;the previous random province;x
+EE_RANDOM_DISTINCT;a different random province;x
+EE_RANDOM_NOT_CAPITAL;a non-capital province;x
+EE_RANDOM_DISTINCT_NOT_CAPITAL;a different non-capital province;x
+EE_RANDOM_UNKNOWN;an unknown random province;x
+EE_RANDOM_COUNTRY;a random country;x
+EE_RANDOM_LAST_RANDOM_COUNTRY;the previous random country;x
+EE_RANDOM_DISTINCT_COUNTRY;a different random country;x
+EE_RANDOM_EMPEROR;the Holy Roman Emperor;x
+EE_RANDOM_ELECTOR;a random HRE Elector;x
+EE_RANDOM_DISTINCT_ELECTOR;a different random HRE Elector;x
+EE_RANDOM_OVERLORD;the overlord;x
+EE_RANDOM_SAME_RELIGION;a random %s country;x
+EE_RANDOM_SAME_RELIGIOUS_GROUP;a random %s country;x
+EE_RANDOM_UNKNOWN_COUNTRY;an unknown random country;x
+# note that the WHERE strings must begin with a space;x
+EE_WHERE; in %s;x
+EE_WHERE_NEIGHBOR; neighboring us;x
+EE_WHERE_COASTAL; on the coast;x
+EE_WHERE_UNKNOWN; in (unknown continent, region, or area);x
+# New string for land tech speed;x
+EFFECT_LAND_MOVEMENT;%s%d\%% movement speed\n;x
+# New strings for HRE window;x
+HEAD_HRE;Holy Roman Empire;x
+HRE_NOEMPEROR;No Emperor;x
+HRE_NOELECTORS;No Electors;x
+HRE_ELECTORSHEAD;Electors (%d/%d supportive):;x
+HRE_ELECTORSHEAD_NOEMPEROR;Electors:;x
+HRE_SUPPORTHEAD;Current Support:;x
+HRE_RELATIONS;%s Elector Relations;x
+HRE_ROLSHIELDNOEMPEROR;There is no Holy Roman Emperor;x
+HRE_ROLSHIELDNOSUPPORT;%s gets no Imperial benefits because no Electors are supportive;x
+HRE_ROLSHIELDSUPPORT;%s gets the following benefits from having %d supportive Electors:\n%s%d maximum manpower\n%s%d$ end of year income\n%d\%% technology costs\n%d\%% stability costs\n\nThe Emperor also has automatic military access through every HRE province when at war.;x
+HRE_ROLELECTOR;%s has %s%d relations with %s (must be at least 100 to be considered supportive)\n;x
+HRE_ROLELECTOREMPEROR;%s is the Holy Roman Emperor\n;x
+HRE_ROLELECTORVOTES;%s has %d Electoral votes;x
+HRE_ROLSUPPORT;%s has %d total support from Electors (diplomatic relations multiplied by number of Electoral votes).\nNote that randomness of up to %d may be applied during an actual election.\n;x
+HRE_ROLSUPPORTSPECIAL;%s also receives a special bonus of %d support.;x
+HRE_ROLINFO;To be eligible for the Imperial election, a country must be: either Catholic or a member state of the HRE, not a republic or theocracy (e.g. a bishopric or holy order), and must not have a ruling council or interregnum as monarch.;x
+# New strings for rebel shield mouseover in province details window;x
+HPREB_INDEP;\nThis faction may declare independence starting in %s %d.;x
+HPREB_INDEPPOSSIBLE; Possible countries: ;x
+HPREB_INDEPNOPOSSIBLE;\nThis faction will NOT declare independence because there are no possible revolters here.;x
+HPREB_INDEPNO;\nThis faction will NOT declare independence.;x
+HPREB_DEFECT;\nThis faction may defect starting in %s %d.;x
+HPREB_DEFECTNO;\nThis faction will NOT defect.;x
+HPREB_TOPPLE;\nThis faction may overthrow the government if it controls the capital.;x
+HPREB_TOPPLENO;\nThis faction will NOT overthrow the government, but may assist another rebel faction in doing so.;x
+# New indicator for straits in sea window;x
+SEA_STRAIT;There is a strait here to represent natural elements or defences which are likely to aid the defender. Gain control of this sea zone with a fleet (or drive enemy fleets away) in order to successfully invade adjacent provinces.\n;x
+SEA_STRAIT_BETWEEN;Strait between 即%s and %s劬\n;x
+SEA_CHOKEPOINT;The natural properties of this coastal sea zone make it easier for fleets to be spotted and intercepted. Controlling any of the following provinces adjacent to this sea zone will result in a greatly increased chance of naval combat:\n;x
+SEA_CHOKEPOINT_CONTROL;即%s劬\n;x
+# New commands for leaders;x
+EE_GENERAL;Gain general in %s with up to %d values.\n;x
+EE_ADMIRAL;Gain admiral in %s with up to %d values.\n;x
+EE_PRIVATEER;Gain privateer in %s with up to %d values.\n;x
+EE_DISBANDREBELS;Disband all rebels in %s.\n;x
+# New indicators for leader types;x
+UNITLEADERHISTORICAL;This leader is scripted;x
+UNITLEADERGENERATED;This leader is randomly generated;x
+# GOTO button for religion change;x
+OTHERRELIGION_BTN2;Goto;x
+# New for province revolt risk rollover;x
+RRISK_REBEL_FACTIONS;\n \n即Possible rebels:劬\n;x
+#;x
+FEBTN_RANDOM;RANDOM COUNTRY;x
+#;x
+WARDESC_NOPROVSBUTNOTCOMPLETE;\nThey have been completely defeated by a third party;x
+COWROLLMODIFIERHEAD;Current Modifiers:;x
+COWROLLPOLICY;即%s%d劬 from domestic policies;x
+COWROLLMODIFIER;即%s%d劬 until 即%s %d劬 from events/decisions;x
+#;x
+ALERT_LOSING_ELECTION;We do not have enough support to retain the title of Emperor if our monarch were to die;x
+#;x
+SETRALLY;Set Rally Point;x
+SETRALLYROLAND;Click to set a rally point for all newly created armies to travel to;x
+SETRALLYROSEA;Click to set a rally point for all newly created ships to travel to;x
+RALLY_HEAD_LAND;CLICK TO SELECT A RALLY POINT FOR NEW ARMIES\n \nThe rally point must be connected to this province by owned land.;x
+RALLY_HEAD_SEA;CLICK TO SELECT A RALLY POINT FOR NEW FLEETS\n \nThe rally point must be either an owned port or a sea zone.;x
+RALLY_MID;Select this province to clear the rally point.;x
+RALLY_CURRENT;Current rally point:\n即%s劬;x
+RALLY_CURRENT_NONE;No rally point selected;x
+#-----------------------------------------------------------------------------------------------;x
+#;x
+#EOF;x

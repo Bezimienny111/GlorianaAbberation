@@ -1,0 +1,6198 @@
+###################################################
+### events for the amerindian tribal nations	###
+### by 'Ayeshteni' Alex J Fowler		###
+### For the New AJF scenario			###
+###################################################
+
+#unwanted European influences
+event = {
+
+	id = 121000
+	trigger = {
+		year = 1500
+		OR = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+		}
+		continent = America
+		domestic = { type = innovative value = 8 }
+		any_neighbour = { continent = europe }
+		any_neighbour = { religion = catholic }
+		}
+	random = yes
+	name = "The Whiteman's Influence Grows"
+	desc = "The Whiteman from across the sea has always been one to press their influence on our people and dilute our ancient and ancestral ways. Alas, more of our people listen to the tongues of these whitemen and heed their words."
+	style = 0
+
+	action_a = {
+		name = "Curses!"
+		command = { type = infra value = 150 }
+		command = { type = trade value = 100 }
+		command = { type = land value = 150 }
+		command = { type = naval value = 50 }
+		command = { type = stability value = -1 }
+		command = { type = provincereligion which = -1 value = catholic }
+		command = { type = revoltrisk which = 12 value = 3 }
+	}
+}
+
+#unwanted European influences
+event = {
+
+	id = 121001
+	trigger = {
+		year = 1500
+		OR = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+		}
+		continent = America
+		domestic = { type = innovative value = 4 }
+		NOT = {
+			domestic = { type = innovative value = 8 }
+			}
+		any_neighbour = { continent = europe }
+		any_neighbour = { religion = catholic }
+		}
+	random = yes
+	name = "The Whiteman's Influence Grows"
+	desc = "The Whiteman from across the sea has always been one to press their influence on our people and dilute our ancient and ancestral ways. Alas, more of our people listen to the tongues of these whitemen and heed their words."
+	style = 0
+
+	action_a = {
+		name = "Curses!"
+		command = { type = infra value = 100 }
+		command = { type = trade value = 50 }
+		command = { type = land value = 100 }
+		command = { type = naval value = 25 }
+		command = { type = stability value = -2 }
+		command = { type = provincereligion which = -1 value = catholic }
+		command = { type = revoltrisk which = 24 value = 5 }
+	}
+}
+
+#unwanted European influences
+event = {
+
+	id = 121002
+	trigger = {
+		year = 1500
+		OR = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+		}
+		continent = America
+		NOT = {
+			domestic = { type = innovative value = 4 }
+			}
+		any_neighbour = { continent = europe }
+		any_neighbour = { religion = catholic }
+		}
+	random = yes
+	name = "The Whiteman's Influence Grows"
+	desc = "The Whiteman from across the sea has always been one to press their influence on our people and dilute our ancient and ancestral ways. Alas, more of our people listen to the tongues of these whitemen and heed their words."
+	style = 0
+
+	action_a = {
+		name = "Curses!"
+		command = { type = infra value = 50 }
+		command = { type = trade value = 25 }
+		command = { type = land value = 50 }
+		command = { type = naval value = 12 }
+		command = { type = stability value = -3 }
+		command = { type = provincereligion which = -1 value = catholic }
+		command = { type = revoltrisk which = 36 value = 6 }
+	}
+}
+
+#unwanted European influences
+event = {
+
+	id = 121003
+	trigger = {
+		year = 1500
+		OR = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+		}
+		continent = America
+		domestic = { type = innovative value = 8 }
+		any_neighbour = { continent = europe }
+		any_neighbour = { religion = protestant }
+		}
+	random = yes
+	name = "The Whiteman's Influence Grows"
+	desc = "The Whiteman from across the sea has always been one to press their influence on our people and dilute our ancient and ancestral ways. Alas, more of our people listen to the tongues of these whitemen and heed their words."
+	style = 0
+
+	action_a = {
+		name = "Curses!"
+		command = { type = infra value = 150 }
+		command = { type = trade value = 100 }
+		command = { type = land value = 150 }
+		command = { type = naval value = 50 }
+		command = { type = stability value = -1 }
+		command = { type = provincereligion which = -1 value = protestant }
+		command = { type = revoltrisk which = 12 value = 3 }
+	}
+}
+
+#unwanted European influences
+event = {
+
+	id = 121004
+	trigger = {
+		year = 1500
+		OR = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+		}
+		continent = America
+		domestic = { type = innovative value = 4 }
+		NOT = {
+			domestic = { type = innovative value = 8 }
+			}
+		any_neighbour = { continent = europe }
+		any_neighbour = { religion = protestant }
+		}
+	random = yes
+	name = "The Whiteman's Influence Grows"
+	desc = "The Whiteman from across the sea has always been one to press their influence on our people and dilute our ancient and ancestral ways. Alas, more of our people listen to the tongues of these whitemen and heed their words."
+	style = 0
+
+	action_a = {
+		name = "Curses!"
+		command = { type = infra value = 100 }
+		command = { type = trade value = 50 }
+		command = { type = land value = 100 }
+		command = { type = naval value = 25 }
+		command = { type = stability value = -2 }
+		command = { type = provincereligion which = -1 value = protestant }
+		command = { type = revoltrisk which = 24 value = 5 }
+	}
+}
+
+#unwanted European influences
+event = {
+
+	id = 121005
+	trigger = {
+		year = 1500
+		OR = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+		}
+		continent = America
+		NOT = {
+			domestic = { type = innovative value = 4 }
+			}
+		any_neighbour = { continent = europe }
+		any_neighbour = { religion = protestant }
+		}
+	random = yes
+	name = "The Whiteman's Influence Grows"
+	desc = "The Whiteman from across the sea has always been one to press their influence on our people and dilute our ancient and ancestral ways. Alas, more of our people listen to the tongues of these whitemen and heed their words."
+	style = 0
+
+	action_a = {
+		name = "Curses!"
+		command = { type = infra value = 50 }
+		command = { type = trade value = 25 }
+		command = { type = land value = 50 }
+		command = { type = naval value = 12 }
+		command = { type = stability value = -3 }
+		command = { type = provincereligion which = -1 value = protestant }
+		command = { type = revoltrisk which = 36 value = 6 }
+	}
+}
+
+#unwanted European influences
+event = {
+
+	id = 121006
+	trigger = {
+		year = 1500
+		OR = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+		}
+		continent = America
+		domestic = { type = innovative value = 8 }
+		any_neighbour = { religion = reformed }
+		OR = {
+			neighbour = USA
+			any_neighbour = { continent = europe }
+			}
+		}
+	random = yes
+	name = "The Whiteman's Influence Grows"
+	desc = "The Whiteman from across the sea has always been one to press their influence on our people and dilute our ancient and ancestral ways. Alas, more of our people listen to the tongues of these whitemen and heed their words."
+	style = 0
+
+	action_a = {
+		name = "Curses!"
+		command = { type = infra value = 150 }
+		command = { type = trade value = 100 }
+		command = { type = land value = 150 }
+		command = { type = naval value = 50 }
+		command = { type = stability value = -1 }
+		command = { type = provincereligion which = -1 value = reformed }
+		command = { type = revoltrisk which = 12 value = 3 }
+	}
+}
+
+#unwanted European influences
+event = {
+
+	id = 121007
+	trigger = {
+		year = 1500
+		OR = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+		}
+		continent = America
+		domestic = { type = innovative value = 4 }
+		NOT = {
+			domestic = { type = innovative value = 8 }
+			}
+		any_neighbour = { religion = reformed }
+		OR = {
+			neighbour = USA
+			any_neighbour = { continent = europe }
+			}
+		}
+	random = yes
+	name = "The Whiteman's Influence Grows"
+	desc = "The Whiteman from across the sea has always been one to press their influence on our people and dilute our ancient and ancestral ways. Alas, more of our people listen to the tongues of these whitemen and heed their words."
+	style = 0
+
+	action_a = {
+		name = "Curses!"
+		command = { type = infra value = 100 }
+		command = { type = trade value = 50 }
+		command = { type = land value = 100 }
+		command = { type = naval value = 25 }
+		command = { type = stability value = -2 }
+		command = { type = provincereligion which = -1 value = reformed }
+		command = { type = revoltrisk which = 24 value = 5 }
+	}
+}
+
+#unwanted European influences
+event = {
+
+	id = 121008
+	trigger = {
+		year = 1500
+		OR = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+		}
+		continent = America
+		NOT = {
+			domestic = { type = innovative value = 4 }
+			}
+		any_neighbour = { religion = reformed }
+		OR = {
+			neighbour = USA
+			any_neighbour = { continent = europe }
+			}
+		}
+	random = yes
+	name = "The Whiteman's Influence Grows"
+	desc = "The Whiteman from across the sea has always been one to press their influence on our people and dilute our ancient and ancestral ways. Alas, more of our people listen to the tongues of these whitemen and heed their words."
+	style = 0
+
+	action_a = {
+		name = "Curses!"
+		command = { type = infra value = 50 }
+		command = { type = trade value = 25 }
+		command = { type = land value = 50 }
+		command = { type = naval value = 12 }
+		command = { type = stability value = -3 }
+		command = { type = provincereligion which = -1 value = reformed }
+		command = { type = revoltrisk which = 36 value = 6 }
+	}
+}
+
+#unwanted European influences
+event = {
+
+	id = 121009
+	trigger = {
+		year = 1500
+		OR = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+		}
+		continent = America
+		domestic = { type = innovative value = 8 }
+		any_neighbour = { continent = europe }
+		any_neighbour = { religion = catholic }
+		}
+	random = yes
+	name = "The Whiteman's Influence Grows"
+	desc = "The Whiteman from across the sea has always been one to press their influence on our people and dilute our ancient and ancestral ways. Alas, more of our people listen to the tongues of these whitemen and heed their words."
+	style = 0
+
+	action_a = {
+		name = "Curses!"
+		command = { type = infra value = 150 }
+		command = { type = trade value = 100 }
+		command = { type = land value = 150 }
+		command = { type = naval value = 50 }
+		command = { type = stability value = -1 }
+		command = { type = provincereligion which = -1 value = catholic }
+		command = { type = revoltrisk which = 12 value = 3 }
+	}
+}
+
+#unwanted European influences
+event = {
+
+	id = 121010
+	trigger = {
+		year = 1500
+		OR = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+		}
+		continent = America
+		domestic = { type = innovative value = 4 }
+		NOT = {
+			domestic = { type = innovative value = 8 }
+			}
+		any_neighbour = { continent = europe }
+		any_neighbour = { religion = catholic }
+		}
+	random = yes
+	name = "The Whiteman's Influence Grows"
+	desc = "The Whiteman from across the sea has always been one to press their influence on our people and dilute our ancient and ancestral ways. Alas, more of our people listen to the tongues of these whitemen and heed their words."
+	style = 0
+
+	action_a = {
+		name = "Curses!"
+		command = { type = infra value = 100 }
+		command = { type = trade value = 50 }
+		command = { type = land value = 100 }
+		command = { type = naval value = 25 }
+		command = { type = stability value = -2 }
+		command = { type = provincereligion which = -1 value = catholic }
+		command = { type = revoltrisk which = 24 value = 5 }
+	}
+}
+
+#unwanted European influences
+event = {
+
+	id = 121011
+	trigger = {
+		year = 1500
+		OR = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+		}
+		continent = America
+		NOT = {
+			domestic = { type = innovative value = 4 }
+			}
+		any_neighbour = { continent = europe }
+		any_neighbour = { religion = catholic }
+		}
+	random = yes
+	name = "The Whiteman's Influence Grows"
+	desc = "The Whiteman from across the sea has always been one to press their influence on our people and dilute our ancient and ancestral ways. Alas, more of our people listen to the tongues of these whitemen and heed their words."
+	style = 0
+
+	action_a = {
+		name = "Curses!"
+		command = { type = infra value = 50 }
+		command = { type = trade value = 25 }
+		command = { type = land value = 50 }
+		command = { type = naval value = 12 }
+		command = { type = stability value = -3 }
+		command = { type = provincereligion which = -1 value = catholic }
+		command = { type = revoltrisk which = 36 value = 6 }
+	}
+}
+
+#unwanted European influences
+event = {
+
+	id = 121012
+	trigger = {
+		year = 1500
+		OR = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+		}
+		continent = America
+		domestic = { type = innovative value = 8 }
+		any_neighbour = { continent = europe }
+		any_neighbour = { religion = protestant }
+		}
+	random = yes
+	name = "The Whiteman's Influence Grows"
+	desc = "The Whiteman from across the sea has always been one to press their influence on our people and dilute our ancient and ancestral ways. Alas, more of our people listen to the tongues of these whitemen and heed their words."
+	style = 0
+
+	action_a = {
+		name = "Curses!"
+		command = { type = infra value = 150 }
+		command = { type = trade value = 100 }
+		command = { type = land value = 150 }
+		command = { type = naval value = 50 }
+		command = { type = stability value = -1 }
+		command = { type = provincereligion which = -1 value = protestant }
+		command = { type = revoltrisk which = 12 value = 3 }
+	}
+}
+
+#unwanted European influences
+event = {
+
+	id = 121013
+	trigger = {
+		year = 1500
+		OR = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+		}
+		continent = America
+		domestic = { type = innovative value = 4 }
+		NOT = {
+			domestic = { type = innovative value = 8 }
+			}
+		any_neighbour = { continent = europe }
+		any_neighbour = { religion = protestant }
+		}
+	random = yes
+	name = "The Whiteman's Influence Grows"
+	desc = "The Whiteman from across the sea has always been one to press their influence on our people and dilute our ancient and ancestral ways. Alas, more of our people listen to the tongues of these whitemen and heed their words."
+	style = 0
+
+	action_a = {
+		name = "Curses!"
+		command = { type = infra value = 100 }
+		command = { type = trade value = 50 }
+		command = { type = land value = 100 }
+		command = { type = naval value = 25 }
+		command = { type = stability value = -2 }
+		command = { type = provincereligion which = -1 value = protestant }
+		command = { type = revoltrisk which = 24 value = 5 }
+	}
+}
+
+#unwanted European influences
+event = {
+
+	id = 121014
+	trigger = {
+		year = 1500
+		OR = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+		}
+		continent = America
+		NOT = {
+			domestic = { type = innovative value = 4 }
+			}
+		any_neighbour = { continent = europe }
+		any_neighbour = { religion = protestant }
+		}
+	random = yes
+	name = "The Whiteman's Influence Grows"
+	desc = "The Whiteman from across the sea has always been one to press their influence on our people and dilute our ancient and ancestral ways. Alas, more of our people listen to the tongues of these whitemen and heed their words."
+	style = 0
+
+	action_a = {
+		name = "Curses!"
+		command = { type = infra value = 50 }
+		command = { type = trade value = 25 }
+		command = { type = land value = 50 }
+		command = { type = naval value = 12 }
+		command = { type = stability value = -3 }
+		command = { type = provincereligion which = -1 value = protestant }
+		command = { type = revoltrisk which = 36 value = 6 }
+	}
+}
+
+#unwanted European influences
+event = {
+
+	id = 121015
+	trigger = {
+		year = 1500
+		OR = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+		}
+		continent = America
+		domestic = { type = innovative value = 8 }
+		any_neighbour = { religion = reformed }
+		OR = {
+			neighbour = USA
+			any_neighbour = { continent = europe }
+			}
+		}
+	random = yes
+	name = "The Whiteman's Influence Grows"
+	desc = "The Whiteman from across the sea has always been one to press their influence on our people and dilute our ancient and ancestral ways. Alas, more of our people listen to the tongues of these whitemen and heed their words."
+	style = 0
+
+	action_a = {
+		name = "Curses!"
+		command = { type = infra value = 150 }
+		command = { type = trade value = 100 }
+		command = { type = land value = 150 }
+		command = { type = naval value = 50 }
+		command = { type = stability value = -1 }
+		command = { type = provincereligion which = -1 value = reformed }
+		command = { type = revoltrisk which = 12 value = 3 }
+	}
+}
+
+#unwanted European influences
+event = {
+
+	id = 121016
+	trigger = {
+		year = 1500
+		OR = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+		}
+		continent = America
+		domestic = { type = innovative value = 4 }
+		NOT = {
+			domestic = { type = innovative value = 8 }
+			}
+		any_neighbour = { religion = reformed }
+		OR = {
+			neighbour = USA
+			any_neighbour = { continent = europe }
+			}
+		}
+	random = yes
+	name = "The Whiteman's Influence Grows"
+	desc = "The Whiteman from across the sea has always been one to press their influence on our people and dilute our ancient and ancestral ways. Alas, more of our people listen to the tongues of these whitemen and heed their words."
+	style = 0
+
+	action_a = {
+		name = "Curses!"
+		command = { type = infra value = 100 }
+		command = { type = trade value = 50 }
+		command = { type = land value = 100 }
+		command = { type = naval value = 25 }
+		command = { type = stability value = -2 }
+		command = { type = provincereligion which = -1 value = reformed }
+		command = { type = revoltrisk which = 24 value = 5 }
+	}
+}
+
+#unwanted European influences
+event = {
+
+	id = 121017
+	trigger = {
+		year = 1500
+		OR = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+		}
+		continent = America
+		NOT = {
+			domestic = { type = innovative value = 4 }
+			}
+		any_neighbour = { religion = reformed }
+		OR = {
+			neighbour = USA
+			any_neighbour = { continent = europe }
+			}
+		}
+	random = yes
+	name = "The Whiteman's Influence Grows"
+	desc = "The Whiteman from across the sea has always been one to press their influence on our people and dilute our ancient and ancestral ways. Alas, more of our people listen to the tongues of these whitemen and heed their words."
+	style = 0
+
+	action_a = {
+		name = "Curses!"
+		command = { type = infra value = 50 }
+		command = { type = trade value = 25 }
+		command = { type = land value = 50 }
+		command = { type = naval value = 12 }
+		command = { type = stability value = -3 }
+		command = { type = provincereligion which = -1 value = reformed }
+		command = { type = revoltrisk which = 36 value = 6 }
+	}
+}
+
+#the whiteman also brings....DISEASE!!!
+event = {
+
+	id = 121018
+	trigger = {
+		year = 1500
+		continent = America
+		OR = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+		}
+		any_neighbour = { continent = europe }
+		}
+	random = yes
+	name = "The Whiteman's Curse"
+	desc = "With the arrival of the Europeans came death. Often as innocent as the common cold or as grave as the pox, the Native American Indians were vulnerable to the Whiteman's diseases. Where the Whiteman went, death was sure to follow. Many Amerindian communities were decimated by the diseases brought by the Europeans."
+	style = 0
+
+	action_a = {
+		name = "Curses!"
+		command = { type = stability value = -1 }
+		command = { type = manpower value = -25 }
+		command = { type = desertion which = -2 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 1000 }
+		command = { type = fortress which = -1 value = -1 }
+		command = { type = fortress which = -1 value = -1 }
+		command = { type = population which = -2 value = -10000 }
+		command = { type = population which = -1 value = -5000 }
+		command = { type = population which = -1 value = -5000 }
+		command = { type = population which = -1 value = -5000 }
+	}
+}
+
+#the whiteman also brings....DISEASE!!!
+event = {
+
+	id = 121019
+	trigger = {
+		year = 1500
+		continent = America
+		OR = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+		}
+		any_neighbour = { continent = europe }
+		}
+	random = yes
+	name = "The Whiteman's Curse"
+	desc = "With the arrival of the Europeans came death. Often as innocent as the common cold or as grave as the pox, the Native American Indians were vulnerable to the Whiteman's diseases. Where the Whiteman went, death was sure to follow. Many Amerindian communities were decimated by the diseases brought by the Europeans."
+	style = 0
+
+	action_a = {
+		name = "Curses!"
+		command = { type = stability value = -1 }
+		command = { type = manpower value = -25 }
+		command = { type = desertion which = -2 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 1000 }
+		command = { type = fortress which = -1 value = -1 }
+		command = { type = fortress which = -1 value = -1 }
+		command = { type = population which = -2 value = -10000 }
+		command = { type = population which = -1 value = -5000 }
+		command = { type = population which = -1 value = -5000 }
+		command = { type = population which = -1 value = -5000 }
+	}
+}
+
+#the whiteman also brings....DISEASE!!!
+event = {
+
+	id = 121020
+	trigger = {
+		year = 1500
+		continent = America
+		OR = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+		}
+		any_neighbour = { continent = europe }
+		}
+	random = yes
+	name = "The Whiteman's Curse"
+	desc = "With the arrival of the Europeans came death. Often as innocent as the common cold or as grave as the pox, the Native American Indians were vulnerable to the Whiteman's diseases. Where the Whiteman went, death was sure to follow. Many Amerindian communities were decimated by the diseases brought by the Europeans."
+	style = 0
+
+	action_a = {
+		name = "Curses!"
+		command = { type = stability value = -1 }
+		command = { type = manpower value = -25 }
+		command = { type = desertion which = -2 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 1000 }
+		command = { type = fortress which = -1 value = -1 }
+		command = { type = fortress which = -1 value = -1 }
+		command = { type = population which = -2 value = -10000 }
+		command = { type = population which = -1 value = -5000 }
+		command = { type = population which = -1 value = -5000 }
+		command = { type = population which = -1 value = -5000 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121021
+	trigger = {
+		year = 1500
+		owned = { province = 1474 data = -1 }
+		control = { province = 1474 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 1474 data = pagan }
+			provincereligion = { province = 1474 data = thunderbird }
+			provincereligion = { province = 1474 data = gorgetism }
+			provincereligion = { province = 1474 data = medicinewheel }
+			provincereligion = { province = 1474 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 1474 value = -1 }
+		command = { type = conversion which = 1474 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121022
+	trigger = {
+		year = 1500
+		owned = { province = 1475 data = -1 }
+		control = { province = 1475 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 1475 data = pagan }
+			provincereligion = { province = 1475 data = thunderbird }
+			provincereligion = { province = 1475 data = gorgetism }
+			provincereligion = { province = 1475 data = medicinewheel }
+			provincereligion = { province = 1475 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 1475 value = -1 }
+		command = { type = conversion which = 1475 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121023
+	trigger = {
+		year = 1500
+		owned = { province = 1476 data = -1 }
+		control = { province = 1476 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 1476 data = pagan }
+			provincereligion = { province = 1476 data = thunderbird }
+			provincereligion = { province = 1476 data = gorgetism }
+			provincereligion = { province = 1476 data = medicinewheel }
+			provincereligion = { province = 1476 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 1476 value = -1 }
+		command = { type = conversion which = 1476 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121024
+	trigger = {
+		year = 1500
+		owned = { province = 11 data = -1 }
+		control = { province = 11 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 11 data = pagan }
+			provincereligion = { province = 11 data = thunderbird }
+			provincereligion = { province = 11 data = gorgetism }
+			provincereligion = { province = 11 data = medicinewheel }
+			provincereligion = { province = 11 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 11 value = -1 }
+		command = { type = conversion which = 11 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121025
+	trigger = {
+		year = 1500
+		owned = { province = 14 data = -1 }
+		control = { province = 14 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 14 data = pagan }
+			provincereligion = { province = 14 data = thunderbird }
+			provincereligion = { province = 14 data = gorgetism }
+			provincereligion = { province = 14 data = medicinewheel }
+			provincereligion = { province = 14 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 14 value = -1 }
+		command = { type = conversion which = 14 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121026
+	trigger = {
+		year = 1500
+		owned = { province = 16 data = -1 }
+		control = { province = 16 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 16 data = pagan }
+			provincereligion = { province = 16 data = thunderbird }
+			provincereligion = { province = 16 data = gorgetism }
+			provincereligion = { province = 16 data = medicinewheel }
+			provincereligion = { province = 16 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 16 value = -1 }
+		command = { type = conversion which = 16 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121027
+	trigger = {
+		year = 1500
+		owned = { province = 18 data = -1 }
+		control = { province = 18 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 18 data = pagan }
+			provincereligion = { province = 18 data = thunderbird }
+			provincereligion = { province = 18 data = gorgetism }
+			provincereligion = { province = 18 data = medicinewheel }
+			provincereligion = { province = 18 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 18 value = -1 }
+		command = { type = conversion which = 18 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121028
+	trigger = {
+		year = 1500
+		owned = { province = 22 data = -1 }
+		control = { province = 22 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 22 data = pagan }
+			provincereligion = { province = 22 data = thunderbird }
+			provincereligion = { province = 22 data = gorgetism }
+			provincereligion = { province = 22 data = medicinewheel }
+			provincereligion = { province = 22 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 22 value = -1 }
+		command = { type = conversion which = 22 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121029
+	trigger = {
+		year = 1500
+		owned = { province = 40 data = -1 }
+		control = { province = 40 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 40 data = pagan }
+			provincereligion = { province = 40 data = thunderbird }
+			provincereligion = { province = 40 data = gorgetism }
+			provincereligion = { province = 40 data = medicinewheel }
+			provincereligion = { province = 40 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 40 value = -1 }
+		command = { type = conversion which = 40 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121030
+	trigger = {
+		year = 1500
+		owned = { province = 42 data = -1 }
+		control = { province = 42 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 42 data = pagan }
+			provincereligion = { province = 42 data = thunderbird }
+			provincereligion = { province = 42 data = gorgetism }
+			provincereligion = { province = 42 data = medicinewheel }
+			provincereligion = { province = 42 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 42 value = -1 }
+		command = { type = conversion which = 42 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121031
+	trigger = {
+		year = 1500
+		owned = { province = 1480 data = -1 }
+		control = { province = 1480 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 1480 data = pagan }
+			provincereligion = { province = 1480 data = thunderbird }
+			provincereligion = { province = 1480 data = gorgetism }
+			provincereligion = { province = 1480 data = medicinewheel }
+			provincereligion = { province = 1480 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 1480 value = -1 }
+		command = { type = conversion which = 1480 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121032
+	trigger = {
+		year = 1500
+		owned = { province = 1481 data = -1 }
+		control = { province = 1481 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 1481 data = pagan }
+			provincereligion = { province = 1481 data = thunderbird }
+			provincereligion = { province = 1481 data = gorgetism }
+			provincereligion = { province = 1481 data = medicinewheel }
+			provincereligion = { province = 1481 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 1481 value = -1 }
+		command = { type = conversion which = 1481 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121033
+	trigger = {
+		year = 1500
+		owned = { province = 44 data = -1 }
+		control = { province = 44 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 44 data = pagan }
+			provincereligion = { province = 44 data = thunderbird }
+			provincereligion = { province = 44 data = gorgetism }
+			provincereligion = { province = 44 data = medicinewheel }
+			provincereligion = { province = 44 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 44 value = -1 }
+		command = { type = conversion which = 44 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121034
+	trigger = {
+		year = 1500
+		owned = { province = 51 data = -1 }
+		control = { province = 51 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 51 data = pagan }
+			provincereligion = { province = 51 data = thunderbird }
+			provincereligion = { province = 51 data = gorgetism }
+			provincereligion = { province = 51 data = medicinewheel }
+			provincereligion = { province = 51 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 51 value = -1 }
+		command = { type = conversion which = 51 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121035
+	trigger = {
+		year = 1500
+		owned = { province = 57 data = -1 }
+		control = { province = 57 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 57 data = pagan }
+			provincereligion = { province = 57 data = thunderbird }
+			provincereligion = { province = 57 data = gorgetism }
+			provincereligion = { province = 57 data = medicinewheel }
+			provincereligion = { province = 57 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 57 value = -1 }
+		command = { type = conversion which = 57 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121036
+	trigger = {
+		year = 1500
+		owned = { province = 58 data = -1 }
+		control = { province = 58 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 58 data = pagan }
+			provincereligion = { province = 58 data = thunderbird }
+			provincereligion = { province = 58 data = gorgetism }
+			provincereligion = { province = 58 data = medicinewheel }
+			provincereligion = { province = 58 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 58 value = -1 }
+		command = { type = conversion which = 58 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121037
+	trigger = {
+		year = 1500
+		owned = { province = 52 data = -1 }
+		control = { province = 52 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 52 data = pagan }
+			provincereligion = { province = 52 data = thunderbird }
+			provincereligion = { province = 52 data = gorgetism }
+			provincereligion = { province = 52 data = medicinewheel }
+			provincereligion = { province = 52 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 52 value = -1 }
+		command = { type = conversion which = 52 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121038
+	trigger = {
+		year = 1500
+		owned = { province = 53 data = -1 }
+		control = { province = 53 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 53 data = pagan }
+			provincereligion = { province = 53 data = thunderbird }
+			provincereligion = { province = 53 data = gorgetism }
+			provincereligion = { province = 53 data = medicinewheel }
+			provincereligion = { province = 53 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 53 value = -1 }
+		command = { type = conversion which = 53 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121039
+	trigger = {
+		year = 1500
+		owned = { province = 1477 data = -1 }
+		control = { province = 1477 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 1477 data = pagan }
+			provincereligion = { province = 1477 data = thunderbird }
+			provincereligion = { province = 1477 data = gorgetism }
+			provincereligion = { province = 1477 data = medicinewheel }
+			provincereligion = { province = 1477 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 1477 value = -1 }
+		command = { type = conversion which = 1477 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121040
+	trigger = {
+		year = 1500
+		owned = { province = 1478 data = -1 }
+		control = { province = 1478 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 1478 data = pagan }
+			provincereligion = { province = 1478 data = thunderbird }
+			provincereligion = { province = 1478 data = gorgetism }
+			provincereligion = { province = 1478 data = medicinewheel }
+			provincereligion = { province = 1478 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 1478 value = -1 }
+		command = { type = conversion which = 1478 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121041
+	trigger = {
+		year = 1500
+		owned = { province = 1479 data = -1 }
+		control = { province = 1479 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 1479 data = pagan }
+			provincereligion = { province = 1479 data = thunderbird }
+			provincereligion = { province = 1479 data = gorgetism }
+			provincereligion = { province = 1479 data = medicinewheel }
+			provincereligion = { province = 1479 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 1479 value = -1 }
+		command = { type = conversion which = 1479 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121042
+	trigger = {
+		year = 1500
+		owned = { province = 19 data = -1 }
+		control = { province = 19 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 19 data = pagan }
+			provincereligion = { province = 19 data = thunderbird }
+			provincereligion = { province = 19 data = gorgetism }
+			provincereligion = { province = 19 data = medicinewheel }
+			provincereligion = { province = 19 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 19 value = -1 }
+		command = { type = conversion which = 19 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121043
+	trigger = {
+		year = 1500
+		owned = { province = 48 data = -1 }
+		control = { province = 48 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 48 data = pagan }
+			provincereligion = { province = 48 data = thunderbird }
+			provincereligion = { province = 48 data = gorgetism }
+			provincereligion = { province = 48 data = medicinewheel }
+			provincereligion = { province = 48 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 48 value = -1 }
+		command = { type = conversion which = 48 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121044
+	trigger = {
+		year = 1500
+		owned = { province = 54 data = -1 }
+		control = { province = 54 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 54 data = pagan }
+			provincereligion = { province = 54 data = thunderbird }
+			provincereligion = { province = 54 data = gorgetism }
+			provincereligion = { province = 54 data = medicinewheel }
+			provincereligion = { province = 54 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 54 value = -1 }
+		command = { type = conversion which = 54 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121045
+	trigger = {
+		year = 1500
+		owned = { province = 55 data = -1 }
+		control = { province = 55 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 55 data = pagan }
+			provincereligion = { province = 55 data = thunderbird }
+			provincereligion = { province = 55 data = gorgetism }
+			provincereligion = { province = 55 data = medicinewheel }
+			provincereligion = { province = 55 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 55 value = -1 }
+		command = { type = conversion which = 55 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121046
+	trigger = {
+		year = 1500
+		owned = { province = 56 data = -1 }
+		control = { province = 56 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 56 data = pagan }
+			provincereligion = { province = 56 data = thunderbird }
+			provincereligion = { province = 56 data = gorgetism }
+			provincereligion = { province = 56 data = medicinewheel }
+			provincereligion = { province = 56 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 56 value = -1 }
+		command = { type = conversion which = 56 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121047
+	trigger = {
+		year = 1500
+		owned = { province = 59 data = -1 }
+		control = { province = 59 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 59 data = pagan }
+			provincereligion = { province = 59 data = thunderbird }
+			provincereligion = { province = 59 data = gorgetism }
+			provincereligion = { province = 59 data = medicinewheel }
+			provincereligion = { province = 59 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 59 value = -1 }
+		command = { type = conversion which = 59 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121048
+	trigger = {
+		year = 1500
+		owned = { province = 60 data = -1 }
+		control = { province = 60 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 60 data = pagan }
+			provincereligion = { province = 60 data = thunderbird }
+			provincereligion = { province = 60 data = gorgetism }
+			provincereligion = { province = 60 data = medicinewheel }
+			provincereligion = { province = 60 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 60 value = -1 }
+		command = { type = conversion which = 60 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121049
+	trigger = {
+		year = 1500
+		owned = { province = 61 data = -1 }
+		control = { province = 61 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 61 data = pagan }
+			provincereligion = { province = 61 data = thunderbird }
+			provincereligion = { province = 61 data = gorgetism }
+			provincereligion = { province = 61 data = medicinewheel }
+			provincereligion = { province = 61 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 61 value = -1 }
+		command = { type = conversion which = 61 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121050
+	trigger = {
+		year = 1500
+		owned = { province = 65 data = -1 }
+		control = { province = 65 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 65 data = pagan }
+			provincereligion = { province = 65 data = thunderbird }
+			provincereligion = { province = 65 data = gorgetism }
+			provincereligion = { province = 65 data = medicinewheel }
+			provincereligion = { province = 65 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 65 value = -1 }
+		command = { type = conversion which = 65 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121051
+	trigger = {
+		year = 1500
+		owned = { province = 66 data = -1 }
+		control = { province = 66 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 66 data = pagan }
+			provincereligion = { province = 66 data = thunderbird }
+			provincereligion = { province = 66 data = gorgetism }
+			provincereligion = { province = 66 data = medicinewheel }
+			provincereligion = { province = 66 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 66 value = -1 }
+		command = { type = conversion which = 66 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121052
+	trigger = {
+		year = 1500
+		owned = { province = 67 data = -1 }
+		control = { province = 67 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 67 data = pagan }
+			provincereligion = { province = 67 data = thunderbird }
+			provincereligion = { province = 67 data = gorgetism }
+			provincereligion = { province = 67 data = medicinewheel }
+			provincereligion = { province = 67 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 67 value = -1 }
+		command = { type = conversion which = 67 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121053
+	trigger = {
+		year = 1500
+		owned = { province = 68 data = -1 }
+		control = { province = 68 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 68 data = pagan }
+			provincereligion = { province = 68 data = thunderbird }
+			provincereligion = { province = 68 data = gorgetism }
+			provincereligion = { province = 68 data = medicinewheel }
+			provincereligion = { province = 68 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 68 value = -1 }
+		command = { type = conversion which = 68 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121054
+	trigger = {
+		year = 1500
+		owned = { province = 69 data = -1 }
+		control = { province = 69 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 69 data = pagan }
+			provincereligion = { province = 69 data = thunderbird }
+			provincereligion = { province = 69 data = gorgetism }
+			provincereligion = { province = 69 data = medicinewheel }
+			provincereligion = { province = 69 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 69 value = -1 }
+		command = { type = conversion which = 69 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121055
+	trigger = {
+		year = 1500
+		owned = { province = 70 data = -1 }
+		control = { province = 70 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 70 data = pagan }
+			provincereligion = { province = 70 data = thunderbird }
+			provincereligion = { province = 70 data = gorgetism }
+			provincereligion = { province = 70 data = medicinewheel }
+			provincereligion = { province = 70 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 70 value = -1 }
+		command = { type = conversion which = 70 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121056
+	trigger = {
+		year = 1500
+		owned = { province = 71 data = -1 }
+		control = { province = 71 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 71 data = pagan }
+			provincereligion = { province = 71 data = thunderbird }
+			provincereligion = { province = 71 data = gorgetism }
+			provincereligion = { province = 71 data = medicinewheel }
+			provincereligion = { province = 71 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 71 value = -1 }
+		command = { type = conversion which = 71 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121057
+	trigger = {
+		year = 1500
+		owned = { province = 72 data = -1 }
+		control = { province = 72 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 72 data = pagan }
+			provincereligion = { province = 72 data = thunderbird }
+			provincereligion = { province = 72 data = gorgetism }
+			provincereligion = { province = 72 data = medicinewheel }
+			provincereligion = { province = 72 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 72 value = -1 }
+		command = { type = conversion which = 72 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121058
+	trigger = {
+		year = 1500
+		owned = { province = 73 data = -1 }
+		control = { province = 73 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 73 data = pagan }
+			provincereligion = { province = 73 data = thunderbird }
+			provincereligion = { province = 73 data = gorgetism }
+			provincereligion = { province = 73 data = medicinewheel }
+			provincereligion = { province = 73 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 73 value = -1 }
+		command = { type = conversion which = 73 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121059
+	trigger = {
+		year = 1500
+		owned = { province = 74 data = -1 }
+		control = { province = 74 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 74 data = pagan }
+			provincereligion = { province = 74 data = thunderbird }
+			provincereligion = { province = 74 data = gorgetism }
+			provincereligion = { province = 74 data = medicinewheel }
+			provincereligion = { province = 74 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 74 value = -1 }
+		command = { type = conversion which = 74 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121060
+	trigger = {
+		year = 1500
+		owned = { province = 75 data = -1 }
+		control = { province = 75 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 75 data = pagan }
+			provincereligion = { province = 75 data = thunderbird }
+			provincereligion = { province = 75 data = gorgetism }
+			provincereligion = { province = 75 data = medicinewheel }
+			provincereligion = { province = 75 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 75 value = -1 }
+		command = { type = conversion which = 75 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121061
+	trigger = {
+		year = 1500
+		owned = { province = 76 data = -1 }
+		control = { province = 76 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 76 data = pagan }
+			provincereligion = { province = 76 data = thunderbird }
+			provincereligion = { province = 76 data = gorgetism }
+			provincereligion = { province = 76 data = medicinewheel }
+			provincereligion = { province = 76 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 76 value = -1 }
+		command = { type = conversion which = 76 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121062
+	trigger = {
+		year = 1500
+		owned = { province = 77 data = -1 }
+		control = { province = 77 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 77 data = pagan }
+			provincereligion = { province = 77 data = thunderbird }
+			provincereligion = { province = 77 data = gorgetism }
+			provincereligion = { province = 77 data = medicinewheel }
+			provincereligion = { province = 77 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 77 value = -1 }
+		command = { type = conversion which = 77 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121063
+	trigger = {
+		year = 1500
+		owned = { province = 78 data = -1 }
+		control = { province = 78 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 78 data = pagan }
+			provincereligion = { province = 78 data = thunderbird }
+			provincereligion = { province = 78 data = gorgetism }
+			provincereligion = { province = 78 data = medicinewheel }
+			provincereligion = { province = 78 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 78 value = -1 }
+		command = { type = conversion which = 78 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121064
+	trigger = {
+		year = 1500
+		owned = { province = 79 data = -1 }
+		control = { province = 79 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 79 data = pagan }
+			provincereligion = { province = 79 data = thunderbird }
+			provincereligion = { province = 79 data = gorgetism }
+			provincereligion = { province = 79 data = medicinewheel }
+			provincereligion = { province = 79 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 79 value = -1 }
+		command = { type = conversion which = 79 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121065
+	trigger = {
+		year = 1500
+		owned = { province = 80 data = -1 }
+		control = { province = 80 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 80 data = pagan }
+			provincereligion = { province = 80 data = thunderbird }
+			provincereligion = { province = 80 data = gorgetism }
+			provincereligion = { province = 80 data = medicinewheel }
+			provincereligion = { province = 80 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 80 value = -1 }
+		command = { type = conversion which = 80 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121066
+	trigger = {
+		year = 1500
+		owned = { province = 81 data = -1 }
+		control = { province = 81 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 81 data = pagan }
+			provincereligion = { province = 81 data = thunderbird }
+			provincereligion = { province = 81 data = gorgetism }
+			provincereligion = { province = 81 data = medicinewheel }
+			provincereligion = { province = 81 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 81 value = -1 }
+		command = { type = conversion which = 81 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121067
+	trigger = {
+		year = 1500
+		owned = { province = 82 data = -1 }
+		control = { province = 82 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 82 data = pagan }
+			provincereligion = { province = 82 data = thunderbird }
+			provincereligion = { province = 82 data = gorgetism }
+			provincereligion = { province = 82 data = medicinewheel }
+			provincereligion = { province = 82 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 82 value = -1 }
+		command = { type = conversion which = 82 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121068
+	trigger = {
+		year = 1500
+		owned = { province = 83 data = -1 }
+		control = { province = 83 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 83 data = pagan }
+			provincereligion = { province = 83 data = thunderbird }
+			provincereligion = { province = 83 data = gorgetism }
+			provincereligion = { province = 83 data = medicinewheel }
+			provincereligion = { province = 83 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 83 value = -1 }
+		command = { type = conversion which = 83 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121069
+	trigger = {
+		year = 1500
+		owned = { province = 84 data = -1 }
+		control = { province = 84 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 84 data = pagan }
+			provincereligion = { province = 84 data = thunderbird }
+			provincereligion = { province = 84 data = gorgetism }
+			provincereligion = { province = 84 data = medicinewheel }
+			provincereligion = { province = 84 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 84 value = -1 }
+		command = { type = conversion which = 84 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121070
+	trigger = {
+		year = 1500
+		owned = { province = 85 data = -1 }
+		control = { province = 85 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 85 data = pagan }
+			provincereligion = { province = 85 data = thunderbird }
+			provincereligion = { province = 85 data = gorgetism }
+			provincereligion = { province = 85 data = medicinewheel }
+			provincereligion = { province = 85 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 85 value = -1 }
+		command = { type = conversion which = 85 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121071
+	trigger = {
+		year = 1500
+		owned = { province = 86 data = -1 }
+		control = { province = 86 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 86 data = pagan }
+			provincereligion = { province = 86 data = thunderbird }
+			provincereligion = { province = 86 data = gorgetism }
+			provincereligion = { province = 86 data = medicinewheel }
+			provincereligion = { province = 86 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 86 value = -1 }
+		command = { type = conversion which = 86 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121072
+	trigger = {
+		year = 1500
+		owned = { province = 87 data = -1 }
+		control = { province = 87 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 87 data = pagan }
+			provincereligion = { province = 87 data = thunderbird }
+			provincereligion = { province = 87 data = gorgetism }
+			provincereligion = { province = 87 data = medicinewheel }
+			provincereligion = { province = 87 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 87 value = -1 }
+		command = { type = conversion which = 87 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121073
+	trigger = {
+		year = 1500
+		owned = { province = 89 data = -1 }
+		control = { province = 89 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 89 data = pagan }
+			provincereligion = { province = 89 data = thunderbird }
+			provincereligion = { province = 89 data = gorgetism }
+			provincereligion = { province = 89 data = medicinewheel }
+			provincereligion = { province = 89 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 89 value = -1 }
+		command = { type = conversion which = 89 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121074
+	trigger = {
+		year = 1500
+		owned = { province = 90 data = -1 }
+		control = { province = 90 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 90 data = pagan }
+			provincereligion = { province = 90 data = thunderbird }
+			provincereligion = { province = 90 data = gorgetism }
+			provincereligion = { province = 90 data = medicinewheel }
+			provincereligion = { province = 90 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 90 value = -1 }
+		command = { type = conversion which = 90 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121075
+	trigger = {
+		year = 1500
+		owned = { province = 91 data = -1 }
+		control = { province = 91 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 91 data = pagan }
+			provincereligion = { province = 91 data = thunderbird }
+			provincereligion = { province = 91 data = gorgetism }
+			provincereligion = { province = 91 data = medicinewheel }
+			provincereligion = { province = 91 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 91 value = -1 }
+		command = { type = conversion which = 91 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121076
+	trigger = {
+		year = 1500
+		owned = { province = 92 data = -1 }
+		control = { province = 92 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 92 data = pagan }
+			provincereligion = { province = 92 data = thunderbird }
+			provincereligion = { province = 92 data = gorgetism }
+			provincereligion = { province = 92 data = medicinewheel }
+			provincereligion = { province = 92 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 92 value = -1 }
+		command = { type = conversion which = 92 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121077
+	trigger = {
+		year = 1500
+		owned = { province = 93 data = -1 }
+		control = { province = 93 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 93 data = pagan }
+			provincereligion = { province = 93 data = thunderbird }
+			provincereligion = { province = 93 data = gorgetism }
+			provincereligion = { province = 93 data = medicinewheel }
+			provincereligion = { province = 93 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 93 value = -1 }
+		command = { type = conversion which = 93 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121078
+	trigger = {
+		year = 1500
+		owned = { province = 94 data = -1 }
+		control = { province = 94 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 94 data = pagan }
+			provincereligion = { province = 94 data = thunderbird }
+			provincereligion = { province = 94 data = gorgetism }
+			provincereligion = { province = 94 data = medicinewheel }
+			provincereligion = { province = 94 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 94 value = -1 }
+		command = { type = conversion which = 94 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121079
+	trigger = {
+		year = 1500
+		owned = { province = 95 data = -1 }
+		control = { province = 95 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 95 data = pagan }
+			provincereligion = { province = 95 data = thunderbird }
+			provincereligion = { province = 95 data = gorgetism }
+			provincereligion = { province = 95 data = medicinewheel }
+			provincereligion = { province = 95 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 95 value = -1 }
+		command = { type = conversion which = 95 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121080
+	trigger = {
+		year = 1500
+		owned = { province = 96 data = -1 }
+		control = { province = 96 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 96 data = pagan }
+			provincereligion = { province = 96 data = thunderbird }
+			provincereligion = { province = 96 data = gorgetism }
+			provincereligion = { province = 96 data = medicinewheel }
+			provincereligion = { province = 96 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 96 value = -1 }
+		command = { type = conversion which = 96 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121081
+	trigger = {
+		year = 1500
+		owned = { province = 97 data = -1 }
+		control = { province = 97 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 97 data = pagan }
+			provincereligion = { province = 97 data = thunderbird }
+			provincereligion = { province = 97 data = gorgetism }
+			provincereligion = { province = 97 data = medicinewheel }
+			provincereligion = { province = 97 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 97 value = -1 }
+		command = { type = conversion which = 97 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121082
+	trigger = {
+		year = 1500
+		owned = { province = 98 data = -1 }
+		control = { province = 98 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 98 data = pagan }
+			provincereligion = { province = 98 data = thunderbird }
+			provincereligion = { province = 98 data = gorgetism }
+			provincereligion = { province = 98 data = medicinewheel }
+			provincereligion = { province = 98 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 98 value = -1 }
+		command = { type = conversion which = 98 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121083
+	trigger = {
+		year = 1500
+		owned = { province = 101 data = -1 }
+		control = { province = 101 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 101 data = pagan }
+			provincereligion = { province = 101 data = thunderbird }
+			provincereligion = { province = 101 data = gorgetism }
+			provincereligion = { province = 101 data = medicinewheel }
+			provincereligion = { province = 101 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 101 value = -1 }
+		command = { type = conversion which = 101 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121084
+	trigger = {
+		year = 1500
+		owned = { province = 105 data = -1 }
+		control = { province = 105 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 105 data = pagan }
+			provincereligion = { province = 105 data = thunderbird }
+			provincereligion = { province = 105 data = gorgetism }
+			provincereligion = { province = 105 data = medicinewheel }
+			provincereligion = { province = 105 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 105 value = -1 }
+		command = { type = conversion which = 105 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121085
+	trigger = {
+		year = 1500
+		owned = { province = 107 data = -1 }
+		control = { province = 107 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 107 data = pagan }
+			provincereligion = { province = 107 data = thunderbird }
+			provincereligion = { province = 107 data = gorgetism }
+			provincereligion = { province = 107 data = medicinewheel }
+			provincereligion = { province = 107 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 107 value = -1 }
+		command = { type = conversion which = 107 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121086
+	trigger = {
+		year = 1500
+		owned = { province = 108 data = -1 }
+		control = { province = 108 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 108 data = pagan }
+			provincereligion = { province = 108 data = thunderbird }
+			provincereligion = { province = 108 data = gorgetism }
+			provincereligion = { province = 108 data = medicinewheel }
+			provincereligion = { province = 108 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 108 value = -1 }
+		command = { type = conversion which = 108 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121087
+	trigger = {
+		year = 1500
+		owned = { province = 133 data = -1 }
+		control = { province = 133 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 133 data = pagan }
+			provincereligion = { province = 133 data = thunderbird }
+			provincereligion = { province = 133 data = gorgetism }
+			provincereligion = { province = 133 data = medicinewheel }
+			provincereligion = { province = 133 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 133 value = -1 }
+		command = { type = conversion which = 133 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121088
+	trigger = {
+		year = 1500
+		owned = { province = 134 data = -1 }
+		control = { province = 134 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 134 data = pagan }
+			provincereligion = { province = 134 data = thunderbird }
+			provincereligion = { province = 134 data = gorgetism }
+			provincereligion = { province = 134 data = medicinewheel }
+			provincereligion = { province = 134 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 134 value = -1 }
+		command = { type = conversion which = 134 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121089
+	trigger = {
+		year = 1500
+		owned = { province = 135 data = -1 }
+		control = { province = 135 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 135 data = pagan }
+			provincereligion = { province = 135 data = thunderbird }
+			provincereligion = { province = 135 data = gorgetism }
+			provincereligion = { province = 135 data = medicinewheel }
+			provincereligion = { province = 135 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 135 value = -1 }
+		command = { type = conversion which = 135 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121090
+	trigger = {
+		year = 1500
+		owned = { province = 136 data = -1 }
+		control = { province = 136 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 136 data = pagan }
+			provincereligion = { province = 136 data = thunderbird }
+			provincereligion = { province = 136 data = gorgetism }
+			provincereligion = { province = 136 data = medicinewheel }
+			provincereligion = { province = 136 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 136 value = -1 }
+		command = { type = conversion which = 136 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121091
+	trigger = {
+		year = 1500
+		owned = { province = 131 data = -1 }
+		control = { province = 131 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 131 data = pagan }
+			provincereligion = { province = 131 data = thunderbird }
+			provincereligion = { province = 131 data = gorgetism }
+			provincereligion = { province = 131 data = medicinewheel }
+			provincereligion = { province = 131 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 131 value = -1 }
+		command = { type = conversion which = 131 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121092
+	trigger = {
+		year = 1500
+		owned = { province = 132 data = -1 }
+		control = { province = 132 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 132 data = pagan }
+			provincereligion = { province = 132 data = thunderbird }
+			provincereligion = { province = 132 data = gorgetism }
+			provincereligion = { province = 132 data = medicinewheel }
+			provincereligion = { province = 132 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 132 value = -1 }
+		command = { type = conversion which = 132 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121093
+	trigger = {
+		year = 1500
+		owned = { province = 88 data = -1 }
+		control = { province = 88 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 88 data = pagan }
+			provincereligion = { province = 88 data = thunderbird }
+			provincereligion = { province = 88 data = gorgetism }
+			provincereligion = { province = 88 data = medicinewheel }
+			provincereligion = { province = 88 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 88 value = -1 }
+		command = { type = conversion which = 88 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121094
+	trigger = {
+		year = 1500
+		owned = { province = 99 data = -1 }
+		control = { province = 99 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 99 data = pagan }
+			provincereligion = { province = 99 data = thunderbird }
+			provincereligion = { province = 99 data = gorgetism }
+			provincereligion = { province = 99 data = medicinewheel }
+			provincereligion = { province = 99 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 99 value = -1 }
+		command = { type = conversion which = 99 }
+	}
+}
+
+#additional religious/cultural conversion events for the Europeans
+event = {
+
+	id = 121095
+	trigger = {
+		year = 1500
+		owned = { province = 100 data = -1 }
+		control = { province = 100 data = -1 }
+		stability = 3
+		continent = Europe
+		OR = {
+			provincereligion = { province = 100 data = pagan }
+			provincereligion = { province = 100 data = thunderbird }
+			provincereligion = { province = 100 data = gorgetism }
+			provincereligion = { province = 100 data = medicinewheel }
+			provincereligion = { province = 100 data = peyote }
+			}
+		NOT = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			domestic = { type = innovative value = 5 }
+			badboy = 10
+			}
+		}
+	random = yes
+	name = "Missionaries Successful!"
+	desc = "Missionaries have succeeded in spreading the message of God to the heathen natives."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = provinceculture which = 100 value = -1 }
+		command = { type = conversion which = 100 }
+	}
+}
+
+#AI European colonials need a hand against the amerindians
+#ENGLAND
+event = {
+
+	id = 121096
+	trigger = {
+		year = 1500
+		ai = yes
+		OR = {
+			war = { country = ENG country = APA }
+			war = { country = ENG country = DAK }
+			war = { country = ENG country = HUR }
+			war = { country = ENG country = OHI }
+			war = { country = ENG country = SHA }
+			war = { country = ENG country = CHE }
+			war = { country = ENG country = CRE }
+			war = { country = ENG country = OJI }
+			war = { country = ENG country = KMK }
+			war = { country = ENG country = POT }
+			war = { country = ENG country = SKN }
+			war = { country = ENG country = POW }
+			war = { country = ENG country = OTW }
+			war = { country = ENG country = CEE }
+			war = { country = ENG country = CHW }
+			war = { country = ENG country = WAZ }
+			war = { country = ENG country = ILI }
+			war = { country = ENG country = CAD }
+			war = { country = ENG country = SXF }
+			war = { country = ENG country = TWA }
+			war = { country = ENG country = WAM }
+			war = { country = ENG country = SEM }
+			war = { country = ENG country = PUE }
+			war = { country = ENG country = MIK }
+			war = { country = ENG country = ALN }
+			war = { country = ENG country = SAH }
+			war = { country = ENG country = CKW }
+			war = { country = ENG country = CHU }
+			war = { country = ENG country = HOP }
+			war = { country = ENG country = MOH }
+			war = { country = ENG country = NEU }
+			war = { country = ENG country = QUA }
+		}
+		NOT = {
+			exists = USA
+		} 
+	}
+	random = yes
+	name = "Raise the Militia"
+	desc = "Militia raised. God knows we need them as we are crap at colonial wars in America"
+	style = 0
+
+	action_a = {
+		name = "We can do it now!"
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = manpower value = 20 }
+		command = { type = treasury value = 100 }
+		}
+	}
+
+#AI European colonials need a hand against the amerindians
+#ENGLAND
+event = {
+
+	id = 121097
+	trigger = {
+		year = 1500
+		ai = yes
+		OR = {
+			war = { country = ENG country = APA }
+			war = { country = ENG country = DAK }
+			war = { country = ENG country = HUR }
+			war = { country = ENG country = OHI }
+			war = { country = ENG country = SHA }
+			war = { country = ENG country = CHE }
+			war = { country = ENG country = CRE }
+			war = { country = ENG country = OJI }
+			war = { country = ENG country = KMK }
+			war = { country = ENG country = POT }
+			war = { country = ENG country = SKN }
+			war = { country = ENG country = POW }
+			war = { country = ENG country = OTW }
+			war = { country = ENG country = CEE }
+			war = { country = ENG country = CHW }
+			war = { country = ENG country = WAZ }
+			war = { country = ENG country = ILI }
+			war = { country = ENG country = CAD }
+			war = { country = ENG country = SXF }
+			war = { country = ENG country = TWA }
+			war = { country = ENG country = WAM }
+			war = { country = ENG country = SEM }
+			war = { country = ENG country = PUE }
+			war = { country = ENG country = MIK }
+			war = { country = ENG country = ALN }
+			war = { country = ENG country = SAH }
+			war = { country = ENG country = CKW }
+			war = { country = ENG country = CHU }
+			war = { country = ENG country = HOP }
+			war = { country = ENG country = MOH }
+			war = { country = ENG country = NEU }
+			war = { country = ENG country = QUA }
+		}
+		NOT = {
+			exists = USA
+		}
+	}
+	random = yes
+	name = "Raise the Militia"
+	desc = "Militia raised. God knows we need them as we are crap at colonial wars in America"
+	style = 0
+
+	action_a = {
+		name = "We can do it now!"
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = manpower value = 20 }
+		command = { type = treasury value = 100 }
+		}
+	}
+
+#AI European colonials need a hand against the amerindians
+#ENGLAND
+event = {
+
+	id = 121098
+	trigger = {
+		year = 1500
+		ai = yes
+		OR = {
+			war = { country = ENG country = APA }
+			war = { country = ENG country = DAK }
+			war = { country = ENG country = HUR }
+			war = { country = ENG country = OHI }
+			war = { country = ENG country = SHA }
+			war = { country = ENG country = CHE }
+			war = { country = ENG country = CRE }
+			war = { country = ENG country = OJI }
+			war = { country = ENG country = KMK }
+			war = { country = ENG country = POT }
+			war = { country = ENG country = SKN }
+			war = { country = ENG country = POW }
+			war = { country = ENG country = OTW }
+			war = { country = ENG country = CEE }
+			war = { country = ENG country = CHW }
+			war = { country = ENG country = WAZ }
+			war = { country = ENG country = ILI }
+			war = { country = ENG country = CAD }
+			war = { country = ENG country = SXF }
+			war = { country = ENG country = TWA }
+			war = { country = ENG country = WAM }
+			war = { country = ENG country = SEM }
+			war = { country = ENG country = PUE }
+			war = { country = ENG country = MIK }
+			war = { country = ENG country = ALN }
+			war = { country = ENG country = SAH }
+			war = { country = ENG country = CKW }
+			war = { country = ENG country = CHU }
+			war = { country = ENG country = HOP }
+			war = { country = ENG country = MOH }
+			war = { country = ENG country = NEU }
+			war = { country = ENG country = QUA }
+		}
+		NOT = {
+			exists = USA
+		}
+	}
+	random = yes
+	name = "Raise the Militia"
+	desc = "Militia raised. God knows we need them as we are crap at colonial wars in America"
+	style = 0
+
+	action_a = {
+		name = "We can do it now!"
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = manpower value = 20 }
+		command = { type = treasury value = 100 }
+		}
+	}
+
+#AI European colonials need a hand against the amerindians
+#ENGLAND
+event = {
+
+	id = 121099
+	trigger = {
+		year = 1500
+		ai = yes
+		OR = {
+			war = { country = ENG country = APA }
+			war = { country = ENG country = DAK }
+			war = { country = ENG country = HUR }
+			war = { country = ENG country = OHI }
+			war = { country = ENG country = SHA }
+			war = { country = ENG country = CHE }
+			war = { country = ENG country = CRE }
+			war = { country = ENG country = OJI }
+			war = { country = ENG country = KMK }
+			war = { country = ENG country = POT }
+			war = { country = ENG country = SKN }
+			war = { country = ENG country = POW }
+			war = { country = ENG country = OTW }
+			war = { country = ENG country = CEE }
+			war = { country = ENG country = CHW }
+			war = { country = ENG country = WAZ }
+			war = { country = ENG country = ILI }
+			war = { country = ENG country = CAD }
+			war = { country = ENG country = SXF }
+			war = { country = ENG country = TWA }
+			war = { country = ENG country = WAM }
+			war = { country = ENG country = SEM }
+			war = { country = ENG country = PUE }
+			war = { country = ENG country = MIK }
+			war = { country = ENG country = ALN }
+			war = { country = ENG country = SAH }
+			war = { country = ENG country = CKW }
+			war = { country = ENG country = CHU }
+			war = { country = ENG country = HOP }
+			war = { country = ENG country = MOH }
+			war = { country = ENG country = NEU }
+			war = { country = ENG country = QUA }
+		}
+		NOT = {
+			exists = USA
+		}
+	}
+	random = yes
+	name = "Raise the Militia"
+	desc = "Militia raised. God knows we need them as we are crap at colonial wars in America"
+	style = 0
+
+	action_a = {
+		name = "We can do it now!"
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = manpower value = 20 }
+		command = { type = treasury value = 100 }
+		}
+	}
+
+#AI European colonials need a hand against the amerindians
+#ENGLAND
+event = {
+
+	id = 121100
+	trigger = {
+		year = 1500
+		ai = yes
+		OR = {
+			war = { country = ENG country = APA }
+			war = { country = ENG country = DAK }
+			war = { country = ENG country = HUR }
+			war = { country = ENG country = OHI }
+			war = { country = ENG country = SHA }
+			war = { country = ENG country = CHE }
+			war = { country = ENG country = CRE }
+			war = { country = ENG country = OJI }
+			war = { country = ENG country = KMK }
+			war = { country = ENG country = POT }
+			war = { country = ENG country = SKN }
+			war = { country = ENG country = POW }
+			war = { country = ENG country = OTW }
+			war = { country = ENG country = CEE }
+			war = { country = ENG country = CHW }
+			war = { country = ENG country = WAZ }
+			war = { country = ENG country = ILI }
+			war = { country = ENG country = CAD }
+			war = { country = ENG country = SXF }
+			war = { country = ENG country = TWA }
+			war = { country = ENG country = WAM }
+			war = { country = ENG country = SEM }
+			war = { country = ENG country = PUE }
+			war = { country = ENG country = MIK }
+			war = { country = ENG country = ALN }
+			war = { country = ENG country = SAH }
+			war = { country = ENG country = CKW }
+			war = { country = ENG country = CHU }
+			war = { country = ENG country = HOP }
+			war = { country = ENG country = MOH }
+			war = { country = ENG country = NEU }
+			war = { country = ENG country = QUA }
+		}
+		NOT = {
+			exists = USA
+		}
+	}
+	random = yes
+	name = "Raise the Militia"
+	desc = "Militia raised. God knows we need them as we are crap at colonial wars in America"
+	style = 0
+
+	action_a = {
+		name = "We can do it now!"
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = manpower value = 20 }
+		command = { type = treasury value = 100 }
+		}
+	}
+
+#AI European colonials need a hand against the amerindians
+#ENGLAND
+event = {
+
+	id = 121101
+	trigger = {
+		year = 1500
+		ai = yes
+		OR = {
+			war = { country = ENG country = APA }
+			war = { country = ENG country = DAK }
+			war = { country = ENG country = HUR }
+			war = { country = ENG country = OHI }
+			war = { country = ENG country = SHA }
+			war = { country = ENG country = CHE }
+			war = { country = ENG country = CRE }
+			war = { country = ENG country = OJI }
+			war = { country = ENG country = KMK }
+			war = { country = ENG country = POT }
+			war = { country = ENG country = SKN }
+			war = { country = ENG country = POW }
+			war = { country = ENG country = OTW }
+			war = { country = ENG country = CEE }
+			war = { country = ENG country = CHW }
+			war = { country = ENG country = WAZ }
+			war = { country = ENG country = ILI }
+			war = { country = ENG country = CAD }
+			war = { country = ENG country = SXF }
+			war = { country = ENG country = TWA }
+			war = { country = ENG country = WAM }
+			war = { country = ENG country = SEM }
+			war = { country = ENG country = PUE }
+			war = { country = ENG country = MIK }
+			war = { country = ENG country = ALN }
+			war = { country = ENG country = SAH }
+			war = { country = ENG country = CKW }
+			war = { country = ENG country = CHU }
+			war = { country = ENG country = HOP }
+			war = { country = ENG country = MOH }
+			war = { country = ENG country = NEU }
+			war = { country = ENG country = QUA }
+		}
+		NOT = {
+			exists = USA
+		}
+	}
+	random = yes
+	name = "Raise the Militia"
+	desc = "Militia raised. God knows we need them as we are crap at colonial wars in America"
+	style = 0
+
+	action_a = {
+		name = "We can do it now!"
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = manpower value = 20 }
+		command = { type = treasury value = 100 }
+		}
+	}
+
+#AI European colonials need a hand against the amerindians
+#FRANCE
+event = {
+
+	id = 121102
+	trigger = {
+		year = 1500
+		ai = yes
+		OR = {
+			war = { country = FRA country = APA }
+			war = { country = FRA country = DAK }
+			war = { country = FRA country = HUR }
+			war = { country = FRA country = OHI }
+			war = { country = FRA country = SHA }
+			war = { country = FRA country = CHE }
+			war = { country = FRA country = CRE }
+			war = { country = FRA country = OJI }
+			war = { country = FRA country = KMK }
+			war = { country = FRA country = POT }
+			war = { country = FRA country = SKN }
+			war = { country = FRA country = POW }
+			war = { country = FRA country = OTW }
+			war = { country = FRA country = CEE }
+			war = { country = FRA country = CHW }
+			war = { country = FRA country = WAZ }
+			war = { country = FRA country = ILI }
+			war = { country = FRA country = CAD }
+			war = { country = FRA country = SXF }
+			war = { country = FRA country = TWA }
+			war = { country = FRA country = WAM }
+			war = { country = FRA country = SEM }
+			war = { country = FRA country = PUE }
+			war = { country = FRA country = MIK }
+			war = { country = FRA country = ALN }
+			war = { country = FRA country = SAH }
+			war = { country = FRA country = CKW }
+			war = { country = FRA country = CHU }
+			war = { country = FRA country = HOP }
+			war = { country = FRA country = MOH }
+			war = { country = FRA country = NEU }
+			war = { country = FRA country = QUA }
+		}
+		NOT = {
+			exists = USA
+		}
+	}
+	random = yes
+	name = "Raise the Militia"
+	desc = "Militia raised. God knows we need them as we are crap at colonial wars in America"
+	style = 0
+
+	action_a = {
+		name = "We can do it now!"
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = manpower value = 20 }
+		command = { type = treasury value = 100 }
+		}
+	}
+
+#AI European colonials need a hand against the amerindians
+#FRANCE
+event = {
+
+	id = 121103
+	trigger = {
+		year = 1500
+		ai = yes
+		OR = {
+			war = { country = FRA country = APA }
+			war = { country = FRA country = DAK }
+			war = { country = FRA country = HUR }
+			war = { country = FRA country = OHI }
+			war = { country = FRA country = SHA }
+			war = { country = FRA country = CHE }
+			war = { country = FRA country = CRE }
+			war = { country = FRA country = OJI }
+			war = { country = FRA country = KMK }
+			war = { country = FRA country = POT }
+			war = { country = FRA country = SKN }
+			war = { country = FRA country = POW }
+			war = { country = FRA country = OTW }
+			war = { country = FRA country = CEE }
+			war = { country = FRA country = CHW }
+			war = { country = FRA country = WAZ }
+			war = { country = FRA country = ILI }
+			war = { country = FRA country = CAD }
+			war = { country = FRA country = SXF }
+			war = { country = FRA country = TWA }
+			war = { country = FRA country = WAM }
+			war = { country = FRA country = SEM }
+			war = { country = FRA country = PUE }
+			war = { country = FRA country = MIK }
+			war = { country = FRA country = ALN }
+			war = { country = FRA country = SAH }
+			war = { country = FRA country = CKW }
+			war = { country = FRA country = CHU }
+			war = { country = FRA country = HOP }
+			war = { country = FRA country = MOH }
+			war = { country = FRA country = NEU }
+			war = { country = FRA country = QUA }
+		}
+		NOT = {
+			exists = USA
+		}
+	}
+	random = yes
+	name = "Raise the Militia"
+	desc = "Militia raised. God knows we need them as we are crap at colonial wars in America"
+	style = 0
+
+	action_a = {
+		name = "We can do it now!"
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = manpower value = 20 }
+		command = { type = treasury value = 100 }
+		}
+	}
+
+#AI European colonials need a hand against the amerindians
+#FRANCE
+event = {
+
+	id = 121104
+	trigger = {
+		year = 1500
+		ai = yes
+		OR = {
+			war = { country = FRA country = APA }
+			war = { country = FRA country = DAK }
+			war = { country = FRA country = HUR }
+			war = { country = FRA country = OHI }
+			war = { country = FRA country = SHA }
+			war = { country = FRA country = CHE }
+			war = { country = FRA country = CRE }
+			war = { country = FRA country = OJI }
+			war = { country = FRA country = KMK }
+			war = { country = FRA country = POT }
+			war = { country = FRA country = SKN }
+			war = { country = FRA country = POW }
+			war = { country = FRA country = OTW }
+			war = { country = FRA country = CEE }
+			war = { country = FRA country = CHW }
+			war = { country = FRA country = WAZ }
+			war = { country = FRA country = ILI }
+			war = { country = FRA country = CAD }
+			war = { country = FRA country = SXF }
+			war = { country = FRA country = TWA }
+			war = { country = FRA country = WAM }
+			war = { country = FRA country = SEM }
+			war = { country = FRA country = PUE }
+			war = { country = FRA country = MIK }
+			war = { country = FRA country = ALN }
+			war = { country = FRA country = SAH }
+			war = { country = FRA country = CKW }
+			war = { country = FRA country = CHU }
+			war = { country = FRA country = HOP }
+			war = { country = FRA country = MOH }
+			war = { country = FRA country = NEU }
+			war = { country = FRA country = QUA }
+		}
+		NOT = {
+			exists = USA
+		}
+	}
+	random = yes
+	name = "Raise the Militia"
+	desc = "Militia raised. God knows we need them as we are crap at colonial wars in America"
+	style = 0
+
+	action_a = {
+		name = "We can do it now!"
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = manpower value = 20 }
+		command = { type = treasury value = 100 }
+		}
+	}
+
+#AI European colonials need a hand against the amerindians
+#FRANCE
+event = {
+
+	id = 121105
+	trigger = {
+		year = 1500
+		ai = yes
+		OR = {
+			war = { country = FRA country = APA }
+			war = { country = FRA country = DAK }
+			war = { country = FRA country = HUR }
+			war = { country = FRA country = OHI }
+			war = { country = FRA country = SHA }
+			war = { country = FRA country = CHE }
+			war = { country = FRA country = CRE }
+			war = { country = FRA country = OJI }
+			war = { country = FRA country = KMK }
+			war = { country = FRA country = POT }
+			war = { country = FRA country = SKN }
+			war = { country = FRA country = POW }
+			war = { country = FRA country = OTW }
+			war = { country = FRA country = CEE }
+			war = { country = FRA country = CHW }
+			war = { country = FRA country = WAZ }
+			war = { country = FRA country = ILI }
+			war = { country = FRA country = CAD }
+			war = { country = FRA country = SXF }
+			war = { country = FRA country = TWA }
+			war = { country = FRA country = WAM }
+			war = { country = FRA country = SEM }
+			war = { country = FRA country = PUE }
+			war = { country = FRA country = MIK }
+			war = { country = FRA country = ALN }
+			war = { country = FRA country = SAH }
+			war = { country = FRA country = CKW }
+			war = { country = FRA country = CHU }
+			war = { country = FRA country = HOP }
+			war = { country = FRA country = MOH }
+			war = { country = FRA country = NEU }
+			war = { country = FRA country = QUA }
+		}
+		NOT = {
+			exists = USA
+		}
+	}
+	random = yes
+	name = "Raise the Militia"
+	desc = "Militia raised. God knows we need them as we are crap at colonial wars in America"
+	style = 0
+
+	action_a = {
+		name = "We can do it now!"
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = manpower value = 20 }
+		command = { type = treasury value = 100 }
+		}
+	}
+
+#AI European colonials need a hand against the amerindians
+#FRANCE
+event = {
+
+	id = 121106
+	trigger = {
+		year = 1500
+		ai = yes
+		OR = {
+			war = { country = FRA country = APA }
+			war = { country = FRA country = DAK }
+			war = { country = FRA country = HUR }
+			war = { country = FRA country = OHI }
+			war = { country = FRA country = SHA }
+			war = { country = FRA country = CHE }
+			war = { country = FRA country = CRE }
+			war = { country = FRA country = OJI }
+			war = { country = FRA country = KMK }
+			war = { country = FRA country = POT }
+			war = { country = FRA country = SKN }
+			war = { country = FRA country = POW }
+			war = { country = FRA country = OTW }
+			war = { country = FRA country = CEE }
+			war = { country = FRA country = CHW }
+			war = { country = FRA country = WAZ }
+			war = { country = FRA country = ILI }
+			war = { country = FRA country = CAD }
+			war = { country = FRA country = SXF }
+			war = { country = FRA country = TWA }
+			war = { country = FRA country = WAM }
+			war = { country = FRA country = SEM }
+			war = { country = FRA country = PUE }
+			war = { country = FRA country = MIK }
+			war = { country = FRA country = ALN }
+			war = { country = FRA country = SAH }
+			war = { country = FRA country = CKW }
+			war = { country = FRA country = CHU }
+			war = { country = FRA country = HOP }
+			war = { country = FRA country = MOH }
+			war = { country = FRA country = NEU }
+			war = { country = FRA country = QUA }
+		}
+		NOT = {
+			exists = USA
+		}
+	}
+	random = yes
+	name = "Raise the Militia"
+	desc = "Militia raised. God knows we need them as we are crap at colonial wars in America"
+	style = 0
+
+	action_a = {
+		name = "We can do it now!"
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = manpower value = 20 }
+		command = { type = treasury value = 100 }
+		}
+	}
+
+#AI European colonials need a hand against the amerindians
+#SPAIN
+event = {
+
+	id = 121107
+	trigger = {
+		year = 1500
+		ai = yes
+		OR = {
+			war = { country = SPA country = APA }
+			war = { country = SPA country = DAK }
+			war = { country = SPA country = HUR }
+			war = { country = SPA country = OHI }
+			war = { country = SPA country = SHA }
+			war = { country = SPA country = CHE }
+			war = { country = SPA country = CRE }
+			war = { country = SPA country = OJI }
+			war = { country = SPA country = KMK }
+			war = { country = SPA country = POT }
+			war = { country = SPA country = SKN }
+			war = { country = SPA country = POW }
+			war = { country = SPA country = OTW }
+			war = { country = SPA country = CEE }
+			war = { country = SPA country = CHW }
+			war = { country = SPA country = WAZ }
+			war = { country = SPA country = ILI }
+			war = { country = SPA country = CAD }
+			war = { country = SPA country = SXF }
+			war = { country = SPA country = TWA }
+			war = { country = SPA country = WAM }
+			war = { country = SPA country = SEM }
+			war = { country = SPA country = PUE }
+			war = { country = SPA country = MIK }
+			war = { country = SPA country = ALN }
+			war = { country = SPA country = SAH }
+			war = { country = SPA country = CKW }
+			war = { country = SPA country = CHU }
+			war = { country = SPA country = HOP }
+			war = { country = SPA country = MOH }
+			war = { country = SPA country = NEU }
+			war = { country = SPA country = QUA }
+		}
+		NOT = {
+			exists = USA
+		}
+	}
+	random = yes
+	name = "Raise the Militia"
+	desc = "Militia raised. God knows we need them as we are crap at colonial wars in America"
+	style = 0
+
+	action_a = {
+		name = "We can do it now!"
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = manpower value = 20 }
+		command = { type = treasury value = 100 }
+		}
+	}
+
+#AI European colonials need a hand against the amerindians
+#SPAIN
+event = {
+
+	id = 121108
+	trigger = {
+		year = 1500
+		ai = yes
+		OR = {
+			war = { country = SPA country = APA }
+			war = { country = SPA country = DAK }
+			war = { country = SPA country = HUR }
+			war = { country = SPA country = OHI }
+			war = { country = SPA country = SHA }
+			war = { country = SPA country = CHE }
+			war = { country = SPA country = CRE }
+			war = { country = SPA country = OJI }
+			war = { country = SPA country = KMK }
+			war = { country = SPA country = POT }
+			war = { country = SPA country = SKN }
+			war = { country = SPA country = POW }
+			war = { country = SPA country = OTW }
+			war = { country = SPA country = CEE }
+			war = { country = SPA country = CHW }
+			war = { country = SPA country = WAZ }
+			war = { country = SPA country = ILI }
+			war = { country = SPA country = CAD }
+			war = { country = SPA country = SXF }
+			war = { country = SPA country = TWA }
+			war = { country = SPA country = WAM }
+			war = { country = SPA country = SEM }
+			war = { country = SPA country = PUE }
+			war = { country = SPA country = MIK }
+			war = { country = SPA country = ALN }
+			war = { country = SPA country = SAH }
+			war = { country = SPA country = CKW }
+			war = { country = SPA country = CHU }
+			war = { country = SPA country = HOP }
+			war = { country = SPA country = MOH }
+			war = { country = SPA country = NEU }
+			war = { country = SPA country = QUA }
+		}
+		NOT = {
+			exists = USA
+		}
+	}
+	random = yes
+	name = "Raise the Militia"
+	desc = "Militia raised. God knows we need them as we are crap at colonial wars in America"
+	style = 0
+
+	action_a = {
+		name = "We can do it now!"
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = manpower value = 20 }
+		command = { type = treasury value = 100 }
+		}
+	}
+
+#AI European colonials need a hand against the amerindians
+#SPAIN
+event = {
+
+	id = 121109
+	trigger = {
+		year = 1500
+		ai = yes
+		OR = {
+			war = { country = SPA country = APA }
+			war = { country = SPA country = DAK }
+			war = { country = SPA country = HUR }
+			war = { country = SPA country = OHI }
+			war = { country = SPA country = SHA }
+			war = { country = SPA country = CHE }
+			war = { country = SPA country = CRE }
+			war = { country = SPA country = OJI }
+			war = { country = SPA country = KMK }
+			war = { country = SPA country = POT }
+			war = { country = SPA country = SKN }
+			war = { country = SPA country = POW }
+			war = { country = SPA country = OTW }
+			war = { country = SPA country = CEE }
+			war = { country = SPA country = CHW }
+			war = { country = SPA country = WAZ }
+			war = { country = SPA country = ILI }
+			war = { country = SPA country = CAD }
+			war = { country = SPA country = SXF }
+			war = { country = SPA country = TWA }
+			war = { country = SPA country = WAM }
+			war = { country = SPA country = SEM }
+			war = { country = SPA country = PUE }
+			war = { country = SPA country = MIK }
+			war = { country = SPA country = ALN }
+			war = { country = SPA country = SAH }
+			war = { country = SPA country = CKW }
+			war = { country = SPA country = CHU }
+			war = { country = SPA country = HOP }
+			war = { country = SPA country = MOH }
+			war = { country = SPA country = NEU }
+			war = { country = SPA country = QUA }
+		}
+		NOT = {
+			exists = USA
+		}
+	}
+	random = yes
+	name = "Raise the Militia"
+	desc = "Militia raised. God knows we need them as we are crap at colonial wars in America"
+	style = 0
+
+	action_a = {
+		name = "We can do it now!"
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = manpower value = 20 }
+		command = { type = treasury value = 100 }
+		}
+	}
+
+#AI European colonials need a hand against the amerindians
+#SPAIN
+event = {
+
+	id = 121110
+	trigger = {
+		year = 1500
+		ai = yes
+		OR = {
+			war = { country = SPA country = APA }
+			war = { country = SPA country = DAK }
+			war = { country = SPA country = HUR }
+			war = { country = SPA country = OHI }
+			war = { country = SPA country = SHA }
+			war = { country = SPA country = CHE }
+			war = { country = SPA country = CRE }
+			war = { country = SPA country = OJI }
+			war = { country = SPA country = KMK }
+			war = { country = SPA country = POT }
+			war = { country = SPA country = SKN }
+			war = { country = SPA country = POW }
+			war = { country = SPA country = OTW }
+			war = { country = SPA country = CEE }
+			war = { country = SPA country = CHW }
+			war = { country = SPA country = WAZ }
+			war = { country = SPA country = ILI }
+			war = { country = SPA country = CAD }
+			war = { country = SPA country = SXF }
+			war = { country = SPA country = TWA }
+			war = { country = SPA country = WAM }
+			war = { country = SPA country = SEM }
+			war = { country = SPA country = PUE }
+			war = { country = SPA country = MIK }
+			war = { country = SPA country = ALN }
+			war = { country = SPA country = SAH }
+			war = { country = SPA country = CKW }
+			war = { country = SPA country = CHU }
+			war = { country = SPA country = HOP }
+			war = { country = SPA country = MOH }
+			war = { country = SPA country = NEU }
+			war = { country = SPA country = QUA }
+		}
+		NOT = {
+			exists = USA
+		}
+	}
+	random = yes
+	name = "Raise the Militia"
+	desc = "Militia raised. God knows we need them as we are crap at colonial wars in America"
+	style = 0
+
+	action_a = {
+		name = "We can do it now!"
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = manpower value = 20 }
+		command = { type = treasury value = 100 }
+		}
+	}
+
+#AI European colonials need a hand against the amerindians
+#SPAIN
+event = {
+
+	id = 121111
+	trigger = {
+		year = 1500
+		ai = yes
+		OR = {
+			war = { country = SPA country = APA }
+			war = { country = SPA country = DAK }
+			war = { country = SPA country = HUR }
+			war = { country = SPA country = OHI }
+			war = { country = SPA country = SHA }
+			war = { country = SPA country = CHE }
+			war = { country = SPA country = CRE }
+			war = { country = SPA country = OJI }
+			war = { country = SPA country = KMK }
+			war = { country = SPA country = POT }
+			war = { country = SPA country = SKN }
+			war = { country = SPA country = POW }
+			war = { country = SPA country = OTW }
+			war = { country = SPA country = CEE }
+			war = { country = SPA country = CHW }
+			war = { country = SPA country = WAZ }
+			war = { country = SPA country = ILI }
+			war = { country = SPA country = CAD }
+			war = { country = SPA country = SXF }
+			war = { country = SPA country = TWA }
+			war = { country = SPA country = WAM }
+			war = { country = SPA country = SEM }
+			war = { country = SPA country = PUE }
+			war = { country = SPA country = MIK }
+			war = { country = SPA country = ALN }
+			war = { country = SPA country = SAH }
+			war = { country = SPA country = CKW }
+			war = { country = SPA country = CHU }
+			war = { country = SPA country = HOP }
+			war = { country = SPA country = MOH }
+			war = { country = SPA country = NEU }
+			war = { country = SPA country = QUA }
+		}
+		NOT = {
+			exists = USA
+		}
+	}
+	random = yes
+	name = "Raise the Militia"
+	desc = "Militia raised. God knows we need them as we are crap at colonial wars in America"
+	style = 0
+
+	action_a = {
+		name = "We can do it now!"
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = INF which = -4 value = 5000 }
+		command = { type = CAV which = -3 value = 1000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = manpower value = 20 }
+		command = { type = treasury value = 100 }
+		}
+	}
+
+#the whiteman also brings....DISEASE!!!
+event = {
+
+	id = 121112
+	trigger = {
+		year = 1500
+		continent = America
+		OR = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			}
+		any_neighbour = { continent = europe }
+		}
+	random = yes
+	name = "The Whiteman's Curse"
+	desc = "With the arrival of the Europeans came death. Often as innocent as the common cold or as grave as the pox, the Native American Indians were vulnerable to the Whiteman's diseases. Where the Whiteman went, death was sure to follow. Many Amerindian communities were decimated by the diseases brought by the Europeans."
+	style = 0
+
+	action_a = {
+		name = "Curses!"
+		command = { type = stability value = -1 }
+		command = { type = manpower value = -25 }
+		command = { type = desertion which = -2 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 1000 }
+		command = { type = fortress which = -1 value = -1 }
+		command = { type = fortress which = -1 value = -1 }
+		command = { type = population which = -2 value = -10000 }
+		command = { type = population which = -1 value = -5000 }
+		command = { type = population which = -1 value = -5000 }
+		command = { type = population which = -1 value = -5000 }
+	}
+}
+
+#the whiteman also brings....DISEASE!!!
+event = {
+
+	id = 121113
+	trigger = {
+		year = 1500
+		continent = America
+		OR = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			}
+		any_neighbour = { continent = europe }
+		}
+	random = yes
+	name = "The Whiteman's Curse"
+	desc = "With the arrival of the Europeans came death. Often as innocent as the common cold or as grave as the pox, the Native American Indians were vulnerable to the Whiteman's diseases. Where the Whiteman went, death was sure to follow. Many Amerindian communities were decimated by the diseases brought by the Europeans."
+	style = 0
+
+	action_a = {
+		name = "Curses!"
+		command = { type = stability value = -1 }
+		command = { type = manpower value = -25 }
+		command = { type = desertion which = -2 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 1000 }
+		command = { type = fortress which = -1 value = -1 }
+		command = { type = fortress which = -1 value = -1 }
+		command = { type = population which = -2 value = -10000 }
+		command = { type = population which = -1 value = -5000 }
+		command = { type = population which = -1 value = -5000 }
+		command = { type = population which = -1 value = -5000 }
+	}
+}
+
+#the whiteman also brings....DISEASE!!!
+event = {
+
+	id = 121114
+	trigger = {
+		year = 1500
+		continent = America
+		OR = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			}
+		any_neighbour = { continent = europe }
+		}
+	random = yes
+	name = "The Whiteman's Curse"
+	desc = "With the arrival of the Europeans came death. Often as innocent as the common cold or as grave as the pox, the Native American Indians were vulnerable to the Whiteman's diseases. Where the Whiteman went, death was sure to follow. Many Amerindian communities were decimated by the diseases brought by the Europeans."
+	style = 0
+
+	action_a = {
+		name = "Curses!"
+		command = { type = stability value = -1 }
+		command = { type = manpower value = -25 }
+		command = { type = desertion which = -2 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 1000 }
+		command = { type = fortress which = -1 value = -1 }
+		command = { type = fortress which = -1 value = -1 }
+		command = { type = population which = -2 value = -10000 }
+		command = { type = population which = -1 value = -5000 }
+		command = { type = population which = -1 value = -5000 }
+		command = { type = population which = -1 value = -5000 }
+	}
+}
+
+#the whiteman also brings....DISEASE!!!
+event = {
+
+	id = 121115
+	trigger = {
+		year = 1500
+		continent = America
+		OR = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			}
+		any_neighbour = { continent = europe }
+		}
+	random = yes
+	name = "The Whiteman's Curse"
+	desc = "With the arrival of the Europeans came death. Often as innocent as the common cold or as grave as the pox, the Native American Indians were vulnerable to the Whiteman's diseases. Where the Whiteman went, death was sure to follow. Many Amerindian communities were decimated by the diseases brought by the Europeans."
+	style = 0
+
+	action_a = {
+		name = "Curses!"
+		command = { type = stability value = -1 }
+		command = { type = manpower value = -25 }
+		command = { type = desertion which = -2 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 1000 }
+		command = { type = fortress which = -1 value = -1 }
+		command = { type = fortress which = -1 value = -1 }
+		command = { type = population which = -2 value = -10000 }
+		command = { type = population which = -1 value = -5000 }
+		command = { type = population which = -1 value = -5000 }
+		command = { type = population which = -1 value = -5000 }
+	}
+}
+
+#the whiteman also brings....DISEASE!!!
+event = {
+
+	id = 121116
+	trigger = {
+		year = 1500
+		continent = America
+		OR = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			}
+		any_neighbour = { continent = europe }
+		}
+	random = yes
+	name = "The Whiteman's Curse"
+	desc = "With the arrival of the Europeans came death. Often as innocent as the common cold or as grave as the pox, the Native American Indians were vulnerable to the Whiteman's diseases. Where the Whiteman went, death was sure to follow. Many Amerindian communities were decimated by the diseases brought by the Europeans."
+	style = 0
+
+	action_a = {
+		name = "Curses!"
+		command = { type = stability value = -1 }
+		command = { type = manpower value = -25 }
+		command = { type = desertion which = -2 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 1000 }
+		command = { type = fortress which = -1 value = -1 }
+		command = { type = fortress which = -1 value = -1 }
+		command = { type = population which = -2 value = -10000 }
+		command = { type = population which = -1 value = -5000 }
+		command = { type = population which = -1 value = -5000 }
+		command = { type = population which = -1 value = -5000 }
+	}
+}
+
+#the whiteman also brings....DISEASE!!!
+event = {
+
+	id = 121117
+	trigger = {
+		year = 1500
+		continent = America
+		OR = {
+			religion = pagan
+			religion = thunderbird
+			religion = gorgetism
+			religion = medicinewheel
+			religion = peyote
+			}
+		any_neighbour = { continent = europe }
+		}
+	random = yes
+	name = "The Whiteman's Curse"
+	desc = "With the arrival of the Europeans came death. Often as innocent as the common cold or as grave as the pox, the Native American Indians were vulnerable to the Whiteman's diseases. Where the Whiteman went, death was sure to follow. Many Amerindian communities were decimated by the diseases brought by the Europeans."
+	style = 0
+
+	action_a = {
+		name = "Curses!"
+		command = { type = stability value = -1 }
+		command = { type = manpower value = -25 }
+		command = { type = desertion which = -2 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 1000 }
+		command = { type = fortress which = -1 value = -1 }
+		command = { type = fortress which = -1 value = -1 }
+		command = { type = population which = -2 value = -10000 }
+		command = { type = population which = -1 value = -5000 }
+		command = { type = population which = -1 value = -5000 }
+		command = { type = population which = -1 value = -5000 }
+	}
+}
+
+###################################################
+### Historical events for the Amerindians	###
+### For the New AJF Scenario			###
+### By Ayeshteni				###
+###################################################
+
+#NOTE- long event descs need to be placed into text.csv file
+
+#ids 121120-
+
+#CHEROKEE
+#historic smallpox events 1729, 1738, 1753
+event = {
+
+	id = 121120
+	trigger = {
+		OR = {
+			neighbour = SPA
+			neighbour = ENG
+			neighbour = FRA
+			neighbour = HOL
+			}
+		}
+	random = no
+	country = CHE
+	name = "The Whiteman's Curse"
+	desc = "With the arrival of the Europeans came death. Often as innocent as the common cold or as grave as the pox, the Native American Indians were vulnerable to the Whiteman's diseases. Where the Whiteman went, death was sure to follow. Many Amerindian communities were decimated by the diseases brought by the Europeans. The Cherokee were not exempt and suffered debilitating smallpox epidemics in 1729, 1738 and 1753."
+	style = 0
+
+	date = { day = 1 month = january year = 1729 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1738 }
+
+	action_a = {
+		name = "Curses!"
+		command = { type = stability value = -1 }
+		command = { type = manpower value = -25 }
+		command = { type = desertion which = -2 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 1000 }
+		command = { type = fortress which = -1 value = -1 }
+		command = { type = fortress which = -1 value = -1 }
+		command = { type = population which = -2 value = -2000 }
+		command = { type = population which = -1 value = -1000 }
+		command = { type = population which = -1 value = -1000 }
+		command = { type = population which = -1 value = -1000 }
+	}
+}
+
+event = {
+
+	id = 121121
+	trigger = {
+		any_neighbour = { continent = europe }
+		}
+	random = no
+	country = CHE
+	name = "The Whiteman's Curse"
+	desc = "With the arrival of the Europeans came death. Often as innocent as the common cold or as grave as the pox, the Native American Indians were vulnerable to the Whiteman's diseases. Where the Whiteman went, death was sure to follow. Many Amerindian communities were decimated by the diseases brought by the Europeans. The Cherokee were not exempt and suffered debilitating smallpox epidemics in 1729, 1738 and 1753."
+	style = 0
+
+	date = { day = 1 month = january year = 1738 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1753 }
+
+	action_a = {
+		name = "Curses!"
+		command = { type = stability value = -1 }
+		command = { type = manpower value = -25 }
+		command = { type = desertion which = -2 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 1000 }
+		command = { type = fortress which = -1 value = -1 }
+		command = { type = fortress which = -1 value = -1 }
+		command = { type = population which = -2 value = -2000 }
+		command = { type = population which = -1 value = -1000 }
+		command = { type = population which = -1 value = -1000 }
+		command = { type = population which = -1 value = -1000 }
+	}
+}
+
+event = {
+
+	id = 121122
+	trigger = {
+		any_neighbour = { continent = europe }
+		}
+	random = no
+	country = CHE
+	name = "The Whiteman's Curse"
+	desc = "With the arrival of the Europeans came death. Often as innocent as the common cold or as grave as the pox, the Native American Indians were vulnerable to the Whiteman's diseases. Where the Whiteman went, death was sure to follow. Many Amerindian communities were decimated by the diseases brought by the Europeans. The Cherokee were not exempt and suffered debilitating smallpox epidemics in 1729, 1738 and 1753."
+	style = 0
+
+	date = { day = 1 month = january year = 1753 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1775 }
+
+	action_a = {
+		name = "Curses!"
+		command = { type = stability value = -1 }
+		command = { type = manpower value = -25 }
+		command = { type = desertion which = -2 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 1000 }
+		command = { type = fortress which = -1 value = -1 }
+		command = { type = fortress which = -1 value = -1 }
+		command = { type = population which = -2 value = -2000 }
+		command = { type = population which = -1 value = -1000 }
+		command = { type = population which = -1 value = -1000 }
+		command = { type = population which = -1 value = -1000 }
+	}
+}
+
+#english/carolinean trade
+event = {
+
+	id = 121123
+	trigger = {
+		neighbour = CHE
+		NOT = {
+			war = { country = ENG country = CHE }
+		}
+	}
+	random = no
+	country = ENG
+	name = "Fur trade with the Cherokee"
+	desc = "The Cherokee's location in the interior mountains kept them relatively isolated until after the settlement of Virginia in 1609. By 1629 English traders had worked their way west into the Appalachians and met the Cherokee. Contact became continuous with the founding of the Carolina colonies. Virginian Abraham Wood tried unsuccessfully to maintain his trade monopoly with the Cherokee and sent two men, James Needham and Gabriel Arthur, to the Cherokee Overhill capital at Echota in 1673, but the following year a group of Cherokee met with rival Carolina traders along the upper Savannah River. A treaty with South Carolina followed in 1684 beginning a steady trade in deerskins and Indian slaves. Although contact was limited initially to white traders, important changes began to occur within the Cherokee as a result. Leadership shifted from priest to warrior, and warriors became hunters for profit."
+	style = 0
+
+	date = { day = 1 month = january year = 1650 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1700 }
+
+	action_a = {
+		name = "Trade with the Cherokee"
+		command = { type = trade value = 100 }
+		command = { type = merchants value = 1 }
+		command = { type = relation which = CHE value = 100 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = trigger which = 121124 }
+	}
+
+	action_b = {
+		name ="We shall just take what we need"
+		command = { type = INF which = -4 value = 2000 }
+		command = { type = relation which = CHE value = -100 }
+		command = { type = casusbelli which = CHE value = 48 }
+	}
+}
+
+#cherokee effects of english trade
+event = { 
+
+	id = 121124
+	random = no
+	country = CHE
+	name = "Fur trade with the English"
+	desc = "The Cherokee's location in the interior mountains kept them relatively isolated until after the settlement of Virginia in 1609. By 1629 English traders had worked their way west into the Appalachians and met the Cherokee. Contact became continuous with the founding of the Carolina colonies. Virginian Abraham Wood tried unsuccessfully to maintain his trade monopoly with the Cherokee and sent two men, James Needham and Gabriel Arthur, to the Cherokee Overhill capital at Echota in 1673, but the following year a group of Cherokee met with rival Carolina traders along the upper Savannah River. A treaty with South Carolina followed in 1684 beginning a steady trade in deerskins and Indian slaves. Although contact was limited initially to white traders, important changes began to occur within the Cherokee as a result. Leadership shifted from priest to warrior, and warriors became hunters for profit."
+	style = 0
+
+	action_a = {
+		name = "This could prove profitable"
+		command = { type = relation which = ENG value = 50 }
+		command = { type = trade value = 1000 }
+		command = { type = domestic which = quality value = -1 } #warriors focus on hunting
+	}
+}
+
+#britain offers alliance to the cherokee in NA
+event = {
+
+	id = 121125
+	trigger = {
+		event = 121124
+		exists = CHE
+		NOT = {
+			war = { country = ENG country = CHE }
+		}
+	}
+	random = no
+	country = ENG
+	name = "An Alliance with the Cherokee"
+	desc = "Increasing dependence on trade goods also drew the Cherokee to the British as allies in their wars against the French and Spanish between 1689 and 1763. Cherokee relations with their neighbors were not always friendly before contact. They raided Spanish settlements in Florida during 1673 and fought the coastal tribes of the Carolinas, but European trade and competition aggravated these rivalries and destabilized the region. By 1680 most of the tribes had gotten their first firearms, and the Cherokee had fortified their larger villages. Constant fighting with the Catawba erupted in the east followed by a growing friction with the Creek and Choctaw to the south. To the west there was a traditional hostility with the Chickasaw (also a British ally). To the north, the struggle between the French, Dutch, and English in the fur trade started the Beaver Wars and a period of conquest by the Iroquois League which spread across the Great Lakes and the Ohio Valley."
+	style = 0
+
+	date = { day = 1 month = january year = 1680 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1760 }
+
+	action_a = {
+		name = "It could aid us against our rivals"
+		command = { type = relation which = CHE value = 50 }
+		command = { type = trigger which = 121126 }
+	}
+
+	action_b = {
+		name = "We have no need of such savages"
+		command = { type = relation which = CHE value = -25 }
+	}
+}
+
+#cherokee response
+event = {
+
+	id = 121126
+	random = no
+	country = CHE
+	name = "Will we ally with the English"
+	desc = "Increasing dependence on trade goods also drew the Cherokee to the British as allies in their wars against the French and Spanish between 1689 and 1763. Cherokee relations with their neighbors were not always friendly before contact. They raided Spanish settlements in Florida during 1673 and fought the coastal tribes of the Carolinas, but European trade and competition aggravated these rivalries and destabilized the region. By 1680 most of the tribes had gotten their first firearms, and the Cherokee had fortified their larger villages. Constant fighting with the Catawba erupted in the east followed by a growing friction with the Creek and Choctaw to the south. To the west there was a traditional hostility with the Chickasaw (also a British ally). To the north, the struggle between the French, Dutch, and English in the fur trade started the Beaver Wars and a period of conquest by the Iroquois League which spread across the Great Lakes and the Ohio Valley."
+	style = 0
+
+	action_a = {
+		name = "It could help us against our enemies"
+		command = { type = relation which = ENG value = 25 }
+		command = { type = casusbelli which = CRE value = 48 }
+		command = { type = casusbelli which = CHW value = 48 }
+		command = { type = casusbelli which = SKN value = 48 }
+		command = { type = casusbelli which = CKW value = 48 }
+		command = { type = stability value = -2 }
+		command = { type = land value = 500 } #firearms
+		command = { type = trigger which = 121127 }
+	}
+
+	action_b = {
+		name = "No alliance with the whiteman"
+		command = { type = stability value = 1 }
+		command = { type = relation which = ENG value = -75 }
+	}
+}
+
+#english get their alliance
+event = {
+
+	id = 121127
+	random = no
+	country = ENG
+	name = "We have an alliance with the Cherokee"
+	desc = "Increasing dependence on trade goods also drew the Cherokee to the British as allies in their wars against the French and Spanish between 1689 and 1763. Cherokee relations with their neighbors were not always friendly before contact. They raided Spanish settlements in Florida during 1673 and fought the coastal tribes of the Carolinas, but European trade and competition aggravated these rivalries and destabilized the region. By 1680 most of the tribes had gotten their first firearms, and the Cherokee had fortified their larger villages. Constant fighting with the Catawba erupted in the east followed by a growing friction with the Creek and Choctaw to the south. To the west there was a traditional hostility with the Chickasaw (also a British ally). To the north, the struggle between the French, Dutch, and English in the fur trade started the Beaver Wars and a period of conquest by the Iroquois League which spread across the Great Lakes and the Ohio Valley."
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = alliance which = CHE }
+		command = { type = casusbelli which = FRA value = 48 }
+		command = { type = casusbelli which = SPA value = 48 }
+	}
+}
+
+#cherokee/shawnee tensions
+event = {
+
+	id = 121128
+	trigger = {
+		exists = SHA
+		exists = OHI
+		war = { country = OHI country = SHA }
+		NOT = {
+			war = { country = CHE country = SHA }
+		}
+	}
+	random = no
+	country = CHE
+	name = "Shawnee Refugees"
+	desc = "EVENTHIST121128"
+	style = 0
+
+	date = { day = 1 month = january year = 1658 }
+	offset = 1
+	deathdate = { day = 1 month = january year = 1680 }
+
+	action_a = {
+		name = "How Annoying"
+		command = { type = relation which = SHA value = -75 }
+		command = { type = breakdynastic which = SHA }
+		command = { type = casusbelli which = SHA value = 24 }
+		command = { type = land value = 250 }
+	}
+}
+
+#cherokee response to iro chain.
+
+####################################
+### IROQUOIS
+####################################
+
+#a founding
+event = {
+
+	id = 121300
+	random = no
+	country = OHI
+	name = "A Founding"
+	desc = "Archeological evidence indicates the Iroquois had lived in upstate New York for a long time before the Europeans arrived. Longhouse construction dates to at least 1100 A.D. The maize agriculture was introduced in the 14th century prompting a population surge and other changes. By 1350 villages had become larger and fortified due to increased warfare, and ritual cannibalism began around 1400. The Onondaga were the first of the Iroquois tribes that can be positively identified in New York and seems to have begun after the merger of two villages sometime between 1450 and 1475. The origin of the other four tribes is not as certain. According to Iroquois tradition, they were once a single tribe in the St. Lawrence Valley subject to Algonquin-speaking Adirondack who had taught them agriculture. To escape Algonquin domination, the Iroquois say they left the St. Lawrence and moved south to New York where they split into opposing tribes."
+	style = 0
+
+	date = { day = 1 month = january year = 1450 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1570 }
+
+	action_a = {
+		name = "Um, OK"
+		command = { type = vp value = 1 }
+	}
+}
+
+#our lost tribe?
+event = {
+
+	id = 121301
+	random = no
+	country = OHI
+	name = "The Laurentian Iroquois - Our lost tribe?"
+	desc = "When Jacques Cartier first explored the St. Lawrence in 1535, there were Iroquoian-speaking peoples living in at least eleven villages between Stadacona (Quebec) and Hochelaga (Montreal). Hochelaga was a large fortified village with large corn fields and a population over 3,000. It was still there during Cartier's second visit (1541-42), but when the French returned to the area in 1603, Hochelaga and the other Iroquois villages on the St. Lawrence had disappeared. In their place were Montagnais and Algonkin. For lack of a better term, these Iroquian people have been called the Laurentian Iroquois, but their exact relationship to other Iroquian groups has never been established. Both the Huron and Mohawk traditions claim them as their own. Linguistic evidence tends to support the Huron, but it is quite possible the Laurentian Iroquois may have been part of the Mohawk."
+	style = 0
+
+	date = { day = 1 month = january year = 1600 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1605 }
+
+	action_a = {
+		name = "They were our brothers and sisters"
+		command = { type = relation which = HUR value = -25 }
+		command = { type = vp value = -1 }
+	}
+}
+
+#our lost tribe?
+event = {
+
+	id = 121302
+	random = no
+	country = HUR
+	name = "The Laurentian Iroquois - Our lost tribe?"
+	desc = "When Jacques Cartier first explored the St. Lawrence in 1535, there were Iroquoian-speaking peoples living in at least eleven villages between Stadacona (Quebec) and Hochelaga (Montreal). Hochelaga was a large fortified village with large corn fields and a population over 3,000. It was still there during Cartier's second visit (1541-42), but when the French returned to the area in 1603, Hochelaga and the other Iroquois villages on the St. Lawrence had disappeared. In their place were Montagnais and Algonkin. For lack of a better term, these Iroquian people have been called the Laurentian Iroquois, but their exact relationship to other Iroquian groups has never been established. Both the Huron and Mohawk traditions claim them as their own. Linguistic evidence tends to support the Huron, but it is quite possible the Laurentian Iroquois may have been part of the Mohawk."
+	style = 0
+
+	date = { day = 1 month = january year = 1600 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1605 }
+
+	action_a = {
+		name = "They were our brothers and sisters"
+		command = { type = relation which = OHI value = -25 }
+		command = { type = vp value = -1 }
+	}
+}
+
+#legacy of Deganawida
+event = {
+
+	id = 121303
+	random = no
+	country = OHI
+	name = "Legacy of Deganawida"
+	desc = "EVENTHIST121303"
+	style = 0
+
+	date = { day = 1 month = january year = 1451 }
+	offset = 360
+	deathdate = { day = 1 month = january year = 1570 }
+
+	action_a = {
+		name = "Found the Confederacy and the Great peace"
+		command = { type = infra value = 200 }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 10 }
+		command = { type = diplomats value = 1 }
+		command = { type = domestic which = centralization value = 1 }
+	}
+}
+
+#into Airdondack
+event = {
+
+	id = 121304
+	trigger = {
+		NOT = {
+			war = { country = OHI country = MOH }
+			alliance = { country = OHI country = MOH }
+			vassal = { country = OHI country = MOH }
+			relation = { country = MOH data = 100 }
+		}
+	}
+	random = no
+	country = OHI
+	name = "Against Adirondack"
+	desc = "EVENTHIST121304"
+	style = 0
+
+	date = { day = 1 month = january year = 1570 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a = {
+		name = "Move the Warbands in!"
+		command = { type = addcore_national which = 100 }
+		command = { type = relation which = MOH value = -50 }
+		command = { type = casusbelli which = MOH value = 24 }
+		command = { type = INF which = -1 value = 3000 }
+	}
+
+	action_b = {
+		name = "We are not interested"
+		command = { type = domestic which = quality value = -1 }
+		command = { type = DIP which = 2 value = 12 }
+		command = { type = MIL which = -2 value = 12 }
+		command = { type = relation which = MOH value = 25 }
+		command = { type = stability value = 2 }
+	}
+}
+
+
+####################################
+### Beaver War sequence
+####################################
+
+#121200-
+
+#iroquois and huron still exist
+event = {
+
+	id = 121200
+	trigger = {
+		exists = OHI
+		neighbour = FRA
+		}
+	random = no
+	country = HUR
+	name = "Trade fur for Whiteman's goods"
+	desc = "EVENTHIST121200"
+	style = 0
+
+	date = { day = 1 month = january year = 1609 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1630 }
+
+	action_a = {
+		name = "Trade Fur with the Europeans"
+		command = { type = relation which = OHI value = -50 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = trade value = 1000 }
+		command = { type = treasury value = 100 }
+		command = { type = trigger which = 121202 } #FRA event (hur)
+	}
+
+	action_b = {
+		name = "we don't need the whiteman's goods"
+		command = { type = domestic which = innovative value = -1 }
+		command = { type = relation which = OHI value = 25 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = trigger which = 121201 } #OHI trade instead
+	}
+}
+
+#Iroquois trade with the french instead
+event = {
+
+	id = 121201
+	random = no
+	country = OHI
+	name = "A trade opportunity has arisen"
+	desc = "The French expansion into what would be known Nouvelle France would see them encountering and trading with the Huron who had access not only to the fur the French were interested in, but also access to even better fur through the Ojibwa lands and acrosss the Great Lakes. The Iroquois Confederacy wished to corner the market in trade with the Europeans for goods that they would depend on. The dominance of the Huron in the fur trade with the French would lead to the destructive Beaver Wars that would see the Huron nations subjugated or scattered by the Iroquois around 1650. Nevertheless, the Huron have decided not to trade with the French, therefore we should be able to provide the French with what they want with little competition."
+	style = 0
+
+	action_a = {
+		name = "By all means, lets trade!"
+		command = { type = relation which = HUR value = -25 }
+		command = { type = relation which = FRA value = 200 }
+		command = { type = trade value = 500 }
+		command = { type = treasury value = 50 }
+		command = { type = trigger which = 121203 } #FRA event (ohi)
+	}
+
+	action_b = {
+		name = "The Huron are right, why trade with these devils"
+		command = { type = relation which = HUR value = 50 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = domestic which = innovative value = -1 }
+	}
+}
+
+#french gain goodies - huron 121202
+event = {
+
+	id = 121202
+	random = no
+	country = FRA
+	name = "Trade with the Huron"
+	desc = "EVENTHIST121202"
+	style = 0
+
+	action_a = {
+		name = "Reap the Benefits"
+		command = { type = trade value = 100 }
+		command = { type = treasury value = 50 }
+		command = { type = relation which = OHI value = -50 }
+		command = { type = relation which = HUR value = 50 }
+		command = { type = alliance which = HUR }
+	}
+}
+
+#french gain goodies - iroquois 121203
+event = {
+
+	id = 121203
+	random = no
+	country = FRA
+	name = "Trade with the Iroquios"
+	desc = "The French expansion into what would be known Nouvelle France would see them encountering and trading with the Huron who had access not only to the fur the French were interested in, but also access to even better fur through the Ojibwa lands and acrosss the Great Lakes. The Iroquois Confederacy wished to corner the market in trade with the Europeans for goods that they would depend on. The dominance of the Huron in the fur trade with the French would lead to the destructive Beaver Wars that would see the Huron nations subjugated or scattered by the Iroquois around 1650. Nevertheless, the Huron have decided not to trade with us, therefore the Iroquois have decided to provide us with what we want with little competition."
+	style = 0
+
+	action_a = {
+		name = "Reap the Benefits"
+		command = { type = trade value = 100 }
+		command = { type = treasury value = 50 }
+		command = { type = relation which = HUR value = -50 }
+		command = { type = relation which = OHI value = 50 }
+		command = { type = alliance which = OHI }
+	}
+}
+
+#samuel champlains raid
+event = {
+
+	id = 121204
+	trigger = {
+		event = 121202
+	}
+	random = no
+	country = FRA
+	name = "Samuel Champlain's Raid"
+	desc = "EVENTHIST121204"
+	style = 0
+
+	date = { day = 1 month = january year = 1609 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1650 }
+
+	action_a = {
+		name = "Should be no trouble"
+		command = { type = war which = OHI }
+		command = { type = relation which = HUR value = 50 }
+	}
+}
+
+#dutch provide arms to the iroquois
+event = {
+
+	id = 121205
+	trigger = {
+		event = 121204
+		discovered = 90
+		NOT = {
+			relation = { country = FRA data = 100 }
+			alliance = { country = FRA country = HOL }
+		}
+	}
+	random = no
+	country = HOL
+	name = "Arms to the Iroquois nation"
+	desc = "EVENTHIST121205"
+	style = 0
+
+	date = { day = 1 month = january year = 1610 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1650 }
+
+	action_a = {
+		name = "Arm the Iroquois against our rival"
+		command = { type = relation which = FRA value = -25 }
+		command = { type = relation which = MOH value = 25 }
+		command = { type = treasury value = -25 } #money to mohicans
+		command = { type = trigger which = 121206 }
+	}
+
+	action_b = {
+		name = "let us not get involved"
+		command = { type = stability value = 1 }
+		command = { type = vp value = -5 }
+		command = { type = relation which = FRA value = 25 }
+	}
+}
+
+#iroquois get firearms aplenty
+event = {
+
+	id = 121206
+	random = no
+	country = OHI
+	name = "We have the Whiteman's weapons!"
+	desc = "EVENTHIST121206"
+	style = 0
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = land value = 2000 }
+		command = { type = domestic which = offensive value = 2 }
+		command = { type = INF which = -2 value = 2000 }
+		command = { type = casusbelli which = MOH value = 48 }
+		command = { type = casusbelli which = HUR value = 48 }
+	}
+}
+
+#iroquois-mohican war
+event = {
+
+	id = 121207
+	trigger = {
+		exists = MOH
+		event = 121206
+		NOT = {
+			relation = { country = MOH data = 100 }
+			alliance = { country = OHI country = MOH }
+		}
+	}
+	random = no
+	country = OHI
+	name = "The Iroquois-Mahican War"
+	desc = "EVENTHIST121207"
+	style = 0
+
+	date = { day = 1 month = january year = 1622 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1650 }
+
+	action_a = {
+		name = "We cannot tolerate trade with our enemies!"
+		command = { type = war which = MOH }
+		command = { type = relation which = HOL value = -25 }
+		command = { type = relation which = ALN value = -100 }
+		command = { type = INF which = -2 value = 5000 }
+	}
+
+	action_b = {
+		name = "We must tolerate it"
+		command = { type = relation which = MOH value = 25 }
+		command = { type = relation which = HOL value = 25 }
+		command = { type = relation which = ALN value = 25 }
+		command = { type = vp value = -5 }
+	}
+}
+
+#######################################
+### Culture shift English to American
+#######################################
+
+#121400-
+event = {
+
+	id = 121400
+	trigger = {
+		war = { country = USA country = ENG }
+		provinceculture = { province = 103 data = anglosaxon }
+		OR = {
+		tag = USA
+		tag = ENG
+		}
+	}
+	random = no
+	province = 103
+	name = "Divided Loyalties"
+	desc = "With the War of Independence raging, the people need to determine where their allegiance lies."
+	style = 0
+
+	date = { day = 1 month = january year = 1740 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1838 }
+
+	action_a = {
+		name = "We, the American people..."
+		command = { type = provinceculture which = 103 value = American }
+		command = { type = vp value = 1 }
+	}
+
+	action_b = {
+		name = "Remain Loyalists to the Crown"
+		command = { type = provinceculture which = 103 value = anglosaxon }
+		command = { type = vp value = 1 }
+	}
+}
+
+event = {
+
+	id = 121401
+	trigger = {
+		war = { country = USA country = ENG }
+		provinceculture = { province = 101 data = anglosaxon }
+		OR = {
+		tag = USA
+		tag = ENG
+		}
+	}
+	random = no
+	province = 101
+	name = "Divided Loyalties"
+	desc = "With the War of Independence raging, the people need to determine where their allegiance lies."
+	style = 0
+
+	date = { day = 1 month = january year = 1740 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1838 }
+
+	action_a = {
+		name = "We, the American people..."
+		command = { type = provinceculture which = 101 value = American }
+		command = { type = vp value = 1 }
+	}
+
+	action_b = {
+		name = "Remain Loyalists to the Crown"
+		command = { type = provinceculture which = 101 value = anglosaxon }
+		command = { type = vp value = 1 }
+	}
+}
+
+event = {
+
+	id = 121402
+	trigger = {
+		war = { country = USA country = ENG }
+		provinceculture = { province = 102 data = anglosaxon }
+		OR = {
+		tag = USA
+		tag = ENG
+		}
+	}
+	random = no
+	province = 102
+	name = "Divided Loyalties"
+	desc = "With the War of Independence raging, the people need to determine where their allegiance lies."
+	style = 0
+
+	date = { day = 1 month = january year = 1740 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1838 }
+
+	action_a = {
+		name = "We, the American people..."
+		command = { type = provinceculture which = 102 value = American }
+		command = { type = vp value = 1 }
+	}
+
+	action_b = {
+		name = "Remain Loyalists to the Crown"
+		command = { type = provinceculture which = 102 value = anglosaxon }
+		command = { type = vp value = 1 }
+	}
+}
+
+event = {
+
+	id = 121403
+	trigger = {
+		war = { country = USA country = ENG }
+		provinceculture = { province = 87 data = anglosaxon }
+		OR = {
+		tag = USA
+		tag = ENG
+		}
+	}
+	random = no
+	province = 87
+	name = "Divided Loyalties"
+	desc = "With the War of Independence raging, the people need to determine where their allegiance lies."
+	style = 0
+
+	date = { day = 1 month = january year = 1740 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1838 }
+
+	action_a = {
+		name = "We, the American people..."
+		command = { type = provinceculture which = 87 value = American }
+		command = { type = vp value = 1 }
+	}
+
+	action_b = {
+		name = "Remain Loyalists to the Crown"
+		command = { type = provinceculture which = 87 value = anglosaxon }
+		command = { type = vp value = 1 }
+	}
+}
+
+event = {
+
+	id = 121404
+	trigger = {
+		war = { country = USA country = ENG }
+		provinceculture = { province = 88 data = anglosaxon }
+		OR = {
+		tag = USA
+		tag = ENG
+		}
+	}
+	random = no
+	province = 88
+	name = "Divided Loyalties"
+	desc = "With the War of Independence raging, the people need to determine where their allegiance lies."
+	style = 0
+
+	date = { day = 1 month = january year = 1740 }
+	offset = 30
+deathdate = { day = 1 month = january year = 1838 }
+
+	action_a = {
+		name = "We, the American people..."
+		command = { type = provinceculture which = 88 value = American }
+		command = { type = vp value = 1 }
+	}
+
+	action_b = {
+		name = "Remain Loyalists to the Crown"
+		command = { type = provinceculture which = 88 value = anglosaxon }
+		command = { type = vp value = 1 }
+	}
+}
+
+event = {
+
+	id = 121405
+	trigger = {
+		war = { country = USA country = ENG }
+		provinceculture = { province = 86 data = anglosaxon }
+		OR = {
+		tag = USA
+		tag = ENG
+		}
+	}
+	random = no
+	province = 86
+	name = "Divided Loyalties"
+	desc = "With the War of Independence raging, the people need to determine where their allegiance lies."
+	style = 0
+
+	date = { day = 1 month = january year = 1740 }
+	offset = 30
+deathdate = { day = 1 month = january year = 1838 }
+
+	action_a = {
+		name = "We, the American people..."
+		command = { type = provinceculture which = 86 value = American }
+		command = { type = vp value = 1 }
+	}
+
+	action_b = {
+		name = "Remain Loyalists to the Crown"
+		command = { type = provinceculture which = 86 value = anglosaxon }
+		command = { type = vp value = 1 }
+	}
+}
+
+event = {
+
+	id = 121406
+	trigger = {
+		war = { country = USA country = ENG }
+		provinceculture = { province = 85 data = anglosaxon }
+		OR = {
+		tag = USA
+		tag = ENG
+		}
+	}
+	random = no
+	province = 85
+	name = "Divided Loyalties"
+	desc = "With the War of Independence raging, the people need to determine where their allegiance lies."
+	style = 0
+
+	date = { day = 1 month = january year = 1740 }
+	offset = 30
+deathdate = { day = 1 month = january year = 1838 }
+
+	action_a = {
+		name = "We, the American people..."
+		command = { type = provinceculture which = 85 value = American }
+		command = { type = vp value = 1 }
+	}
+
+	action_b = {
+		name = "Remain Loyalists to the Crown"
+		command = { type = provinceculture which = 85 value = anglosaxon }
+		command = { type = vp value = 1 }
+	}
+}
+
+event = {
+
+	id = 121407
+	trigger = {
+		war = { country = USA country = ENG }
+		provinceculture = { province = 65 data = anglosaxon }
+		OR = {
+		tag = USA
+		tag = ENG
+		}
+	}
+	random = no
+	province = 65
+	name = "Divided Loyalties"
+	desc = "With the War of Independence raging, the people need to determine where their allegiance lies."
+	style = 0
+
+	date = { day = 1 month = january year = 1740 }
+	offset = 30
+deathdate = { day = 1 month = january year = 1838 }
+
+	action_a = {
+		name = "We, the American people..."
+		command = { type = provinceculture which = 65 value = American }
+		command = { type = vp value = 1 }
+	}
+
+	action_b = {
+		name = "Remain Loyalists to the Crown"
+		command = { type = provinceculture which = 65 value = anglosaxon }
+		command = { type = vp value = 1 }
+	}
+}
+
+event = {
+
+	id = 121408
+	trigger = {
+		war = { country = USA country = ENG }
+		provinceculture = { province = 64 data = anglosaxon }
+		OR = {
+		tag = USA
+		tag = ENG
+		}
+	}
+	random = no
+	province = 64
+	name = "Divided Loyalties"
+	desc = "With the War of Independence raging, the people need to determine where their allegiance lies."
+	style = 0
+
+	date = { day = 1 month = january year = 1740 }
+	offset = 30
+deathdate = { day = 1 month = january year = 1838 }
+
+	action_a = {
+		name = "We, the American people..."
+		command = { type = provinceculture which = 64 value = American }
+		command = { type = vp value = 1 }
+	}
+
+	action_b = {
+		name = "Remain Loyalists to the Crown"
+		command = { type = provinceculture which = 64 value = anglosaxon }
+		command = { type = vp value = 1 }
+	}
+}
+
+event = {
+
+	id = 121409
+	trigger = {
+		war = { country = USA country = ENG }
+		provinceculture = { province = 63 data = anglosaxon }
+		OR = {
+		tag = USA
+		tag = ENG
+		}
+	}
+	random = no
+	province = 63
+	name = "Divided Loyalties"
+	desc = "With the War of Independence raging, the people need to determine where their allegiance lies."
+	style = 0
+
+	date = { day = 1 month = january year = 1740 }
+	offset = 30
+deathdate = { day = 1 month = january year = 1838 }
+
+	action_a = {
+		name = "We, the American people..."
+		command = { type = provinceculture which = 63 value = American }
+		command = { type = vp value = 1 }
+	}
+
+	action_b = {
+		name = "Remain Loyalists to the Crown"
+		command = { type = provinceculture which = 63 value = anglosaxon }
+		command = { type = vp value = 1 }
+	}
+}
+
+event = {
+
+	id = 121410
+	trigger = {
+		war = { country = USA country = ENG }
+		provinceculture = { province = 62 data = anglosaxon }
+		OR = {
+		tag = USA
+		tag = ENG
+		}
+	}
+	random = no
+	province = 62
+	name = "Divided Loyalties"
+	desc = "With the War of Independence raging, the people need to determine where their allegiance lies."
+	style = 0
+
+	date = { day = 1 month = january year = 1740 }
+	offset = 30
+deathdate = { day = 1 month = january year = 1838 }
+
+	action_a = {
+		name = "We, the American people..."
+		command = { type = provinceculture which = 62 value = American }
+		command = { type = vp value = 1 }
+	}
+
+	action_b = {
+		name = "Remain Loyalists to the Crown"
+		command = { type = provinceculture which = 62 value = anglosaxon }
+		command = { type = vp value = 1 }
+	}
+}
+
+event = {
+
+	id = 121411
+	trigger = {
+		war = { country = USA country = ENG }
+		provinceculture = { province = 104 data = anglosaxon }
+		OR = {
+		tag = USA
+		tag = ENG
+		}
+	}
+	random = no
+	province = 104
+	name = "Divided Loyalties"
+	desc = "With the War of Independence raging, the people need to determine where their allegiance lies."
+	style = 0
+
+	date = { day = 1 month = january year = 1740 }
+	offset = 30
+deathdate = { day = 1 month = january year = 1838 }
+
+	action_a = {
+		name = "We, the American people..."
+		command = { type = provinceculture which = 104 value = American }
+		command = { type = vp value = 1 }
+	}
+
+	action_b = {
+		name = "Remain Loyalists to the Crown"
+		command = { type = provinceculture which = 104 value = anglosaxon }
+		command = { type = vp value = 1 }
+	}
+}
+
+event = {
+
+	id = 121412
+	trigger = {
+		war = { country = USA country = ENG }
+		provinceculture = { province = 112 data = anglosaxon }
+		OR = {
+		tag = USA
+		tag = ENG
+		}
+	}
+	random = no
+	province = 112
+	name = "Divided Loyalties"
+	desc = "With the War of Independence raging, the people need to determine where their allegiance lies."
+	style = 0
+
+	date = { day = 1 month = january year = 1740 }
+	offset = 30
+deathdate = { day = 1 month = january year = 1838 }
+
+	action_a = {
+		name = "We, the American people..."
+		command = { type = provinceculture which = 112 value = American }
+		command = { type = vp value = 1 }
+	}
+
+	action_b = {
+		name = "Remain Loyalists to the Crown"
+		command = { type = provinceculture which = 112 value = anglosaxon }
+		command = { type = vp value = 1 }
+	}
+}

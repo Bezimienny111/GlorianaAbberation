@@ -1,0 +1,473 @@
+###################################################
+### renaissance italy events for the NAJF	###
+### by Alex J Fowler (ayeshteni)		###
+###################################################
+
+#Leonardo da Vinci#
+event = {
+	id = 5240
+	random = no
+	province = 389
+	name = "EVENTNAME5240"
+	desc = "EVENTHIST5240"
+	style = 1
+	date = { day = 1 month = june year = 1497 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5240A"
+		command = { type = stability value = 1 }
+		command = { type = infra value = 250 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+	}
+}
+
+#Niccolò Machiavelli publishes 'The Prince'#
+event = {
+	id = 5220
+	random = no
+	province = 401
+	name = "EVENTNAME5220"
+	desc = "EVENTHIST5220"
+	style = 2
+	date = { day = 1 month = june year = 1513 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5220A"
+		command = { type = relation which = -1 value = 20 }
+		command = { type = relation which = -1 value = 20 }
+		command = { type = relation which = -1 value = 20 }
+		command = { type = relation which = -1 value = 20 }
+		command = { type = diplomats value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+	}
+}
+#Michelangelo#
+event = {
+	id = 5221
+	random = no
+	province = 401
+	name = "EVENTNAME5221"
+	desc = "EVENTHIST5221"
+	style = 4
+	date = { day = 1 month = january year = 1504 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5221A"
+		command = { type = stability value = 1 }
+		command = { type = infra value = 250 }
+	}
+}
+
+#####################################
+#### OAJF Italy events -AGCEEP
+#####################################
+
+#L'Illuminismo Napoletano 
+#From The Bard, scripted by Isaac Brock
+event = {
+
+	id = 239002
+	random = no
+	province = 393
+	name = "L'Illuminismo Napoletano"
+	desc = "The main centers of Italian Enlightment were Milan and Naples.
+In Naples, the movement arose from the social and cultural reforms
+introduced by the Bourbon Kings, in the newly independent state. The
+intellectuals favoured the initiatives of the kings, expecially intended
+to reduce Church's privileges and Pope's political power. Important 
+scholars in the Neopolitan Enlightenment icluded Antonio Genovesi,
+Ferdinando Galiani and Gaetano Filangieri, who established the basis for
+modern political, economical and monetarist sciences. In particular,
+Filangieri brought on a general reform of Jurisprudence, renewing the
+civil life of the realm."#some changes, slight change in meaning
+	style = 4
+        date = { day = 1 month = january year = 1740 }
+        deathdate = { day = 1 month = january year = 1760 }
+	offset = 3000
+
+	action_a ={			#excellent#
+		name = "Excellent"
+		command = { type = infra value = 300 }
+		command = { type = stability value = -2 } 
+		command = { type = domestic which = innovative value = 2 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = domestic which = mercantilism value = -1 }
+	}
+}
+
+event = {
+
+	id = 17427
+	random = no
+	province = 404
+	name = "The Order of Santi Maurizio e Lazzaro"
+	desc = "In 1573 Savoy established the Order of the Knights of Santi Maurizio e Lazzaro, in emulation of the success of the Knights of St. John in Malta.  The knights maintained a handful of galleys, in principle to protect the Savoyard coast from Turkish raiders.  As the Savoyard coast was very small, in practice they rented their services to Spain and engaged in piracy against both Muslim merchants and the occasional Venetian merchants."
+	style = 1
+
+	date = { day = 1 month = january year = 1573 }
+	action_a ={			
+		name = "Alright"
+		command = { type = relation   which = SPA value = 20 }
+		command = { type = relation   which = TUR value = -20 }
+		command = { type = naval   value = 50 }
+	}
+}
+
+### Alessandro Volta (for MLO)
+### (text from Weisstein's World of Scientific Biography)
+### (http://scienceworld.wolfram.com/biography/)
+### By mfigueras
+
+event = {
+	id = 5241
+	trigger = { domestic = { type = innovative value = 3 }
+           	stability = 0 }
+	random = no
+	province = 389
+	name = "Volta and the first battery"
+	desc = "Volta was an italian physicist who constructed a device for accumulating a large charge by a series of inductions and groundings. He investigated the 'animal electricity' of Galvani and found that the current was generated from the contact of dissimilar metals, and that the frog leg was only acting as a detector. Using this principle, in 1800 he constructed the first battery to produce electricity. Volta's method of stacking round plates of copper and zinc separated by disks of cardboard moistened with salt solution was termed a Voltaic pile. By touching the copper and zinc disks together, Volta showed them to be oppositely charged."
+	style = 5
+	date = {day = 1 month = march year = 1800}
+	offset = 360
+	deathdate = {day = 30 month = december year = 1801}
+	action_a = {
+		name = "Interesting! Any practical applications?"
+		command = {type = infra value = 50}
+		}
+}
+
+### Brunelleschi and the Duomo
+### By mfigueras (text from Mac Tutor History of Mathematics)
+event = {
+	id = 5222
+	random = no
+	province = 401
+	name = "Brunelleschi and the Duomo of Florence"
+	desc = "The work for the cathedral in Florence had begun in 1296 and proceeded very slowly. When the architect and sculptor Filippo Brunelleschi became interested in the project the main problem facing the architects was the construction of the dome. Huge engineering problems faced the placing of a dome on the octagonal Baptistry, and much argument had taken place on how to solve this and Brunelleschi set to work on finding an innovative solution. He combined his artistic skills, his mathematical skills and his understanding of mechanical devices when he made a proposal to the wardens of works of the cathedral when they set up a competition in 1418 to find the best solution to the problem of designing and constructing the dome. Brunelleschi proposed a double selfsupporting shell and a rib structure to support the enormous weight. He proposed brick as a building material, laid in rotating herringbone patterns. In 1420 Brunelleschi was awarded the commission and construction began"
+	style = 1
+	date = {day = 1 month = march year = 1420}
+	offset = 150
+
+	action_a = {
+		name = "Let's appoint Brunelleschi and fund him"
+		command = { type = cash value = -60 }
+		command = { type = ADM which = 1 value = 18 }
+		command = { type = infra value = 50 }
+		}
+	action_b = {
+		name = "Let's appoint someone less innovative"
+		command = { type = cash value = -15 }
+		command = { type = infra value = 10 }
+		command = { type = sleepevent which = 5223 }
+		}
+	action_c = {
+		name = "A dome for the cathedral? Some carpentry work will suffice"
+		command = { type = infra value = -10 }
+		command = { type = sleepevent which = 5223 }
+		}
+}
+
+### The Duomo is completed !!
+### By mfigueras
+
+event = {
+	id = 5223
+	random = no
+	province = 401
+	trigger = { event = 5222 }
+	name = "The Duomo is completed!"
+	desc = "Although Brunelleschi's construction methods were revolutionary
+the erection of the dome was still a lengthy construction process. By
+the time Brunelleschi died in 1446 the dome was almost completely
+finished. It soon became one of the masterworks of architecture admired
+throughout the world. Although the duomo of Santa Maria del Fiore was
+the most famous of Brunelleschi's architectural achievements there are
+many other examples of his stunning architecture in Florence."
+	style = 1
+	date = {day = 1 month = march year = 1447}
+	offset = 120
+	action_a = {
+		name = "We have a truly grandiose masterpiece!!"
+		command = { type = vp value = 5 }
+		command = { type = infra value = 75 }
+		command = { type = stability value = 1 }
+		command = { type = relation which = -1 value = 15}
+		command = { type = relation which = -1 value = 15}
+		command = { type = relation which = -1 value = 15}
+		command = { type = relation which = -1 value = 15}
+		}
+}
+
+### Donatello
+### by Isaac Brock
+event = {
+	id = 17361
+	random = no
+	province = 401
+	name = "Donatello"
+	desc = "Donatello (1386-1466) was trained as a goldsmith but studied
+ancient art. His 'David' (1430) is one of the most renowned sculptures
+of the early Renaissance and the first free standing figure to be cast
+in bronze since antiquity.  His 'Judith slaying Holofernes' was
+dedicated to the Florentine republic."
+	style = 0
+	date = { day = 1 month = january year = 1430}
+	offset = 360
+
+	action_a = {
+		name = "Ok"
+		command = { type = stability value = 1 }
+		command = { type = infra value = 250 }
+	}
+}
+
+### The Staging of Mandragola#
+### by Tom Corcoran (tpc) #
+
+event = {
+	id = 297000 
+	random = no
+	province = 401
+	name = "The Staging of Mandragola"
+	desc = "Hail"
+	style = 2
+	date = { day = 1 month = january year = 1525 }
+	offset = 356 #i don't know the exact date of the staging#
+
+	action_a = {
+		name = "La Dolce Vita"
+		command = {type = infra value = 500}
+	}	
+}
+
+#Mantegna - modeled on Paradox painter events#
+event = {
+	id = 17342
+	random = no
+	province = 390
+	name = "Andrea Mantegna"
+	desc = "Andrea Mantegna was a prolific and admired painter. He is best known for his 'Triumph of Caesar' murals in Mantua.  He directed the work of such artsts as Bellini, Rafael, Durer and da Vinci.  Though he painted for many Renaissance princes he spent most of his career and produced his most prominent works in Mantua"
+	style = 1
+	date = { day = 1 month = january year = 1462 }
+	offset = 180
+	action_a ={				#Ok#
+		name = "Ok"
+		command = { type = stability value = 1 }
+		command = { type = infra value = 200 }
+	}
+}
+
+### Accademia dei Lincei
+### By mfigueras
+
+event = {
+	id = 5224
+	trigger = { stability = 0
+            	domestic = { type = innovative value = 2 }
+		NOT = { domestic = { type = innovative value = 8 } } }
+	random = no
+	province = 399
+	name = "Accademia dei Lincei"
+	desc = "The Accademia dei Lincei was founded in 1603 in Rome by the young Prince Federico Cesi and his friends, Anastasio Di Filiis, Johannes Van Heeck, and Francesco Stelluti. It aimed at a radical renewal of scientific knowledge and it encouraged a vigorous critical approach to the dominant Aristotelian philosophy. They chose the lynx as their emblem, to stress the importance of sharp and penetrating insight into nature. The Academy realized the revolutionary importance of the celestial discoveries that Galileo made with his new telescope in 1610. Nevertheless, the Academy did not survive the death of Prince Federico Cesi in 1630"
+	style = 3
+	date = { day = 10 month = march year = 1603 }
+	offset = 60
+	deathdate = { day = 10 month = march year = 1607 }
+	action_a = {
+		name = "Good work, but I foresee some problems..."
+		command = { type = infra value = 60 }
+		}
+	action_b = {
+		name = "Give the new Academy our support. Science needs a renovation"
+		command = { type = cash value = -50 }
+		command = { type = infra value = 150 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = stability value = -1 }
+		command = { type = sleepevent which = 5225 }	## No trial against Galileo
+		}
+	action_c = {
+		name = "Aristotle is the truth! Let's ban these heretics"
+		command = { type = domestic which = innovative value = -1 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		}
+}
+
+#Venetian flavour events by ilv0lontario
+#Tintoretto #
+event = {
+	id = 17031
+	random = no
+	province = 370
+	name = "Tintoretto"
+	desc = "Tintoretto brought the magnificence and creativity of Renaissance culture to Venice"
+	style = 2
+	date = { day = 16 month = march year = 1575 }
+
+	action_a = { #Ok#
+		name = "Great!"
+		command = { type = infra value = 75 }
+		}
+}
+#Goldoni#
+event = {
+	id = 17032
+	random = no
+	province = 370
+	name = "Goldoni's plays"
+	desc = "Goldoni's theatrical works laid the foundation for a truly Italian theatre.  He replaced the 'Commedia dell' arte' - improvisational drama, with fully developed characters.  Although he was inspired by French theatre he brought a level of realism to his plays that had not been seen before"
+	style = 4
+	date = { day = 1 month = may year = 1740 }
+
+	action_a = { #Ok#
+		name = "Great!"
+		command = { type = infra value = 250 }
+		command = { type = stability value = 1 }
+		}
+}
+
+#The Enlightenment arrives: the Cafè#
+#script by ilv0lontario, translated by The Bard, modified by Isaac Brock (lower innovation)
+event = {
+	id = 326006
+	random = no
+	province = 370
+	name = "The Enlightenment arrives: the Cafè"
+	desc = "The most important intellectuals of Enlightenment united
+together to write the Cafè, a newspaper.  Their interest in, and
+commitment to political, economic and scientific questions, as well as
+in the State affairs were no less than their French peers."
+	style = 4
+	date = { day = 5 month = may year = 1763 }
+
+	action_a = { #Ok#
+		name = "Excellent"
+		command = { type = inflation value = -5 }#changed for 50! IB
+		command = { type = trade value = 500 }
+		command = { type = infra value = 500 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+	}
+}
+
+#Reggia di Caserta stands in Unearthly Glory#
+event = {
+	id = 122125
+	random = no
+	province = 393
+	trigger = { 
+		event = 122124 
+		}
+	name = "The Reggia di Caserta in all it's glory"
+	desc = "After 22 years of hard work, the Reggia (Royal Palace) is completed! Now we are more important and our court is a beacon of Enlightment!"
+	style = 4
+	date = { day = 1 month = january year = 1774 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1774 }
+
+	action_a ={ 
+		name = "We have our Palace"
+		command = { type = gainmanufactory which = 393 value = luxury }
+		command = { type = vp value = 50 }
+		}
+}
+
+#The Commissioning of Reggia di Caserta#
+event = {
+	id = 122124
+	random = no
+	province = 393
+	name = "The Commissioning of Reggia di Caserta"
+	desc = "Carlo VII, king of Naples and son of Felipe V of Spain, wanted a palace like Versailles. It was commissioned to Luigi Vanvitelli (1700-1773); his project was grandiose: it comprehended not only the palace itself (247 m x 184 m = 270 yards x 201 yards), but also a place, a vast park (120 hectares = 296.5 acres), a new urbanistic plan for Caserta and an aqueduct. The Reggia (Royal Palace) was very expensive, expecially for a small state like Naples, but when it was completed in 1774 it gave more prestige and cultural importance to the Kingdom of Naples"
+	style = 4
+
+	date = { day = 1 month = january year = 1752 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1752 }
+
+	action_a ={ 
+		name = "Build the Reggia"
+		command = { type = treasury value = -400 }
+		command = { type = stability value = -1 }
+		}
+
+	action_b ={ 
+		name = "Don't build it"
+		command = { type = stability value = 1 }
+		command = { type = sleepevent which = 122125 }
+		}
+}
+
+#Osuna:  Naval for Naples
+#Basically in to shift the sliders a bit
+event = {
+
+	id = 239000
+	random = no
+	province = 393
+	name = "The Duke of Osuna"
+	desc = "The Duke of Osuna served as viceroy of Naples from 1610-1620. 
+He followed an aggresive foreign policy, particularly with regards to
+naval matters.  He built up a private navy seperate from (and larger
+than) the state navy.  This fleet, which was supposedly raised to
+protect the coast, was in fact composed of privateers, and harrassed
+Venetian and Muslim shipping.  He favoured roundships over the
+traditional Neapolitan galleys.  After his departure the fleet passed
+inot the government's hands."
+
+	style = 3
+        date = { day = 1 month = january year = 1610 }
+	offset = 500
+
+	action_a ={			
+		name = "Support his ambitions"
+		command = { type = stability value = -2 } 
+		command = { type = naval   value = 500 }#not too much for 1610
+		command = { type = domestic which = land value = -1 }
+		command = { type = warships   which = -1 value = 5 }
+		command = { type = cash   value = -100 }
+		command = { type = relation   which = VEN value = -150 } #nearly caused a war
+		command = { type = relation   which = TUR value = -80 }
+		command = { type = relation   which = MAM value = -80 }
+		command = { type = relation   which = ALD value = -40 }
+		command = { type = relation   which = TRI value = -40 }#are they still Tripoli?
+		command = { type = relation   which = CYR value = -80 }#Cytenacia??
+	}
+	action_b ={			
+		name = "This is foolish!"
+		command = { type = stability value = 1 } 
+		command = { type = naval   value = -200 }
+	}
+}
+
+### The Knights of Santo Stefano
+### by Isaac Brock
+
+event = {
+	id = 17376
+	random = no
+	province = 401
+	trigger = { NOT = { relation = {  country = TUR data = -50 } } }
+	name = "The Knights of Santo Stefano"
+	desc = "Inspired by the successes of the Knights of St. John in
+fighting the Turks, Grand Duke Cosimo I set up the order of the Knights
+of Santo Stefano.  Based out of Pisa their role was to serve the Grand
+Duke when he needed naval support and to defend Tuscan interests in the
+Mediterranean.  They played a role in many of the great conflicts in the
+Mediterranean against the Ottomans including the battle of Lepanto
+(1572) and the siege of Candia (1645-1669).  When not at war they
+engaged in piracy against Turkish and occasionally Venetian shipping. 
+This was the first naval force Tuscany had ever had and represented a
+change in the military stance of the Tuscan state."
+	style = 2
+	date = { day = 1 month = january year = 1558}
+	offset = 360
+	action_a = {
+		name = "OK"
+		command = { type = naval  value = 1000 }
+		command = { type = domestic which = LAND value = -1 }
+		command = { type = galleys which = 401 value = 5 }
+		}
+}
+

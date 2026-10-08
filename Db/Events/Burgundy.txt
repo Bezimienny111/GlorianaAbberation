@@ -1,0 +1,1055 @@
+#################################################
+### Burgundian events after Charles the Bold ####
+### mainly Fantasy Burgundian events for AJF ####
+### By AJF Ayeshteni Fowler		     ####
+#################################################
+
+#event range 131000-
+
+#events to realise the dukes dream of becoming a king#
+event = {
+
+	id = 131000
+	trigger = {
+		owned = { province = 406 data = -1 }
+		}
+	random = no
+	country = BUR
+	name = "Burgundy Reclaims Provence"
+	desc = "Before 1419, the County of Provence was actually a fief of Burgundy, and not France. The aim of the Dukes of Burgundy during the Hundred Year War, and especially under Philippe III le Bon was to be recognised as a King. The Kingdom of Burgundy had once existed and covered an area from the Upper Lorraine valley down to Provence and from Dauphine to Bern. Your Grace, we have recovered the wayward Provencials!"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "Thy will be done"
+		command = { type = vp value = 5 }
+		command = { type = addcore_national which = 406 }
+		command = { type = add_countryculture which = occitan } #occitan
+		command = { type = relation which = FRA value = -25 }
+		command = { type = relation which = ARG value = -10 }
+	}
+}
+
+#events to realise the dukes dream of becoming a king#
+event = {
+
+	id = 131001
+	trigger = {
+		owned = { province = 407 data = -1 }
+		}
+	random = no
+	country = BUR
+	name = "Burgundy Reclaims Dauphine"
+	desc = "Before 1419, the Counties of Viennois and Dauphine were actually fiefs of Burgundy, and not France. The aim of the Dukes of Burgundy during the Hundred Year War, and especially under Philippe III le Bon was to be recognised as a King. The Kingdom of Burgundy had once existed and covered an area from the Upper Lorraine valley down to Provence and from Dauphine to Bern. Your Grace, we have recovered the wayward Dauphinois!"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "Thy will be done"
+		command = { type = vp value = 5 }
+		command = { type = addcore_national which = 407 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = ENG value = -10 }
+	}
+}
+
+#events to realise the dukes dream of becoming a king#
+event = {
+
+	id = 131002
+	trigger = {
+		owned = { province = 404 data = -1 }
+		owned = { province = 405 data = -1 }
+		}
+	random = no
+	country = BUR
+	name = "Burgundy Reclaims Savoie"
+	desc = "Before 1419, the County of Savoy, the Duchy of Savoy and the Principalities of Orange and Monaco were actually fiefs of Burgundy, and not France. The aim of the Dukes of Burgundy during the Hundred Year War, and especially under Philippe III le Bon was to be recognised as a King. The Kingdom of Burgundy had once existed and covered an area from the Upper Lorraine valley down to Provence and from Dauphine to Bern. Your Grace, we have recovered the wayward Savoyards!"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "Thy will be done"
+		command = { type = vp value = 5 }
+		command = { type = addcore_national which = 404 }
+		command = { type = addcore_national which = 405 }
+#		command = { type = add_countryculture which = hawaiian } #gallo-italian
+		command = { type = relation which = FRA value = -25 }
+		command = { type = relation which = PAP value = -10 }
+	}
+}
+
+#events to realise the dukes dream of becoming a king#
+event = {
+
+	id = 131003
+	trigger = {
+		owned = { province = 408 data = -1 }
+		}
+	random = no
+	country = BUR
+	name = "Burgundy Reclaims Nevers"
+	desc = "Before 1419, Nevers in Lyonnais belonged to Burgundy, and not France. The aim of the Dukes of Burgundy during the Hundred Year War, and especially under Philippe III le Bon was to be recognised as a King. The Kingdom of Burgundy had once existed and covered an area from the Upper Lorraine valley down to Provence and from Dauphine to Bern. Your Grace, we have recovered this province!"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "Thy will be done"
+		command = { type = vp value = 5 }
+		command = { type = addcore_national which = 408 }
+		command = { type = relation which = FRA value = -25 }
+		command = { type = relation which = ENG value = -10 }
+	}
+}
+
+#events to realise the dukes dream of becoming a king#
+event = {
+
+	id = 131004
+	trigger = {
+		owned = { province = 388 data = -1 }
+		}
+	random = no
+	country = BUR
+	name = "Burgundy Reclaims Bern"
+	desc = "Before 1419, Burgundy once ruled over Western Switzerland. The aim of the Dukes of Burgundy during the Hundred Year War, and especially under Philippe III le Bon was to be recognised as a King. The Kingdom of Burgundy had once existed and covered an area from the Upper Lorraine valley down to Provence and from Dauphine to Bern. Your Grace, we have recovered the wayward Swiss!"
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "Thy will be done"
+		command = { type = vp value = 5 }
+		command = { type = addcore_national which = 388 }
+		command = { type = add_countryculture which = swiss } #alammanic
+		command = { type = relation which = HAB value = -25 }
+		command = { type = relation which = MLO value = -10 }
+	}
+}
+
+#burgundy seeks recognition from the emperor#
+event = {
+
+	id = 131005
+	trigger = {
+		OR = {
+			AND = {
+				owned = { province = 409 data = -1 }
+				owned = { province = 387 data = -1 }
+				owned = { province = 388 data = -1 }
+				owned = { province = 406 data = -1 }
+				owned = { province = 407 data = -1 }
+				owned = { province = 405 data = -1 }
+				owned = { province = 404 data = -1 }
+				owned = { province = 408 data = -1 }
+				relation = { country = HAB value = 100 }
+				}
+			AND = {
+				countrysize = 20
+				owned = { province = 385 data = -1 }
+				owned = { province = 411 data = -1 }
+				owned = { province = 386 data = -1 }
+				owned = { province = 376 data = -1 }
+				owned = { province = 379 data = -1 }
+				owned = { province = 383 data = -1 }
+				owned = { province = 384 data = -1 }
+				NOT = {
+					exists = FRA
+					}
+				}
+			}
+		}
+	random = no
+	country = BUR
+	name = "The Kingdom of Burgundy"
+	desc = "The Kingdom of Burgundy had, in times of old, sat nestled between West Francia (France) and East Francia (Germany), and the Dukes of Burgundy sought to recreate the old territory of Francia Media and replace the Ducal hat with a King's crown. Burgundy has indeed regained it's old lands and fiefs, and after Charles the Bold's daughter's marriage to Maximillian I, Emperor of the HRE and the continuing good relations between Burgundy and Austria, Burgundy decided that the time was right to petition the Emperor for recognition of the Kingdom of Burgundy. The Emperor after some deliberation granted the petition and the Great Kingdom of Burgundy re-arose like a pheonix from the flames!"
+	style = 1
+
+	date = { day = 1 month = january year = 1493 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "Hail the King!"
+		command = { type = stability value = 2 }
+		command = { type = vp value = 20 }
+		command = { type = DIP which = 3 value = 120 }
+		command = { type = domestic which = aristocracy value = 1 }
+		command = { type = domestic which = centralization value = 2 }
+		command = { type = domestic which = serfdom value = 1 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = PAP value = -25 }
+		command = { type = relation which = MLO value = -25 }
+		command = { type = relation which = STR value = -50 }
+		command = { type = relation which = LOR value = -50 }
+		command = { type = provincetax which = -2 value = 3 }
+		command = { type = provincemanpower which = -2 value = 2 }
+		command = { type = gainmanufactory which = -2 value = luxury }
+		command = { type = flagname which = King }
+	}
+}
+
+#burgundy claims the french crown, if france does not exist#
+event = {
+
+	id = 131006
+	trigger = {
+			event = 131005
+			NOT = {
+				exists = FRA
+				}
+			}
+	random = no
+	country = BUR
+	name = "Claim West Francia"
+	desc = "The Kingdom of Burgundy wished to emulate the greatness of the old Empire of Charlemagne, but were understandably cautious as to make this known. However, with the French Crown no longer soveriegn, the Valois Kings of Burgundy felt the time had come to official lay claim to West Francia - France, and remove the foreign invader from so-called Burgundian lands. The Burgundian royal line had descended from the French Valois and before that the Capetians and so with just cause they directed their attention to reclaiming France."
+	style = 1
+
+	date = { day = 1 month = january year = 1493 }
+	offset = 120
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "Make the claim but keep the flag of Burgund"
+		command = { type = stability value = -2 }
+		command = { type = relation which = HAB value = -25 }
+		command = { type = relation which = PAP value = -25 }
+		command = { type = relation which = SPA value = -25 }
+		command = { type = relation which = ENG value = -25 }
+		command = { type = add_countryculture which = french } #french
+		command = { type = add_countryculture which = occitan } #occitan
+		command = { type = addcore_national which = 415 }
+		command = { type = addcore_national which = 414 }
+		command = { type = addcore_national which = 416 }
+		command = { type = addcore_national which = 413 }
+		command = { type = addcore_national which = 412 }
+		command = { type = addcore_national which = 417 }
+		command = { type = addcore_national which = 418 }
+		command = { type = addcore_national which = 424 }
+		command = { type = addcore_national which = 411 }
+		command = { type = addcore_national which = 410 }
+		command = { type = addcore_national which = 419 }
+		command = { type = addcore_national which = 423 }
+		command = { type = addcore_national which = 426 }
+		command = { type = addcore_national which = 422 }
+		command = { type = addcore_national which = 421 }
+		command = { type = addcore_national which = 420 }
+		command = { type = addcore_national which = 384 }
+		command = { type = addcore_national which = 383 }
+		command = { type = addcore_national which = 382 }
+		command = { type = addcore_national which = 385 }
+		command = { type = addcore_national which = 386 }
+		command = { type = addcore_national which = 376 }
+		command = { type = addcore_national which = 375 }
+	}
+
+	action_b = {
+		name = "Make the claim and take the gold Fleur-de-lys on a field of purple"
+		command = { type = stability value = -2 }
+		command = { type = relation which = HAB value = -25 }
+		command = { type = relation which = PAP value = -25 }
+		command = { type = relation which = SPA value = -25 }
+		command = { type = relation which = ENG value = -25 }
+		command = { type = add_countryculture which = french } #french
+		command = { type = add_countryculture which = occitan } #occitan
+		command = { type = addcore_national which = 415 }
+		command = { type = addcore_national which = 414 }
+		command = { type = addcore_national which = 416 }
+		command = { type = addcore_national which = 413 }
+		command = { type = addcore_national which = 412 }
+		command = { type = addcore_national which = 417 }
+		command = { type = addcore_national which = 418 }
+		command = { type = addcore_national which = 424 }
+		command = { type = addcore_national which = 411 }
+		command = { type = addcore_national which = 410 }
+		command = { type = addcore_national which = 419 }
+		command = { type = addcore_national which = 423 }
+		command = { type = addcore_national which = 426 }
+		command = { type = addcore_national which = 422 }
+		command = { type = addcore_national which = 421 }
+		command = { type = addcore_national which = 420 }
+		command = { type = addcore_national which = 384 }
+		command = { type = addcore_national which = 383 }
+		command = { type = addcore_national which = 382 }
+		command = { type = addcore_national which = 385 }
+		command = { type = addcore_national which = 386 }
+		command = { type = addcore_national which = 376 }
+		command = { type = addcore_national which = 375 }
+		command = { type = flagname which = france }
+	}
+
+	action_c = {
+		name = "Why should we care?"
+		command = { type = stability value = 1 }
+		command = { type = relation which = HAB value = 25 }
+		command = { type = relation which = PAP value = 25 }
+		command = { type = relation which = SPA value = 25 }
+		command = { type = relation which = ENG value = 25 }
+	}
+}
+
+#The League of Augsburg#
+event = {
+
+	id = 131007			#triggered by FRA3127#
+	random = no
+	country = BUR
+	name = "EVENTNAME3680"
+	desc = "EVENTHIST3680"
+	style = 3
+
+	action_a ={					#Defy French claims#
+		name = "ACTIONNAME3680A"
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = PRU value = 150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = HAN value = 100 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = HES value = 100 }
+		command = { type = relation which = KLE value = 100 }
+		command = { type = relation which = KOL value = 100 }
+		command = { type = relation which = PFA value = 100 }
+		command = { type = relation which = THU value = 100 }
+	}
+
+	action_b ={					#Ignore it#
+		name = "ACTIONNAME3680B"
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = PRU value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = HAN value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = HES value = -50 }
+		command = { type = relation which = KLE value = -50 }
+		command = { type = relation which = KOL value = -50 }
+		command = { type = relation which = PFA value = -50 }
+		command = { type = relation which = THU value = -50 }
+	}
+}
+
+#The League of Schmalkalden#
+event = {
+
+	id = 131008
+	trigger = {
+		 exists = HAB  
+		 	AND = { 
+				OR = {
+					religion = protestant
+					religion = reformed
+						}
+			}
+	}
+	random = no
+	country = BUR
+	name = "EVENTNAME3681"
+	desc = "EVENTHIST3681"
+	style = 2
+
+	date = { day = 1 month = january year = 1527 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1529 }
+
+	action_a ={				#Give it your support#
+		name = "ACTIONNAME3681A"
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = HAN value = 150 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = PFA value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = THU value = 150 }
+		command = { type = relation which = KLE value = 100 }
+		command = { type = relation which = KOL value = 50 }
+		command = { type = relation which = BAY value = 50 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={				#Ignore it#
+		name = "ACTIONNAME3681B"
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = HAN value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = PFA value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = relation which = THU value = -100 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#The Evangelic Union#
+event = {
+		
+	id = 131009
+	trigger = {
+		 OR = {
+			religion = protestant
+			religion = reformed
+				}
+			}		
+	random = no
+	country = BUR
+	name = "EVENTNAME3682"
+	desc = "EVENTHIST3682"
+	style = 3
+
+	date = { day = 1 month = january year = 1605 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a ={				#Prepare to Join#
+		name = "ACTIONNAME3682A"
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = HAN value = 150 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = PFA value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = THU value = 150 }
+		command = { type = relation which = SHL value = 150 }
+		command = { type = relation which = KLE value = 100 }
+		command = { type = relation which = KOL value = 50 }
+		command = { type = relation which = BAY value = 50 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={				#Stay Neutral#
+		name = "ACTIONNAME3682B"
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = HAN value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = PFA value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = relation which = THU value = -100 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#The Catholic League#
+event = {
+
+	id = 131010
+	trigger = {
+		 OR = {
+			religion = catholic
+			religion = counterreform
+				}
+			}			
+	random = no
+	country = BUR
+	name = "EVENTNAME3683"
+	desc = "EVENTHIST3683"
+	style = 3
+
+	date = { day = 1 month = january year = 1607 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a ={				#Prepare to Join#
+		name = "ACTIONNAME3683A"
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = BRA value = -150 }
+		command = { type = relation which = HAN value = -150 }
+		command = { type = relation which = HES value = -150 }
+		command = { type = relation which = PFA value = -150 }
+		command = { type = relation which = SAC value = -150 }
+		command = { type = relation which = THU value = -150 }
+		command = { type = relation which = SHL value = -150 }
+		command = { type = relation which = KLE value = 50 }
+		command = { type = relation which = KOL value = 100 }
+		command = { type = relation which = BAY value = 100 }
+		command = { type = relation which = PAP value = 100 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = HAB value = 150 }
+	}
+
+	action_b ={				#Stay Neutral#
+		name = "ACTIONNAME3683B"
+		command = { type = relation which = BRA value = 50 }
+		command = { type = relation which = HAN value = 50 }
+		command = { type = relation which = HES value = 50 }
+		command = { type = relation which = PFA value = 50 }
+		command = { type = relation which = SAC value = 50 }
+		command = { type = relation which = THU value = 50 }
+		command = { type = relation which = BAY value = -50 }
+		command = { type = relation which = KLE value = -50 }
+		command = { type = relation which = KOL value = -50 }
+		command = { type = relation which = HAB value = -100 }
+	}
+}
+
+#The Effects of the Pragmatic Sanction#
+event = {
+
+	id = 131011
+	trigger = { event = 3205 }
+	random = no
+	country = BUR
+	name = "EVENTNAME3616"
+	desc = "EVENTHIST3616"
+	style = 4
+
+	date = { day = 1 month = january year = 1741 }
+	offset = 10
+	deathdate = { day = 1 month = june year = 1741 }
+
+	action_c ={				#Anti-Habsburg#
+		name = "ACTIONNAME3616A"
+		command = { type = casusbelli which = HAB value = 36 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = PRU value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = GEN value = 50 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = RUS value = -100 }
+		command = { type = relation which = HES value = -50 }
+		command = { type = relation which = HAN value = -50 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={				#Neutral#
+		name = "ACTIONNAME3616B"
+		command = { type = relation which = PRU value = -50 }
+		command = { type = relation which = SAC value = -50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = HOL value = 100 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = relation which = HES value = 100 }
+		command = { type = relation which = HAN value = 100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = stability value = 1 }
+	}
+	action_a ={				#Pro-Habsburg#
+		name = "ACTIONNAME3616C"
+		command = { type = relation which = PRU value = -150 }
+		command = { type = relation which = SAC value = -150 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HOL value = 100 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = HAN value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = stability value = -2 }
+		command = { type = casusbelli which = PRU value = 12 }
+	}
+}
+
+#fantasy events based on fantasy monarchs#
+event = {
+
+	id = 131012
+	random = no
+	country = BUR
+	name = "Ascension of Philippe IV"
+	desc = "Historically Charles I the Bold of Burgundy died at the walls of Nancy in 1477, leaving no male heir to lead the Duchy. Charles did have a daughter called Marie who married Maximillian I of Austria. The lands of Burgundy passed to the Habsburgs except for the rump of the Duchy that passed to France. However, it appears that Charles has not died and lived long enough to produce a male heir, Philippe who has now ascended to the Burgundian throne. It seems Burgundy may survive after all."
+	style = 1
+
+	date = { day = 1 month = january year = 1486 }
+
+	action_a = {
+		name = "All Hail Philippe!"
+		command = { type = vp value = 1 }
+	}
+}
+
+#philippe iv and the italian wars#
+event = {
+
+	id = 131013
+	random = no
+	country = BUR
+	name = "Burgundy in Italy"
+	desc = "Burgundy always had interests in Italy, and with the Aragon-Anjou conflicts in the peninsula it was inevitable that Burgundy would become involved. While having to consider whether to side with the French or Spain, Burgundy also had to consider the spectre of Austria as well as to decide to make their own independent moves or policies in Italy. Philippe IV was a good diplomat and played the two great powers against each other while increasing his own influence in the region."
+	style = 1
+
+	date = { day = 1 month = january year = 1495 }
+	offset = 60
+	deathdate = { day = 1 month = december year = 1503 }
+
+	action_a = {
+		name = "Play both sides and expand influence in region"
+		command = { type = relation which = SPA value = -25 }
+		command = { type = relation which = ARG value = -25 }
+		command = { type = relation which = FRA value = -25 }
+		command = { type = relation which = PAP value = 50 }
+		command = { type = relation which = MLO value = 75 }
+		command = { type = relation which = PAR value = 50 }
+		command = { type = relation which = NAP value = 50 }
+		command = { type = relation which = HAB value = 25 }
+		command = { type = INF which = -2 value = 3000 }
+	}
+
+	action_b = {
+		name = "Take direct military action in Italy"
+		command = { type = stability value = -1 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = ARG value = -50 }
+		command = { type = relation which = PAP value = -50 }
+		command = { type = relation which = MLO value = -75 }
+		command = { type = relation which = PAR value = -50 }
+		command = { type = relation which = NAP value = -50 }
+		command = { type = relation which = HAB value = -25 }
+		command = { type = casusbelli which = MLO value = 24 }
+		command = { type = casusbelli which = NAP value = 24 }
+		command = { type = casusbelli which = PAP value = 24 }
+	}
+
+	action_c = {
+		name = "Support the French"
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = SPA value = -75 }
+		command = { type = relation which = ARG value = -75 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = casusbelli which = ARG value = 24 }
+		command = { type = casusbelli which = SPA value = 24 }
+	}
+
+	action_d = {
+		name = "Support the Spanish"
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = ARG value = 75 }
+		command = { type = relation which = FRA value = -75 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = casusbelli which = FRA value = 24 }
+		command = { type = casusbelli which = NAP value = 24 }
+	}
+}
+
+#wars of religion in france#
+event = {
+
+	id = 131014
+	trigger = {
+		event = 3110
+		OR = {
+			religion = catholic
+			religion = counterreform
+			}
+		}
+	random = no
+	country = BUR
+	name = "Wars of Religion in France"
+	desc = "In 1562 the Wars of Religion began in France between the Catholics and the Protestant Hugenots. Several countries would take an interest in the War, for instance the Palatinate sent a force to help the Hugenots in 1567 and the English also sent troops and supplies to the Protestants. In 1560 Jean II Roi de Lune rose to the throne of Burgundy and he had little time in office before having to decide what to do with the conflict raging at his borders. In 1563 Jean II decided that the Protestant threat threatened not only France but Burgundy as well. Therefore, Burgundy sent men and supplies to the Catholic Kings of France."
+	style = 2
+
+	date = { day = 1 month = march year = 1562 }
+	offset = 30
+	deathdate = { day = 24 month = august year = 1572 }
+
+	action_a = {
+		name = "Aid the French"
+		command = { type = stability value = 1 }
+		command = { type = trigger which = 131015 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = treasury value = -100 }
+		command = { type = desertion which = -1 value = 3000 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -1 }
+	}
+
+	action_b = {
+		name = "We have our own concerns"
+		command = { type = relation which = FRA value = -25 }
+		command = { type = stability value = -1 }
+		command = { type = religiousrevolt which = -1 }
+	}
+
+	action_c = {
+		name = "Aid the Hugenots"
+		command = { type = relation which = FRA value = -100 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = revolt which = 409 }
+		command = { type = revolt which = 387 }
+		command = { type = revoltrisk which = 36 value = 3 }
+	}
+}
+
+#aid to france#
+event = {
+
+	id = 131015
+	random = no
+	country = FRA
+	name = "Burgundy give us aid"
+	desc = "Burgundy have elected to give us aid in the fight against the Hugenots"
+	style = 2
+
+	action_a = {
+		name = "We recieve it with thanks"
+		command = { type = INF which = -1 value = 3000 }
+		command = { type = treasury value = 100 }
+	}
+}
+
+#admin reforms of charles III#
+event = {
+
+	id = 131016
+	random = no
+	country = BUR
+	name = "Administrative reforms of Charles III"
+	desc = "Charles III proved to be a eager student of economics during his formative years and these stood him in good stead once he rose to the throne of Burgundy. His administrative reforms were somewhat revolutionary during this time and he provided greater freedom to the trading and merchant classes as well as providing a regulatory code of controlling commerce and giving more rights to the Middle Classes."
+	style = 3
+
+	date = { day = 1 month = january year = 1640 }
+	offset = 60
+	deathdate = { day = 1 month = december year = 1660 }
+
+	action_a = {
+		name = "Reform"
+		command = { type = infra value = 50 }
+		command = { type = trade value = 200 }
+		command = { type = loansize which = 500 }
+		command = { type = inflation value = -5 }
+		command = { type = domestic which = aristocracy value = -1 }
+		command = { type = domestic which = mercantilism value = -2 }
+		command = { type = domestic which = serfdom value = -1 }
+		command = { type = provincetax which = -2 value = 2 }
+		command = { type = provincetax which = -1 value = 1 }
+	}
+}
+
+#the revolutionary period#
+event = {
+
+	id = 131017
+	trigger = {
+			OR = {
+			event = 3342
+			event = 3779
+			}
+		}
+	random = no
+	country = BUR
+	name = "Revolution in France"
+	desc = "With revolution brewing in Europe and France's support for the United States' independence from Britain caused concern in central Europe. When the French overthrew the government and formed a radical government, Emigres from France poured into neighbouring Burgundy. The Burgundian ruler, Henri II allowed the Emigres into the country and pondered what to do next. As the revolutionaries in France turned their gaze out to neighbouring regimes, the Burgundian nobles began to panic. The peasants on the Franco-Burgundian border began to ponder the benefits of the enlightenment and of revolution, while the nobles either brutally suppressed such ideas or fled to the Royal court. Other nobles began secret negotiations with the revolutionaries in a doomed bid to save their property and valuables. Burgundy began to fragment and fall apart, only the actions of its ruler could hold the pieces together."
+	style = 4
+
+	date = { day = 1 month = january year = 1790 }
+	offset = 10
+	deathdate = { day = 31 month = december year = 1792 }
+
+	action_a = {
+		name = "Oh no!"
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = domestic which = QUALITY value = -1 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = stability value = -2 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revoltrisk which = 24 value = 3 }
+		command = { type = flagname which = france2 }
+	}
+}
+
+#the revolutionary period#
+event = {
+
+	id = 131018
+	trigger = {
+		event = 3780
+		}
+	random = no
+	country = BUR
+	name = "Revolution in France"
+	desc = "With revolution brewing in Europe and France's support for the United States' independence from Britain caused concern in central Europe. When the French overthrew the government and formed a constitutional Monarchy, Emigres from France poured into neighbouring Burgundy. The Burgundian ruler, Henri II allowed the Emigres into the country and pondered what to do next. As the revolutionaries in France turned their gaze out to neighbouring regimes, the Burgundian nobles began to panic. The peasants on the Franco-Burgundian border began to ponder the benefits of the enlightenment and of revolution, while the nobles either brutally suppressed such ideas or fled to the Royal court. Other nobles began secret negotiations with the revolutionaries in a doomed bid to save their property and valuables. Burgundy began to fragment and fall apart, only the actions of its ruler could hold the pieces together."
+	style = 4
+
+	date = { day = 1 month = january year = 1790 }
+	offset = 10
+	deathdate = { day = 31 month = december year = 1792 }
+
+	action_a = {
+		name = "Oh no!"
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = domestic which = QUALITY value = -1 }
+		command = { type = desertion which = -1 value = 2000 }
+		command = { type = stability value = -2 }
+		command = { type = revolt which = -1 }
+		command = { type = revoltrisk which = 12 value = 2 }
+	}
+}
+
+#burgundian cot if no france#
+event = {
+
+	id = 131019
+	trigger = {
+		owned = { province = 385 data = -1 }
+		owned = { province = 408 data = -1 }
+		owned = { province = 409 data = -1 }
+		event = 131006
+		NOT = {
+			exists = FRA
+			}
+		}
+	random = no
+	country = BUR
+	name = "Burgundian Centre of Trade"
+	desc = "With the demise of the French Kingdom and the rise of the Kingdom of Burgundy, the traders, slowly at first, moved from Paris to the growing splendour of Dijon, the new capital of the realm. Soon Dijon became the hub of trade between the French provinces, Switzerland and beyond. The Burgundian King encouraged this new direction in trade as it pumped luxury consumable goods closer to home and also diverted possible trade away from the Danish and Dutch konters, especially after the Dutch revolts in the late 1500s."
+	style = 2
+
+	date = { day = 1 month = january year = 1550 }
+	offset = 300
+	deathdate = { day = 1 month = january year = 1820 }
+
+	action_a = {
+		name = "Move the Trade Centre"
+		command = { 
+			trigger = { cot = 385 }
+			type = removecot which = 385
+		}
+		command = { 
+			trigger = { cot = 408 }
+			type = removecot which = 408
+		}
+		command = { type = cot which = 409 }
+		command = { type = treasury value = 200 }
+		command = { type = trade value = 100 }
+		command = { type = merchants value = 6 }
+	}
+
+	action_b = {
+		name = "Keep it in Paris"
+		command = { type = domestic which = mercantilism value = -1 }
+		command = { type = trade value = 50 }
+		command = { type = stability value = 2 }
+	}
+}
+
+#temporary event - forgot to add french and occitan to the reclaimation of francia event.
+#event = {
+#	id = 1311020
+#	trigger = {
+#		event = 131006
+#	}
+#	random = no
+#	country = BUR
+#	name = "Culture setup"
+#	desc = "you will be loyal subjects now"
+#	style = 0
+#	date = { day = 1 month = january year = 1337 }
+#	offset = 1
+#	deathdate = { day = 30 month = december year = 1820 }
+#
+#	action_a = {
+#		name = "yippee"
+#		command = { type = add_countryculture which = french } #french
+#		command = { type = add_countryculture which = indian } #occitan
+#	}
+#}
+
+#'Burgundian inheritance' chain alternative if France does not exist after english victory in HYW.
+event = {
+	id = 131033
+	trigger = {
+		event = 100056
+		exists = HAB
+		atwar = no
+		NOT = {
+			exists = FRA
+			event = 3597
+		}
+	}
+	random = no
+	country = BUR
+	name = "EVENTNAME3597"
+	desc = "EVENTHIST3597"
+	style = 1
+
+	date = { day = 3 month = june year = 1476 }
+	offset = 0
+	deathdate = { day = 4 month = june year = 1484 }
+
+	action_a ={
+		name = "ACTIONNAME3597A"	#Maximilian of Austria#
+		command = { type = independence which = GEL }
+		command = { type = independence which = FRI }
+		command = { type = independence which = KLE }
+		command = { type = independence which = HAN }
+		command = { type = independence which = KOL }
+		command = { type = independence which = LOR }
+                command = { type = independence which = PFA }
+                command = { type = revolt which = 334 }
+		command = { type = revolt which = 334 }
+		command = { type = revolt which = 335 }
+		command = { type = revolt which = 335 }
+		command = { type = revolt which = 336 }
+		command = { type = revolt which = 336 }
+                command = { type = cedeprovince which = ENG value = 376 }
+		command = { type = cedeprovince which = ENG value = 379 }
+		command = { type = cedeprovince which = ENG value = 382 }
+		command = { type = cedeprovince which = ENG value = 383 }
+		command = { type = cedeprovince which = ENG value = 384 }
+		command = { type = cedeprovince which = ENG value = 385 } #paris in case FRA doesn't have it. -AJF
+		command = { type = cedeprovince which = ENG value = 386 }
+		command = { type = cedeprovince which = ENG value = 387 }
+		command = { type = cedeprovince which = ENG value = 405 }
+		command = { type = cedeprovince which = ENG value = 407 }
+		command = { type = cedeprovince which = ENG value = 408 }
+		command = { type = cedeprovince which = ENG value = 409 }
+		command = { type = cedeprovince which = ENG value = 410 }
+		command = { type = cedeprovince which = ENG value = 411 }
+		command = { type = cedeprovince which = ENG value = 412 }
+		command = { type = cedeprovince which = ENG value = 419 }
+		command = { type = cedeprovince which = ENG value = 420 }
+		command = { type = cedeprovince which = ENG value = 421 }
+		command = { type = trigger which = 3178 } # HAB
+		command = { type = trigger which = 131034 } # ENG
+	}
+
+	action_b ={
+		name = "ACTIONNAME3597B"	#Charles of France#
+		command = { type = independence which = GEL }
+		command = { type = independence which = FRI }
+		command = { type = independence which = KLE }
+		command = { type = independence which = HAN }
+		command = { type = independence which = KOL }
+		command = { type = independence which = LOR }
+                command = { type = independence which = PFA }
+                command = { type = revolt which = 334 }
+		command = { type = revolt which = 334 }
+		command = { type = revolt which = 335 }
+		command = { type = revolt which = 335 }
+		command = { type = revolt which = 336 }
+		command = { type = revolt which = 336 }
+                command = { type = cedeprovince which = HAB value = 333 }
+		command = { type = cedeprovince which = HAB value = 343 }
+		command = { type = cedeprovince which = HAB value = 344 }
+		command = { type = cedeprovince which = HAB value = 345 }
+		command = { type = cedeprovince which = HAB value = 346 }
+		command = { type = cedeprovince which = HAB value = 374 }
+		command = { type = cedeprovince which = HAB value = 375 }
+		command = { type = cedeprovince which = HAB value = 387 }
+		command = { type = trigger which = 131035 } # ENG
+		command = { type = trigger which = 131036 } # HAB
+	}
+
+	action_c ={
+		name = "ACTIONNAME3597C"	#Charles the Bold never died#
+		command = { type = stability value = 2 }
+		command = { type = land value = 1000 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = relation which = ENG value = 50 }
+		command = { type = relation which = DAU value = -150 }
+		command = { type = relation which = HAB value = -150 }
+	        command = { type = revolt which = -1 }
+                command = { type = revolt which = -1 }
+                command = { type = revolt which = -1 }
+                command = { type = revolt which = -1 }
+                command = { type = revoltrisk which = 48 value = 4 }
+
+        }
+
+}
+
+#Austria inherits Burgundy#
+event = {
+
+	id = 131034
+	random = no
+	country = ENG
+	name = "EVENTNAME3320"
+	desc = "EVENTHIST3320"
+	style = 1
+
+	action_a ={			#I crave blood !#
+		name = "ACTIONNAME3320A"
+		command = { type = addcore_national which = 379 }
+		command = { type = addcore_national which = 387 }
+		command = { type = addcore_national which = 409 }
+		command = { type = stability value = -2 }
+		command = { type = casusbelli which = HAB value = 24 }
+	}
+}
+
+#england inherits Burgundy#
+event = {
+
+	id = 131035
+	random = no
+	country = ENG
+	name = "EVENTNAME3319"
+	desc = "EVENTHIST3319"
+	style = 1
+
+	action_a ={			#Its all mine!#
+		name = "ACTIONNAME3319A"
+		command = { type = inherit which = BUR }
+		command = { type = stability value = 2 }
+		command = { type = DIP which = 3 value = 60 }
+		command = { type = addcore_national which = 377 }
+		command = { type = addcore_national which = 378 }
+		command = { type = addcore_national which = 379 }
+		command = { type = addcore_national which = 380 }
+		command = { type = addcore_national which = 337 }
+		command = { type = addcore_national which = 338 }
+		command = { type = addcore_national which = 339 }
+		command = { type = addcore_national which = 340 }
+		command = { type = addcore_national which = 387 }
+		command = { type = addcore_national which = 409 }
+	}
+}
+
+#england inherits Burgundy#
+event = {
+
+	id = 131036
+	random = no
+	country = HAB
+	name = "EVENTNAME3180"
+	desc = "EVENTHIST3180"
+	style = 1
+
+	action_a ={					#I crave blood!#
+		name = "ACTIONNAME3180A"
+		command = { type = addcore_national which = 379 }
+		command = { type = addcore_national which = 387 }
+		command = { type = addcore_national which = 409 }
+		command = { type = stability value = -2 }
+		command = { type = casusbelli which = ENG value = 24 }
+	}
+}

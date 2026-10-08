@@ -1,0 +1,40 @@
+##Armenia Minor Events##
+
+#(1342-1420) Armenia Minor converts to Catholicism
+event = {
+	id = 108000
+	trigger = {
+		NOT = { religion = catholic }
+	}
+	random = no
+	country = AMI
+	name = "Armenia Minor converts to Catholicism"
+	desc = "The last male descendent of Het'um I was assassinated in 1342 and Guy de Lusignan, prince of Cyprus, was the best remaining heir, so finally he was enthroned as Constantine II. He filled the court with French-speaking favourites, and brought in missionaries to convert the country to western Christianity. This was the most turbulent period for the kingdom. Internal discord among the princes, aggravated by religious dissent and the Latinizing attitudes of Western missionaries, of certain Armenian milieux, and of the Lusignans themselves, did no more than aggravate an already precarious situation." 
+
+	date = { day = 1 month = january year = 1342 }
+	offset = 120
+	deathdate = { day = 30 month = december year = 1420 }
+
+	action_a ={
+		name = "Yes, we must!"
+		command = { type = relation which = PAP value = 100 }
+		command = { type = relation which = BYZ value = -100 }
+		command = { type = missionaries value = 1 }
+		command = { type = religion which = catholic }
+		command = { type = revoltrisk which = 120 value = 4 }
+		command = { type = stability value = -3 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -2 }
+	}
+	action_b ={
+		name = "Remain orthodox"
+		command = { type = infra value = 100 }
+		command = { type = domestic which = innovative value = -2 }
+		command = { type = stability value = 1 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = BYZ value = 100 }
+	}
+}
+
+
+#first free ID: 108001

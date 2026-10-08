@@ -1,0 +1,146 @@
+# Uzbek #
+
+# The Khanate of Bukhara #
+event = {
+
+	id = 25010
+	trigger = {
+		atwar = no
+		owned = { province = 1532 data = -1 } # Bukhara
+		NOT = {
+			event = 25011
+			exists = BUK
+		}
+	}
+	random = no
+	country = UZB
+	name = "The Khanate of Bukhara"
+	desc = "EVENTHIST25010"
+
+	date = { day = 1 month = january year = 1492 }
+	offset = 150
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={	# Move to Bukhara and focus on the Persians #
+		name = "Move to Bukhara and focus on the Persians"
+		command = { type = capital which = 1532 }
+		command = { type = manpower value = 20 }
+		command = { type = domestic which = QUALITY value = -3 }
+		command = { type = land value = 1000 }
+		command = { type = relation which = CHG value = 50 }
+		command = { type = relation which = KZK value = 50 }
+		command = { type = relation which = NOG value = 50 }
+		command = { type = relation which = PER value = -150 }
+		command = { type = technology which = muslim }
+		command = { type = add_countryculture which = persian }
+		command = { type = free which = KZK }
+		command = { type = free which = KHI }
+		command = { type = flagname which = "" }
+		command = { type = country which = BUK }
+	}
+
+	action_b ={	# Stay put and fortify our borders #
+		name = "Stay put and fortify our borders"
+		command = { type = domestic which = OFFENSIVE value = -3 }
+		command = { type = fortress which = -2 value = 2 }
+		command = { type = fortress which = -4 value = 1 }
+		command = { type = fortress which = -4 value = 1 }
+		command = { type = fortress which = -4 value = 1 }
+		command = { type = fortress which = -4 value = 1 }
+		command = { type = treasury value = -750 }
+	}
+}
+
+# The Khanate of Khiva #
+event = {
+
+	id = 25011
+	trigger = {
+		atwar = no
+		owned = { province = 1533 data = -1 } # Khiva
+		NOT = {
+			event = 25010
+			exists = KHI
+		}
+	}
+	random = no
+	country = UZB
+	name = "The Khanate of Khiva"
+	desc = "EVENTHIST25011"
+
+	date = { day = 1 month = january year = 1492 }
+	offset = 150
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={	# Move to Khiva and focus on the Persians #
+		name = "Move to Khiva and focus on the Persians"
+		command = { type = capital which = 1533 }
+		command = { type = manpower value = 20 }
+		command = { type = domestic which = QUALITY value = -3 }
+		command = { type = land value = 1000 }
+		command = { type = relation which = CHG value = 50 }
+		command = { type = relation which = KZK value = 50 }
+		command = { type = relation which = NOG value = 50 }
+		command = { type = relation which = PER value = -150 }
+		command = { type = technology which = muslim }
+		command = { type = add_countryculture which = persian }
+		command = { type = free which = KZK }
+		command = { type = free which = BUK }
+		command = { type = flagname which = "" }
+		command = { type = country which = KHI }
+	}
+
+	action_b ={	# Stay put and fortify our borders #
+		name = "Stay put and fortify our borders"
+		command = { type = domestic which = OFFENSIVE value = -3 }
+		command = { type = fortress which = -2 value = 2 }
+		command = { type = fortress which = -4 value = 1 }
+		command = { type = fortress which = -4 value = 1 }
+		command = { type = fortress which = -4 value = 1 }
+		command = { type = fortress which = -4 value = 1 }
+		command = { type = treasury value = -750 }
+	}
+}
+
+# The Khanate of Kokand #
+event = {
+
+	id = 50041
+	trigger = {
+		OR = {
+			tag = BUK
+			tag = KHI
+			tag = UZB
+		}
+		atwar = no
+		owned = { province = 1598 data = -1 } # Tadjikistan
+		NOT = { exists = KOK }
+	}
+	random = no
+	name = "The Khanate of Kokand"
+	desc = "The Khanate of Kokand was established in 1709 when the Shaybanid emir Shahrukh, of the Ming Tribe of Uzbeks, declared independence from the Khanate of Bukhara, establishing a state in the eastern part of the Fergana Valley. He built a citadel as his capital in the small town of Kokand, thus starting the Khanate of Kokand. His son, Abdul Kahrim Bey, and grandson, Narbuta Bey, enlarged the citadel, but both were forced to submit as a protectorate, and pay tribute to, the Qing dynasty between 1774 and 1798. Though a small and fairly insular state, Kokand did later play an important role during the Afaqi Khoja rebellion in Dzungaria, before eventually being annexed into the Russian Empire as the Fergana Oblast in the 1870s."
+
+	date = { day = 1 month = january year = 1710 }
+	offset = 150
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={	# Grant them their freedom #
+		name = "Grant them their freedom"
+		command = { type = cityname which = 1598 value = "Kokand" }
+		command = { type = free which = KOK }
+		command = { type = relation which = KOK value = 100 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={	# Stamp out the Ming traitors! #
+		name = "Stamp out the Ming traitors!"
+		command = { type = revolt which = 1591 }
+		command = { type = revolt which = 1598 }
+		command = { type = revolt which = 1598 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = stability value = -2 }
+	}
+}

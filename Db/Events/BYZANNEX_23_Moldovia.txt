@@ -1,0 +1,133 @@
+#-----------------------------------------------------------------------------
+# Moldavian Events
+
+#A troubled Moldavia calls on Byzantium for help
+event = {
+	id = 3001378
+	trigger = {
+		event = 3001359
+		NOT = { event = 3001379 }
+		atwar = no
+		OR = {
+			vassal = { country = HUN country = MOL }
+			vassal = { country = TUR country = MOL }
+			vassal = { country = DUL country = MOL }
+			vassal = { country = ALB country = MOL }
+			vassal = { country = HAB country = MOL }
+			vassal = { country = POL country = MOL }
+			vassal = { country = BOS country = MOL }
+			vassal = { country = CAN country = MOL }
+			vassal = { country = CRO country = MOL }
+			vassal = { country = KAR country = MOL }
+			vassal = { country = VEN country = MOL }
+		}
+	}
+	random = NO
+	country = MOL
+	name = "Imperial influence on the Danube"
+	desc = "Moldavia has found itself dependent on foreign powers. Now Imperial influence has grown, and an Orthodox protector presents itself. This protection, however, will surely have a price."
+	date = { day = 1 month = january year = 1450 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = { # Let us call for help whatever it costs.
+		name = "If we will be slaves, let us have better masters"
+		command = { type = stability value = 2 }
+		command = { type = breakvassal which = HUN }
+		command = { type = breakvassal which = TUR }
+		command = { type = breakvassal which = DUL }
+		command = { type = breakvassal which = ALB }
+		command = { type = breakvassal which = HAB }
+		command = { type = breakvassal which = POL }
+		command = { type = breakvassal which = BOS }
+		command = { type = breakvassal which = CAN }
+		command = { type = breakvassal which = CRO }
+		command = { type = breakvassal which = KAR }
+		command = { type = breakvassal which = VEN }
+		command = { type = treasury value = -200 }
+		command = { type = trigger which = 3001380 }
+	}
+	action_b = { # Refuse to give our precious independence.
+		name = "Let us keep the evil we know"
+		command = { type = stability value = -1 }
+	}
+}
+
+#A troubled Moldavia calls on Byzantium for help
+event = {
+	id = 3001379
+	trigger = {
+		exists = BYZ
+		atwar = yes
+		NOT = {
+			event = 3001378
+			war = { country = BYZ country = MOL }
+			alliance = { country = RUS country = MOL }
+			alliance = { country = HUN country = MOL }
+			alliance = { country = TUR country = MOL }
+			alliance = { country = DUL country = MOL }
+			alliance = { country = ALB country = MOL }
+			alliance = { country = HAB country = MOL }
+			alliance = { country = POL country = MOL }
+			alliance = { country = BOS country = MOL }
+			alliance = { country = CAN country = MOL }
+			alliance = { country = CRO country = MOL }
+			alliance = { country = KAR country = MOL }
+			alliance = { country = VEN country = MOL }
+			alliance = { country = SER country = MOL }
+			alliance = { country = MOL country = MOL }
+			alliance = { country = BOH country = MOL }
+		}
+	}
+	random = NO
+	country = MOL
+	name = "An appeal to Constantinople"
+	desc = "Constantly embroiled in many wars, Moldavia was sometimes left alone. Now Imperial influence has grown, and Byzantium is an obvious protector. This protection, however, will surely have a price."
+	date = { day = 1 month = january year = 1450 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = { # Let us call for help whatever it costs.
+		name = "Let us call for help whatever it costs."
+		command = { type = stability value = 2 }
+		command = { type = treasury value = -200 }
+		command = { type = breakvassal which = HUN }
+		command = { type = breakvassal which = TUR }
+		command = { type = breakvassal which = DUL }
+		command = { type = breakvassal which = ALB }
+		command = { type = breakvassal which = HAB }
+		command = { type = breakvassal which = POL }
+		command = { type = breakvassal which = BOS }
+		command = { type = breakvassal which = CAN }
+		command = { type = breakvassal which = CRO }
+		command = { type = breakvassal which = KAR }
+		command = { type = breakvassal which = VEN }
+		command = { type = trigger which = 3001380 }
+	}
+	action_b = { # Refuse to give our precious independence.
+		name = "Refuse to give our precious independence."
+		command = { type = stability value = -1 }
+	}
+}
+
+#Byzantium's reply to Moldavia
+event = {
+	id = 3001380
+	random = NO
+	country = BYZ
+	name = "An appeal from Moldavia"
+	desc = "Moldavia has sent us a call for help. The generals think the Trans-Danube region is more trouble than it's worth, but the Patriarch is mindful to protect its Orthodoxy against the Magyars and Poles."
+
+	action_a = { # Take the money and run
+		name = "Thank the envoys for their time"
+		command = { type = treasury value = 200 }
+	}
+	action_b = { # Take what you can get
+		name = "We shall not refuse them succor"
+		command = { type = stability value = -1 }
+		command = { type = vassal which = MOL }
+		command = { type = dynastic which = MOL }
+		command = { type = alliance which = MOL }
+		command = { type = relation which = MOL value = 300 }
+	}
+}

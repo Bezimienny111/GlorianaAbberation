@@ -1,0 +1,4372 @@
+###########################################
+### Events for the Kingdom of Italy	###
+### for the New AJF Scenario		###
+### by Ayeshteni 			###
+###########################################
+
+#an italian minor has the powerbase to unite italy - MILAN
+event = {
+
+	id = 131100
+	trigger = {
+          	 AND = {
+                 	OR = {
+                       		owned = { province = 404 data = -1 }
+                        	vassal = { country = MLO country = SAV }
+                  	}
+                  	OR = {
+                        	owned = { province = 402 data = -1 }
+                        	vassal = { country = MLO country = PAR }
+			}
+                 	OR = {
+                       		owned = { province = 401 data = -1 }
+                        	vassal = { country = MLO country = FLO }
+                  	}
+                  	OR = {
+                        	owned = { province = 400 data = -1 }
+                        	vassal = { country = MLO country = PIS }
+                  	}
+                 	OR = {
+                       		owned = { province = 390 data = -1 }
+                        	vassal = { country = MLO country = MAN }
+                  	}
+			stability = 2
+			atwar = no
+			NOT = {
+				exists = ITA
+			}
+           	}
+	}
+	random = no
+	country = MLO
+	name = "Consolidation of Northern Italy"
+	desc = "Trying to unite Italy had been on the minds of many of the rulers of the Italian states as well as major European powers who did everything in their power to prevent it. It was finally achieved in 1861 when the great powers were distracted by the Franco-Prussian war. There were many things that were needed to be done before an united Italy could burst itself onto the international scene, gaining the necessary territory was only but one of those requisites needed. However we have a great powerbase in Northern Italy, we could start the process to unite Italy my lord."
+	style = 2
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "Start the process to Unite Italy"
+		command = { type = vp value = 5 }
+		command = { type = stability value = -1 }
+		command = { type = trigger which = 131101 } #savoy chooses to accept
+		command = { type = trigger which = 131102 } #modena chooses to accept
+		command = { type = trigger which = 131103 } #florence chooses to accept
+		command = { type = trigger which = 131104 } #siena chooses to accept
+		command = { type = trigger which = 131105 } #mantua chooses to accept
+		command = { type = trigger which = 131116 } #papal resistance or support
+		command = { type = setflag which = mloitaly }
+	}
+
+	action_b = {
+		name = "Let the idea of a United Italy die forever"
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = domestic which = aristocracy value = -1 }
+	}
+}
+
+#italian vassal decides to join italy or not
+event = {
+	id = 131101
+	random = no
+	country = SAV
+	name = "Recognise the Claim of Italy"
+	desc = "Our Feudal Lord and Master has the desire and ability to proclaim himself the King of Italy. The title and crown of Italy lies with the Holy Roman Emperor and so our master may not find his coronation easy. Sire, we may become an integral part of our lords Kingdom or go so far only to recognise his claim. Otherwise we must denounce his claim and renounce all ties we have with him which may lead to war. Sire what do we do?"
+	style = 2
+
+	action_a = {
+		name = "Recognise his claim, no more"
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {
+		name = "Denounce this Meglomanics Claims!"
+		command = { type = breakvassal which = MLO }
+		command = { type = relation which = MLO value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = war which = MLO }
+		command = { type = stability value = 5 }
+		command = { type = trigger which = 131107 }
+	}
+
+	action_c = {
+		name = "Embrace our Masters Ambitions (Game Over)"
+		command = { type = trigger which = 131106 }
+	}
+}
+
+#italian minor seeks annexation
+event = {
+	id = 131106
+	random = no
+	country = MLO
+	name = "Our Vassal seeks Annexation"
+	desc = "Our obedient vassal sees the benefits our ambitions hold and he wishes to be a part of our great Kingdom when we declare our investiture."
+	style = 2
+
+	action_a = {
+		name = "So be it"
+		command = { type = inherit which = SAV }
+		command = { type = vp value = 5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#austria takes rebellious minor under her wing
+event = {
+	id = 131107
+	random = no
+	country = HAB
+	name = "News from Italy"
+	desc = "We have news from Italy that an Italian lord hopes to crown himself as King of Italy. One of his former vassals has denounced this lord. We hold the title and crown of Italy, so watching this upstart is of great importance. Nevertheless, this lord has yet to declare himself so we can not approve or move against him openly. His vassal however has. Shall we protect his vassal or leave him to his fate and see what transpires?"
+	style = 2
+
+	action_a = {
+		name = "Take Action in Italy"
+		command = { type = dynastic which = SAV }
+		command = { type = alliance which = SAV }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = MLO value = -50 }
+	}
+
+	action_b = {
+		name = "Wait and see what happens"
+		command = { type = relation which = SAV value = -50 }
+		command = { type = relation which = MLO value = 25 }
+	}
+}
+
+#italian vassal decides to join italy or not
+event = {
+	id = 131102
+	random = no
+	country = PAR
+	name = "Recognise the Claim of Italy"
+	desc = "Our Feudal Lord and Master has the desire and ability to proclaim himself the King of Italy. The title and crown of Italy lies with the Holy Roman Emperor and so our master may not find his coronation easy. Sire, we may become an integral part of our lords Kingdom or go so far only to recognise his claim. Otherwise we must denounce his claim and renounce all ties we have with him which may lead to war. Sire what do we do?"
+	style = 2
+
+	action_a = {
+		name = "Recognise his claim, no more"
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {
+		name = "Denounce this Meglomanics Claims!"
+		command = { type = breakvassal which = MLO }
+		command = { type = relation which = MLO value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = war which = MLO }
+		command = { type = stability value = 5 }
+		command = { type = trigger which = 131108 }
+	}
+
+	action_c = {
+		name = "Embrace our Masters Ambitions (Game Over)"
+		command = { type = trigger which = 131109 }
+	}
+}
+
+#italian minor seeks annexation
+event = {
+	id = 131109
+	random = no
+	country = MLO
+	name = "Our Vassal seeks Annexation"
+	desc = "Our obedient vassal sees the benefits our ambitions hold and he wishes to be a part of our great Kingdom when we declare our investiture."
+	style = 2
+
+	action_a = {
+		name = "So be it"
+		command = { type = inherit which = PAR }
+		command = { type = vp value = 5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#austria takes rebellious minor under her wing
+event = {
+	id = 131108
+	random = no
+	country = HAB
+	name = "News from Italy"
+	desc = "We have news from Italy that an Italian lord hopes to crown himself as King of Italy. One of his former vassals has denounced this lord. We hold the title and crown of Italy, so watching this upstart is of great importance. Nevertheless, this lord has yet to declare himself so we can not approve or move against him openly. His vassal however has. Shall we protect his vassal or leave him to his fate and see what transpires?"
+	style = 2
+
+	action_a = {
+		name = "Take Action in Italy"
+		command = { type = dynastic which = PAR }
+		command = { type = alliance which = PAR }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = MLO value = -50 }
+	}
+
+	action_b = {
+		name = "Wait and see what happens"
+		command = { type = relation which = PAR value = -50 }
+		command = { type = relation which = MLO value = 25 }
+	}
+}
+
+#italian vassal decides to join italy or not
+event = {
+	id = 131103
+	random = no
+	country = FLO
+	name = "Recognise the Claim of Italy"
+	desc = "Our Feudal Lord and Master has the desire and ability to proclaim himself the King of Italy. The title and crown of Italy lies with the Holy Roman Emperor and so our master may not find his coronation easy. Sire, we may become an integral part of our lords Kingdom or go so far only to recognise his claim. Otherwise we must denounce his claim and renounce all ties we have with him which may lead to war. Sire what do we do?"
+	style = 2
+
+	action_a = {
+		name = "Recognise his claim, no more"
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {
+		name = "Denounce this Meglomanics Claims!"
+		command = { type = breakvassal which = MLO }
+		command = { type = relation which = MLO value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = war which = MLO }
+		command = { type = stability value = 5 }
+		command = { type = trigger which = 131111 }
+	}
+
+	action_c = {
+		name = "Embrace our Masters Ambitions (Game Over)"
+		command = { type = trigger which = 131110 }
+	}
+}
+
+#italian minor seeks annexation
+event = {
+	id = 131110
+	random = no
+	country = MLO
+	name = "Our Vassal seeks Annexation"
+	desc = "Our obedient vassal sees the benefits our ambitions hold and he wishes to be a part of our great Kingdom when we declare our investiture."
+	style = 2
+
+	action_a = {
+		name = "So be it"
+		command = { type = inherit which = FLO }
+		command = { type = vp value = 5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#austria takes rebellious minor under her wing
+event = {
+	id = 131111
+	random = no
+	country = HAB
+	name = "News from Italy"
+	desc = "We have news from Italy that an Italian lord hopes to crown himself as King of Italy. One of his former vassals has denounced this lord. We hold the title and crown of Italy, so watching this upstart is of great importance. Nevertheless, this lord has yet to declare himself so we can not approve or move against him openly. His vassal however has. Shall we protect his vassal or leave him to his fate and see what transpires?"
+	style = 2
+
+	action_a = {
+		name = "Take Action in Italy"
+		command = { type = dynastic which = FLO }
+		command = { type = alliance which = FLO }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = MLO value = -50 }
+	}
+
+	action_b = {
+		name = "Wait and see what happens"
+		command = { type = relation which = FLO value = -50 }
+		command = { type = relation which = MLO value = 25 }
+	}
+}
+
+#italian vassal decides to join italy or not
+event = {
+	id = 131104
+	random = no
+	country = PIS
+	name = "Recognise the Claim of Italy"
+	desc = "Our Feudal Lord and Master has the desire and ability to proclaim himself the King of Italy. The title and crown of Italy lies with the Holy Roman Emperor and so our master may not find his coronation easy. Sire, we may become an integral part of our lords Kingdom or go so far only to recognise his claim. Otherwise we must denounce his claim and renounce all ties we have with him which may lead to war. Sire what do we do?"
+	style = 2
+
+	action_a = {
+		name = "Recognise his claim, no more"
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {
+		name = "Denounce this Meglomanics Claims!"
+		command = { type = breakvassal which = MLO }
+		command = { type = relation which = MLO value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = war which = MLO }
+		command = { type = stability value = 5 }
+		command = { type = trigger which = 131113 }
+	}
+
+	action_c = {
+		name = "Embrace our Masters Ambitions (Game Over)"
+		command = { type = trigger which = 131112 }
+	}
+}
+
+#italian minor seeks annexation
+event = {
+	id = 131112
+	random = no
+	country = MLO
+	name = "Our Vassal seeks Annexation"
+	desc = "Our obedient vassal sees the benefits our ambitions hold and he wishes to be a part of our great Kingdom when we declare our investiture."
+	style = 2
+
+	action_a = {
+		name = "So be it"
+		command = { type = inherit which = PIS }
+		command = { type = vp value = 5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#austria takes rebellious minor under her wing
+event = {
+	id = 131113
+	random = no
+	country = HAB
+	name = "News from Italy"
+	desc = "We have news from Italy that an Italian lord hopes to crown himself as King of Italy. One of his former vassals has denounced this lord. We hold the title and crown of Italy, so watching this upstart is of great importance. Nevertheless, this lord has yet to declare himself so we can not approve or move against him openly. His vassal however has. Shall we protect his vassal or leave him to his fate and see what transpires?"
+	style = 2
+
+	action_a = {
+		name = "Take Action in Italy"
+		command = { type = dynastic which = PIS }
+		command = { type = alliance which = PIS }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = MLO value = -50 }
+	}
+
+	action_b = {
+		name = "Wait and see what happens"
+		command = { type = relation which = PIS value = -50 }
+		command = { type = relation which = MLO value = 25 }
+	}
+}
+
+#italian vassal decides to join italy or not
+event = {
+	id = 131105
+	random = no
+	country = MAN
+	name = "Recognise the Claim of Italy"
+	desc = "Our Feudal Lord and Master has the desire and ability to proclaim himself the King of Italy. The title and crown of Italy lies with the Holy Roman Emperor and so our master may not find his coronation easy. Sire, we may become an integral part of our lords Kingdom or go so far only to recognise his claim. Otherwise we must denounce his claim and renounce all ties we have with him which may lead to war. Sire what do we do?"
+	style = 2
+
+	action_a = {
+		name = "Recognise his claim, no more"
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {
+		name = "Denounce this Meglomanics Claims!"
+		command = { type = breakvassal which = MLO }
+		command = { type = relation which = MLO value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = war which = MLO }
+		command = { type = stability value = 5 }
+		command = { type = trigger which = 131115 }
+	}
+
+	action_c = {
+		name = "Embrace our Masters Ambitions (Game Over)"
+		command = { type = trigger which = 131114 }
+	}
+}
+
+#italian minor seeks annexation
+event = {
+	id = 131114
+	random = no
+	country = MLO
+	name = "Our Vassal seeks Annexation"
+	desc = "Our obedient vassal sees the benefits our ambitions hold and he wishes to be a part of our great Kingdom when we declare our investiture."
+	style = 2
+
+	action_a = {
+		name = "So be it"
+		command = { type = inherit which = MAN }
+		command = { type = vp value = 5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#austria takes rebellious minor under her wing
+event = {
+	id = 131115
+	random = no
+	country = HAB
+	name = "News from Italy"
+	desc = "We have news from Italy that an Italian lord hopes to crown himself as King of Italy. One of his former vassals has denounced this lord. We hold the title and crown of Italy, so watching this upstart is of great importance. Nevertheless, this lord has yet to declare himself so we can not approve or move against him openly. His vassal however has. Shall we protect his vassal or leave him to his fate and see what transpires?"
+	style = 2
+
+	action_a = {
+		name = "Take Action in Italy"
+		command = { type = dynastic which = MAN }
+		command = { type = alliance which = MAN }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = MLO value = -50 }
+	}
+
+	action_b = {
+		name = "Wait and see what happens"
+		command = { type = relation which = MAN value = -50 }
+		command = { type = relation which = MLO value = 25 }
+	}
+}
+
+#papal resistance or support
+event = {
+	id = 131116
+	random = no
+	country = PAP
+	name = "The Papal Decree on Italy"
+	desc = "Your Excellency! One of the Northern Italian nobles is moving to have himself crowned King of Italy. Having a powerful Kingdom in the Italian peninsula could be a threat to the spiritual reign of Saint Peter. On the other hand the Kingdom of Italy could be a wonderful buffer State to the ambitions of France and Austria. Shall we support this mans ambition or put him firmly in place?"
+	style = 2
+
+	action_a = {
+		name = "The Vatican Opposes it"
+		command = { type = relation which = MLO value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = casusbelli which = MLO value = 60 }
+		command = { type = breakdynastic which = MLO }
+		command = { type = breakvassal which = MLO }
+	}
+
+	action_b = {
+		name = "The Vatican Gives its Blessing"
+		command = { type = relation which = MLO value = 100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = dynastic which = MLO }
+	}
+}
+
+#a minor creates the kingdom of italy
+event = {
+	id = 131117
+	trigger = {
+		flag = mloitaly
+		stability = 3
+		atwar = no
+		NOT = {
+			exists = ITA
+		}
+	}
+	random = no
+	country = MLO
+	name = "Behold the Kingdom of Italy"
+	desc = "Preparations were rushed forward to crown the ambitious noble as King of Italy. His advisors gauged well the moods of the surrounding nobles as well as those who supported him in his endevours. One thing which was the thorn in the bush was Austria. The Habsburgs held the title and crown of Italy and it was fairly certain that they would crush any attempt at ursurping them. Of course the title and the Iron crown were fairly worthless possessions to the ambitions of the Habsburgs, perhaps, just perhaps they may just get away with it. The dice were cast only luck would tell."
+	style = 2
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "The King is Crowned!"
+		command = { type = domestic which = centralization value = 2 }
+		command = { type = stability value = -1 }
+		command = { type = vp value = 50 }
+		command = { type = relation which = HAB value = -200 }
+		command = { type = country which = ITA }
+		command = { type = trigger which = 131118 } #austria decides
+	}
+}
+
+#austria decides what to do
+event = {
+	id = 131118
+	random = no
+	country = HAB
+	name = "The King has been declared"
+	desc = "The upstart noble in Italy has been declared and even crowned. We hold the title and crown. What shall we do with this upstart?"
+	style = 2
+
+	action_a = {
+		name = "Crush him like a bug"
+		command = { type = relation which = ITA value = -100 }
+		command = { type = breakvassal which = ITA }
+		command = { type = breakdynastic which = ITA }
+		command = { type = war which = ITA }
+		command = { type = stability value = 4 }
+	}
+
+	action_b = {
+		name = "Do Nothing, it is worthless anyway"
+		command = { type = relation which = ITA value = 50 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#italian monarch lists - milano 12151-12159
+event = {
+	id = 131119
+	trigger = {
+		event = 131117
+		}
+	random = no
+	country = ITA
+	name = "Let us reign forever!"
+	desc = "with the ambition declared, the Transition Council set up the sucession as quickly as possible. A willing cardinal was dragged in to perform the ceremony and a holiday was declared so that the populace could join in the celebrations. Without any further delay the King was crowned and he prayed that his line would rule Italy justly for a thousand years"
+	style = 2
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Long live the King!"
+		command = { type = vp value = 10 }
+		command = { type = stability value = 1 }
+		command = { type = sleepmonarch which = 12150 }
+		command = { type = wakemonarch which = 12151 }
+		command = { type = wakemonarch which = 12152 }
+		command = { type = wakemonarch which = 12153 }
+		command = { type = wakemonarch which = 12154 }
+		command = { type = wakemonarch which = 12155 }
+		command = { type = wakemonarch which = 12156 }
+		command = { type = wakemonarch which = 12157 }
+		command = { type = wakemonarch which = 12158 }
+		command = { type = wakemonarch which = 12159 }
+	}
+}
+
+#an italian minor has the powerbase to unite italy - SAVOIE
+event = {
+
+	id = 131120
+	trigger = {
+          	 AND = {
+                 	OR = {
+                       		owned = { province = 389 data = -1 }
+                        	vassal = { country = SAV country = MLO }
+                  	}
+                  	OR = {
+                        	owned = { province = 402 data = -1 }
+                        	vassal = { country = SAV country = PAR }
+			}
+                 	OR = {
+                       		owned = { province = 401 data = -1 }
+                        	vassal = { country = SAV country = FLO }
+                  	}
+                  	OR = {
+                        	owned = { province = 400 data = -1 }
+                        	vassal = { country = SAV country = PIS }
+                  	}
+                 	OR = {
+                       		owned = { province = 390 data = -1 }
+                        	vassal = { country = SAV country = MAN }
+                  	}
+			stability = 2
+			atwar = no
+			NOT = {
+				exists = ITA
+			}
+           	}
+	}
+	random = no
+	country = SAV
+	name = "Consolidation of Northern Italy"
+	desc = "Trying to unite Italy had been on the minds of many of the rulers of the Italian states as well as major European powers who did everything in their power to prevent it. It was finally achieved in 1861 when the great powers were distracted by the Franco-Prussian war. There were many things that were needed to be done before an united Italy could burst itself onto the international scene, gaining the necessary territory was only but one of those requisites needed. However we have a great powerbase in Northern Italy, we could start the process to unite Italy my lord."
+	style = 2
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "Start the process to Unite Italy"
+		command = { type = vp value = 5 }
+		command = { type = stability value = -1 }
+		command = { type = trigger which = 131121 } #milan chooses to accept
+		command = { type = trigger which = 131122 } #modena chooses to accept
+		command = { type = trigger which = 131123 } #florence chooses to accept
+		command = { type = trigger which = 131124 } #siena chooses to accept
+		command = { type = trigger which = 131125 } #mantua chooses to accept
+		command = { type = trigger which = 131136 } #papal resistance or support
+		command = { type = setflag which = savitaly }
+	}
+
+	action_b = {
+		name = "Let the idea of a United Italy die forever"
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = domestic which = aristocracy value = -1 }
+	}
+}
+
+#italian vassal decides to join italy or not
+event = {
+	id = 131121
+	random = no
+	country = MLO
+	name = "Recognise the Claim of Italy"
+	desc = "Our Feudal Lord and Master has the desire and ability to proclaim himself the King of Italy. The title and crown of Italy lies with the Holy Roman Emperor and so our master may not find his coronation easy. Sire, we may become an integral part of our lords Kingdom or go so far only to recognise his claim. Otherwise we must denounce his claim and renounce all ties we have with him which may lead to war. Sire what do we do?"
+	style = 2
+
+	action_a = {
+		name = "Recognise his claim, no more"
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {
+		name = "Denounce this Meglomanics Claims!"
+		command = { type = breakvassal which = SAV }
+		command = { type = relation which = SAV value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = war which = SAV }
+		command = { type = stability value = 5 }
+		command = { type = trigger which = 131127 }
+	}
+
+	action_c = {
+		name = "Embrace our Masters Ambitions (Game Over)"
+		command = { type = trigger which = 131126 }
+	}
+}
+
+#italian minor seeks annexation
+event = {
+	id = 131126
+	random = no
+	country = SAV
+	name = "Our Vassal seeks Annexation"
+	desc = "Our obedient vassal sees the benefits our ambitions hold and he wishes to be a part of our great Kingdom when we declare our investiture."
+	style = 2
+
+	action_a = {
+		name = "So be it"
+		command = { type = inherit which = MLO }
+		command = { type = vp value = 5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#austria takes rebellious minor under her wing
+event = {
+	id = 131127
+	random = no
+	country = HAB
+	name = "News from Italy"
+	desc = "We have news from Italy that an Italian lord hopes to crown himself as King of Italy. One of his former vassals has denounced this lord. We hold the title and crown of Italy, so watching this upstart is of great importance. Nevertheless, this lord has yet to declare himself so we can not approve or move against him openly. His vassal however has. Shall we protect his vassal or leave him to his fate and see what transpires?"
+	style = 2
+
+	action_a = {
+		name = "Take Action in Italy"
+		command = { type = dynastic which = MLO }
+		command = { type = alliance which = MLO }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = SAV value = -50 }
+	}
+
+	action_b = {
+		name = "Wait and see what happens"
+		command = { type = relation which = MLO value = -50 }
+		command = { type = relation which = SAV value = 25 }
+	}
+}
+
+#italian vassal decides to join italy or not
+event = {
+	id = 131122
+	random = no
+	country = PAR
+	name = "Recognise the Claim of Italy"
+	desc = "Our Feudal Lord and Master has the desire and ability to proclaim himself the King of Italy. The title and crown of Italy lies with the Holy Roman Emperor and so our master may not find his coronation easy. Sire, we may become an integral part of our lords Kingdom or go so far only to recognise his claim. Otherwise we must denounce his claim and renounce all ties we have with him which may lead to war. Sire what do we do?"
+	style = 2
+
+	action_a = {
+		name = "Recognise his claim, no more"
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {
+		name = "Denounce this Meglomanics Claims!"
+		command = { type = breakvassal which = SAV }
+		command = { type = relation which = SAV value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = war which = SAV }
+		command = { type = stability value = 5 }
+		command = { type = trigger which = 131128 }
+	}
+
+	action_c = {
+		name = "Embrace our Masters Ambitions (Game Over)"
+		command = { type = trigger which = 131129 }
+	}
+}
+
+#italian minor seeks annexation
+event = {
+	id = 131129
+	random = no
+	country = SAV
+	name = "Our Vassal seeks Annexation"
+	desc = "Our obedient vassal sees the benefits our ambitions hold and he wishes to be a part of our great Kingdom when we declare our investiture."
+	style = 2
+
+	action_a = {
+		name = "So be it"
+		command = { type = inherit which = PAR }
+		command = { type = vp value = 5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#austria takes rebellious minor under her wing
+event = {
+	id = 131128
+	random = no
+	country = HAB
+	name = "News from Italy"
+	desc = "We have news from Italy that an Italian lord hopes to crown himself as King of Italy. One of his former vassals has denounced this lord. We hold the title and crown of Italy, so watching this upstart is of great importance. Nevertheless, this lord has yet to declare himself so we can not approve or move against him openly. His vassal however has. Shall we protect his vassal or leave him to his fate and see what transpires?"
+	style = 2
+
+	action_a = {
+		name = "Take Action in Italy"
+		command = { type = dynastic which = PAR }
+		command = { type = alliance which = PAR }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = SAV value = -50 }
+	}
+
+	action_b = {
+		name = "Wait and see what happens"
+		command = { type = relation which = PAR value = -50 }
+		command = { type = relation which = SAV value = 25 }
+	}
+}
+
+#italian vassal decides to join italy or not
+event = {
+	id = 131123
+	random = no
+	country = FLO
+	name = "Recognise the Claim of Italy"
+	desc = "Our Feudal Lord and Master has the desire and ability to proclaim himself the King of Italy. The title and crown of Italy lies with the Holy Roman Emperor and so our master may not find his coronation easy. Sire, we may become an integral part of our lords Kingdom or go so far only to recognise his claim. Otherwise we must denounce his claim and renounce all ties we have with him which may lead to war. Sire what do we do?"
+	style = 2
+
+	action_a = {
+		name = "Recognise his claim, no more"
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {
+		name = "Denounce this Meglomanics Claims!"
+		command = { type = breakvassal which = SAV }
+		command = { type = relation which = SAV value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = war which = SAV }
+		command = { type = stability value = 5 }
+		command = { type = trigger which = 131131 }
+	}
+
+	action_c = {
+		name = "Embrace our Masters Ambitions (Game Over)"
+		command = { type = trigger which = 131130 }
+	}
+}
+
+#italian minor seeks annexation
+event = {
+	id = 131130
+	random = no
+	country = SAV
+	name = "Our Vassal seeks Annexation"
+	desc = "Our obedient vassal sees the benefits our ambitions hold and he wishes to be a part of our great Kingdom when we declare our investiture."
+	style = 2
+
+	action_a = {
+		name = "So be it"
+		command = { type = inherit which = FLO }
+		command = { type = vp value = 5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#austria takes rebellious minor under her wing
+event = {
+	id = 131131
+	random = no
+	country = HAB
+	name = "News from Italy"
+	desc = "We have news from Italy that an Italian lord hopes to crown himself as King of Italy. One of his former vassals has denounced this lord. We hold the title and crown of Italy, so watching this upstart is of great importance. Nevertheless, this lord has yet to declare himself so we can not approve or move against him openly. His vassal however has. Shall we protect his vassal or leave him to his fate and see what transpires?"
+	style = 2
+
+	action_a = {
+		name = "Take Action in Italy"
+		command = { type = dynastic which = FLO }
+		command = { type = alliance which = FLO }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = SAV value = -50 }
+	}
+
+	action_b = {
+		name = "Wait and see what happens"
+		command = { type = relation which = FLO value = -50 }
+		command = { type = relation which = SAV value = 25 }
+	}
+}
+
+#italian vassal decides to join italy or not
+event = {
+	id = 131124
+	random = no
+	country = PIS
+	name = "Recognise the Claim of Italy"
+	desc = "Our Feudal Lord and Master has the desire and ability to proclaim himself the King of Italy. The title and crown of Italy lies with the Holy Roman Emperor and so our master may not find his coronation easy. Sire, we may become an integral part of our lords Kingdom or go so far only to recognise his claim. Otherwise we must denounce his claim and renounce all ties we have with him which may lead to war. Sire what do we do?"
+	style = 2
+
+	action_a = {
+		name = "Recognise his claim, no more"
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {
+		name = "Denounce this Meglomanics Claims!"
+		command = { type = breakvassal which = SAV }
+		command = { type = relation which = SAV value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = war which = SAV }
+		command = { type = stability value = 5 }
+		command = { type = trigger which = 131133 }
+	}
+
+	action_c = {
+		name = "Embrace our Masters Ambitions (Game Over)"
+		command = { type = trigger which = 131132 }
+	}
+}
+
+#italian minor seeks annexation
+event = {
+	id = 131132
+	random = no
+	country = SAV
+	name = "Our Vassal seeks Annexation"
+	desc = "Our obedient vassal sees the benefits our ambitions hold and he wishes to be a part of our great Kingdom when we declare our investiture."
+	style = 2
+
+	action_a = {
+		name = "So be it"
+		command = { type = inherit which = PIS }
+		command = { type = vp value = 5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#austria takes rebellious minor under her wing
+event = {
+	id = 131133
+	random = no
+	country = HAB
+	name = "News from Italy"
+	desc = "We have news from Italy that an Italian lord hopes to crown himself as King of Italy. One of his former vassals has denounced this lord. We hold the title and crown of Italy, so watching this upstart is of great importance. Nevertheless, this lord has yet to declare himself so we can not approve or move against him openly. His vassal however has. Shall we protect his vassal or leave him to his fate and see what transpires?"
+	style = 2
+
+	action_a = {
+		name = "Take Action in Italy"
+		command = { type = dynastic which = PIS }
+		command = { type = alliance which = PIS }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = SAV value = -50 }
+	}
+
+	action_b = {
+		name = "Wait and see what happens"
+		command = { type = relation which = PIS value = -50 }
+		command = { type = relation which = SAV value = 25 }
+	}
+}
+
+#italian vassal decides to join italy or not
+event = {
+	id = 131125
+	random = no
+	country = MAN
+	name = "Recognise the Claim of Italy"
+	desc = "Our Feudal Lord and Master has the desire and ability to proclaim himself the King of Italy. The title and crown of Italy lies with the Holy Roman Emperor and so our master may not find his coronation easy. Sire, we may become an integral part of our lords Kingdom or go so far only to recognise his claim. Otherwise we must denounce his claim and renounce all ties we have with him which may lead to war. Sire what do we do?"
+	style = 2
+
+	action_a = {
+		name = "Recognise his claim, no more"
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {
+		name = "Denounce this Meglomanics Claims!"
+		command = { type = breakvassal which = SAV }
+		command = { type = relation which = SAV value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = war which = SAV }
+		command = { type = stability value = 5 }
+		command = { type = trigger which = 131135 }
+	}
+
+	action_c = {
+		name = "Embrace our Masters Ambitions (Game Over)"
+		command = { type = trigger which = 131134 }
+	}
+}
+
+#italian minor seeks annexation
+event = {
+	id = 131134
+	random = no
+	country = SAV
+	name = "Our Vassal seeks Annexation"
+	desc = "Our obedient vassal sees the benefits our ambitions hold and he wishes to be a part of our great Kingdom when we declare our investiture."
+	style = 2
+
+	action_a = {
+		name = "So be it"
+		command = { type = inherit which = MAN }
+		command = { type = vp value = 5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#austria takes rebellious minor under her wing
+event = {
+	id = 131135
+	random = no
+	country = HAB
+	name = "News from Italy"
+	desc = "We have news from Italy that an Italian lord hopes to crown himself as King of Italy. One of his former vassals has denounced this lord. We hold the title and crown of Italy, so watching this upstart is of great importance. Nevertheless, this lord has yet to declare himself so we can not approve or move against him openly. His vassal however has. Shall we protect his vassal or leave him to his fate and see what transpires?"
+	style = 2
+
+	action_a = {
+		name = "Take Action in Italy"
+		command = { type = dynastic which = MAN }
+		command = { type = alliance which = MAN }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = SAV value = -50 }
+	}
+
+	action_b = {
+		name = "Wait and see what happens"
+		command = { type = relation which = MAN value = -50 }
+		command = { type = relation which = SAV value = 25 }
+	}
+}
+
+#papal resistance or support
+event = {
+	id = 131136
+	random = no
+	country = PAP
+	name = "The Papal Decree on Italy"
+	desc = "Your Excellency! One of the Northern Italian nobles is moving to have himself crowned King of Italy. Having a powerful Kingdom in the Italian peninsula could be a threat to the spiritual reign of Saint Peter. On the other hand the Kingdom of Italy could be a wonderful buffer State to the ambitions of France and Austria. Shall we support this mans ambition or put him firmly in place?"
+	style = 2
+
+	action_a = {
+		name = "The Vatican Opposes it"
+		command = { type = relation which = SAV value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = casusbelli which = SAV value = 60 }
+		command = { type = breakdynastic which = SAV }
+		command = { type = breakvassal which = SAV }
+	}
+
+	action_b = {
+		name = "The Vatican Gives its Blessing"
+		command = { type = relation which = SAV value = 100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = dynastic which = SAV }
+	}
+}
+
+#a minor creates the kingdom of italy
+event = {
+	id = 131137
+	trigger = {
+		flag = savitaly
+		stability = 3
+		atwar = no
+		NOT = {
+			exists = ITA
+		}
+	}
+	random = no
+	country = SAV
+	name = "Behold the Kingdom of Italy"
+	desc = "Preparations were rushed forward to crown the ambitious noble as King of Italy. His advisors gauged well the moods of the surrounding nobles as well as those who supported him in his endevours. One thing which was the thorn in the bush was Austria. The Habsburgs held the title and crown of Italy and it was fairly certain that they would crush any attempt at ursurping them. Of course the title and the Iron crown were fairly worthless possessions to the ambitions of the Habsburgs, perhaps, just perhaps they may just get away with it. The dice were cast only luck would tell."
+	style = 2
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "The King is Crowned!"
+		command = { type = domestic which = centralization value = 2 }
+		command = { type = stability value = -1 }
+		command = { type = vp value = 50 }
+		command = { type = relation which = HAB value = -200 }
+		command = { type = country which = ITA }
+		command = { type = trigger which = 131138 } #austria decides
+	}
+}
+
+#austria decides what to do
+event = {
+	id = 131138
+	random = no
+	country = HAB
+	name = "The King has been declared"
+	desc = "The upstart noble in Italy has been declared and even crowned. We hold the title and crown. What shall we do with this upstart?"
+	style = 2
+
+	action_a = {
+		name = "Crush him like a bug"
+		command = { type = relation which = ITA value = -100 }
+		command = { type = breakvassal which = ITA }
+		command = { type = breakdynastic which = ITA }
+		command = { type = war which = ITA }
+		command = { type = stability value = 4 }
+	}
+
+	action_b = {
+		name = "Do Nothing, it is worthless anyway"
+		command = { type = relation which = ITA value = 50 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#italian monarch lists - savoie 12160-12178
+event = {
+	id = 131139
+	trigger = {
+		event = 131137
+		}
+	random = no
+	country = ITA
+	name = "Let us reign forever!"
+	desc = "with the ambition declared, the Transition Council set up the sucession as quickly as possible. A willing cardinal was dragged in to perform the ceremony and a holiday was declared so that the populace could join in the celebrations. Without any further delay the King was crowned and he prayed that his line would rule Italy justly for a thousand years"
+	style = 2
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Long live the King!"
+		command = { type = vp value = 10 }
+		command = { type = stability value = 1 }
+		command = { type = sleepmonarch which = 12150 }
+		command = { type = wakemonarch which = 12160 }
+		command = { type = wakemonarch which = 12161 }
+		command = { type = wakemonarch which = 12162 }
+		command = { type = wakemonarch which = 12163 }
+		command = { type = wakemonarch which = 12164 }
+		command = { type = wakemonarch which = 12165 }
+		command = { type = wakemonarch which = 12166 }
+		command = { type = wakemonarch which = 12167 }
+		command = { type = wakemonarch which = 12168 }
+		command = { type = wakemonarch which = 12169 }
+		command = { type = wakemonarch which = 12170 }
+		command = { type = wakemonarch which = 12171 }
+		command = { type = wakemonarch which = 12172 }
+		command = { type = wakemonarch which = 12173 }
+		command = { type = wakemonarch which = 12174 }
+		command = { type = wakemonarch which = 12175 }
+		command = { type = wakemonarch which = 12176 }
+		command = { type = wakemonarch which = 12177 }
+		command = { type = wakemonarch which = 12178 }
+	}
+}
+
+#an italian minor has the powerbase to unite italy - MODENA
+event = {
+
+	id = 131140
+	trigger = {
+          	 AND = {
+                 	OR = {
+                       		owned = { province = 389 data = -1 }
+                        	vassal = { country = PAR country = MLO }
+                  	}
+                  	OR = {
+                        	owned = { province = 404 data = -1 }
+                        	vassal = { country = PAR country = SAV }
+			}
+                 	OR = {
+                       		owned = { province = 401 data = -1 }
+                        	vassal = { country = PAR country = FLO }
+                  	}
+                  	OR = {
+                        	owned = { province = 400 data = -1 }
+                        	vassal = { country = PAR country = PIS }
+                  	}
+                 	OR = {
+                       		owned = { province = 390 data = -1 }
+                        	vassal = { country = PAR country = MAN }
+                  	}
+			stability = 2
+			atwar = no
+			NOT = {
+				exists = ITA
+			}
+           	}
+	}
+	random = no
+	country = PAR
+	name = "Consolidation of Northern Italy"
+	desc = "Trying to unite Italy had been on the minds of many of the rulers of the Italian states as well as major European powers who did everything in their power to prevent it. It was finally achieved in 1861 when the great powers were distracted by the Franco-Prussian war. There were many things that were needed to be done before an united Italy could burst itself onto the international scene, gaining the necessary territory was only but one of those requisites needed. However we have a great powerbase in Northern Italy, we could start the process to unite Italy my lord."
+	style = 2
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "Start the process to Unite Italy"
+		command = { type = vp value = 5 }
+		command = { type = stability value = -1 }
+		command = { type = trigger which = 131141 } #milan chooses to accept
+		command = { type = trigger which = 131142 } #savoie chooses to accept
+		command = { type = trigger which = 131143 } #florence chooses to accept
+		command = { type = trigger which = 131144 } #siena chooses to accept
+		command = { type = trigger which = 131145 } #mantua chooses to accept
+		command = { type = trigger which = 131156 } #papal resistance or support
+		command = { type = setflag which = paritaly }
+	}
+
+	action_b = {
+		name = "Let the idea of a United Italy die forever"
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = domestic which = aristocracy value = -1 }
+	}
+}
+
+#italian vassal decides to join italy or not
+event = {
+	id = 131141
+	random = no
+	country = MLO
+	name = "Recognise the Claim of Italy"
+	desc = "Our Feudal Lord and Master has the desire and ability to proclaim himself the King of Italy. The title and crown of Italy lies with the Holy Roman Emperor and so our master may not find his coronation easy. Sire, we may become an integral part of our lords Kingdom or go so far only to recognise his claim. Otherwise we must denounce his claim and renounce all ties we have with him which may lead to war. Sire what do we do?"
+	style = 2
+
+	action_a = {
+		name = "Recognise his claim, no more"
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {
+		name = "Denounce this Meglomanics Claims!"
+		command = { type = breakvassal which = PAR }
+		command = { type = relation which = PAR value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = war which = PAR }
+		command = { type = stability value = 5 }
+		command = { type = trigger which = 131147 }
+	}
+
+	action_c = {
+		name = "Embrace our Masters Ambitions (Game Over)"
+		command = { type = trigger which = 131146 }
+	}
+}
+
+#italian minor seeks annexation
+event = {
+	id = 131146
+	random = no
+	country = PAR
+	name = "Our Vassal seeks Annexation"
+	desc = "Our obedient vassal sees the benefits our ambitions hold and he wishes to be a part of our great Kingdom when we declare our investiture."
+	style = 2
+
+	action_a = {
+		name = "So be it"
+		command = { type = inherit which = MLO }
+		command = { type = vp value = 5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#austria takes rebellious minor under her wing
+event = {
+	id = 131147
+	random = no
+	country = HAB
+	name = "News from Italy"
+	desc = "We have news from Italy that an Italian lord hopes to crown himself as King of Italy. One of his former vassals has denounced this lord. We hold the title and crown of Italy, so watching this upstart is of great importance. Nevertheless, this lord has yet to declare himself so we can not approve or move against him openly. His vassal however has. Shall we protect his vassal or leave him to his fate and see what transpires?"
+	style = 2
+
+	action_a = {
+		name = "Take Action in Italy"
+		command = { type = dynastic which = MLO }
+		command = { type = alliance which = MLO }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = PAR value = -50 }
+	}
+
+	action_b = {
+		name = "Wait and see what happens"
+		command = { type = relation which = MLO value = -50 }
+		command = { type = relation which = PAR value = 25 }
+	}
+}
+
+#italian vassal decides to join italy or not
+event = {
+	id = 131142
+	random = no
+	country = SAV
+	name = "Recognise the Claim of Italy"
+	desc = "Our Feudal Lord and Master has the desire and ability to proclaim himself the King of Italy. The title and crown of Italy lies with the Holy Roman Emperor and so our master may not find his coronation easy. Sire, we may become an integral part of our lords Kingdom or go so far only to recognise his claim. Otherwise we must denounce his claim and renounce all ties we have with him which may lead to war. Sire what do we do?"
+	style = 2
+
+	action_a = {
+		name = "Recognise his claim, no more"
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {
+		name = "Denounce this Meglomanics Claims!"
+		command = { type = breakvassal which = PAR }
+		command = { type = relation which = PAR value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = war which = PAR }
+		command = { type = stability value = 5 }
+		command = { type = trigger which = 131148 }
+	}
+
+	action_c = {
+		name = "Embrace our Masters Ambitions (Game Over)"
+		command = { type = trigger which = 131149 }
+	}
+}
+
+#italian minor seeks annexation
+event = {
+	id = 131149
+	random = no
+	country = PAR
+	name = "Our Vassal seeks Annexation"
+	desc = "Our obedient vassal sees the benefits our ambitions hold and he wishes to be a part of our great Kingdom when we declare our investiture."
+	style = 2
+
+	action_a = {
+		name = "So be it"
+		command = { type = inherit which = SAV }
+		command = { type = vp value = 5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#austria takes rebellious minor under her wing
+event = {
+	id = 131148
+	random = no
+	country = HAB
+	name = "News from Italy"
+	desc = "We have news from Italy that an Italian lord hopes to crown himself as King of Italy. One of his former vassals has denounced this lord. We hold the title and crown of Italy, so watching this upstart is of great importance. Nevertheless, this lord has yet to declare himself so we can not approve or move against him openly. His vassal however has. Shall we protect his vassal or leave him to his fate and see what transpires?"
+	style = 2
+
+	action_a = {
+		name = "Take Action in Italy"
+		command = { type = dynastic which = SAV }
+		command = { type = alliance which = SAV }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = PAR value = -50 }
+	}
+
+	action_b = {
+		name = "Wait and see what happens"
+		command = { type = relation which = SAV value = -50 }
+		command = { type = relation which = PAR value = 25 }
+	}
+}
+
+#italian vassal decides to join italy or not
+event = {
+	id = 131143
+	random = no
+	country = FLO
+	name = "Recognise the Claim of Italy"
+	desc = "Our Feudal Lord and Master has the desire and ability to proclaim himself the King of Italy. The title and crown of Italy lies with the Holy Roman Emperor and so our master may not find his coronation easy. Sire, we may become an integral part of our lords Kingdom or go so far only to recognise his claim. Otherwise we must denounce his claim and renounce all ties we have with him which may lead to war. Sire what do we do?"
+	style = 2
+
+	action_a = {
+		name = "Recognise his claim, no more"
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {
+		name = "Denounce this Meglomanics Claims!"
+		command = { type = breakvassal which = PAR }
+		command = { type = relation which = PAR value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = war which = PAR }
+		command = { type = stability value = 5 }
+		command = { type = trigger which = 131151 }
+	}
+
+	action_c = {
+		name = "Embrace our Masters Ambitions (Game Over)"
+		command = { type = trigger which = 131150 }
+	}
+}
+
+#italian minor seeks annexation
+event = {
+	id = 131150
+	random = no
+	country = PAR
+	name = "Our Vassal seeks Annexation"
+	desc = "Our obedient vassal sees the benefits our ambitions hold and he wishes to be a part of our great Kingdom when we declare our investiture."
+	style = 2
+
+	action_a = {
+		name = "So be it"
+		command = { type = inherit which = FLO }
+		command = { type = vp value = 5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#austria takes rebellious minor under her wing
+event = {
+	id = 131151
+	random = no
+	country = HAB
+	name = "News from Italy"
+	desc = "We have news from Italy that an Italian lord hopes to crown himself as King of Italy. One of his former vassals has denounced this lord. We hold the title and crown of Italy, so watching this upstart is of great importance. Nevertheless, this lord has yet to declare himself so we can not approve or move against him openly. His vassal however has. Shall we protect his vassal or leave him to his fate and see what transpires?"
+	style = 2
+
+	action_a = {
+		name = "Take Action in Italy"
+		command = { type = dynastic which = FLO }
+		command = { type = alliance which = FLO }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = PAR value = -50 }
+	}
+
+	action_b = {
+		name = "Wait and see what happens"
+		command = { type = relation which = FLO value = -50 }
+		command = { type = relation which = PAR value = 25 }
+	}
+}
+
+#italian vassal decides to join italy or not
+event = {
+	id = 131144
+	random = no
+	country = PIS
+	name = "Recognise the Claim of Italy"
+	desc = "Our Feudal Lord and Master has the desire and ability to proclaim himself the King of Italy. The title and crown of Italy lies with the Holy Roman Emperor and so our master may not find his coronation easy. Sire, we may become an integral part of our lords Kingdom or go so far only to recognise his claim. Otherwise we must denounce his claim and renounce all ties we have with him which may lead to war. Sire what do we do?"
+	style = 2
+
+	action_a = {
+		name = "Recognise his claim, no more"
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {
+		name = "Denounce this Meglomanics Claims!"
+		command = { type = breakvassal which = PAR }
+		command = { type = relation which = PAR value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = war which = PAR }
+		command = { type = stability value = 5 }
+		command = { type = trigger which = 131153 }
+	}
+
+	action_c = {
+		name = "Embrace our Masters Ambitions (Game Over)"
+		command = { type = trigger which = 131152 }
+	}
+}
+
+#italian minor seeks annexation
+event = {
+	id = 131152
+	random = no
+	country = PAR
+	name = "Our Vassal seeks Annexation"
+	desc = "Our obedient vassal sees the benefits our ambitions hold and he wishes to be a part of our great Kingdom when we declare our investiture."
+	style = 2
+
+	action_a = {
+		name = "So be it"
+		command = { type = inherit which = PIS }
+		command = { type = vp value = 5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#austria takes rebellious minor under her wing
+event = {
+	id = 131153
+	random = no
+	country = HAB
+	name = "News from Italy"
+	desc = "We have news from Italy that an Italian lord hopes to crown himself as King of Italy. One of his former vassals has denounced this lord. We hold the title and crown of Italy, so watching this upstart is of great importance. Nevertheless, this lord has yet to declare himself so we can not approve or move against him openly. His vassal however has. Shall we protect his vassal or leave him to his fate and see what transpires?"
+	style = 2
+
+	action_a = {
+		name = "Take Action in Italy"
+		command = { type = dynastic which = PIS }
+		command = { type = alliance which = PIS }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = PAR value = -50 }
+	}
+
+	action_b = {
+		name = "Wait and see what happens"
+		command = { type = relation which = PIS value = -50 }
+		command = { type = relation which = PAR value = 25 }
+	}
+}
+
+#italian vassal decides to join italy or not
+event = {
+	id = 131145
+	random = no
+	country = MAN
+	name = "Recognise the Claim of Italy"
+	desc = "Our Feudal Lord and Master has the desire and ability to proclaim himself the King of Italy. The title and crown of Italy lies with the Holy Roman Emperor and so our master may not find his coronation easy. Sire, we may become an integral part of our lords Kingdom or go so far only to recognise his claim. Otherwise we must denounce his claim and renounce all ties we have with him which may lead to war. Sire what do we do?"
+	style = 2
+
+	action_a = {
+		name = "Recognise his claim, no more"
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {
+		name = "Denounce this Meglomanics Claims!"
+		command = { type = breakvassal which = PAR }
+		command = { type = relation which = PAR value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = war which = PAR }
+		command = { type = stability value = 5 }
+		command = { type = trigger which = 131155 }
+	}
+
+	action_c = {
+		name = "Embrace our Masters Ambitions (Game Over)"
+		command = { type = trigger which = 131154 }
+	}
+}
+
+#italian minor seeks annexation
+event = {
+	id = 131154
+	random = no
+	country = PAR
+	name = "Our Vassal seeks Annexation"
+	desc = "Our obedient vassal sees the benefits our ambitions hold and he wishes to be a part of our great Kingdom when we declare our investiture."
+	style = 2
+
+	action_a = {
+		name = "So be it"
+		command = { type = inherit which = MAN }
+		command = { type = vp value = 5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#austria takes rebellious minor under her wing
+event = {
+	id = 131155
+	random = no
+	country = HAB
+	name = "News from Italy"
+	desc = "We have news from Italy that an Italian lord hopes to crown himself as King of Italy. One of his former vassals has denounced this lord. We hold the title and crown of Italy, so watching this upstart is of great importance. Nevertheless, this lord has yet to declare himself so we can not approve or move against him openly. His vassal however has. Shall we protect his vassal or leave him to his fate and see what transpires?"
+	style = 2
+
+	action_a = {
+		name = "Take Action in Italy"
+		command = { type = dynastic which = MAN }
+		command = { type = alliance which = MAN }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = PAR value = -50 }
+	}
+
+	action_b = {
+		name = "Wait and see what happens"
+		command = { type = relation which = MAN value = -50 }
+		command = { type = relation which = PAR value = 25 }
+	}
+}
+
+#papal resistance or support
+event = {
+	id = 131156
+	random = no
+	country = PAP
+	name = "The Papal Decree on Italy"
+	desc = "Your Excellency! One of the Northern Italian nobles is moving to have himself crowned King of Italy. Having a powerful Kingdom in the Italian peninsula could be a threat to the spiritual reign of Saint Peter. On the other hand the Kingdom of Italy could be a wonderful buffer State to the ambitions of France and Austria. Shall we support this mans ambition or put him firmly in place?"
+	style = 2
+
+	action_a = {
+		name = "The Vatican Opposes it"
+		command = { type = relation which = PAR value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = casusbelli which = PAR value = 60 }
+		command = { type = breakdynastic which = PAR }
+		command = { type = breakvassal which = PAR }
+	}
+
+	action_b = {
+		name = "The Vatican Gives its Blessing"
+		command = { type = relation which = PAR value = 100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = dynastic which = PAR }
+	}
+}
+
+#a minor creates the kingdom of italy
+event = {
+	id = 131157
+	trigger = {
+		flag = paritaly
+		stability = 3
+		atwar = no
+		NOT = {
+			exists = ITA
+		}
+	}
+	random = no
+	country = PAR
+	name = "Behold the Kingdom of Italy"
+	desc = "Preparations were rushed forward to crown the ambitious noble as King of Italy. His advisors gauged well the moods of the surrounding nobles as well as those who supported him in his endevours. One thing which was the thorn in the bush was Austria. The Habsburgs held the title and crown of Italy and it was fairly certain that they would crush any attempt at ursurping them. Of course the title and the Iron crown were fairly worthless possessions to the ambitions of the Habsburgs, perhaps, just perhaps they may just get away with it. The dice were cast only luck would tell."
+	style = 2
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "The King is Crowned!"
+		command = { type = domestic which = centralization value = 2 }
+		command = { type = stability value = -1 }
+		command = { type = vp value = 50 }
+		command = { type = relation which = HAB value = -200 }
+		command = { type = country which = ITA }
+		command = { type = trigger which = 131158 } #austria decides
+	}
+}
+
+#austria decides what to do
+event = {
+	id = 131158
+	random = no
+	country = HAB
+	name = "The King has been declared"
+	desc = "The upstart noble in Italy has been declared and even crowned. We hold the title and crown. What shall we do with this upstart?"
+	style = 2
+
+	action_a = {
+		name = "Crush him like a bug"
+		command = { type = relation which = ITA value = -100 }
+		command = { type = breakvassal which = ITA }
+		command = { type = breakdynastic which = ITA }
+		command = { type = war which = ITA }
+		command = { type = stability value = 4 }
+	}
+
+	action_b = {
+		name = "Do Nothing, it is worthless anyway"
+		command = { type = relation which = ITA value = 50 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#italian monarch lists - modena 12179-12195
+event = {
+	id = 131159
+	trigger = {
+		event = 131157
+		}
+	random = no
+	country = ITA
+	name = "Let us reign forever!"
+	desc = "with the ambition declared, the Transition Council set up the sucession as quickly as possible. A willing cardinal was dragged in to perform the ceremony and a holiday was declared so that the populace could join in the celebrations. Without any further delay the King was crowned and he prayed that his line would rule Italy justly for a thousand years"
+	style = 2
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Long live the King!"
+		command = { type = vp value = 10 }
+		command = { type = stability value = 1 }
+		command = { type = sleepmonarch which = 12150 }
+		command = { type = wakemonarch which = 12179 }
+		command = { type = wakemonarch which = 12180 }
+		command = { type = wakemonarch which = 12181 }
+		command = { type = wakemonarch which = 12182 }
+		command = { type = wakemonarch which = 12183 }
+		command = { type = wakemonarch which = 12184 }
+		command = { type = wakemonarch which = 12185 }
+		command = { type = wakemonarch which = 12186 }
+		command = { type = wakemonarch which = 12187 }
+		command = { type = wakemonarch which = 12188 }
+		command = { type = wakemonarch which = 12189 }
+		command = { type = wakemonarch which = 12190 }
+		command = { type = wakemonarch which = 12191 }
+		command = { type = wakemonarch which = 12192 }
+		command = { type = wakemonarch which = 12193 }
+		command = { type = wakemonarch which = 12194 }
+		command = { type = wakemonarch which = 12195 }
+	}
+}
+
+#an italian minor has the powerbase to unite italy - FLORENCE
+event = {
+
+	id = 131160
+	trigger = {
+          	 AND = {
+                 	OR = {
+                       		owned = { province = 389 data = -1 }
+                        	vassal = { country = FLO country = MLO }
+                  	}
+                  	OR = {
+                        	owned = { province = 404 data = -1 }
+                        	vassal = { country = FLO country = SAV }
+			}
+                 	OR = {
+                       		owned = { province = 402 data = -1 }
+                        	vassal = { country = FLO country = PAR }
+                  	}
+                  	OR = {
+                        	owned = { province = 400 data = -1 }
+                        	vassal = { country = FLO country = PIS }
+                  	}
+                 	OR = {
+                       		owned = { province = 390 data = -1 }
+                        	vassal = { country = FLO country = MAN }
+                  	}
+			stability = 2
+			atwar = no
+			NOT = {
+				exists = ITA
+			}
+           	}
+	}
+	random = no
+	country = FLO
+	name = "Consolidation of Northern Italy"
+	desc = "Trying to unite Italy had been on the minds of many of the rulers of the Italian states as well as major European powers who did everything in their power to prevent it. It was finally achieved in 1861 when the great powers were distracted by the Franco-Prussian war. There were many things that were needed to be done before an united Italy could burst itself onto the international scene, gaining the necessary territory was only but one of those requisites needed. However we have a great powerbase in Northern Italy, we could start the process to unite Italy my lord."
+	style = 2
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "Start the process to Unite Italy"
+		command = { type = vp value = 5 }
+		command = { type = stability value = -1 }
+		command = { type = trigger which = 131161 } #milan chooses to accept
+		command = { type = trigger which = 131162 } #savoie chooses to accept
+		command = { type = trigger which = 131163 } #modena chooses to accept
+		command = { type = trigger which = 131164 } #siena chooses to accept
+		command = { type = trigger which = 131165 } #mantua chooses to accept
+		command = { type = trigger which = 131176 } #papal resistance or support
+		command = { type = setflag which = tositaly }
+	}
+
+	action_b = {
+		name = "Let the idea of a United Italy die forever"
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = domestic which = aristocracy value = -1 }
+	}
+}
+
+#italian vassal decides to join italy or not
+event = {
+	id = 131161
+	random = no
+	country = MLO
+	name = "Recognise the Claim of Italy"
+	desc = "Our Feudal Lord and Master has the desire and ability to proclaim himself the King of Italy. The title and crown of Italy lies with the Holy Roman Emperor and so our master may not find his coronation easy. Sire, we may become an integral part of our lords Kingdom or go so far only to recognise his claim. Otherwise we must denounce his claim and renounce all ties we have with him which may lead to war. Sire what do we do?"
+	style = 2
+
+	action_a = {
+		name = "Recognise his claim, no more"
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {
+		name = "Denounce this Meglomanics Claims!"
+		command = { type = breakvassal which = FLO }
+		command = { type = relation which = FLO value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = war which = FLO }
+		command = { type = stability value = 5 }
+		command = { type = trigger which = 131167 }
+	}
+
+	action_c = {
+		name = "Embrace our Masters Ambitions (Game Over)"
+		command = { type = trigger which = 131166 }
+	}
+}
+
+#italian minor seeks annexation
+event = {
+	id = 131166
+	random = no
+	country = FLO
+	name = "Our Vassal seeks Annexation"
+	desc = "Our obedient vassal sees the benefits our ambitions hold and he wishes to be a part of our great Kingdom when we declare our investiture."
+	style = 2
+
+	action_a = {
+		name = "So be it"
+		command = { type = inherit which = MLO }
+		command = { type = vp value = 5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#austria takes rebellious minor under her wing
+event = {
+	id = 131167
+	random = no
+	country = HAB
+	name = "News from Italy"
+	desc = "We have news from Italy that an Italian lord hopes to crown himself as King of Italy. One of his former vassals has denounced this lord. We hold the title and crown of Italy, so watching this upstart is of great importance. Nevertheless, this lord has yet to declare himself so we can not approve or move against him openly. His vassal however has. Shall we protect his vassal or leave him to his fate and see what transpires?"
+	style = 2
+
+	action_a = {
+		name = "Take Action in Italy"
+		command = { type = dynastic which = MLO }
+		command = { type = alliance which = MLO }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = FLO value = -50 }
+	}
+
+	action_b = {
+		name = "Wait and see what happens"
+		command = { type = relation which = MLO value = -50 }
+		command = { type = relation which = FLO value = 25 }
+	}
+}
+
+#italian vassal decides to join italy or not
+event = {
+	id = 131162
+	random = no
+	country = SAV
+	name = "Recognise the Claim of Italy"
+	desc = "Our Feudal Lord and Master has the desire and ability to proclaim himself the King of Italy. The title and crown of Italy lies with the Holy Roman Emperor and so our master may not find his coronation easy. Sire, we may become an integral part of our lords Kingdom or go so far only to recognise his claim. Otherwise we must denounce his claim and renounce all ties we have with him which may lead to war. Sire what do we do?"
+	style = 2
+
+	action_a = {
+		name = "Recognise his claim, no more"
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {
+		name = "Denounce this Meglomanics Claims!"
+		command = { type = breakvassal which = FLO }
+		command = { type = relation which = FLO value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = war which = FLO }
+		command = { type = stability value = 5 }
+		command = { type = trigger which = 131168 }
+	}
+
+	action_c = {
+		name = "Embrace our Masters Ambitions (Game Over)"
+		command = { type = trigger which = 131169 }
+	}
+}
+
+#italian minor seeks annexation
+event = {
+	id = 131169
+	random = no
+	country = FLO
+	name = "Our Vassal seeks Annexation"
+	desc = "Our obedient vassal sees the benefits our ambitions hold and he wishes to be a part of our great Kingdom when we declare our investiture."
+	style = 2
+
+	action_a = {
+		name = "So be it"
+		command = { type = inherit which = SAV }
+		command = { type = vp value = 5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#austria takes rebellious minor under her wing
+event = {
+	id = 131168
+	random = no
+	country = HAB
+	name = "News from Italy"
+	desc = "We have news from Italy that an Italian lord hopes to crown himself as King of Italy. One of his former vassals has denounced this lord. We hold the title and crown of Italy, so watching this upstart is of great importance. Nevertheless, this lord has yet to declare himself so we can not approve or move against him openly. His vassal however has. Shall we protect his vassal or leave him to his fate and see what transpires?"
+	style = 2
+
+	action_a = {
+		name = "Take Action in Italy"
+		command = { type = dynastic which = SAV }
+		command = { type = alliance which = SAV }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = FLO value = -50 }
+	}
+
+	action_b = {
+		name = "Wait and see what happens"
+		command = { type = relation which = SAV value = -50 }
+		command = { type = relation which = FLO value = 25 }
+	}
+}
+
+#italian vassal decides to join italy or not
+event = {
+	id = 131163
+	random = no
+	country = PAR
+	name = "Recognise the Claim of Italy"
+	desc = "Our Feudal Lord and Master has the desire and ability to proclaim himself the King of Italy. The title and crown of Italy lies with the Holy Roman Emperor and so our master may not find his coronation easy. Sire, we may become an integral part of our lords Kingdom or go so far only to recognise his claim. Otherwise we must denounce his claim and renounce all ties we have with him which may lead to war. Sire what do we do?"
+	style = 2
+
+	action_a = {
+		name = "Recognise his claim, no more"
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {
+		name = "Denounce this Meglomanics Claims!"
+		command = { type = breakvassal which = FLO }
+		command = { type = relation which = FLO value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = war which = FLO }
+		command = { type = stability value = 5 }
+		command = { type = trigger which = 131171 }
+	}
+
+	action_c = {
+		name = "Embrace our Masters Ambitions (Game Over)"
+		command = { type = trigger which = 131170 }
+	}
+}
+
+#italian minor seeks annexation
+event = {
+	id = 131170
+	random = no
+	country = FLO
+	name = "Our Vassal seeks Annexation"
+	desc = "Our obedient vassal sees the benefits our ambitions hold and he wishes to be a part of our great Kingdom when we declare our investiture."
+	style = 2
+
+	action_a = {
+		name = "So be it"
+		command = { type = inherit which = PAR }
+		command = { type = vp value = 5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#austria takes rebellious minor under her wing
+event = {
+	id = 131171
+	random = no
+	country = HAB
+	name = "News from Italy"
+	desc = "We have news from Italy that an Italian lord hopes to crown himself as King of Italy. One of his former vassals has denounced this lord. We hold the title and crown of Italy, so watching this upstart is of great importance. Nevertheless, this lord has yet to declare himself so we can not approve or move against him openly. His vassal however has. Shall we protect his vassal or leave him to his fate and see what transpires?"
+	style = 2
+
+	action_a = {
+		name = "Take Action in Italy"
+		command = { type = dynastic which = PAR }
+		command = { type = alliance which = PAR }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = FLO value = -50 }
+	}
+
+	action_b = {
+		name = "Wait and see what happens"
+		command = { type = relation which = PAR value = -50 }
+		command = { type = relation which = FLO value = 25 }
+	}
+}
+
+#italian vassal decides to join italy or not
+event = {
+	id = 131164
+	random = no
+	country = PIS
+	name = "Recognise the Claim of Italy"
+	desc = "Our Feudal Lord and Master has the desire and ability to proclaim himself the King of Italy. The title and crown of Italy lies with the Holy Roman Emperor and so our master may not find his coronation easy. Sire, we may become an integral part of our lords Kingdom or go so far only to recognise his claim. Otherwise we must denounce his claim and renounce all ties we have with him which may lead to war. Sire what do we do?"
+	style = 2
+
+	action_a = {
+		name = "Recognise his claim, no more"
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {
+		name = "Denounce this Meglomanics Claims!"
+		command = { type = breakvassal which = FLO }
+		command = { type = relation which = FLO value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = war which = FLO }
+		command = { type = stability value = 5 }
+		command = { type = trigger which = 131173 }
+	}
+
+	action_c = {
+		name = "Embrace our Masters Ambitions (Game Over)"
+		command = { type = trigger which = 131172 }
+	}
+}
+
+#italian minor seeks annexation
+event = {
+	id = 131172
+	random = no
+	country = FLO
+	name = "Our Vassal seeks Annexation"
+	desc = "Our obedient vassal sees the benefits our ambitions hold and he wishes to be a part of our great Kingdom when we declare our investiture."
+	style = 2
+
+	action_a = {
+		name = "So be it"
+		command = { type = inherit which = PIS }
+		command = { type = vp value = 5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#austria takes rebellious minor under her wing
+event = {
+	id = 131173
+	random = no
+	country = HAB
+	name = "News from Italy"
+	desc = "We have news from Italy that an Italian lord hopes to crown himself as King of Italy. One of his former vassals has denounced this lord. We hold the title and crown of Italy, so watching this upstart is of great importance. Nevertheless, this lord has yet to declare himself so we can not approve or move against him openly. His vassal however has. Shall we protect his vassal or leave him to his fate and see what transpires?"
+	style = 2
+
+	action_a = {
+		name = "Take Action in Italy"
+		command = { type = dynastic which = PIS }
+		command = { type = alliance which = PIS }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = FLO value = -50 }
+	}
+
+	action_b = {
+		name = "Wait and see what happens"
+		command = { type = relation which = PIS value = -50 }
+		command = { type = relation which = FLO value = 25 }
+	}
+}
+
+#italian vassal decides to join italy or not
+event = {
+	id = 131165
+	random = no
+	country = MAN
+	name = "Recognise the Claim of Italy"
+	desc = "Our Feudal Lord and Master has the desire and ability to proclaim himself the King of Italy. The title and crown of Italy lies with the Holy Roman Emperor and so our master may not find his coronation easy. Sire, we may become an integral part of our lords Kingdom or go so far only to recognise his claim. Otherwise we must denounce his claim and renounce all ties we have with him which may lead to war. Sire what do we do?"
+	style = 2
+
+	action_a = {
+		name = "Recognise his claim, no more"
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {
+		name = "Denounce this Meglomanics Claims!"
+		command = { type = breakvassal which = FLO }
+		command = { type = relation which = FLO value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = war which = FLO }
+		command = { type = stability value = 5 }
+		command = { type = trigger which = 131175 }
+	}
+
+	action_c = {
+		name = "Embrace our Masters Ambitions (Game Over)"
+		command = { type = trigger which = 131174 }
+	}
+}
+
+#italian minor seeks annexation
+event = {
+	id = 131174
+	random = no
+	country = FLO
+	name = "Our Vassal seeks Annexation"
+	desc = "Our obedient vassal sees the benefits our ambitions hold and he wishes to be a part of our great Kingdom when we declare our investiture."
+	style = 2
+
+	action_a = {
+		name = "So be it"
+		command = { type = inherit which = MAN }
+		command = { type = vp value = 5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#austria takes rebellious minor under her wing
+event = {
+	id = 131175
+	random = no
+	country = HAB
+	name = "News from Italy"
+	desc = "We have news from Italy that an Italian lord hopes to crown himself as King of Italy. One of his former vassals has denounced this lord. We hold the title and crown of Italy, so watching this upstart is of great importance. Nevertheless, this lord has yet to declare himself so we can not approve or move against him openly. His vassal however has. Shall we protect his vassal or leave him to his fate and see what transpires?"
+	style = 2
+
+	action_a = {
+		name = "Take Action in Italy"
+		command = { type = dynastic which = MAN }
+		command = { type = alliance which = MAN }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = FLO value = -50 }
+	}
+
+	action_b = {
+		name = "Wait and see what happens"
+		command = { type = relation which = MAN value = -50 }
+		command = { type = relation which = FLO value = 25 }
+	}
+}
+
+#papal resistance or support
+event = {
+	id = 131176
+	random = no
+	country = PAP
+	name = "The Papal Decree on Italy"
+	desc = "Your Excellency! One of the Northern Italian nobles is moving to have himself crowned King of Italy. Having a powerful Kingdom in the Italian peninsula could be a threat to the spiritual reign of Saint Peter. On the other hand the Kingdom of Italy could be a wonderful buffer State to the ambitions of France and Austria. Shall we support this mans ambition or put him firmly in place?"
+	style = 2
+
+	action_a = {
+		name = "The Vatican Opposes it"
+		command = { type = relation which = FLO value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = casusbelli which = FLO value = 60 }
+		command = { type = breakdynastic which = FLO }
+		command = { type = breakvassal which = FLO }
+	}
+
+	action_b = {
+		name = "The Vatican Gives its Blessing"
+		command = { type = relation which = FLO value = 100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = dynastic which = FLO }
+	}
+}
+
+#a minor creates the kingdom of italy
+event = {
+	id = 131177
+	trigger = {
+		flag = tositaly
+		stability = 3
+		atwar = no
+		NOT = {
+			exists = ITA
+		}
+	}
+	random = no
+	country = FLO
+	name = "Behold the Kingdom of Italy"
+	desc = "Preparations were rushed forward to crown the ambitious noble as King of Italy. His advisors gauged well the moods of the surrounding nobles as well as those who supported him in his endevours. One thing which was the thorn in the bush was Austria. The Habsburgs held the title and crown of Italy and it was fairly certain that they would crush any attempt at ursurping them. Of course the title and the Iron crown were fairly worthless possessions to the ambitions of the Habsburgs, perhaps, just perhaps they may just get away with it. The dice were cast only luck would tell."
+	style = 2
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "The King is Crowned!"
+		command = { type = domestic which = centralization value = 2 }
+		command = { type = stability value = -1 }
+		command = { type = vp value = 50 }
+		command = { type = relation which = HAB value = -200 }
+		command = { type = country which = ITA }
+		command = { type = trigger which = 131178 } #austria decides
+	}
+}
+
+#austria decides what to do
+event = {
+	id = 131178
+	random = no
+	country = HAB
+	name = "The King has been declared"
+	desc = "The upstart noble in Italy has been declared and even crowned. We hold the title and crown. What shall we do with this upstart?"
+	style = 2
+
+	action_a = {
+		name = "Crush him like a bug"
+		command = { type = relation which = ITA value = -100 }
+		command = { type = breakvassal which = ITA }
+		command = { type = breakdynastic which = ITA }
+		command = { type = war which = ITA }
+		command = { type = stability value = 4 }
+	}
+
+	action_b = {
+		name = "Do Nothing, it is worthless anyway"
+		command = { type = relation which = ITA value = 50 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#italian monarch lists - florence 12196-12216
+event = {
+	id = 131179
+	trigger = {
+		event = 131177
+		}
+	random = no
+	country = ITA
+	name = "Let us reign forever!"
+	desc = "with the ambition declared, the Transition Council set up the sucession as quickly as possible. A willing cardinal was dragged in to perform the ceremony and a holiday was declared so that the populace could join in the celebrations. Without any further delay the King was crowned and he prayed that his line would rule Italy justly for a thousand years"
+	style = 2
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Long live the King!"
+		command = { type = vp value = 10 }
+		command = { type = stability value = 1 }
+		command = { type = sleepmonarch which = 12150 }
+		command = { type = wakemonarch which = 12196 }
+		command = { type = wakemonarch which = 12197 }
+		command = { type = wakemonarch which = 12198 }
+		command = { type = wakemonarch which = 12199 }
+		command = { type = wakemonarch which = 12200 }
+		command = { type = wakemonarch which = 12201 }
+		command = { type = wakemonarch which = 12202 }
+		command = { type = wakemonarch which = 12203 }
+		command = { type = wakemonarch which = 12204 }
+		command = { type = wakemonarch which = 12205 }
+		command = { type = wakemonarch which = 12206 }
+		command = { type = wakemonarch which = 12207 }
+		command = { type = wakemonarch which = 12208 }
+		command = { type = wakemonarch which = 12209 }
+		command = { type = wakemonarch which = 12210 }
+		command = { type = wakemonarch which = 12211 }
+		command = { type = wakemonarch which = 12212 }
+		command = { type = wakemonarch which = 12213 }
+		command = { type = wakemonarch which = 12214 }
+		command = { type = wakemonarch which = 12215 }
+		command = { type = wakemonarch which = 12216 }
+	}
+}
+
+#an italian minor has the powerbase to unite italy - SIENA
+event = {
+
+	id = 131180
+	trigger = {
+          	 AND = {
+                 	OR = {
+                       		owned = { province = 389 data = -1 }
+                        	vassal = { country = PIS country = MLO }
+                  	}
+                  	OR = {
+                        	owned = { province = 404 data = -1 }
+                        	vassal = { country = PIS country = SAV }
+			}
+                 	OR = {
+                       		owned = { province = 402 data = -1 }
+                        	vassal = { country = PIS country = PAR }
+                  	}
+                  	OR = {
+                        	owned = { province = 401 data = -1 }
+                        	vassal = { country = PIS country = FLO }
+                  	}
+                 	OR = {
+                       		owned = { province = 390 data = -1 }
+                        	vassal = { country = PIS country = MAN }
+                  	}
+			stability = 2
+			atwar = no
+			NOT = {
+				exists = ITA
+			}
+           	}
+	}
+	random = no
+	country = PIS
+	name = "Consolidation of Northern Italy"
+	desc = "Trying to unite Italy had been on the minds of many of the rulers of the Italian states as well as major European powers who did everything in their power to prevent it. It was finally achieved in 1861 when the great powers were distracted by the Franco-Prussian war. There were many things that were needed to be done before an united Italy could burst itself onto the international scene, gaining the necessary territory was only but one of those requisites needed. However we have a great powerbase in Northern Italy, we could start the process to unite Italy my lord."
+	style = 2
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "Start the process to Unite Italy"
+		command = { type = vp value = 5 }
+		command = { type = stability value = -1 }
+		command = { type = trigger which = 131181 } #milan chooses to accept
+		command = { type = trigger which = 131182 } #savoie chooses to accept
+		command = { type = trigger which = 131183 } #modena chooses to accept
+		command = { type = trigger which = 131184 } #florence chooses to accept
+		command = { type = trigger which = 131185 } #mantua chooses to accept
+		command = { type = trigger which = 131196 } #papal resistance or support
+		command = { type = setflag which = pisitaly }
+	}
+
+	action_b = {
+		name = "Let the idea of a United Italy die forever"
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = domestic which = aristocracy value = -1 }
+	}
+}
+
+#italian vassal decides to join italy or not
+event = {
+	id = 131181
+	random = no
+	country = MLO
+	name = "Recognise the Claim of Italy"
+	desc = "Our Feudal Lord and Master has the desire and ability to proclaim himself the King of Italy. The title and crown of Italy lies with the Holy Roman Emperor and so our master may not find his coronation easy. Sire, we may become an integral part of our lords Kingdom or go so far only to recognise his claim. Otherwise we must denounce his claim and renounce all ties we have with him which may lead to war. Sire what do we do?"
+	style = 2
+
+	action_a = {
+		name = "Recognise his claim, no more"
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {
+		name = "Denounce this Meglomanics Claims!"
+		command = { type = breakvassal which = PIS }
+		command = { type = relation which = PIS value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = war which = PIS }
+		command = { type = stability value = 5 }
+		command = { type = trigger which = 131187 }
+	}
+
+	action_c = {
+		name = "Embrace our Masters Ambitions (Game Over)"
+		command = { type = trigger which = 131186 }
+	}
+}
+
+#italian minor seeks annexation
+event = {
+	id = 131186
+	random = no
+	country = PIS
+	name = "Our Vassal seeks Annexation"
+	desc = "Our obedient vassal sees the benefits our ambitions hold and he wishes to be a part of our great Kingdom when we declare our investiture."
+	style = 2
+
+	action_a = {
+		name = "So be it"
+		command = { type = inherit which = MLO }
+		command = { type = vp value = 5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#austria takes rebellious minor under her wing
+event = {
+	id = 131187
+	random = no
+	country = HAB
+	name = "News from Italy"
+	desc = "We have news from Italy that an Italian lord hopes to crown himself as King of Italy. One of his former vassals has denounced this lord. We hold the title and crown of Italy, so watching this upstart is of great importance. Nevertheless, this lord has yet to declare himself so we can not approve or move against him openly. His vassal however has. Shall we protect his vassal or leave him to his fate and see what transpires?"
+	style = 2
+
+	action_a = {
+		name = "Take Action in Italy"
+		command = { type = dynastic which = MLO }
+		command = { type = alliance which = MLO }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = PIS value = -50 }
+	}
+
+	action_b = {
+		name = "Wait and see what happens"
+		command = { type = relation which = MLO value = -50 }
+		command = { type = relation which = PIS value = 25 }
+	}
+}
+
+#italian vassal decides to join italy or not
+event = {
+	id = 131182
+	random = no
+	country = SAV
+	name = "Recognise the Claim of Italy"
+	desc = "Our Feudal Lord and Master has the desire and ability to proclaim himself the King of Italy. The title and crown of Italy lies with the Holy Roman Emperor and so our master may not find his coronation easy. Sire, we may become an integral part of our lords Kingdom or go so far only to recognise his claim. Otherwise we must denounce his claim and renounce all ties we have with him which may lead to war. Sire what do we do?"
+	style = 2
+
+	action_a = {
+		name = "Recognise his claim, no more"
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {
+		name = "Denounce this Meglomanics Claims!"
+		command = { type = breakvassal which = PIS }
+		command = { type = relation which = PIS value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = war which = PIS }
+		command = { type = stability value = 5 }
+		command = { type = trigger which = 131188 }
+	}
+
+	action_c = {
+		name = "Embrace our Masters Ambitions (Game Over)"
+		command = { type = trigger which = 131189 }
+	}
+}
+
+#italian minor seeks annexation
+event = {
+	id = 131189
+	random = no
+	country = PIS
+	name = "Our Vassal seeks Annexation"
+	desc = "Our obedient vassal sees the benefits our ambitions hold and he wishes to be a part of our great Kingdom when we declare our investiture."
+	style = 2
+
+	action_a = {
+		name = "So be it"
+		command = { type = inherit which = SAV }
+		command = { type = vp value = 5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#austria takes rebellious minor under her wing
+event = {
+	id = 131188
+	random = no
+	country = HAB
+	name = "News from Italy"
+	desc = "We have news from Italy that an Italian lord hopes to crown himself as King of Italy. One of his former vassals has denounced this lord. We hold the title and crown of Italy, so watching this upstart is of great importance. Nevertheless, this lord has yet to declare himself so we can not approve or move against him openly. His vassal however has. Shall we protect his vassal or leave him to his fate and see what transpires?"
+	style = 2
+
+	action_a = {
+		name = "Take Action in Italy"
+		command = { type = dynastic which = SAV }
+		command = { type = alliance which = SAV }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = PIS value = -50 }
+	}
+
+	action_b = {
+		name = "Wait and see what happens"
+		command = { type = relation which = SAV value = -50 }
+		command = { type = relation which = PIS value = 25 }
+	}
+}
+
+#italian vassal decides to join italy or not
+event = {
+	id = 131183
+	random = no
+	country = PAR
+	name = "Recognise the Claim of Italy"
+	desc = "Our Feudal Lord and Master has the desire and ability to proclaim himself the King of Italy. The title and crown of Italy lies with the Holy Roman Emperor and so our master may not find his coronation easy. Sire, we may become an integral part of our lords Kingdom or go so far only to recognise his claim. Otherwise we must denounce his claim and renounce all ties we have with him which may lead to war. Sire what do we do?"
+	style = 2
+
+	action_a = {
+		name = "Recognise his claim, no more"
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {
+		name = "Denounce this Meglomanics Claims!"
+		command = { type = breakvassal which = PIS }
+		command = { type = relation which = PIS value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = war which = PIS }
+		command = { type = stability value = 5 }
+		command = { type = trigger which = 131191 }
+	}
+
+	action_c = {
+		name = "Embrace our Masters Ambitions (Game Over)"
+		command = { type = trigger which = 131190 }
+	}
+}
+
+#italian minor seeks annexation
+event = {
+	id = 131190
+	random = no
+	country = PIS
+	name = "Our Vassal seeks Annexation"
+	desc = "Our obedient vassal sees the benefits our ambitions hold and he wishes to be a part of our great Kingdom when we declare our investiture."
+	style = 2
+
+	action_a = {
+		name = "So be it"
+		command = { type = inherit which = PAR }
+		command = { type = vp value = 5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#austria takes rebellious minor under her wing
+event = {
+	id = 131191
+	random = no
+	country = HAB
+	name = "News from Italy"
+	desc = "We have news from Italy that an Italian lord hopes to crown himself as King of Italy. One of his former vassals has denounced this lord. We hold the title and crown of Italy, so watching this upstart is of great importance. Nevertheless, this lord has yet to declare himself so we can not approve or move against him openly. His vassal however has. Shall we protect his vassal or leave him to his fate and see what transpires?"
+	style = 2
+
+	action_a = {
+		name = "Take Action in Italy"
+		command = { type = dynastic which = PAR }
+		command = { type = alliance which = PAR }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = PIS value = -50 }
+	}
+
+	action_b = {
+		name = "Wait and see what happens"
+		command = { type = relation which = PAR value = -50 }
+		command = { type = relation which = PIS value = 25 }
+	}
+}
+
+#italian vassal decides to join italy or not
+event = {
+	id = 131184
+	random = no
+	country = FLO
+	name = "Recognise the Claim of Italy"
+	desc = "Our Feudal Lord and Master has the desire and ability to proclaim himself the King of Italy. The title and crown of Italy lies with the Holy Roman Emperor and so our master may not find his coronation easy. Sire, we may become an integral part of our lords Kingdom or go so far only to recognise his claim. Otherwise we must denounce his claim and renounce all ties we have with him which may lead to war. Sire what do we do?"
+	style = 2
+
+	action_a = {
+		name = "Recognise his claim, no more"
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {
+		name = "Denounce this Meglomanics Claims!"
+		command = { type = breakvassal which = PIS }
+		command = { type = relation which = PIS value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = war which = PIS }
+		command = { type = stability value = 5 }
+		command = { type = trigger which = 131193 }
+	}
+
+	action_c = {
+		name = "Embrace our Masters Ambitions (Game Over)"
+		command = { type = trigger which = 131192 }
+	}
+}
+
+#italian minor seeks annexation
+event = {
+	id = 131192
+	random = no
+	country = PIS
+	name = "Our Vassal seeks Annexation"
+	desc = "Our obedient vassal sees the benefits our ambitions hold and he wishes to be a part of our great Kingdom when we declare our investiture."
+	style = 2
+
+	action_a = {
+		name = "So be it"
+		command = { type = inherit which = FLO }
+		command = { type = vp value = 5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#austria takes rebellious minor under her wing
+event = {
+	id = 131193
+	random = no
+	country = HAB
+	name = "News from Italy"
+	desc = "We have news from Italy that an Italian lord hopes to crown himself as King of Italy. One of his former vassals has denounced this lord. We hold the title and crown of Italy, so watching this upstart is of great importance. Nevertheless, this lord has yet to declare himself so we can not approve or move against him openly. His vassal however has. Shall we protect his vassal or leave him to his fate and see what transpires?"
+	style = 2
+
+	action_a = {
+		name = "Take Action in Italy"
+		command = { type = dynastic which = FLO }
+		command = { type = alliance which = FLO }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = PIS value = -50 }
+	}
+
+	action_b = {
+		name = "Wait and see what happens"
+		command = { type = relation which = FLO value = -50 }
+		command = { type = relation which = PIS value = 25 }
+	}
+}
+
+#italian vassal decides to join italy or not
+event = {
+	id = 131185
+	random = no
+	country = MAN
+	name = "Recognise the Claim of Italy"
+	desc = "Our Feudal Lord and Master has the desire and ability to proclaim himself the King of Italy. The title and crown of Italy lies with the Holy Roman Emperor and so our master may not find his coronation easy. Sire, we may become an integral part of our lords Kingdom or go so far only to recognise his claim. Otherwise we must denounce his claim and renounce all ties we have with him which may lead to war. Sire what do we do?"
+	style = 2
+
+	action_a = {
+		name = "Recognise his claim, no more"
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {
+		name = "Denounce this Meglomanics Claims!"
+		command = { type = breakvassal which = PIS }
+		command = { type = relation which = PIS value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = war which = PIS }
+		command = { type = stability value = 5 }
+		command = { type = trigger which = 131195 }
+	}
+
+	action_c = {
+		name = "Embrace our Masters Ambitions (Game Over)"
+		command = { type = trigger which = 131194 }
+	}
+}
+
+#italian minor seeks annexation
+event = {
+	id = 131194
+	random = no
+	country = PIS
+	name = "Our Vassal seeks Annexation"
+	desc = "Our obedient vassal sees the benefits our ambitions hold and he wishes to be a part of our great Kingdom when we declare our investiture."
+	style = 2
+
+	action_a = {
+		name = "So be it"
+		command = { type = inherit which = MAN }
+		command = { type = vp value = 5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#austria takes rebellious minor under her wing
+event = {
+	id = 131195
+	random = no
+	country = HAB
+	name = "News from Italy"
+	desc = "We have news from Italy that an Italian lord hopes to crown himself as King of Italy. One of his former vassals has denounced this lord. We hold the title and crown of Italy, so watching this upstart is of great importance. Nevertheless, this lord has yet to declare himself so we can not approve or move against him openly. His vassal however has. Shall we protect his vassal or leave him to his fate and see what transpires?"
+	style = 2
+
+	action_a = {
+		name = "Take Action in Italy"
+		command = { type = dynastic which = MAN }
+		command = { type = alliance which = MAN }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = PIS value = -50 }
+	}
+
+	action_b = {
+		name = "Wait and see what happens"
+		command = { type = relation which = MAN value = -50 }
+		command = { type = relation which = PIS value = 25 }
+	}
+}
+
+#papal resistance or support
+event = {
+	id = 131196
+	random = no
+	country = PAP
+	name = "The Papal Decree on Italy"
+	desc = "Your Excellency! One of the Northern Italian nobles is moving to have himself crowned King of Italy. Having a powerful Kingdom in the Italian peninsula could be a threat to the spiritual reign of Saint Peter. On the other hand the Kingdom of Italy could be a wonderful buffer State to the ambitions of France and Austria. Shall we support this mans ambition or put him firmly in place?"
+	style = 2
+
+	action_a = {
+		name = "The Vatican Opposes it"
+		command = { type = relation which = PIS value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = casusbelli which = PIS value = 60 }
+		command = { type = breakdynastic which = PIS }
+		command = { type = breakvassal which = PIS }
+	}
+
+	action_b = {
+		name = "The Vatican Gives its Blessing"
+		command = { type = relation which = PIS value = 100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = dynastic which = PIS }
+	}
+}
+
+#a minor creates the kingdom of italy
+event = {
+	id = 131197
+	trigger = {
+		flag = pisitaly
+		stability = 3
+		atwar = no
+		NOT = {
+			exists = ITA
+		}
+	}
+	random = no
+	country = PIS
+	name = "Behold the Kingdom of Italy"
+	desc = "Preparations were rushed forward to crown the ambitious noble as King of Italy. His advisors gauged well the moods of the surrounding nobles as well as those who supported him in his endevours. One thing which was the thorn in the bush was Austria. The Habsburgs held the title and crown of Italy and it was fairly certain that they would crush any attempt at ursurping them. Of course the title and the Iron crown were fairly worthless possessions to the ambitions of the Habsburgs, perhaps, just perhaps they may just get away with it. The dice were cast only luck would tell."
+	style = 2
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "The King is Crowned!"
+		command = { type = domestic which = centralization value = 2 }
+		command = { type = stability value = -1 }
+		command = { type = vp value = 50 }
+		command = { type = relation which = HAB value = -200 }
+		command = { type = country which = ITA }
+		command = { type = trigger which = 131198 } #austria decides
+	}
+}
+
+#austria decides what to do
+event = {
+	id = 131198
+	random = no
+	country = HAB
+	name = "The King has been declared"
+	desc = "The upstart noble in Italy has been declared and even crowned. We hold the title and crown. What shall we do with this upstart?"
+	style = 2
+
+	action_a = {
+		name = "Crush him like a bug"
+		command = { type = relation which = ITA value = -100 }
+		command = { type = breakvassal which = ITA }
+		command = { type = breakdynastic which = ITA }
+		command = { type = war which = ITA }
+		command = { type = stability value = 4 }
+	}
+
+	action_b = {
+		name = "Do Nothing, it is worthless anyway"
+		command = { type = relation which = ITA value = 50 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#italian monarch lists - siena 12236-12251
+event = {
+	id = 131199
+	trigger = {
+		event = 131197
+		}
+	random = no
+	country = ITA
+	name = "Let us reign forever!"
+	desc = "with the ambition declared, the Transition Council set up the sucession as quickly as possible. A willing cardinal was dragged in to perform the ceremony and a holiday was declared so that the populace could join in the celebrations. Without any further delay the King was crowned and he prayed that his line would rule Italy justly for a thousand years"
+	style = 2
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Long live the King!"
+		command = { type = vp value = 10 }
+		command = { type = stability value = 1 }
+		command = { type = sleepmonarch which = 12150 }
+		command = { type = wakemonarch which = 12236 }
+		command = { type = wakemonarch which = 12237 }
+		command = { type = wakemonarch which = 12238 }
+		command = { type = wakemonarch which = 12239 }
+		command = { type = wakemonarch which = 12240 }
+		command = { type = wakemonarch which = 12241 }
+		command = { type = wakemonarch which = 12242 }
+		command = { type = wakemonarch which = 12243 }
+		command = { type = wakemonarch which = 12244 }
+		command = { type = wakemonarch which = 12245 }
+		command = { type = wakemonarch which = 12246 }
+		command = { type = wakemonarch which = 12247 }
+		command = { type = wakemonarch which = 12248 }
+		command = { type = wakemonarch which = 12249 }
+		command = { type = wakemonarch which = 12250 }
+		command = { type = wakemonarch which = 12251 }
+	}
+}
+
+#an italian minor has the powerbase to unite italy - MANTUA
+event = {
+
+	id = 131200
+	trigger = {
+          	 AND = {
+                 	OR = {
+                       		owned = { province = 389 data = -1 }
+                        	vassal = { country = MAN country = MLO }
+                  	}
+                  	OR = {
+                        	owned = { province = 404 data = -1 }
+                        	vassal = { country = MAN country = SAV }
+			}
+                 	OR = {
+                       		owned = { province = 402 data = -1 }
+                        	vassal = { country = MAN country = PAR }
+                  	}
+                  	OR = {
+                        	owned = { province = 401 data = -1 }
+                        	vassal = { country = MAN country = FLO }
+                  	}
+                 	OR = {
+                       		owned = { province = 400 data = -1 }
+                        	vassal = { country = MAN country = PIS }
+                  	}
+			stability = 2
+			atwar = no
+			NOT = {
+				exists = ITA
+			}
+           	}
+	}
+	random = no
+	country = MAN
+	name = "Consolidation of Northern Italy"
+	desc = "Trying to unite Italy had been on the minds of many of the rulers of the Italian states as well as major European powers who did everything in their power to prevent it. It was finally achieved in 1861 when the great powers were distracted by the Franco-Prussian war. There were many things that were needed to be done before an united Italy could burst itself onto the international scene, gaining the necessary territory was only but one of those requisites needed. However we have a great powerbase in Northern Italy, we could start the process to unite Italy my lord."
+	style = 2
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 90
+	deathdate = { day = 31 month = december year = 1820 }
+
+	action_a = {
+		name = "Start the process to Unite Italy"
+		command = { type = vp value = 5 }
+		command = { type = stability value = -1 }
+		command = { type = trigger which = 131201 } #milan chooses to accept
+		command = { type = trigger which = 131202 } #savoie chooses to accept
+		command = { type = trigger which = 131203 } #modena chooses to accept
+		command = { type = trigger which = 131204 } #florence chooses to accept
+		command = { type = trigger which = 131205 } #siena chooses to accept
+		command = { type = trigger which = 131216 } #papal resistance or support
+		command = { type = setflag which = manitaly }
+	}
+
+	action_b = {
+		name = "Let the idea of a United Italy die forever"
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = domestic which = aristocracy value = -1 }
+	}
+}
+
+#italian vassal decides to join italy or not
+event = {
+	id = 131201
+	random = no
+	country = MLO
+	name = "Recognise the Claim of Italy"
+	desc = "Our Feudal Lord and Master has the desire and ability to proclaim himself the King of Italy. The title and crown of Italy lies with the Holy Roman Emperor and so our master may not find his coronation easy. Sire, we may become an integral part of our lords Kingdom or go so far only to recognise his claim. Otherwise we must denounce his claim and renounce all ties we have with him which may lead to war. Sire what do we do?"
+	style = 2
+
+	action_a = {
+		name = "Recognise his claim, no more"
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {
+		name = "Denounce this Meglomanics Claims!"
+		command = { type = breakvassal which = MAN }
+		command = { type = relation which = MAN value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = war which = MAN }
+		command = { type = stability value = 5 }
+		command = { type = trigger which = 131207 }
+	}
+
+	action_c = {
+		name = "Embrace our Masters Ambitions (Game Over)"
+		command = { type = trigger which = 131206 }
+	}
+}
+
+#italian minor seeks annexation
+event = {
+	id = 131206
+	random = no
+	country = MAN
+	name = "Our Vassal seeks Annexation"
+	desc = "Our obedient vassal sees the benefits our ambitions hold and he wishes to be a part of our great Kingdom when we declare our investiture."
+	style = 2
+
+	action_a = {
+		name = "So be it"
+		command = { type = inherit which = MLO }
+		command = { type = vp value = 5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#austria takes rebellious minor under her wing
+event = {
+	id = 131207
+	random = no
+	country = HAB
+	name = "News from Italy"
+	desc = "We have news from Italy that an Italian lord hopes to crown himself as King of Italy. One of his former vassals has denounced this lord. We hold the title and crown of Italy, so watching this upstart is of great importance. Nevertheless, this lord has yet to declare himself so we can not approve or move against him openly. His vassal however has. Shall we protect his vassal or leave him to his fate and see what transpires?"
+	style = 2
+
+	action_a = {
+		name = "Take Action in Italy"
+		command = { type = dynastic which = MLO }
+		command = { type = alliance which = MLO }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = MAN value = -50 }
+	}
+
+	action_b = {
+		name = "Wait and see what happens"
+		command = { type = relation which = MLO value = -50 }
+		command = { type = relation which = MAN value = 25 }
+	}
+}
+
+#italian vassal decides to join italy or not
+event = {
+	id = 131202
+	random = no
+	country = SAV
+	name = "Recognise the Claim of Italy"
+	desc = "Our Feudal Lord and Master has the desire and ability to proclaim himself the King of Italy. The title and crown of Italy lies with the Holy Roman Emperor and so our master may not find his coronation easy. Sire, we may become an integral part of our lords Kingdom or go so far only to recognise his claim. Otherwise we must denounce his claim and renounce all ties we have with him which may lead to war. Sire what do we do?"
+	style = 2
+
+	action_a = {
+		name = "Recognise his claim, no more"
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {
+		name = "Denounce this Meglomanics Claims!"
+		command = { type = breakvassal which = MAN }
+		command = { type = relation which = MAN value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = war which = MAN }
+		command = { type = stability value = 5 }
+		command = { type = trigger which = 131208 }
+	}
+
+	action_c = {
+		name = "Embrace our Masters Ambitions (Game Over)"
+		command = { type = trigger which = 131209 }
+	}
+}
+
+#italian minor seeks annexation
+event = {
+	id = 131209
+	random = no
+	country = MAN
+	name = "Our Vassal seeks Annexation"
+	desc = "Our obedient vassal sees the benefits our ambitions hold and he wishes to be a part of our great Kingdom when we declare our investiture."
+	style = 2
+
+	action_a = {
+		name = "So be it"
+		command = { type = inherit which = SAV }
+		command = { type = vp value = 5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#austria takes rebellious minor under her wing
+event = {
+	id = 131208
+	random = no
+	country = HAB
+	name = "News from Italy"
+	desc = "We have news from Italy that an Italian lord hopes to crown himself as King of Italy. One of his former vassals has denounced this lord. We hold the title and crown of Italy, so watching this upstart is of great importance. Nevertheless, this lord has yet to declare himself so we can not approve or move against him openly. His vassal however has. Shall we protect his vassal or leave him to his fate and see what transpires?"
+	style = 2
+
+	action_a = {
+		name = "Take Action in Italy"
+		command = { type = dynastic which = SAV }
+		command = { type = alliance which = SAV }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = MAN value = -50 }
+	}
+
+	action_b = {
+		name = "Wait and see what happens"
+		command = { type = relation which = SAV value = -50 }
+		command = { type = relation which = MAN value = 25 }
+	}
+}
+
+#italian vassal decides to join italy or not
+event = {
+	id = 131203
+	random = no
+	country = PAR
+	name = "Recognise the Claim of Italy"
+	desc = "Our Feudal Lord and Master has the desire and ability to proclaim himself the King of Italy. The title and crown of Italy lies with the Holy Roman Emperor and so our master may not find his coronation easy. Sire, we may become an integral part of our lords Kingdom or go so far only to recognise his claim. Otherwise we must denounce his claim and renounce all ties we have with him which may lead to war. Sire what do we do?"
+	style = 2
+
+	action_a = {
+		name = "Recognise his claim, no more"
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {
+		name = "Denounce this Meglomanics Claims!"
+		command = { type = breakvassal which = MAN }
+		command = { type = relation which = MAN value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = war which = MAN }
+		command = { type = stability value = 5 }
+		command = { type = trigger which = 131211 }
+	}
+
+	action_c = {
+		name = "Embrace our Masters Ambitions (Game Over)"
+		command = { type = trigger which = 131210 }
+	}
+}
+
+#italian minor seeks annexation
+event = {
+	id = 131210
+	random = no
+	country = MAN
+	name = "Our Vassal seeks Annexation"
+	desc = "Our obedient vassal sees the benefits our ambitions hold and he wishes to be a part of our great Kingdom when we declare our investiture."
+	style = 2
+
+	action_a = {
+		name = "So be it"
+		command = { type = inherit which = PAR }
+		command = { type = vp value = 5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#austria takes rebellious minor under her wing
+event = {
+	id = 131211
+	random = no
+	country = HAB
+	name = "News from Italy"
+	desc = "We have news from Italy that an Italian lord hopes to crown himself as King of Italy. One of his former vassals has denounced this lord. We hold the title and crown of Italy, so watching this upstart is of great importance. Nevertheless, this lord has yet to declare himself so we can not approve or move against him openly. His vassal however has. Shall we protect his vassal or leave him to his fate and see what transpires?"
+	style = 2
+
+	action_a = {
+		name = "Take Action in Italy"
+		command = { type = dynastic which = PAR }
+		command = { type = alliance which = PAR }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = MAN value = -50 }
+	}
+
+	action_b = {
+		name = "Wait and see what happens"
+		command = { type = relation which = PAR value = -50 }
+		command = { type = relation which = MAN value = 25 }
+	}
+}
+
+#italian vassal decides to join italy or not
+event = {
+	id = 131204
+	random = no
+	country = FLO
+	name = "Recognise the Claim of Italy"
+	desc = "Our Feudal Lord and Master has the desire and ability to proclaim himself the King of Italy. The title and crown of Italy lies with the Holy Roman Emperor and so our master may not find his coronation easy. Sire, we may become an integral part of our lords Kingdom or go so far only to recognise his claim. Otherwise we must denounce his claim and renounce all ties we have with him which may lead to war. Sire what do we do?"
+	style = 2
+
+	action_a = {
+		name = "Recognise his claim, no more"
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {
+		name = "Denounce this Meglomanics Claims!"
+		command = { type = breakvassal which = MAN }
+		command = { type = relation which = MAN value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = war which = MAN }
+		command = { type = stability value = 5 }
+		command = { type = trigger which = 131213 }
+	}
+
+	action_c = {
+		name = "Embrace our Masters Ambitions (Game Over)"
+		command = { type = trigger which = 131212 }
+	}
+}
+
+#italian minor seeks annexation
+event = {
+	id = 131212
+	random = no
+	country = MAN
+	name = "Our Vassal seeks Annexation"
+	desc = "Our obedient vassal sees the benefits our ambitions hold and he wishes to be a part of our great Kingdom when we declare our investiture."
+	style = 2
+
+	action_a = {
+		name = "So be it"
+		command = { type = inherit which = FLO }
+		command = { type = vp value = 5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#austria takes rebellious minor under her wing
+event = {
+	id = 131213
+	random = no
+	country = HAB
+	name = "News from Italy"
+	desc = "We have news from Italy that an Italian lord hopes to crown himself as King of Italy. One of his former vassals has denounced this lord. We hold the title and crown of Italy, so watching this upstart is of great importance. Nevertheless, this lord has yet to declare himself so we can not approve or move against him openly. His vassal however has. Shall we protect his vassal or leave him to his fate and see what transpires?"
+	style = 2
+
+	action_a = {
+		name = "Take Action in Italy"
+		command = { type = dynastic which = FLO }
+		command = { type = alliance which = FLO }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = MAN value = -50 }
+	}
+
+	action_b = {
+		name = "Wait and see what happens"
+		command = { type = relation which = FLO value = -50 }
+		command = { type = relation which = MAN value = 25 }
+	}
+}
+
+#italian vassal decides to join italy or not
+event = {
+	id = 131205
+	random = no
+	country = PIS
+	name = "Recognise the Claim of Italy"
+	desc = "Our Feudal Lord and Master has the desire and ability to proclaim himself the King of Italy. The title and crown of Italy lies with the Holy Roman Emperor and so our master may not find his coronation easy. Sire, we may become an integral part of our lords Kingdom or go so far only to recognise his claim. Otherwise we must denounce his claim and renounce all ties we have with him which may lead to war. Sire what do we do?"
+	style = 2
+
+	action_a = {
+		name = "Recognise his claim, no more"
+		command = { type = stability value = -2 }
+	}
+
+	action_b = {
+		name = "Denounce this Meglomanics Claims!"
+		command = { type = breakvassal which = MAN }
+		command = { type = relation which = MAN value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = war which = MAN }
+		command = { type = stability value = 5 }
+		command = { type = trigger which = 131215 }
+	}
+
+	action_c = {
+		name = "Embrace our Masters Ambitions (Game Over)"
+		command = { type = trigger which = 131214 }
+	}
+}
+
+#italian minor seeks annexation
+event = {
+	id = 131214
+	random = no
+	country = MAN
+	name = "Our Vassal seeks Annexation"
+	desc = "Our obedient vassal sees the benefits our ambitions hold and he wishes to be a part of our great Kingdom when we declare our investiture."
+	style = 2
+
+	action_a = {
+		name = "So be it"
+		command = { type = inherit which = PIS }
+		command = { type = vp value = 5 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#austria takes rebellious minor under her wing
+event = {
+	id = 131215
+	random = no
+	country = HAB
+	name = "News from Italy"
+	desc = "We have news from Italy that an Italian lord hopes to crown himself as King of Italy. One of his former vassals has denounced this lord. We hold the title and crown of Italy, so watching this upstart is of great importance. Nevertheless, this lord has yet to declare himself so we can not approve or move against him openly. His vassal however has. Shall we protect his vassal or leave him to his fate and see what transpires?"
+	style = 2
+
+	action_a = {
+		name = "Take Action in Italy"
+		command = { type = dynastic which = PIS }
+		command = { type = alliance which = PIS }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = MAN value = -50 }
+	}
+
+	action_b = {
+		name = "Wait and see what happens"
+		command = { type = relation which = PIS value = -50 }
+		command = { type = relation which = MAN value = 25 }
+	}
+}
+
+#papal resistance or support
+event = {
+	id = 131216
+	random = no
+	country = PAP
+	name = "The Papal Decree on Italy"
+	desc = "Your Excellency! One of the Northern Italian nobles is moving to have himself crowned King of Italy. Having a powerful Kingdom in the Italian peninsula could be a threat to the spiritual reign of Saint Peter. On the other hand the Kingdom of Italy could be a wonderful buffer State to the ambitions of France and Austria. Shall we support this mans ambition or put him firmly in place?"
+	style = 2
+
+	action_a = {
+		name = "The Vatican Opposes it"
+		command = { type = relation which = MAN value = -100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = casusbelli which = MAN value = 60 }
+		command = { type = breakdynastic which = MAN }
+		command = { type = breakvassal which = MAN }
+	}
+
+	action_b = {
+		name = "The Vatican Gives its Blessing"
+		command = { type = relation which = MAN value = 100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = dynastic which = MAN }
+	}
+}
+
+#a minor creates the kingdom of italy
+event = {
+	id = 131217
+	trigger = {
+		flag = manitaly
+		stability = 3
+		atwar = no
+		NOT = {
+			exists = ITA
+		}
+	}
+	random = no
+	country = MAN
+	name = "Behold the Kingdom of Italy"
+	desc = "Preparations were rushed forward to crown the ambitious noble as King of Italy. His advisors gauged well the moods of the surrounding nobles as well as those who supported him in his endevours. One thing which was the thorn in the bush was Austria. The Habsburgs held the title and crown of Italy and it was fairly certain that they would crush any attempt at ursurping them. Of course the title and the Iron crown were fairly worthless possessions to the ambitions of the Habsburgs, perhaps, just perhaps they may just get away with it. The dice were cast only luck would tell."
+	style = 2
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "The King is Crowned!"
+		command = { type = domestic which = centralization value = 2 }
+		command = { type = stability value = -1 }
+		command = { type = vp value = 50 }
+		command = { type = relation which = HAB value = -200 }
+		command = { type = country which = ITA }
+		command = { type = trigger which = 131218 } #austria decides
+	}
+}
+
+#austria decides what to do
+event = {
+	id = 131218
+	random = no
+	country = HAB
+	name = "The King has been declared"
+	desc = "The upstart noble in Italy has been declared and even crowned. We hold the title and crown. What shall we do with this upstart?"
+	style = 2
+
+	action_a = {
+		name = "Crush him like a bug"
+		command = { type = relation which = ITA value = -100 }
+		command = { type = breakvassal which = ITA }
+		command = { type = breakdynastic which = ITA }
+		command = { type = war which = ITA }
+		command = { type = stability value = 4 }
+	}
+
+	action_b = {
+		name = "Do Nothing, it is worthless anyway"
+		command = { type = relation which = ITA value = 50 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#italian monarch lists - mantua 12217-12235
+event = {
+	id = 131219
+	trigger = {
+		event = 131217
+		}
+	random = no
+	country = ITA
+	name = "Let us reign forever!"
+	desc = "with the ambition declared, the Transition Council set up the sucession as quickly as possible. A willing cardinal was dragged in to perform the ceremony and a holiday was declared so that the populace could join in the celebrations. Without any further delay the King was crowned and he prayed that his line would rule Italy justly for a thousand years"
+	style = 2
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Long live the King!"
+		command = { type = vp value = 10 }
+		command = { type = stability value = 1 }
+		command = { type = sleepmonarch which = 12150 }
+		command = { type = wakemonarch which = 12217 }
+		command = { type = wakemonarch which = 12218 }
+		command = { type = wakemonarch which = 12219 }
+		command = { type = wakemonarch which = 12220 }
+		command = { type = wakemonarch which = 12221 }
+		command = { type = wakemonarch which = 12222 }
+		command = { type = wakemonarch which = 12223 }
+		command = { type = wakemonarch which = 12224 }
+		command = { type = wakemonarch which = 12225 }
+		command = { type = wakemonarch which = 12226 }
+		command = { type = wakemonarch which = 12227 }
+		command = { type = wakemonarch which = 12228 }
+		command = { type = wakemonarch which = 12229 }
+		command = { type = wakemonarch which = 12230 }
+		command = { type = wakemonarch which = 12231 }
+		command = { type = wakemonarch which = 12232 }
+		command = { type = wakemonarch which = 12233 }
+		command = { type = wakemonarch which = 12234 }
+		command = { type = wakemonarch which = 12235 }
+	}
+}
+
+#ITALIAN EVENTS
+#ITA leader events
+#milan
+event = {
+	id = 131220
+	trigger = {
+		NOT = {
+			exists = MLO
+			}
+	}
+	random = no
+	country = ITA
+	name = "Carmagnola"
+	desc = "You have gained the services of Carmagnola"
+	style = 2
+
+	date = { day = 1 month = january year = 1419 }
+	offset = 2
+	deathdate = { day = 1 month = january year = 1425 }
+
+	action_a = {
+		name = "OK"
+		command = { type = sleepleader which = 09630 }
+		command = { type = wakeleader which = 20025 }
+	}
+}
+
+event = {
+	id = 131221
+	trigger = {
+		NOT = {
+			exists = MLO
+			}
+	}
+	random = no
+	country = ITA
+	name = "Ludovico Sforza"
+	desc = "You have gained the services of Ludovico Sforza"
+	style = 2
+
+	date = { day = 1 month = january year = 1490 }
+	offset = 2
+	deathdate = { day = 1 month = january year = 1508 }
+
+	action_a = {
+		name = "OK"
+		command = { type = sleepleader which = 09631 }
+		command = { type = wakeleader which = 20026 }
+	}
+}
+
+event = {
+	id = 131222
+	trigger = {
+		NOT = {
+			exists = MLO
+			}
+	}
+	random = no
+	country = ITA
+	name = "Massimiliano Sforza"
+	desc = "You have gained the services of Massimiliano Sforza"
+	style = 2
+
+	date = { day = 1 month = january year = 1508 }
+	offset = 2
+	deathdate = { day = 1 month = january year = 1516 }
+
+	action_a = {
+		name = "OK"
+		command = { type = sleepleader which = 09632 }
+		command = { type = wakeleader which = 20027 }
+	}
+}
+
+event = {
+	id = 131223
+	trigger = {
+		NOT = {
+			exists = MLO
+			}
+	}
+	random = no
+	country = ITA
+	name = "Francesco Sforza"
+	desc = "You have gained the services of Francesco Sforza"
+	style = 2
+
+	date = { day = 1 month = january year = 1516 }
+	offset = 2
+	deathdate = { day = 1 month = november year = 1535 }
+
+	action_a = {
+		name = "OK"
+		command = { type = sleepleader which = 09633 }
+		command = { type = wakeleader which = 20028 }
+	}
+}
+
+event = {
+	id = 131224
+	trigger = {
+		NOT = {
+			exists = MLO
+			}
+	}
+	random = no
+	country = ITA
+	name = "Marquis del Vasto"
+	desc = "You have gained the services of Marquis del Vasto"
+	style = 2
+
+	date = { day = 1 month = january year = 1535 }
+	offset = 2
+	deathdate = { day = 1 month = january year = 1546 }
+
+	action_a = {
+		name = "OK"
+		command = { type = sleepleader which = 09634 }
+		command = { type = wakeleader which = 20029 }
+	}
+}
+
+#Modena
+event = {
+	id = 131225
+	trigger = {
+		NOT = {
+			exists = PAR
+			}
+	}
+	random = no
+	country = ITA
+	name = "A. Farnese"
+	desc = "You have gained the services of A. Farnese"
+	style = 2
+
+	date = { day = 1 month = january year = 1586 }
+	offset = 2
+	deathdate = { day = 1 month = january year = 1592 }
+
+	action_a = {
+		name = "OK"
+		command = { type = sleepleader which = 2125 }
+		command = { type = wakeleader which = 20030 }
+	}
+}
+
+#Savoie
+event = {
+	id = 131226
+	trigger = {
+		NOT = {
+			exists = SAV
+			}
+	}
+	random = no
+	country = ITA
+	name = "Emmanuel Philibert"
+	desc = "You have gained the services of Emmanuel Philibert"
+	style = 2
+
+	date = { day = 1 month = january year = 1559 }
+	offset = 2
+	deathdate = { day = 1 month = january year = 1580 }
+
+	action_a = {
+		name = "OK"
+		command = { type = sleepleader which = 09821 }
+		command = { type = wakeleader which = 20031 }
+	}
+}
+
+event = {
+	id = 131227
+	trigger = {
+		NOT = {
+			exists = SAV
+			}
+	}
+	random = no
+	country = ITA
+	name = "Charles Emmanuel"
+	desc = "You have gained the services of Charles Emmanuel"
+	style = 2
+
+	date = { day = 1 month = january year = 1580 }
+	offset = 2
+	deathdate = { day = 1 month = january year = 1630 }
+
+	action_a = {
+		name = "OK"
+		command = { type = sleepleader which = 09822 }
+		command = { type = wakeleader which = 20032 }
+	}
+}
+
+event = {
+	id = 131228
+	trigger = {
+		NOT = {
+			exists = SAV
+			}
+	}
+	random = no
+	country = ITA
+	name = "Victor Amede I"
+	desc = "You have gained the services of Victor Amede I"
+	style = 2
+
+	date = { day = 1 month = january year = 1625 }
+	offset = 2
+	deathdate = { day = 1 month = january year = 1638 }
+
+	action_a = {
+		name = "OK"
+		command = { type = sleepleader which = 09820 }
+		command = { type = wakeleader which = 20033 }
+	}
+}
+
+event = {
+	id = 131229
+	trigger = {
+		NOT = {
+			exists = SAV
+			}
+	}
+	random = no
+	country = ITA
+	name = "Tommaso de Savoia"
+	desc = "You have gained the services of Tommaso de Savoia"
+	style = 2
+
+	date = { day = 1 month = january year = 1638 }
+	offset = 2
+	deathdate = { day = 1 month = january year = 1656 }
+
+	action_a = {
+		name = "OK"
+		command = { type = sleepleader which = 09824 }
+		command = { type = wakeleader which = 20034 }
+	}
+}
+
+event = {
+	id = 131230
+	trigger = {
+		NOT = {
+			exists = SAV
+			}
+	}
+	random = no
+	country = ITA
+	name = "Leutrum"
+	desc = "You have gained the services of Leutrum"
+	style = 2
+
+	date = { day = 8 month = february year = 1743 }
+	offset = 2
+	deathdate = { day = 16 month = may year = 1755 }
+
+	action_a = {
+		name = "OK"
+		command = { type = sleepleader which = 09826 }
+		command = { type = wakeleader which = 20035 }
+	}
+}
+
+event = {
+	id = 131231
+	trigger = {
+		NOT = {
+			exists = SAV
+			}
+	}
+	random = no
+	country = ITA
+	name = "Victor Amede II"
+	desc = "You have gained the services of Victor Amede II"
+	style = 2
+
+	date = { day = 1 month = january year = 1690 }
+	offset = 2
+	deathdate = { day = 1 month = january year = 1732 }
+
+	action_a = {
+		name = "OK"
+		command = { type = sleepleader which = 09823 }
+		command = { type = wakeleader which = 20036 }
+	}
+}
+
+event = {
+	id = 131232
+	trigger = {
+		NOT = {
+			exists = SAV
+			}
+	}
+	random = no
+	country = ITA
+	name = "Charles Emmanuel III"
+	desc = "You have gained the services of Charles Emmanuel III"
+	style = 2
+
+	date = { day = 1 month = january year = 1735 }
+	offset = 2
+	deathdate = { day = 1 month = january year = 1775 }
+
+	action_a = {
+		name = "OK"
+		command = { type = sleepleader which = 09825 }
+		command = { type = wakeleader which = 20037 }
+	}
+}
+
+event = {
+	id = 131233
+	trigger = {
+		NOT = {
+			exists = SAV
+			}
+	}
+	random = no
+	country = ITA
+	name = "Colli"
+	desc = "You have gained the services of Colli"
+	style = 2
+
+	date = { day = 1 month = january year = 1795 }
+	offset = 2
+	deathdate = { day = 1 month = january year = 1796 }
+
+	action_a = {
+		name = "OK"
+		command = { type = sleepleader which = 09827 }
+		command = { type = wakeleader which = 20038 }
+	}
+}
+
+#Florence
+event = {
+	id = 131234
+	trigger = {
+		NOT = {
+			exists = FLO
+			}
+	}
+	random = no
+	country = ITA
+	name = "Machiavelli"
+	desc = "You have gained the services of Machiavelli"
+	style = 2
+
+	date = { day = 1 month = january year = 1498 }
+	offset = 2
+	deathdate = { day = 1 month = january year = 1512 }
+
+	action_a = {
+		name = "OK"
+		command = { type = sleepleader which = 2119 }
+		command = { type = wakeleader which = 20039 }
+	}
+}
+
+event = {
+	id = 131235
+	trigger = {
+		NOT = {
+			exists = FLO
+			}
+	}
+	random = no
+	country = ITA
+	name = "Uffreducci"
+	desc = "You have gained the services of Uffreducci"
+	style = 2
+
+	date = { day = 1 month = january year = 1490 }
+	offset = 2
+	deathdate = { day = 1 month = january year = 1503 }
+
+	action_a = {
+		name = "OK"
+		command = { type = sleepleader which = 2120 }
+		command = { type = wakeleader which = 20040 }
+	}
+}
+
+event = {
+	id = 131236
+	trigger = {
+		NOT = {
+			exists = FLO
+			}
+	}
+	random = no
+	country = ITA
+	name = "Vitelli"
+	desc = "You have gained the services of Vitelli"
+	style = 2
+
+	date = { day = 1 month = january year = 1490 }
+	offset = 2
+	deathdate = { day = 1 month = january year = 1499 }
+
+	action_a = {
+		name = "OK"
+		command = { type = sleepleader which = 2121 }
+		command = { type = wakeleader which = 20041 }
+	}
+}
+
+#add cores - italia
+event = {
+	id = 131237
+	random = no
+	country = ITA
+	name = "Lay claim over our legitimate borders"
+	desc = "With the Kingdom created, the Kings council drew up the boundaries of the Kingdom as was still considered legitimate based on the old borders of the Kingdom."
+	style = 2
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Let it be so"
+		command = { type = addcore_national which = 389 }
+		command = { type = addcore_national which = 404 }
+		command = { type = addcore_national which = 402 }
+		command = { type = addcore_national which = 390 }
+		command = { type = addcore_national which = 401 }
+		command = { type = addcore_national which = 400 }
+	}
+}
+
+event = {
+	id = 131238
+	trigger = {
+		event = 131237
+	}
+	random = no
+	country = ITA
+	name = "Lay claim over the Rich Republics"
+	desc = "The Kings Council prevaricated over whether they should also lay claim to the rich republics of Genova and Venezia."
+	style = 2
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "let it be so"
+		command = { type = addcore_national which = 403 }
+		command = { type = addcore_national which = 370 }
+		command = { type = relation which = GEN value = -100 }
+		command = { type = relation which = VEN value = -100 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b = {
+		name = "No, let us not push things"
+		command = { type = stability value = 1 }
+	}
+}
+
+event = {
+	id = 131239
+	trigger = {
+		event = 131238
+	}
+	random = no
+	country = ITA
+	name = "Lay claim to the rebellious East"
+	desc = "The Kings Councils last concern was the rebellious lords in the east that continued to give the Vatican troubles. The King felt that these lands should be held under the jurisdiction of the Kingdom of Italy. Whether the Pope agreed or not was irrelevant."
+	style = 2
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Let it be so"
+		command = { type = addcore_national which = 391 }
+		command = { type = addcore_national which = 392 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = VEN value = -25 }
+		command = { type = relation which = HAB value = -25 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b = {
+		name = "No, let us not push things"
+		command = { type = relation which = PAP value = 50 }
+		command = { type = stability value = 2 }
+	}
+}
+
+event = {
+	id = 131240
+	trigger = {
+		NOT = {
+			exists = PAP
+		}
+	}
+	random = no
+	country = ITA
+	name = "Claim the Old Capital"
+	desc = "Rome had been the capital of the Old Roman Empire. Many Italians were devout Catholics and would not look at the occupation and control of the Sacred City with favour. However the Vatican has fallen to aggressors, we could use the opportunity to offer our protection to the city of Rome and that of the Vatican"
+	style = 2
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Let it be so"
+		command = { type = addcore_national which = 399 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 5 }
+	}
+
+	action_b = {
+		name = "We dare not risk it"
+		command = { type = stability value = 2 }
+	}
+}
+
+#The League of Cambrai#
+event = {
+
+	id = 131241
+	trigger = {
+			exists = VEN
+		}
+	random = no
+	country = ITA
+	name = "EVENTNAME3182"
+	desc = "EVENTHIST3182"
+	style = 2
+
+	date = { day = 1 month = october year = 1500 }
+	offset = 3000
+	deathdate = { day = 1 month = may year = 1512 }
+
+	action_a ={
+		name = "ACTIONNAME3182A"	#Express Support#
+		command = { type = casusbelli which = VEN value = 72 }
+		command = { type = relation which = VEN value = -150 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = PAP value = 150 }
+		command = { type = relation which = HAB value = 150 }
+	}
+
+	action_b ={
+		name = "ACTIONNAME3182B"	#Ignore#
+		command = { type = relation which = VEN value = 50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = PAP value = -50 }
+		command = { type = relation which = HAB value = -50 }
+	}
+
+	action_c ={
+		name = "ACTIONNAME3182C"	#Express Hostility#
+		command = { type = relation which = VEN value = 150 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = PAP value = -150 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+}
+
+#The Catholic League#
+event = {
+
+	id = 131242
+	trigger = {
+		 OR = {
+			religion = catholic
+			religion = counterreform
+				}
+			}
+	random = no
+	country = ITA
+	name = "EVENTNAME3192"
+	desc = "EVENTHIST3192"
+	style = 3
+
+	date = { day = 1 month = january year = 1607 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a ={						#Prepare to Join#
+		name = "ACTIONNAME3192A"
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = BRA value = -150 }
+		command = { type = relation which = HAN value = -150 }
+		command = { type = relation which = HES value = -150 }
+		command = { type = relation which = PFA value = -150 }
+		command = { type = relation which = SAC value = -150 }
+		command = { type = relation which = THU value = -150 }
+		command = { type = relation which = SHL value = -150 }
+		command = { type = relation which = KLE value = 100 }
+		command = { type = relation which = KOL value = 150 }
+		command = { type = relation which = BAY value = 150 }
+		command = { type = relation which = PAP value = 150 }
+		command = { type = relation which = SPA value = 150 }
+		command = { type = relation which = HAB value = 150 }
+	}
+
+	action_b ={						#Stay Neutral#
+		name = "ACTIONNAME3192B"
+		command = { type = relation which = BRA value = 100 }
+		command = { type = relation which = HAN value = 100 }
+		command = { type = relation which = HES value = 100 }
+		command = { type = relation which = PFA value = 100 }
+		command = { type = relation which = SAC value = 100 }
+		command = { type = relation which = THU value = 100 }
+		command = { type = relation which = BAY value = 50 }
+		command = { type = relation which = KLE value = -50 }
+		command = { type = relation which = KOL value = -50 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = PAP value = -150 }
+		command = { type = relation which = HAB value = -150 }
+	}
+}
+
+#The Holy League#
+event = {
+
+	id = 131243
+	trigger = {
+			exists = TUR
+			AND = {
+				event = 3549 
+				} 
+		}
+random = no
+	country = ITA
+	name = "EVENTNAME3112"
+	desc = "EVENTHIST3112"
+	style = 2
+
+	date = { day = 1 month = january year = 1568 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1571 }
+
+	action_a ={			#Support the Holy League#
+		name = "ACTIONNAME3112A"
+		command = { type = casusbelli which = TUR value = 72 }
+		command = { type = relation which = TUR value = -150 }
+		command = { type = relation which = PAP value = 150 }
+		command = { type = relation which = KNI value = 150 }
+		command = { type = relation which = SPA value = 150 }
+		command = { type = relation which = FLO value = 150 }
+		command = { type = relation which = VEN value = 150 }
+		command = { type = relation which = NAP value = 150 }
+		command = { type = relation which = SAV value = 150 }
+	}
+
+	action_b ={			#Let the matter fall#
+		name = "ACTIONNAME3112B"
+		command = { type = relation which = TUR value = 50 }
+		command = { type = relation which = PAP value = -50 }
+		command = { type = relation which = KNI value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = FLO value = -50 }
+		command = { type = relation which = VEN value = -50 }
+		command = { type = relation which = NAP value = -50 }
+		command = { type = relation which = SAV value = -50 }
+	}
+}
+
+#The Effects of the Pragmatic Sanction#
+event = {
+
+	id = 131244
+	random = no
+	country = ITA
+	name = "EVENTNAME3138"
+	desc = "EVENTHIST3138"
+	style = 4
+
+	date = { day = 1 month = january year = 1741 }
+	offset = 10
+	deathdate = { day = 1 month = august year = 1741 }
+
+	action_a ={		#Anti-Habsburg#
+		name = "ACTIONNAME3138A"
+		command = { type = casusbelli which = HAB value = 36 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = BAY value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = GEN value = 50 }
+		command = { type = relation which = PRU value = 150 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = RUS value = -100 }
+		command = { type = relation which = HES value = -50 }
+		command = { type = relation which = HAN value = -50 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={		#Neutral#
+		name = "ACTIONNAME3138B"
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = BAY value = -50 }
+		command = { type = relation which = SAC value = -50 }
+		command = { type = relation which = PRU value = -50 }
+		command = { type = relation which = ENG value = -50 }
+		command = { type = relation which = HOL value = -50 }
+		command = { type = relation which = RUS value = 100 }
+		command = { type = relation which = HES value = 50 }
+		command = { type = relation which = HAN value = -50 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = stability value = 1 }
+		command = { type = casusbelli which = ENG value = 12 }
+	}
+
+	action_c ={		#Pro-Habsburg#
+		name = "ACTIONNAME3138C"
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = BAY value = -150 }
+		command = { type = relation which = SAC value = -150 }
+		command = { type = relation which = PRU value = -150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HOL value = 100 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = HAN value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = stability value = -3 }
+	}
+
+}
+
+#trans-alpine republic
+event = {
+	id = 131245
+	trigger = {
+		event = 120751
+	}
+	random = no
+	country = ITA
+	name = "Trans-Alpine Republic Proclaimed"
+	desc = "Revolutionary tendencies spread after the fall of the French Bourbons and the founding of the First French Republic. French military gains by Napoleon Bonaparte and other commanders saw the founding of puppet Republics by France in her newly aquired territories. The Trans-Alpine Republic was one such puppet. It covered the old Kingdom of Italy and its flag and coat of arms would be those of Italy in the 1860s"
+	style = 4
+
+	date = { day = 1 month = january year = 1790 }
+	offset = 15
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "OK"
+		command = { type = sleepmonarch which = 12150 }
+		command = { type = wakemonarch which = 12252 }
+		command = { type = domestic which = aristocracy value = -4 }
+		command = { type = domestic which = innovative value = 2 }
+		command = { type = domestic which = serfdom value = -4 }
+	}
+}
+
+#papal patrimony
+event = {
+	id = 131246
+	trigger = {
+		OR = {
+			religion = catholic
+			religion = counterreform
+			}
+		NOT = {
+			exists = ITA
+			exists = PAP
+			}
+		provincereligion = { province = 399 data = catholic }
+	}
+	random = yes
+	province = 399
+	name = "The Patrimony of Rome."
+	desc = "The Patrimony of Rome has been conquered by a fellow Catholic state. This could cuase great upset amongst our peers and will give any one of them a good cause to go to war with us. Shall we grant the Pope his lands back? At least this war we can still have a great influence by making him subservient to us while denying our enemies an excuse to attack us."
+	style = 0
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 15
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Grant them back"
+		command = { type = independence which = PAP }
+		command = { type = vp value = 20 } #to offset the loss
+		command = { type = domestic which = innovative value = -1 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+	}
+
+	action_b = {
+		name = "No it is ours"
+		command = { type = vp value = 20 } #worth it
+		command = { type = domestic which = innovative value = 2 } #hefty for a random, but makes a good choice
+		command = { type = relation which = -1 value = -50 }
+		command = { type = relation which = -1 value = -50 }
+		command = { type = relation which = -1 value = -50 }
+		command = { type = relation which = -1 value = -50 }
+		command = { type = relation which = -1 value = -50 }
+		command = { type = heretic which = -1 } #your populace start following your heretical stance ;)
+		command = { type = heretic which = -1 } #your populace start following your heretical stance ;)
+	}
+}
+
+#papal patrimony
+event = {
+	id = 131247
+	trigger = {
+		OR = {
+			religion = catholic
+			religion = counterreform
+			}
+		NOT = {
+			exists = ITA
+			exists = PAP
+			}
+		provincereligion = { province = 399 data = catholic }
+	}
+	random = yes
+	province = 399
+	name = "The Patrimony of Rome."
+	desc = "The Patrimony of Rome has been conquered by a fellow Catholic state. This could cuase great upset amongst our peers and will give any one of them a good cause to go to war with us. Shall we grant the Pope his lands back? At least this war we can still have a great influence by making him subservient to us while denying our enemies an excuse to attack us."
+	style = 0
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 15
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Grant them back"
+		command = { type = independence which = PAP }
+		command = { type = vp value = 20 } #to offset the loss
+		command = { type = domestic which = innovative value = -1 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+	}
+
+	action_b = {
+		name = "No it is ours"
+		command = { type = vp value = 20 } #worth it
+		command = { type = domestic which = innovative value = 2 } #hefty for a random, but makes a good choice
+		command = { type = relation which = -1 value = -50 }
+		command = { type = relation which = -1 value = -50 }
+		command = { type = relation which = -1 value = -50 }
+		command = { type = relation which = -1 value = -50 }
+		command = { type = relation which = -1 value = -50 }
+		command = { type = heretic which = -1 } #your populace start following your heretical stance ;)
+		command = { type = heretic which = -1 } #your populace start following your heretical stance ;)
+	}
+}
+
+#papal patrimony
+event = {
+	id = 131248
+	trigger = {
+		OR = {
+			religion = catholic
+			religion = counterreform
+			}
+		NOT = {
+			exists = ITA
+			exists = PAP
+			}
+		provincereligion = { province = 399 data = catholic }
+	}
+	random = yes
+	province = 399
+	name = "The Patrimony of Rome."
+	desc = "The Patrimony of Rome has been conquered by a fellow Catholic state. This could cuase great upset amongst our peers and will give any one of them a good cause to go to war with us. Shall we grant the Pope his lands back? At least this war we can still have a great influence by making him subservient to us while denying our enemies an excuse to attack us."
+	style = 0
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 15
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Grant them back"
+		command = { type = independence which = PAP }
+		command = { type = vp value = 20 } #to offset the loss
+		command = { type = domestic which = innovative value = -1 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+	}
+
+	action_b = {
+		name = "No it is ours"
+		command = { type = vp value = 20 } #worth it
+		command = { type = domestic which = innovative value = 2 } #hefty for a random, but makes a good choice
+		command = { type = relation which = -1 value = -50 }
+		command = { type = relation which = -1 value = -50 }
+		command = { type = relation which = -1 value = -50 }
+		command = { type = relation which = -1 value = -50 }
+		command = { type = relation which = -1 value = -50 }
+		command = { type = heretic which = -1 } #your populace start following your heretical stance ;)
+		command = { type = heretic which = -1 } #your populace start following your heretical stance ;)
+	}
+}
+
+#papal patrimony
+event = {
+	id = 131249
+	trigger = {
+		OR = {
+			religion = catholic
+			religion = counterreform
+			}
+		NOT = {
+			exists = ITA
+			exists = PAP
+			}
+		provincereligion = { province = 399 data = catholic }
+	}
+	random = yes
+	province = 399
+	name = "The Patrimony of Rome."
+	desc = "The Patrimony of Rome has been conquered by a fellow Catholic state. This could cuase great upset amongst our peers and will give any one of them a good cause to go to war with us. Shall we grant the Pope his lands back? At least this war we can still have a great influence by making him subservient to us while denying our enemies an excuse to attack us."
+	style = 0
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 15
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Grant them back"
+		command = { type = independence which = PAP }
+		command = { type = vp value = 20 } #to offset the loss
+		command = { type = domestic which = innovative value = -1 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+	}
+
+	action_b = {
+		name = "No it is ours"
+		command = { type = vp value = 20 } #worth it
+		command = { type = domestic which = innovative value = 2 } #hefty for a random, but makes a good choice
+		command = { type = relation which = -1 value = -50 }
+		command = { type = relation which = -1 value = -50 }
+		command = { type = relation which = -1 value = -50 }
+		command = { type = relation which = -1 value = -50 }
+		command = { type = relation which = -1 value = -50 }
+		command = { type = heretic which = -1 } #your populace start following your heretical stance ;)
+		command = { type = heretic which = -1 } #your populace start following your heretical stance ;)
+	}
+}
+
+#papal patrimony
+event = {
+	id = 131250
+	trigger = {
+		OR = {
+			religion = catholic
+			religion = counterreform
+			}
+		NOT = {
+			exists = ITA
+			exists = PAP
+			}
+		provincereligion = { province = 399 data = catholic }
+	}
+	random = yes
+	province = 399
+	name = "The Patrimony of Rome."
+	desc = "The Patrimony of Rome has been conquered by a fellow Catholic state. This could cuase great upset amongst our peers and will give any one of them a good cause to go to war with us. Shall we grant the Pope his lands back? At least this war we can still have a great influence by making him subservient to us while denying our enemies an excuse to attack us."
+	style = 0
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 15
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = {
+		name = "Grant them back"
+		command = { type = independence which = PAP }
+		command = { type = vp value = 20 } #to offset the loss
+		command = { type = domestic which = innovative value = -1 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+		command = { type = relation which = -1 value = 50 }
+	}
+
+	action_b = {
+		name = "No it is ours"
+		command = { type = vp value = 20 } #worth it
+		command = { type = domestic which = innovative value = 2 } #hefty for a random, but makes a good choice
+		command = { type = relation which = -1 value = -50 }
+		command = { type = relation which = -1 value = -50 }
+		command = { type = relation which = -1 value = -50 }
+		command = { type = relation which = -1 value = -50 }
+		command = { type = relation which = -1 value = -50 }
+		command = { type = heretic which = -1 } #your populace start following your heretical stance ;)
+		command = { type = heretic which = -1 } #your populace start following your heretical stance ;)
+	}
+}
+
+###########################################
+## Cretan War event series
+###########################################
+
+event = {
+	id = 131251
+	trigger = {
+		OR = {
+			owned = { province = 480 data = VEN }
+			exists = KRE
+		}
+		NOT = {
+			vassal = { country = TUR country = KRE }
+			relation = { country = VEN data = 100 }
+			relation = { country = KRE data = 100 }
+		}
+	}
+	random = no
+	country = TUR
+	name = "The Cretan War"
+	desc = "EVENTHIST131251"
+	style = 3
+
+	date = { day = 1 month = june year = 1645 }
+	offset = 15
+	deathdate = { day = 1 month = january year = 1670 }
+
+	action_a = {
+		name = "Prepare for War"
+		command = { type = addcore_casusbelli which = 480 }
+		command = { type = naval value = 500 }
+		command = { type = galleys which = 357 value = 10 }
+	}
+
+	action_b = {
+		name = "We have other concerns"
+		command = { type = land value = 500 }
+		command = { type = treasury value = 100 }
+		command = { type = stability value = 1 }
+	}
+}
+
+event = {
+	id = 131252
+	trigger = {
+		vassal = { country = TUR country = KRE }
+	}
+	random = no
+	country = KRE
+	name = "Ottoman suzerainty over Crete"
+	desc = "With the success of the Ottomans in taking over the Island of Crete, new ruling Pashas set up in Candia."
+	style = 3
+
+	date = { day = 1 month = june year = 1645 }
+	offset = 1
+	deathdate = { day = 1 month = january year = 1820 }
+
+	action_a = {
+		name = "This will do nicely"
+		command = { type = sleepmonarch which = 17999 }
+		command = { type = sleepmonarch which = 18000 }
+		command = { type = sleepmonarch which = 18001 }
+		command = { type = sleepmonarch which = 18002 }
+		command = { type = sleepmonarch which = 18003 }
+		command = { type = sleepmonarch which = 18012 }
+		command = { type = wakemonarch which = 18004 }
+		command = { type = wakemonarch which = 18005 }
+		command = { type = wakemonarch which = 18006 }
+		command = { type = wakemonarch which = 18007 }
+		command = { type = wakemonarch which = 18008 }
+		command = { type = wakemonarch which = 18009 }
+		command = { type = wakemonarch which = 18010 }
+		command = { type = wakemonarch which = 18011 }
+		command = { type = treasury value = 50 }
+	}
+}

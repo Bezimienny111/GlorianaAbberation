@@ -1,0 +1,2987 @@
+#####Polish Major Events######
+#By Joakim 'Greven' Bergqwist#
+##############################
+
+#The Brzesc Privileges-'Nemiem Captivabus'#
+event = {
+
+	id = 3466
+	trigger = {
+			domestic = {
+				type = ARISTOCRACY
+				value = 7
+				}
+		NOT = {
+			domestic = {
+				type = CENTRALIZATION
+				value = 5
+				}
+			}
+		}
+	random = no
+	country = POL
+	name = "EVENTNAME3466"
+	desc = "EVENTHIST3466"
+	style = "3466"
+
+	date = { day = 1 month = january year = 1423 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1428 }
+
+
+	action_a ={		#Accept the Magnates demands#
+		name = "ACTIONNAME3466A"
+		command = { type = provincetax which = -1 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={		#Limit the Magnates demands#
+		name = "ACTIONNAME3466B"
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = revoltrisk which = 12 value = 6 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#The Nieszawa Privileges-'Conventiones Particulares'#
+event = {
+
+	id = 3467
+	trigger = {
+			domestic = {
+				type = ARISTOCRACY
+				value = 7
+				}
+		NOT = {
+			domestic = {
+				type = CENTRALIZATION
+				value = 5
+				}
+			}
+		}
+	random = no
+	country = POL
+	name = "EVENTNAME3467"
+	desc = "EVENTHIST3467"
+	style = "3467"
+
+	date = { day = 1 month = january year = 1452 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1457 }
+
+	action_a ={		#Accept the Conventions#
+		name = "ACTIONNAME3467A"
+		command = { type = provincetax which = -1 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = manpower value = -10 }
+		command = { type = stability value = 2 }
+		command = { type = cot which = 301 }
+		command = { type = removecot which = 283 }
+	}
+
+	action_b ={		#Weaken the Conventions#
+		name = "ACTIONNAME3467B"
+		command = { type = provincetax which = -1 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = revoltrisk which = 12 value = 6 }
+		command = { type = stability value = -1 }
+		command = { type = cot which = 301 }
+		command = { type = removecot which = 283 }
+	}
+
+	action_c ={		#Refuse to sign it and defy the Magnates#
+		name = "ACTIONNAME3467C"
+		command = { type = provincetax which = -1 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -4 value = 5000 }
+		command = { type = desertion which = -4 value = 5000 }
+		command = { type = revoltrisk which = 12 value = 6 }
+		command = { type = stability value = -6 }
+	}
+}
+
+#The Statute of Piotrkow#
+event = {
+
+	id = 3468
+	trigger = {
+			domestic = {
+				type = ARISTOCRACY
+				value = 7
+				}
+		NOT = {
+			domestic = {
+				type = CENTRALIZATION
+				value = 5
+				}
+			}
+		}
+	random = no
+	country = POL
+	name = "EVENTNAME3468"
+	desc = "EVENTHIST3468"
+	style = 1
+
+	date = { day = 1 month = january year = 1495 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1498 }
+
+	action_a ={				#Enact#
+		name = "ACTIONNAME3468A"
+		command = { type = domestic which = SERFDOM value = 3 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = domestic which = MERCANTILISM value = 3 }
+		command = { type = stability value = 2 }
+	}
+
+	action_b ={				#Enact a mild variant#
+		name = "ACTIONNAME3468B"
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = MERCANTILISM value = 1 }
+		command = { type = stability value = 1 }
+	}
+
+	action_c ={				#Refuse to enact#
+		name = "ACTIONNAME3468C"
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = stability value = -1 }
+		command = { type = revoltrisk which = 24 value = 2 }
+	}
+
+}
+
+#The Constitution of Radom-'Nihil Novo'#
+event = {
+
+	id = 3469
+	trigger = {
+			domestic = {
+				type = ARISTOCRACY
+				value = 7
+				}
+		NOT = {
+			domestic = {
+				type = CENTRALIZATION
+				value = 5
+				}
+			}
+		}
+
+	random = no
+	country = POL
+	name = "EVENTNAME3469"
+	desc = "EVENTHIST3469"
+	style = 2
+
+	date = { day = 1 month = january year = 1505 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1506 }
+
+
+	action_a ={			#Accept the power of the Sejm#
+		name = "ACTIONNAME3469A"
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = LAND value = 2 }
+		command = { type = domestic which = OFFENSIVE value = -3 }
+		command = { type = manpower value = -20 }
+		command = { type = stability value = 2 }
+	}
+
+	action_b ={			#Limit the power of the Sejm#
+		name = "ACTIONNAME3469B"
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = LAND value = -1 }
+		command = { type = domestic which = OFFENSIVE value = -1 }
+		command = { type = manpower value = -10 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#The Fate of the Teutonic Order#
+event = {
+
+	id = 3470			#Triggered by LIV3620#
+	random = no
+	country = POL
+	name = "EVENTNAME3470"
+	desc = "EVENTHIST3470"
+	style = 2
+
+	action_a ={			#Accept Agreement#
+		name = "ACTIONNAME3470A"
+		command = { type = vassal which = KUR }
+		command = { type = addcore_claim which = 282 }
+		command = { type = addcore_claim which = 283 }
+		command = { type = relation which = KUR value = 150 }
+		command = { type = relation which = SWE value = 100 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={			#Only Accept your part of the Agreement#
+		name = "ACTIONNAME3470B"
+		command = { type = vassal which = KUR }
+		command = { type = addcore_claim which = 275 }
+		command = { type = addcore_claim which = 276 }
+		command = { type = addcore_claim which = 282 }
+		command = { type = addcore_claim which = 283 }
+		command = { type = relation which = KUR value = -100 }
+		command = { type = relation which = SWE value = -100 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#The Fate of the Teutonic Order#
+event = {
+
+	id = 3471			#Triggered by LIV3620#
+	random = no
+	country = POL
+	name = "EVENTNAME3471"
+	desc = "EVENTHIST3471"
+	style = 2
+
+	action_a ={			#Defy the Agreement#
+		name = "ACTIONNAME3471A"
+		command = { type = addcore_claim which = 282 }
+		command = { type = addcore_claim which = 283 }
+		command = { type = relation which = KUR value = -50 }
+		command = { type = relation which = SWE value = 150 }
+		command = { type = relation which = RUS value = -150 }
+		command = { type = relation which = DAN value = -150 }
+		command = { type = casusbelli which = DAN value = 60 }
+		command = { type = casusbelli which = RUS value = 60 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={			#Accept the Agreement#
+		name = "ACTIONNAME3471B"
+		command = { type = relation which = KUR value = 150 }
+		command = { type = relation which = SWE value = -50 }
+		command = { type = relation which = RUS value = 100 }
+		command = { type = relation which = DAN value = 100 }
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 200 }
+	}
+}
+
+#The Fate of the Teutonic Order#
+event = {
+
+	id = 3472			#Triggered by LIV3620#
+	random = no
+	country = POL
+	name = "EVENTNAME3472"
+	desc = "EVENTHIST3472"
+	style = 2
+
+	action_a ={			#Defy the Knights#
+		name = "ACTIONNAME3472A"
+		command = { type = addcore_claim which = 282 }
+		command = { type = addcore_claim which = 283 }
+		command = { type = casusbelli which = LIV value = 60 }
+		command = { type = stability value = -2 }
+		command = { type = relation which = LIV value = -150 }
+		command = { type = relation which = SWE value = 50 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = relation which = DAN value = 50 }
+	}
+
+	action_b ={			#Accept this Government#
+		name = "ACTIONNAME3472B"
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 200 }
+		command = { type = relation which = LIV value = 150 }
+		command = { type = relation which = SWE value = -50 }
+		command = { type = relation which = RUS value = -50 }
+		command = { type = relation which = DAN value = -50 }
+	}
+}
+
+#The Polish Inheritance of Masovia#
+event = {
+
+	id = 3473
+	trigger = {
+		OR = {
+			owned = { province = 291 data = POL }
+			vassal = { country = POL country = MAS }
+			}
+		NOT = {
+			war = { country = POL country = MAS }
+			}
+		}
+	random = no
+	country = POL
+	name = "EVENTNAME3473"
+	desc = "EVENTHIST3473"
+	style = "3473"
+
+	date = { day = 1 month = january year = 1525 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1596 }
+
+	action_a ={		#Make it a personal royal fiefdom#
+		name = "ACTIONNAME3473A"
+		command = { type = inherit which = MAS }
+		command = { type = provincetax which = 291 value = 3 }
+		command = { type = stability value = -1 }
+		command = { type = treasury value = 300 }
+	}
+
+	action_b ={		#Give it piecemeal to different Magnates#
+		name = "ACTIONNAME3473B"
+		command = { type = inherit which = MAS }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = provincetax which = 291 value = -3 }
+		command = { type = stability value = 3 }
+		command = { type = gainmanufactory which = -1 value = goods }
+	}
+}
+
+#Hohenzollern Prussia become Polish Duchy#
+event = {
+
+	id = 3474			#Triggered by LAT3516#
+	random = no
+	country = POL
+	name = "EVENTNAME3474"
+	desc = "EVENTHIST3474"
+	style = 2
+
+	action_a ={			#Accept the New Vassal#
+		name = "ACTIONNAME3474A"
+		command = { type = vassal which = PRU }
+		command = { type = relation which = LIV value = -150 }
+		command = { type = relation which = PRU value = 50 }
+		command = { type = gainmanufactory which = 301 value = refinery }
+		command = { type = inflation value = 5 }
+	}
+
+	action_b ={			#Claim Ownership#
+		name = "ACTIONNAME3474B"
+		command = { type = casusbelli which = PRU value = 240 }
+		command = { type = addcore_claim which = 289 }
+		command = { type = addcore_claim which = 290 }
+		command = { type = relation which = LIV value = -150 }
+		command = { type = relation which = PRU value = -200 }
+		command = { type = treasury value = -250 }
+		command = { type = inflation value = 2 }
+	}
+}
+
+#The Act of Union-'Rzeczpospolita Polska'#
+event = {
+
+	id = 3475			#Triggered by LIT3447#
+	random = no
+	country = POL
+	name = "EVENTNAME3475"
+	desc = "EVENTHIST3475"
+	style = "3447"
+
+	action_a ={			#Enact the Union#
+		name = "ACTIONNAME3475A"
+		command = { type = inherit which = LIT }
+		command = { type = stability value = 2 }
+		command = { type = add_countryculture which = lithuanian }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = addcore_national which = 280 }
+		command = { type = addcore_national which = 281 }
+		command = { type = addcore_national which = 284 }
+		command = { type = addcore_national which = 285 }
+		command = { type = addcore_national which = 286 }
+		command = { type = addcore_national which = 287 }
+		command = { type = addcore_national which = 288 }
+		command = { type = addcore_national which = 293 }
+		command = { type = addcore_national which = 294 }
+		command = { type = addcore_national which = 295 }
+		command = { type = addcore_national which = 296 }
+		command = { type = addcore_national which = 449 }
+		command = { type = addcore_national which = 450 }
+		command = { type = addcore_national which = 451 }
+		command = { type = addcore_national which = 460 }
+		command = { type = addcore_national which = 461 }
+		command = { type = addcore_national which = 462 }
+		command = { type = flagname which = Union }
+		command = { type = countryname value = "Poland-Lithuania" }
+		command = { type = wakeleader which = 09461 }
+		command = { type = wakeleader which = 09464 }
+		command = { type = wakeleader which = 09466 }
+		command = { type = wakeleader which = 09469 }
+		command = { type = wakeleader which = 09476 }
+		command = { type = wakeleader which = 09479 }
+		command = { type = wakeleader which = 09485 }
+		command = { type = wakeleader which = 09487 }
+		command = { type = wakeleader which = 09488 }
+		command = { type = wakeleader which = 09490 }
+
+	}
+
+	action_b ={			#Keep it a loose structure#
+		name = "ACTIONNAME3475B"
+		command = { type = vassal which = LIT }
+		command = { type = relation which = LIT value = 100 }
+		command = { type = stability value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = sleepevent which = 3767 }
+	}
+}
+
+#The Act of Union-'Rzeczpospolita Polska'#
+event = {
+
+	id = 3476			#Triggered by LIT3447#
+	random = no
+	country = POL
+	name = "EVENTNAME3476"
+	desc = "EVENTHIST3476"
+	style = "3447"
+
+	action_a ={			#Recollect the lost sheep#
+		name = "ACTIONNAME3476A"
+		command = { type = casusbelli which = LIT value = 60 }
+		command = { type = relation which = LIT value = -150 }
+		command = { type = relation which = MOS value = -150 }
+		command = { type = relation which = RUS value = -150 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={			#Let them go in peace#
+		name = "ACTIONNAME3476B"
+		command = { type = relation which = LIT value = 150 }
+		command = { type = relation which = MOS value = 100 }
+		command = { type = relation which = RUS value = 100 }
+		command = { type = gainmanufactory which = 299 value = luxury }
+		command = { type = stability value = 1 }
+		command = { type = revoltrisk which = 24 value = 6 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+	}
+}
+
+#The Act of Union-'Rzeczpospolita Polska'#
+event = {
+
+	id = 4132
+	trigger = {
+		NOT = {
+			event = 3447
+			exists = LIT
+		}
+		someof = {
+			number = 6
+			owned = { province = 284 data = -1 }
+			owned = { province = 285 data = -1 }
+			owned = { province = 286 data = -1 }
+			owned = { province = 287 data = -1 }
+			owned = { province = 288 data = -1 }
+			owned = { province = 293 data = -1 }
+			owned = { province = 294 data = -1 }
+			owned = { province = 295 data = -1 }
+			owned = { province = 296 data = -1 }
+			owned = { province = 450 data = -1 }
+			owned = { province = 460 data = -1 }
+			owned = { province = 461 data = -1 }
+			owned = { province = 462 data = -1 }
+		}
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3475"
+	desc = "EVENTHIST3475"
+
+	style = "3447"
+
+	date = { day = 1 month = january year = 1567 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1572 }
+
+	action_a ={			#Enact the Union#
+		name = "ACTIONNAME3475A"
+		command = { type = flagname which = Union }
+		command = { type = countryname value = "Poland-Lithuania" }
+		command = { type = stability value = 2 }
+		command = { type = add_countryculture which = lithuanian }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = addcore_national which = 280 }
+		command = { type = addcore_national which = 281 }
+		command = { type = addcore_national which = 284 }
+		command = { type = addcore_national which = 285 }
+		command = { type = addcore_national which = 286 }
+		command = { type = addcore_national which = 287 }
+		command = { type = addcore_national which = 288 }
+		command = { type = addcore_national which = 293 }
+		command = { type = addcore_national which = 294 }
+		command = { type = addcore_national which = 295 }
+		command = { type = addcore_national which = 296 }
+		command = { type = addcore_national which = 449 }
+		command = { type = addcore_national which = 450 }
+		command = { type = addcore_national which = 451 }
+		command = { type = addcore_national which = 460 }
+		command = { type = addcore_national which = 461 }
+		command = { type = addcore_national which = 462 }
+		command = { type = wakeleader which = 09461 }
+		command = { type = wakeleader which = 09464 }
+		command = { type = wakeleader which = 09466 }
+		command = { type = wakeleader which = 09469 }
+		command = { type = wakeleader which = 09476 }
+		command = { type = wakeleader which = 09479 }
+		command = { type = wakeleader which = 09485 }
+		command = { type = wakeleader which = 09487 }
+		command = { type = wakeleader which = 09488 }
+		command = { type = wakeleader which = 09490 }
+	}
+
+	action_b ={			#Keep it a loose structure#
+		name = "ACTIONNAME3475B"
+		command = { type = relation which = MOS value = 50 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = stability value = -1 }
+		command = { type = revoltrisk which = 24 value = 4 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = sleepevent which = 3767 }
+	}
+}
+
+#The Jesuit King#
+event = {
+
+	id = 3477
+	trigger = {
+		OR = {
+			monarch = 04134
+			monarch = 04119
+		}
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3477"
+	desc = "EVENTHIST3477"
+	style = "3477"
+
+	date = { day = 1 month = january year = 1607 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1608 }
+
+	action_a ={		#Religious Freedom won the day#
+		name = "ACTIONNAME3477A"
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={		#The Catholic Faith are the First among Equals#
+		name = "ACTIONNAME3477B"
+		command = { type = religion which = catholic }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = relation which = HAB value = 70 }
+		command = { type = relation which = SPA value = 70 }
+		command = { type = relation which = PAP value = 70 }
+		command = { type = stability value = -1 }
+	}
+
+	action_c ={		#Hail the Jesuit King!#
+		name = "ACTIONNAME3477C"
+		command = { type = religion which = counterreform }
+		command = { type = domestic which = INNOVATIVE value = -5 }
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = SPA value = 150 }
+		command = { type = relation which = PAP value = 150 }
+		command = { type = dynastic which = HAB }
+		command = { type = dynastic which = SPA }
+		command = { type = dynastic which = PAP }
+		command = { type = stability value = -3 }
+		command = { type = revoltrisk which = 48 value = 8 }
+	}
+
+}
+
+#Emperor Wladislav of Russia#
+event = {
+
+	id = 3478
+	trigger = {
+		OR = {
+			monarch = 04134
+			monarch = 04119
+		}
+		NOT = { exists = LIT }
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3478"
+	desc = "EVENTHIST3478"
+	style = "3478"
+
+	date = { day = 1 month = january year = 1609 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1610 }
+
+
+	action_a ={		#Vladimir Wasa, Czar of all Russians#
+		name = "ACTIONNAME3478A"
+		command = { type = casusbelli which = RUS value = 6 }
+		command = { type = relation which = RUS value = -150 }
+		command = { type = relation which = SWE value = -100 }
+	}
+
+	action_b ={		#No we will not meddle in their Civil War#
+		name = "ACTIONNAME3478B"
+		command = { type = relation which = RUS value = -100 }
+		command = { type = stability value = 1 }
+		command = { type = relation which = SWE value = 50 }
+	}
+}
+
+#Warszawa#
+event = {
+
+	id = 3479
+	trigger = {
+		NOT = {
+			Exists = LIT
+			}
+		owned = {
+			province = 291
+			data = -1
+			}
+		}
+
+	random = no
+	country = POL
+	name = "EVENTNAME3479"
+	desc = "EVENTHIST3479"
+	style = "3479"
+
+	date = { day = 1 month = january year = 1570 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1580 }
+
+	action_a ={		#Let move the Capital to Warszawa#
+		name = "Move the Capital to Warszawa"
+		command = { type = capital which = 291 }
+		command = { type = land value = 1000 }
+		command = { type = infra value = 1000 }
+		command = { type = trade value = 500 }
+		command = { type = stability value = 1 }
+		command = { type = setflag which = warsaw }
+	}
+
+	action_b ={		#Let Kraków stay Capital#
+		name = "Let Kraków stay as the Capital"
+		command = { type = land value = 500 }
+		command = { type = infra value = 500 }
+		command = { type = trade value = 1000 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = stability value = 3 }
+	}
+}
+
+#The Pact Conventa and the Henrykian Articles#
+event = {
+
+	id = 3480
+	trigger = {
+		monarch = 04117
+		NOT = {
+			domestic = {
+				type = CENTRALIZATION
+				value = 7
+			}
+		}
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3480"
+	desc = "EVENTHIST3480"
+	style = "3480"
+
+	date = { day = 1 month = january year = 1573 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1574 }
+
+	action_a ={		#There is nothing we can do my King#
+		name = "ACTIONNAME3480A"
+		command = { type = manpower value = -20 }
+		command = { type = treasury value = -1200 }
+		command = { type = domestic which = ARISTOCRACY value = 3 }
+		command = { type = domestic which = CENTRALIZATION value = -3 }
+		command = { type = domestic which = LAND value = 2 }
+		command = { type = domestic which = QUALITY value = 3 }
+		command = { type = stability value = 2 }
+	}
+}
+
+#The Struggle for Royal Power#
+event = {
+
+	id = 3481
+
+	random = no
+	country = POl
+	name = "EVENTNAME3481"
+	desc = "EVENTHIST3481"
+	style = 3
+
+	date = { day = 1 month = january year = 1607}
+	offset = 30
+	deathdate = { day = 1 month = january year = 1611 }
+
+
+	action_a ={		#Fight a bitter but peaceful conflict#
+		name = "ACTIONNAME3481A"
+		command = { type = sleepevent which = 3740 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = revoltrisk which = 120 value = 1 }
+	}
+
+	action_b ={	#Resignate completely and read theological books instead#
+		name = "ACTIONNAME3481B"
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = revoltrisk which = 120 value = -2 }
+		command = { type = stability value = 3 }
+	}
+
+	action_c ={		#Wage a war of extermination on the Nobility#
+		name = "ACTIONNAME3481C"
+		command = { type = sleepevent which = 3740 }
+		command = { type = sleepevent which = 3741 }
+		command = { type = domestic which = ARISTOCRACY value = -6 }
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = revoltrisk which = 240 value = 5 }
+		command = { type = stability value = -1 }
+	}
+
+}
+
+#Liberum Veto in Poland#
+event = {
+
+	id = 3482
+	trigger = {
+		domestic = {
+			type = ARISTOCRACY
+			value = 7
+			}
+		}
+	random = no
+	country = POL
+	name = "EVENTNAME3482"
+	desc = "EVENTHIST3482"
+	style = "3482"
+
+	date = { day = 1 month = january year = 1652 }
+	offset = 0
+	deathdate = { day = 1 month = january year = 1653 }
+
+	action_a ={		#This country is now a true Aristocracy#
+		name = "ACTIONNAME3482A"
+		command = { type = treasury value = -1200 }
+		command = { type = stability value = 1 }
+		command = { type = DIP which = -5 value = 600 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = MERCANTILISM value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = domestic which = QUALITY value = -5 }
+	}
+}
+
+#Liberum Veto in Poland#
+event = {
+
+	id = 3483
+	trigger = {
+		NOT = {
+			event  = 3482
+		}
+		domestic = {
+			type = ARISTOCRACY
+			value = 9
+			}
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3483"
+	desc = "EVENTHIST3483"
+	style = "3482"
+
+	date = { day = 2 month = january year = 1653 }
+	offset = 0
+	deathdate = { day = 1 month = january year = 1772 }
+
+	action_a ={		#This country is now a true Aristocracy#
+		name = "ACTIONNAME3483A"
+		command = { type = treasury value = -1200 }
+		command = { type = stability value = 1 }
+		command = { type = DIP which = -5 value = 600 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = MERCANTILISM value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = domestic which = QUALITY value = -5 }
+	}
+}
+
+#The Sobieskian Army Reforms#
+event = {
+
+	id = 3485
+	trigger = {
+		monarch = 04123
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3485"
+	desc = "EVENTHIST3485"
+	style = "3485"
+
+	date = { day = 1 month = january year = 1672 }
+	offset = 0
+	deathdate = { day = 1 month = january year = 1681 }
+
+
+	action_a ={		#Make a strict Army Reform only#
+		name = "ACTIONNAME3485A"
+		command = { type = land value = 1200 }
+		command = { type = MIL which = 3 value = 80 }
+		command = { type = domestic which = QUALITY value = 3 }
+		command = { type = manpower value = 30 }
+		command = { type = fortress which = -1 value = 1 }
+		command = { type = fortress which = -4 value = 1 }
+		command = { type = fortress which = -4 value = 1 }
+		command = { type = stability value = 3 }
+		command = { type = sleepevent which = 3743 } # good Sejm events
+		command = { type = sleepevent which = 4127 }
+		command = { type = sleepevent which = 4128 }
+		command = { type = sleepevent which = 4129 }
+		command = { type = sleepevent which = 4130 }
+
+
+	}
+
+	action_b ={		#Reform Army and undermine the power of the Sejm#
+		name = "ACTIONNAME3485B"
+		command = { type = land value = 1200 }
+		command = { type = MIL which = 3 value = 80 }
+		command = { type = ADM which = -2 value = 80 }
+		command = { type = domestic which = QUALITY value = 3 }
+		command = { type = manpower value = 30 }
+		command = { type = fortress which = -1 value = 1 }
+		command = { type = fortress which = -4 value = 1 }
+		command = { type = fortress which = -4 value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = revoltrisk which = 60 value = 3 }
+		command = { type = stability value = -2 }
+		command = { type = sleepevent which = 3742 } # bad Sejm events
+		command = { type = sleepevent which = 3744 }
+		command = { type = sleepevent which = 3745 }
+		command = { type = sleepevent which = 3746 }
+		command = { type = sleepevent which = 4103 }
+		command = { type = sleepevent which = 4104 }
+	}
+}
+
+#Turko-Polish Tension#
+event = {
+
+	id = 3488
+	trigger = {
+		exists = TUR
+		OR = {
+			neighbour = TUR
+			vassal = { country = TUR country = HUN }
+			AND = {
+				vassal = { country = TUR country = MOL }
+				vassal = { country = TUR country = WAL }
+			}
+			AND = {
+				NOT = { exists = HUN }
+				owned = { province = 320 data = TUR } # Dobrudja
+				owned = { province = 355 data = TUR } # Serbia
+				TUR = { countrysize = 15 }
+			}
+		}
+		countrysize = 6
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3488"
+	desc = "EVENTHIST3488"
+	style = 3
+
+	date = { day = 1 month = january year = 1670}
+	offset = 0
+	deathdate = { day = 1 month = january year = 1671 }
+
+
+	action_a ={		#We will defend Christendom#
+		name = "ACTIONNAME3488A"
+		command = { type = casusbelli which = TUR value = 36 }
+		command = { type = casusbelli which = CRI value = 36 }
+		command = { type = relation which = TUR value = -100 }
+		command = { type = relation which = CRI value = -100 }
+		command = { type = relation which = PAP value = 100 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = treasury value = 100 }
+		command = { type = manpower value = 5 }
+		command = { type = stability value = 1 }
+		command = { type = trigger which = 3388 } # TUR: Turko-Polish Tensions I
+	}
+}
+
+#Turko-Polish Tension#
+event = {
+
+	id = 3489
+	trigger = {
+		exists = TUR
+		OR = {
+			neighbour = TUR
+			vassal = { country = TUR country = HUN }
+			AND = {
+				vassal = { country = TUR country = MOL }
+				vassal = { country = TUR country = WAL }
+			}
+			AND = {
+				NOT = { exists = HUN }
+				owned = { province = 320 data = TUR } # Dobrudja
+				owned = { province = 355 data = TUR } # Serbia
+				TUR = { countrysize = 15 }
+			}
+		}
+		countrysize = 6
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3489"
+	desc = "EVENTHIST3489"
+	style = 3
+
+	date = { day = 1 month = january year = 1675}
+	offset = 0
+	deathdate = { day = 1 month = january year = 1676 }
+
+	action_a ={		#We will defend Christendom#
+		name = "ACTIONNAME3489A"
+		command = { type = casusbelli which = TUR value = 36 }
+		command = { type = casusbelli which = CRI value = 36 }
+		command = { type = relation which = TUR value = -100 }
+		command = { type = relation which = CRI value = -100 }
+		command = { type = relation which = PAP value = 100 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = treasury value = 100 }
+		command = { type = manpower value = 5 }
+		command = { type = stability value = 1 }
+		command = { type = trigger which = 3389 } # TUR: Turko-Polish Tensions II
+	}
+}
+
+#Turko-Polish Tension#
+event = {
+
+	id = 3490
+	trigger = {
+		exists = TUR
+		OR = {
+			neighbour = TUR
+			vassal = { country = TUR country = HUN }
+			AND = {
+				vassal = { country = TUR country = MOL }
+				vassal = { country = TUR country = WAL }
+			}
+			AND = {
+				NOT = { exists = HUN }
+				owned = { province = 320 data = TUR } # Dobrudja
+				owned = { province = 355 data = TUR } # Serbia
+				TUR = { countrysize = 15 }
+			}
+		}
+		countrysize = 6
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3490"
+	desc = "EVENTHIST3490"
+	style = 3
+
+	date = { day = 1 month = january year = 1680}
+	offset = 0
+	deathdate = { day = 1 month = january year = 1681 }
+
+	action_a ={		#We will defend Christendom#
+		name = "ACTIONNAME3490A"
+		command = { type = casusbelli which = TUR value = 36 }
+		command = { type = casusbelli which = CRI value = 36 }
+		command = { type = relation which = TUR value = -100 }
+		command = { type = relation which = CRI value = -100 }
+		command = { type = relation which = PAP value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = treasury value = 200 }
+		command = { type = manpower value = 10 }
+		command = { type = stability value = 2 }
+		command = { type = trigger which = 3390 } # TUR: Turko-Polish Tensions III
+	}
+}
+
+#The Great Northern Conflict#
+event = {
+
+	id = 3491
+	trigger = {
+		vassal ={
+			country = POL
+			country = SAC
+			}
+		 AND = {
+			OR = {
+				owned = { province = 282 data =SWE }
+				owned = { province = 283 data =SWE }
+				owned = { province = 289 data =SWE }
+				owned = { province = 290 data =SWE }
+				owned = { province = 301 data =SWE }
+				owned = { province = 303 data =SWE }
+				owned = { province = 300 data =SWE }
+				owned = { province = 331 data =SWE }
+				owned = { province = 332 data =SWE }
+				}
+			}
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3491"
+	desc = "EVENTHIST3491"
+	style = 4
+
+	date = { day = 15 month = june year = 1697 }
+	offset = 0
+	deathdate = { day = 1 month = april year = 1700 }
+
+	action_a ={				#Advance!#
+		name = "ACTIONNAME3491A"
+		command = { type = casusbelli which = SWE value = 36 }
+		command = { type = relation which = SWE value = -150 }
+		command = { type = relation which = DAN value = 150 }
+		command = { type = relation which = RUS value = 150 }
+		command = { type = relation which = SAC value = 200 }
+		command = { type = INF which = -1 value = 20000 }
+		command = { type = CAV which = -3 value = 5000 }
+		command = { type = ART which = -3 value = 10 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={				#Stay calm for a while#
+		name = "ACTIONNAME3491B"
+		command = { type = casusbelli which = SWE value = 36 }
+		command = { type = relation which = SWE value = -100 }
+		command = { type = relation which = DAN value = 50 }
+		command = { type = relation which = RUS value = -100 }
+		command = { type = relation which = SAC value = 200 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#The Dethronement of August the Strong#
+event = {
+
+	id = 3492			#Triggered by SWE3242#
+	random = no
+	country = POL
+	name = "EVENTNAME3492"
+	desc = "EVENTHIST3492"
+	style = 4
+
+	action_a ={			#Dethrone August and install Stanislaus#
+		name = "ACTIONNAME3492A"
+		command = { type = wakemonarch which = 04125 }
+		command = { type = relation which = SWE value = 150 }
+		command = { type = stability value = -3 }
+		command = { type = revoltrisk which = 12 value = 3 }
+	}
+}
+
+#The Return of August the Strong#
+event = {
+
+	id = 3501
+	trigger = {
+		AND = {
+			event = 3492
+			NOT = {
+				vassal = {
+					country = SWE
+					country = POL
+					}
+				}
+			}
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3501"
+	desc = "EVENTHIST3501"
+	style = 4
+
+	date = { day = 1 month = january year = 1700 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1720 }
+
+	action_a ={			#August is reinstalled#
+		name = "ACTIONNAME3501A"
+		command = { type = wakemonarch which = 04124 }
+		command = { type = stability value = 1 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = dynastic which = SAC }
+#		command = { type = alliance which = SAC }
+		command = { type = treasury value = -1000 }
+		command = { type = trigger which = 3737 }
+	}
+}
+
+#The Horrible Plague in Lithuania#
+event = {
+
+	id = 3493
+	trigger = {
+		NOT = {
+			exists = LIT
+			}
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3493"
+	desc = "EVENTHIST3493"
+	style = 4
+
+	date = { day = 1 month = january year = 1709 }
+	offset = 0
+	deathdate = { day = 1 month = january year = 1711 }
+
+	action_a ={				#Arghhh!#
+		name = "ACTIONNAME3493A"
+		command = { type = populationpercent which = 284 value = -15 }
+		command = { type = populationpercent which = 287 value = -15 }
+		command = { type = populationpercent which = 288 value = -15 }
+		command = { type = populationpercent which = 293 value = -15 }
+		command = { type = populationpercent which = 294 value = -15 }
+		command = { type = desertion which = -1 value = 7321 }
+		command = { type = desertion which = -4 value = 5478 }
+		command = { type = desertion which = -4 value = 3934 }
+	}
+}
+
+#Stanislaus Poniatowski-'The Last King'#
+event = {
+
+	id = 3494
+	trigger = {
+		monarch = 04128
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3494"
+	desc = "EVENTHIST3494"
+	style = "3494"
+
+	date = { day = 6 month = september year = 1764 }
+	offset = 0
+	deathdate = { day = 7 month = september year = 1764 }
+
+	action_a ={		#Reform as much as possible before Russia intervenes#
+		name = "ACTIONNAME3494A"
+		command = { type = breakvassal which = RUS }
+		command = { type = relation which = RUS value = -150 }
+		command = { type = relation which = PRU value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = inflation value = -2 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={		#Appease Russia and their Magnate faction#
+		name = "ACTIONNAME3494B"
+		command = { type = relation which = RUS value = 200 }
+		command = { type = inflation value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -3 }
+		command = { type = domestic which = MERCANTILISM value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = stability value = 3 }
+	}
+}
+
+#Friedrich Augustus Wettin backs down!#
+event = {
+
+	id = 3487			#Triggereed by SAC3628#
+	random = no
+	country = POL
+	name = "EVENTNAME3487"
+	desc = "EVENTHIST3487"
+	style = 4
+
+	action_a ={				#Elect Stanislas  Leczinski#
+		name = "ACTIONNAME3487A"
+		command = { type = trigger which = 3632 }
+		command = { type = wakemonarch which = 04125 }
+		command = { type = stability value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+	}
+}
+
+#The Courland Succession of 1726#
+event = {
+
+	id = 3496
+	trigger = {
+		exists = KUR
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3496"
+	desc = "EVENTHIST3496"
+	style = 4
+
+	date = { day = 13 month = january year = 1726 }
+	offset = 0
+	deathdate = { day = 14 month = january year = 1726 }
+
+	action_a ={				#Back down#
+		name = "ACTIONNAME3496A"
+		command = { type = stability value = 1 }
+		command = { type = relation which = RUS value = 150 }
+	}
+
+	action_b ={				#Fight for Maurice#
+		name = "ACTIONNAME3496B"
+		command = { type = addcore_claim which = 283 }
+		command = { type = relation which = RUS value = -150 }
+		command = { type = relation which = KUR value = 150 }
+		command = { type = casusbelli which = RUS value = 3 }
+		command = { type = casusbelli which = SWE value = 3 }
+		command = { type = casusbelli which = PRU value = 3 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#Ending the Stagnation#
+event = {
+
+	id = 3497
+	trigger = {
+		NOT = {
+			AND = {
+				stability = 3
+				domestic = { type = centralization value = 8 }
+			}
+		}
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3497"
+	desc = "EVENTHIST3497"
+	style = "3497"
+
+	date = { day = 1 month = january year = 1672 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1697 }
+
+	action_a ={		#No its too problematic to change the situation#
+		name = "ACTIONNAME3497A"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = MERCANTILISM value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+	}
+	action_b ={		#Let us change this depressive situation#
+		name = "ACTIONNAME3497B"
+		command = { type = trigger which = 3443 }
+		command = { type = stability value = -4 }
+		command = { type = domestic which = ARISTOCRACY value = -3 }
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = MERCANTILISM value = -3 }
+		command = { type = domestic which = SERFDOM value = -3 }
+	}
+}
+
+#Ending the Stagnation#
+event = {
+
+	id = 3498
+	trigger = {
+		NOT = {
+			AND = {
+				stability = 3
+				domestic = { type = centralization value = 8 }
+			}
+		}
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3498"
+	desc = "EVENTHIST3498"
+	style = "3497"
+
+	date = { day = 2 month = january year = 1697 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1717 }
+
+	action_a ={		#No its too problematic to change the situation#
+		name = "ACTIONNAME3498A"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = MERCANTILISM value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+	}
+	action_b ={		#Let us change this depressive situation#
+		name = "ACTIONNAME3498B"
+		command = { type = trigger which = 3442 }
+		command = { type = stability value = -4 }
+		command = { type = domestic which = ARISTOCRACY value = -3 }
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = MERCANTILISM value = -3 }
+		command = { type = domestic which = SERFDOM value = -3 }
+	}
+}
+
+#Ending the Stagnation#
+event = {
+
+	id = 3499
+	trigger = {
+		NOT = {
+			AND = {
+				stability = 3
+				domestic = { type = centralization value = 8 }
+			}
+		}
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3499"
+	desc = "EVENTHIST3499"
+	style = "3497"
+
+	date = { day = 10 month = september year = 1764 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1772 }
+
+	action_a ={		#Let us change this depressive situation#
+		name = "ACTIONNAME3499A"
+		command = { type = trigger which = 3440 }
+		command = { type = trigger which = 3337 }
+		command = { type = trigger which = 3533 }
+		command = { type = stability value = -3 }
+		command = { type = domestic which = ARISTOCRACY value = -4 }
+		command = { type = domestic which = CENTRALIZATION value = 4 }
+		command = { type = domestic which = MERCANTILISM value = -4 }
+		command = { type = domestic which = SERFDOM value = -4 }
+	}
+	action_b ={		#No its too problematic to change the situation#
+		name = "ACTIONNAME3499B"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = MERCANTILISM value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+	}
+}
+
+#Ending the Stagnation#
+event = {
+
+	id = 3500
+	trigger = {
+		NOT = {
+			AND = {
+				stability = 3
+				domestic = { type = centralization value = 8 }
+			}
+		}
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3500"
+	desc = "EVENTHIST3500"
+	style = "3497"
+
+	date = { day = 1 month = january year = 1788 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1792 }
+
+	action_a ={		#Let us change this depressive situation#
+		name = "ACTIONNAME3500A"
+		command = { type = trigger which = 3441 }
+		command = { type = trigger which = 3338 }
+		command = { type = trigger which = 3534 }
+		command = { type = stability value = -3 }
+		command = { type = domestic which = ARISTOCRACY value = -5 }
+		command = { type = domestic which = CENTRALIZATION value = 5 }
+		command = { type = domestic which = MERCANTILISM value = -5 }
+		command = { type = domestic which = SERFDOM value = -5 }
+	}
+
+	action_b ={		#No its too problematic to change the situation#
+		name = "ACTIONNAME3500B"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = MERCANTILISM value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+	}
+}
+
+#Ending the Stagnation#
+event = {
+
+	id = 4101
+	trigger = {
+		NOT = {
+			AND = {
+				stability = 3
+				domestic = { type = centralization value = 8 }
+			}
+		}
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3497"
+	desc = "EVENTHIST3497"
+
+	style = "3497"
+
+	date = { day = 1 month = january year = 1804 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1810 }
+
+	action_a ={		#No its too problematic to change the situation#
+		name = "ACTIONNAME3497A"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = MERCANTILISM value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+	}
+	action_b ={		#Let us change this depressive situation#
+		name = "ACTIONNAME3497B"
+		command = { type = stability value = -4 }
+		command = { type = domestic which = ARISTOCRACY value = -3 }
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = MERCANTILISM value = -3 }
+		command = { type = domestic which = SERFDOM value = -3 }
+	}
+}
+
+#Ending the Stagnation#
+event = {
+
+	id = 4102
+	trigger = {
+		NOT = {
+			AND = {
+				stability = 3
+				domestic = { type = centralization value = 8 }
+			}
+		}
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3497"
+	desc = "EVENTHIST3497"
+
+	style = "3497"
+
+	date = { day = 1 month = january year = 1818 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1824 }
+
+	action_a ={		#No its too problematic to change the situation#
+		name = "ACTIONNAME3497A"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = MERCANTILISM value = 2 }
+		command = { type = domestic which = SERFDOM value = 2 }
+	}
+	action_b ={		#Let us change this depressive situation#
+		name = "ACTIONNAME3497B"
+		command = { type = stability value = -4 }
+		command = { type = domestic which = ARISTOCRACY value = -3 }
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = MERCANTILISM value = -3 }
+		command = { type = domestic which = SERFDOM value = -3 }
+	}
+}
+
+#The Sejm refuse to allow the mobilization of more troops#
+event = {
+
+	id = 3738
+	trigger = {
+		NOT = {
+			monarch = 05936
+			monarch = 05937
+			monarch = 05949
+		}
+		event = 3480
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3738"
+	desc = "EVENTHIST3738"
+	style = 2
+
+	date = { day = 1 month = january year = 1575 }
+	offset = 0
+	deathdate = { day = 1 month = january year = 1590 }
+
+
+	action_a ={		#Ok#
+		name = "ACTIONNAME3738A"
+		command = { type = manpower value = -10 }
+		command = { type = stability value = 1 }
+	}
+action_b ={		#Go behind their backs#
+		name = "ACTIONNAME3738B"
+		command = { type = manpower value = -5 }
+		command = { type = treasury value = -100 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#The Sejm refuse to allow the mobilization of more troops#
+event = {
+
+	id = 3739
+	trigger = {
+		NOT = {
+			monarch = 05936
+			monarch = 05937
+			monarch = 05949
+		}
+		event = 3480
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3739"
+	desc = "EVENTHIST3739"
+	style = 3
+
+	date = { day = 1 month = january year = 1590 }
+	offset = 0
+	deathdate = { day = 1 month = january year = 1605 }
+
+	action_a ={		#Ok#
+		name = "ACTIONNAME3739A"
+		command = { type = manpower value = -10 }
+		command = { type = stability value = 1 }
+	}
+action_b ={		#Go behind their backs#
+		name = "ACTIONNAME3739B"
+		command = { type = manpower value = -5 	}
+		command = { type = treasury value = -100 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#The Sejm refuse to allow the mobilization of more troops#
+event = {
+
+	id = 3740
+	trigger = {
+		NOT = {
+			monarch = 05936
+			monarch = 05937
+			monarch = 05949
+		}
+		event = 3480
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3740"
+	desc = "EVENTHIST3740"
+	style = 3
+
+	date = { day = 1 month = january year = 1611 }
+	offset = 0
+	deathdate = { day = 1 month = january year = 1630 }
+
+	action_a ={		#Ok#
+		name = "ACTIONNAME3740A"
+		command = { type = manpower value = -10 }
+		command = { type = stability value = 1 }
+	}
+	action_b ={		#Go behind their backs#
+		name = "ACTIONNAME3740B"
+		command = { type = manpower value = -5 	 }
+		command = { type = treasury value = -100 }
+		command = { type = stability value = -1 }
+	}
+}
+
+# The Sejm refuse to allow the mobilization of more troops #
+event = {
+
+	id = 3741
+	trigger = {
+		NOT = {
+			monarch = 05936
+			monarch = 05937
+			monarch = 05949
+		}
+		event = 3480
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3741"
+	desc = "EVENTHIST3741"
+	style = 3
+
+	date = { day = 1 month = january year = 1631 }
+	offset = 0
+	deathdate = { day = 1 month = january year = 1651 }
+
+	action_a ={		#Ok#
+		name = "ACTIONNAME3741A"
+		command = { type = manpower value = -10 }
+		command = { type = stability value = 1 }
+	}
+	action_b ={		#Go behind their backs#
+		name = "ACTIONNAME3741B"
+		command = { type = manpower value = -5 	  }
+		command = { type = treasury value = -100 }
+		command = { type = stability value = -1 }
+	}
+}
+
+# The Sejm veto all your policies #
+event = {
+
+	id = 3742
+	trigger = {
+		NOT = {
+			monarch = 05936
+			monarch = 05937
+			monarch = 05949
+		}
+		OR = {
+			event = 3482
+			event = 3483
+		}
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3742"
+	desc = "EVENTHIST3742"
+	style = 3
+
+	date = { day = 1 month = january year = 1670 }
+	offset = 0
+	deathdate = { day = 1 month = january year = 1690 }
+
+	action_a ={		#Ok#
+		name = "ACTIONNAME3742A"
+		command = { type = manpower value = -10 }
+		command = { type = stability value = 1 }
+	}
+	action_b ={		#Go behind their backs#
+		name = "ACTIONNAME3742B"
+		command = { type = manpower value = -5 }
+		command = { type = treasury value = -100 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#The Sejm comply to your policies#
+event = {
+
+	id = 3743
+	trigger = {
+		OR ={
+			event = 3482
+			event = 3483
+			}
+		AND = {
+			event = 3485
+			}
+		}
+	random = no
+	country = POL
+	name = "EVENTNAME3743"
+	desc = "EVENTHIST3743"
+	style = 3
+
+	date = { day = 1 month = january year = 1672 }
+	offset = 0
+	deathdate = { day = 1 month = january year = 1707 }
+
+	action_a ={		#Great!#
+		name = "ACTIONNAME3743A"
+		command = { type = manpower value = 10 }
+		command = { type = treasury value = 100 }
+		command = { type = stability value = 2 }
+	}
+}
+
+#The Sejm veto all your policies#
+event = {
+
+	id = 3744
+	trigger = {
+		NOT = {
+			monarch = 05936
+			monarch = 05937
+			monarch = 05949
+		}
+		OR = {
+			event = 3482
+			event = 3483
+		}
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3744"
+	desc = "EVENTHIST3744"
+	style = 4
+
+	date = { day = 1 month = january year = 1708 }
+	offset = 0
+	deathdate = { day = 1 month = january year = 1730 }
+
+	action_a ={		#Ok#
+		name = "ACTIONNAME3744A"
+		command = { type = manpower value = -10 }
+		command = { type = stability value = 1 }
+	}
+action_b ={		#Go behind their backs#
+		name = "ACTIONNAME3744B"
+		command = { type = manpower value = -5 	}
+		command = { type = treasury value = -100 }
+		command = { type = stability value = -1 }
+	}
+}
+
+# The Sejm veto all your policies #
+event = {
+
+	id = 3745
+	trigger = {
+		NOT = {
+			monarch = 05936
+			monarch = 05937
+			monarch = 05949
+		}
+		OR = {
+			event = 3482
+			event = 3483
+		}
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3745"
+	desc = "EVENTHIST3745"
+	style = 4
+
+	date = { day = 1 month = january year = 1731 }
+	offset = 0
+	deathdate = { day = 1 month = january year = 1751 }
+
+	action_a ={		#Ok#
+		name = "ACTIONNAME3745A"
+		command = { type = manpower value = -10 }
+		command = { type = stability value = 1 }
+	}
+	action_b ={		#Go behind their backs#
+		name = "ACTIONNAME3745B"
+		command = { type = manpower value = -5 }
+		command = { type = treasury value = -100 }
+		command = { type = stability value = -1 }
+	}
+}
+
+# The Sejm veto all your policies #
+event = {
+
+	id = 3746
+	trigger = {
+		NOT = {
+			monarch = 05936
+			monarch = 05937
+			monarch = 05949
+		}
+		OR = {
+			event = 3482
+			event = 3483
+		}
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3746"
+	desc = "EVENTHIST3746"
+	style = 4
+
+	date = { day = 1 month = january year = 1753 }
+	offset = 0
+	deathdate = { day = 1 month = january year = 1784 }
+
+	action_a ={		#Ok#
+		name = "ACTIONNAME3746A"
+		command = { type = manpower value = -10 }
+		command = { type = stability value = 1 }
+	}
+	action_b ={		#Go behind their backs#
+		name = "ACTIONNAME3746B"
+		command = { type = manpower value = -5 	}
+		command = { type = treasury value = -100 }
+		command = { type = stability value = -1 }
+	}
+}
+
+# The Sejm veto all your policies #
+event = {
+
+	id = 4103
+	trigger = {
+		NOT = {
+			monarch = 05936
+			monarch = 05937
+			monarch = 05949
+		}
+		OR = {
+			event = 3482
+			event = 3483
+		}
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3746"
+	desc = "EVENTHIST3746"
+
+	date = { day = 1 month = january year = 1785 }
+	offset = 0
+	deathdate = { day = 1 month = january year = 1812 }
+
+	action_a ={		#Ok#
+		name = "ACTIONNAME3746A"
+		command = { type = manpower value = -10 }
+		command = { type = stability value = 1 }
+	}
+	action_b ={		#Go behind their backs#
+		name = "ACTIONNAME3746B"
+		command = { type = manpower value = -5 	}
+		command = { type = treasury value = -100 }
+		command = { type = stability value = -1 }
+	}
+}
+
+# The Sejm veto all your policies #
+event = {
+
+	id = 4104
+	trigger = {
+		NOT = {
+			monarch = 05936
+			monarch = 05937
+			monarch = 05949
+		}
+		OR = {
+			event = 3482
+			event = 3483
+		}
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3746"
+	desc = "EVENTHIST3746"
+
+	date = { day = 1 month = january year = 1814 }
+	offset = 0
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={		#Ok#
+		name = "ACTIONNAME3746A"
+		command = { type = manpower value = -10 }
+		command = { type = stability value = 1 }
+	}
+	action_b ={		#Go behind their backs#
+		name = "ACTIONNAME3746B"
+		command = { type = manpower value = -5 	}
+		command = { type = treasury value = -100 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#The Sejm comply to your policies#
+event = {
+
+	id = 4127
+	trigger = {
+		OR = {
+			event = 3482
+			event = 3483
+		}
+		event = 3485
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3743"
+	desc = "EVENTHIST3743"
+
+	date = { day = 1 month = january year = 1710 }
+	offset = 0
+	deathdate = { day = 1 month = january year = 1735 }
+
+	action_a ={		#Great!#
+		name = "ACTIONNAME3743A"
+		command = { type = manpower value = 10 }
+		command = { type = treasury value = 100 }
+		command = { type = stability value = 2 }
+	}
+}
+
+#The Sejm comply to your policies#
+event = {
+
+	id = 4128
+	trigger = {
+		OR = {
+			event = 3482
+			event = 3483
+		}
+		event = 3485
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3743"
+	desc = "EVENTHIST3743"
+
+	date = { day = 1 month = january year = 1740 }
+	offset = 0
+	deathdate = { day = 1 month = january year = 1765 }
+
+	action_a ={		#Great!#
+		name = "ACTIONNAME3743A"
+		command = { type = manpower value = 10 }
+		command = { type = treasury value = 100 }
+		command = { type = stability value = 2 }
+	}
+}
+
+#The Sejm comply to your policies#
+event = {
+
+	id = 4129
+	trigger = {
+		OR = {
+			event = 3482
+			event = 3483
+		}
+		event = 3485
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3743"
+	desc = "EVENTHIST3743"
+
+	date = { day = 1 month = january year = 1770 }
+	offset = 0
+	deathdate = { day = 1 month = january year = 1795 }
+
+	action_a ={		#Great!#
+		name = "ACTIONNAME3743A"
+		command = { type = manpower value = 10 }
+		command = { type = treasury value = 100 }
+		command = { type = stability value = 2 }
+	}
+}
+
+#The Sejm comply to your policies#
+event = {
+
+	id = 4130
+	trigger = {
+		OR = {
+			event = 3482
+			event = 3483
+		}
+		event = 3485
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME3743"
+	desc = "EVENTHIST3743"
+
+	date = { day = 1 month = january year = 1800 }
+	offset = 0
+	deathdate = { day = 1 month = january year = 1825 }
+
+	action_a ={		#Great!#
+		name = "ACTIONNAME3743A"
+		command = { type = manpower value = 10 }
+		command = { type = treasury value = 100 }
+		command = { type = stability value = 2 }
+	}
+}
+
+# New election events for 1.3
+# Poland is a real ballache for monarchs! D:
+
+#The Polish Succession of 1573# -- historical election following the death of King Sigismund II
+event = {
+	id = 3767
+	trigger = {
+		OR = {
+			event = 3475 # none of these need to fire if POL-LIT never unify
+			event = 4132
+		}
+		monarch = 04116
+	}
+	random = no
+	country = POL
+	name = "The Polish Succession of 1573"
+	desc = "EVENTHIST3767"
+
+	style = "3767"
+
+	date = { day = 6 month = july year = 1572 }
+	
+	action_a ={ # Elect Henry of Valois # -- historical path, leads to other historical elections
+		name = "Elect Henry of Valois"
+		trigger = { 
+			NOT = {
+				war = { country = POL country = FRA }
+			}
+		}
+		command = { type = dynastic which = FRA }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = SWE value = -50 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = RUS value = -50 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = wakemonarch which = 04117 }
+		command = { type = sleepmonarch which = 04133 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={ # Elect Anna and the Vasas # -- leads to default hereditary monarchs through Vasa line, then a choice of either Stuarts or Wettins in the 1690 election (POL_4105)
+		name = "Elect Anna and the Vasas"
+		command = { type = dynastic which = SWE }
+		command = { type = relation which = SWE value = 100 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = RUS value = -50 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = stability value = -2 }
+		command = {
+			trigger = {
+				SWE = {
+					OR = {
+						monarch = 06303
+						monarch = 06304
+					}
+				}
+				NOT = {
+					war = { country = POL country = SWE }
+				}
+			}
+			type = trigger which = 4108
+		}
+	}
+
+	action_c ={ # Elect Archduke Ernest of Austria # -- pro-HAB path, then defaults to hereditary monarchs
+		name = "Elect Archduke Ernest of Austria"
+		trigger = { 
+			NOT = {
+				war = { country = POL country = HAB }
+			}
+		}
+		command = { type = dynastic which = HAB }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = SWE value = -50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = RUS value = -50 }
+		command = { type = fortress which = -1 value = 1 }
+		command = { type = provincetax which = -3 value = 2 }
+		command = { type = land value = 500 }
+		command = { type = domestic which = OFFENSIVE value = -1 }
+		command = { type = wakemonarch which = 04161 }
+		command = { type = sleepmonarch which = 04133 }
+		command = { type = stability value = -1 }
+	}
+
+	action_d ={ # Elect Prince Feodor of Russia # -- pro-RUS path, then defaults to hereditary monarchs
+		name = "Elect Prince Feodor of Russia"
+		trigger = { 
+			NOT = {
+				war = { country = POL country = RUS }
+			}
+		}
+		command = { type = dynastic which = RUS }
+		command = { type = relation which = RUS value = 100 }
+		command = { type = relation which = SWE value = -50 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = manpower value = 15 }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = CAV which = -4 value = 5000 }
+		command = { type = domestic which = QUALITY value = -1 }
+		command = { type = wakemonarch which = 04163 }
+		command = { type = sleepmonarch which = 04133 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#The Polish Succession of 1575# -- historical election following the abdication of King Henry of Valois
+event = {
+	id = 3768
+	trigger = {
+		monarch = 04117
+	}
+	random = no
+	country = POL
+	name = "The Polish Succession of 1575"
+	desc = "The 1575 royal election in Poland-Lithuania was unexpected, having taken place following the abdication and departure of King Henry of Valois. Henry had been elected King of Poland in 1573 but quickly left to assume the French throne following the death from tuberculosis of his elder brother King Charles IX. The 1575 election was notable for the absence of a clear successor, leading to a lengthy interregnum characterized by political instability and rivalry among various noble factions, known as the szlachta. This period of uncertainty emphasized the power of the Polish nobility and their ability to influence the selection of monarchs. Eventually, in 1576, Stephen Báthory, a Transylvanian prince, was elected as king, bringing relative stability and successful military campaigns to the Commonwealth during his reign - though he first had to put down the 1575-77 Danzig rebellion."
+
+	style = "3768"
+
+	date = { day = 18 month = june year = 1574 }
+	
+	action_a ={ # Elect Stephen Báthory # -- historical path, leads to other historical elections
+		name = "Elect Stephen Báthory"
+		trigger = { 
+			NOT = {
+				war = { country = POL country = TRA }
+			}
+		}
+		command = { type = dynastic which = TRA }
+		command = { type = relation which = TRA value = 100 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = RUS value = -50 }
+		command = { type = wakemonarch which = 04118 }
+		command = { type = wakeleader which = 09462 } # Stefan I Batory
+		command = { type = revolt which = 301 }
+		command = { type = revolt which = 301 }
+		command = { type = stability value = 2 }
+	}
+
+	action_b ={ # Let Henry rule both kingdoms # -- pro-FRA path, then a choice of either Bourbons or Vasas in the 1590 election (POL_4106)
+		name = "Let Henry rule both kingdoms"
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = TRA value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = RUS value = -100 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = revoltrisk which = 60 value = 3 }
+		command = { type = revolt which = -2 }
+		command = { type = stability value = -4 }
+	}
+
+	action_c ={ # Elect Archduke Ernest of Austria # -- pro-HAB path, then defaults to hereditary monarchs
+		name = "Elect Archduke Ernest of Austria"
+		trigger = { 
+			NOT = {
+				war = { country = POL country = HAB }
+			}
+		}
+		command = { type = dynastic which = HAB }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = TRA value = -50 }
+		command = { type = relation which = RUS value = -50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = fortress which = -1 value = 1 }
+		command = { type = provincetax which = -3 value = 2 }
+		command = { type = land value = 500 }
+		command = { type = domestic which = OFFENSIVE value = -1 }
+		command = { type = wakemonarch which = 04161 }
+		command = { type = stability value = -1 }
+	}
+
+	action_d ={ # Elect Prince Feodor of Russia # -- pro-RUS path, then defaults to hereditary monarchs
+		name = "Elect Prince Feodor of Russia"
+		trigger = { 
+			NOT = {
+				war = { country = POL country = RUS }
+			}
+		}
+		command = { type = dynastic which = RUS }
+		command = { type = relation which = RUS value = 100 }
+		command = { type = relation which = TRA value = -50 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = manpower value = 15 }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = CAV which = -4 value = 5000 }
+		command = { type = domestic which = QUALITY value = -1 }
+		command = { type = wakemonarch which = 04163 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#The Polish Succession of 1587# -- historical election following the death of King Stephen Báthory
+event = {
+	id = 3769
+	trigger = {
+		monarch = 04118
+	}
+	random = no
+	country = POL
+	name = "The Polish Succession of 1587"
+	desc = "The 1587 royal election in Poland-Lithuania was called following the death of King Stephen Báthory and was marked by intense political maneuvering and foreign influence - particularly from the Habsburg court in Vienna, who lobbied heavily for the Emperor's younger brother Maximilian. The election ultimately resulted in the selection of Sigismund Vasa, a Swedish prince and grandson of Sigismund I 'the Old' of Poland, as the new monarch. Sigismund's election was significant because it marked the beginning of the Vasa dynasty's rule in the Commonwealth, which would last for over half a century. His reign would be characterized by conflicts between Catholics and Protestants, and tensions between the monarchy and the powerful Lithuanian nobility, contributing to the immense challenges faced by the Commonwealth during this period."
+
+	style = "3769"
+
+	date = { day = 11 month = december year = 1586 }
+	
+	action_a ={ # Elect the Vasas # -- historical path, leads to other historical elections
+		name = "Elect the Vasas"
+		command = { type = dynastic which = SWE }
+		command = { type = relation which = SWE value = 100 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = wakemonarch which = 04119 }
+		command = { type = wakemonarch which = 04120 }
+		command = { type = wakemonarch which = 04121 }
+		command = { type = sleepmonarch which = 04134 }
+		command = { type = sleepmonarch which = 04135 }
+		command = { type = sleepmonarch which = 04136 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={ # Elect Archduke Maximilian of Austria # -- pro-HAB path, then defaults to hereditary monarchs
+		name = "Elect Archduke Maximilian of Austria"
+		trigger = { 
+			NOT = {
+				war = { country = POL country = HAB }
+			}
+		}
+		command = { type = dynastic which = HAB }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = SWE value = -50 }
+		command = { type = wakemonarch which = 04162 }
+		command = { type = sleepmonarch which = 04134 }
+		command = { type = sleepleader which = 09465 } # Zygmunt III
+		command = { type = religion which = counterreform }
+		command = { type = treasury value = 500 }
+		command = { type = domestic which = MERCANTILISM value = 2 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -4 }
+		command = { type = missionaries value = 6 }
+		command = { type = stability value = -3 }
+	}
+}
+
+#The Polish Succession of 1669# -- historical election following the abdication of King John II Casimir
+event = {
+	id = 3770
+	trigger = {
+		monarch = 04121
+	}
+	random = no
+	country = POL
+	name = "The Polish Succession of 1669"
+	desc = "EVENTHIST3770"
+
+	style = "3770"
+
+	date = { day = 15 month = september year = 1668 }
+	
+	action_a ={ # Elect Michael Korybut # -- historical path, leads to other historical elections
+		name = "Elect Michael Korybut"
+		command = { type = breakvassal which = SWE } # just in case
+		command = { type = relation which = SWE value = 50 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = BRA value = -50 }
+		command = { type = wakemonarch which = 04122 }
+		command = { type = sleepmonarch which = 04137 }
+		command = { type = inflation value = -2 }
+		command = { type = diplomats value = 3 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={ # Elect Prince Louis of Condé # -- pro-FRA path, then defaults to hereditary monarchs
+		name = "Elect Prince Louis of Condé"
+		trigger = { 
+			NOT = {
+				war = { country = POL country = FRA }
+			}
+		}
+		command = { type = breakvassal which = SWE } # just in case
+		command = { type = dynastic which = FRA }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = INF which = -2 value = 5000 }
+		command = { type = ART which = -2 value = 20 }
+		command = { type = land value = 500 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = gainmanufactory which = -1 value = weapons }
+		command = { type = wakemonarch which = 04164 }
+		command = { type = wakeleader which = 2163 } # Ludwik I
+		command = { type = sleepmonarch which = 04137 }
+		command = { type = sleepleader which = 09009 } # de Condé (FRA)
+		command = { type = stability value = -2 }
+	}
+
+	action_c ={ # Elect Frederick William of Brandenburg # -- pro-BRA path, then defaults to hereditary monarchs
+		name = "Elect Frederick William of Brandenburg"
+		trigger = { 
+			NOT = {
+				war = { country = POL country = BRA }
+			}
+		}
+		command = { type = breakvassal which = SWE } # just in case
+		command = { type = dynastic which = BRA }
+		command = { type = relation which = BRA value = 100 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = infra value = 1000 }
+		command = { type = gainmanufactory which = -1 value = goods }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = wakemonarch which = 04165 }
+		command = { type = sleepmonarch which = 04137 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#The Polish Succession of 1674# -- historical election following the death of King Michael Korybut
+event = {
+	id = 3800
+	trigger = {
+		monarch = 04122
+	}
+	random = no
+	country = POL
+	name = "The Polish Succession of 1674"
+	desc = "EVENTHIST3800"
+
+	style = "3800"
+
+	date = { day = 9 month = november year = 1673 }
+	
+	action_a ={ # Elect John Sobieski # -- historical path, leads to other historical elections
+		name = "Elect John Sobieski"
+		command = { type = relation which = -12 value = 50 }
+		command = { type = relation which = -4 value = 50 }
+		command = { type = relation which = -4 value = 50 }
+		command = { type = relation which = -4 value = 50 }
+		command = { type = relation which = -4 value = 50 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = treasury value = 300 }
+		command = { type = wakemonarch which = 04123 }
+		command = { type = wakeleader which = 09483 } # Jan III Sobieski
+		command = { type = sleepmonarch which = 05937 }
+		command = { type = stability value = 3 }
+	}
+
+	action_b ={ # Elect Prince Louis of Condé # -- pro-FRA path, then defaults to hereditary monarchs
+		name = "Elect Prince Louis of Condé"
+		trigger = { 
+			NOT = {
+				war = { country = POL country = FRA }
+			}
+		}
+		command = { type = dynastic which = FRA }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = DAN value = -100 }
+		command = { type = INF which = -2 value = 5000 }
+		command = { type = ART which = -2 value = 20 }
+		command = { type = land value = 500 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = gainmanufactory which = -1 value = weapons }
+		command = { type = wakemonarch which = 04164 }
+		command = { type = wakeleader which = 2163 } # Ludwik I
+		command = { type = sleepleader which = 09009 } # de Condé (FRA)
+		command = { type = stability value = -2 }
+	}
+
+	action_c ={ # Elect Prince George of Denmark # -- pro-DAN path, then defaults to hereditary monarchs
+		name = "Elect Prince George of Denmark"
+		trigger = { 
+			NOT = {
+				war = { country = POL country = DAN }
+			}
+		}
+		command = { type = dynastic which = DAN }
+		command = { type = relation which = DAN value = 100 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = naval value = 1000 }
+		command = { type = trade value = 1000 }
+		command = { type = givetrade which = DAN }
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = gainmanufactory which = -1 value = navalequipment }
+		command = { type = merchants value = 6 }
+		command = { type = wakemonarch which = 04166 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#The Polish Succession of 1697# -- historical election following the death of King John III Sobieski
+event = {
+
+	id = 3486
+	trigger = {
+		monarch = 04123
+	}
+	random = no
+	country = POL
+	name = "The Polish Succession of 1697"
+	desc = "The political sickness of the Polish body manifested itself fully after the death of John III Sobieski in 1696. The election that followed was one of the most dismal episodes in Polish parliamentary history. The primary candidates were the king's son, James Sobieski, Friedrich Augustus Wettin, the Elector of Saxony, and François Louis de Bourbon, the Prince of Conti."
+
+	style = "3486"
+
+	date = { day = 16 month = june year = 1696 }
+
+	action_a ={ #Elect Augustus the Strong of Saxony# -- historical path, leads to other historical elections
+		name = "Elect Augustus the Strong of Saxony"
+		trigger = { 
+			NOT = {
+				war = { country = POL country = SAC }
+			}
+		}
+		command = { type = trigger which = 3627 }
+		command = { type = wakemonarch which = 04124 }
+		command = { type = stability value = -2 }
+		command = { type = revoltrisk  which = 12 value = 2 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -4 value = 5000 }
+		command = { type = desertion which = -4 value = 5000 }
+		command = { type = relation which = SAC value = 100 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = dynastic which = SAC }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = LAND value = -5 }
+	}
+
+	action_b ={ #Elect the Princes of Conti# -- pro-FRA path, get Contis for rest of the game
+		name = "Elect the Princes of Conti"
+		trigger = { 
+			NOT = {
+				war = { country = POL country = FRA }
+			}
+		}
+		command = { type = trigger which = 3734 }
+		command = { type = wakemonarch which = 04131 }
+		command = { type = wakemonarch which = 04132 }
+		command = { type = wakemonarch which = 04138 }
+		command = { type = wakemonarch which = 04160 }
+		command = { type = wakemonarch which = 05935 }
+		command = { type = stability value = -4 }
+		command = { type = revoltrisk  which = 12 value = 6 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -4 value = 5000 }
+		command = { type = desertion which = -4 value = 5000 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = dynastic which = FRA }
+		command = { type = domestic which = CENTRALIZATION value = -3 }
+		command = { type = domestic which = LAND value = -3 }
+	}
+
+	action_c ={ #Elect James Sobieski and the Stuarts# -- plausible Jacobite path, get Stuarts for rest of the game
+		name = "Elect James Sobieski and the Stuarts"
+		trigger = { 
+			NOT = {
+				ENG = { monarch = 04046 }
+			}
+		}
+		command = { type = trigger which = 4112 }
+		command = { type = wakemonarch which = 04129 }
+		command = { type = wakemonarch which = 04130 }
+		command = { type = wakemonarch which = 05933 }
+		command = { type = wakemonarch which = 05934 }
+		command = { type = sleepevent which = 3495 }
+		command = { type = sleepevent which = 3242 }
+		command = { type = stability value = 2 }
+		command = { type = revoltrisk  which = 12 value = 3 }
+		command = { type = desertion which = -1 value = 10000 }
+		command = { type = desertion which = -4 value = 10000 }
+		command = { type = desertion which = -4 value = 10000 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = SAC value = -150 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = RUS value = -150 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = LAND value = 1 }
+	}
+
+	action_d ={ # Allow the Sejm to govern directly # -- Selm rule the country directly, no more elections
+		name = "Allow the Sejm to govern directly"
+		command = { type = wakemonarch which = 05936 }
+		command = { type = treasury value = 500 }
+		command = { type = breakvassal which = -1 }
+		command = { type = domestic which = ARISTOCRACY value = -3 }
+		command = { type = domestic which = CENTRALIZATION value = -4 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = stability value = -3 }
+	}
+}
+
+#The Polish Succession of 1733# -- historical election following the death of King Augustus II
+event = {
+
+	id = 3495
+	trigger = {
+		monarch = 04124
+	}
+	random = no
+	country = POL
+	name = "The Polish Succession of 1733"
+	desc = "In 1733, the death of August II prompted a new election for the Polish monarch. Due to the permanent practice of Liberum Veto and the ensuing constant bribery, the Polish Sejm was unable to agree between the French Candidate, Stanislas Leszinsky and his opponent, August III of Saxony, supported by Austria and Russia. The Sejm finally agreed on Stanislas, but this was rejected by Austria and Russia starting the war of Polish Succession. The war ended with August III on the Polish throne."
+
+	style = "3495"
+
+	date = { day = 30 month = january year = 1733 }
+
+	action_a ={ #Elect Frederick Augustus of Saxony# -- historical path, leads to other historical elections
+		name = "Elect Frederick Augustus of Saxony"
+		trigger = { 
+			NOT = {
+				war = { country = POL country = SAC }
+			}
+		}
+		command = { type = trigger which = 3628 }
+		command = { type = trigger which = 3136 }
+		command = { type = relation which = POR value = -50 }
+		command = { type = wakemonarch which = 04127 }
+		command = { type = stability value = -3 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = MERCANTILISM value = 1 }
+		command = { type = domestic which = LAND value = -3 }
+	}
+
+	action_b ={ #Elect Stanislas Leszczynski# -- semi-historical path, then defaults to the Sejm
+		name = "Elect Stanislas Leszczynski"
+		command = { type = breakvassal which = SAC } # just in case
+		command = { type = trigger which = 3136 }
+		command = { type = trigger which = 3626 }
+		command = { type = trigger which = 3632 }
+		command = { type = relation which = POR value = -50 }
+		command = { type = wakemonarch which = 04125 }
+		command = { type = wakemonarch which = 05949 }
+		command = { type = stability value = -4 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = MERCANTILISM value = 1 }
+		command = { type = domestic which = LAND value = -1 }
+	}
+
+	action_c ={ #Elect Infante Manuel of Portugal# -- pro-POR path, then defaults to the Sejm
+		name = "Elect Infante Manuel of Portugal"
+		trigger = { 
+			NOT = {
+				war = { country = POL country = POR }
+			}
+		}
+		command = { type = breakvassal which = SAC } # just in case
+		command = { type = dynastic which = POR }
+		command = { type = relation which = POR value = 100 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = naval value = 1000 }
+		command = { type = trade value = 1000 }
+		command = { type = givetrade which = POR }
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = gainmanufactory which = -1 value = navalequipment }
+		command = { type = merchants value = 6 }
+		command = { type = wakemonarch which = 04167 }
+		command = { type = wakemonarch which = 05949 }
+		command = { type = stability value = -1 }
+	}
+
+	action_d ={ # Allow the Sejm to govern directly # -- Selm rule the country directly, no more elections
+		name = "Allow the Sejm to govern directly"
+		command = { type = wakemonarch which = 05936 }
+		command = { type = treasury value = 500 }
+		command = { type = breakvassal which = -1 }
+		command = { type = domestic which = ARISTOCRACY value = -3 }
+		command = { type = domestic which = CENTRALIZATION value = -4 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = stability value = -3 }
+	}
+}
+
+#The Polish Succession of 1764# -- historical election following the death of King Augustus III
+event = {
+	id = 4100
+	trigger = {
+		monarch = 04127
+	}
+	random = no
+	country = POL
+	name = "The Polish Succession of 1764"
+	desc = "EVENTHIST4100"
+
+	style = "4100"
+
+	date = { day = 4 month = october year = 1763 }
+	
+	action_a ={ # Elect Stanislaw Poniatowski # -- historical path, not many effects as gets his own event shortly after (POL_3494)
+		name = "Elect Stanislaw Poniatowski"
+		command = { type = breakvassal which = SAC } # just in case
+		command = { type = relation which = HAB value = 50 }
+		command = { type = relation which = PRU value = 50 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = wakemonarch which = 04128 }
+		command = { type = wakemonarch which = 05948 }
+		command = { type = stability value = 1 }
+	}
+
+	action_b ={ # Elect the Wettins # -- pro-SAC path, get Wettins for rest of the game
+		name = "Elect the Wettins"
+		trigger = { 
+			NOT = {
+				war = { country = POL country = SAC }
+			}
+		}
+		command = { type = dynastic which = SAC }
+		command = { type = relation which = SAC value = 100 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = PRU value = -50 }
+		command = { type = relation which = RUS value = -50 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = wakemonarch which = 04168 }
+		command = { type = wakemonarch which = 04169 }
+		command = { type = wakemonarch which = 04126 }
+		command = { type = trigger which = 4111 }
+		command = { type = stability value = -2 }
+	}
+
+	action_c ={ # Allow the Sejm to govern directly # -- Selm rule the country directly, no more elections
+		name = "Allow the Sejm to govern directly"
+		command = { type = wakemonarch which = 05936 }
+		command = { type = treasury value = 500 }
+		command = { type = breakvassal which = -1 }
+		command = { type = domestic which = ARISTOCRACY value = -3 }
+		command = { type = domestic which = CENTRALIZATION value = -4 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = stability value = -3 }
+	}
+}
+
+#The Polish Succession of 1690# -- fictional election following the death of Queen Christina
+event = {
+	id = 4105
+	trigger = {
+		monarch = 04137
+	}
+	random = no
+	country = POL
+	name = "The Polish Succession of 1690"
+	desc = "EVENTHIST4105"
+
+	style = "4105"
+
+	date = { day = 18 month = april year = 1689 }
+	
+	action_a ={ # Elect the Stuarts # -- plausible Jacobite path, get Stuarts for rest of the game
+		name = "Elect the Stuarts"
+		trigger = { 
+			NOT = {
+				ENG = { monarch = 04046 }
+			}
+		}
+		command = { type = breakvassal which = SWE } # just in case
+		command = { type = relation which = ENG value = -150 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = wakemonarch which = 05939 }
+		command = { type = wakemonarch which = 05940 }
+		command = { type = wakemonarch which = 05941 }
+		command = { type = wakemonarch which = 05933 }
+		command = { type = wakemonarch which = 05934 }
+		command = { type = wakeleader which = 2164 } # Jakub I Stuart
+		command = { type = sleepmonarch which = 05937 }
+		command = { type = trigger which = 4109 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={ # Elect the Wettins # -- pro-SAC path, get Wettins until historical 1764 election (POL_4100)
+		name = "Elect the Wettins"
+		trigger = { 
+			NOT = {
+				war = { country = POL country = SAC }
+			}
+		}
+		command = { type = breakvassal which = SWE } # just in case
+		command = { type = dynastic which = SAC }
+		command = { type = relation which = SAC value = 100 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = wakemonarch which = 05938 }
+		command = { type = wakemonarch which = 04127 }
+		command = { type = sleepmonarch which = 05937 }
+		command = { type = trigger which = 4110 }
+		command = { type = stability value = -2 }
+	}
+
+	action_c ={ # Allow the Sejm to govern directly # -- Selm rule the country directly, no more elections
+		name = "Allow the Sejm to govern directly"
+		command = { type = treasury value = 500 }
+		command = { type = breakvassal which = -1 }
+		command = { type = domestic which = ARISTOCRACY value = -3 }
+		command = { type = domestic which = CENTRALIZATION value = -4 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = stability value = -3 }
+	}
+}
+
+#The Polish Succession of 1590# -- fictional election following the death of King Henry of Valois if he didn't abdicate earlier
+event = {
+	id = 4106
+	trigger = {
+		monarch = 04117
+	}
+	random = no
+	country = POL
+	name = "The Polish Succession of 1590"
+	desc = "EVENTHIST4106"
+
+	style = "4106"
+
+	date = { day = 1 month = august year = 1589 }
+
+	action_a ={ # Elect the Vasas # -- pro-SWE path, get Vasas until historical 1669 election (POL_3770)
+		name = "Elect the Vasas"
+		trigger = { 
+			NOT = {
+				war = { country = POL country = SWE }
+			}
+		}
+		command = { type = dynastic which = SWE }
+		command = { type = relation which = SWE value = 100 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = wakemonarch which = 04119 }
+		command = { type = wakemonarch which = 04120 }
+		command = { type = wakemonarch which = 04121 }
+		command = { type = sleepmonarch which = 04134 }
+		command = { type = sleepmonarch which = 04135 }
+		command = { type = sleepmonarch which = 04136 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={ # Elect Archduke Maximilian of Austria # -- pro-HAB path, then defaults to hereditary monarchs
+		name = "Elect Archduke Maximilian of Austria"
+		trigger = { 
+			NOT = {
+				war = { country = POL country = HAB }
+			}
+		}
+		command = { type = dynastic which = HAB }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = SWE value = -50 }
+		command = { type = wakemonarch which = 04162 }
+		command = { type = sleepmonarch which = 04134 }
+		command = { type = sleepleader which = 09465 } # Zygmunt III
+		command = { type = religion which = counterreform }
+		command = { type = treasury value = 500 }
+		command = { type = domestic which = MERCANTILISM value = 2 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -4 }
+		command = { type = missionaries value = 6 }
+		command = { type = stability value = -3 }
+	}
+
+	action_c ={ # Maintain the union with France # -- pro-FRA path, get Bourbons for rest of the game
+		name = "Maintain the union with France"
+		trigger = { 
+			NOT = {
+				war = { country = POL country = FRA }
+			}
+		}
+		command = { type = dynastic which = FRA }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = SWE value = -150 }
+		command = { type = relation which = HAB value = -150 }
+		command = { type = wakemonarch which = 05942 }
+		command = { type = wakemonarch which = 05943 }
+		command = { type = wakemonarch which = 05944 }
+		command = { type = wakemonarch which = 05945 }
+		command = { type = wakemonarch which = 05946 }
+		command = { type = wakemonarch which = 05947 }
+		command = { type = sleepmonarch which = 04134 }
+		command = { type = sleepmonarch which = 04135 }
+		command = { type = sleepmonarch which = 04136 }
+		command = { type = sleepmonarch which = 04137 }
+		command = { type = sleepmonarch which = 05937 }
+		command = { type = sleepleader which = 09465 } # Zygmunt III
+		command = { type = sleepleader which = 09471 } # Wladyslaw IV
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = QUALITY value = 2 }
+		command = { type = technology which = latin }
+		command = { type = land value = 1500 }
+		command = { type = infra value = 1500 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = stability value = -4 }
+		command = { type = trigger which = 4107 }
+	}
+
+	action_d ={ # Allow the Sejm to govern directly # -- Selm rule the country directly, no more elections
+		name = "Allow the Sejm to govern directly"
+		command = { type = wakemonarch which = 05936 }
+		command = { type = sleepmonarch which = 04134 }
+		command = { type = sleepmonarch which = 04135 }
+		command = { type = sleepmonarch which = 04136 }
+		command = { type = sleepmonarch which = 04137 }
+		command = { type = sleepmonarch which = 05937 }
+		command = { type = sleepleader which = 09465 } # Zygmunt III
+		command = { type = sleepleader which = 09471 } # Wladyslaw IV
+		command = { type = treasury value = 500 }
+		command = { type = breakvassal which = -1 }
+		command = { type = domestic which = ARISTOCRACY value = -3 }
+		command = { type = domestic which = CENTRALIZATION value = -4 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = stability value = -3 }
+	}
+}
+
+#Catholics expelled from France#
+event = {
+
+	id = 4154					#Triggered by FRA3129#
+	trigger = {
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+	}
+	random = no
+	country = POL
+	name = "Catholics expelled from France"
+	desc = "On April 13th, 1598 Henri IV issued the Edict of Nantes, a new law granting French Catholics a large degree of religious toleration. Almost a hundred years later his grandson Louis XIV, a radical Huguenot puritan striving for complete religious and political unity within France, viewed the coexistence of the Calvinist and Roman churches as a potential catalyst for renewed civil war. Having already encouraged the persecution of France's Catholics for over a decade, in October 1685 Louis issued the Edict of Fontainebleau - essentially a complete revocation of his grandfather's Edict of Nantes. Within a few years, more than half a million Catholics had fled to Spain, Poland and the Habsburg dominions across Germany and Italy, thereby depriving France of her traditional artisan class."
+
+	action_a ={				#We welcome you with open arms#
+		name = "We welcome you with open arms"
+		command = { type = populationpercent which = -1 value = 10 }
+		command = { type = provincetax which = -3 value = 1 }
+		command = { type = populationpercent which = -4 value = 10 }
+		command = { type = provincetax which = -3 value = 1 }
+		command = { type = populationpercent which = -4 value = 10 }
+		command = { type = provincetax which = -3 value = 1 }
+		command = { type = populationpercent which = -4 value = 10 }
+		command = { type = provincetax which = -3 value = 1 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#The Warsaw Confederation#
+event = {
+	id = 4181
+	trigger = {
+		domestic = {
+			type = INNOVATIVE
+			value = 5
+		}
+	}
+	random = no
+	country = POL
+	name = "The Warsaw Confederation"
+	desc = "EVENTHIST4181"
+
+	date = { day = 1 month = january year = 1573 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1583 }
+
+	action_a ={			# Grant religious tolerance
+		name = "Grant religious tolerance"
+		trigger = { 
+			NOT = { religion = counterreform }
+		}
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 3 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = revoltrisk which = 60 value = 6 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -4 value = 2500 }
+		command = { type = desertion which = -4 value = 2500 }
+		command = { type = ADM which = 2 value = 120 }
+		command = { type = DIP which = -2 value = 120 }
+		command = { type = infra value = 400 }
+		command = { type = stability value = -2 }
+	}
+
+	action_b ={			# Crack down on regional heresy
+		name = "Crack down on regional heresy"
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -3 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = revoltrisk which = 120 value = 3 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = religiousrevolt which = -4 }
+		command = { type = DIP which = 2 value = 120 }
+		command = { type = ADM which = -2 value = 120 }
+		command = { type = missionaries value = 3 }
+		command = { type = treasury value = 200 }
+		command = { type = stability value = -1 }
+	}
+}

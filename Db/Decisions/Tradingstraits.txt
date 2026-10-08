@@ -1,0 +1,307 @@
+#Gibralter
+
+decision = {
+	id = 6100
+	major = no
+	unique = yes
+	potential = {
+	OR = {
+		owned = { province = 445 data = -1 }
+		owned = { province = 732 data = -1 }
+		}
+	NOT = {
+		decision = 6101
+		}
+	}
+	trigger = {
+		owned = { province = 445 data = -1 }
+		owned = { province = 732 data = -1 }
+		domestic = { type = mercantilism value = 7 }
+	}
+	ai_trigger = {
+	}
+
+	name = "Tax all trade through Gibralter Strait"
+	desc = "With control of the Gibralter Strait a nation could greatly influence the
+traffic of trade and merchants that passed from the Mediterranean Sea into the Atlantic 
+Ocean. Nations could profit greatly from the strategic importance of these straits."
+
+	action = {
+		command = { type = merchants value = -2 }
+		command = { type = naval value = 200 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = provincetax which = -2 value = 2 }
+		command = { type = treasury value = 100 }
+	}
+}
+
+decision = {
+	id = 6101
+	major = no
+	unique = yes
+	potential = {
+	OR = {
+		owned = { province = 445 data = -1 }
+		owned = { province = 732 data = -1 }
+		}
+	NOT = {
+		decision = 6100
+		}
+	}
+	trigger = {
+		owned = { province = 445 data = -1 }
+		owned = { province = 732 data = -1 }
+	NOT = {
+		domestic = { type = mercantilism value = 4 }
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Allow Free Trade through Gibralter Strait"
+	desc = "With control of the Gibralter Strait a nation could greatly influence the
+traffic of trade and merchants that passed from the Mediterranean Sea into the Atlantic 
+Ocean. Nations could profit greatly from the strategic importance of these straits."
+
+	action = {
+		command = { type = merchants value = 2 }
+		command = { type = relation which = -1 value = 20 }
+		command = { type = relation which = -1 value = 20 }
+		command = { type = relation which = -1 value = 20 }
+		command = { type = trade value = 200 }
+		command = { type = provincetax which = 445 value = 1 }
+		command = { type = provincetax which = 732 value = 1 }
+	}
+}
+
+#Bosphoros
+
+decision = {
+	id = 6102
+	major = no
+	unique = yes
+	potential = {
+	OR = {
+		owned = { province = 357 data = -1 }
+		owned = { province = 478 data = -1 }
+		}
+	NOT = {
+		decision = 6103
+		}
+	}
+	trigger = {
+		owned = { province = 357 data = -1 }
+		owned = { province = 478 data = -1 }
+		domestic = { type = mercantilism value = 7 }
+	}
+	ai_trigger = {
+	}
+
+	name = "Tax all trade through Bosporus"
+	desc = "With control of the Bosporus Strait a nation could greatly influence the
+traffic of trade and merchants that passed from the Mediterranean Sea into the Black Sea. 
+Nations could profit greatly from the strategic importance of these straits."
+
+	action = {
+		command = { type = merchants value = -2 }
+		command = { type = naval value = 200 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = provincetax which = -2 value = 2 }
+		command = { type = treasury value = 100 }
+	}
+}
+
+decision = {
+	id = 6103
+	major = no
+	unique = yes
+	potential = {
+	OR = {
+		owned = { province = 357 data = -1 }
+		owned = { province = 478 data = -1 }
+		}
+	NOT = {
+		decision = 6102
+		}
+	}
+	trigger = {
+		owned = { province = 357 data = -1 }
+		owned = { province = 478 data = -1 }
+	NOT = {
+		domestic = { type = mercantilism value = 4 }
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Allow Free Trade through Bosporus"
+	desc = "With control of the Bosporus Strait a nation could greatly influence the
+traffic of trade and merchants that passed from the Mediterranean Sea into the Black Sea. 
+Nations could profit greatly from the strategic importance of these straits."
+
+	action = {
+		command = { type = merchants value = 2 }
+		command = { type = relation which = -1 value = 20 }
+		command = { type = relation which = -1 value = 20 }
+		command = { type = relation which = -1 value = 20 }
+		command = { type = trade value = 200 }
+		command = { type = provincetax which = 357 value = 1 }
+		command = { type = provincetax which = 478 value = 1 }
+	}
+}
+
+#dardanelles
+
+decision = {
+	id = 6104
+	major = no
+	unique = yes
+	potential = {
+	OR = {
+		owned = { province = 357 data = -1 }
+		owned = { province = 477 data = -1 }
+		}
+	NOT = {
+		decision = 6105
+		}
+	}
+	trigger = {
+		owned = { province = 357 data = -1 }
+		owned = { province = 477 data = -1 }
+		domestic = { type = mercantilism value = 7 }
+	}
+	ai_trigger = {
+	}
+
+	name = "Tax all trade through Dardanelles"
+	desc = "With control of the Dardanelles a nation could greatly influence the
+traffic of trade and merchants that passed from the Mediterranean Sea into the Black Sea. 
+Nations could profit greatly from the strategic importance of these straits."
+
+	action = {
+		command = { type = merchants value = -2 }
+		command = { type = naval value = 200 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = provincetax which = -2 value = 2 }
+		command = { type = treasury value = 100 }
+	}
+}
+
+decision = {
+	id = 6105
+	major = no
+	unique = yes
+	potential = {
+	OR = {
+		owned = { province = 357 data = -1 }
+		owned = { province = 477 data = -1 }
+		}
+	NOT = {
+		decision = 6104
+		}
+	}
+	trigger = {
+		owned = { province = 357 data = -1 }
+		owned = { province = 477 data = -1 }
+	NOT = {
+		domestic = { type = mercantilism value = 4 }
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Allow Free Trade through Dardanelles"
+	desc = "With control of the Dardanelles a nation could greatly influence the
+traffic of trade and merchants that passed from the Mediterranean Sea into the Black Sea. 
+Nations could profit greatly from the strategic importance of these straits."
+
+	action = {
+		command = { type = merchants value = 2 }
+		command = { type = relation which = -1 value = 20 }
+		command = { type = relation which = -1 value = 20 }
+		command = { type = relation which = -1 value = 20 }
+		command = { type = trade value = 200 }
+		command = { type = provincetax which = 357 value = 1 }
+		command = { type = provincetax which = 477 value = 1 }
+	}
+}
+
+#sund
+
+decision = {
+	id = 6106
+	major = no
+	unique = yes
+	potential = {
+	OR = {
+		owned = { province = 307 data = -1 }
+		owned = { province = 251 data = -1 }
+		}
+	NOT = {
+		decision = 6107
+		}
+	}
+	trigger = {
+		owned = { province = 307 data = -1 }
+		owned = { province = 251 data = -1 }
+		domestic = { type = mercantilism value = 7 }
+	}
+	ai_trigger = {
+	}
+
+	name = "Tax all trade through the Sound"
+	desc = "With control of the Sound a nation could greatly influence the
+traffic of trade and merchants that passed from the North Sea into the Baltic Sea. 
+Nations could profit greatly from the strategic importance of these straits."
+
+	action = {
+		command = { type = merchants value = -2 }
+		command = { type = naval value = 200 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = relation which = -1 value = -20 }
+		command = { type = provincetax which = -2 value = 2 }
+		command = { type = treasury value = 100 }
+	}
+}
+
+decision = {
+	id = 6107
+	major = no
+	unique = yes
+	potential = {
+	OR = {
+		owned = { province = 307 data = -1 }
+		owned = { province = 251 data = -1 }
+		}
+	NOT = {
+		decision = 6106
+		}
+	}
+	trigger = {
+		owned = { province = 307 data = -1 }
+		owned = { province = 251 data = -1 }
+	NOT = {
+		domestic = { type = mercantilism value = 4 }
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Allow Free Trade through the Sound"
+	desc = "With control of the Sound a nation could greatly influence the
+traffic of trade and merchants that passed from the North Sea into the Baltic Sea. 
+Nations could profit greatly from the strategic importance of these straits."
+
+	action = {
+		command = { type = merchants value = 2 }
+		command = { type = relation which = -1 value = 20 }
+		command = { type = relation which = -1 value = 20 }
+		command = { type = relation which = -1 value = 20 }
+		command = { type = trade value = 200 }
+		command = { type = provincetax which = 307 value = 1 }
+		command = { type = provincetax which = 251 value = 1 }
+	}
+}

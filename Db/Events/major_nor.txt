@@ -1,0 +1,44 @@
+#####Norway Major Events#####
+#	By		    #
+#			    #
+# Henrik 'Doomdark' Fåhraeus#
+##############################
+
+
+# End of the Kalmar Union #
+event = {
+	id = 3846
+	
+	# Triggered by SWE 3219 or 3234
+	
+	random = no
+	country = NOR
+	name = "EVENTNAME3846"
+	desc = "EVENTHIST3846"
+
+	action_a = { # Autonomy is unnecessary
+		name = "ACTIONNAME3846A"
+		trigger = { 
+			ai = yes
+		}
+		command = { type = trigger which = 5848 } # Inherited by Denmark
+	}
+	action_b = { # Limited autonomy is best
+		name = "ACTIONNAME3846B"
+		command = { type = relation which = DAN value = 100 }
+		command = { type = relation which = SWE value = -50 }
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = stability value = 2 }
+	}
+	action_c = { # Walk our own path
+		name = "ACTIONNAME3846C"
+		command = { type = breakvassal which = DAN }
+		command = { type = trigger which = 3847 } # DAN: Norway Declares Independence
+		command = { type = relation which = DAN value = -150 }
+		command = { type = relation which = SWE value = 80 }
+		command = { type = stability value = -7 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+	}
+}

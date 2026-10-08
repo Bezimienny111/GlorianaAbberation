@@ -1,0 +1,222 @@
+#-----------------------------------------------------------------------------
+# Bulgarian Events
+
+#(1430-1820) The Bulgar Question
+event = {
+	id = 3001168
+	trigger = {
+		NOT = { war = { country = BUL country = BYZ } }
+		owned = { province = 320 data = -1 } #Dobrudja
+		owned = { province = 321 data = -1 } #Rumelia
+		owned = { province = 356 data = -1 } #Bulgaria
+		owned = { province = 357 data = -1 } #Thrace
+		owned = { province = 358 data = -1 } #Macedonia
+		owned = { province = 360 data = -1 } #Morea
+	}
+	random = NO
+	country = BYZ
+	name = "The Bulgar Question"
+	desc = "When the Byzantine army first overran the Turk's holdings in Europe, the Greek nobles divided the spoils among themselves. Now, the former Bulgarian lords have appealed to the Emperor to be restored to their lands. They say that the Bulgars will not accept absent and foreign nobles, and they're probably right. They also humbly ask to have their independent, autocephalous church restored, with Bulgar priests, bishops and services."
+
+	date = { day = 1 month = january year = 1430 }
+	offset = 1800 #5 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "They may have their lands, but the church is one!"
+		command = { type = revolt which = 356 } #Bulgaria
+		command = { type = religiousrevolt which = 320 } #Dobrudja
+		command = { type = religiousrevolt which = 321 } #Rumelia
+		command = { type = religiousrevolt which = 356 } #Bulgaria
+		command = { type = relation which = SER value = -100 } #Other orthodox countries with autoceph. churches
+		command = { type = relation which = GEO value = -100 }
+		command = { type = sleepevent which = 3001169 } #BYZ: Bulgarian Resistance
+		command = { type = sleepevent which = 3001170 } #BYZ: The Bulgars are Assimilated I
+		command = { type = sleepevent which = 3001171 } #BYZ: The Bulgars are Assimilated II
+		command = { type = sleepevent which = 3001172 } #BYZ: Bulgarian Uprising
+	}
+	action_b = {
+		name = "There is but one church and one empire!"
+		command = { type = stability value = 1 }
+		command = { type = revolt which = 320 } #Dobrudja
+		command = { type = revolt which = 321 } #Rumelia
+		command = { type = revolt which = 356 } #Bulgaria
+		command = { type = religiousrevolt which = 320 } #Dobrudja
+		command = { type = religiousrevolt which = 321 } #Rumelia
+		command = { type = religiousrevolt which = 356 } #Bulgaria
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = relation which = SER value = -200 } #Other orthodox countries with autoceph. churches
+		command = { type = relation which = GEO value = -100 } #they see where this is headed...
+		command = { type = relation which = ALB value = -100 }
+		command = { type = relation which = WAL value = -100 }
+		command = { type = relation which = MOL value = -100 }
+		command = { type = sleepevent which = 3001171 } #BYZ: The Bulgars are Assimilated II
+		command = { type = sleepevent which = 3001172 } #BYZ: Bulgarian Uprising
+		command = { type = sleepevent which = 3001424 } #BYZ: American Shadows over Bulgaria
+		command = { type = sleepevent which = 3001432 } #BYZ: French Shadows over Bulgaria
+	}
+	action_c = {
+		name = "I love Church Slavonic!"
+		command = { type = revolt which = 357 } #Thrace
+		command = { type = revolt which = 360 } #Morea
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = stability value = -2 }
+		command = { type = relation which = SER value = 100 } #Other orthodox countries with autoceph. churches
+		command = { type = relation which = GEO value = 100 }
+		command = { type = sleepevent which = 3001169 } #BYZ: Bulgarian Resistance
+		command = { type = sleepevent which = 3001170 } #BYZ: The Bulgars are Assimilated I
+		command = { type = sleepevent which = 3001424 } #BYZ: American Shadows over Bulgaria
+		command = { type = sleepevent which = 3001432 } #BYZ: French Shadows over Bulgaria
+	}
+	action_d = {
+		name = "We need more armies!"
+		command = { type = stability value = -2 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = independence which = BUL }
+		command = { type = vassal which = BUL }
+		command = { type = dynastic which = BUL }
+		command = { type = alliance which = BUL }
+		command = { type = relation which = BUL value = 300 }
+		command = { type = revolt which = 358 } #Macedonia
+		command = { type = revolt which = -1 }
+		command = { type = relation which = SER value = 200 } #Other orthodox countries with autoceph. churches
+		command = { type = relation which = GEO value = 100 } #they see where this is headed...
+		command = { type = relation which = ALB value = 100 }
+		command = { type = relation which = WAL value = 100 }
+		command = { type = relation which = MOL value = 100 }
+		command = { type = sleepevent which = 3001169 } #BYZ: Bulgarian Resistance
+		command = { type = sleepevent which = 3001170 } #BYZ: The Bulgars are Assimilated I
+		command = { type = sleepevent which = 3001171 } #BYZ: The Bulgars are Assimilated II
+		command = { type = sleepevent which = 3001172 } #BYZ: Bulgarian Uprising
+		command = { type = sleepevent which = 3001424 } #BYZ: American Shadows over Bulgaria
+		command = { type = sleepevent which = 3001432 } #BYZ: French Shadows over Bulgaria
+	}
+}
+
+#(1430-1820) Bulgarian Resistance
+event = {
+	id = 3001169
+	trigger = {
+		event = 3001168 #BYZ: The Bulgar Question
+		NOT = { event = 3001170 } #BYZ: The Bulgars are Assimilated
+	}
+	random = YES
+	country = BYZ
+	name = "Bulgarian Resistance"
+	desc = "The Bulgars, needing to adapt to a world where the law and the gospel are rendered only in Greek, have slowly begun mastering the language. In the meantime, though, there are dispossessed lords and oppressed peasants to contend with."
+
+	action_a = {
+		name = "Where's Basil II when you need him?"
+		command = { type = stability value = -1 }
+		command = { type = revolt which = 320 } #Dobrudja
+		command = { type = revolt which = 321 } #Rumelia
+		command = { type = revolt which = 356 } #Bulgaria
+	}
+}
+
+#(1475-1820) The Bulgars are Assimilated I
+event = {
+	id = 3001170
+	trigger = {
+		event = 3001168 #BYZ: The Bulgar Question
+		owned = { province = 320 data = -1 } #Dobrudja
+		owned = { province = 321 data = -1 } #Rumelia
+		owned = { province = 356 data = -1 } #Bulgaria
+	}
+	random = NO
+	country = BYZ
+	name = "The Bulgars are Assimilated"
+	desc = "Finally, after decades of Greek overlordship and cultural assimilation, the Bulgars become Hellenes themselves. Unfortunately, during the period, intolerance could pay off handsomely..."
+
+	date = { day = 1 month = january year = 1475 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Whee! More taxes!"
+		command = { type = stability value = 1 }
+		command = { type = provinceculture which = 320 value = -1 } #Dobrudja
+		command = { type = provinceculture which = 321 value = -1 } #Rumelia
+		command = { type = provinceculture which = 356 value = -1 } #Bulgaria
+	}
+}
+
+#(1475-1820) The Bulgars are Assimilated II
+event = {
+	id = 3001171
+	trigger = {
+		event = 3001168 #BYZ: The Bulgar Question
+		owned = { province = 320 data = -1 } #Dobrudja
+		owned = { province = 321 data = -1 } #Rumelia
+		owned = { province = 356 data = -1 } #Bulgaria
+	}
+	random = NO
+	country = BYZ
+	name = "The Bulgars are Assimilated"
+	desc = "The forbearance shown by the Emperor decades ago has paid off handsomely. Bulgaria thrives under the Imperial banner, her men bolster and lead our armies, and her merchants swell our coffers. Moreover, the Bulgar lords have improved our relations with surrounding countries."
+
+	date = { day = 1 month = january year = 1475 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Finally!"
+		command = { type = add_countryculture which = slavonic }
+		command = { type = provincetax which = 320 value = 1 } #Dobrudja
+		command = { type = provincetax which = 321 value = 1 } #Rumelia
+		command = { type = provincetax which = 356 value = 1 } #Bulgaria
+		command = { type = provincemanpower which = 320 value = 1 } #Dobrudja
+		command = { type = provincemanpower which = 321 value = 1 } #Rumelia
+		command = { type = provincemanpower which = 356 value = 1 } #Bulgaria
+		command = { type = wakeleader which = 027835 } #Dobrovski (BYZ)
+		command = { type = wakeleader which = 027836 } #Radic (BYZ)
+		command = { type = relation which = SER value = 100 }
+		command = { type = relation which = HUN value = 100 }
+		command = { type = relation which = WAL value = 100 }
+		command = { type = relation which = MOL value = 100 }
+	}
+}
+
+#(1419-1820) Bulgarian Uprising
+event = {
+	id = 3001172
+	trigger = {
+		event = 3001168 #BYZ: The Bulgar Question
+		owned = { province = 356 data = -1 } #Bulgaria
+		NOT = { domestic = { type = aristocracy value = 5 } }
+		NOT = { domestic = { type = serfdom value = 5 } }
+		NOT = { domestic = { type = centralization value = 8 } }
+	}
+	random = YES
+	country = BYZ
+	name = "Bulgarian Uprising"
+	desc = "A Bulgarian lord has risen up in defense of his noble rights. He demands satisfaction and marches at the head of an army!"
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Give them an inch..."
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = domestic which = CENTRALIZATION value= -1 }
+	}
+	action_b = {
+		name = "Never!"
+		command = { type = revolt which = 356 } #Bulgaria
+		command = { type = revolt which = 356 } #Bulgaria
+		command = { type = revolt which = 356 } #Bulgaria
+	}
+	action_c = {
+		name = "Crush the Bulgarian lords"
+		command = { type = revolt which = 320 } #Dobrudja
+		command = { type = revolt which = 321 } #Rumelia
+		command = { type = revolt which = 356 } #Bulgaria
+		command = { type = revolt which = 356 } #Bulgaria
+		command = { type = revolt which = 356 } #Bulgaria
+		command = { type = sleepevent which = 3001172 } #BYZ: Bulgarian Uprising
+		command = { type = remove_countryculture which = slavonic }
+	}
+}

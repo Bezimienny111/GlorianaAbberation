@@ -1,0 +1,57 @@
+# Permia (Great Perm) #
+
+#The Fall of Great Perm#
+event = {
+
+	id = 4219
+	trigger = {
+		OR = {
+			vassal = { country = NVG country = PRM }
+			vassal = { country = MOS country = PRM }
+		}
+	}
+	random = no
+	country = PRM
+	name = "EVENTNAME4219"
+	desc = "EVENTHIST4219"
+
+	date = { day = 1 month = january year = 1455 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1490 }
+
+	action_a ={	#Submit to the Archbishop of Novgorod#
+		name = "ACTIONNAME4219A"
+		trigger = { 
+			ai = yes
+			vassal = { country = NVG country = PRM }
+		}
+		command = { type = trigger which = 4220 }
+	}
+
+	action_b ={	#Submit to the Prince of Moscow#
+		name = "ACTIONNAME4219B"
+		trigger = { 
+			ai = yes
+			vassal = { country = MOS country = PRM }
+		}
+		command = { type = trigger which = 4221 }
+	}
+
+	action_c ={	#Stand and fight!#
+		name = "ACTIONNAME4219C"
+		command = { type = breakvassal which = NVG }
+		command = { type = breakvassal which = MOS }
+		command = { type = casusbelli which = NVG value = 36 }
+		command = { type = casusbelli which = MOS value = 36 }
+		command = { type = relation which = NVG value = -150 }
+		command = { type = relation which = MOS value = -150 }
+		command = { type = manpower value = 10 }
+		command = { type = treasury value = 150 }
+		command = { type = conquistador which = -2 }
+		command = { type = colonists value = 2 }
+		command = { type = missionaries value = 2 }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = CAV which = -2 value = 5000 }
+		command = { type = stability value = 3 }
+	}
+}

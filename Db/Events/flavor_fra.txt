@@ -1,0 +1,82 @@
+#####France Flavor Events######
+#By Henrik 'Doomdark' Fåhraeus#
+###############################
+
+#Rousseau publishes 'The Social Contract'.#
+event = {
+	id = 5000
+	random = no
+	country = FRA
+	name = "EVENTNAME5000"
+	desc = "EVENTHIST5000"
+	date = { day = 1 month = january year = 1762 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5000A"
+		command = { type = domestic which = SERFDOM value = -1 }
+	}
+}
+#Voltaire publishes 'Lettres Philosophiques'.#
+event = {
+	id = 5001
+	random = no
+	country = FRA
+	name = "EVENTNAME5001"
+	desc = "EVENTHIST5001"
+	date = { day = 1 month = january year = 1732 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5001A"
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = revoltrisk value = 1 }
+	}
+}
+#Montesquieu publishes 'The Spirit of Laws'#
+event = {
+	id = 5002
+	random = no
+	country = FRA
+	name = "EVENTNAME5002"
+	desc = "EVENTHIST5002"
+	date = { day = 1 month = january year = 1750 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5002A"
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = infra value = 250 }
+	}
+}
+#Descartes#
+event = {
+	id = 5003
+	random = no
+	country = FRA
+	name = "EVENTNAME5003"
+	desc = "EVENTHIST5003"
+	date = { day = 1 month = january year = 1637 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5003A"
+		command = { type = domestic which = INNOVATIVE value = 1 }
+	}
+}
+#Vauban#
+event = {
+	id = 5004
+	random = no
+	country = FRA
+	name = "EVENTNAME5004"
+	desc = "EVENTHIST5004"
+	date = { day = 1 month = january year = 1681 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5004A"
+		command = { type = land value = 250 }
+		command = { type = fortress which = -1 value = 1 } # Random province
+		command = { type = fortress which = -4 value = 1 } # Random province
+		command = { type = fortress which = -4 value = 1 } # Random province
+		command = { type = fortress which = -4 value = 1 } # Random province
+	}
+}
+
+# Ids free to 5029

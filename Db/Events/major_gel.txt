@@ -1,0 +1,29 @@
+######Gelre Major Events#######
+# By Kristof 'BiB' Haekens    #
+###############################
+
+# The Dutch Republic
+event = {
+	id = 3806
+	
+	# Triggered by HOL 3900
+	
+	random = no
+	country = GEL
+	name = "EVENTNAME3806"
+	desc = "EVENTHIST3806"
+	
+	action_a = { # Join
+		name = "ACTIONNAME3806A"
+		trigger = { 
+			ai = yes
+		}
+		command = { type = trigger which = 3807 }
+	}
+
+	action_b = { # Stay out
+		name = "ACTIONNAME3806B"
+		command = { type = relation which = HOL value = -100 }
+		command = { type = stability value = -2 }
+	}
+}

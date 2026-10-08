@@ -1,0 +1,384 @@
+#-----------------------------------------------------------------------------
+# Morea
+
+#(1430-1432) Achaia for SPR (by Lambert Simnel)
+event = {
+	id = 3001003
+	trigger = {
+		owned = { province = 360 data = -1 } #Morea
+		NOT = { event = 286002 } #SPR: Conquest of Achaea
+	}
+	random = NO
+	country = BYZ
+	name = "The Principality of Achaea"
+	desc = "In 1430, the porphyrogenitoi Konstantinos and Thomas defeated the forces of the Frankish Principality of Achaea. Prince Centurione II Zaccaria agreed to marry his daughter to Thomas and hand over most of the principality as a dowry. Within two years, the principality was completely absorbed into the Empire."
+
+	date = { day = 1 month = january year = 1430 }
+	offset = 720 #2 years
+	deathdate = { day = 1 month = january year = 1432 }
+
+	action_a = {
+		name = "The Peloponnese is ours!"
+		command = { type = provincetax which = 360 value = 1 } #Morea
+		command = { type = provincemanpower which = 360 value = 1 } #Morea
+	}
+}
+
+#(1448-1470) The Status of Morea
+event = {
+	id = 3001004
+	trigger = {
+		exists = SPR
+		relation = { country = SPR data = 150 }
+		NOT = { war = { country = BYZ country = SPR } }
+		owned = { province = 358 data = -1 } # Macedonia
+		owned = { province = 478 data = -1 } # Smyrna
+		OR = {
+			owned = { province = 359 data = -1 } # Athens
+			owned = { province = 359 data = SPR }
+		}
+		OR = {
+			alliance = { country = BYZ country = SPR }
+			vassal = { country = BYZ country = SPR }
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "The Status of Morea"
+	desc = "During the empire's recent weakness, the province of Morea has effectively become independent of Constantinople's control, although ruled by our crown prince the Despotes. Byzantium has secured itself some much needed room and regained control of the Aegean. With the ascension of the former Despotes to the imperial throne, there lies a chance to reintroduce direct rule over the province. Shall we reincorporate Morea into the Empire?"
+
+	date = { day = 29 month = October year = 1448 }
+	offset = 30 #1 month
+	deathdate = { day = 1 month = january year = 1470 }
+
+	action_a = {
+		name = "Our brother will understand"
+		command = { type = sleepleader which = 027879 } #Konstantinos XI * (BYZ)
+		command = { type = sleepmonarch which = 027563 } #Konstantinos XI Dragenses * (BYZ)
+		command = { type = sleepmonarch which = 027564 } #Thomas * (BYZ) 1457
+		command = { type = trigger which = 3001005 } #SPR: Morea Responds
+	}
+	action_b = {
+		name = "We shall maintain Morea as a Protectorate"
+		command = { type = stability value = 1 }
+		command = { type = wakemonarch which = 027563 } #Konstantinos XI Dragenses * (BYZ)
+		command = { type = wakeleader which = 027879 } #Konstantinos XI * (BYZ)
+		command = { type = sleepmonarch which = 027527 } #Thomas (BYZ)
+		command = { type = wakemonarch which = 027564 } #Thomas * (BYZ) 1457
+		command = { type = vassal which = SPR }
+		command = { type = dynastic which = SPR }
+		command = { type = alliance which = SPR }
+		command = { type = relation which = SPR value = 300 }
+		command = { type = trigger which = 3001008 } #BYZ: Morea vassalization
+	}
+}
+
+#(1448-1470) Shall Morea Rejoin the Empire?
+event = {
+	id = 3001005 #triggered by BYZ_3001004 A
+	random = NO
+	country = SPR
+	name = "Shall Morea Rejoin the Empire?"
+	desc = "The Despotes's brother demands that we submit more directly to his rule. He promises offices for our nobles and improvements for our people. Shall we accept?"
+
+	action_a = {
+		name = "Ah, my chance shall come soon enough (GAME OVER)" #Accept, sort of
+		command = { type = trigger which = 3001006 } #BYZ: Morea Submits
+	}
+	action_b = {
+		name = "It's mine!" #Refuse
+		command = { type = stability value = -3 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = sleepevent which = 3001009 } #BYZ: Assassination of Konstantinos Drageses
+		command = { type = trigger which = 3001007 } #BYZ: Morea Refuses
+	}
+	action_c = {
+		name = "It's mine! It's all mine!" #Refuse and then some
+		command = { type = domestic which = CENTRALIZATION value = 4 }
+		command = { type = relation which = BYZ value = -200 }
+		command = { type = stability value = -5 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+		command = { type = sleepevent which = 3001009 } #BYZ: Assassination of Konstantinos Drageses
+		command = { type = trigger which = 3001007 } #BYZ: Morea Refuses
+	}
+}
+
+#(1448-1470) The Status of Morea - Morea Submits
+event = {
+	id = 3001006 #triggered by BYZ_3001005 A
+	random = NO
+	country = BYZ
+	name = "Morea Submits"
+	desc = "The Despotes of Morea has agreed to accept his brother's suzerainty."
+
+	action_a = {
+		name = "Honor our brother's loyalty!"
+		command = { type = inherit which = SPR }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = badboy value = -1 }
+		#command = { type = vp value = 5 }
+	}
+}
+
+#(1448-1470) The Status of Morea - Morea Refuses
+event = {
+	id = 3001007 #triggered by BYZ_3001005 B & C
+	random = NO
+	country = BYZ
+	name = "Morea refuses"
+	desc = "After some time, the answer arrived. The messenger had been returned in several small, ornate boxes."
+
+	action_a = {
+		name = "The insolence! This means war!"
+		command = { type = sleepevent which = 3001009 } #BYZ: Assassination of Konstantinos Drageses
+		command = { type = sleepmonarch which = 027527 } #Thomas (BYZ)
+		command = { type = wakemonarch which = 027563 } #Konstantinos XI Dragenses * (BYZ)
+		command = { type = wakeleader which = 027879 } #Konstantinos XI * (BYZ)
+		command = { type = wakemonarch which = 027564 } #Thomas * (BYZ) 1457
+		command = { type = relation which = SPR value = -400 }
+		command = { type = breakvassal which = SPR }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = SPR }
+		#command = { type = vp value = -10 }
+	}
+	action_b = {
+		name = "Whatever. Morea cannot stand without us."
+		command = { type = sleepevent which = 3001009 } #BYZ: Assassination of Konstantinos Drageses
+		command = { type = sleepmonarch which = 027527 } #Thomas (BYZ)
+		command = { type = wakemonarch which = 027563 } #Konstantinos XI Dragenses * (BYZ)
+		command = { type = wakeleader which = 027879 } #Konstantinos XI * (BYZ)
+		command = { type = wakemonarch which = 027564 } #Thomas * (BYZ) 1457
+		command = { type = relation which = SPR value = 50 }
+		#command = { type = vp value = -25 }
+	}
+}
+
+#(1448-1470) The Empire Grows Strong - Morea
+event = {
+	id = 3001008 #triggered by BYZ_3001004 B
+	random = NO
+	country = SPR
+	name = "The Empire Grows Strong"
+	desc = "The Despotes's brother demands our submission, but allows us our independence."
+
+	action_a ={
+		name = "Praise be to God"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = relation which = BYZ value = 200 }
+	}
+}
+
+#(1453-1454) Assassination of Konstantinos Drageses
+event = {
+	id = 3001009
+	trigger = {
+		event = 3001005 #SPR: Shall Morea Rejoin the Empire?
+		NOT = { exists = SPR }
+	}
+	random = NO
+	country = BYZ
+	name = "Assassination of Konstantinos Drageses"
+	desc = "Having forsaken his power in the Peloponnesos, the aging Demetrios felt he had waited quite long enough for the Imperial purple. After securing a faction among the aristocracy and army, he had Konstantinos poisoned at the Easter eucharist. The Emperor was dead within days."
+
+	date = { day = 1 month = may year = 1453 }
+	offset = 1 #immediate
+	deathdate = { year = 1454 }
+
+	action_a = {
+		name = "Sacrilege in the Hagia Sophia!"
+		command = { type = stability value = -3 }
+		command = { type = wakemonarch which = 027503 } #Demetrios (BYZ)
+		command = { type = wakeleader which = 027880 } #Demetrios (BYZ)
+		command = { type = treasury value = -30 } #bribes to curry favor with barons and the populace
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = MERCANTILISM value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -3 } #trade-offs with the regional barons
+		command = { type = relation which = KAL value = -50 }
+		command = { type = relation which = GEO value = -50 }
+		command = { type = relation which = TRE value = -50 }
+		command = { type = relation which = WAL value = -50 }
+		command = { type = relation which = MOS value = -50 }
+		command = { type = relation which = MOL value = -50 }
+		command = { type = relation which = SER value = -50 }
+		command = { type = relation which = NVG value = -50 }
+		command = { type = relation which = RUS value = -50 }
+		command = { type = relation which = NUB value = -50 }
+		command = { type = relation which = ETH value = -50 }
+		command = { type = relation which = DOB value = -50 }
+		command = { type = relation which = BUL value = -50 }
+		command = { type = sleepleader which = 027879 } #Konstantinos XI * (BYZ)
+		command = { type = sleepmonarch which = 027563 } #Konstantinos XI Dragenses * (BYZ)
+		command = { type = sleepmonarch which = 027527 } #Thomas (BYZ)
+		command = { type = sleepmonarch which = 027564 } #Thomas * (BYZ) 1457
+		command = { type = sleepmonarch which = 027564 } #Thomas * (BYZ) 1457
+	}
+}
+
+#(1470-1820) The Future of Morea
+event = {
+	id = 3001010
+	trigger = {
+		countrysize = 8
+		exists = SPR
+		relation = { country = SPR data = 190 }
+	}
+	random = NO
+	country = BYZ
+	name = "The Future of Morea"
+	desc = "With the empire now well established, it is high time to curtail the independence of our lord in Morea."
+
+	date = { day = 1 month = january year = 1470 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "It will help the treasury"
+		command = { type = inherit which = SPR }
+	}
+	action_b = {
+		name = "It's good training for the boy."
+		command = { type = domestic which = ARISTOCRACY value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		#command = { type = vp value = -10 }
+	}
+}
+
+#(1448-1820) War with the Empire
+event = {
+	id = 3001011
+	trigger = {
+		exists = BYZ
+		NOT = { relation = { country = BYZ data = -149 } }
+	}
+	random = NO
+	country = SPR
+	name = "War with the Empire"
+	desc = "The Imperial government has grown cold and distant to our nobles and people. They clamor for the Despotes to declare himself Autocrat of the Romans and march on Constantinople."
+
+	date = { day = 29 month = october year = 1448 }
+	offset = 720 #2 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Hail Autocrator!"
+		command = { type = relation which = BYZ value = -200 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+		command = { type = sleepevent which = 3001012 } #BYZ: Morea Rejoins the Empire
+		command = { type = sleepevent which = 3001013 } #BYZ: The Fate of the Crown Prince
+	}
+	action_b = {
+		name = "You must be mad!"
+		command = { type = stability value = -2 }
+		#command = { type = vp value = -25 }
+	}
+}
+
+#(1419-1820) Despotes takes Constantinople
+event = {
+	id = 3001504
+	trigger = {
+		war = { country = SPR country = BYZ }
+		exists = BYZ
+		control = { province = 357 data = -1 }
+	}
+	random = NO
+	country = SPR
+	name = "Despotes Captures Constantinople"
+	desc = "The forces of the Despotes have succeeded in seizing Constantinople. The old Emperor is blinded and cast into a monastary to atone for his sins, and we sit on the seat of the Autocrat of the Romans."
+
+	date = { day = 29 month = october year = 1337 }
+	offset = 10 #1 week
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Hail Autocrator!"
+		command = { type = inherit which = BYZ }
+		command = { type = country which = BYZ }
+		command = { type = religion which = orthodox }
+		command = { type = capital which = 357 }
+		command = { type = conversion which = -2 }
+	}
+}
+
+#(1419-1820) The Palaiologi Return I
+event = {
+	id = 3001505
+	trigger = {
+		control = { province = 357 data = SPR } #Thrace
+		NOT = { exists = BYZ }
+		owned = { province = 357 data = TUR } #Thrace
+		owned = { province = 477 data = TUR } #Thrace
+	}
+	random = NO
+	country = TUR
+	name = "The Palaiologi Return!"
+	desc = "As the avenging Greeks poured into the city, the Turks fled, taking with them what they could."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "To our tents!"
+		command = { type = capital which = 477 } #Anatolia
+		command = { type = provincetax which = 357 value = -2 } #Thrace
+		command = { type = provincemanpower which = 357 value = -2 } #Thrace
+		command = { type = cedeprovince which = SPR value = 357 } #Thrace
+		command = { type = trigger which = 3001506 } #SPR: The Palaiologi Return II
+	}
+}
+
+#(1419-1820) The Palaiologi Return II
+event = {
+	id = 3001506 #triggered by TUR_3001505
+	random = NO
+	country = SPR
+	name = "The Palaiologi Return!"
+	desc = "Having recaptured Constantinople, the Despotes is recognized as Autocrat of the Romans!"
+
+	action_a = {
+		name = "I am the Autocrat of the Romans!"
+		command = { type = capital which = 357 } #Thrace
+		command = { type = country which = BYZ }
+		command = { type = badboy value = -3 }
+		command = { type = addcore_national which = 321 } #Rumelia
+		command = { type = addcore_national which = 357 } #Thrace
+		command = { type = addcore_national which = 358 } #Macedonia
+		command = { type = addcore_national which = 359 } #Hellas
+		command = { type = addcore_national which = 360 } #Morea
+		command = { type = addcore_national which = 477 } #Anatolia
+		command = { type = addcore_national which = 478 } #Smyrna
+		command = { type = addcore_national which = 479 } #Ionia
+		command = { type = addcore_national which = 820 } #Corfu
+		command = { type = provinceculture which = 357 value = greek } #Thrace
+		command = { type = provincereligion which = 357 value = orthodox } #Thrace
+	}
+}
+
+#(1500-1820) Morea Rejoins the Empire
+event = {
+	id = 3001012
+	trigger = {
+		exists = SPR
+		countrysize = 20
+		relation = { country = SPR data = -1 }
+	}
+	random = NO
+	country = BYZ
+	name = "Morea Rejoins the Empire"
+	desc = "The crown prince, the Despotes of Morea, has agreed to relinquish his independent province in exchange for more power within our growing Empire."
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "The insolence! Oh, wait... that's good!"
+		command = { type = inherit which = SPR }
+	}
+}

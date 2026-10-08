@@ -1,0 +1,4925 @@
+#Created by Aaron Seltzer
+#The Safavid Heresy#
+event = {
+
+	id = 3999
+	trigger = {
+		exists = PER
+	}
+
+	random = no
+	country = UZB
+	name = "EVENTNAME3999"
+	desc = "EVENTHIST3999"
+
+	date = { day = 1 month = january year = 1440 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1800 }
+
+	action_a ={				#The Safavid Heresy#
+		name = "ACTIONNAME3999A"
+		command = { type = cedeprovince which = PER value = 529 }
+		command = { type = cedeprovince which = PER value = 533 }
+		command = { type = cedeprovince which = PER value = 531 }
+		command = { type = cedeprovince which = PER value = 532 }
+		command = { type = cedeprovince which = PER value = 525 }
+		command = { type = cedeprovince which = PER value = 535 }
+		command = { type = cedeprovince which = PER value = 534 }
+		command = { type = cedeprovince which = PER value = 528 }
+	}
+	action_b = {				#Crush Them#
+		name = "ACTIONNAME3999B"
+		command = { type = stability value = -6 }
+		command = { type = cash value = -1000 }
+	}
+}
+
+event = {
+
+	id = 3997
+	trigger = {
+		exists = PER
+	}
+
+	random = no
+	country = TIM
+	name = "EVENTNAME3999"
+	desc = "EVENTHIST3999"
+
+	date = { day = 1 month = january year = 1440 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1800 }
+
+	action_a ={				#The Safavid Heresy#
+		name = "ACTIONNAME3999A"
+		command = { type = cedeprovince which = PER value = 529 }
+		command = { type = cedeprovince which = PER value = 533 }
+		command = { type = cedeprovince which = PER value = 531 }
+		command = { type = cedeprovince which = PER value = 532 }
+		command = { type = cedeprovince which = PER value = 525 }
+		command = { type = cedeprovince which = PER value = 535 }
+		command = { type = cedeprovince which = PER value = 534 }
+		command = { type = cedeprovince which = PER value = 528 }
+	}
+	action_b = {				#Crush Them#
+		name = "ACTIONNAME3999B"
+		command = { type = stability value = -6 }
+		command = { type = cash value = -1000 }
+	}
+}
+
+#Tribesmen Join the Safavid Cause#
+event = {
+
+	id = 3998
+	random = no 
+	country = PER
+	name = "EVENTNAME3998"
+	desc = "EVENTHIST3998"
+
+        date = { day = 1 month = january year = 1440 }
+	offset = 30
+	deathdate = { day = 1 month = December year = 1491 }
+
+	action_a = {					#Tribesmen Join#
+		name = "ACTIONNAME3998"
+		command = { type = INF which = -1 value = 4000 }
+		command = { type = CAV which = -1 value = 6000 }
+		command = { type = addcore_national which = 529 }
+		command = { type = addcore_national which = 533 }
+		command = { type = addcore_national which = 531 }
+		command = { type = addcore_national which = 532 }
+		command = { type = addcore_national which = 525 }
+		command = { type = addcore_national which = 535 }
+		command = { type = addcore_national which = 534 }
+		command = { type = addcore_national which = 528 }
+	}
+}
+
+##########################################
+## Vanilla FTG1.3 Events by Mandead	##
+##########################################
+
+# Extra Grand Campaign events for 1.3
+
+###########################
+# Safavid Persia sequence #
+###########################
+
+#Tribesmen Join the Safavid Cause#
+event = {
+
+	id = 250000 #3995
+	random = no 
+	country = PER
+	name = "EVENTNAME3998"
+	desc = "EVENTHIST3998"
+
+	date = { day = 1 month = january year = 1492 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1500 }
+
+	action_a = {					#The Tribesmen join us#
+		name = "ACTIONNAME3998"
+		command = { type = INF which = -1 value = 8000 }
+		command = { type = CAV which = -4 value = 4000 }
+		command = { type = CAV which = -4 value = 4000 }
+		command = { type = conversion which = -1 }
+		command = { type = missionaries value = 1 }
+		command = { type = cash value = 200 }
+	}
+}
+
+#Tribesmen Join the Safavid Cause#
+event = {
+
+	id = 250001 #3996
+	random = no 
+	country = PER
+	name = "EVENTNAME3998"
+	desc = "EVENTHIST3998"
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1510 }
+
+	action_a = {					#The Tribesmen join us#
+		name = "ACTIONNAME3998"
+		command = { type = INF which = -1 value = 8000 }
+		command = { type = CAV which = -4 value = 4000 }
+		command = { type = CAV which = -4 value = 4000 }
+		command = { type = conversion which = -1 }
+		command = { type = missionaries value = 1 }
+		command = { type = cash value = 200 }
+	}
+}
+
+#Tribesmen Join the Safavid Cause#
+event = {
+
+	id = 250002 #3997
+	random = no 
+	country = PER
+	name = "EVENTNAME3998"
+	desc = "EVENTHIST3998"
+
+	date = { day = 1 month = january year = 1510 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1520 }
+
+	action_a = {					#The Tribesmen join us#
+		name = "ACTIONNAME3998"
+		command = { type = INF which = -1 value = 8000 }
+		command = { type = CAV which = -4 value = 4000 }
+		command = { type = CAV which = -4 value = 4000 }
+		command = { type = conversion which = -1 }
+		command = { type = missionaries value = 1 }
+		command = { type = cash value = 200 }
+	}
+}
+
+#Tribesmen Join the Safavid Cause#
+event = {
+
+	id = 250003 #3998
+	random = no 
+	country = PER
+	name = "EVENTNAME3998"
+	desc = "EVENTHIST3998"
+
+	date = { day = 1 month = january year = 1520 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1530 }
+
+	action_a = {					#The Tribesmen join us#
+		name = "ACTIONNAME3998"
+		command = { type = INF which = -1 value = 8000 }
+		command = { type = CAV which = -4 value = 4000 }
+		command = { type = CAV which = -4 value = 4000 }
+		command = { type = conversion which = -1 }
+		command = { type = missionaries value = 1 }
+		command = { type = cash value = 200 }
+	}
+}
+
+#The Safavid Heresy#
+event = {
+
+	id = 250004 #3999
+	random = no
+	country = FAR
+	trigger = { exists = PER }
+	name = "EVENTNAME3999"
+	desc = "EVENTHIST3999"
+
+	date = { day = 1 month = january year = 1492 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1530 }
+
+	action_a ={				#Accept Ismail as Shah of Persia#
+		name = "ACTIONNAME3999A"
+		command = { type = trigger which = 250006 }
+	}
+	action_b = {				#Crush the Safavid Heresy#
+		name = "ACTIONNAME3999B"
+		command = { type = relation which = PER value = -200 }
+		command = { type = war which = PER }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = CAV which = -2 value = 5000 }
+		command = { type = stability value = 3 }
+	}
+}
+
+#Ismail's Resurrection of Persia#
+event = {
+
+	id = 250005 #4000
+	random = no
+	country = FAR
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		countrysize = 5
+		owned = { province = 533 data = -1 } # Isfahan
+		control = { province = 533 data = -1 }
+		NOT = { exists = PER }
+	}
+
+	name = "EVENTNAME250005"
+	desc = "EVENTHIST250005"
+
+	date = { day = 1 month = january year = 1492 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1530 }
+
+	action_a ={				#Take up the Safavid cause#
+		name = "ACTIONNAME250005A"
+		command = { type = religion which = shia } # Just in case
+		command = { type = conversion which = -2 }
+		command = { type = missionaries value = 3 }
+		command = { type = land value = 3000 }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = CAV which = -2 value = 20000 }
+		command = { type = ART which = -2 value = 10 }
+		command = { type = add_countryculture which = kurdish }
+		command = { type = addcore_national which = 471 } # Persian cores
+		command = { type = addcore_national which = 472 }
+		command = { type = addcore_national which = 473 }
+		command = { type = addcore_national which = 474 }
+		command = { type = addcore_national which = 486 }
+		command = { type = addcore_national which = 487 }
+		command = { type = addcore_national which = 488 }
+		command = { type = addcore_national which = 489 }
+		command = { type = addcore_national which = 508 }
+		command = { type = addcore_national which = 525 }
+		command = { type = addcore_national which = 526 }
+		command = { type = addcore_national which = 527 }
+		command = { type = addcore_national which = 528 }
+		command = { type = addcore_national which = 529 }
+		command = { type = addcore_national which = 530 }
+		command = { type = addcore_national which = 531 }
+		command = { type = addcore_national which = 532 }
+		command = { type = addcore_national which = 533 }
+		command = { type = addcore_national which = 534 }
+		command = { type = addcore_national which = 535 }
+		command = { type = addcore_national which = 1529 }
+		command = { type = addcore_national which = 1530 }
+		command = { type = addcore_national which = 1531 }
+		command = { type = flagname which = "" }
+		command = { type = country which = PER }
+		command = { type = vp value = 200 }
+	}
+	action_b = {				#Exterminate the Shi'a Heresy#
+		name = "ACTIONNAME250005B"
+		command = { type = religion which = sunni } # Just in case
+		command = { type = conversion which = -2 }
+		command = { type = missionaries value = 3 }
+		command = { type = revoltrisk which = 120 value = 6 }
+		command = { type = stability value = -3 }
+	}
+}
+
+# Fars is annexed into Persia
+event = {
+	id = 250006 #4001
+	random = no
+	country = PER
+	name = "EVENTNAME250006"
+	desc = "EVENTHIST250006"
+
+	action = { # Marvellous!
+		name = "ACTIONNAME250006A"
+		command = { type = inherit which = FAR }
+	}
+}
+
+#The Safavid Heresy#
+event = {
+
+	id = 250007 #4002
+	random = no
+	country = KHO
+	trigger = { exists = PER }
+	name = "EVENTNAME3999"
+	desc = "EVENTHIST3999"
+
+	date = { day = 1 month = january year = 1492 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1530 }
+
+	action_a ={				#Accept Ismail as Shah of Persia#
+		name = "ACTIONNAME3999A"
+		command = { type = trigger which = 250008 }
+	}
+	action_b = {				#Crush the Safavid Heresy#
+		name = "ACTIONNAME3999B"
+		command = { type = relation which = PER value = -200 }
+		command = { type = war which = PER }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = CAV which = -2 value = 5000 }
+		command = { type = stability value = 3 }
+	}
+}
+
+# Khorasan is annexed into Persia
+event = {
+	id = 250008 #4003
+	random = no
+	country = PER
+	name = "EVENTNAME250008"
+	desc = "EVENTHIST250008"
+
+	action = { # Marvellous!
+		name = "ACTIONNAME250008A"
+		command = { type = inherit which = KHO }
+	}
+}
+
+#The Safavid Heresy#
+event = {
+
+	id = 4188
+	random = no
+	country = SHI
+	trigger = { exists = PER }
+	name = "EVENTNAME3999"
+	desc = "EVENTHIST3999"
+
+	date = { day = 1 month = january year = 1492 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1530 }
+
+	action_a ={				#Accept Ismail as Shah of Persia#
+		name = "ACTIONNAME3999A"
+		trigger = { 
+			ai = yes
+		}
+		command = { type = trigger which = 4189 }
+	}
+	action_b = {				#Crush the Safavid Heresy#
+		name = "ACTIONNAME3999B"
+		command = { type = relation which = PER value = -200 }
+		command = { type = war which = PER }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = CAV which = -2 value = 5000 }
+		command = { type = stability value = 3 }
+	}
+}
+
+# Shirvan is annexed into Persia
+event = {
+	id = 4189
+	random = no
+	country = PER
+	name = "EVENTNAME4189"
+	desc = "EVENTHIST4189"
+
+	action = { # Marvellous!
+		name = "ACTIONNAME4189A"
+		command = { type = inherit which = SHI }
+	}
+}
+
+############################
+# Sale of Küstrin sequence #
+############################
+
+# The Sale of Küstrin (LAT) #
+event = {
+	id = 250009 #25034
+	trigger = {
+		OR = {
+			exists = BRA
+			exists = POL
+			exists = BOH
+		}
+		owned = { province = 313 data = -1 } # Küstrin
+	}
+	random = no
+	country = LAT
+	name = "EVENTNAME250009"
+	desc = "EVENTHIST250009"
+
+	date = { day = 1 month = january year = 1455 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1465 }
+
+	action_a = {	# Offer the sale to Brandenburg #
+		name = "ACTIONNAME250009A"
+		trigger = { 
+			exists = BRA
+			NOT = { war = { country = LAT country = BRA } }
+		}
+		command = { type = trigger which = 250010 }
+	}
+
+	action_b = {	# Offer the sale to Poland #
+		name = "ACTIONNAME250009B"
+		trigger = { 
+			exists = POL
+			NOT = { war = { country = LAT country = POL } }
+		}
+		command = { type = trigger which = 250011 }
+	}
+
+	action_c = {	# Request Bohemia buy back the land #
+		name = "ACTIONNAME250009C"
+		trigger = { 
+			exists = BOH
+			NOT = { war = { country = LAT country = BOH } }
+		}
+		command = { type = trigger which = 250012 }
+	}
+
+	action_d = {	# Sell Küstrin to a minor noble #
+		name = "ACTIONNAME250009D"
+		command = { type = treasury value = 150 }
+		command = { type = independence which = KUS }
+	}
+
+	action = {	# Keep Küstrin #
+		name = "ACTIONNAME250009E"
+		command = { type = provincetax which = 313 value = -1 }
+		command = { type = stability value = -1 }
+	}
+}
+
+# The Order Offers to sell us Küstrin (BRA) #
+event = {
+	id = 250010 #25035
+	random = no
+	country = BRA
+	name = "EVENTNAME250010"
+	desc = "EVENTHIST250010"
+
+	action_a = {	# Yes, Küstrin should be ours #
+		name = "ACTIONNAME250010A"
+		command = { type = trigger which = 250013 }
+		command = { type = treasury value = -250 }
+		# BRA should already start with a core on Küstrin
+	}
+
+	action_b = {	# No, it is too expensive #
+		name = "ACTIONNAME250010B"
+		command = { type = trigger which = 250014 }
+	}
+}
+
+# The Order Offers to sell us Küstrin (POL) #
+event = {
+	id = 250011 #25036
+	random = no
+	country = POL
+	name = "EVENTNAME250011"
+	desc = "EVENTHIST250011"
+
+	action_a = {	# Yes, Küstrin should be ours #
+		name = "ACTIONNAME250011A"
+		command = { type = trigger which = 250015 }
+		command = { type = treasury value = -250 }
+		command = { type = addcore_claim which = 313 } # Küstrin
+	}
+
+	action_b = {	# No, it is too expensive #
+		name = "ACTIONNAME25036B"
+		command = { type = trigger which = 250016 }
+	}
+}
+
+# The Order Offers to sell us Küstrin (BOH) #
+event = {
+	id = 250012 #25037
+	random = no
+	country = BOH
+	name = "EVENTNAME250012"
+	desc = "EVENTHIST250012"
+
+	action_a = {	# Yes, Küstrin should be ours #
+		name = "ACTIONNAME250012A"
+		command = { type = trigger which = 250017 }
+		command = { type = treasury value = -250 }
+		command = { type = addcore_claim which = 313 } # Küstrin
+	}
+
+	action_b = {	# No, it is too expensive #
+		name = "ACTIONNAME25037B"
+		command = { type = trigger which = 250018 }
+	}
+}
+
+# Brandenburg Agrees to Purchase Küstrin (LAT) #
+event = {
+	id = 250013 #25038
+	random = no
+	country = LAT
+	name = "EVENTNAME250013"
+	desc = "EVENTHIST250013"
+
+	action_a = {	# Excellent! #
+		name = "ACTIONNAME250013A"
+		command = { type = treasury value = 250 }
+		command = { type = relation which = BRA value = 100 }
+		command = { type = cedeprovince which = BRA value = 313 } # Küstrin
+	}
+}
+
+# Brandenburg Refuses to Purchase Küstrin (LAT) #
+event = {
+	id = 250014 #25039
+	random = no
+	country = LAT
+	name = "EVENTNAME250014"
+	desc = "EVENTHIST250014"
+
+	action_a = {	# So be it #
+		name = "ACTIONNAME250014A"
+		command = { type = relation which = BRA value = -50 }
+	}
+}
+
+# Poland Agrees to Purchase Küstrin (LAT) #
+event = {
+	id = 250015 #25040
+	random = no
+	country = LAT
+	name = "EVENTNAME250015"
+	desc = "EVENTHIST250015"
+
+	action_a = {	# Excellent! #
+		name = "ACTIONNAME250015A"
+		command = { type = treasury value = 250 }
+		command = { type = relation which = POL value = 100 }
+		command = { type = cityname which = 313 value = "Kostrzyn" }
+		command = { type = provinceculture which = 313 value = polish }
+		command = { type = cedeprovince which = POL value = 313 } # Küstrin
+		command = { type = sleepevent which = 338076 } #ProvinceSpec*313: Polish settlers in Küstrin
+	}
+}
+
+# Poland Refuses to Purchase Küstrin (LAT) #
+event = {
+	id = 250016 #25041
+	random = no
+	country = LAT
+	name = "EVENTNAME250016"
+	desc = "EVENTHIST250016"
+
+	action_a = {	# So be it #
+		name = "ACTIONNAME250016A"
+		command = { type = relation which = POL value = -50 }
+	}
+}
+
+# Bohemia Agrees to Purchase Küstrin (LAT) #
+event = {
+	id = 250017 #25042
+	random = no
+	country = LAT
+	name = "EVENTNAME250017"
+	desc = "EVENTHIST250017"
+
+	action_a = {	# Excellent! #
+		name = "ACTIONNAME250017A"
+		command = { type = treasury value = 250 }
+		command = { type = relation which = BOH value = 100 }
+		command = { type = provincetax which = 313 value = 2 }
+		command = { type = provincemanpower which = 313 value = 1 }
+		command = { type = cedeprovince which = BOH value = 313 } # Küstrin
+	}
+}
+
+# Bohemia Refuses to Purchase Küstrin (LAT) #
+event = {
+	id = 250018 #25043
+	random = no
+	country = LAT
+	name = "EVENTNAME250018"
+	desc = "EVENTHIST250018"
+
+	action_a = {	# So be it #
+		name = "ACTIONNAME250018A"
+		command = { type = relation which = BOH value = -50 }
+	}
+}
+
+################################
+# Thirteen Years' War sequence #
+################################
+
+# The Thirteen Years' War (POL) #
+event = {
+	id = 250019 #25044
+	trigger = {
+		exists = LAT
+		isvassal = no
+		countrysize = 4
+		NOT = {
+			alliance = { country = POL country = LAT }
+			vassal = { country = POL country = LAT }
+			war = { country = POL country = LAT }
+		}
+		LAT = {
+			owned = { province = 301 data = -1 } # Danzig
+		}
+	}
+	random = no
+	country = POL
+	name = "EVENTNAME250019"
+	desc = "EVENTHIST250019"
+
+	date = { day = 1 month = january year = 1454 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1464 }
+
+	action_a = {	# Demand Eastern Pomerania #
+		name = "ACTIONNAME25019A"
+		command = { type = trigger which = 250020 }
+		command = { type = relation which = LIT value = -50 }
+		command = { type = relation which = BRA value = -50 }
+		command = { type = relation which = POM value = -50 }
+		command = { type = relation which = DAN value = -50 }
+		command = { type = relation which = SWE value = -50 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b = {	# Demand all of Prussia #
+		name = "ACTIONNAME250019B"
+		trigger = { 
+			LAT = { owned = { province = 282 data = -1 } }
+		}
+		command = { type = trigger which = 250021 }
+		command = { type = relation which = LIT value = -100 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = POM value = -100 }
+		command = { type = relation which = DAN value = -100 }
+		command = { type = relation which = SWE value = -100 }
+		command = { type = stability value = -2 }
+	}
+
+	action_c = {	# Settle for a negotiated peace #
+		name = "ACTIONNAME250019C"
+		command = { type = trigger which = 250022 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# Poland Demands Eastern Pomerania (LAT) #
+event = {
+	id = 250020 #25045
+	random = no
+	country = LAT
+	name = "EVENTNAME250020"
+	desc = "EVENTHIST250020"
+
+	action_a = {	# No, we shall stand our ground #
+		name = "ACTIONNAME250020A"
+		command = { type = trigger which = 250023 }
+	}
+
+	action_b = {	# Yes, we cannot afford another war #
+		name = "ACTIONNAME250020B"
+		command = { type = trigger which = 250024 }
+		command = { type = revoltrisk which = 24 value = 2 }
+		command = { type = removecore_national which = 301 }
+		command = { type = cedeprovince which = POL value = 301 } # Danzig
+		command = { type = cedeprovince which = POL value = 302 } # just in case
+	}
+}
+
+# Poland Demands Prussia (LAT) #
+event = {
+	id = 250021 #25046
+	random = no
+	country = LAT
+	name = "EVENTNAME250021"
+	desc = "EVENTHIST250021"
+
+	action_a = {	# No, we shall stand our ground #
+		name = "ACTIONNAME250021A"
+		command = { type = trigger which = 250025 }
+	}
+
+	action_b = {	# Yes, we cannot afford another war #
+		name = "ACTIONNAME250021B"
+		command = { type = trigger which = 250026 }
+		command = { type = revoltrisk which = 24 value = 4 }
+		command = { type = capital which = 282 }
+		command = { type = removecore_national which = 289 }
+		command = { type = removecore_national which = 290 }
+		command = { type = removecore_national which = 301 }
+		command = { type = cedeprovince which = POL value = 289 } # Prussia
+		command = { type = cedeprovince which = POL value = 290 }
+		command = { type = cedeprovince which = POL value = 301 }
+		command = { type = cedeprovince which = POL value = 302 } # just in case
+	}
+}
+
+# Poland Offers a Negotiated Peace (LAT) #
+event = {
+	id = 250022 #25047
+	random = no
+	country = LAT
+	name = "EVENTNAME250022"
+	desc = "EVENTHIST250022"
+
+	action_a = {	# Very well, let us compromise #
+		name = "ACTIONNAME250022A"
+		command = { type = trigger which = 250027 }
+		command = { type = revoltrisk which = 24 value = 3 }
+		command = { type = treasury value = -250 }
+		command = { type = removecore_national which = 301 }
+		command = { type = cedeprovince which = POL value = 302 } # just in case
+		command = { type = free which = PRL }
+	}
+
+	action_b = {	# There will be no craven pact with the Devil #
+		name = "ACTIONNAME250022B"
+		command = { type = trigger which = 250028 }
+	}
+}
+
+# Teutonic Order Refuses to Surrender Eastern Pomerania (POL) #
+event = {
+	id = 250023 #25048
+	random = no
+	country = POL
+	name = "EVENTNAME250023"
+	desc = "EVENTHIST250023"
+
+	action_a = {	# Assemble the army! #
+		name = "ACTIONNAME250023A"
+		command = { type = war which = LAT }
+		command = { type = casusbelli which = LAT value = 36 }
+		command = { type = relation which = LAT value = -200 }
+	}
+}
+
+# Teutonic Order Surrenders Eastern Pomerania (POL) #
+event = {
+	id = 250024 #25049
+	random = no
+	country = POL
+	name = "EVENTNAME250024"
+	desc = "EVENTHIST250024"
+
+	action_a = {	# Excellent! #
+		name = "ACTIONNAME250024A"
+		command = { type = relation which = LAT value = 100 }
+	}
+}
+
+# Teutonic Order Refuses to Surrender Prussia (POL) #
+event = {
+	id = 250025 #25050
+	random = no
+	country = POL
+	name = "EVENTNAME250025"
+	desc = "EVENTHIST250025"
+
+	action_a = {	# Assemble the army! #
+		name = "ACTIONNAME250025A"
+		command = { type = war which = LAT }
+		command = { type = casusbelli which = LAT value = 36 }
+		command = { type = relation which = LAT value = -200 }
+	}
+}
+
+# Teutonic Order Surrenders Prussia (POL) #
+event = {
+	id = 250026 #25051
+	random = no
+	country = POL
+	name = "EVENTNAME250026"
+	desc = "EVENTHIST250026"
+
+	action_a = {	# Rule Prussia directly #
+		name = "ACTIONNAME250026A"
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = relation which = LAT value = 100 }
+		command = { type = addcore_claim which = 289 }
+		command = { type = addcore_claim which = 290 }
+	}
+
+	action_b = {	# Rule Prussia as a fief #
+		name = "ACTIONNAME250026B"
+		trigger = { 
+			NOT = { exists = PRU }
+		}
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = independence which = PRU }
+		command = { type = relation which = PRU value = 150 }
+		command = { type = relation which = LAT value = 150 }
+		command = { type = addcore_claim which = 289 }
+		command = { type = addcore_claim which = 290 }
+	}
+}
+
+# Teutonic Order Agrees to a Negotiated Peace (POL) #
+event = {
+	id = 250027 #25052
+	random = no
+	country = POL
+	name = "EVENTNAME250027"
+	desc = "EVENTHIST250027"
+
+	action_a = {	# Now let us focus on other matters #
+		name = "ACTIONNAME250027A"
+		command = { type = treasury value = 250 }
+		command = { type = alliance which = PRL }
+		command = { type = relation which = PRL value = 150 }
+		command = { type = relation which = LAT value = 150 }
+		command = { type = removecore_national which = 301 }
+	}
+}
+
+# Teutonic Order Refuses a Negotiated Peace (POL) #
+event = {
+	id = 250028 #25053
+	random = no
+	country = POL
+	name = "EVENTNAME250028"
+	desc = "EVENTHIST250028"
+
+	action_a = {	# So be it #
+		name = "ACTIONNAME250028A"
+		command = { type = casusbelli which = LAT value = 12 }
+		command = { type = relation which = LAT value = -100 }
+	}
+}
+
+#Geoffrey Chaucer.#
+event = {
+	id = 5056
+	random = no
+	country = ENG
+	name = "EVENTNAME5056"
+	desc = "EVENTHIST5056"
+	date = { day = 25 month = october year = 1400 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5056A"
+		command = { type = domestic which = SERFDOM value = -1 }
+	}
+}
+#Thomas More.#
+event = {
+	id = 5057
+	random = no
+	country = ENG
+	name = "EVENTNAME5057"
+	desc = "EVENTHIST5057"
+	date = { day = 1 month = january year = 1516 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5057A"
+		command = { type = domestic which = INNOVATIVE value = -1 }
+	}
+}
+#Robert Blake.#
+event = {
+	id = 5058
+	random = no
+	country = ENG
+	name = "EVENTNAME5058"
+	desc = "EVENTHIST5058"
+	date = { day = 20 month = april year = 1657 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5058A"
+		command = { type = domestic which = LAND value = -1 }
+		command = { type = naval value = 500 }
+	}
+}
+#Horatio Nelson.#
+event = {
+	id = 5059
+	random = no
+	country = ENG
+	name = "EVENTNAME5059"
+	desc = "EVENTHIST5059"
+	date = { day = 3 month = august year = 1798 }
+
+	action_a ={				#Ok#
+		name = "ACTIONNAME5059A"
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = naval value = 250 }
+	}
+}
+
+###########################
+
+#The Great Plague#
+event = {
+
+	id = 25006
+	random = no
+	country = ENG
+	name = "EVENTNAME25006"
+	desc = "EVENTHIST25006"
+	style = "25006"
+
+	date = { day = 1 month = february year = 1665 }
+	offset = 30
+	deathdate = { day = 1 month = april year = 1665 }
+
+
+	action_a ={		#Where to bury all these dead?#
+		name = "ACTIONNAME25006A"
+		command = { type = populationpercent which = 247 value = -20 }
+		command = { type = provincetax which = 247 value = -2 }
+		command = { type = province_revoltrisk which = 247 value = 2 }
+		command = { type = infra value = -250 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#The Great Fire of London#
+event = {
+
+	id = 25007
+	random = no
+	country = ENG
+	name = "EVENTNAME25007"
+	desc = "EVENTHIST25007"
+	style = "25007"
+
+	date = { day = 1 month = april year = 1666 }
+	offset = 30
+	deathdate = { day = 1 month = august year = 1666 }
+
+
+	action_a ={		#Surely we are cursed?#
+		name = "ACTIONNAME25007A"
+		command = { type = populationpercent which = 247 value = -5 }
+		command = { type = provincetax which = 247 value = -4 }
+		command = { type = losebuilding which = 247 value = shipyard }
+		command = { type = losemanufactory which = 247 }
+		command = { type = fortress which = 247 value = -3 }
+		command = { type = infra value = -750 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#Sir Christopher Wren and the Great Rebuilding#
+event = {
+
+	id = 25008
+	random = no
+	country = ENG
+	name = "EVENTNAME25008"
+	desc = "EVENTHIST25008"
+	style = "25008"
+
+	date = { day = 1 month = january year = 1675 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1680 }
+
+
+	action_a ={		#We must rebuild our great city#
+		name = "ACTIONNAME25008A"
+		command = { type = populationpercent which = 247 value = 25 }
+		command = { type = provincetax which = 247 value = 8 }
+		command = { type = gainbuilding which = 247 value = shipyard }
+		command = { type = gainmanufactory which = 247 value = luxury }
+		command = { type = fortress which = 247 value = 1 }
+		command = { type = infra value = 3000 }
+		command = { type = treasury value = -750 }
+		command = { type = stability value = 3 }
+	}
+
+	action_b ={		#We cannot afford the huge expense#
+		name = "ACTIONNAME25008B"
+		command = { type = removecot which = 247 }
+		command = { type = revoltrisk which = 120 value = 3 }
+		command = { type = vp value = -200 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#Protestants expelled from France#
+event = {
+
+	id = 250029 #3849
+	trigger = {
+		OR = {
+			religion = protestant
+			religion = reformed
+		}
+	}					#Triggered by FRA3128#
+	random = no
+	country = ENG
+	name = "EVENTNAME250029"
+	desc = "EVENTHIST250029"
+
+	action_a ={				#We welcome you with open arms#
+		name = "ACTIONNAME250029A"
+		#command = { type = wakeleader which = 09157 } # Feversham
+		#command = { type = wakeleader which = 09158 } # Galway
+		command = { type = populationpercent which = -1 value = 10 }
+		command = { type = provincetax which = -3 value = 1 }
+		command = { type = populationpercent which = -4 value = 10 }
+		command = { type = provincetax which = -3 value = 1 }
+		command = { type = populationpercent which = -4 value = 10 }
+		command = { type = provincetax which = -3 value = 1 }
+		command = { type = populationpercent which = -4 value = 10 }
+		command = { type = provincetax which = -3 value = 1 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# The Capture of Gibraltar #
+event = {
+	id = 25012
+	trigger = {
+		owned = { province = 445 data = -1 } # Gibraltar
+		control = { province = 445 data = -1 } # Gibraltar
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME25012"
+	desc = "EVENTHIST25012"
+
+	date = { day = 1 month = january year = 1700 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a = { # The Rock is ours! #
+		name = "ACTIONNAME25012"
+		command = { type = cityname which = 445 value = "Gibraltar" }
+		command = { type = provinceculture which = 445 value = anglosaxon }
+		command = { type = fortress which = 445 value = 1 }
+		command = { type = conversion which = 445 }
+	}
+}
+
+# The Elizabethan Religious Settlement #
+event = {
+
+	id = 25024
+	trigger = {
+		event = 3014
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME25024"
+	desc = "EVENTHIST25024"
+	style = "25024"
+
+	date = { day = 1 month = january year = 1560 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1570 }
+
+	action_a ={			#Return to a more moderate path#
+		name = "ACTIONNAME25024A"
+		command = { type = religion which = protestant }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = conversion which = -1 }
+		command = { type = missionaries value = 1 }
+		command = { type = infra value = 800 }
+		command = { type = treasury value = 300 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = stability value = 2 }
+	}
+	action_b ={			#Maintain a gentler union with Rome#
+		name = "ACTIONNAME25024B"
+		command = {
+			trigger = { religion = counterreform }
+			type = religion which = catholic
+		}
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = PAP value = 50 }
+		command = { type = stability value = -1 }
+	}
+}
+
+# The Loss of Calais #
+event = {
+	id = 25056
+	trigger = {
+		event = 3004
+		owned = { province = 382 data = FRA } # Calais
+	}
+	random = no
+	country = ENG
+	name = "EVENTNAME25056"
+	desc = "EVENTHIST25056"
+
+	date = { day = 1 month = january year = 1492 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a = { # The dream is over! #
+		name = "ACTIONNAME25056"
+		command = { type = vp value = -25 }
+		command = { type = revoltrisk which = 24 value = 1 }
+		command = { type = stability value = -2 }
+		#command = { type = trigger which = 25057 }
+	}
+}
+
+# The Capture of Calais #
+event = {
+
+	id = 25057			#No longer Triggered by ENG25056#
+	trigger = {
+		event = 105513
+		event = 25056
+		owned = { province = 382 data = FRA } # Calais
+	}
+	random = no
+	country = FRA
+	name = "EVENTNAME25057"
+	desc = "EVENTHIST25057"
+
+	date = { day = 1 month = january year = 1492 }
+	offset = 5
+	deathdate = { day = 1 month = january year = 1821 }
+
+	action_a ={			# At last! #
+		name = "ACTIONNAME25057"
+		command = { type = cityname which = 382 value = "Boulogne" }
+		command = { type = provinceculture which = 382 value = french }
+		command = { type = provincetax which = 382 value = -8 } #reworked, back to -8
+		command = { type = goods which = 382 value = fish }
+		command = { type = fortress which = 382 value = -1 }
+		command = { type = conversion which = 382 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# The Collapse of the Black Sea Trade #
+event = {
+	id = 25025
+	trigger = {
+		event = 3352
+		NOT = {
+			OR = {
+				owned = { province = 464 data = -1 }
+				owned = { province = 465 data = -1 }
+				owned = { province = 479 data = -1 }
+			}
+		}
+	}
+	random = no
+	country = GEN
+	name = "EVENTNAME25025"
+	desc = "EVENTHIST25025"
+
+	date = { day = 1 month = january year = 1492 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a = {	# Damn! #
+		name = "ACTIONNAME25025A"
+		#command = { type = remove_countryculture which = greek }
+		#command = { type = removecore_national which = 464 }
+		#command = { type = removecore_national which = 465 }
+		#command = { type = removecore_national which = 479 }
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = merchants value = -4 }
+		command = { type = treasury value = -200 }
+		command = { type = trade value = -400 }
+		command = { type = stability value = -3 }
+	}
+}
+
+# The Dual Monarchy #
+#event = {
+#
+#	id = 15005
+#	trigger = {
+#		atwar = no
+#		isvassal = no
+##		stability = 1
+#		countrysize = 6
+#		owned = { province = 385 data = -1 } # Ile-de-France
+#		control = { province = 385 data = -1 }
+##		NOT = { exists = FRA }
+#		NOT = { event = 25002 }
+#	}
+#	random = no
+##	country = NAV
+#	name = "EVENTNAME15005"
+#	desc = "EVENTHIST15005"
+#	
+##	date = { day = 1 month = january year = 1399 }
+#	offset = 30
+#	deathdate = { day = 1 month = january year = 1821 }
+#
+#	action_a = { # Ascendancy!
+#		name = "ACTIONNAME15005A"
+#		command = { type = vp value = 200 }
+##		command = { type = capital which = 385 }
+#		command = { type = conversion which = 385 }
+#		command = { type = provinceculture which = 424 value = basque }
+#		command = { type = provinceculture which = 425 value = basque }
+##		command = { type = add_countryculture which = french }
+#		command = { type = diplomats value = 3 }
+#		command = { type = addcore_national which = 376 } # France (1419 cores)
+#		command = { type = addcore_national which = 379 }
+#		command = { type = addcore_national which = 380 }
+#		command = { type = addcore_national which = 382 }
+##		command = { type = addcore_national which = 383 }
+#		command = { type = addcore_national which = 384 }
+#		command = { type = addcore_national which = 385 }
+#		command = { type = addcore_national which = 407 }
+#		command = { type = addcore_national which = 408 }
+#		command = { type = addcore_national which = 410 }
+#		command = { type = addcore_national which = 411 }
+#		command = { type = addcore_national which = 412 }
+#		command = { type = addcore_national which = 413 }
+#		command = { type = addcore_national which = 417 }
+#		command = { type = addcore_national which = 418 }
+#		command = { type = addcore_national which = 419 }
+#		command = { type = addcore_national which = 420 }
+#		command = { type = addcore_national which = 421 }
+#		command = { type = addcore_national which = 422 }
+#		command = { type = addcore_national which = 423 }
+#		command = { type = addcore_national which = 424 }
+#		command = { type = treasury value = 200 }
+#	}
+#}
+
+################################################################
+## Mandead's Age of Timur events
+################################################################
+
+#(1413-1417) Armagnacs and Burgundians - (by mandead)
+event = {
+	id = 26020
+	trigger = { 
+		event = 296004 #26012
+	}
+	random = no 
+	country = FRA
+
+	name = "EVENTNAME26020"
+	desc = "EVENTHIST26020"
+	style = "26020"
+	
+	date = { day = 1 month = january year = 1413 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1417 }
+
+	action_a ={
+		name = "ACTIONNAME26020A"
+		command = { type = revoltrisk which = 60 value = 3 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = relation which = AUV value = 100 }
+		command = { type = relation which = BRI value = 100 }
+		command = { type = relation which = PRO value = 100 }
+		command = { type = relation which = SCO value = 100 }
+		command = { type = relation which = BUR value = -200 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = LOR value = -100 }
+		command = { type = relation which = SAV value = -100 }
+		command = { type = stability value = -3 }
+	}
+	action_b ={
+		name = "ACTIONNAME26020B"
+		trigger = { 
+			NOT = {
+				war = { country = FRA country = BUR }
+				war = { country = FRA country = ENG }
+			}
+		}
+		command = { type = revoltrisk which = 60 value = 5 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = relation which = BUR value = 200 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = LOR value = 100 }
+		command = { type = relation which = SAV value = 100 }
+		command = { type = relation which = AUV value = -100 }
+		command = { type = relation which = BRI value = -100 }
+		command = { type = relation which = PRO value = -100 }
+		command = { type = relation which = SCO value = -100 }
+		#command = { type = sleepleader which = 09148 } # de Buchan
+		command = { type = stability value = -5 }
+	}
+}
+
+#(1404-1406) The Regreg War - (by mandead)
+event = {
+	id = 26021
+	trigger = {
+		someof = {
+			number = 6
+			owned = { province = 678 data = -1 }
+			owned = { province = 681 data = -1 }
+			owned = { province = 682 data = -1 }
+			owned = { province = 697 data = -1 }
+			owned = { province = 698 data = -1 }
+			owned = { province = 699 data = -1 }
+			owned = { province = 703 data = -1 }
+			owned = { province = 704 data = -1 }
+			owned = { province = 705 data = -1 }
+		}
+		NOT = { exists = MTR }
+	}
+	random = no
+	country = MAJ
+
+	name = "EVENTNAME26021"
+	desc = "EVENTHIST26021"
+	style = "26021"
+	
+	date = { day = 1 month = january year = 1404 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1406 }
+
+	action_a = {
+		name = "ACTIONNAME26021A"
+		command = { type = revoltrisk which = 60 value = 8 }
+		command = { type = revolt which = 698 }
+		command = { type = revolt which = 699 }
+		command = { type = revolt which = 703 }
+		command = { type = revolt which = 705 }
+		command = { type = relation which = AYU value = 100 }
+		command = { type = relation which = CHI value = -200 }
+		command = { type = relation which = BEI value = -100 }
+		command = { type = relation which = BJR value = -100 }
+		command = { type = relation which = BUT value = -100 }
+		command = { type = relation which = KUT value = -100 }
+		command = { type = relation which = MKS value = -100 }
+		command = { type = relation which = TER value = -100 }
+		command = { type = domestic which = LAND value = 2 }
+		command = { type = wakeleader which = 055323 } # Wikramawardhana
+		command = { type = cot which = 677 }
+		command = { type = removecot which = 678 }
+		command = { type = stability value = -6 }
+	}
+	action_b = {
+		name = "ACTIONNAME26021B"
+		command = { type = revoltrisk which = 60 value = 8 }
+		command = { type = revolt which = 678 }
+		command = { type = revolt which = 681 }
+		command = { type = revolt which = 682 }
+		command = { type = revolt which = 697 }
+		command = { type = relation which = CHI value = 100 }
+		command = { type = relation which = AYU value = -200 }
+		command = { type = relation which = ATJ value = -100 }
+		command = { type = relation which = BTN value = -100 }
+		command = { type = relation which = KED value = -100 }
+		command = { type = relation which = MLC value = -100 }
+		command = { type = relation which = PAL value = -100 }
+		command = { type = relation which = SIA value = -100 }
+		command = { type = relation which = SUN value = -100 }
+		command = { type = domestic which = LAND value = -2 }
+		command = { type = wakeleader which = 09856 } # Bhre Wirabhumi
+		command = { type = cot which = 677 }
+		command = { type = removecot which = 678 }
+		command = { type = stability value = -6 }
+	}
+	action_c = {
+		name = "ACTIONNAME26021C"
+		command = { type = independence which = ATJ } # Just in case...
+		command = { type = independence which = BEI }
+		command = { type = independence which = BJR }
+		#command = { type = independence which = BTN } # not needed; overlaps with PAL/SUN
+		command = { type = independence which = BUT }
+		command = { type = independence which = KUT }
+		command = { type = independence which = KED }
+		command = { type = independence which = MKS }
+		command = { type = independence which = MLC }
+		command = { type = independence which = PAL }
+		command = { type = independence which = SIA }
+		command = { type = independence which = SUN }
+		command = { type = independence which = TER }
+		command = { type = cedeprovince which = MLC value = 678 }
+		command = { type = cedeprovince which = BEI value = 695 }
+		command = { type = cedeprovince which = BEI value = 697 }
+		command = { type = cedeprovince which = KUT value = 699 }
+		command = { type = cedeprovince which = SUN value = 702 }
+		command = { type = cedeprovince which = SUN value = 703 }
+		command = { type = removecore_national which = 681 } # Imperial cores outside Java
+		command = { type = removecore_national which = 682 }
+		command = { type = removecore_national which = 697 }
+		command = { type = removecore_national which = 698 }
+		command = { type = removecore_national which = 699 }
+		command = { type = removecore_national which = 700 }
+		command = { type = removecore_national which = 708 }
+		command = { type = removecore_national which = 709 }
+		command = { type = relation which = CHI value = 50 }
+		command = { type = relation which = AYU value = 50 }
+		command = { type = relation which = -1 value = 100 }
+		command = { type = relation which = -4 value = 100 }
+		command = { type = relation which = -4 value = 100 }
+		command = { type = treasury value = -200 }
+		command = { type = cityname which = 704 value = "Kotagede" }
+		command = { type = country which = MTR }
+		command = { type = stability value = -3 }
+	}
+}
+
+#(1415-1418) Distant Shores (CAS) - (by mandead)
+event = {
+	id = 26022
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 2
+		event = 101004 #26010
+		owned = { province = 817 data = -1 } # The Canary Islands
+	}
+	random = no
+	country = CAS
+
+	name = "EVENTNAME26022"
+	desc = "EVENTHIST26022"
+	
+	date = { day = 1 month = january year = 1415 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1418 }
+
+	action_a = {
+		name = "ACTIONNAME26022A"
+		command = { type = explorer which = -1 }
+		command = { type = colonists value = 2 }
+		command = { type = missionaries value = 1 }
+		command = { type = relation which = PAP value = 50 }
+		command = { type = relation which = POR value = 50 }
+	}
+}
+
+#(1415-1418) Distant Shores (POR) - (by mandead)
+event = {
+	id = 26023
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 2
+		event = 116001 #26018
+		owned = { province = 823 data = -1 } # The Azores
+	}
+	random = no
+	country = POR
+
+	name = "EVENTNAME26022"
+	desc = "EVENTHIST26022"
+	
+	date = { day = 1 month = january year = 1415 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1418 }
+
+	action_a = {
+		name = "ACTIONNAME26022A"
+		command = { type = explorer which = -1 }
+		command = { type = colonists value = 2 }
+		command = { type = missionaries value = 1 }
+		command = { type = relation which = PAP value = 50 }
+		command = { type = relation which = CAS value = 50 }
+	}
+}
+
+#(1401-1403) The Welsh Revolt - (by mandead)
+event = {
+	id = 26024
+	trigger = {
+		owned = { province = 243 data = -1 } # Wales
+	}
+	random = no
+	country = ENG
+
+	name = "EVENTNAME26024"
+	desc = "EVENTHIST26024"
+	style = "26024"
+	
+	date = { day = 1 month = january year = 1401 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1403 }
+
+	action_a = {
+		name = "ACTIONNAME26024A"
+		command = { type = revoltrisk which = 120 value = 4 }
+		command = { type = revolt which = 243 }
+		command = { type = revolt which = 243 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = stability value = -2 }
+	}
+	action_b = {
+		name = "ACTIONNAME26024B"
+		command = { type = independence which = WLS }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#(1406-1407) The Ming Conquest of Dai Viet - (by mandead)
+event = {
+	id = 26025
+	trigger = {
+		exists = DAI
+		monarch = 07400
+		NOT = {
+			alliance = { country = CHI country = DAI }
+			vassal = { country = CHI country = DAI }
+			war = { country = CHI country = DAI }
+		}
+	}
+	random = no
+	country = CHI
+
+	name = "EVENTNAME26025"
+	desc = "EVENTHIST26025"
+	
+	date = { day = 1 month = january year = 1406 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1407 }
+
+	action_a = {
+		name = "ACTIONNAME26025A"
+		command = { type = war which = DAI }
+		command = { type = casusbelli which = DAI value = 72 }
+		command = { type = relation which = DAI value = -200 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = badboy value = 10 }
+		command = { type = stability value = -1 }
+	}
+	action_b = {
+		name = "ACTIONNAME26025B"
+		command = { type = vassal which = DAI }
+		command = { type = relation which = DAI value = 100 }
+		command = { type = domestic which = MERCANTILISM value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = stability value = 2 }
+	}
+	action_c = {
+		name = "ACTIONNAME26025C"
+		command = { type = dynastic which = DAI }
+		command = { type = relation which = DAI value = 50 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#(1403-1405) The Revolt in Beta Israel - (by mandead)
+#event = {
+#	id = 26026
+#	trigger = {
+#		owned = { province = 1588 data = -1 } # Gonder
+#	}
+#	random = no
+#	country = ETH
+#
+#	name = "EVENTNAME26026"
+#	desc = "EVENTHIST26026"
+#	
+#	date = { day = 1 month = january year = 1403 }
+#	offset = 60
+#	deathdate = { day = 1 month = january year = 1405 }
+#
+#	action_a = {
+#		name = "ACTIONNAME26026A"
+#		command = { type = conversion which = 1588 }
+#		command = { type = revolt which = 1588 }
+#		command = { type = revolt which = 1588 }
+#		command = { type = domestic which = CENTRALIZATION value = 1 }
+#		command = { type = domestic which = INNOVATIVE value = -1 }
+#		command = { type = stability value = -2 }
+#	}
+#	action_b = {
+#		name = "ACTIONNAME26026B"
+#		command = { type = revoltrisk which = 24 value = 2 }
+#		command = { type = domestic which = CENTRALIZATION value = -1 }
+#		command = { type = domestic which = INNOVATIVE value = 1 }
+#		command = { type = stability value = -1 }
+#	}
+#	action_c = {
+#		name = "ACTIONNAME26026C"
+#		trigger = { 
+#			ai = no
+#		}
+#		command = { type = religion which = jewish }
+#		command = { type = conversion which = 1517 }
+#		command = { type = conversion which = 1588 }
+#		command = { type = conversion which = 1589 }
+#		command = { type = revolt which = 752 }
+#		command = { type = revolt which = 753 }
+#		command = { type = missionaries value = 1 }
+#		command = { type = relation which = NUB value = -150 }
+#		command = { type = domestic which = ARISTOCRACY value = -2 }
+#		command = { type = domestic which = INNOVATIVE value = 2 }
+#		command = { type = domestic which = SERFDOM value = -1 }
+#		command = { type = stability value = -5 }
+#	}
+#}
+
+#(1405) The Ottoman Revival - (by mandead)
+event = {
+	id = 26027 #triggered by TIM_26019A
+	random = no
+	country = TUR
+
+	name = "EVENTNAME26027"
+	desc = "EVENTHIST26027"
+
+	action_a ={
+		name = "ACTIONNAME26027A"
+		command = { type = breakvassal which = TIM }
+		command = { type = casusbelli which = TIM value = 60 }
+		command = { type = treasury value = 800 }
+		command = { type = land value = 1000 }
+		command = { type = naval value = 1000 }
+		command = { type = infra value = 500 }
+		command = { type = trade value = 500 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = stability value = 5 }
+		command = { type = INF which = -2 value = 15000 }
+		command = { type = CAV which = -2 value = 5000 }
+		command = { type = INF which = -1 value = 5000 }
+		command = { type = INF which = -1 value = 5000 }
+	}
+}
+
+#(1405-1409) The Samogitian Uprisings - (by mandead)
+event = {
+	id = 26028
+	trigger = {
+		owned = { province = 283 data = -1 } # Kurland
+	}
+	random = no
+	country = LAT
+
+	name = "EVENTNAME26028"
+	desc = "EVENTHIST26028"
+	
+	date = { day = 1 month = january year = 1405 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1409 }
+
+	action_a = {
+		name = "ACTIONNAME26028A"
+		command = { type = conversion which = 283 }
+		command = { type = cityname which = 283 value = "Mitau" }
+		command = { type = revolt which = 283 }
+		command = { type = revolt which = 283 }
+		command = { type = casusbelli which = LIT value = 24 }
+		command = { type = relation which = LIT value = -50 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = stability value = -2 }
+	}
+	action_b = {
+		name = "ACTIONNAME26028B"
+		trigger = { 
+			NOT = { exists = LIV }
+		}
+		command = { type = independence which = LIV }
+		command = { type = alliance which = LIV }
+		command = { type = remove_countryculture which = ugric }
+		command = { type = removecore_national which = 275 }
+		command = { type = removecore_national which = 276 }
+		command = { type = removecore_national which = 277 }
+		command = { type = removecore_national which = 282 }
+		command = { type = removecore_national which = 283 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = OFFENSIVE value = -1 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = sleepevent which = 3620 } #LAT: The Fate of the Teutonic Order
+		command = { type = stability value = -3 }
+	}
+	action_c = {
+		name = "ACTIONNAME26028C"
+		trigger = { 
+			exists = LIT
+			NOT = {
+				war = { country = LAT country = LIT }
+			}
+		}
+		command = { type = treasury value = 200 }
+		command = { type = cedeprovince which = LIT value = 283 }
+		command = { type = removecore_national which = 283 }
+		command = { type = relation which = LIT value = 150 }
+		command = { type = sleepevent which = 26036 } #LAT: Terra Mariana
+		command = { type = trigger which = 26054 } #LIT: The Order Returns Samogitia
+		command = { type = stability value = -1 }
+	}
+}
+
+#(1410-1411) The Ming-Kotte War - (by mandead)
+event = {
+	id = 26029
+	trigger = {
+		monarch = 07400
+		leader = 08830 #Zheng He
+	}
+	random = no
+	country = CHI
+
+	name = "EVENTNAME26029"
+	desc = "EVENTHIST26029"
+	
+	date = { day = 1 month = january year = 1410 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1411 }
+
+	action_a = {
+		name = "ACTIONNAME26029A"
+		command = { type = colonists value = 1 }
+		command = { type = missionaries value = 1 }
+		command = { type = discover which = 576 }
+		command = { type = warships which = -1 value = 5 }
+		command = { type = transports which = -3 value = 5 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = casusbelli which = LNK value = 36 }
+		command = { type = relation which = LNK value = -150 }
+		command = { type = naval value = 500 }
+		command = { type = treasury value = -300 }
+		command = { type = stability value = 1 }
+	}
+	action_b = {
+		name = "ACTIONNAME26029B"
+		command = { type = merchants value = 2 }
+		command = { type = discover which = 576 }
+		command = { type = domestic which = MERCANTILISM value = -1 }
+		command = { type = relation which = LNK value = -50 }
+		command = { type = trade value = 500 }
+		command = { type = treasury value = 200 }
+		command = { type = sleepleader which = 08830 } # Zheng He
+		command = { type = stability value = -1 }
+	}
+}
+
+#(1418) The Lam Son Uprising - (by mandead)
+event = {
+	id = 26030
+	trigger = {
+		monarch = 07400
+		event = 26025
+		OR = {  
+			owned = { province = 662 data = -1 }
+			owned = { province = 663 data = -1 }
+			owned = { province = 1554 data = -1 }
+		}
+		NOT = { event = 3904 }
+	}
+	random = no
+	country = CHI
+
+	name = "EVENTNAME26030"
+	desc = "EVENTHIST26030"
+	
+	date = { day = 1 month = january year = 1418 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1418 }
+
+	action_a = {
+		name = "ACTIONNAME26030A"
+		command = { type = badboy value = 5 }
+		command = { type = province_revoltrisk which = 662 value = 30 }
+		command = { type = province_revoltrisk which = 663 value = 30 }
+		command = { type = province_revoltrisk which = 1554 value = 30 }
+		command = { type = stability value = -2 }
+	}
+	action_b = {
+		name = "ACTIONNAME26030B"
+		trigger = { 
+			NOT = { exists = DAI }
+		}
+		command = { type = independence which = DAI }
+		command = { type = breakoverlord which = DAI }
+		command = { type = relation which = DAI value = 100 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#(1413-1418) The Great Frisian War - (by mandead)
+event = {
+	id = 26031
+	trigger = {
+		atwar = no
+	}
+	random = no
+	country = FRI
+
+	name = "EVENTNAME26031"
+	desc = "EVENTHIST26031"
+	
+	date = { day = 1 month = january year = 1413 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1418 }
+
+	action_a = {
+		name = "ACTIONNAME26031A"
+		command = { type = revoltrisk which = 60 value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = relation which = GEL value = 50 }
+		command = { type = relation which = -6 value = 100 }
+		command = { type = relation which = HLL value = -100 }
+		command = { type = casusbelli which = HLL value = 24 }
+		command = { type = provincetax which = 337 value = 2 }
+		command = { type = INF which = 337 value = 5000 }
+		command = { type = stability value = -2 }
+	}
+	action_b = {
+		name = "ACTIONNAME26031B"
+		command = { type = revoltrisk which = 24 value = 4 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = OFFENSIVE value = -1 }
+		command = { type = alliance which = HLL }
+		command = { type = dynastic which = HLL }
+		command = { type = relation which = HLL value = 150 }
+		command = { type = relation which = GEL value = -50 }
+		command = { type = fortress which = 337 value = 1 }
+		command = { type = treasury value = 50 }
+		#command = { type = sleepleader which = 08646 } # Fokko Ukena
+		command = { type = stability value = -3 }
+	}
+}
+
+#(1405-1412) The Scutari Wars - (by mandead)
+event = {
+	id = 26032
+	trigger = {
+		atwar = no
+		isvassal = no
+		religion = catholic
+	}
+	random = no
+	country = ZET
+
+	name = "EVENTNAME26032"
+	desc = "EVENTHIST26032"
+	
+	date = { day = 1 month = january year = 1405 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1412 }
+
+	action_a = {
+		name = "ACTIONNAME26032A"
+		trigger = { 
+			neighbour = VEN
+		}
+		command = { type = religion which = orthodox }
+		command = { type = INF which = 362 value = 5000 }
+		command = { type = casusbelli which = VEN value = 36 }
+		command = { type = alliance which = SER }
+		command = { type = dynastic which = SER }
+		command = { type = relation which = SER value = 150 }
+		command = { type = relation which = VEN value = -100 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = stability value = -1 }
+	}
+	action_b = {
+		name = "ACTIONNAME26032B"
+		command = { type = fortress which = 362 value = 1 }
+		command = { type = relation which = VEN value = 100 }
+		command = { type = relation which = SER value = -50 }
+		command = { type = domestic which = OFFENSIVE value = -1 }
+		command = { type = treasury value = 50 }
+		command = { type = stability value = 1 }
+	}
+	action_c = {
+		name = "ACTIONNAME26032C"
+		trigger = { 
+			neighbour = TUR
+		}
+		command = { type = religion which = sunni }
+		command = { type = missionaries value = 1 }
+		command = { type = INF which = 362 value = 5000 }
+		command = { type = relation which = TUR value = 150 }
+		command = { type = relation which = SER value = -100 }
+		command = { type = relation which = VEN value = -100 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = treasury value = 200 }
+		command = { type = stability value = -3 }
+	}
+}
+
+#(1418) The Gihae Expedition - (by mandead)
+event = {
+	id = 26033
+	trigger = {
+		exists = NIP
+		NOT = {
+			alliance = { country = KOR country = NIP }
+			vassal = { country = KOR country = NIP }
+			war = { country = KOR country = NIP }
+		}
+	}
+	random = no
+	country = KOR
+
+	name = "EVENTNAME26033"
+	desc = "EVENTHIST26033"
+	style = "26033"
+	
+	date = { day = 1 month = january year = 1418 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1418 }
+
+	action_a = {
+		name = "ACTIONNAME26033A"
+		command = { type = warships which = -1 value = 15 }
+		command = { type = transports which = -3 value = 5 }
+		command = { type = casusbelli which = NIP value = 36 }
+		command = { type = relation which = NIP value = -100 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = domestic which = LAND value = -1 }
+		command = { type = naval value = 500 }
+		command = { type = treasury value = -150 }
+		command = { type = trigger which = 26034 } #NIP: The Joseon Invasion
+		command = { type = stability value = 1 }
+	}
+	action_b = {
+		name = "ACTIONNAME26033B"
+		command = { type = fortress which = 641 value = 1 }
+		command = { type = domestic which = OFFENSIVE value = -1 }
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = land value = 500 }
+		command = { type = treasury value = -150 }
+		command = { type = stability value = -1 }
+	}
+	action_c = {
+		name = "ACTIONNAME26033C"
+		command = { type = revoltrisk which = 24 value = 2 }
+		command = { type = dynastic which = NIP }
+		command = { type = relation which = NIP value = 50 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = treasury value = 100 }
+		#command = { type = sleepleader which = 08941 } # Yi Jong-mu
+		command = { type = trigger which = 26035 } #NIP: The Wokou Negotiations
+		command = { type = stability value = -2 }
+	}
+}
+
+#(1418) The Joseon Invasion - (by mandead)
+event = {
+	id = 26034 #triggered by KOR_26033A
+	random = no
+	country = NIP
+
+	name = "EVENTNAME26034"
+	desc = "EVENTHIST26034"
+
+	action_a ={
+		name = "ACTIONNAME26034A"
+		command = { type = pirates which = 1019 value = 3 }
+		command = { type = revolt value = WKR which = 688 }
+		command = { type = revolt value = WKR which = 688 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#(1418) The Wokou Negotiations - (by mandead)
+event = {
+	id = 26035 #triggered by KOR_26033C
+	random = no
+	country = NIP
+
+	name = "EVENTNAME26035"
+	desc = "EVENTHIST26035"
+
+	action_a ={
+		name = "ACTIONNAME26035A"
+		command = { type = warships which = 688 value = 5 }
+		command = { type = provincetax which = 688 value = 2 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = treasury value = -100 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#(1409-1411) Terra Mariana - (by mandead)
+event = {
+	id = 26036
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 2
+		event = 26028
+		exists = POL
+		exists = LIT
+		NOT = {
+			alliance = { country = LAT country = POL }
+			vassal = { country = LAT country = POL }
+			alliance = { country = LAT country = LIT }
+			vassal = { country = LAT country = LIT }
+		}
+	}
+	random = no
+	country = LAT
+
+	name = "EVENTNAME26036"
+	desc = "EVENTHIST26036"
+	style = "26036"
+	
+	date = { day = 1 month = january year = 1409 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1411 }
+
+	action_a = {
+		name = "ACTIONNAME26036A"
+		command = { type = war which = POL }
+		command = { type = war which = LIT }
+		command = { type = relation which = POM value = 50 }
+		command = { type = relation which = STT value = 50 }
+		command = { type = relation which = DAN value = 50 }
+		command = { type = relation which = SWE value = 50 }
+		command = { type = relation which = LIV value = 50 }
+		command = { type = relation which = -6 value = 50 }
+		command = { type = relation which = POL value = -150 }
+		command = { type = relation which = LIT value = -150 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = QUALITY value = -1 }
+		command = { type = INF which = -2 value = 15000 }
+		command = { type = CAV which = -2 value = 5000 }
+		command = { type = treasury value = -150 }
+		command = { type = trigger which = 26037 } #POL: The Order Reignites the Lithuanian Crusade (POL)
+		command = { type = trigger which = 26038 } #LIT: The Order Reignites the Lithuanian Crusade (LIT)
+		command = { type = stability value = 2 }
+	}
+	action_b = {
+		name = "ACTIONNAME26036B"
+		trigger = { 
+			NOT = {
+				war = { country = LAT country = DAN }
+			}
+			owned = { province = 308 data = -1 } # Gotland
+		}
+		command = { type = casusbelli which = POL value = 24 }
+		command = { type = casusbelli which = LIT value = 24 }
+		command = { type = relation which = POM value = 100 }
+		command = { type = relation which = STT value = 100 }
+		command = { type = relation which = DAN value = 100 }
+		command = { type = relation which = SWE value = 100 }
+		command = { type = relation which = LIV value = 100 }
+		command = { type = relation which = -6 value = 100 }
+		command = { type = relation which = POL value = -100 }
+		command = { type = relation which = LIT value = -100 }
+		command = { type = removecore_national which = 308 }
+		command = { type = cedeprovince which = DAN value = 308 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = QUALITY value = -1 }
+		command = { type = manpower value = 10 }
+		command = { type = treasury value = 300 }
+		command = { type = trigger which = 26037 } #POL: The Order Reignites the Lithuanian Crusade (POL)
+		command = { type = trigger which = 26038 } #LIT: The Order Reignites the Lithuanian Crusade (LIT)
+		command = { type = trigger which = 26039 } #DAN: The Order Reignites the Lithuanian Crusade (DAN)
+		command = { type = stability value = -1 }
+	}
+	action_c = {
+		name = "ACTIONNAME26036C"
+		command = { type = revoltrisk which = 24 value = 2 }
+		command = { type = relation which = POL value = 100 }
+		command = { type = relation which = LIT value = 100 }
+		command = { type = relation which = POM value = -50 }
+		command = { type = relation which = STT value = -50 }
+		command = { type = relation which = DAN value = -50 }
+		command = { type = relation which = SWE value = -50 }
+		command = { type = relation which = LIV value = -50 }
+		command = { type = relation which = -6 value = -50 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#(1409-1411) The Order Reignites the Lithuanian Crusade (POL) - (by mandead)
+event = {
+	id = 26037 #triggered by LAT_26036A/LAT_26036B
+	random = no
+	country = POL
+
+	name = "EVENTNAME26037"
+	desc = "EVENTHIST26037"
+
+	action_a ={
+		name = "ACTIONNAME26037A"
+		command = { type = domestic which = OFFENSIVE value = -1 }
+		command = { type = INF which = -2 value = 5000 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#(1409-1411) The Order Reignites the Lithuanian Crusade (LIT) - (by mandead)
+event = {
+	id = 26038 #triggered by LAT_26036A/LAT_26036B
+	random = no
+	country = LIT
+
+	name = "EVENTNAME26038"
+	desc = "EVENTHIST26038"
+
+	action_a ={
+		name = "ACTIONNAME26038A"
+		command = { type = domestic which = OFFENSIVE value = -1 }
+		command = { type = CAV which = -2 value = 5000 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#(1409-1411) The Order Reignites the Lithuanian Crusade (DAN) - (by mandead)
+event = {
+	id = 26039 #triggered by LAT_26036B
+	random = no
+	country = DAN
+
+	name = "EVENTNAME26039"
+	desc = "EVENTHIST26039"
+
+	action_a ={
+		name = "ACTIONNAME26039A"
+		command = { type = alliance which = LAT }
+		command = { type = casusbelli which = POL value = 12 }
+		command = { type = casusbelli which = LIT value = 12 }
+		command = { type = relation which = LAT value = 100 }
+		command = { type = relation which = LIV value = 100 }
+		command = { type = relation which = POL value = -100 }
+		command = { type = relation which = LIT value = -100 }
+		command = { type = treasury value = -300 }
+		command = { type = stability value = -1 }
+	}
+	action_b ={
+		name = "ACTIONNAME26039B"
+		command = { type = relation which = LAT value = 50 }
+		command = { type = relation which = LIV value = 50 }
+		command = { type = relation which = POL value = -50 }
+		command = { type = relation which = LIT value = -50 }
+		command = { type = treasury value = -300 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#(1402-1406) The Future of the Kalmar Union - (by mandead)
+event = {
+	id = 26040
+	trigger = {
+		vassal = { country = DAN country = NOR }
+		vassal = { country = DAN country = SWE }
+	}
+	random = no
+	country = DAN
+
+	name = "EVENTNAME26040"
+	desc = "EVENTHIST26040"
+	style = "26040"
+	
+	date = { day = 1 month = january year = 1402 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1406 }
+
+	action_a = {
+		name = "ACTIONNAME26040A"
+		trigger = { 
+			NOT = {
+				war = { country = DAN country = ENG }
+			}
+		}
+		command = { type = dynastic which = ENG }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = NOR value = -50 }
+		command = { type = relation which = SWE value = -50 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = revolt which = -1234 }
+		command = { type = revolt which = -1235 }
+		command = { type = stability value = -2 }
+	}
+	action_b = {
+		name = "ACTIONNAME26040B"
+		trigger = { 
+			NOT = {
+				war = { country = DAN country = SCO }
+			}
+		}
+		command = { type = dynastic which = SCO }
+		command = { type = relation which = SCO value = 100 }
+		command = { type = relation which = NOR value = 50 }
+		command = { type = relation which = SWE value = -50 }
+		command = { type = domestic which = MERCANTILISM value = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+		command = { type = revolt which = -1235 }
+		command = { type = stability value = -1 }
+	}
+	action_c = {
+		name = "ACTIONNAME26040C"
+		trigger = { 
+			NOT = {
+				war = { country = DAN country = BAY }
+			}
+		}
+		command = { type = dynastic which = BAY }
+		command = { type = relation which = BAY value = 100 }
+		command = { type = relation which = NOR value = -50 }
+		command = { type = relation which = SWE value = 50 }
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = domestic which = OFFENSIVE value = -1 }
+		command = { type = revolt which = -1234 }
+		command = { type = stability value = -1 }
+	}
+	action_d = {
+		name = "ACTIONNAME26040D"
+		command = { type = DIP which = 1 value = 120 }
+		command = { type = ADM which = 1 value = 120 }
+		command = { type = MIL which = 1 value = 120 }
+		command = { type = relation which = NOR value = 50 }
+		command = { type = relation which = SWE value = 50 }
+		command = { type = relation which = ENG value = -50 }
+		command = { type = relation which = SCO value = -50 }
+		command = { type = relation which = BAY value = -50 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#(1405-1410) The Ayutthayan Occupation - (by mandead)
+event = {
+	id = 26041
+	trigger = {
+		vassal = { country = AYU country = KHM }
+	}
+	random = no
+	country = KHM
+
+	name = "EVENTNAME26041"
+	desc = "EVENTHIST26041"
+	
+	date = { day = 1 month = january year = 1405 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1410 }
+
+	action_a = {
+		name = "ACTIONNAME26041A"
+		command = { type = breakvassal which = AYU }
+		command = { type = casusbelli which = AYU value = 36 }
+		command = { type = relation which = AYU value = -100 }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = stability value = 2 }
+	}
+	action_b = {
+		name = "ACTIONNAME26041B"
+		command = { type = dynastic which = AYU }
+		command = { type = relation which = AYU value = 100 }
+		command = { type = revoltrisk which = 24 value = 2 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#(1399-1405) The Age of Timur - (by mandead)
+event = {
+	id = 26042
+	trigger = {
+		monarch = 0141007 #Timur
+		AND = {
+			vassal = { country = TIM country = DLH }
+			vassal = { country = TIM country = MAM }
+			vassal = { country = TIM country = STE }
+			vassal = { country = TIM country = TUR }
+		}
+	}
+	random = no
+	country = TIM
+
+	name = "EVENTNAME26042"
+	desc = "EVENTHIST26042"
+	style = "26042"
+	
+	date = { day = 1 month = january year = 1399 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1405 }
+
+	action_a = {
+		name = "ACTIONNAME26042A"
+		command = { type = vp value = 500 }
+		command = { type = manpower value = 100 }
+		command = { type = treasury value = 1000 }
+		command = { type = casusbelli which = BYZ value = 60 }
+		command = { type = casusbelli which = POL value = 60 }
+		command = { type = casusbelli which = LIT value = 60 }
+		command = { type = casusbelli which = HUN value = 60 }
+		command = { type = relation which = DLH value = 300 }
+		command = { type = relation which = MAM value = 300 }
+		command = { type = relation which = STE value = 300 }
+		command = { type = relation which = TUR value = 300 }
+		command = { type = relation which = BYZ value = -100 }
+		command = { type = relation which = POL value = -100 }
+		command = { type = relation which = LIT value = -100 }
+		command = { type = relation which = HUN value = -100 }
+		command = { type = stability value = 3 }
+	}
+}
+
+#(1406-1418) The Bahmani-Vijayanagara Wars - (by mandead)
+event = {
+	id = 26043
+	trigger = {
+		neighbour = VIJ
+		NOT = {
+			alliance = { country = HYD country = VIJ }
+			vassal = { country = HYD country = VIJ }
+			war = { country = HYD country = VIJ }
+		}
+	}
+	random = no
+	country = HYD
+
+	name = "EVENTNAME26043"
+	desc = "EVENTHIST26043"
+	
+	date = { day = 1 month = january year = 1406 }
+	offset = 60
+	deathdate = { day = 29 month = december year = 1418 }
+
+	action_a = {
+		name = "ACTIONNAME26043A"
+		command = { type = casusbelli which = VIJ value = 36 }
+		command = { type = relation which = VIJ value = -100 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = stability value = 1 }
+	}
+	action_b = {
+		name = "ACTIONNAME26043B"
+		command = { type = dynastic which = VIJ }
+		command = { type = relation which = VIJ value = 100 }
+		command = { type = revoltrisk which = 24 value = 2 }
+		command = { type = domestic which = OFFENSIVE value = -1 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#(1405) The Death of Margaret of Flanders - (by mandead)
+event = {
+	id = 26044
+	trigger = {
+		owned = { province = 380 data = -1 } # Flandern
+	}
+	random = no
+	country = BUR
+
+	name = "EVENTNAME26044"
+	desc = "EVENTHIST26044"
+	style = "26044"
+	
+	date = { day = 16 month = march year = 1405 }
+
+	action_a = {
+		name = "ACTIONNAME26044A"
+		command = { type = add_countryculture which = dutch }
+		command = { type = addcore_national which = 379 }
+		command = { type = addcore_national which = 380 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = MERCANTILISM value = 1 }
+		command = { type = treasury value = 500 }
+		command = { type = stability value = 2 }
+	}
+}
+
+#(1400-1406) Tokhtamysh's Rebellion - (by mandead)
+event = {
+	id = 26045
+	trigger = {
+		war = { country = STE country = SIB }
+	}
+	random = no
+	country = STE
+
+	name = "EVENTNAME26045"
+	desc = "EVENTHIST26045"
+	style = "26045"
+	
+	date = { day = 1 month = january year = 1400 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1406 }
+
+	action_a = {
+		name = "ACTIONNAME26045A"
+		trigger = { 
+			war = { country = STE country = TIM }
+		}
+		command = { type = manpower value = 25 }
+		command = { type = treasury value = 250 }
+		command = { type = diplomats value = 2 }
+		command = { type = CAV which = -2 value = 25000 }
+		command = { type = CAV which = 515 value = 10000 }
+		command = { type = stability value = 2 }
+	}
+	action_b = {
+		name = "ACTIONNAME26045B"
+		trigger = { 
+			war = { country = STE country = LIT }
+		}
+		command = { type = manpower value = 20 }
+		command = { type = treasury value = 200 }
+		command = { type = diplomats value = 2 }
+		command = { type = CAV which = -2 value = 20000 }
+		command = { type = CAV which = 460 value = 10000 }
+		command = { type = stability value = 2 }
+	}
+	action_c = {
+		name = "ACTIONNAME26045C"
+		command = { type = manpower value = 15 }
+		command = { type = treasury value = 150 }
+		command = { type = missionaries value = 4 }
+		command = { type = CAV which = 511 value = 15000 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#(1403-1405) The End of the Venetian Renaissance - (by mandead)
+event = {
+	id = 26046
+	trigger = {
+		owned = { province = 365 data = NAP } # Dalmatia
+		NOT = {
+			war = { country = VEN country = NAP }
+			war = { country = HUN country = NAP }
+		}
+	}
+	random = no
+	country = VEN
+
+	name = "EVENTNAME26046"
+	desc = "EVENTHIST26046"
+	style = "26046"
+	
+	date = { day = 1 month = january year = 1403 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1405 }
+
+	action_a = {
+		name = "ACTIONNAME26046A"
+		command = { type = trigger which = 26047 } #NAP: Venice Offers to Purchase Dalmatia
+	}
+	action_b = {
+		name = "ACTIONNAME26046B"
+		trigger = { 
+			exists = GEN
+		}
+		command = { type = casusbelli which = GEN value = 36 }
+		command = { type = relation which = GEN value = -100 }
+		command = { type = merchants value = 3 }
+		command = { type = infra value = 500 }
+		command = { type = trade value = 500 }
+		command = { type = stability value = 1 }
+	}
+	action_c = {
+		name = "ACTIONNAME26046C"
+		trigger = { 
+			exists = TUR
+			NOT = { event = 26027 }
+		}
+		command = { type = casusbelli which = TUR value = 36 }
+		command = { type = relation which = TUR value = -100 }
+		command = { type = INF which = 359 value = 10000 }
+		command = { type = land value = 500 }
+		command = { type = stability value = 1 }
+	}
+	action_d = {
+		name = "ACTIONNAME26046D"
+		trigger = { 
+			exists = MAM
+		}
+		command = { type = casusbelli which = MAM value = 36 }
+		command = { type = relation which = MAM value = -100 }
+		command = { type = galleys which = 480 value = 25 }
+		command = { type = naval value = 500 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#(1403-1405) Venice Offers to Purchase Dalmatia - (by mandead)
+event = {
+	id = 26047 #triggered by VEN_26046A
+	random = no
+	country = NAP
+
+	name = "EVENTNAME26047"
+	desc = "EVENTHIST26047"
+
+	action_a ={
+		name = "ACTIONNAME26047A"
+		command = { type = breakoverlord which = BOS }
+		command = { type = removecore_national which = 365 }
+		command = { type = removecore_national which = 366 }
+		command = { type = cedeprovince which = VEN value = 364 }
+		command = { type = cedeprovince which = VEN value = 365 }
+		command = { type = cedeprovince which = VEN value = 366 }
+		command = { type = treasury value = 300 }
+		command = { type = trigger which = 26048 } #VEN: Naples Agrees to Sell Dalmatia
+		command = { type = stability value = 1 }
+	}
+	action_b ={
+		name = "ACTIONNAME26047B"
+		command = { type = trigger which = 26049 } #VEN: Naples Refuses to Sell Dalmatia
+		command = { type = stability value = -1 }
+	}
+}
+
+#(1403-1405) Naples Agrees to Sell Dalmatia - (by mandead)
+event = {
+	id = 26048 #triggered by NAP_26047A
+	random = no
+	country = VEN
+
+	name = "EVENTNAME26048"
+	desc = "EVENTHIST26048"
+
+	action_a ={
+		name = "ACTIONNAME26048A"
+		command = { type = relation which = NAP value = 100 }
+		command = { type = treasury value = -300 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#(1403-1405) Naples Refuses to Sell Dalmatia - (by mandead)
+event = {
+	id = 26049 #triggered by NAP_26047B
+	random = no
+	country = VEN
+
+	name = "EVENTNAME26049"
+	desc = "EVENTHIST26049"
+
+	action_a ={
+		name = "ACTIONNAME26049A"
+		command = { type = relation which = NAP value = -100 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#(1401-1410) The Many Crowns of Sigismund - (by mandead)
+event = {
+	id = 26050
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		monarch = 06260 #Zsigmond
+		countrysize = 10
+	}
+	random = no
+	country = HUN
+
+	name = "EVENTNAME26050"
+	desc = "EVENTHIST26050"
+	style = "26050"
+	
+	date = { day = 1 month = january year = 1401 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1410 }
+
+	action_a = {
+		name = "ACTIONNAME26050A"
+		command = { type = dynastic which = HAB }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = CLL value = 50 }
+		command = { type = provincetax which = -1 value = 2 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = provincetax which = -4 value = 1 }
+		command = { type = diplomats value = 3 }
+		command = { type = stability value = 2 }
+	}
+	action_b = {
+		name = "ACTIONNAME26050B"
+		command = { type = casusbelli which = BOH value = 36 }
+		command = { type = casusbelli which = BRA value = 36 }
+		command = { type = relation which = BOH value = -100 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = CAV which = 326 value = 5000 }
+		command = { type = stability value = -1 }
+	}
+	action_c = {
+		name = "ACTIONNAME26050C"
+		command = { type = casusbelli which = MOL value = 36 }
+		command = { type = casusbelli which = WAL value = 36 }
+		command = { type = relation which = MOL value = -100 }
+		command = { type = relation which = WAL value = -100 }
+		command = { type = INF which = 323 value = 5000 }
+		command = { type = stability value = 1 }
+	}
+	action_d = {
+		name = "ACTIONNAME26050D"
+		trigger = { 
+			neighbour = NAP
+		}
+		command = { type = addcore_claim which = 365 }
+		command = { type = addcore_claim which = 366 }
+		command = { type = casusbelli which = NAP value = 36 }
+		command = { type = casusbelli which = BOS value = 36 }
+		command = { type = relation which = NAP value = -100 }
+		command = { type = relation which = BOS value = -100 }
+		command = { type = INF which = 366 value = 5000 }
+		command = { type = stability value = 2 }
+	}
+}
+
+#(1401-1402) The Guardianship of Scotland - (by mandead)
+event = {
+	id = 26051
+	random = no
+	country = SCO
+
+	name = "EVENTNAME26051"
+	desc = "EVENTHIST26051"
+	style = "26051"
+	
+	date = { day = 1 month = january year = 1401 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1402 }
+
+	action_a = {
+		name = "ACTIONNAME26051A"
+		command = { type = revolt which = 238 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = stability value = -1 }
+	}
+	action_b = {
+		name = "ACTIONNAME26051B"
+		command = { type = revoltrisk which = 60 value = 3 }
+		command = { type = treasury value = 150 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = stability value = -2 }
+	}
+	action_c = {
+		name = "ACTIONNAME26051C"
+		command = { type = CAV which = 239 value = 5000 }
+		command = { type = casusbelli which = ENG value = 24 }
+		command = { type = relation which = ENG value = -50 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = stability value = 1 }
+	}
+	action_d = {
+		name = "ACTIONNAME26051D"
+		command = { type = revolt which = 237 }
+		command = { type = revolt which = 239 }
+		command = { type = DIP which = 2 value = 60 }
+		command = { type = ADM which = 2 value = 60 }
+		command = { type = MIL which = 2 value = 60 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = stability value = -3 }
+	}
+}
+
+#(1399) The Death of John the Conqueror - (by mandead)
+event = {
+	id = 26052
+	trigger = {
+		NOT = {
+			war = { country = BRI country = FRA }
+			war = { country = BRI country = ENG }
+		}
+	}
+	random = no
+	country = BRI
+
+	name = "EVENTNAME26052"
+	desc = "EVENTHIST26052"
+	style = "26052"
+	
+	date = { day = 1 month = november year = 1399 }
+
+	action_a = {
+		name = "ACTIONNAME26052A"
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = ENG value = 50 }
+		command = { type = provincetax which = 415 value = 3 }
+		command = { type = trade value = 500 }
+		command = { type = stability value = 1 }
+	}
+	action_b = {
+		name = "ACTIONNAME26052B"
+		command = { type = alliance which = FRA }
+		command = { type = dynastic which = FRA }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = casusbelli which = ENG value = 24 }
+		command = { type = domestic which = LAND value = -1 }
+		command = { type = naval value = 500 }
+		command = { type = trigger which = 26056 } #FRA: Brittany Requests Protection (FRA)
+		command = { type = stability value = -2 }
+	}
+	action_c = {
+		name = "ACTIONNAME26052C"
+		command = { type = alliance which = ENG }
+		command = { type = dynastic which = ENG }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = casusbelli which = FRA value = 24 }
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = land value = 500 }
+		command = { type = sleepleader which = 09142 } # de Richemont (FRA)
+		command = { type = trigger which = 26057 } #ENG: Brittany Requests Protection (ENG)
+		command = { type = stability value = -2 }
+	}
+}
+
+#(1401-1413) Vytautas and the Expansion of Lithuania - (by mandead)
+event = {
+	id = 26053
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		monarch = 04290 #Vytautas Didysis
+		countrysize = 10
+	}
+	random = no
+	country = LIT
+
+	name = "EVENTNAME26053"
+	desc = "EVENTHIST26053"
+	style = "26053"
+	
+	date = { day = 1 month = january year = 1401 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1413 }
+
+	action_a = {
+		name = "ACTIONNAME26053A"
+		command = { type = relation which = POL value = 50 }
+		command = { type = relation which = MAS value = 50 }
+		command = { type = treasury value = 150 }
+		command = { type = infra value = 500 }
+		command = { type = trade value = 500 }
+		command = { type = stability value = 2 }
+	}
+	action_b = {
+		name = "ACTIONNAME26053B"
+		command = { type = addcore_claim which = 277 }
+		command = { type = relation which = LAT value = 200 }
+		command = { type = relation which = LIV value = 200 }
+		command = { type = relation which = NVG value = -200 }
+		command = { type = relation which = PSK value = -200 }
+		command = { type = casusbelli which = NVG value = 60 }
+		command = { type = casusbelli which = PSK value = 60 }
+		command = { type = stability value = -1 }
+	}
+	action_c = {
+		name = "ACTIONNAME26053C"
+		command = { type = addcore_claim which = 283 }
+		command = { type = relation which = LAT value = -200 }
+		command = { type = relation which = LIV value = -200 }
+		command = { type = casusbelli which = LAT value = 60 }
+		command = { type = casusbelli which = LIV value = 60 }
+		command = { type = stability value = -2 }
+	}
+	action_d = {
+		name = "ACTIONNAME26053D"
+		command = { type = wakemonarch which = 04294 } # Jogaila
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -2 }
+		command = { type = relation which = POL value = 200 }
+		command = { type = relation which = MAS value = 100 }
+		command = { type = domestic which = ARISTOCRACY value = -3 }
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = treasury value = 400 }
+		command = { type = infra value = 1000 }
+		command = { type = trade value = 1000 }
+		command = { type = stability value = -4 }
+	}
+}
+
+#(1405-1409) The Order Returns Samogitia - (by mandead)
+event = {
+	id = 26054 #triggered by LAT_26028C
+	random = no
+	country = LIT
+
+	name = "EVENTNAME26054"
+	desc = "EVENTHIST26054"
+
+	action_a ={
+		name = "ACTIONNAME26054A"
+		command = { type = treasury value = -200 }
+		command = { type = addcore_claim which = 283 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#(1405-1447) The Horde Rides East - (by mandead)
+event = {
+	id = 26055
+	trigger = {
+		exists = CHI
+		event = 26042
+		someof = {
+			number = 3
+			OR = {
+				NOT = { exists = BYZ }
+				vassal = { country = TIM country = BYZ }
+			}
+			OR = {
+				NOT = { exists = POL }
+				vassal = { country = TIM country = POL }
+			}
+			OR = {
+				NOT = { exists = LIT }
+				vassal = { country = TIM country = LIT }
+			}
+			OR = {
+				NOT = { exists = HUN }
+				vassal = { country = TIM country = HUN }
+			}
+		}
+		OR = {
+			alliance = { country = TIM country = CHG }
+			vassal = { country = TIM country = CHG }
+			neighbour = CHI
+		}
+	}
+	random = no
+	country = TIM
+
+	name = "EVENTNAME26055"
+	desc = "EVENTHIST26055"
+	
+	date = { day = 1 month = january year = 1405 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1447 }
+
+	action_a = {
+		name = "ACTIONNAME26055A"
+		command = { type = vp value = 150 }
+		command = { type = manpower value = 25 }
+		command = { type = treasury value = 500 }
+		command = { type = INF which = -2 value = 15000 }
+		command = { type = CAV which = -2 value = 35000 }
+		command = { type = ART which = -2 value = 50 }
+		command = { type = casusbelli which = CHI value = 120 }
+		command = { type = relation which = BYZ value = 100 }
+		command = { type = relation which = POL value = 100 }
+		command = { type = relation which = LIT value = 100 }
+		command = { type = relation which = HUN value = 100 }
+		command = { type = relation which = CHI value = -200 }
+		command = { type = stability value = 2 }
+	}
+}
+
+#(1399) Brittany Requests Protection (FRA) - (by mandead)
+event = {
+	id = 26056 #triggered by BRI_26052B
+	random = no
+	country = FRA
+
+	name = "EVENTNAME26056"
+	desc = "EVENTHIST26056"
+
+	action_a ={
+		name = "ACTIONNAME26056A"
+		command = { type = vassal which = BRI }
+		command = { type = alliance which = BRI }
+		command = { type = relation which = BRI value = 100 }
+		command = { type = relation which = ENG value = -150 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#(1399) Brittany Requests Protection (ENG) - (by mandead)
+event = {
+	id = 26057 #triggered by BRI_26052C
+	random = no
+	country = ENG
+
+	name = "EVENTNAME26057"
+	desc = "EVENTHIST26057"
+
+	action_a ={
+		name = "ACTIONNAME26057A"
+		command = { type = vassal which = BRI }
+		command = { type = alliance which = BRI }
+		command = { type = relation which = BRI value = 100 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#(1407) The Death of Pir Muhammad - (by mandead)
+event = {
+	id = 26058
+	random = no 
+	country = TIM
+
+	name = "EVENTNAME26058"
+	desc = "EVENTHIST26058"
+
+	date = { day = 22 month = february year = 1407 }
+
+	action_a ={
+		name = "ACTIONNAME26058A"
+		command = { type = revoltrisk which = 24 value = 8 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = stability value = -3 }
+	}
+}
+
+#(1409) The Death of Khalil Sultan - (by mandead)
+event = {
+	id = 26059
+	random = no 
+	country = TIM
+
+	name = "EVENTNAME26059"
+	desc = "EVENTHIST26059"
+
+	date = { day = 13 month = may year = 1409 }
+
+	action_a ={
+		name = "ACTIONNAME26059A"
+		command = { type = revoltrisk which = 24 value = 8 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revolt which = -4 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = stability value = -3 }
+	}
+}
+
+#(1402) The Ottoman Interregnum (BYZ) - (by mandead)
+event = {
+	id = 26060 #triggered by TUR_26017A
+	random = no
+	country = BYZ
+
+	name = "EVENTNAME26017"
+	desc = "EVENTHIST26017"
+
+	style = "26017"
+
+	action_a ={
+		name = "ACTIONNAME3549B"
+		trigger = { 
+			NOT = {
+				war = { country = BYZ country = TUR }
+			}
+		}
+		command = { type = giveaccess which = TUR }
+		command = { type = relation which = TUR value = 150 }
+		command = { type = DIP which = 2 value = 120 }
+		command = { type = ADM which = 2 value = 120 }
+		command = { type = treasury value = 200 }
+		command = { type = infra value = 400 }
+		command = { type = trade value = 800 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = OFFENSIVE value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = revoltrisk which = 60 value = 4 }
+		command = { type = stability value = 1 }
+	}
+	action_b ={
+		name = "ACTIONNAME26046C"
+		command = { type = breakvassal which = TUR }
+		command = { type = relation which = TUR value = -100 }
+		command = { type = MIL which = 3 value = 120 }
+		command = { type = manpower value = 25 }
+		command = { type = land value = 1500 }
+		command = { type = naval value = 1500 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = QUALITY value = -1 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = populationpercent which = 357 value = -25 }
+		command = { type = provincetax which = 357 value = -2 }
+		command = { type = provincemanpower which = 357 value = -1 }
+		command = { type = INF which = -2 value = 40000 }
+		command = { type = CAV which = -2 value = 10000 }
+		command = { type = galleys which = -2 value = 25 }
+		command = { type = stability value = -2 }
+	}
+}
+
+###########################################
+### 1.31 additions and alterations	###
+###########################################
+
+#The League of Schmalkalden#
+event = {
+
+	id = 3608
+	trigger = {
+		 exists = HAB  
+		 	AND = { 
+				OR = {
+					religion = protestant
+					religion = reformed
+						}
+			}
+	}
+	random = no
+	country = HAN
+	name = "EVENTNAME3608"
+	desc = "EVENTHIST3608"
+
+	date = { day = 1 month = january year = 1527 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1529 }
+
+	action_a ={					#Give it your support#
+		name = "ACTIONNAME3608A"
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = BAD value = 150 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = PFA value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = THU value = 150 }
+		command = { type = relation which = KLE value = 100 }
+		command = { type = relation which = KOL value = 50 }
+		command = { type = relation which = BAY value = 50 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={					#Ignore it#
+		name = "ACTIONNAME3608B"
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = BAD value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = PFA value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = relation which = THU value = -100 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#The Evangelic Union#
+event = {
+
+	id = 3609
+	trigger = {
+		 OR = {
+			religion = protestant
+			religion = reformed
+				}
+			}
+	random = no
+	country = HAN
+	name = "EVENTNAME3609"
+	desc = "EVENTHIST3609"
+
+	date = { day = 1 month = january year = 1605 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a ={					#Prepare to Join#
+		name = "ACTIONNAME3609A"
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = BAD value = 150 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = PFA value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = THU value = 150 }
+		command = { type = relation which = SHL value = 150 }
+		command = { type = relation which = KLE value = 100 }
+		command = { type = relation which = KOL value = 50 }
+		command = { type = relation which = BAY value = 50 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={					#Stay Neutral#
+		name = "ACTIONNAME3609B"
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = BAD value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = PFA value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = relation which = THU value = -100 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#The Catholic League#
+event = {
+
+	id = 3610
+	trigger = {
+		 OR = {
+			religion = catholic
+			religion = counterreform
+				}
+			}
+	random = no
+	country = HAN
+	name = "EVENTNAME3610"
+	desc = "EVENTHIST3610"
+
+	date = { day = 1 month = january year = 1607 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a ={					#Prepare to Join#
+		name = "ACTIONNAME3610A"
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = BRA value = -150 }
+		command = { type = relation which = BAD value = -150 }
+		command = { type = relation which = HES value = -150 }
+		command = { type = relation which = PFA value = -150 }
+		command = { type = relation which = SAC value = -150 }
+		command = { type = relation which = THU value = -150 }
+		command = { type = relation which = SHL value = -150 }
+		command = { type = relation which = KLE value = 50 }
+		command = { type = relation which = KOL value = 100 }
+		command = { type = relation which = BAY value = 100 }
+		command = { type = relation which = PAP value = 100 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = HAB value = 150 }
+	}
+
+	action_b ={					#Stay Neutral#
+		name = "ACTIONNAME3610B"
+		command = { type = relation which = BRA value = 50 }
+		command = { type = relation which = BAD value = 50 }
+		command = { type = relation which = HES value = 50 }
+		command = { type = relation which = PFA value = 50 }
+		command = { type = relation which = SAC value = 50 }
+		command = { type = relation which = THU value = 50 }
+		command = { type = relation which = BAY value = -50 }
+		command = { type = relation which = KLE value = -50 }
+		command = { type = relation which = KOL value = -50 }
+		command = { type = relation which = HAB value = -100 }
+	}
+}
+
+#The League of Augsburg#
+event = {
+
+	id = 3611			#triggered by FRA3127#
+	random = no
+	country = HAN
+	name = "EVENTNAME3611"
+	desc = "EVENTHIST3611"
+
+	action_a ={					#Defy French claims#
+		name = "ACTIONNAME3611A"
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = PRU value = 150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = BAD value = 100 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = HES value = 100 }
+		command = { type = relation which = KLE value = 100 }
+		command = { type = relation which = KOL value = 100 }
+		command = { type = relation which = PFA value = 100 }
+		command = { type = relation which = THU value = 100 }
+	}
+
+	action_b ={					#Ignore it#
+		name = "ACTIONNAME3611B"
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = PRU value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = BAD value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = HES value = -50 }
+		command = { type = relation which = KLE value = -50 }
+		command = { type = relation which = KOL value = -50 }
+		command = { type = relation which = PFA value = -50 }
+		command = { type = relation which = THU value = -50 }
+	}
+}
+
+#The League of Augsburg#
+event = {
+
+	id = 26117
+	random = no
+	country = SAV
+	name = "EVENTNAME3030"
+	desc = "EVENTHIST3030"
+
+	action_a ={				#Ignore it#
+		name = "ACTIONNAME3030B"
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = BAD value = -50 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = PRU value = -100 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = BRU value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = HES value = -50 }
+		command = { type = relation which = KLE value = -50 }
+		command = { type = relation which = KOL value = -50 }
+		command = { type = relation which = PFA value = -50 }
+		command = { type = relation which = WUR value = -50 }
+	}
+
+	action_b ={				#Defy French claims#
+		name = "ACTIONNAME3030A"
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = BAD value = 100 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = PRU value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = BRU value = 100 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = HES value = 100 }
+		command = { type = relation which = KLE value = 100 }
+		command = { type = relation which = KOL value = 100 }
+		command = { type = relation which = PFA value = 100 }
+		command = { type = relation which = WUR value = 100 }
+	}
+}
+
+#The League of Augsburg#
+event = {
+
+	id = 26118
+	random = no
+	country = BAY
+	name = "EVENTNAME3030"
+	desc = "EVENTHIST3030"
+
+	action_a ={				#Ignore it#
+		name = "ACTIONNAME3030B"
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = BAD value = -50 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = PRU value = -100 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = BRU value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = HES value = -50 }
+		command = { type = relation which = KLE value = -50 }
+		command = { type = relation which = KOL value = -50 }
+		command = { type = relation which = PFA value = -50 }
+		command = { type = relation which = WUR value = -50 }
+	}
+
+	action_b ={				#Defy French claims#
+		name = "ACTIONNAME3030A"
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = BAD value = 100 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = PRU value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = BRU value = 100 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = HES value = 100 }
+		command = { type = relation which = KLE value = 100 }
+		command = { type = relation which = KOL value = 100 }
+		command = { type = relation which = PFA value = 100 }
+		command = { type = relation which = WUR value = 100 }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+# Anhalt (ANH)
+#-----------------------------------------------------------------------------------------------
+
+#The Schmalkaldic League#
+event = {
+
+	id = 26100
+	trigger = {
+		AND = {
+			exists = HAB
+			HAB = {
+				OR = {
+					religion = catholic
+					religion = counterreform
+				}
+			}
+		}
+		OR = {
+			#religion = lollard
+			religion = protestant
+			religion = reformed
+		}
+	}
+	random = no
+	country = ANH
+	name = "EVENTNAME3622"
+	desc = "EVENTHIST3622"
+
+	date = { day = 1 month = january year = 1527 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1529 }
+
+	action_a ={					#Give it your support#
+		name = "ACTIONNAME3622A"
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = BRE value = 150 }
+		command = { type = relation which = BRU value = 150 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = KLE value = 150 }
+		command = { type = relation which = KUS value = 150 }
+		command = { type = relation which = MAG value = 150 }
+		command = { type = relation which = MEC value = 150 }
+		command = { type = relation which = PFA value = 150 }
+		command = { type = relation which = POM value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = STT value = 150 }
+		command = { type = relation which = WUR value = 150 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={					#Ignore it#
+		name = "ACTIONNAME3622B"
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = BRE value = -100 }
+		command = { type = relation which = BRU value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = KLE value = -100 }
+		command = { type = relation which = KUS value = -100 }
+		command = { type = relation which = MAG value = -100 }
+		command = { type = relation which = MEC value = -100 }
+		command = { type = relation which = PFA value = -100 }
+		command = { type = relation which = POM value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = relation which = STT value = -100 }
+		command = { type = relation which = WUR value = -100 }
+		command = { type = relation which = PAP value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#The Evangelical Union#
+event = {
+
+	id = 26111
+	trigger = {
+		OR = {
+			#religion = lollard
+			religion = protestant
+			religion = reformed
+		}
+	}
+	random = no
+	country = ANH
+	name = "EVENTNAME3629"
+	desc = "EVENTHIST3629"
+
+	date = { day = 1 month = january year = 1605 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a ={					#Prepare to Join#
+		name = "ACTIONNAME3629A"
+		command = { type = relation which = ANS value = 150 }
+		command = { type = relation which = BAD value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = PFA value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		#command = { type = relation which = STR value = 150 }
+		command = { type = relation which = WUR value = 150 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={					#Stay Neutral#
+		name = "ACTIONNAME3629B"
+		command = { type = relation which = ANS value = -100 }
+		command = { type = relation which = BAD value = -100 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = PFA value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		#command = { type = relation which = STR value = -100 }
+		command = { type = relation which = WUR value = -100 }
+		command = { type = relation which = PAP value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+# Bremen (BRE)
+#-----------------------------------------------------------------------------------------------
+
+#The Schmalkaldic League#
+event = {
+
+	id = 26101
+	trigger = {
+		AND = {
+			exists = HAB
+			HAB = {
+				OR = {
+					religion = catholic
+					religion = counterreform
+				}
+			}
+		}
+		OR = {
+			#religion = lollard
+			religion = protestant
+			religion = reformed
+		}
+	}
+	random = no
+	country = BRE
+	name = "EVENTNAME3622"
+	desc = "EVENTHIST3622"
+
+	date = { day = 1 month = january year = 1527 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1529 }
+
+	action_a ={					#Give it your support#
+		name = "ACTIONNAME3622A"
+		command = { type = relation which = ANH value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = BRU value = 150 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = KLE value = 150 }
+		command = { type = relation which = KUS value = 150 }
+		command = { type = relation which = MAG value = 150 }
+		command = { type = relation which = MEC value = 150 }
+		command = { type = relation which = PFA value = 150 }
+		command = { type = relation which = POM value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = STT value = 150 }
+		command = { type = relation which = WUR value = 150 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={					#Ignore it#
+		name = "ACTIONNAME3622B"
+		command = { type = relation which = ANH value = -100 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = BRU value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = KLE value = -100 }
+		command = { type = relation which = KUS value = -100 }
+		command = { type = relation which = MAG value = -100 }
+		command = { type = relation which = MEC value = -100 }
+		command = { type = relation which = PFA value = -100 }
+		command = { type = relation which = POM value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = relation which = STT value = -100 }
+		command = { type = relation which = WUR value = -100 }
+		command = { type = relation which = PAP value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+# Küstrin (KUS)
+#-----------------------------------------------------------------------------------------------
+
+#The Schmalkaldic League#
+event = {
+
+	id = 26102
+	trigger = {
+		AND = {
+			exists = HAB
+			HAB = {
+				OR = {
+					religion = catholic
+					religion = counterreform
+				}
+			}
+		}
+		OR = {
+			#religion = lollard
+			religion = protestant
+			religion = reformed
+		}
+	}
+	random = no
+	country = KUS
+	name = "EVENTNAME3622"
+	desc = "EVENTHIST3622"
+
+	date = { day = 1 month = january year = 1527 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1529 }
+
+	action_a ={					#Give it your support#
+		name = "ACTIONNAME3622A"
+		command = { type = relation which = ANH value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = BRE value = 150 }
+		command = { type = relation which = BRU value = 150 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = KLE value = 150 }
+		command = { type = relation which = MAG value = 150 }
+		command = { type = relation which = MEC value = 150 }
+		command = { type = relation which = PFA value = 150 }
+		command = { type = relation which = POM value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = STT value = 150 }
+		command = { type = relation which = WUR value = 150 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={					#Ignore it#
+		name = "ACTIONNAME3622B"
+		command = { type = relation which = ANH value = -100 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = BRE value = -100 }
+		command = { type = relation which = BRU value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = KLE value = -100 }
+		command = { type = relation which = MAG value = -100 }
+		command = { type = relation which = MEC value = -100 }
+		command = { type = relation which = PFA value = -100 }
+		command = { type = relation which = POM value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = relation which = STT value = -100 }
+		command = { type = relation which = WUR value = -100 }
+		command = { type = relation which = PAP value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+# Magdeburg (MAG)
+#-----------------------------------------------------------------------------------------------
+
+#The Schmalkaldic League#
+event = {
+
+	id = 26103
+	trigger = {
+		AND = {
+			exists = HAB
+			HAB = {
+				OR = {
+					religion = catholic
+					religion = counterreform
+				}
+			}
+		}
+		OR = {
+			#religion = lollard
+			religion = protestant
+			religion = reformed
+		}
+	}
+	random = no
+	country = MAG
+	name = "EVENTNAME3622"
+	desc = "EVENTHIST3622"
+
+	date = { day = 1 month = january year = 1527 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1529 }
+
+	action_a ={					#Give it your support#
+		name = "ACTIONNAME3622A"
+		command = { type = relation which = ANH value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = BRE value = 150 }
+		command = { type = relation which = BRU value = 150 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = KLE value = 150 }
+		command = { type = relation which = KUS value = 150 }
+		command = { type = relation which = MEC value = 150 }
+		command = { type = relation which = PFA value = 150 }
+		command = { type = relation which = POM value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = STT value = 150 }
+		command = { type = relation which = WUR value = 150 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={					#Ignore it#
+		name = "ACTIONNAME3622B"
+		command = { type = relation which = ANH value = -100 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = BRE value = -100 }
+		command = { type = relation which = BRU value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = KLE value = -100 }
+		command = { type = relation which = KUS value = -100 }
+		command = { type = relation which = MEC value = -100 }
+		command = { type = relation which = PFA value = -100 }
+		command = { type = relation which = POM value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = relation which = STT value = -100 }
+		command = { type = relation which = WUR value = -100 }
+		command = { type = relation which = PAP value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+# Mecklenburg (MEC)
+#-----------------------------------------------------------------------------------------------
+
+#The Schmalkaldic League#
+event = {
+
+	id = 26104
+	trigger = {
+		AND = {
+			exists = HAB
+			HAB = {
+				OR = {
+					religion = catholic
+					religion = counterreform
+				}
+			}
+		}
+		OR = {
+			#religion = lollard
+			religion = protestant
+			religion = reformed
+		}
+	}
+	random = no
+	country = MEC
+	name = "EVENTNAME3622"
+	desc = "EVENTHIST3622"
+
+	date = { day = 1 month = january year = 1527 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1529 }
+
+	action_a ={					#Give it your support#
+		name = "ACTIONNAME3622A"
+		command = { type = relation which = ANH value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = BRE value = 150 }
+		command = { type = relation which = BRU value = 150 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = KLE value = 150 }
+		command = { type = relation which = KUS value = 150 }
+		command = { type = relation which = MAG value = 150 }
+		command = { type = relation which = PFA value = 150 }
+		command = { type = relation which = POM value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = STT value = 150 }
+		command = { type = relation which = WUR value = 150 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={					#Ignore it#
+		name = "ACTIONNAME3622B"
+		command = { type = relation which = ANH value = -100 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = BRE value = -100 }
+		command = { type = relation which = BRU value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = KLE value = -100 }
+		command = { type = relation which = KUS value = -100 }
+		command = { type = relation which = MAG value = -100 }
+		command = { type = relation which = PFA value = -100 }
+		command = { type = relation which = POM value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = relation which = STT value = -100 }
+		command = { type = relation which = WUR value = -100 }
+		command = { type = relation which = PAP value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+# Pomerania (POM)
+#-----------------------------------------------------------------------------------------------
+
+#The Schmalkaldic League#
+event = {
+
+	id = 26105
+	trigger = {
+		AND = {
+			exists = HAB
+			HAB = {
+				OR = {
+					religion = catholic
+					religion = counterreform
+				}
+			}
+		}
+		OR = {
+			#religion = lollard
+			religion = protestant
+			religion = reformed
+		}
+	}
+	random = no
+	country = POM
+	name = "EVENTNAME3622"
+	desc = "EVENTHIST3622"
+
+	date = { day = 1 month = january year = 1527 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1529 }
+
+	action_a ={					#Give it your support#
+		name = "ACTIONNAME3622A"
+		command = { type = relation which = ANH value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = BRE value = 150 }
+		command = { type = relation which = BRU value = 150 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = KLE value = 150 }
+		command = { type = relation which = KUS value = 150 }
+		command = { type = relation which = MAG value = 150 }
+		command = { type = relation which = MEC value = 150 }
+		command = { type = relation which = PFA value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = STT value = 150 }
+		command = { type = relation which = WUR value = 150 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={					#Ignore it#
+		name = "ACTIONNAME3622B"
+		command = { type = relation which = ANH value = -100 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = BRE value = -100 }
+		command = { type = relation which = BRU value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = KLE value = -100 }
+		command = { type = relation which = KUS value = -100 }
+		command = { type = relation which = MAG value = -100 }
+		command = { type = relation which = MEC value = -100 }
+		command = { type = relation which = PFA value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = relation which = STT value = -100 }
+		command = { type = relation which = WUR value = -100 }
+		command = { type = relation which = PAP value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+# Strassburg (STR)
+#-----------------------------------------------------------------------------------------------
+
+#The Schmalkaldic League#
+event = {
+
+	id = 26106
+	trigger = {
+		AND = {
+			exists = HAB
+			HAB = {
+				OR = {
+					religion = catholic
+					religion = counterreform
+				}
+			}
+		}
+		OR = {
+			#religion = lollard
+			religion = protestant
+			religion = reformed
+		}
+	}
+	random = no
+	country = STR
+	name = "EVENTNAME3622"
+	desc = "EVENTHIST3622"
+
+	date = { day = 1 month = january year = 1527 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1529 }
+
+	action_a ={					#Give it your support#
+		name = "ACTIONNAME3622A"
+		command = { type = relation which = ANH value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = BRE value = 150 }
+		command = { type = relation which = BRU value = 150 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = KLE value = 150 }
+		command = { type = relation which = KUS value = 150 }
+		command = { type = relation which = MAG value = 150 }
+		command = { type = relation which = MEC value = 150 }
+		command = { type = relation which = PFA value = 150 }
+		command = { type = relation which = POM value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = STT value = 150 }
+		command = { type = relation which = WUR value = 150 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={					#Ignore it#
+		name = "ACTIONNAME3622B"
+		command = { type = relation which = ANH value = -100 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = BRE value = -100 }
+		command = { type = relation which = BRU value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = KLE value = -100 }
+		command = { type = relation which = KUS value = -100 }
+		command = { type = relation which = MAG value = -100 }
+		command = { type = relation which = MEC value = -100 }
+		command = { type = relation which = PFA value = -100 }
+		command = { type = relation which = POM value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = relation which = STT value = -100 }
+		command = { type = relation which = WUR value = -100 }
+		command = { type = relation which = PAP value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#The Evangelical Union#
+event = {
+
+	id = 26110
+	trigger = {
+		OR = {
+			#religion = lollard
+			religion = protestant
+			religion = reformed
+		}
+	}
+	random = no
+	country = STR
+	name = "EVENTNAME3629"
+	desc = "EVENTHIST3629"
+
+	date = { day = 1 month = january year = 1605 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a ={					#Prepare to Join#
+		name = "ACTIONNAME3629A"
+		command = { type = relation which = ANH value = 150 }
+		command = { type = relation which = ANS value = 150 }
+		command = { type = relation which = BAD value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = PFA value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = WUR value = 150 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={					#Stay Neutral#
+		name = "ACTIONNAME3629B"
+		command = { type = relation which = ANH value = -100 }
+		command = { type = relation which = ANS value = -100 }
+		command = { type = relation which = BAD value = -100 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = PFA value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = relation which = WUR value = -100 }
+		command = { type = relation which = PAP value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#The Catholic League#
+event = {
+
+	id = 26113
+	trigger = {
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+	}
+	random = no
+	country = STR
+	name = "EVENTNAME3630"
+	desc = "EVENTHIST3630"
+
+	date = { day = 1 month = january year = 1607 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a ={					#Prepare to Join#
+		name = "ACTIONNAME3630A"
+		command = { type = relation which = BAY value = 100 }
+		command = { type = relation which = KOL value = 100 }
+		command = { type = relation which = MUN value = 100 }
+		command = { type = relation which = MAI value = 100 }
+		command = { type = relation which = TRR value = 100 }
+		command = { type = relation which = WRZ value = 100 }
+		command = { type = relation which = PAP value = 150 }
+		command = { type = relation which = SPA value = 150 }
+		command = { type = relation which = HAB value = 150 }
+	}
+
+	action_b ={					#Stay Neutral#
+		name = "ACTIONNAME3630B"
+		command = { type = relation which = BAY value = -50 }
+		command = { type = relation which = KOL value = -50 }
+		command = { type = relation which = MUN value = -50 }
+		command = { type = relation which = MAI value = -50 }
+		command = { type = relation which = TRR value = -50 }
+		command = { type = relation which = WRZ value = -50 }
+		command = { type = relation which = PAP value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = HAB value = -100 }
+	}
+}
+
+#The League of Augsburg#
+event = {
+
+	id = 26120
+	random = no
+	country = STR
+	name = "EVENTNAME3664"
+	desc = "EVENTHIST3664"
+
+	action_a ={					#Defy French claims#
+		name = "ACTIONNAME3664A"
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = PRU value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = BRU value = 100 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = HES value = 100 }
+		command = { type = relation which = KLE value = 100 }
+		command = { type = relation which = KOL value = 100 }
+		command = { type = relation which = BAD value = 100 }
+		command = { type = relation which = WUR value = 100 }
+	}
+
+	action_b ={					#Ignore it#
+		name = "ACTIONNAME3664B"
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = PRU value = -100 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = BRU value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = HES value = -50 }
+		command = { type = relation which = KLE value = -50 }
+		command = { type = relation which = KOL value = -50 }
+		command = { type = relation which = BAD value = -50 }
+		command = { type = relation which = WUR value = -50 }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+# Stettin (STT)
+#-----------------------------------------------------------------------------------------------
+
+#The Schmalkaldic League#
+event = {
+
+	id = 26107
+	trigger = {
+		AND = {
+			exists = HAB
+			HAB = {
+				OR = {
+					religion = catholic
+					religion = counterreform
+				}
+			}
+		}
+		OR = {
+			#religion = lollard
+			religion = protestant
+			religion = reformed
+		}
+	}
+	random = no
+	country = STT
+	name = "EVENTNAME3622"
+	desc = "EVENTHIST3622"
+
+	date = { day = 1 month = january year = 1527 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1529 }
+
+	action_a ={					#Give it your support#
+		name = "ACTIONNAME3622A"
+		command = { type = relation which = ANH value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = BRE value = 150 }
+		command = { type = relation which = BRU value = 150 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = KLE value = 150 }
+		command = { type = relation which = KUS value = 150 }
+		command = { type = relation which = MAG value = 150 }
+		command = { type = relation which = MEC value = 150 }
+		command = { type = relation which = PFA value = 150 }
+		command = { type = relation which = POM value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = WUR value = 150 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={					#Ignore it#
+		name = "ACTIONNAME3622B"
+		command = { type = relation which = ANH value = -100 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = BRE value = -100 }
+		command = { type = relation which = BRU value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = KLE value = -100 }
+		command = { type = relation which = KUS value = -100 }
+		command = { type = relation which = MAG value = -100 }
+		command = { type = relation which = MEC value = -100 }
+		command = { type = relation which = PFA value = -100 }
+		command = { type = relation which = POM value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = relation which = WUR value = -100 }
+		command = { type = relation which = PAP value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+# Württemberg (WUR)
+#-----------------------------------------------------------------------------------------------
+
+#The Schmalkaldic League#
+event = {
+
+	id = 26108
+	trigger = {
+		AND = {
+			exists = HAB
+			HAB = {
+				OR = {
+					religion = catholic
+					religion = counterreform
+				}
+			}
+		}
+		OR = {
+			#religion = lollard
+			religion = protestant
+			religion = reformed
+		}
+	}
+	random = no
+	country = WUR
+	name = "EVENTNAME3622"
+	desc = "EVENTHIST3622"
+
+	date = { day = 1 month = january year = 1527 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1529 }
+
+	action_a ={					#Give it your support#
+		name = "ACTIONNAME3622A"
+		command = { type = relation which = ANH value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = BRE value = 150 }
+		command = { type = relation which = BRU value = 150 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = KLE value = 150 }
+		command = { type = relation which = KUS value = 150 }
+		command = { type = relation which = MAG value = 150 }
+		command = { type = relation which = MEC value = 150 }
+		command = { type = relation which = PFA value = 150 }
+		command = { type = relation which = POM value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = STT value = 150 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={					#Ignore it#
+		name = "ACTIONNAME3622B"
+		command = { type = relation which = ANH value = -100 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = BRE value = -100 }
+		command = { type = relation which = BRU value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = KLE value = -100 }
+		command = { type = relation which = KUS value = -100 }
+		command = { type = relation which = MAG value = -100 }
+		command = { type = relation which = MEC value = -100 }
+		command = { type = relation which = PFA value = -100 }
+		command = { type = relation which = POM value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		command = { type = relation which = STT value = -100 }
+		command = { type = relation which = PAP value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#The Evangelical Union#
+event = {
+
+	id = 26109
+	trigger = {
+		OR = {
+			#religion = lollard
+			religion = protestant
+			religion = reformed
+		}
+	}
+	random = no
+	country = WUR
+	name = "EVENTNAME3629"
+	desc = "EVENTHIST3629"
+
+	date = { day = 1 month = january year = 1605 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a ={					#Prepare to Join#
+		name = "ACTIONNAME3629A"
+		command = { type = relation which = ANH value = 150 }
+		command = { type = relation which = ANS value = 150 }
+		command = { type = relation which = BAD value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = PFA value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		#command = { type = relation which = STR value = 150 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={					#Stay Neutral#
+		name = "ACTIONNAME3629B"
+		command = { type = relation which = ANH value = -100 }
+		command = { type = relation which = ANS value = -100 }
+		command = { type = relation which = BAD value = -100 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = PFA value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		#command = { type = relation which = STR value = -100 }
+		command = { type = relation which = PAP value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#The League of Augsburg#
+event = {
+
+	id = 36620
+	random = no
+	country = WUR
+	name = "EVENTNAME3662"
+	desc = "EVENTHIST3662"
+
+	action_a ={					#Defy French claims#
+		name = "ACTIONNAME3662A"
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = PRU value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = BRU value = 100 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = HES value = 100 }
+		command = { type = relation which = KLE value = 100 }
+		command = { type = relation which = KOL value = 100 }
+		command = { type = relation which = PFA value = 100 }
+		command = { type = relation which = BAD value = 100 }
+	}
+
+	action_b ={					#Ignore it#
+		name = "ACTIONNAME3662B"
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = PRU value = -100 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = BRU value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = HES value = -50 }
+		command = { type = relation which = KLE value = -50 }
+		command = { type = relation which = KOL value = -50 }
+		command = { type = relation which = PFA value = -50 }
+		command = { type = relation which = BAD value = -50 }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+# Ansbach (ANS)
+#-----------------------------------------------------------------------------------------------
+
+#The Evangelical Union#
+event = {
+
+	id = 26112
+	trigger = {
+		OR = {
+			#religion = lollard
+			religion = protestant
+			religion = reformed
+		}
+	}
+	random = no
+	country = ANS
+	name = "EVENTNAME3629"
+	desc = "EVENTHIST3629"
+
+	date = { day = 1 month = january year = 1605 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a ={					#Prepare to Join#
+		name = "ACTIONNAME3629A"
+		command = { type = relation which = ANH value = 150 }
+		command = { type = relation which = BAD value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = PFA value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		#command = { type = relation which = STR value = 150 }
+		command = { type = relation which = WUR value = 150 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={					#Stay Neutral#
+		name = "ACTIONNAME3629B"
+		command = { type = relation which = ANH value = -100 }
+		command = { type = relation which = BAD value = -100 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = PFA value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		#command = { type = relation which = STR value = -100 }
+		command = { type = relation which = WUR value = -100 }
+		command = { type = relation which = PAP value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+# Mainz (MAI)
+#-----------------------------------------------------------------------------------------------
+
+#The Catholic League#
+event = {
+
+	id = 26114
+	trigger = {
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+	}
+	random = no
+	country = MAI
+	name = "EVENTNAME3630"
+	desc = "EVENTHIST3630"
+
+	date = { day = 1 month = january year = 1607 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a ={					#Prepare to Join#
+		name = "ACTIONNAME3630A"
+		command = { type = relation which = BAY value = 100 }
+		command = { type = relation which = KOL value = 100 }
+		command = { type = relation which = MUN value = 100 }
+		command = { type = relation which = TRR value = 100 }
+		command = { type = relation which = STR value = 100 }
+		command = { type = relation which = WRZ value = 100 }
+		command = { type = relation which = PAP value = 150 }
+		command = { type = relation which = SPA value = 150 }
+		command = { type = relation which = HAB value = 150 }
+	}
+
+	action_b ={					#Stay Neutral#
+		name = "ACTIONNAME3630B"
+		command = { type = relation which = BAY value = -50 }
+		command = { type = relation which = KOL value = -50 }
+		command = { type = relation which = MUN value = -50 }
+		command = { type = relation which = TRR value = -50 }
+		command = { type = relation which = STR value = -50 }
+		command = { type = relation which = WRZ value = -50 }
+		command = { type = relation which = PAP value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = HAB value = -100 }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+# Trier (TRR)
+#-----------------------------------------------------------------------------------------------
+
+#The Catholic League#
+event = {
+
+	id = 26115
+	trigger = {
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+	}
+	random = no
+	country = TRR
+	name = "EVENTNAME3630"
+	desc = "EVENTHIST3630"
+
+	date = { day = 1 month = january year = 1607 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a ={					#Prepare to Join#
+		name = "ACTIONNAME3630A"
+		command = { type = relation which = BAY value = 100 }
+		command = { type = relation which = KOL value = 100 }
+		command = { type = relation which = MAI value = 100 }
+		command = { type = relation which = MUN value = 100 }
+		command = { type = relation which = STR value = 100 }
+		command = { type = relation which = WRZ value = 100 }
+		command = { type = relation which = PAP value = 150 }
+		command = { type = relation which = SPA value = 150 }
+		command = { type = relation which = HAB value = 150 }
+	}
+
+	action_b ={					#Stay Neutral#
+		name = "ACTIONNAME3630B"
+		command = { type = relation which = BAY value = -50 }
+		command = { type = relation which = KOL value = -50 }
+		command = { type = relation which = MAI value = -50 }
+		command = { type = relation which = MUN value = -50 }
+		command = { type = relation which = STR value = -50 }
+		command = { type = relation which = WRZ value = -50 }
+		command = { type = relation which = PAP value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = HAB value = -100 }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+# Münster (MUN)
+#-----------------------------------------------------------------------------------------------
+
+#The Catholic League#
+event = {
+
+	id = 26116
+	trigger = {
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+	}
+	random = no
+	country = MUN
+	name = "EVENTNAME3630"
+	desc = "EVENTHIST3630"
+
+	date = { day = 1 month = january year = 1607 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a ={					#Prepare to Join#
+		name = "ACTIONNAME3630A"
+		command = { type = relation which = BAY value = 100 }
+		command = { type = relation which = KOL value = 100 }
+		command = { type = relation which = MAI value = 100 }
+		command = { type = relation which = TRR value = 100 }
+		command = { type = relation which = STR value = 100 }
+		command = { type = relation which = WRZ value = 100 }
+		command = { type = relation which = PAP value = 150 }
+		command = { type = relation which = SPA value = 150 }
+		command = { type = relation which = HAB value = 150 }
+	}
+
+	action_b ={					#Stay Neutral#
+		name = "ACTIONNAME3630B"
+		command = { type = relation which = BAY value = -50 }
+		command = { type = relation which = KOL value = -50 }
+		command = { type = relation which = MAI value = -50 }
+		command = { type = relation which = TRR value = -50 }
+		command = { type = relation which = STR value = -50 }
+		command = { type = relation which = WRZ value = -50 }
+		command = { type = relation which = PAP value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = HAB value = -100 }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+# Lorraine (LOR)
+#-----------------------------------------------------------------------------------------------
+
+#The League of Augsburg#
+event = {
+
+	id = 26119
+	random = no
+	country = LOR
+	name = "EVENTNAME3664"
+	desc = "EVENTHIST3664"
+
+	action_a ={					#Defy French claims#
+		name = "ACTIONNAME3664A"
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = PRU value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = BRU value = 100 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = HES value = 100 }
+		command = { type = relation which = KLE value = 100 }
+		command = { type = relation which = KOL value = 100 }
+		command = { type = relation which = BAD value = 100 }
+		command = { type = relation which = WUR value = 100 }
+	}
+
+	action_b ={					#Ignore it#
+		name = "ACTIONNAME3664B"
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = PRU value = -100 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = BRU value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = HES value = -50 }
+		command = { type = relation which = KLE value = -50 }
+		command = { type = relation which = KOL value = -50 }
+		command = { type = relation which = BAD value = -50 }
+		command = { type = relation which = WUR value = -50 }
+	}
+}
+
+#The Effects of the Pragmatic Sanction#
+event = {
+
+	id = 4223
+	trigger = { event = 3205 }
+	random = no
+	country = LOR
+	name = "EVENTNAME3625"
+	desc = "EVENTHIST3625"
+
+	date = { day = 1 month = january year = 1741 }
+	offset = 10
+	deathdate = { day = 1 month = june year = 1741 }
+
+	action_a ={				#Pro-Habsburg#
+		name = "ACTIONNAME3625C"
+		command = { type = relation which = PRU value = -150 }
+		command = { type = relation which = BAY value = -150 }
+		command = { type = relation which = SAC value = -150 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HOL value = 100 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = HAN value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = stability value = 2 }
+		command = { type = casusbelli which = PRU value = 12 }
+	}
+
+	action_b ={				#Neutral#
+		name = "ACTIONNAME3625B"
+		command = { type = relation which = PRU value = -50 }
+		command = { type = relation which = BAY value = -50 }
+		command = { type = relation which = SAC value = -50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = HOL value = 100 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = relation which = HES value = 100 }
+		command = { type = relation which = HAN value = 100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = stability value = 1 }
+	}
+
+	action_c ={				#Anti-Habsburg#
+		name = "ACTIONNAME3625A"
+		command = { type = casusbelli which = HAB value = 36 }
+		command = { type = stability value = -2 }
+		command = { type = relation which = PRU value = 150 }
+		command = { type = relation which = BAY value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = RUS value = -100 }
+		command = { type = relation which = HES value = -50 }
+		command = { type = relation which = HAN value = -50 }
+		command = { type = relation which = HAB value = -150 }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+# Navarre (NAV)
+#-----------------------------------------------------------------------------------------------
+
+#The League of Augsburg#
+event = {
+
+	id = 26121
+	random = no
+	country = NAV
+	name = "EVENTNAME3664"
+	desc = "EVENTHIST3664"
+
+	action_a ={					#Defy French claims#
+		name = "ACTIONNAME3664A"
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = PRU value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = HOL value = 150 }
+		command = { type = relation which = BRU value = 100 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = HES value = 100 }
+		command = { type = relation which = KLE value = 100 }
+		command = { type = relation which = KOL value = 100 }
+		command = { type = relation which = BAD value = 100 }
+		command = { type = relation which = WUR value = 100 }
+	}
+
+	action_b ={					#Ignore it#
+		name = "ACTIONNAME3664B"
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = HAB value = -100 }
+		command = { type = relation which = PRU value = -100 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = BRU value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = HES value = -50 }
+		command = { type = relation which = KLE value = -50 }
+		command = { type = relation which = KOL value = -50 }
+		command = { type = relation which = BAD value = -50 }
+		command = { type = relation which = WUR value = -50 }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+# Teutonic Order (LAT)
+#-----------------------------------------------------------------------------------------------
+
+#The Evangelical Union#
+event = {
+
+	id = 26122
+	trigger = {
+		OR = {
+			#religion = lollard
+			religion = protestant
+			religion = reformed
+		}
+	}
+	random = no
+	country = LAT
+	name = "EVENTNAME3629"
+	desc = "EVENTHIST3629"
+
+	date = { day = 1 month = january year = 1605 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a ={					#Prepare to Join#
+		name = "ACTIONNAME3629A"
+		command = { type = relation which = ANH value = 150 }
+		command = { type = relation which = ANS value = 150 }
+		command = { type = relation which = BAD value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = PFA value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		#command = { type = relation which = STR value = 150 }
+		command = { type = relation which = WUR value = 150 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={					#Stay Neutral#
+		name = "ACTIONNAME3629B"
+		command = { type = relation which = ANH value = -100 }
+		command = { type = relation which = ANS value = -100 }
+		command = { type = relation which = BAD value = -100 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = PFA value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		#command = { type = relation which = STR value = -100 }
+		command = { type = relation which = WUR value = -100 }
+		command = { type = relation which = PAP value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#The Catholic League#
+event = {
+
+	id = 26123
+	trigger = {
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+	}
+	random = no
+	country = LAT
+	name = "EVENTNAME3630"
+	desc = "EVENTHIST3630"
+
+	date = { day = 1 month = january year = 1607 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a ={					#Prepare to Join#
+		name = "ACTIONNAME3630A"
+		command = { type = relation which = BAY value = 100 }
+		command = { type = relation which = KOL value = 100 }
+		command = { type = relation which = MUN value = 100 }
+		command = { type = relation which = MAI value = 100 }
+		command = { type = relation which = TRR value = 100 }
+		command = { type = relation which = STR value = 100 }
+		command = { type = relation which = WRZ value = 100 }
+		command = { type = relation which = PAP value = 150 }
+		command = { type = relation which = SPA value = 150 }
+		command = { type = relation which = HAB value = 150 }
+	}
+
+	action_b ={					#Stay Neutral#
+		name = "ACTIONNAME3630B"
+		command = { type = relation which = BAY value = -50 }
+		command = { type = relation which = KOL value = -50 }
+		command = { type = relation which = MUN value = -50 }
+		command = { type = relation which = MAI value = -50 }
+		command = { type = relation which = TRR value = -50 }
+		command = { type = relation which = STR value = -50 }
+		command = { type = relation which = WRZ value = -50 }
+		command = { type = relation which = PAP value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = HAB value = -100 }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+# Livonian Order (LIV)
+#-----------------------------------------------------------------------------------------------
+
+#The Evangelical Union#
+event = {
+
+	id = 26124
+	trigger = {
+		OR = {
+			#religion = lollard
+			religion = protestant
+			religion = reformed
+		}
+	}
+	random = no
+	country = LIV
+	name = "EVENTNAME3629"
+	desc = "EVENTHIST3629"
+
+	date = { day = 1 month = january year = 1605 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a ={					#Prepare to Join#
+		name = "ACTIONNAME3629A"
+		command = { type = relation which = ANH value = 150 }
+		command = { type = relation which = ANS value = 150 }
+		command = { type = relation which = BAD value = 150 }
+		command = { type = relation which = BRA value = 150 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = PFA value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		#command = { type = relation which = STR value = 150 }
+		command = { type = relation which = WUR value = 150 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={					#Stay Neutral#
+		name = "ACTIONNAME3629B"
+		command = { type = relation which = ANH value = -100 }
+		command = { type = relation which = ANS value = -100 }
+		command = { type = relation which = BAD value = -100 }
+		command = { type = relation which = BRA value = -100 }
+		command = { type = relation which = HES value = -100 }
+		command = { type = relation which = PFA value = -100 }
+		command = { type = relation which = SAC value = -100 }
+		#command = { type = relation which = STR value = -100 }
+		command = { type = relation which = WUR value = -100 }
+		command = { type = relation which = PAP value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#The Catholic League#
+event = {
+
+	id = 26125
+	trigger = {
+		OR = {
+			religion = catholic
+			religion = counterreform
+		}
+	}
+	random = no
+	country = LIV
+	name = "EVENTNAME3630"
+	desc = "EVENTHIST3630"
+
+	date = { day = 1 month = january year = 1607 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1609 }
+
+	action_a ={					#Prepare to Join#
+		name = "ACTIONNAME3630A"
+		command = { type = relation which = BAY value = 100 }
+		command = { type = relation which = KOL value = 100 }
+		command = { type = relation which = MUN value = 100 }
+		command = { type = relation which = MAI value = 100 }
+		command = { type = relation which = TRR value = 100 }
+		command = { type = relation which = STR value = 100 }
+		command = { type = relation which = WRZ value = 100 }
+		command = { type = relation which = PAP value = 150 }
+		command = { type = relation which = SPA value = 150 }
+		command = { type = relation which = HAB value = 150 }
+	}
+
+	action_b ={					#Stay Neutral#
+		name = "ACTIONNAME3630B"
+		command = { type = relation which = BAY value = -50 }
+		command = { type = relation which = KOL value = -50 }
+		command = { type = relation which = MUN value = -50 }
+		command = { type = relation which = MAI value = -50 }
+		command = { type = relation which = TRR value = -50 }
+		command = { type = relation which = STR value = -50 }
+		command = { type = relation which = WRZ value = -50 }
+		command = { type = relation which = PAP value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = HAB value = -100 }
+	}
+}
+
+#-----------------------------------------------------------------------------------------------
+# Poland (POL)
+#-----------------------------------------------------------------------------------------------
+
+#The Effects of the Pragmatic Sanction#
+event = {
+
+	id = 4213
+	trigger = { event = 3205 }
+	random = no
+	country = POL
+	name = "EVENTNAME3625"
+	desc = "EVENTHIST3625"
+
+	date = { day = 1 month = january year = 1741 }
+	offset = 10
+	deathdate = { day = 1 month = june year = 1741 }
+
+	action_a ={				#Anti-Habsburg#
+		name = "ACTIONNAME3625A"
+		command = { type = casusbelli which = HAB value = 36 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = PRU value = 150 }
+		command = { type = relation which = BAY value = 150 }
+		command = { type = relation which = SAC value = 150 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = HOL value = -100 }
+		command = { type = relation which = RUS value = -100 }
+		command = { type = relation which = HES value = -50 }
+		command = { type = relation which = HAN value = -50 }
+		command = { type = relation which = HAB value = -150 }
+	}
+
+	action_b ={				#Neutral#
+		name = "ACTIONNAME3625B"
+		command = { type = relation which = PRU value = -50 }
+		command = { type = relation which = BAY value = -50 }
+		command = { type = relation which = SAC value = -50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = HOL value = 100 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = relation which = HES value = 100 }
+		command = { type = relation which = HAN value = 100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = stability value = 1 }
+	}
+
+	action_c ={				#Pro-Habsburg#
+		name = "ACTIONNAME3625C"
+		command = { type = relation which = PRU value = -150 }
+		command = { type = relation which = BAY value = -150 }
+		command = { type = relation which = SAC value = -150 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = HOL value = 100 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = relation which = HES value = 150 }
+		command = { type = relation which = HAN value = 150 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = stability value = -2 }
+		command = { type = casusbelli which = PRU value = 12 }
+	}
+}
+
+
+#-----------------------------------------------------------------------------------------------

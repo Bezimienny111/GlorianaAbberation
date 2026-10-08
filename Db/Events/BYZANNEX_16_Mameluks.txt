@@ -1,0 +1,1323 @@
+#-----------------------------------------------------------------------------
+# The Early Mamluk Events by Mr. Ouija
+
+#The Byzantium-Mamluk Conflict
+event = {
+	id = 3001269
+	trigger = {
+		exists = MAM
+		NOT = { exists = TUR }
+		owned = { province = 474 data = -1 } # Sivas
+		owned = { province = 476 data = -1 } # Angora
+		owned = { province = 477 data = -1 } # Anatolia
+		owned = { province = 482 data = -1 } # Konya
+		owned = { province = 483 data = -1 } # Adana
+		owned = { province = 1609 data = -1 } # Kastamonu
+		owned = { province = 1610 data = -1 } # Antalya
+		owned = { province = 1611 data = -1 } # Taurus
+		OR = {
+			vassal = { country = BYZ country = TRE }
+			owned = { province = 475 data = -1 } # Trabzon - already Greek
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "The Byzantium-Mamluk Conflict"
+	desc = "The fall of Anatolia and the Ottomans left Byzantium the masters of Asia Minor. Their complete victory shocked the Mamluks of Egypt. They had originally declared support for Byzantium to offset the rising power of the Turks. But after Mehmet was deposed and Byzantium’s position in Anatolia consolidated, the Mamluks began voicing their opposition to the Romanoi. The situation escalated after Byzantium's policies began to affect the native Turkish people. The Imperials in the royal court at Constantinople, their egos inflated after the victory over the Turks, were eager to come to blows with the Egyptian nobles."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 1800 #5 years
+	deathdate = { day = 1 month = january year = 1600 }
+
+	action_a = { # Hold a Council of War
+		name = "Hold a Council of War"
+		command = { type = stability value = -1 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = relation which = MAM value = -100 }
+		#command = { type = vp value = 5 }
+	}
+	action_b = { # Strengthen the Border and leave Egypt alone
+		name = "Strengthen the Border and leave Egypt alone"
+		command = { type = stability value = -1 }
+		command = { type = relation which = MAM value = 200 }
+		command = { type = fortress which = 483 value = 1 }
+		command = { type = fortress which = 474 value = 1 }
+		command = { type = domestic which = OFFENSIVE value = -3 }
+		#command = { type = vp value = -100 }
+		command = { type = sleepevent which = 3001270 }
+		command = { type = sleepevent which = 3001279 }
+	}
+}
+
+#The Anatolia Uprising
+event = {
+	id = 3001270
+	trigger = {
+		event = 3001269
+	}
+	random = NO
+	country = BYZ
+	name = "The Anatolian Uprising"
+	desc = "Seeing conflict as unavoidable, the Mamluks struck first. There was still a significant Ottoman presence in Anatolia despite Byzantium reforms there. The Mamluks gave support to Süleyman, considered the rightful ruler of the Ottomans after Mehmet, who began open revolt against Byzantium."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30 #1 month
+	deathdate = { day = 1 month = january year = 1600 }
+
+	action_a = { # They don't know what they've started
+		name = "We trusted them!"
+		command = { type = revolt which = 477 }
+		command = { type = revolt which = 477 }
+		command = { type = revolt which = 476 }
+		command = { type = revolt which = 482 }
+		command = { type = revolt which = 1611 }
+		command = { type = revolt which = 1609 }
+		command = { type = breakvassal which = MAM }
+		command = { type = casusbelli which = MAM value = 200 }
+		command = { type = war which = MAM }
+	}
+}
+
+#We Stand United
+event = {
+	id = 3001271
+	trigger = {
+		war = { country = MAM country = BYZ }
+		control = { province = 493 data = BYZ }
+	}
+	random = NO
+	country = MAM
+	name = "We Stand United"
+	desc = "The loss of Jerusalem was a sobering blow to the nobles in Cairo. The threat of the annexation of the entire empire - not just Jerusalem - united them for the first time in decades. A call to arms raised new troops and the government and army were reorganized to defend the country. They would be ready for the next battle. The only question was tactics: should they fight defensively or take a more offensive approach?"
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60 #2 months
+	deathdate = { day = 1 month = january year = 1580 }
+
+	action_a = { # Fight An Offensive War: Drive the Infidels From Our Lands!
+		name = "Drive the Infidels From Our Lands!"
+		command = { type = stability value = 2 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = land value = 10000 }
+		command = { type = domestic which = QUALITY value = -3 }
+		command = { type = domestic which = OFFENSIVE value = 3 }
+		command = { type = MIL which = 4 value = 360 }
+	}
+	action_b = { # Fight A Defensive War: Byzantium Will Not Step One Inch Further!
+		name = "Byzantium Will Not Step One Inch Further!"
+		command = { type = cedeprovince which = BYZ value = 493 }
+		command = { type = stability value = 2 }
+		command = { type = land value = 10000 }
+		command = { type = domestic which = QUALITY value = 3 }
+		command = { type = domestic which = OFFENSIVE value = -3 }
+		command = { type = fortress which = -1 value = 1 }
+		command = { type = fortress which = -1 value = 1 }
+		command = { type = fortress which = -1 value = 1 }
+		command = { type = fortress which = -1 value = 1 }
+		command = { type = MIL which = 4 value = 360 }
+	}
+}
+
+#(1419-1820) Seizing the Holy Land
+event = {
+	id = 3001272
+	trigger = {
+		owned = { province = 493 data = -1 } #Judea
+	}
+	random = NO
+	country = BYZ
+	name = "Seizing the Holy Land"
+	desc = "During the war with the Mamluks, the armies of the Byzantine Empire marched into Jerusalem and draped the Byzantine flag over the Wailing Wall. When news of this reached Europe, there were celebrations for months - Christians had retaken the Holy Land! Hoping to shape the new policy in Judea, the Pope raised a massive amount of funds from nobles and merchants: his only condition - that Jerusalem be banned to all Muslims. Many in Constantinople were in favor of the pontiff’s agreement. Still, though the funds were needed for war, several Muslim countries were willing to come to a reconciliation to keep the city open to them. Moreover, the Imperial diplomats believed that to ban them from the area would spark an unwanted holy war."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60 #2 months
+	deathdate = { day = 1 month = january year = 1580 }
+
+	action_a = { # Expel the Muslims
+		name = "Expel the Muslims"
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 300 }
+		command = { type = provincereligion which = 493 value = orthodox }
+		command = { type = populationpercent which = 493 value = -10 }
+		command = { type = provincetax which = 493 value = -1 }
+		command = { type = relation which = PAP value = 200 }
+		command = { type = sleepevent which = 3001273 } #BYZ: Il Grande Citta
+		command = { type = trigger which = 3001275 } #QAR: The Holy War
+		command = { type = trigger which = 3001276 } #OMA: The Holy War
+		command = { type = trigger which = 3001277 } #ARA: The Holy War
+		command = { type = trigger which = 3001278 } #ADE: The Holy War
+	}
+	action_b = { # Allow Free Passage to All
+		name = "Allow Free Passage to All"
+		command = { type = stability value = -1 }
+		command = { type = populationpercent which = 493 value = 5 }
+		command = { type = provincetax which = 493 value = 1 }
+		command = { type = revoltrisk which = 12 value = 4 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = ARA value = 150 }
+		command = { type = relation which = QAR value = 150 }
+		command = { type = relation which = ADE value = 150 }
+		command = { type = relation which = OMA value = 150 }
+		command = { type = relation which = AKK value = 150 }
+		command = { type = sleepevent which = 3001274 } #AKK: The Holy War
+		command = { type = sleepevent which = 3001275 } #QAR: The Holy War
+		command = { type = sleepevent which = 3001276 } #OMA: The Holy War
+		command = { type = sleepevent which = 3001277 } #ARA: The Holy War
+		command = { type = sleepevent which = 3001278 } #ADE: The Holy War
+	}
+}
+
+#(1419-1820) Il Grande Citta
+event = {
+	id = 3001273
+	trigger = {
+		event = 3001272 #BYZ: Seizing the Holy Land
+		owned = { province = 493 data = -1 } #Judea
+	}
+	random = NO
+	country = BYZ
+	name = "Il Grande Citta"
+	desc = "The decision to keep Jerusalem open to all people, Christian and Muslim, was an unpopular one, but it reinvigorated the city. Thousands of pilgrims flocked there, and many decided to stay creating a cosmopolitan atmosphere. Trade and education flourished and Jerusalem became the third city of the Empire, after Constantinople and Thessaloniki. Even the Pope, whose predecessor first advocated expelling all Muslims from the province, was so impressed with Jerusalem that on a state visit he called the town 'Il Grande Citta' - 'The Great City.'"
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 14400 #40 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Excellent!" # Excellent!
+		command = { type = stability value = 2 }
+		command = { type = populationpercent which = 493 value = 20 }
+		command = { type = provincetax which = 493 value = 5 }
+	}
+}
+
+#(1419-1820) The Holy War - Ak Koyunlu
+event = {
+	id = 3001274 #triggered by BYZ_3001272 A
+	random = NO
+	country = AKK
+	name = "Jihad!"
+	desc = "Sire! The Romans have banned Muslims from one of our most holiest cities! The people are demanding a holy war against the 'Isaist heathens."
+
+	action_a = {
+		name = "Wage a Holy War" # Wage a Holy War
+		command = { type = relation which = BYZ value = -200 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+		command = { type = stability value = 3 }
+		command = { type = relation which = ARA value = 300 }
+		command = { type = relation which = QAR value = 300 }
+		command = { type = relation which = ADE value = 300 }
+		command = { type = relation which = OMA value = 300 }
+		command = { type = relation which = MAM value = 300 }
+		command = { type = alliance which = ARA }
+		command = { type = alliance which = QAR }
+		command = { type = alliance which = OMA }
+		command = { type = alliance which = ADE }
+		command = { type = alliance which = MAM }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = CAV which = -2 value = 5000 }
+	}
+	action_b = {
+		name = "Do Nothing" # Do Nothing
+		command = { type = stability value = -6 }
+		command = { type = relation which = BYZ value = 150 }
+	}
+}
+
+#(1419-1820) The Holy War - Qara Koyunlu
+event = {
+	id = 3001275 #triggered by BYZ_3001272 A
+	random = NO
+	country = QAR
+	name = "Jihad!"
+	desc = "Sire! The Romans have banned Muslims from one of our most holiest cities! The people are demanding a holy war against the 'Isaist heathens."
+
+	action_a = {
+		name = "Wage a Holy War" # Wage a Holy War
+		command = { type = relation which = BYZ value = -200 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+		command = { type = stability value = 3 }
+		command = { type = relation which = AKK value = 300 }
+		command = { type = relation which = QAR value = 300 }
+		command = { type = relation which = ADE value = 300 }
+		command = { type = relation which = ARA value = 300 }
+		command = { type = relation which = MAM value = 300 }
+		command = { type = alliance which = AKK }
+		command = { type = alliance which = ARA }
+		command = { type = alliance which = OMA }
+		command = { type = alliance which = ADE }
+		command = { type = alliance which = MAM }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = CAV which = -2 value = 5000 }
+	}
+	action_b = {
+		name = "Do Nothing" # Do Nothing
+		command = { type = stability value = -6 }
+		command = { type = relation which = BYZ value = 150 }
+	}
+}
+
+#(1419-1820) The Holy War - Oman
+event = {
+	id = 3001276 #triggered by BYZ_3001272 A
+	random = NO
+	country = OMA
+	name = "Jihad!"
+	desc = "Sire! The Romans have banned Muslims from one of our most holiest cities! The people are demanding a holy war against the 'Isaist heathens."
+
+	action_a = {
+		name = "Wage a Holy War" # Wage a Holy War
+		command = { type = relation which = BYZ value = -200 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+		command = { type = stability value = 3 }
+		command = { type = relation which = AKK value = 300 }
+		command = { type = relation which = QAR value = 300 }
+		command = { type = relation which = ADE value = 300 }
+		command = { type = relation which = ARA value = 300 }
+		command = { type = relation which = MAM value = 300 }
+		command = { type = alliance which = AKK }
+		command = { type = alliance which = QAR }
+		command = { type = alliance which = ARA }
+		command = { type = alliance which = ADE }
+		command = { type = alliance which = MAM }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = CAV which = -2 value = 5000 }
+	}
+	action_b = {
+		name = "Do Nothing" # Do Nothing
+		command = { type = stability value = -6 }
+		command = { type = relation which = BYZ value = 150 }
+	}
+}
+
+#(1419-182) The Holy War - Hedjaz
+event = {
+	id = 3001277 #triggered by BYZ_3001272 A
+	random = NO
+	country = ARA
+	name = "Jihad!"
+	desc = "Sire! The Romans have banned Muslims from one of our most holiest cities! The people are demanding a holy war against the 'Isaist heathens."
+
+	action_a = {
+		name = "Wage a Holy War" # Wage a Holy War
+		command = { type = relation which = BYZ value = -200 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+		command = { type = stability value = 3 }
+		command = { type = relation which = AKK value = 300 }
+		command = { type = relation which = QAR value = 300 }
+		command = { type = relation which = ADE value = 300 }
+		command = { type = relation which = OMA value = 300 }
+		command = { type = relation which = MAM value = 300 }
+		command = { type = alliance which = AKK }
+		command = { type = alliance which = QAR }
+		command = { type = alliance which = OMA }
+		command = { type = alliance which = ADE }
+		command = { type = alliance which = MAM }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = CAV which = -2 value = 5000 }
+	}
+	action_b = {
+		name = "Do Nothing" # Do Nothing
+		command = { type = stability value = -6 }
+		command = { type = relation which = BYZ value = 150 }
+	}
+}
+
+#(1419-1820) The Holy War - Aden
+event = {
+	id = 3001278 #triggered by BYZ_3001272 A
+	random = NO
+	country = ADE
+	name = "Jihad!"
+	desc = "Sire! The Romans have banned Muslims from one of our most holiest cities! The people are demanding a holy war against the 'Isaist heathens."
+
+	action_a = {
+		name = "Wage a Holy War" # Wage a Holy War
+		command = { type = relation which = BYZ value = -200 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+		command = { type = stability value = 3 }
+		command = { type = relation which = AKK value = 300 }
+		command = { type = relation which = QAR value = 300 }
+		command = { type = relation which = ARA value = 300 }
+		command = { type = relation which = OMA value = 300 }
+		command = { type = relation which = MAM value = 300 }
+		command = { type = alliance which = AKK }
+		command = { type = alliance which = QAR }
+		command = { type = alliance which = OMA }
+		command = { type = alliance which = ARA }
+		command = { type = alliance which = MAM }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = CAV which = -2 value = 5000 }
+	}
+	action_b = {
+		name = "Do Nothing" # Do Nothing
+		command = { type = stability value = -6 }
+		command = { type = relation which = BYZ value = 150 }
+	}
+}
+
+#The Mamluk Revival by Mr. Ouija
+event = {
+	id = 3001279
+	trigger = {
+		event = 3001271
+		NOT = { war = { country = BYZ country = MAM } }
+		owned = { province = 493 data = -1 } #judea
+		owned = { province = 744 data = -1 } #Alexandria
+	}
+	random = NO
+	country = MAM
+	name = "The Mamluk Revival"
+	desc = "Against all odds, the Mamluks turned back the Byzantium invaders and retook preserved the most important parts of their state. This great victory made their country the strongest among the Islamic world and the innovative philosophy to confronting Byzantium would be cemented in the government for some time."
+
+	date = { year = 1337 }
+	offset = 30 #1 months
+	deathdate = { year = 1838 }
+
+	action_a = { # We are victorious!
+		name = "We are victorious!"
+		command = { type = stability value = 3 }
+		command = { type = domestic which = INNOVATIVE value = 3 }
+		command = { type = technology which = orthodox }
+		command = { type = add_countryculture which = arabic }
+		#command = { type = vp value = 200 }
+	}
+}
+
+#Terms of Surrender
+event = {
+	id = 3001280
+	trigger = {
+		event = 3001271
+		NOT = { control = { province = 493 data = -1 } } #judea
+		NOT = { control = { province = 490 data = -1 } } #syria
+		NOT = { control = { province = 491 data = -1 } } #lebanon
+		NOT = { control = { province = 744 data = -1 } } #Alexandria
+		NOT = { control = { province = 745 data = -1 } } #delta
+		NOT = { control = { province = 746 data = -1 } } #egypt
+		control = { province = 497 data = -1 } #medina
+		control = { province = 498 data = -1 } #mecca
+	}
+	country = MAM
+	name = "Terms of surrender"
+	desc = "Sire, although we have lost much of our dominion, the holy shrines of Medina and Mecca are as yet undefiled by the 'Isaist swine. If we offer terms forsaking Egypt, the Byzantines might allow us to retreat into Arabia, where we can still live comfortably on the pilgrim trade."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 1800 #5 years
+	deathdate = { year = 1838 }
+
+	action_a = { #Ok
+		name = "Accept the end"
+		trigger = {
+			ai = yes
+		}
+		command = { type = trigger which = 3001281 }
+	}
+	action_b = { #No
+		name = "We fight to the death!"
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = stability value = -3 }
+	}
+}
+
+#The Byzantium-Mamluk War Ends
+event = {
+	id = 3001281 #Triggered by MAM_3001280 A
+	random = NO
+	country = BYZ
+	name = "Terms of Surrender"
+	desc = "In order to protect the holy shrines in Medina and Mecca, the Mamluks have sent an envoy with terms of surrender - in exchange for leaving the Hedjaz unmolested, the Mamluks will withdraw from Cairo and surrender Alexandria and Jerusalem, along with whatever other prizes Byzantium might conquer."
+
+	action_a = {
+		name = "Accept their terms and create the Mamluk Sharifate of Hedjaz" #Major cleanup of original event
+		command = { type = inherit which = MAM }
+		#command = { type = trigger which = 3001508 } #Release SUD if annexed by MAM
+		#command = { type = trigger which = 3001509 } #Give SUD ancient provinces
+		#command = { type = trigger which = 3001510 } #Release ARA to create Hedjaz
+		#command = { type = trigger which = 3001511 } #Give ARA Mecca/Medina
+		command = { type = stability value = 1 }
+	}
+	action_b = {
+		name = "We will extirpate this heresy!"
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#(1419-1820) Liberation of Nubia 
+event = {
+	id = 3001508 #Triggered by BYZ_3001281 A/BYZ_3001286 A
+	trigger = {
+		OR = {
+			event = 3001281 #BYZ: Byzantine-Mamluk Conflict Ends
+			event = 3001286 #BYZ: Byzantine-Mamluk Conflict Ends
+		}
+		NOT = { exists = MAM }
+		NOT = { exists = NUB }
+	}
+	random = NO
+	country = BYZ
+	name = "Liberation of Nubia"
+	desc = "After the collapse of the Mamluk state, the Emperor allows the Orthodox Nubians to rebuild their kingdom." 
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30 #1 month
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "As God grants us our liberty, so do we grant theirs!"
+		command = { type = badboy value = -1 }
+		command = { type = independence which = NUB } #if annexed by MAM, which is pretty common
+	}
+}
+
+#(1419-1820) Restoration of Nubia 
+event = {
+	id = 3001509 #Triggered by BYZ_3001281 A/BYZ_3001286 A
+	trigger = {
+		OR = {
+			event = 3001281 #BYZ: Byzantine-Mamluk Conflict Ends
+			event = 3001286 #BYZ: Byzantine-Mamluk Conflict Ends
+			event = 3001508 #BYZ: Liberation of Nubia
+		}
+		NOT = { exists = MAM }
+		exists = NUB
+	}
+	random = NO
+	country = BYZ
+	name = "Restoration of Nubia"
+	desc = "As a weak orthodox state on their southern border, Nubia offered the Mamluk state an often tempting target for expansion, destruction and conquest. The Emperors, recognizing that same story in their stand against the Turks and the Venetians, eagerly restored the old Nubian claims. This also gave them a strong orthodox vassal in the south." 
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30 #1 month
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Allow the Nubians to reclaim their lands"
+		command = { type = sleepevent which = 289000 } #NUB: Fall of Alodia
+		command = { type = relation which = NUB value = 300 }
+		command = { type = cedeprovince which = NUB value = 748 }
+		command = { type = cedeprovince which = NUB value = 749 }
+		command = { type = cedeprovince which = NUB value = 750 }
+		command = { type = cedeprovince which = NUB value = 751 }
+		command = { type = cedeprovince which = NUB value = 752 }
+		command = { type = vassal which = NUB }
+	}
+}
+
+#(1419-1820) Arabia for the Arabs
+event = {
+	id = 3001510 #Triggered by BYZ_3001280 A/BYZ_3001303 A
+	trigger = {
+		event = 3001281
+		NOT = { exists = MAM }
+		NOT = { exists = ARA }
+	}
+	random = NO
+	country = BYZ
+	name = "Arabia for the Arabs"
+	desc = "Recognizing that Orthodox Greeks would hardly be able to hold the desert sands, the Emperor grants the title of Sharif of Hedjaz to a trusted Arabian tribe."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30 #1 month
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Let them serve us loyally... in the desert."
+		command = { type = badboy value = -1 }
+		command = { type = independence which = ARA }
+	} #Consider adding Mamluk leaders to ARA monarch file
+}
+
+#(1419-1820) Guardians of the Kaaba
+event = {
+	id = 3001511 #Triggered by BYZ_3001280 A/BYZ_3001303 A
+	trigger = {
+		event = 3001281
+		NOT = { exists = MAM }
+		exists = ARA
+	}
+	random = NO
+	country = BYZ
+	name = "Guardians of the Kaaba"
+	desc = "Respecting the power if not the substance of the teachings of the desert prophet, the Emperor has turned over the holy shrines in Mecca and Medina to the Sharif of Hedjaz for safekeeping."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30 #1 month
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Let our wisdom guide our successors"
+		command = { type = relation which = ARA value = 300 }
+		command = { type = cedeprovince which = ARA value = 496 }
+		command = { type = cedeprovince which = ARA value = 497 }
+		command = { type = cedeprovince which = ARA value = 498 }
+		command = { type = vassal which = ARA }
+	}
+}
+
+#Coptic revolts I
+event = {
+	id = 3001282
+	trigger = {
+		control = { province = 744 data = BYZ }
+	}
+	random = NO
+	country = MAM
+	name = "Coptic revolts"
+	desc = "With the Empire making a successful assault on Egypt, the native Christian population rises in revolt."
+	date = { day = 1 month = january year = 1337 }
+	offset = 30 #1 month
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Crap"
+		command = { type = desertion which = -1 value = -2000 }
+		command = { type = desertion which = -1 value = -2000 }
+		command = { type = desertion which = -1 value = -2000 }
+		command = { type = revolt which = 743 }
+		command = { type = revolt which = 745 }
+		command = { type = revolt which = 746 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#Coptic revolts II
+event = {
+	id = 3001283
+	trigger = {
+		event = 3001215
+		control = { province = 744 data = BYZ }
+	}
+	random = NO
+	country = MAM
+	name = "Coptic revolts"
+	desc = "With the Empire making a successful assault on Egypt, the native Christian population rises in revolt. Because the Imperial stance is now more friendly to the non-Chalcedonian Copts, they are still more determined."
+	date = { day = 1 month = january year = 1337 }
+	offset = 30 #1 month
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Crap"
+		command = { type = desertion which = -1 value = -2000 }
+		command = { type = desertion which = -1 value = -2000 }
+		command = { type = desertion which = -1 value = -2000 }
+		command = { type = desertion which = -1 value = -2000 }
+		command = { type = desertion which = -1 value = -2000 }
+		command = { type = revolt which = 743 }
+		command = { type = revolt which = 745 }
+		command = { type = revolt which = 746 }
+		command = { type = stability value = -2 }
+		command = { type = revolt which = 743 }
+		command = { type = revolt which = 745 }
+		command = { type = revolt which = 746 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# More Mamluk Events by Louis-Philippe
+
+event = {
+	id = 3001284
+	trigger = {
+		vassal = { country = BYZ country = MAM }
+	}
+	random = NO
+	country = BYZ
+	name = "Egypt succumbs to instability"
+	desc = "After years of survival, the Mamluk Sultanate has collapsed under its own weight and instability. Today, the forces of the resurgent Roman Empire emerged as master of Egypt and seized the capital. The Sultan abdicated. By virtue of a treaty previously signed with the Emperor, Nubia will recover all lands previously taken by the Sultanate. Egypt herself falls into Greek hands. The last Sultanate of the East is no more..."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30 #1 month
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Finish him!"
+		command = { type = trigger which = 3001285 }
+	}
+	action_b = {
+		name = "Let them be"
+		command = { type = relation which = MAM value = 400 }
+	}
+}
+
+event = {
+	id = 3001285
+	random = NO
+	country = MAM
+	name = "The Last Sultanate of the East is no more."
+	desc = "After years of survival, the Mamluk Sultanate has collapsed under its own weight and instability. Today, the forces of the resurgent Roman Empire emerged as masters of Egypt, seizing the capital and forcing the Sultan to abdicate. By virtue of a treaty signed with the Emperor, Nubia will recover all lands previously taken by the Sultanate, but Egypt herself falls into Greek hands. The last Sultanate of the East is no more."
+
+	action_a = {
+		name = "There is nothing for it..."
+		trigger = {
+			ai = yes
+		}
+		command = { type = trigger which = 3001286 }
+	}
+	action_b = {
+		name = "Better death than dishonor!"
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -2 }
+		command = { type = stability value = -6 }
+		command = { type = treasury value = -2500 }
+	}
+}
+
+#The Byzantine-Mamluk War Ends
+event = {
+	id = 3001286
+	random = NO
+	country = BYZ
+	name = "Aigypton"
+	desc = "The Egyptians have accepted total Imperial control. We are victorious!"
+
+	action_a = {
+		name = "Frickin' Sweet!"
+		command = { type = stability value = 3 }
+		command = { type = inherit which = MAM }
+		command = { type = badboy value = -1 }
+		#command = { type = trigger which = 3001508 } #Release SUD if annexed by MAM
+		#command = { type = trigger which = 3001509 } #Give SUD ancient provinces
+	}
+}
+
+event = {
+	id = 3001287
+	trigger = {
+		owned = { province = 742 data = BYZ } #Quattara
+		owned = { province = 743 data = BYZ } #Cataract
+		owned = { province = 744 data = BYZ } #Alexandria
+		owned = { province = 745 data = BYZ } #Delta
+		owned = { province = 746 data = BYZ } #Egypt
+		OR = {
+			flag = byz_victory_egypt #BYZ: Victory in Egypt (dec. 6034)
+			flag = byz_empire_east #BYZ: The Empire of the East (dec. 6036-6037)
+			flag = byz_conquest_africa #BYZ: Conquest of Africa (dec. 6038-6039)
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "Imperial domination of the East"
+	desc = "With the capture of Egypt and the last Muslim strongholds, the Emperor engaged himself in a politics of reconciliation with local Muslim Arab population. His goal was not the destruction of their culture, but an alliance with their lords to better face the threats to his east in Persia and Arabia. Though, he could still be persuaded to support the Coptic populance against their former masters..."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30 #1 month
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Conclude an alliance"
+		command = { type = provincetax which = 744 value = 1 }
+		command = { type = provincetax which = 745 value = 1 }
+		command = { type = provincetax which = 746 value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = sleepevent which = 3001288 }
+	}
+	action_b = {
+		name = "Let us promote the Copts"
+		command = { type = populationpercent which = 743 value = -4 }
+		command = { type = revolt which = 743 }
+		command = { type = revolt which = 743 }
+		command = { type = revolt which = 743 }
+		command = { type = revolt which = 743 }
+		command = { type = populationpercent which = 744 value = -7 }
+		command = { type = revolt which = 744 }
+		command = { type = revolt which = 744 }
+		command = { type = revolt which = 744 }
+		command = { type = revolt which = 744 }
+		command = { type = populationpercent which = 745 value = -6 }
+		command = { type = revolt which = 745 }
+		command = { type = revolt which = 745 }
+		command = { type = revolt which = 745 }
+		command = { type = revolt which = 745 }
+		command = { type = populationpercent which = 746 value = -10 }
+		command = { type = revolt which = 746 }
+		command = { type = revolt which = 746 }
+		command = { type = revolt which = 746 }
+		command = { type = revolt which = 746 }
+		command = { type = populationpercent which = 747 value = -4 }
+		command = { type = revolt which = 747 }
+		command = { type = revolt which = 747 }
+		command = { type = revolt which = 747 }
+		command = { type = revolt which = 747 }
+		command = { type = stability value = -2 }
+		command = { type = trigger which = 3001290 } #refugee event
+		command = { type = trigger which = 3001289 } #refugee event
+		command = { type = trigger which = 3001291 } #refugee event
+	}
+}
+
+#Coptic reprisal
+event = {
+	id = 3001288
+	trigger = {
+		event = 3001287
+	}
+	random = NO
+	country = BYZ
+	name = "Coptic reprisals"
+	desc = "The Muslims had, by and large, been very tolerant of the Copts, Egypt's native and largely Christian population. There was even a Hadith of the Prophet (pbuh) protecting them in the name of his beloved Coptic wife. Still, after the Mad Caliph al-Hakim had banned them from official service and begun their persecution and the Crusades had followed shortly after, their condition had become miserable. Now, four centuries on, some of the newly empowered Copts have decided to wreck havoc on Egypt's remaining Arabs."
+	date = { year = 1337 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Let the Copts run amok"
+		command = { type = stability value = 1 }
+		command = { type = conversion which = 745 }
+		command = { type = conversion which = 746 }
+		command = { type = provincetax which = 746 value = -4 }
+		command = { type = provincetax which = 745 value = -2 }
+		command = { type = provincetax which = 744 value = -5 }
+		command = { type = provincetax which = 743 value = -2 }
+		command = { type = provincetax which = 742 value = -2 }
+		command = { type = provincetax which = 747 value = -2 }
+		command = { type = populationpercent which = 746 value = -20 }
+		command = { type = populationpercent which = 745 value = -5 }
+		command = { type = populationpercent which = 744 value = -10 }
+		command = { type = populationpercent which = 743 value = -2 }
+		command = { type = populationpercent which = 742 value = -4 }
+		command = { type = populationpercent which = 747 value = -4 }
+		command = { type = revolt which = 744 }
+		command = { type = revolt which = 744 }
+		command = { type = revolt which = 745 }
+		command = { type = revolt which = 745 }
+		command = { type = revolt which = 746 }
+		command = { type = revolt which = 746 }
+		command = { type = revolt which = 747 }
+		command = { type = revolt which = 747 }
+		command = { type = revolt which = 743 }
+		command = { type = revolt which = 742 }
+		command = { type = trigger which = 3001294 }
+		command = { type = trigger which = 3001292 }
+		command = { type = trigger which = 3001293 }
+	}
+	action_b = {
+		name = "Rein them in"
+		command = { type = stability value = -1 }
+		command = { type = revolt which = 744 }
+		command = { type = revolt which = 746 }
+		command = { type = relation which = MAM value = 100 }
+		command = { type = relation which = CYR value = 100 }
+		command = { type = relation which = TUN value = 100 }
+		command = { type = relation which = PER value = 100 }
+		command = { type = relation which = ARA value = 100 }
+		command = { type = relation which = ADE value = 100 }
+	}
+}
+
+event = {
+	id = 3001289
+	trigger = {
+		event = 3001287
+	}
+	random = NO
+	country = ARA
+	name = "Refugees from Egypt"
+	desc = "After the conquest of Egypt by the Romans, the Arab Muslims were persecuted by the Greeks and the Egyptian Copts. The martyrs, chased from their lands, chose to revolt, but the Imperial oppression made part of these poor exiles decide to escape to the Arabian peninsula. Today, we must choose to accept them or to force them into the desert."
+	date = { year = 1337 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Generosity is a mitzvah"
+		command = { type = stability value = -3 }
+		command = { type = treasury value = 150 }
+		command = { type = populationpercent which = -2 value = 10 }
+		command = { type = populationpercent which = -1 value = 5 }
+		command = { type = populationpercent which = -1 value = 5 }
+		command = { type = revoltrisk which = 48 value = 2 }
+	}
+	action_b = {
+		name = "We don't have enough for ourselves!"
+		command = { type = stability value = 2 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -1 }
+	}
+}
+
+event = {
+	id = 3001290
+	trigger = {
+		event = 3001287
+	}
+	random = NO
+	country = ADE
+	name = "Refugees from Egypt"
+	desc = "After the conquest of Egypt by the Romans, the Arab Muslims were persecuted by the Greeks and the Egyptian Copts. The martyrs, chased from their lands, chose to revolt, but the Imperial oppression made part of these poor exiles decide to escape to the Arabian peninsula. Today, we must choose to accept them or to force them into the desert."
+	date = { year = 1337 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Generosity is a mitzvah"
+		command = { type = stability value = -3 }
+		command = { type = treasury value = 150 }
+		command = { type = populationpercent which = -2 value = 8 }
+		command = { type = populationpercent which = -1 value = 2 }
+		command = { type = populationpercent which = -1 value = 2 }
+		command = { type = revoltrisk which = 48 value = 2 }
+	}
+	action_b = {
+		name = "We don't have enough for ourselves!"
+		command = { type = stability value = 2 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -1 }
+	}
+}
+
+event = {
+	id = 3001291
+	trigger = {
+		event = 3001287
+	}
+	random = NO
+	country = TUN
+	name = "Refugees from Egyptian Arabs"
+	desc = "After the conquest of Egypt by the Romans, the Arab Muslims were persecuted by the Greeks and the Egyptian Copts. The martyrs, chased from their lands, chose to revolt, but the Imperial oppression made part of these poor exiles decide to escape to Tunisia. Today, we must choose to accept them or to force them into the desert."
+	date = { year = 1337 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Generosity is a mitzvah"
+		command = { type = stability value = -3 }
+		command = { type = treasury value = 150 }
+		command = { type = populationpercent which = -2 value = 8 }
+		command = { type = populationpercent which = -1 value = 2 }
+		command = { type = populationpercent which = -1 value = 2 }
+		command = { type = revoltrisk which = 48 value = 2 }
+	}
+	action_b = {
+		name = "We don't have enough for ourselves!"
+		command = { type = stability value = 2 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -1 }
+	}
+}
+
+#Arab Exodus from Egypt#
+event = {
+	id = 3001292
+	trigger = {
+		event = 3001288
+	}
+	random = NO
+	country = ARA
+	name = "Arab Exodus from Egypt"
+	desc = "Expelled and persecuted Arabs from Egypt flee to all neighbouring countries. We should receive our brothers and make war with infidels."
+	date = { year = 1337 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = { #This means Holy War#
+		name = "Jihad!"
+		command = { type = populationpercent which = -2 value = 8 }
+		command = { type = populationpercent which = -1 value = 4 }
+		command = { type = relation which = BYZ value = -200 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+		command = { type = stability value = 3 }
+		command = { type = relation which = ADE value = 300 }
+		command = { type = relation which = TUN value = 300 }
+		command = { type = relation which = MAM value = 300 }
+		command = { type = alliance which = ADE }
+		command = { type = alliance which = TUN }
+		command = { type = alliance which = MAM }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = CAV which = -2 value = 5000 }
+	}
+}
+#adjusted values
+
+#Arab Exodus from Egypt
+event = {
+	id = 3001293
+	trigger = {
+		event = 3001288
+	}
+	random = NO
+	country = ADE
+	name = "Arab Exodus from Egypt"
+	desc = "Expelled Arabs from Egypt flee to all neighbouring countries. We should receive our brothers and make war with infidels."
+	date = { year = 1337 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = { #This means Holy War#
+		name = "Jihad!"
+		command = { type = populationpercent which = -2 value = 8 }
+		command = { type = populationpercent which = -1 value = 4 }
+		command = { type = relation which = BYZ value = -200 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+		command = { type = stability value = 3 }
+		command = { type = relation which = ARA value = 300 }
+		command = { type = relation which = TUN value = 300 }
+		command = { type = relation which = MAM value = 300 }
+		command = { type = alliance which = ARA }
+		command = { type = alliance which = TUN }
+		command = { type = alliance which = MAM }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = CAV which = -2 value = 5000 }
+	}
+}
+#adjusted values
+
+#Arab Exodus from Egypt
+event = {
+	id = 3001294
+	trigger = {
+		event = 3001288
+	}
+	random = NO
+	country = TUN
+	name = "Arab Exodus from Egypt"
+	desc = "Expelled Arabs from Egypt flee to all neighbouring countries. We should receive our brothers and make war with infidels."
+	style = 2
+	date = { year = 1337 }
+	offset = 3600 #10 years
+	deathdate = { year = 1838 }
+
+	action_a = { #This means Holy War#
+		name = "Jihad!"
+		command = { type = populationpercent which = -2 value = 8 }
+		command = { type = populationpercent which = -1 value = 4 }
+		command = { type = relation which = BYZ value = -200 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+		command = { type = stability value = 3 }
+		command = { type = relation which = ADE value = 300 }
+		command = { type = relation which = ARA value = 300 }
+		command = { type = relation which = MAM value = 300 }
+		command = { type = alliance which = ADE }
+		command = { type = alliance which = ARA }
+		command = { type = alliance which = MAM }
+		command = { type = INF which = -2 value = 10000 }
+		command = { type = CAV which = -2 value = 5000 }
+	}
+}
+#adjusted values
+
+event = {
+	id = 3001295
+	trigger = {
+		owned = { province = 493 data = BYZ} #Judea
+		owned = { province = 492 data = BYZ} #Samaria
+		owned = { province = 491 data = BYZ} #Lebanon
+		OR = {
+			flag = byz_victory_egypt #BYZ: Victory in Egypt (dec. 6034)
+			flag = byz_empire_east #BYZ: The Empire of the East (dec. 6036-6037)
+			flag = byz_conquest_africa #BYZ: Conquest of Africa (dec. 6038-6039)
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "The New Jerusalem"
+	desc = "After many battles, the Romans were able to seize the holy places of Judea. Almost immediately, they began the colonization of the territory with people coming from Anatolia and the Balkans, Greeks in search of free land and hoping in time to replace the Arab usurpers. Many western merchants also arrived, especially the Italians, to engage in the lucrative trade between the Holy Land and the West."
+	date = { day = 1 month = january year = 1500 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Organize settlements and foreign trade"
+		command = { type = revolt which = 493 }
+		command = { type = revolt which = 492 }
+		command = { type = revolt which = 491 }
+		command = { type = trade value = 500 }
+		command = { type = relation which = PAP value = 200 }
+		command = { type = relation which = VEN value = 150 }
+		command = { type = relation which = SPA value = 75 }
+		command = { type = relation which = FRA value = 75 }
+		command = { type = relation which = KNI value = 200 }
+		command = { type = treasury value = -100 }
+		command = { type = populationpercent which = 493 value = 6 }
+		command = { type = populationpercent which = 492 value = 3 }
+		command = { type = populationpercent which = 491 value = 3 }
+		command = { type = populationpercent which = 357 value = -3 } #Thrace
+		command = { type = populationpercent which = 358 value = -2 } #Macedonia
+		command = { type = populationpercent which = 359 value = -1 }
+		command = { type = populationpercent which = 478 value = -2 }
+		command = { type = populationpercent which = 477 value = -2 }
+		command = { type = populationpercent which = 475 value = -2 }
+	}
+	action_b = {
+		name = "We shall limit ourselves to the coastal trade"
+		command = { type = revolt which = 493 }
+		command = { type = revolt which = 492 }
+		command = { type = revolt which = 491 }
+		command = { type = trade value = 1500 }
+		command = { type = relation which = PAP value = 200 }
+		command = { type = relation which = VEN value = 200 }
+		command = { type = relation which = GEN value = 200 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = sleepevent which = 3001296 }
+		command = { type = sleepevent which = 3001297 }
+		command = { type = sleepevent which = 3001298 }
+		command = { type = domestic which = LAND value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+	}
+}
+#added population, made b slightly more appealing
+
+event = {
+	id = 3001296
+	trigger = {
+		owned = { province = 493 data = BYZ } #Judea
+		event = 3001295
+	}
+	random = NO
+	country = BYZ
+	name = "The Greeks are the majority in Judea"
+	desc = "After the conquest of Judea, the Emperor organized the colonization of the recovered lands. It took many years for the Greeks to become a majority in the province, but the Emperor has finally attained his goal. A last revolt attempted to drive the Greeks back into the sea."
+	date = { day = 1 month = january year = 1525 }
+	offset = 7200 #20 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Huzzah!"
+		command = { type = provincereligion which = 493 value = orthodox }
+		command = { type = provinceculture which = 493 value = greek }
+		command = { type = revolt which = 493 }
+		command = { type = revolt which = 493 }
+		command = { type = revolt which = 493 }
+	}
+}
+
+event = {
+	id = 3001297
+	trigger = {
+		owned = { province = 492 data = BYZ } #Samaria
+		event = 3001295
+	}
+	random = NO
+	country = BYZ
+	name = "The Greeks are the majority in Judea"
+	desc = "After the conquest of Judea, the Emperor organized the colonization of the recovered lands. It took many years for the Greeks to become a majority in the province, but the Emperor has finally attained his goal. A last revolt attempted to drive the Greeks back into the sea."
+	date = { day = 1 month = january year = 1525 }
+	offset = 7200 #20 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Huzzah!"
+		command = { type = provincereligion which = 492 value = orthodox }
+		command = { type = provinceculture which = 492 value = greek }
+		command = { type = revolt which = 492 }
+		command = { type = revolt which = 492 }
+		command = { type = revolt which = 492 }
+	}
+}
+
+event = {
+	id = 3001298
+	trigger = {
+		event = 3001295
+		owned = { province = 491 data = BYZ } #Lebanon
+	}
+	random = NO
+	country = BYZ
+	name = "The Greeks are the majority in Judea"
+	desc = "After the conquest of Judea, the Emperor organized the colonization of the recovered lands. It took many years for the Greeks to become a majority in the province, but the Emperor has finally attained his goal. A last revolt attempted to drive the Greeks back into the sea."
+	date = { day = 1 month = january year = 1525 }
+	offset = 7200 #20 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Huzzah!"
+		command = { type = provincereligion which = 491 value = orthodox }
+		command = { type = provinceculture which = 491 value = greek }
+		command = { type = revolt which = 491 }
+		command = { type = revolt which = 491 }
+		command = { type = revolt which = 491 }
+	}
+}
+
+event = {
+	id = 3001299
+	trigger = {
+		owned = { province = 491 data = BYZ } #Lebanon
+		domestic = { type = centralization value = 7 }
+	}
+	random = NO
+	country = BYZ
+	name = "The restoration of the University of Beirut"
+	desc = "During the time of the old Empire, and even under Iustinianus, the University of Beirut was known throughout the entire world, from Persia to Gaul. Nevertheless, with the passing years, the university lost its prestige until a fatal blow came in the limitation of legal education to Constantinople. After the Arab conquest, the university was shuttered. Now, in the 16th century, the administrative and legal needs of the Empire have obliged the Emperor to speed the creation of administrators and functionaries. Thoughts turned to the reestablishment of the old university."
+	date = { day = 1 month = january year = 1540 }
+	offset = 60 #2 months
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Restore it"
+		command = { type = gainmanufactory which = 491 value = luxury }
+		command = { type = treasury value = -600 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+	}
+	action_b = {
+		name = "Nope, too much..."
+		command = { type = treasury value = 100 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+	}
+}
+#changed price
+
+event = {
+	id = 3001300
+	trigger = {
+		owned = { province = 493 data = BYZ } #Judea
+	}
+	random = NO
+	country = BYZ
+	name = "The Restoration of the Holy Sepulchre"
+	desc = "After centuries of absence from Christendom and many centuries absence from Orthodoxy, the Holy Land is finally recovered. The holy churches of the region are in critical shape. It is necessary, for our honor and for the Christian faith, to restore these monuments."
+	date = { day = 1 month = january year = 1545 }
+	offset = 30 #1 month
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Restore them to their original state"
+		command = { type = treasury value = -200 }
+		command = { type = stability value = 1 }
+	}
+	action_b = {
+		name = "To the greater glory of God! & his servant, me!"
+		command = { type = treasury value = -1000 }
+		command = { type = gainmanufactory which = 493 value = luxury }
+		command = { type = badboy value = -1 }
+		command = { type = stability value = 2 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+	}
+}
+#changed prices
+
+event = {
+	id = 3001301
+	trigger = {
+		OR = {
+			flag = byz_victory_egypt #BYZ: Victory in Egypt (dec. 6034)
+			flag = byz_empire_east #BYZ: The Empire of the East (dec. 6036-6037)
+			flag = byz_conquest_africa #BYZ: Conquest of Africa (dec. 6038-6039)
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "The Eastern border"
+	desc = "After having seized Syria, the Empire faced many routes of invasion from the East, especially from Persia. The Emperor, understanding he could not be everywhere at once, reorganzied the border defenses to prevent any incursion on Roman land. He then ordered an immense wall constructed, from Edessa to Judea, and the establishment of border garrisons to repel enemy incursions. However, the cost of this work would be huge, and there were numerous voices against the expense."
+	date = { day = 1 month = january year = 1560 }
+	offset = 30 #1 month
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Organize our frontier defense"
+		command = { type = treasury value = -375 }
+		command = { type = domestic which = OFFENSIVE value = -1 }
+		command = { type = fortress which = 486 value = 2 }
+		command = { type = fortress which = 490 value = 2 }
+		command = { type = fortress which = 495 value = 1 }
+		command = { type = stability value = -1 }
+	}
+	action_b = {
+		name = "If you're going to do something..."
+		command = { type = treasury value = -750 }
+		command = { type = domestic which = OFFENSIVE value = -3 }
+		command = { type = fortress which = 486 value = 3 }
+		command = { type = fortress which = 490 value = 3 }
+		command = { type = fortress which = 495 value = 3 }
+		command = { type = INF which = 486 value = 2000 }
+		command = { type = INF which = 490 value = 2000 }
+		command = { type = INF which = 495 value = 2000 }
+		command = { type = stability value = -2 }
+	}
+	action_c = {
+		name = "Establish the Roman Rapid Response Force instead"
+		command = { type = domestic which = OFFENSIVE value = 2 }
+		command = { type = domestic which = QUALITY value = 2 }
+		command = { type = land value = 500 }
+		command = { type = CAV which = 490 value = 5000 }
+	}
+}
+#changed free soldier amounts, penalty to offensive
+
+event = {
+	id = 3001302
+	trigger = {
+		owned = { province = 744 data = BYZ } #Alexandria
+	}
+	random = NO
+	country = BYZ
+	name = "The riches of Alexandria"
+	desc = "After several decades of decline under Imperial dominion, Alexandria finally began to recover its economic growth. Very quickly, the populance adjusted itself to Greek hegemony in the East, and Alexandria recovered its status as a major African port. Tens of thousands of Greek and Italian merchants have installed themselves in the town, creating inside the port a new city with a Greek and Coptic majority. His dominion over the city secure, the Emperor reestablished the Annone - the tax of Egyptian grain that will feed the poor of Constantinople. The new town sees rapid growth, and the need to have transportation for the wheat leads to the construction of an immense merchant armada. The cost of this reorganization was huge, and the local populance is leery of these changes."
+	date = { day = 1 month = january year = 1500 }
+	offset = 30 #1 month
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Whatever it costs..."
+		command = { type = treasury value = -1000 }
+		command = { type = gainbuilding which = 744 value = shipyard }
+		command = { type = provincetax which = 744 value = 3 }
+		command = { type = provinceculture which = 744 value = greek }
+		command = { type = provincereligion which = 744 value = orthodox }
+		command = { type = revolt which = 744 }
+	}
+	action_b = {
+		name = "When I said whatever, what I meant was..."
+		command = { type = treasury value = -200 }
+		command = { type = provinceculture which = 744 value = greek }
+		command = { type = revolt which = 357 } #Thrace
+	}
+	action_c = {
+		name = "Let sleeping dogs lie"
+		command = { type = treasury value = 100 }
+		command = { type = stability value = 1 }
+		command = { type = revolt which = 357 } #Thrace
+		command = { type = revolt which = 357 } #Thrace
+	}
+}
+#changed the cost, added 'cheap' option, added revolting urchins

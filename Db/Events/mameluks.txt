@@ -1,0 +1,35 @@
+##Mameluks Events##
+
+event = {
+      id = 112000
+      random = no
+      country = MAM
+      name = "Death of al-Nasir"
+      desc = "When al-Nasir died open warfare broke out between the Kipchak and Circassian factions. As the Mameluks quarreled among themselves their quality as soldiers declined. They neglected traditional fighting skills, and innovations such as gunpowder did not catch on until all of the neighboring countries had them."
+
+      date = { day = 1 month = january year = 1341 }
+      offset = 30
+      deathdate = { day = 30 month = december year = 1360 }
+
+      action_a ={
+               name = "Let the factions kill each other"
+               command = { type = domestic which = aristocracy value = 2 }
+               command = { type = domestic which = centralization value = -3 }
+               command = { type = domestic which = innovative value = -2 }
+               command = { type = domestic which = quality value = -2 }
+               command = { type = revoltrisk which = 60 value = 4 }
+               command = { type = stability value = -3 }
+      }
+      action_b ={
+               name = "Try to stop the chaos!"
+               command = { type = domestic which = aristocracy value = 1 }
+               command = { type = domestic which = centralization value = -1 }
+               command = { type = domestic which = innovative value = -1 }
+               command = { type = domestic which = quality value = -1 }
+               command = { type = cash value = 300 }
+               command = { type = revoltrisk which = 60 value = 8 }
+               command = { type = stability value = -5 }
+      }
+}
+
+#first free Id: 112001

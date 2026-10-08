@@ -1,0 +1,88 @@
+#####Naples Major Events######
+#By Joakim 'Greven' Bergqwist#
+##############################
+
+#The Aragon Inheritance of Napoli#
+event = {
+
+	id = 3660
+	trigger = {
+			exists = ARG
+		}
+	random = no
+	country = NAP
+	name = "EVENTNAME3660"
+	desc = "EVENTHIST3660"
+
+	date = { day = 1 month = january year = 1442 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1444 }
+
+	action_a ={
+		name = "ACTIONNAME3660A"	#Ruled as Vassal#
+		command = { type = trigger which = 3555 }
+		command = { type = relation which = ARG value = 150 }
+		command = { type = relation which = PAP value = 100 }
+		command = { type = relation which = VEN value = 100 }
+		command = { type = relation which = GEN value = 100 }
+		command = { type = relation which = PRO value = -100 }
+		command = { type = stability value = 2 }
+	}
+
+	action_b ={
+		name = "ACTIONNAME3660B"	#Independent#
+		command = { type = relation which = ARG value = -150 }
+		command = { type = relation which = PRO value = 100 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#The Holy League#
+event = {
+
+	id = 3661
+	trigger = {
+				 exists = TUR
+				event = 3549
+			 }
+	random = no
+	country = NAP
+	name = "EVENTNAME3661"
+	desc = "EVENTHIST3661"
+
+	date = { day = 1 month = january year = 1568 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1571 }
+
+	action_a ={						#Support the Holy League#
+		name = "ACTIONNAME3661A"	
+		command = { type = casusbelli which = TUR value = 72 }
+		command = { type = relation which = TUR value = -150 }
+		command = { type = relation which = PAP value = 100 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = POR value = 50 }
+		command = { type = relation which = SAV value = 50 }
+		command = { type = relation which = VEN value = 50 }
+		command = { type = relation which = TOS value = 50 }
+		command = { type = relation which = KNI value = 50 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = relation which = GEN value = 50 }
+	}
+
+	action_b ={						#Let the matter fall#
+		name = "ACTIONNAME3661B"
+		command = { type = relation which = TUR value = 50 }
+		command = { type = relation which = PAP value = -100 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = POR value = -50 }
+		command = { type = relation which = SAV value = -50 }
+		command = { type = relation which = VEN value = -50 }
+		command = { type = relation which = TOS value = -50 }
+		command = { type = relation which = KNI value = -50 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = relation which = GEN value = -50 }
+	}
+}

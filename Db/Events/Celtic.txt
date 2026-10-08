@@ -1,0 +1,305 @@
+##################################
+### major celtic events for ajf###
+### inc. wales and irish states###
+### by Alex "Ayeshteni" Fowler ###
+##################################
+
+#-no welsh events by AJF yet boyo!#
+
+#ulster and the reformation#
+event = {
+
+	id = 120680
+	trigger = {
+		event = 100
+		exists = HOL
+		}
+	random = no
+	country = ULS
+	name = "Ulaidh supports Protestant Cause"
+	desc = "With the reformation, Ulsterian nobles threw their lot in with the Protestant cause, which would see them turn on their Catholic brothers. Protestant Ulaidh became a bulwark for the Protestant English and would cement the English Queen Elizabeth I as Queen of Ireland."
+	style = 2
+
+	date = { day = 1 month = january year = 1550 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1650 }
+
+	action_a = {
+		name = "Protestant Rights!"
+		command = { type = religion which = protestant }
+		command = { type = conversion which = -2 }
+		command = { type = conversion which = -1 }
+		command = { type = conversion which = -1 }
+		command = { type = religiousrevolt which = -1 }
+		command = { type = dynastic which = HOL }
+		command = { type = dynastic which = ENG }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = HOL value = 50 }
+		command = { type = relation which = EIR value = -100 }
+		command = { type = relation which = LEI value = -100 }
+		command = { type = relation which = MEA value = -100 }
+		command = { type = relation which = MST value = -100 }
+		command = { type = relation which = CON value = -100 }
+		command = { type = stability value = 2 }
+	}
+
+	action_b = {
+		name = "It is not in our interests"
+		command = { type = relation which = EIR value = 50 }
+		command = { type = relation which = LEI value = 50 }
+		command = { type = relation which = MEA value = 50 }
+		command = { type = relation which = MST value = 50 }
+		command = { type = relation which = CON value = 50 }
+	}
+}
+
+#Eire union events#
+event = {
+
+	id = 120681
+	trigger = {
+		owned = { province = 231 data = -1 }
+		owned = { province = 232 data = -1 }
+		owned = { province = 233 data = -1 }
+		owned = { province = 234 data = -1 }
+		owned = { province = 235 data = -1 }
+		NOT = {
+			exists = EIR
+			}
+		}
+	random = no
+	country = LEI
+	name = "Crowning of the Aird Righ!"
+	desc = "Throughout the Emerald Isles history there were attempts by various kings to unite the various kings of the Isle and declare themselves 'king of kings' - the Aird Righ. In fact it had been accomplished many times, and equally broken up as well. With the arrival of the English into Ireland, it became impossible for one man to unite the various factions and the Kings of England actively sought to divide and conquer, and this they did. However, Sire, you have managed to unite the rival kings under your lordship. Shall we crown you Aird Righ of Eire?"
+	style = 3
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1820 } 
+
+	action_a = {
+		name = "I am King of Kings!"
+		command = { type = country which = EIR }
+		command = { type = stability value = -1 }
+		command = { type = domestic which = centralization value = 3 }
+		command = { type = revoltrisk which = 36 value = 4 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = SCO value = -25 }
+		command = { type = relation which = WLS value = 50 }
+		command = { type = relation which = BRI value = 50 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = SPA value = 50 }
+	}
+
+	action_b = {
+		name = "We shall remain Laigin"
+		command = { type = stability value = 1 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = SCO value = 25 }
+		command = { type = relation which = WLS value = -50 }
+		command = { type = relation which = BRI value = -50 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = SPA value = -50 }
+	}
+}
+
+#Eire union events#
+event = {
+
+	id = 120682
+	trigger = {
+		owned = { province = 231 data = -1 }
+		owned = { province = 232 data = -1 }
+		owned = { province = 233 data = -1 }
+		owned = { province = 234 data = -1 }
+		owned = { province = 235 data = -1 }
+		NOT = {
+			exists = EIR
+			}
+		}
+	random = no
+	country = MEA
+	name = "Crowning of the Aird Righ!"
+	desc = "Throughout the Emerald Isles history there were attempts by various kings to unite the various kings of the Isle and declare themselves 'king of kings' - the Aird Righ. In fact it had been accomplished many times, and equally broken up as well. With the arrival of the English into Ireland, it became impossible for one man to unite the various factions and the Kings of England actively sought to divide and conquer, and this they did. However, Sire, you have managed to unite the rival kings under your lordship. Shall we crown you Aird Righ of Eire?"
+	style = 3
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1820 } 
+
+	action_a = {
+		name = "I am King of Kings!"
+		command = { type = country which = EIR }
+		command = { type = stability value = -1 }
+		command = { type = domestic which = centralization value = 3 }
+		command = { type = revoltrisk which = 36 value = 4 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = SCO value = -25 }
+		command = { type = relation which = WLS value = 50 }
+		command = { type = relation which = BRI value = 50 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = SPA value = 50 }
+	}
+
+	action_b = {
+		name = "We shall remain Midhe"
+		command = { type = stability value = 1 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = SCO value = 25 }
+		command = { type = relation which = WLS value = -50 }
+		command = { type = relation which = BRI value = -50 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = SPA value = -50 }
+	}
+}
+
+#Eire union events#
+event = {
+
+	id = 120683
+	trigger = {
+		owned = { province = 231 data = -1 }
+		owned = { province = 232 data = -1 }
+		owned = { province = 233 data = -1 }
+		owned = { province = 234 data = -1 }
+		owned = { province = 235 data = -1 }
+		NOT = {
+			exists = EIR
+			}
+		}
+	random = no
+	country = MST
+	name = "Crowning of the Aird Righ!"
+	desc = "Throughout the Emerald Isles history there were attempts by various kings to unite the various kings of the Isle and declare themselves 'king of kings' - the Aird Righ. In fact it had been accomplished many times, and equally broken up as well. With the arrival of the English into Ireland, it became impossible for one man to unite the various factions and the Kings of England actively sought to divide and conquer, and this they did. However, Sire, you have managed to unite the rival kings under your lordship. Shall we crown you Aird Righ of Eire?"
+	style = 3
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1820 } 
+
+	action_a = {
+		name = "I am King of Kings!"
+		command = { type = country which = EIR }
+		command = { type = stability value = -1 }
+		command = { type = domestic which = centralization value = 3 }
+		command = { type = revoltrisk which = 36 value = 4 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = SCO value = -25 }
+		command = { type = relation which = WLS value = 50 }
+		command = { type = relation which = BRI value = 50 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = SPA value = 50 }
+	}
+
+	action_b = {
+		name = "We shall remain Mumhain"
+		command = { type = stability value = 1 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = SCO value = 25 }
+		command = { type = relation which = WLS value = -50 }
+		command = { type = relation which = BRI value = -50 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = SPA value = -50 }
+	}
+}
+
+#Eire union events#
+event = {
+
+	id = 120684
+	trigger = {
+		owned = { province = 231 data = -1 }
+		owned = { province = 232 data = -1 }
+		owned = { province = 233 data = -1 }
+		owned = { province = 234 data = -1 }
+		owned = { province = 235 data = -1 }
+		NOT = {
+			exists = EIR
+			}
+		}
+	random = no
+	country = CON
+	name = "Crowning of the Aird Righ!"
+	desc = "Throughout the Emerald Isles history there were attempts by various kings to unite the various kings of the Isle and declare themselves 'king of kings' - the Aird Righ. In fact it had been accomplished many times, and equally broken up as well. With the arrival of the English into Ireland, it became impossible for one man to unite the various factions and the Kings of England actively sought to divide and conquer, and this they did. However, Sire, you have managed to unite the rival kings under your lordship. Shall we crown you Aird Righ of Eire?"
+	style = 3
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1820 } 
+
+	action_a = {
+		name = "I am King of Kings!"
+		command = { type = country which = EIR }
+		command = { type = stability value = -1 }
+		command = { type = domestic which = centralization value = 3 }
+		command = { type = revoltrisk which = 36 value = 4 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = SCO value = -25 }
+		command = { type = relation which = WLS value = 50 }
+		command = { type = relation which = BRI value = 50 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = SPA value = 50 }
+	}
+
+	action_b = {
+		name = "We shall remain Connachta"
+		command = { type = stability value = 1 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = SCO value = 25 }
+		command = { type = relation which = WLS value = -50 }
+		command = { type = relation which = BRI value = -50 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = SPA value = -50 }
+	}
+}
+
+#Eire union events#
+event = {
+
+	id = 120685
+	trigger = {
+		owned = { province = 231 data = -1 }
+		owned = { province = 232 data = -1 }
+		owned = { province = 233 data = -1 }
+		owned = { province = 234 data = -1 }
+		owned = { province = 235 data = -1 }
+		NOT = {
+			exists = EIR
+			}
+		}
+	random = no
+	country = ULS
+	name = "Crowning of the Aird Righ!"
+	desc = "Throughout the Emerald Isles history there were attempts by various kings to unite the various kings of the Isle and declare themselves 'king of kings' - the Aird Righ. In fact it had been accomplished many times, and equally broken up as well. With the arrival of the English into Ireland, it became impossible for one man to unite the various factions and the Kings of England actively sought to divide and conquer, and this they did. However, Sire, you have managed to unite the rival kings under your lordship. Shall we crown you Aird Righ of Eire?"
+	style = 3
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1820 } 
+
+	action_a = {
+		name = "I am King of Kings!"
+		command = { type = country which = EIR }
+		command = { type = stability value = -1 }
+		command = { type = domestic which = centralization value = 3 }
+		command = { type = revoltrisk which = 36 value = 4 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = SCO value = -25 }
+		command = { type = relation which = WLS value = 50 }
+		command = { type = relation which = BRI value = 50 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = SPA value = 50 }
+	}
+
+	action_b = {
+		name = "We shall remain Ulaidh"
+		command = { type = stability value = 1 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = relation which = SCO value = 25 }
+		command = { type = relation which = WLS value = -50 }
+		command = { type = relation which = BRI value = -50 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = SPA value = -50 }
+	}
+}
+

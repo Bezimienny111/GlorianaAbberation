@@ -1,0 +1,540 @@
+#-----------------------------------------------------------------------------
+# Trebizond Events
+
+#(1419-1820) The Status of Trebizond
+event = {
+	id = 3001094
+	trigger = {
+		exists = TRE
+		NOT = { exists = TUR }
+		NOT = { war = { country = TRE country = BYZ } }
+		countrysize = 12
+		owned = { province = 478 data = -1 } # Smyrna
+		owned = { province = 477 data = -1 } # Anatolia
+		owned = { province = 1609 data = -1 } # Kastamonu
+		owned = { province = 1610 data = -1 } # Anatyla
+		owned = { province = 482 data = -1 } # Konya
+	}
+	random = NO
+	country = BYZ
+	name = "The status of Trebizond"
+	desc = "Trebizond had gained independence from the Empire under the old Kommenoi dynasty after the fall of Constantinople in 1204. Now that we have crushed the Ottomans and secured western Anatolia, we are in a position to demand their submission. Shall we attempt it?"
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "By the Pantokrator, yes!"
+		command = { type = trigger which = 3001095 } #TRE: Shall We Rejoin the Empire?
+	}
+	action_b = {
+		name = "We shall preserve Trebizond as a Protectorate"
+		command = { type = stability value = 1 }
+		command = { type = vassal which = TRE }
+		command = { type = dynastic which = TRE }
+		command = { type = alliance which = TRE }
+		command = { type = relation which = TRE value = 300 }
+		command = { type = trigger which = 3001098 } #TRE: The Empire Grows Strong
+	}
+}
+
+#(1419-1820) Shall Trebizond Rejoin the Empire?
+event = {
+	id = 3001095 #triggered by BYZ_3001094 A
+	random = NO
+	country = TRE
+	name = "Shall Trebizond Rejoin the Empire?"
+	desc = "The upstart Palaiologos has allowed his power to rush to his head. He promises offices to our nobles but demands our submission to his authority. Shall we accept?"
+	style = 2
+
+	action_a = { # Refuse
+		name = "We march on Constantinople!"
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = stability value = -3 }
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+		command = { type = trigger which = 3001097 } #BYZ: Trebizond Refuses to Submit
+	#could switch back to the Kommenoi Imperial arms - black double-headed eagle on a gold field
+	}
+	action_b = { # Accept
+		name = "It is God's will"
+		trigger = {
+			ai = yes
+		}
+		command = { type = trigger which = 3001096 } #BYZ: Trebizond Accepts Reunification
+	}
+}
+
+#(1419-1820) Trebizond Accepts Reunification
+event = {
+	id = 3001096 #triggered by TRE_3001095 B
+	random = NO
+	country = BYZ
+	name = "Trebizond Accepts Reunification"
+	desc = "The Kommenoi have agreed to be our Strategoi in the East."
+
+	action_a = {
+		name = "Praise be to the Philanthropos!" #"Lover of Mankind," title of Christ
+		command = { type = inherit which = TRE }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		#command = { type = vp value = 50 }
+	}
+}
+
+#(1419-1820) Trebizond Refuses to Submit
+event = {
+	id = 3001097 #triggered by TRE_3001095 A
+	random = NO
+	country = BYZ
+	name = "Trebizond Refuses to Submit"
+	desc = "After some time, the answer arrived. The messenger's severed head was very eloquent."
+
+	action_a = {
+		name = "The insolence!"
+		command = { type = relation which = TRE value = -200 }
+		#command = { type = vp value = -25 }
+	}
+}
+
+#(1419-1820) The Empire Grows Strong - Trebizond
+event = {
+	id = 3001098 #triggered by BYZ_3001094 B
+	random = NO
+	country = TRE
+	name = "The Empire Grows Strong"
+	desc = "The reinvigorated Empire demands our submission, but allows us our independence."
+
+	action_a = {
+		name = "Praise be to God!"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = relation which = BYZ value = 200 }
+	}
+}
+
+#(1419-1820) The Kommenoi Seize Constantinople
+event = {
+	id = 3001099
+	trigger = {
+		control = { province = 357 data = -1 } #Thrace
+		OR = {
+			event = 3001097 #BYZ: Trebizond Refuses to Submit
+			event = 3001101 #BYZ: Kommenoi Pretensions I
+			event = 3001102 #BYZ: Kommenoi Pretensions II
+			event = 3001103 #BYZ: Kommenoi Pretensions III
+		}
+	}
+	random = NO
+	country = TRE
+	name = "The Kommenoi Seize Constantinople"
+	desc = "Believing the Theodosian walls would remain impenetrable against such a small force, the Palaiologue Emperor remained in the capital far too long. Long before the walls fell, spies and ambitious courtesians had imprisoned him as a gift to their new lord. After two centuries' absence, the Kommenoi dynasty returned to the throne."
+
+	date = { day = 1 month = january year = 1419 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Execute the scum!"
+		command = { type = inherit which = BYZ }
+		command = { type = country which = BYZ }
+		command = { type = provinceculture which = 357 value = greek } #Thrace
+		command = { type = provincereligion which = 357 value = orthodox } #Thrace
+		command = { type = wakemonarch which = 027532 } #Alexios IV Kommenos (TRE)
+		command = { type = wakemonarch which = 027533 } #Ioannes IV (TRE)
+		command = { type = wakemonarch which = 027534 } #David II (TRE)
+		command = { type = wakemonarch which = 027535 } #Alexius VII (TRE)
+		command = { type = wakemonarch which = 027536 } #Alexandros I (TRE)
+		command = { type = wakemonarch which = 027537 } #Alexandros II (TRE)
+		command = { type = wakemonarch which = 027538 } #Levan I (TRE)
+		command = { type = wakemonarch which = 027539 } #Georgios II * (TRE)
+		command = { type = wakemonarch which = 027540 } #Georgios III * (TRE)
+		command = { type = wakemonarch which = 027541 } #Ioannes VII * (TRE)
+		command = { type = wakemonarch which = 027542 } #Andronikos V * (TRE)
+		command = { type = wakemonarch which = 027543 } #Theodora II * (TRE)
+		command = { type = wakemonarch which = 027544 } #Alexius VIII * (TRE)
+		command = { type = wakemonarch which = 027545 } #Ioannes VIII * (TRE)
+		command = { type = wakemonarch which = 027546 } #David III * (TRE)
+		command = { type = wakemonarch which = 027547 } #Georgios IV * (TRE)
+		command = { type = wakemonarch which = 027548 } #Adrianos I * (TRE)
+		command = { type = wakemonarch which = 027549 } #Manuel V * (TRE)
+		command = { type = wakemonarch which = 027550 } #Manuel VI * (TRE)
+		command = { type = wakemonarch which = 027551 } #Basileos IV * (TRE)
+		command = { type = wakemonarch which = 027552 } #Alexius IX * (TRE)
+		command = { type = wakemonarch which = 027553 } #Iustinianos III * (TRE)
+		command = { type = wakemonarch which = 027554 } #Alexius X * (TRE)
+		command = { type = wakemonarch which = 027555 } #Romanos V * (TRE)
+		command = { type = wakemonarch which = 027556 } #Isaakios II * (TRE)
+		command = { type = wakemonarch which = 027557 } #Alexius XI * (TRE)
+		command = { type = wakemonarch which = 027558 } #Konstantinos IX * (TRE)
+		command = { type = wakemonarch which = 027559 } #Stephanos * (TRE)
+		command = { type = wakemonarch which = 027560 } #Adrianos II * (TRE)
+		command = { type = wakemonarch which = 027561 } #Georgios V * (TRE)
+		command = { type = wakemonarch which = 027562 } #Andronikos VI * (TRE)
+		command = { type = wakeleader which = 027873 } #Georgios (TRE)
+		command = { type = wakeleader which = 027874 } #Alexius (TRE)
+		command = { type = wakeleader which = 027875 } #Iustinianos (TRE)
+		command = { type = wakeleader which = 027876 } #Isaakios (TRE)
+		command = { type = wakeleader which = 027877 } #Konstantinos (TRE)
+		command = { type = wakeleader which = 027878 } #Adrianos (TRE)
+		command = { type = sleepmonarch which = 027500 } #Palaiologid dynasty
+		command = { type = sleepmonarch which = 027501 } #Ioannes VIII (BYZ)
+		command = { type = sleepmonarch which = 027502 } #Konstantinos XI Dragases (BYZ)
+		command = { type = sleepmonarch which = 027503 } #Demetrios (BYZ)
+		command = { type = sleepmonarch which = 027504 } #Andreas I (BYZ)
+		command = { type = sleepmonarch which = 027505 } #Manuel V (BYZ)
+		command = { type = sleepmonarch which = 027506 } #Andreas II (BYZ)
+		command = { type = sleepmonarch which = 027507 } #Ioannes IX * (BYZ)
+		command = { type = sleepmonarch which = 027508 } #Michael X * (BYZ)
+		command = { type = sleepmonarch which = 027509 } #Ioannes X * (BYZ)
+		command = { type = sleepmonarch which = 027510 } #Nikolai I * (BYZ)
+		command = { type = sleepmonarch which = 027511 } #Andronicus V * (BYZ)
+		command = { type = sleepmonarch which = 027512 } #Konstantinos XII * (BYZ)
+		command = { type = sleepmonarch which = 027513 } #Konstantinos XIII * (BYZ)
+		command = { type = sleepmonarch which = 027514 } #Zoe II * (BYZ)
+		command = { type = sleepmonarch which = 027515 } #Nikolai II * (BYZ)
+		command = { type = sleepmonarch which = 027516 } #Alexius VI * (BYZ)
+		command = { type = sleepmonarch which = 027517 } #Ioannes XI * (BYZ)
+		command = { type = sleepmonarch which = 027518 } #Konstantinos XIV * (BYZ)
+		command = { type = sleepmonarch which = 027519 } #Konstantinos XV * (BYZ)
+		command = { type = sleepmonarch which = 027520 } #Michael XI * (BYZ)
+		command = { type = sleepmonarch which = 027521 } #Alexius VII * (BYZ)
+		command = { type = sleepmonarch which = 027522 } #Konstantinos XVI * (BYZ)
+		command = { type = sleepmonarch which = 027523 } #Nikolai III * (BYZ)
+		command = { type = sleepmonarch which = 027524 } #Konstantinos XVII * (BYZ)
+		command = { type = sleepmonarch which = 027525 } #Ioannes XII * (BYZ)
+		command = { type = sleepmonarch which = 027526 } #Ioannes XIII * (BYZ)
+		command = { type = sleepmonarch which = 027527 } #Thomas (BYZ)
+		command = { type = sleepmonarch which = 027563 } #Konstantinos XI Dragenses * (BYZ)
+		command = { type = sleepmonarch which = 027564 } #Thomas * (BYZ) 1457
+		command = { type = sleepleader which = 027800 } #Konstantinos XI (BYZ)
+		command = { type = sleepleader which = 027803 } #Nikolai I (BYZ)
+		command = { type = sleepleader which = 027817 } #Ioannes IX (BYZ)
+		command = { type = sleepleader which = 027833 } #Ioannes XII (BYZ)
+		command = { type = sleepleader which = 027856 } #Michael X (BYZ)
+		command = { type = sleepleader which = 027857 } #Konstantinos XII (BYZ)
+		command = { type = sleepleader which = 027858 } #Konstantinos XIV (BYZ)
+		command = { type = sleepleader which = 027859 } #Konstantinos XVII (BYZ)
+ 		command = { type = sleepleader which = 027860 } #Demetrios (BYZ)
+		command = { type = sleepleader which = 027861 } #Andreas (BYZ)
+		command = { type = sleepleader which = 027862 } #Ioannes (BYZ)
+		command = { type = sleepleader which = 027863 } #Iacobus (BYZ)
+		command = { type = sleepleader which = 027864 } #Andronicus (BYZ)
+		command = { type = sleepleader which = 027865 } #Alexius (BYZ)
+		command = { type = sleepleader which = 027866 } #Petros (BYZ)
+		command = { type = sleepleader which = 027867 } #Konstantinos (BYZ)
+		command = { type = sleepleader which = 027867 } #Michael (BYZ)
+		command = { type = sleepleader which = 027869 } #Ioannes (BYZ)
+		command = { type = sleepleader which = 027870 } #Ioannes (BYZ)
+		command = { type = sleepleader which = 027879 } #Konstantinos XI * (BYZ)
+		command = { type = sleepleader which = 027880 } #Demetrios (BYZ)
+		command = { type = flagname which = komnenos }
+	#could switch the flag to the Kommenid banner - black double eagle on a gold field
+	}
+}
+
+#(1419-1820) The Kommenoi are Captured
+event = {
+	id = 3001100
+	trigger = {
+		control = { province = 475 data = -1 } #Trabzon
+		OR = {
+			event = 3001097 #BYZ: Trebizond Refuses to Submit
+			event = 3001101 #BYZ: Kommenoi Pretensions I
+			event = 3001102 #BYZ: Kommenoi Pretensions II
+			event = 3001103 #BYZ: Kommenoi Pretensions III
+		}
+	}
+	random = NO
+	country = BYZ
+	name = "The Kommenoi are captured"
+	desc = "Unfortunately for his descendants, the false Emperor in Trebizond is captured. Now, instead of the Imperial purple, they will all be draped in shrouds, for there is only one course."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Execute the men! Execute the children!"
+		command = { type = inherit which = TRE }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = stability value = -1 }
+		command = { type = sleepevent which = 3001101 } #BYZ: Kommenoi Pretensions I
+		command = { type = sleepevent which = 3001102 } #BYZ: Kommenoi Pretensions II
+		command = { type = sleepevent which = 3001103 } #BYZ: Kommenoi Pretensions III
+		command = { type = sleepevent which = 3001104 } #BYZ: The Great Kommenid Rebellion
+	}
+	action_b = {
+		name = "No! The quality of mercy is not strained"
+		command = { type = inherit which = TRE }
+		command = { type = stability value = 1 }
+		#command = { type = province_revoltrisk which = 475 value = 3 } #Trabzon
+		command = { type = revoltrisk which = 12 value = 3 } #Gloriana1337
+		command = { type = sleepevent which = 3001105 } #BYZ: The Great Noble Rebellion
+	}
+}
+
+#(1419-1820) Kommenoi Pretensions I
+event = {
+	id = 3001101
+	trigger = {
+		exists = BYZ
+		NOT = { relation = { country = BYZ data = -150 } }
+	}
+	random = NO
+	country = TRE
+	name = "Kommenoi Pretensions"
+	desc = "The lords of Trebizond are decendants of the great Emperor Alexius I Kommenos. With the collapse of our relations with the usurper Palaiologoi, the nobles demand that we march on Constantinople and recover our birthright."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 360 #1 year
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "You must be mad!"
+		command = { type = stability value = 1 }
+		command = { type = relation which = BYZ value = 100 }
+		#command = { type = vp value = -100 }
+	}
+	action_b = {
+		name = "Hail Basileos! Hail Autokrator!"
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+	}
+}
+
+#(1419-1820) Kommenoi Pretensions II
+event = {
+	id = 3001102
+	trigger = {
+		event = 3001101 #TRE: Kommenoi Pretensions I
+		exists = BYZ
+		NOT = { relation = { country = BYZ data = -150 } }
+	}
+	random = NO
+	country = TRE
+	name = "Kommenoi Pretensions"
+	desc = "The lords of Trebizond are decendants of the great Emperor Alexius I Kommenos. With the collapse of our relations with the usurper Palaiologoi, the nobles demand that we march on Constantinople and recover our birthright."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 720 #2 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "You must be mad!"
+		command = { type = stability value = 1 }
+		command = { type = relation which = BYZ value = 100 }
+		#command = { type = vp value = -100 }
+	}
+	action_b = {
+		name = "Hail Basileos! Hail Autokrator!"
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+	}
+}
+
+#(1419-1820) Kommenoi Pretensions III
+event = {
+	id = 3001103
+	trigger = {
+		event = 3001101 #TRE: Kommenoi Pretensions I
+		event = 3001102 #TRE: Kommenoi Pretensions II
+		exists = BYZ
+		NOT = { relation = { country = BYZ data = -150 } }
+	}
+	random = NO
+	country = TRE
+	name = "Kommenoi pretensions"
+	desc = "The lords of Trebizond are decendants of the great Emperor Alexius I Kommenos. With the collapse of our relations with the usurper Palaiologoi, the nobles demand that we march on Constantinople and recover our birthright."
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 1440 #4 years
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "You must be mad!"
+		command = { type = stability value = 1 }
+		command = { type = relation which = BYZ value = 100 }
+		#command = { type = vp value = -100 }
+	}
+	action_b = {
+		name = "Hail Basileos! Hail Autokrator!"
+		command = { type = breakvassal which = BYZ }
+		command = { type = casusbelli which = BYZ value = 200 }
+		command = { type = war which = BYZ }
+	}
+}
+
+#(1611-1820) The Great Kommenid Rebellion (replaces the great rebellion under Zoë)
+event = {
+	id = 3001104
+	trigger = {
+		NOT = { exists = TRE }
+		event = 3001472 #BYZ: The Sibling Conflict
+	}
+	random = NO
+	country = BYZ
+	name = "The Great Kommenid Rebellion"
+	desc = "Although the previous revolts against the Basilissa had failed, the nobility tried for a final time, pouring all their resources into it. At their head marched the talented scion of the Kommenid family, Georgios, and his son Adrianos. Behind which side should we throw our support?"
+
+	date = { day = 29 month = march year = 1611 }
+	offset = 1 #immediate
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "The Palaiologids"
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = stability value = -2 }
+		command = { type = desertion which = -2 value = 20000 }
+		command = { type = desertion which = -1 value = 10000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = revoltrisk which = 12 value = 10 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -3 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -3 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -3 }
+		command = { type = sleepleader which = 027871 } #Alexius Kommenos
+		command = { type = sleepleader which = 027872 } #Georgios Kommenos
+	}
+	action_b = {
+		name = "The Kommenids"
+		command = { type = stability value = 2 }
+		command = { type = domestic which = ARISTOCRACY value = 4 }
+		command = { type = revoltrisk which = 12 value = 3 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = wakemonarch which = 027532 } #Alexios IV Kommenos (TRE)
+		command = { type = wakemonarch which = 027533 } #Ioannes IV (TRE)
+		command = { type = wakemonarch which = 027534 } #David II (TRE)
+		command = { type = wakemonarch which = 027535 } #Alexius VII (TRE)
+		command = { type = wakemonarch which = 027536 } #Alexandros I (TRE)
+		command = { type = wakemonarch which = 027537 } #Alexandros II (TRE)
+		command = { type = wakemonarch which = 027538 } #Levan I (TRE)
+		command = { type = wakemonarch which = 027539 } #Georgios II * (TRE)
+		command = { type = wakemonarch which = 027540 } #Georgios III * (TRE)
+		command = { type = wakemonarch which = 027541 } #Ioannes VII * (TRE)
+		command = { type = wakemonarch which = 027542 } #Andronikos V * (TRE)
+		command = { type = wakemonarch which = 027543 } #Theodora II * (TRE)
+		command = { type = wakemonarch which = 027544 } #Alexius VIII * (TRE)
+		command = { type = wakemonarch which = 027545 } #Ioannes VIII * (TRE)
+		command = { type = wakemonarch which = 027546 } #David III * (TRE)
+		command = { type = wakemonarch which = 027547 } #Georgios IV * (TRE)
+		command = { type = wakemonarch which = 027548 } #Adrianos I * (TRE)
+		command = { type = wakemonarch which = 027549 } #Manuel V * (TRE)
+		command = { type = wakemonarch which = 027550 } #Manuel VI * (TRE)
+		command = { type = wakemonarch which = 027551 } #Basileos IV * (TRE)
+		command = { type = wakemonarch which = 027552 } #Alexius IX * (TRE)
+		command = { type = wakemonarch which = 027553 } #Iustinianos III * (TRE)
+		command = { type = wakemonarch which = 027554 } #Alexius X * (TRE)
+		command = { type = wakemonarch which = 027555 } #Romanos V * (TRE)
+		command = { type = wakemonarch which = 027556 } #Isaakios II * (TRE)
+		command = { type = wakemonarch which = 027557 } #Alexius XI * (TRE)
+		command = { type = wakemonarch which = 027558 } #Konstantinos IX * (TRE)
+		command = { type = wakemonarch which = 027559 } #Stephanos * (TRE)
+		command = { type = wakemonarch which = 027560 } #Adrianos II * (TRE)
+		command = { type = wakemonarch which = 027561 } #Georgios V * (TRE)
+		command = { type = wakemonarch which = 027562 } #Andronikos VI * (TRE)
+		command = { type = wakeleader which = 027873 } #Georgios (TRE)
+		command = { type = wakeleader which = 027874 } #Alexius (TRE)
+		command = { type = wakeleader which = 027875 } #Iustinianos (TRE)
+		command = { type = wakeleader which = 027876 } #Isaakios (TRE)
+		command = { type = wakeleader which = 027877 } #Konstantinos (TRE)
+		command = { type = wakeleader which = 027878 } #Adrianos (TRE)
+		command = { type = sleepmonarch which = 027500 } #Palaiologid dynasty
+		command = { type = sleepmonarch which = 027501 } #Ioannes VIII (BYZ)
+		command = { type = sleepmonarch which = 027502 } #Konstantinos XI Dragases (BYZ)
+		command = { type = sleepmonarch which = 027503 } #Demetrios (BYZ)
+		command = { type = sleepmonarch which = 027504 } #Andreas I (BYZ)
+		command = { type = sleepmonarch which = 027505 } #Manuel V (BYZ)
+		command = { type = sleepmonarch which = 027506 } #Andreas II (BYZ)
+		command = { type = sleepmonarch which = 027507 } #Ioannes IX * (BYZ)
+		command = { type = sleepmonarch which = 027508 } #Michael X * (BYZ)
+		command = { type = sleepmonarch which = 027509 } #Ioannes X * (BYZ)
+		command = { type = sleepmonarch which = 027510 } #Nikolai I * (BYZ)
+		command = { type = sleepmonarch which = 027511 } #Andronicus V * (BYZ)
+		command = { type = sleepmonarch which = 027512 } #Konstantinos XII * (BYZ)
+		command = { type = sleepmonarch which = 027513 } #Konstantinos XIII * (BYZ)
+		command = { type = sleepmonarch which = 027514 } #Zoe II * (BYZ)
+		command = { type = sleepmonarch which = 027515 } #Nikolai II * (BYZ)
+		command = { type = sleepmonarch which = 027516 } #Alexius VI * (BYZ)
+		command = { type = sleepmonarch which = 027517 } #Ioannes XI * (BYZ)
+		command = { type = sleepmonarch which = 027518 } #Konstantinos XIV * (BYZ)
+		command = { type = sleepmonarch which = 027519 } #Konstantinos XV * (BYZ)
+		command = { type = sleepmonarch which = 027520 } #Michael XI * (BYZ)
+		command = { type = sleepmonarch which = 027521 } #Alexius VII * (BYZ)
+		command = { type = sleepmonarch which = 027522 } #Konstantinos XVI * (BYZ)
+		command = { type = sleepmonarch which = 027523 } #Nikolai III * (BYZ)
+		command = { type = sleepmonarch which = 027524 } #Konstantinos XVII * (BYZ)
+		command = { type = sleepmonarch which = 027525 } #Ioannes XII * (BYZ)
+		command = { type = sleepmonarch which = 027526 } #Ioannes XIII * (BYZ)
+		command = { type = sleepmonarch which = 027527 } #Thomas (BYZ)
+		command = { type = sleepmonarch which = 027563 } #Konstantinos XI Dragenses * (BYZ)
+		command = { type = sleepmonarch which = 027564 } #Thomas * (BYZ) 1457
+		command = { type = sleepleader which = 027800 } #Konstantinos XI (BYZ)
+		command = { type = sleepleader which = 027803 } #Nikolai I (BYZ)
+		command = { type = sleepleader which = 027817 } #Ioannes IX (BYZ)
+		command = { type = sleepleader which = 027833 } #Ioannes XII (BYZ)
+		command = { type = sleepleader which = 027856 } #Michael X (BYZ)
+		command = { type = sleepleader which = 027857 } #Konstantinos XII (BYZ)
+		command = { type = sleepleader which = 027858 } #Konstantinos XIV (BYZ)
+		command = { type = sleepleader which = 027859 } #Konstantinos XVII (BYZ)
+ 		command = { type = sleepleader which = 027860 } #Demetrios (BYZ)
+		command = { type = sleepleader which = 027861 } #Andreas (BYZ)
+		command = { type = sleepleader which = 027862 } #Ioannes (BYZ)
+		command = { type = sleepleader which = 027863 } #Iacobus (BYZ)
+		command = { type = sleepleader which = 027864 } #Andronicus (BYZ)
+		command = { type = sleepleader which = 027865 } #Alexius (BYZ)
+		command = { type = sleepleader which = 027866 } #Petros (BYZ)
+		command = { type = sleepleader which = 027867 } #Konstantinos (BYZ)
+		command = { type = sleepleader which = 027867 } #Michael (BYZ)
+		command = { type = sleepleader which = 027869 } #Ioannes (BYZ)
+		command = { type = sleepleader which = 027870 } #Ioannes (BYZ)
+		command = { type = sleepleader which = 027879 } #Konstantinos XI * (BYZ)
+		command = { type = sleepleader which = 027880 } #Demetrios (BYZ)
+		command = { type = flagname which = komnenos }
+	#could switch the flag to the Kommenid banner - black double eagle on a gold field
+	}
+}
+
+#(1611-1820) The Great Noble Rebellion (alternate revolt of Zoë´s reign)
+event = {
+	id = 3001105 #id = 90951
+	trigger = {
+		event = 3001472 #BYZ: The Sibling Conflict
+		domestic = { type = aristocracy value = 1 }
+		OR = {
+			NOT = { event = 3001104 } #BYZ: The Great Kommenid Rebellion
+			exists = TRE
+		}
+	}
+	random = no
+	country = BYZ
+	name = "The Great Noble Rebellion" #The Great Noble Rebellion
+	desc = "Although the previous revolts against the Empress's rule had failed, the nobility tried one more time and poured all their resources into it. Thankfully, since the Kommenids had been executed, there was no legitimate challenger to lead them."
+
+	date = { day = 29 month = march year = 1611 }
+	offset = 1 #immediate
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Crush the revolters!" #Crush the revolters!
+		command = { type = stability value = -2 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = desertion which = -1 value = 10000 }
+		command = { type = desertion which = -1 value = 10000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = revoltrisk which = 12 value = 10 }
+	}
+}

@@ -1,0 +1,1644 @@
+#########USA Major Events###########
+#By Joakim 'Greven' Bergqwist      #
+#   Kristof 'BiB' Haekens          #
+#   William 'State Machine' Thomas #
+####################################
+
+#The Creation of the Continental Army#
+event = {
+
+	id = 3055
+	trigger ={
+		atwar = yes
+	}
+	random = no
+	country = USA 
+	name = "EVENTNAME3055"
+	desc = "EVENTHIST3055"
+	style = 5
+
+	date = { day = 1 month = october year = 1773 }
+	offset = 150
+	deathdate = { day = 2 month = may year = 1837 }
+
+
+	action_a ={
+		name = "ACTIONNAME3055A"	#Raise Professional Army#
+		command = { type = domestic which = QUALITY value = 2 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = stability value = -1 }
+		command = { type = infantry which = -2 value = 25000 }
+		command = { type = cavalry which = -2 value = 10000 }
+		command = { type = artillery which = -2 value = 50 }
+	}
+
+	action_b ={
+		name = "ACTIONNAME3055B"	#Raise Provincial Militias#
+		command = { type = domestic which = QUALITY value = -1 }
+		command = { type = domestic which = OFFENSIVE value = -2 }
+		command = { type = stability value = 1 }
+		command = { type = infantry which = -1 value = 5000 }
+		command = { type = infantry which = -4 value = 5000 }
+		command = { type = infantry which = -4 value = 5000 }
+	}
+
+	action_c ={
+		name = "ACTIONNAME3055C"	#Call for Volunteers#
+		command = { type = domestic which = QUALITY value = -2 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = stability value = 2 }
+		command = { type = provincemanpower which = -1 value = 3 }
+		command = { type = provincemanpower which = -4 value = 3 }
+		command = { type = provincemanpower which = -4 value = 3 }
+	}
+
+}
+
+#The Congress' Printing Machine#
+event = {
+
+	id = 3056
+	trigger ={
+		atwar = yes
+		}
+	random = no
+	country = USA
+	name = "EVENTNAME3056"
+	desc = "EVENTHIST3056"
+	style = 5
+
+	date = { day = 1 month = october year = 1779 }
+	offset = 50
+	deathdate = { day = 2 month = may year = 1837 }
+
+	action_a ={
+		name = "ACTIONNAME3056A"	#Print more money#
+		command = { type = inflation value = 5 }
+		command = { type = treasury value = 500 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={
+		name = "ACTIONNAME3056B"	#Use with constraint#
+		command = { type = inflation value = 1 }
+		command = { type = treasury value = 100 }
+		command = { type = stability value = -1 }
+	}
+
+	action_c ={
+		name = "ACTIONNAME3056C"	#Stop immediately#
+		command = { type = inflation value = -1 }
+		command = { type = treasury value = -50 }
+		command = { type = stability value = 1 }
+	}
+
+}
+
+#The US Constitution#
+event = {
+
+	id = 3057
+	date = { day = 1 month = october year = 1786 }
+	offset = 570
+	deathdate = { day = 2 month = may year = 1788 }
+	random = no
+	country = USA
+	name = "EVENTNAME3057"
+	desc = "EVENTHIST3057"
+	style = "3057"
+
+	action_a ={
+		name = "ACTIONNAME3057A"	#Governmental Balance of Power#
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+	}
+
+	action_b ={
+		name = "ACTIONNAME3057B"	#Strong Federal Government#
+		command = { type = domestic which = ARISTOCRACY value = 3 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = SERFDOM value = 2 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -4 value = 5000 }
+	}
+
+	action_c ={
+		name = "ACTIONNAME3057C"	#Confederacy of Independent States#
+		command = { type = domestic which = ARISTOCRACY value = -3 }
+		command = { type = domestic which = CENTRALIZATION value = -2 }
+		command = { type = domestic which = SERFDOM value = -2 }
+		command = { type = provincetax which = -1 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = provincetax which = -4 value = -1 }
+		command = { type = flagname which = CSA }
+	}
+
+}
+
+#US.Presidential Election of 1796#
+event = {
+
+	id = 3058
+	date = { day = 4 month = march year = 1797 }
+	random = no
+	country = USA
+	name = "EVENTNAME3058"
+	desc = "EVENTHIST3058"
+	style = 5
+
+	action_a ={
+		name = "ACTIONNAME3058A"	#John Adams#
+		command = { type = domestic which = ARISTOCRACY	value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = relation which = ENG value = 50 }
+		command = { type = monarch which = 04062 }
+	}
+
+	action_b ={
+		name = "ACTIONNAME3058B"	#Thomas Jefferson#
+		command = { type = domestic which = ARISTOCRACY	value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = relation which = ENG value = -50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = monarch which = 04063 }
+	}
+
+}
+
+#Federal Taxes on Property#
+event = {
+
+	id = 3059
+	date = { day = 1 month = january year = 1799 }
+	offset = 360
+	deathdate = { day = 2 month = january year = 1800 }
+	random = no
+	country = USA
+	name = "EVENTNAME3059"
+	desc = "EVENTHIST3059"
+	style = 5
+
+	action_a ={
+		name = "ACTIONNAME3059A"	#Limited Federal Taxation Rights#
+		command = { type = stability value = 1 }
+		command = { type = provincetax which = -1 value = 2 }
+		command = { type = provincetax which = -4 value = 2 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+	}
+
+	action_b ={
+		name = "ACTIONNAME3059B"	#No Federal Taxation Rights#
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = SERFDOM value = -3 }
+		command = { type = domestic which = ARISTOCRACY value = -3 }
+		command = { type = provincetax which = -1 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = { type = provincetax which = -4 value = -2 }
+		command = {  }
+	}
+
+	action_c ={
+		name = "ACTIONNAME3059C"	#Unlimited Federal Taxation Rights#
+		command = { type = provincetax which = -1 value = 4 }
+		command = { type = provincetax which = -4 value = 4 }
+		command = { type = provincetax which = -4 value = 4 }
+		command = { type = provincetax which = -4 value = 4 }
+		command = { type = provincetax which = -4 value = 4 }
+		command = { type = provincetax which = -4 value = 4 }
+		command = { type = provincetax which = -4 value = 4 }
+		command = { type = provincetax which = -4 value = 4 }
+		command = { type = desertion which = -1 value = 10000 }
+		command = { type = desertion which = -4 value = 10000 }
+		command = { type = desertion which = -4 value = 10000 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -4 }
+		command = { type = revoltrisk which = 64 value = 2 }
+	}
+}
+
+#US.Presidential Election of 1800#
+event = {
+
+	id = 3060
+	date = { day = 4 month = march year = 1801 }
+	random = no
+	country = USA
+	name = "EVENTNAME3060"
+	desc = "EVENTHIST3060"
+	style = 5
+
+	action_a ={
+		name = "ACTIONNAME3060A"	#Thomas Jefferson#
+		command = { type = domestic which = ARISTOCRACY	value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = monarch which = 04063 }
+	}
+
+	action_b ={
+		name = "ACTIONNAME3060B"	#Aaron Burr#
+		command = { type = domestic which = ARISTOCRACY	value = 2 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -3 }
+		command = { type = monarch which = 04066 }
+	}
+
+	action_c ={
+		name = "ACTIONNAME3060C"	#John Adams#
+		command = { type = domestic which = ARISTOCRACY	value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = monarch which = 04062 }
+	}
+
+}
+
+#The Louisiana Purchase#
+event = {
+
+	id = 3061
+	random = no
+	country = USA
+	name = "EVENTNAME3061"
+	desc = "EVENTHIST3061"
+	style = "3087"
+
+	action_a ={
+		name = "ACTIONNAME3061A"	#Accept Offer#
+		command = { type = treasury value = -1000 }
+		command = { type = addcore_national which = 44 } # Wichita
+		command = { type = addcore_national which = 45 } # Bayou
+		command = { type = addcore_national which = 51 } # Arkansas
+		command = { type = addcore_national which = 52 } # Yazoo
+		command = { type = addcore_national which = 57 } # Mississippi
+		command = { type = addcore_national which = 58 } # Missouri
+		command = { type = addcore_national which = 75 } # Iowa
+		command = { type = addcore_national which = 76 } # Minnesota
+		command = { type = addcore_national which = 1481 } # Oklahoma
+		command = { type = relation which = FRA value = 100 }
+		command = { type = trigger which = 3088 }
+	}
+
+	action_b ={
+		name = "ACTIONNAME3061B"	#Decline Offer#
+		command = { type = relation which = FRA value = -100 }
+		command = { type = vp value = -100 }
+		command = { type = trigger which = 3089 }
+		command = { type = sleepevent which = 50000 } # Lewis and Clark's Expedition
+	}
+}
+
+#US.Presidential Election of 1804#
+event = {
+
+	id = 3062
+	date = { day = 4 month = march year = 1805 }
+	random = no
+	country = USA
+	name = "EVENTNAME3062"
+	desc = "EVENTHIST3062"
+	style = 5
+
+	action_a ={
+		name = "ACTIONNAME3062A"	#Thomas Jefferson#
+		command = { type = domestic which = ARISTOCRACY	value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = MERCANTILISM value = 3 }
+		command = { type = trade value = -2000 }
+		command = { type = merchants value = -6 }
+		command = { type = monarch which = 04063 }
+	}
+
+	action_b ={
+		name = "ACTIONNAME3062B"	#Charles Pinckney#
+		command = { type = domestic which = ARISTOCRACY	value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = MERCANTILISM value = -1 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -4 }
+		command = { type = monarch which = 04067 }
+	}
+}
+
+#US.Presidential Election of 1808#
+event = {
+
+	id = 3063
+	date = { day = 4 month = march year = 1809 }
+	random = no
+	country = USA
+	name = "EVENTNAME3063"
+	desc = "EVENTHIST3063"
+	style = 5
+
+	action_a ={
+		name = "ACTIONNAME3063A"	#James Madison#
+		command = { type = domestic which = ARISTOCRACY	value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = MERCANTILISM value = 3 }
+		command = { type = monarch which = 04064 }
+	}
+
+	action_b ={
+		name = "ACTIONNAME3063B"	#Charles Pinckney#
+		command = { type = domestic which = ARISTOCRACY	value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = MERCANTILISM value = -1 }
+		command = { type = monarch which = 04067 }
+	}
+
+	action_c ={
+		name = "ACTIONNAME3063C"	#George Clinton#
+		command = { type = domestic which = ARISTOCRACY	value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = MERCANTILISM value = -1 }
+		command = { type = monarch which = 04068 }
+	}
+
+}
+
+#Hawks and Doves of 1812#
+event = {
+
+	id = 3064
+	date = { day = 1 month = january year = 1812 }
+	offset = 150
+	deathdate = { day = 2 month = june year = 1812 }
+	random = no
+	country = USA
+	name = "EVENTNAME3064"
+	desc = "EVENTHIST3064"
+	style = 5
+
+	action_a ={
+		name = "ACTIONNAME3064A"	#Support Warhawks#
+		command = { type = casusbelli which = ENG value = 24 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = stability value = -1 }
+	}
+
+	action_b ={
+		name = "ACTIONNAME3064B"	#Support Doves#
+		command = { type = relation which = ENG value = 50 }
+		command = { type = stability value = 2 }
+		command = { type = diplomats value = 4 }
+	}
+}
+
+#US.Presidential Election of 1812#
+event = {
+
+	id = 3065
+	date = { day = 4 month = march year = 1813 }
+	random = no
+	country = USA
+	name = "EVENTNAME3065"
+	desc = "EVENTHIST3065"
+	style = 5
+
+	action_a ={
+		name = "ACTIONNAME3065A"	#James Madison#
+		command = { type = relation which = ENG value = -25 }
+		command = { type = stability value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+		command = { type = domestic which = MERCANTILISM value = 1 }
+		command = { type = monarch which = 04064 }
+	}
+
+	action_b ={
+		name = "ACTIONNAME3065B"	#DeWitt Clinton#
+		command = { type = relation which = ENG value = -50 }
+		command = { type = stability value = -1 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = domestic which = MERCANTILISM value = -1 }
+		command = { type = monarch which = 04069 }
+	}
+
+}
+
+#US.Presidential Election of 1816#
+event = {
+
+	id = 3066
+	date = { day = 4 month = march year = 1817 }
+	random = no
+	country = USA
+	name = "EVENTNAME3066"
+	desc = "EVENTHIST3066"
+	style = 5
+
+	action_a ={
+		name = "ACTIONNAME3066A"	#James Monroe#
+		command = { type = domestic which = MERCANTILISM value = 1 }
+		command = { type = stability value = 2 }
+		command = { type = monarch which = 04065 }
+	}
+
+	action_b ={
+		name = "ACTIONNAME3066B"	#Rufus King#
+		command = { type = domestic which = MERCANTILISM value = -2 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = monarch which = 03999 }
+	}
+
+}
+
+#Adam-Onís Treaty#
+event = {
+
+	id = 3067
+	random = no
+	country = USA
+	name = "EVENTNAME3067"
+	desc = "EVENTHIST3067"
+	style = 5
+
+	action_a ={
+		name = "ACTIONNAME3067A"	#Accept Offer#
+		command = { type = treasury value = -500 }
+		command = { type = addcore_national which = 46 } # Biloxi
+		command = { type = addcore_national which = 47 } # Mobile
+		command = { type = addcore_national which = 48 } # Tallahassee
+		command = { type = addcore_national which = 49 } # Seminole
+		command = { type = addcore_national which = 50 } # Everglades
+		command = {
+			trigger = { owned = { province = 53 data = SPA } } # extra cash for Cherokee/Creek area if owned by Spain (all are already cores of USA)
+			type = treasury value = -50
+		}
+		command = {
+			trigger = { owned = { province = 54 data = SPA } }
+			type = treasury value = -50
+		}
+		command = {
+			trigger = { owned = { province = 55 data = SPA } }
+			type = treasury value = -50
+		}
+		command = {
+			trigger = { owned = { province = 56 data = SPA } }
+			type = treasury value = -50
+		}
+		command = { type = relation which = SPA value = 100 }
+		command = { type = trigger which = 3091 }
+	}
+
+	action_b ={
+		name = "ACTIONNAME3067B"	#Decline Offer#
+		command = { type = relation which = SPA value = -100 }
+		command = { type = vp value = -75 }
+		command = { type = trigger which = 3092 }
+	}
+}
+
+#The Economic Dependency on England is broken#
+event = {
+
+	id = 3068
+	trigger = {
+		OR = {
+			event = 4994 # Treaty of Paris - survival
+			event = 4995 # Treaty of Paris - complete victory
+		}
+		war = { country = USA country = ENG }
+	}
+	date = { day = 1 month = july year = 1800 }
+	offset = 120
+	deathdate = { day = 2 month = january year = 1837 }
+	trigger = { atwar = yes }
+	random = no
+	country = USA
+	name = "EVENTNAME3068"
+	desc = "EVENTHIST3068"
+	style = 5
+
+	action_a ={
+		name = "ACTIONNAME3068A"	#At last!!!#
+		command = { type = infra value = 5000 }
+		command = { type = gainmanufactory which = -1 value = goods }
+		command = { type = gainmanufactory which = -4 value = refinery }
+		command = { type = gainmanufactory which = -4 value = weapons }
+	}
+}
+
+#The Continental Congress#
+# 20 Nov 2001, BiB, State Machine - New event of the Continental Congress 
+# meeting after hostilities have started, to try to form a united front.
+
+event = {
+	id = 4990
+	trigger = { 
+		event = 3049 
+		war = { country = USA country = ENG }
+	}
+	random = no
+	country = USA
+	name = "EVENTNAME4990"
+	desc = "EVENTHIST4990"
+	style = 4
+
+	date = { day = 1 month = january year = 1773 }
+	offset = 0
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a = {			#Let us unite together and fight for independence!#
+		name = "ACTIONNAME4990A"
+		command = { type = capital which =  85 } # Susquehanna
+		command = { type = add_countryculture which = anglosaxon }
+		command = { type = religion which = reformed }
+		command = { type = trigger which = 4982 }
+		command = { type = setflag which = susquehanna }
+	}
+
+	action_b = {			#We cannot find common cause!#
+		name = "ACTIONNAME4990B"
+		command = { type = add_countryculture which = anglosaxon }
+		command = { type = religion which = protestant }
+		command = { type = province_revoltrisk which = 54 value = 3 } # Savannah
+		command = { type = province_revoltrisk which = 62 value = 3 } # Carolina
+		command = { type = province_revoltrisk which = 63 value = 3 } # Santee
+		command = { type = province_revoltrisk which = 64 value = 3 } # Roanoke
+		command = { type = province_revoltrisk which = 65 value = 3 } # Catawba
+		command = { type = province_revoltrisk which = 66 value = 3 } # Appalache
+		command = { type = province_revoltrisk which = 68 value = 3 } # Chesapeake
+		command = { type = province_revoltrisk which = 69 value = 3 } # Powhatan
+		command = { type = province_revoltrisk which = 70 value = 3 } # Shenandoah
+		command = { type = province_revoltrisk which = 83 value = 3 } # Irondekoit
+		command = { type = province_revoltrisk which = 84 value = 3 } # Tuscarora
+		command = { type = province_revoltrisk which = 90 value = 3 } # Mohawk
+		command = { type = province_revoltrisk which = 85 value = 3 } # Susquehanna
+		command = { type = province_revoltrisk which = 86 value = 3 } # Delaware
+		command = { type = province_revoltrisk which = 87 value = 3 } # Manhattan
+		command = { type = province_revoltrisk which = 88 value = 3 } # Catskill
+		command = { type = province_revoltrisk which = 89 value = 3 } # Oswego
+		command = { type = province_revoltrisk which = 91 value = 3 } # Onondaga
+		command = { type = province_revoltrisk which = 100 value = 3 } # Adirondak
+		command = { type = province_revoltrisk which = 101 value = 3 } # Sebago
+		command = { type = province_revoltrisk which = 102 value = 3 } # Connecticut
+		command = { type = province_revoltrisk which = 103 value = 3 } # Massachussetts
+		command = { type = province_revoltrisk which = 104 value = 3 } # Penobscot
+		command = { type = province_revoltrisk which = 112 value = 3 } # Bangor
+		command = { type = trigger which = 4986 }
+	}
+}
+
+
+#We share the same goals and objectives#
+# 20 Nov 2001, BiB, State Machine - New event of the consequences of the Continental Congress .
+
+event = {
+	id = 4992
+	trigger = { 
+		event = 4982
+		#event = 4991
+		war = { country = USA country = ENG }
+	}
+	random = no
+	country = USA
+	name = "EVENTNAME4992"
+	desc = "EVENTHIST4992"
+	style = 4
+
+	date = { day = 1 month = january year = 1773 }
+	offset = 0
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a = {			#OK#
+		name = "ACTIONNAME4992A"
+		command = { type = addcore_national which = 54 } # Savannah (I assume this event just turns your claims into cores?)
+		command = { type = addcore_national which = 55 } # Alabama
+		command = { type = addcore_national which = 56 } # Tennessee
+		command = { type = addcore_national which = 61 } # Alleghany
+		command = { type = addcore_national which = 62 } # Carolina
+		command = { type = addcore_national which = 63 } # Santee
+		command = { type = addcore_national which = 64 } # Roanoke
+		command = { type = addcore_national which = 65 } # Catawba
+		command = { type = addcore_national which = 66 } # Appalache
+		command = { type = addcore_national which = 67 } # Kentucky
+		command = { type = addcore_national which = 68 } # Chesapeake
+		command = { type = addcore_national which = 69 } # Powhatan
+		command = { type = addcore_national which = 70 } # Shenandoah
+		command = { type = addcore_national which = 83 } # Irondekoit
+		command = { type = addcore_national which = 84 } # Tuscarora
+		command = { type = addcore_national which = 85 } # Susquehanna
+		command = { type = addcore_national which = 86 } # Delaware
+		command = { type = addcore_national which = 87 } # Manhattan
+		command = { type = addcore_national which = 88 } # Catskill
+		command = { type = addcore_national which = 89 } # Oswego
+		command = { type = addcore_national which = 90 } # Mohawk
+		command = { type = addcore_national which = 91 } # Onondaga
+		command = { type = addcore_national which = 100 } # Adirondak
+		command = { type = addcore_national which = 101 } # Sebago
+		command = { type = addcore_national which = 102 } # Connecticut
+		command = { type = addcore_national which = 103 } # Massachussetts
+		command = { type = addcore_national which = 104 } # Penobscot
+		command = { type = addcore_national which = 112 } # Bangor
+	}
+}
+
+
+# The Declaration of Independence #
+# 20 Nov 2001, State Machine - New event of the consequence of the Continental 
+# Congress forming a united front.
+
+event = {
+	id = 4993
+	trigger = { 
+		event = 4982
+		war = { country = USA country = ENG }
+	}
+	random = no
+	country = USA
+	name = "EVENTNAME4993"
+	desc = "EVENTHIST4993"
+	style = "4993"
+
+	date = { day = 1 month = january year = 1773 }
+	offset = 0
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={			 
+		name = "ACTIONNAME4993A" 
+		command = { type = stability value = 2 }
+		command = { type = vp value = 100 }
+	}
+}
+
+
+#Treaty of Paris - un petit peace#
+#20 Nov 2001, State Machine - New event. The USA has won (ie survived)
+
+event = {
+	id = 4994
+	trigger = {
+		event = 4982
+		NOT = { war = { country = USA country = ENG } }
+		NOT = {
+			someof = {
+				number = 7
+				owned = { province = 64 data = -1 } # Roanoke
+				owned = { province = 68 data = -1 } # Chesapeake
+				owned = { province = 85 data = -1 } # Susquehanna
+				owned = { province = 86 data = -1 } # Delaware
+				owned = { province = 87 data = -1 } # Manhattan
+				owned = { province = 88 data = -1 } # Catskill
+				owned = { province = 101 data = -1 } # Sebago
+				owned = { province = 102 data = -1 } # Connecticut
+				owned = { province = 103 data = -1 } # Massachusetts
+			}
+		}
+	}
+	random = no
+	country = USA
+	name = "EVENTNAME4994"
+	desc = "EVENTHIST4994"
+	style = "4983"
+
+	date = { day = 1 month = january year = 1773 }
+	offset = 0
+	deathdate = { day = 1 month = january year = 1837 }
+	
+	action_a ={			#We managed to survive
+		name = "ACTIONNAME4994A" 
+		command = { type = vp value = 200 } 
+	}
+}
+
+#Treaty of Paris - un grand peace#
+#20 Nov 2001, State Machine - New event. The USA has won big.
+
+event = {
+	id = 4995
+	trigger = {
+		event = 4982
+		NOT = { war = { country = USA country = ENG } }
+		someof = {
+			number = 7
+			owned = { province = 64 data = -1 } # Roanoke
+			owned = { province = 68 data = -1 } # Chesapeake
+			owned = { province = 85 data = -1 } # Susquehanna
+			owned = { province = 86 data = -1 } # Deleware
+			owned = { province = 87 data = -1 } # Manhattan
+			owned = { province = 88 data = -1 } # Catskill
+			owned = { province = 101 data = -1 } # Sebago
+			owned = { province = 102 data = -1 } # Conneticut
+			owned = { province = 103 data = -1 } # Massachussetts
+		}
+	}
+	random = no
+	country = USA
+	name = "EVENTNAME4995"
+	desc = "EVENTHIST4995"
+	style = "4983"
+
+	date = { day = 1 month = january year = 1773 }
+	offset = 0
+	deathdate = { day = 1 month = january year = 1837 }
+
+	action_a ={			#Ok
+		name = "ACTIONNAME4995A" 
+		command = { type = vp value = 400 } 
+		command = { type = addcore_national which = 53 } # Tuscaloosa
+		command = { type = addcore_national which = 59 } # Illinois
+		command = { type = addcore_national which = 60 } # Miamis
+		command = { type = addcore_national which = 71 } # Erie
+		command = { type = addcore_national which = 72 } # Hindua
+		command = { type = addcore_national which = 73 } # Fox
+		command = { type = addcore_national which = 74 } # Milwaukee
+		command = { type = addcore_national which = 77 } # Mesabi
+		command = { type = addcore_national which = 78 } # Duluth
+		command = { type = addcore_national which = 79 } # Wisconsin
+		command = { type = addcore_national which = 80 } # Oskosh
+		command = { type = addcore_national which = 81 } # Michilimakinak
+		command = { type = addcore_national which = 82 } # Detroit
+		command = { type = addcore_national which = 93 } # Sault
+	}
+}
+
+#unhistorical revolt suceeeds#
+#20 Nov 2001, State Machine - New event to reduce revolt risk to the USA incurred by 4990.
+
+Event = {
+	id = 4996
+	trigger = { 
+		event = 4986
+		NOT = { war = { country = USA country = ENG } }		
+	}
+	random = no
+	country = USA
+	name = "EVENTNAME4996"
+	desc = "EVENTHIST4996"
+	style = 4
+
+	date = { day = 1 month = january year = 1773 }
+	offset = 0
+	deathdate = { day = 1 month = january year = 1837 }
+
+		action_a ={			#Good#
+		name = "ACTIONNAME4996A"
+		command = { type = province_revoltrisk which = 54 value = -3 } # Savannah
+		command = { type = province_revoltrisk which = 62 value = -3 } # Carolina
+		command = { type = province_revoltrisk which = 63 value = -3 } # Santee
+		command = { type = province_revoltrisk which = 64 value = -3 } # Roanoke
+		command = { type = province_revoltrisk which = 65 value = -3 } # Catawba
+		command = { type = province_revoltrisk which = 66 value = -3 } # Appalache
+		command = { type = province_revoltrisk which = 68 value = -3 } # Chesapeake
+		command = { type = province_revoltrisk which = 69 value = -3 } # Powhatan
+		command = { type = province_revoltrisk which = 70 value = -3 } # Shenandoah
+		command = { type = province_revoltrisk which = 85 value = -3 } # Susquehanna
+		command = { type = province_revoltrisk which = 86 value = -3 } # Delaware
+		command = { type = province_revoltrisk which = 87 value = -3 } # Manhattan
+		command = { type = province_revoltrisk which = 88 value = -3 } # Catskill
+		command = { type = province_revoltrisk which = 89 value = -3 } # Oswego
+		command = { type = province_revoltrisk which = 91 value = -3 } # Onondaga
+		command = { type = province_revoltrisk which = 100 value = -3 } # Adirondak
+		command = { type = province_revoltrisk which = 101 value = -3 } # Sebago
+		command = { type = province_revoltrisk which = 102 value = -3 } # Connecticut
+		command = { type = province_revoltrisk which = 103 value = -3 } # Massachussetts
+		command = { type = province_revoltrisk which = 104 value = -3 } # Penobscot
+		command = { type = province_revoltrisk which = 112 value = -3 } # Bangor
+	}
+}
+
+#
+# New events for 1.3, by MichaelM (edits by mandead) #
+#
+
+# The Jay Treaty (historically 1794 but needs ENG-FRA to be at war) #
+event = {
+	id = 4988
+	trigger = {
+		event = 4995 # Treaty of Paris (historical big win)
+		war = { country = ENG country = FRA }
+	}
+	random = no
+	country = USA
+	name = "The Jay Treaty"
+	desc = "EVENTHIST4988"
+
+	date = { day = 1 month = january year = 1785 }
+	offset = 90
+	deathdate = { day = 30 month = december year = 1799 }
+
+	action_a = {			# Sign the Jay Treaty #
+		name = "Sign the Jay Treaty"
+		command = { type = stability value = -2 }
+		command = { type = treasury value = 200 }
+		command = { type = relation which = ENG value = 25 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = trigger which = 3727 } # ENG: Jay Treaty - ENG cedes border forts and pays damages
+	}
+	action_b = {			# No, these terms are unacceptable! #
+		name = "No, these terms are unacceptable!"
+		command = { type = casusbelli which = ENG value = 60 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = sleepevent which = 4997 } # XYZ Affair
+	}
+}
+
+# Jay Treaty rejected #
+event = {
+	id = 4989
+	# triggered by ENG 3727 B
+	random = no
+	country = USA
+	name = "Jay Treaty rejected"
+	desc = "Great Britain rejected the terms! We will have to make our own way."
+
+	action_a = {			# Very well #
+		name = "Very well"
+		command = { type = casusbelli which = ENG value = 60 }
+		command = { type = relation which = ENG value = -50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = sleepevent which = 4997 } # XYZ Affair
+	}
+}
+
+# The Capital Question #
+event = {
+	id = 4991
+	trigger = {
+		event = 4982 # ENG: Continental Congress succeeds (triggered if USA moves capital to Philadelphia)
+		atwar = no
+		OR = {
+			owned = { province = 69 data = -1 } # Powhatan
+			owned = { province = 88 data = -1 } # Catskill
+		}
+		NOT = {
+			capital = 69
+			capital = 88
+		}
+	}
+	random = no
+	country = USA
+	name = "The Capital Question"
+	desc = "By the time the US Constitution was drafted in 1787, the de facto capitals of the new USA were Philadelphia and New York. But the framers saw that setting the capital in either - or in any particular state - might cause jealousy among the other states, and also might grant that state too much leverage over the federal government in times of unrest. Therefore, Article 1 Section 8 granted Congress the ability to create and administrate a 10-by-10 mile federal district that would not be part of any state. However, there was no guidance as to where such a district might be located. New York, New Jersey, Maryland, and Virginia all offered land. Where shall we create this 'District of Columbia'?"
+
+	date = { day = 1 month = january year = 1800 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1810 }
+
+	action_a = {	# Create a new district in the south
+		name = "Create a new district in the south"
+		trigger = { 
+			owned = { province = 69 data = -1 } # Powhatan
+		}
+		command = { type = capital which = 69 } # Powhatan
+		command = { type = cityname which = 69 value = "Washington" }
+		command = { type = provinceculture which = 69 value = -1 }
+		command = { type = provincetax which = 69 value = 1 }
+		command = { type = revolt which = 88 } # people annoyed in the north
+		command = { type = treasury value = -100 }
+		command = { type = stability value = -1 }
+		command = { type = setflag which = powhatan }
+	}
+	action_b = {	# Create a new district in the north
+		name = "Create a new district in the north"
+		trigger = { 
+			owned = { province = 88 data = -1 } # Catskill
+		}
+		command = { type = capital which = 88 } # Catskill
+		command = { type = cityname which = 88 value = "Washington" }
+		command = { type = provinceculture which = 88 value = -1 }
+		command = { type = provincetax which = 88 value = 1 }
+		command = { type = revolt which = 69 } # people annoyed in the south
+		command = { type = treasury value = -100 }
+		command = { type = stability value = -1 }
+		command = { type = setflag which = catskill }
+	}
+	action_c = {	# We do not need a federal capital
+		name = "We do not need a federal capital"
+		command = { type = provincetax which = -2 value = 1 }
+		command = { type = domestic which = centralization value = -1 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# The XYZ Affair #
+event = {
+	id = 4997
+	trigger = {
+		event = 4988 # Jay Treaty
+		OR = {
+			monarch = 04062 # both possible Adams iterations
+			monarch = 04057
+		}
+		OR = {
+			FRA = { monarch = 04018 } # La Convention Nationale
+			FRA = { monarch = 04019 } # Le Directoire
+		}
+		NOT = {
+			relation = { country = FRA data = 100 }
+		}
+	}
+	random = no
+	country = USA
+	name = "The XYZ Affair"
+	desc = "John Jay's treaty with Great Britain raised concerns among the French that the US might join Britain in the ongoing French Revolutionary Wars. The French Navy began stopping American ships in an effort to impede Anglo-American trade, which was not taken well by the US. Three American diplomats (Charles Cotesworth Pinckney, John Marshall, and Elbridge Gerry) traveled to Paris in an effort to replicate Jay's success. When they arrived, they found that the French foreign minister, Charles-Maurice de Talleyrand, expected all foreign diplomats to pay bribes for the privilege of a meeting. A succession of semi-official members of Talleyrand's circle (later pseudonymed as W, X, Y, and Z in the official dispatches) met with the Americans to ask for money. Pinckney refused to give Talleyrand even a sixpence... but perhaps bribery could be justified to prevent war?"
+
+	date = { day = 1 month = january year = 1797 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1797 }
+
+	action_a = {			# Millions for defense, but not one cent for tribute! #
+		name = "Millions for defense, but not one cent for tribute!"
+		command = { type = treasury value = -200 }
+		command = { type = infantry which = -1 value = 5000 }
+		command = { type = warships which = -1 value = 6 }
+		command = { type = casusbelli which = FRA value = 24 }
+		command = { type = relation which = FRA value = -50 }
+	}
+	action_b = {			# Play the game #
+		name = "Play the game"
+		command = { type = treasury value = -100 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = sleepevent which = 4998 } # Quasi-War
+	}
+}
+
+# The Quasi-War #
+event = {
+	id = 4998
+	trigger = {
+		event = 4997 # XYZ Affair
+	}
+	random = no
+	country = USA
+	name = "The Quasi-War"
+	desc = "The XYZ affair of 1797 galvanized the American public into general support of military action against France. President Adams appointed Benjamin Stoddert to the newly-created post of Secretary of the Navy in 1798 and charged him with the protection of American merchants against the French Navy and French privateers. No war was declared, but Congress authorized Stoddert's navy to use force if necessary. Six frigates were built and launched, and the new U.S. Navy began operations by late summer of 1798. Over the next two years, American and French vessels fought a series of skirmishes ranging in location from the Caribbean up as far north as New Jersey waters. In September 1800, the US and Napoleon's French government signed the Convention of 1800 which affirmed American neutrality and secured safety for American merchants from the French Navy, ending the Quasi-War."
+
+	date = { day = 1 month = january year = 1798 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1798 }
+
+	action_a = {			# They brought it upon themselves #
+		name = "They brought it upon themselves"
+		command = { type = treasury value = -50 }
+		command = { type = privateers which = 1378 } # privateers attack trade in the French West Indies
+		command = { type = privateers which = 1048 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = ENG value = 50 }
+		command = { type = domestic which = centralization value = 1 } # President can now authorize military actions
+		command = { type = trade value = -200 }
+		command = { type = stability value = -1 }
+	}
+	action_b = {			# Recommission the fleet #
+		name = "Recommission the fleet"
+		command = { type = treasury value = -200 }
+		command = { type = warships which = -1 value = 15 }
+		command = { type = relation which = FRA value = -150 }
+		command = { type = relation which = ENG value = 100 }
+		command = { type = domestic which = centralization value = 1 } # President can now authorize military actions
+		command = { type = domestic which = land value = -1 } # federal navy is recommissioned by Congress and used against French ships
+		command = { type = naval value = 500 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# First Barbary War #
+event = {
+	id = 4999
+	trigger = {
+		exists = TRI
+		NOT = { relation = { country = TRI data = 100 } }
+	}
+	random = no
+	country = USA
+	name = "First Barbary War"
+	desc = "EVENTHIST4999"
+
+	style = "4999"
+
+	date = { day = 1 month = january year = 1801 }
+	offset = 90
+	deathdate = { day = 30 month = december year = 1805 }
+
+	action_a = {			# To the shores of Tripoli! #
+		name = "To the shores of Tripoli!"
+		command = { type = casusbelli which = TRI value = 24 }
+		command = { type = relation which = TRI value = -100 }
+		command = { type = treasury value = -100 }
+		command = { type = trade value = 500 }
+	}
+	action_b = {			# Involve ourselves off the record #
+		name = "Involve ourselves off the record"
+		command = { type = privateers which = 990 }
+		command = { type = relation which = TRI value = -50 }
+		command = { type = treasury value = -50 }
+		command = { type = trade value = 200 }
+	}
+	action_c = {			# This is not a matter for the navy #
+		name = "This is not a matter for the navy"
+		command = { type = trade value = -500 }
+		command = { type = domestic which = land value = 1 }
+		command = { type = sleepevent which = 50011 } # Second Barbary War
+	}
+}
+
+# Lewis and Clark's Expedition #
+event = {
+	id = 50000
+	trigger = {
+		event = 3061 # Louisiana Purchase
+		OR = {
+			monarch = 04063 # all three possible Jefferson iterations
+			monarch = 04055
+			monarch = 04056
+		}
+	}
+	random = no
+	country = USA
+	name = "Lewis and Clark's Expedition"
+	desc = "EVENTHIST50000"
+
+	style = "50000"
+
+	date = { day = 14 month = may year = 1804 }
+	offset = 90
+	deathdate = { day = 23 month = september year = 1806 }
+
+	action_a = {			# Send Lewis and Clark #
+		name = "Send Lewis and Clark"
+		command = { type = vp value = 50 }
+		command = { type = colonists value = 6 }
+		command = { type = missionaries value = 6 }
+		command = { type = trade value = 800 }
+		command = { type = infra value = 400 }
+		command = { type = INF which = -1144 value = 5000 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = discover which = 6 }    # Columbia
+		command = { type = addcore_claim which = 6 }
+		command = { type = discover which = 7 }    # Nehalem
+		command = { type = addcore_claim which = 7 }
+		command = { type = discover which = 1473 } # Oregon
+		command = { type = addcore_claim which = 1473 }
+		command = { type = discover which = 860 }  # Ocean
+		command = { type = discover which = 861 }  # Ocean
+		command = { type = wakeleader which = 24182 } # Meriwether Lewis
+		command = { type = treasury value = -300 }
+	}
+	action_b = {			# No, it is too expensive #
+		name = "No, it is too expensive"
+		command = { type = stability value = 1 }
+		command = { type = relation which = ENG value = 25 }
+	}
+}
+
+# Second Barbary War #
+event = {
+	id = 50011
+	trigger = {
+		event = 4999 # First Barbary War
+		exists = ALD
+		NOT = { relation = { country = ALD data = 100 } }
+	}
+	random = no
+	country = USA
+	name = "Second Barbary War"
+	desc = "The First Barbary War of 1801-1805 had not completely ended Barbary piracy of American merchant vessels, but the threat of war with Great Britain prevented anything more being done about it. But after the Treaty of Ghent, it was time once again to focus on the problem. President James Madison asked for and received power from Congress to send a naval expedition against Algiers in March 1815. Commodore Stephen Decatur - the hero of the First Barbary War - was chosen to lead the squadron. The Second Barbary War lasted only as long as it took Decatur to sail to Algiers, as he encountered and captured the Algerian flagship 'Meshouda' on the way. This was the last time American military action was needed against Barbary pirates, as the European powers, no longer at war with each other post-Napoleon, were now free to sweep the seas themselves."
+
+	date = { day = 1 month = january year = 1815 }
+	offset = 90
+	deathdate = { day = 30 month = december year = 1819 }
+
+	action_a = {			# To the shores of Algiers! #
+		name = "To the shores of Algiers!"
+		command = { type = casusbelli which = ALD value = 24 }
+		command = { type = relation which = ALD value = -100 }
+		command = { type = treasury value = -100 }
+		command = { type = trade value = 500 }
+	}
+	action_b = {			# Involve ourselves off the record #
+		name = "Involve ourselves off the record"
+		command = { type = privateers which = 986 }
+		command = { type = relation which = ALD value = -50 }
+		command = { type = treasury value = -50 }
+		command = { type = trade value = 200 }
+	}
+	action_c = {			# This is not a matter for the navy #
+		name = "This is not a matter for the navy"
+		command = { type = trade value = -500 }
+		command = { type = domestic which = land value = 1 }
+	}
+}
+
+# First Seminole War #
+event = {
+	id = 50001
+	trigger = {
+		OR = {
+			owned = { province = 54 data = -1 } # Savannah
+			owned = { province = 48 data = -1 } # Tallahassee
+			owned = { province = 49 data = -1 } # Seminole
+			owned = { province = 50 data = -1 } # Everglades
+		}
+	}
+	random = no
+	country = USA
+	name = "First Seminole War"
+	desc = "EVENTHIST50001"
+
+	style = "50001"
+
+	date = { day = 1 month = january year = 1818 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1818 }
+
+	action_a = {			# Chase them into Florida if we have to #
+		name = "Chase them into Florida if we have to"
+		command = { type = revolt value = IDR which = 54 }
+		command = { type = revolt value = IDR which = 47 }
+		command = { type = revolt value = IDR which = 48 }
+		command = {
+			trigger = { neighbour = SPA }
+			type = relation which = SPA value = -50
+		}
+		command = { type = DIP which = -2 value = 36 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = stability value = -1 }
+	}
+	action_b = {			# Stay within our borders #
+		name = "Stay within our borders"
+		command = { type = revolt value = IDR which = 54 }
+		command = { type = revolt value = IDR which = 47 }
+		command = {
+			trigger = { neighbour = SPA }
+			type = relation which = SPA value = 50
+		}
+		command = { type = sleepevent which = 3090 } # SPA: Sale of Florida
+	}
+	action_c = {			# Placate the Spanish and abandon Florida #
+		name = "Placate the Spanish and abandon Florida"
+		trigger = { 
+			neighbour = SPA
+			NOT = {
+				war = { country = USA country = SPA }
+			}
+		}
+		command = { type = sleepleader which = 09449 } # Jackson (dismissed by Congress for causing problems)
+		command = { type = cedeprovince which = SPA value = 46 } # give back any of Florida owned
+		command = { type = cedeprovince which = SPA value = 47 }
+		command = { type = cedeprovince which = SPA value = 48 }
+		command = { type = cedeprovince which = SPA value = 49 }
+		command = { type = cedeprovince which = SPA value = 50 }
+		command = { type = relation which = SPA value = 150 }
+		command = { type = domestic which = OFFENSIVE value = -1 }
+		command = { type = treasury value = 300 }
+		command = { type = stability value = 2 }
+		command = { type = sleepevent which = 3090 } # SPA: Sale of Florida
+		command = { type = sleepevent which = 50005 } # Second Seminole War
+	}
+}
+
+# The Missouri Compromise #
+event = {
+	id = 50002
+	trigger = {
+		owned = { province = 57 data = -1 } # southern Missouri
+		owned = { province = 58 data = -1 } # northern Missouri
+		owned = { province = 112 data = -1 } # Bangor (Maine)
+	}
+	random = no
+	country = USA
+	name = "The Missouri Compromise"
+	desc = "EVENTHIST50002"
+
+	date = { day = 1 month = january year = 1819 }
+	offset = 90
+	deathdate = { day = 30 month = december year = 1836 }
+
+	action_a = {			# Make the compromise #
+		name = "Make the compromise"
+		command = { type = stability value = -1 }
+		command = { type = provincetax which = 58 value = 2 } # St. Louis
+		command = { type = provincetax which = 112 value = 2 } # Portland/Augusta
+	}
+	action_b = {			# Admit Missouri alone as a slave state #
+		name = "Admit Missouri alone as a slave state"
+		command = { type = revolt which = -1 where = Maine } # unhappy abolitionists in the north
+		command = { type = provincetax which = 58 value = 5 } # St. Louis
+		command = { type = domestic which = serfdom value = 2 }
+	}
+	action_c = {			# Admit Maine alone as a free state #
+		name = "Admit Maine alone as a free state"
+		command = { type = revolt which = -1 where = Georgia } # unhappy slaveowners in the south
+		command = { type = revolt which = -4 where = Georgia }
+		command = { type = provincetax which = 112 value = 3 } # Portland/Augusta
+		command = { type = domestic which = aristocracy value = -1 }
+	}
+	action_d = {			# No more slave states! #
+		name = "No more slave states!"
+		command = { type = stability value = -2 }
+		command = { type = domestic which = serfdom value = -2 }
+		command = { type = domestic which = innovative value = 2 }
+	}
+}
+
+# Georgia Gold Rush (province specific) #
+event = {
+	id = 50010
+	trigger = {
+		NOT = { tradingpost = 55 }
+		OR = {
+			tag = USA
+			continent = europe
+		}
+	}
+	province = 55 # Alabama, which is actually upstate Georgia
+	name = "Georgia Gold Rush"
+	desc = "Settlers in western Georgia have discovered rich veins of gold in the hills near Dahlonega! Of course, there are Cherokee already living in the hill country, but surely they won't mind thousands of gold miners moving in... will they?"
+
+	date = { day = 1 month = january year = 1827 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1830 }
+
+	action_a = {		# Gold! #
+		name = "Gold!"
+		command = { type = goods which = 55 value = gold }
+		command = { type = mine which = 55 value = 25 }
+		command = { type = populationpercent which = 55 value = 20 }
+		command = { type = province_revoltrisk which = 55 value = 5 } # friction between gold seekers and native Cherokee
+	}
+}
+
+# The Indian Removal Act #
+event = {
+	id = 50003
+	trigger = {
+		event = 50010 # Georgia Gold Rush
+		OR = {
+			exists = CHE
+			exists = CRE
+			owned = { province = 55 data = -1 } # Alabama - Cherokee capital
+			owned = { province = 53 data = -1 } # Tuscaloosa - Creek capital
+		}
+		OR = {
+			owned = { province = 51 data = -1 } # Arkansas
+			owned = { province = 1481 data = -1 } # Oklahoma
+		}
+	}
+	random = no
+	country = USA
+	name = "The Indian Removal Act"
+	desc = "Although many Native American tribes had adopted white-European ways by the 1820s and 1830s - particularly the Five Civilized Tribes of Cherokee, Choctaw, Creek, Chickasaw, and Seminole - there were still white voices arguing that they could never be fully assimilated into white society and therefore should be removed to a place where they could self-govern. The Georgia Gold Rush of 1828 brought matters to a head in western Georgia, where white prospectors moved en masse into Cherokee lands to search for gold. President Andrew Jackson, veteran of numerous Indian wars, called for Indian removal in his 1829 State of the Union address. His proposal called for the transfer of all native lands to US states, and corresponding land grants west of the Mississippi River for Indian resettlement. Jackson believed this was the only way to avoid extinction of Indians, but not all saw it as a mercy."
+
+	date = { day = 1 month = january year = 1830 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1832 }
+
+	action_a = {			# Yes, remove them #
+		name = "Yes, remove them"
+		command = { type = domestic which = centralization value = 2 }
+		command = { type = domestic which = innovative value = -1 }
+		command = { type = relation which = CHE value = -200 }
+		command = { type = relation which = CRE value = -200 }
+		command = { type = revolt value = IDR which = -1 where = Georgia }
+		command = { type = revolt value = IDR which = -4 where = Georgia }
+	}
+	action_b = {			# No, they have rights #
+		name = "No, they have rights"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = revolt which = -1 where = Georgia } # unhappy settlers
+		command = { type = sleepevent which = 50004 } # The Trail of Tears
+	}
+}
+
+# The Trail of Tears #
+event = {
+	id = 50004
+	trigger = {
+		event = 50003 # Indian Removal Act
+		OR = {
+			monarch = 043015 # all three possible Jackson iterations (would anyone else have done this?)
+			monarch = 043016
+			monarch = 043018
+		}
+		NOT = {
+			war = { country = USA country = CHE }
+			war = { country = USA country = CRE }
+		}
+	}
+	random = no
+	country = USA
+	name = "The Trail of Tears"
+	desc = "The Indian Removal Act of 1830 paved the way for forced migration of eastern Indian tribes to lands west of the Mississippi. The U.S. government largely ignored the many existing Indian treaties in an effort to appease white settlers. Between 1831 and 1838, all five Civilized Tribes were removed - nearly 50,000 were forced from their homes, and at least 10,000-15,000 died from disease, malnutrition, and cold exposure along the 900-mile Trail of Tears. The survivors settled in eastern and central Indian Territory (now Oklahoma), making peace with the migratory Osage, Quapaw, Caddo, and Wichita tribes who already lived there. More than 20 other eastern Indian nations were removed to Oklahoma over the next 30 years, although no other removal had such a mortality rate. The feeling of betrayal by the U.S. federal government would later cause almost all the removed tribes to support the Confederacy during the Civil War."
+
+	style = "50004"
+
+	date = { day = 1 month = january year = 1830 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1836 }
+
+	action_a = {			# Enforce removal #
+		name = "Enforce removal"
+		command = { type = badboy value = 5 }
+		command = { type = annex which = CHE }
+		command = { type = annex which = CRE }
+		command = { type = domestic which = innovative value = -2 }
+		command = { type = province_revoltrisk which = 55 value = -5 } # from gold rush event
+		command = { type = populationpercent which = 46 value = -10 } # Biloxi
+		command = { type = provinceculture which = 46 value = anglosaxon }
+		command = { type = cityculture which = 46 value = anglosaxon }
+		command = { type = cityname which = 46 value = "Biloxi" }
+		command = { type = conversion which = 46 }
+		command = { type = populationpercent which = 47 value = -10 } # Mobile
+		command = { type = provinceculture which = 47 value = anglosaxon }
+		command = { type = cityculture which = 47 value = anglosaxon }
+		command = { type = cityname which = 47 value = "Mobile" }
+		command = { type = conversion which = 47 }
+		command = { type = populationpercent which = 48 value = -10 } # Tallahassee
+		command = { type = provinceculture which = 48 value = anglosaxon }
+		command = { type = cityculture which = 48 value = anglosaxon }
+		command = { type = cityname which = 48 value = "Tallahassee" }
+		command = { type = conversion which = 48 }
+		command = { type = populationpercent which = 52 value = -10 } # Yazoo
+		command = { type = provinceculture which = 52 value = anglosaxon }
+		command = { type = cityculture which = 52 value = anglosaxon }
+		command = { type = cityname which = 52 value = "Memphis" }
+		command = { type = conversion which = 52 }
+		command = { type = populationpercent which = 53 value = -25 } # Tuscaloosa
+		command = { type = provinceculture which = 53 value = anglosaxon }
+		command = { type = cityculture which = 53 value = anglosaxon }
+		command = { type = cityname which = 53 value = "Montgomery" }
+		command = { type = conversion which = 53 }
+		command = { type = populationpercent which = 54 value = -10 } # Savannah
+		command = { type = provinceculture which = 54 value = anglosaxon }
+		command = { type = cityculture which = 54 value = anglosaxon }
+		command = { type = cityname which = 54 value = "Savannah" }
+		command = { type = conversion which = 54 }
+		command = { type = populationpercent which = 55 value = -25 } # Alabama
+		command = { type = provinceculture which = 55 value = anglosaxon }
+		command = { type = cityculture which = 55 value = anglosaxon }
+		command = { type = cityname which = 55 value = "Atlanta" }
+		command = { type = conversion which = 55 }
+		command = { type = populationpercent which = 56 value = -25 } # Tennessee
+		command = { type = provinceculture which = 56 value = anglosaxon }
+		command = { type = cityculture which = 56 value = anglosaxon }
+		command = { type = cityname which = 56 value = "Nashville" }
+		command = { type = conversion which = 56 }
+		command = { type = populationpercent which = 61 value = -10 } # Alleghany
+		command = { type = provinceculture which = 61 value = anglosaxon }
+		command = { type = cityculture which = 61 value = anglosaxon }
+		command = { type = cityname which = 61 value = "Columbia" }
+		command = { type = conversion which = 61 }
+		command = {
+			trigger = {
+				owned = { province = 1481 data = -1 } # Oklahoma
+				NOT = { tradingpost = 1481 }
+			}
+			type = population which = 1481 value = 5000
+		}
+		command = {
+			trigger = {
+				owned = { province = 1481 data = -1 }
+				NOT = { tradingpost = 1481 }
+			}
+			type = provincereligion which = 1481 value = gorgetism
+		}
+		command = {
+			trigger = {
+				owned = { province = 1481 data = -1 }
+				NOT = { tradingpost = 1481 }
+			}
+			type = provinceculture which = 1481 value = cherokee
+		}
+		command = {
+			trigger = {
+				owned = { province = 1481 data = -1 }
+				NOT = { tradingpost = 1481 }
+			}
+			type = cityculture which = 1481 value = cherokee
+		}
+		command = {
+			trigger = {
+				owned = { province = 1481 data = -1 }
+				NOT = { tradingpost = 1481 }
+			}
+			type = cityname which = 1481 value = "Tahlonteeskee" # first capital of the western Cherokee in OK, later moved to Tahlequah
+		}
+		command = {
+			trigger = {
+				OR = {
+					NOT = { owned = { province = 1481 data = -1 } }
+					tradingpost = 1481
+				}
+			}
+			type = population which = 51 value = 5000	# Arkansas if Oklahoma isn't ours or is a trading post
+		}
+		command = {
+			trigger = {
+				OR = {
+					NOT = { owned = { province = 1481 data = -1 } }
+					tradingpost = 1481
+				}
+			}
+			type = provincereligion which = 51 value = gorgetism
+		}
+		command = {
+			trigger = {
+				OR = {
+					NOT = { owned = { province = 1481 data = -1 } }
+					tradingpost = 1481
+				}
+			}
+			type = provinceculture which = 51 value = cherokee
+		}
+		command = {
+			trigger = {
+				OR = {
+					NOT = { owned = { province = 1481 data = -1 } }
+					tradingpost = 1481
+				}
+			}
+			type = cityculture which = 51 value = cherokee
+		}
+		command = {
+			trigger = {
+				OR = {
+					NOT = { owned = { province = 1481 data = -1 } }
+					tradingpost = 1481
+				}
+			}
+			type = cityname which = 51 value = "Little Rock" # probably not accurate but can't find any specific Cherokee settlement names in AR
+		}
+	}
+
+	action_b = {			# Acknowledge tribal sovereignty #
+		name = "Acknowledge tribal sovereignty"
+		command = { type = stability value = -2 }
+		command = { type = domestic which = centralization value = -1 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = domestic which = serfdom value = -1 }
+		command = { type = relation which = CHE value = 200 }
+		command = { type = relation which = CRE value = 200 }
+	}
+}
+
+# Second Seminole War #
+event = {
+	id = 50005
+	trigger = {
+		event = 50001 # First Seminole War
+		event = 50003 # Indian Removal Act
+		OR = {
+			owned = { province = 49 data = -1 } # Seminole
+			owned = { province = 50 data = -1 } # Everglades
+		}
+	}
+	random = no
+	country = USA
+	name = "Second Seminole War"
+	desc = "After the Indian Removal Act of 1830, the U.S. government and the Seminole nation signed the 1832 Treaty of Payne's Landing, providing for the tribe to join the Creek Nation in Indian Territory. However, the tribe felt they had been tricked into signing. The government established a deadline of 1835 for all Seminoles to move, but the Seminoles informed the government agents that they had no intention of leaving. President Andrew Jackson's threats of force (and unilateral removal of several Seminole chiefs from their positions) were enough to convince most of the recalcitrants, but the young warrior Osceola took matters into his own hands. He and his followers began a campaign of guerrilla resistance which lasted seven years, despite never numbering more than a few hundred warriors. Osceola himself was illegally captured by General Thomas Jesup during a white flag parley and died in prison in 1838, but his name became legendary."
+
+	date = { day = 1 month = january year = 1835 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1836 }
+
+	action_a = {			# Oh no #
+		name = "Oh no"
+		command = { type = revolt value = IDR which = 49 }
+		command = { type = revolt value = IDR which = 50 }
+		command = { type = province_revoltrisk which = 49 value = 5 }
+		command = { type = province_revoltrisk which = 50 value = 5 }
+	}
+}
+
+#US.Presidential Election of 1820#
+event = {
+	id = 50006
+	date = { day = 4 month = march year = 1821 }
+	random = no
+	country = USA
+	name = "U.S. Presidential Election of 1820"
+	desc = "Campaign and the Issues, 1820: James Monroe's first term had ushered in the Era of Good Feelings. Rufus King's Federalist party had nearly ceased to exist, leaving Monroe's Democrat-Republicans as the only major party. Monroe ran unopposed and received all but one electoral vote. The only issue in the election was whether Missouri's votes should count or not, since it had not yet been fully admitted as a state. This turned out not to matter since it would have only contributed further to Monroe's unopposed win. But if Rufus King had won in 1816, he might well have run again in 1820. Who will you choose?"
+
+	action_a = {
+		name = "James Monroe"	#James Monroe#
+		command = { type = stability value = 1 }
+		command = { type = monarch which = 043013 }
+	}
+
+	action_b = {
+		name = "Rufus King"	#Rufus King#
+		command = { type = domestic which = MERCANTILISM value = -1 }
+		command = { type = relation which = ENG value = 50 }
+		command = { type = monarch which = 03999 }
+	}
+}
+
+#US.Presidential Election of 1824#
+event = {
+	id = 50007
+	date = { day = 4 month = march year = 1825 }
+	random = no
+	country = USA
+	name = "U.S. Presidential Election of 1824"
+	desc = "EVENTHIST50007"
+
+	action_a = {
+		name = "John Quincy Adams"	#John Quincy Adams#
+		command = { type = monarch which = 043014 }
+		command = { type = stability value = -1 }
+		command = { type = domestic which = aristocracy value = 1 }
+	}
+
+	action_b = {
+		name = "Andrew Jackson"	#Andrew Jackson#
+		command = { type = monarch which = 043015 }
+		command = { type = stability value = -1 }
+		command = { type = domestic which = aristocracy value = -1 }
+		command = { type = relation which = CHE value = -50 }
+		command = { type = relation which = CRE value = -50 }
+	}
+}
+
+#US.Presidential Election of 1828#
+event = {
+	id = 50008
+	date = { day = 4 month = march year = 1829 }
+	random = no
+	country = USA
+	name = "U.S. Presidential Election of 1828"
+	desc = "EVENTHIST50008"
+
+	action_a = {
+		name = "Andrew Jackson"	#Andrew Jackson#
+		command = { type = monarch which = 043016 }
+		command = { type = domestic which = aristocracy value = -1 }
+		command = { type = relation which = CHE value = -50 }
+		command = { type = relation which = CRE value = -50 }
+	}
+
+	action_b = {
+		name = "John Quincy Adams"	#John Quincy Adams#
+		command = { type = monarch which = 043017 }
+		command = { type = domestic which = aristocracy value = 1 }
+	}
+}
+
+#US.Presidential Election of 1832#
+event = {
+	id = 50009
+	date = { day = 4 month = march year = 1833 }
+	random = no
+	country = USA
+	name = "U.S. Presidential Election of 1832"
+	desc = "Campaign and the Issues, 1832: While the incumbent Andrew Jackson had opposed the Bank of the United States in his 1824 and 1828 campaigns, he had not had opportunity to do anything about it since its charter ran through 1836. Henry Clay, Daniel Webster, and the National Republicans - allies of the national bank - saw a chance to force Jackson into a potentially unpopular bank war, and the Bank submitted its charter renewal early in 1832 rather than waiting. Congress approved the charter but Jackson vetoed it, announcing that he intended to protect the small against the rich elite. Some of his coalition opposed the bank because it offered credit too easily, while some wanted credit and didn't receive it. Whatever the reasons, his opposition to the bank did not prove the disaster that Clay's party had hoped for. Jackson won reelection handily, but who will you choose?"
+
+	action_a = {
+		name = "Andrew Jackson"	#Andrew Jackson#
+		command = { type = monarch which = 043018 }
+		command = { type = domestic which = centralization value = -1 }
+		command = { type = loansize which = 100 }
+		command = { type = relation which = CHE value = -50 }
+		command = { type = relation which = CRE value = -50 }
+	}
+
+	action_b = {
+		name = "Henry Clay"	#Henry Clay#
+		command = { type = monarch which = 043019 }
+		command = { type = domestic which = centralization value = 1 }
+	}
+}
+
+#
+# Triggered event when American Rebels (USR) first take control of a province
+#
+event = {
+	id = 49999
+	trigger = {
+		continent = Europe
+		NOT = {
+			exists = USA
+			flag = [LexingtonConcord]
+		}
+	}
+
+	random = no
+	persistent = yes
+
+	name = "EVENTNAME49999"
+	desc = "EVENTHIST49999"
+
+	action_a = {
+		name = "ACTIONNAME49999A"	# Oh no! #
+		command = { type = revolt value = USR which = -1 }
+		command = { type = revolt value = USR which = -3 }
+		command = { type = revolt value = USR which = -3 }
+		command = { type = revolt value = USR which = -4 }
+		command = { type = revolt value = USR which = -3 }
+		command = { type = revolt value = USR which = -4 }
+		command = { type = revolt value = USR which = -4 }
+		command = { type = setflag which = [LexingtonConcord] }	# this event only fires once per country
+	}
+}

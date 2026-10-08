@@ -1,0 +1,216 @@
+# Events copied from AGCEEP in FTG 1.3 to make it likely that Algeria (ALD) appears
+
+
+#(1511-1523) Arudj and Khayr al-Din Barbarossa
+event = {
+	id = 51024
+	trigger = {
+		NOT = {
+			event = 51025
+			exists = ALD
+		}
+		OR = {
+			event = 50024 # TUR: The Barbarossas (Tunisia)
+			event = 50025 # TUR: The Barbarossas (No Tunisia)
+		}
+	}
+	random = no
+	country = TLE
+	name = "Arudj and Khayr al-Din Barbarossa" #Arudj and Khayr al-Din Barbarossa
+	desc = "In the 16th century, Spain occupied various ports in North Africa. Algiers was blockaded and forced to pay tribute. Other ports were captured outright. The desperate Muslims called for help from the Ottoman sultan, then the caliph of all Islam. Two corsair brothers, the Barbarossas petitioned the sultan to send them with a fleet to North Africa. Using the city of Tunis of a launching point, they ran piracy operations and began attacks on Algiers. At the same time, rulers of rivaling cities took the chance to launch attacks on Tlemcen."
+
+	date = { day = 1 month = november year = 1511 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1523 }
+
+	action_a = {
+		name = "Curse them!" #Curse them!
+		command = { type = revolt which = 737 } #Al Djazair
+		command = { type = revolt which = 737 } #Al Djazair
+		command = { type = revolt which = 738 } #Kabylia
+		command = { type = revolt which = 738 } #Kabylia
+		command = { type = revolt which = -1 }
+		command = { type = province_revoltrisk which = 738 value = 8 } #Kabylia
+		command = { type = province_revoltrisk which = 737 value = 8 } #Al Djazair
+		command = { type = revoltrisk which = 100 value = 6 }
+	}
+	action_b = {
+		name = "We shall ready our last defenses" #We shall ready our last defenses
+		command = { type = revolt which = 737 } #Al Djazair
+		command = { type = revolt which = 737 } #Al Djazair
+		command = { type = revolt which = 738 } #Kabylia
+		command = { type = revolt which = 738 } #Kabylia
+		command = { type = province_revoltrisk which = 738 value = 8 } #Kabylia
+		command = { type = province_revoltrisk which = 737 value = 8 } #Al Djazair
+		command = { type = inf which = -2 value = 5000 }
+		command = { type = inf which = -1 value = 5000 }
+		command = { type = treasury value = -300 }
+		command = { type = revoltrisk which = 100 value = 8 }
+	}
+	action_c = {
+		name = "We submit to their power" #We submit to their power
+		command = { type = flagname which = "" }
+		command = { type = remove_countryculture which = berber }
+		command = { type = addcore_national which = 738 } #Kabylia
+		command = { type = country which = ALD }
+		command = { type = capital which = 737 } #Al Djazair
+		command = { type = revoltrisk which = 120 value = 5 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+	}
+}
+
+#(1511-1523) Arudj and Khayr al-Din Barbarossa
+event = {
+	id = 51025
+	trigger = {
+		NOT = {
+			event = 51024
+			exists = ALD
+		}
+		OR = {
+			event = 50024 # TUR: The Barbarossas (Tunisia)
+			event = 50025 # TUR: The Barbarossas (No Tunisia)
+		}
+	}
+	random = no
+	country = TLE
+	name = "Arudj and Khayr al-Din Barbarossa" #Arudj and Khayr al-Din Barbarossa
+	desc = "In the 16th century, Spain occupied various ports in North Africa. Algiers was blockaded and forced to pay tribute. Other ports were captured outright. The desperate Muslims called for help from the Ottoman sultan, then the caliph of all Islam. Two corsair brothers, the Barbarossas petitioned the sultan to send them with a fleet to North Africa. They had planned to use the port of Tunis as a gathering point. However, their gifts did not impress the ruler of Tunis who barred them from the city. Despite this inconvenience, they still continued piracy operations and began attacks on Algiers. At the same time, rulers of rivaling cities took the chance to launch attacks on Tlemcen."
+
+	date = { day = 2 month = november year = 1511 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1523 }
+
+	action_a = {
+		name = "Curse them!" #Curse them!
+		command = { type = revolt which = 737 } #Al Djazair
+		command = { type = revolt which = 738 } #Kabylia
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = province_revoltrisk which = 738 value = 8 } #Kabylia
+		command = { type = province_revoltrisk which = 737 value = 8 } #Al Djazair
+	}
+	action_b = {
+		name = "We shall ready our last defenses" #We shall ready our last defenses
+		command = { type = revolt which = 737 } #Al Djazair
+		command = { type = revolt which = 738 } #Kabylia
+		command = { type = province_revoltrisk which = 738 value = 8 } #Kabylia
+		command = { type = province_revoltrisk which = 737 value = 8 } #Al Djazair
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = inf which = -2 value = 5000 }
+		command = { type = inf which = -1 value = 5000 }
+		command = { type = treasury value = -150 }
+	}
+	action_c = {
+		name = "We submit to their power" #We submit to their power
+		command = { type = flagname which = "" }
+		command = { type = remove_countryculture which = berber }
+		command = { type = addcore_national which = 738 } #Kabylia
+		command = { type = country which = ALD }
+		command = { type = capital which = 737 } #Al Djazair
+		command = { type = revoltrisk which = 120 value = 5 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+	}
+}
+
+#(1511-1530) The Barbarossas take Algiers
+event = {
+	id = 332000
+	trigger = {
+		control = { province = 737 data = REB }
+		control = { province = 738 data = REB }
+		OR = {
+			event = 51024
+			event = 50025 # TUR: The Barbarossas (No Tunisia)
+		}
+	}
+	random = no
+	country = TLE
+	name = "The Barbarossas take Algiers" #The Barbarossas take Algiers
+	desc = "My lord, the great city of Algiers has fallen to our enemies!"
+
+	date = { day = 1 month = november year = 1511 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1530 }
+
+	action_a = {
+		name = "How horrid!" #How horrid!
+		command = { type = free which = ALD }
+		#command = { type = trigger which = 105000 } #ALD: Emergence of Algiers (not in vanilla)
+		command = { type = removecore_national which = 736 } #Aures
+		command = { type = removecore_national which = 737 } #Al Djazair
+		command = { type = removecore_national which = 738 } #Kabylia
+	}
+}
+
+#Moor Refugees from Al-Andalus#
+event = {
+
+	id = 250056 #3652					#Triggered by SPA3150#
+	random = no
+	country = TLE
+	name = "Moor Refugees from Al-Andalus"
+	desc = "The great Christian victory (1212) of Navas de Tolosa prepared the way for the downfall of the Muslims. Córdoba fell to Ferdinand III of Castile in 1236. The wars went on, and one by one the Moorish strongholds fell, until only Granada remained in their hands. Málaga was taken (1487) after a long siege by the forces of Ferdinand and Isabella, and in 1492 Granada was recovered. Many of the Moors remained in Spain, those who remained faithful to Islam were called Mudejares, while those who accepted Christianity were called Moriscos. They were allowed to stay in Spain but were kept under close surveillance."
+
+	action_a ={					#Al-Andalus has fallen#
+		name = "Al-Andalus has fallen"
+		command = { type = populationpercent which = -1 value = 10 }
+		command = { type = populationpercent which = -4 value = 10 }
+		command = { type = relation which = GRA value = 150 }
+		command = { type = relation which = MOR value = 100 }
+		command = { type = relation which = FEZ value = 100 }
+		command = { type = relation which = SPA value = -100 }
+		command = { type = trade value = 800 }
+		command = { type = land value = 800 }
+		command = { type = treasury value = 500 }
+		command = { type = inflation value = -2 }
+	}
+}
+
+#Moor Exodus from Al-Andalus#
+event = {
+
+	id = 250057 #3729					#Triggered by SPA3150#
+	random = no
+	country = TLE
+	name = "Moor Exodus from Al-Andalus"
+	desc = ";As the Spanish infidels continue their purging of our Muslim brethren from Iberia, the conditions are now ripe in Northern Africa to strike back!"
+
+	action_a ={					#This means Holy War#
+		name = "This means Holy War"
+		command = { type = populationpercent which = -1 value = 15 }
+		command = { type = populationpercent which = -4 value = 15 }
+		command = { type = relation which = GRA value = 180 }
+		command = { type = relation which = MOR value = 150 }
+		command = { type = relation which = FEZ value = 150 }
+		command = { type = relation which = SPA value = -150 }
+		command = { type = trade value = 1200 }
+		command = { type = land value = 1200 }
+		command = { type = treasury value = 700 }
+		command = { type = stability value = 1 }
+		command = { type = casusbelli which = SPA value = 36 }
+		command = { type = dynastic which = MOR }
+		command = { type = dynastic which = GRA }
+	}
+
+	action_b ={					#Unfortenantely our hands are bound#
+		name = "Unfortenantely our hands are bound"
+		command = { type = populationpercent which = -1 value = 10 }
+		command = { type = populationpercent which = -4 value = 10 }
+		command = { type = relation which = GRA value = -50 }
+		command = { type = relation which = MOR value = -50 }
+		command = { type = relation which = FEZ value = -50 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = trade value = 1200 }
+		command = { type = land value = 1200 }
+		command = { type = treasury value = 700 }
+		command = { type = stability value = -2 }
+		command = { type = inflation value = -3 }
+	}
+}

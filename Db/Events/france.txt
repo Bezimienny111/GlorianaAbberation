@@ -1,0 +1,535 @@
+#France Events#
+
+#(1340-1360) Disaster at Crecy
+event = {
+	id = 107000 #Triggered by ENG_105512
+	random = no
+	country = FRA
+	name = "Disaster at Crecy"
+	desc = "Philippe VI, after some good times after the victory of Cassel in 1328, didn't succeed to completely consolidate his dynasty. Political turmoil was permanent, and continued during the first years of the war, explaining the french defensive position during this period. In 1346, Edward's ride, helped by the treason of the great normand baron Geoffroy d'Harcourt, marked the worst time of Philippe's reign : unable to organize an efficient response, the King finally assembled the ost, thinking to crush the english expedition with the superior number of the french knights. However, the Battle of Crecy, in August 1346, illustrated kingdom's political turmoil, with the unability of Philippe VI to really command his own forces. French charge was crushed by english bowmen, and knights were slaughtered. The King, unable to do anything else, was forced to retreat. The defeat was not decisive, but was a terrible kick."
+
+	action_a = {
+		name = "Aaaaargh!"
+		command = { type = stability value = -3 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+	}
+}
+
+#(1340-1360) The Fall of Calais
+event = {
+	id = 107001
+	trigger = {
+		owned = { province = 382 data = FRA }
+		event = 105512 #ENG: Crecy and the Fall of Calais
+	}
+	random = no
+	country = FRA
+	name = "The Fall of Calais"
+	desc = "The great victory of Crecy gave to Edward III the time to besiege and conquer the port of Calais : despite a courageous resistance, townsmen didn't receive any help from Philippe VI, now afraid to risk his crown in another battle, and were forced to capitulate during the well-known event of the 'six bourgeois'. Edward was merciful with the citizens, but he forced them to evacuate the town - they will be taken in charge by the King of France and sent in various locations in the kingdom. For more than 200 years, Calais will become an english-bridgehead in France."
+
+	date = { year = 1340 }
+	offset = 1
+	deathdate = { year = 1360 }
+
+	action_a = {
+		name = "We must give the keys of the city!"
+		command = { type = cedeprovince which = ENG value = 382 }
+		command = { type = population which = -2 value = 2000 }
+		command = { type = population which = -1 value = 500 }
+		command = { type = population which = -1 value = 500 }
+	}
+}
+
+#(1356-1360) The King has been captured
+event = {
+	id = 107002
+	trigger = {
+		war = { country = FRA country = ENG }
+		someof = {
+			number = 2
+			AND = {
+				owned = { province = 383 data = -1 }
+				control = { province = 383 data = ENG }
+			}
+			AND = {
+				owned = { province = 384 data = -1 }
+				control = { province = 384 data = ENG }
+			}
+			AND = {
+				owned = { province = 413 data = -1 }
+				control = { province = 413 data = ENG }
+			}
+			AND = {
+				owned = { province = 411 data = -1 }
+				control = { province = 411 data = ENG }
+			}
+			AND = {
+				owned = { province = 412 data = -1 }
+				control = { province = 412 data = ENG }
+			}
+			AND = {
+				owned = { province = 417 data = -1 }
+				control = { province = 417 data = ENG }
+			}
+			AND = {
+				owned = { province = 410 data = -1 }
+				control = { province = 410 data = ENG }
+			}
+			AND = {
+				owned = { province = 379 data = -1 }
+				control = { province = 379 data = ENG }
+			}
+			AND = {
+				owned = { province = 418 data = -1 }
+				control = { province = 418 data = ENG }
+			}
+			AND = {
+				owned = { province = 419 data = -1 }
+				control = { province = 419 data = ENG }
+			}
+			AND = {
+				owned = { province = 420 data = -1 }
+				control = { province = 420 data = ENG }
+			}
+			AND = {
+				owned = { province = 423 data = -1 }
+				control = { province = 423 data = ENG }
+			}
+			AND = {
+				owned = { province = 424 data = -1 }
+				control = { province = 424 data = ENG }
+			}
+			AND = {
+				owned = { province = 382 data = -1 }
+				control = { province = 382 data = ENG }
+			}
+			AND = {
+				owned = { province = 385 data = -1 }
+				control = { province = 385 data = ENG }
+			}
+		}
+		monarch = 15873 # Jean II le Bon#
+	}
+	random = no
+	country = FRA
+	name = "The King has been captured"
+	desc = "Jean le Bon was clearly more a knight than the King which France needed to triumph from Edward and the Black Prince. Having already shown his lack of efficiency during his father's reign, Jean II made numerous mistakes during the campaign of 1356 and the decisive battle of Poitiers. Despite large superiority, he engaged Black Prince's troops at the worst moment, and so lead the major part of royal army to a new terrible disaster ten years after Crecy. Jean II did a last mistake, prefering to stay in than to retreat, and so was personnaly captured. Consequences were of course terrible, in internal crisis as for the course of the war. "
+
+	date = { year = 1356 }
+	offset = 50
+	deathdate = { year = 1360 }
+
+	action_a = {
+		name = "At least our honor is preserved..."
+		command = { type = stability value = -3 }
+		command = { type = DIP which = -8 value = 120 }
+		command = { type = MIL which = -8 value = 120 }
+		command = { type = ADM which = -8 value = 120 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = setflag which = [king_capture] }
+		command = { type = setflag which = [iron_king] }
+		command = { type = diplomats value = -6 }
+		command = { type = trigger which = 105006 } #ENG: The King of France is captured!
+	}
+	action_b = {
+		name = "Flee their prison camp, stupid King!"
+		command = { type = stability value = -1 }
+		command = { type = vp value = -50 }
+		command = { type = domestic which = centralization value = -1 }
+		command = { type = domestic which = offensive value = -1 }
+		command = { type = desertion which = -1 value = 10000 }
+		command = { type = setflag which = [Humiliation] }
+		command = { type = diplomats value = -6 }
+	}
+}
+
+#(1356-1360) Political ramifications of Poitiers
+event = {
+	id = 107005
+	trigger = {
+		flag = [king_capture]
+	}
+	random = no
+	country = FRA
+	name = "Political ramifications of Poitiers"
+	desc = "After the disaster of Poitiers and the capture of the King, situation was terrible for the new regent of the royal power, the young dauphin Charles. Facing the opposition of the General Estates under control of Etienne Marcel, parisian 'Prevot des Marchands', he must also challenged the ambitions of Charles le Mauvais, King of Navarra and pretender to the french crown. With also peasantry's revolt in 1358, it's a kind of miracle that the french royal power didn't disappeared completely in those dark times. But for the moment, the Dauphin had to concede reforms to the Estates, with the Grande Ordonnance of march 1357, giving a major political power to the representatives. With luck and skill, maybe those concessions will be only for a few moment... "
+
+	date = { year = 1356 }
+	offset = 30
+	deathdate = { year = 1360 }
+
+	action_a = {
+		name = "Make concessions, but remain on guard"
+		command = { type = domestic which = centralization value = -1 }
+		#command = { type = monarch which = 21734 } # Dauphin Charles #
+		command = { type = revoltrisk which = 24 value = 2 }
+		command = { type = setflag which = [crown_gamble] }
+	}
+	action_b = {
+		name = "Fight openly the opposition"
+		command = { type = stability value = -3 }
+		#command = { type = monarch which = 21734 } # Dauphin Charles #
+		command = { type = revolt which = 385 }
+		command = { type = revolt which = 385 }
+		command = { type = revolt which = 385 }
+		command = { type = revolt which = 385 }
+		command = { type = revolt which = 385 }
+		command = { type = revoltrisk which = 24 value = 4 }
+	}
+	#action_c = {
+	#	name = "Respect the Grande Ordonnance"
+	#	command = { type = stability value = 1 }
+	#	command = { type = vp value = -200 }
+	#	command = { type = domestic which = centralization value = -8 }
+	#	command = { type = domestic which = aristocracy value = -1 }
+	#	command = { type = domestic which = innovative value = 1 }
+	#	command = { type = domestic which = mercantilism value = 3 }
+	#	command = { type = domestic which = offensive value = -4 }
+	#	#command = { type = monarch which = 21735 } # Etienne Marcel #
+	#}
+}
+
+#(1356-1360) The Fugitive King - Ahistorical
+event = {
+	id = 107006
+	trigger = {
+		flag = [Humiliation]
+	}
+	random = no
+	country = FRA
+	name = "The Fugitive King"
+	desc = "Jean le Bon choose to escape after the disruption of the royal ost at Poitiers, prefering the humiliation like his father one at Crecy ten years before rather a glorious but politically dangerous capture. Thanks to a strong government and an efficient royal propaganda, the King succeeded to limit the consequences of so great loss of reputation. But from now, the military adventures were over for him."
+
+	date = { year = 1356 }
+	offset = 30
+	deathdate = { year = 1360 }
+
+	action_a = {
+		name = "Poitiers? Never happened!"
+		command = { type = badboy value = 2 }
+		command = { type = stability value = -1 }
+		command = { type = DIP which = -4 value = 36 }
+		command = { type = domestic which = aristocracy value = 1 }
+		command = { type = domestic which = centralization value = -1 }
+	}
+}
+
+#(1358-1359) Parisian Uprising!
+event = {
+	id = 107007
+	trigger = {
+		control = { province = 385 data = -1 }
+		OR = {
+			AND = {
+				flag = [crown_gamble]
+				NOT = { stability = 3 }
+			}
+			NOT = { stability = -2 }
+		}
+	}
+	random = no
+	country = FRA
+	name = "Parisian Uprising!"
+	desc = "The political situation of the Dauphin was really terrible in those dark times of 1356-1358. Opposition of the General Estates, escape of Charles of Navarra and tensions in the capital lead to a major revolt in february 1358. Etienne Marcel and a furious mob invaded the Palace of the Louvre and killed the marshalls of Normandie and Champagne who stayed near the Dauphin. The prince, under pressure, was forced to accept these murders and recognized the effective power of Etienne Marcel over Paris. In april, Dauphin Charles finally decided to counterattack and, with the support of the Estates of Champagne, flew from the capital, established a camp at Meaux and travelled in every cities near Paris in order of getting their help against Parisians. Civil war was at the gates."
+
+	date = { year = 1358 }
+	offset = 30
+	deathdate = { year = 1359 }
+
+	action_a = {
+		name = "It's time to crush those damned Parisians!"
+		command = { type = stability value = -2 }
+		command = { type = domestic which = centralization value = -1 }
+		command = { type = population which = 385 value = -1000 }
+		command = { type = revolt which = 385 }
+		command = { type = revolt which = 385 }
+		command = { type = revolt which = 385 }
+		command = { type = revolt which = 385 }
+		command = { type = revolt which = 385 }
+		command = { type = desertion which = 385 value = 10000 }
+		command = { type = desertion which = -1 value = 10000 }
+	}
+	#action_b = {
+	#name = " Let the power to Etienne Marcel "
+	#command = { type = stability value = 1 }
+	#command = { type = domestic which = centralization value = -8 }
+	#command = { type = domestic which = aristocracy value = -1 }
+	#command = { type = domestic which = innovative value = 1 }
+	#command = { type = domestic which = mercantilism value = 3 }
+	#command = { type = domestic which = offensive value = -4 }
+	#command = { type = monarch which = 21735 } # Etienne Marcel #
+	#}
+}
+
+#(1358-1359) The Jacquerie
+event = {
+	id = 107008
+	trigger = {
+		OR = {
+			AND = {
+				OR = {
+					flag = [king_capture]
+					flag = [crown_gamble]
+				}
+				NOT = { stability = 2 }
+			}
+			AND = {
+				atwar = yes
+				NOT = { stability = -2 }
+			}
+		}
+	}
+	random = no
+	country = FRA
+	name = "The Jacquerie"
+	desc = "During the dark times of war and civil war in 1358, peasantry of the parisian region saw his good economic situation terribly weakened, and fear quickly became furor. Saying that the nobles and their treason after the King's capture were the reasons of the bad times, some large troops of peasants assembled and started to attack castles, kill knights and their families and destroy whatever called them the noble's power. Of course this new revolt could have been the final kick to the royal government, but in fact it helped largely the regent Charles, Etienne Marcel tried to contact Guillaume Carle, one of the leaders of the 'Jacques', but finally only succeeded to make all the nobles, including Charles of Navarra, broke their alliance with him to return with the Dauphin. In June 9, 1358, the Jacques were slaughtered by a troop lead by the King of Navarra, and some weeks later Etienne Marcel was killed by his former supporters. Thanks to the Jacquerie, the Dauphin was seen as the real defender of order."
+
+	date = { year = 1358 }
+	offset = 100
+	deathdate = { year = 1359 }
+
+	action_a = {
+		name = "Nobles! Surround the Dauphin!"
+		command = { type = stability value = 2 } #this revolt paradoxally helped the royal power
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = domestic which = aristocracy value = 1 }
+		command = { type = domestic which = serfdom value = 1 }
+		command = { type = revolt which = 385 }
+		command = { type = revolt which = 385 }
+		command = { type = revolt which = 385 }
+		command = { type = revolt which = 411 }
+		command = { type = revolt which = 383 }
+		command = { type = revolt which = 386 }
+		command = { type = revolt which = 376 }
+		command = { type = revoltrisk which = 12 value = 4 }
+	}
+}
+
+#(1358-1360) Assassination of Etienne Marcel
+event = {
+	id = 107009
+	trigger = {
+		OR = {
+			flag = [crown_gamble]
+			event = 107007 #FRA: Parisian Uprising!
+		}
+		control = { province = 385 data = -1 }
+	}
+	random = no
+	country = FRA
+	name = "Assassination of Etienne Marcel"
+	desc = "Etienne Marcel, Prevot des Marchands, was the real master of Paris as long as he had in the same time the support of Parisian citizens and of the King of Navarra. But he was unable to ultimaly force to submission the Dauphin, and his actions of february 1358, and overall his negociations with the Jacques were terrible mistakes, as it opened a direct conflict with the Prince without the support of Charles of Navarra, who couldn't help the ally of some guys who wanted to killed the nobles. His partisans slaughtered at Meaux, in a desperate attempt to join the Jacques, Etienne Marcel was finally killed himself by his former parisian supporters in july 1358. Parisian citizen, fearing the Dauphin's reaction, made to Charles a cheerful welcome."
+
+	date = { year = 1358 }
+	offset = 300
+	deathdate = { year = 1360 }
+
+	action_a = {
+		name = " Our revenge will be terrible ! "
+		command = { type = stability value = 1 }
+		command = { type = revoltrisk which = 12 value = -5 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = population which = 385 value = -1000 }
+		command = { type = sleepevent which = 107007 } #Parisian Uprising!
+	}
+}
+
+#(1359-1364) Treaties of London and Bretigny
+event = {
+	id = 107010
+	trigger = {
+		exists = ENG
+		flag = [king_capture]
+		NOT = { war = { country = FRA country = ENG } }
+		OR = {
+			control = { province = 383 data = ENG }
+			control = { province = 384 data = ENG }
+			control = { province = 413 data = ENG }
+			control = { province = 411 data = ENG }
+			control = { province = 412 data = ENG }
+			control = { province = 417 data = ENG }
+			control = { province = 410 data = ENG }
+			control = { province = 418 data = ENG }
+			control = { province = 419 data = ENG }
+			control = { province = 420 data = ENG }
+			control = { province = 423 data = ENG }
+			control = { province = 424 data = ENG }
+			control = { province = 382 data = ENG }
+		}
+	}
+	random = no
+	country = FRA
+	name = "Treaties of London and Bretigny"
+	desc = "After the capture of Jean II at Poitiers, only a wonder could have preserved the Kingdom of France to negociate a disastrous peace with Edward III. Internal troubles could have been the lethal kick, but finally the Dauphin preserved the major part of royal authority. Negociations were difficult, and the first attempt of peace with the Treaty of London was rejected by Paris Parliament, despite the agreement of Jean II. Finally, the definitive signing, with the Treaty of Bretigny in may 8, 1360, gave to Edward all the former parts of the great Duchy of Aquitaine, and confirmed the english possession of Calais. The King Jean II could be released at the price of an enormous ransom, and three of the king's sons should stay at London as hostages. All would have been nice for Edward, if a decisive point would had been cleared in this treaty, the King's sovereignty was theorically preserved on those lost lands. Of course, Jean II wasn't able to use this argument now, but in the future..."
+
+	date = { year = 1359 }
+	offset = 100
+	deathdate = { day = 8 month = april year = 1364 }
+
+	action_a = {
+	name = "We need our King! Let's accept the treaty"
+		command = { type = stability value = 1 }
+		command = { type = cash value = -600 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = domestic which = centralization value = -1 }
+		command = { type = cedeprovince which = ENG value = 425 }
+		command = { type = cedeprovince which = ENG value = 424 }
+		command = { type = cedeprovince which = ENG value = 423 }
+		command = { type = cedeprovince which = ENG value = 418 }
+		command = { type = cedeprovince which = ENG value = 419 }
+		command = { type = cedeprovince which = ENG value = 420 }
+		command = { type = cedeprovince which = ENG value = 417 }
+		command = { type = cedeprovince which = ENG value = 410 }
+		command = { type = cedeprovince which = ENG value = 382 }
+		command = { type = cedeprovince which = ENG value = 414 }
+		command = { type = cedeprovince which = ENG value = 415 }
+		command = { type = cedeprovince which = ENG value = 416 }
+		command = { type = setflag which = [hostages] }
+		#command = { type = monarch which = 21736 } # Jean II, the return!
+		command = { type = trigger which = 105008 } #ENG: Treaty of Bretigny
+	}
+	action_b = {
+		name = " We can't accept such a treaty! Sorry, King Jean..."
+		command = { type = stability value = -3 }
+		command = { type = revoltrisk which = 36 value = 4 }
+		command = { type = badboy value = 2 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = trigger which = 105009 } #ENG: Negotiations with the regent have failed
+	}
+}
+
+#(1363-1364) Escape of the Princes and King's Honor
+event = {
+	id = 107011
+	trigger = { flag = hostages }
+	random = no
+	country = FRA
+	name = "Escape of the Princes and King's Honor"
+	desc = " After the Treaty of Bretigny, Jean II was released only if three of his sons would have replaced him in London as hostages. In last month of 1363, Louis d'Anjou, one of the hostages, succeeded to escape from Calais, where he and his brothers had been sent as negotiations for their freedom were at their end. Edward III was furious, and the last honourable option for Jean II was to go back to London. This time, he never returned in his kingdom, as he died in april 8, 1364. "
+
+	date = { year = 1363 }
+	offset = 30
+	deathdate = { day = 8 month = april year = 1364 }
+
+	action_a = {
+		name = "Farewell, noble - stupid King!"
+		command = { type = stability value = -1 }
+		command = { type = badboy value = -2 }
+	#	command = { type = monarch which = 21737 } # Charles the Dauphin as regent, a last time #
+		command = { type = relation which = ENG value = 20 }
+		command = { type = relation which = -1 value = 15 }
+		command = { type = relation which = -1 value = 15 }
+		command = { type = relation which = -1 value = 15 }
+	}
+}
+
+#(1349) The Purchase of Dauphiné – Historical
+event = {
+	id = 107003  # Triggered by DAU_296021_A
+	random = no
+	country = FRA
+	name = "The Purchase of Dauphiné"
+	desc = "Without an heir and bankrupted by extravagant expenses and failed crusades, Humbert II of Dauphiné sold his property to Philip VI of France in 1349. According to an agreement with the Emperor that the lands could not be fully united to France, the title of 'Dauphin' was to be granted to the son of the King and treated as a separate entity when the current King was childless. In the long run, however, this became largely a formality and the lands were effectively part of the French realm."
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = inherit which = DAU }
+		command = { type = treasury value = -40 }
+	}
+}
+
+#(1349) The Purchase of Dauphiné - Limited Agreement
+event = {
+	id = 107004 # Triggered by DAU_296021_C
+	random = no
+	country = FRA
+	name = "The Purchase of Dauphiné"
+	desc = "Without an heir and bankrupted by extravagant expenses and failed crusades, Humbert II of Dauphiné sold his property to Philip VI of France in 1349. According to an agreement with the Emperor that the lands could not be fully united to France, the title of 'Dauphin' was to be granted to the son of the King and treated as a separate entity when the current King was childless. Historically, this became largely a formality and the lands were effectively part of the French realm, but a greater petition to the Emperor by the outgoing Humbert could have seen this more closely enforced for the short-term."
+	action_a = { 
+		name = "Okay"
+		command = { type = vassal which = DAU }
+		command = { type = treasury value = -15 }
+	}
+}
+
+#(1407) Assasination of Louis, Duke of Orléans#
+event = {
+	id = 296004
+	trigger = {
+		event = 195007
+	}
+	random = no 
+	country = FRA
+	name = "EVENTNAME296004"
+	desc = "EVENTHIST296004"
+	style = "26012"
+	
+	date = { day = 22 month = november year = 1407 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1407 }
+
+
+	action_a ={
+		name = "ACTIONNAME296004A"	#Insanity takes a toll on us all
+		command = { type = revoltrisk which = 60 value = 8 } # Tough!
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -2 }
+		command = { type = revolt which = -2 }
+		command = { type = desertion which = -1 value = 8000 }
+		command = { type = desertion which = -1 value = 10000 }
+		command = { type = desertion which = -1 value = 10000 }
+		command = { type = desertion which = -1 value = 7000 }
+		command = { type = stability value = -3 }
+		command = { type = relation which = BUR value = -150 }
+		command = { type = casusbelli which = BUR value = 36 }
+		command = { type = independence which = ORL } #Gloriana 1337
+		command = { type = independence which = NRM } #Gloriana 1337
+	}
+}
+
+#(1409-1414) Support for the Pisan Papacy
+event = {
+	id = 296016
+	trigger = {
+		NOT = { event = 2296001 }
+		OR = {
+			religion = avignon_catholic
+			religion = catholic
+		}
+		event = 296012
+	}
+	random = no
+	country = FRA
+	name = "EVENTNAME296013" #Support for the Pisan Papacy
+	desc = "EVENTHIST296013"
+
+	date = { year = 1409 }
+	offset = 5
+	deathdate = { year = 1414 }
+
+	action_a = {
+		name = "ACTIONNAME296013A" #Support the Pisan Papacy!
+		command = { type = religion which = pisan_catholic }
+	}
+	action_b = {
+		name = "ACTIONNAME296013B" #He is not the Vicar of Christ!
+		command = { }
+	}
+}
+
+#first free ID: 107012

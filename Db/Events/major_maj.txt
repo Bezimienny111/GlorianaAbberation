@@ -1,0 +1,148 @@
+# Majapahit #
+
+# The Fall of Majapahit #
+event = {
+	id = 4199
+	trigger = {
+		capital = 704
+		NOT = {
+			control = { province = 704 data = -1 }
+		}
+		OR = {
+			# capital seized by rebels or one of the Javan sultanates
+			war = { country = ATJ country = MAJ } # Aceh
+			war = { country = BEI country = MAJ } # Brunei
+			war = { country = BJR country = MAJ } # Banjar
+			war = { country = BTN country = MAJ } # Banten
+			war = { country = JOH country = MAJ } # Johor
+			war = { country = KED country = MAJ } # Kedah
+			war = { country = MLC country = MAJ } # Malacca
+			war = { country = MTR country = MAJ } # Mataram
+			war = { country = PAL country = MAJ } # Palembang
+			war = { country = SUL country = MAJ } # Sulu
+			control = { province = 704 data = REB }
+		}
+		OR = {
+			religion = hinduism
+			religion = buddhism
+			#religion = jain
+		}
+	}
+	random = no
+	country = MAJ
+	name = "EVENTNAME4199"
+	desc = "EVENTHIST4199"
+
+	date = { day = 1 month = january year = 1451 }
+	offset = 10
+	deathdate = { year = 1527 }
+
+	action_a = { # Convert to Islam and end the stagnation
+		name = "ACTIONNAME4199A"
+		command = { type = religion which = sunni }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = breakoverlord which = -1 } # just in case
+		command = { type = breakoverlord which = -4 }
+		command = { type = breakoverlord which = -4 }
+		command = { type = breakoverlord which = -4 }
+		command = { type = breakoverlord which = -4 }
+		command = { type = breakoverlord which = -4 }
+		command = { type = breakoverlord which = -4 }
+		command = { type = breakoverlord which = -4 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = desertion which = -4 value = 4000 }
+		command = { type = desertion which = -4 value = 3000 }
+		command = { type = desertion which = -4 value = 2000 }
+		command = { type = populationpercent which = 704 value = -25 }
+		command = { type = removecore_national which = 681 } # Imperial cores outside Java
+		command = { type = removecore_national which = 682 }
+		command = { type = removecore_national which = 697 }
+		command = { type = removecore_national which = 698 }
+		command = { type = removecore_national which = 699 }
+		command = { type = removecore_national which = 700 }
+		command = { type = removecore_national which = 708 }
+		command = { type = removecore_national which = 709 }
+		command = { type = removecore_national which = 710 }
+		command = { type = free which = KED }
+		command = { type = free which = MLC }
+		command = { type = free which = ATJ }
+		command = { type = free which = PAL }
+		command = { type = free which = BEI }
+		command = { type = free which = SUL }
+		command = { type = free which = BJR }
+		command = { type = free which = BTN }
+		command = { type = free which = TER }
+		command = { type = free which = MKS }
+		command = { type = free which = BUT }
+		command = { type = free which = BON }
+		command = { type = free which = BIM }
+		command = { type = cedeprovince which = MLC value = 676 } # cede territory outside Java to the other sultanates
+		command = { type = cedeprovince which = MLC value = 677 }
+		command = { type = cedeprovince which = MLC value = 678 }
+		command = { type = cedeprovince which = ATJ value = 679 }
+		command = { type = cedeprovince which = ATJ value = 680 }
+		command = { type = cedeprovince which = PAL value = 681 }
+		command = { type = cedeprovince which = PAL value = 682 }
+		command = { type = cedeprovince which = BEI value = 695 }
+		command = { type = cedeprovince which = BEI value = 696 }
+		command = { type = cedeprovince which = BEI value = 697 }
+		command = { type = cedeprovince which = BJR value = 698 }
+		command = { type = cedeprovince which = BJR value = 699 }
+		command = { type = cedeprovince which = BJR value = 700 }
+		command = { type = cedeprovince which = BTN value = 701 }
+		command = { type = cedeprovince which = BTN value = 702 }
+		command = { type = inflation value = -2 }
+		command = { type = missionaries value = 3 }
+		command = { type = infra value = 800 }
+		command = { type = trade value = 800 }
+		command = { type = treasury value = 200 }
+		command = {
+			trigger = {
+				NOT = { exists = MTR }
+			}
+			type = cityname which = 704 value = "Demak"
+		}
+		command = {
+			trigger = {
+				NOT = { exists = MTR }
+			}
+			type = flagname which = ""
+		}
+		command = {
+			trigger = {
+				NOT = { exists = MTR }
+			}
+			type = country which = MTR
+		}
+		command = { type = trigger which = 4200 }
+		command = { type = vp value = -50 }
+		command = { type = stability value = -4 }
+	}
+	action_b = { # Rally the faithful and eject the Muslim invaders
+		name = "ACTIONNAME4199B"
+		command = { type = add_countryculture which = malay }
+		command = { type = revoltrisk which = 120 value = 10 }
+		command = { type = religiousrevolt which = -5 }
+		command = { type = religiousrevolt which = -5 }
+		command = { type = religiousrevolt which = -5 }
+		command = { type = religiousrevolt which = -5 }
+		command = { type = domestic which = OFFENSIVE value = -2 }
+		command = { type = domestic which = QUALITY value = -2 }
+		command = { type = disbandrebels which = 704 }
+		command = { type = control which = 704 value = -1 }
+		command = { type = fortress which = 704 value = 1 }
+		command = { type = INF which = 704 value = 15000 }
+		command = { type = relation which = -11 value = 100 }
+		command = { type = relation which = -11 value = 100 }
+		command = { type = relation which = -11 value = 100 }
+		command = { type = relation which = -11 value = 100 }
+		command = { type = relation which = -11 value = 100 }
+		command = { type = relation which = -11 value = 100 }
+		command = { type = infra value = -1200 }
+		command = { type = trade value = -1200 }
+		command = { type = treasury value = -600 }
+		command = { type = vp value = 200 }
+		command = { type = stability value = -8 }
+	}
+}
