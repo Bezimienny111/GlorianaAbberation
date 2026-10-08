@@ -30,7 +30,7 @@ event = {
 		command = { type = treasury value = 150 }
 		command = { type = domestic which = centralization value = 1 }
 		command = { type = trade value = 400 }
-		command = { type = setflag which = hsa_diet_1356 value = 1 }
+		command = { type = setflag which = hsa_diet_1356 }
 	}
 }
 
@@ -71,7 +71,7 @@ event = {
 	desc = "Angielscy kupcy z gildii Merchant Adventurers, zazdrosni o podatkowe przywileje niemieckiej faktorii Steelyard, wywolali zamieszki w Londynie i domagaja sie od Korony konfiskaty hanzeatyckich magazynow. Jak odpowie Senat Ligi?"
 
 	trigger = {
-		hasflag = { which = hsa_steelyard value = 1 }
+		flag = hsa_steelyard
 		year = 1400
 	}
 
@@ -105,7 +105,7 @@ event = {
 	desc = "Wielkie Ksiestwo Moskiewskie dazy do zbrojnej aneksji Nowogrodu Wielkiego, co oznaczaloby likwidacje autonomii hanzeatyckiego Peterhofu i utrate rynku futrzarskiego. Senat w Lubece staje przed wyborem zbrojnego wsparcia dla republiki kupieckiej nad rzeka Wolchow."
 
 	trigger = {
-		hasflag = { which = hsa_peterhof value = 1 }
+		flag = hsa_peterhof
 		year = 1450
 		not = { year = 1520 }
 	}
@@ -139,7 +139,7 @@ event = {
 	desc = "Raporty naszych kapitanow Didrika Pininga i Hansa Pothorsta potwierdzaja: wody wokol Nowej Fundlandii obfite sa w nieprzebrane lawice dorszy i wielorybow. Hanzeatyccy osadnicy buduja pierwsze stalowe wedzarnie i osady tranowe na Nowym Kontynencie."
 
 	trigger = {
-		hasflag = { which = hsa_vinland value = 1 }
+		flag = hsa_vinland
 	}
 
 	date = { day = 1 month = january year = 1475 }

@@ -44,7 +44,7 @@ decision = {
 		command = { type = domestic which = centralization value = 2 }
 		command = { type = stability value = -1 }
 		command = { type = revoltrisk which = 36 value = 2 }
-		command = { type = setflag which = mam_emancipation value = 1 }
+		command = { type = setflag which = mam_emancipation }
 	}
 }
 
@@ -63,7 +63,7 @@ decision = {
 		tag = MAM
 		atwar = no
 		stability = 1
-		hasflag = { which = mam_emancipation value = 1 }
+		flag = mam_emancipation
 	}
 
 	cost = 150
@@ -79,7 +79,7 @@ decision = {
 		command = { type = manpower which = 745 value = 1 }
 		command = { type = manpower which = 746 value = 1 }
 		command = { type = revoltrisk which = 24 value = -2 }
-		command = { type = setflag which = mam_mamluk_dismantled value = 1 }
+		command = { type = setflag which = mam_mamluk_dismantled }
 	}
 }
 
@@ -104,7 +104,7 @@ decision = {
 		stability = 2
 		owned = { province = 744 data = -1 } # Alexandria
 		control = { province = 744 data = -1 }
-		hasflag = { which = mam_mamluk_dismantled value = 1 }
+		flag = mam_mamluk_dismantled
 	}
 
 	cost = 200
@@ -131,7 +131,7 @@ decision = {
 		command = { type = sleepmonarch which = 12011 }
 		command = { type = sleepmonarch which = 12012 }
 		command = { type = wakemonarch which = 39201 }
-		command = { type = setflag which = egy_ptolemaic value = 1 }
+		command = { type = setflag which = egy_ptolemaic }
 		command = { type = trigger which = 3009215 } # EGY: Pax Orientalis czy Wojna o Lewant
 	}
 }
@@ -303,7 +303,7 @@ decision = {
 		command = { type = addcore_claim which = 748 } # Batn al-Hajar
 		command = { type = addcore_claim which = 749 } # Nubia
 		command = { type = relation which = ETH value = 80 }
-		command = { type = setflag which = nile_secured value = 1 }
+		command = { type = setflag which = nile_secured }
 	}
 }
 
@@ -330,7 +330,7 @@ decision = {
 			tag = MAM
 			tag = EGY
 		}
-		hasflag = { which = mam_mamluk_dismantled value = 1 }
+		flag = mam_mamluk_dismantled
 		owned = { province = 746 data = -1 } # Cairo / Memphis
 		owned = { province = 744 data = -1 } # Alexandria
 		owned = { province = 745 data = -1 } # Delta
@@ -357,7 +357,7 @@ decision = {
 		command = { type = revolt which = 745 } # Delta
 		command = { type = revoltrisk which = 48 value = 6 }
 		command = { type = wakemonarch which = 39221 } # Usermaatre Ramesses XI
-		command = { type = setflag which = kemet_restored value = 1 }
+		command = { type = setflag which = kemet_restored }
 		command = { type = trigger which = 3009220 } # Pan-Islamic Jihad
 	}
 }
@@ -495,7 +495,7 @@ decision = {
 		command = { type = stability value = -3 }
 		command = { type = provincereligion which = 744 value = mutazilite }
 		command = { type = provincereligion which = 746 value = mutazilite }
-		command = { type = setflag which = mam_mutazilite value = 1 }
+		command = { type = setflag which = mam_mutazilite }
 		command = { type = trigger which = 3009230 } # Orthodox backlash
 	}
 }

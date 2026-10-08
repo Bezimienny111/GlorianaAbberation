@@ -15,7 +15,7 @@ event = {
 	trigger = {
 		owned = { province = 243 data = -1 } # Wales
 		control = { province = 243 data = -1 }
-		not = { hasflag = { which = wls_rising_fired value = 1 } }
+		NOT = { flag = wls_rising_fired }
 	}
 
 	date = { day = 1 month = january year = 1337 }
@@ -29,7 +29,7 @@ event = {
 		command = { type = domestic which = QUALITY value = 1 }
 		command = { type = INF which = 243 value = 8000 }
 		command = { type = CAV which = 243 value = 2000 }
-		command = { type = setflag which = wls_rising_fired value = 1 }
+		command = { type = setflag which = wls_rising_fired }
 		command = { type = vp value = 50 }
 	}
 	action_b = {
@@ -37,7 +37,7 @@ event = {
 		ai_chance = 20
 		command = { type = treasury value = 100 }
 		command = { type = stability value = 1 }
-		command = { type = setflag which = wls_rising_fired value = 1 }
+		command = { type = setflag which = wls_rising_fired }
 	}
 }
 
@@ -52,7 +52,7 @@ event = {
 	trigger = {
 		owned = { province = 243 data = -1 }
 		control = { province = 243 data = -1 }
-		hasflag = { which = wls_proclaimed value = 1 }
+		flag = wls_proclaimed
 	}
 
 	date = { day = 1 month = january year = 1337 }
@@ -84,8 +84,8 @@ event = {
 	desc = "Zjednoczenie koron Alby, Cymru i Eire stawia celtyckie elity przed dziejowym wyborem ustrojowym: czy zachowac tradycje swobod klanowych w ramach Federalnej Rzeczypospolitej Celtyckiej z rotacyjna Wysoka Rada Trzech Narodow, czy tez wskrzesic jednolita imperialna Korone Arturiańska ze scentralizowana wladza w jednej stolicy."
 
 	trigger = {
-		hasflag = { which = celt_union_formed value = 1 }
-		not = { hasflag = { which = celt_constitution_chosen value = 1 } }
+		flag = celt_union_formed
+		NOT = { flag = celt_constitution_chosen }
 	}
 
 	date = { day = 1 month = january year = 1337 }
@@ -101,8 +101,8 @@ event = {
 		command = { type = provincemanpower which = 239 value = 2 }
 		command = { type = provincemanpower which = 243 value = 1 }
 		command = { type = provincemanpower which = 233 value = 2 }
-		command = { type = setflag which = celt_republic_path value = 1 }
-		command = { type = setflag which = celt_constitution_chosen value = 1 }
+		command = { type = setflag which = celt_republic_path }
+		command = { type = setflag which = celt_constitution_chosen }
 		command = { type = vp value = 100 }
 	}
 	action_b = {
@@ -114,8 +114,8 @@ event = {
 		command = { type = provincetax which = 243 value = 2 }
 		command = { type = provincetax which = 233 value = 2 }
 		command = { type = stability value = -1 }
-		command = { type = setflag which = celt_empire_path value = 1 }
-		command = { type = setflag which = celt_constitution_chosen value = 1 }
+		command = { type = setflag which = celt_empire_path }
+		command = { type = setflag which = celt_constitution_chosen }
 		command = { type = vp value = 120 }
 	}
 }
@@ -128,8 +128,8 @@ event = {
 	desc = "Gdy Londyn zostal zdobyty przez celtyckie armie, a wladza Plantagenetow legla w gruzach, zwyciescy wodzowie stoja przed decyzja ostatecznego uregulowania losow narodu anglosaskiego: czy zredukowac Anglie do wasalnego malego ksiestwa Wessex, czy tez dokonac calkowitej aneksji i podzialu ziem pod bezposredni zarzad celtycki."
 
 	trigger = {
-		hasflag = { which = celt_britain_restored value = 1 }
-		not = { hasflag = { which = celt_england_fate_resolved value = 1 } }
+		flag = celt_britain_restored
+		NOT = { flag = celt_england_fate_resolved }
 	}
 
 	date = { day = 1 month = january year = 1337 }
@@ -143,7 +143,7 @@ event = {
 		command = { trigger = { exists = ENG } type = relation which = ENG value = 100 }
 		command = { type = badboy value = -5 }
 		command = { type = stability value = 2 }
-		command = { type = setflag which = celt_england_fate_resolved value = 1 }
+		command = { type = setflag which = celt_england_fate_resolved }
 		command = { type = vp value = 150 }
 	}
 	action_b = {
@@ -155,7 +155,7 @@ event = {
 		command = { type = addcore_claim which = 246 } # Midlands
 		command = { type = addcore_claim which = 244 } # Lancashire
 		command = { type = stability value = -2 }
-		command = { type = setflag which = celt_england_fate_resolved value = 1 }
+		command = { type = setflag which = celt_england_fate_resolved }
 		command = { type = vp value = 200 }
 	}
 }
@@ -177,7 +177,7 @@ event = {
 		}
 		owned = { province = 233 data = -1 } # Meath / Dublin
 		control = { province = 233 data = -1 }
-		not = { hasflag = { which = pale_fallen value = 1 } }
+		NOT = { flag = pale_fallen }
 	}
 
 	date = { day = 1 month = january year = 1337 }
@@ -189,7 +189,7 @@ event = {
 		ai_chance = 85
 		command = { type = stability value = 2 }
 		command = { type = treasury value = 150 }
-		command = { type = setflag which = pale_fallen value = 1 }
+		command = { type = setflag which = pale_fallen }
 		command = { type = vp value = 60 }
 	}
 	action_b = {
@@ -197,7 +197,7 @@ event = {
 		ai_chance = 15
 		command = { type = trade value = 300 }
 		command = { type = treasury value = 200 }
-		command = { type = setflag which = pale_fallen value = 1 }
+		command = { type = setflag which = pale_fallen }
 	}
 }
 
@@ -209,8 +209,8 @@ event = {
 	desc = "Powracajaca z zachodniego oceanu flotylla celtycka przywozi wiesci o odkryciu rozleglych, bogatych w ryby i lasy ziem za Atlantykiem. Pradawna celtycka legenda o podrozy swietego Brendana Zeglarza staje sie rzeczywistoscia, otwierajac erę zamorskiej kolonizacji Nowej Alby."
 
 	trigger = {
-		hasflag = { which = celt_brendan_voyage value = 1 }
-		not = { hasflag = { which = celt_new_alba_founded value = 1 } }
+		flag = celt_brendan_voyage
+		NOT = { flag = celt_new_alba_founded }
 	}
 
 	date = { day = 1 month = january year = 1337 }
@@ -226,7 +226,7 @@ event = {
 		command = { type = naval value = 800 }
 		command = { type = treasury value = 300 }
 		command = { type = stability value = 1 }
-		command = { type = setflag which = celt_new_alba_founded value = 1 }
+		command = { type = setflag which = celt_new_alba_founded }
 		command = { type = vp value = 150 }
 	}
 	action_b = {
@@ -236,7 +236,7 @@ event = {
 		command = { type = domestic which = NAVAL value = 2 }
 		command = { type = fortress which = 249 value = 1 }
 		command = { type = stability value = 1 }
-		command = { type = setflag which = celt_new_alba_founded value = 1 }
+		command = { type = setflag which = celt_new_alba_founded }
 		command = { type = vp value = 80 }
 	}
 }
@@ -249,7 +249,7 @@ event = {
 	desc = "Bratni celtycki narod Bretanii zza Kanalu La Manche z podziwem sledzi narodziny Unii Celtyckiej. Ksiaze Bretanii wysyla poslow z darami i propozycja wiecznego sojuszu kulturowego."
 
 	trigger = {
-		hasflag = { which = celt_union_formed value = 1 }
+		flag = celt_union_formed
 		atwar = no
 	}
 
@@ -287,7 +287,7 @@ event = {
 	trigger = {
 		or = {
 			tag = SCO
-			hasflag = { which = celt_union_formed value = 1 }
+			flag = celt_union_formed
 		}
 		owned = { province = 239 data = -1 } # Lothian
 		control = { province = 239 data = -1 }
@@ -327,7 +327,7 @@ event = {
 	trigger = {
 		or = {
 			tag = WLS
-			hasflag = { which = celt_union_formed value = 1 }
+			flag = celt_union_formed
 		}
 		owned = { province = 243 data = -1 } # Wales
 		control = { province = 243 data = -1 }
@@ -365,7 +365,7 @@ event = {
 	trigger = {
 		or = {
 			tag = SCO
-			hasflag = { which = celt_union_formed value = 1 }
+			flag = celt_union_formed
 		}
 		owned = { province = 236 data = -1 } # Highlands
 		owned = { province = 238 data = -1 } # Strathclyde
@@ -411,7 +411,7 @@ event = {
 		or = {
 			tag = SCO
 			tag = EIR
-			hasflag = { which = celt_union_formed value = 1 }
+			flag = celt_union_formed
 		}
 		owned = { province = 236 data = -1 } # Highlands (Iona)
 		control = { province = 236 data = -1 }

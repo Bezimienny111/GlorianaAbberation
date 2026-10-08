@@ -44,7 +44,7 @@ event = {
 	desc = "Pod mecenatem krola Sejonga wybitny inzynier i wynalazca Jang Yeong-sil konstruuje automatyczny zegar wodny (Jagyeokru) oraz pierwszy na swiecie standaryzowany deszczomierz (Cheugugi). Dokladne prognozowanie monsunow ratuje uprawy ryzu przed suszami i powodziami."
 
 	trigger = {
-		hasflag = { which = kor_hall_of_worthies value = 1 }
+		flag = kor_hall_of_worthies
 		year = 1440
 		not = { year = 1460 }
 	}
@@ -72,7 +72,7 @@ event = {
 	desc = "Pancerne okręty Geobukseon staja naprzeciw flotylli inwazyjnych. Dziala plujace ogniem z rzezbionych smoczych glow oraz pancerny dach rozbijaja w puch wrogie jednostki, zamykajac dostep do koreanskich wybrzezy."
 
 	trigger = {
-		hasflag = { which = kor_geobukseon_built value = 1 }
+		flag = kor_geobukseon_built
 		atwar = yes
 	}
 

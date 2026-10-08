@@ -20,8 +20,8 @@ event = {
 	trigger = {
 		owned = { province = 27 data = -1 } # Tenochtitlan
 		control = { province = 27 data = -1 }
-		not = { hasflag = { which = azt_captured_technology value = 1 } }
-		not = { hasflag = { which = azt_iron_empire value = 1 } }
+		NOT = { flag = azt_captured_technology }
+		NOT = { flag = azt_iron_empire }
 		OR = {
 			atwar = yes
 			year = 1515
@@ -38,7 +38,7 @@ event = {
 		command = { type = treasury value = 300 }
 		command = { type = domestic which = QUALITY value = 1 }
 		command = { type = land value = 500 }
-		command = { type = setflag which = azt_captured_technology value = 1 }
+		command = { type = setflag which = azt_captured_technology }
 		command = { type = stability value = 1 }
 		command = { type = vp value = 100 }
 	}
@@ -48,7 +48,7 @@ event = {
 		command = { type = domestic which = OFFENSIVE value = 1 }
 		command = { type = domestic which = QUALITY value = 1 }
 		command = { type = land value = 400 }
-		command = { type = setflag which = azt_captured_technology value = 1 }
+		command = { type = setflag which = azt_captured_technology }
 		command = { type = stability value = 1 }
 		command = { type = vp value = 75 }
 	}
@@ -64,8 +64,8 @@ event = {
 
 	trigger = {
 		OR = {
-			hasflag = { which = azt_captured_technology value = 1 }
-			hasflag = { which = azt_iron_empire value = 1 }
+			flag = azt_captured_technology
+			flag = azt_iron_empire
 		}
 	}
 
@@ -99,9 +99,9 @@ event = {
 	desc = "Podczas obrad w Texcoco kaplani i wodzowie stoja przed decydujacym wyborem drogi cywilizacyjnej: czy podazyc sciezka Nezahualcoyotla i boga madrosci Quetzalcoatla ku oswieceniu, pokojowemu przymierzu z sasiadami i zaniechaniu ofiar z ludzi, czy tez zachowac fanatyczny kult boga wojny Huitzilopochtli, czerpiac potege z nieustannej ekspansji i krwi jencow."
 
 	trigger = {
-		hasflag = { which = azt_texcoco_code value = 1 }
-		not = { hasflag = { which = azt_reformed_faith value = 1 } }
-		not = { hasflag = { which = azt_war_cult value = 1 } }
+		flag = azt_texcoco_code
+		NOT = { flag = azt_reformed_faith }
+		NOT = { flag = azt_war_cult }
 	}
 
 	date = { day = 1 month = january year = 1337 }
@@ -114,14 +114,14 @@ event = {
 		command = { type = religion which = nahua_reformed }
 		command = { type = domestic which = INNOVATIVE value = 3 }
 		command = { type = domestic which = CENTRALIZATION value = 2 }
-		command = { type = setflag which = azt_reformed_faith value = 1 }
+		command = { type = setflag which = azt_reformed_faith }
 		command = { type = stability value = 1 }
 		command = { type = vp value = 75 }
 	}
 	action_b = {
 		name = "Krwawy Kult Huitzilopochtli: Wieczna Wojna Kwietna"
 		ai_chance = 30
-		command = { type = setflag which = azt_war_cult value = 1 }
+		command = { type = setflag which = azt_war_cult }
 		command = { type = domestic which = QUALITY value = 2 }
 		command = { type = domestic which = OFFENSIVE value = 2 }
 		command = { type = domestic which = LAND value = 2 }
@@ -143,7 +143,7 @@ event = {
 	desc = "Galeony z Tenochtitlan i Veracruz zawinely do portow Europy i basenu Morza Srodziemnego. Poslowie Mexicow w barwnych pióropuszach i zlotych pancerzach wkraczaja na dwory Rzymu, Paryza, Londynu i Konstantynopola, budzac podziw uczonych. Europejskie mocarstwa oficjalnie uznaja cesarstwo Cemanahuac za suwerenne i rownorzedne panstwo swiata."
 
 	trigger = {
-		hasflag = { which = azt_transatlantic_embassy value = 1 }
+		flag = azt_transatlantic_embassy
 	}
 
 	date = { day = 1 month = january year = 1400 }
@@ -192,7 +192,7 @@ event = {
 		owned = { province = 164 data = -1 } # Quito
 		control = { province = 168 data = -1 }
 		control = { province = 164 data = -1 }
-		not = { hasflag = { which = inc_succession_resolved value = 1 } }
+		NOT = { flag = inc_succession_resolved }
 	}
 
 	date = { day = 1 month = january year = 1400 }
@@ -207,7 +207,7 @@ event = {
 		command = { type = domestic which = QUALITY value = 1 }
 		command = { type = INF which = 168 value = 8000 }
 		command = { type = INF which = 164 value = 8000 }
-		command = { type = setflag which = inc_succession_resolved value = 1 }
+		command = { type = setflag which = inc_succession_resolved }
 		command = { type = vp value = 80 }
 	}
 	action_b = {
@@ -220,7 +220,7 @@ event = {
 		command = { type = provincetax which = 164 value = 2 }
 		command = { type = stability value = -2 }
 		command = { type = revolt which = 164 } # Quito generals revolt
-		command = { type = setflag which = inc_succession_resolved value = 1 }
+		command = { type = setflag which = inc_succession_resolved }
 		command = { type = vp value = 100 }
 	}
 }
@@ -234,9 +234,9 @@ event = {
 	desc = "Gdy zamorscy awanturnicy wkroczyli na plac w Cajamarce liczac na zaskoczenie orszaku Sapa Inki, ze stoku gorskiego wyronily sie tysiace zaprawionych w bojach andyjskich legionistow. Zamiast pojmania cesarza, caly oddzial najeźdźców zostaje otoczony i zmuszony do bezwarunkowej kapitulacji!"
 
 	trigger = {
-		hasflag = { which = inc_succession_resolved value = 1 }
-		not = { hasflag = { which = inc_captured_technology value = 1 } }
-		not = { hasflag = { which = inc_iron_legions value = 1 } }
+		flag = inc_succession_resolved
+		NOT = { flag = inc_captured_technology }
+		NOT = { flag = inc_iron_legions }
 		OR = {
 			atwar = yes
 			year = 1530
@@ -253,7 +253,7 @@ event = {
 		command = { type = treasury value = 300 }
 		command = { type = land value = 500 }
 		command = { type = naval value = 400 }
-		command = { type = setflag which = inc_captured_technology value = 1 }
+		command = { type = setflag which = inc_captured_technology }
 		command = { type = stability value = 1 }
 		command = { type = vp value = 100 }
 	}
@@ -263,7 +263,7 @@ event = {
 		command = { type = treasury value = 150 }
 		command = { type = infra value = 500 }
 		command = { type = land value = 600 }
-		command = { type = setflag which = inc_captured_technology value = 1 }
+		command = { type = setflag which = inc_captured_technology }
 		command = { type = stability value = 1 }
 		command = { type = vp value = 80 }
 	}
@@ -278,7 +278,7 @@ event = {
 	desc = "Oceaniczna flotylla Inkow pod dowodztwem smialych zeglarzy powrocila ze Szlaku Slonca na Pacyfiku. Wyprawa potwierdzila istnienie bogatych wysp Polinezji i nawiazala kontakt z kupieckimi dzonkami ze Wschodu. Andyjskie porty w Callao i Guayaquil staja sie bramami globalnego handlu morskiego."
 
 	trigger = {
-		hasflag = { which = inc_pacific_expedition value = 1 }
+		flag = inc_pacific_expedition
 	}
 
 	date = { day = 1 month = january year = 1400 }
@@ -390,7 +390,7 @@ event = {
 	desc = "Wraz z modernizacja rzemiosla i rozwojem handlu miejskiego tradycyjna wymiana ziaren kakao i zlotego piasku w piorach staje sie niewystarczajaca. Cesarska mennica w Tenochtitlan rozpoczyna bicie standaryzowanych monet ze zlota i miedzi, rewolucjonizujac finanse Cemanahuac."
 
 	trigger = {
-		hasflag = { which = azt_iron_empire value = 1 }
+		flag = azt_iron_empire
 		owned = { province = 27 data = -1 }
 		control = { province = 27 data = -1 }
 	}

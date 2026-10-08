@@ -18,7 +18,7 @@ decision = {
 			tag = WLS
 			owned = { province = 243 data = -1 } # Wales
 		}
-		not = { hasflag = { which = wls_proclaimed value = 1 } }
+		NOT = { flag = wls_proclaimed }
 	}
 	name = "Koronacja Owaina Glyndwra: Ksiaze Walii"
 	desc = "W zylach Owaina Glyndwra plynie krew dawnych wladcow Gwynedd i Powys. Zrzucajac anglo-normanskie jarzmo, Owain zwoluje walijskie rody, przyjmuje tytul Ksiecia Walii (Tywysog Cymru) i wznosi sztandar Zlotego Smoka. Wolna Walia staje sie suwerennym panstwem gotowym do walki o wolnosc celtyckich narodow."
@@ -43,7 +43,7 @@ decision = {
 		command = { type = relation which = FRA value = 150 }
 		command = { type = relation which = SCO value = 150 }
 		command = { type = relation which = ENG value = -250 }
-		command = { type = setflag which = wls_proclaimed value = 1 }
+		command = { type = setflag which = wls_proclaimed }
 		command = { type = vp value = 75 }
 	}
 }
@@ -64,7 +64,7 @@ decision = {
 			tag = MST
 			tag = LEI
 		}
-		not = { hasflag = { which = eir_high_king value = 1 } }
+		NOT = { flag = eir_high_king }
 	}
 	name = "Oczyszczenie Pale: Wysoki Krol Irlandii"
 	desc = "Przez pokolenia angielska twierdza wokol Dublina (The Pale) byla symbolem obcej okupacji Zielonej Wyspy. Odbicie Dublina i likwidacja angielskiego urzedu Justiciara otwiera droge do wskrzeszenia tytulu Wysokiego Krola Irlandii (Ard Ri na hEireann) i zjednoczenia klanow pod jednym sztandarem."
@@ -91,7 +91,7 @@ decision = {
 		command = { type = addcore_national which = 235 } # Leinster
 		command = { type = treasury value = -200 }
 		command = { type = stability value = 2 }
-		command = { type = setflag which = eir_high_king value = 1 }
+		command = { type = setflag which = eir_high_king }
 		command = { type = vp value = 100 }
 	}
 }
@@ -110,7 +110,7 @@ decision = {
 			tag = WLS
 			tag = EIR
 		}
-		not = { hasflag = { which = celt_pact_formed value = 1 } }
+		NOT = { flag = celt_pact_formed }
 	}
 	name = "Pakt z Caernarfon: Wielki Sojusz Celtycki"
 	desc = "Wobec imperialnych roszczen Londynu, delegacje Szkocji, Walii i Irlandii spotykaja sie w zamku Caernarfon. Zamiast walczyc osobno, ludy celtyckie tworza nierozerwalna federacje obronna poparta francuskimi posilkami i zlotem."
@@ -130,7 +130,7 @@ decision = {
 		command = { type = domestic which = QUALITY value = 1 }
 		command = { type = treasury value = 250 } # French subsidies
 		command = { type = stability value = 1 }
-		command = { type = setflag which = celt_pact_formed value = 1 }
+		command = { type = setflag which = celt_pact_formed }
 		command = { type = vp value = 50 }
 	}
 }
@@ -145,7 +145,7 @@ decision = {
 			tag = EIR
 			tag = WLS
 		}
-		not = { hasflag = { which = celt_union_formed value = 1 } }
+		NOT = { flag = celt_union_formed }
 	}
 	name = "Unia Koron Celtyckich: Alba, Cymru, Eire"
 	desc = "Zwyciestwo nad najeźdźcami umozliwia ostateczne zjednoczenie celtyckich narodow w jedno potezne imperium atlantyckie. Polaczenie tradycji Edynburga, Caernarfon i Dublina tworzy mocarstwo oparte na wspolnocie jezykow gaelickich i brytonskich."
@@ -177,7 +177,7 @@ decision = {
 		command = { type = cot which = 239 }
 		command = { type = treasury value = -300 }
 		command = { type = stability value = 2 }
-		command = { type = setflag which = celt_union_formed value = 1 }
+		command = { type = setflag which = celt_union_formed }
 		command = { type = vp value = 150 }
 	}
 }
@@ -187,13 +187,13 @@ decision = {
 	id = 7254
 	major = yes
 	potential = {
-		hasflag = { which = celt_union_formed value = 1 }
+		flag = celt_union_formed
 		or = {
 			tag = SCO
 			tag = WLS
 			tag = EIR
 		}
-		not = { hasflag = { which = celt_march_london value = 1 } }
+		NOT = { flag = celt_march_london }
 	}
 	name = "Marsz na Londyn: Wyzwolenie Kornwalii i Polnocy"
 	desc = "Przelamujac angielska obrone w bitwach pod Marches i w Yorkshire, celtyckie armie staja u bram Londynu. Wyzwolenie brytonskiej Kornwalii, celtyckiej Kumbrii i starozytnej Brytanii Pólnocnej trwale odsuwa zagrozenie anglosaskie."
@@ -218,7 +218,7 @@ decision = {
 		command = { type = addcore_national which = 249 } # Cornwall
 		command = { type = addcore_claim which = 247 } # London
 		command = { type = stability value = 1 }
-		command = { type = setflag which = celt_march_london value = 1 }
+		command = { type = setflag which = celt_march_london }
 		command = { type = vp value = 100 }
 	}
 }
@@ -228,13 +228,13 @@ decision = {
 	id = 7255
 	major = yes
 	potential = {
-		hasflag = { which = celt_march_london value = 1 }
+		flag = celt_march_london
 		or = {
 			tag = SCO
 			tag = WLS
 			tag = EIR
 		}
-		not = { hasflag = { which = celt_britain_restored value = 1 } }
+		NOT = { flag = celt_britain_restored }
 	}
 	name = "Restauracja Brytanii Artura: Los Anglii"
 	desc = "Zajecie Londynu i zepchniecie anglosaskiej monarchii stanowi dziejowy triumf ludow celtyckich. W obliczu ostatecznego zwyciestwa Celci musza zadecydowac o losie Anglii: czy pozostawic ja jako zwasalizowane małe ksiestwo Wessex, czy tez dokonac bezposredniej aneksji i podzialu ziem anglosaskich."
@@ -262,7 +262,7 @@ decision = {
 		command = { type = naval value = 800 }
 		command = { type = domestic which = naval value = 2 }
 		command = { type = stability value = 2 }
-		command = { type = setflag which = celt_britain_restored value = 1 }
+		command = { type = setflag which = celt_britain_restored }
 		command = { type = vp value = 250 }
 	}
 }
@@ -272,13 +272,13 @@ decision = {
 	id = 7256
 	major = yes
 	potential = {
-		hasflag = { which = celt_union_formed value = 1 }
+		flag = celt_union_formed
 		or = {
 			tag = SCO
 			tag = WLS
 			tag = EIR
 		}
-		not = { hasflag = { which = celt_brendan_voyage value = 1 } }
+		NOT = { flag = celt_brendan_voyage }
 	}
 	name = "Szlak Świętego Brendana: Nowa Alba na Atlantyku"
 	desc = "Podtrzymujac pradawne legendy o oceanicznej wyprawie swietego Brendana Zeglarza na zachod przez wzburzony Atlantyk, zjednoczona flotylla celtycka wyrusza ze stoczni w Kintyre i Falmouth na podboj Nowego Swiata. Celtyccy pionierzy zakladaja Nowa Albe wyprzedzajac innych kolonizatorow."
@@ -298,7 +298,7 @@ decision = {
 		command = { type = treasury value = -300 }
 		command = { type = naval value = 800 }
 		command = { type = trade value = 800 }
-		command = { type = setflag which = celt_brendan_voyage value = 1 }
+		command = { type = setflag which = celt_brendan_voyage }
 		command = { type = vp value = 150 }
 	}
 }

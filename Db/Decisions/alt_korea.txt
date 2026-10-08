@@ -37,7 +37,7 @@ decision = {
 		command = { type = infra value = 600 }
 		command = { type = domestic which = innovative value = 3 }
 		command = { type = stability value = 1 }
-		command = { type = setflag which = kor_hall_of_worthies value = 1 }
+		command = { type = setflag which = kor_hall_of_worthies }
 		command = { type = vp value = 80 }
 	}
 }
@@ -55,7 +55,7 @@ decision = {
 
 	trigger = {
 		tag = KOR
-		hasflag = { which = kor_hall_of_worthies value = 1 }
+		flag = kor_hall_of_worthies
 		atwar = no
 		stability = 1
 	}
@@ -70,7 +70,7 @@ decision = {
 		command = { type = provincetax which = 642 value = 3 }
 		command = { type = inflation value = -2 }
 		command = { type = stability value = 1 }
-		command = { type = setflag which = kor_hangul_adopted value = 1 }
+		command = { type = setflag which = kor_hangul_adopted }
 		command = { type = vp value = 100 }
 	}
 }
@@ -106,7 +106,7 @@ decision = {
 		command = { type = naval value = 600 }
 		command = { type = domestic which = naval value = 2 }
 		command = { type = domestic which = quality value = 1 }
-		command = { type = setflag which = kor_geobukseon_built value = 1 }
+		command = { type = setflag which = kor_geobukseon_built }
 		command = { type = vp value = 100 }
 	}
 }
@@ -124,7 +124,7 @@ decision = {
 
 	trigger = {
 		tag = KOR
-		hasflag = { which = kor_geobukseon_built value = 1 }
+		flag = kor_geobukseon_built
 		atwar = no
 		stability = 1
 	}
@@ -138,7 +138,7 @@ decision = {
 		command = { type = trade value = 500 }
 		command = { type = stability value = 1 }
 		command = { type = relation which = NIP value = -50 }
-		command = { type = setflag which = kor_woko_cleared value = 1 }
+		command = { type = setflag which = kor_woko_cleared }
 		command = { type = vp value = 60 }
 	}
 }
@@ -176,7 +176,7 @@ decision = {
 		command = { type = addcore_national which = 637 } # Jilin
 		command = { type = addcore_claim which = 638 } # Heilongjiang / Amur
 		command = { type = stability value = 1 }
-		command = { type = setflag which = kor_goguryeo_reclaimed value = 1 }
+		command = { type = setflag which = kor_goguryeo_reclaimed }
 		command = { type = vp value = 120 }
 	}
 }
@@ -193,7 +193,7 @@ decision = {
 
 	trigger = {
 		tag = KOR
-		hasflag = { which = kor_goguryeo_reclaimed value = 1 }
+		flag = kor_goguryeo_reclaimed
 		owned = { province = 636 data = -1 }
 		owned = { province = 637 data = -1 }
 		control = { province = 636 data = -1 }

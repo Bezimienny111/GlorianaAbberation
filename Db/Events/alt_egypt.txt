@@ -18,7 +18,7 @@ event = {
 		control = { province = 746 data = -1 }
 		year = 1345
 		not = { year = 1370 }
-		not = { hasflag = { which = mam_purge_done value = 1 } }
+		NOT = { flag = mam_purge_done }
 	}
 
 	date = { day = 1 month = january year = 1345 }
@@ -35,8 +35,8 @@ event = {
 		command = { type = stability value = -4 }
 		command = { type = revolt which = 490 } # Syria
 		command = { type = revolt which = 744 } # Alexandria
-		command = { type = setflag which = mam_purge_done value = 1 }
-		command = { type = setflag which = mam_emancipation value = 1 }
+		command = { type = setflag which = mam_purge_done }
+		command = { type = setflag which = mam_emancipation }
 	}
 
 	action_b = {
@@ -44,7 +44,7 @@ event = {
 		command = { type = stability value = 1 }
 		command = { type = domestic which = aristocracy value = 2 }
 		command = { type = domestic which = centralization value = -2 }
-		command = { type = setflag which = mam_purge_done value = 1 }
+		command = { type = setflag which = mam_purge_done }
 	}
 }
 
@@ -57,11 +57,11 @@ event = {
 	desc = "Kres wszechwladzy obcej kasty mameluckiej postawil Egipt przed dziejowym wyborem. Wolna od feudalnego paralizu kraina Nilu moze zwrocic sie ku morzu i hellenizmowi w tradycji Ptolemeuszy, wskrzesic prastare politeistyczne dziedzictwo Faraonow, przeprowadzic racjonalistyczna reformacje islamu w duchu szkoly Mu'tazila, badz pozostac ortodoksyjnym sułtanatem."
 
 	trigger = {
-		hasflag = { which = mam_purge_done value = 1 }
+		flag = mam_purge_done
 		stability = 1
 		year = 1348
 		not = { year = 1380 }
-		not = { hasflag = { which = nile_path_chosen value = 1 } }
+		NOT = { flag = nile_path_chosen }
 	}
 
 	date = { day = 1 month = january year = 1348 }
@@ -70,7 +70,7 @@ event = {
 
 	action_a = {
 		name = "Zwrot ku morzu: Nowe Panstwo Ptolemeuszy!"
-		command = { type = setflag which = nile_path_chosen value = 1 }
+		command = { type = setflag which = nile_path_chosen }
 		command = { type = relation which = VEN value = 50 }
 		command = { type = relation which = GEN value = 50 }
 		command = { type = relation which = BYZ value = 50 }
@@ -81,7 +81,7 @@ event = {
 
 	action_b = {
 		name = "Wskrzeszmy pradawny Kemet i wiare Faraonow!"
-		command = { type = setflag which = nile_path_chosen value = 1 }
+		command = { type = setflag which = nile_path_chosen }
 		command = { type = domestic which = innovative value = 2 }
 		command = { type = infra value = 300 }
 		command = { type = stability value = -1 }
@@ -89,7 +89,7 @@ event = {
 
 	action_c = {
 		name = "Oswiecmy wiare swiatlem Rozumu (Mu'tazilizm)!"
-		command = { type = setflag which = nile_path_chosen value = 1 }
+		command = { type = setflag which = nile_path_chosen }
 		command = { type = domestic which = innovative value = 2 }
 		command = { type = infra value = 300 }
 		command = { type = trade value = 300 }
@@ -97,7 +97,7 @@ event = {
 
 	action_d = {
 		name = "Zachowajmy tradycyjny porzadek sunnicki"
-		command = { type = setflag which = nile_path_chosen value = 1 }
+		command = { type = setflag which = nile_path_chosen }
 		command = { type = stability value = 2 }
 		command = { type = domestic which = aristocracy value = 1 }
 	}

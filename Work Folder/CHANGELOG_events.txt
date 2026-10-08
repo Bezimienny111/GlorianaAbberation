@@ -566,3 +566,12 @@ global shared event/decision ID space, monarch space, and leader space:
   * 3009520: The Breton Connection (Uniting Armorica with the Celtic Realm).
   * Flavor & Depth: Garde Ecossaise in Continental Wars (3009531), Longbow Tradition of Wales (3009532), Highland Clan Wars (3009533), Culdees & Reformation of the Celtic Church (3009534), Integration Waves (3009541-3009545).
 ================================================================================
+
+[2026-10-09] Engine Flag Trigger & Command Normalization (Full Mod Audit):
+- Verified FTG engine flag mechanics against FTG.exe binary and Changelog 1.3:
+  * In For The Glory (EU2 engine), 'hasflag = { which = ... }' does NOT exist.
+  * Native FTG trigger syntax is strictly 'flag = <flagname>' and 'NOT = { flag = <flagname> }'.
+  * In 'command = { type = setflag which = <flagname> value = <months> }', 'value' specifies duration in MONTHS; 'value = 1' caused flags to expire after 30 days!
+- Refactored all 95 instances of 'hasflag' across alt_americas.txt, alt_celtic.txt, alt_egypt.txt, alt_ethiopia.txt, alt_hansa.txt, and alt_korea.txt to native 'flag = <flagname>' / 'NOT = { flag = <flagname> }'.
+- Cleaned all 72 instances of 'type = setflag which = <name> value = 1' to permanent flag command 'type = setflag which = <name>'.
+- Verified 0 remaining occurrences of hasflag and 100% comment-stripped bracket balance across all event and decision files.

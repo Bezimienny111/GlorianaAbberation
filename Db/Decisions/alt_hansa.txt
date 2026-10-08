@@ -57,7 +57,7 @@ decision = {
 		command = { type = cot which = 305 value = yes }
 		command = { type = treasury value = -250 }
 		command = { type = stability value = 1 }
-		command = { type = setflag which = hsa_proclaimed value = 1 }
+		command = { type = setflag which = hsa_proclaimed }
 	}
 }
 
@@ -75,8 +75,8 @@ decision = {
 
 	trigger = {
 		tag = HSA
-		hasflag = { which = hsa_proclaimed value = 1 }
-		not = { hasflag = { which = hsa_seereich value = 1 } }
+		flag = hsa_proclaimed
+		NOT = { flag = hsa_seereich }
 		atwar = no
 		stability = 1
 	}
@@ -93,7 +93,7 @@ decision = {
 		command = { type = domestic which = mercantilism value = -2 }
 		command = { type = domestic which = naval value = 3 }
 		command = { type = trade value = 500 }
-		command = { type = setflag which = hsa_republic value = 1 }
+		command = { type = setflag which = hsa_republic }
 		command = { type = vp value = 50 }
 	}
 }
@@ -112,8 +112,8 @@ decision = {
 
 	trigger = {
 		tag = HSA
-		hasflag = { which = hsa_proclaimed value = 1 }
-		not = { hasflag = { which = hsa_republic value = 1 } }
+		flag = hsa_proclaimed
+		NOT = { flag = hsa_republic }
 		atwar = no
 		stability = 1
 	}
@@ -129,7 +129,7 @@ decision = {
 		command = { type = domestic which = offensive value = 1 }
 		command = { type = domestic which = naval value = 3 }
 		command = { type = naval value = 600 }
-		command = { type = setflag which = hsa_seereich value = 1 }
+		command = { type = setflag which = hsa_seereich }
 		command = { type = vp value = 50 }
 	}
 }
@@ -194,7 +194,7 @@ decision = {
 		command = { type = treasury value = -200 }
 		command = { type = trade value = 500 }
 		command = { type = provincetax which = 305 value = 3 }
-		command = { type = setflag which = hsa_steelyard value = 1 }
+		command = { type = setflag which = hsa_steelyard }
 		command = { type = vp value = 50 }
 	}
 }
@@ -224,7 +224,7 @@ decision = {
 		command = { type = treasury value = -200 }
 		command = { type = trade value = 500 }
 		command = { type = provincetax which = 308 value = 3 }
-		command = { type = setflag which = hsa_peterhof value = 1 }
+		command = { type = setflag which = hsa_peterhof }
 		command = { type = vp value = 50 }
 	}
 }
@@ -253,7 +253,7 @@ decision = {
 		command = { type = treasury value = -150 }
 		command = { type = trade value = 400 }
 		command = { type = naval value = 300 }
-		command = { type = setflag which = hsa_bryggen value = 1 }
+		command = { type = setflag which = hsa_bryggen }
 		command = { type = vp value = 40 }
 	}
 }
@@ -283,7 +283,7 @@ decision = {
 		command = { type = treasury value = -250 }
 		command = { type = trade value = 600 }
 		command = { type = infra value = 400 }
-		command = { type = setflag which = hsa_flanders value = 1 }
+		command = { type = setflag which = hsa_flanders }
 		command = { type = vp value = 60 }
 	}
 }
@@ -319,7 +319,7 @@ decision = {
 		command = { type = colonists value = 3 }
 		command = { type = trade value = 500 }
 		command = { type = naval value = 500 }
-		command = { type = setflag which = hsa_vinland value = 1 }
+		command = { type = setflag which = hsa_vinland }
 		command = { type = vp value = 150 }
 	}
 }

@@ -15,7 +15,7 @@ decision = {
 	major = yes
 	potential = {
 		tag = AZT
-		not = { hasflag = { which = azt_texcoco_code value = 1 } }
+		NOT = { flag = azt_texcoco_code }
 	}
 	name = "Wielka Narada w Texcoco: Kodeks Nezahualcoyotla"
 	desc = "Pod wplywem poety i filozofa Nezahualcoyotla z Texcoco, Mexikowie staja przed dziejowym wyborem przyszlosci Cemanahuac: czy odrzucic krwawy terror masowych ofiar z jencow i paranoje Wojen Kwietnych na rzecz oswiecenia boga madrosci Quetzalcoatla, czy tez podwoic fanatyczna potęge boga wojny Huitzilopochtli."
@@ -37,7 +37,7 @@ decision = {
 		command = { type = treasury value = -200 }
 		command = { type = stability value = 1 }
 		command = { type = infra value = 500 }
-		command = { type = setflag which = azt_texcoco_code value = 1 }
+		command = { type = setflag which = azt_texcoco_code }
 		command = { type = vp value = 50 }
 	}
 }
@@ -48,17 +48,17 @@ decision = {
 	major = yes
 	potential = {
 		tag = AZT
-		hasflag = { which = azt_reformed_faith value = 1 }
-		not = { hasflag = { which = azt_war_cult value = 1 } }
-		not = { hasflag = { which = azt_league_formed value = 1 } }
+		flag = azt_reformed_faith
+		NOT = { flag = azt_war_cult }
+		NOT = { flag = azt_league_formed }
 	}
 	name = "Wieczna Liga Cemanahuac: Pojednanie z Sasiadami"
 	desc = "Odrzucenie krwawych wojen pozwala na zawarcie trwalej konfederacji miedzy Mexikami, Tlaxcala, Taraskanami i Zapotekami. Uznanie praw i tradycji sasiadow wlacza ich elity do wspolnej armii i rzadu, uniemozliwiajac obcym najezdzcom znalezienie jakichkolwiek indiańskich sojusznikow."
 
 	trigger = {
 		tag = AZT
-		hasflag = { which = azt_reformed_faith value = 1 }
-		not = { hasflag = { which = azt_war_cult value = 1 } }
+		flag = azt_reformed_faith
+		NOT = { flag = azt_war_cult }
 		atwar = no
 		stability = 2
 	}
@@ -75,7 +75,7 @@ decision = {
 		command = { type = addcore_national which = 26 } # Michoacan
 		command = { type = addcore_national which = 28 } # Zacatecas
 		command = { type = addcore_national which = 31 } # Oaxaca
-		command = { type = setflag which = azt_league_formed value = 1 }
+		command = { type = setflag which = azt_league_formed }
 		command = { type = vp value = 100 }
 	}
 }
@@ -86,15 +86,15 @@ decision = {
 	major = yes
 	potential = {
 		tag = AZT
-		hasflag = { which = azt_war_cult value = 1 }
-		not = { hasflag = { which = azt_league_formed value = 1 } }
+		flag = azt_war_cult
+		NOT = { flag = azt_league_formed }
 	}
 	name = "Hegemonia Krwi i Wojny: Zmiażdżenie Sąsiadów"
 	desc = "Podtrzymujac swiety nakaz karmienia slonca krwia jencow, Mexikowie ruszaja na ostateczna wojne totalna przeciwko Tlaxcali, Taraskanom i Zapotekom. Podbite krainy zostaja przeksztalcone w niewolne prowincje trybutarne pod zelazna wladza garnizonow Tenochtitlan."
 
 	trigger = {
 		tag = AZT
-		hasflag = { which = azt_war_cult value = 1 }
+		flag = azt_war_cult
 		atwar = no
 		stability = 2
 	}
@@ -110,7 +110,7 @@ decision = {
 		command = { type = addcore_claim which = 31 } # Oaxaca
 		command = { type = badboy value = 3 }
 		command = { type = INF which = 27 value = 10000 }
-		command = { type = setflag which = azt_league_formed value = 1 }
+		command = { type = setflag which = azt_league_formed }
 		command = { type = vp value = 100 }
 	}
 }
@@ -121,7 +121,7 @@ decision = {
 	major = yes
 	potential = {
 		tag = AZT
-		not = { hasflag = { which = azt_iron_empire value = 1 } }
+		NOT = { flag = azt_iron_empire }
 	}
 	name = "Zelazne Imperium Mexikow: Mistrzowie Ognia i Stali"
 	desc = "Przelom technologiczny Mexicow dokonuje sie badz dzieki pojmanym hiszpanskim rusznikarzom, kowalom i koniom bojowym, badz dzieki unifikacji bogatych kopaln miedzi i zlota oraz geniuszowi mezoamerykanskich rzemieslnikow. Rycerze Orla i Jaguara dosiadaja koni bojowych, a bataliony arkebuzerow staja sie postrachem najezdzcow."
@@ -131,7 +131,7 @@ decision = {
 		atwar = no
 		stability = 1
 		OR = {
-			hasflag = { which = azt_captured_technology value = 1 }
+			flag = azt_captured_technology
 			AND = {
 				owned = { province = 25 data = -1 } # Jalisco
 				owned = { province = 26 data = -1 } # Michoacan (mines)
@@ -156,7 +156,7 @@ decision = {
 		command = { type = land value = 800 }
 		command = { type = CAV which = 27 value = 5000 } # Cavalry in Tenochtitlan
 		command = { type = INF which = 27 value = 10000 }
-		command = { type = setflag which = azt_iron_empire value = 1 }
+		command = { type = setflag which = azt_iron_empire }
 		command = { type = vp value = 150 }
 	}
 }
@@ -167,15 +167,15 @@ decision = {
 	major = yes
 	potential = {
 		tag = AZT
-		hasflag = { which = azt_iron_empire value = 1 }
-		not = { hasflag = { which = azt_caribbean_claims value = 1 } }
+		flag = azt_iron_empire
+		NOT = { flag = azt_caribbean_claims }
 	}
 	name = "Arsenaly w Veracruz i Pelnomorska Flota"
 	desc = "Budowa pelnomorskich karaweli i galeonow w Veracruz przelamuje obcy monopol na Morzu Karaibskim. Wyplywajac z Zatoki Meksykanskiej, wyzwalajmy wyspy z rak najezdzcow i zabezpieczamy wybrzeza Ameryki Srodkowej."
 
 	trigger = {
 		tag = AZT
-		hasflag = { which = azt_iron_empire value = 1 }
+		flag = azt_iron_empire
 		owned = { province = 34 data = -1 } # Veracruz
 		control = { province = 34 data = -1 }
 		atwar = no
@@ -192,7 +192,7 @@ decision = {
 		command = { type = addcore_claim which = 138 } # Havana / Cuba
 		command = { type = addcore_claim which = 140 } # Jamaica
 		command = { type = addcore_claim which = 141 } # Hispaniola
-		command = { type = setflag which = azt_caribbean_claims value = 1 }
+		command = { type = setflag which = azt_caribbean_claims }
 		command = { type = vp value = 100 }
 	}
 }
@@ -204,7 +204,7 @@ decision = {
 	potential = {
 		tag = AZT
 		owned = { province = 27 data = -1 }
-		not = { hasflag = { which = azt_chinampas_built value = 1 } }
+		NOT = { flag = azt_chinampas_built }
 	}
 	name = "Wielkie Groble i Akwedukty Tenochtitlan"
 	desc = "Monumentalna rozbudowa systemu plywajacych ogrodow (chinampas), grobli przeciwpowodziowych oraz kamiennych akweduktow z Chapultepec zapewnia milionowej metropolii staly dostep do krystalicznej wody i nieprzebrane zbiory kukurydzy."
@@ -225,7 +225,7 @@ decision = {
 		command = { type = populationpercent which = 27 value = 15 }
 		command = { type = provincetax which = 27 value = 4 }
 		command = { type = infra value = 400 }
-		command = { type = setflag which = azt_chinampas_built value = 1 }
+		command = { type = setflag which = azt_chinampas_built }
 		command = { type = vp value = 50 }
 	}
 }
@@ -236,16 +236,16 @@ decision = {
 	major = yes
 	potential = {
 		tag = AZT
-		hasflag = { which = azt_iron_empire value = 1 }
-		not = { hasflag = { which = azt_transatlantic_embassy value = 1 } }
+		flag = azt_iron_empire
+		NOT = { flag = azt_transatlantic_embassy }
 	}
 	name = "Wyprawa Poselska Mexiców ku Staremu Światu"
 	desc = "Dysponujac pelnomorska flota galeonow zbudowanych w Veracruz oraz doswiadczonymi nawigatorami, wladca Mexicow wysyla wielka oceaniczna ekspedycje przez Atlantyk. Poselstwo ma nawiazac bezposredni kontakt dyplomatyczny ze stolicami Europy i potwierdzic status Cemanahuac jako suwerennego imperium."
 
 	trigger = {
 		tag = AZT
-		hasflag = { which = azt_iron_empire value = 1 }
-		hasflag = { which = azt_caribbean_claims value = 1 }
+		flag = azt_iron_empire
+		flag = azt_caribbean_claims
 		owned = { province = 34 data = -1 } # Veracruz
 		control = { province = 34 data = -1 }
 		atwar = no
@@ -260,7 +260,7 @@ decision = {
 		command = { type = treasury value = -350 }
 		command = { type = naval value = 800 }
 		command = { type = trade value = 800 }
-		command = { type = setflag which = azt_transatlantic_embassy value = 1 }
+		command = { type = setflag which = azt_transatlantic_embassy }
 		command = { type = vp value = 150 }
 	}
 }
@@ -275,7 +275,7 @@ decision = {
 	major = yes
 	potential = {
 		tag = INC
-		not = { hasflag = { which = inc_qhapaq_nan value = 1 } }
+		NOT = { flag = inc_qhapaq_nan }
 	}
 	name = "Krolewski Szlak Qhapaq Nan"
 	desc = "Siec kamiennych drog andyjskich i linowych mostow wiszacych nad przepasciami laczy wszystkie cztery czesci swiata Tawantinsuyu od Quito po Chile. Potezna arteria komunikacyjna umozliwia blyskawiczne przemieszczanie armii i znoszenie barier handlowych w gorach."
@@ -298,7 +298,7 @@ decision = {
 		command = { type = infra value = 600 }
 		command = { type = provincetax which = 168 value = 3 }
 		command = { type = provincetax which = 164 value = 2 }
-		command = { type = setflag which = inc_qhapaq_nan value = 1 }
+		command = { type = setflag which = inc_qhapaq_nan }
 		command = { type = vp value = 80 }
 	}
 }
@@ -309,15 +309,15 @@ decision = {
 	major = yes
 	potential = {
 		tag = INC
-		hasflag = { which = inc_qhapaq_nan value = 1 }
-		not = { hasflag = { which = inc_chasqui_network value = 1 } }
+		flag = inc_qhapaq_nan
+		NOT = { flag = inc_chasqui_network }
 	}
 	name = "Spichlerze Panstwowe Qullqa i Biegacze Chasqui"
 	desc = "Siec tysiecy kamiennych spichlerzy qullqa magazynujacych liofilizowane ziemniaki (chuño) i suszone mieso oraz sztafeta kurierow chasqui chronia imperium przed kleskami glodu i umozliwiaja natychmiastowe wprowadzanie kordonow sanitarnych w razie zarazy."
 
 	trigger = {
 		tag = INC
-		hasflag = { which = inc_qhapaq_nan value = 1 }
+		flag = inc_qhapaq_nan
 		atwar = no
 		stability = 2
 	}
@@ -330,7 +330,7 @@ decision = {
 		command = { type = treasury value = -200 }
 		command = { type = stability value = 1 }
 		command = { type = trade value = 400 }
-		command = { type = setflag which = inc_chasqui_network value = 1 }
+		command = { type = setflag which = inc_chasqui_network }
 		command = { type = vp value = 60 }
 	}
 }
@@ -341,7 +341,7 @@ decision = {
 	major = yes
 	potential = {
 		tag = INC
-		not = { hasflag = { which = inc_reformed_faith value = 1 } }
+		NOT = { flag = inc_reformed_faith }
 	}
 	name = "Zreformowany Kult Boga Slonca Inti"
 	desc = "Wzmocnienie autorytetu Najwyzszego Kaplana Willaq Umu i uporzadkowanie kultu Inti oraz boga-stwórcy Viracochy tworzy jednolity kodeks moralny, odrzucajac barbarzynskie stereotypy i nadajac Tawantinsuyu niezachwiana tozsamosc cywilizacyjna."
@@ -364,7 +364,7 @@ decision = {
 		command = { type = domestic which = centralization value = 2 }
 		command = { type = domestic which = innovative value = 2 }
 		command = { type = stability value = 1 }
-		command = { type = setflag which = inc_reformed_faith value = 1 }
+		command = { type = setflag which = inc_reformed_faith }
 		command = { type = vp value = 75 }
 	}
 }
@@ -375,7 +375,7 @@ decision = {
 	major = yes
 	potential = {
 		tag = INC
-		not = { hasflag = { which = inc_iron_legions value = 1 } }
+		NOT = { flag = inc_iron_legions }
 	}
 	name = "Zelazne Legiony Tawantinsuyu i Andyjska Konnica"
 	desc = "Modernizacja armii Inkow nastepuje albo w wyniku pojmania hiszpanskich najeźdźców, albo dzieki zjednoczeniu szlaku andyjskiego, kopalni srebra i miedzi Altiplano oraz wlasnemu odlewnictwu. Twierdze w Cuzco i Tiwanaku otrzymuja nowoczesne baterie armat, a lekka kawaleria andyjska strzeze gorskich przeleczy."
@@ -385,14 +385,14 @@ decision = {
 		atwar = no
 		stability = 1
 		OR = {
-			hasflag = { which = inc_captured_technology value = 1 }
+			flag = inc_captured_technology
 			AND = {
 				owned = { province = 168 data = -1 } # Cuzco
 				owned = { province = 164 data = -1 } # Quito
 				owned = { province = 167 data = -1 } # Callao / Lima
 				owned = { province = 192 data = -1 } # Potosi (silver)
 				control = { province = 168 data = -1 }
-				hasflag = { which = inc_qhapaq_nan value = 1 }
+				flag = inc_qhapaq_nan
 				domestic = { which = innovative value = 4 }
 				infra = 2
 			}
@@ -411,7 +411,7 @@ decision = {
 		command = { type = land value = 800 }
 		command = { type = CAV which = 168 value = 5000 }
 		command = { type = INF which = 168 value = 10000 }
-		command = { type = setflag which = inc_iron_legions value = 1 }
+		command = { type = setflag which = inc_iron_legions }
 		command = { type = vp value = 150 }
 	}
 }
@@ -422,15 +422,15 @@ decision = {
 	major = yes
 	potential = {
 		tag = INC
-		hasflag = { which = inc_iron_legions value = 1 }
-		not = { hasflag = { which = inc_pacific_thalassocracy value = 1 } }
+		flag = inc_iron_legions
+		NOT = { flag = inc_pacific_thalassocracy }
 	}
 	name = "Galeony z Guayaquil: Szlak Tupaca Yupanqui"
 	desc = "Podtrzymujac tradycje morskiej wyprawy cesarza Tupaca Yupanqui na Pacyfik, w stoczniach Guayaquil i Callao wznosimy oceaniczne okrety wojenne. Inkowskie floty dominuja na zachodnim wybrzezu Ameryki i otwieraja szlaki pelnomorskie ku odleglym archipelagom."
 
 	trigger = {
 		tag = INC
-		hasflag = { which = inc_iron_legions value = 1 }
+		flag = inc_iron_legions
 		owned = { province = 167 data = -1 } # Lima / Callao
 		control = { province = 167 data = -1 }
 		atwar = no
@@ -445,7 +445,7 @@ decision = {
 		command = { type = gainbuilding which = 167 value = shipyard }
 		command = { type = naval value = 600 }
 		command = { type = trade value = 500 }
-		command = { type = setflag which = inc_pacific_thalassocracy value = 1 }
+		command = { type = setflag which = inc_pacific_thalassocracy }
 		command = { type = vp value = 120 }
 	}
 }
@@ -456,15 +456,15 @@ decision = {
 	major = yes
 	potential = {
 		tag = INC
-		hasflag = { which = inc_pacific_thalassocracy value = 1 }
-		not = { hasflag = { which = inc_pacific_expedition value = 1 } }
+		flag = inc_pacific_thalassocracy
+		NOT = { flag = inc_pacific_expedition }
 	}
 	name = "Wielka Ekspedycja Pacyficzna ku Polinezji i Azji"
 	desc = "Czerpiac ze starych map i legend o wyprawie cesarza Tupaca Yupanqui, Sapa Inka posyla oceaniczna flote galeonow balsa w gląb bezkresnego Pacyfiku. Wyprawa dociera do odleglych wysp Polinezji, nawiazujac bezposredni transpacyficzny handel z obcymi ludami i kupcami."
 
 	trigger = {
 		tag = INC
-		hasflag = { which = inc_pacific_thalassocracy value = 1 }
+		flag = inc_pacific_thalassocracy
 		owned = { province = 167 data = -1 } # Callao
 		control = { province = 167 data = -1 }
 		atwar = no
@@ -479,7 +479,7 @@ decision = {
 		command = { type = treasury value = -300 }
 		command = { type = naval value = 800 }
 		command = { type = trade value = 800 }
-		command = { type = setflag which = inc_pacific_expedition value = 1 }
+		command = { type = setflag which = inc_pacific_expedition }
 		command = { type = vp value = 150 }
 	}
 }
