@@ -70,3 +70,36 @@
    - Events 3009141-3009145: Organic provincial 10-year integration events (ownerchange = 10 -> addcore_national) for core Italian provinces (Romagna, Marche, Firenze, Lombardia, Napoli).
    - Db/Monarchs/monarchs_wre.txt: 12 monarchs of the Aurelia dynasty (39001-39012) + 4 SPQR Consul pairs (39020-39023).
    - Db/Leaders/leaders_wre.txt: 9 Roman generals, admirals, and explorer Lucio Africano (39101-39109).
+
+[2026-10-08] Db/Decisions/alt_egypt.txt & Db/Events/alt_egypt.txt: implemented comprehensive alternate history module for Mameluks (MAM) and Ptolemaic Egypt (EGY):
+1. Common Reform Path (Decisions 7050-7051, Event 3009200):
+   - Event 3009200: "Czystka w Cytadeli Kairskiej" (The Cairo Citadel Purge, 1345-1360) - physical liquidation of rebellious Kipchak/Circassian Mamluk emirs, liberating Egyptian fellahs and Copts.
+   - Decision 7050: "Emancypacja Fellahow i Koptow" - grants coptic accepted culture alongside arabic, breaks military monopoly, shifts domestic sliders toward centralization and freedom.
+   - Decision 7051: "Likwidacja Kasty Niewolnikow Wojskowych" - abolishes boy-slave trade from Kipchak/Caucasus, forms native standing army, reduces inflation and increases provincial manpower.
+2. The Nile Crossroads (Event 3009201):
+   - Presents the 4 strategic paths for Egypt: Hellenistic/Ptolemaic Thalassocracy (EGY), Ancient Kemetic Revival (Egyptian Pagan), Islamic Rationalist Reformation (Mu'tazilism), or Traditional Sunni Sultanate.
+3. Branch E - The New Ptolemaic Kingdom (tag EGY, Decisions 7052-7057):
+   - Decision 7052: "Koronacja w Aleksandrii" - transforms tag to EGY, moves capital to coastal metropolis Alexandria (744), grants greek accepted culture and national cores along the Nile (743-747), sleeps Crusader monarchs and awakens the New Ptolemaic Dynasty (39201-39214).
+   - Decision 7053: "Odbudowa Latarni na Faros" - rebuilds the Pharos Lighthouse (Seventh Wonder), establishing modern shipyard and naval superiority.
+   - Decision 7054: "Nowa Wielka Biblioteka Aleksandryjska" - resurrects the Mouseion and Great Library, granting refinery, innovative boost, and rapid tech progression.
+   - Decision 7055: "Pradawny Kanal Faraonow" - excavates the ancient Necho/Darius canal linking Nile to Red Sea (Suez), creating a Center of Trade in Delta (745) and discovering Indian Ocean routes.
+   - Decision 7056: "Talasokracja Wschodniego Srodziemnomorza" - claims Cyprus (484), Crete (480), Rhodes (481), and Lebanon (491).
+   - Decision 7057: "Zabezpieczenie Zrodel Nilu" - secures Upper Nile through Nubian expedition and alliance with Christian Ethiopia (ETH).
+4. Branch P - Ancient Kemetic Revival (Decisions 7060-7063, Events 3009220-3009221):
+   - Decision 7060: "Edykt z Memfis: Powrot Zywiacego Horusa" - converts state religion to egyptian_pagan, ruler crowned Pharaoh and Son of Ra, wakes the Kemetic Dynasty (39221-39232), converts Memphis (746) and Thebes (747).
+   - Event 3009220: "Powszechny Dzihad przeciwko Faraonowi Apostacie" - pan-Islamic holy war declared by Ottoman Empire (TUR) and Caliphate rivals against the apostate Pharaoh.
+   - Event 3009221: "Koptowie witaja Nowego Faraona" - Christian Egyptian population rallies behind the restoration of native sovereignty.
+   - Decisions 7061-7063: Restoration of the Giza Pyramids and Great Sphinx, reconstruction of Karnak and Luxor temple complexes, and annual celebration of the sacred Feast of Opet.
+5. Branch M - Islamic Rationalist Reformation / Mu'tazilism (Decisions 7070-7073, Events 3009230-3009231):
+   - Decision 7070: "Edykt Rozumu i Mu'tazilizm" - establishes the rationalist Mu'tazilite school as state religion (mutazilite), elevating human reason ('aql) and free will.
+   - Decision 7071: "Akademia Nauk Scislych Al-Azhar" - transforms Al-Azhar into an empirical science academy of astronomy, mathematics, and medicine.
+   - Decision 7072: "Szpital i Szkola Medyczna Mansuri" - expands the Mansuri bimaristan complex into a world-leading hospital, boosting Cairo population and health.
+   - Decision 7073: "Nowy Dom Madrosci nad Nilem" - revives Beit al-Hikma, translating world scientific treatises into Arabic.
+   - Events 3009230-3009231: Ash'arite orthodox backlash and subsequent mass influx of scholars from Persia, Spain, and Europe.
+6. Regional Consolidation & Supporting Data:
+   - Decision 7075: "Pacyfikacja i Integracja Syrii" - grants national cores on Syria, Lebanon, Judea, Samaria, and Jordan.
+   - Decision 7076: "Straznik Swietych Miejsc Hedzazu" - claims and protects Mecca (498) and Medina (497).
+   - Events 3009241-3009245: 10-year organic provincial integration events (ownerchange = 10 -> addcore_national) for Cyprus, Syria, Judea, Nubia, and Crete.
+   - Db/Monarchs/monarchs_egy.txt: added 14 New Ptolemaic monarchs (39201-39214) and 12 Kemetic Pharaoh monarchs (39221-39232).
+   - Db/Leaders/leaders_egy.txt: created 9 Egyptian generals, admirals, and explorers (39251-39259).
+   - Db/cultures.txt & Work Folder/Alt_Patches/cultures_patch.txt: added coptic culture definition.

@@ -1,1 +1,352 @@
-# Alternate Destinies - Modular File
+#################################################################
+## Gloriana 1337 - Alternate Destinies                         ##
+## Module 3: Mameluks & Ptolemaic Egypt (MAM / EGY)            ##
+## Events File: alt_egypt.txt                                  ##
+## ID Range: 3009200 - 3009250                                 ##
+#################################################################
+
+# 3009200: Czystka w Cytadeli Kairskiej (1345-1360)
+event = {
+	id = 3009200
+	random = no
+	country = MAM
+	name = "Czystka w Cytadeli Kairskiej"
+	desc = "Po smierci al-Nasira frakcje kipczackich i czerkieskich emirow pograzyly Egipt w krwawej anarchii. Sułtan, wspierany przez wierna straz przyboczna oraz mieszczan Kairu, ma okazje zwolac zebranie przywodcow frakcji pod pretekstem uczty pojednania w Cytadeli, zamknac wrota Bramy Bab al-Azab i fizycznie zlikwidowac samowolna kaste zolnierzy-niewolnikow."
+
+	trigger = {
+		owned = { province = 746 data = -1 } # Cairo / Egypt
+		control = { province = 746 data = -1 }
+		year = 1345
+		not = { year = 1370 }
+		not = { hasflag = { which = mam_purge_done value = 1 } }
+	}
+
+	date = { day = 1 month = january year = 1345 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1370 }
+
+	action_a = {
+		name = "Zamknij bramy Cytadeli i zgładź uzurpatorow!"
+		command = { type = treasury value = 400 }
+		command = { type = add_countryculture which = coptic }
+		command = { type = domestic which = aristocracy value = -3 }
+		command = { type = domestic which = serfdom value = -3 }
+		command = { type = domestic which = centralization value = 2 }
+		command = { type = stability value = -4 }
+		command = { type = revolt which = 490 } # Syria
+		command = { type = revolt which = 744 } # Alexandria
+		command = { type = setflag which = mam_purge_done value = 1 }
+		command = { type = setflag which = mam_emancipation value = 1 }
+	}
+
+	action_b = {
+		name = "Zatwierdz przywileje emirow i zachowaj pokoj"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = aristocracy value = 2 }
+		command = { type = domestic which = centralization value = -2 }
+		command = { type = setflag which = mam_purge_done value = 1 }
+	}
+}
+
+# 3009201: Rozdroze nad Nilem: Wybor Przyszlosci
+event = {
+	id = 3009201
+	random = no
+	country = MAM
+	name = "Rozdroze nad Nilem: Wybor Przyszlosci"
+	desc = "Kres wszechwladzy obcej kasty mameluckiej postawil Egipt przed dziejowym wyborem. Wolna od feudalnego paralizu kraina Nilu moze zwrocic sie ku morzu i hellenizmowi w tradycji Ptolemeuszy, wskrzesic prastare politeistyczne dziedzictwo Faraonow, przeprowadzic racjonalistyczna reformacje islamu w duchu szkoly Mu'tazila, badz pozostac ortodoksyjnym sułtanatem."
+
+	trigger = {
+		hasflag = { which = mam_purge_done value = 1 }
+		stability = 1
+		year = 1348
+		not = { year = 1380 }
+		not = { hasflag = { which = nile_path_chosen value = 1 } }
+	}
+
+	date = { day = 1 month = january year = 1348 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1380 }
+
+	action_a = {
+		name = "Zwrot ku morzu: Nowe Panstwo Ptolemeuszy!"
+		command = { type = setflag which = nile_path_chosen value = 1 }
+		command = { type = relation which = VEN value = 50 }
+		command = { type = relation which = GEN value = 50 }
+		command = { type = relation which = BYZ value = 50 }
+		command = { type = domestic which = naval value = 2 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = naval value = 300 }
+	}
+
+	action_b = {
+		name = "Wskrzeszmy pradawny Kemet i wiare Faraonow!"
+		command = { type = setflag which = nile_path_chosen value = 1 }
+		command = { type = domestic which = innovative value = 2 }
+		command = { type = infra value = 300 }
+		command = { type = stability value = -1 }
+	}
+
+	action_c = {
+		name = "Oswiecmy wiare swiatlem Rozumu (Mu'tazilizm)!"
+		command = { type = setflag which = nile_path_chosen value = 1 }
+		command = { type = domestic which = innovative value = 2 }
+		command = { type = infra value = 300 }
+		command = { type = trade value = 300 }
+	}
+
+	action_d = {
+		name = "Zachowajmy tradycyjny porzadek sunnicki"
+		command = { type = setflag which = nile_path_chosen value = 1 }
+		command = { type = stability value = 2 }
+		command = { type = domestic which = aristocracy value = 1 }
+	}
+}
+
+# 3009220: Powszechny Dzihad przeciwko Faraonowi Apostacie
+event = {
+	id = 3009220
+	random = no
+	name = "Powszechny Dzihad przeciwko Faraonowi Apostacie"
+	desc = "Wiadomosc o wskrzeszeniu poganskiego kultu Amona i ogloszeniu Faraona Synem Ra wstrzasnela calym swiatem islamskim. Z Damaszku, Bagdadu i stolicy Osmanow poplynely wezwania do swietej wojny w celu zglizenia bezboznego wladcy na tronie w Memfis!"
+
+	action_a = {
+		name = "Niech bogowie Nilu zmiota najeźdźcow!"
+		command = { type = land_morale value = 0.20 }
+		command = { type = relation which = TUR value = -300 }
+		command = { type = relation which = ABB value = -300 }
+		command = { type = relation which = MOR value = -200 }
+		command = { type = relation which = TUN value = -200 }
+		command = { type = casusbelli which = TUR }
+		command = { type = casusbelli which = ABB }
+		command = { type = stability value = -1 }
+		command = { type = vp value = 50 }
+	}
+}
+
+# 3009221: Koptowie witaja Nowego Faraona
+event = {
+	id = 3009221
+	random = no
+	name = "Koptowie witaja Nowego Faraona"
+	desc = "Wsrod chrzescijanskiej ludnosci Egiptu wiesc o obaleniu obcego panowania i powrocie do rdzennych, pradawnych tradycji wzbudzila nadzieje na pokoj i sprawiedliwosc. Koptowie masowo wstepuja do nowej armii Faraona, wspierajac go przeciwko najeźdźcom ze wschodu."
+
+	trigger = {
+		religion = egyptian_pagan
+		owned = { province = 743 data = -1 } # Cataract
+		owned = { province = 747 data = -1 } # Nile
+	}
+
+	date = { day = 1 month = january year = 1371 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Jestesmy synami tej samej pradawnej ziemi"
+		command = { type = stability value = 1 }
+		command = { type = population which = 743 value = 2000 }
+		command = { type = population which = 747 value = 3000 }
+		command = { type = revoltrisk which = 48 value = -2 }
+	}
+}
+
+# 3009230: Reakcja Ulemow Aszaryckich na Edykt Rozumu
+event = {
+	id = 3009230
+	random = no
+	name = "Reakcja Konserwatywnych Ulemow na Mu'tazilizm"
+	desc = "Odrzucenie scislego dogmatyzmu i gloszenie prymatu ludzkiej wolnej woli wywolalo wscieklosc tradycyjnych jurystow aszaryckich. Czesc fundamentalistow wzywa do buntu, zarzucajac wladcy niszczenie ortodoksji."
+
+	action_a = {
+		name = "Rozum jest najwiekszym darem Allaha!"
+		command = { type = stability value = -2 }
+		command = { type = religiousrevolt which = 490 } # Syria
+		command = { type = religiousrevolt which = 746 } # Cairo
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = infra value = 400 }
+	}
+
+	action_b = {
+		name = "Zlagodzmy reformy dla uspokojenia ulemow"
+		command = { type = stability value = 1 }
+		command = { type = domestic which = innovative value = -1 }
+	}
+}
+
+# 3009231: Naplyw Uczonych do Kairu i Aleksandrii
+event = {
+	id = 3009231
+	random = no
+	name = "Naplyw Uczonych do Kairu i Aleksandrii"
+	desc = "Dzieki polityce tolerancji i wsparcia dla nauk empirycznych, Egipt staje sie bezpiecznym azylem dla przesladowanych filozofow, matematykow, astronomow i medykow z Europy i Bliskiego Wschodu."
+
+	trigger = {
+		or = {
+			religion = mutazilite
+			tag = EGY
+		}
+		domestic = { which = innovative value = 6 }
+		atwar = no
+	}
+
+	date = { day = 1 month = january year = 1380 }
+	offset = 120
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Otworzcie podwoje bibliotek i akademii!"
+		command = { type = infra value = 500 }
+		command = { type = trade value = 500 }
+		command = { type = treasury value = 100 }
+		command = { type = vp value = 50 }
+	}
+}
+
+#----------------------------------------------------------------
+# Native 10-Year Integration Events (FTG 1.3 ownerchange = 10)
+#----------------------------------------------------------------
+
+# 3009241: Integracja Cypru (484)
+event = {
+	id = 3009241
+	random = no
+	name = "Integracja Cypru"
+	desc = "Po dekadzie sprawiedliwych i stabilnych rzadow cypryjscy kupcy i mieszkancy w pelni zaakceptowali przynaleznosc do wladcy Aleksandrii."
+
+	trigger = {
+		or = {
+			tag = EGY
+			tag = MAM
+		}
+		owned = { province = 484 data = -1 }
+		control = { province = 484 data = -1 }
+		ownerchange = { province = 484 data = 10 }
+		not = { core = { province = 484 data = -1 } }
+	}
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Cypr staje sie nieodlaczna czescia panstwa"
+		command = { type = addcore_national which = 484 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# 3009242: Integracja Syrii / Damaszku (490)
+event = {
+	id = 3009242
+	random = no
+	name = "Pelna Integracja Syrii"
+	desc = "Dziesiec lat nieprzerwanych rzadow i reform gospodarczych trwale zwiazalo losy Damaszku i ziem syryjskich z wladza nad Nilem."
+
+	trigger = {
+		or = {
+			tag = EGY
+			tag = MAM
+		}
+		owned = { province = 490 data = -1 }
+		control = { province = 490 data = -1 }
+		ownerchange = { province = 490 data = 10 }
+		not = { core = { province = 490 data = -1 } }
+	}
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Syria staje sie filarem korony"
+		command = { type = addcore_national which = 490 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# 3009243: Integracja Judei / Jerozolimy (493)
+event = {
+	id = 3009243
+	random = no
+	name = "Pelna Integracja Judei"
+	desc = "Dziesiec lat opieki nad miejscami kultu i spokoju spolecznego ugruntowalo przynaleznosc Jerozolimy do korony."
+
+	trigger = {
+		or = {
+			tag = EGY
+			tag = MAM
+		}
+		owned = { province = 493 data = -1 }
+		control = { province = 493 data = -1 }
+		ownerchange = { province = 493 data = 10 }
+		not = { core = { province = 493 data = -1 } }
+	}
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Jerozolima jest pod nasza wieczysta opieka"
+		command = { type = addcore_national which = 493 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# 3009244: Integracja Nubii (749)
+event = {
+	id = 3009244
+	random = no
+	name = "Pelna Integracja Nubii"
+	desc = "Dziesiec lat wspolnych szlakow handlowych i stabilnosci nad gornym Nilem polaczylo ludy Nubii z monarchia."
+
+	trigger = {
+		or = {
+			tag = EGY
+			tag = MAM
+		}
+		owned = { province = 749 data = -1 }
+		control = { province = 749 data = -1 }
+		ownerchange = { province = 749 data = 10 }
+		not = { core = { province = 749 data = -1 } }
+	}
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Nubia jest czescia krolestwa Nilu"
+		command = { type = addcore_national which = 749 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# 3009245: Integracja Krety (480)
+event = {
+	id = 3009245
+	random = no
+	name = "Integracja Krety"
+	desc = "Dekada sprawiedliwego pokoju i rozkwitu portow handlowych sprawila, ze wyspa Kreta stala sie integralna czescia panstwa aleksandryjskiego."
+
+	trigger = {
+		or = {
+			tag = EGY
+			tag = MAM
+		}
+		owned = { province = 480 data = -1 }
+		control = { province = 480 data = -1 }
+		ownerchange = { province = 480 data = 10 }
+		not = { core = { province = 480 data = -1 } }
+	}
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Kreta jest nieodlaczna twierdza morska"
+		command = { type = addcore_national which = 480 }
+		command = { type = stability value = 1 }
+	}
+}

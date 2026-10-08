@@ -1,1 +1,578 @@
-# Alternate Destinies - Modular File
+#################################################################
+## Gloriana 1337 - Alternate Destinies                         ##
+## Module 3: Mameluks & Ptolemaic Egypt (MAM / EGY)            ##
+## Decisions File: alt_egypt.txt                               ##
+## ID Range: 7050 - 7079                                       ##
+#################################################################
+
+#----------------------------------------------------------------
+# Common Path: Internal Reform and Emancipation of Native Peoples
+#----------------------------------------------------------------
+
+# 7050: Emancipation of Fellahs and Copts
+decision = {
+	id = 7050
+	name = "Emancypacja Fellahow i Koptow"
+	desc = "Przez stulecia wladza nad Nilem spoczywala w rekach obcej, sprowadzanej z Kipczaku i Kaukazu kasty mameluckich niewolnikow-wojownikow. Rdzenni egipscy fellahowie oraz chrzescijascy Koptowie byli traktowani jak poddani nizszej kategorii. Otwarcie korpusu urzedniczego i szeregow armii dla wolnych autochtonow przelamie monopol emirow i zjednoczy mieszkancow Nilu w jeden silny narod."
+
+	trigger = {
+		tag = MAM
+		atwar = no
+		stability = 1
+		owned = { province = 744 data = -1 } # Alexandria
+		owned = { province = 745 data = -1 } # Delta
+		owned = { province = 746 data = -1 } # Cairo / Egypt
+		control = { province = 744 data = -1 }
+		control = { province = 745 data = -1 }
+		control = { province = 746 data = -1 }
+		year = 1345
+	}
+
+	cost = 100
+	treasury = 100
+
+	action = {
+		name = "Nadaj pelne prawa fellahom i Koptom"
+		command = { type = treasury value = -100 }
+		command = { type = add_countryculture which = coptic }
+		command = { type = domestic which = aristocracy value = -2 }
+		command = { type = domestic which = serfdom value = -2 }
+		command = { type = domestic which = centralization value = 2 }
+		command = { type = stability value = -1 }
+		command = { type = revoltrisk which = 36 value = 2 }
+		command = { type = setflag which = mam_emancipation value = 1 }
+	}
+}
+
+# 7051: Dismantling the Military Slave Monopoly
+decision = {
+	id = 7051
+	name = "Likwidacja Kasty Niewolnikow Wojskowych"
+	desc = "Utrzymanie targow niewolnikow i nieustanne oplacanie obcych garnizonow wyczerpuje skarb panstwa i rodzi ciagle przewroty palacowe. Wydajac edykt o zakazie zakupu wojskowych niewolnikow i tworzac stala armie poborowa z ludnosci rodzimej, kladziemy kres samowoli mameluckiej oligarchii."
+
+	trigger = {
+		tag = MAM
+		atwar = no
+		stability = 1
+		hasflag = { which = mam_emancipation value = 1 }
+	}
+
+	cost = 150
+	treasury = 150
+
+	action = {
+		name = "Rozwiaz tradycyjne garnizony mameluckie"
+		command = { type = treasury value = -150 }
+		command = { type = domestic which = aristocracy value = -2 }
+		command = { type = domestic which = quality value = 1 }
+		command = { type = domestic which = offensive value = 1 }
+		command = { type = inflation value = -2 }
+		command = { type = manpower which = 745 value = 1 }
+		command = { type = manpower which = 746 value = 1 }
+		command = { type = revoltrisk which = 24 value = -2 }
+		command = { type = setflag which = mam_mamluk_dismantled value = 1 }
+	}
+}
+
+#----------------------------------------------------------------
+# Branch E: The New Ptolemaic Kingdom (Tag EGY)
+#----------------------------------------------------------------
+
+# 7052: Coronation in Alexandria: The New Ptolemaic Kingdom
+decision = {
+	id = 7052
+	name = "Koronacja w Aleksandrii: Odrodzenie Panstwa Ptolemeuszy"
+	desc = "Zrzucajac mameluckie jarzmo, wladca Egiptu przenosi stolice z kontynentalnego Kairu do nadmorskiej metropolii Aleksandrii. Przyjmujac tradycje dawnej dynastii Lagidow (Ptolemeuszy), panstwo zwraca sie ku Morzu Srodziemnemu, laczac dziedzictwo greckie, koptyjskie i arabskie w kosmopolityczne imperium handlu i nauki."
+
+	trigger = {
+		tag = MAM
+		atwar = no
+		stability = 2
+		owned = { province = 744 data = -1 } # Alexandria
+		control = { province = 744 data = -1 }
+		hasflag = { which = mam_mamluk_dismantled value = 1 }
+	}
+
+	cost = 200
+	treasury = 200
+
+	action = {
+		name = "Proklamuj Nowe Panstwo Ptolemeuszy"
+		command = { type = country which = EGY }
+		command = { type = capital which = 744 }
+		command = { type = add_countryculture which = greek }
+		command = { type = addcore_national which = 744 } # Alexandria
+		command = { type = addcore_national which = 745 } # Delta
+		command = { type = addcore_national which = 746 } # Egypt / Cairo
+		command = { type = addcore_national which = 747 } # Nile
+		command = { type = addcore_national which = 743 } # Cataract
+		command = { type = treasury value = -200 }
+		command = { type = badboy value = -3 }
+		command = { type = stability value = 1 }
+		command = { type = sleepmonarch which = 123740 }
+		command = { type = sleepmonarch which = 123741 }
+		command = { type = sleepmonarch which = 123742 }
+		command = { type = sleepmonarch which = 123743 }
+		command = { type = sleepmonarch which = 12010 }
+		command = { type = sleepmonarch which = 12011 }
+		command = { type = sleepmonarch which = 12012 }
+		command = { type = wakemonarch which = 39201 }
+		command = { type = setflag which = egy_ptolemaic value = 1 }
+	}
+}
+
+# 7053: Reconstruction of the Pharos of Alexandria
+decision = {
+	id = 7053
+	name = "Odbudowa Latarni na Faros"
+	desc = "Siodmy Cud Swiata, potezna latarnia morska na wysepce Faros, zostala powaznie uszkodzona przez trzesienia ziemi. Wykorzystujac zyski z ceł aleksandryjskich i najnowsze osiagniecia inzynierii, wznosimy na nowo monumentalna wieze z systemem luster i bateriami dzial nadbrzeznych, aby prowadzic okrety calego Morza Srodziemnego."
+
+	trigger = {
+		tag = EGY
+		owned = { province = 744 data = -1 }
+		control = { province = 744 data = -1 }
+		atwar = no
+	}
+
+	cost = 200
+	treasury = 200
+
+	action = {
+		name = "Wskrzes cud architektoniczny Faros"
+		command = { type = treasury value = -200 }
+		command = { type = naval value = 300 }
+		command = { type = trade value = 300 }
+		command = { type = shipyard which = 744 value = yes }
+		command = { type = vp value = 50 }
+	}
+}
+
+# 7054: The New Great Library of Alexandria
+decision = {
+	id = 7054
+	name = "Nowa Wielka Biblioteka Aleksandryjska"
+	desc = "Podobnie jak w czasach starozytnego Mouseionu, wladca nakazuje zebranie manuskryptow ze wszystkich stron swiata. Tlumacze, filozofowie, astronomowie i lekarze z Konstantynopola, Bagdadu, Rzymu i Andaluzji otrzymuja wysokie uposazenia i schronienie w Aleksandrii, czyniac z niej serce renesansu wiedzy."
+
+	trigger = {
+		tag = EGY
+		owned = { province = 744 data = -1 }
+		control = { province = 744 data = -1 }
+		domestic = { which = innovative value = 5 }
+		atwar = no
+	}
+
+	cost = 300
+	treasury = 300
+
+	action = {
+		name = "Utworz Akademie i Biblioteke"
+		command = { type = treasury value = -300 }
+		command = { type = domestic which = innovative value = 2 }
+		command = { type = infra value = 600 }
+		command = { type = manufactory which = 744 value = refinery }
+		command = { type = vp value = 75 }
+	}
+}
+
+# 7055: Restoration of the Ancient Canal of the Pharaohs (Suez Link)
+decision = {
+	id = 7055
+	name = "Pradawny Kanal Faraonow"
+	desc = "Jeszcze przed wiekami Faraon Necho i perski krol Dariusz wybudowali kanal laczacy odnoge Nilu z Morzem Czerwonym. Zmobilizowanie inzynierow i tysiecy robotnikow do oczyszczenia i poszerzenia dawnego szlaku pozwoli egyptskim galerom przeplywac prosto ze Srodziemnomorza na Ocean Indyjski bez oplywania Afryki."
+
+	trigger = {
+		tag = EGY
+		owned = { province = 745 data = -1 } # Delta
+		owned = { province = 746 data = -1 } # Egypt
+		owned = { province = 494 data = -1 } # Sinai
+		control = { province = 745 data = -1 }
+		control = { province = 746 data = -1 }
+		control = { province = 494 data = -1 }
+		atwar = no
+	}
+
+	cost = 400
+	treasury = 400
+
+	action = {
+		name = "Przekop szlak ku Morzu Czerwonemu"
+		command = { type = treasury value = -400 }
+		command = { type = cot which = 745 value = yes }
+		command = { type = trade value = 800 }
+		command = { type = infra value = 500 }
+		command = { type = inflation value = 2 }
+		command = { type = discover which = 1059 } # Red Sea North
+		command = { type = discover which = 1060 } # Red Sea South
+		command = { type = discover which = 1061 } # Bab el-Mandeb
+		command = { type = vp value = 150 }
+	}
+}
+
+# 7056: Levantine and Aegean Thalassocracy
+decision = {
+	id = 7056
+	name = "Talasokracja Wschodniego Srodziemnomorza"
+	desc = "Flota aleksandryjska dominuje na wodach Lewantu. Aby zabezpieczyc szlaki handlowe przed weneckimi i genuenskimi konsorcjami, proklamujemy strefe protektoratu nad wyspami Morza Egejskiego i wybrzezami Syrii."
+
+	trigger = {
+		tag = EGY
+		owned = { province = 744 data = -1 }
+		atwar = no
+	}
+
+	cost = 150
+	treasury = 150
+
+	action = {
+		name = "Zglos roszczenia do kluczowych wysp"
+		command = { type = treasury value = -150 }
+		command = { type = addcore_claim which = 484 } # Cyprus
+		command = { type = addcore_claim which = 480 } # Crete
+		command = { type = addcore_claim which = 481 } # Rhodes
+		command = { type = addcore_claim which = 491 } # Lebanon
+		command = { type = naval value = 600 }
+		command = { type = domestic which = naval value = 2 }
+	}
+}
+
+# 7057: Securing the Sources of the Nile (Nubia Expedition)
+decision = {
+	id = 7057
+	name = "Zabezpieczenie Zrodel Nilu"
+	desc = "Egipt jest darem Nilu. Kazde zaklocenie doplywu zyznych mulow grozi kleska glodu. Wyslanie ekspedycji w gore rzeki ku Nubii i zawarcie strategicznego porozumienia z chrzescjanskim krolestwem Etiopii zabezpieczy zyciodajne zrodla."
+
+	trigger = {
+		or = {
+			tag = EGY
+			tag = MAM
+		}
+		owned = { province = 747 data = -1 } # Nile
+		control = { province = 747 data = -1 }
+		atwar = no
+	}
+
+	cost = 150
+	treasury = 150
+
+	action = {
+		name = "Zabezpiecz poludniowy szlak Nilu"
+		command = { type = treasury value = -150 }
+		command = { type = addcore_claim which = 748 } # Batn al-Hajar
+		command = { type = addcore_claim which = 749 } # Nubia
+		command = { type = relation which = ETH value = 80 }
+		command = { type = setflag which = nile_secured value = 1 }
+	}
+}
+
+#----------------------------------------------------------------
+# Branch P: Kemetic Revival (Egyptian Pagan / Cultus Aegypti)
+#----------------------------------------------------------------
+
+# 7060: Edict of Memphis: Return of the Living Horus
+decision = {
+	id = 7060
+	name = "Edykt z Memfis: Powrot Zywiacego Horusa"
+	desc = "Pod natchnieniem odnalezionych hieroglificznych inskrypcji i prastarej tradycji, wladca oglaza sie prawowitym Faraonem – Synem Boga Slonca Ra i ziemskim wcieleniem Horusa. Wiara dawnego Kemetu wraca nad brzegi Nilu, wypierajac obce nauki i wprawiajac swiat monoteistyczny w bezgraniczne przerazenie!"
+
+	trigger = {
+		or = {
+			tag = MAM
+			tag = EGY
+		}
+		hasflag = { which = mam_mamluk_dismantled value = 1 }
+		owned = { province = 746 data = -1 } # Cairo / Memphis
+		owned = { province = 744 data = -1 } # Alexandria
+		owned = { province = 745 data = -1 } # Delta
+		owned = { province = 747 data = -1 } # Nile / Thebes
+		domestic = { which = innovative value = 5 }
+		stability = 2
+		atwar = no
+		year = 1370
+	}
+
+	cost = 300
+	treasury = 300
+
+	action = {
+		name = "Przyjmij Boska Korone Faraonow!"
+		command = { type = treasury value = -300 }
+		command = { type = religion which = egyptian_pagan }
+		command = { type = country which = EGY }
+		command = { type = provincereligion which = 746 value = egyptian_pagan }
+		command = { type = provincereligion which = 747 value = egyptian_pagan }
+		command = { type = stability value = -5 }
+		command = { type = revolt which = 490 } # Syria
+		command = { type = revolt which = 493 } # Judea
+		command = { type = revolt which = 745 } # Delta
+		command = { type = revoltrisk which = 48 value = 6 }
+		command = { type = wakemonarch which = 39221 } # Usermaatre Ramesses XI
+		command = { type = setflag which = kemet_restored value = 1 }
+		command = { type = trigger which = 3009220 } # Pan-Islamic Jihad
+	}
+}
+
+# 7061: Restoration of the Pyramids and Great Sphinx of Giza
+decision = {
+	id = 7061
+	name = "Odnowienie Piramid w Gizie"
+	desc = "Przez stulecia wielkie grobowce dawnych kroli i oblicze Wielkiego Sfinksa byly dewastowane na material budowlany dla kairskich twierdz. Faraon nakazuje natychmiastowe wstrzymanie rozbiorki, odkopanie monumentow spod ton pustynnego piasku i odtworzenie ich lsnacej biela wapiennej okladziny."
+
+	trigger = {
+		religion = egyptian_pagan
+		owned = { province = 746 data = -1 }
+		control = { province = 746 data = -1 }
+		atwar = no
+	}
+
+	cost = 300
+	treasury = 300
+
+	action = {
+		name = "Odnów wieczne monumenty bogow"
+		command = { type = treasury value = -300 }
+		command = { type = stability value = 2 }
+		command = { type = tax_modifier which = 746 value = 3 }
+		command = { type = manpower which = 746 value = 2 }
+		command = { type = vp value = 100 }
+	}
+}
+
+# 7062: Reconstruction of Karnak and Luxor Temples
+decision = {
+	id = 7062
+	name = "Odbudowa Swiatyn w Karnaku i Luksorze"
+	desc = "Prastare Wese (Teby) znow staje sie swietym sercem kultu Amona-Ra. Monumentalne aleje sfinksow, gigantyczne pylony i sale hypostylowe w Karnaku i Luksorze zostaja zrekonstruowane, przyciagajac kaplanow i pielgrzymow z calej doliny Nilu."
+
+	trigger = {
+		religion = egyptian_pagan
+		owned = { province = 747 data = -1 } # Nile
+		control = { province = 747 data = -1 }
+		atwar = no
+	}
+
+	cost = 250
+	treasury = 250
+
+	action = {
+		name = "Zapal swiete znicze Amona-Ra"
+		command = { type = treasury value = -250 }
+		command = { type = provincereligion which = 747 value = egyptian_pagan }
+		command = { type = missionaries value = 3 }
+		command = { type = domestic which = innovative value = -1 }
+		command = { type = vp value = 75 }
+	}
+}
+
+# 7063: The Great Feast of Opet and Cult of Amun-Ra
+decision = {
+	id = 7063
+	name = "Swieto Opet i Kult Amona-Ra"
+	desc = "Co roku swieta barka Amona wyrusza z Karnaku ku Luxorowi w uroczystej procesji, potwierdzajac kosmiczna wiez miedzy bostwem a zyjacym Faraonem. Rozdanie chleba i wina wsrod ludu umacnia wiare i posluszenstwo wobec boskiego wladcy."
+
+	trigger = {
+		religion = egyptian_pagan
+		owned = { province = 746 data = -1 }
+		owned = { province = 747 data = -1 }
+		atwar = no
+	}
+
+	cost = 150
+	treasury = 150
+
+	action = {
+		name = "Swietuj odnowienie kosmicznego porzadku"
+		command = { type = treasury value = -150 }
+		command = { type = stability value = 1 }
+		command = { type = revoltrisk which = 60 value = -3 }
+		command = { type = vp value = 30 }
+	}
+}
+
+#----------------------------------------------------------------
+# Branch M: The Mu'tazilite Reformation (Rationalist Islam)
+#----------------------------------------------------------------
+
+# 7070: Edict of Reason: The Mu'tazilite Reformation
+decision = {
+	id = 7070
+	name = "Edykt Rozumu i Mu'tazilizm"
+	desc = "Odrzucajac bierny fatalizm i doslowny dogmatyzm, wladca przyjmuje szkole Mu'tazila jako oficjalna doktryne panstwowa. Prymat ludzkiego rozumu ('aql) w interpretacji wiary otwiera drzwi dla wolnej woli, nauk przyrodniczych, medycyny i tolerancji wobec ludnosci ksiegi. Choć konserwatywni teolodzy wrza z gniewu, Kair wkracza w nowy zloty wiek intelektualny."
+
+	trigger = {
+		tag = MAM
+		religion = sunni
+		domestic = { which = innovative value = 5 }
+		stability = 2
+		atwar = no
+	}
+
+	cost = 250
+	treasury = 250
+
+	action = {
+		name = "Oglos prymat Rozumu nad dogmatem"
+		command = { type = treasury value = -250 }
+		command = { type = religion which = mutazilite }
+		command = { type = domestic which = innovative value = 2 }
+		command = { type = infra value = 600 }
+		command = { type = trade value = 600 }
+		command = { type = stability value = -3 }
+		command = { type = provincereligion which = 744 value = mutazilite }
+		command = { type = provincereligion which = 746 value = mutazilite }
+		command = { type = setflag which = mam_mutazilite value = 1 }
+		command = { type = trigger which = 3009230 } # Orthodox backlash
+	}
+}
+
+# 7071: Transformation of Al-Azhar into Academy of Sciences
+decision = {
+	id = 7071
+	name = "Akademia Nauk Scislych Al-Azhar"
+	desc = "Slynna ustronna szkola teologiczna Al-Azhar w Kairze zostaje przeksztalcona w uniwersytet nauk empirycznych. Katedry astronomii, matematyki, algebry, anatomii i fizyki przyciagaja wybitne umysly z calego swiata."
+
+	trigger = {
+		religion = mutazilite
+		owned = { province = 746 data = -1 }
+		control = { province = 746 data = -1 }
+		atwar = no
+	}
+
+	cost = 250
+	treasury = 250
+
+	action = {
+		name = "Ustanow katedry nauk doswiadczalnych"
+		command = { type = treasury value = -250 }
+		command = { type = infra value = 500 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = manufactory which = 746 value = refinery }
+		command = { type = vp value = 80 }
+	}
+}
+
+# 7072: The Mansuri Hospital and Medical College
+decision = {
+	id = 7072
+	name = "Szpital i Szkola Medyczna Mansuri"
+	desc = "Kompleks szpitalny sułtana Qalawuna w Kairze zostaje rozbudowany w najnowoczesniejszy bimaristan swiata. Nauczanie oparte na sekcjach anatomicznych, farmakopei ziolowej i higienie zapobiega zarazom i zapewnia bezplatne leczenie kazdemu obywatelowi."
+
+	trigger = {
+		or = {
+			religion = mutazilite
+			tag = EGY
+		}
+		owned = { province = 746 data = -1 }
+		control = { province = 746 data = -1 }
+	}
+
+	cost = 180
+	treasury = 180
+
+	action = {
+		name = "Rozbuduj centrum medyczne Nilu"
+		command = { type = treasury value = -180 }
+		command = { type = population which = 746 value = 6000 }
+		command = { type = tax_modifier which = 746 value = 2 }
+		command = { type = infra value = 300 }
+		command = { type = vp value = 40 }
+	}
+}
+
+# 7073: New House of Wisdom on the Nile (Beit al-Hikma)
+decision = {
+	id = 7073
+	name = "Nowy Dom Madrosci nad Nilem"
+	desc = "Wskrzeszajac legendarna tradycje Domu Madrosci dawnego Bagdadu, biblioteka w Kairze staje sie archiwum prac filozoficznych, astronomicznych atlasow i tlumaczen z sanskrytu, greki i laciny na jezyk arabski."
+
+	trigger = {
+		religion = mutazilite
+		owned = { province = 746 data = -1 }
+		control = { province = 746 data = -1 }
+		atwar = no
+	}
+
+	cost = 300
+	treasury = 300
+
+	action = {
+		name = "Zgromadz skarby wiedzy ludzkiej"
+		command = { type = treasury value = -300 }
+		command = { type = trade value = 500 }
+		command = { type = infra value = 500 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = vp value = 100 }
+	}
+}
+
+#----------------------------------------------------------------
+# Regional Integration & Defense (Levant, Hedjaz)
+#----------------------------------------------------------------
+
+# 7075: Pacification and Integration of Syria
+decision = {
+	id = 7075
+	name = "Pacyfikacja i Integracja Syrii"
+	desc = "Syria od dawna stanowila zarzewie rebelii wrogich frakcji. Przeprowadzenie gruntownej reformy administracyjnej, zrownanie w prawach syryjskich miast oraz ufortyfikowanie Damaszku i Aleppo cementuje unie Syrii z Egiptem."
+
+	trigger = {
+		or = {
+			tag = MAM
+			tag = EGY
+		}
+		owned = { province = 490 data = -1 } # Syria
+		owned = { province = 491 data = -1 } # Lebanon
+		owned = { province = 492 data = -1 } # Samaria
+		owned = { province = 493 data = -1 } # Judea
+		control = { province = 490 data = -1 }
+		control = { province = 491 data = -1 }
+		stability = 2
+		atwar = no
+	}
+
+	cost = 150
+	treasury = 150
+
+	action = {
+		name = "Zintegruj syryjskie prowincje z korona"
+		command = { type = treasury value = -150 }
+		command = { type = addcore_national which = 490 }
+		command = { type = addcore_national which = 491 }
+		command = { type = addcore_national which = 492 }
+		command = { type = addcore_national which = 493 }
+		command = { type = addcore_national which = 495 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# 7076: Protector of the Holy Sanctuaries of Hedjaz
+decision = {
+	id = 7076
+	name = "Straznik Swietych Miejsc Hedzazu"
+	desc = "Sprawowanie pieczy nad Swietymi Miastami Mekka i Medyna stanowi najwyzszy honor dla wladcy panujacego nad Morzem Czerwonym. Zapewnienie bezpieczenstwa karawan pielgrzymich przynosi powszechny szacunek w calym swiecie."
+
+	trigger = {
+		or = {
+			tag = MAM
+			tag = EGY
+		}
+		not = { religion = egyptian_pagan }
+		owned = { province = 497 data = -1 } # Medina
+		owned = { province = 498 data = -1 } # Mecca
+		control = { province = 497 data = -1 }
+		control = { province = 498 data = -1 }
+		stability = 2
+		atwar = no
+	}
+
+	cost = 200
+	treasury = 200
+
+	action = {
+		name = "Obejmij protektorat nad Haramejn"
+		command = { type = treasury value = -200 }
+		command = { type = addcore_national which = 497 }
+		command = { type = addcore_national which = 498 }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 100 }
+	}
+}

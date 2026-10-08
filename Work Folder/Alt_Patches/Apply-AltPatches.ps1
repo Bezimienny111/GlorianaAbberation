@@ -37,11 +37,24 @@ $CulturesFile = Join-Path $ModDir "Db\cultures.txt"
 $CulturesPatch = Join-Path $ScriptDir "cultures_patch.txt"
 if (Test-Path $CulturesFile) {
     $content = Get-Content $CulturesFile -Raw
-    if ($content -notmatch 'roman\s*=') {
-        Write-Host "Adding roman culture to Db\cultures.txt..." -ForegroundColor Yellow
+    if ($content -notmatch 'roman\s*=' -or $content -notmatch 'coptic\s*=') {
+        Write-Host "Adding custom cultures (roman, coptic) to Db\cultures.txt..." -ForegroundColor Yellow
         "`r`n# --- Gloriana Alternate Destinies Additions ---`r`n" + (Get-Content $CulturesPatch -Raw) | Add-Content $CulturesFile -Encoding ascii
     } else {
-        Write-Host "Roman culture already present in Db\cultures.txt." -ForegroundColor Green
+        Write-Host "Custom cultures already present in Db\cultures.txt." -ForegroundColor Green
+    }
+}
+
+# 4. Egypt Monarchs
+$MonarchsEgyFile = Join-Path $ModDir "Db\Monarchs\monarchs_egy.txt"
+$MonarchsEgyPatch = Join-Path $ScriptDir "monarchs_egy_patch.txt"
+if (Test-Path $MonarchsEgyFile) {
+    $content = Get-Content $MonarchsEgyFile -Raw
+    if ($content -notmatch '39201') {
+        Write-Host "Adding custom Ptolemaic/Kemetic dynasties to Db\Monarchs\monarchs_egy.txt..." -ForegroundColor Yellow
+        "`r`n# --- Gloriana Alternate Destinies Additions ---`r`n" + (Get-Content $MonarchsEgyPatch -Raw) | Add-Content $MonarchsEgyFile -Encoding ascii
+    } else {
+        Write-Host "Custom Egypt dynasties already present in Db\Monarchs\monarchs_egy.txt." -ForegroundColor Green
     }
 }
 
