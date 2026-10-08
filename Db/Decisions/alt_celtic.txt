@@ -1,1 +1,233 @@
-# Alternate Destinies - Modular File
+#################################################################
+## Gloriana 1337 - Alternate Destinies                         ##
+## Module 6: Celtic Union (SCO / WLS / EIR)                    ##
+## Decisions File: alt_celtic.txt                              ##
+## ID Range: 7250 - 7265                                       ##
+#################################################################
+
+#----------------------------------------------------------------
+# Principality of Wales (Tag: WLS)
+#----------------------------------------------------------------
+
+# 7250: Crowning of Owain Glyndŵr - Prince of Wales
+decision = {
+	id = 7250
+	name = "Koronacja Owaina Glyndwra: Ksiaze Walii"
+	desc = "W zylach Owaina Glyndwra plynie krew dawnych wladcow Gwynedd i Powys. Zrzucajac anglo-normanskie jarzmo, Owain zwoluje walijskie rody, przyjmuje tytul Ksiecia Walii (Tywysog Cymru) i wznosi sztandar Zlotego Smoka. Wolna Walia staje sie suwerennym panstwem gotowym do walki o wolnosc celtyckich narodow."
+
+	trigger = {
+		or = {
+			tag = WLS
+			owned = { province = 243 data = -1 } # Wales
+		}
+		owned = { province = 243 data = -1 }
+		control = { province = 243 data = -1 }
+		year = 1400
+	}
+
+	cost = 150
+	treasury = 150
+
+	action = {
+		name = "Proklamuj Suwerenne Ksiestwo Walii!"
+		command = { type = country which = WLS }
+		command = { type = capital which = 243 }
+		command = { type = add_countryculture which = welsh }
+		command = { type = addcore_national which = 243 } # Wales
+		command = { type = addcore_claim which = 242 } # The Marches
+		command = { type = treasury value = -150 }
+		command = { type = stability value = 2 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = SCO value = 150 }
+		command = { type = relation which = ENG value = -250 }
+		command = { type = setflag which = wls_proclaimed value = 1 }
+		command = { type = vp value = 75 }
+	}
+}
+
+#----------------------------------------------------------------
+# High Kingdom of Ireland (Tag: EIR)
+#----------------------------------------------------------------
+
+# 7251: Liberation of the Pale and Proclamation of High King
+decision = {
+	id = 7251
+	name = "Oczyszczenie Pale: Wysoki Krol Irlandii"
+	desc = "Przez pokolenia angielska twierdza wokol Dublina (The Pale) byla symbolem obcej okupacji Zielonej Wyspy. Odbicie Dublina i likwidacja angielskiego urzedu Justiciara otwiera droge do wskrzeszenia tytulu Wysokiego Krola Irlandii (Ard Ri na hEireann) i zjednoczenia klanow pod jednym sztandarem."
+
+	trigger = {
+		or = {
+			tag = EIR
+			tag = ULS
+			tag = CON
+			tag = MST
+			tag = LEI
+		}
+		owned = { province = 233 data = -1 } # Meath / Dublin
+		control = { province = 233 data = -1 }
+		atwar = no
+		stability = 1
+	}
+
+	cost = 200
+	treasury = 200
+
+	action = {
+		name = "Wskrzesz Tytul Wysokiego Krola (Ard Ri)!"
+		command = { type = country which = EIR }
+		command = { type = capital which = 233 }
+		command = { type = add_countryculture which = gaelic }
+		command = { type = addcore_national which = 231 } # Connaught
+		command = { type = addcore_national which = 232 } # Ulster
+		command = { type = addcore_national which = 233 } # Meath
+		command = { type = addcore_national which = 234 } # Munster
+		command = { type = addcore_national which = 235 } # Leinster
+		command = { type = treasury value = -200 }
+		command = { type = stability value = 2 }
+		command = { type = setflag which = eir_high_king value = 1 }
+		command = { type = vp value = 100 }
+	}
+}
+
+#----------------------------------------------------------------
+# The Grand Celtic Union (SCO / WLS / EIR)
+#----------------------------------------------------------------
+
+# 7252: The Pact of Caernarfon (Auld Alliance 2.0)
+decision = {
+	id = 7252
+	name = "Pakt z Caernarfon: Wielki Sojusz Celtycki"
+	desc = "Wobec imperialnych roszczen Londynu, delegacje Szkocji, Walii i Irlandii spotykaja sie w zamku Caernarfon. Zamiast walczyc osobno, ludy celtyckie tworza nierozerwalna federacje obronna poparta francuskimi posilkami i zlotem."
+
+	trigger = {
+		or = {
+			tag = SCO
+			tag = WLS
+			tag = EIR
+		}
+		atwar = yes
+		war = { country = ENG }
+		stability = 1
+	}
+
+	cost = 100
+	treasury = 100
+
+	action = {
+		name = "Zawrzyj Swiety Pakt Obrony Celtyckiej"
+		command = { type = treasury value = -100 }
+		command = { type = land_morale value = 0.15 }
+		command = { type = treasury value = 250 } # French subsidies
+		command = { type = stability value = 1 }
+		command = { type = setflag which = celt_pact_formed value = 1 }
+		command = { type = vp value = 50 }
+	}
+}
+
+# 7253: Unia Koron Celtyckich (Alba, Cymru, Éire)
+decision = {
+	id = 7253
+	name = "Unia Koron Celtyckich: Alba, Cymru, Eire"
+	desc = "Zwyciestwo nad najeźdźcami umozliwia ostateczne zjednoczenie celtyckich narodow w jedno potezne imperium atlantyckie. Polaczenie tradycji Edynburga, Caernarfon i Dublina tworzy mocarstwo oparte na wspolnocie jezykow gaelickich i brytonskich."
+
+	trigger = {
+		or = {
+			tag = SCO
+			tag = EIR
+			tag = WLS
+		}
+		owned = { province = 239 data = -1 } # Lothian / Edinburgh
+		owned = { province = 243 data = -1 } # Wales
+		owned = { province = 233 data = -1 } # Meath / Dublin
+		control = { province = 239 data = -1 }
+		control = { province = 243 data = -1 }
+		control = { province = 233 data = -1 }
+		atwar = no
+		stability = 2
+	}
+
+	cost = 300
+	treasury = 300
+
+	action = {
+		name = "Zjednocz Korony Szkocji, Walii i Irlandii!"
+		command = { type = add_countryculture which = gaelic }
+		command = { type = add_countryculture which = welsh }
+		command = { type = add_countryculture which = breton }
+		command = { type = addcore_national which = 236 } # Highlands
+		command = { type = addcore_national which = 237 } # Grampians
+		command = { type = addcore_national which = 238 } # Strathclyde
+		command = { type = addcore_national which = 239 } # Lothian
+		command = { type = addcore_national which = 243 } # Wales
+		command = { type = cot which = 239 value = yes }
+		command = { type = treasury value = -300 }
+		command = { type = stability value = 2 }
+		command = { type = setflag which = celt_union_formed value = 1 }
+		command = { type = vp value = 150 }
+	}
+}
+
+# 7254: March on London & Liberation of the Celtic Fringe
+decision = {
+	id = 7254
+	name = "Marsz na Londyn: Wyzwolenie Kornwalii i Polnocy"
+	desc = "Przelamujac angielska obrone w bitwach pod Marches i w Yorkshire, celtyckie armie staja u bram Londynu. Wyzwolenie brytonskiej Kornwalii, celtyckiej Kumbrii i starozytnej Brytanii Pólnocnej trwale odsuwa zagrozenie anglosaskie."
+
+	trigger = {
+		hasflag = { which = celt_union_formed value = 1 }
+		owned = { province = 242 data = -1 } # The Marches
+		owned = { province = 245 data = -1 } # Yorkshire
+		control = { province = 242 data = -1 }
+		control = { province = 245 data = -1 }
+		atwar = no
+		stability = 1
+	}
+
+	cost = 250
+	treasury = 250
+
+	action = {
+		name = "Odzyskaj pradawne rubieze Brytanii"
+		command = { type = treasury value = -250 }
+		command = { type = addcore_national which = 240 } # Northumberland
+		command = { type = addcore_national which = 241 } # Cumberland
+		command = { type = addcore_national which = 249 } # Cornwall
+		command = { type = addcore_claim which = 247 } # London
+		command = { type = stability value = 1 }
+		command = { type = vp value = 100 }
+	}
+}
+
+# 7255: Restoration of Arthurian Britain
+decision = {
+	id = 7255
+	name = "Restauracja Brytanii Artura"
+	desc = "Zajecie Londynu i zepchniecie anglosaskiej monarchii do roli malego wasala w Wessex stanowi historyczne zwienczenie legendy o Krolu Arturze. Celtycki renesans przywraca pradawny blask Wyspom Brytyjskim, a atlantyckie floty celtyckie ruszaja na podboj oceanow."
+
+	trigger = {
+		hasflag = { which = celt_union_formed value = 1 }
+		owned = { province = 247 data = -1 } # London
+		owned = { province = 249 data = -1 } # Cornwall
+		control = { province = 247 data = -1 }
+		control = { province = 249 data = -1 }
+		atwar = no
+		stability = 2
+	}
+
+	cost = 350
+	treasury = 350
+
+	action = {
+		name = "Oglos triumf celtyckiej Brytanii!"
+		command = { type = treasury value = -350 }
+		command = { type = addcore_national which = 247 } # London
+		command = { type = addcore_national which = 248 } # Kent
+		command = { type = addcore_national which = 244 } # Lancashire
+		command = { type = addcore_national which = 246 } # Midlands
+		command = { type = shipyard which = 249 value = yes }
+		command = { type = naval value = 800 }
+		command = { type = domestic which = naval value = 2 }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 250 }
+	}
+}
