@@ -1,1 +1,224 @@
-# Alternate Destinies - Modular File
+#################################################################
+## Gloriana 1337 - Alternate Destinies                         ##
+## Module 8: Joseon Kingdom of Korea (KOR)                     ##
+## Events File: alt_korea.txt                                  ##
+## ID Range: 3009700 - 3009750                                 ##
+#################################################################
+
+# 3009700: Przewrot Generala Yi Seong-gye: Narodziny Joseon (1392)
+event = {
+	id = 3009700
+	random = no
+	country = KOR
+	name = "Przewrot Generala Yi Seong-gye: Narodziny Joseon"
+	desc = "W 1392 roku general Yi Seong-gye zawraca swoje armie z wyspy Wihwado, obala skompromitowana dynastie Goryeo i zaklada nowa dynastie Joseon. Przeniesienie stolicy do Hanseongu (Seulu) oraz oparcie rzadow na etyce neokonfucjanskiej rozpoczyna nowa epoke w dziejach Korei."
+
+	trigger = {
+		year = 1392
+		not = { year = 1410 }
+		owned = { province = 642 data = -1 }
+		control = { province = 642 data = -1 }
+	}
+
+	date = { day = 17 month = july year = 1392 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1410 }
+
+	action_a = {
+		name = "Proklamuj Krolestwo Joseon i przenies stolice do Seulu!"
+		command = { type = capital which = 642 }
+		command = { type = stability value = 2 }
+		command = { type = domestic which = centralization value = 2 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = treasury value = 200 }
+		command = { type = vp value = 50 }
+	}
+}
+
+# 3009701: Zegary Wodne i Deszczomierze: Wynalazki Jang Yeong-sila (1441)
+event = {
+	id = 3009701
+	random = no
+	country = KOR
+	name = "Zegary Wodne i Deszczomierze Jang Yeong-sila"
+	desc = "Pod mecenatem krola Sejonga wybitny inzynier i wynalazca Jang Yeong-sil konstruuje automatyczny zegar wodny (Jagyeokru) oraz pierwszy na swiecie standaryzowany deszczomierz (Cheugugi). Dokladne prognozowanie monsunow ratuje uprawy ryzu przed suszami i powodziami."
+
+	trigger = {
+		hasflag = { which = kor_hall_of_worthies value = 1 }
+		year = 1440
+		not = { year = 1460 }
+	}
+
+	date = { day = 1 month = january year = 1441 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1460 }
+
+	action_a = {
+		name = "Wdrozyc wynalazki w kazdej prowincji krolestwa!"
+		command = { type = infra value = 500 }
+		command = { type = tax_modifier which = 641 value = 2 }
+		command = { type = tax_modifier which = 642 value = 2 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 60 }
+	}
+}
+
+# 3009710: Triumf Okretow Zolwi w Ciesninie Tsushima
+event = {
+	id = 3009710
+	random = no
+	country = KOR
+	name = "Triumf Okretow Zolwi w Ciesninie Tsushima"
+	desc = "Pancerne okręty Geobukseon staja naprzeciw flotylli inwazyjnych. Dziala plujace ogniem z rzezbionych smoczych glow oraz pancerny dach rozbijaja w puch wrogie jednostki, zamykajac dostep do koreanskich wybrzezy."
+
+	trigger = {
+		hasflag = { which = kor_geobukseon_built value = 1 }
+		atwar = yes
+	}
+
+	date = { day = 1 month = january year = 1435 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Geobukseon przynosza absolutne panowanie na morzu!"
+		command = { type = naval_morale value = 0.20 }
+		command = { type = naval value = 500 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 80 }
+	}
+}
+
+#----------------------------------------------------------------
+# Native 10-Year Integration Events (FTG 1.3 ownerchange = 10)
+#----------------------------------------------------------------
+
+# 3009741: Integracja Kyongsang / Pusan (641)
+event = {
+	id = 3009741
+	random = no
+	country = KOR
+	name = "Integracja Pusan"
+	desc = "Dziesiec lat rozbudowy stoczni ugruntowalo pozycje Pusan jako glownego portu handlowego i wojennego krolestwa."
+
+	trigger = {
+		owned = { province = 641 data = -1 }
+		control = { province = 641 data = -1 }
+		ownerchange = { province = 641 data = 10 }
+		not = { core = { province = 641 data = -1 } }
+	}
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Pusan jest sercem poludniowej marynarki"
+		command = { type = addcore_national which = 641 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# 3009742: Integracja Pyongan / Phenianu (643)
+event = {
+	id = 3009742
+	random = no
+	country = KOR
+	name = "Integracja Phenianu"
+	desc = "Dekada sprawiedliwych rzadow polaczyla prastara polnocna stolice z tronem w Hanseongu."
+
+	trigger = {
+		owned = { province = 643 data = -1 }
+		control = { province = 643 data = -1 }
+		ownerchange = { province = 643 data = 10 }
+		not = { core = { province = 643 data = -1 } }
+	}
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Pyongan jest tarcza krolestwa"
+		command = { type = addcore_national which = 643 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# 3009743: Integracja Liaodong / Yalu (636)
+event = {
+	id = 3009743
+	random = no
+	country = KOR
+	name = "Integracja Liaodong i Ziemi za Yalu"
+	desc = "Dziesiec lat bezpiecznego osadnictwa zwiazalo poludniowa Mandzurie z korona Joseon."
+
+	trigger = {
+		owned = { province = 636 data = -1 }
+		control = { province = 636 data = -1 }
+		ownerchange = { province = 636 data = 10 }
+		not = { core = { province = 636 data = -1 } }
+	}
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Ziemie za Yalu powracaja do macierzy"
+		command = { type = addcore_national which = 636 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# 3009744: Integracja Jilin (637)
+event = {
+	id = 3009744
+	random = no
+	country = KOR
+	name = "Integracja Jilin"
+	desc = "Dekada pokojowej integracji koczownikow ugruntowala przynaleznosc Jilin do cesarstwa."
+
+	trigger = {
+		owned = { province = 637 data = -1 }
+		control = { province = 637 data = -1 }
+		ownerchange = { province = 637 data = 10 }
+		not = { core = { province = 637 data = -1 } }
+	}
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Jilin jest zintegrowana czescia panstwa"
+		command = { type = addcore_national which = 637 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# 3009745: Integracja Regionu Amuru (638)
+event = {
+	id = 3009745
+	random = no
+	country = KOR
+	name = "Integracja Regionu Rzeki Amur"
+	desc = "Dziesiec lat stabilnosci na polnocnej granicy uczynilo rzeke Amur wieczysta rubieza cesarstwa."
+
+	trigger = {
+		owned = { province = 638 data = -1 }
+		control = { province = 638 data = -1 }
+		ownerchange = { province = 638 data = 10 }
+		not = { core = { province = 638 data = -1 } }
+	}
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Amur wyznacza granice mocarstwa wschodu"
+		command = { type = addcore_national which = 638 }
+		command = { type = stability value = 1 }
+	}
+}
