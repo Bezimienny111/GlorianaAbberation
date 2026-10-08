@@ -12,8 +12,8 @@
 # 7200: Legal Code of Texcoco (Philosophy of Nezahualcoyotl)
 decision = {
 	id = 7200
-	name = "Kodeks Prawny z Texcoco: Nauki Nezahualcoyotla"
-	desc = "Pod wplywem poety i filozofa Nezahualcoyotla z Texcoco, Mexikowie odrzucaja krwawy terror masowych ofiar z jencow i paranoje Wojen Kwietnych. Przejscie ku kultowi boga madrosci i stworzenia Quetzalcoatla oraz filozofii kosmicznej harmonii Ometeotl jednoczy ludy Doliny Meksyku i przeksztalca brutalna teokracje w oswiecone cesarstwo."
+	name = "Wielka Narada w Texcoco: Kodeks Nezahualcoyotla"
+	desc = "Pod wplywem poety i filozofa Nezahualcoyotla z Texcoco, Mexikowie staja przed dziejowym wyborem przyszlosci Cemanahuac: czy odrzucic krwawy terror masowych ofiar z jencow i paranoje Wojen Kwietnych na rzecz oswiecenia boga madrosci Quetzalcoatla, czy tez podwoic fanatyczna potęge boga wojny Huitzilopochtli."
 
 	trigger = {
 		tag = AZT
@@ -28,27 +28,25 @@ decision = {
 	treasury = 200
 
 	action = {
-		name = "Wprowadz reforme madrosci Quetzalcoatla"
+		name = "Zwól Wielka Narade Medrcow i Kapłanow w Texcoco"
 		command = { type = treasury value = -200 }
-		command = { type = religion which = nahua_reformed }
-		command = { type = domestic which = innovative value = 3 }
-		command = { type = domestic which = centralization value = 2 }
 		command = { type = stability value = 1 }
 		command = { type = infra value = 500 }
-		command = { type = setflag which = azt_reformed_faith value = 1 }
-		command = { type = vp value = 75 }
+		command = { type = setflag which = azt_texcoco_code value = 1 }
+		command = { type = vp value = 50 }
 	}
 }
 
-# 7201: The Eternal League of Cemanahuac
+# 7201: The Eternal League of Cemanahuac (Peaceful Path)
 decision = {
 	id = 7201
 	name = "Wieczna Liga Cemanahuac: Pojednanie z Sasiadami"
-	desc = "Koniec krwawych wojen pozwala na zawarcie trwalej konfederacji miedzy Mexikami, Tlaxcala, Taraskanami i Zapotekami. Uznanie praw i tradycji sasiadow wlacza ich elity do wspolnej armii i rzadu, uniemozliwiajac obcym najezdzcom znalezienie jakichkolwiek indiańskich sojusznikow."
+	desc = "Odrzucenie krwawych wojen pozwala na zawarcie trwalej konfederacji miedzy Mexikami, Tlaxcala, Taraskanami i Zapotekami. Uznanie praw i tradycji sasiadow wlacza ich elity do wspolnej armii i rzadu, uniemozliwiajac obcym najezdzcom znalezienie jakichkolwiek indiańskich sojusznikow."
 
 	trigger = {
 		tag = AZT
 		hasflag = { which = azt_reformed_faith value = 1 }
+		not = { hasflag = { which = azt_war_cult value = 1 } }
 		atwar = no
 		stability = 2
 	}
@@ -70,17 +68,57 @@ decision = {
 	}
 }
 
+# 7206: Hegemony of Blood and War (Militarist Path)
+decision = {
+	id = 7206
+	name = "Hegemonia Krwi i Wojny: Zmiażdżenie Sąsiadów"
+	desc = "Podtrzymujac swiety nakaz karmienia slonca krwia jencow, Mexikowie ruszaja na ostateczna wojne totalna przeciwko Tlaxcali, Taraskanom i Zapotekom. Podbite krainy zostaja przeksztalcone w niewolne prowincje trybutarne pod zelazna wladza garnizonow Tenochtitlan."
+
+	trigger = {
+		tag = AZT
+		hasflag = { which = azt_war_cult value = 1 }
+		atwar = no
+		stability = 2
+	}
+
+	cost = 250
+	treasury = 250
+
+	action = {
+		name = "Narzuć hegemonię Huitzilopochtli nad Cemanahuac!"
+		command = { type = treasury value = -250 }
+		command = { type = addcore_claim which = 26 } # Michoacan
+		command = { type = addcore_claim which = 28 } # Zacatecas
+		command = { type = addcore_claim which = 31 } # Oaxaca
+		command = { type = badboy value = 3 }
+		command = { type = INF which = 27 value = 10000 }
+		command = { type = setflag which = azt_league_formed value = 1 }
+		command = { type = vp value = 100 }
+	}
+}
+
 # 7202: The Iron Mexica Empire: Adaptation of Fire and Steel
 decision = {
 	id = 7202
 	name = "Zelazne Imperium Mexikow: Mistrzowie Ognia i Stali"
-	desc = "Dzieki pojmanym hiszpanskim rusznikarzom, kowalom i koniom bojowym, mezoamerykanscy rzemieslnicy opanowali hutnictwo zelaza i produkcje czarnego prochu. Rycerze Orla i Jaguara dosiadaja koni bojowych, a elitarne bataliony arkebuzerow Mexica staja sie postrachem konkwistadorow."
+	desc = "Przelom technologiczny Mexicow dokonuje sie badz dzieki pojmanym hiszpanskim rusznikarzom, kowalom i koniom bojowym, badz dzieki unifikacji bogatych kopaln miedzi i zlota oraz geniuszowi mezoamerykanskich rzemieslnikow. Rycerze Orla i Jaguara dosiadaja koni bojowych, a bataliony arkebuzerow staja sie postrachem najezdzcow."
 
 	trigger = {
 		tag = AZT
-		hasflag = { which = azt_captured_technology value = 1 }
 		atwar = no
 		stability = 1
+		OR = {
+			hasflag = { which = azt_captured_technology value = 1 }
+			AND = {
+				owned = { province = 25 data = -1 } # Jalisco
+				owned = { province = 26 data = -1 } # Michoacan (mines)
+				owned = { province = 27 data = -1 } # Tenochtitlan
+				owned = { province = 28 data = -1 } # Zacatecas / Tampico
+				control = { province = 27 data = -1 }
+				domestic = { which = innovative value = 5 }
+				infra = 2
+			}
+		}
 	}
 
 	cost = 300
@@ -104,7 +142,7 @@ decision = {
 decision = {
 	id = 7203
 	name = "Arsenaly w Veracruz i Pelnomorska Flota"
-	desc = "Budowa pelnomorskich karaweli i galeonow w Veracruz przelamuje hiszpanski monopol na Morzu Karaibskim. Wyplywajac z Zatoki Meksykanskiej, wyzwalajmy wyspy z rak najezdzcow i zabezpieczamy wybrzeza Ameryki Srodkowej."
+	desc = "Budowa pelnomorskich karaweli i galeonow w Veracruz przelamuje obcy monopol na Morzu Karaibskim. Wyplywajac z Zatoki Meksykanskiej, wyzwalajmy wyspy z rak najezdzcow i zabezpieczamy wybrzeza Ameryki Srodkowej."
 
 	trigger = {
 		tag = AZT
@@ -153,6 +191,35 @@ decision = {
 		command = { type = provincetax which = 27 value = 4 }
 		command = { type = infra value = 400 }
 		command = { type = vp value = 50 }
+	}
+}
+
+# 7205: Transatlantic Embassy to the Old World
+decision = {
+	id = 7205
+	name = "Wyprawa Poselska Mexiców ku Staremu Światu"
+	desc = "Dysponujac pelnomorska flota galeonow zbudowanych w Veracruz oraz doswiadczonymi nawigatorami, wladca Mexicow wysyla wielka oceaniczna ekspedycje przez Atlantyk. Poselstwo ma nawiazac bezposredni kontakt dyplomatyczny ze stolicami Europy i potwierdzic status Cemanahuac jako suwerennego imperium."
+
+	trigger = {
+		tag = AZT
+		hasflag = { which = azt_iron_empire value = 1 }
+		hasflag = { which = azt_caribbean_claims value = 1 }
+		owned = { province = 34 data = -1 } # Veracruz
+		control = { province = 34 data = -1 }
+		atwar = no
+		stability = 2
+	}
+
+	cost = 350
+	treasury = 350
+
+	action = {
+		name = "Wyslij wielkie poselstwo przez ocean!"
+		command = { type = treasury value = -350 }
+		command = { type = naval value = 800 }
+		command = { type = trade value = 800 }
+		command = { type = setflag which = azt_transatlantic_embassy value = 1 }
+		command = { type = vp value = 150 }
 	}
 }
 
@@ -248,13 +315,25 @@ decision = {
 decision = {
 	id = 7213
 	name = "Zelazne Legiony Tawantinsuyu i Andyjska Konnica"
-	desc = "Laczenie tradycyjnego mistrzostwa odlewniczego Altiplano z technologia zdobytej europejskiej stali i broni palnej pozwala uruchomic fabryki armat w Cuzco i Tiwanaku. Dzieki wyhodowaniu gorskiej rasy koni powstaje lekka kawaleria andyjska z lancami i bolami."
+	desc = "Modernizacja armii Inkow nastepuje albo w wyniku pojmania hiszpanskich najeźdźców, albo dzieki zjednoczeniu szlaku andyjskiego, kopalni srebra i miedzi Altiplano oraz wlasnemu odlewnictwu. Twierdze w Cuzco i Tiwanaku otrzymuja nowoczesne baterie armat, a lekka kawaleria andyjska strzeze gorskich przeleczy."
 
 	trigger = {
 		tag = INC
-		hasflag = { which = inc_captured_technology value = 1 }
 		atwar = no
 		stability = 1
+		OR = {
+			hasflag = { which = inc_captured_technology value = 1 }
+			AND = {
+				owned = { province = 168 data = -1 } # Cuzco
+				owned = { province = 164 data = -1 } # Quito
+				owned = { province = 167 data = -1 } # Callao / Lima
+				owned = { province = 192 data = -1 } # Potosi (silver)
+				control = { province = 168 data = -1 }
+				hasflag = { which = inc_qhapaq_nan value = 1 }
+				domestic = { which = innovative value = 4 }
+				infra = 2
+			}
+		}
 	}
 
 	cost = 300
@@ -278,7 +357,7 @@ decision = {
 decision = {
 	id = 7214
 	name = "Galeony z Guayaquil: Szlak Tupaca Yupanqui"
-	desc = "Podtrzymujac tradycje morskiej wyprawy cesarza Tupaca Yupanqui na Pacyfik, w stoczniach Guayaquil i Callao wznosimy oceaniczne okrety wojenne. Inkowskie floty dominuja na zachodnim wybrzezu Ameryki i nawiazuja bezposredni szlak handlowy z cesarstwem Chin i Japonia!"
+	desc = "Podtrzymujac tradycje morskiej wyprawy cesarza Tupaca Yupanqui na Pacyfik, w stoczniach Guayaquil i Callao wznosimy oceaniczne okrety wojenne. Inkowskie floty dominuja na zachodnim wybrzezu Ameryki i otwieraja szlaki pelnomorskie ku odleglym archipelagom."
 
 	trigger = {
 		tag = INC
@@ -299,5 +378,33 @@ decision = {
 		command = { type = trade value = 500 }
 		command = { type = setflag which = inc_pacific_thalassocracy value = 1 }
 		command = { type = vp value = 120 }
+	}
+}
+
+# 7215: Great Pacific Expedition of Sapa Inca
+decision = {
+	id = 7215
+	name = "Wielka Ekspedycja Pacyficzna ku Polinezji i Azji"
+	desc = "Czerpiac ze starych map i legend o wyprawie cesarza Tupaca Yupanqui, Sapa Inka posyla oceaniczna flote galeonow balsa w gląb bezkresnego Pacyfiku. Wyprawa dociera do odleglych wysp Polinezji, nawiazujac bezposredni transpacyficzny handel z obcymi ludami i kupcami."
+
+	trigger = {
+		tag = INC
+		hasflag = { which = inc_pacific_thalassocracy value = 1 }
+		owned = { province = 167 data = -1 } # Callao
+		control = { province = 167 data = -1 }
+		atwar = no
+		stability = 2
+	}
+
+	cost = 300
+	treasury = 300
+
+	action = {
+		name = "Wyslij floty na Szlak Slonca przez Pacyfik!"
+		command = { type = treasury value = -300 }
+		command = { type = naval value = 800 }
+		command = { type = trade value = 800 }
+		command = { type = setflag which = inc_pacific_expedition value = 1 }
+		command = { type = vp value = 150 }
 	}
 }

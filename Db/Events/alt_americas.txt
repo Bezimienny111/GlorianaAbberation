@@ -5,34 +5,52 @@
 ## ID Range: 3009400 - 3009450                                 ##
 #################################################################
 
+#----------------------------------------------------------------
+# Aztec Empire / Mexica (Tag: AZT)
+#----------------------------------------------------------------
+
 # 3009400: Wielka Noc Odwetu na Groblach Tenochtitlan
 event = {
 	id = 3009400
 	random = no
 	country = AZT
 	name = "Wielka Noc Odwetu na Groblach Tenochtitlan"
-	desc = "Gdy hiszpanscy konkwistadorzy probowali wymknac sie pod oslona nocy z Tenochtitlan obciazeni zagrabionym zlotem, wojownicy Mexicow przerwali mosty i zaatakowali z setek wojennych czolen. Zamiast hekatomby, bitwa konczy sie calkowitym zniszczeniem najezdzcow i pojmaniem zywcem hiszpanskich rusznikarzy, kowali oraz ich koni bojowych!"
+	desc = "Gdy obcy zolnierze i konkwistadorzy probowali wymknac sie pod oslona nocy z Tenochtitlan obciazeni zagrabionym zlotem, wojownicy Mexicow przerwali groble i uderzyli z setek wojennych czolen. Zamiast hekatomby, bitwa konczy sie calkowitym zniszczeniem najezdzcow i pojmaniem zywcem rusznikarzy, kowali oraz ich koni bojowych!"
 
 	trigger = {
 		owned = { province = 27 data = -1 } # Tenochtitlan
 		control = { province = 27 data = -1 }
-		year = 1515
-		not = { year = 1540 }
 		not = { hasflag = { which = azt_captured_technology value = 1 } }
+		not = { hasflag = { which = azt_iron_empire value = 1 } }
+		OR = {
+			atwar = yes
+			year = 1515
+		}
 	}
 
-	date = { day = 1 month = january year = 1515 }
+	date = { day = 1 month = january year = 1400 }
 	offset = 60
-	deathdate = { day = 30 month = december year = 1540 }
+	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Uderzcie ze wszystkich stron i pojmijcie kowali zywcem!"
+		name = "Uderzcie ze wszystkich stron i pojmijcie rusznikarzy zywcem!"
+		ai_chance = 80
 		command = { type = treasury value = 300 }
 		command = { type = domestic which = QUALITY value = 1 }
 		command = { type = land value = 500 }
 		command = { type = setflag which = azt_captured_technology value = 1 }
 		command = { type = stability value = 1 }
 		command = { type = vp value = 100 }
+	}
+	action_b = {
+		name = "Złóżcie najeźdźców w ofierze bogom wojny"
+		ai_chance = 20
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = land value = 400 }
+		command = { type = setflag which = azt_captured_technology value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 75 }
 	}
 }
 
@@ -42,53 +60,168 @@ event = {
 	random = no
 	country = AZT
 	name = "Kordon Sanitarny i Medycyna Ziolowa"
-	desc = "Pojawienie sie nieznanych europejskich chorob grozilo zaglada milionom mieszkancow. Dzieki medycynie ziolowej, kapielom parowym w temazcal i natychmiastowej izolacji chorych przez straz miejska, epidemia zostaje zatrzymana, ratujac tkanke spoleczna imperium."
+	desc = "Pojawienie sie nieznanych zamorskich chorob grozilo zaglada milionom mieszkancow. Dzieki medycynie ziolowej, kapielom parowym w temazcal i natychmiastowej izolacji chorych przez cesarska straz miejska, epidemia zostaje zatrzymana, ratujac tkanke spoleczna imperium."
 
 	trigger = {
-		hasflag = { which = azt_captured_technology value = 1 }
+		OR = {
+			hasflag = { which = azt_captured_technology value = 1 }
+			hasflag = { which = azt_iron_empire value = 1 }
+		}
 	}
 
-	date = { day = 1 month = january year = 1520 }
+	date = { day = 1 month = january year = 1420 }
 	offset = 90
-	deathdate = { day = 30 month = december year = 1560 }
+	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
 		name = "Zastosujcie kordony sanitarne i wiedze zielarzy"
+		ai_chance = 85
 		command = { type = stability value = 1 }
 		command = { type = populationpercent which = 27 value = 15 }
 		command = { type = infra value = 300 }
 		command = { type = vp value = 50 }
 	}
+	action_b = {
+		name = "Zaufajcie modłom kapłanów w świątyniach"
+		ai_chance = 15
+		command = { type = stability value = -1 }
+		command = { type = populationpercent which = 27 value = -5 }
+		command = { type = trade value = 200 }
+	}
 }
+
+# 3009405: Duchowe Przeznaczenie Mexiców: Quetzalcoatl vs Huitzilopochtli
+event = {
+	id = 3009405
+	random = no
+	country = AZT
+	name = "Duchowe Przeznaczenie Mexiców: Quetzalcoatl vs Huitzilopochtli"
+	desc = "Podczas obrad w Texcoco kaplani i wodzowie stoja przed decydujacym wyborem drogi cywilizacyjnej: czy podazyc sciezka Nezahualcoyotla i boga madrosci Quetzalcoatla ku oswieceniu, pokojowemu przymierzu z sasiadami i zaniechaniu ofiar z ludzi, czy tez zachowac fanatyczny kult boga wojny Huitzilopochtli, czerpiac potege z nieustannej ekspansji i krwi jencow."
+
+	trigger = {
+		hasflag = { which = azt_texcoco_code value = 1 }
+		not = { hasflag = { which = azt_reformed_faith value = 1 } }
+		not = { hasflag = { which = azt_war_cult value = 1 } }
+	}
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 10
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Światłość Quetzalcoatla i Nezahualcoyotla: Filozofia i Nauka"
+		ai_chance = 70
+		command = { type = religion which = nahua_reformed }
+		command = { type = domestic which = INNOVATIVE value = 3 }
+		command = { type = domestic which = CENTRALIZATION value = 2 }
+		command = { type = setflag which = azt_reformed_faith value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 75 }
+	}
+	action_b = {
+		name = "Krwawy Kult Huitzilopochtli: Wieczna Wojna Kwietna"
+		ai_chance = 30
+		command = { type = setflag which = azt_war_cult value = 1 }
+		command = { type = domestic which = QUALITY value = 2 }
+		command = { type = domestic which = OFFENSIVE value = 2 }
+		command = { type = domestic which = LAND value = 2 }
+		command = { type = domestic which = INNOVATIVE value = -2 }
+		command = { type = INF which = 27 value = 15000 }
+		command = { type = CAV which = 27 value = 2000 }
+		command = { type = stability value = -1 }
+		command = { type = revolt which = 25 } # Jalisco
+		command = { type = vp value = 75 }
+	}
+}
+
+# 3009406: Wielkie Poselstwo Mexiców w Starym Świecie
+event = {
+	id = 3009406
+	random = no
+	country = AZT
+	name = "Wielkie Poselstwo Mexiców w Starym Świecie"
+	desc = "Galeony z Tenochtitlan i Veracruz zawinely do portow Europy i basenu Morza Srodziemnego. Poslowie Mexicow w barwnych pióropuszach i zlotych pancerzach wkraczaja na dwory Rzymu, Paryza, Londynu i Konstantynopola, budzac podziw uczonych. Europejskie mocarstwa oficjalnie uznaja cesarstwo Cemanahuac za suwerenne i rownorzedne panstwo swiata."
+
+	trigger = {
+		hasflag = { which = azt_transatlantic_embassy value = 1 }
+	}
+
+	date = { day = 1 month = january year = 1400 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Zasiądźcie w gronie cywilizowanych mocarstw świata"
+		ai_chance = 80
+		command = { type = relation which = PAP value = 150 }
+		command = { type = relation which = FRA value = 150 }
+		command = { type = relation which = ENG value = 150 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = BYZ value = 150 }
+		command = { type = DIP which = 120 value = 3 }
+		command = { type = infra value = 600 }
+		command = { type = trade value = 800 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 150 }
+	}
+	action_b = {
+		name = "Zademonstrujcie nieugiętą dumę wojowników Mexica"
+		ai_chance = 20
+		command = { type = badboy value = 2 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = land value = 600 }
+		command = { type = naval value = 600 }
+		command = { type = vp value = 100 }
+	}
+}
+
+#----------------------------------------------------------------
+# Inca Empire / Tawantinsuyu (Tag: INC)
+#----------------------------------------------------------------
 
 # 3009410: Pojednanie w Quito: Jednosc Synow Slonca
 event = {
 	id = 3009410
 	random = no
 	country = INC
-	name = "Pojednanie w Quito: Jednosc Synow Slonca"
-	desc = "W obliczu wiesci o obcych brodatych przybyszach z polnocy, krolewscy bracia Huascar z Cuzco i Atahualpa z Quito unikaja niszczycielskiej wojny domowej. Za posrednictwem Najwyzszego Kaplana zawarto kompromis sukcesyjny, stawiajac calej potegi polmilionowej armii andyjskiej w gotowosci obronnej."
+	name = "Pojednanie w Quito: Sukcesja i Ustrój Tawantinsuyu"
+	desc = "W obliczu wiesci o obcych niebezpieczenstwach i potrzebie scalenia imperium, krolewscy bracia Huascar z Cuzco i Atahualpa z Quito staja przed wyzwaniem pogodzenia pretensji dynastycznych. Za posrednictwem Najwyzszego Kaplana Willaq Umu zarysowuja sie dwa rozwiazania: diarchiczny kompromis wladzy wojskowej i sakralnej lub twarda centralizacja pod jednym berlem."
 
 	trigger = {
 		owned = { province = 168 data = -1 } # Cuzco
 		owned = { province = 164 data = -1 } # Quito
 		control = { province = 168 data = -1 }
 		control = { province = 164 data = -1 }
-		year = 1525
-		not = { year = 1535 }
+		not = { hasflag = { which = inc_succession_resolved value = 1 } }
 	}
 
-	date = { day = 1 month = january year = 1525 }
+	date = { day = 1 month = january year = 1400 }
 	offset = 30
-	deathdate = { day = 30 month = december year = 1535 }
+	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Niech Synowie Slonca stana razem w obronie Andow!"
+		name = "Podział diarchiczny: Atahualpa na Północy, Huáscar na Południu"
+		ai_chance = 60
 		command = { type = stability value = 2 }
-		command = { type = domestic which = centralization value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = 1 }
 		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = INF which = 168 value = 8000 }
+		command = { type = INF which = 164 value = 8000 }
 		command = { type = setflag which = inc_succession_resolved value = 1 }
 		command = { type = vp value = 80 }
+	}
+	action_b = {
+		name = "Jedynowładztwo Sapa Inki: Bezwzględna Centralizacja w Cuzco"
+		ai_chance = 40
+		command = { type = domestic which = CENTRALIZATION value = 3 }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = SERFDOM value = 1 }
+		command = { type = provincetax which = 168 value = 3 }
+		command = { type = provincetax which = 164 value = 2 }
+		command = { type = stability value = -2 }
+		command = { type = revolt which = 164 } # Quito generals revolt
+		command = { type = setflag which = inc_succession_resolved value = 1 }
+		command = { type = vp value = 100 }
 	}
 }
 
@@ -98,27 +231,293 @@ event = {
 	random = no
 	country = INC
 	name = "Zasadzka w Cajamarce: Pojmanie Pizarra"
-	desc = "Gdy oddzial Francisca Pizarra wkroczyl na plac w Cajamarce liczac na latwa rzez nieuzbrojonego orszaku, ze stoku gorskiego wyronily sie tysiace zaprawionych w bojach wojownikow Inki. Zamiast pojmania cesarza, caly hiszpanski oddzial zostaje otoczony i zmuszony do kapitulacji!"
+	desc = "Gdy zamorscy awanturnicy wkroczyli na plac w Cajamarce liczac na zaskoczenie orszaku Sapa Inki, ze stoku gorskiego wyronily sie tysiace zaprawionych w bojach andyjskich legionistow. Zamiast pojmania cesarza, caly oddzial najeźdźców zostaje otoczony i zmuszony do bezwarunkowej kapitulacji!"
 
 	trigger = {
 		hasflag = { which = inc_succession_resolved value = 1 }
-		year = 1530
-		not = { year = 1545 }
 		not = { hasflag = { which = inc_captured_technology value = 1 } }
+		not = { hasflag = { which = inc_iron_legions value = 1 } }
+		OR = {
+			atwar = yes
+			year = 1530
+		}
 	}
 
-	date = { day = 1 month = january year = 1530 }
+	date = { day = 1 month = january year = 1400 }
 	offset = 60
-	deathdate = { day = 30 month = december year = 1545 }
+	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
 		name = "Wymus okup w postaci kowali, koni i map morskich!"
+		ai_chance = 80
 		command = { type = treasury value = 300 }
 		command = { type = land value = 500 }
 		command = { type = naval value = 400 }
 		command = { type = setflag which = inc_captured_technology value = 1 }
 		command = { type = stability value = 1 }
 		command = { type = vp value = 100 }
+	}
+	action_b = {
+		name = "Uwięźcie najeźdźców i przejmijcie ich broń do badań"
+		ai_chance = 20
+		command = { type = treasury value = 150 }
+		command = { type = infra value = 500 }
+		command = { type = land value = 600 }
+		command = { type = setflag which = inc_captured_technology value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 80 }
+	}
+}
+
+# 3009415: Transpacyficzny Szlak Tawantinsuyu
+event = {
+	id = 3009415
+	random = no
+	country = INC
+	name = "Transpacyficzny Szlak Tawantinsuyu: Spotkanie z Żeglarzami Polinezji i Azji"
+	desc = "Oceaniczna flotylla Inkow pod dowodztwem smialych zeglarzy powrocila ze Szlaku Slonca na Pacyfiku. Wyprawa potwierdzila istnienie bogatych wysp Polinezji i nawiazala kontakt z kupieckimi dzonkami ze Wschodu. Andyjskie porty w Callao i Guayaquil staja sie bramami globalnego handlu morskiego."
+
+	trigger = {
+		hasflag = { which = inc_pacific_expedition value = 1 }
+	}
+
+	date = { day = 1 month = january year = 1400 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Ustanowić Transpacyficzny Szlak Złota i Przypraw"
+		ai_chance = 75
+		command = { type = cot which = 167 } # Callao / Lima
+		command = { type = treasury value = 400 }
+		command = { type = trade value = 800 }
+		command = { type = provincetax which = 167 value = 3 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 150 }
+	}
+	action_b = {
+		name = "Ufortyfikować wybrzeża Pacyfiku przed obcymi"
+		ai_chance = 25
+		command = { type = fortress which = 167 value = 1 }
+		command = { type = naval value = 600 }
+		command = { type = domestic which = OFFENSIVE value = -1 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 80 }
+	}
+}
+
+#----------------------------------------------------------------
+# Flavor & Historical Crises (AZT / INC)
+#----------------------------------------------------------------
+
+# 3009431: Ogrody Botaniczne i Akwedukty Huaxtepec (AZT)
+event = {
+	id = 3009431
+	random = no
+	country = AZT
+	name = "Ogrody Botaniczne i Akwedukty Huaxtepec"
+	desc = "Pod panowaniem Montezumy I i Nezahualcoyotla powstaja wspaniale ogrody krolewskie w Huaxtepec, gromadzace setki gatunkow ziol i roslin leczniczych z calego Cemanahuac. Rozbudowa akweduktow i ogrodow staje sie centrum mezoamerykanskiej medycyny naturalnej i botaniki."
+
+	trigger = {
+		owned = { province = 27 data = -1 } # Tenochtitlan
+		control = { province = 27 data = -1 }
+		stability = 1
+	}
+
+	date = { day = 1 month = january year = 1440 }
+	offset = 120
+	deathdate = { day = 30 month = december year = 1475 }
+
+	action_a = {
+		name = "Ufundujcie cesarskie ogrody medycyny i akwedukt"
+		ai_chance = 80
+		command = { type = treasury value = -100 }
+		command = { type = infra value = 400 }
+		command = { type = provincetax which = 27 value = 2 }
+		command = { type = populationpercent which = 27 value = 5 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 50 }
+	}
+	action_b = {
+		name = "Przeznaczcie złoto na nowe garnizony wojenne"
+		ai_chance = 20
+		command = { type = land value = 300 }
+		command = { type = INF which = 27 value = 4000 }
+	}
+}
+
+# 3009432: Wielka Susza Roku Jednego Królika (AZT, 1454)
+event = {
+	id = 3009432
+	random = no
+	country = AZT
+	name = "Wielka Susza Roku Jednego Królika (Ce Tochtli)"
+	desc = "Niszczycielska czteroletnia susza polaczona z przedwczesnymi przymrozkami dotknela Dolina Meksyku w roku Ce Tochtli (1454). Uprawy kukurydzy zniszczalo, a widmo glodu zagrozilo milionom mieszkancow Tenochtitlan i okolicznych miast."
+
+	trigger = {
+		owned = { province = 27 data = -1 }
+		control = { province = 27 data = -1 }
+	}
+
+	date = { day = 1 month = january year = 1450 }
+	offset = 90
+	deathdate = { day = 30 month = december year = 1460 }
+
+	action_a = {
+		name = "Otworzyć cesarskie spichlerze i rozszerzyć chinampas"
+		ai_chance = 70
+		command = { type = treasury value = -150 }
+		command = { type = infra value = 300 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 50 }
+	}
+	action_b = {
+		name = "Złożyć masowe ofiary błagalne bóstwom deszczu Tlalocowi"
+		ai_chance = 30
+		command = { type = stability value = -2 }
+		command = { type = populationpercent which = 27 value = -5 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = QUALITY value = 1 }
+	}
+}
+
+# 3009433: Bicie Złotych Monet i Mennica Tenochtitlan (AZT)
+event = {
+	id = 3009433
+	random = no
+	country = AZT
+	name = "Bicie Złotych Monet i Mennica Tenochtitlan"
+	desc = "Wraz z modernizacja rzemiosla i rozwojem handlu miejskiego tradycyjna wymiana ziaren kakao i zlotego piasku w piorach staje sie niewystarczajaca. Cesarska mennica w Tenochtitlan rozpoczyna bicie standaryzowanych monet ze zlota i miedzi, rewolucjonizujac finanse Cemanahuac."
+
+	trigger = {
+		hasflag = { which = azt_iron_empire value = 1 }
+		owned = { province = 27 data = -1 }
+		control = { province = 27 data = -1 }
+	}
+
+	date = { day = 1 month = january year = 1400 }
+	offset = 90
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Ustanowić złotą i srebrną monetę Cemanahuac"
+		ai_chance = 85
+		command = { type = inflation value = -2 }
+		command = { type = trade value = 500 }
+		command = { type = provincetax which = 27 value = 3 }
+		command = { type = treasury value = 200 }
+		command = { type = vp value = 50 }
+	}
+	action_b = {
+		name = "Pozostawić tradycyjną wymianę ziaren kakao"
+		ai_chance = 15
+		command = { type = stability value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+	}
+}
+
+# 3009434: Architektura Sejsmiczna Pachacutiego (INC)
+event = {
+	id = 3009434
+	random = no
+	country = INC
+	name = "Architektura Sejsmiczna Pachacutiego"
+	desc = "Pod rzadami cesarza Pachacuti andyjscy budowniczowie udoskonalaja sztuke wznoszenia poligonalnych murow z dopasowanych wielotonowych glazow bez uzycia zaprawy. Struktury te wytrzymuja najsilniejsze trzesienia ziemi w Andach, a powstalne twierdze w Sacsayhuamán i Machu Picchu staja sie arcydzielami inzynierii."
+
+	trigger = {
+		owned = { province = 168 data = -1 } # Cuzco
+		control = { province = 168 data = -1 }
+		stability = 1
+	}
+
+	date = { day = 1 month = january year = 1440 }
+	offset = 120
+	deathdate = { day = 30 month = december year = 1480 }
+
+	action_a = {
+		name = "Wznieść kamienne mury dopasowane do drgań ziemi"
+		ai_chance = 85
+		command = { type = treasury value = -150 }
+		command = { type = infra value = 500 }
+		command = { type = provincetax which = 168 value = 3 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 60 }
+	}
+	action_b = {
+		name = "Oszczędzać skarb na wyprawy w doliny"
+		ai_chance = 15
+		command = { type = treasury value = 100 }
+	}
+}
+
+# 3009435: Węzełkowe Pismo Quipu i Rachunkowość Tawantinsuyu (INC)
+event = {
+	id = 3009435
+	random = no
+	country = INC
+	name = "Węzełkowe Pismo Quipu i Rachunkowość Tawantinsuyu"
+	desc = "Mistrzowie quipucamayoc uzywaja skomplikowanego systemu kolorowych sznurow z wezlami (quipu) do prowadzenia dokladnych spisow ludnosci, zbiorow w spichlerzach qullqa, danin podatkowych oraz rozkazow wojskowych. Wprowadzenie centralnego rejestru quipu zapewnia perfekcyjna kontrole nad gospodarka panstwa."
+
+	trigger = {
+		owned = { province = 168 data = -1 }
+		control = { province = 168 data = -1 }
+	}
+
+	date = { day = 1 month = january year = 1430 }
+	offset = 90
+	deathdate = { day = 30 month = december year = 1490 }
+
+	action_a = {
+		name = "Wdrożyć powszechny spis ludności i dóbr Quipu"
+		ai_chance = 90
+		command = { type = provincetax which = 168 value = 1 }
+		command = { type = provincetax which = 164 value = 1 }
+		command = { type = provincetax which = 167 value = 1 }
+		command = { type = provincetax which = 192 value = 1 }
+		command = { type = infra value = 400 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 50 }
+	}
+	action_b = {
+		name = "Zezwolić kacykom na własne szacunki"
+		ai_chance = 10
+		command = { type = domestic which = ARISTOCRACY value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = -1 }
+	}
+}
+
+# 3009436: Srebrna Góra Potosí: Cerro Rico (INC)
+event = {
+	id = 3009436
+	random = no
+	country = INC
+	name = "Srebrna Góra Potosí: Cerro Rico"
+	desc = "Odkrycie nieprzebranych zloz srebra w gorze Cerro Rico w Potosí przynosi imperium bajeczne bogactwa. Tysiace andyjskich piecow wiatrowych (huayras) na stokach gorskich wytapiaja czyste srebro dla cesarskiego skarbu, finansujac inwestycje infrastrukturalne i wojskowe."
+
+	trigger = {
+		owned = { province = 192 data = -1 } # Potosi
+		control = { province = 192 data = -1 }
+	}
+
+	date = { day = 1 month = january year = 1400 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Uruchomić tysiące pieców huayras na zboczach Cerro Rico"
+		ai_chance = 85
+		command = { type = treasury value = 600 }
+		command = { type = provincetax which = 192 value = 5 }
+		command = { type = trade value = 600 }
+		command = { type = inflation value = 1 }
+		command = { type = vp value = 75 }
+	}
+	action_b = {
+		name = "Ograniczyć wydobycie do potrzeb świątyń Słońca"
+		ai_chance = 15
+		command = { type = treasury value = 200 }
+		command = { type = stability value = 1 }
+		command = { type = trade value = 300 }
 	}
 }
 
