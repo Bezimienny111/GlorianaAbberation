@@ -442,3 +442,32 @@ event = {
 		command = { type = trade value = 500 }
 	}
 }
+
+#-----------------------------------------------------------------------------
+# Event 3009025: BYZ - The Ambassadors of the Western Caesar
+# Triggered by WRE Event 3009120 (Concordia Augustorum)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009025
+	random = no
+	country = BYZ
+
+	name = "Poselstwo z Wiecznego Miasta: Odrodzenie Zachodu"
+	desc = "Do Zlotego Rogu przybyli poslowie z Wiecznego Rzymu! Nowy August Zachodu oglasza restytucje zachodnich prowincji i proponuje braterski uklad: zachowanie jednosci rzymskiego swiata i podzial zadan obronnych przeciw barbarzyncom i niewiernym."
+	style = 1
+
+	action_a = {
+		name = "Niechaj zyja obaj Augustowie! (Concordia Augustorum)"
+		ai_chance = 70
+		command = { type = relation which = WRE value = 100 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 50 }
+	}
+	action_b = {
+		name = "Jest tylko jeden prawowity Rzym - Konstantynopol!"
+		ai_chance = 30
+		command = { type = relation which = WRE value = -150 }
+		command = { type = casusbelli which = WRE value = 60 }
+		command = { type = addcore_claim which = 399 } # Claim on Rome
+	}
+}

@@ -129,7 +129,7 @@ decision = {
 		tag = PAP
 		flag = pap_peace_league
 		NOT = { flag = pap_iron_crown }
-		NOT = { year = 1450 }
+		# NOT = { # year = 1450 # Unrestricted pacing } # Unrestricted pacing
 	}
 	trigger = {
 		atwar = no
@@ -179,7 +179,7 @@ decision = {
 		tag = PAP
 		flag = pap_peace_league
 		NOT = { flag = pap_iron_crown }
-		year = 1450
+		# year = 1450 # Unrestricted pacing
 	}
 	trigger = {
 		atwar = no
@@ -229,7 +229,7 @@ decision = {
 		tag = PAP
 		flag = pap_iron_crown
 		NOT = { flag = pap_north_united }
-		NOT = { year = 1450 }
+		# NOT = { # year = 1450 # Unrestricted pacing } # Unrestricted pacing
 	}
 	trigger = {
 		atwar = no
@@ -278,7 +278,7 @@ decision = {
 		tag = PAP
 		flag = pap_iron_crown
 		NOT = { flag = pap_north_united }
-		year = 1450
+		# year = 1450 # Unrestricted pacing
 	}
 	trigger = {
 		atwar = no
@@ -513,7 +513,7 @@ decision = {
 		NOT = { flag = pap_theocracy_complete }
 	}
 	trigger = {
-		year = 1650
+		# year = 1650 # Unrestricted pacing
 		NOT = { year = 1838 }
 		atwar = no
 		isvassal = no
@@ -653,7 +653,7 @@ decision = {
 		NOT = { flag = ita_oceanic_company }
 	}
 	trigger = {
-		year = 1500
+		# year = 1500 # Unrestricted pacing
 		NOT = { year = 1838 }
 		atwar = no
 		isvassal = no
@@ -800,6 +800,7 @@ decision = {
 		command = { type = stability value = -1 }
 		command = { type = badboy value = 2 }
 		command = { type = trigger which = 3009120 } #Uklad z Bizancjum
+		command = { type = trigger which = 3009121 } #Religijne Przeznaczenie Cesarstwa Zachodniego
 	}
 }
 
@@ -1023,7 +1024,7 @@ decision = {
 		NOT = { flag = wre_pax_romana }
 	}
 	trigger = {
-		year = 1600
+		# year = 1600 # Unrestricted pacing
 		NOT = { year = 1838 }
 		atwar = no
 		isvassal = no
@@ -1073,7 +1074,7 @@ decision = {
 		tag = WRE
 		flag = wre_pax_romana
 		NOT = { flag = wre_republic_restored }
-		year = 1775
+		# year = 1775 # Unrestricted pacing
 	}
 	trigger = {
 		atwar = no
@@ -1092,6 +1093,7 @@ decision = {
 		command = { type = domestic which = SERFDOM value = -3 }
 		command = { type = domestic which = INNOVATIVE value = 2 }
 		command = { type = wakemonarch which = 39020 } #Consules Valerio & Cornelio
+		command = { type = trigger which = 3009190 } #Comitia Centuriata: Pierwsze Wybory Konsulow
 		command = { type = stability value = 1 }
 		command = { type = vp value = 200 }
 	}

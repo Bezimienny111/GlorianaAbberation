@@ -32,7 +32,7 @@ global shared event/decision ID space, monarch space, and leader space:
 | Module / Nation             | Tag(s)        | Decisions | Events          | Monarchs      | Leaders       |
 |-----------------------------|---------------|-----------|-----------------|---------------|---------------|
 | 1. Byzantine Empire         | BYZ           | 6000-6065 | 3009000-3009022 | Vanilla       | Vanilla       |
-| 2. Papal States / Italy/WRE | PAP, ITA, WRE | 7010-7049 | 3009100-3009145 | 39001-39023   | 39101-39109   |
+| 2. Papal States / Italy/WRE | PAP, ITA, WRE | 7010-7049 | 3009100-3009194 | 39001-39023   | 39101-39109   |
 | 3. Mameluks & Ptolemaic Egy | MAM, EGY      | 7050-7076 | 3009200-3009245 | 39201-39232   | 39251-39259   |
 | 4. Hanseatic League         | HSA           | 7150-7160 | 3009300-3009345 | 13599-13763   | 39401-39410   |
 | 5. Pre-Columbian Americas   | AZT, INC      | 7200-7214 | 3009400-3009425 | Vanilla       | 39501-39558   |
@@ -201,6 +201,32 @@ global shared event/decision ID space, monarch space, and leader space:
    - Db/Monarchs/monarchs_wre.txt: 12 monarchs of the Aurelia dynasty (39001-39012) + 4 SPQR Consul pairs.
    - Db/Leaders/leaders_wre.txt: 9 Roman generals, admirals, and conquistadors (39101-39109).
 
+
+
+[2026-10-08] Expansion Phase 2 (Conclave Chronology, SPQR Elections, Religious Destiny & AI Weighting):
+1. Unrestricted Unification Pacing (Decisions 7013-7016, 7026, 7033, 7047, 7048):
+   - Removed artificial year locks (year = 1450, 1500, 1600, 1650, 1775) while preserving 
+     the dual-tier structure: early prestigious path vs mature consolidated path.
+2. Treaty of the Two Emperors & AI Choice Weighting (Event 3009120 & BYZ Event 3009025):
+   - Added native FTG engine "ai_chance" weighting:
+     * Action A: Concordia Augustorum (perpetual alliance & sphere division) -> ai_chance = 70.
+     * Action B: Bellum Augustorum (claims on Constantinople & rivalry) -> ai_chance = 30.
+   - Connected to BYZ mirror reaction event 3009025 ("The Ambassadors of the Western Caesar").
+3. Religious Destiny of the Restored Western Empire (Event 3009121):
+   - Triggered upon enacting Decision 7040:
+     * Action A: Christian Caesar & Church Protector (Catholic) -> ai_chance = 80.
+     * Action B: Cult of Sol Invictus & Roman Pantheon (roman_pagan) -> ai_chance = 20, 
+       converts Rome and Lombardy, -400 relations with Papacy, +2 legion morale, 10k troops.
+4. Historical Papal Conclaves Series (Events 3009150-3009180):
+   - Replaced generic random conclave event 3009101 with an authentic chronological sequence 
+     of 31 historical conclaves (1417-1831) from Martin V to Gregory XVI.
+   - Triggers for ITA, WRE, or PAP holding Rome with distinct historical pontificate bonuses.
+5. SPQR Consular Elections (Events 3009190-3009191):
+   - Triggered by Decision 7048 (Res Publica Restituta).
+   - Establishes persistent 5-year Senate election cycles (Comitia Centuriata):
+     * Military Consul (Legatus Legionum): MIL bonus, army morale, land tech, recruits (ai_chance = 35).
+     * Diplomatic Consul (Princeps Senatus): DIP bonus, badboy reduction, diplomats, relations (ai_chance = 35).
+     * Administrative Consul (Praetor Aerarii): ADM bonus, tax income, infrastructure, trade (ai_chance = 30).
 
 ================================================================================
 5. MODULE 3: MAMELUKS & PTOLEMAIC EGYPT (MAM / EGY)

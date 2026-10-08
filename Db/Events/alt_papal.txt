@@ -133,18 +133,64 @@ event = {
 	style = 1
 
 	action_a = {
-		name = "Niechaj oba orly panuja w zgodzie!"
+		name = "Niechaj oba orly panuja w zgodzie (Concordia Augustorum)!"
+		ai_chance = 70
 		command = { type = relation which = BYZ value = 150 }
 		command = { type = alliance which = BYZ }
+		command = { type = trigger which = 3009025 } #BYZ: Reakcja Konstantynopola
 		command = { type = stability value = 1 }
 		command = { type = vp value = 50 }
 	}
 	action_b = {
-		name = "Tylko w Wiecznym Rzymie bije serce imperium!"
+		name = "Tylko w Wiecznym Rzymie bije serce imperium (Bellum Augustorum)!"
+		ai_chance = 30
 		command = { type = relation which = BYZ value = -150 }
-		command = { type = casusbelli which = BYZ value = 24 }
+		command = { type = casusbelli which = BYZ value = 60 }
+		command = { type = addcore_claim which = 357 } #Roszczenie do Konstantynopola
 	}
 }
+
+#-----------------------------------------------------------------------------
+# I01b: The Religious Destiny of the Western Empire
+# Triggered by Decision 7040 (Renovatio Imperii Occidentalis)
+# Choice between Catholic continuity and Roman Paganism (roman_pagan)
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3009121
+	random = no
+	country = WRE
+
+	name = "Religijne Przeznaczenie Cesarstwa Zachodniego"
+	desc = "Wskrzeszenie Cesarstwa Rzymskiego stawia wladze przed fundamentalnym wyborem duchowym. Czy odrodzony Zachod ma pozostac wiernym obronca Stolicy Apostolskiej i wiary katolickiej, czy tez - w duchu cesarza Juliana - wskrzesic pradawny Panteon Rzymski, kult Sol Invictus i cnoty obywatelskie starozytnego Rzymu?"
+	style = 1
+
+	action_a = {
+		name = "Chrzescijanski Cezar i wierny protektor Kosciola"
+		ai_chance = 80
+		command = { type = stability value = 1 }
+		command = { type = relation which = PAP value = 150 }
+		command = { type = treasury value = 200 }
+	}
+	action_b = {
+		name = "Wskrzesmy pradawne kulty rzymskie i Panteon Bogow (Sol Invictus)!"
+		ai_chance = 20
+		command = { type = religion which = roman_pagan }
+		command = { type = setflag which = wre_pagan_restoration }
+		command = { type = provinceculture which = 399 value = roman }
+		command = { type = provincereligion which = 399 value = roman_pagan } #Roma
+		command = { type = provincereligion which = 389 value = roman_pagan } #Lombardia
+		command = { type = stability value = -3 }
+		command = { type = revoltrisk which = 60 value = 5 }
+		command = { type = relation which = PAP value = -400 }
+		command = { type = relation which = FRA value = -200 }
+		command = { type = relation which = HAB value = -200 }
+		command = { type = relation which = SPA value = -200 }
+		command = { type = landmorale which = 120 value = 2 }
+		command = { type = INF which = 399 value = 10000 }
+	}
+}
+
 
 #-----------------------------------------------------------------------------
 # I11 Follow-up: Trans-Saharan Expedition to Mali
@@ -180,27 +226,7 @@ event = {
 # Periodic events providing stability without changing secular monarch
 #-----------------------------------------------------------------------------
 
-event = {
-	id = 3009101
-	random = yes
-	trigger = {
-		OR = {
-			tag = ITA
-			tag = WRE
-		}
-		owned = { province = 399 data = -1 } #Roma
-		NOT = { stability = 3 }
-	}
-
-	name = "Habemus Papam: Nowe Konklawe w Rzymie"
-	desc = "Kolegium Kardynalskie zebrane w Kaplicy Sykstynskiej oglosilo bialy dym! Nad Bazylika Swietego Piotra rozbrzmiewa uroczyste 'Habemus Papam'. Nowo wybrany Biskup Rzymu blogoslawi wladcy i ludowi, umacniajac pokoj i zgode spoleczna w panstwie."
-	style = 1
-
-	action_a = {
-		name = "Niech Bog blogoslawi Ojcu Swietemu!"
-		command = { type = stability value = 1 }
-	}
-}
+# Event 3009101 (random) replaced by historical Conclaves series (3009150-3009180)
 
 #-----------------------------------------------------------------------------
 # Provincial 10-Year Integration Events (ownerchange = 10 -> addcore_national)
@@ -319,5 +345,1066 @@ event = {
 		name = "Neapol powraca do jednosci!"
 		command = { type = addcore_national which = 393 }
 		command = { type = provincetax which = 393 value = 1 }
+	}
+}
+
+#=============================================================================
+# HISTORICAL CONCLAVE CHRONOLOGY (1417 - 1831)
+# Triggers for ITA, WRE or PAP when owning Rome (399) and Catholic
+# Replaces random pontificate generation with authentic historical pontificates
+# ID Range: 3009150 - 3009180
+#=============================================================================
+
+#-----------------------------------------------------------------------------
+# Event 3009150: Konklawe w Konstancji: Wybor Marcina V (1417)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009150
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Konstancji: Wybor Marcina V"
+	desc = "Marcin V (Oddone Colonna) konczy Wielka Schizme Zachodnia. Rzym ponownie staje sie niekwestionowana stolica chrzescijanstwa."
+	style = 1
+
+	date = { day = 1 month = january year = 1417 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1420 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = stability value = 1 }
+		command = { type = infra value = 100 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009151: Konklawe w Rzymie: Wybor Eugeniusza IV (1431)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009151
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Rzymie: Wybor Eugeniusza IV"
+	desc = "Eugeniusz IV przewodzi obradom Soboru we Florencji, dazac do unii z Kosciolem wschodnim i umocnienia prymatu papieskiego."
+	style = 1
+
+	date = { day = 1 month = january year = 1431 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1434 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = stability value = 1 }
+		command = { type = relation which = BYZ value = 50 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009152: Konklawe w Rzymie: Wybor Mikolaja V (1447)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009152
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Rzymie: Wybor Mikolaja V"
+	desc = "Mikolaj V zaklada Biblioteke Watykanska i zaprasza do Rzymu najwiekszych humanistow, inaugurujac renesansowy zloty wiek."
+	style = 1
+
+	date = { day = 1 month = january year = 1447 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1450 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = infra value = 150 }
+		command = { type = trade value = 150 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009153: Konklawe w Rzymie: Wybor Kaliksta III (1455)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009153
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Rzymie: Wybor Kaliksta III"
+	desc = "Pierwszy papiez z katalonskiego rodu Borgiow, z cala moca nawoluje do zjednoczenia sil chrzescijanskich przeciw Turkom."
+	style = 1
+
+	date = { day = 1 month = january year = 1455 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1458 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = INF which = 399 value = 5000 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009154: Konklawe w Rzymie: Wybor Piusa II (1458)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009154
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Rzymie: Wybor Piusa II"
+	desc = "Eneasz Sylwiusz Piccolomini, wybitny humanista, pisarz i dyplomata, obejmuje Tron Piotrowy."
+	style = 1
+
+	date = { day = 1 month = january year = 1458 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1461 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = stability value = 1 }
+		command = { type = dip which = 24 value = 2 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009155: Konklawe w Rzymie: Wybor Pawla II (1464)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009155
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Rzymie: Wybor Pawla II"
+	desc = "Wenecki kardynal Pietro Barbo slynie z mecenatu nad architektura i umacniania rzymskiego prawa miejskiego."
+	style = 1
+
+	date = { day = 1 month = january year = 1464 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1467 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = treasury value = 150 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009156: Konklawe w Rzymie: Wybor Sykstusa IV (1471)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009156
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Rzymie: Wybor Sykstusa IV"
+	desc = "Sykstus IV z rodu della Rovere funduje slynna Kaplice Sykstynska oraz most Ponte Sisto, modernizujac Rzym."
+	style = 1
+
+	date = { day = 1 month = january year = 1471 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1474 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = provincetax which = 399 value = 1 }
+		command = { type = infra value = 150 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009157: Konklawe w Rzymie: Wybor Innocentego VIII (1484)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009157
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Rzymie: Wybor Innocentego VIII"
+	desc = "Innocenty VIII stabilizuje relacje z wloskimi dynastiami i wspiera pokoj na polwyspie."
+	style = 1
+
+	date = { day = 1 month = january year = 1484 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1487 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = stability value = 1 }
+		command = { type = badboy value = -1 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009158: Konklawe w Rzymie: Wybor Aleksandra VI (1492)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009158
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Rzymie: Wybor Aleksandra VI"
+	desc = "Rodrigo Borgia wstepuje na Tron Piotrowy jako Aleksander VI, prowadzac wielka polityke dynastyczna i dyplomatyczna w dobie odkryc."
+	style = 1
+
+	date = { day = 1 month = january year = 1492 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1495 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = dip which = 36 value = 2 }
+		command = { type = treasury value = 200 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009159: Konklawe w Rzymie: Wybor Juliusza II (1503)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009159
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Rzymie: Wybor Juliusza II"
+	desc = "Giuliano della Rovere - 'Papiez Wojownik'. Rozpoczyna budowe nowej Bazyliki Swietego Piotra i zatrudnia Michala Aniola oraz Rafaela."
+	style = 1
+
+	date = { day = 1 month = january year = 1503 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1506 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = landmorale which = 60 value = 1 }
+		command = { type = fortress which = 399 value = 1 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009160: Konklawe w Rzymie: Wybor Leona X (1513)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009160
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Rzymie: Wybor Leona X"
+	desc = "Giovanni de' Medici - syn Wawrzynca Wspanialego. Apogeum mecenatu, zlotego wieku kultury i sztuki renesansu w Rzymie."
+	style = 1
+
+	date = { day = 1 month = january year = 1513 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1516 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = trade value = 200 }
+		command = { type = infra value = 200 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009161: Konklawe w Rzymie: Wybor Klemensa VII (1523)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009161
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Rzymie: Wybor Klemensa VII"
+	desc = "Giulio de' Medici mierzy sie z burza wojen wloskich i europejskich przetasowan politycznych."
+	style = 1
+
+	date = { day = 1 month = january year = 1523 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1526 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 100 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009162: Konklawe w Rzymie: Wybor Pawla III (1534)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009162
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Rzymie: Wybor Pawla III"
+	desc = "Alessandro Farnese zwoluje Sobor Trydencki, zatwierdza zakon jezuitow i otwiera epoke wielkiej reformy katolickiej."
+	style = 1
+
+	date = { day = 1 month = january year = 1534 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1537 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = stability value = 2 }
+		command = { type = infra value = 200 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009163: Konklawe w Rzymie: Wybor Juliusza III (1550)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009163
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Rzymie: Wybor Juliusza III"
+	desc = "Juliusz III kontynuuje obrady Soboru Trydenckiego i wznosi wspaniala rezydencje Villa Giulia."
+	style = 1
+
+	date = { day = 1 month = january year = 1550 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1553 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = stability value = 1 }
+		command = { type = infra value = 100 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009164: Konklawe w Rzymie: Wybor Piusa IV (1559)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009164
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Rzymie: Wybor Piusa IV"
+	desc = "Pius IV doprowadza do szczesliwego i uroczystego zakonczenia Soboru Trydenckiego, oglaszajac odnowe wiary."
+	style = 1
+
+	date = { day = 1 month = january year = 1559 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1562 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = stability value = 1 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = SPA value = 100 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009165: Konklawe w Rzymie: Wybor Piusa V (1566)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009165
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Rzymie: Wybor Piusa V"
+	desc = "Swiety Pius V formuje Swieta Lige prowadzaca do triumfu pod Lepanto oraz kodyfikuje jednolity Mszal Rzymski."
+	style = 1
+
+	date = { day = 1 month = january year = 1566 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1569 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = warships which = 399 value = 5 }
+		command = { type = navalmorale which = 60 value = 1 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009166: Konklawe w Rzymie: Wybor Grzegorza XIII (1572)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009166
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Rzymie: Wybor Grzegorza XIII"
+	desc = "Ugo Boncompagni reformuje kalendarz, wprowadzajac kalendarz gregorianski oraz funduje Gregorianum."
+	style = 1
+
+	date = { day = 1 month = january year = 1572 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1575 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = infra value = 250 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009167: Konklawe w Rzymie: Wybor Sykstusa V (1585)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009167
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Rzymie: Wybor Sykstusa V"
+	desc = "Felice Peretti prowadzi bezwzgledna walke z bandytyzmem i przeprowadza monumentalna przebudowe urbanistyczna Rzymu."
+	style = 1
+
+	date = { day = 1 month = january year = 1585 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1588 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = provincetax which = 399 value = 2 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009168: Konklawe w Rzymie: Wybor Klemensa VIII (1592)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009168
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Rzymie: Wybor Klemensa VIII"
+	desc = "Klemens VIII przywraca pokoj w Europie i pokojowo wlacza Ksiestwo Ferrary w sklad prowincji Stolicy Apostolskiej."
+	style = 1
+
+	date = { day = 1 month = january year = 1592 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1595 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = badboy value = -2 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009169: Konklawe w Rzymie: Wybor Pawla V (1605)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009169
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Rzymie: Wybor Pawla V"
+	desc = "Camillo Borghese konczy monumentalna fasade Bazyliki Swietego Piotra i wznosi wspaniale akwedukty."
+	style = 1
+
+	date = { day = 1 month = january year = 1605 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1608 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = vp value = 50 }
+		command = { type = infra value = 200 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009170: Konklawe w Rzymie: Wybor Urbana VIII (1623)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009170
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Rzymie: Wybor Urbana VIII"
+	desc = "Maffeo Barberini - wielki mecenas Gian Lorenzo Berniniego, rozkwit rzymskiego baroku i fortyfikacji Castel Sant'Angelo."
+	style = 1
+
+	date = { day = 1 month = january year = 1623 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1626 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = provincetax which = 399 value = 1 }
+		command = { type = artillery which = 399 value = 20 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009171: Konklawe w Rzymie: Wybor Innocentego X (1644)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009171
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Rzymie: Wybor Innocentego X"
+	desc = "Giovanni Battista Pamphilj przebudowuje Piazza Navona i wznosi slynna Fontanne Czterech Rzek."
+	style = 1
+
+	date = { day = 1 month = january year = 1644 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1647 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 150 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009172: Konklawe w Rzymie: Wybor Aleksandra VII (1655)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009172
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Rzymie: Wybor Aleksandra VII"
+	desc = "Fabio Chigi wznosi slynna eliptyczna kolumnade Berniniego na Placu Swietego Piotra, witajaca pielgrzymow calego swiata."
+	style = 1
+
+	date = { day = 1 month = january year = 1655 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1658 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = vp value = 50 }
+		command = { type = infra value = 200 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009173: Konklawe w Rzymie: Wybor Innocentego XI (1676)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009173
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Rzymie: Wybor Innocentego XI"
+	desc = "Innocenty XI jednoczy monarchie europejskie przeciw ekspansji osmanskiej, wspierajac Wiktorie Wiedenska."
+	style = 1
+
+	date = { day = 1 month = january year = 1676 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1679 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = landmorale which = 60 value = 1 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009174: Konklawe w Rzymie: Wybor Klemensa XI (1700)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009174
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Rzymie: Wybor Klemensa XI"
+	desc = "Klemens XI dba o pokoj w dobie wielkich wojen sukcesyjnych i wspiera rzymskie akademie sztuki."
+	style = 1
+
+	date = { day = 1 month = january year = 1700 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1703 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = stability value = 1 }
+		command = { type = trade value = 150 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009175: Konklawe w Rzymie: Wybor Benedykta XIV (1740)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009175
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Rzymie: Wybor Benedykta XIV"
+	desc = "Prospero Lambertini - wielki Papiez Oswiecenia, reformator prawa, mecenas uniwersytetow i nauk scislych."
+	style = 1
+
+	date = { day = 1 month = january year = 1740 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1743 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = infra value = 300 }
+		command = { type = trade value = 300 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009176: Konklawe w Rzymie: Wybor Klemensa XIII (1758)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009176
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Rzymie: Wybor Klemensa XIII"
+	desc = "Klemens XIII broni autorytetu instytucji koscielnych w epoce filozofow i sporow ideowych."
+	style = 1
+
+	date = { day = 1 month = january year = 1758 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1761 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 100 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009177: Konklawe w Rzymie: Wybor Piusa VI (1775)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009177
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Rzymie: Wybor Piusa VI"
+	desc = "Pius VI osusza Blota Pontyjskie, zaklada Muzeum Pio-Clementino i stawia czolo kryzysom rewolucji."
+	style = 1
+
+	date = { day = 1 month = january year = 1775 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1778 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = provincetax which = 399 value = 1 }
+		command = { type = infra value = 200 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009178: Konklawe w Wenecji i Rzymie: Wybor Piusa VII (1800)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009178
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Wenecji i Rzymie: Wybor Piusa VII"
+	desc = "Barnaba Chiaramonti przetrwal burze epoki napoleonskiej, odradzajac autorytet Wiecznego Miasta w XIX wieku."
+	style = 1
+
+	date = { day = 1 month = january year = 1800 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1803 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = stability value = 2 }
+		command = { type = relation which = FRA value = 100 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009179: Konklawe w Rzymie: Wybor Leona XII (1823)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009179
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Rzymie: Wybor Leona XII"
+	desc = "Leon XII oglasza Rok Swiety 1825, gromadzac w Rzymie setki tysiecy pielgrzymow ze wszystkich stron globu."
+	style = 1
+
+	date = { day = 1 month = january year = 1823 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1826 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = treasury value = 250 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009180: Konklawe w Rzymie: Wybor Grzegorza XVI (1831)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009180
+	random = no
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+			tag = PAP
+		}
+		owned = { province = 399 data = -1 } # Roma
+		NOT = { religion = roman_pagan }
+	}
+
+	name = "Konklawe w Rzymie: Wybor Grzegorza XVI"
+	desc = "Mauro Cappellari wznosi Muzeum Gregoriaskie i dba o porzadek spoleczny oraz dziedzictwo Wiecznego Miasta."
+	style = 1
+
+	date = { day = 1 month = january year = 1831 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1834 }
+
+	action_a = {
+		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = stability value = 1 }
+		command = { type = infra value = 150 }
+	}
+}
+
+#=============================================================================
+# SPQR RES PUBLICA: 5-YEAR CONSULAR ELECTIONS (COMITIA CENTURIATA)
+# Triggered by Decision 7048. Recurring 5-year election cycles for the Senate.
+# Allows player to choose between Military, Diplomatic, and Administrative Consuls.
+# ID Range: 3009190 - 3009194
+#=============================================================================
+
+#-----------------------------------------------------------------------------
+# Event 3009190: Comitia Centuriata: Pierwsze Wybory Konsulow SPQR
+# Triggered by Decision 7048
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009190
+	random = no
+	country = WRE
+
+	name = "Comitia Centuriata: Wybory Konsulow Rzeczypospolitej"
+	desc = "Na Polu Marsowym i w Kurii zebral sie Senat oraz Obywatele Rzymu! Zgodnie ze starozytnym prawem Republiki, nadszedl czas wyboru Konsulow na kolejna 5-letnia kadencje. Kto stanie na czele panstwa i poprowadzi rzymskie legiony oraz magistraty?"
+	style = 1
+
+	action_a = {
+		name = "Wybierz Konsula Wojskowego (Legatus Legionum)"
+		ai_chance = 35
+		command = { type = landmorale which = 60 value = 1 }
+		command = { type = land value = 200 }
+		command = { type = INF which = 399 value = 4000 }
+		command = { type = CAV which = 399 value = 1000 }
+	}
+	action_b = {
+		name = "Wybierz Konsula Dyplomatycznego (Princeps Senatus)"
+		ai_chance = 35
+		command = { type = badboy value = -1 }
+		command = { type = dip which = 60 value = 2 }
+		command = { type = stability value = 1 }
+		command = { type = relation which = FRA value = 25 }
+		command = { type = relation which = HAB value = 25 }
+	}
+	action_c = {
+		name = "Wybierz Konsula Administracyjnego (Praetor Aerarii)"
+		ai_chance = 30
+		command = { type = infra value = 200 }
+		command = { type = trade value = 200 }
+		command = { type = treasury value = 200 }
+		command = { type = provincetax which = 399 value = 1 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Recurring 5-Year Senate Elections (Persistent cycle)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009191
+	random = no
+	persistent = yes
+	country = WRE
+
+	trigger = {
+		flag = wre_republic_restored
+	}
+
+	name = "Comitia Centuriata: Nowe Wybory Konsulow"
+	desc = "Mija piec lat owocnych rzadow poprzednich magistratow. Zgodnie z konstytucja SPQR, zgromadzenie kurialne i centurialne zbiera sie ponownie, by wybrac nowych sternikow Republiki."
+	style = 1
+
+	date = { day = 1 month = january year = 1400 }
+	offset = 1825 # Co okolo 5 lat (1825 dni)
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Frakcja Legionowa: Konsul Wojenny"
+		ai_chance = 35
+		command = { type = landmorale which = 60 value = 1 }
+		command = { type = land value = 200 }
+		command = { type = INF which = 399 value = 3000 }
+	}
+	action_b = {
+		name = "Frakcja Senatorska: Konsul Dyplomatyczny"
+		ai_chance = 35
+		command = { type = badboy value = -1 }
+		command = { type = dip which = 60 value = 2 }
+		command = { type = stability value = 1 }
+	}
+	action_c = {
+		name = "Frakcja Kupiecka: Konsul Skarbu"
+		ai_chance = 30
+		command = { type = infra value = 200 }
+		command = { type = treasury value = 200 }
+		command = { type = trade value = 150 }
 	}
 }
