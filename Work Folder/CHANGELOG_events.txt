@@ -45,3 +45,28 @@
 8. Sequence 8 (6059-6060): "Reconquista Daciae Traianae" - 6059 claims Dacia beyond the Danube (318-319, 322-323); 6060 "Imperium Dacicum" awards national cores and Transylvanian gold revenues.
 9. Sequence 9 (6061): "Mesopotamia Traiana" - claims Euphrates & Tigris (Kirkuk 488, Iraq 489).
 10. Sequence 10 (6062): "Renovatio Imperii Maximi: Pax Romana Restaurata" - grand culmination requiring Trajan-era boundaries (Thrace, Rome, Alexandria, Jerusalem, Toledo, Paris, London, Wien, Köln); awards national cores on northern Italy and Mesopotamia, +1 stability, -10 badboy, +2000 gold, +1000 VP, and major permanent tax/manpower boosts to imperial capitals.
+
+[2026-10-08] Db/Decisions/alt_papal.txt & Db/Events/alt_papal.txt: implemented comprehensive alternate history module for Papal States (PAP), Kingdom of Italy (ITA), and Western Roman Empire (WRE):
+1. Common Path C01-C06 (Decisions 7010-7016):
+   - C01 (7010): "Powrot do Rzymu" - relocates Papal capital from Avignon to Rome, triggers French reaction (3009102).
+   - C02 (7011): "Legaci i zbuntowane komuny" - pacification of Romagna and Marche via Cardinal Albornoz legates.
+   - C03 (7012): "Liga Pokoju Wloskiego" - peace league and protectorate over Tuscany and Emilia (Siena, Firenze, Emilia).
+   - C05 (7013/7014): "Korona Longobardzka" - early (pre-1450) and mature (post-1450, 70% threshold) decisions claiming northern Italy (Lombardia, Mantua, Veneto, Liguria, Piemonte) and triggering HRE reaction (3009103).
+   - C06 (7015/7016): "Zjednoczenie Polnocnej Italii" - early (90% threshold) and mature (75% threshold) decisions completing northern unification.
+2. Crossroads Event C07 (Event 3009100): "Miecz i Tiara" - presents the 3 constitutional paths for a unified Italy upon reaching 1450.
+3. Branch T - Militant Theocracy (tag PAP, Decisions 7020-7026):
+   - T01 (7020): "Patrimonium Sancti Petri" - declares permanent theocratic constitution under the Holy See.
+   - T02-T09 (7021-7026): Roman Curia reform, St. Peter's Basilica patronage, Ecumenical Council, Gregorianum colleges, Holy League of Faith, and post-religious-wars consolidation.
+4. Branch K - Kingdom of Italy (tag ITA, Decisions 7030-7036):
+   - K01 (7030): "Korona Italii" - transitions tag from PAP to ITA, capital in Rome, sleeps Transition Council (12150), triggers royal dynasty election (3009110) between Medici (12217), Sforza (12153), or Savoy (12165).
+   - K03-K08 (7031-7036): Southern Italy unification claims (393-396, 819), Royal Arsenals of Genoa & Venice, Oceanic Company, Cape of Good Hope Haven (Porto Reale), East India Company spice monopoly, and High Renaissance cultural patronage.
+5. Branch I - Western Roman Empire (tag WRE, Decisions 7040-7049):
+   - I01 (7040): "Renovatio Imperii Occidentalis" - resurrects the Western Roman Empire (tag WRE) in Rome, triggers Concordat of the Two Emperors with Byzantine Empire (3009120).
+   - I02-I09 (7041-7047): Italia Mezzogiorno claims, Africa Romana claims (Carthage/Tunis, Tripoli), Hispania Romana claims, Gallia Narbonensis claims, Corpus Iuris Civilis legal codification, Lex de Civitate Romana reviving roman accepted culture, and grand Pax Romana Restaurata triumph across all 4 imperial regions.
+   - I10 (7048): "Res Publica Restituta" - optional 1775+ late-era republican revolution proclaiming SPQR and activating elected Senate Consuls pairs (39020-39023).
+   - I11 (7049): "Wyprawa Transsaharyjska" - trans-Saharan expedition to Mali, waking conquistador Lucio Africano (39103) and discovering Sahara oases (1597, 1488, 1495, 1490, 1496) and Bambuk gold (3009130).
+6. Supporting Mechanics & Data Files:
+   - Event 3009101: "Habemus Papam" - periodic conclave events for secular paths ITA and WRE maintaining +1 stability.
+   - Events 3009141-3009145: Organic provincial 10-year integration events (ownerchange = 10 -> addcore_national) for core Italian provinces (Romagna, Marche, Firenze, Lombardia, Napoli).
+   - Db/Monarchs/monarchs_wre.txt: 12 monarchs of the Aurelia dynasty (39001-39012) + 4 SPQR Consul pairs (39020-39023).
+   - Db/Leaders/leaders_wre.txt: 9 Roman generals, admirals, and explorer Lucio Africano (39101-39109).

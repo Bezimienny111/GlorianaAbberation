@@ -1,1 +1,1133 @@
-# Alternate Destinies - Modular File
+# Papal States, Kingdom of Italy & Western Roman Empire (PAP / ITA / WRE)
+# Alternate Destinies Modular Decisions
+# ID Range: 7010 - 7049
+
+#=============================================================================
+# COMMON PATH: ITALY UNDER ROMAN PROTECTION (C01 - C06)
+#=============================================================================
+
+#-----------------------------------------------------------------------------
+# C01: Return to Rome
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7010
+	major = yes
+	unique = yes
+	potential = {
+		tag = PAP
+		NOT = { flag = pap_return_rome }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 0
+		owned = { province = 399 data = -1 } #Roma
+		control = { province = 399 data = -1 } #Roma
+	}
+	ai_trigger = {
+	}
+
+	name = "Powrot do Rzymu: Koniec Niewoli Awignonskiej"
+	desc = "Od dziesiecioleci nastepcy sw. Piotra rezydowali nad brzegami Rodanu w Awinionie, pod czujnym okiem krolow Francji. Jednak to Wieczne Miasto - Rzym - jest prawowita stolica Stolicy Apostolskiej i sercem chrzescijanstwa. Czas powrocic na Wzgorze Watykanskie i odbudowac zrujnowana Kurie Rzymska."
+
+	action = {
+		command = { type = setflag which = pap_return_rome }
+		command = { type = capital which = 399 } #Roma
+		command = { type = treasury value = -100 }
+		command = { type = infra value = 200 }
+		command = { type = relation which = FRA value = -25 }
+		command = { type = trigger which = 3009102 } #Reakcja Francji
+	}
+}
+
+#-----------------------------------------------------------------------------
+# C02: Legates and Rebel Communes
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7011
+	major = yes
+	unique = yes
+	potential = {
+		tag = PAP
+		flag = pap_return_rome
+		NOT = { flag = pap_legates_sent }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		treasury = 75
+	}
+	ai_trigger = {
+	}
+
+	name = "Legaci i zbuntowane komuny: Misja Kardynala Albornoza"
+	desc = "Pod nieobecnosc papiezy ziemie Patrimonium Petri w Romanii i Marchii Ankonskiej pograzyly sie w anarchii, opanowane przez samowolnych tyranow i sklocone komuny miejskie. Wyslanie kardynalow-legatow z silnym mandatem pozwoli przywrocic prawo koscielne i poddac zbuntowane miasta wladzy papieskiej."
+
+	action = {
+		command = { type = setflag which = pap_legates_sent }
+		command = { type = treasury value = -75 }
+		command = { type = addcore_claim which = 391 } #Romagna
+		command = { type = addcore_claim which = 392 } #Marche
+		command = { type = relation which = BOL value = -100 }
+		command = { type = relation which = URB value = -100 }
+		command = { type = relation which = RIM value = -100 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# C03: League of Italian Peace
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7012
+	major = yes
+	unique = yes
+	potential = {
+		tag = PAP
+		flag = pap_legates_sent
+		NOT = { flag = pap_peace_league }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		treasury = 100
+		owned = { province = 391 data = -1 } #Romagna
+		owned = { province = 392 data = -1 } #Marche
+	}
+	ai_trigger = {
+	}
+
+	name = "Liga Pokoju Wloskiego: Protektorat Toskanii i Emilii"
+	desc = "Uporzadkowawszy wlasne posiadlosci, Rzym musi spojrzec ku sasiadom w Toskanii i dolinie Padu. Florencja, Siena i Modena szukaja rownowagi wobec zaborczego Mediolanu. Papiez jako ojciec wszystkich wiernych oglasza Lige Pokoju, oferujac wloskim miastom protektorat i wieczny pokoj pod egida Stolicy Apostolskiej."
+
+	action = {
+		command = { type = setflag which = pap_peace_league }
+		command = { type = treasury value = -100 }
+		command = { type = diplomats value = 2 }
+		command = { type = addcore_claim which = 400 } #Siena
+		command = { type = addcore_claim which = 401 } #Firenze
+		command = { type = addcore_claim which = 402 } #Emilia
+		command = { type = relation which = TOS value = 50 }
+		command = { type = relation which = PIS value = 50 }
+		command = { type = relation which = MOD value = 50 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# C05: Iron Crown of Lombardy (Early variant: pre-1450)
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7013
+	major = yes
+	unique = yes
+	potential = {
+		tag = PAP
+		flag = pap_peace_league
+		NOT = { flag = pap_iron_crown }
+		NOT = { year = 1450 }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 2
+		treasury = 200
+		owned = { province = 399 data = -1 } #Roma
+		someof = {
+			number = 4
+			owned = { province = 391 data = -1 } #Romagna
+			owned = { province = 392 data = -1 } #Marche
+			owned = { province = 400 data = -1 } #Siena
+			owned = { province = 401 data = -1 } #Firenze
+			owned = { province = 402 data = -1 } #Emilia
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Korona Longobardzka (Etap Wczesny)"
+	desc = "Zjednoczywszy srodkowa Italie, Rzym staje przed wyzwaniem bogatej polnocy. Zelazna Korona Longobardow w Monzy czeka na prawowitego wladce Italii. Zgromadziwszy potezne srodki, Stolica Apostolska wysuwa roszczenia do miast Lombardii, Wenecji i Ligurii."
+
+	action = {
+		command = { type = setflag which = pap_iron_crown }
+		command = { type = treasury value = -200 }
+		command = { type = addcore_claim which = 389 } #Lombardia
+		command = { type = addcore_claim which = 390 } #Mantua
+		command = { type = addcore_claim which = 370 } #Veneto
+		command = { type = addcore_claim which = 403 } #Liguria
+		command = { type = addcore_claim which = 404 } #Piemonte
+		command = { type = relation which = MLO value = -200 }
+		command = { type = relation which = VEN value = -200 }
+		command = { type = relation which = GEN value = -200 }
+		command = { type = trigger which = 3009103 } #Reakcja Cesarza
+	}
+}
+
+#-----------------------------------------------------------------------------
+# C05: Iron Crown of Lombardy (Mature variant: post-1450, 70% threshold)
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7014
+	major = yes
+	unique = yes
+	potential = {
+		tag = PAP
+		flag = pap_peace_league
+		NOT = { flag = pap_iron_crown }
+		year = 1450
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		treasury = 150
+		owned = { province = 399 data = -1 } #Roma
+		someof = {
+			number = 3
+			owned = { province = 391 data = -1 } #Romagna
+			owned = { province = 392 data = -1 } #Marche
+			owned = { province = 400 data = -1 } #Siena
+			owned = { province = 401 data = -1 } #Firenze
+			owned = { province = 402 data = -1 } #Emilia
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Korona Longobardzka (Etap Dojrzaly)"
+	desc = "Po dekadach sporow nadszedl czas na ostateczne rozstrzygniecie losow polnocnych Wloch. Zelazna Korona Longobardow w Monzy musi powrocic pod rzymska protekcje, otwierajac droge do pelnego zjednoczenia polwyspu."
+
+	action = {
+		command = { type = setflag which = pap_iron_crown }
+		command = { type = treasury value = -150 }
+		command = { type = addcore_claim which = 389 } #Lombardia
+		command = { type = addcore_claim which = 390 } #Mantua
+		command = { type = addcore_claim which = 370 } #Veneto
+		command = { type = addcore_claim which = 403 } #Liguria
+		command = { type = addcore_claim which = 404 } #Piemonte
+		command = { type = relation which = MLO value = -200 }
+		command = { type = relation which = VEN value = -200 }
+		command = { type = relation which = GEN value = -200 }
+		command = { type = trigger which = 3009103 } #Reakcja Cesarza
+	}
+}
+
+#-----------------------------------------------------------------------------
+# C06: Unification of Northern Italy (Early variant: pre-1450)
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7015
+	major = yes
+	unique = yes
+	potential = {
+		tag = PAP
+		flag = pap_iron_crown
+		NOT = { flag = pap_north_united }
+		NOT = { year = 1450 }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 2
+		treasury = 250
+		owned = { province = 399 data = -1 } #Roma
+		owned = { province = 389 data = -1 } #Lombardia
+		someof = {
+			number = 8
+			owned = { province = 391 data = -1 } #Romagna
+			owned = { province = 392 data = -1 } #Marche
+			owned = { province = 400 data = -1 } #Siena
+			owned = { province = 401 data = -1 } #Firenze
+			owned = { province = 402 data = -1 } #Emilia
+			owned = { province = 390 data = -1 } #Mantua
+			owned = { province = 370 data = -1 } #Veneto
+			owned = { province = 403 data = -1 } #Liguria
+			owned = { province = 404 data = -1 } #Piemonte
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Zjednoczenie Polnocnej Italii (Etap Wczesny)"
+	desc = "Niewiarygodny triumf oreza i dyplomacji! Od Alp az po Rzym cala polnocna i srodkowa Italia uznaje prymat Wiecznego Miasta. Kupcy, komuny i arystokracja skladaja hold nowemu porzadkowi."
+
+	action = {
+		command = { type = setflag which = pap_north_united }
+		command = { type = treasury value = -250 }
+		command = { type = stability value = 1 }
+		command = { type = badboy value = -2 }
+		command = { type = infra value = 300 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# C06: Unification of Northern Italy (Mature variant: post-1450, 75% threshold)
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7016
+	major = yes
+	unique = yes
+	potential = {
+		tag = PAP
+		flag = pap_iron_crown
+		NOT = { flag = pap_north_united }
+		year = 1450
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		treasury = 150
+		owned = { province = 399 data = -1 } #Roma
+		someof = {
+			number = 7
+			owned = { province = 389 data = -1 } #Lombardia
+			owned = { province = 391 data = -1 } #Romagna
+			owned = { province = 392 data = -1 } #Marche
+			owned = { province = 400 data = -1 } #Siena
+			owned = { province = 401 data = -1 } #Firenze
+			owned = { province = 402 data = -1 } #Emilia
+			owned = { province = 390 data = -1 } #Mantua
+			owned = { province = 370 data = -1 } #Veneto
+			owned = { province = 403 data = -1 } #Liguria
+			owned = { province = 404 data = -1 } #Piemonte
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Zjednoczenie Polnocnej Italii (Etap Dojrzaly)"
+	desc = "Potezne miasta i prowincje doliny Padu oraz Toskanii zostaly zjednoczone pod rzymskim przewodem. Czas chaosu dobiegl konca. Przed Italia otwiera sie brama ku wielkiej przyszlosci."
+
+	action = {
+		command = { type = setflag which = pap_north_united }
+		command = { type = treasury value = -150 }
+		command = { type = stability value = 1 }
+		command = { type = badboy value = -2 }
+		command = { type = infra value = 300 }
+	}
+}
+
+#=============================================================================
+# BRANCH T: THEOCRACY (Tag PAP)
+#=============================================================================
+
+decision = {
+	id = 7020
+	major = yes
+	unique = yes
+	potential = {
+		tag = PAP
+		flag = pap_north_united
+		NOT = { flag = pap_constitution_chosen }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		treasury = 100
+	}
+	ai_trigger = {
+	}
+
+	name = "Patrimonium Sancti Petri: Wielka Teokracja Wloska"
+	desc = "Odrzucajac pokusy swieckich tytulow krolewskich czy cesarskich, Namiestnik Chrystusa decyduje, ze zjednoczona Italia pozostanie pod wladza Katedry Swietego Piotra. Panstwo Koscielne staje sie duchowym i militarnym obronca wiary, w ktorym prawo kanoniczne i autorytet moralny rzadza zjednoczonymi komunami."
+
+	action = {
+		command = { type = setflag which = pap_constitution_chosen }
+		command = { type = setflag which = pap_path_theocracy }
+		command = { type = treasury value = -100 }
+		command = { type = stability value = 1 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = provincetax which = 399 value = 2 } #Roma
+	}
+}
+
+decision = {
+	id = 7021
+	major = yes
+	unique = yes
+	potential = {
+		tag = PAP
+		flag = pap_path_theocracy
+		NOT = { flag = pap_curia_reformed }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		treasury = 150
+	}
+	ai_trigger = {
+	}
+
+	name = "Reforma Kurii Rzymskiej: Administracja Swietego Oficjum"
+	desc = "Aby udzwignac ciezar zarzadzania milionami wiernych i calym polwyspem, Kuria musi wyplenic symonie, nepotyzm i korupcje. Nowoczesne kongregacje kardynalskie przejmuja piecze nad finansami, sadownictwem i obrona granic."
+
+	action = {
+		command = { type = setflag which = pap_curia_reformed }
+		command = { type = treasury value = -150 }
+		command = { type = infra value = 300 }
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = stability value = 1 }
+	}
+}
+
+decision = {
+	id = 7022
+	major = yes
+	unique = yes
+	potential = {
+		tag = PAP
+		flag = pap_path_theocracy
+		NOT = { flag = pap_basilica_patronage }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		treasury = 200
+	}
+	ai_trigger = {
+	}
+
+	name = "Patronat nad Bazylika Swietego Piotra"
+	desc = "Nowy Rzym potrzebuje swiatyni godnej stolicy swiata chrzescijanskiego. Zamiast uciekac sie do gorszacej i bezwzglednej sprzedazy odpustow, Papiez przeznacza dochody zjednoczonej Italii na budowe wspanialej Bazyliki wedlug planow Michala Aniola i Bramantego."
+
+	action = {
+		command = { type = setflag which = pap_basilica_patronage }
+		command = { type = treasury value = -200 }
+		command = { type = vp value = 100 }
+		command = { type = provincetax which = 399 value = 2 } #Roma
+		command = { type = relation which = HAB value = 50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = SPA value = 50 }
+	}
+}
+
+decision = {
+	id = 7023
+	major = yes
+	unique = yes
+	potential = {
+		tag = PAP
+		flag = pap_path_theocracy
+		NOT = { flag = pap_council_convened }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		treasury = 200
+	}
+	ai_trigger = {
+	}
+
+	name = "Sobor Powszechny: Odnowa Katolicka"
+	desc = "W obliczu wstrzasow reformacji i sporow doktrynalnych w Europie, Stolica Apostolska zwoluje Sobor Powszechny. Dostojnicy kosciola z calego swiata debatuja nad reforma dyscypliny duchowienstwa, katechizmem i zjednoczeniem narodow chrzescijanskich."
+
+	action = {
+		command = { type = setflag which = pap_council_convened }
+		command = { type = treasury value = -200 }
+		command = { type = stability value = 1 }
+		command = { type = missionaries value = 3 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = domestic which = SERFDOM value = -1 }
+	}
+}
+
+decision = {
+	id = 7024
+	major = yes
+	unique = yes
+	potential = {
+		tag = PAP
+		flag = pap_council_convened
+		NOT = { flag = pap_colleges_orders }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		treasury = 125
+	}
+	ai_trigger = {
+	}
+
+	name = "Kolegia i Zakony: Uniwersytet Gregorianum"
+	desc = "Dla obrony prawdy wiary i formacji przyszlych elit zakladamy siec rzymskich kolegiow oraz wspieramy nowo powstale zakony nauczycielskie. Edukacja oparta na klasycznym trivium i teologii staje sie duma wloskiej teokracji."
+
+	action = {
+		command = { type = setflag which = pap_colleges_orders }
+		command = { type = treasury value = -125 }
+		command = { type = infra value = 250 }
+		command = { type = missionaries value = 2 }
+	}
+}
+
+decision = {
+	id = 7025
+	major = yes
+	unique = yes
+	potential = {
+		tag = PAP
+		flag = pap_council_convened
+		NOT = { flag = pap_faith_league }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		treasury = 200
+	}
+	ai_trigger = {
+	}
+
+	name = "Liga Obrony Wiary: Swiete Przymierze"
+	desc = "Gdy fale wojen religijnych zagrazaja jednosci Europy, Rzym obejmuje militarne przywodztwo nad obroncami ortodoksji. Tworzymy Swiete Przymierze z katolickimi mocarstwami dla ochrony bezpieczenstwa polwyspu i obrony chrzescianstwa."
+
+	action = {
+		command = { type = setflag which = pap_faith_league }
+		command = { type = treasury value = -200 }
+		command = { type = badboy value = -2 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = SPA value = 150 }
+		command = { type = relation which = POL value = 100 }
+	}
+}
+
+decision = {
+	id = 7026
+	major = yes
+	unique = yes
+	potential = {
+		tag = PAP
+		flag = pap_faith_league
+		NOT = { flag = pap_theocracy_complete }
+	}
+	trigger = {
+		year = 1650
+		NOT = { year = 1838 }
+		atwar = no
+		isvassal = no
+		stability = 2
+		owned = { province = 399 data = -1 } #Roma
+	}
+	ai_trigger = {
+	}
+
+	name = "Panstwo Kosciola po Wojnach Religijnych: Zloty Wiek Teokracji"
+	desc = "Koniec wojen religijnych w Europie przynosi stabilizacje. Zjednoczone Panstwo Koscielne wyroslo na potege szanowana przez caly cywilizowany swiat. Rzym staje sie stolica sztuki baroku, prawa i nienaruszalnego pokoju."
+
+	action = {
+		command = { type = setflag which = pap_theocracy_complete }
+		command = { type = badboy value = -3 }
+		command = { type = infra value = 500 }
+		command = { type = provincetax which = 399 value = 2 } #Roma
+		command = { type = provincetax which = 401 value = 2 } #Firenze
+		command = { type = treasury value = 400 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#=============================================================================
+# BRANCH K: KINGDOM OF ITALY (Tag ITA)
+#=============================================================================
+
+decision = {
+	id = 7030
+	major = yes
+	unique = yes
+	potential = {
+		tag = PAP
+		flag = pap_north_united
+		NOT = { flag = pap_constitution_chosen }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 2
+		treasury = 200
+		NOT = { exists = ITA }
+	}
+	ai_trigger = {
+	}
+
+	name = "Korona Italii: Proklamacja Krolestwa Wloch"
+	desc = "Przelomowa chwila w historii polwyspu! Papiez przekazuje rzady swieckie w rece dziedzicznego Krola Wloch, sam pozostajac pasterzem duchowym chrzescijanstwa w Rzymie. Zelazna Korona spoczywa na skroniach wloskiego monarchy, a stolica nowego krolestwa staje sie Roma!"
+
+	action = {
+		command = { type = setflag which = pap_constitution_chosen }
+		command = { type = setflag which = pap_path_kingdom }
+		command = { type = country which = ITA }
+		command = { type = capital which = 399 } #Roma
+		command = { type = treasury value = -200 }
+		command = { type = stability value = -1 }
+		command = { type = sleepevent which = 12150 } #Sleep Transition Council
+		command = { type = trigger which = 3009110 } #Wybor dynastii krolewskiej
+	}
+}
+
+decision = {
+	id = 7031
+	major = yes
+	unique = yes
+	potential = {
+		tag = ITA
+		flag = pap_path_kingdom
+		NOT = { flag = ita_south_claims }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+	}
+	ai_trigger = {
+	}
+
+	name = "Od Alp do Sycylii: Zjednoczenie Mezzogiorno"
+	desc = "Zjednoczenie Italii nie moze byc pelne, dopoki Neapol, Apulia i Sycylia znajduja sie pod obca, hiszpansko-aragonska dominacja. Krol Wloch wzywa do polaczenia calego narodu wloskiego w jednym silnym panstwie!"
+
+	action = {
+		command = { type = setflag which = ita_south_claims }
+		command = { type = addcore_claim which = 393 } #Napoli
+		command = { type = addcore_claim which = 394 } #Apulia
+		command = { type = addcore_claim which = 395 } #Messina
+		command = { type = addcore_claim which = 396 } #Sicily
+		command = { type = addcore_claim which = 819 } #Malta
+		command = { type = relation which = NAP value = -250 }
+		command = { type = relation which = ARG value = -250 }
+		command = { type = relation which = SPA value = -300 }
+		command = { type = badboy value = 1 }
+	}
+}
+
+decision = {
+	id = 7032
+	major = yes
+	unique = yes
+	potential = {
+		tag = ITA
+		flag = pap_path_kingdom
+		NOT = { flag = ita_royal_arsenals }
+		OR = {
+			owned = { province = 403 data = -1 } #Liguria / Genova
+			owned = { province = 370 data = -1 } #Veneto / Venezia
+		}
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		treasury = 200
+	}
+	ai_trigger = {
+	}
+
+	name = "Krolewskie Arsenaly Genui i Wenecji"
+	desc = "Polaczenie geniuszu inzynieryjnego weneckiego Arsenalu z doswiadczeniem zeglarskim genuenczykow daje Krolestwu Wloch najpotezniejszy potencjal morski na swiecie. Inwestycje w krolewska flote otwieraja droge na oceany."
+
+	action = {
+		command = { type = setflag which = ita_royal_arsenals }
+		command = { type = treasury value = -200 }
+		command = { type = naval value = 500 }
+		command = { type = trade value = 250 }
+		command = { type = warships which = -1 value = 10 }
+	}
+}
+
+decision = {
+	id = 7033
+	major = yes
+	unique = yes
+	potential = {
+		tag = ITA
+		flag = ita_royal_arsenals
+		NOT = { flag = ita_oceanic_company }
+	}
+	trigger = {
+		year = 1500
+		NOT = { year = 1838 }
+		atwar = no
+		isvassal = no
+		stability = 1
+		treasury = 250
+	}
+	ai_trigger = {
+	}
+
+	name = "Wloska Kompania Oceaniczna: Zamorskie Szlaki"
+	desc = "Kiedy hiszpanscy i portugalscy zeglarze odkrywaja Nowy Swiat i szlak do Indii, Krolestwo Wloch nie moze pozostac w tyle na zamknietym Morzu Srodziemnym. Powolujemy Wloska Kompanie Oceaniczna, wysylajac naszych najlepszych kapitanow ku afrykanskim i indyjskim wybrzezom."
+
+	action = {
+		command = { type = setflag which = ita_oceanic_company }
+		command = { type = treasury value = -250 }
+		command = { type = colonists value = 2 }
+		command = { type = trade value = 300 }
+		command = { type = domestic which = MERCANTILISM value = -1 }
+	}
+}
+
+decision = {
+	id = 7034
+	major = yes
+	unique = yes
+	potential = {
+		tag = ITA
+		flag = ita_oceanic_company
+		NOT = { flag = ita_cape_haven }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		treasury = 150
+	}
+	ai_trigger = {
+	}
+
+	name = "Przystan na Przyladku Dobrej Nadziei: Porto Reale"
+	desc = "Punkt wezlowy na poludniowym krancu Afryki jest kluczem do panowania nad handlem przyprawami. Zakladamy ufortyfikowana baze Porto Reale, sprowadzajac wloskich osadnikow z Genui i Neapolu dla zaopatrywania naszych karawel."
+
+	action = {
+		command = { type = setflag which = ita_cape_haven }
+		command = { type = treasury value = -150 }
+		command = { type = colonists value = 2 }
+		command = { type = naval value = 250 }
+	}
+}
+
+decision = {
+	id = 7035
+	major = yes
+	unique = yes
+	potential = {
+		tag = ITA
+		flag = ita_cape_haven
+		NOT = { flag = ita_east_indies }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		treasury = 300
+	}
+	ai_trigger = {
+	}
+
+	name = "Wloska Kompania Indii Wschodnich: Monopol na Przyprawy"
+	desc = "Od brzegow Malabaru po Ciesnine Malakka wloskie faktorie przelamuja monopol rywali. Zloto z handlu pieprzem, cynamonem i jedwabiem plynace do portow Neapolu, Genui i Wenecji czyni z Krolestwa Wloch jedno z najbogatszych mocarstw globu."
+
+	action = {
+		command = { type = setflag which = ita_east_indies }
+		command = { type = treasury value = -300 }
+		command = { type = trade value = 500 }
+		command = { type = merchants value = 6 }
+		command = { type = badboy value = -2 }
+	}
+}
+
+decision = {
+	id = 7036
+	major = yes
+	unique = yes
+	potential = {
+		tag = ITA
+		flag = pap_path_kingdom
+		NOT = { flag = ita_renaissance_patronage }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 2
+		treasury = 250
+	}
+	ai_trigger = {
+	}
+
+	name = "Wielki Mecenat: Rozkwit Wloskiego Renesansu"
+	desc = "Wloskie krolestwo staje sie kolebka nowoczesnej cywilizacji europejskiej. Krolewski mecenat nad architektura, malarstwem, astronomia i filozofia przyciaga najwybitniejsze umysly stulecia, rozswietlajac caly kontynent blaskiem humanizmu."
+
+	action = {
+		command = { type = setflag which = ita_renaissance_patronage }
+		command = { type = treasury value = -250 }
+		command = { type = infra value = 500 }
+		command = { type = vp value = 150 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#=============================================================================
+# BRANCH I: WESTERN ROMAN EMPIRE (Tag WRE)
+#=============================================================================
+
+decision = {
+	id = 7040
+	major = yes
+	unique = yes
+	potential = {
+		tag = PAP
+		flag = pap_north_united
+		NOT = { flag = pap_constitution_chosen }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 2
+		treasury = 250
+		NOT = { exists = WRE }
+	}
+	ai_trigger = {
+	}
+
+	name = "Renovatio Imperii Occidentalis: Odrodzenie Cesarstwa Zachodniego"
+	desc = "Senat i Lud Rzymski przemowily! Po tysiacu lat od upadku Romulusa Augustulusa, Cesarstwo Rzymskie na Zachodzie odradza sie ze stolica w Wiecznym Rzymie! Nowy Cesarz przywdziewa purpure, wskrzeszajac tradycje cezarow i powolujac imperialne legiony."
+
+	action = {
+		command = { type = setflag which = pap_constitution_chosen }
+		command = { type = setflag which = pap_path_empire }
+		command = { type = country which = WRE }
+		command = { type = capital which = 399 } #Roma
+		command = { type = treasury value = -250 }
+		command = { type = stability value = -1 }
+		command = { type = badboy value = 2 }
+		command = { type = trigger which = 3009120 } #Uklad z Bizancjum
+	}
+}
+
+decision = {
+	id = 7041
+	major = yes
+	unique = yes
+	potential = {
+		tag = WRE
+		flag = pap_path_empire
+		NOT = { flag = wre_italia_heart }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+	}
+	ai_trigger = {
+	}
+
+	name = "Italia, Serce Cesarstwa: Podporzadkowanie Poludnia"
+	desc = "Cesarstwo nie moze tolerowac obcych garnizonow w dawnych rzymskich prowincjach Kampanii, Apulii i Sycylii. Pod haslem 'Roma Aeterna' legiony ruszaja na poludnie, by polaczyc cala Italie pod cesarskim orlem."
+
+	action = {
+		command = { type = setflag which = wre_italia_heart }
+		command = { type = addcore_claim which = 393 } #Napoli
+		command = { type = addcore_claim which = 394 } #Apulia
+		command = { type = addcore_claim which = 395 } #Messina
+		command = { type = addcore_claim which = 396 } #Sicily
+		command = { type = addcore_claim which = 819 } #Malta
+		command = { type = relation which = NAP value = -300 }
+		command = { type = relation which = ARG value = -300 }
+		command = { type = relation which = SPA value = -300 }
+		command = { type = badboy value = 1 }
+	}
+}
+
+decision = {
+	id = 7042
+	major = yes
+	unique = yes
+	potential = {
+		tag = WRE
+		flag = wre_italia_heart
+		NOT = { flag = wre_africa_romana }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		OR = {
+			owned = { province = 395 data = -1 } #Messina
+			owned = { province = 396 data = -1 } #Sicily
+			owned = { province = 819 data = -1 } #Malta
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Africa Romana: Odrodzenie Kartaginy i Numidii"
+	desc = "Prowincja Afryka byla niegdys spichlerzem zachodniego Rzymu. Z portow Sycylii cesarska flota desantuje legiony na wybrzezach dawnej Kartaginy, Numidii i Trypolitanii, by przepedzic berberyjskich korsarzy i przywrocic rzymski lad."
+
+	action = {
+		command = { type = setflag which = wre_africa_romana }
+		command = { type = addcore_claim which = 739 } #Tunisia
+		command = { type = addcore_claim which = 740 } #Tripolitania
+		command = { type = addcore_claim which = 741 } #Cyrenica
+		command = { type = addcore_claim which = 737 } #Al-Djazair
+		command = { type = relation which = TUN value = -300 }
+		command = { type = relation which = TRI value = -300 }
+		command = { type = badboy value = 1 }
+	}
+}
+
+decision = {
+	id = 7043
+	major = yes
+	unique = yes
+	potential = {
+		tag = WRE
+		flag = wre_italia_heart
+		NOT = { flag = wre_hispania_claims }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		OR = {
+			owned = { province = 739 data = -1 } #Tunisia
+			owned = { province = 403 data = -1 } #Liguria
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Reconquista Hispaniae Romanae: Dawne Prowincje Iberii"
+	desc = "Od rzeki Ebro po Gibraltar dawne prowincje Baetica i Tarraconensis czekaja na powrot cesarskich legatow. Nowe Cesarstwo Zachodnie wysuwa roszczenia do poludniowych i wschodnich wybrzezy polwyspu."
+
+	action = {
+		command = { type = setflag which = wre_hispania_claims }
+		command = { type = addcore_claim which = 443 } #Andalusia
+		command = { type = addcore_claim which = 444 } #Granada
+		command = { type = addcore_claim which = 436 } #Valencia
+		command = { type = addcore_claim which = 437 } #Murcia
+		command = { type = addcore_claim which = 429 } #Catalonia
+		command = { type = relation which = CAS value = -250 }
+		command = { type = relation which = SPA value = -350 }
+		command = { type = relation which = ARG value = -250 }
+		command = { type = badboy value = 1 }
+	}
+}
+
+decision = {
+	id = 7044
+	major = yes
+	unique = yes
+	potential = {
+		tag = WRE
+		flag = wre_italia_heart
+		NOT = { flag = wre_gallia_claims }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		OR = {
+			owned = { province = 403 data = -1 } #Liguria
+			owned = { province = 404 data = -1 } #Piemonte
+			owned = { province = 429 data = -1 } #Catalonia
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Reconquista Galliae Romanae: Narbonensis i Prowansja"
+	desc = "Gallia Narbonensis, starozytna Provincia, stanowi niezbedny pomost ladowy miedzy Italia a Hispania. Marsylia, dolina Rodanu i Tuluza musza ponownie uznac autorytet rzymskiego senatu."
+
+	action = {
+		command = { type = setflag which = wre_gallia_claims }
+		command = { type = addcore_claim which = 406 } #Provence
+		command = { type = addcore_claim which = 407 } #Dauphine
+		command = { type = addcore_claim which = 421 } #Languedoc
+		command = { type = addcore_claim which = 422 } #Roussillon
+		command = { type = relation which = FRA value = -300 }
+		command = { type = relation which = PRO value = -250 }
+		command = { type = badboy value = 1 }
+	}
+}
+
+decision = {
+	id = 7045
+	major = yes
+	unique = yes
+	potential = {
+		tag = WRE
+		flag = pap_path_empire
+		NOT = { flag = wre_corpus_juris }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		treasury = 250
+	}
+	ai_trigger = {
+	}
+
+	name = "Corpus Iuris Civilis: Nowa Kodyfikacja Prawa Cesarskiego"
+	desc = "Fundamentem rzymskiej wielkosci bylo jednolite, sprawiedliwe prawo. Wznawiajac tradycje kodyfikacji Justyniana i dawnych pretorow, powolujemy cesarski trybunal i publikujemy odnowiony Kodeks Cywilny dla wszystkich prowincji."
+
+	action = {
+		command = { type = setflag which = wre_corpus_juris }
+		command = { type = treasury value = -250 }
+		command = { type = infra value = 500 }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = stability value = 1 }
+	}
+}
+
+decision = {
+	id = 7046
+	major = yes
+	unique = yes
+	potential = {
+		tag = WRE
+		flag = wre_corpus_juris
+		NOT = { flag = wre_romanitas_restored }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 2
+		treasury = 200
+		owned = { province = 399 data = -1 } #Roma
+	}
+	ai_trigger = {
+	}
+
+	name = "Lex de Civitate Romana: Odrodzenie Romanitas"
+	desc = "Przelomowy edykt obywatelski! Na wzor Edyktu Karakalli z 212 roku, cesarz oglasza odrodzenie kultury rzymskiej (Romanitas). Wszyscy wolni mieszkancy Wiecznego Miasta i kluczowych osrodkow cesarstwa staja sie Rzymianami, a kultury wloska, iberijska i francuska zyskuja pelna akceptacje w cesarstwie."
+
+	action = {
+		command = { type = setflag which = wre_romanitas_restored }
+		command = { type = add_countryculture which = roman }
+		command = { type = add_countryculture which = iberian }
+		command = { type = add_countryculture which = french }
+		command = { type = add_countryculture which = berber }
+		command = { type = provinceculture which = 399 value = roman } #Roma
+		command = { type = treasury value = -200 }
+		command = { type = stability value = 1 }
+	}
+}
+
+decision = {
+	id = 7047
+	major = yes
+	unique = yes
+	potential = {
+		tag = WRE
+		flag = wre_romanitas_restored
+		NOT = { flag = wre_pax_romana }
+	}
+	trigger = {
+		year = 1600
+		NOT = { year = 1838 }
+		atwar = no
+		isvassal = no
+		stability = 2
+		owned = { province = 399 data = -1 } #Roma
+		someof = {
+			number = 12
+			owned = { province = 389 data = -1 } #Lombardia
+			owned = { province = 391 data = -1 } #Romagna
+			owned = { province = 393 data = -1 } #Napoli
+			owned = { province = 395 data = -1 } #Messina
+			owned = { province = 401 data = -1 } #Firenze
+			owned = { province = 403 data = -1 } #Liguria
+			owned = { province = 406 data = -1 } #Provence
+			owned = { province = 421 data = -1 } #Languedoc
+			owned = { province = 429 data = -1 } #Catalonia
+			owned = { province = 436 data = -1 } #Valencia
+			owned = { province = 443 data = -1 } #Andalusia
+			owned = { province = 739 data = -1 } #Tunisia
+			owned = { province = 740 data = -1 } #Tripolitania
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Pax Romana Restaurata: Tryumf Cesarstwa Zachodniego"
+	desc = "Cztery filary dawnego imperium - Italia, Africa, Hispania i Gallia - stoja znow zjednoczone pod rzymskim orlem! Z zachodniego basenu Morza Srodziemnego uczynilismy wewnetrzne jezioro rzymskiego swiata (Mare Nostrum). W Wiecznym Miescie odbywa sie wielki cesarski triumf!"
+
+	action = {
+		command = { type = setflag which = wre_pax_romana }
+		command = { type = badboy value = -5 }
+		command = { type = infra value = 750 }
+		command = { type = trade value = 500 }
+		command = { type = treasury value = 1000 }
+		command = { type = vp value = 500 }
+		command = { type = provincetax which = 399 value = 3 } #Roma
+		command = { type = provincetax which = 739 value = 2 } #Tunis
+		command = { type = stability value = 1 }
+	}
+}
+
+decision = {
+	id = 7048
+	major = yes
+	unique = yes
+	potential = {
+		tag = WRE
+		flag = wre_pax_romana
+		NOT = { flag = wre_republic_restored }
+		year = 1775
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 2
+	}
+	ai_trigger = {
+	}
+
+	name = "Res Publica Restituta: Konsulowie Senatu i Ludu Rzymskiego (SPQR)"
+	desc = "Pod wplywem idei oswiecenia i pamieci o starozytnej cnocie obywatelskiej, obywatele i senatorowie obalaja dziedziczny absolutyzm cesarzy! Przywracamy Swieta Republike - Senatus Populusque Romanus. Wladze wykonawcza obejmuja wybieralni Konsulowie, a prawa gwarantuja wolnosc kazdemu rzymskiemu obywatelowi!"
+
+	action = {
+		command = { type = setflag which = wre_republic_restored }
+		command = { type = domestic which = ARISTOCRACY value = -2 }
+		command = { type = domestic which = SERFDOM value = -3 }
+		command = { type = domestic which = INNOVATIVE value = 2 }
+		command = { type = wakemonarch which = 39020 } #Consules Valerio & Cornelio
+		command = { type = stability value = 1 }
+		command = { type = vp value = 200 }
+	}
+}
+
+decision = {
+	id = 7049
+	major = yes
+	unique = yes
+	potential = {
+		tag = WRE
+		flag = wre_africa_romana
+		NOT = { flag = wre_sahara_expedition }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		treasury = 200
+		owned = { province = 740 data = -1 } #Tripolitania
+	}
+	ai_trigger = {
+	}
+
+	name = "Wyprawa Transsaharyjska: Odkrycie Oaz i Zlota Mali"
+	desc = "Z ufortyfikowanych baz w Trypolitanii i Fezzanie cesarstwo wysyla ekspedycje pod dowodztwem smialego konkwistadora Lucio Africano w glab niezbadanych piaskow Sahary. Celem sa legendarne kopalnie zlota krolestwa Mali i oaza Timbuktu."
+
+	action = {
+		command = { type = setflag which = wre_sahara_expedition }
+		command = { type = treasury value = -200 }
+		command = { type = wakeleader which = 39103 } #Lucio Africano
+		command = { type = discover which = 1597 } #Azaouad
+		command = { type = discover which = 1488 } #Walata
+		command = { type = discover which = 1495 } #Timbuktu
+		command = { type = discover which = 1490 } #Bambuk
+		command = { type = discover which = 1496 } #Gao
+		command = { type = trigger which = 3009130 } #Event wyprawy
+	}
+}

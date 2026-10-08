@@ -1,1 +1,323 @@
-# Alternate Destinies - Modular File
+# Papal States, Kingdom of Italy & Western Roman Empire (PAP / ITA / WRE)
+# Alternate Destinies Modular Events
+# ID Range: 3009100 - 3009160
+
+#-----------------------------------------------------------------------------
+# C07: The Sword and the Tiara (Crossroads)
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3009100
+	random = no
+	country = PAP
+
+	trigger = {
+		flag = pap_north_united
+		NOT = { flag = pap_constitution_chosen }
+		year = 1450
+		atwar = no
+		isvassal = no
+	}
+
+	name = "Miecz i Tiara: Los Zjednoczonej Italii"
+	desc = "Od Alp az po granice Neapolu polnocna i srodkowa Italia stoja zjednoczone pod opieka Rzymu. W bazylikach i palacach Wiecznego Miasta trwa goraca debata nad przyszlym losem panstwa. Czy Stolica Apostolska powinna pozostac wielka duchowa teokracja chroniaca wiare? Czy powolac swieckiego Krola Wloch, by scigac sie z mocarstwami na oceanach? A moze zglosic roszczenie do najwiekszego dziedzictwa historii - wskrzeszenia Cesarstwa Rzymskiego na Zachodzie?"
+	style = 1
+
+	date = { day = 1 month = january year = 1450 }
+	offset = 30
+	deathdate = { year = 1838 }
+
+	action_a = {
+		name = "Przyszlosc spoczywa w naszych rekach"
+		command = { type = stability value = 1 }
+		command = { type = vp value = 50 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Reaction Events: France to C01 Return to Rome
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3009102
+	random = no
+	country = FRA
+
+	name = "Papiez Powraca do Rzymu"
+	desc = "Stolica Apostolska oficjalnie przeniosla swoja rezydencje z Awinionu z powrotem do Wiecznego Miasta Rzymu. Wplyw korony francuskiej na kardynalow i Kurie zostal oslabiony, lecz papiez pragnie zachowac pokojowe stosunki z najstarsza corka Kosciola."
+	style = 1
+
+	action_a = {
+		name = "Przyjmijmy te decyzje z godnoscia"
+		command = { type = relation which = PAP value = -25 }
+		command = { type = vp value = 10 }
+	}
+	action_b = {
+		name = "Zaprotestujmy przeciw opuszczeniu Awinionu!"
+		command = { type = relation which = PAP value = -100 }
+		command = { type = casusbelli which = PAP value = 24 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Reaction Events: Holy Roman Emperor to C05 Iron Crown
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3009103
+	random = no
+	country = HAB
+
+	name = "Papiez i Zelazna Korona Longobardow"
+	desc = "Rzym oglasza swoje zwierzchnictwo nad polnocnymi Wlochami i wkracza do Lombardii. Prawa cesarzy rzymsko-niemieckich do krolestwa wloskiego stoja w obliczu bezposredniego wyzwania."
+	style = 1
+
+	action_a = {
+		name = "Negocjujmy kompromis z Rzymem"
+		command = { type = relation which = PAP value = -50 }
+		command = { type = diplomats value = 1 }
+	}
+	action_b = {
+		name = "Nigdy nie zrzekniemy sie praw cesarstwa!"
+		command = { type = relation which = PAP value = -200 }
+		command = { type = casusbelli which = PAP value = 36 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# K01 Follow-up: Choosing the Royal Dynasty of Italy
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3009110
+	random = no
+	country = ITA
+
+	name = "Wybor Dynastii Krolewskiej Zjednoczonych Wloch"
+	desc = "Krolestwo Wloch stalo sie faktem! Zgromadzeni w Rzymie przedstawiciele senatu, komun i arystokracji musza wybrac dom panujacy, ktory poprowadzi Italie ku potedze. Kto zalozy krolewska dynastie?"
+	style = 1
+
+	action_a = {
+		name = "Dom Medyceuszy z Florencji (Dyplomacja, Finanse, Renesans)"
+		command = { type = wakemonarch which = 12217 } #Giovanni di Medici
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = treasury value = 200 }
+		command = { type = setflag which = ita_dynasty_medici }
+	}
+	action_b = {
+		name = "Dom Sforzow z Mediolanu (Wojskowosc, Fortyfikacje, Dyscyplina)"
+		command = { type = wakemonarch which = 12153 } #Francesco I Sforza
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = setflag which = ita_dynasty_sforza }
+	}
+	action_c = {
+		name = "Dom Sabaudzki (Militarna Tradycja, Straznicy Alp)"
+		command = { type = wakemonarch which = 12165 } #Louis I of Savoy
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = setflag which = ita_dynasty_savoia }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# I01 Follow-up: Concordat of the Two Emperors (WRE & BYZ)
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3009120
+	random = no
+	country = WRE
+
+	name = "Uklad Dwoch Cesarzy: Rzym i Konstantynopol"
+	desc = "Odrodzenie Cesarstwa Rzymskiego na Zachodzie wywolalo wielkie poruszenie na dworze w Konstantynopolu. Zamiast bratobojczego sporu o jedynosc cesarskiego tytulu, obaj wladcy wysylaja poslow. Rzym panuje nad Zachodem, a Nowy Rzym nad Wschodem - tak jak za czasow Teodozjusza!"
+	style = 1
+
+	action_a = {
+		name = "Niechaj oba orly panuja w zgodzie!"
+		command = { type = relation which = BYZ value = 150 }
+		command = { type = alliance which = BYZ }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 50 }
+	}
+	action_b = {
+		name = "Tylko w Wiecznym Rzymie bije serce imperium!"
+		command = { type = relation which = BYZ value = -150 }
+		command = { type = casusbelli which = BYZ value = 24 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# I11 Follow-up: Trans-Saharan Expedition to Mali
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3009130
+	random = no
+	country = WRE
+
+	name = "Oaza Azaouad i Kraina Zlota"
+	desc = "Ekspedycja konkwistadora Lucio Africano po miesiacach morderczego marszu przez Sahare dotarla do legendarnej oazy Timbuktu i kopaln zlota krolestwa Mali. Pustynni wladcy stoja zdumieni widokiem rzymskich orlow wylaniajacych sie z burzy piaskowej!"
+	style = 1
+
+	action_a = {
+		name = "Narzuccie trybut w zlocie i protektorat handlowy!"
+		command = { type = treasury value = 500 }
+		command = { type = merchants value = 6 }
+		command = { type = relation which = MAL value = 50 }
+		command = { type = trade value = 300 }
+	}
+	action_b = {
+		name = "Zaadajcie bezposredniej aneksji kopaln Bambuk!"
+		command = { type = addcore_claim which = 1490 } #Bambuk
+		command = { type = addcore_claim which = 1495 } #Timbuktu
+		command = { type = relation which = MAL value = -300 }
+		command = { type = casusbelli which = MAL value = 36 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Conclave Events: Habemus Papam for Secular Paths (ITA / WRE)
+# Periodic events providing stability without changing secular monarch
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3009101
+	random = yes
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = WRE
+		}
+		owned = { province = 399 data = -1 } #Roma
+		NOT = { stability = 3 }
+	}
+
+	name = "Habemus Papam: Nowe Konklawe w Rzymie"
+	desc = "Kolegium Kardynalskie zebrane w Kaplicy Sykstynskiej oglosilo bialy dym! Nad Bazylika Swietego Piotra rozbrzmiewa uroczyste 'Habemus Papam'. Nowo wybrany Biskup Rzymu blogoslawi wladcy i ludowi, umacniajac pokoj i zgode spoleczna w panstwie."
+	style = 1
+
+	action_a = {
+		name = "Niech Bog blogoslawi Ojcu Swietemu!"
+		command = { type = stability value = 1 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Provincial 10-Year Integration Events (ownerchange = 10 -> addcore_national)
+# Ensures historical, organic assimilation of conquered Italian provinces
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3009141
+	random = no
+	trigger = {
+		OR = { tag = PAP tag = ITA tag = WRE }
+		owned = { province = 391 data = -1 } #Romagna
+		control = { province = 391 data = -1 }
+		ownerchange = { province = 391 years = 10 }
+		NOT = { core = { province = 391 data = -1 } }
+	}
+	name = "Integracja Prowincji: Romagna"
+	desc = "Po dekadzie nieprzerwanych i sprawiedliwych rzadow mieszkancy Romanii calkowicie zintegrowali sie z naszym panstwem. Prowincja staje sie nierozerwalna czescia naszej ojczyzny."
+	style = 1
+	date = { day = 1 month = january year = 1347 }
+	offset = 60
+	deathdate = { year = 1838 }
+	action_a = {
+		name = "Romagna jest nasza!"
+		command = { type = addcore_national which = 391 }
+		command = { type = provincetax which = 391 value = 1 }
+	}
+}
+
+event = {
+	id = 3009142
+	random = no
+	trigger = {
+		OR = { tag = PAP tag = ITA tag = WRE }
+		owned = { province = 392 data = -1 } #Marche
+		control = { province = 392 data = -1 }
+		ownerchange = { province = 392 years = 10 }
+		NOT = { core = { province = 392 data = -1 } }
+	}
+	name = "Integracja Prowincji: Marche"
+	desc = "Po dekadzie nieprzerwanych rzadow Marchia Ankonska zostaje na stale wlaczona jako rdzenne terytorium panstwa."
+	style = 1
+	date = { day = 1 month = january year = 1347 }
+	offset = 60
+	deathdate = { year = 1838 }
+	action_a = {
+		name = "Marche jest nasza!"
+		command = { type = addcore_national which = 392 }
+		command = { type = provincetax which = 392 value = 1 }
+	}
+}
+
+event = {
+	id = 3009143
+	random = no
+	trigger = {
+		OR = { tag = PAP tag = ITA tag = WRE }
+		owned = { province = 401 data = -1 } #Firenze
+		control = { province = 401 data = -1 }
+		ownerchange = { province = 401 years = 10 }
+		NOT = { core = { province = 401 data = -1 } }
+	}
+	name = "Integracja Prowincji: Firenze"
+	desc = "Kolebka renesansu - Florencja - po 10 latach stabilnego panowania uznaje nasza wladze za wlasna i prawowita."
+	style = 1
+	date = { day = 1 month = january year = 1347 }
+	offset = 60
+	deathdate = { year = 1838 }
+	action_a = {
+		name = "Florencja jest zjednoczona z nami!"
+		command = { type = addcore_national which = 401 }
+		command = { type = provincetax which = 401 value = 1 }
+	}
+}
+
+event = {
+	id = 3009144
+	random = no
+	trigger = {
+		OR = { tag = PAP tag = ITA tag = WRE }
+		owned = { province = 389 data = -1 } #Lombardia
+		control = { province = 389 data = -1 }
+		ownerchange = { province = 389 years = 10 }
+		NOT = { core = { province = 389 data = -1 } }
+	}
+	name = "Integracja Prowincji: Lombardia"
+	desc = "Mediolan i zyzne rowniny Lombardii po 10 latach rzadow staja sie filarem naszego zjednoczonego panstwa."
+	style = 1
+	date = { day = 1 month = january year = 1347 }
+	offset = 60
+	deathdate = { year = 1838 }
+	action_a = {
+		name = "Lombardia stanowi czesc naszego rdzenia!"
+		command = { type = addcore_national which = 389 }
+		command = { type = provincetax which = 389 value = 1 }
+	}
+}
+
+event = {
+	id = 3009145
+	random = no
+	trigger = {
+		OR = { tag = PAP tag = ITA tag = WRE }
+		owned = { province = 393 data = -1 } #Napoli
+		control = { province = 393 data = -1 }
+		ownerchange = { province = 393 years = 10 }
+		NOT = { core = { province = 393 data = -1 } }
+	}
+	name = "Integracja Prowincji: Napoli"
+	desc = "Neapol i ziemie poludniowej Italii po 10 latach spokojnego wladania zostaja calkowicie zintegrowane jako rdzen narodowy."
+	style = 1
+	date = { day = 1 month = january year = 1347 }
+	offset = 60
+	deathdate = { year = 1838 }
+	action_a = {
+		name = "Neapol powraca do jednosci!"
+		command = { type = addcore_national which = 393 }
+		command = { type = provincetax which = 393 value = 1 }
+	}
+}
