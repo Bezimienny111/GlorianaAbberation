@@ -25,7 +25,7 @@ decision = {
 		control = { province = 744 data = -1 }
 		control = { province = 745 data = -1 }
 		control = { province = 746 data = -1 }
-		year = 1345
+		# year = 1345 # Unrestricted pacing
 	}
 
 	cost = 100
@@ -118,6 +118,7 @@ decision = {
 		command = { type = sleepmonarch which = 12012 }
 		command = { type = wakemonarch which = 39201 }
 		command = { type = setflag which = egy_ptolemaic value = 1 }
+		command = { type = trigger which = 3009215 } # EGY: Pax Orientalis czy Wojna o Lewant
 	}
 }
 
@@ -178,33 +179,42 @@ decision = {
 decision = {
 	id = 7055
 	name = "Pradawny Kanal Faraonow"
-	desc = "Jeszcze przed wiekami Faraon Necho i perski krol Dariusz wybudowali kanal laczacy odnoge Nilu z Morzem Czerwonym. Zmobilizowanie inzynierow i tysiecy robotnikow do oczyszczenia i poszerzenia dawnego szlaku pozwoli egyptskim galerom przeplywac prosto ze Srodziemnomorza na Ocean Indyjski bez oplywania Afryki."
+	desc = "Jeszcze przed wiekami Faraon Necho i perski krol Dariusz wybudowali kanal laczacy odnoge Nilu z Morzem Czerwonym. Zmobilizowanie inzynierow i tysiecy robotnikow do oczyszczenia i poszerzenia dawnego szlaku pozwoli egipskim okretom przeplywac prosto ze Srodziemnomorza na Ocean Indyjski bez oplywania Afryki."
 
 	trigger = {
 		tag = EGY
 		owned = { province = 745 data = -1 } # Delta
-		owned = { province = 746 data = -1 } # Egypt
+		owned = { province = 746 data = -1 } # Egypt / Cairo
+		owned = { province = 747 data = -1 } # Nile / Red Sea
 		owned = { province = 494 data = -1 } # Sinai
 		control = { province = 745 data = -1 }
 		control = { province = 746 data = -1 }
+		control = { province = 747 data = -1 }
 		control = { province = 494 data = -1 }
+		treasury = 800
 		atwar = no
 	}
 
-	cost = 400
-	treasury = 400
+	cost = 800
+	treasury = 800
 
 	action = {
-		name = "Przekop szlak ku Morzu Czerwonemu"
-		command = { type = treasury value = -400 }
-		command = { type = cot which = 745 value = yes }
-		command = { type = trade value = 800 }
-		command = { type = infra value = 500 }
-		command = { type = inflation value = 2 }
-		command = { type = discover which = 1059 } # Red Sea North
-		command = { type = discover which = 1060 } # Red Sea South
+		name = "Przekop szlak ku Morzu Czerwonemu i zbuduj Czerwona Flote"
+		command = { type = treasury value = -800 }
+		command = { type = cot which = 745 value = yes } # Centrum Handlu w Delcie
+		command = { type = provincetax which = 745 value = 4 } # Delta metropolia
+		command = { type = shipyard which = 747 } # Stocznia nad Morzem Czerwonym w Nile
+		command = { type = warships which = 747 value = 10 } # Czerwona Eskadra
+		command = { type = trade value = 1000 }
+		command = { type = infra value = 600 }
+		command = { type = inflation value = 1 }
+		command = { type = discover which = 1059 } # Morze Czerwone Polnoc
+		command = { type = discover which = 1060 } # Morze Czerwone Poludnie
 		command = { type = discover which = 1061 } # Bab el-Mandeb
-		command = { type = vp value = 150 }
+		command = { type = discover which = 1062 } # Zatoka Adenska
+		command = { type = discover which = 1063 } # Morze Arabskie
+		command = { type = discover which = 1064 } # Szlak ku Indiom
+		command = { type = vp value = 200 }
 	}
 }
 
@@ -287,7 +297,7 @@ decision = {
 		domestic = { which = innovative value = 5 }
 		stability = 2
 		atwar = no
-		year = 1370
+		# year = 1370 # Unrestricted pacing
 	}
 
 	cost = 300

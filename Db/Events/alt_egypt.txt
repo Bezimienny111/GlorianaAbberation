@@ -108,19 +108,24 @@ event = {
 	id = 3009220
 	random = no
 	name = "Powszechny Dzihad przeciwko Faraonowi Apostacie"
-	desc = "Wiadomosc o wskrzeszeniu poganskiego kultu Amona i ogloszeniu Faraona Synem Ra wstrzasnela calym swiatem islamskim. Z Damaszku, Bagdadu i stolicy Osmanow poplynely wezwania do swietej wojny w celu zglizenia bezboznego wladcy na tronie w Memfis!"
+	desc = "Wiadomosc o wskrzeszeniu poganskiego kultu Amona i ogloszeniu Faraona Synem Ra wstrzasnela calym swiatem islamskim. Z Damaszku, Bagdadu, Stambulu i Kairu plyna wezwania do swietej wojny przeciw bezboznemu wladcy w Memfis! Sasiednie emiraty i su?tanaty oglaszaja swiety obowiazek obalenia Kemetu."
+	style = 1
 
 	action_a = {
-		name = "Niech bogowie Nilu zmiota najeźdźcow!"
-		command = { type = land_morale value = 0.20 }
-		command = { type = relation which = TUR value = -300 }
-		command = { type = relation which = ABB value = -300 }
-		command = { type = relation which = MOR value = -200 }
-		command = { type = relation which = TUN value = -200 }
-		command = { type = casusbelli which = TUR }
-		command = { type = casusbelli which = ABB }
-		command = { type = stability value = -1 }
-		command = { type = vp value = 50 }
+		name = "Niech bogowie Nilu zmiota najezdzcow!"
+		command = { type = landmorale which = 120 value = 2 } # Fanatyzm obroncow Nilu
+		command = { type = INF which = 746 value = 12000 } # Gwardia Faraona
+		command = { type = domestic which = OFFENSIVE value = 2 }
+		command = { trigger = { exists = TUR } type = relation which = TUR value = -400 }
+		command = { trigger = { exists = TUR } type = casusbelli which = TUR value = 60 }
+		command = { trigger = { exists = PER } type = relation which = PER value = -400 }
+		command = { trigger = { exists = PER } type = casusbelli which = PER value = 60 }
+		command = { trigger = { exists = HED } type = relation which = HED value = -400 }
+		command = { trigger = { exists = HED } type = casusbelli which = HED value = 60 }
+		command = { trigger = { exists = TUN } type = relation which = TUN value = -300 }
+		command = { trigger = { exists = MOR } type = relation which = MOR value = -300 }
+		command = { type = stability value = -2 }
+		command = { type = vp value = 100 }
 	}
 }
 
@@ -348,5 +353,183 @@ event = {
 		name = "Kreta jest nieodlaczna twierdza morska"
 		command = { type = addcore_national which = 480 }
 		command = { type = stability value = 1 }
+	}
+}
+
+#=============================================================================
+# PTOLEMAIC & NILE DIPLOMATIC AND FLAVOR EVENTS
+# ID Range: 3009215 - 3009235
+#=============================================================================
+
+#-----------------------------------------------------------------------------
+# Event 3009215: EGY - Pax Orientalis czy Wojna o Lewant?
+# Triggered by Decision 7052 (Koronacja w Aleksandrii)
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009215
+	random = no
+	country = EGY
+
+	name = "Ptolemaios i Basileus: Pax Orientalis czy Wojna o Lewant?"
+	desc = "Odrodzenie grecko-egipskiego Krolestwa Ptolemeuszy w Aleksandrii stawia nas przed wielkim wyborem strategicznym wobec Cesarstwa Bizantyjskiego w Konstantynopolu. Czy powinnismy zawrzec wieczysty sojusz dwoch greckich mocarstw (Pax Orientalis) i podzielic strefy wplywow w Lewancie, czy tez rywalizowac o panowanie nad Morzem Egejskim, Cyprem i Lewantem?"
+	style = 1
+
+	action_a = {
+		name = "Pax Orientalis: Sojusz i braterski podzial Lewantu!"
+		ai_chance = 70
+		command = { type = alliance which = BYZ }
+		command = { type = relation which = BYZ value = 150 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 50 }
+		command = { type = trigger which = 3009026 } #BYZ: Reakcja na Pax Orientalis
+	}
+	action_b = {
+		name = "Morze Lewantynskie nalezy wylacznie do Aleksandrii!"
+		ai_chance = 30
+		command = { type = relation which = BYZ value = -150 }
+		command = { type = casusbelli which = BYZ value = 60 }
+		command = { type = addcore_claim which = 484 } #Cypr
+		command = { type = addcore_claim which = 480 } #Kreta
+		command = { type = addcore_claim which = 481 } #Rhodos
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009230: EGY - Wylewy Nilu: Blogoslawienstwo Hapi
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009230
+	random = no
+	country = EGY
+
+	name = "Wylewy Nilu: Blogoslawienstwo Hapi"
+	desc = "Tegoroczny przybor wod Nilu osiagnal idealny poziom szesnastu lokci na nilometrze w Roda! Czarna, zyzna ziemia Kemetu przyniosla plony stulecia. Spichlerze Aleksandrii i Kairu pekaja w szwach, a wdzieczny lud wielbi rzady wladcy."
+	style = 1
+
+	date = { day = 1 month = august year = 1420 }
+	offset = 120
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Wypelnijmy spichlerze i podziekujmy za dar rzeki!"
+		command = { type = treasury value = 250 }
+		command = { type = provincetax which = 745 value = 1 } #Delta
+		command = { type = provincetax which = 747 value = 1 } #Nile
+		command = { type = stability value = 1 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009231: EGY - Tajemnice Doliny Krolow: Odkrycie Grobowcow
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009231
+	random = no
+	country = EGY
+
+	name = "Tajemnice Doliny Krolow: Odkrycie Grobowcow"
+	desc = "Podczas prac irygacyjnych i wykopalisk w skalach Teb robotnicy natrafili na zapieczetowane wejscie do nienaruszonego grobowca starozytnej dynastii! Wewnatrz odnaleziono zlocone sarkofagi, bezcenne papirusy i skarby sprzed tysiecy lat."
+	style = 1
+
+	date = { day = 1 month = january year = 1460 }
+	offset = 180
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Przekaz zloto do skarbca na rozbudowe panstwa"
+		ai_chance = 50
+		command = { type = treasury value = 400 }
+		command = { type = infra value = 150 }
+	}
+	action_b = {
+		name = "Zachowaj grobowiec jako swiete sanktuarium nauki i tradycji"
+		ai_chance = 50
+		command = { type = domestic which = INNOVATIVE value = 1 }
+		command = { type = badboy value = -2 }
+		command = { type = vp value = 50 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009232: EGY - Wyprawa do Mitycznej Krainy Punt
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009232
+	random = no
+	country = EGY
+
+	trigger = {
+		owned = { province = 747 data = -1 } #Nile / Port nad Morzem Czerwonym
+		flag = egy_canal_built
+	}
+
+	name = "Wyprawa do Mitycznej Krainy Punt"
+	desc = "Wzorem krolowej Hatszepsut, nasi zeglarze z Morza Czerwonego wyruszyli na poludnie wzdluz wybrzezy Afryki Wschodniej. Eskadra powrocila obciazona mirra, kadzidlem, koscmi sloniowymi i zlotem z legendarnej Krainy Punt, otwierajac bogaty szlak handlowy."
+	style = 1
+
+	date = { day = 1 month = january year = 1480 }
+	offset = 200
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Szlak kadzidlany nalezy do Egiptu!"
+		command = { type = merchants value = 6 }
+		command = { type = trade value = 300 }
+		command = { type = treasury value = 200 }
+		command = { type = discover which = 757 } #Somalia
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009233: EGY - Kleopatra VIII Philopator na Tronie Nilu
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009233
+	random = no
+	country = EGY
+
+	trigger = {
+		flag = egy_ptolemaic
+	}
+
+	name = "Kleopatra VIII Philopator na Tronie Nilu"
+	desc = "Na tronie w Aleksandrii zasiadla mloda, niezwykle utalentowana krolowa - Kleopatra VIII Philopator. Wladajaca kilkunastoma jezykami, biegle obeznana z dyplomacja i strategia morska, staje sie natchnieniem poetow i postrachem rywali w calym basenie Morza Srodziemnego."
+	style = 1
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1520 }
+
+	action_a = {
+		name = "Niech zyje Krolowa Nilu!"
+		command = { type = wakemonarch which = 39202 } #Kleopatra VIII Philopator
+		command = { type = stability value = 1 }
+		command = { type = dip which = 120 value = 2 }
+		command = { type = vp value = 50 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009234: EGY - Bunt Mameluckich Emiratow w Gornym Egipcie
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009234
+	random = no
+	country = EGY
+
+	name = "Bunt Mameluckich Emiratow w Gornym Egipcie"
+	desc = "Ostatnie niedobitki dawnych emirow mameluckich, wygnanych z Kairu, zgromadzily buntownicze oddzialy w Asuanie i Gornym Egipcie. Usiluja wzniecic rebelie fellahow, by odzyskac swe utracone przywileje feudalne."
+	style = 1
+
+	date = { day = 1 month = january year = 1380 }
+	offset = 90
+	deathdate = { day = 30 month = december year = 1450 }
+
+	action_a = {
+		name = "Zgniesc zdrajcow bez litosci!"
+		command = { type = revolt which = 747 } #Nile
+		command = { type = stability value = -1 }
+		command = { type = treasury value = 150 } #Skonfiskowane skarby emirow
 	}
 }

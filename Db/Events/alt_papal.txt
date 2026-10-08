@@ -1408,3 +1408,136 @@ event = {
 		command = { type = trade value = 150 }
 	}
 }
+
+#=============================================================================
+# NICCOLO MACHIAVELLI (1469 - 1527) - THE FLORENTINE CHANCELLOR
+# Authentic historical presence adapted for each of the three Italian destinies.
+# ID Range: 3009185 - 3009187
+#=============================================================================
+
+#-----------------------------------------------------------------------------
+# Event 3009185: PAP - Niccolo Machiavelli: Wrog Tiary czy Sekretarz Kurii?
+# Trigger: PAP controls Florence (401), 1513-1527
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009185
+	random = no
+	country = PAP
+
+	trigger = {
+		owned = { province = 401 data = -1 } # Firenze
+		NOT = { flag = machiavelli_handled }
+	}
+
+	name = "Niccolo Machiavelli: Wrog Tiary czy Sekretarz Kurii?"
+	desc = "Florencki dyplomata Niccolo Machiavelli w swoich pismach bezlitosnie krytykowal doczesna wladze papiezy, twierdzac, ze Stolica Apostolska podzielila Italie i zniszczyla rzymska cnote obywatelska. Widzac jednak potege zjednoczonego panstwa papieskiego i bezwzgledna determinacje Kurii, florencki sekretarz staje przed obliczem Papieza. Niektorzy kardynalowie zadaja wtracenia go do lochu jako heretyka, inni zas chca wykorzysac jego genialny, chlodny zmysl polityczny."
+	style = 1
+
+	date = { day = 1 month = january year = 1513 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1527 }
+
+	action_a = {
+		name = "Zatrudnij go jako doradce dyplomatycznego Stolicy Apostolskiej"
+		ai_chance = 50
+		command = { type = setflag which = machiavelli_handled }
+		command = { type = dip which = 60 value = 2 }
+		command = { type = badboy value = -2 }
+		command = { type = infra value = 150 }
+		command = { type = relation which = FRA value = -25 }
+	}
+	action_b = {
+		name = "Uwiez bezboznika i potep jego dziela jako heretyckie!"
+		ai_chance = 50
+		command = { type = setflag which = machiavelli_handled }
+		command = { type = stability value = 1 }
+		command = { type = domestic which = INNOVATIVE value = -1 }
+		command = { type = relation which = SPA value = 50 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009186: ITA - Niccolo Machiavelli i Wezwanie do Wyzwolenia Italii
+# Trigger: ITA controls Florence (401), 1513-1527
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009186
+	random = no
+	country = ITA
+
+	trigger = {
+		owned = { province = 401 data = -1 } # Firenze
+		NOT = { flag = machiavelli_handled }
+	}
+
+	name = "Niccolo Machiavelli i Wezwanie do Wyzwolenia Italii"
+	desc = "Rozdzial 26 'Ksiecia' stal sie zywa rzeczywistoscia! Niccolo Machiavelli przybywa na dwor Krola Wloch, skladajac hold wladcy, ktory wyzwolil Italie z rak cudzoziemskich barbarzyncow. Przynosi ze soba traktat 'O sztuce wojennej' i proponuje natychmiastowe zerwanie z zawodnymi najemnikami na rzecz stworzenia narodowej, zdyscyplinowanej milicji obywatelskiej, zdolnej obronic caly polwysep."
+	style = 1
+
+	date = { day = 1 month = january year = 1513 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1527 }
+
+	action_a = {
+		name = "Mianuj Machiavellego Wielkim Kanclerzem i utworz Milicje Narodowa!"
+		ai_chance = 80
+		command = { type = setflag which = machiavelli_handled }
+		command = { type = domestic which = QUALITY value = 1 }
+		command = { type = domestic which = LAND value = 1 }
+		command = { type = domestic which = ARISTOCRACY value = -1 }
+		command = { type = landmorale which = 60 value = 1 }
+		command = { type = land value = 300 }
+		command = { type = INF which = 401 value = 8000 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 100 }
+	}
+	action_b = {
+		name = "Wykorzystaj jego geniusz wylacznie w dyplomacji zagranicznej"
+		ai_chance = 20
+		command = { type = setflag which = machiavelli_handled }
+		command = { type = dip which = 60 value = 3 }
+		command = { type = badboy value = -3 }
+		command = { type = trade value = 200 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009187: WRE - Niccolo Machiavelli i Odrodzenie Cnoty Rzymskiej (Virtu)
+# Trigger: WRE controls Florence (401), 1513-1527
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009187
+	random = no
+	country = WRE
+
+	trigger = {
+		owned = { province = 401 data = -1 } # Firenze
+		NOT = { flag = machiavelli_handled }
+	}
+
+	name = "Niccolo Machiavelli i Odrodzenie Cnoty Rzymskiej (Virtu)"
+	desc = "Niccolo Machiavelli, autor 'Rozwazan nad pierwszymi dziesiecioma ksiegami Tytusa Liwiusza', z zachwytem patrzy na odrodzone Imperium Romanum. Widzac wskrzeszona rzymska potegie, ofiarowuje swoj talent Senatowi i Cesarzowi, doradzajac jak polaczyc bezwzgledny realizm polityczny ze starozytna cnota obywatelska i dyscyplina rzymskich legionow."
+	style = 1
+
+	date = { day = 1 month = january year = 1513 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1527 }
+
+	action_a = {
+		name = "Wprowadz reformy Machiavellego w duchu starozytnego Rzymu!"
+		ai_chance = 80
+		command = { type = setflag which = machiavelli_handled }
+		command = { type = domestic which = CENTRALIZATION value = 1 }
+		command = { type = domestic which = OFFENSIVE value = 1 }
+		command = { type = landmorale which = 60 value = 1 }
+		command = { type = infra value = 250 }
+		command = { type = vp value = 100 }
+	}
+	action_b = {
+		name = "Docen jego pisma, lecz zachowaj tradycyjny porzadek"
+		ai_chance = 20
+		command = { type = setflag which = machiavelli_handled }
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 100 }
+	}
+}

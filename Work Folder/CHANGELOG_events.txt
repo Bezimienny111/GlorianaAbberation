@@ -228,6 +228,15 @@ global shared event/decision ID space, monarch space, and leader space:
      * Diplomatic Consul (Princeps Senatus): DIP bonus, badboy reduction, diplomats, relations (ai_chance = 35).
      * Administrative Consul (Praetor Aerarii): ADM bonus, tax income, infrastructure, trade (ai_chance = 30).
 
+6. Niccolo Machiavelli Renaissance Integration (Events 3009185-3009187):
+   - Historical presence (1469-1527) adapted across all 3 Italian destinies:
+     * PAP (3009185): "Wrog Tiary czy Sekretarz Kurii?" - choice between Machiavellian diplomatic 
+       advisor (+2 DIP, -2 badboy) vs Inquisitorial condemnation (imprisonment in Castel Sant'Angelo).
+     * ITA (3009186): "Wezwanie do Wyzwolenia Italii" (Prince Ch. 26 fulfillment) - appointed Grand 
+       Chancellor, executes "Dell'arte della guerra" national militia reform (+1 army morale, +8000 INF).
+     * WRE/SPQR (3009187): "Odrodzenie Cnoty Rzymskiej (Virtu)" - Discorsi implementation for the 
+       Senate (+1 centralization, +1 offensive, +1 army morale, +250 infra).
+
 ================================================================================
 5. MODULE 3: MAMELUKS & PTOLEMAIC EGYPT (MAM / EGY)
 ================================================================================
@@ -269,6 +278,31 @@ global shared event/decision ID space, monarch space, and leader space:
    - Db/Leaders/leaders_egy.txt: 9 Egyptian generals, admirals, and explorers (39251-39259).
    - Db/cultures.txt & Work Folder/Alt_Patches/cultures_patch.txt: Added coptic culture definition.
 
+
+
+[2026-10-08] Expansion Phase 2 (Pax Orientalis, Red Sea Suez, Pan-Islamic Jihad & Nile Flavor):
+1. Unrestricted Nile Pacing (Decisions 7050, 7060):
+   - Removed artificial year locks (year = 1345, 1370) allowing immediate player reform upon 
+     satisfying citadel and territorial requirements.
+2. The Canal of the Pharaohs Overhaul (Decision 7055):
+   - Increased strategic investment cost to 800 ducats (treasury = 800, cost = 800).
+   - Establishes a major naval shipyard on the Red Sea side in Province 747 (Nile/Quseir).
+   - Grants the Red Sea naval squadron (10 warships), +4 tax in Delta, opens Indian Ocean sea routes.
+3. Ptolemaic-Byzantine Diplomacy (Event 3009215 & BYZ Reaction 3009026):
+   - Triggered upon coronation in Alexandria (Decision 7052):
+     * Action A: Pax Orientalis (Greek fraternity alliance & Levant sphere division) -> ai_chance = 70.
+     * Action B: War for the Levantine Sea (rivalry over Cyprus, Crete, Rhodes) -> ai_chance = 30.
+   - Connected to Byzantine response event 3009026 in Constantinople.
+4. Pan-Islamic Jihad & Sovereign Existence Checks (Event 3009220):
+   - Overhauled with strict engine condition checks (exists = TUR, PER, HED, TUN, MOR).
+   - Neighbors receive formal Holy War casus belli and -400 relations against Kemet apostasy.
+   - Grants Kemet Pharaonic fanatical guard (12,000 INF) and +2 army morale.
+5. Authentic Nile Flavor Events (Events 3009230-3009234):
+   - 3009230: Inundation of the Nile: Blessing of Hapi (grain bounty, +250 treasury, +tax).
+   - 3009231: Secrets of the Valley of the Kings (pharaonic gold vs sacred museum sanctuary).
+   - 3009232: Expedition to the Mythical Land of Punt (Red Sea incense and gold trade).
+   - 3009233: Cleopatra VIII Philopator on the Throne of the Nile (wakes monarch 39202).
+   - 3009234: Revolt of the Mamluk Emirs in Upper Egypt (crushing feudal reaction).
 
 ================================================================================
 6. MODULE 4: HANSEATIC LEAGUE (HSA)

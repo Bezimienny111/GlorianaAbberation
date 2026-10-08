@@ -471,3 +471,33 @@ event = {
 		command = { type = addcore_claim which = 399 } # Claim on Rome
 	}
 }
+
+#-----------------------------------------------------------------------------
+# Event 3009026: BYZ - The Ambassadors of Ptolemaic Egypt (Pax Orientalis)
+# Triggered by EGY Event 3009215
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009026
+	random = no
+	country = BYZ
+
+	name = "Poselstwo z Aleksandrii: Pax Orientalis"
+	desc = "Do Konstantynopola przybyli wspaniali poslowie z odrodzonego Krolestwa Ptolemeuszy w Egipcie. Jako wladcy mowiacy jezykiem Homera i dzielacy helenistyczne dziedzictwo, proponuja wieczysty sojusz (Pax Orientalis) i pokojowy podzial stref wplywow w Lewancie."
+	style = 1
+
+	action_a = {
+		name = "Przyjmijmy sojusz ze wspolbrazmi z Aleksandrii! (Pax Orientalis)"
+		ai_chance = 70
+		command = { type = relation which = EGY value = 150 }
+		command = { type = alliance which = EGY }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 50 }
+	}
+	action_b = {
+		name = "Aleksandria i Egipt to odwieczne prowincje Cesarstwa Rzymskiego!"
+		ai_chance = 30
+		command = { type = relation which = EGY value = -150 }
+		command = { type = casusbelli which = EGY value = 60 }
+		command = { type = addcore_claim which = 744 } #Alexandria
+	}
+}
