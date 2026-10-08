@@ -1,1 +1,303 @@
-# Alternate Destinies - Modular File
+#################################################################
+## Gloriana 1337 - Alternate Destinies                         ##
+## Module 5: Pre-Columbian Americas (AZT / INC)                ##
+## Decisions File: alt_americas.txt                            ##
+## ID Range: 7200 - 7249                                       ##
+#################################################################
+
+#----------------------------------------------------------------
+# Aztec Empire / Mexica (Tag: AZT)
+#----------------------------------------------------------------
+
+# 7200: Legal Code of Texcoco (Philosophy of Nezahualcoyotl)
+decision = {
+	id = 7200
+	name = "Kodeks Prawny z Texcoco: Nauki Nezahualcoyotla"
+	desc = "Pod wplywem poety i filozofa Nezahualcoyotla z Texcoco, Mexikowie odrzucaja krwawy terror masowych ofiar z jencow i paranoje Wojen Kwietnych. Przejscie ku kultowi boga madrosci i stworzenia Quetzalcoatla oraz filozofii kosmicznej harmonii Ometeotl jednoczy ludy Doliny Meksyku i przeksztalca brutalna teokracje w oswiecone cesarstwo."
+
+	trigger = {
+		tag = AZT
+		atwar = no
+		stability = 2
+		owned = { province = 27 data = -1 } # Tenochtitlan
+		control = { province = 27 data = -1 }
+		domestic = { which = innovative value = 4 }
+	}
+
+	cost = 200
+	treasury = 200
+
+	action = {
+		name = "Wprowadz reforme madrosci Quetzalcoatla"
+		command = { type = treasury value = -200 }
+		command = { type = religion which = nahua_reformed }
+		command = { type = domestic which = innovative value = 3 }
+		command = { type = domestic which = centralization value = 2 }
+		command = { type = stability value = 1 }
+		command = { type = infra value = 500 }
+		command = { type = setflag which = azt_reformed_faith value = 1 }
+		command = { type = vp value = 75 }
+	}
+}
+
+# 7201: The Eternal League of Cemanahuac
+decision = {
+	id = 7201
+	name = "Wieczna Liga Cemanahuac: Pojednanie z Sasiadami"
+	desc = "Koniec krwawych wojen pozwala na zawarcie trwalej konfederacji miedzy Mexikami, Tlaxcala, Taraskanami i Zapotekami. Uznanie praw i tradycji sasiadow wlacza ich elity do wspolnej armii i rzadu, uniemozliwiajac obcym najezdzcom znalezienie jakichkolwiek indiańskich sojusznikow."
+
+	trigger = {
+		tag = AZT
+		hasflag = { which = azt_reformed_faith value = 1 }
+		atwar = no
+		stability = 2
+	}
+
+	cost = 250
+	treasury = 250
+
+	action = {
+		name = "Proklamuj Wieczna Lige Cemanahuac"
+		command = { type = treasury value = -250 }
+		command = { type = add_countryculture which = tarascan }
+		command = { type = add_countryculture which = zapotec }
+		command = { type = stability value = 2 }
+		command = { type = addcore_national which = 26 } # Michoacan
+		command = { type = addcore_national which = 28 } # Zacatecas
+		command = { type = addcore_national which = 31 } # Oaxaca
+		command = { type = setflag which = azt_league_formed value = 1 }
+		command = { type = vp value = 100 }
+	}
+}
+
+# 7202: The Iron Mexica Empire: Adaptation of Fire and Steel
+decision = {
+	id = 7202
+	name = "Zelazne Imperium Mexikow: Mistrzowie Ognia i Stali"
+	desc = "Dzieki pojmanym hiszpanskim rusznikarzom, kowalom i koniom bojowym, mezoamerykanscy rzemieslnicy opanowali hutnictwo zelaza i produkcje czarnego prochu. Rycerze Orla i Jaguara dosiadaja koni bojowych, a elitarne bataliony arkebuzerow Mexica staja sie postrachem konkwistadorow."
+
+	trigger = {
+		tag = AZT
+		hasflag = { which = azt_captured_technology value = 1 }
+		atwar = no
+		stability = 1
+	}
+
+	cost = 300
+	treasury = 300
+
+	action = {
+		name = "Przekuj obsydian w zelazo i proch!"
+		command = { type = treasury value = -300 }
+		command = { type = techgroup which = orthodox }
+		command = { type = domestic which = quality value = 2 }
+		command = { type = domestic which = offensive value = 1 }
+		command = { type = land value = 800 }
+		command = { type = CAV which = 27 value = 5000 } # Cavalry in Tenochtitlan
+		command = { type = INF which = 27 value = 10000 }
+		command = { type = setflag which = azt_iron_empire value = 1 }
+		command = { type = vp value = 150 }
+	}
+}
+
+# 7203: Veracruz Arsenals and High Seas Fleet
+decision = {
+	id = 7203
+	name = "Arsenaly w Veracruz i Pelnomorska Flota"
+	desc = "Budowa pelnomorskich karaweli i galeonow w Veracruz przelamuje hiszpanski monopol na Morzu Karaibskim. Wyplywajac z Zatoki Meksykanskiej, wyzwalajmy wyspy z rak najezdzcow i zabezpieczamy wybrzeza Ameryki Srodkowej."
+
+	trigger = {
+		tag = AZT
+		hasflag = { which = azt_iron_empire value = 1 }
+		owned = { province = 34 data = -1 } # Veracruz
+		control = { province = 34 data = -1 }
+		atwar = no
+	}
+
+	cost = 300
+	treasury = 300
+
+	action = {
+		name = "Wyprowadz floty na Morze Karaibskie"
+		command = { type = treasury value = -300 }
+		command = { type = shipyard which = 34 value = yes }
+		command = { type = naval value = 600 }
+		command = { type = addcore_claim which = 138 } # Havana / Cuba
+		command = { type = addcore_claim which = 140 } # Jamaica
+		command = { type = addcore_claim which = 141 } # Hispaniola
+		command = { type = setflag which = azt_caribbean_claims value = 1 }
+		command = { type = vp value = 100 }
+	}
+}
+
+# 7204: Grand Chinampas and Aqueducts of Tenochtitlan
+decision = {
+	id = 7204
+	name = "Wielkie Groble i Akwedukty Tenochtitlan"
+	desc = "Monumentalna rozbudowa systemu plywajacych ogrodow (chinampas), grobli przeciwpowodziowych oraz kamiennych akweduktow z Chapultepec zapewnia milionowej metropolii staly dostep do krystalicznej wody i nieprzebrane zbiory kukurydzy."
+
+	trigger = {
+		tag = AZT
+		owned = { province = 27 data = -1 } # Tenochtitlan
+		control = { province = 27 data = -1 }
+		atwar = no
+	}
+
+	cost = 200
+	treasury = 200
+
+	action = {
+		name = "Rozbuduj wodna metropolie Mexikow"
+		command = { type = treasury value = -200 }
+		command = { type = population which = 27 value = 12000 }
+		command = { type = tax_modifier which = 27 value = 4 }
+		command = { type = infra value = 400 }
+		command = { type = vp value = 50 }
+	}
+}
+
+#----------------------------------------------------------------
+# Inca Empire / Tawantinsuyu (Tag: INC)
+#----------------------------------------------------------------
+
+# 7210: The Royal Road of Qhapaq Ñan
+decision = {
+	id = 7210
+	name = "Krolewski Szlak Qhapaq Nan"
+	desc = "Siec kamiennych drog andyjskich i linowych mostow wiszacych nad przepasciami laczy wszystkie cztery czesci swiata Tawantinsuyu od Quito po Chile. Potezna arteria komunikacyjna umozliwia blyskawiczne przemieszczanie armii i znoszenie barier handlowych w gorach."
+
+	trigger = {
+		tag = INC
+		owned = { province = 168 data = -1 } # Cuzco
+		owned = { province = 164 data = -1 } # Quito
+		control = { province = 168 data = -1 }
+		control = { province = 164 data = -1 }
+		atwar = no
+	}
+
+	cost = 250
+	treasury = 250
+
+	action = {
+		name = "Wybrukuj Krolewska Droge Slonca"
+		command = { type = treasury value = -250 }
+		command = { type = infra value = 600 }
+		command = { type = tax_modifier which = 168 value = 3 }
+		command = { type = tax_modifier which = 164 value = 2 }
+		command = { type = setflag which = inc_qhapaq_nan value = 1 }
+		command = { type = vp value = 80 }
+	}
+}
+
+# 7211: Imperial Granaries (Qullqa) and Chasqui Network
+decision = {
+	id = 7211
+	name = "Spichlerze Panstwowe Qullqa i Biegacze Chasqui"
+	desc = "Siec tysiecy kamiennych spichlerzy qullqa magazynujacych liofilizowane ziemniaki (chuño) i suszone mieso oraz sztafeta kurierow chasqui chronia imperium przed kleskami glodu i umozliwiaja natychmiastowe wprowadzanie kordonow sanitarnych w razie zarazy."
+
+	trigger = {
+		tag = INC
+		hasflag = { which = inc_qhapaq_nan value = 1 }
+		atwar = no
+		stability = 2
+	}
+
+	cost = 200
+	treasury = 200
+
+	action = {
+		name = "Wzmocnij spichlerze i bezpieczenstwo ludu"
+		command = { type = treasury value = -200 }
+		command = { type = stability value = 1 }
+		command = { type = trade value = 400 }
+		command = { type = setflag which = inc_chasqui_network value = 1 }
+		command = { type = vp value = 60 }
+	}
+}
+
+# 7212: Reformation of the Faith of Inti
+decision = {
+	id = 7212
+	name = "Zreformowany Kult Boga Slonca Inti"
+	desc = "Wzmocnienie autorytetu Najwyzszego Kaplana Willaq Umu i uporzadkowanie kultu Inti oraz boga-stwórcy Viracochy tworzy jednolity kodeks moralny, odrzucajac barbarzynskie stereotypy i nadajac Tawantinsuyu niezachwiana tozsamosc cywilizacyjna."
+
+	trigger = {
+		tag = INC
+		owned = { province = 168 data = -1 } # Cuzco
+		control = { province = 168 data = -1 }
+		atwar = no
+		stability = 2
+	}
+
+	cost = 200
+	treasury = 200
+
+	action = {
+		name = "Ustanow odnowiona wiare Synow Slonca"
+		command = { type = treasury value = -200 }
+		command = { type = religion which = inti_reformed }
+		command = { type = domestic which = centralization value = 2 }
+		command = { type = domestic which = innovative value = 2 }
+		command = { type = stability value = 1 }
+		command = { type = setflag which = inc_reformed_faith value = 1 }
+		command = { type = vp value = 75 }
+	}
+}
+
+# 7213: The Iron Legions of Tawantinsuyu & Andean Cavalry
+decision = {
+	id = 7213
+	name = "Zelazne Legiony Tawantinsuyu i Andyjska Konnica"
+	desc = "Laczenie tradycyjnego mistrzostwa odlewniczego Altiplano z technologia zdobytej europejskiej stali i broni palnej pozwala uruchomic fabryki armat w Cuzco i Tiwanaku. Dzieki wyhodowaniu gorskiej rasy koni powstaje lekka kawaleria andyjska z lancami i bolami."
+
+	trigger = {
+		tag = INC
+		hasflag = { which = inc_captured_technology value = 1 }
+		atwar = no
+		stability = 1
+	}
+
+	cost = 300
+	treasury = 300
+
+	action = {
+		name = "Wystaw zelazne regimenty Synow Slonca!"
+		command = { type = treasury value = -300 }
+		command = { type = techgroup which = orthodox }
+		command = { type = domestic which = quality value = 2 }
+		command = { type = domestic which = offensive value = 1 }
+		command = { type = land value = 800 }
+		command = { type = CAV which = 168 value = 5000 }
+		command = { type = INF which = 168 value = 10000 }
+		command = { type = setflag which = inc_iron_legions value = 1 }
+		command = { type = vp value = 150 }
+	}
+}
+
+# 7214: Galleons of Guayaquil: Heritage of Tupac Yupanqui
+decision = {
+	id = 7214
+	name = "Galeony z Guayaquil: Szlak Tupaca Yupanqui"
+	desc = "Podtrzymujac tradycje morskiej wyprawy cesarza Tupaca Yupanqui na Pacyfik, w stoczniach Guayaquil i Callao wznosimy oceaniczne okrety wojenne. Inkowskie floty dominuja na zachodnim wybrzezu Ameryki i nawiazuja bezposredni szlak handlowy z cesarstwem Chin i Japonia!"
+
+	trigger = {
+		tag = INC
+		hasflag = { which = inc_iron_legions value = 1 }
+		owned = { province = 167 data = -1 } # Lima / Callao
+		control = { province = 167 data = -1 }
+		atwar = no
+	}
+
+	cost = 300
+	treasury = 300
+
+	action = {
+		name = "Zbuduj Pacyficzna Flote Tawantinsuyu"
+		command = { type = treasury value = -300 }
+		command = { type = shipyard which = 167 value = yes }
+		command = { type = naval value = 600 }
+		command = { type = trade value = 500 }
+		command = { type = setflag which = inc_pacific_thalassocracy value = 1 }
+		command = { type = vp value = 120 }
+	}
+}

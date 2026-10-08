@@ -1,1 +1,257 @@
-# Alternate Destinies - Modular File
+#################################################################
+## Gloriana 1337 - Alternate Destinies                         ##
+## Module 5: Pre-Columbian Americas (AZT / INC)                ##
+## Events File: alt_americas.txt                               ##
+## ID Range: 3009400 - 3009450                                 ##
+#################################################################
+
+# 3009400: Wielka Noc Odwetu na Groblach Tenochtitlan
+event = {
+	id = 3009400
+	random = no
+	country = AZT
+	name = "Wielka Noc Odwetu na Groblach Tenochtitlan"
+	desc = "Gdy hiszpanscy konkwistadorzy probowali wymknac sie pod oslona nocy z Tenochtitlan obciazeni zagrabionym zlotem, wojownicy Mexicow przerwali mosty i zaatakowali z setek wojennych czolen. Zamiast hekatomby, bitwa konczy sie calkowitym zniszczeniem najezdzcow i pojmaniem zywcem hiszpanskich rusznikarzy, kowali oraz ich koni bojowych!"
+
+	trigger = {
+		owned = { province = 27 data = -1 } # Tenochtitlan
+		control = { province = 27 data = -1 }
+		year = 1515
+		not = { year = 1540 }
+		not = { hasflag = { which = azt_captured_technology value = 1 } }
+	}
+
+	date = { day = 1 month = january year = 1515 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1540 }
+
+	action_a = {
+		name = "Uderzcie ze wszystkich stron i pojmijcie kowali zywcem!"
+		command = { type = treasury value = 300 }
+		command = { type = land_morale value = 0.20 }
+		command = { type = land value = 500 }
+		command = { type = setflag which = azt_captured_technology value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 100 }
+	}
+}
+
+# 3009401: Kordon Sanitarny i Medycyna Ziolowa
+event = {
+	id = 3009401
+	random = no
+	country = AZT
+	name = "Kordon Sanitarny i Medycyna Ziolowa"
+	desc = "Pojawienie sie nieznanych europejskich chorob grozilo zaglada milionom mieszkancow. Dzieki medycynie ziolowej, kapielom parowym w temazcal i natychmiastowej izolacji chorych przez straz miejska, epidemia zostaje zatrzymana, ratujac tkanke spoleczna imperium."
+
+	trigger = {
+		hasflag = { which = azt_captured_technology value = 1 }
+	}
+
+	date = { day = 1 month = january year = 1520 }
+	offset = 90
+	deathdate = { day = 30 month = december year = 1560 }
+
+	action_a = {
+		name = "Zastosujcie kordony sanitarne i wiedze zielarzy"
+		command = { type = stability value = 1 }
+		command = { type = population which = 27 value = 5000 }
+		command = { type = infra value = 300 }
+		command = { type = vp value = 50 }
+	}
+}
+
+# 3009410: Pojednanie w Quito: Jednosc Synow Slonca
+event = {
+	id = 3009410
+	random = no
+	country = INC
+	name = "Pojednanie w Quito: Jednosc Synow Slonca"
+	desc = "W obliczu wiesci o obcych brodatych przybyszach z polnocy, krolewscy bracia Huascar z Cuzco i Atahualpa z Quito unikaja niszczycielskiej wojny domowej. Za posrednictwem Najwyzszego Kaplana zawarto kompromis sukcesyjny, stawiajac calej potegi polmilionowej armii andyjskiej w gotowosci obronnej."
+
+	trigger = {
+		owned = { province = 168 data = -1 } # Cuzco
+		owned = { province = 164 data = -1 } # Quito
+		control = { province = 168 data = -1 }
+		control = { province = 164 data = -1 }
+		year = 1525
+		not = { year = 1535 }
+	}
+
+	date = { day = 1 month = january year = 1525 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1535 }
+
+	action_a = {
+		name = "Niech Synowie Slonca stana razem w obronie Andow!"
+		command = { type = stability value = 2 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = land_morale value = 0.15 }
+		command = { type = setflag which = inc_succession_resolved value = 1 }
+		command = { type = vp value = 80 }
+	}
+}
+
+# 3009411: Zasadzka w Cajamarce
+event = {
+	id = 3009411
+	random = no
+	country = INC
+	name = "Zasadzka w Cajamarce: Pojmanie Pizarra"
+	desc = "Gdy oddzial Francisca Pizarra wkroczyl na plac w Cajamarce liczac na latwa rzez nieuzbrojonego orszaku, ze stoku gorskiego wyronily sie tysiace zaprawionych w bojach wojownikow Inki. Zamiast pojmania cesarza, caly hiszpanski oddzial zostaje otoczony i zmuszony do kapitulacji!"
+
+	trigger = {
+		hasflag = { which = inc_succession_resolved value = 1 }
+		year = 1530
+		not = { year = 1545 }
+		not = { hasflag = { which = inc_captured_technology value = 1 } }
+	}
+
+	date = { day = 1 month = january year = 1530 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1545 }
+
+	action_a = {
+		name = "Wymus okup w postaci kowali, koni i map morskich!"
+		command = { type = treasury value = 300 }
+		command = { type = land value = 500 }
+		command = { type = naval value = 400 }
+		command = { type = setflag which = inc_captured_technology value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 100 }
+	}
+}
+
+#----------------------------------------------------------------
+# Native 10-Year Integration Events (FTG 1.3 ownerchange = 10)
+#----------------------------------------------------------------
+
+# 3009421: Integracja Michoacan (26)
+event = {
+	id = 3009421
+	random = no
+	country = AZT
+	name = "Integracja Michoacan z Cesarstwem"
+	desc = "Dziesiec lat stabilnych rzadow polaczylo kopalnie miedzi i lud Taraskow z Tenochtitlan."
+
+	trigger = {
+		owned = { province = 26 data = -1 }
+		control = { province = 26 data = -1 }
+		ownerchange = { province = 26 data = 10 }
+		not = { core = { province = 26 data = -1 } }
+	}
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Michoacan jest integralna czescia Cemanahuac"
+		command = { type = addcore_national which = 26 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# 3009422: Integracja Oaxaca (31)
+event = {
+	id = 3009422
+	random = no
+	country = AZT
+	name = "Integracja Zapotekow i Oaxaca"
+	desc = "Dekada sprawiedliwego pokoju zjednoczyla gorskie doliny Zapotekow z cesarstwem."
+
+	trigger = {
+		owned = { province = 31 data = -1 }
+		control = { province = 31 data = -1 }
+		ownerchange = { province = 31 data = 10 }
+		not = { core = { province = 31 data = -1 } }
+	}
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Oaxaca jest filarem ligi"
+		command = { type = addcore_national which = 31 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# 3009423: Integracja Quito (164)
+event = {
+	id = 3009423
+	random = no
+	country = INC
+	name = "Integracja Quito z Tawantinsuyu"
+	desc = "Dekada rzadow cesarskich ugruntowala przynaleznosc polnocnej stolicy do korony Inkow."
+
+	trigger = {
+		owned = { province = 164 data = -1 }
+		control = { province = 164 data = -1 }
+		ownerchange = { province = 164 data = 10 }
+		not = { core = { province = 164 data = -1 } }
+	}
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Quito jest nieodlaczna polnocna stolica"
+		command = { type = addcore_national which = 164 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# 3009424: Integracja Potosi (192)
+event = {
+	id = 3009424
+	random = no
+	country = INC
+	name = "Integracja Srebrnej Gory Potosi"
+	desc = "Dziesiec lat bezpiecznego wydobycia kruszcu polaczylo kopalnie Cerro Rico z panstwem Inkow."
+
+	trigger = {
+		owned = { province = 192 data = -1 }
+		control = { province = 192 data = -1 }
+		ownerchange = { province = 192 data = 10 }
+		not = { core = { province = 192 data = -1 } }
+	}
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Bogactwa Potosi sluza Synom Slonca"
+		command = { type = addcore_national which = 192 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# 3009425: Integracja Callao / Lima (167)
+event = {
+	id = 3009425
+	random = no
+	country = INC
+	name = "Integracja Wybrzeza Callao"
+	desc = "Dekada rozbudowy portu i handlu morskiego ugruntowala pozycje Callao jako glównej bramy pacyficznej Tawantinsuyu."
+
+	trigger = {
+		owned = { province = 167 data = -1 }
+		control = { province = 167 data = -1 }
+		ownerchange = { province = 167 data = 10 }
+		not = { core = { province = 167 data = -1 } }
+	}
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Callao jest glowna stocznia Pacyfiku"
+		command = { type = addcore_national which = 167 }
+		command = { type = stability value = 1 }
+	}
+}
