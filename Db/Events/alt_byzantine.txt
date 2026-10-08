@@ -1,1 +1,36 @@
 # Byzantine Empire (BYZ) - Alternate Events & Sleeper Sequences
+# ID Range: 3009000 - 3009099
+
+#-----------------------------------------------------------------------------
+# Startup Sleeper Event
+# Deactivates original linear progression events (3001154-3001162, 3001167)
+# which have been replaced by player-driven decisions (6020-6040).
+# Preserves triggered narrative reward events (3001163-3001166).
+
+event = {
+	id = 3009000
+	random = no
+	country = BYZ
+
+	name = "Imperial Administration: The Grand Strategy"
+	desc = "With the accession of our dynasty and our renewed ambition, the path to restoring the Roman Empire shall no longer be dictated by rigid historical crises, but by sovereign imperial decrees. Our strategists and magistrates stand ready to enact our conquests and administrative reforms through the Decision Ledger."
+	style = 1
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "The Empire shall rise again!"
+		command = { type = sleepevent which = 3001154 } #A Crossroads
+		command = { type = sleepevent which = 3001155 } #Victory in the Balkans
+		command = { type = sleepevent which = 3001156 } #Victory in Anatolia
+		command = { type = sleepevent which = 3001157 } #Victory in Italy
+		command = { type = sleepevent which = 3001158 } #The Empire of Basil II
+		command = { type = sleepevent which = 3001159 } #Victory in Egypt
+		command = { type = sleepevent which = 3001160 } #Conquest of Egypt
+		command = { type = sleepevent which = 3001161 } #The Empire of the East
+		command = { type = sleepevent which = 3001162 } #Conquest of Africa
+		command = { type = sleepevent which = 3001167 } #The Restoration is Complete
+	}
+}

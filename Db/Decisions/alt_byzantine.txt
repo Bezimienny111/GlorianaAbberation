@@ -80,7 +80,7 @@ decision = {
 	trigger = {
 		atwar = no
 		isvassal = no
-		stability = 3
+		stability = 2
 		someof = {
 			number = 13
 			owned = { province = 320 data = -1 }
@@ -398,7 +398,7 @@ decision = {
 	trigger = {
 		atwar = no
 		isvassal = no
-		stability = 3
+		stability = 2
 		someof = {
 			number = 13
 			owned = { province = 320 data = -1 }
@@ -455,7 +455,7 @@ decision = {
 	trigger = {
 		atwar = no
 		isvassal = no
-		stability = 3
+		stability = 2
 		someof = {
 			number = 10
 			owned = { province = 486 data = -1 }
@@ -739,19 +739,23 @@ decision = {
 	trigger = {
 		atwar = no
 		isvassal = no
-		stability = 3
+		stability = 2
 		someof = {
-			number = 9
-			owned = { province = 490 data = -1 }
-			owned = { province = 491 data = -1 }
-			owned = { province = 492 data = -1 }
-			owned = { province = 493 data = -1 }
-			owned = { province = 494 data = -1 }
-			owned = { province = 743 data = -1 }
-			owned = { province = 744 data = -1 }
-			owned = { province = 745 data = -1 }
-			owned = { province = 746 data = -1 }
-			owned = { province = 747 data = -1 }
+			number = 13
+			owned = { province = 320 data = -1 }
+			owned = { province = 355 data = -1 }
+			owned = { province = 356 data = -1 }
+			owned = { province = 361 data = -1 }
+			owned = { province = 362 data = -1 }
+			owned = { province = 363 data = -1 }
+			owned = { province = 364 data = -1 }
+			owned = { province = 365 data = -1 }
+			owned = { province = 366 data = -1 }
+			owned = { province = 368 data = -1 }
+			owned = { province = 475 data = -1 }
+			owned = { province = 480 data = -1 }
+			owned = { province = 481 data = -1 }
+			owned = { province = 484 data = -1 }
 		}
 	}
 	ai_trigger = {
@@ -1580,6 +1584,7 @@ decision = {
 
 	action = {
 		command = { type = setflag which = byz_victory_anatolia }
+		command = { type = setflag which = optionsopen3 }
 		command = { type = addcore_claim which = 320 } #Dobrudja
 		command = { type = addcore_claim which = 355 } #Serbia
 		command = { type = addcore_claim which = 356 } #Bulgaria
@@ -1631,14 +1636,23 @@ decision = {
 		flag = byz_victory_balkans
 		NOT = { flag = byz_victory_anatolia }
 		NOT = { flag = byz_basil2 }
-		someof = {
-			number = 3
+		OR = {
 			owned = { province = 391 data = -1 } #Romagna
+			owned = { province = 392 data = -1 } #Marche
 			owned = { province = 393 data = -1 } #Napoli
 			owned = { province = 394 data = -1 } #Apulia
 			owned = { province = 395 data = -1 } #Messina
+			owned = { province = 396 data = -1 } #Sicily
 			owned = { province = 399 data = -1 } #Roma
+			owned = { province = 400 data = -1 } #Siena
 			owned = { province = 401 data = -1 } #Firenze
+			owned = { province = 402 data = -1 } #Emila
+			vassal = { country = BYZ country = NAP }
+			vassal = { country = BYZ country = PAP }
+			vassal = { country = BYZ country = TOS }
+			vassal = { country = BYZ country = SIC }
+			vassal = { country = BYZ country = VEN }
+			vassal = { country = BYZ country = MLO }
 		}
 	}
 	trigger = {
@@ -2058,13 +2072,12 @@ decision = {
 		NOT = { flag = byz_conquest_egypt }
 		flag = byz_crossroads
 		someof = {
-			number = 4
+			number = 3
 			owned = { province = 474 data = -1 } #Sivas
 			owned = { province = 476 data = -1 } #Angora
 			owned = { province = 477 data = -1 } #Anatolia
-			owned = { province = 490 data = -1 } #Syria
-			owned = { province = 493 data = -1 } #Judea
-			owned = { province = 744 data = -1 } #Alexandria
+			owned = { province = 482 data = -1 } #Konya
+			owned = { province = 483 data = -1 } #Adana
 		}
 	}
 	trigger = {
@@ -2180,7 +2193,7 @@ decision = {
 		NOT = { flag = byz_empire_east }
 		flag = byz_crossroads
 		someof = {
-			number = 5
+			number = 4
 			owned = { province = 320 data = -1 } #Dobrudja
 			owned = { province = 477 data = -1 } #Anatolia
 			owned = { province = 490 data = -1 } #Syria
@@ -2265,7 +2278,7 @@ decision = {
 		NOT = { event = 3001165}
 		flag = byz_crossroads
 		someof = {
-			number = 5
+			number = 4
 			owned = { province = 320 data = -1 } #Dobrudja
 			owned = { province = 477 data = -1 } #Anatolia
 			owned = { province = 490 data = -1 } #Syria
@@ -2314,6 +2327,7 @@ decision = {
 
 	action = {
 		command = { type = setflag which = byz_empire_east }
+		command = { type = addcore_claim which = 393 } #Napoli
 		command = { type = addcore_claim which = 394 } #Apulia
 		command = { type = addcore_claim which = 395 } #Messina
 		command = { type = addcore_claim which = 396 } #Sicily
