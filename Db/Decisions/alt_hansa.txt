@@ -1,1 +1,334 @@
-# Alternate Destinies - Modular File
+#################################################################
+## Gloriana 1337 - Alternate Destinies                         ##
+## Module 4: Hanseatic League (HSA)                            ##
+## Decisions File: alt_hansa.txt                               ##
+## ID Range: 7150 - 7179                                       ##
+#################################################################
+
+#----------------------------------------------------------------
+# Proclamation & Constitutional Foundation
+#----------------------------------------------------------------
+
+# 7150: Proclamation of the Sovereign Hanseatic State (Großer Hansetag)
+decision = {
+	id = 7150
+	name = "Proklamacja Suwerennego Panstwa Hanzeatyckiego"
+	desc = "Podczas gdy ksiazeta Rzeszy i monarchowie Skandynawii tocza nieustanne wojny, wolne miasta kupieckie zrzeszone w Lidze gromadza sie na powszechnym zjezdzie w Lubece. Przeksztalcenie luznego porozumienia gildii i kantorow w jedno suwerenne, niepodzielne panstwo ze stala reprezentacja pozwoli narzucic wole kupcow na wszystkich wodach Polnocy."
+
+	trigger = {
+		or = {
+			tag = HSA
+			tag = BRE
+			tag = DAN
+			tag = POM
+			tag = SHL
+			tag = KOL
+		}
+		atwar = no
+		stability = 2
+		owned = { province = 305 data = -1 } # Mecklemburg / Luebeck
+		control = { province = 305 data = -1 }
+		year = 1356
+	}
+
+	cost = 250
+	treasury = 250
+
+	action = {
+		name = "Proklamuj Suwerenna Lige Hanzeatycka"
+		command = { type = country which = HSA }
+		command = { type = capital which = 305 }
+		command = { type = add_countryculture which = german }
+		command = { type = addcore_national which = 305 } # Mecklemburg / Luebeck
+		command = { type = addcore_national which = 308 } # Gotland / Visby
+		command = { type = addcore_claim which = 336 } # Bremen
+		command = { type = addcore_claim which = 304 } # Vorpommern
+		command = { type = cot which = 305 value = yes }
+		command = { type = treasury value = -250 }
+		command = { type = stability value = 1 }
+		command = { type = setflag which = hsa_proclaimed value = 1 }
+	}
+}
+
+# 7151: The Hanseatic Republic (Merchant Oligarchy / Senate Path)
+decision = {
+	id = 7151
+	name = "Die Hanseatische Republik: Rzady Senatu Kupieckiego"
+	desc = "Odrzucajac feudalny despotyzm arystokracji, wladze najwyzsza powierzamy Senatowi Ligi i czterem Kwartalom Miejskim (Wendish, Saxon, Westphalian, Prussian). Prawa patrycjatu, wolny obrot towarami i bezwzgledny prymat handlu morskiego staja sie fundamentem nowego ustroju."
+
+	trigger = {
+		tag = HSA
+		hasflag = { which = hsa_proclaimed value = 1 }
+		not = { hasflag = { which = hsa_seereich value = 1 } }
+		atwar = no
+		stability = 1
+	}
+
+	cost = 150
+	treasury = 150
+
+	action = {
+		name = "Wprowadz Konstytucje Lubecka"
+		command = { type = treasury value = -150 }
+		command = { type = domestic which = aristocracy value = -4 }
+		command = { type = domestic which = centralization value = -1 }
+		command = { type = domestic which = innovative value = 2 }
+		command = { type = domestic which = mercantilism value = -2 }
+		command = { type = domestic which = naval value = 3 }
+		command = { type = trade value = 500 }
+		command = { type = setflag which = hsa_republic value = 1 }
+		command = { type = vp value = 50 }
+	}
+}
+
+# 7152: Das Nordische Seereich (Stadtholderate / Thalassocracy Path)
+decision = {
+	id = 7152
+	name = "Das Nordische Seereich: Kapitanat Generalny Ligi"
+	desc = "Aby stawic czolo mocarstwom ladowym Danii, Francji i Szwecji, Hanza potrzebuje silnej, scentralizowanej wladzy wykonawczej. Wybierajac dziedzicznego Stadtholdera i Kapitana Generalnego sposrod zasluzonych rodow, budujemy morska monarchie polnocy wsparta potezna regularna armada wojenna."
+
+	trigger = {
+		tag = HSA
+		hasflag = { which = hsa_proclaimed value = 1 }
+		not = { hasflag = { which = hsa_republic value = 1 } }
+		atwar = no
+		stability = 1
+	}
+
+	cost = 200
+	treasury = 200
+
+	action = {
+		name = "Ustanow Generalny Kapitanat Morza"
+		command = { type = treasury value = -200 }
+		command = { type = domestic which = centralization value = 3 }
+		command = { type = domestic which = quality value = 2 }
+		command = { type = domestic which = offensive value = 1 }
+		command = { type = domestic which = naval value = 3 }
+		command = { type = naval value = 600 }
+		command = { type = setflag which = hsa_seereich value = 1 }
+		command = { type = vp value = 50 }
+	}
+}
+
+#----------------------------------------------------------------
+# Maritime Dominance & Foreign Kontors
+#----------------------------------------------------------------
+
+# 7153: Seizure of the Sound Toll (Kontrola Cła Sundzkiego)
+decision = {
+	id = 7153
+	name = "Kontrola Cla Sundzkiego: Zlamanie Monopolu Danii"
+	desc = "Krolestwo Danii przez wieki drenowalo hanzeatyckich kupcow z naleznych zyskow, pobierajac myto w ciesninie Sund pod lufami zamkow Helsingborg i Kronborg. Opanowujac oba brzegi ciesniny, przejmujemy kontrola nad kluczowym przesmykiem laczacym Morze Polnocne z Baltykiem."
+
+	trigger = {
+		tag = HSA
+		owned = { province = 251 data = -1 } # Skaone
+		control = { province = 251 data = -1 }
+		atwar = no
+		stability = 1
+	}
+
+	cost = 300
+	treasury = 300
+
+	action = {
+		name = "Pobieraj Clo Sundzkie na rzecz Ligi"
+		command = { type = treasury value = -300 }
+		command = { type = addcore_national which = 251 }
+		command = { type = tax_modifier which = 305 value = 5 }
+		command = { type = trade value = 800 }
+		command = { type = relation which = DAN value = -150 }
+		command = { type = vp value = 100 }
+	}
+}
+
+# 7154: The London Steelyard (Uzbrojony Kontor w Londynie)
+decision = {
+	id = 7154
+	name = "Uzbrojony Kontor Stalowy w Londynie (Steelyard)"
+	desc = "Nad brzegiem Tamizy hanzeatycka baza Stalhof (Steelyard) stanowi serce wymiany miedzy Anglia a kontynentem. Wywierajac presje finansowa i morska na Korone Angielska, uzyskujemy eksterytorialny status naszej faktorii, wylaczny monopol na eksport angielskiej welny oraz immunitet podatkowy dla niemieckich kupcow."
+
+	trigger = {
+		tag = HSA
+		atwar = no
+		stability = 1
+		naval = 2
+	}
+
+	cost = 200
+	treasury = 200
+
+	action = {
+		name = "Zabezpiecz przywileje Steelyardu"
+		command = { type = treasury value = -200 }
+		command = { type = trade value = 500 }
+		command = { type = tax_modifier which = 305 value = 3 }
+		command = { type = setflag which = hsa_steelyard value = 1 }
+		command = { type = vp value = 50 }
+	}
+}
+
+# 7155: The Novgorod Peterhof (Uzbrojony Kontor w Nowogrodzie)
+decision = {
+	id = 7155
+	name = "Kontor Dworu Sw. Piotra w Nowogrodzie (Peterhof)"
+	desc = "Nowogrod Wielki jest brama do bezkresnych bogactw Rusi: futer, wosku i dziegciu. Wzmocnienie obwarowan Peterhofu i narzucenie posadnikom nienaruszalnosci hanzeatyckiego sadownictwa gwarantuje absolutna kontrole nad rynkiem futrzarskim."
+
+	trigger = {
+		tag = HSA
+		atwar = no
+		stability = 1
+		owned = { province = 308 data = -1 } # Gotland
+	}
+
+	cost = 200
+	treasury = 200
+
+	action = {
+		name = "Zmonopolizuj szlak handlu futrami"
+		command = { type = treasury value = -200 }
+		command = { type = trade value = 500 }
+		command = { type = tax_modifier which = 308 value = 3 }
+		command = { type = setflag which = hsa_peterhof value = 1 }
+		command = { type = vp value = 50 }
+	}
+}
+
+# 7156: The Bergen Bryggen (Uzbrojony Kontor w Bergen)
+decision = {
+	id = 7156
+	name = "Bryggen w Bergen: Monopol na Tran i Sztokfisz"
+	desc = "Zabudowania nabrzeza Bryggen w norweskim Bergen skupiaja caly eksport suszonego dorsza z polnocnych lowisk Lofotow. Narzucenie norweskiej koronie wylacznosci hanzeatyckich kompanii zabezpiecza zaopatrzenie w tania zywnosc i tluszcze dla calej Europy."
+
+	trigger = {
+		tag = HSA
+		atwar = no
+		stability = 1
+	}
+
+	cost = 150
+	treasury = 150
+
+	action = {
+		name = "Podporzadkuj handel rybny Polnocy"
+		command = { type = treasury value = -150 }
+		command = { type = trade value = 400 }
+		command = { type = naval value = 300 }
+		command = { type = setflag which = hsa_bryggen value = 1 }
+		command = { type = vp value = 40 }
+	}
+}
+
+# 7157: The Flemish Counter in Bruges and Antwerp
+decision = {
+	id = 7157
+	name = "Kantor we Flandrii: Brugia i Antwerpia"
+	desc = "Flandria to najbogatszy rynek tkacki Europy i glowny wezel zamorskiego handlu. Utworzenie wlasnego konsorcjum w Antwerpii i Brugii otwiera bezposredni dostep do sukna lewantu oraz hiszpanskiego i portugalskiego kruszcu."
+
+	trigger = {
+		tag = HSA
+		atwar = no
+		stability = 1
+		infra = 2
+	}
+
+	cost = 250
+	treasury = 250
+
+	action = {
+		name = "Otworz flandryjski rynek finansowy"
+		command = { type = treasury value = -250 }
+		command = { type = trade value = 600 }
+		command = { type = infra value = 400 }
+		command = { type = setflag which = hsa_flanders value = 1 }
+		command = { type = vp value = 60 }
+	}
+}
+
+# 7158: The Norse Atlantic Route to Vinland
+decision = {
+	id = 7158
+	name = "Szlakiem Wikingow ku Winlandii"
+	desc = "Czerpiac ze starych sag i relacji norweskich rybakow z Bergen i Islandii, hanzeatyccy kapitanowie Didrik Pining i Hans Pothorst ruszaja na zachod ku niezbadanym wodom Nowego Swiata. Zalozenie stacji wielorybniczych i faktorii handlu futrami w Winlandii otwiera nowy kontynent na dekady przed innymi mocarstwami!"
+
+	trigger = {
+		tag = HSA
+		year = 1460
+		naval = 3
+		atwar = no
+		stability = 2
+	}
+
+	cost = 350
+	treasury = 350
+
+	action = {
+		name = "Wyslij floty ku Nowemu Swiatu"
+		command = { type = treasury value = -350 }
+		command = { type = discover which = 110 } # Placentia / Newfoundland
+		command = { type = discover which = 111 } # Wabana
+		command = { type = discover which = 112 } # Isle Royale
+		command = { type = discover which = 113 } # Belle Isle
+		command = { type = colonists value = 3 }
+		command = { type = trade value = 500 }
+		command = { type = naval value = 500 }
+		command = { type = setflag which = hsa_vinland value = 1 }
+		command = { type = vp value = 150 }
+	}
+}
+
+# 7159: Baltic Cities Defense Pact
+decision = {
+	id = 7159
+	name = "Federalny Pakt Obrony Miast Bałtyckich"
+	desc = "Prusy, Pomorze i Inflanty usiane sa wielkimi osrodkami hanzeatyckimi: Gdanskiem, Elblagiem, Ryga i Rewlem. Zaciesnienie wiezow obronnych i wlaczenie tych metropolii do jednolitego systemu prawnego Ligi tworzy nieprzerwany kordon handlowy wzdluz calego Baltyku."
+
+	trigger = {
+		tag = HSA
+		atwar = no
+		stability = 2
+		owned = { province = 301 data = -1 } # Danzig
+		control = { province = 301 data = -1 }
+	}
+
+	cost = 200
+	treasury = 200
+
+	action = {
+		name = "Zjednocz baltyckie porty z Liga"
+		command = { type = treasury value = -200 }
+		command = { type = addcore_national which = 301 } # Danzig
+		command = { type = addcore_claim which = 282 } # Livland / Riga
+		command = { type = addcore_claim which = 276 } # Estland / Reval
+		command = { type = stability value = 1 }
+		command = { type = vp value = 75 }
+	}
+}
+
+# 7160: Grand Arsenal and Admiralty of Lübeck
+decision = {
+	id = 7160
+	name = "Wielka Zbrojownia i Stocznia w Lubece"
+	desc = "Stolica Ligi zasluguje na najnowoczesniejsza baze morska w Europie. Wzorem weneckiego Arsenale wznosimy w Lubece stocznie wojenna zdolna do masowej produkcji uzbrojonych kog, karawel i galeonow oraz odlewania dzial bronzowych dla flotylli Ligi."
+
+	trigger = {
+		tag = HSA
+		owned = { province = 305 data = -1 }
+		control = { province = 305 data = -1 }
+		atwar = no
+		naval = 3
+	}
+
+	cost = 300
+	treasury = 300
+
+	action = {
+		name = "Wznies admiralska stocznie Lubecka"
+		command = { type = treasury value = -300 }
+		command = { type = shipyard which = 305 value = yes }
+		command = { type = naval value = 600 }
+		command = { type = manpower which = 305 value = 2 }
+		command = { type = vp value = 80 }
+	}
+}
