@@ -1,1 +1,223 @@
-# Alternate Destinies - Modular File
+#################################################################
+## Gloriana 1337 - Alternate Destinies                         ##
+## Module 7: Solomonic Empire of Ethiopia (ETH)                ##
+## Events File: alt_ethiopia.txt                               ##
+## ID Range: 3009600 - 3009650                                 ##
+#################################################################
+
+# 3009600: Zwyciestwo Cesarza Amda Seyona nad Ifat (1338)
+event = {
+	id = 3009600
+	random = no
+	country = ETH
+	name = "Zwyciestwo Cesarza Amda Seyona nad Ifat"
+	desc = "Pod wodza niezwyciezonego cesarza Amda Seyona I armie Abisynii rozbily powstanie muzulmanskich sułtanatow Ifat i Adal. Triumf ten ugruntowal absolutny autorytet wladcy w gorskich prowincjach i zlamal probe okrazenia cesarstwa."
+
+	trigger = {
+		year = 1337
+		not = { year = 1345 }
+		owned = { province = 752 data = -1 }
+		control = { province = 752 data = -1 }
+	}
+
+	date = { day = 1 month = january year = 1338 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1345 }
+
+	action_a = {
+		name = "Chwala Panu i Niegusowi Niegusti!"
+		command = { type = stability value = 1 }
+		command = { type = land_morale value = 0.15 }
+		command = { type = treasury value = 150 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = vp value = 50 }
+	}
+}
+
+# 3009601: Zloty Wiek Cesarza Zara Yaqoba (1434)
+event = {
+	id = 3009601
+	random = no
+	country = ETH
+	name = "Zloty Wiek Cesarza Zara Yaqoba"
+	desc = "Wstapienie na tron Zara Yaqoba rozpoczyna okres bezprecedensowego rozkwitu teologii, literatury ge'ez i architektury sakralnej. Cesarz reformuje administracje klasztorna, zwalcza herezje i wysyla delegatow na Sobor we Florencji."
+
+	trigger = {
+		year = 1434
+		not = { year = 1468 }
+		atwar = no
+	}
+
+	date = { day = 1 month = january year = 1434 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1468 }
+
+	action_a = {
+		name = "Niech Abisynia rozkwita wiara i wiedza!"
+		command = { type = stability value = 2 }
+		command = { type = infra value = 400 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = vp value = 75 }
+	}
+}
+
+# 3009610: Poslowie z Rzymu i Wenecji w Aksum
+event = {
+	id = 3009610
+	random = no
+	country = ETH
+	name = "Poslowie z Rzymu i Wenecji w Aksum"
+	desc = "Podroznicy i dyplomaci z Italii docieraja do dworu w Aksum. Swiat zachodni z radoscia wita odnalezienie chrzecijanskiego sojusznika na tylach islamu, proponujac wspolne sojusze wojskowe i dostawy broni ogniowej."
+
+	trigger = {
+		hasflag = { which = eth_prester_john value = 1 }
+	}
+
+	date = { day = 1 month = january year = 1450 }
+	offset = 90
+	deathdate = { day = 30 month = december year = 1550 }
+
+	action_a = {
+		name = "Zawrzyjmy przymierze z chrzescijanska Europa!"
+		command = { type = relation which = PAP value = 100 }
+		command = { type = relation which = VEN value = 100 }
+		command = { type = trade value = 400 }
+		command = { type = land value = 400 }
+		command = { type = vp value = 50 }
+	}
+}
+
+#----------------------------------------------------------------
+# Native 10-Year Integration Events (FTG 1.3 ownerchange = 10)
+#----------------------------------------------------------------
+
+# 3009641: Integracja Massawa (753)
+event = {
+	id = 3009641
+	random = no
+	country = ETH
+	name = "Integracja Portu Massawa"
+	desc = "Dziesiec lat obecnosci cesarskich garnizonow i rozbudowy nabrzeza w pelni zwiazalo port Massawa z cesarstwem."
+
+	trigger = {
+		owned = { province = 753 data = -1 }
+		control = { province = 753 data = -1 }
+		ownerchange = { province = 753 data = 10 }
+		not = { core = { province = 753 data = -1 } }
+	}
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Massawa jest glownym oknem na swiat Cesarstwa"
+		command = { type = addcore_national which = 753 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# 3009642: Integracja Dongola (750)
+event = {
+	id = 3009642
+	random = no
+	country = ETH
+	name = "Integracja Dongoli"
+	desc = "Dekada sprawiedliwego pokoju przywrocila wiezi religijne miedzy Nubijczykami a Kosciolem Etiopskim."
+
+	trigger = {
+		owned = { province = 750 data = -1 }
+		control = { province = 750 data = -1 }
+		ownerchange = { province = 750 data = 10 }
+		not = { core = { province = 750 data = -1 } }
+	}
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Dongola powraca pod skrzydla prawowitych wladcow"
+		command = { type = addcore_national which = 750 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# 3009643: Integracja Batn al-Hajar (748)
+event = {
+	id = 3009643
+	random = no
+	country = ETH
+	name = "Integracja Batn al-Hajar"
+	desc = "Dziesiec lat spokoju wzdluz Nilu ugruntowalo przynaleznosc katarakt do korony."
+
+	trigger = {
+		owned = { province = 748 data = -1 }
+		control = { province = 748 data = -1 }
+		ownerchange = { province = 748 data = 10 }
+		not = { core = { province = 748 data = -1 } }
+	}
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Katarakty Nilu sa bezpieczne"
+		command = { type = addcore_national which = 748 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# 3009644: Integracja Adenu (500)
+event = {
+	id = 3009644
+	random = no
+	country = ETH
+	name = "Integracja Twierdzy Aden"
+	desc = "Dekada sprawowania wladzy nad Ciesnina Lez uczynila z Adenu niezbedny bastion cesarskiej marynarki."
+
+	trigger = {
+		owned = { province = 500 data = -1 }
+		control = { province = 500 data = -1 }
+		ownerchange = { province = 500 data = 10 }
+		not = { core = { province = 500 data = -1 } }
+	}
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Aden jest kluczem do Oceanu Indyjskiego"
+		command = { type = addcore_national which = 500 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# 3009645: Integracja Synaju (494)
+event = {
+	id = 3009645
+	random = no
+	country = ETH
+	name = "Integracja Polwyspu Synaj"
+	desc = "Po dziesieciu latach obecnosci etiopskich garnizonow i mnichow Klasztoru Sw. Katarzyny, Synaj stal sie brama cesarstwa do Lewantu."
+
+	trigger = {
+		owned = { province = 494 data = -1 }
+		control = { province = 494 data = -1 }
+		ownerchange = { province = 494 data = 10 }
+		not = { core = { province = 494 data = -1 } }
+	}
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Synaj laczy Afryke z Ziemia Swieta"
+		command = { type = addcore_national which = 494 }
+		command = { type = stability value = 1 }
+	}
+}

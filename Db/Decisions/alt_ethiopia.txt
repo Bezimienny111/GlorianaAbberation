@@ -1,1 +1,204 @@
-# Alternate Destinies - Modular File
+#################################################################
+## Gloriana 1337 - Alternate Destinies                         ##
+## Module 7: Solomonic Empire of Ethiopia (ETH)                ##
+## Decisions File: alt_ethiopia.txt                            ##
+## ID Range: 7300 - 7349                                       ##
+#################################################################
+
+#----------------------------------------------------------------
+# Red Sea Thalassocracy & Maritime Openings
+#----------------------------------------------------------------
+
+# 7300: Gate of the Red Sea: Port of Massawa
+decision = {
+	id = 7300
+	name = "Wrota Morza Czerwonego: Port w Massawa"
+	desc = "Przez stulecia wrogie emiraty odcinaly chrzecijanskie cesarstwo Abisynii od morskich szlakow swiata. Zdobycie i ufortyfikowanie portu Massawa oraz archipelagu Dahlak otwiera bezposredni dostep do handlu z Indiami, Egiptem i Lewantem."
+
+	trigger = {
+		tag = ETH
+		owned = { province = 753 data = -1 } # Massawa / Red Sea coast
+		control = { province = 753 data = -1 }
+		atwar = no
+	}
+
+	cost = 150
+	treasury = 150
+
+	action = {
+		name = "Zbuduj cesarska stocznie w Massawie"
+		command = { type = treasury value = -150 }
+		command = { type = shipyard which = 753 value = yes }
+		command = { type = naval value = 400 }
+		command = { type = discover which = 1059 } # Red Sea North
+		command = { type = discover which = 1060 } # Red Sea South
+		command = { type = discover which = 1061 } # Bab el-Mandeb
+		command = { type = stability value = 1 }
+		command = { type = setflag which = eth_massawa_built value = 1 }
+		command = { type = vp value = 50 }
+	}
+}
+
+# 7301: The Bab al-Mandab Blockade & Fortress of Aden
+decision = {
+	id = 7301
+	name = "Blokada Bab al-Mandab i Twierdza w Adenie"
+	desc = "Waska ciesnina Bab al-Mandab (Wrota Lez) laczy Morze Czerwone z Oceanem Indyjskim. Przejecie kontroli nad strategicznym portem Aden pozwala etiopskim flotyllom pobierac cla ze wszystkich statkow korzennych plynacych z Indii ku Europie."
+
+	trigger = {
+		tag = ETH
+		hasflag = { which = eth_massawa_built value = 1 }
+		owned = { province = 500 data = -1 } # Aden
+		control = { province = 500 data = -1 }
+		atwar = no
+		stability = 1
+	}
+
+	cost = 200
+	treasury = 200
+
+	action = {
+		name = "Zabezpiecz Wrota Lez i handel korzenny"
+		command = { type = treasury value = -200 }
+		command = { type = addcore_national which = 500 } # Aden
+		command = { type = trade value = 600 }
+		command = { type = tax_modifier which = 753 value = 4 }
+		command = { type = stability value = 1 }
+		command = { type = setflag which = eth_aden_secured value = 1 }
+		command = { type = vp value = 100 }
+	}
+}
+
+#----------------------------------------------------------------
+# Diplomatic Contact & Western Firepower
+#----------------------------------------------------------------
+
+# 7302: The Prester John Embassy to Europe
+decision = {
+	id = 7302
+	name = "Poselstwo Ksieza Jana do Europy"
+	desc = "Wiesc o legendarnym krolestwie Ksieza Jana w gornym biegu Nilu obiega dwory Rzymu, Wenecji i Lizbony. Wyslanie wielkiego poselstwa przez Morze Czerwone przynosi sojusz ze swiatem zachodnim, traktaty handlowe oraz przybycie portugalskich i wloskich instruktorow broni palnej."
+
+	trigger = {
+		tag = ETH
+		hasflag = { which = eth_massawa_built value = 1 }
+		atwar = no
+		stability = 1
+	}
+
+	cost = 200
+	treasury = 200
+
+	action = {
+		name = "Powitaj europejskich mistrzow broni i armat"
+		command = { type = treasury value = -200 }
+		command = { type = infra value = 500 }
+		command = { type = land value = 600 }
+		command = { type = domestic which = innovative value = 2 }
+		command = { type = domestic which = quality value = 1 }
+		command = { type = relation which = PAP value = 150 }
+		command = { type = relation which = VEN value = 150 }
+		command = { type = relation which = POR value = 150 }
+		command = { type = setflag which = eth_prester_john value = 1 }
+		command = { type = vp value = 80 }
+	}
+}
+
+#----------------------------------------------------------------
+# Imperial Nile Expansion & The Southern Crusade
+#----------------------------------------------------------------
+
+# 7303: Reconquista of Christian Nubia
+decision = {
+	id = 7303
+	name = "Rekonkwista Dawnych Krolestw Nubii"
+	desc = "Wzdluz gorno-srodkowego biegu Nilu kwitly niegdys chrzecijanskie krolestwa Makurii i Alodii. Wyprawa armii cesarskiej na polnoc w dol rzeki przynosi wyzwolenie wspolwyznawcow spod ucisku nomadow i wlacza ludy Nubii do korony salomonskiej."
+
+	trigger = {
+		tag = ETH
+		owned = { province = 750 data = -1 } # Dongola
+		control = { province = 750 data = -1 }
+		atwar = no
+		stability = 1
+	}
+
+	cost = 150
+	treasury = 150
+
+	action = {
+		name = "Przylacz ziemie Nubii do Cesarstwa"
+		command = { type = treasury value = -150 }
+		command = { type = add_countryculture which = nubian }
+		command = { type = addcore_national which = 750 } # Dongola
+		command = { type = addcore_national which = 748 } # Batn al-Hajar
+		command = { type = addcore_national which = 749 } # Nubia
+		command = { type = stability value = 1 }
+		command = { type = setflag which = eth_nubia_reclaimed value = 1 }
+		command = { type = vp value = 100 }
+	}
+}
+
+# 7304: Southern Crusade to Sinai and Jerusalem
+decision = {
+	id = 7304
+	name = "Poludniowa Krucjata ku Synajowi i Jerozolimie"
+	desc = "Dysponujac armia zbrojna w armaty i muszkiety oraz pelna kontrola nad gornym Nilem i Morzem Czerwonym, Cesarz Etiopii wyrusza na wyzwolenie Swietych Miejsc Chrzescijanstwa od poludnia. Marsz ku Synajowi i Bramom Syjonu stawia Abisynie na czele swiatowej krucjaty!"
+
+	trigger = {
+		tag = ETH
+		hasflag = { which = eth_nubia_reclaimed value = 1 }
+		hasflag = { which = eth_prester_john value = 1 }
+		year = 1450
+		stability = 2
+		atwar = no
+	}
+
+	cost = 300
+	treasury = 300
+
+	action = {
+		name = "Prowadz krucjate Synow Salomona ku Syjonowi!"
+		command = { type = treasury value = -300 }
+		command = { type = addcore_claim which = 494 } # Sinai
+		command = { type = addcore_claim which = 493 } # Judea / Jerusalem
+		command = { type = addcore_claim which = 746 } # Egypt / Cairo
+		command = { type = land_morale value = 0.20 }
+		command = { type = stability value = 1 }
+		command = { type = setflag which = eth_southern_crusade value = 1 }
+		command = { type = vp value = 150 }
+	}
+}
+
+# 7305: Restoration of the Axumite-Solomonic Empire
+decision = {
+	id = 7305
+	name = "Restauracja Cesarstwa Aksumicko-Salomonskiego"
+	desc = "Pod panowaniem Niegusa Niegusti (Krola Krolow) zjednoczyly sie ziemie od zrodel Nilu az po Jerozolime i Ciesnine Ormuz. Spełnia sie pradawne proroctwo: Krolestwo Ksieza Jana staje sie niezwyciezonym bastionem wschodniego chrzescijanstwa i paniem szlakow handlowych swiata!"
+
+	trigger = {
+		tag = ETH
+		hasflag = { which = eth_southern_crusade value = 1 }
+		owned = { province = 493 data = -1 } # Judea / Jerusalem
+		owned = { province = 494 data = -1 } # Sinai
+		owned = { province = 500 data = -1 } # Aden
+		control = { province = 493 data = -1 }
+		control = { province = 494 data = -1 }
+		control = { province = 500 data = -1 }
+		atwar = no
+		stability = 2
+	}
+
+	cost = 400
+	treasury = 400
+
+	action = {
+		name = "Proklamuj Triumf Cesarstwa Aksumickiego!"
+		command = { type = treasury value = -400 }
+		command = { type = addcore_national which = 493 } # Jerusalem
+		command = { type = addcore_national which = 494 } # Sinai
+		command = { type = cot which = 753 value = yes }
+		command = { type = badboy value = -5 }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 300 }
+	}
+}
