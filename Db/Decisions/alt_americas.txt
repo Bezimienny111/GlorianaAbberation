@@ -21,6 +21,7 @@ decision = {
 	desc = "Pod wplywem poety i filozofa Nezahualcoyotla z Texcoco, Mexikowie staja przed dziejowym wyborem przyszlosci Cemanahuac: czy odrzucic krwawy terror masowych ofiar z jencow i paranoje Wojen Kwietnych na rzecz oswiecenia boga madrosci Quetzalcoatla, czy tez podwoic fanatyczna potęge boga wojny Huitzilopochtli."
 
 	trigger = {
+		treasury = 200
 		tag = AZT
 		atwar = no
 		stability = 2
@@ -29,8 +30,6 @@ decision = {
 		domestic = { which = innovative value = 4 }
 	}
 
-	cost = 200
-	treasury = 200
 
 	action = {
 		name = "Zwól Wielka Narade Medrcow i Kapłanow w Texcoco"
@@ -56,6 +55,7 @@ decision = {
 	desc = "Odrzucenie krwawych wojen pozwala na zawarcie trwalej konfederacji miedzy Mexikami, Tlaxcala, Taraskanami i Zapotekami. Uznanie praw i tradycji sasiadow wlacza ich elity do wspolnej armii i rzadu, uniemozliwiajac obcym najezdzcom znalezienie jakichkolwiek indiańskich sojusznikow."
 
 	trigger = {
+		treasury = 250
 		tag = AZT
 		flag = azt_reformed_faith
 		NOT = { flag = azt_war_cult }
@@ -63,8 +63,6 @@ decision = {
 		stability = 2
 	}
 
-	cost = 250
-	treasury = 250
 
 	action = {
 		name = "Proklamuj Wieczna Lige Cemanahuac"
@@ -93,14 +91,13 @@ decision = {
 	desc = "Podtrzymujac swiety nakaz karmienia slonca krwia jencow, Mexikowie ruszaja na ostateczna wojne totalna przeciwko Tlaxcali, Taraskanom i Zapotekom. Podbite krainy zostaja przeksztalcone w niewolne prowincje trybutarne pod zelazna wladza garnizonow Tenochtitlan."
 
 	trigger = {
+		treasury = 250
 		tag = AZT
 		flag = azt_war_cult
 		atwar = no
 		stability = 2
 	}
 
-	cost = 250
-	treasury = 250
 
 	action = {
 		name = "Narzuć hegemonię Huitzilopochtli nad Cemanahuac!"
@@ -127,6 +124,7 @@ decision = {
 	desc = "Przelom technologiczny Mexicow dokonuje sie badz dzieki pojmanym hiszpanskim rusznikarzom, kowalom i koniom bojowym, badz dzieki unifikacji bogatych kopaln miedzi i zlota oraz geniuszowi mezoamerykanskich rzemieslnikow. Rycerze Orla i Jaguara dosiadaja koni bojowych, a bataliony arkebuzerow staja sie postrachem najezdzcow."
 
 	trigger = {
+		treasury = 300
 		tag = AZT
 		atwar = no
 		stability = 1
@@ -144,8 +142,6 @@ decision = {
 		}
 	}
 
-	cost = 300
-	treasury = 300
 
 	action = {
 		name = "Przekuj obsydian w zelazo i proch!"
@@ -174,6 +170,7 @@ decision = {
 	desc = "Budowa pelnomorskich karaweli i galeonow w Veracruz przelamuje obcy monopol na Morzu Karaibskim. Wyplywajac z Zatoki Meksykanskiej, wyzwalajmy wyspy z rak najezdzcow i zabezpieczamy wybrzeza Ameryki Srodkowej."
 
 	trigger = {
+		treasury = 300
 		tag = AZT
 		flag = azt_iron_empire
 		owned = { province = 34 data = -1 } # Veracruz
@@ -181,8 +178,6 @@ decision = {
 		atwar = no
 	}
 
-	cost = 300
-	treasury = 300
 
 	action = {
 		name = "Wyprowadz floty na Morze Karaibskie"
@@ -210,14 +205,13 @@ decision = {
 	desc = "Monumentalna rozbudowa systemu plywajacych ogrodow (chinampas), grobli przeciwpowodziowych oraz kamiennych akweduktow z Chapultepec zapewnia milionowej metropolii staly dostep do krystalicznej wody i nieprzebrane zbiory kukurydzy."
 
 	trigger = {
+		treasury = 200
 		tag = AZT
 		owned = { province = 27 data = -1 } # Tenochtitlan
 		control = { province = 27 data = -1 }
 		atwar = no
 	}
 
-	cost = 200
-	treasury = 200
 
 	action = {
 		name = "Rozbuduj wodna metropolie Mexikow"
@@ -243,6 +237,7 @@ decision = {
 	desc = "Dysponujac pelnomorska flota galeonow zbudowanych w Veracruz oraz doswiadczonymi nawigatorami, wladca Mexicow wysyla wielka oceaniczna ekspedycje przez Atlantyk. Poselstwo ma nawiazac bezposredni kontakt dyplomatyczny ze stolicami Europy i potwierdzic status Cemanahuac jako suwerennego imperium."
 
 	trigger = {
+		treasury = 350
 		tag = AZT
 		flag = azt_iron_empire
 		flag = azt_caribbean_claims
@@ -252,8 +247,6 @@ decision = {
 		stability = 2
 	}
 
-	cost = 350
-	treasury = 350
 
 	action = {
 		name = "Wyslij wielkie poselstwo przez ocean!"
@@ -281,6 +274,7 @@ decision = {
 	desc = "Siec kamiennych drog andyjskich i linowych mostow wiszacych nad przepasciami laczy wszystkie cztery czesci swiata Tawantinsuyu od Quito po Chile. Potezna arteria komunikacyjna umozliwia blyskawiczne przemieszczanie armii i znoszenie barier handlowych w gorach."
 
 	trigger = {
+		treasury = 250
 		tag = INC
 		owned = { province = 168 data = -1 } # Cuzco
 		owned = { province = 164 data = -1 } # Quito
@@ -289,8 +283,6 @@ decision = {
 		atwar = no
 	}
 
-	cost = 250
-	treasury = 250
 
 	action = {
 		name = "Wybrukuj Krolewska Droge Slonca"
@@ -316,14 +308,13 @@ decision = {
 	desc = "Siec tysiecy kamiennych spichlerzy qullqa magazynujacych liofilizowane ziemniaki (chuño) i suszone mieso oraz sztafeta kurierow chasqui chronia imperium przed kleskami glodu i umozliwiaja natychmiastowe wprowadzanie kordonow sanitarnych w razie zarazy."
 
 	trigger = {
+		treasury = 200
 		tag = INC
 		flag = inc_qhapaq_nan
 		atwar = no
 		stability = 2
 	}
 
-	cost = 200
-	treasury = 200
 
 	action = {
 		name = "Wzmocnij spichlerze i bezpieczenstwo ludu"
@@ -347,6 +338,7 @@ decision = {
 	desc = "Wzmocnienie autorytetu Najwyzszego Kaplana Willaq Umu i uporzadkowanie kultu Inti oraz boga-stwórcy Viracochy tworzy jednolity kodeks moralny, odrzucajac barbarzynskie stereotypy i nadajac Tawantinsuyu niezachwiana tozsamosc cywilizacyjna."
 
 	trigger = {
+		treasury = 200
 		tag = INC
 		owned = { province = 168 data = -1 } # Cuzco
 		control = { province = 168 data = -1 }
@@ -354,8 +346,6 @@ decision = {
 		stability = 2
 	}
 
-	cost = 200
-	treasury = 200
 
 	action = {
 		name = "Ustanow odnowiona wiare Synow Slonca"
@@ -381,6 +371,7 @@ decision = {
 	desc = "Modernizacja armii Inkow nastepuje albo w wyniku pojmania hiszpanskich najeźdźców, albo dzieki zjednoczeniu szlaku andyjskiego, kopalni srebra i miedzi Altiplano oraz wlasnemu odlewnictwu. Twierdze w Cuzco i Tiwanaku otrzymuja nowoczesne baterie armat, a lekka kawaleria andyjska strzeze gorskich przeleczy."
 
 	trigger = {
+		treasury = 300
 		tag = INC
 		atwar = no
 		stability = 1
@@ -399,8 +390,6 @@ decision = {
 		}
 	}
 
-	cost = 300
-	treasury = 300
 
 	action = {
 		name = "Wystaw zelazne regimenty Synow Slonca!"
@@ -429,6 +418,7 @@ decision = {
 	desc = "Podtrzymujac tradycje morskiej wyprawy cesarza Tupaca Yupanqui na Pacyfik, w stoczniach Guayaquil i Callao wznosimy oceaniczne okrety wojenne. Inkowskie floty dominuja na zachodnim wybrzezu Ameryki i otwieraja szlaki pelnomorskie ku odleglym archipelagom."
 
 	trigger = {
+		treasury = 300
 		tag = INC
 		flag = inc_iron_legions
 		owned = { province = 167 data = -1 } # Lima / Callao
@@ -436,8 +426,6 @@ decision = {
 		atwar = no
 	}
 
-	cost = 300
-	treasury = 300
 
 	action = {
 		name = "Zbuduj Pacyficzna Flote Tawantinsuyu"
@@ -463,6 +451,7 @@ decision = {
 	desc = "Czerpiac ze starych map i legend o wyprawie cesarza Tupaca Yupanqui, Sapa Inka posyla oceaniczna flote galeonow balsa w gląb bezkresnego Pacyfiku. Wyprawa dociera do odleglych wysp Polinezji, nawiazujac bezposredni transpacyficzny handel z obcymi ludami i kupcami."
 
 	trigger = {
+		treasury = 300
 		tag = INC
 		flag = inc_pacific_thalassocracy
 		owned = { province = 167 data = -1 } # Callao
@@ -471,8 +460,6 @@ decision = {
 		stability = 2
 	}
 
-	cost = 300
-	treasury = 300
 
 	action = {
 		name = "Wyslij floty na Szlak Slonca przez Pacyfik!"

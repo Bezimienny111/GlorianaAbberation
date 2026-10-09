@@ -20,14 +20,13 @@ decision = {
 	desc = "Przez stulecia wrogie emiraty odcinaly chrzecijanskie cesarstwo Abisynii od morskich szlakow swiata. Zdobycie i ufortyfikowanie portu Massawa oraz archipelagu Dahlak otwiera bezposredni dostep do handlu z Indiami, Egiptem i Lewantem."
 
 	trigger = {
+		treasury = 150
 		tag = ETH
 		owned = { province = 753 data = -1 } # Massawa / Red Sea coast
 		control = { province = 753 data = -1 }
 		atwar = no
 	}
 
-	cost = 150
-	treasury = 150
 
 	action = {
 		name = "Zbuduj cesarska stocznie w Massawie"
@@ -55,6 +54,7 @@ decision = {
 	desc = "Waska ciesnina Bab al-Mandab (Wrota Lez) laczy Morze Czerwone z Oceanem Indyjskim. Przejecie kontroli nad strategicznym portem Aden pozwala etiopskim flotyllom pobierac cla ze wszystkich statkow korzennych plynacych z Indii ku Europie."
 
 	trigger = {
+		treasury = 200
 		tag = ETH
 		flag = eth_massawa_built
 		owned = { province = 500 data = -1 } # Aden
@@ -63,8 +63,6 @@ decision = {
 		stability = 1
 	}
 
-	cost = 200
-	treasury = 200
 
 	action = {
 		name = "Zabezpiecz Wrota Lez i handel korzenny"
@@ -94,14 +92,13 @@ decision = {
 	desc = "Wiesc o legendarnym krolestwie Ksieza Jana w gornym biegu Nilu obiega dwory Rzymu, Wenecji i Lizbony. Wyslanie wielkiego poselstwa przez Morze Czerwone przynosi sojusz ze swiatem zachodnim, traktaty handlowe oraz przybycie portugalskich i wloskich instruktorow broni palnej."
 
 	trigger = {
+		treasury = 200
 		tag = ETH
 		flag = eth_massawa_built
 		atwar = no
 		stability = 1
 	}
 
-	cost = 200
-	treasury = 200
 
 	action = {
 		name = "Powitaj europejskich mistrzow broni i armat"
@@ -133,6 +130,7 @@ decision = {
 	desc = "Wzdluz gorno-srodkowego biegu Nilu kwitly niegdys chrzecijanskie krolestwa Makurii i Alodii. Wyprawa armii cesarskiej na polnoc w dol rzeki przynosi wyzwolenie wspolwyznawcow spod ucisku nomadow i wlacza ludy Nubii do korony salomonskiej."
 
 	trigger = {
+		treasury = 150
 		tag = ETH
 		owned = { province = 750 data = -1 } # Dongola
 		control = { province = 750 data = -1 }
@@ -140,8 +138,6 @@ decision = {
 		stability = 1
 	}
 
-	cost = 150
-	treasury = 150
 
 	action = {
 		name = "Przylacz ziemie Nubii do Cesarstwa"
@@ -169,6 +165,7 @@ decision = {
 	desc = "Dysponujac armia zbrojna w armaty i muszkiety oraz pelna kontrola nad gornym Nilem i Morzem Czerwonym, Cesarz Etiopii wyrusza na wyzwolenie Swietych Miejsc Chrzescijanstwa od poludnia. Marsz ku Synajowi i Bramom Syjonu stawia Abisynie na czele swiatowej krucjaty!"
 
 	trigger = {
+		treasury = 300
 		tag = ETH
 		flag = eth_nubia_reclaimed
 		flag = eth_prester_john
@@ -177,8 +174,6 @@ decision = {
 		atwar = no
 	}
 
-	cost = 300
-	treasury = 300
 
 	action = {
 		name = "Prowadz krucjate Synow Salomona ku Syjonowi!"
@@ -204,6 +199,7 @@ decision = {
 	desc = "Pod panowaniem Niegusa Niegusti (Krola Krolow) zjednoczyly sie ziemie od zrodel Nilu az po Jerozolime i Ciesnine Ormuz. Spełnia sie pradawne proroctwo: Krolestwo Ksieza Jana staje sie niezwyciezonym bastionem wschodniego chrzescijanstwa i paniem szlakow handlowych swiata!"
 
 	trigger = {
+		treasury = 400
 		tag = ETH
 		flag = eth_southern_crusade
 		owned = { province = 493 data = -1 } # Judea / Jerusalem
@@ -216,8 +212,6 @@ decision = {
 		stability = 2
 	}
 
-	cost = 400
-	treasury = 400
 
 	action = {
 		name = "Proklamuj Triumf Cesarstwa Aksumickiego!"

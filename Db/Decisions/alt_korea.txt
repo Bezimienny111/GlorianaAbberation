@@ -20,6 +20,7 @@ decision = {
 	desc = "Krol Sejong Wielki powoluje w palacu Gyeongbokgung akademie najtezszych umyslow krolestwa. Jiphyeonjeon laczy badania nad astronomia, kartografia, inzynieria wodna, agronomia i medycyna. Rewolucja naukowa stawia Koree na czele innowacyjnosci swiata przednowozytnego."
 
 	trigger = {
+		treasury = 200
 		tag = KOR
 		owned = { province = 642 data = -1 } # Kyongju / Seoul
 		control = { province = 642 data = -1 }
@@ -28,8 +29,6 @@ decision = {
 		year = 1420
 	}
 
-	cost = 200
-	treasury = 200
 
 	action = {
 		name = "Otworz Sale Medrcow w Seulu"
@@ -54,14 +53,13 @@ decision = {
 	desc = "Dotychczasowe pismo chinskie (Hanja) bylo narzedziem dominacji arystokracji yangban i zrodlem analfabetyzmu ludu. Stworzenie logicznego, naukowego alfabetu Hangul (Hunminjeongeum - Wlasciwe dzwieki do nauczania ludu) oraz druk ruchoma czcionka metalowa umozliwia masowa edukacje chlopow i rzemieslnikow."
 
 	trigger = {
+		treasury = 150
 		tag = KOR
 		flag = kor_hall_of_worthies
 		atwar = no
 		stability = 1
 	}
 
-	cost = 150
-	treasury = 150
 
 	action = {
 		name = "Wprowadz Hangul jako pismo panstwowe"
@@ -90,21 +88,20 @@ decision = {
 	desc = "Laczenie doswiadczen stoczniowcow z Pusan z krolewskim biurem artylerii umozliwia stworzenie pierwszych na swiecie pancernych okretow wojennych. Geobukseon posiada zelazny dach najeżony kolcami przeciw abordazowi, dziala armatnie zieonace ogniem z paszczy smoka na dziobie i zdolnosc taranowania wrogich lodzi."
 
 	trigger = {
+		treasury = 250
 		tag = KOR
 		owned = { province = 641 data = -1 } # Kyongsang / Pusan
 		control = { province = 641 data = -1 }
 		atwar = no
 	}
 
-	cost = 250
-	treasury = 250
 
 	action = {
 		name = "Zwoduj pancerne lodzie Geobukseon!"
 		command = { type = treasury value = -250 }
 		command = { type = gainbuilding which = 641 value = shipyard }
 		command = { type = naval value = 600 }
-		command = { type = domestic which = naval value = 2 }
+		command = { type = domestic which = land value = -2 }
 		command = { type = domestic which = quality value = 1 }
 		command = { type = setflag which = kor_geobukseon_built }
 		command = { type = vp value = 100 }
@@ -123,14 +120,13 @@ decision = {
 	desc = "Japonskie pirackie bandy Wōkō od dziesiecioleci lupily wybrzeza Korei. Zmobilizowanie floty okretow Geobukseon i uderzenie na pirackie bazy na wyspie Tsushima niszczy gniazda korsarzy i wymusza na wladcach Japonii pelne bezpieczenstwo szlakow morskich."
 
 	trigger = {
+		treasury = 150
 		tag = KOR
 		flag = kor_geobukseon_built
 		atwar = no
 		stability = 1
 	}
 
-	cost = 150
-	treasury = 150
 
 	action = {
 		name = "Zniszcz bazy korsarzy w Ciesninie Tsushima"
@@ -158,6 +154,7 @@ decision = {
 	desc = "Wykorzystujac oslabienie koczownikow i kryzysy dynastii polnocnych, Korea przekracza graniczna rzeke Yalu, by odzyskac prastare prowincje krolestwa Goguryeo. Podboj ziem Mandzurii i zintegrowanie koczowniczych plemion Dżurdżenow tworzy potezne mocarstwo kontynentalne."
 
 	trigger = {
+		treasury = 250
 		tag = KOR
 		owned = { province = 643 data = -1 } # Pyongan
 		control = { province = 643 data = -1 }
@@ -165,8 +162,6 @@ decision = {
 		atwar = no
 	}
 
-	cost = 250
-	treasury = 250
 
 	action = {
 		name = "Odzyskaj pradawne rubieze Goguryeo!"
@@ -192,6 +187,7 @@ decision = {
 	desc = "Ugruntowanie granic na rzece Amur i pelna integracja Mandzurii z krolestwem w Hanseongu. Korea staje sie suwerennym imperium wschodnioazjatyckim, dysponujacym nieprzebranymi zasobami zelaza, drewna i zboza oraz pancerzami Geobukseon broniacymi Morza Zoltego."
 
 	trigger = {
+		treasury = 350
 		tag = KOR
 		flag = kor_goguryeo_reclaimed
 		owned = { province = 636 data = -1 }
@@ -202,8 +198,6 @@ decision = {
 		stability = 2
 	}
 
-	cost = 350
-	treasury = 350
 
 	action = {
 		name = "Proklamuj Oswiecone Cesarstwo Wschodu!"

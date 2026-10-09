@@ -20,6 +20,7 @@ decision = {
 	desc = "Przez stulecia wladza nad Nilem spoczywala w rekach obcej, sprowadzanej z Kipczaku i Kaukazu kasty mameluckich niewolnikow-wojownikow. Rdzenni egipscy fellahowie oraz chrzescijascy Koptowie byli traktowani jak poddani nizszej kategorii. Otwarcie korpusu urzedniczego i szeregow armii dla wolnych autochtonow przelamie monopol emirow i zjednoczy mieszkancow Nilu w jeden silny narod."
 
 	trigger = {
+		treasury = 100
 		tag = MAM
 		atwar = no
 		stability = 1
@@ -32,8 +33,6 @@ decision = {
 		# year = 1345 # Unrestricted pacing
 	}
 
-	cost = 100
-	treasury = 100
 
 	action = {
 		name = "Nadaj pelne prawa fellahom i Koptom"
@@ -60,14 +59,13 @@ decision = {
 	desc = "Utrzymanie targow niewolnikow i nieustanne oplacanie obcych garnizonow wyczerpuje skarb panstwa i rodzi ciagle przewroty palacowe. Wydajac edykt o zakazie zakupu wojskowych niewolnikow i tworzac stala armie poborowa z ludnosci rodzimej, kladziemy kres samowoli mameluckiej oligarchii."
 
 	trigger = {
+		treasury = 150
 		tag = MAM
 		atwar = no
 		stability = 1
 		flag = mam_emancipation
 	}
 
-	cost = 150
-	treasury = 150
 
 	action = {
 		name = "Rozwiaz tradycyjne garnizony mameluckie"
@@ -99,6 +97,7 @@ decision = {
 	desc = "Zrzucajac mameluckie jarzmo, wladca Egiptu przenosi stolice z kontynentalnego Kairu do nadmorskiej metropolii Aleksandrii. Przyjmujac tradycje dawnej dynastii Lagidow (Ptolemeuszy), panstwo zwraca sie ku Morzu Srodziemnemu, laczac dziedzictwo greckie, koptyjskie i arabskie w kosmopolityczne imperium handlu i nauki."
 
 	trigger = {
+		treasury = 200
 		tag = MAM
 		atwar = no
 		stability = 2
@@ -107,8 +106,6 @@ decision = {
 		flag = mam_mamluk_dismantled
 	}
 
-	cost = 200
-	treasury = 200
 
 	action = {
 		name = "Proklamuj Nowe Panstwo Ptolemeuszy"
@@ -146,14 +143,13 @@ decision = {
 	desc = "Siodmy Cud Swiata, potezna latarnia morska na wysepce Faros, zostala powaznie uszkodzona przez trzesienia ziemi. Wykorzystujac zyski z ceł aleksandryjskich i najnowsze osiagniecia inzynierii, wznosimy na nowo monumentalna wieze z systemem luster i bateriami dzial nadbrzeznych, aby prowadzic okrety calego Morza Srodziemnego."
 
 	trigger = {
+		treasury = 200
 		tag = EGY
 		owned = { province = 744 data = -1 }
 		control = { province = 744 data = -1 }
 		atwar = no
 	}
 
-	cost = 200
-	treasury = 200
 
 	action = {
 		name = "Wskrzes cud architektoniczny Faros"
@@ -175,6 +171,7 @@ decision = {
 	desc = "Podobnie jak w czasach starozytnego Mouseionu, wladca nakazuje zebranie manuskryptow ze wszystkich stron swiata. Tlumacze, filozofowie, astronomowie i lekarze z Konstantynopola, Bagdadu, Rzymu i Andaluzji otrzymuja wysokie uposazenia i schronienie w Aleksandrii, czyniac z niej serce renesansu wiedzy."
 
 	trigger = {
+		treasury = 300
 		tag = EGY
 		owned = { province = 744 data = -1 }
 		control = { province = 744 data = -1 }
@@ -182,8 +179,6 @@ decision = {
 		atwar = no
 	}
 
-	cost = 300
-	treasury = 300
 
 	action = {
 		name = "Utworz Akademie i Biblioteke"
@@ -218,8 +213,6 @@ decision = {
 		atwar = no
 	}
 
-	cost = 800
-	treasury = 800
 
 	action = {
 		name = "Przekop szlak ku Morzu Czerwonemu i zbuduj Czerwona Flote"
@@ -251,13 +244,12 @@ decision = {
 	desc = "Flota aleksandryjska dominuje na wodach Lewantu. Aby zabezpieczyc szlaki handlowe przed weneckimi i genuenskimi konsorcjami, proklamujemy strefe protektoratu nad wyspami Morza Egejskiego i wybrzezami Syrii."
 
 	trigger = {
+		treasury = 150
 		tag = EGY
 		owned = { province = 744 data = -1 }
 		atwar = no
 	}
 
-	cost = 150
-	treasury = 150
 
 	action = {
 		name = "Zglos roszczenia do kluczowych wysp"
@@ -267,7 +259,7 @@ decision = {
 		command = { type = addcore_claim which = 481 } # Rhodes
 		command = { type = addcore_claim which = 491 } # Lebanon
 		command = { type = naval value = 600 }
-		command = { type = domestic which = naval value = 2 }
+		command = { type = domestic which = land value = -2 }
 	}
 }
 
@@ -285,6 +277,7 @@ decision = {
 	desc = "Egipt jest darem Nilu. Kazde zaklocenie doplywu zyznych mulow grozi kleska glodu. Wyslanie ekspedycji w gore rzeki ku Nubii i zawarcie strategicznego porozumienia z chrzescjanskim krolestwem Etiopii zabezpieczy zyciodajne zrodla."
 
 	trigger = {
+		treasury = 150
 		or = {
 			tag = EGY
 			tag = MAM
@@ -294,8 +287,6 @@ decision = {
 		atwar = no
 	}
 
-	cost = 150
-	treasury = 150
 
 	action = {
 		name = "Zabezpiecz poludniowy szlak Nilu"
@@ -326,6 +317,7 @@ decision = {
 	desc = "Pod natchnieniem odnalezionych hieroglificznych inskrypcji i prastarej tradycji, wladca oglaza sie prawowitym Faraonem – Synem Boga Slonca Ra i ziemskim wcieleniem Horusa. Wiara dawnego Kemetu wraca nad brzegi Nilu, wypierajac obce nauki i wprawiajac swiat monoteistyczny w bezgraniczne przerazenie!"
 
 	trigger = {
+		treasury = 300
 		or = {
 			tag = MAM
 			tag = EGY
@@ -341,8 +333,6 @@ decision = {
 		# year = 1370 # Unrestricted pacing
 	}
 
-	cost = 300
-	treasury = 300
 
 	action = {
 		name = "Przyjmij Boska Korone Faraonow!"
@@ -376,14 +366,13 @@ decision = {
 	desc = "Przez stulecia wielkie grobowce dawnych kroli i oblicze Wielkiego Sfinksa byly dewastowane na material budowlany dla kairskich twierdz. Faraon nakazuje natychmiastowe wstrzymanie rozbiorki, odkopanie monumentow spod ton pustynnego piasku i odtworzenie ich lsnacej biela wapiennej okladziny."
 
 	trigger = {
+		treasury = 300
 		religion = egyptian_pagan
 		owned = { province = 746 data = -1 }
 		control = { province = 746 data = -1 }
 		atwar = no
 	}
 
-	cost = 300
-	treasury = 300
 
 	action = {
 		name = "Odnów wieczne monumenty bogow"
@@ -409,14 +398,13 @@ decision = {
 	desc = "Prastare Wese (Teby) znow staje sie swietym sercem kultu Amona-Ra. Monumentalne aleje sfinksow, gigantyczne pylony i sale hypostylowe w Karnaku i Luksorze zostaja zrekonstruowane, przyciagajac kaplanow i pielgrzymow z calej doliny Nilu."
 
 	trigger = {
+		treasury = 250
 		religion = egyptian_pagan
 		owned = { province = 747 data = -1 } # Nile
 		control = { province = 747 data = -1 }
 		atwar = no
 	}
 
-	cost = 250
-	treasury = 250
 
 	action = {
 		name = "Zapal swiete znicze Amona-Ra"
@@ -442,14 +430,13 @@ decision = {
 	desc = "Co roku swieta barka Amona wyrusza z Karnaku ku Luxorowi w uroczystej procesji, potwierdzajac kosmiczna wiez miedzy bostwem a zyjacym Faraonem. Rozdanie chleba i wina wsrod ludu umacnia wiare i posluszenstwo wobec boskiego wladcy."
 
 	trigger = {
+		treasury = 150
 		religion = egyptian_pagan
 		owned = { province = 746 data = -1 }
 		owned = { province = 747 data = -1 }
 		atwar = no
 	}
 
-	cost = 150
-	treasury = 150
 
 	action = {
 		name = "Swietuj odnowienie kosmicznego porzadku"
@@ -475,6 +462,7 @@ decision = {
 	desc = "Odrzucajac bierny fatalizm i doslowny dogmatyzm, wladca przyjmuje szkole Mu'tazila jako oficjalna doktryne panstwowa. Prymat ludzkiego rozumu ('aql) w interpretacji wiary otwiera drzwi dla wolnej woli, nauk przyrodniczych, medycyny i tolerancji wobec ludnosci ksiegi. Choć konserwatywni teolodzy wrza z gniewu, Kair wkracza w nowy zloty wiek intelektualny."
 
 	trigger = {
+		treasury = 250
 		tag = MAM
 		religion = sunni
 		domestic = { which = innovative value = 5 }
@@ -482,8 +470,6 @@ decision = {
 		atwar = no
 	}
 
-	cost = 250
-	treasury = 250
 
 	action = {
 		name = "Oglos prymat Rozumu nad dogmatem"
@@ -514,14 +500,13 @@ decision = {
 	desc = "Slynna ustronna szkola teologiczna Al-Azhar w Kairze zostaje przeksztalcona w uniwersytet nauk empirycznych. Katedry astronomii, matematyki, algebry, anatomii i fizyki przyciagaja wybitne umysly z calego swiata."
 
 	trigger = {
+		treasury = 250
 		religion = mutazilite
 		owned = { province = 746 data = -1 }
 		control = { province = 746 data = -1 }
 		atwar = no
 	}
 
-	cost = 250
-	treasury = 250
 
 	action = {
 		name = "Ustanow katedry nauk doswiadczalnych"
@@ -546,6 +531,7 @@ decision = {
 	desc = "Kompleks szpitalny sułtana Qalawuna w Kairze zostaje rozbudowany w najnowoczesniejszy bimaristan swiata. Nauczanie oparte na sekcjach anatomicznych, farmakopei ziolowej i higienie zapobiega zarazom i zapewnia bezplatne leczenie kazdemu obywatelowi."
 
 	trigger = {
+		treasury = 180
 		or = {
 			religion = mutazilite
 			tag = EGY
@@ -554,8 +540,6 @@ decision = {
 		control = { province = 746 data = -1 }
 	}
 
-	cost = 180
-	treasury = 180
 
 	action = {
 		name = "Rozbuduj centrum medyczne Nilu"
@@ -581,14 +565,13 @@ decision = {
 	desc = "Wskrzeszajac legendarna tradycje Domu Madrosci dawnego Bagdadu, biblioteka w Kairze staje sie archiwum prac filozoficznych, astronomicznych atlasow i tlumaczen z sanskrytu, greki i laciny na jezyk arabski."
 
 	trigger = {
+		treasury = 300
 		religion = mutazilite
 		owned = { province = 746 data = -1 }
 		control = { province = 746 data = -1 }
 		atwar = no
 	}
 
-	cost = 300
-	treasury = 300
 
 	action = {
 		name = "Zgromadz skarby wiedzy ludzkiej"
@@ -617,6 +600,7 @@ decision = {
 	desc = "Syria od dawna stanowila zarzewie rebelii wrogich frakcji. Przeprowadzenie gruntownej reformy administracyjnej, zrownanie w prawach syryjskich miast oraz ufortyfikowanie Damaszku i Aleppo cementuje unie Syrii z Egiptem."
 
 	trigger = {
+		treasury = 150
 		or = {
 			tag = MAM
 			tag = EGY
@@ -631,8 +615,6 @@ decision = {
 		atwar = no
 	}
 
-	cost = 150
-	treasury = 150
 
 	action = {
 		name = "Zintegruj syryjskie prowincje z korona"
@@ -660,6 +642,7 @@ decision = {
 	desc = "Sprawowanie pieczy nad Swietymi Miastami Mekka i Medyna stanowi najwyzszy honor dla wladcy panujacego nad Morzem Czerwonym. Zapewnienie bezpieczenstwa karawan pielgrzymich przynosi powszechny szacunek w calym swiecie."
 
 	trigger = {
+		treasury = 200
 		or = {
 			tag = MAM
 			tag = EGY
@@ -673,8 +656,6 @@ decision = {
 		atwar = no
 	}
 
-	cost = 200
-	treasury = 200
 
 	action = {
 		name = "Obejmij protektorat nad Haramejn"

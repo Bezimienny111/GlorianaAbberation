@@ -24,12 +24,11 @@ decision = {
 	desc = "W zylach Owaina Glyndwra plynie krew dawnych wladcow Gwynedd i Powys. Zrzucajac anglo-normanskie jarzmo, Owain zwoluje walijskie rody, przyjmuje tytul Ksiecia Walii (Tywysog Cymru) i wznosi sztandar Zlotego Smoka. Wolna Walia staje sie suwerennym panstwem gotowym do walki o wolnosc celtyckich narodow."
 
 	trigger = {
+		treasury = 150
 		owned = { province = 243 data = -1 }
 		control = { province = 243 data = -1 }
 	}
 
-	cost = 150
-	treasury = 150
 
 	action = {
 		name = "Proklamuj Suwerenne Ksiestwo Walii!"
@@ -70,14 +69,13 @@ decision = {
 	desc = "Przez pokolenia angielska twierdza wokol Dublina (The Pale) byla symbolem obcej okupacji Zielonej Wyspy. Odbicie Dublina i likwidacja angielskiego urzedu Justiciara otwiera droge do wskrzeszenia tytulu Wysokiego Krola Irlandii (Ard Ri na hEireann) i zjednoczenia klanow pod jednym sztandarem."
 
 	trigger = {
+		treasury = 200
 		owned = { province = 233 data = -1 } # Meath / Dublin
 		control = { province = 233 data = -1 }
 		atwar = no
 		stability = 1
 	}
 
-	cost = 200
-	treasury = 200
 
 	action = {
 		name = "Wskrzesz Tytul Wysokiego Krola (Ard Ri)!"
@@ -116,13 +114,12 @@ decision = {
 	desc = "Wobec imperialnych roszczen Londynu, delegacje Szkocji, Walii i Irlandii spotykaja sie w zamku Caernarfon. Zamiast walczyc osobno, ludy celtyckie tworza nierozerwalna federacje obronna poparta francuskimi posilkami i zlotem."
 
 	trigger = {
+		treasury = 100
 		atwar = yes
 		war = { country = ENG }
 		stability = 1
 	}
 
-	cost = 100
-	treasury = 100
 
 	action = {
 		name = "Zawrzyj Swiety Pakt Obrony Celtyckiej"
@@ -151,6 +148,7 @@ decision = {
 	desc = "Zwyciestwo nad najeźdźcami umozliwia ostateczne zjednoczenie celtyckich narodow w jedno potezne imperium atlantyckie. Polaczenie tradycji Edynburga, Caernarfon i Dublina tworzy mocarstwo oparte na wspolnocie jezykow gaelickich i brytonskich."
 
 	trigger = {
+		treasury = 300
 		owned = { province = 239 data = -1 } # Lothian / Edinburgh
 		owned = { province = 243 data = -1 } # Wales
 		owned = { province = 233 data = -1 } # Meath / Dublin
@@ -161,8 +159,6 @@ decision = {
 		stability = 2
 	}
 
-	cost = 300
-	treasury = 300
 
 	action = {
 		name = "Zjednocz Korony Szkocji, Walii i Irlandii!"
@@ -199,6 +195,7 @@ decision = {
 	desc = "Przelamujac angielska obrone w bitwach pod Marches i w Yorkshire, celtyckie armie staja u bram Londynu. Wyzwolenie brytonskiej Kornwalii, celtyckiej Kumbrii i starozytnej Brytanii Pólnocnej trwale odsuwa zagrozenie anglosaskie."
 
 	trigger = {
+		treasury = 250
 		owned = { province = 242 data = -1 } # The Marches
 		owned = { province = 245 data = -1 } # Yorkshire
 		control = { province = 242 data = -1 }
@@ -207,8 +204,6 @@ decision = {
 		stability = 1
 	}
 
-	cost = 250
-	treasury = 250
 
 	action = {
 		name = "Odzyskaj pradawne rubieze Brytanii"
@@ -240,6 +235,7 @@ decision = {
 	desc = "Zajecie Londynu i zepchniecie anglosaskiej monarchii stanowi dziejowy triumf ludow celtyckich. W obliczu ostatecznego zwyciestwa Celci musza zadecydowac o losie Anglii: czy pozostawic ja jako zwasalizowane małe ksiestwo Wessex, czy tez dokonac bezposredniej aneksji i podzialu ziem anglosaskich."
 
 	trigger = {
+		treasury = 350
 		owned = { province = 247 data = -1 } # London
 		owned = { province = 249 data = -1 } # Cornwall
 		control = { province = 247 data = -1 }
@@ -248,8 +244,6 @@ decision = {
 		stability = 2
 	}
 
-	cost = 350
-	treasury = 350
 
 	action = {
 		name = "Oglos triumf celtyckiej Brytanii!"
@@ -260,7 +254,7 @@ decision = {
 		command = { type = addcore_national which = 246 } # Midlands
 		command = { type = gainbuilding which = 249 value = shipyard }
 		command = { type = naval value = 800 }
-		command = { type = domestic which = naval value = 2 }
+		command = { type = domestic which = land value = -2 }
 		command = { type = stability value = 2 }
 		command = { type = setflag which = celt_britain_restored }
 		command = { type = vp value = 250 }
@@ -284,14 +278,13 @@ decision = {
 	desc = "Podtrzymujac pradawne legendy o oceanicznej wyprawie swietego Brendana Zeglarza na zachod przez wzburzony Atlantyk, zjednoczona flotylla celtycka wyrusza ze stoczni w Kintyre i Falmouth na podboj Nowego Swiata. Celtyccy pionierzy zakladaja Nowa Albe wyprzedzajac innych kolonizatorow."
 
 	trigger = {
+		treasury = 300
 		owned = { province = 249 data = -1 } # Cornwall / Falmouth
 		control = { province = 249 data = -1 }
 		atwar = no
 		stability = 2
 	}
 
-	cost = 300
-	treasury = 300
 
 	action = {
 		name = "Wyslij floty na Szlak Swietego Brendana!"
