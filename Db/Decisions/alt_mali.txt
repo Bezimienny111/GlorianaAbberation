@@ -1,0 +1,642 @@
+#################################################################
+## Gloriana 1337 - Alternate Destinies                         ##
+## Module 8: Mali Empire (MAL)                                 ##
+## Decisions File: alt_mali.txt                                ##
+## ID Range: 7450 - 7469                                       ##
+#################################################################
+
+#----------------------------------------------------------------
+# Phase 1: Unification of the West African Heartland
+# (Prerequisites before outward expansion or overseas voyages)
+#----------------------------------------------------------------
+
+# 7450: Consolidation of the Royal Goldfields: Bambuk and Bure
+decision = {
+	id = 7450
+	potential = {
+		tag = MAL
+		NOT = { flag = mal_goldfields_consolidated }
+	}
+	name = "Consolidation of the Royal Goldfields: Bambuk and Bure"
+	desc = "The legendary wealth of the Mansa derives from the auriferous gravels of Bambuk and Bure. Bringing both mining regions under direct imperial overseers and garrisoning them with royal archers eliminates rogue prospectors, triples crown revenues, and provides the bullion needed to unite West Africa."
+
+	trigger = {
+		tag = MAL
+		owned = { province = 1490 data = -1 } # Bambuk
+		owned = { province = 1494 data = -1 } # Bure
+		control = { province = 1490 data = -1 }
+		control = { province = 1494 data = -1 }
+		atwar = no
+		treasury = 100
+	}
+
+	action = {
+		command = { type = treasury value = -100 }
+		command = { type = addcore_national which = 1490 }
+		command = { type = addcore_national which = 1494 }
+		command = { type = provincetax which = 1490 value = 3 }
+		command = { type = provincetax which = 1494 value = 3 }
+		command = { type = infra value = 300 }
+		command = { type = stability value = 1 }
+		command = { type = setflag which = mal_goldfields_consolidated }
+	}
+}
+
+# 7451: Pacification of the Mossi Horsemen
+decision = {
+	id = 7451
+	potential = {
+		tag = MAL
+		flag = mal_goldfields_consolidated
+		NOT = { flag = mal_mossi_subdued }
+	}
+	name = "Pacification of the Mossi Horsemen"
+	desc = "Mossi cavalry raiders from the southern savanna have repeatedly raided the market towns of the Niger Bend. Marching our imperial host into the heart of Yatenga, subduing the Mogho Naba, and incorporating their elite horsemen into the imperial army secures our southern flank against sudden invasions."
+
+	trigger = {
+		tag = MAL
+		owned = { province = 1493 data = -1 } # Mossi
+		control = { province = 1493 data = -1 }
+		atwar = no
+		treasury = 100
+	}
+
+	action = {
+		command = { type = treasury value = -100 }
+		command = { type = addcore_national which = 1493 }
+		command = { type = cavalry which = 1493 value = 3000 }
+		command = { type = domestic which = offensive value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = setflag which = mal_mossi_subdued }
+	}
+}
+
+# 7452: Subjugation of the Songhai Realm: Gao and the Niger Bend
+decision = {
+	id = 7452
+	potential = {
+		tag = MAL
+		flag = mal_goldfields_consolidated
+		NOT = { flag = mal_songhai_subdued }
+	}
+	name = "Subjugation of the Songhai Realm: Gao and the Niger Bend"
+	desc = "Downstream along the great bend of the Niger lies Gao, capital of the proud Songhai fishermen and warriors. Bringing Gao and Say under permanent Malinke administration secures the entire navigable river corridor from Segu to the frontiers of Hausaland."
+
+	trigger = {
+		tag = MAL
+		owned = { province = 1496 data = -1 } # Gao
+		owned = { province = 1497 data = -1 } # Say
+		control = { province = 1496 data = -1 }
+		control = { province = 1497 data = -1 }
+		atwar = no
+		treasury = 150
+	}
+
+	action = {
+		command = { type = treasury value = -150 }
+		command = { type = addcore_national which = 1496 }
+		command = { type = addcore_national which = 1497 }
+		command = { type = provincetax which = 1496 value = 2 }
+		command = { type = cot which = 1496 }
+		command = { type = stability value = 1 }
+		command = { type = setflag which = mal_songhai_subdued }
+	}
+}
+
+# 7453: The Savanna Merchant Highway: Jenne to the Hausa Marches
+decision = {
+	id = 7453
+	potential = {
+		tag = MAL
+		flag = mal_goldfields_consolidated
+		NOT = { flag = mal_savanna_secured }
+	}
+	name = "The Savanna Merchant Highway: Jenne to the Hausa Marches"
+	desc = "Connecting the trade emporiums of Djenne and Begho to the eastern markets of Kano and Zaria integrates the bustling savanna trade. Malinke Wangara merchants, carrying gold, kola nuts, and woven cotton, dominate commercial networks all the way to Lake Chad."
+
+	trigger = {
+		tag = MAL
+		owned = { province = 1489 data = -1 } # Jenne
+		owned = { province = 1498 data = -1 } # Begho
+		control = { province = 1489 data = -1 }
+		control = { province = 1498 data = -1 }
+		atwar = no
+		treasury = 150
+	}
+
+	action = {
+		command = { type = treasury value = -150 }
+		command = { type = addcore_national which = 1489 }
+		command = { type = addcore_national which = 1498 }
+		command = { type = trade value = 500 }
+		command = { type = infra value = 400 }
+		command = { type = merchants value = 3 }
+		command = { type = setflag which = mal_savanna_secured }
+	}
+}
+
+# 7454: The Atlantic Gateway: Senegambian Estuaries
+decision = {
+	id = 7454
+	potential = {
+		tag = MAL
+		flag = mal_goldfields_consolidated
+		NOT = { flag = mal_senegambia_secured }
+	}
+	name = "The Atlantic Gateway: Senegambian Estuaries"
+	desc = "To gaze upon the infinite Western Ocean, Mali must push westward to the sea. Incorporating the Wolof and Serer communities of Dakar, Gambia, and Senegal gives the empire sheltered natural harbors, fisheries, and direct access to maritime navigation."
+
+	trigger = {
+		tag = MAL
+		owned = { province = 798 data = -1 } # Gambia
+		owned = { province = 799 data = -1 } # Dakar
+		owned = { province = 800 data = -1 } # Senegal
+		control = { province = 798 data = -1 }
+		control = { province = 799 data = -1 }
+		control = { province = 800 data = -1 }
+		atwar = no
+		treasury = 150
+	}
+
+	action = {
+		command = { type = treasury value = -150 }
+		command = { type = add_countryculture which = senegambian }
+		command = { type = addcore_national which = 798 }
+		command = { type = addcore_national which = 799 }
+		command = { type = addcore_national which = 800 }
+		command = { type = naval value = 400 }
+		command = { type = stability value = 1 }
+		command = { type = setflag which = mal_senegambia_secured }
+	}
+}
+
+# 7455: Proclamation of the Grand United Empire of Mali
+decision = {
+	id = 7455
+	potential = {
+		tag = MAL
+		flag = mal_mossi_subdued
+		flag = mal_songhai_subdued
+		flag = mal_savanna_secured
+		flag = mal_senegambia_secured
+		NOT = { flag = mal_west_africa_united }
+	}
+	name = "Proclamation of the Grand United Empire of Mali"
+	desc = "From the Atlantic breakers of Cape Verde to the gates of Hausaland, and from the Sahara dunes to the equatorial forests, West Africa is united under the golden scepter of the Mansa. With the home continent at peace, the empire stands ready to choose its world destiny: march north across the Sahara to liberate Andalusia, or sail the Atlantic Ocean to found an overseas world empire."
+
+	trigger = {
+		tag = MAL
+		stability = 2
+		atwar = no
+		treasury = 200
+	}
+
+	action = {
+		command = { type = treasury value = -200 }
+		command = { type = stability value = 2 }
+		command = { type = domestic which = centralization value = 2 }
+		command = { type = domestic which = aristocracy value = 1 }
+		command = { type = badboy value = -5 }
+		command = { type = vp value = 200 }
+		command = { type = setflag which = mal_west_africa_united }
+	}
+}
+
+#----------------------------------------------------------------
+# Path A: The Trans-Saharan Caliphate & Reconquista of Iberia
+#----------------------------------------------------------------
+
+# 7456: Trans-Saharan March: Subjugation of the Western Oases
+decision = {
+	id = 7456
+	potential = {
+		tag = MAL
+		flag = mal_west_africa_united
+		NOT = { flag = mal_sahara_secured }
+	}
+	name = "Trans-Saharan March: Subjugation of the Western Oases"
+	desc = "Beyond Walata and Awdaghost lie the desolate sands of the western Sahara. Mobilizing camel-mounted cavalry and garrisoning the water wells of Nouakchott, Nouadibuh, and Tassaret links Mali with the caravan routes of the Sanhaja and Tuareg tribes, forging an open highway to Morocco."
+
+	trigger = {
+		tag = MAL
+		owned = { province = 801 data = -1 } # Louga
+		owned = { province = 802 data = -1 } # Nouakchott
+		owned = { province = 803 data = -1 } # Nouadibuh
+		owned = { province = 804 data = -1 } # Tassaret
+		owned = { province = 805 data = -1 } # Sahara
+		control = { province = 802 data = -1 }
+		control = { province = 805 data = -1 }
+		atwar = no
+		treasury = 200
+	}
+
+	action = {
+		command = { type = treasury value = -200 }
+		command = { type = add_countryculture which = tuareg }
+		command = { type = addcore_national which = 801 }
+		command = { type = addcore_national which = 802 }
+		command = { type = addcore_national which = 803 }
+		command = { type = addcore_national which = 804 }
+		command = { type = addcore_national which = 805 }
+		command = { type = stability value = 1 }
+		command = { type = setflag which = mal_sahara_secured }
+	}
+}
+
+# 7457: Overthrow of the Marinid Sultanate: The Siege of Fez
+decision = {
+	id = 7457
+	potential = {
+		tag = MAL
+		flag = mal_sahara_secured
+		NOT = { flag = mal_morocco_secured }
+	}
+	name = "Overthrow of the Marinid Sultanate: The Siege of Fez"
+	desc = "Descending from the High Atlas, the imperial hosts of Mali confront the decaying Marinid dynasty of Morocco. Seizing the imperial cities of Fez, Tangiers, and the Atlantic coast brings the Maghreb under the Mansa\'s banner, securing direct access to the Straits of Gibraltar."
+
+	trigger = {
+		tag = MAL
+		owned = { province = 806 data = -1 } # Toubkal / Marrakech
+		owned = { province = 731 data = -1 } # Anti-Atlas
+		owned = { province = 733 data = -1 } # Fez
+		owned = { province = 732 data = -1 } # Tangiers
+		control = { province = 733 data = -1 }
+		control = { province = 732 data = -1 }
+		atwar = no
+		treasury = 250
+	}
+
+	action = {
+		command = { type = treasury value = -250 }
+		command = { type = add_countryculture which = berber }
+		command = { type = addcore_national which = 806 }
+		command = { type = addcore_national which = 731 }
+		command = { type = addcore_national which = 733 }
+		command = { type = addcore_national which = 732 }
+		command = { type = addcore_claim which = 445 } # Gibraltar
+		command = { type = stability value = 1 }
+		command = { type = setflag which = mal_morocco_secured }
+	}
+}
+
+# 7458: The Crossing of Gibraltar: The African Jihad for Andalusia
+decision = {
+	id = 7458
+	potential = {
+		tag = MAL
+		flag = mal_morocco_secured
+		NOT = { flag = mal_gibraltar_crossed }
+	}
+	name = "The Crossing of Gibraltar: The African Jihad for Andalusia"
+	desc = "Centuries after Tariq ibn Ziyad and the Almoravids, African Muslim hosts assemble once more on the beaches of Tangiers. Crossing the narrow strait under cover of royal naval squadrons, our armies establish an unshakeable beachhead upon the Rock of Gibraltar, pledging to liberate Andalusia from Christian reconquista."
+
+	trigger = {
+		tag = MAL
+		owned = { province = 732 data = -1 } # Tangiers
+		control = { province = 732 data = -1 }
+		treasury = 250
+		atwar = no
+		stability = 1
+	}
+
+	action = {
+		command = { type = treasury value = -250 }
+		command = { type = addcore_claim which = 445 } # Gibraltar
+		command = { type = addcore_claim which = 443 } # Andalusia
+		command = { type = addcore_claim which = 444 } # Granada
+		command = { type = casusbelli which = CAS value = 60 }
+		command = { type = casusbelli which = POR value = 60 }
+		command = { type = relation which = CAS value = -300 }
+		command = { type = relation which = POR value = -300 }
+		command = { type = setflag which = mal_gibraltar_crossed }
+	}
+}
+
+# 7459: Liberation of the Emirate of Granada
+decision = {
+	id = 7459
+	potential = {
+		tag = MAL
+		flag = mal_gibraltar_crossed
+		NOT = { flag = mal_granada_liberated }
+	}
+	name = "Liberation of the Emirate of Granada"
+	desc = "The Nasrid dynasty in the Alhambra has stood besieged by Christian Castile for generations. Storming the mountain passes and sweeping into Granada, the Mansa relieves the Muslim population, restores the defenses of the Sierra Nevada, and incorporates Granada as the northern jewel of the African Caliphate."
+
+	trigger = {
+		tag = MAL
+		owned = { province = 444 data = -1 } # Granada
+		owned = { province = 445 data = -1 } # Gibraltar
+		control = { province = 444 data = -1 }
+		control = { province = 445 data = -1 }
+		atwar = no
+		treasury = 150
+	}
+
+	action = {
+		command = { type = treasury value = -150 }
+		command = { type = addcore_national which = 444 }
+		command = { type = addcore_national which = 445 }
+		command = { type = fortress which = 444 value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = setflag which = mal_granada_liberated }
+	}
+}
+
+# 7460: The Grand Reconquista: Recovery of Cordoba and Seville
+decision = {
+	id = 7460
+	potential = {
+		tag = MAL
+		flag = mal_granada_liberated
+		NOT = { flag = mal_andalusia_restored }
+	}
+	name = "The Grand Reconquista: Recovery of Cordoba and Seville"
+	desc = "Reversing centuries of Christian advances, the armies of Mali sweep across the Guadalquivir valley. Capturing Seville and the ancient Umayyad capital of Cordoba, Muslim call to prayer echoes from the Mezquita once more. Reaching the Tagus river and taking Toledo seals the restoration of Islamic Iberia."
+
+	trigger = {
+		tag = MAL
+		owned = { province = 443 data = -1 } # Andalusia (Seville)
+		owned = { province = 439 data = -1 } # Toledo
+		control = { province = 443 data = -1 }
+		control = { province = 439 data = -1 }
+		atwar = no
+		treasury = 300
+	}
+
+	action = {
+		command = { type = treasury value = -300 }
+		command = { type = add_countryculture which = iberian }
+		command = { type = addcore_national which = 443 }
+		command = { type = addcore_national which = 439 }
+		command = { type = addcore_national which = 440 } # Estramadura
+		command = { type = cot which = 443 }
+		command = { type = stability value = 2 }
+		command = { type = setflag which = mal_andalusia_restored }
+	}
+}
+
+# 7461: Proclamation of the Mandinka-Andalusian Caliphate
+decision = {
+	id = 7461
+	potential = {
+		tag = MAL
+		flag = mal_andalusia_restored
+		NOT = { flag = mal_caliphate_proclaimed }
+	}
+	name = "Proclamation of the Mandinka-Andalusian Caliphate"
+	desc = "Before the assembled ulema, emirs, and Mandinka war leaders in the Great Mosque of Cordoba, the Mansa proclaims the Mandinka-Andalusian Caliphate. Uniting West Africa, the Maghreb, and southern Iberia under a single crown, the African Caliphate stands as the supreme protector of Islam across the Mediterranean and the Atlantic."
+
+	trigger = {
+		tag = MAL
+		stability = 3
+		atwar = no
+		treasury = 500
+	}
+
+	action = {
+		command = { type = treasury value = -500 }
+		command = { type = stability value = 2 }
+		command = { type = badboy value = -8 }
+		command = { type = domestic which = centralization value = 2 }
+		command = { type = domestic which = innovative value = 2 }
+		command = { type = vp value = 300 }
+		command = { type = setflag which = mal_caliphate_proclaimed }
+	}
+}
+
+# 7462: The Golden Dinar Standard of Timbuktu-Cordoba
+decision = {
+	id = 7462
+	potential = {
+		tag = MAL
+		flag = mal_caliphate_proclaimed
+		NOT = { flag = mal_golden_dinar_established }
+	}
+	name = "The Golden Dinar Standard of Timbuktu-Cordoba"
+	desc = "Flooding Mediterranean markets with pure Bambuk gold minted into universal dinars bearing Arabic and Malinke inscriptions revolutionizes commerce. The Dinar becomes the undisputed global reserve currency, enriching state coffers and crushing inflation."
+
+	trigger = {
+		tag = MAL
+		treasury = 400
+		atwar = no
+		stability = 2
+	}
+
+	action = {
+		command = { type = treasury value = -400 }
+		command = { type = inflation value = -5 }
+		command = { type = trade value = 1000 }
+		command = { type = infra value = 1000 }
+		command = { type = merchants value = 6 }
+		command = { type = setflag which = mal_golden_dinar_established }
+	}
+}
+
+#----------------------------------------------------------------
+# Path B: The Transatlantic Empire of Mansa Abu Bakr II
+#----------------------------------------------------------------
+
+# 7463: The Royal Ocean Dockyards of Dakar: Abu Bakr's Vision
+decision = {
+	id = 7463
+	potential = {
+		tag = MAL
+		flag = mal_west_africa_united
+		NOT = { flag = mal_ocean_dockyards }
+	}
+	name = "The Royal Ocean Dockyards of Dakar: Abu Bakr's Vision"
+	desc = "Remembering Mansa Abu Bakr II, who sailed into the unknown ocean with thousands of ships, the empire commits its resources to the sea. Constructing timber basins, dry docks, and sail lofts at Dakar and Bathurst equips Mali with deep-sea caravels capable of crossing the Atlantic."
+
+	trigger = {
+		tag = MAL
+		owned = { province = 799 data = -1 } # Dakar
+		control = { province = 799 data = -1 }
+		treasury = 250
+		atwar = no
+	}
+
+	action = {
+		command = { type = treasury value = -250 }
+		command = { type = domestic which = land value = -3 } # Shift to naval
+		command = { type = naval value = 600 }
+		command = { type = shipyard which = 799 }
+		command = { type = transports which = 799 value = 10 }
+		command = { type = warships which = 799 value = 10 }
+		command = { type = setflag which = mal_ocean_dockyards }
+	}
+}
+
+# 7464: The Equatorial Armada: Crossing the Atlantic Current
+decision = {
+	id = 7464
+	potential = {
+		tag = MAL
+		flag = mal_ocean_dockyards
+		NOT = { flag = mal_transatlantic_launched }
+	}
+	name = "The Equatorial Armada: Crossing the Atlantic Current"
+	desc = "Exploiting the westward Canary and Guinea currents, an imperial armada of caravels commanded by experienced Mandinka navigators charts the ocean crossing. In a few weeks of open-ocean sailing, the expedition reaches the lush coastlines of South America."
+
+	trigger = {
+		tag = MAL
+		treasury = 300
+		atwar = no
+		stability = 1
+	}
+
+	action = {
+		command = { type = treasury value = -300 }
+		command = { type = wakeleader which = 39454 } # Mansa's Admiral
+		command = { type = naval value = 800 }
+		command = { type = colonists value = 3 }
+		command = { type = stability value = 1 }
+		command = { type = setflag which = mal_transatlantic_launched }
+	}
+}
+
+# 7465: Founding of Mali Kura: The Shoreline of Brazil
+decision = {
+	id = 7465
+	potential = {
+		tag = MAL
+		flag = mal_transatlantic_launched
+		NOT = { flag = mal_brazil_colony }
+	}
+	name = "Founding of Mali Kura: The Shoreline of Brazil"
+	desc = "Upon the fertile shores of Pernambuco and Maranhao, Malinke pioneers raise the first permanent overseas settlement: Mali Kura (New Mali). Establishing sugarcane plantations, tobacco farming, and gold-panning posts, Mali establishes the first sovereign African colony across the Atlantic."
+
+	trigger = {
+		tag = MAL
+		owned = { province = 206 data = -1 } # Pernambuco
+		control = { province = 206 data = -1 }
+		atwar = no
+		treasury = 200
+	}
+
+	action = {
+		command = { type = treasury value = -200 }
+		command = { type = addcore_national which = 206 }
+		command = { type = populationpercent which = 206 value = 25 }
+		command = { type = provincetax which = 206 value = 3 }
+		command = { type = trade value = 500 }
+		command = { type = setflag which = mal_brazil_colony }
+	}
+}
+
+# 7466: The Golden Trade of the Caribbean Islands
+decision = {
+	id = 7466
+	potential = {
+		tag = MAL
+		flag = mal_brazil_colony
+		NOT = { flag = mal_caribbean_trade }
+	}
+	name = "The Golden Trade of the Caribbean Islands"
+	desc = "Pushing northward through the Windward Islands, Malinke merchant fleets establish lucrative barter and trading posts across the Caribbean. Trading Mandinka cotton and brassware for pearls, dyewoods, and cacao turns the Caribbean into an ocean crossroads of Malinke commerce."
+
+	trigger = {
+		tag = MAL
+		owned = { province = 143 data = -1 } # Barahona / Hispaniola
+		control = { province = 143 data = -1 }
+		treasury = 200
+		atwar = no
+	}
+
+	action = {
+		command = { type = treasury value = -200 }
+		command = { type = addcore_national which = 143 }
+		command = { type = cot which = 143 }
+		command = { type = merchants value = 4 }
+		command = { type = stability value = 1 }
+		command = { type = setflag which = mal_caribbean_trade }
+	}
+}
+
+# 7467: Transatlantic Merchant Monopoly of the Malinke
+decision = {
+	id = 7467
+	potential = {
+		tag = MAL
+		flag = mal_brazil_colony
+		NOT = { flag = mal_atlantic_monopoly }
+	}
+	name = "Transatlantic Merchant Monopoly of the Malinke"
+	desc = "The crown charters the Malinke Atlantic Guild, granting royal trading syndicates exclusive rights over the export of tropical commodities and gold bullion between the New World and West Africa. European interlopers are barred from West African anchorages."
+
+	trigger = {
+		tag = MAL
+		stability = 2
+		atwar = no
+		treasury = 300
+	}
+
+	action = {
+		command = { type = treasury value = -300 }
+		command = { type = domestic which = mercantilism value = 2 }
+		command = { type = trade value = 1000 }
+		command = { type = infra value = 500 }
+		command = { type = provincetax which = 799 value = 4 } # Dakar emporium
+		command = { type = setflag which = mal_atlantic_monopoly }
+	}
+}
+
+#----------------------------------------------------------------
+# Internal Cultural & Intellectual Achievements
+#----------------------------------------------------------------
+
+# 7468: The University of Sankore: Epicenter of Islamic Scholarship
+decision = {
+	id = 7468
+	potential = {
+		tag = MAL
+		NOT = { flag = mal_sankore_flourishing }
+	}
+	name = "The University of Sankore: Epicenter of Islamic Scholarship"
+	desc = "In the desert metropolis of Timbuktu, the Sankore Madrasah flourishes as a world academy. Endowing thousands of hand-copied manuscripts on astronomy, mathematics, medicine, and jurisprudence attracts jurists and philosophers from Cairo, Fez, and Baghdad."
+
+	trigger = {
+		tag = MAL
+		owned = { province = 1495 data = -1 } # Timbuktu
+		control = { province = 1495 data = -1 }
+		domestic = { type = innovative value = 4 }
+		treasury = 200
+		atwar = no
+	}
+
+	action = {
+		command = { type = treasury value = -200 }
+		command = { type = domestic which = innovative value = 2 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = infra value = 600 }
+		command = { type = stability value = 1 }
+		command = { type = setflag which = mal_sankore_flourishing }
+	}
+}
+
+# 7469: The Great Mud Mosque of Djenne: Monument of Sacred Earth
+decision = {
+	id = 7469
+	potential = {
+		tag = MAL
+		NOT = { flag = mal_djenne_mosque_built }
+	}
+	name = "The Great Mud Mosque of Djenne: Monument of Sacred Earth"
+	desc = "Constructed from sun-baked banco clay and supported by palm beams (toron), the Great Mosque of Djenne rises majestically over the Bani river. This masterpiece of Sudano-Sahelian architecture affirms the spiritual piety of the realm and unites urban guilds with royal authority."
+
+	trigger = {
+		tag = MAL
+		owned = { province = 1489 data = -1 } # Jenne
+		control = { province = 1489 data = -1 }
+		treasury = 150
+		atwar = no
+	}
+
+	action = {
+		command = { type = treasury value = -150 }
+		command = { type = provincetax which = 1489 value = 3 }
+		command = { type = stability value = 2 }
+		command = { type = revoltrisk which = 36 value = -2 }
+		command = { type = setflag which = mal_djenne_mosque_built }
+	}
+}

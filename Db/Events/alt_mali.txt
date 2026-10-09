@@ -1,0 +1,481 @@
+#################################################################
+## Gloriana 1337 - Alternate Destinies                         ##
+## Module 8: Mali Empire (MAL)                                 ##
+## Events File: alt_mali.txt                                   ##
+## ID Range: 3009800 - 3009849                                 ##
+#################################################################
+
+#-----------------------------------------------------------------------------
+# Event 3009800: The Legacy of Mansa Musa: The Golden Legend
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009800
+	random = no
+	country = MAL
+
+	name = "The Legacy of Mansa Musa: The Golden Legend"
+	desc = "The legendary pilgrimage of Mansa Musa to Mecca astonished the courts of Cairo and Europe. Distributing tens of thousands of gold dinars, the Mansa put Mali onto the Catalan Atlas as the wealthiest empire on earth. With his passing, the royal council (Gbara) must decide how to reinvest the immense prestige and revenues of the realm."
+	style = 1
+
+	trigger = {
+		year = 1337
+		not = { year = 1345 }
+	}
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1345 }
+
+	action_a = {
+		name = "Invest gold into universities, mosques, and river fleets!"
+		ai_chance = 70
+		command = { type = infra value = 400 }
+		command = { type = trade value = 400 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 50 }
+	}
+	action_b = {
+		name = "Enlarge the imperial cavalry and recruit royal archers!"
+		ai_chance = 30
+		command = { type = cavalry which = 1492 value = 4000 }
+		command = { type = infantry which = 1492 value = 6000 }
+		command = { type = domestic which = offensive value = 1 }
+		command = { type = vp value = 30 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009801: The Council of the Gbara: Reforming the Great Charter
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009801
+	random = no
+	country = MAL
+
+	name = "The Council of the Gbara: Reforming the Great Charter"
+	desc = "Since Sundiata Keita promulgated the Kouroukan Fouga (the Constitution of the Manden), the Great Council of Clan Chiefs (Gbara) has convened to resolve disputes, confirm succession, and protect civic liberties. To prevent internal rebellions, the Mansa may reaffirm the constitutional freedoms of the clans or strengthen absolute royal rule."
+	style = 1
+
+	trigger = {
+		year = 1350
+		not = { year = 1370 }
+	}
+
+	date = { day = 1 month = january year = 1350 }
+	offset = 120
+	deathdate = { day = 30 month = december year = 1370 }
+
+	action_a = {
+		name = "Uphold the Kouroukan Fouga: Harmony and tribal council rule"
+		ai_chance = 60
+		command = { type = domestic which = aristocracy value = 1 }
+		command = { type = stability value = 2 }
+		command = { type = revoltrisk which = 48 value = -2 }
+		command = { type = vp value = 30 }
+	}
+	action_b = {
+		name = "Centralize imperial authority under royal governors"
+		ai_chance = 40
+		command = { type = domestic which = centralization value = 2 }
+		command = { type = domestic which = aristocracy value = -1 }
+		command = { type = stability value = -1 }
+		command = { type = treasury value = 150 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009805: The World Destiny of Mali: The Sahara or the Ocean?
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009805
+	random = no
+	country = MAL
+
+	name = "The World Destiny of Mali: The Sahara or the Ocean?"
+	desc = "Having achieved the total unification of West Africa from the Atlantic shores of Senegambia to the borders of Hausaland, the Council of the Gbara assembles in Niani. Two grand imperial visions captivate the court: march north across the Sahara to liberate Andalusia and establish an African Caliphate, or resurrect the grand oceanic armada of Mansa Abu Bakr II to conquer an overseas empire in the Americas."
+	style = 1
+
+	trigger = {
+		flag = mal_west_africa_united
+		stability = 2
+		atwar = no
+	}
+
+	date = { day = 1 month = january year = 1360 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "The Trans-Saharan Caliphate: Reclaim Al-Andalus!"
+		ai_chance = 50
+		command = { type = domestic which = land value = 2 }
+		command = { type = domestic which = offensive value = 1 }
+		command = { type = treasury value = 200 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 100 }
+	}
+	action_b = {
+		name = "The Ocean of Abu Bakr: Build the Transatlantic Armada!"
+		ai_chance = 50
+		command = { type = domestic which = land value = -3 } # Shift to naval
+		command = { type = naval value = 600 }
+		command = { type = colonists value = 4 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 100 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009810: The Fall of Fez: The Moroccan Submission
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009810
+	random = no
+	country = MAL
+
+	name = "The Fall of Fez: The Moroccan Submission"
+	desc = "The imperial banners of Mali fly above the ancient minarets of Fez! The Marinid Sultan has submitted to the Mansa, and Berber tribes of the Rif and Atlas pledge allegiance to the Emperor of the Gold Coast. All North African routes to the Mediterranean are now firmly in Malinke hands."
+	style = 1
+
+	trigger = {
+		flag = mal_morocco_secured
+	}
+
+	date = { day = 1 month = january year = 1370 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Integrate the Moroccan emirs and prepare the crossing to Europe!"
+		command = { type = treasury value = 300 }
+		command = { type = cavalry which = 733 value = 5000 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 80 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009815: The Golden Banners upon the Alhambra
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009815
+	random = no
+	country = MAL
+
+	name = "The Golden Banners upon the Alhambra"
+	desc = "African columns have entered the Court of the Lions in the Alhambra! The beleaguered Muslims of Granada hail the Mansa as the savior of Islam in Europe. Reunited under the wealth and martial valor of Mali, Andalusia stands redeemed from Christian conquest."
+	style = 1
+
+	trigger = {
+		flag = mal_granada_liberated
+	}
+
+	date = { day = 1 month = january year = 1380 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Restore the Andalusian academies and summon scholars from Cordoba!"
+		command = { type = infra value = 500 }
+		command = { type = trade value = 500 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 150 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009820: Return of the Ocean Caravels: Discovery of the New World
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009820
+	random = no
+	country = MAL
+
+	name = "Return of the Ocean Caravels: Discovery of the New World"
+	desc = "Sailing into the harbor of Dakar, the flagship of the imperial armada fires joyous cannonades. The expedition of Abu Bakr II has returned laden with exotic goods: tobacco, maize, multicolored parrots, and maps of vast green continents across the Atlantic. The oceanic dream of the Mansa has become triumphant reality!"
+	style = 1
+
+	trigger = {
+		flag = mal_transatlantic_launched
+	}
+
+	date = { day = 1 month = january year = 1380 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Found New Mali (Mali Kura) and send settler fleets!"
+		command = { type = colonists value = 5 }
+		command = { type = naval value = 600 }
+		command = { type = trade value = 600 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 150 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009825: The Golden Age of African Letters: The Timbuktu Renaissance
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009825
+	random = no
+	country = MAL
+
+	name = "The Golden Age of African Letters: The Timbuktu Renaissance"
+	desc = "With imperial wealth, peace across the Sahel, and flourishing trade, Timbuktu becomes the undisputed center of African intellectual life. Private family libraries house hundreds of thousands of illuminated manuscripts covering astronomy, mathematics, jurisprudence, chemistry, and ethics, eclipsing contemporary European centers of learning."
+	style = 1
+
+	trigger = {
+		flag = mal_sankore_flourishing
+	}
+
+	date = { day = 1 month = january year = 1400 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Endow royal scriptoriums and protect universal scholarship!"
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = infra value = 800 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 100 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009831: The Salt Caravans of Taghaza
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009831
+	random = no
+	country = MAL
+
+	name = "The Salt Caravans of Taghaza"
+	desc = "Thousands of heavily laden camels cross the Sahara desert from the subterranean salt mines of Taghaza to Timbuktu. In the Sahel markets, slabs of pure white rock salt are exchanged ounce for ounce with the gold dust of Bambuk, enriching royal toll stations."
+	style = 1
+
+	trigger = {
+		owned = { province = 1495 data = -1 } # Timbuktu
+		control = { province = 1495 data = -1 }
+	}
+
+	date = { day = 1 month = january year = 1390 }
+	offset = 90
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Protect the desert trade routes with imperial camel corps"
+		command = { type = treasury value = 250 }
+		command = { type = trade value = 300 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009832: The Tuareg Incursions from the Desert
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009832
+	random = no
+	country = MAL
+
+	name = "The Tuareg Incursions from the Desert"
+	desc = "Veiled Tuareg nomadic warriors from the northern Sahara strike at the caravan routes, raiding outposts outside Walata and Timbuktu. The Mansa must respond decisively to secure desert trade and maintain public order."
+	style = 1
+
+	trigger = {
+		owned = { province = 1488 data = -1 } # Walata
+		not = { flag = mal_sahara_secured }
+	}
+
+	date = { day = 1 month = january year = 1410 }
+	offset = 120
+	deathdate = { day = 30 month = december year = 1460 }
+
+	action_a = {
+		name = "Deploy the imperial army to crush the raiders"
+		ai_chance = 70
+		command = { type = infantry which = 1488 value = 4000 }
+		command = { type = treasury value = -100 }
+		command = { type = stability value = 1 }
+	}
+	action_b = {
+		name = "Bribe the tribal elders with gold and trading privileges"
+		ai_chance = 30
+		command = { type = treasury value = -150 }
+		command = { type = domestic which = aristocracy value = 1 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Event 3009833: The Griots of Mali: The Epic of Sundiata
+#-----------------------------------------------------------------------------
+event = {
+	id = 3009833
+	random = no
+	country = MAL
+
+	name = "The Griots of Mali: The Epic of Sundiata"
+	desc = "Accompanied by the resonant chords of the kora and balafon, the hereditary royal griots (djeli) recite the epic tale of Sundiata Keita, the Lion King of Mali. Celebrating ancestral honor and imperial destiny inspires profound patriotism across all subjects of the crown."
+	style = 1
+
+	trigger = {
+		stability = 1
+	}
+
+	date = { day = 1 month = january year = 1430 }
+	offset = 120
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Honor the royal griots and patronize the national bards!"
+		command = { type = stability value = 1 }
+		command = { type = vp value = 50 }
+		command = { type = domestic which = centralization value = 1 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# Integration Waves (10-Year native ownerchange)
+#-----------------------------------------------------------------------------
+
+# 3009841: Integration of the Gold Coast of Bambuk
+event = {
+	id = 3009841
+	random = no
+	country = MAL
+
+	name = "Integration of the Gold Coast of Bambuk"
+	desc = "A decade of stable imperial administration and regular mining production has permanently integrated Bambuk into the core realm of Mali."
+	style = 1
+
+	trigger = {
+		owned = { province = 1490 data = -1 }
+		control = { province = 1490 data = -1 }
+		ownerchange = { province = 1490 years = 10 }
+		not = { core = { province = 1490 data = -1 } }
+	}
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Bambuk is an eternal fountain of imperial wealth"
+		command = { type = addcore_national which = 1490 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# 3009842: Integration of Gao and the Songhai Marches
+event = {
+	id = 3009842
+	random = no
+	country = MAL
+
+	name = "Integration of Gao and the Songhai Marches"
+	desc = "Ten years of civic governance, river patrols, and municipal prosperity have reconciled Gao with the central crown of the Mansa."
+	style = 1
+
+	trigger = {
+		owned = { province = 1496 data = -1 }
+		control = { province = 1496 data = -1 }
+		ownerchange = { province = 1496 years = 10 }
+		not = { core = { province = 1496 data = -1 } }
+	}
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Gao stands as a majestic pillar of the Niger Bend"
+		command = { type = addcore_national which = 1496 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# 3009843: Integration of Dakar and the Atlantic Littoral
+event = {
+	id = 3009843
+	random = no
+	country = MAL
+
+	name = "Integration of Dakar and the Atlantic Littoral"
+	desc = "A decade of maritime development and naval trade has bound the ports of Dakar, Senegal, and the Gambia to the imperial throne."
+	style = 1
+
+	trigger = {
+		owned = { province = 799 data = -1 }
+		control = { province = 799 data = -1 }
+		ownerchange = { province = 799 years = 10 }
+		not = { core = { province = 799 data = -1 } }
+	}
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Dakar is our undisputed window to the Atlantic"
+		command = { type = addcore_national which = 799 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# 3009844: Integration of Morocco and the Maghreb
+event = {
+	id = 3009844
+	random = no
+	country = MAL
+
+	name = "Integration of Morocco and the Maghreb"
+	desc = "Ten years of just governance have united the cities of Fez and Marrakech with the trans-Saharan realm of the Mansa."
+	style = 1
+
+	trigger = {
+		owned = { province = 733 data = -1 } # Fez
+		control = { province = 733 data = -1 }
+		ownerchange = { province = 733 years = 10 }
+		not = { core = { province = 733 data = -1 } }
+	}
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "The Maghreb is an inseparable land of the Caliphate"
+		command = { type = addcore_national which = 733 }
+		command = { type = stability value = 1 }
+	}
+}
+
+# 3009845: Integration of Andalusia and Southern Iberia
+event = {
+	id = 3009845
+	random = no
+	country = MAL
+
+	name = "Integration of Andalusia and Southern Iberia"
+	desc = "A decade of Islamic restoration, communal peace, and golden prosperity has permanently restored Andalusia to the African Caliphate."
+	style = 1
+
+	trigger = {
+		owned = { province = 443 data = -1 } # Andalusia
+		control = { province = 443 data = -1 }
+		ownerchange = { province = 443 years = 10 }
+		not = { core = { province = 443 data = -1 } }
+	}
+
+	date = { day = 1 month = january year = 1337 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1838 }
+
+	action_a = {
+		name = "Cordoba and Seville are the crown jewels of the realm"
+		command = { type = addcore_national which = 443 }
+		command = { type = stability value = 1 }
+	}
+}
