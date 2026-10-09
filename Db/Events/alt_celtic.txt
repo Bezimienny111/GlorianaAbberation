@@ -9,6 +9,7 @@
 event = {
 	id = 3009500
 	random = no
+	country = WLS
 	name = "Awakening of the Dragon: Glyndwr's Rising"
 	desc = "Taking advantage of royal dynastic upheaval in England, Owain Glyndwr raises the banner of the Red Dragon in northern Wales. Proclaimed Prince of Wales by the bards, he summons all Welshmen to throw off Anglo-Norman tyranny."
 
@@ -84,6 +85,11 @@ event = {
 	desc = "The union of the crowns of Alba, Cymru, and Eire presents the Celtic leadership with a momentous political choice: establish an egalitarian Federal Commonwealth governed by a rotating Council of the Three Nations, or revive the Arthurian High Empire, uniting all Britain under a centralized imperial crown at Caerleon."
 
 	trigger = {
+		or = {
+			tag = SCO
+			tag = WLS
+			tag = EIR
+		}
 		flag = celt_union_formed
 		NOT = { flag = celt_constitution_chosen }
 	}
@@ -128,6 +134,11 @@ event = {
 	desc = "With the fall of London to the victorious Celtic armies and the collapse of Plantagenet rule, the fate of England is sealed. The High Council must choose whether to reduce England to a vassal Duchy of Wessex south of the Thames or pursue total annexation, restoring Brythonic dominance across the island."
 
 	trigger = {
+		or = {
+			tag = SCO
+			tag = WLS
+			tag = EIR
+		}
 		flag = celt_britain_restored
 		NOT = { flag = celt_england_fate_resolved }
 	}
@@ -209,6 +220,11 @@ event = {
 	desc = "Returning from across the Atlantic, an adventurous Celtic expedition reports the discovery of a vast, forested continent beyond Newfoundland, named New Alba in honor of ancient legends. Celtic fishing fleets and trading posts begin colonizing the new frontier."
 
 	trigger = {
+		or = {
+			tag = SCO
+			tag = WLS
+			tag = EIR
+		}
 		flag = celt_brendan_voyage
 		NOT = { flag = celt_new_alba_founded }
 	}
@@ -249,6 +265,11 @@ event = {
 	desc = "Across the English Channel, our Breton kin watch the rise of the Celtic Union with profound admiration. The Duke of Brittany sends an official delegation to Edinburgh and Caernarfon proposing close commercial, naval, and military ties against English and French expansionism."
 
 	trigger = {
+		or = {
+			tag = SCO
+			tag = WLS
+			tag = EIR
+		}
 		flag = celt_union_formed
 		atwar = no
 	}
@@ -447,6 +468,11 @@ event = {
 	desc = "Cornwall has been famed for its rich tin and copper deposits since antiquity. Freed from English stannary taxation, the ports of Falmouth and Penzance flourish into thriving naval and trading hubs."
 
 	trigger = {
+		or = {
+			tag = SCO
+			tag = WLS
+			tag = EIR
+		}
 		owned = { province = 249 data = -1 } # Cornwall
 		control = { province = 249 data = -1 }
 	}

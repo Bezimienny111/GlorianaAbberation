@@ -35,9 +35,12 @@ decision = {
 	id = 7501
 	potential = {
 		tag = ZIM
+		flag = zim_citadel_rebuilt
 	}
 	trigger = {
 		tag = ZIM
+		flag = zim_citadel_rebuilt
+		infra = 1
 		owned = { province = 1508 data = -1 } # Sofala
 		owned = { province = 1509 data = -1 } # Zimbabwe
 		owned = { province = 1510 data = -1 } # Rozwi
@@ -62,10 +65,11 @@ decision = {
 	id = 7502
 	potential = {
 		tag = ZIM
+		flag = zim_gold_exploited
 	}
 	trigger = {
 		tag = ZIM
-		flag = zim_citadel_rebuilt
+		flag = zim_gold_exploited
 		owned = { province = 1508 data = -1 } # Sofala
 		NOT = { flag = zim_coast_advanced }
 	}

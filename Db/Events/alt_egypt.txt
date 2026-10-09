@@ -166,6 +166,13 @@ event = {
 	name = "Backlash of Conservative Ulema against Mu'tazilism"
 	desc = "Discarding strict fatalism and declaring the supremacy of human reason provokes fierce resistance from conservative Cairo clerics. Led by hardline theologians, conservative mobs riot in the markets, demanding a return to rigid orthodox dogmatism."
 
+	trigger = {
+		OR = {
+			tag = MAM
+			tag = EGY
+		}
+	}
+
 	action_a = {
 		name = "Reason is Allah's greatest gift to mankind!"
 		command = { type = stability value = -2 }

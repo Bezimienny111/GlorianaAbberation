@@ -166,6 +166,7 @@ decision = {
 	id = 7154
 	potential = {
 		tag = HSA
+		flag = hsa_proclaimed
 		NOT = { flag = hsa_steelyard }
 	}
 	name = "The Fortified Steelyard Kontor in London"
@@ -174,6 +175,7 @@ decision = {
 	trigger = {
 		treasury = 200
 		tag = HSA
+		flag = hsa_proclaimed
 		atwar = no
 		stability = 1
 		naval = 2
@@ -194,6 +196,7 @@ decision = {
 	id = 7155
 	potential = {
 		tag = HSA
+		flag = hsa_proclaimed
 		NOT = { flag = hsa_peterhof }
 	}
 	name = "The Peterhof Kontor in Novgorod"
@@ -202,8 +205,10 @@ decision = {
 	trigger = {
 		treasury = 200
 		tag = HSA
+		flag = hsa_proclaimed
 		atwar = no
 		stability = 1
+		trade = 2
 		owned = { province = 308 data = -1 } # Gotland
 	}
 
@@ -222,6 +227,7 @@ decision = {
 	id = 7156
 	potential = {
 		tag = HSA
+		flag = hsa_proclaimed
 		NOT = { flag = hsa_bryggen }
 	}
 	name = "Bryggen in Bergen: Monopoly on Cod and Train Oil"
@@ -230,8 +236,10 @@ decision = {
 	trigger = {
 		treasury = 150
 		tag = HSA
+		flag = hsa_proclaimed
 		atwar = no
 		stability = 1
+		trade = 2
 	}
 
 
@@ -249,6 +257,7 @@ decision = {
 	id = 7157
 	potential = {
 		tag = HSA
+		flag = hsa_proclaimed
 		NOT = { flag = hsa_flanders }
 	}
 	name = "The Flanders Kontor: Bruges and Antwerp"
@@ -257,6 +266,7 @@ decision = {
 	trigger = {
 		treasury = 250
 		tag = HSA
+		flag = hsa_proclaimed
 		atwar = no
 		stability = 1
 		infra = 2
@@ -277,6 +287,7 @@ decision = {
 	id = 7158
 	potential = {
 		tag = HSA
+		flag = hsa_proclaimed
 		NOT = { flag = hsa_vinland }
 	}
 	name = "Sailing the Viking Routes to Vinland"
@@ -285,7 +296,8 @@ decision = {
 	trigger = {
 		treasury = 350
 		tag = HSA
-		# year = 1460 # Unrestricted pacing
+		flag = hsa_proclaimed
+		year = 1460
 		naval = 3
 		atwar = no
 		stability = 2
@@ -311,6 +323,7 @@ decision = {
 	id = 7159
 	potential = {
 		tag = HSA
+		flag = hsa_proclaimed
 	}
 	name = "Federal Defense Pact of the Baltic Cities"
 	desc = "Prussia, Pomerania, and Livonia are dotted with mighty Hanseatic strongholds: Danzig, Konigsberg, Thorn, Riga, and Reval. Uniting defensive obligations, standardizing artillery, and organizing joint convoy patrols forms an impenetrable shield against territorial monarchies."
@@ -318,6 +331,7 @@ decision = {
 	trigger = {
 		treasury = 200
 		tag = HSA
+		flag = hsa_proclaimed
 		atwar = no
 		stability = 2
 		owned = { province = 301 data = -1 } # Danzig
@@ -340,6 +354,7 @@ decision = {
 	id = 7160
 	potential = {
 		tag = HSA
+		flag = hsa_proclaimed
 	}
 	name = "The Great Armory and Naval Arsenal of Lubeck"
 	desc = "The capital of the League merits the most formidable naval base in Northern Europe. Emulating the Venetian Arsenale, Lubeck constructs a vast armory and shipyard complex capable of outfitting mighty war galleons and caravels, culminating in the flagship Adler von Lubeck."
@@ -347,6 +362,7 @@ decision = {
 	trigger = {
 		treasury = 300
 		tag = HSA
+		flag = hsa_proclaimed
 		owned = { province = 305 data = -1 }
 		control = { province = 305 data = -1 }
 		atwar = no
@@ -374,13 +390,18 @@ decision = {
 
 	potential = {
 		tag = HSA
+		flag = hsa_vinland
 		NOT = { flag = hsa_atlantic_company }
 	}
 
 	trigger = {
 		atwar = no
-		stability = 1
+		stability = 2
 		treasury = 500
+		flag = hsa_vinland
+		trade = 3
+		naval = 3
+		year = 1500
 		owned = { province = 305 data = -1 } # Mecklemburg / Lubeck
 	}
 

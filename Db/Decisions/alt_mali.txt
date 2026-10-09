@@ -590,6 +590,7 @@ decision = {
 	id = 7468
 	potential = {
 		tag = MAL
+		flag = mal_goldfields_consolidated
 		NOT = { flag = mal_sankore_flourishing }
 	}
 	name = "The University of Sankore: Epicenter of Islamic Scholarship"
@@ -597,6 +598,9 @@ decision = {
 
 	trigger = {
 		tag = MAL
+		flag = mal_goldfields_consolidated
+		infra = 2
+		year = 1400
 		owned = { province = 1495 data = -1 } # Timbuktu
 		control = { province = 1495 data = -1 }
 		domestic = { type = innovative value = 4 }
@@ -619,6 +623,7 @@ decision = {
 	id = 7469
 	potential = {
 		tag = MAL
+		flag = mal_goldfields_consolidated
 		NOT = { flag = mal_djenne_mosque_built }
 	}
 	name = "The Great Mud Mosque of Djenne: Monument of Sacred Earth"
@@ -626,6 +631,8 @@ decision = {
 
 	trigger = {
 		tag = MAL
+		flag = mal_goldfields_consolidated
+		infra = 1
 		owned = { province = 1489 data = -1 } # Jenne
 		control = { province = 1489 data = -1 }
 		treasury = 150

@@ -1023,3 +1023,59 @@ MODULE 2 EXTENSION: PAPAL THEOCRACY EXPANSION (BRANCH T, 1500-1800)
     and alt_korea.txt; replaced all UTF-8 multibyte dashes with engine-safe ASCII dashes.
 ================================================================================
 
+================================================================================
+COMPREHENSIVE AUDIT: SCOPING ISOLATION & DAY-1 PACING RESTRUCTURING
+================================================================================
+1. Country Tag & Event Scoping Isolation:
+   - Full audit of all 256 decisions and 252 events across all 13 Alternate Destinies modules.
+   - Fixed Db/Decisions/alt_celtic.txt (Decision 7250): Removed loose "owned = 243" fallback in potential,
+     strictly restricting coronation of Owain Glyndwr to "tag = WLS". England and conquering nations
+     no longer see Welsh prince coronation.
+   - Fixed Db/Events/alt_celtic.txt:
+     * Event 3009500 (Glyndwr's Rising): Added "country = WLS" so England no longer triggers Welsh revolt armies.
+     * Events 3009505, 3009506, 3009515, 3009520, 3009535: Added explicit "or = { tag = SCO tag = WLS tag = EIR }"
+       tag triggers to prevent foreign owners/conquerors from triggering Celtic Union decisions.
+   - Fixed Db/Events/alt_egypt.txt (Event 3009230): Added "trigger = { OR = { tag = MAM tag = EGY } }".
+   - Decision 7072 (Mansuri Hospital): Restricted potential to "or = { religion = mutazilite tag = EGY }".
+   - 100% of all decisions now possess explicit nation tag scoping in potential.
+
+2. Day-1 (1337) Pacing & Progression Restructuring:
+   - Eliminated Day-1 decision dumps where nations faced 5-6 monumental choices on game start.
+   - Ethiopia (Db/Decisions/alt_ethiopia.txt):
+     * Day 1: Only foundational nomad court reform (7306 Katama System) is immediately clickable.
+     * 7308 (Autocephaly): Gated behind infra = 2, stability = 2, year = 1400.
+     * 7302 (Council of Florence / Rome Alliance): Gated behind infra = 2, year = 1435.
+     * 7300 (Massawa Naval Shipyard): Gated behind trade = 1, naval = 1.
+     * 7309 (Coastal Defense): Gated behind land = 1, stability = 2.
+     * 7312 (Restoration of Axum): Gated behind infra = 2, year = 1400, flag eth_katama.
+   - Egypt & Mameluks (Db/Decisions/alt_egypt.txt):
+     * Day 1: Starts at stability -2 with 0 clickable decisions. Must restore stability to +1 before
+       enacting Fellah/Copt emancipation (7050).
+     * Gated late-game modern decisions (7079 Suez Locks, 7170-7176, 7177-7184) behind historical years
+       (1600-1780) and advanced tech levels (infra 3-5, trade 3-5, naval 2-4, land 3).
+     * 7057 (Nile Expedition): Gated behind flag mam_emancipation and stability = 1.
+   - Hanseatic League (Db/Decisions/alt_hansa.txt):
+     * Day 1: Focuses exclusively on establishing sovereign Hanseatic statehood (7150 Hansetag).
+     * Foreign Kontors (7154 London, 7155 Novgorod, 7156 Bergen, 7157 Flanders) and Great Arsenal (7160)
+       now strictly require flag hsa_proclaimed and relevant trade/naval levels.
+     * 7161 (Atlantic Company): Gated behind flag hsa_vinland, year = 1500, trade = 3, naval = 3.
+   - Great Zimbabwe (Db/Decisions/alt_zimbabwe.txt):
+     * Day 1: Only Stone Citadel reconstruction (7500) available.
+     * 7501 (Exploit Goldfields): Gated behind flag zim_citadel_rebuilt and infra = 1.
+     * 7502 (Advance to Swahili Coast): Gated behind flag zim_gold_exploited.
+   - Mali Empire (Db/Decisions/alt_mali.txt):
+     * Day 1: Only Royal Goldfields consolidation (7450) available.
+     * 7469 (Djenne Mud Mosque): Gated behind flag mal_goldfields_consolidated and infra = 1.
+     * 7468 (University of Sankore): Gated behind flag mal_goldfields_consolidated, infra = 2, year = 1400.
+   - Joseon Korea (Db/Decisions/alt_korea.txt):
+     * 7352 (Turtle Ships): Gated behind year = 1420 and naval = 2.
+   - Golden Horde (Db/Decisions/alt_horde.txt):
+     * 7600 (Kurultai Reform): Gated behind stability = 0 (recovering from starting civil war chaos).
+     * 7604 (Northern Silk Road): Gated behind flag ste_kurultai_reformed and trade = 1.
+   - Americas (Db/Decisions/alt_americas.txt):
+     * 7204 (Tenochtitlan Causeways/Chinampas): Gated behind flag azt_texcoco_code.
+   - Kingdom of Georgia (Db/Decisions/alt_georgia.txt):
+     * External expansion decisions (7552, 7553, 7554): Gated behind flag geo_dzeglisdeba.
+================================================================================
+
+

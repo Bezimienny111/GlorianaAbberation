@@ -96,13 +96,15 @@ decision = {
 	desc = "Rather than founding a new seat, the sovereign restores ancient Axum--the cradle of Ethiopian Christianity and empire. Raising the monumental stelae and rebuilding the cathedral of Our Lady of Mary of Zion re-establishes direct continuity with the legacy of the Queen of Sheba."
 
 	trigger = {
-		treasury = 300
 		tag = ETH
 		flag = eth_katama
+		treasury = 300
 		owned = { province = 753 data = -1 } # Massawa/Aksum area
 		control = { province = 753 data = -1 }
 		atwar = no
-		stability = 1
+		stability = 2
+		infra = 2
+		year = 1400
 	}
 
 	action = {
@@ -137,9 +139,11 @@ decision = {
 	desc = "For centuries, the Ethiopian Church was subordinate to the Coptic Patriarch of Alexandria, who appointed an Egyptian bishop (Abuna). In light of foreign subjugation in Egypt, the Emperor proclaims full ecclesiastical autocephaly, consecrating a native Patriarchate at Axum."
 
 	trigger = {
-		treasury = 150
 		tag = ETH
-		stability = 1
+		treasury = 150
+		stability = 2
+		infra = 2
+		year = 1400
 	}
 
 	action = {
@@ -168,10 +172,12 @@ decision = {
 	desc = "Reports of the legendary realm of Prester John captivate the courts of Europe. Endorsing the Council of Florence and communion with Rome yields invaluable rewards: an influx of European gunsmiths, architects, and naval support from Portuguese and Venetian armadas in the Indian Ocean."
 
 	trigger = {
-		treasury = 250
 		tag = ETH
+		treasury = 250
 		atwar = no
-		stability = 0
+		stability = 1
+		infra = 2
+		year = 1435
 	}
 
 	action = {
@@ -207,11 +213,13 @@ decision = {
 	desc = "Constructing imperial naval shipyards at Massawa inaugurates Ethiopian maritime supremacy over the Red Sea. A permanent war fleet safeguards coastal trade, shields Christian pilgrims, and challenges hostile sultanates across the Gulf of Aden."
 
 	trigger = {
-		treasury = 200
 		tag = ETH
+		treasury = 200
 		owned = { province = 753 data = -1 } # Massawa
 		control = { province = 753 data = -1 }
 		atwar = no
+		trade = 1
+		naval = 1
 	}
 
 	action = {
@@ -241,11 +249,13 @@ decision = {
 	desc = "The sea brings raiders and corruption. Rather than building an expensive fleet, we fortify the littoral, secure the mountain passes, and concentrate our power in highland citadels. Massive fortifications at Massawa guarantee inviolable borders."
 
 	trigger = {
-		treasury = 150
 		tag = ETH
+		treasury = 150
 		owned = { province = 753 data = -1 } # Massawa
 		control = { province = 753 data = -1 }
 		atwar = no
+		stability = 2
+		land = 1
 	}
 
 	action = {

@@ -14,16 +14,14 @@ decision = {
 	id = 7250
 	major = yes
 	potential = {
-		or = {
-			tag = WLS
-			owned = { province = 243 data = -1 } # Wales
-		}
+		tag = WLS
 		NOT = { flag = wls_proclaimed }
 	}
 	name = "Coronation of Owain Glyndwr: Prince of Wales"
 	desc = "The blood of the ancient rulers of Gwynedd and Powys flows in Owain Glyndwr. Casting off the English yoke, the Prince summons a grand council of Welsh commotes, restores the laws of Hywel Dda, and raises the Golden Dragon of liberty across Cymru."
 
 	trigger = {
+		tag = WLS
 		treasury = 150
 		owned = { province = 243 data = -1 }
 		control = { province = 243 data = -1 }
