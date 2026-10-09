@@ -899,3 +899,33 @@ MODULE 14: THE REBORN WESTERN ROMAN EMPIRE (WRE) EXPANSION (1500-1800)
   * Flavio Orsini (1500-1525), Andrea Doria (1528-1560), Raimondo Montecuccoli (1640-1680),
     Eugenius Sabaudus (1683-1736), Angelo Emo (1765-1792).
 ================================================================================
+
+================================================================================
+MODULE 2 UPDATE: REFINED PAPAL PROLOGUE & RETURN TO ROME CHAIN (1337-1378)
+================================================================================
+- Tag: PAP (Papal States / Sancta Sedes)
+- Problem Resolved:
+  * Decision 7010 ("Return to Rome") was previously active on day 1 (May 1, 1337) with no
+    historical prerequisites or cost, skipping the Avignon Papacy and Italian pacification.
+- Refined Sequence:
+  * 1337 Start: Event 3009101 ("The Babylonian Captivity on the Rhone") fires in 1337,
+    establishing Papal court residency in Avignon and setting flag "pap_avignon_captivity".
+  * 1347 Anarchy: Event 3009104 ("The Tribunate of Cola di Rienzo") simulates the Capitoline
+    republican uprising and baronial strife in Rome (399), requiring papal response.
+  * Legatine Pacification: Decision 7011 ("Mission of Cardinal Albornoz") can only be enacted
+    after Avignon captivity is set, requiring 75 gold, stability 1, and peaceful borders. Grants
+    cores on Romagna (391) and Marche (392), raising apostolic regiments.
+  * Institutional Consolidation:
+    - Decision 7017 ("The Egidian Constitutions"): Requires pacification/ownership of Romagna & Marche.
+      Promulgates administrative law, +1 centralization, +1 stability, sets "pap_egidian_constitutions".
+    - Decision 7018 ("The Rocca Albornoziana"): Erects stone citadels in Lazio/Roma (fortress +1).
+  * Moral and Spiritual Appeal: Event 3009105 ("The Letters of Petrarch and Saint Catherine of Siena")
+    fires between 1365-1376 once legates are active, setting flag "pap_ready_to_return".
+  * Climax (Decision 7010 - "Return to Rome: End of the Avignon Papacy"):
+    - Strict triggers: Requires "pap_legates_sent", treasury 150 gold, stability 1, owning and controlling
+      Roma (399), and either Catherine's plea ("pap_ready_to_return") or Albornoz's constitutions ("pap_egidian_constitutions").
+    - Moves capital to Rome, deducts 150 gold, adds +250 infra, triggers French reaction (3009102),
+      and triggers Event 3009107 ("The Western Schism Averted"), granting +2 stability and +1 centralization.
+  * Subsequent Progression:
+    - Decision 7012 ("Italian League of Peace") now strictly requires flag "pap_return_rome".
+================================================================================

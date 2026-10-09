@@ -3,6 +3,115 @@
 # ID Range: 3009100 - 3009160
 
 #-----------------------------------------------------------------------------
+# C00a: The Babylonian Captivity on the Rhone (Prologue 1337)
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3009101
+	random = no
+	country = PAP
+
+	trigger = {
+		NOT = { flag = pap_avignon_captivity }
+	}
+
+	name = "The Babylonian Captivity on the Rhone"
+	desc = "Since the pontificate of Clement V, the Papal court has resided not upon the historic hills of Rome, but in the Provencal city of Avignon on the banks of the Rhone. Protected yet dominated by the French Crown, the Pope enjoys palatial luxury in the Palais des Papes while the Italian Patrimony suffers negligence and baronial strife. If the Holy See is ever to reclaim its universal moral authority and sovereign dignity, it must first restore order across the Alps before daring to return to the tomb of Saint Peter."
+	style = 1
+
+	date = { day = 1 month = may year = 1337 }
+	offset = 1
+	deathdate = { year = 1450 }
+
+	action_a = {
+		name = "We govern from the banks of the Rhone for now"
+		command = { type = setflag which = pap_avignon_captivity }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 10 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# C00b: The Tribunate of Cola di Rienzo (1347)
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3009104
+	random = no
+	country = PAP
+
+	trigger = {
+		flag = pap_avignon_captivity
+		NOT = { flag = pap_return_rome }
+		owned = { province = 399 data = -1 } #Roma
+	}
+
+	name = "The Tribunate of Cola di Rienzo"
+	desc = "In May 1347, the charismatic notary Cola di Rienzo leads a popular uprising against the violent aristocratic clans of Rome--the Colonna and Orsini. Proclaiming the revival of the ancient Roman Republic and the 'Good State' (Buono Stato) from the Capitoline Hill, Rienzo sends circular letters to all Italian cities summoning them to a national parliament. Though Pope Clement VI initially tolerates the tribune to curb the overweening barons, Rienzo's radical demagoguery threatens total chaos in the Eternal City."
+	style = 1
+
+	date = { day = 1 month = may year = 1347 }
+	offset = 30
+	deathdate = { year = 1360 }
+
+	action_a = {
+		name = "Send apostolic legates to quell the turmoil"
+		command = { type = revolt which = 399 }
+		command = { type = provincetax which = 399 value = -1 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = FRA value = 25 }
+		command = { type = vp value = -10 }
+	}
+	action_b = {
+		name = "Tolerate the Capitoline commune for subsidies"
+		command = { type = treasury value = 50 }
+		command = { type = domestic which = centralization value = -1 }
+		command = { type = stability value = -2 }
+		command = { type = vp value = -20 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# C00c: The Letters of Petrarch and Saint Catherine of Siena (1365-1376)
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3009105
+	random = no
+	country = PAP
+
+	trigger = {
+		flag = pap_legates_sent
+		NOT = { flag = pap_return_rome }
+		NOT = { flag = pap_ready_to_return }
+	}
+
+	name = "The Letters of Petrarch and Saint Catherine of Siena"
+	desc = "From across Christendom, powerful voices demand the Pontiff's return to Rome. Francesco Petrarch denounces Avignon as the modern Babylon of corruption and servitude, while Saint Catherine of Siena writes passionate epistles to Pope Gregory XI, admonishing him to be a courageous pastor, abandon the comforts of Provence, and return to his true see upon the Vatican hill. Their urgent appeals electrify the Church and rally public opinion throughout the Italian peninsula."
+	style = 1
+
+	date = { day = 1 month = january year = 1365 }
+	offset = 60
+	deathdate = { year = 1420 }
+
+	action_a = {
+		name = "Heed the holy counsel and prepare the journey home"
+		command = { type = setflag which = pap_ready_to_return }
+		command = { type = stability value = 1 }
+		command = { type = relation which = TUS value = 50 }
+		command = { type = vp value = 25 }
+	}
+	action_b = {
+		name = "Remain comfortably in Avignon for a time"
+		command = { type = relation which = FRA value = 50 }
+		command = { type = treasury value = 50 }
+		command = { type = stability value = -1 }
+		command = { type = vp value = -10 }
+	}
+}
+
+#-----------------------------------------------------------------------------
 # C07: The Sword and the Tiara (Crossroads)
 #-----------------------------------------------------------------------------
 
@@ -56,6 +165,30 @@ event = {
 		name = "Protest against departing Avignon!"
 		command = { type = relation which = PAP value = -100 }
 		command = { type = casusbelli which = PAP value = 24 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# C02 Follow-up: The Western Schism Averted (1378)
+# Triggered by Decision 7010 (Return to Rome)
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3009107
+	random = no
+	country = PAP
+
+	name = "The Western Schism Averted"
+	desc = "With the Holy See once again firmly established in Rome and the Patrimony securely fortified by the Egidian Constitutions and Albornoz's citadels, the cardinals assemble in conclave under the solemn gaze of the Roman citizenry. Through firm diplomacy, prudent concessions, and unquestioned papal authority, the College of Cardinals elects an undisputed supreme pontiff in Rome, completely averting the catastrophic Western Schism that threatened to tear Latin Christendom into rival allegiances."
+	style = 1
+
+	action_a = {
+		name = "Rome is once more the undisputed heart of Christendom!"
+		command = { type = stability value = 2 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = diplomats value = 3 }
+		command = { type = treasury value = 100 }
+		command = { type = vp value = 50 }
 	}
 }
 

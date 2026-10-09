@@ -7,42 +7,8 @@
 #=============================================================================
 
 #-----------------------------------------------------------------------------
-# C01: Return to Rome
 #-----------------------------------------------------------------------------
-
-decision = {
-	id = 7010
-	major = yes
-	unique = yes
-	potential = {
-		tag = PAP
-		NOT = { flag = pap_return_rome }
-	}
-	trigger = {
-		atwar = no
-		isvassal = no
-		stability = 0
-		owned = { province = 399 data = -1 } #Roma
-		control = { province = 399 data = -1 } #Roma
-	}
-	ai_trigger = {
-	}
-
-	name = "Return to Rome: End of the Avignon Papacy"
-	desc = "Moved by the impassioned pleas of Saint Catherine of Siena and Petrarch, and facing eroding control over the Patrimonium Petri in Italy, the Holy Father makes the historic decision to depart Avignon. Returning the papal court to the Eternal City restores apostolic authority and lays the foundation for sovereign papal rule in Italy."
-
-	action = {
-		command = { type = setflag which = pap_return_rome }
-		command = { type = capital which = 399 } #Roma
-		command = { type = treasury value = -100 }
-		command = { type = infra value = 200 }
-		command = { type = relation which = FRA value = -25 }
-		command = { type = trigger which = 3009102 } #Reakcja Francji
-	}
-}
-
-#-----------------------------------------------------------------------------
-# C02: Legates and Rebel Communes
+# C01: Mission of Cardinal Albornoz: Pacification of the Patrimony
 #-----------------------------------------------------------------------------
 
 decision = {
@@ -51,7 +17,7 @@ decision = {
 	unique = yes
 	potential = {
 		tag = PAP
-		flag = pap_return_rome
+		flag = pap_avignon_captivity
 		NOT = { flag = pap_legates_sent }
 	}
 	trigger = {
@@ -59,21 +25,140 @@ decision = {
 		isvassal = no
 		stability = 1
 		treasury = 75
+		owned = { province = 399 data = -1 } #Roma
+		control = { province = 399 data = -1 } #Roma
 	}
 	ai_trigger = {
 	}
 
 	name = "Legates and Rebellious Communes: Mission of Cardinal Albornoz"
-	desc = "The Papal States have descended into factional strife under petty tyrants in Bologna, Rimini, and Forli. Cardinal Gil de Albornoz is appointed vicar-general with the mandate to pacify Romagna and the Marches through arms and diplomacy, codifying order under the Egidian Constitutions."
+	desc = "While the Papal court resides in Avignon, the Patrimony of Saint Peter and Romagna have descended into factional anarchy under petty tyrants in Bologna, Rimini, and Forli, while Roman barons divide the city into armed camps. Cardinal Gil de Albornoz is appointed vicar-general with extraordinary powers to cross the Alps with armed cohorts, subdue the rebellious lords, and lay the foundations for the Pope's eventual return."
 
 	action = {
 		command = { type = setflag which = pap_legates_sent }
 		command = { type = treasury value = -75 }
 		command = { type = addcore_claim which = 391 } #Romagna
 		command = { type = addcore_claim which = 392 } #Marche
+		command = { type = infantry which = 399 value = 3000 }
+		command = { type = cavalry which = 399 value = 1000 }
 		command = { type = relation which = BOL value = -100 }
 		command = { type = relation which = URB value = -100 }
 		command = { type = relation which = RIM value = -100 }
+		command = { type = vp value = 20 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# C01b: The Egidian Constitutions: Law of the Papal States
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7017
+	major = yes
+	unique = yes
+	potential = {
+		tag = PAP
+		flag = pap_legates_sent
+		NOT = { flag = pap_egidian_constitutions }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		owned = { province = 391 data = -1 } #Romagna
+		owned = { province = 392 data = -1 } #Marche
+	}
+	ai_trigger = {
+	}
+
+	name = "The Egidian Constitutions: Law of the Papal States"
+	desc = "Having subdued the petty despots of Romagna and the Marches, Cardinal Albornoz convenes a parliament in Fano to promulgate the Constitutiones Sanctae Matris Ecclesiae. Dividing the Papal States into provinces governed by apostolic rectores and establishing uniform judicial courts, this masterwork of administrative law restores order to central Italy."
+
+	action = {
+		command = { type = setflag which = pap_egidian_constitutions }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = infra value = 250 }
+		command = { type = treasury value = -60 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 25 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# C01c: The Rocca Albornoziana: Fortresses of the Patrimony
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7018
+	major = yes
+	unique = yes
+	potential = {
+		tag = PAP
+		flag = pap_legates_sent
+		NOT = { flag = pap_rocca_albornoz }
+	}
+	trigger = {
+		atwar = no
+		stability = 1
+		treasury = 100
+		owned = { province = 399 data = -1 } #Roma
+	}
+	ai_trigger = {
+	}
+
+	name = "The Rocca Albornoziana: Fortresses of the Patrimony"
+	desc = "To guarantee that the rebellious barons of Rome and Umbria never again threaten apostolic order, Cardinal Albornoz erects formidable stone citadels--the Rocche Albornoziane in Spoleto, Viterbo, and Narni. Dominating strategic mountain defiles along the Flaminian Way, these bastions ensure the safe passage of the Pope and his court."
+
+	action = {
+		command = { type = setflag which = pap_rocca_albornoz }
+		command = { type = fortress which = 399 value = 1 } #Roma / Lazio
+		command = { type = treasury value = -100 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 20 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# C02: Return to Rome: End of the Avignon Papacy
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7010
+	major = yes
+	unique = yes
+	potential = {
+		tag = PAP
+		flag = pap_legates_sent
+		NOT = { flag = pap_return_rome }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		treasury = 150
+		owned = { province = 399 data = -1 } #Roma
+		control = { province = 399 data = -1 } #Roma
+		OR = {
+			flag = pap_ready_to_return
+			flag = pap_egidian_constitutions
+		}
+	}
+	ai_trigger = {
+	}
+
+	name = "Return to Rome: End of the Avignon Papacy"
+	desc = "Moved by the impassioned pleas of Saint Catherine of Siena and Petrarch, and with the Patrimony of Saint Peter pacified by Cardinal Albornoz, the Holy Father makes the historic decision to depart Avignon forever. Transferring the entire Papal court, cardinals, and archives back to the Eternal City breaks the French Babylonian captivity, restoring apostolic independence upon the tomb of Saint Peter."
+
+	action = {
+		command = { type = setflag which = pap_return_rome }
+		command = { type = capital which = 399 } #Roma
+		command = { type = treasury value = -150 }
+		command = { type = infra value = 250 }
+		command = { type = relation which = FRA value = -75 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 40 }
+		command = { type = trigger which = 3009102 } #Reakcja Francji
+		command = { type = trigger which = 3009107 } #Groźba Schizmy zażegnana
 	}
 }
 
@@ -87,7 +172,7 @@ decision = {
 	unique = yes
 	potential = {
 		tag = PAP
-		flag = pap_legates_sent
+		flag = pap_return_rome
 		NOT = { flag = pap_peace_league }
 	}
 	trigger = {
