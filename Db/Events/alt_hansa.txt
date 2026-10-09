@@ -10,8 +10,8 @@ event = {
 	id = 3009300
 	random = no
 	country = HSA
-	name = "Pierwszy Ogolny Hansetag w Lubece"
-	desc = "W 1356 roku w murach Lubeki zebrali sie po raz pierwszy przedstawiciele wszystkich kwartalow i faktorii Hanzy. Zjazd ten przeksztalcil dotychczasowe luzne przymierze kupieckie w zorganizowane cialo polityczne zdolne do wspolnego wypowiadania wojen, zawierania traktatow i nakladania blokad handlowych."
+	name = "The First General Hansetag in Lubeck"
+	desc = "In 1356, burgomasters and councilors from all Hanseatic cities assembled in Lubeck for the first general Hansetag. The delegates agreed to forge a perpetual defensive and commercial union to protect merchants across the Baltic and North Seas."
 
 	trigger = {
 		owned = { province = 305 data = -1 } # Mecklemburg / Luebeck
@@ -25,7 +25,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1380 }
 
 	action_a = {
-		name = "Uchwalmy wspolny statut Ligi Hanzeatyckiej!"
+		name = "Ratify the common charter of the Hanseatic League!"
 		command = { type = stability value = 1 }
 		command = { type = treasury value = 150 }
 		command = { type = domestic which = centralization value = 1 }
@@ -39,8 +39,8 @@ event = {
 	id = 3009301
 	random = no
 	country = HSA
-	name = "Pokoj w Stralsundzie: Triumf nad Dania"
-	desc = "Po zwycieskiej wojnie konfederacji miast hanzeatyckich z dunskim krolem Waldemarem IV Atterdagiem podpisano wiekopomny traktat w Stralsundzie. Hanza uzyskala pelna kontrole nad zamkami Skanii, prawo weta przy wyborze nastepcy tronu Danii oraz nieograniczona swobode zeglugi przez Ciesniny Dunskie."
+	name = "The Treaty of Stralsund: Triumph over Denmark"
+	desc = "Following a triumphant war waged by the confederation against King Valdemar IV of Denmark, the historic Treaty of Stralsund was signed. Denmark surrenders control of the Scania trade castles, exempts Hanseatic cogs from customs, and recognizes the League as arbiter of the North."
 
 	trigger = {
 		year = 1370
@@ -53,7 +53,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1395 }
 
 	action_a = {
-		name = "Zatwierdzmy dominacje Hanzy na Baltyku!"
+		name = "Affirm Hanseatic hegemony across the Baltic!"
 		command = { type = stability value = 1 }
 		command = { type = trade value = 500 }
 		command = { type = relation which = DAN value = -100 }
@@ -67,8 +67,8 @@ event = {
 	id = 3009310
 	random = no
 	country = HSA
-	name = "Kryzys Steelyardu w Londynie"
-	desc = "Angielscy kupcy z gildii Merchant Adventurers, zazdrosni o podatkowe przywileje niemieckiej faktorii Steelyard, wywolali zamieszki w Londynie i domagaja sie od Korony konfiskaty hanzeatyckich magazynow. Jak odpowie Senat Ligi?"
+	name = "The Steelyard Crisis in London"
+	desc = "English merchants of the Company of Merchant Adventurers, envious of Hanseatic privileges in London, stir anti-German rioting and demand King Edward revoke the Steelyard charters. The Hansetag must respond decisively to defend its trading quarters."
 
 	trigger = {
 		flag = hsa_steelyard
@@ -80,7 +80,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1600 }
 
 	action_a = {
-		name = "Oglos blokade morska Anglii i wyslij floty kaperskie!"
+		name = "Enforce a naval blockade against England and dispatch privateers!"
 		command = { type = relation which = ENG value = -150 }
 		command = { type = casusbelli which = ENG }
 		command = { type = naval value = 400 }
@@ -89,7 +89,7 @@ event = {
 	}
 
 	action_b = {
-		name = "Wykup dodatkowe przywileje u krola Anglii"
+		name = "Purchase additional commercial charters from the English King"
 		command = { type = treasury value = -150 }
 		command = { type = relation which = ENG value = 50 }
 		command = { type = stability value = 1 }
@@ -101,8 +101,8 @@ event = {
 	id = 3009320
 	random = no
 	country = HSA
-	name = "Obronca Wolnego Nowogrodu przed Moskwa"
-	desc = "Wielkie Ksiestwo Moskiewskie dazy do zbrojnej aneksji Nowogrodu Wielkiego, co oznaczaloby likwidacje autonomii hanzeatyckiego Peterhofu i utrate rynku futrzarskiego. Senat w Lubece staje przed wyborem zbrojnego wsparcia dla republiki kupieckiej nad rzeka Wolchow."
+	name = "Defender of Free Novgorod against Muscovy"
+	desc = "The Grand Duchy of Muscovy seeks to conquer the sovereign merchant republic of Novgorod, threatening the closure of the Peterhof kontor and the expulsion of Western merchants. The Hansetag must decide whether to send troops to preserve Novgorodian liberties."
 
 	trigger = {
 		flag = hsa_peterhof
@@ -115,7 +115,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1520 }
 
 	action_a = {
-		name = "Udziel Nowogrodowi gwarancji i poslij najemnikow!"
+		name = "Guarantee Novgorod and dispatch professional mercenary companies!"
 		command = { type = treasury value = -200 }
 		command = { type = relation which = NVG value = 150 }
 		command = { type = relation which = MOS value = -200 }
@@ -124,7 +124,7 @@ event = {
 	}
 
 	action_b = {
-		name = "Nie angazujmy sie w konflikty na wschodzie"
+		name = "Avoid entanglement in eastern continental wars"
 		command = { type = stability value = 1 }
 		command = { type = relation which = MOS value = 50 }
 	}
@@ -135,8 +135,8 @@ event = {
 	id = 3009330
 	random = no
 	country = HSA
-	name = "Zlote Lowiska w Winlandii"
-	desc = "Raporty naszych kapitanow Didrika Pininga i Hansa Pothorsta potwierdzaja: wody wokol Nowej Fundlandii obfite sa w nieprzebrane lawice dorszy i wielorybow. Hanzeatyccy osadnicy buduja pierwsze stalowe wedzarnie i osady tranowe na Nowym Kontynencie."
+	name = "The Golden Fisheries of Vinland"
+	desc = "Reports from expedition captains Didrik Pining and Hans Pothorst confirm that northwestern ocean waters near Newfoundland and Labrador teem with inexhaustible schools of cod, opening a boundless source of maritime wealth for Hanseatic fleets."
 
 	trigger = {
 		flag = hsa_vinland
@@ -147,7 +147,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1550 }
 
 	action_a = {
-		name = "Wspaniale! Niech bogactwo morza plynie do Lubeki!"
+		name = "Splendid! Let the oceanic wealth flow to Lubeck!"
 		command = { type = treasury value = 250 }
 		command = { type = trade value = 500 }
 		command = { type = infra value = 300 }
@@ -165,8 +165,8 @@ event = {
 	id = 3009341
 	random = no
 	country = HSA
-	name = "Integracja Bremy z Liga"
-	desc = "Po dekadzie wspolnych praw i stabilnosci miasto Brema stalo sie nieodlacznym filarem zachodniego kwartalu Ligi."
+	name = "Integration of Bremen into the League"
+	desc = "Following a decade of common maritime statutes and civic stability, the city of Bremen stands as an unshakeable pillar of the League."
 
 	trigger = {
 		owned = { province = 336 data = -1 }
@@ -180,7 +180,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Brema jest nierozerwalna czescia Ligi"
+		name = "Bremen is an inseparable pillar of the League"
 		command = { type = addcore_national which = 336 }
 		command = { type = stability value = 1 }
 	}
@@ -191,8 +191,8 @@ event = {
 	id = 3009342
 	random = no
 	country = HSA
-	name = "Integracja Gdanska z Liga"
-	desc = "Dziesiec lat pod sztandarem Ligi ugruntowalo pozycje Gdanska jako glównego emporium zbozowego Baltyku."
+	name = "Integration of Danzig into the League"
+	desc = "Ten years under the League's banner have cemented Danzig as the premier grain and timber emporium of the southern Baltic."
 
 	trigger = {
 		owned = { province = 301 data = -1 }
@@ -206,7 +206,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Danzig staje sie stolica pruskiego kwartalu"
+		name = "Danzig stands as the capital of the Prussian quarter"
 		command = { type = addcore_national which = 301 }
 		command = { type = stability value = 1 }
 	}
@@ -217,8 +217,8 @@ event = {
 	id = 3009343
 	random = no
 	country = HSA
-	name = "Integracja Pomorza Przedniego z Liga"
-	desc = "Dekada sprawiedliwych rzadow polaczyla porty Stralsundu i Gryfii z rzadem w Lubece."
+	name = "Integration of Western Pomerania into the League"
+	desc = "A decade of equitable governance has bound the ports of Stralsund and Greifswald securely to the government in Lubeck."
 
 	trigger = {
 		owned = { province = 304 data = -1 }
@@ -232,7 +232,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Pomorze Przednie jest czescia Ligi"
+		name = "Western Pomerania is integral to the League"
 		command = { type = addcore_national which = 304 }
 		command = { type = stability value = 1 }
 	}
@@ -243,8 +243,8 @@ event = {
 	id = 3009344
 	random = no
 	country = HSA
-	name = "Integracja Skanii z Liga"
-	desc = "Dziesiec lat panowania nad ciesninami i zamkiem Helsingborg sprawilo, ze Skania w pelni zintegrowala sie z gospodarka Ligi."
+	name = "Integration of Scania into the League"
+	desc = "Ten years of commanding the Sound from Helsingborg fortress have made Scania the golden gateway of Hanseatic maritime power."
 
 	trigger = {
 		owned = { province = 251 data = -1 }
@@ -258,7 +258,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Skania staje sie zlotym kluczem ciesnin"
+		name = "Scania serves as the golden key to the Straits"
 		command = { type = addcore_national which = 251 }
 		command = { type = stability value = 1 }
 	}
@@ -269,8 +269,8 @@ event = {
 	id = 3009345
 	random = no
 	country = HSA
-	name = "Integracja Holsztynu z Liga"
-	desc = "Po dekadzie pokoju i dobrobytu porty Kilonii i Hamburga w pelni utozsamiaja sie z rzadem Hanzy."
+	name = "Integration of Holstein into the League"
+	desc = "Following a decade of peace and commercial prosperity, the harbors of Kiel and Hamburg are thoroughly integrated into the League."
 
 	trigger = {
 		owned = { province = 306 data = -1 }
@@ -284,7 +284,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Holsztyn jest czescia panstwa Hanzy"
+		name = "Holstein belongs irrevocably to the Hanseatic realm"
 		command = { type = addcore_national which = 306 }
 		command = { type = stability value = 1 }
 	}
@@ -304,12 +304,12 @@ event = {
 	random = no
 	country = HSA
 
-	name = "Ustroj Panstwa Hanzeatyckiego: Republika czy Morska Monarchia?"
-	desc = "Po uroczystej proklamacji zjednoczonego panstwa, Wielki Hansetag staje przed historycznym wyborem ustrojowym. Czy Hanza ma pozostac Wolna Republika Kupiecka rzadzona przez patrycjat miejski, czy tez przeksztalcic sie w dziedziczne Krolestwo Baltyku (Das Nordische Seereich) z silnym Kapitanem Generalnym na czele?"
+	name = "Constitution of the Hanseatic State: Republic or Maritime Monarchy?"
+	desc = "Following the proclamation of a unified state, the Hansetag faces an epochal constitutional crossroads: organize the state as an aristocratic merchant republic under the Senate, or institute a centralized maritime monarchy under a hereditary Captain-General."
 	style = 1
 
 	action_a = {
-		name = "Die Hanseatische Republik: Rzady Wolnych Kupcow i Senatu"
+		name = "Die Hanseatische Republik: Rule of the Free Merchants and Senate"
 		ai_chance = 60
 		command = { type = setflag which = hsa_republic_chosen }
 		command = { type = domestic which = ARISTOCRACY value = -3 }
@@ -320,7 +320,7 @@ event = {
 		command = { type = stability value = 1 }
 	}
 	action_b = {
-		name = "Das Nordische Seereich: Dziedziczny Kapitanat Generalny"
+		name = "Das Nordische Seereich: Hereditary Captaincy-General"
 		ai_chance = 40
 		command = { type = setflag which = hsa_monarchy_chosen }
 		command = { type = domestic which = ARISTOCRACY value = 2 }
@@ -342,12 +342,12 @@ event = {
 	random = no
 	country = HSA
 
-	name = "Zalozenie Nowej Lubeki w Nowym Swiecie"
-	desc = "Pierwsze statki Atlantyckiej Kompanii Hanzeatyckiej zawinely do cieplych wod Karaibow! Wzniesiono pierwszy hanzeatycki fort handlowy, nazwany Nowa Lubeka. Bogate zbiory trzciny cukrowej, tytoniu i kakao zasilaja skarb Ligi, otwierajac zloty wiek transatlantyckiego handlu."
+	name = "Founding of New Lubeck in the New World"
+	desc = "The first transatlantic expedition of the Hanseatic Atlantic Company has dropped anchor in the West Indies. Founded upon chartered land, New Lubeck becomes the premier German trading emporium in the New World."
 	style = 1
 
 	action_a = {
-		name = "Niechaj Hanza rozkwita na obu polkulach!"
+		name = "May the Hanseatic League flourish across both hemispheres!"
 		command = { type = merchants value = 6 }
 		command = { type = trade value = 400 }
 		command = { type = treasury value = 300 }
@@ -364,8 +364,8 @@ event = {
 	random = no
 	country = HSA
 
-	name = "Bracia Witalijscy i Klaus Stoertebeker"
-	desc = "Fale Morza Baltyckiego i Polnocnego zostaly zlane zuchwalymi rajdami Braci Witalijskich pod wodza legendarnego Klausa Stoertebekera! Piraci paralizuja handel morski z Gotlandii, lamiac monopol hanzeatyckich kupcow. Czy powinnismy wyslac flote wojenna i sciac ich wodzow, czy tez zaoferowac im listy kaperskie?"
+	name = "The Victual Brothers and Klaus Stoertebeker"
+	desc = "The Baltic and North Seas have been terrorized by the daring privateer brotherhood known as the Victual Brothers, led by the legendary Klaus Stoertebeker and Goedeke Michels. Hamburg and Lubeck dispatch war cogs to eliminate the threat."
 	style = 1
 
 	date = { day = 1 month = january year = 1395 }
@@ -373,7 +373,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1410 }
 
 	action_a = {
-		name = "Rozgromic piratow i sciac ich przywodcow w Hamburgu!"
+		name = "Rout the corsairs and execute their ringleaders in Hamburg!"
 		ai_chance = 70
 		command = { type = domestic which = QUALITY value = 1 }
 		command = { type = naval value = 250 }
@@ -381,7 +381,7 @@ event = {
 		command = { type = vp value = 50 }
 	}
 	action_b = {
-		name = "Dac im listy kaperskie: niech lupia obcych rywali Ligi!"
+		name = "Grant them letters of marque: let them plunder the League's rivals!"
 		ai_chance = 30
 		command = { type = warships which = 305 value = 6 }
 		command = { type = badboy value = 1 }
@@ -402,8 +402,8 @@ event = {
 		owned = { province = 301 data = -1 } # Danzig
 	}
 
-	name = "Zlote Zniwa Baltyku: Monopol Zbozowy Gdanska"
-	desc = "Wisla splywaja setki szkut i koli pelnych zlocistego zboza z calej Polski i Mazowsza. Gdansk staje sie najwiekszym spichlerzem Europy. Caly zachodni swiat - od Londynu po Lizbone - zalezy od hanzeatyckiego chleba, co przynosi niebotyczne zyski miejskim patrycjuszom."
+	name = "Golden Harvest of the Baltic: Danzig's Grain Monopoly"
+	desc = "Down the Vistula River float thousands of river barges laden with rye and wheat from Poland and Mazovia. Danzig's great wooden crane works day and night, loading Hanseatic freighters bound for Amsterdam, London, and Lisbon."
 	style = 1
 
 	date = { day = 1 month = january year = 1450 }
@@ -411,7 +411,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Baltyk zywicielem Europy!"
+		name = "The Baltic feeds Europe!"
 		command = { type = provincetax which = 301 value = 2 } # Danzig
 		command = { type = trade value = 500 }
 		command = { type = treasury value = 300 }
@@ -427,8 +427,8 @@ event = {
 	random = no
 	country = HSA
 
-	name = "Bunt Gildii Rzemieslniczych w Lubece"
-	desc = "Cechy rzemieslnikow, tkaczy i kowali zarzucaja wielkiemu patrycjatowi kupieckiemu egoizm, chciwosc i monopolizacje wladzy w radzie miejskiej. Na ulicach Lubeki dochodzi do starc i zamieszek domagajacych sie dopuszczenia cechow do rzadow."
+	name = "Revolt of the Craft Guilds in Lubeck"
+	desc = "Craft guilds, weavers, and blacksmiths rise in revolt against the wealthy merchant patriciate in Lubeck, demanding seats in the city council and lower municipal duties. The Hansetag must decide whether to negotiate or send in city guards."
 	style = 1
 
 	date = { day = 1 month = january year = 1410 }
@@ -436,7 +436,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1480 }
 
 	action_a = {
-		name = "Pojsc na ustepstwa i dopuscic cechy do reprezentacji"
+		name = "Grant concessions and admit craft guilds into the municipal council"
 		ai_chance = 50
 		command = { type = domestic which = ARISTOCRACY value = -1 }
 		command = { type = domestic which = CENTRALIZATION value = 1 }
@@ -444,7 +444,7 @@ event = {
 		command = { type = treasury value = -50 }
 	}
 	action_b = {
-		name = "Zgniesc bunt przy pomocy najemnikow rady!"
+		name = "Crush the insurrection with the council's mercenaries!"
 		ai_chance = 50
 		command = { type = revolt which = 305 } # Mecklemburg / Lubeck
 		command = { type = stability value = -2 }

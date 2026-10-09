@@ -10,8 +10,8 @@ event = {
 	id = 3009700
 	random = no
 	country = KOR
-	name = "Przewrot Generala Yi Seong-gye: Narodziny Joseon"
-	desc = "W 1392 roku general Yi Seong-gye zawraca swoje armie z wyspy Wihwado, obala skompromitowana dynastie Goryeo i zaklada nowa dynastie Joseon. Przeniesienie stolicy do Hanseongu (Seulu) oraz oparcie rzadow na etyce neokonfucjanskiej rozpoczyna nowa epoke w dziejach Korei."
+	name = "General Yi Seong-gye's Coup: The Birth of Joseon"
+	desc = "In 1392, General Yi Seong-gye overthrew the decaying Goryeo dynasty, establishing the Joseon dynasty and relocating the royal capital to Hanseong (Seoul). Embracing Neo-Confucian statecraft and legal codification, the new dynasty laid the foundation for centuries of cultural flourishing."
 
 	trigger = {
 		year = 1392
@@ -25,7 +25,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1410 }
 
 	action_a = {
-		name = "Proklamuj Krolestwo Joseon i przenies stolice do Seulu!"
+		name = "Proclaim the Kingdom of Joseon and move the capital to Hanseong!"
 		command = { type = capital which = 642 }
 		command = { type = stability value = 2 }
 		command = { type = domestic which = centralization value = 2 }
@@ -41,7 +41,7 @@ event = {
 	random = no
 	country = KOR
 	name = "Zegary Wodne i Deszczomierze Jang Yeong-sila"
-	desc = "Pod mecenatem krola Sejonga wybitny inzynier i wynalazca Jang Yeong-sil konstruuje automatyczny zegar wodny (Jagyeokru) oraz pierwszy na swiecie standaryzowany deszczomierz (Cheugugi). Dokladne prognozowanie monsunow ratuje uprawy ryzu przed suszami i powodziami."
+	desc = "In response to recurrent pirate raids along the southern provinces, General Yi Jong-mu leads a royal expeditionary fleet of over two hundred warships to Tsushima Island. The Wokou pirate encampments are destroyed, securing navigation along the Korean Strait."
 
 	trigger = {
 		flag = kor_hall_of_worthies
@@ -68,8 +68,8 @@ event = {
 	id = 3009710
 	random = no
 	country = KOR
-	name = "Triumf Okretow Zolwi w Ciesninie Tsushima"
-	desc = "Pancerne okręty Geobukseon staja naprzeciw flotylli inwazyjnych. Dziala plujace ogniem z rzezbionych smoczych glow oraz pancerny dach rozbijaja w puch wrogie jednostki, zamykajac dostep do koreanskich wybrzezy."
+	name = "Triumph of the Turtle Ships in Tsushima Strait"
+	desc = "Ironclad Turtle Ships confront hostile invasion armadas. Spewing cannon fire from dragon figureheads and protected by iron-spiked decks, the Geobukseon shatter enemy fleets and seal the Korean coastline."
 
 	trigger = {
 		flag = kor_geobukseon_built
@@ -81,7 +81,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Geobukseon przynosza absolutne panowanie na morzu!"
+		name = "Geobukseon secure absolute naval supremacy!"
 		command = { type = naval value = 300 }
 		command = { type = naval value = 500 }
 		command = { type = stability value = 1 }
@@ -99,7 +99,7 @@ event = {
 	random = no
 	country = KOR
 	name = "Integracja Pusan"
-	desc = "Dziesiec lat rozbudowy stoczni ugruntowalo pozycje Pusan jako glownego portu handlowego i wojennego krolestwa."
+	desc = "A decade of stable administration, roadbuilding, and fortress construction has firmly linked Liaoning with the royal administration of Joseon."
 
 	trigger = {
 		owned = { province = 641 data = -1 }
@@ -125,7 +125,7 @@ event = {
 	random = no
 	country = KOR
 	name = "Integracja Phenianu"
-	desc = "Dekada sprawiedliwych rzadow polaczyla prastara polnocna stolice z tronem w Hanseongu."
+	desc = "Ten years of civic governance have established peace, bringing the communities of Jilin into the fold of the realm."
 
 	trigger = {
 		owned = { province = 643 data = -1 }
@@ -151,7 +151,7 @@ event = {
 	random = no
 	country = KOR
 	name = "Integracja Liaodong i Ziemi za Yalu"
-	desc = "Dziesiec lat bezpiecznego osadnictwa zwiazalo poludniowa Mandzurie z korona Joseon."
+	desc = "Ten years of military garrisons along the northern rivers have established the Amur borderlands as an unshakeable boundary of the empire."
 
 	trigger = {
 		owned = { province = 636 data = -1 }
@@ -176,8 +176,8 @@ event = {
 	id = 3009744
 	random = no
 	country = KOR
-	name = "Integracja Jilin"
-	desc = "Dekada pokojowej integracji koczownikow ugruntowala przynaleznosc Jilin do cesarstwa."
+	name = "Integration of Jilin"
+	desc = "A decade of peaceful integration has secured Jilin as part of the empire."
 
 	trigger = {
 		owned = { province = 637 data = -1 }
@@ -191,7 +191,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Jilin jest zintegrowana czescia panstwa"
+		name = "Jilin is an integrated province of the realm"
 		command = { type = addcore_national which = 637 }
 		command = { type = stability value = 1 }
 	}

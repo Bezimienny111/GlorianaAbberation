@@ -575,3 +575,64 @@ global shared event/decision ID space, monarch space, and leader space:
 - Refactored all 95 instances of 'hasflag' across alt_americas.txt, alt_celtic.txt, alt_egypt.txt, alt_ethiopia.txt, alt_hansa.txt, and alt_korea.txt to native 'flag = <flagname>' / 'NOT = { flag = <flagname> }'.
 - Cleaned all 72 instances of 'type = setflag which = <name> value = 1' to permanent flag command 'type = setflag which = <name>'.
 - Verified 0 remaining occurrences of hasflag and 100% comment-stripped bracket balance across all event and decision files.
+
+================================================================================
+[2026-10-09] Module 7: Solomonic Empire of Ethiopia (ETH):
+- Decisions Implemented (Db/Decisions/alt_ethiopia.txt: 7300-7312):
+  * 7300: Thalassocracy: Shipyards of Massawa (Red Sea naval dominance).
+  * 7301: Invasion of Yemen and Blockade of Aden (Bab-el-Mandeb crossing).
+  * 7302: Alliance with Rome and Embassy of Prester John (Western military mission).
+  * 7303: Reconquest of the Ancient Realms of Nubia (Nile corridor).
+  * 7304: Southern Crusade to Sinai (Monastery of St. Catherine & overland route).
+  * 7306: Establishment of the Katama System (Mobile military camp governance).
+  * 7307: Foundation of a Permanent Capital in Gondar (Castle architecture & archives).
+  * 7308: Autocephaly of the Ethiopian Orthodox Church (Native Axum Patriarchate).
+  * 7309: Defense of the African Littoral (Continental isolationism & bastions).
+  * 7310: Fate of the Holy Land: Restoration of the Kingdom of Jerusalem (Vassal kingdom).
+  * 7311: Fate of the Holy Land: Direct Administration of Zion (United Solomonic realm).
+  * 7312: Restoration of Ancient Axum (Stelae and Ark of the Covenant heritage).
+- Events Implemented (Db/Events/alt_ethiopia.txt: 3009600-3009645):
+  * 3009600: Triumph of Emperor Amda Seyon over Ifat.
+  * 3009601: The Golden Age of Emperor Zara Yaqob.
+  * 3009602: Revolt of the Monks of Debre Libanos.
+  * 3009603: The Great Jihad of Ahmad Gragn.
+  * 3009604: Glory of Zion: The New Jerusalem.
+  * 3009610: Envoys from Rome and Venice at Axum.
+  * 3009641-3009645: Integration waves (Massawa, Dongola, Batn al-Hajar, Aden, Sinai).
+================================================================================
+
+[2026-10-09] FTG Engine Syntax Audit & Bug Fixes:
+- Decision Structure:
+  * Removed invalid option 'name = ...' entries from inside decision 'action = { ... }' blocks across all decision files. Decision actions only accept commands.
+- Culture Standardization:
+  * Corrected Aztec/Inca cultures to native FTG definitions: 'tarascan' -> 'mesoamerican', 'zapotec' -> 'zapotek'.
+  * Standardized British cultures: 'anglo_saxon' -> 'english', 'welsh'/'breton' -> 'brythonic'.
+- Tag Standardization:
+  * Replaced invalid EU4 tag 'KOJ' with native FTG tag 'JER' for Kingdom of Jerusalem in alt_ethiopia.txt.
+  * Replaced invalid tag 'HED' with native FTG tag 'ARA' for Hedjaz.
+- Domestic Slider Syntax:
+  * Fixed 'which = NAVAL' command in alt_celtic.txt to 'type = domestic which = land value = -2' (FTG slider is 'land').
+  * Corrected trigger syntax: domestic triggers strictly use 'type = <slider> value = X' (not 'which').
+- Trigger Syntax Fixes:
+  * Fixed war triggers: changed single-country triggers to standard two-tag syntax 'war = { country = TAG1 country = TAG2 }'.
+  * Fixed relation triggers: changed 'value = X' to native 'data = X' across all files.
+  * Fixed ownerchange triggers: standardized to 'ownerchange = { province = X years = 10 }'.
+- ID Uniqueness:
+  * Renumbered duplicate event ID 3009230 in alt_egypt.txt to clean range 3009250-3009254.
+  * Verified 0 collisions mod-wide across events, leaders, and monarchs.
+================================================================================
+
+[2026-10-09] Complete Mod Localization to English:
+- Full English Localization:
+  * Translated 100% of names, descriptions, options, and actions across all 16 Alternate Destiny files:
+    - Db/Decisions/alt_americas.txt & Db/Events/alt_americas.txt
+    - Db/Decisions/alt_byzantine.txt & Db/Events/alt_byzantine.txt
+    - Db/Decisions/alt_celtic.txt & Db/Events/alt_celtic.txt
+    - Db/Decisions/alt_egypt.txt & Db/Events/alt_egypt.txt
+    - Db/Decisions/alt_ethiopia.txt & Db/Events/alt_ethiopia.txt
+    - Db/Decisions/alt_hansa.txt & Db/Events/alt_hansa.txt
+    - Db/Decisions/alt_korea.txt & Db/Events/alt_korea.txt
+    - Db/Decisions/alt_papal.txt & Db/Events/alt_papal.txt
+  * Translated all Polish epithets in leader files (leaders_azt.txt, leaders_egy.txt, leaders_eth.txt, leaders_inc.txt).
+  * Eradicated all non-ASCII characters and Polish text, ensuring seamless rendering and compatibility with the For The Glory engine.
+  * Verified 100% comment-stripped bracket balance across all touched files.

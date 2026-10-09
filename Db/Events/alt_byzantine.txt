@@ -452,19 +452,19 @@ event = {
 	random = no
 	country = BYZ
 
-	name = "Poselstwo z Wiecznego Miasta: Odrodzenie Zachodu"
-	desc = "Do Zlotego Rogu przybyli poslowie z Wiecznego Rzymu! Nowy August Zachodu oglasza restytucje zachodnich prowincji i proponuje braterski uklad: zachowanie jednosci rzymskiego swiata i podzial zadan obronnych przeciw barbarzyncom i niewiernym."
+	name = "Embassy from the Eternal City: The Rebirth of the West"
+	desc = "Ambassadors from Eternal Rome have arrived at the Golden Horn! The new Augustus of the West announces the restitution of the western provinces and proposes a fraternal concordat: preserving the unity of the Roman world and dividing defense against barbarians and infidels."
 	style = 1
 
 	action_a = {
-		name = "Niechaj zyja obaj Augustowie! (Concordia Augustorum)"
+		name = "Long live both Augusti! (Concordia Augustorum)"
 		ai_chance = 70
 		command = { type = relation which = WRE value = 100 }
 		command = { type = stability value = 1 }
 		command = { type = vp value = 50 }
 	}
 	action_b = {
-		name = "Jest tylko jeden prawowity Rzym - Konstantynopol!"
+		name = "There is only one legitimate Rome - Constantinople!"
 		ai_chance = 30
 		command = { type = relation which = WRE value = -150 }
 		command = { type = casusbelli which = WRE value = 60 }
@@ -481,12 +481,12 @@ event = {
 	random = no
 	country = BYZ
 
-	name = "Poselstwo z Aleksandrii: Pax Orientalis"
-	desc = "Do Konstantynopola przybyli wspaniali poslowie z odrodzonego Krolestwa Ptolemeuszy w Egipcie. Jako wladcy mowiacy jezykiem Homera i dzielacy helenistyczne dziedzictwo, proponuja wieczysty sojusz (Pax Orientalis) i pokojowy podzial stref wplywow w Lewancie."
+	name = "Embassy from Alexandria: Pax Orientalis"
+	desc = "Splendid envoys from the restored Ptolemaic Kingdom of Egypt have arrived in Constantinople. As rulers speaking Homeric Greek and sharing Hellenistic heritage, they propose a perpetual alliance (Pax Orientalis) and a peaceful partition of spheres of influence across the Levant."
 	style = 1
 
 	action_a = {
-		name = "Przyjmijmy sojusz ze wspolbrazmi z Aleksandrii! (Pax Orientalis)"
+		name = "Embrace alliance with our brethren in Alexandria! (Pax Orientalis)"
 		ai_chance = 70
 		command = { type = relation which = EGY value = 150 }
 		command = { type = alliance which = EGY }
@@ -494,7 +494,7 @@ event = {
 		command = { type = vp value = 50 }
 	}
 	action_b = {
-		name = "Aleksandria i Egipt to odwieczne prowincje Cesarstwa Rzymskiego!"
+		name = "Alexandria and Egypt are eternal provinces of the Roman Empire!"
 		ai_chance = 30
 		command = { type = relation which = EGY value = -150 }
 		command = { type = casusbelli which = EGY value = 60 }

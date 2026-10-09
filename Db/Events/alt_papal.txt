@@ -19,8 +19,8 @@ event = {
 		isvassal = no
 	}
 
-	name = "Miecz i Tiara: Los Zjednoczonej Italii"
-	desc = "Od Alp az po granice Neapolu polnocna i srodkowa Italia stoja zjednoczone pod opieka Rzymu. W bazylikach i palacach Wiecznego Miasta trwa goraca debata nad przyszlym losem panstwa. Czy Stolica Apostolska powinna pozostac wielka duchowa teokracja chroniaca wiare? Czy powolac swieckiego Krola Wloch, by scigac sie z mocarstwami na oceanach? A moze zglosic roszczenie do najwiekszego dziedzictwa historii - wskrzeszenia Cesarstwa Rzymskiego na Zachodzie?"
+	name = "Sword and Tiara: The Destiny of United Italy"
+	desc = "From the Alps down to the Neapolitan borders, northern and central Italy stand united under Roman protection. The estates gather in Rome to decide the nation's destiny: establish a unified Catholic Theocracy under the Holy See, crown a national King of Italy, or restore the Western Roman Empire."
 	style = 1
 
 	date = { day = 1 month = january year = 1450 }
@@ -28,7 +28,7 @@ event = {
 	deathdate = { year = 1838 }
 
 	action_a = {
-		name = "Przyszlosc spoczywa w naszych rekach"
+		name = "The future rests in our hands"
 		command = { type = stability value = 1 }
 		command = { type = vp value = 50 }
 	}
@@ -43,17 +43,17 @@ event = {
 	random = no
 	country = FRA
 
-	name = "Papiez Powraca do Rzymu"
-	desc = "Stolica Apostolska oficjalnie przeniosla swoja rezydencje z Awinionu z powrotem do Wiecznego Miasta Rzymu. Wplyw korony francuskiej na kardynalow i Kurie zostal oslabiony, lecz papiez pragnie zachowac pokojowe stosunki z najstarsza corka Kosciola."
+	name = "The Pope Returns to Rome"
+	desc = "The Holy See has officially transferred its residence from Avignon back to the Eternal City of Rome. French court influence over the cardinals is broken, and the Pope returns to the tomb of Saint Peter."
 	style = 1
 
 	action_a = {
-		name = "Przyjmijmy te decyzje z godnoscia"
+		name = "Accept the Papal decree with dignity"
 		command = { type = relation which = PAP value = -25 }
 		command = { type = vp value = 10 }
 	}
 	action_b = {
-		name = "Zaprotestujmy przeciw opuszczeniu Awinionu!"
+		name = "Protest against departing Avignon!"
 		command = { type = relation which = PAP value = -100 }
 		command = { type = casusbelli which = PAP value = 24 }
 	}
@@ -68,17 +68,17 @@ event = {
 	random = no
 	country = HAB
 
-	name = "Papiez i Zelazna Korona Longobardow"
-	desc = "Rzym oglasza swoje zwierzchnictwo nad polnocnymi Wlochami i wkracza do Lombardii. Prawa cesarzy rzymsko-niemieckich do krolestwa wloskiego stoja w obliczu bezposredniego wyzwania."
+	name = "The Pope and the Iron Crown of Lombardy"
+	desc = "Rome proclaims its sovereignty over northern Italy and enters Lombardy, claiming the Iron Crown of the Lombards in Monza and Milan to unite the Po Valley."
 	style = 1
 
 	action_a = {
-		name = "Negocjujmy kompromis z Rzymem"
+		name = "Negotiate a compromise with Rome"
 		command = { type = relation which = PAP value = -50 }
 		command = { type = diplomats value = 1 }
 	}
 	action_b = {
-		name = "Nigdy nie zrzekniemy sie praw cesarstwa!"
+		name = "Never renounce the rights of the Empire!"
 		command = { type = relation which = PAP value = -200 }
 		command = { type = casusbelli which = PAP value = 36 }
 	}
@@ -93,26 +93,26 @@ event = {
 	random = no
 	country = ITA
 
-	name = "Wybor Dynastii Krolewskiej Zjednoczonych Wloch"
-	desc = "Krolestwo Wloch stalo sie faktem! Zgromadzeni w Rzymie przedstawiciele senatu, komun i arystokracji musza wybrac dom panujacy, ktory poprowadzi Italie ku potedze. Kto zalozy krolewska dynastie?"
+	name = "Election of the Royal Dynasty of United Italy"
+	desc = "The Kingdom of Italy is proclaimed! Assembled in Rome, delegates from the Senate, merchant guilds, and noble houses prepare to elect a founding royal dynasty: the Medici of Florence, the Sforza of Milan, or the House of Savoy."
 	style = 1
 
 	action_a = {
-		name = "Dom Medyceuszy z Florencji (Dyplomacja, Finanse, Renesans)"
+		name = "House of Medici of Florence (Diplomacy, Banking, Renaissance)"
 		command = { type = wakemonarch which = 12217 } #Giovanni di Medici
 		command = { type = domestic which = INNOVATIVE value = 1 }
 		command = { type = treasury value = 200 }
 		command = { type = setflag which = ita_dynasty_medici }
 	}
 	action_b = {
-		name = "Dom Sforzow z Mediolanu (Wojskowosc, Fortyfikacje, Dyscyplina)"
+		name = "House of Sforza of Milan (Military Command, Fortifications, Discipline)"
 		command = { type = wakemonarch which = 12153 } #Francesco I Sforza
 		command = { type = domestic which = OFFENSIVE value = 1 }
 		command = { type = domestic which = QUALITY value = 1 }
 		command = { type = setflag which = ita_dynasty_sforza }
 	}
 	action_c = {
-		name = "Dom Sabaudzki (Militarna Tradycja, Straznicy Alp)"
+		name = "House of Savoy (Martial Valour, Guardians of the Alpine Passes)"
 		command = { type = wakemonarch which = 12165 } #Louis I of Savoy
 		command = { type = domestic which = LAND value = 1 }
 		command = { type = setflag which = ita_dynasty_savoia }
@@ -128,12 +128,12 @@ event = {
 	random = no
 	country = WRE
 
-	name = "Uklad Dwoch Cesarzy: Rzym i Konstantynopol"
-	desc = "Odrodzenie Cesarstwa Rzymskiego na Zachodzie wywolalo wielkie poruszenie na dworze w Konstantynopolu. Zamiast bratobojczego sporu o jedynosc cesarskiego tytulu, obaj wladcy wysylaja poslow. Rzym panuje nad Zachodem, a Nowy Rzym nad Wschodem - tak jak za czasow Teodozjusza!"
+	name = "Treaty of the Two Emperors: Rome and Constantinople"
+	desc = "The revival of the Western Roman Empire sends shockwaves through the court in Constantinople. The Eastern Emperor sends envoys to clarify relations: concord between two legitimate Augusti (Concordia Augustorum) or a struggle for sole imperial legitimacy."
 	style = 1
 
 	action_a = {
-		name = "Niechaj oba orly panuja w zgodzie (Concordia Augustorum)!"
+		name = "May both eagles reign in harmony (Concordia Augustorum)!"
 		ai_chance = 70
 		command = { type = relation which = BYZ value = 150 }
 		command = { type = alliance which = BYZ }
@@ -142,7 +142,7 @@ event = {
 		command = { type = vp value = 50 }
 	}
 	action_b = {
-		name = "Tylko w Wiecznym Rzymie bije serce imperium (Bellum Augustorum)!"
+		name = "Only in Eternal Rome beats the heart of empire (Bellum Augustorum)!"
 		ai_chance = 30
 		command = { type = relation which = BYZ value = -150 }
 		command = { type = casusbelli which = BYZ value = 60 }
@@ -161,12 +161,12 @@ event = {
 	random = no
 	country = WRE
 
-	name = "Religijne Przeznaczenie Cesarstwa Zachodniego"
-	desc = "Wskrzeszenie Cesarstwa Rzymskiego stawia wladze przed fundamentalnym wyborem duchowym. Czy odrodzony Zachod ma pozostac wiernym obronca Stolicy Apostolskiej i wiary katolickiej, czy tez - w duchu cesarza Juliana - wskrzesic pradawny Panteon Rzymski, kult Sol Invictus i cnoty obywatelskie starozytnego Rzymu?"
+	name = "Religious Destiny of the Western Roman Empire"
+	desc = "The restitution of the Western Roman Empire confronts the leadership with a fundamental spiritual choice: rule as a Christian Caesar and protector of the Church, or revive the ancient Roman state religion and the Pantheon of the Gods (Sol Invictus)."
 	style = 1
 
 	action_a = {
-		name = "Chrzescijanski Cezar i wierny protektor Kosciola"
+		name = "Christian Caesar and devout protector of the Church"
 		ai_chance = 80
 		command = { type = stability value = 1 }
 		command = { type = relation which = PAP value = 150 }
@@ -201,19 +201,19 @@ event = {
 	random = no
 	country = WRE
 
-	name = "Oaza Azaouad i Kraina Zlota"
-	desc = "Ekspedycja konkwistadora Lucio Africano po miesiacach morderczego marszu przez Sahare dotarla do legendarnej oazy Timbuktu i kopaln zlota krolestwa Mali. Pustynni wladcy stoja zdumieni widokiem rzymskich orlow wylaniajacych sie z burzy piaskowej!"
+	name = "The Oasis of Azaouad and the Gold Coast of the Sahara"
+	desc = "The expedition of explorer Lucio Africano, after a grueling march across the Sahara, arrives at the oasis of Timbuktu and the legendary gold mines of the Empire of Mali. The desert rulers watch in amazement as Roman standards emerge from the sands."
 	style = 1
 
 	action_a = {
-		name = "Narzuccie trybut w zlocie i protektorat handlowy!"
+		name = "Impose gold tribute and commercial protectorate!"
 		command = { type = treasury value = 500 }
 		command = { type = merchants value = 6 }
 		command = { type = relation which = MAL value = 50 }
 		command = { type = trade value = 300 }
 	}
 	action_b = {
-		name = "Zaadajcie bezposredniej aneksji kopaln Bambuk!"
+		name = "Demand direct annexation of the Bambuk gold mines!"
 		command = { type = addcore_claim which = 1490 } #Bambuk
 		command = { type = addcore_claim which = 1495 } #Timbuktu
 		command = { type = relation which = MAL value = -300 }
@@ -243,14 +243,14 @@ event = {
 		ownerchange = { province = 391 years = 10 }
 		NOT = { core = { province = 391 data = -1 } }
 	}
-	name = "Integracja Prowincji: Romagna"
-	desc = "Po dekadzie nieprzerwanych i sprawiedliwych rzadow mieszkancy Romanii calkowicie zintegrowali sie z naszym panstwem. Prowincja staje sie nierozerwalna czescia naszej ojczyzny."
+	name = "Provincial Integration: Romagna"
+	desc = "Following a decade of uninterrupted and equitable administration, the people of Romagna have completely integrated into our core realm."
 	style = 1
 	date = { day = 1 month = january year = 1347 }
 	offset = 60
 	deathdate = { year = 1838 }
 	action_a = {
-		name = "Romagna jest nasza!"
+		name = "Romagna is ours!"
 		command = { type = addcore_national which = 391 }
 		command = { type = provincetax which = 391 value = 1 }
 	}
@@ -266,14 +266,14 @@ event = {
 		ownerchange = { province = 392 years = 10 }
 		NOT = { core = { province = 392 data = -1 } }
 	}
-	name = "Integracja Prowincji: Marche"
-	desc = "Po dekadzie nieprzerwanych rzadow Marchia Ankonska zostaje na stale wlaczona jako rdzenne terytorium panstwa."
+	name = "Provincial Integration: Marche"
+	desc = "After a decade of stable rule, the March of Ancona is permanently integrated as a crown province."
 	style = 1
 	date = { day = 1 month = january year = 1347 }
 	offset = 60
 	deathdate = { year = 1838 }
 	action_a = {
-		name = "Marche jest nasza!"
+		name = "The Marches are ours!"
 		command = { type = addcore_national which = 392 }
 		command = { type = provincetax which = 392 value = 1 }
 	}
@@ -289,14 +289,14 @@ event = {
 		ownerchange = { province = 401 years = 10 }
 		NOT = { core = { province = 401 data = -1 } }
 	}
-	name = "Integracja Prowincji: Firenze"
-	desc = "Kolebka renesansu - Florencja - po 10 latach stabilnego panowania uznaje nasza wladze za wlasna i prawowita."
+	name = "Provincial Integration: Florence"
+	desc = "The cradle of the Renaissance—Florence—having enjoyed a decade of stable governance, willingly embraces our sovereign authority."
 	style = 1
 	date = { day = 1 month = january year = 1347 }
 	offset = 60
 	deathdate = { year = 1838 }
 	action_a = {
-		name = "Florencja jest zjednoczona z nami!"
+		name = "Florence is united with us!"
 		command = { type = addcore_national which = 401 }
 		command = { type = provincetax which = 401 value = 1 }
 	}
@@ -312,14 +312,14 @@ event = {
 		ownerchange = { province = 389 years = 10 }
 		NOT = { core = { province = 389 data = -1 } }
 	}
-	name = "Integracja Prowincji: Lombardia"
-	desc = "Mediolan i zyzne rowniny Lombardii po 10 latach rzadow staja sie filarem naszego zjednoczonego panstwa."
+	name = "Provincial Integration: Lombardy"
+	desc = "Milan and the fertile plains of Lombardy, after ten years of governance, become a cornerstone of our realm."
 	style = 1
 	date = { day = 1 month = january year = 1347 }
 	offset = 60
 	deathdate = { year = 1838 }
 	action_a = {
-		name = "Lombardia stanowi czesc naszego rdzenia!"
+		name = "Lombardy forms part of our core realm!"
 		command = { type = addcore_national which = 389 }
 		command = { type = provincetax which = 389 value = 1 }
 	}
@@ -335,14 +335,14 @@ event = {
 		ownerchange = { province = 393 years = 10 }
 		NOT = { core = { province = 393 data = -1 } }
 	}
-	name = "Integracja Prowincji: Napoli"
-	desc = "Neapol i ziemie poludniowej Italii po 10 latach spokojnego wladania zostaja calkowicie zintegrowane jako rdzen narodowy."
+	name = "Provincial Integration: Naples"
+	desc = "Naples and southern Italy, after a decade of peaceful rule, return to the national fold."
 	style = 1
 	date = { day = 1 month = january year = 1347 }
 	offset = 60
 	deathdate = { year = 1838 }
 	action_a = {
-		name = "Neapol powraca do jednosci!"
+		name = "Naples returns to unity!"
 		command = { type = addcore_national which = 393 }
 		command = { type = provincetax which = 393 value = 1 }
 	}
@@ -371,8 +371,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Konstancji: Wybor Marcina V"
-	desc = "Marcin V (Oddone Colonna) konczy Wielka Schizme Zachodnia. Rzym ponownie staje sie niekwestionowana stolica chrzescijanstwa."
+	name = "Conclave of Constance: Election of Martin V"
+	desc = "Martin V (Oddone Colonna) terminates the Western Schism. Rome once again becomes the undisputed center of Christendom."
 	style = 1
 
 	date = { day = 1 month = january year = 1417 }
@@ -380,7 +380,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1420 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = stability value = 1 }
 		command = { type = infra value = 100 }
 	}
@@ -402,8 +402,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Rzymie: Wybor Eugeniusza IV"
-	desc = "Eugeniusz IV przewodzi obradom Soboru we Florencji, dazac do unii z Kosciolem wschodnim i umocnienia prymatu papieskiego."
+	name = "Conclave in Rome: Election of Eugene IV"
+	desc = "Eugene IV leads the Council of Florence, seeking union with the Eastern Orthodox Church and defending papal prerogatives."
 	style = 1
 
 	date = { day = 1 month = january year = 1431 }
@@ -411,7 +411,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1434 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = stability value = 1 }
 		command = { type = relation which = BYZ value = 50 }
 	}
@@ -433,8 +433,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Rzymie: Wybor Mikolaja V"
-	desc = "Mikolaj V zaklada Biblioteke Watykanska i zaprasza do Rzymu najwiekszych humanistow, inaugurujac renesansowy zloty wiek."
+	name = "Conclave in Rome: Election of Nicholas V"
+	desc = "Nicholas V founds the Vatican Library and invites Europe's greatest humanists, scholars, and manuscript collectors to Rome."
 	style = 1
 
 	date = { day = 1 month = january year = 1447 }
@@ -442,7 +442,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1450 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = infra value = 150 }
 		command = { type = trade value = 150 }
 	}
@@ -464,8 +464,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Rzymie: Wybor Kaliksta III"
-	desc = "Pierwszy papiez z katalonskiego rodu Borgiow, z cala moca nawoluje do zjednoczenia sil chrzescijanskich przeciw Turkom."
+	name = "Conclave in Rome: Election of Callixtus III"
+	desc = "The first Borgia Pope, Callixtus III, rallies Christian powers against the Ottoman advance following the fall of Constantinople."
 	style = 1
 
 	date = { day = 1 month = january year = 1455 }
@@ -473,7 +473,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1458 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = INF which = 399 value = 5000 }
 		command = { type = stability value = 1 }
 	}
@@ -495,8 +495,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Rzymie: Wybor Piusa II"
-	desc = "Eneasz Sylwiusz Piccolomini, wybitny humanista, pisarz i dyplomata, obejmuje Tron Piotrowy."
+	name = "Conclave in Rome: Election of Pius II"
+	desc = "Aeneas Silvius Piccolomini, renowned humanist, poet, and diplomat, ascends the throne as Pius II, fostering literature and arts."
 	style = 1
 
 	date = { day = 1 month = january year = 1458 }
@@ -504,7 +504,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1461 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = stability value = 1 }
 		command = { type = DIP which = 2 value = 24 }
 	}
@@ -526,8 +526,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Rzymie: Wybor Pawla II"
-	desc = "Wenecki kardynal Pietro Barbo slynie z mecenatu nad architektura i umacniania rzymskiego prawa miejskiego."
+	name = "Conclave in Rome: Election of Paul II"
+	desc = "Venetian Cardinal Pietro Barbo ascends as Paul II, known for magnificent civic architecture, antiquities, and carnival pageantry."
 	style = 1
 
 	date = { day = 1 month = january year = 1464 }
@@ -535,7 +535,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1467 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = treasury value = 150 }
 		command = { type = stability value = 1 }
 	}
@@ -557,8 +557,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Rzymie: Wybor Sykstusa IV"
-	desc = "Sykstus IV z rodu della Rovere funduje slynna Kaplice Sykstynska oraz most Ponte Sisto, modernizujac Rzym."
+	name = "Conclave in Rome: Election of Sixtus IV"
+	desc = "Sixtus IV of the della Rovere family endows the Sistine Chapel and the Ponte Sisto, modernizing Roman infrastructure."
 	style = 1
 
 	date = { day = 1 month = january year = 1471 }
@@ -566,7 +566,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1474 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = provincetax which = 399 value = 1 }
 		command = { type = infra value = 150 }
 	}
@@ -588,8 +588,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Rzymie: Wybor Innocentego VIII"
-	desc = "Innocenty VIII stabilizuje relacje z wloskimi dynastiami i wspiera pokoj na polwyspie."
+	name = "Conclave in Rome: Election of Innocent VIII"
+	desc = "Innocent VIII stabilizes diplomatic relations with Italian dynasties and supports peace across the peninsula."
 	style = 1
 
 	date = { day = 1 month = january year = 1484 }
@@ -597,7 +597,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1487 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = stability value = 1 }
 		command = { type = badboy value = -1 }
 	}
@@ -619,8 +619,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Rzymie: Wybor Aleksandra VI"
-	desc = "Rodrigo Borgia wstepuje na Tron Piotrowy jako Aleksander VI, prowadzac wielka polityke dynastyczna i dyplomatyczna w dobie odkryc."
+	name = "Conclave in Rome: Election of Alexander VI"
+	desc = "Rodrigo Borgia assumes the throne as Alexander VI, expanding territorial control over the Papal States through bold diplomacy."
 	style = 1
 
 	date = { day = 1 month = january year = 1492 }
@@ -628,7 +628,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1495 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = DIP which = 2 value = 36 }
 		command = { type = treasury value = 200 }
 	}
@@ -650,8 +650,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Rzymie: Wybor Juliusza II"
-	desc = "Giuliano della Rovere - 'Papiez Wojownik'. Rozpoczyna budowe nowej Bazyliki Swietego Piotra i zatrudnia Michala Aniola oraz Rafaela."
+	name = "Conclave in Rome: Election of Julius II"
+	desc = "Giuliano della Rovere—the 'Warrior Pope' Julius II. He begins construction of the new Saint Peter's Basilica and commissions Michelangelo."
 	style = 1
 
 	date = { day = 1 month = january year = 1503 }
@@ -659,7 +659,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1506 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = domestic which = QUALITY value = 1 }
 		command = { type = fortress which = 399 value = 1 }
 	}
@@ -681,8 +681,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Rzymie: Wybor Leona X"
-	desc = "Giovanni de' Medici - syn Wawrzynca Wspanialego. Apogeum mecenatu, zlotego wieku kultury i sztuki renesansu w Rzymie."
+	name = "Conclave in Rome: Election of Leo X"
+	desc = "Giovanni de' Medici—son of Lorenzo the Magnificent. Leo X marks the golden age of Renaissance patronage and humanist arts."
 	style = 1
 
 	date = { day = 1 month = january year = 1513 }
@@ -690,7 +690,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1516 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = trade value = 200 }
 		command = { type = infra value = 200 }
 	}
@@ -712,8 +712,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Rzymie: Wybor Klemensa VII"
-	desc = "Giulio de' Medici mierzy sie z burza wojen wloskich i europejskich przetasowan politycznych."
+	name = "Conclave in Rome: Election of Clement VII"
+	desc = "Giulio de' Medici navigates the turbulent Italian Wars and European geopolitical shifts as Clement VII."
 	style = 1
 
 	date = { day = 1 month = january year = 1523 }
@@ -721,7 +721,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1526 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = stability value = 1 }
 		command = { type = treasury value = 100 }
 	}
@@ -743,8 +743,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Rzymie: Wybor Pawla III"
-	desc = "Alessandro Farnese zwoluje Sobor Trydencki, zatwierdza zakon jezuitow i otwiera epoke wielkiej reformy katolickiej."
+	name = "Conclave in Rome: Election of Paul III"
+	desc = "Alessandro Farnese convokes the Council of Trent, approves the Jesuit Order, and opens the era of Catholic Reformation as Paul III."
 	style = 1
 
 	date = { day = 1 month = january year = 1534 }
@@ -752,7 +752,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1537 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = stability value = 2 }
 		command = { type = infra value = 200 }
 	}
@@ -774,8 +774,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Rzymie: Wybor Juliusza III"
-	desc = "Juliusz III kontynuuje obrady Soboru Trydenckiego i wznosi wspaniala rezydencje Villa Giulia."
+	name = "Conclave in Rome: Election of Julius III"
+	desc = "Julius III continues the Council of Trent and constructs the splendid suburban Villa Giulia as a center of arts."
 	style = 1
 
 	date = { day = 1 month = january year = 1550 }
@@ -783,7 +783,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1553 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = stability value = 1 }
 		command = { type = infra value = 100 }
 	}
@@ -805,8 +805,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Rzymie: Wybor Piusa IV"
-	desc = "Pius IV doprowadza do szczesliwego i uroczystego zakonczenia Soboru Trydenckiego, oglaszajac odnowe wiary."
+	name = "Conclave in Rome: Election of Pius IV"
+	desc = "Pius IV successfully brings the momentous Council of Trent to a solemn conclusion, codifying Counter-Reformation decrees."
 	style = 1
 
 	date = { day = 1 month = january year = 1559 }
@@ -814,7 +814,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1562 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = stability value = 1 }
 		command = { type = relation which = FRA value = 100 }
 		command = { type = relation which = HAB value = 100 }
@@ -838,8 +838,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Rzymie: Wybor Piusa V"
-	desc = "Swiety Pius V formuje Swieta Lige prowadzaca do triumfu pod Lepanto oraz kodyfikuje jednolity Mszal Rzymski."
+	name = "Conclave in Rome: Election of Pius V"
+	desc = "Saint Pius V forms the Holy League leading to triumph at Lepanto and codifies the Tridentine Roman Missal."
 	style = 1
 
 	date = { day = 1 month = january year = 1566 }
@@ -847,7 +847,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1569 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = warships which = 399 value = 5 }
 		command = { type = naval value = 300 }
 	}
@@ -869,8 +869,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Rzymie: Wybor Grzegorza XIII"
-	desc = "Ugo Boncompagni reformuje kalendarz, wprowadzajac kalendarz gregorianski oraz funduje Gregorianum."
+	name = "Conclave in Rome: Election of Gregory XIII"
+	desc = "Ugo Boncompagni reforms the calendar into the Gregorian Calendar and establishes papal colleges across Europe as Gregory XIII."
 	style = 1
 
 	date = { day = 1 month = january year = 1572 }
@@ -878,7 +878,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1575 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = infra value = 250 }
 		command = { type = stability value = 1 }
 	}
@@ -900,8 +900,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Rzymie: Wybor Sykstusa V"
-	desc = "Felice Peretti prowadzi bezwzgledna walke z bandytyzmem i przeprowadza monumentalna przebudowe urbanistyczna Rzymu."
+	name = "Conclave in Rome: Election of Sixtus V"
+	desc = "Felice Peretti wages an unrelenting campaign against brigandage and completes monumental urban redesigns as Sixtus V."
 	style = 1
 
 	date = { day = 1 month = january year = 1585 }
@@ -909,7 +909,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1588 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = provincetax which = 399 value = 2 }
 		command = { type = stability value = 1 }
 	}
@@ -931,8 +931,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Rzymie: Wybor Klemensa VIII"
-	desc = "Klemens VIII przywraca pokoj w Europie i pokojowo wlacza Ksiestwo Ferrary w sklad prowincji Stolicy Apostolskiej."
+	name = "Conclave in Rome: Election of Clement VIII"
+	desc = "Clement VIII fosters European peace and peacefully integrates the Duchy of Ferrara into the domains of the Holy See."
 	style = 1
 
 	date = { day = 1 month = january year = 1592 }
@@ -940,7 +940,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1595 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = badboy value = -2 }
 		command = { type = stability value = 1 }
 	}
@@ -962,8 +962,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Rzymie: Wybor Pawla V"
-	desc = "Camillo Borghese konczy monumentalna fasade Bazyliki Swietego Piotra i wznosi wspaniale akwedukty."
+	name = "Conclave in Rome: Election of Paul V"
+	desc = "Camillo Borghese completes the majestic facade of Saint Peter's Basilica and constructs Villa Borghese as Paul V."
 	style = 1
 
 	date = { day = 1 month = january year = 1605 }
@@ -971,7 +971,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1608 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = vp value = 50 }
 		command = { type = infra value = 200 }
 	}
@@ -993,8 +993,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Rzymie: Wybor Urbana VIII"
-	desc = "Maffeo Barberini - wielki mecenas Gian Lorenzo Berniniego, rozkwit rzymskiego baroku i fortyfikacji Castel Sant'Angelo."
+	name = "Conclave in Rome: Election of Urban VIII"
+	desc = "Maffeo Barberini reigns as Urban VIII—great patron of Gian Lorenzo Bernini and architect of baroque Rome."
 	style = 1
 
 	date = { day = 1 month = january year = 1623 }
@@ -1002,7 +1002,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1626 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = provincetax which = 399 value = 1 }
 		command = { type = artillery which = 399 value = 20 }
 	}
@@ -1024,8 +1024,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Rzymie: Wybor Innocentego X"
-	desc = "Giovanni Battista Pamphilj przebudowuje Piazza Navona i wznosi slynna Fontanne Czterech Rzek."
+	name = "Conclave in Rome: Election of Innocent X"
+	desc = "Innocent X remodels Piazza Navona and commissions Bernini's famous Fountain of the Four Rivers."
 	style = 1
 
 	date = { day = 1 month = january year = 1644 }
@@ -1033,7 +1033,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1647 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = stability value = 1 }
 		command = { type = treasury value = 150 }
 	}
@@ -1055,8 +1055,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Rzymie: Wybor Aleksandra VII"
-	desc = "Fabio Chigi wznosi slynna eliptyczna kolumnade Berniniego na Placu Swietego Piotra, witajaca pielgrzymow calego swiata."
+	name = "Conclave in Rome: Election of Alexander VII"
+	desc = "Fabio Chigi constructs the iconic elliptical colonnade of Bernini embracing Saint Peter's Square as Alexander VII."
 	style = 1
 
 	date = { day = 1 month = january year = 1655 }
@@ -1064,7 +1064,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1658 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = vp value = 50 }
 		command = { type = infra value = 200 }
 	}
@@ -1086,8 +1086,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Rzymie: Wybor Innocentego XI"
-	desc = "Innocenty XI jednoczy monarchie europejskie przeciw ekspansji osmanskiej, wspierajac Wiktorie Wiedenska."
+	name = "Conclave in Rome: Election of Innocent XI"
+	desc = "Innocent XI unites European monarchies against Ottoman siege lines at Vienna, prioritizing fiscal discipline and moral rectitude."
 	style = 1
 
 	date = { day = 1 month = january year = 1676 }
@@ -1095,7 +1095,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1679 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = domestic which = QUALITY value = 1 }
 		command = { type = stability value = 1 }
 	}
@@ -1117,8 +1117,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Rzymie: Wybor Klemensa XI"
-	desc = "Klemens XI dba o pokoj w dobie wielkich wojen sukcesyjnych i wspiera rzymskie akademie sztuki."
+	name = "Conclave in Rome: Election of Clement XI"
+	desc = "Clement XI safeguards neutrality during the War of the Spanish Succession and enriches Rome's academies of archaeology and arts."
 	style = 1
 
 	date = { day = 1 month = january year = 1700 }
@@ -1126,7 +1126,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1703 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = stability value = 1 }
 		command = { type = trade value = 150 }
 	}
@@ -1148,8 +1148,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Rzymie: Wybor Benedykta XIV"
-	desc = "Prospero Lambertini - wielki Papiez Oswiecenia, reformator prawa, mecenas uniwersytetow i nauk scislych."
+	name = "Conclave in Rome: Election of Benedict XIV"
+	desc = "Prospero Lambertini—the great Pope of the Enlightenment Benedict XIV, legal reformer, patron of universities and scientific inquiry."
 	style = 1
 
 	date = { day = 1 month = january year = 1740 }
@@ -1157,7 +1157,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1743 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = infra value = 300 }
 		command = { type = trade value = 300 }
 	}
@@ -1179,8 +1179,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Rzymie: Wybor Klemensa XIII"
-	desc = "Klemens XIII broni autorytetu instytucji koscielnych w epoce filozofow i sporow ideowych."
+	name = "Conclave in Rome: Election of Clement XIII"
+	desc = "Clement XIII defends traditional ecclesiastical prerogatives in the era of philosophes and royal jurisdictional disputes."
 	style = 1
 
 	date = { day = 1 month = january year = 1758 }
@@ -1188,7 +1188,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1761 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = stability value = 1 }
 		command = { type = treasury value = 100 }
 	}
@@ -1210,8 +1210,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Rzymie: Wybor Piusa VI"
-	desc = "Pius VI osusza Blota Pontyjskie, zaklada Muzeum Pio-Clementino i stawia czolo kryzysom rewolucji."
+	name = "Conclave in Rome: Election of Pius VI"
+	desc = "Pius VI drains the Pontine Marshes, founds the Pio-Clementino Museum, and confronts the storms of the French Revolution."
 	style = 1
 
 	date = { day = 1 month = january year = 1775 }
@@ -1219,7 +1219,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1778 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = provincetax which = 399 value = 1 }
 		command = { type = infra value = 200 }
 	}
@@ -1241,8 +1241,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Wenecji i Rzymie: Wybor Piusa VII"
-	desc = "Barnaba Chiaramonti przetrwal burze epoki napoleonskiej, odradzajac autorytet Wiecznego Miasta w XIX wieku."
+	name = "Conclave in Venice and Rome: Election of Pius VII"
+	desc = "Barnaba Chiaramonti perseveres through Napoleonic turbulence, restoring the international prestige of the Holy See as Pius VII."
 	style = 1
 
 	date = { day = 1 month = january year = 1800 }
@@ -1250,7 +1250,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1803 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = stability value = 2 }
 		command = { type = relation which = FRA value = 100 }
 	}
@@ -1272,8 +1272,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Rzymie: Wybor Leona XII"
-	desc = "Leon XII oglasza Rok Swiety 1825, gromadzac w Rzymie setki tysiecy pielgrzymow ze wszystkich stron globu."
+	name = "Conclave in Rome: Election of Leo XII"
+	desc = "Leo XII proclaims the Jubilee of 1825, gathering hundreds of thousands of pilgrims in Rome from all corners of the globe."
 	style = 1
 
 	date = { day = 1 month = january year = 1823 }
@@ -1281,7 +1281,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1826 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = treasury value = 250 }
 		command = { type = stability value = 1 }
 	}
@@ -1303,8 +1303,8 @@ event = {
 		NOT = { religion = roman_pagan }
 	}
 
-	name = "Konklawe w Rzymie: Wybor Grzegorza XVI"
-	desc = "Mauro Cappellari wznosi Muzeum Gregoriaskie i dba o porzadek spoleczny oraz dziedzictwo Wiecznego Miasta."
+	name = "Conclave in Rome: Election of Gregory XVI"
+	desc = "Gregory XVI establishes the Gregorian Etruscan and Egyptian Museums and oversees public works across the Papal State."
 	style = 1
 
 	date = { day = 1 month = january year = 1831 }
@@ -1312,7 +1312,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1834 }
 
 	action_a = {
-		name = "Habemus Papam! Niech Bog blogoslawi Ojcu Swietemu!"
+		name = "Habemus Papam! May God bless the Holy Father!"
 		command = { type = stability value = 1 }
 		command = { type = infra value = 150 }
 	}
@@ -1334,12 +1334,12 @@ event = {
 	random = no
 	country = WRE
 
-	name = "Comitia Centuriata: Wybory Konsulow Rzeczypospolitej"
-	desc = "Na Polu Marsowym i w Kurii zebral sie Senat oraz Obywatele Rzymu! Zgodnie ze starozytnym prawem Republiki, nadszedl czas wyboru Konsulow na kolejna 5-letnia kadencje. Kto stanie na czele panstwa i poprowadzi rzymskie legiony oraz magistraty?"
+	name = "Comitia Centuriata: Consular Elections of the Republic"
+	desc = "On the Campus Martius and in the Curia Julia, the Senate and Citizens of Rome assemble! In accordance with the restored republican constitution, the Comitia Centuriata convenes to elect two annual Consuls to lead the state."
 	style = 1
 
 	action_a = {
-		name = "Wybierz Konsula Wojskowego (Legatus Legionum)"
+		name = "Elect Military Consul (Legatus Legionum)"
 		ai_chance = 35
 		command = { type = domestic which = QUALITY value = 1 }
 		command = { type = land value = 200 }
@@ -1347,7 +1347,7 @@ event = {
 		command = { type = CAV which = 399 value = 1000 }
 	}
 	action_b = {
-		name = "Wybierz Konsula Dyplomatycznego (Princeps Senatus)"
+		name = "Elect Diplomatic Consul (Princeps Senatus)"
 		ai_chance = 35
 		command = { type = badboy value = -1 }
 		command = { type = DIP which = 2 value = 60 }
@@ -1356,7 +1356,7 @@ event = {
 		command = { type = relation which = HAB value = 25 }
 	}
 	action_c = {
-		name = "Wybierz Konsula Administracyjnego (Praetor Aerarii)"
+		name = "Elect Administrative Consul (Praetor Aerarii)"
 		ai_chance = 30
 		command = { type = infra value = 200 }
 		command = { type = trade value = 200 }
@@ -1378,8 +1378,8 @@ event = {
 		flag = wre_republic_restored
 	}
 
-	name = "Comitia Centuriata: Nowe Wybory Konsulow"
-	desc = "Mija piec lat owocnych rzadow poprzednich magistratow. Zgodnie z konstytucja SPQR, zgromadzenie kurialne i centurialne zbiera sie ponownie, by wybrac nowych sternikow Republiki."
+	name = "Comitia Centuriata: Periodic Consular Elections"
+	desc = "Five years of fruitful governance by the magistrates have elapsed. In accordance with the SPQR constitution, the Comitia Centuriata gathers once again to elect new consular leadership."
 	style = 1
 
 	date = { day = 1 month = january year = 1400 }
@@ -1387,21 +1387,21 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Frakcja Legionowa: Konsul Wojenny"
+		name = "Legionary Faction: Martial Consul"
 		ai_chance = 35
 		command = { type = domestic which = QUALITY value = 1 }
 		command = { type = land value = 200 }
 		command = { type = INF which = 399 value = 3000 }
 	}
 	action_b = {
-		name = "Frakcja Senatorska: Konsul Dyplomatyczny"
+		name = "Senatorial Faction: Diplomatic Consul"
 		ai_chance = 35
 		command = { type = badboy value = -1 }
 		command = { type = DIP which = 2 value = 60 }
 		command = { type = stability value = 1 }
 	}
 	action_c = {
-		name = "Frakcja Kupiecka: Konsul Skarbu"
+		name = "Merchant Faction: Treasury Consul"
 		ai_chance = 30
 		command = { type = infra value = 200 }
 		command = { type = treasury value = 200 }
@@ -1429,8 +1429,8 @@ event = {
 		NOT = { flag = machiavelli_handled }
 	}
 
-	name = "Niccolo Machiavelli: Wrog Tiary czy Sekretarz Kurii?"
-	desc = "Florencki dyplomata Niccolo Machiavelli w swoich pismach bezlitosnie krytykowal doczesna wladze papiezy, twierdzac, ze Stolica Apostolska podzielila Italie i zniszczyla rzymska cnote obywatelska. Widzac jednak potege zjednoczonego panstwa papieskiego i bezwzgledna determinacje Kurii, florencki sekretarz staje przed obliczem Papieza. Niektorzy kardynalowie zadaja wtracenia go do lochu jako heretyka, inni zas chca wykorzysac jego genialny, chlodny zmysl polityczny."
+	name = "Niccolo Machiavelli: Adversary of the Tiara or Secretary of the Curia?"
+	desc = "Florentine diplomat Niccolo Machiavelli, in his correspondence and treatises, famously critiqued the temporal weakness of the Italian city-states. Facing a united Papal State, he offers his diplomatic and political expertise to the Holy See."
 	style = 1
 
 	date = { day = 1 month = january year = 1513 }
@@ -1438,7 +1438,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1527 }
 
 	action_a = {
-		name = "Zatrudnij go jako doradce dyplomatycznego Stolicy Apostolskiej"
+		name = "Employ him as diplomatic counselor to the Holy See"
 		ai_chance = 50
 		command = { type = setflag which = machiavelli_handled }
 		command = { type = DIP which = 2 value = 60 }
@@ -1447,7 +1447,7 @@ event = {
 		command = { type = relation which = FRA value = -25 }
 	}
 	action_b = {
-		name = "Uwiez bezboznika i potep jego dziela jako heretyckie!"
+		name = "Imprison him and condemn his political treatises as heretical!"
 		ai_chance = 50
 		command = { type = setflag which = machiavelli_handled }
 		command = { type = stability value = 1 }
@@ -1470,8 +1470,8 @@ event = {
 		NOT = { flag = machiavelli_handled }
 	}
 
-	name = "Niccolo Machiavelli i Wezwanie do Wyzwolenia Italii"
-	desc = "Rozdzial 26 'Ksiecia' stal sie zywa rzeczywistoscia! Niccolo Machiavelli przybywa na dwor Krola Wloch, skladajac hold wladcy, ktory wyzwolil Italie z rak cudzoziemskich barbarzyncow. Przynosi ze soba traktat 'O sztuce wojennej' i proponuje natychmiastowe zerwanie z zawodnymi najemnikami na rzecz stworzenia narodowej, zdyscyplinowanej milicji obywatelskiej, zdolnej obronic caly polwysep."
+	name = "Niccolo Machiavelli: Exhortation to Liberate Italy from the Barbarians"
+	desc = "The final chapter of 'The Prince' becomes a living reality: 'An Exhortation to Liberate Italy from the Barbarians'! Niccolo Machiavelli arrives at the royal court in Rome, urging the King to complete the total unification of the peninsula and establish a national citizen militia."
 	style = 1
 
 	date = { day = 1 month = january year = 1513 }
@@ -1479,7 +1479,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1527 }
 
 	action_a = {
-		name = "Mianuj Machiavellego Wielkim Kanclerzem i utworz Milicje Narodowa!"
+		name = "Appoint Machiavelli Grand Chancellor and establish a National Militia!"
 		ai_chance = 80
 		command = { type = setflag which = machiavelli_handled }
 		command = { type = domestic which = QUALITY value = 1 }
@@ -1492,7 +1492,7 @@ event = {
 		command = { type = vp value = 100 }
 	}
 	action_b = {
-		name = "Wykorzystaj jego geniusz wylacznie w dyplomacji zagranicznej"
+		name = "Direct his political genius solely to foreign diplomacy"
 		ai_chance = 20
 		command = { type = setflag which = machiavelli_handled }
 		command = { type = DIP which = 3 value = 60 }
@@ -1515,8 +1515,8 @@ event = {
 		NOT = { flag = machiavelli_handled }
 	}
 
-	name = "Niccolo Machiavelli i Odrodzenie Cnoty Rzymskiej (Virtu)"
-	desc = "Niccolo Machiavelli, autor 'Rozwazan nad pierwszymi dziesiecioma ksiegami Tytusa Liwiusza', z zachwytem patrzy na odrodzone Imperium Romanum. Widzac wskrzeszona rzymska potegie, ofiarowuje swoj talent Senatowi i Cesarzowi, doradzajac jak polaczyc bezwzgledny realizm polityczny ze starozytna cnota obywatelska i dyscyplina rzymskich legionow."
+	name = "Niccolo Machiavelli: The Revival of Ancient Roman Virtue (Virtu)"
+	desc = "Niccolo Machiavelli, celebrated author of the 'Discourses on Livy', greets the rebirth of the Roman Republic (SPQR) with enthusiasm! He urges the consuls to revive the martial virtues, civic militias, and institutional checks of the ancient Roman Republic."
 	style = 1
 
 	date = { day = 1 month = january year = 1513 }
@@ -1524,7 +1524,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1527 }
 
 	action_a = {
-		name = "Wprowadz reformy Machiavellego w duchu starozytnego Rzymu!"
+		name = "Institute Machiavelli's republican reforms in the spirit of ancient Rome!"
 		ai_chance = 80
 		command = { type = setflag which = machiavelli_handled }
 		command = { type = domestic which = CENTRALIZATION value = 1 }
@@ -1534,7 +1534,7 @@ event = {
 		command = { type = vp value = 100 }
 	}
 	action_b = {
-		name = "Docen jego pisma, lecz zachowaj tradycyjny porzadek"
+		name = "Appreciate his writings, yet maintain the established order"
 		ai_chance = 20
 		command = { type = setflag which = machiavelli_handled }
 		command = { type = stability value = 1 }

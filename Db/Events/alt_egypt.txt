@@ -10,8 +10,8 @@ event = {
 	id = 3009200
 	random = no
 	country = MAM
-	name = "Czystka w Cytadeli Kairskiej"
-	desc = "Po smierci al-Nasira frakcje kipczackich i czerkieskich emirow pograzyly Egipt w krwawej anarchii. Sułtan, wspierany przez wierna straz przyboczna oraz mieszczan Kairu, ma okazje zwolac zebranie przywodcow frakcji pod pretekstem uczty pojednania w Cytadeli, zamknac wrota Bramy Bab al-Azab i fizycznie zlikwidowac samowolna kaste zolnierzy-niewolnikow."
+	name = "Purge at the Citadel of Cairo"
+	desc = "Following dynastic turmoil, rival factions of Kipchak and Circassian emirs plunged Egypt into anarchy. The Sultan lures the conspirators to an imperial banquet within the Citadel of Cairo. With the gates bolted, royal guards eliminate the rebellious commanders, clearing the path for sweeping reforms."
 
 	trigger = {
 		owned = { province = 746 data = -1 } # Cairo / Egypt
@@ -26,7 +26,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1370 }
 
 	action_a = {
-		name = "Zamknij bramy Cytadeli i zgładź uzurpatorow!"
+		name = "Bar the gates of the Citadel and eliminate the traitors!"
 		command = { type = treasury value = 400 }
 		command = { type = add_countryculture which = coptic }
 		command = { type = domestic which = aristocracy value = -3 }
@@ -40,7 +40,7 @@ event = {
 	}
 
 	action_b = {
-		name = "Zatwierdz przywileje emirow i zachowaj pokoj"
+		name = "Confirm the emirs' privileges and preserve peace"
 		command = { type = stability value = 1 }
 		command = { type = domestic which = aristocracy value = 2 }
 		command = { type = domestic which = centralization value = -2 }
@@ -53,8 +53,8 @@ event = {
 	id = 3009201
 	random = no
 	country = MAM
-	name = "Rozdroze nad Nilem: Wybor Przyszlosci"
-	desc = "Kres wszechwladzy obcej kasty mameluckiej postawil Egipt przed dziejowym wyborem. Wolna od feudalnego paralizu kraina Nilu moze zwrocic sie ku morzu i hellenizmowi w tradycji Ptolemeuszy, wskrzesic prastare politeistyczne dziedzictwo Faraonow, przeprowadzic racjonalistyczna reformacje islamu w duchu szkoly Mu'tazila, badz pozostac ortodoksyjnym sułtanatem."
+	name = "Crossroads on the Nile: Destiny of Egypt"
+	desc = "The end of foreign Mameluk supremacy brings Egypt to a historic crossroads: reorient the realm toward the Mediterranean as a restored Greco-Egyptian Ptolemaic sea-kingdom, revive the primordial pagan faith of the Pharaohs, embrace the enlightened rationalism of Mu'tazilism, or maintain orthodox Sunni tradition."
 
 	trigger = {
 		flag = mam_purge_done
@@ -69,7 +69,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1380 }
 
 	action_a = {
-		name = "Zwrot ku morzu: Nowe Panstwo Ptolemeuszy!"
+		name = "Turn to the sea: The New Ptolemaic Realm!"
 		command = { type = setflag which = nile_path_chosen }
 		command = { type = relation which = VEN value = 50 }
 		command = { type = relation which = GEN value = 50 }
@@ -80,7 +80,7 @@ event = {
 	}
 
 	action_b = {
-		name = "Wskrzeszmy pradawny Kemet i wiare Faraonow!"
+		name = "Revive primordial Kemet and the faith of the Pharaohs!"
 		command = { type = setflag which = nile_path_chosen }
 		command = { type = domestic which = innovative value = 2 }
 		command = { type = infra value = 300 }
@@ -88,7 +88,7 @@ event = {
 	}
 
 	action_c = {
-		name = "Oswiecmy wiare swiatlem Rozumu (Mu'tazilizm)!"
+		name = "Enlighten faith with the torch of Reason (Mu'tazilism)!"
 		command = { type = setflag which = nile_path_chosen }
 		command = { type = domestic which = innovative value = 2 }
 		command = { type = infra value = 300 }
@@ -96,7 +96,7 @@ event = {
 	}
 
 	action_d = {
-		name = "Zachowajmy tradycyjny porzadek sunnicki"
+		name = "Preserve the traditional Sunni orthodox order"
 		command = { type = setflag which = nile_path_chosen }
 		command = { type = stability value = 2 }
 		command = { type = domestic which = aristocracy value = 1 }
@@ -107,12 +107,12 @@ event = {
 event = {
 	id = 3009220
 	random = no
-	name = "Powszechny Dzihad przeciwko Faraonowi Apostacie"
-	desc = "Wiadomosc o wskrzeszeniu poganskiego kultu Amona i ogloszeniu Faraona Synem Ra wstrzasnela calym swiatem islamskim. Z Damaszku, Bagdadu, Stambulu i Kairu plyna wezwania do swietej wojny przeciw bezboznemu wladcy w Memfis! Sasiednie emiraty i su?tanaty oglaszaja swiety obowiazek obalenia Kemetu."
+	name = "General Jihad against the Apostate Pharaoh"
+	desc = "Word of the revival of the ancient solar cult of Amun-Ra and the coronation of a living Pharaoh sends shockwaves across the Islamic world. Neighboring sultans preach holy war against the apostate of the Nile, rallying hordes of fanatical warriors along the Syrian and desert borders."
 	style = 1
 
 	action_a = {
-		name = "Niech bogowie Nilu zmiota najezdzcow!"
+		name = "Let the gods of the Nile sweep away the invaders!"
 		command = { type = domestic which = QUALITY value = 1 } # Fanatyzm obroncow Nilu
 		command = { type = INF which = 746 value = 12000 } # Gwardia Faraona
 		command = { type = domestic which = OFFENSIVE value = 2 }
@@ -133,8 +133,8 @@ event = {
 event = {
 	id = 3009221
 	random = no
-	name = "Koptowie witaja Nowego Faraona"
-	desc = "Wsrod chrzescijanskiej ludnosci Egiptu wiesc o obaleniu obcego panowania i powrocie do rdzennych, pradawnych tradycji wzbudzila nadzieje na pokoj i sprawiedliwosc. Koptowie masowo wstepuja do nowej armii Faraona, wspierajac go przeciwko najeźdźcom ze wschodu."
+	name = "Copts Welcome the New Pharaoh"
+	desc = "Among Christian Copts and native fellahin, news of the overthrow of foreign rulers and the restoration of ancient traditions brings jubilation. Copts eagerly enlist in the royal battalions, providing devoted troops and loyal administrators."
 
 	trigger = {
 		religion = egyptian_pagan
@@ -147,7 +147,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Jestesmy synami tej samej pradawnej ziemi"
+		name = "We are sons of the same ancient earth"
 		command = { type = stability value = 1 }
 		command = { type = populationpercent which = 743 value = 15 }
 		command = { type = populationpercent which = 747 value = 15 }
@@ -159,11 +159,11 @@ event = {
 event = {
 	id = 3009230
 	random = no
-	name = "Reakcja Konserwatywnych Ulemow na Mu'tazilizm"
-	desc = "Odrzucenie scislego dogmatyzmu i gloszenie prymatu ludzkiej wolnej woli wywolalo wscieklosc tradycyjnych jurystow aszaryckich. Czesc fundamentalistow wzywa do buntu, zarzucajac wladcy niszczenie ortodoksji."
+	name = "Backlash of Conservative Ulema against Mu'tazilism"
+	desc = "Discarding strict fatalism and declaring the supremacy of human reason provokes fierce resistance from conservative Cairo clerics. Led by hardline theologians, conservative mobs riot in the markets, demanding a return to rigid orthodox dogmatism."
 
 	action_a = {
-		name = "Rozum jest najwiekszym darem Allaha!"
+		name = "Reason is Allah's greatest gift to mankind!"
 		command = { type = stability value = -2 }
 		command = { type = religiousrevolt which = 490 } # Syria
 		command = { type = religiousrevolt which = 746 } # Cairo
@@ -172,7 +172,7 @@ event = {
 	}
 
 	action_b = {
-		name = "Zlagodzmy reformy dla uspokojenia ulemow"
+		name = "Temper our reforms to pacify the conservative clerics"
 		command = { type = stability value = 1 }
 		command = { type = domestic which = innovative value = -1 }
 	}
@@ -182,8 +182,8 @@ event = {
 event = {
 	id = 3009231
 	random = no
-	name = "Naplyw Uczonych do Kairu i Aleksandrii"
-	desc = "Dzieki polityce tolerancji i wsparcia dla nauk empirycznych, Egipt staje sie bezpiecznym azylem dla przesladowanych filozofow, matematykow, astronomow i medykow z Europy i Bliskiego Wschodu."
+	name = "Influx of Scholars to Cairo and Alexandria"
+	desc = "Through policies of broad philosophical inquiry and generous funding for empirical sciences, Egypt emerges as a beacon of learning. Astronomers, physicians, and mathematicians from across the Islamic and Christian worlds flock to Cairo and Alexandria."
 
 	trigger = {
 		or = {
@@ -199,7 +199,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Otworzcie podwoje bibliotek i akademii!"
+		name = "Throw open the doors of libraries and academies!"
 		command = { type = infra value = 500 }
 		command = { type = trade value = 500 }
 		command = { type = treasury value = 100 }
@@ -215,8 +215,8 @@ event = {
 event = {
 	id = 3009241
 	random = no
-	name = "Integracja Cypru"
-	desc = "Po dekadzie sprawiedliwych i stabilnych rzadow cypryjscy kupcy i mieszkancy w pelni zaakceptowali przynaleznosc do wladcy Aleksandrii."
+	name = "Integration of Cyprus"
+	desc = "Following a decade of equitable governance, Cypriot merchants and citizens fully assimilate into the kingdom."
 
 	trigger = {
 		or = {
@@ -234,7 +234,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Cypr staje sie nieodlaczna czescia panstwa"
+		name = "Cyprus becomes an inseparable part of the realm"
 		command = { type = addcore_national which = 484 }
 		command = { type = stability value = 1 }
 	}
@@ -244,8 +244,8 @@ event = {
 event = {
 	id = 3009242
 	random = no
-	name = "Pelna Integracja Syrii"
-	desc = "Dziesiec lat nieprzerwanych rzadow i reform gospodarczych trwale zwiazalo losy Damaszku i ziem syryjskich z wladza nad Nilem."
+	name = "Full Integration of Syria"
+	desc = "Ten years of civic stability and administrative reform have permanently bound Damascus, Aleppo, and the Syrian coast to Cairo."
 
 	trigger = {
 		or = {
@@ -263,7 +263,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Syria staje sie filarem korony"
+		name = "Syria stands as a pillar of the crown"
 		command = { type = addcore_national which = 490 }
 		command = { type = stability value = 1 }
 	}
@@ -273,8 +273,8 @@ event = {
 event = {
 	id = 3009243
 	random = no
-	name = "Pelna Integracja Judei"
-	desc = "Dziesiec lat opieki nad miejscami kultu i spokoju spolecznego ugruntowalo przynaleznosc Jerozolimy do korony."
+	name = "Full Integration of Judea"
+	desc = "A decade of protection over holy sites and peaceful coexistence has secured Jerusalem as an integral domain."
 
 	trigger = {
 		or = {
@@ -292,7 +292,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Jerozolima jest pod nasza wieczysta opieka"
+		name = "Jerusalem rests under our eternal protection"
 		command = { type = addcore_national which = 493 }
 		command = { type = stability value = 1 }
 	}
@@ -302,8 +302,8 @@ event = {
 event = {
 	id = 3009244
 	random = no
-	name = "Pelna Integracja Nubii"
-	desc = "Dziesiec lat wspolnych szlakow handlowych i stabilnosci nad gornym Nilem polaczylo ludy Nubii z monarchia."
+	name = "Full Integration of Nubia"
+	desc = "Ten years of mutual trade and Nile administration have integrated Nubian realms with the kingdom."
 
 	trigger = {
 		or = {
@@ -321,7 +321,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Nubia jest czescia krolestwa Nilu"
+		name = "Nubia is part of the Kingdom of the Nile"
 		command = { type = addcore_national which = 749 }
 		command = { type = stability value = 1 }
 	}
@@ -331,8 +331,8 @@ event = {
 event = {
 	id = 3009245
 	random = no
-	name = "Integracja Krety"
-	desc = "Dekada sprawiedliwego pokoju i rozkwitu portow handlowych sprawila, ze wyspa Kreta stala sie integralna czescia panstwa aleksandryjskiego."
+	name = "Integration of Crete"
+	desc = "A decade of flourishing commerce has transformed Crete into an unshakeable maritime bastion of Alexandria."
 
 	trigger = {
 		or = {
@@ -350,7 +350,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Kreta jest nieodlaczna twierdza morska"
+		name = "Crete is an essential maritime bastion"
 		command = { type = addcore_national which = 480 }
 		command = { type = stability value = 1 }
 	}
@@ -370,12 +370,12 @@ event = {
 	random = no
 	country = EGY
 
-	name = "Ptolemaios i Basileus: Pax Orientalis czy Wojna o Lewant?"
-	desc = "Odrodzenie grecko-egipskiego Krolestwa Ptolemeuszy w Aleksandrii stawia nas przed wielkim wyborem strategicznym wobec Cesarstwa Bizantyjskiego w Konstantynopolu. Czy powinnismy zawrzec wieczysty sojusz dwoch greckich mocarstw (Pax Orientalis) i podzielic strefy wplywow w Lewancie, czy tez rywalizowac o panowanie nad Morzem Egejskim, Cyprem i Lewantem?"
+	name = "Ptolemy and the Basileus: Pax Orientalis or War for the Levant?"
+	desc = "The renaissance of the Greco-Egyptian Ptolemaic Kingdom in Alexandria presents a diplomatic opportunity with the Byzantine Emperor in Constantinople. We must choose between fraternal alliance (Pax Orientalis) or naval rivalry for supremacy over the Levant."
 	style = 1
 
 	action_a = {
-		name = "Pax Orientalis: Sojusz i braterski podzial Lewantu!"
+		name = "Pax Orientalis: Fraternal partition and alliance across the Levant!"
 		ai_chance = 70
 		command = { type = alliance which = BYZ }
 		command = { type = relation which = BYZ value = 150 }
@@ -384,7 +384,7 @@ event = {
 		command = { type = trigger which = 3009026 } #BYZ: Reakcja na Pax Orientalis
 	}
 	action_b = {
-		name = "Morze Lewantynskie nalezy wylacznie do Aleksandrii!"
+		name = "The Levantine Sea belongs exclusively to Alexandria!"
 		ai_chance = 30
 		command = { type = relation which = BYZ value = -150 }
 		command = { type = casusbelli which = BYZ value = 60 }
@@ -402,8 +402,8 @@ event = {
 	random = no
 	country = EGY
 
-	name = "Wylewy Nilu: Blogoslawienstwo Hapi"
-	desc = "Tegoroczny przybor wod Nilu osiagnal idealny poziom szesnastu lokci na nilometrze w Roda! Czarna, zyzna ziemia Kemetu przyniosla plony stulecia. Spichlerze Aleksandrii i Kairu pekaja w szwach, a wdzieczny lud wielbi rzady wladcy."
+	name = "Inundation of the Nile: Blessing of Hapi"
+	desc = "This year's Nile flood crested at sixteen cubits on the Nilometer—the divine ideal! Rich silt covers the fields from Aswan to the Delta, guaranteeing bumper harvests, bursting granaries, and flourishing agricultural wealth."
 	style = 1
 
 	date = { day = 1 month = august year = 1420 }
@@ -411,7 +411,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Wypelnijmy spichlerze i podziekujmy za dar rzeki!"
+		name = "Fill the granaries and give thanks for the gift of the river!"
 		command = { type = treasury value = 250 }
 		command = { type = provincetax which = 745 value = 1 } #Delta
 		command = { type = provincetax which = 747 value = 1 } #Nile
@@ -427,8 +427,8 @@ event = {
 	random = no
 	country = EGY
 
-	name = "Tajemnice Doliny Krolow: Odkrycie Grobowcow"
-	desc = "Podczas prac irygacyjnych i wykopalisk w skalach Teb robotnicy natrafili na zapieczetowane wejscie do nienaruszonego grobowca starozytnej dynastii! Wewnatrz odnaleziono zlocone sarkofagi, bezcenne papirusy i skarby sprzed tysiecy lat."
+	name = "Secrets of the Valley of the Kings: Tomb Rediscovery"
+	desc = "During canal excavations along the cliffs of western Thebes, royal diggers uncover an untouched royal hypogeum laden with golden funerary treasures, scrolls of medical lore, and astronomical charts."
 	style = 1
 
 	date = { day = 1 month = january year = 1460 }
@@ -436,13 +436,13 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Przekaz zloto do skarbca na rozbudowe panstwa"
+		name = "Transfer the gold to the state treasury for public works"
 		ai_chance = 50
 		command = { type = treasury value = 400 }
 		command = { type = infra value = 150 }
 	}
 	action_b = {
-		name = "Zachowaj grobowiec jako swiete sanktuarium nauki i tradycji"
+		name = "Preserve the tomb as a sacred sanctuary of ancient heritage"
 		ai_chance = 50
 		command = { type = domestic which = INNOVATIVE value = 1 }
 		command = { type = badboy value = -2 }
@@ -464,8 +464,8 @@ event = {
 		flag = egy_canal_built
 	}
 
-	name = "Wyprawa do Mitycznej Krainy Punt"
-	desc = "Wzorem krolowej Hatszepsut, nasi zeglarze z Morza Czerwonego wyruszyli na poludnie wzdluz wybrzezy Afryki Wschodniej. Eskadra powrocila obciazona mirra, kadzidlem, koscmi sloniowymi i zlotem z legendarnej Krainy Punt, otwierajac bogaty szlak handlowy."
+	name = "Expedition to the Land of Punt"
+	desc = "Following the immortal example of Queen Hatshepsut, our Red Sea navigators venture south toward the mythic incense shores of Punt, returning with myrrh trees, gold, exotic beasts, and ebony."
 	style = 1
 
 	date = { day = 1 month = january year = 1480 }
@@ -473,7 +473,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Szlak kadzidlany nalezy do Egiptu!"
+		name = "The incense route belongs to Egypt!"
 		command = { type = merchants value = 6 }
 		command = { type = trade value = 300 }
 		command = { type = treasury value = 200 }
@@ -493,8 +493,8 @@ event = {
 		flag = egy_ptolemaic
 	}
 
-	name = "Kleopatra VIII Philopator na Tronie Nilu"
-	desc = "Na tronie w Aleksandrii zasiadla mloda, niezwykle utalentowana krolowa - Kleopatra VIII Philopator. Wladajaca kilkunastoma jezykami, biegle obeznana z dyplomacja i strategia morska, staje sie natchnieniem poetow i postrachem rywali w calym basenie Morza Srodziemnego."
+	name = "Cleopatra VIII Philopator on the Throne of the Nile"
+	desc = "A brilliant, charismatic sovereign ascends the throne in Alexandria—Cleopatra VIII Philopator. Master of seven languages and skilled in diplomacy and naval logistics, she wins the devotion of Greeks and Egyptians alike."
 	style = 1
 
 	date = { day = 1 month = january year = 1500 }
@@ -502,7 +502,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1520 }
 
 	action_a = {
-		name = "Niech zyje Krolowa Nilu!"
+		name = "Long live the Queen of the Nile!"
 		command = { type = wakemonarch which = 39202 } #Kleopatra VIII Philopator
 		command = { type = stability value = 1 }
 		command = { type = DIP which = 2 value = 120 }
@@ -518,8 +518,8 @@ event = {
 	random = no
 	country = EGY
 
-	name = "Bunt Mameluckich Emiratow w Gornym Egipcie"
-	desc = "Ostatnie niedobitki dawnych emirow mameluckich, wygnanych z Kairu, zgromadzily buntownicze oddzialy w Asuanie i Gornym Egipcie. Usiluja wzniecic rebelie fellahow, by odzyskac swe utracone przywileje feudalne."
+	name = "Rebellion of the Mameluk Emirs in Upper Egypt"
+	desc = "Desperate remnants of former Mameluk emirs assemble in the desert hills of Upper Egypt, stirring bedouin tribes to revolt. Royal army regiments must march swiftly up the Nile to snuff out the insurrection."
 	style = 1
 
 	date = { day = 1 month = january year = 1380 }
@@ -527,7 +527,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1450 }
 
 	action_a = {
-		name = "Zgniesc zdrajcow bez litosci!"
+		name = "Crush the traitors without mercy!"
 		command = { type = revolt which = 747 } #Nile
 		command = { type = stability value = -1 }
 		command = { type = treasury value = 150 } #Skonfiskowane skarby emirow

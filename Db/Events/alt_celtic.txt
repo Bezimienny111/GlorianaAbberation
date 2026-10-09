@@ -9,8 +9,8 @@
 event = {
 	id = 3009500
 	random = no
-	name = "Przebudzenie Smoka: Powstanie Glyndwra"
-	desc = "W obliczu oslabienia korony angielskiej w polnocnej Walii Owain Glyndwr podnosi sztandar buntu. Walijczycy ze wszystkich commotes chwytaja za bron, a bardowie spiewaja o powrocie prawowitych wladcow Brytanii."
+	name = "Awakening of the Dragon: Glyndwr's Rising"
+	desc = "Taking advantage of royal dynastic upheaval in England, Owain Glyndwr raises the banner of the Red Dragon in northern Wales. Proclaimed Prince of Wales by the bards, he summons all Welshmen to throw off Anglo-Norman tyranny."
 
 	trigger = {
 		owned = { province = 243 data = -1 } # Wales
@@ -23,7 +23,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Y Ddraig Goch ddyry gychwyn! (Czerwony Smok Rusza ku Wolnosci!)"
+		name = "Y Ddraig Goch ddyry gychwyn! (The Red Dragon leads the way!)"
 		ai_chance = 80
 		command = { type = stability value = 1 }
 		command = { type = domestic which = QUALITY value = 1 }
@@ -33,7 +33,7 @@ event = {
 		command = { type = vp value = 50 }
 	}
 	action_b = {
-		name = "Wynegocjujcie kompromis i autonomię z koroną"
+		name = "Negotiate compromise and regional autonomy with the crown"
 		ai_chance = 20
 		command = { type = treasury value = 100 }
 		command = { type = stability value = 1 }
@@ -46,8 +46,8 @@ event = {
 	id = 3009501
 	random = no
 	country = WLS
-	name = "Sejm w Machynlleth: Parlament Walijski"
-	desc = "Ksiaze Owain zwoluje w Machynlleth pierwszy niepodlegly parlament walijski z udzialem delegatow ze wszystkich commotes. Przyjmuje korone w obecnosci poslow krola Francji, Szkocji i Kastylii, formalizujac struktury nowego panstwa."
+	name = "Parliament of Machynlleth: The Welsh Senedd"
+	desc = "Prince Owain convenes the first independent Welsh parliament at Machynlleth, attended by envoys from Scotland, France, and Castile. A bold charter of statehood is proclaimed, decreeing Welsh university foundations and complete independence for the Welsh Church."
 
 	trigger = {
 		owned = { province = 243 data = -1 }
@@ -60,7 +60,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Uchwalmy konstytucje i sojusz z Francja!"
+		name = "Enact the constitution and cement the alliance with France!"
 		ai_chance = 85
 		command = { type = stability value = 2 }
 		command = { type = treasury value = 200 }
@@ -69,7 +69,7 @@ event = {
 		command = { type = vp value = 50 }
 	}
 	action_b = {
-		name = "Skupmy się na obronie twierdz Gwynedd"
+		name = "Focus on defending the mountain fortresses of Gwynedd"
 		ai_chance = 15
 		command = { type = fortress which = 243 value = 1 }
 		command = { type = domestic which = OFFENSIVE value = -1 }
@@ -80,8 +80,8 @@ event = {
 event = {
 	id = 3009505
 	random = no
-	name = "Wybór Ustroju Unii Celtyckiej: Federalna Rada vs Cesarstwo Arturiańskie"
-	desc = "Zjednoczenie koron Alby, Cymru i Eire stawia celtyckie elity przed dziejowym wyborem ustrojowym: czy zachowac tradycje swobod klanowych w ramach Federalnej Rzeczypospolitej Celtyckiej z rotacyjna Wysoka Rada Trzech Narodow, czy tez wskrzesic jednolita imperialna Korone Arturiańska ze scentralizowana wladza w jednej stolicy."
+	name = "Constitution of the Celtic Union: Federal Council vs Arthurian Empire"
+	desc = "The union of the crowns of Alba, Cymru, and Eire presents the Celtic leadership with a momentous political choice: establish an egalitarian Federal Commonwealth governed by a rotating Council of the Three Nations, or revive the Arthurian High Empire, uniting all Britain under a centralized imperial crown at Caerleon."
 
 	trigger = {
 		flag = celt_union_formed
@@ -93,7 +93,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Federalna Rzeczpospolita Celtycka: Wysoka Rada Trzech Narodów"
+		name = "Federal Celtic Commonwealth: High Council of the Three Nations"
 		ai_chance = 60
 		command = { type = domestic which = ARISTOCRACY value = 2 }
 		command = { type = domestic which = CENTRALIZATION value = -1 }
@@ -106,7 +106,7 @@ event = {
 		command = { type = vp value = 100 }
 	}
 	action_b = {
-		name = "Cesarstwo Arturiańskie: Zjednoczona Korona Wielkiej Brytanii"
+		name = "Arthurian Empire: United Crown of Greater Britain"
 		ai_chance = 40
 		command = { type = domestic which = CENTRALIZATION value = 3 }
 		command = { type = domestic which = ARISTOCRACY value = -2 }
@@ -124,8 +124,8 @@ event = {
 event = {
 	id = 3009506
 	random = no
-	name = "Los Pokonanej Anglii: Wessex vs Bezpośrednia Aneksja"
-	desc = "Gdy Londyn zostal zdobyty przez celtyckie armie, a wladza Plantagenetow legla w gruzach, zwyciescy wodzowie stoja przed decyzja ostatecznego uregulowania losow narodu anglosaskiego: czy zredukowac Anglie do wasalnego malego ksiestwa Wessex, czy tez dokonac calkowitej aneksji i podzialu ziem pod bezposredni zarzad celtycki."
+	name = "Fate of Defeated England: Client Kingdom of Wessex vs Direct Annexation"
+	desc = "With the fall of London to the victorious Celtic armies and the collapse of Plantagenet rule, the fate of England is sealed. The High Council must choose whether to reduce England to a vassal Duchy of Wessex south of the Thames or pursue total annexation, restoring Brythonic dominance across the island."
 
 	trigger = {
 		flag = celt_britain_restored
@@ -137,7 +137,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Zredukujcie Anglię do wasalnego Księstwa Wessex"
+		name = "Reduce England to the tributary Duchy of Wessex"
 		ai_chance = 70
 		command = { trigger = { exists = ENG } type = vassal which = ENG }
 		command = { trigger = { exists = ENG } type = relation which = ENG value = 100 }
@@ -147,7 +147,7 @@ event = {
 		command = { type = vp value = 150 }
 	}
 	action_b = {
-		name = "Całkowita aneksja i podział ziem anglosaskich"
+		name = "Direct annexation and partition of the Anglo-Saxon lands"
 		ai_chance = 30
 		command = { trigger = { exists = ENG } type = inherit which = ENG }
 		command = { type = badboy value = 6 }
@@ -164,8 +164,8 @@ event = {
 event = {
 	id = 3009510
 	random = no
-	name = "Upadek Angielskiego Pale w Irlandii"
-	desc = "Mury Dublina zostaja zdobyte przez zjednoczone klany irlandzkie. Angielscy urzednicy i poborcy uciekaja na okrety do Bristolu. Irlandia po stuleciach zniewolenia staje sie wolna kraina!"
+	name = "Fall of the English Pale in Ireland"
+	desc = "The ramparts of Dublin have fallen to the united Irish clans! English officials and judges flee back across the Irish Sea. The ancient coronation stone of Tara echoes once more to the election of a sovereign High King of Ireland."
 
 	trigger = {
 		or = {
@@ -185,7 +185,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Éirinn go Brách! (Irlandia na Zawsze Wolna!)"
+		name = "Eirinn go Brach! (Ireland Forever Free!)"
 		ai_chance = 85
 		command = { type = stability value = 2 }
 		command = { type = treasury value = 150 }
@@ -193,7 +193,7 @@ event = {
 		command = { type = vp value = 60 }
 	}
 	action_b = {
-		name = "Zezwólcie kupcom na zachowanie przywilejów miejskich"
+		name = "Permit Dublin merchants to retain their municipal charters"
 		ai_chance = 15
 		command = { type = trade value = 300 }
 		command = { type = treasury value = 200 }
@@ -205,8 +205,8 @@ event = {
 event = {
 	id = 3009515
 	random = no
-	name = "Szlak Świętego Brendana: Odkrycie Nowej Alby"
-	desc = "Powracajaca z zachodniego oceanu flotylla celtycka przywozi wiesci o odkryciu rozleglych, bogatych w ryby i lasy ziem za Atlantykiem. Pradawna celtycka legenda o podrozy swietego Brendana Zeglarza staje sie rzeczywistoscia, otwierajac erę zamorskiej kolonizacji Nowej Alby."
+	name = "Voyage of Saint Brendan: Discovery of New Alba"
+	desc = "Returning from across the Atlantic, an adventurous Celtic expedition reports the discovery of a vast, forested continent beyond Newfoundland, named New Alba in honor of ancient legends. Celtic fishing fleets and trading posts begin colonizing the new frontier."
 
 	trigger = {
 		flag = celt_brendan_voyage
@@ -218,7 +218,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Zakładać osady rybackie i faktorje handlowe w Nowej Albie"
+		name = "Found fishing havens and trade outposts in New Alba"
 		ai_chance = 75
 		command = { type = cot which = 249 } # CoT in Cornwall / Falmouth
 		command = { type = colonists value = 3 }
@@ -230,7 +230,7 @@ event = {
 		command = { type = vp value = 150 }
 	}
 	action_b = {
-		name = "Skupić flotę na ochronie wód ojczystych i Kanału"
+		name = "Concentrate the navy on guarding home waters and the Channel"
 		ai_chance = 25
 		command = { type = naval value = 1000 }
 		command = { type = domestic which = land value = -2 }
@@ -245,8 +245,8 @@ event = {
 event = {
 	id = 3009520
 	random = no
-	name = "Poselstwo Ksiecia Bretanii"
-	desc = "Bratni celtycki narod Bretanii zza Kanalu La Manche z podziwem sledzi narodziny Unii Celtyckiej. Ksiaze Bretanii wysyla poslow z darami i propozycja wiecznego sojuszu kulturowego."
+	name = "Embassy of the Duke of Brittany"
+	desc = "Across the English Channel, our Breton kin watch the rise of the Celtic Union with profound admiration. The Duke of Brittany sends an official delegation to Edinburgh and Caernarfon proposing close commercial, naval, and military ties against English and French expansionism."
 
 	trigger = {
 		flag = celt_union_formed
@@ -258,7 +258,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Powitajmy bretonskich braci w naszym przymierzu!"
+		name = "Welcome our Breton cousins into the Celtic League!"
 		ai_chance = 85
 		command = { type = relation which = BRI value = 150 }
 		command = { type = alliance which = BRI }
@@ -266,7 +266,7 @@ event = {
 		command = { type = vp value = 50 }
 	}
 	action_b = {
-		name = "Zachowajcie ostroznosc wobec zaangazowania we Francji"
+		name = "Maintain caution against military entanglement in France"
 		ai_chance = 15
 		command = { type = relation which = BRI value = 50 }
 		command = { type = treasury value = 100 }
@@ -281,8 +281,8 @@ event = {
 event = {
 	id = 3009531
 	random = no
-	name = "Francuska Gwardia Szkocka: Przymierze Auld Alliance"
-	desc = "Wobec wspolnej walki z Anglia krol Francji ufundowal w Paryzu elitarna formacje Garde Écossaise, a w zamian przesyla do Szkocji zaciagi doswiadczonych rusznikarzy, artylerzystow i instruktorow wojskowych, umacniajac celtycka armie."
+	name = "The Garde Ecossaise: Legacy of the Auld Alliance"
+	desc = "Forged in common struggle against English hegemony, the Auld Alliance between Scotland and France blossoms into an enduring military fraternity. The elite Garde Ecossaise guards the King of France in Paris, bringing back continental tactics, cannonry, and cultural prestige to Edinburgh."
 
 	trigger = {
 		or = {
@@ -299,7 +299,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1480 }
 
 	action_a = {
-		name = "Przyjmijcie francuskich artylerzystow i zbroje!"
+		name = "Welcome French gunners and advanced armaments!"
 		ai_chance = 85
 		command = { type = treasury value = 250 }
 		command = { type = land value = 600 }
@@ -310,7 +310,7 @@ event = {
 		command = { type = vp value = 50 }
 	}
 	action_b = {
-		name = "Zachowajcie pelna niezaleznosc od dworu w Paryzu"
+		name = "Maintain full independence from the court of Paris"
 		ai_chance = 15
 		command = { type = domestic which = OFFENSIVE value = 1 }
 		command = { type = land value = 300 }
@@ -321,8 +321,8 @@ event = {
 event = {
 	id = 3009532
 	random = no
-	name = "Walijscy Łucznicy z Gwent: Potęga Długiego Łuku"
-	desc = "Walijskie gory od wiekow slyna z nieprzescignionych lucznikow posluguujacych sie ciezkimi lukami z cisu (Welsh Longbow). Ich strzaly potrafia przebic plytowe zbroje rycerskie na setki krokow. Zorganizowanie narodowych regimentow luczniczych daje armii celtyckiej druzgocaca przewage ogniowa."
+	name = "Welsh Longbowmen of Gwent: Mastery of the Longbow"
+	desc = "The hills of Monmouthshire and Gwent have long bred the world's most formidable longbow archers. By patronizing archery butts in every parish and offering tax exemptions to master bowyers, the Celtic crown fields battalions capable of devastating continental knightly charges."
 
 	trigger = {
 		or = {
@@ -338,7 +338,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1500 }
 
 	action_a = {
-		name = "Ufundujcie krolewskie kompanie lucznikow z Gwent!"
+		name = "Endow royal companies of Gwent longbowmen!"
 		ai_chance = 90
 		command = { type = domestic which = QUALITY value = 1 }
 		command = { type = domestic which = OFFENSIVE value = 1 }
@@ -348,7 +348,7 @@ event = {
 		command = { type = vp value = 50 }
 	}
 	action_b = {
-		name = "Pozostawcie milicje lokalnym commotes"
+		name = "Leave local militias to the commotes"
 		ai_chance = 10
 		command = { type = treasury value = 50 }
 		command = { type = stability value = 1 }
@@ -359,8 +359,8 @@ event = {
 event = {
 	id = 3009533
 	random = no
-	name = "Wojny Klanów Highlandu: MacDonaldowie vs Campbelli"
-	desc = "Krwawa rywalizacja miedzy poteznym klanem MacDonald (Lordowie Wysp) a rosnacym w sile klanem Campbell z Argyll grozi rozerwaniem pokoju w gorach Szkocji. Obydwa klany domagaja sie poparcia korony w sporze o lenna i jurysdykcje."
+	name = "Highland Clan Wars: MacDonalds vs Campbells"
+	desc = "Bloody rivalry between Clan MacDonald (Lords of the Isles) and the rising Clan Campbell of Argyll threatens the peace of the Highlands. Both factions appeal to the Crown for judicial support in their feud over jurisdictions and feudal charters."
 
 	trigger = {
 		or = {
@@ -377,7 +377,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1520 }
 
 	action_a = {
-		name = "Narzućcie sprawiedliwy kompromis królewski"
+		name = "Enforce a balanced royal settlement between the clans"
 		ai_chance = 70
 		command = { type = treasury value = -100 }
 		command = { type = stability value = 1 }
@@ -385,14 +385,14 @@ event = {
 		command = { type = vp value = 50 }
 	}
 	action_b = {
-		name = "Poprzyjcie tradycje Lorda Wysp (MacDonalda)"
+		name = "Support the Gaelic traditions of the Lord of the Isles (MacDonald)"
 		ai_chance = 15
 		command = { type = revolt which = 238 }
 		command = { type = stability value = -1 }
 		command = { type = domestic which = ARISTOCRACY value = 1 }
 	}
 	action_c = {
-		name = "Poprzyjcie Campbellów i prawo królewskie"
+		name = "Back the Campbells and imperial statutory law"
 		ai_chance = 15
 		command = { type = revolt which = 236 }
 		command = { type = stability value = -1 }
@@ -404,8 +404,8 @@ event = {
 event = {
 	id = 3009534
 	random = no
-	name = "Odrodzenie Kościoła Iro-Szkockiego: Dziedzictwo św. Kolumby"
-	desc = "Pradawne klasztory w Ionie, Derry i Armagh odzywaja nowym duchem duchowym. Tradycja mnichow celtyckich (Céli Dé / Culdees), skupiona na nauce, pismie i lokalnej wspolnocie zamiast odleglej wladzy kurii rzymskiej, staje sie filarem tozsamosci celtyckiej."
+	name = "Rebirth of the Insular Church: Heritage of Saint Columba"
+	desc = "Ancient monastic foundations at Iona, Derry, and Armagh awaken with renewed spiritual vigor. Insular traditions of the Culdees (Celi De), celebrated for austere asceticism and rich manuscript illumination, inspire spiritual renewal distinct from continental interference."
 
 	trigger = {
 		or = {
@@ -423,7 +423,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1550 }
 
 	action_a = {
-		name = "Wesprzyjcie autonomiczny ryt i nauke mnichow celtyckich"
+		name = "Foster the autonomous insular liturgy and Celtic monastic learning"
 		ai_chance = 80
 		command = { type = domestic which = INNOVATIVE value = 2 }
 		command = { type = infra value = 500 }
@@ -432,7 +432,7 @@ event = {
 		command = { type = vp value = 50 }
 	}
 	action_b = {
-		name = "Pozostancie w scislej ortodoksji rzymskiej"
+		name = "Adhere strictly to Roman Catholic orthodoxy"
 		ai_chance = 20
 		command = { type = relation which = PAP value = 150 }
 		command = { type = stability value = 1 }
@@ -443,8 +443,8 @@ event = {
 event = {
 	id = 3009535
 	random = no
-	name = "Górnicy Cyny w Kornwalii i Flota Falmouth"
-	desc = "Kornwalia od starozytnosci slynie z bogatych kopaln cyny i miedzi. Po wyzwoleniu spod jarzma Londynu zjednoczone gildię kornwalijskie (Stannary Courts) przezywaja boom wydobywczy, a glebokowodny port w Falmouth staje sie glowna baza atlantyckiej floty handlowej i wojennej."
+	name = "Tin Miners of Cornwall and the Falmouth Fleet"
+	desc = "Cornwall has been famed for its rich tin and copper deposits since antiquity. Freed from English stannary taxation, the ports of Falmouth and Penzance flourish into thriving naval and trading hubs."
 
 	trigger = {
 		owned = { province = 249 data = -1 } # Cornwall
@@ -456,7 +456,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Rozbudowac kopalnie cyny i doki oceaniczne w Falmouth"
+		name = "Expand Cornish tin mines and oceanic shipyards at Falmouth"
 		ai_chance = 85
 		command = { type = treasury value = 300 }
 		command = { type = trade value = 500 }
@@ -465,7 +465,7 @@ event = {
 		command = { type = vp value = 50 }
 	}
 	action_b = {
-		name = "Pozostawic dochody lokalnej radzie gorniczej"
+		name = "Leave tin revenues to the local stannary parliament"
 		ai_chance = 15
 		command = { type = stability value = 1 }
 		command = { type = domestic which = ARISTOCRACY value = 1 }
@@ -480,8 +480,8 @@ event = {
 event = {
 	id = 3009541
 	random = no
-	name = "Integracja Strathclyde"
-	desc = "Dekada sprawiedliwych rzadow polaczyla porty nad zatoka Clyde z korona."
+	name = "Integration of Strathclyde"
+	desc = "A decade of equitable governance has bound the ports of the Firth of Clyde to the Celtic crown."
 
 	trigger = {
 		or = {
@@ -500,7 +500,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Strathclyde jest pelnoprawna czescia korony"
+		name = "Strathclyde is an integral part of the Crown"
 		command = { type = addcore_national which = 238 }
 		command = { type = stability value = 1 }
 	}
@@ -510,8 +510,8 @@ event = {
 event = {
 	id = 3009542
 	random = no
-	name = "Integracja Pogranicza Walijskiego"
-	desc = "Dziesiec lat po wypedzeniu normanskich lordow pogranicza (Marcher Lords), ziemie te staly sie nierozerwalna czescia celtyckiego krolestwa."
+	name = "Integration of the Welsh Marches"
+	desc = "Ten years after the expulsion of the Norman Marcher Lords, the Welsh borderlands flourish under native law."
 
 	trigger = {
 		or = {
@@ -530,7 +530,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Pogranicze powraca do celtyckich korzeni"
+		name = "The Marches return to their Celtic roots"
 		command = { type = addcore_national which = 242 }
 		command = { type = stability value = 1 }
 	}
@@ -540,8 +540,8 @@ event = {
 event = {
 	id = 3009543
 	random = no
-	name = "Integracja Kornwalii (Kernow)"
-	desc = "Dziesiec lat pokoju zjednoczylo kornwalijskich rybakow i gornikow cyny z ich brytonskimi pobratymcami."
+	name = "Integration of Cornwall (Kernow)"
+	desc = "A decade of peace has reunited Cornish tin miners and fishermen with their Brythonic brethren."
 
 	trigger = {
 		or = {
@@ -560,7 +560,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Kernow jest na zawsze wolne!"
+		name = "Kernow is forever free!"
 		command = { type = addcore_national which = 249 }
 		command = { type = stability value = 1 }
 	}
@@ -570,8 +570,8 @@ event = {
 event = {
 	id = 3009544
 	random = no
-	name = "Integracja Dublina"
-	desc = "Dekada wolnych rzadow zatarla slady obcej administracji w sercu Irlandii."
+	name = "Integration of Dublin"
+	desc = "Ten years of self-rule have erased all traces of foreign administration in the heart of Ireland."
 
 	trigger = {
 		or = {
@@ -590,7 +590,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Dublin jest sercem celtyckiego handlu"
+		name = "Dublin is the heart of Celtic trade"
 		command = { type = addcore_national which = 233 }
 		command = { type = stability value = 1 }
 	}
@@ -600,8 +600,8 @@ event = {
 event = {
 	id = 3009545
 	random = no
-	name = "Integracja Klanow Szkockich"
-	desc = "Dziesiec lat wspolpracy i sprawiedliwych praw polaczylo goralskie klany z korona."
+	name = "Integration of the Scottish Clans"
+	desc = "Ten years of mutual respect and just laws have bound the Highland clans irrevocably to the realm."
 
 	trigger = {
 		or = {
@@ -620,7 +620,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Klany stoja na strazy krolestwa"
+		name = "The Highland clans stand watch over the realm"
 		command = { type = addcore_national which = 236 }
 		command = { type = stability value = 1 }
 	}
