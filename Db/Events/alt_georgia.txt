@@ -1,0 +1,258 @@
+# =======================================================================
+# GLORIANA 1337 - ALTERNATE DESTINIES
+# MODULE 10: KINGDOM OF GEORGIA (GEO) EVENTS
+# =======================================================================
+# IDs Reserved: 3010000 - 3010049
+# =======================================================================
+
+# 3010000: The Glory of Giorgi V the Brilliant
+event = {
+	id = 3010000
+	trigger = {
+		tag = GEO
+		owned = { province = 470 data = -1 } # Tbilisi
+	}
+	random = no
+	country = GEO
+	name = "The Glory of Giorgi V the Brilliant"
+	desc = "Through consummate diplomacy and unyielding courage, King Giorgi V has accomplished what seemed impossible: ending decades of Mongol vassalage, expelling foreign garrisons, and reuniting Eastern and Western Georgia under the Bagrationi dynasty. The Golden Age of David the Builder and Queen Tamar shines once more from the heights of Tbilisi."
+	style = 1
+
+	date = { day = 1 month = may year = 1338 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1344 }
+
+	action_a = {
+		name = "May God bless the Kingdom of Georgia!"
+		command = { type = stability value = 2 }
+		command = { type = treasury value = 60 }
+		command = { type = land value = 150 }
+		command = { type = infra value = 150 }
+	}
+}
+
+# 3010001: Mountain Quarantine against the Black Death
+event = {
+	id = 3010001
+	trigger = {
+		tag = GEO
+		owned = { province = 470 data = -1 }
+	}
+	random = no
+	country = GEO
+	name = "Mountain Quarantine against the Black Death"
+	desc = "As news arrives of the catastrophic pestilence ravaging the Black Sea ports, Trebizond, and the cities of Mesopotamia, King Giorgi acts with ruthless determination. All mountain passes into the Caucasus are locked shut. Armed border guards turn away all travelers, and rigorous quarantines are imposed in the valleys. While our neighbors suffer terrible population collapse, the Caucasian highlands remain untouched."
+	style = 1
+
+	date = { day = 1 month = june year = 1348 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1352 }
+
+	action_a = {
+		name = "Enforce strict mountain isolation"
+		command = { type = treasury value = -40 }
+		command = { type = stability value = 1 }
+		command = { type = population which = 470 value = 1000 }
+		command = { type = population which = 469 value = 1000 }
+		command = { type = population which = 472 value = 1000 }
+		command = { type = vp value = 25 }
+	}
+	action_b = {
+		name = "Rely on prayer alone"
+		command = { type = stability value = -1 }
+		command = { type = population which = 470 value = -1000 }
+	}
+}
+
+# 3010002: Defiance against the Steppe Khanates
+event = {
+	id = 3010002
+	trigger = {
+		tag = GEO
+		flag = geo_caucasian_gates
+	}
+	random = no
+	country = GEO
+	name = "Defiance against the Steppe Khanates"
+	desc = "Envoys from the northern steppe hordes have arrived at the Darial Pass, demanding payment of ancient tributes and free passage for their horsemen. Pointing to the stone ramparts and archers bristling along the gorge, the Georgian commander sends them back empty-handed. Any nomadic raiders attempting to breach the defile are cut to pieces."
+	style = 1
+
+	date = { day = 1 month = january year = 1355 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1450 }
+
+	action_a = {
+		name = "The Caucasus shall never bow to horse archers!"
+		command = { type = stability value = 1 }
+		command = { type = land value = 200 }
+		command = { type = relation which = BHR value = -100 }
+		command = { type = relation which = WHR value = -100 }
+		command = { type = vp value = 15 }
+	}
+}
+
+# 3010003: Concord of the Caucasian Churches
+event = {
+	id = 3010003
+	trigger = {
+		tag = GEO
+		flag = geo_armenia_reunited
+	}
+	random = no
+	country = GEO
+	name = "Concord of the Caucasian Churches"
+	desc = "To consolidate political harmony between Georgians and Armenians, the Catholicos-Patriarch of All Georgia and the Catholicos of the Armenian Apostolic Church convene a joint synod in Mtskheta. Setting aside centuries of scholastic dispute, the two historic churches declare reciprocal liturgical communion and mutual brotherly protection under the Bagrationi crown."
+	style = 1
+
+	date = { day = 1 month = january year = 1365 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1500 }
+
+	action_a = {
+		name = "Proclaim eternal brotherhood in Christ"
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = stability value = 2 }
+		command = { type = infra value = 200 }
+		command = { type = vp value = 25 }
+	}
+}
+
+# 3010004: Halting the Turcoman Incursions
+event = {
+	id = 3010004
+	trigger = {
+		tag = GEO
+		flag = geo_sunni_repelled
+	}
+	random = no
+	country = GEO
+	name = "Halting the Turcoman Incursions"
+	desc = "The nomadic confederations of the Black Sheep and White Sheep Turcomans have launched predatory incursions into the Armenian valleys and Pontic highlands. Led by seasoned mountaineer regiments and heavily armored Georgian cataphracts, our royal forces trap the invaders in rocky defiles, routing their hosts and establishing permanent frontier marches."
+	style = 1
+
+	date = { day = 1 month = january year = 1390 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1520 }
+
+	action_a = {
+		name = "The eastern mountains are secure!"
+		command = { type = stability value = 1 }
+		command = { type = land value = 250 }
+		command = { type = treasury value = 100 }
+		command = { type = vp value = 30 }
+	}
+}
+
+# 3010005: The Iron Mountain of the East
+event = {
+	id = 3010005
+	trigger = {
+		tag = GEO
+		flag = geo_caucasian_empire
+	}
+	random = no
+	country = GEO
+	name = "The Iron Mountain of the East"
+	desc = "Travelers, chroniclers, and foreign monarchs across the Mediterranean and Europe marvel at the triumph of the Pan-Caucasian Empire. Where great empires crumbled under plague and foreign invasions, Georgia has stood firm as an iron mountain, repelling both Sunni emirs and Shiite shahs, defending its ancient Christian heritage against all odds."
+	style = 1
+
+	date = { day = 1 month = january year = 1430 }
+	offset = 45
+	deathdate = { day = 1 month = january year = 1750 }
+
+	action_a = {
+		name = "Long live the Bagrationi Dynasty!"
+		command = { type = stability value = 2 }
+		command = { type = badboy value = -4 }
+		command = { type = treasury value = 200 }
+		command = { type = vp value = 60 }
+	}
+}
+
+# 3010006: Provincial Integration of Armenia and Kurdistan
+event = {
+	id = 3010006
+	trigger = {
+		tag = GEO
+		flag = geo_armenia_reunited
+		owned = { province = 472 data = -1 }
+		owned = { province = 473 data = -1 }
+		ownerchange = { province = 472 years = 10 }
+		ownerchange = { province = 473 years = 10 }
+	}
+	random = no
+	country = GEO
+	name = "Provincial Integration of Armenia and Lake Van"
+	desc = "A decade of equitable governance and shared faith has thoroughly integrated the Armenian highlands into the Georgian realm. Fortresses are garrisoned and mountain passes hum with safe trade."
+	style = 1
+
+	date = { day = 1 month = january year = 1360 }
+	offset = 120
+	deathdate = { day = 1 month = january year = 1800 }
+
+	action_a = {
+		name = "Our realms are united forever"
+		command = { type = provincetax which = 472 value = 1 }
+		command = { type = provincetax which = 473 value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 20 }
+	}
+}
+
+# 3010007: Provincial Integration of Shirvan and Azerbaijan
+event = {
+	id = 3010007
+	trigger = {
+		tag = GEO
+		flag = geo_caspian_secured
+		owned = { province = 471 data = -1 }
+		owned = { province = 487 data = -1 }
+		ownerchange = { province = 471 years = 10 }
+		ownerchange = { province = 487 years = 10 }
+	}
+	random = no
+	country = GEO
+	name = "Provincial Integration of Shirvan and Baku"
+	desc = "A decade of imperial administration along the Caspian coast has stabilized trade routes and earned the loyalty of local merchants and tribal elders."
+	style = 1
+
+	date = { day = 1 month = january year = 1380 }
+	offset = 120
+	deathdate = { day = 1 month = january year = 1800 }
+
+	action_a = {
+		name = "The Caspian shore prospers"
+		command = { type = provincetax which = 471 value = 1 }
+		command = { type = provincetax which = 487 value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 20 }
+	}
+}
+
+# 3010008: Provincial Integration of Trebizond and Pontus
+event = {
+	id = 3010008
+	trigger = {
+		tag = GEO
+		flag = geo_trebizond_secured
+		owned = { province = 475 data = -1 }
+		ownerchange = { province = 475 years = 10 }
+	}
+	random = no
+	country = GEO
+	name = "Provincial Integration of Trebizond"
+	desc = "A decade of protective union has cemented the ties between the Pontic Greeks and the Georgian crown. Trebizond serves as our premier maritime portal to the Black Sea."
+	style = 1
+
+	date = { day = 1 month = january year = 1390 }
+	offset = 120
+	deathdate = { day = 1 month = january year = 1800 }
+
+	action_a = {
+		name = "The Black Sea connects us to the world"
+		command = { type = provincetax which = 475 value = 1 }
+		command = { type = naval value = 150 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 20 }
+	}
+}

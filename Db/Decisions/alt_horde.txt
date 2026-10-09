@@ -1,0 +1,289 @@
+# =======================================================================
+# GLORIANA 1337 - ALTERNATE DESTINIES
+# MODULE 11: BLUE & GOLDEN HORDE (BHR / STE) DECISIONS
+# =======================================================================
+# IDs Reserved: 7600 - 7619
+# =======================================================================
+
+# 7600: Avert the Great Troubles: Reform the Imperial Kurultai
+decision = {
+	id = 7600
+	trigger = {
+		OR = {
+			tag = BHR
+			tag = STE
+		}
+		owned = { province = 458 data = -1 } # Sarai Batu / Volgograd
+		control = { province = 458 data = -1 }
+		NOT = { flag = ste_kurultai_reformed }
+	}
+	name = "Reform the Imperial Kurultai"
+	desc = "The greatest threat to the Ulus of Jochi is not external foes, but the bloody dynastic feuds of rival Chinggisid princes and turbulent emirs. By codifying strict laws of succession and centralizing the supreme assembly—the Kurultai—under royal guard regiments, we extinguish the seeds of civil war before they can tear the realm apart."
+	action = {
+		command = { type = domestic which = centralization value = 2 }
+		command = { type = domestic which = aristocracy value = -1 }
+		command = { type = stability value = 2 }
+		command = { type = infra value = 150 }
+		command = { type = treasury value = -80 }
+		command = { type = vp value = 25 }
+		command = { type = setflag which = ste_kurultai_reformed }
+	}
+}
+
+# 7601: Codify the Imperial Yassa of the Steppes
+decision = {
+	id = 7601
+	trigger = {
+		OR = {
+			tag = BHR
+			tag = STE
+		}
+		flag = ste_kurultai_reformed
+		owned = { province = 458 data = -1 } # Sarai
+		owned = { province = 457 data = -1 } # Astrakhan
+		NOT = { flag = ste_yassa_codified }
+	}
+	name = "Codify the Imperial Yassa of the Steppes"
+	desc = "The Great Yassa laid down by Genghis Khan remains the unshakeable foundation of nomadic law. By inscribing its precepts into official scrolls and combining them with Islamic jurisprudence and commercial regulations, we ensure uniform justice and absolute obedience from the Danube to the Irtysh."
+	action = {
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = infra value = 200 }
+		command = { type = trade value = 150 }
+		command = { type = vp value = 20 }
+		command = { type = setflag which = ste_yassa_codified }
+	}
+}
+
+# 7602: Reunification of the Blue and White Hordes (The United Golden Horde)
+decision = {
+	id = 7602
+	trigger = {
+		OR = {
+			tag = BHR
+			tag = WHR
+		}
+		owned = { province = 458 data = -1 } # Sarai
+		owned = { province = 457 data = -1 } # Astrakhan
+		owned = { province = 454 data = -1 } # Samara
+		owned = { province = 515 data = -1 } # Alga / Sarai-Juk
+		control = { province = 458 data = -1 }
+		control = { province = 515 data = -1 }
+		NOT = { flag = ste_horde_reunited }
+	}
+	name = "Reunite the Blue and White Hordes"
+	desc = "Divided between east and west, the sons of Jochi risked losing their birthright. With Sarai and Sarai-Juk now united under a single unquestioned ruler, we cast aside provincial division and re-establish the grand imperial mantle of the United Golden Horde!"
+	action = {
+		command = { type = country which = STE }
+		command = { type = add_countryculture which = tatar }
+		command = { type = add_countryculture which = altai }
+		command = { type = add_countryculture which = mongol }
+		command = { type = addcore which = 446 } # Kazan
+		command = { type = addcore which = 453 } # Ufa
+		command = { type = addcore which = 455 } # Uralsk
+		command = { type = addcore which = 456 } # Orenburg
+		command = { type = addcore which = 463 } # Crimea
+		command = { type = addcore which = 468 } # Kouban
+		command = { type = addcore which = 513 } # Orsk
+		command = { type = addcore which = 514 } # Irgiz
+		command = { type = stability value = 2 }
+		command = { type = treasury value = 200 }
+		command = { type = vp value = 50 }
+		command = { type = setflag which = ste_horde_reunited }
+	}
+}
+
+# 7603: Reassert the Tatar Yoke over Rus' (Subjugation of Muscovy)
+decision = {
+	id = 7603
+	trigger = {
+		OR = {
+			tag = STE
+			tag = BHR
+		}
+		flag = ste_kurultai_reformed
+		owned = { province = 270 data = -1 } # Moscow
+		control = { province = 270 data = -1 }
+		NOT = { flag = ste_tatar_yoke_enforced }
+	}
+	name = "Reassert the Tatar Yoke over Rus'"
+	desc = "The Grand Princes of Moscow have grown insolent, withholding silver tributes and dreaming of Slavic sovereignty. By entering the Kremlin with our iron tumens, we strip their autonomy and force all Russian knyazes to travel as humble suppliants to Sarai for their yarliks of investiture. The Tatar Yoke shall never be broken."
+	action = {
+		command = { type = add_countryculture which = russian }
+		command = { type = addcore which = 271 } # Vladimir
+		command = { type = addcore which = 274 } # Novgorod
+		command = { type = addcore which = 272 } # Nizhgorod
+		command = { type = addcore which = 279 } # Tula
+		command = { type = addcore which = 268 } # Vologda
+		command = { type = treasury value = 300 }
+		command = { type = provincetax which = 458 value = 2 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 40 }
+		command = { type = setflag which = ste_tatar_yoke_enforced }
+	}
+}
+
+# 7604: Commercial Dominance of the Northern Silk Road
+decision = {
+	id = 7604
+	trigger = {
+		OR = {
+			tag = STE
+			tag = BHR
+		}
+		owned = { province = 458 data = -1 } # Sarai
+		owned = { province = 457 data = -1 } # Astrakhan
+		owned = { province = 466 data = -1 } # Azov
+		owned = { province = 463 data = -1 } # Crimea
+		control = { province = 457 data = -1 }
+		NOT = { flag = ste_silk_road_secured }
+	}
+	name = "Dominance of the Northern Silk Road"
+	desc = "Astrakhan and Sarai on the Volga, together with Tana and Caffa on the Black Sea, form the indispensable northern arteries of Eurasian trade. By guaranteeing absolute protection to Genoese, Venetian, Persian, and Chinese caravans, we reap enormous tariff revenues and turn the steppe into the richest commercial basin in the world."
+	action = {
+		command = { type = cot which = 457 } # Center of Trade in Astrakhan
+		command = { type = trade value = 350 }
+		command = { type = merchants value = 6 }
+		command = { type = treasury value = 200 }
+		command = { type = domestic which = mercantilism value = 1 }
+		command = { type = vp value = 30 }
+		command = { type = setflag which = ste_silk_road_secured }
+	}
+}
+
+# 7605: Subdue the Steppes of Chagatai and Transoxiana
+decision = {
+	id = 7605
+	trigger = {
+		OR = {
+			tag = STE
+			tag = BHR
+		}
+		flag = ste_horde_reunited
+		owned = { province = 522 data = -1 } # Khwarizm
+		owned = { province = 1532 data = -1 } # Bukhara
+		owned = { province = 1592 data = -1 } # Samarkand
+		control = { province = 1592 data = -1 }
+		NOT = { flag = ste_transoxiana_subdued }
+	}
+	name = "Subdue Chagatai and Transoxiana"
+	desc = "The turquoise domes of Samarkand and Bukhara, seats of turbulent Chagataid warlords and the house of Timur, have opened their gates to our horse archers! By incorporating Transoxiana into the Golden Horde, we reunite the western and central domains of the Mongol world."
+	action = {
+		command = { type = addcore which = 520 } # Kazak
+		command = { type = addcore which = 521 } # Aralsk
+		command = { type = addcore which = 523 } # Turkmenistan
+		command = { type = treasury value = 250 }
+		command = { type = land value = 300 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 40 }
+		command = { type = setflag which = ste_transoxiana_subdued }
+	}
+}
+
+# 7606: The Grand Western March into Eastern Europe
+decision = {
+	id = 7606
+	trigger = {
+		OR = {
+			tag = STE
+			tag = BHR
+		}
+		flag = ste_tatar_yoke_enforced
+		owned = { province = 296 data = -1 } # Jedisan
+		owned = { province = 295 data = -1 } # Poltava
+		owned = { province = 297 data = -1 } # Podolia
+		control = { province = 296 data = -1 }
+		NOT = { flag = ste_western_march }
+	}
+	name = "The Grand Western March into Eastern Europe"
+	desc = "Recalling the earth-shaking campaigns of Subutai and Batu Khan, our tumens advance westward along the Black Sea littoral, driving deep into Ukraine and the Carpathian approaches. Poland, Lithuania, and Hungary tremble once more before the steppe cavalry."
+	action = {
+		command = { type = addcore which = 294 } # Chernigov
+		command = { type = addcore which = 293 } # Smolensk
+		command = { type = addcore which = 298 } # Galizien
+		command = { type = addcore which = 318 } # Moldavia
+		command = { type = land value = 350 }
+		command = { type = cavalry which = 296 value = 5000 }
+		command = { type = vp value = 35 }
+		command = { type = setflag which = ste_western_march }
+	}
+}
+
+# 7607: Pax Mongolica: Restoration of Genghis Khan's Universal Empire
+decision = {
+	id = 7607
+	trigger = {
+		OR = {
+			tag = STE
+			tag = BHR
+		}
+		flag = ste_horde_reunited
+		flag = ste_tatar_yoke_enforced
+		flag = ste_silk_road_secured
+		flag = ste_transoxiana_subdued
+		NOT = { flag = ste_pax_mongolica }
+	}
+	name = "Restoration of the Universal Mongol Empire"
+	desc = "A virgin carrying a gold nugget could walk from the shores of the Danube to the borders of China without fear of assault. The collapse of the steppes has been undone. Rising from the ashes, the Golden Horde stands as the true heir of Genghis Khan, master of the endless Eurasian horizon!"
+	action = {
+		command = { type = stability value = 3 }
+		command = { type = badboy value = -6 }
+		command = { type = domestic which = centralization value = 2 }
+		command = { type = domestic which = quality value = 2 }
+		command = { type = provincetax which = 458 value = 3 } # Sarai
+		command = { type = provincetax which = 457 value = 2 } # Astrakhan
+		command = { type = treasury value = 500 }
+		command = { type = vp value = 150 }
+		command = { type = setflag which = ste_pax_mongolica }
+	}
+}
+
+# 7608: The Imperial Yam Relay Network
+decision = {
+	id = 7608
+	trigger = {
+		OR = {
+			tag = STE
+			tag = BHR
+		}
+		flag = ste_pax_mongolica
+		NOT = { flag = ste_yam_network }
+	}
+	name = "The Imperial Yam Relay Network"
+	desc = "Across vast steppes and frozen forests, royal dispatch riders carrying bronze and silver paiza tokens change swift mounts at fortified postal stations every thirty miles. Orders of the Khan travel thousands of miles in mere days, binding our colossal empire with unmatched communication speed."
+	action = {
+		command = { type = infra value = 400 }
+		command = { type = trade value = 400 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = treasury value = -100 }
+		command = { type = vp value = 30 }
+		command = { type = setflag which = ste_yam_network }
+	}
+}
+
+# 7609: Monumental Palaces of Sarai
+decision = {
+	id = 7609
+	trigger = {
+		OR = {
+			tag = STE
+			tag = BHR
+		}
+		flag = ste_kurultai_reformed
+		owned = { province = 458 data = -1 } # Sarai
+		treasury = 150
+		NOT = { flag = ste_sarai_embellished }
+	}
+	name = "Monumental Palaces of Sarai"
+	desc = "Ibn Battuta described Sarai as one of the most beautiful and sprawling cities on Earth, with broad streets, mosques, bazaars, and palaces filled with craftsmen from all nations. By investing heavily in stone tile architecture, gardens, and monumental mosques along the Akhtuba river, we create a dazzling metropolis worthy of the Great Khans."
+	action = {
+		command = { type = provincetax which = 458 value = 2 }
+		command = { type = population which = 458 value = 5000 }
+		command = { type = fortress which = 458 value = 1 }
+		command = { type = treasury value = -120 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 25 }
+		command = { type = setflag which = ste_sarai_embellished }
+	}
+}

@@ -1,0 +1,402 @@
+# =======================================================================
+# GLORIANA 1337 - ALTERNATE DESTINIES
+# MODULE 9: GREAT ZIMBABWE (ZIM) DECISIONS
+# =======================================================================
+# IDs Reserved: 7500 - 7519
+# =======================================================================
+
+# 7500: Rebuild the Stone Citadel of Great Zimbabwe
+decision = {
+	id = 7500
+	trigger = {
+		tag = ZIM
+		owned = { province = 1509 data = -1 } # Zimbabwe
+		control = { province = 1509 data = -1 }
+		NOT = { flag = zim_citadel_rebuilt }
+	}
+	name = "Rebuild the Stone Citadel of Great Zimbabwe"
+	desc = "The monumental granite walls of the Great Enclosure and the Conical Tower are the spiritual and political heart of our kingdom. By quarrying the finest stone and summoning master masons from across the plateau, we can turn Great Zimbabwe into an impregnable imperial capital."
+	action = {
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = provincialtax which = 1509 value = 2 }
+		command = { type = fortress which = 1509 value = 1 }
+		command = { type = treasury value = -80 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 20 }
+		command = { type = setflag which = zim_citadel_rebuilt }
+	}
+}
+
+# 7501: Exploit the Goldfields of Sofala and the Zambezi
+decision = {
+	id = 7501
+	trigger = {
+		tag = ZIM
+		owned = { province = 1508 data = -1 } # Sofala
+		owned = { province = 1509 data = -1 } # Zimbabwe
+		owned = { province = 1510 data = -1 } # Rozwi
+		NOT = { flag = zim_gold_exploited }
+	}
+	name = "Exploit the Goldfields of Sofala and the Zambezi"
+	desc = "The alluvial sands and deep quartz veins of the plateau and the coastal hinterland are rich with gold. By organizing miners under royal superintendents and establishing trading posts along the rivers, we will secure a vast flow of precious metals to finance our imperial expansion."
+	action = {
+		command = { type = domestic which = mercantilism value = 1 }
+		command = { type = trade value = 150 }
+		command = { type = provincetax which = 1508 value = 1 }
+		command = { type = provincetax which = 1510 value = 1 }
+		command = { type = treasury value = 150 }
+		command = { type = inflation value = 1 }
+		command = { type = vp value = 15 }
+		command = { type = setflag which = zim_gold_exploited }
+	}
+}
+
+# 7502: Advance to the Swahili Coast (Sofala & Zambezia)
+decision = {
+	id = 7502
+	trigger = {
+		tag = ZIM
+		flag = zim_citadel_rebuilt
+		owned = { province = 1508 data = -1 } # Sofala
+		NOT = { flag = zim_coast_advanced }
+	}
+	name = "Advance to the Swahili Coast"
+	desc = "Our kingdom cannot remain confined to the inland plateau. The sea holds the key to world commerce. We must push our armies downstream along the Zambezi and seize the coastal ports connecting our realm to the Swahili trade network."
+	action = {
+		command = { type = addcore which = 771 } # Zambezia
+		command = { type = addcore which = 770 } # Nampuia
+		command = { type = addcore which = 767 } # Lindi
+		command = { type = addcore which = 766 } # Rufiji / Kilwa
+		command = { type = addcore which = 765 } # Zanzibar
+		command = { type = stability value = 1 }
+		command = { type = vp value = 25 }
+		command = { type = setflag which = zim_coast_advanced }
+	}
+}
+
+# 7503: Subjugate Kilwa and the Swahili Maritime Sultanates
+decision = {
+	id = 7503
+	trigger = {
+		tag = ZIM
+		owned = { province = 766 data = -1 } # Kilwa / Rufiji
+		owned = { province = 765 data = -1 } # Zanzibar
+		owned = { province = 763 data = -1 } # Mombasa
+		control = { province = 766 data = -1 }
+		control = { province = 765 data = -1 }
+		NOT = { flag = zim_swahili_united }
+	}
+	name = "Subjugate the Swahili Maritime Sultanates"
+	desc = "The wealthy merchant princes of Kilwa, Zanzibar, and Mombasa have long held a monopoly on our exports of ivory and gold. Now their island ports and mainland harbors acknowledge the supremacy of the Mwene Mutapa. By integrating their navigators and merchants into our state, we bind the Swahili people to our throne."
+	action = {
+		command = { type = add_countryculture which = swahili }
+		command = { type = cot which = 1508 } # Center of Trade in Sofala
+		command = { type = naval value = 250 }
+		command = { type = addcore which = 762 } # Kenya
+		command = { type = addcore which = 761 } # Malindi
+		command = { type = addcore which = 760 } # Mogadiscio
+		command = { type = addcore which = 757 } # Somalia
+		command = { type = treasury value = 120 }
+		command = { type = vp value = 35 }
+		command = { type = setflag which = zim_swahili_united }
+	}
+}
+
+# 7504: Construct the Imperial Ocean Fleet
+decision = {
+	id = 7504
+	trigger = {
+		tag = ZIM
+		flag = zim_swahili_united
+		owned = { province = 765 data = -1 } # Zanzibar
+		NOT = { flag = zim_ocean_fleet }
+	}
+	name = "Construct the Imperial Ocean Fleet"
+	desc = "With the timber of the coastal mangroves and the skilled shipwrights of the Swahili ports, we can construct an oceanic armada of heavy dhows and swift mtepe. The western Indian Ocean shall belong to Great Zimbabwe."
+	action = {
+		command = { type = domestic which = land value = -2 }
+		command = { type = naval value = 300 }
+		command = { type = warships which = 765 value = 6 }
+		command = { type = transports which = 765 value = 4 }
+		command = { type = treasury value = -90 }
+		command = { type = vp value = 20 }
+		command = { type = setflag which = zim_ocean_fleet }
+	}
+}
+
+# 7505: Establish the Indian Ocean Trade Network
+decision = {
+	id = 7505
+	trigger = {
+		tag = ZIM
+		flag = zim_ocean_fleet
+		NOT = { flag = zim_ocean_trade }
+	}
+	name = "Establish the Indian Ocean Trade Network"
+	desc = "From the monsoon harbors of Zanzibar, our ships can reach Gujarat, the Persian Gulf, and the distant ports of southern China. We shall exchange our gold, ivory, and iron for Chinese silks, porcelain, and Indian spices, enriching our treasury beyond measure."
+	action = {
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = trade value = 300 }
+		command = { type = merchants value = 6 }
+		command = { type = treasury value = 180 }
+		command = { type = vp value = 25 }
+		command = { type = setflag which = zim_ocean_trade }
+	}
+}
+
+# 7506: Subdue the Horn of Africa (Mogadishu & Somalia)
+decision = {
+	id = 7506
+	trigger = {
+		tag = ZIM
+		flag = zim_swahili_united
+		owned = { province = 760 data = -1 } # Mogadiscio
+		owned = { province = 757 data = -1 } # Somalia
+		control = { province = 760 data = -1 }
+		control = { province = 757 data = -1 }
+		NOT = { flag = zim_horn_secured }
+	}
+	name = "Subdue the Horn of Africa"
+	desc = "The arid Horn of Africa bridges the Indian Ocean and the Red Sea. By bringing Mogadishu and the Somali sultanates under our imperial banner, we command the southern maritime gate to Arabia and Egypt."
+	action = {
+		command = { type = add_countryculture which = somali }
+		command = { type = addcore which = 754 } # Issas
+		command = { type = addcore which = 755 } # Afars
+		command = { type = addcore which = 752 } # Massawa
+		command = { type = addcore which = 753 } # Keren
+		command = { type = addcore which = 751 } # Bisharin
+		command = { type = stability value = 1 }
+		command = { type = vp value = 30 }
+		command = { type = setflag which = zim_horn_secured }
+	}
+}
+
+# 7507: Advance along the Red Sea and Upper Nile (Nubia & Sudan)
+decision = {
+	id = 7507
+	trigger = {
+		tag = ZIM
+		flag = zim_horn_secured
+		owned = { province = 755 data = -1 } # Afars
+		owned = { province = 752 data = -1 } # Massawa
+		control = { province = 752 data = -1 }
+		NOT = { flag = zim_nile_corridor }
+	}
+	name = "Advance along the Red Sea and Upper Nile"
+	desc = "To unite the African continent, our legions must forge a continuous corridor northward. Beyond the highlands lies the ancient kingdom of Nubia and the great bend of the Nile. By subduing these riverlands, we open the overland highway to Lower Egypt."
+	action = {
+		command = { type = add_countryculture which = nubian }
+		command = { type = addcore which = 749 } # Nubia
+		command = { type = addcore which = 750 } # Sudan
+		command = { type = addcore which = 748 } # Batn al Hajar
+		command = { type = addcore which = 743 } # Cataract
+		command = { type = addcore which = 747 } # Nile
+		command = { type = addcore which = 746 } # Cairo / Egypt
+		command = { type = addcore which = 744 } # Alexandria
+		command = { type = land value = 250 }
+		command = { type = vp value = 35 }
+		command = { type = setflag which = zim_nile_corridor }
+	}
+}
+
+# 7508: The Conquest of Cairo and the Nile Delta
+decision = {
+	id = 7508
+	trigger = {
+		tag = ZIM
+		flag = zim_nile_corridor
+		owned = { province = 746 data = -1 } # Egypt / Cairo
+		owned = { province = 744 data = -1 } # Alexandria
+		control = { province = 746 data = -1 }
+		control = { province = 744 data = -1 }
+		NOT = { flag = zim_egypt_conquered }
+	}
+	name = "The Conquest of Cairo and the Lower Nile"
+	desc = "Cairo, the greatest metropolis of the Islamic Mediterranean, and Alexandria, the ancient seat of learning, have opened their gates to the armies of Great Zimbabwe! We have conquered the crown of the Nile and broken the power of the northern sultans."
+	action = {
+		command = { type = add_countryculture which = arabic }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = addcore which = 741 } # Cyrenaica
+		command = { type = addcore which = 740 } # Tripolitania
+		command = { type = addcore which = 739 } # Tunisia
+		command = { type = addcore which = 737 } # Al-Djazair
+		command = { type = treasury value = 250 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 50 }
+		command = { type = setflag which = zim_egypt_conquered }
+	}
+}
+
+# 7509: Unification of the Maghreb Coastline (Tripoli to Fez)
+decision = {
+	id = 7509
+	trigger = {
+		tag = ZIM
+		flag = zim_egypt_conquered
+		owned = { province = 740 data = -1 } # Tripolitania
+		owned = { province = 739 data = -1 } # Tunisia
+		owned = { province = 737 data = -1 } # Al-Djazair
+		control = { province = 739 data = -1 }
+		NOT = { flag = zim_maghreb_united }
+	}
+	name = "Unification of the Maghreb Coastline"
+	desc = "From Tripoli to Algiers, the fortified harbors of the Barbary coast and the fertile hills of Ifriqiya now yield to the southern conquerors. By granting protection to the Berber tribes and seafaring corsairs, we bring the northern shore of Africa into our grand commonwealth."
+	action = {
+		command = { type = add_countryculture which = berber }
+		command = { type = addcore which = 734 } # Orania
+		command = { type = addcore which = 733 } # Fez
+		command = { type = addcore which = 732 } # Tangiers
+		command = { type = addcore which = 806 } # Toubkal
+		command = { type = addcore which = 1595 } # Anti-Atlas
+		command = { type = addcore which = 805 } # Sahara
+		command = { type = stability value = 1 }
+		command = { type = vp value = 40 }
+		command = { type = setflag which = zim_maghreb_united }
+	}
+}
+
+# 7510: The Trans-Saharan Highway to the Sahel
+decision = {
+	id = 7510
+	trigger = {
+		tag = ZIM
+		flag = zim_maghreb_united
+		owned = { province = 733 data = -1 } # Fez
+		owned = { province = 806 data = -1 } # Toubkal
+		owned = { province = 1595 data = -1 } # Anti-Atlas
+		control = { province = 1595 data = -1 }
+		NOT = { flag = zim_sahara_conquered }
+	}
+	name = "The Trans-Saharan Highway to the Sahel"
+	desc = "Central Africa is divided by impassable rainforests and deserts, but the ancient caravan routes crossing southward through the Atlas Mountains lead directly into the fertile basin of the Niger. Guided by Tuareg scouts, our southern hosts will descend upon West Africa from the north!"
+	action = {
+		command = { type = addcore which = 1597 } # Azaouad
+		command = { type = addcore which = 1495 } # Timbuktu
+		command = { type = addcore which = 1496 } # Gao
+		command = { type = addcore which = 1489 } # Jenne
+		command = { type = addcore which = 1492 } # Niani
+		command = { type = infra value = 250 }
+		command = { type = treasury value = -75 }
+		command = { type = vp value = 35 }
+		command = { type = setflag which = zim_sahara_conquered }
+	}
+}
+
+# 7511: Subjugation of the Western Empire (Mali and Niger Basin)
+decision = {
+	id = 7511
+	trigger = {
+		tag = ZIM
+		flag = zim_sahara_conquered
+		owned = { province = 1495 data = -1 } # Timbuktu
+		owned = { province = 1496 data = -1 } # Gao
+		owned = { province = 1489 data = -1 } # Jenne
+		owned = { province = 1492 data = -1 } # Niani
+		control = { province = 1495 data = -1 }
+		control = { province = 1492 data = -1 }
+		NOT = { flag = zim_mali_subjugated }
+	}
+	name = "Subjugation of the Western Empire (Mali)"
+	desc = "The fabled Empire of Mali and the golden university city of Timbuktu have bowed before the armies of Great Zimbabwe! The two greatest gold-bearing realms on Earth are now joined under a single crown. The legendary circuit of Africa is complete."
+	action = {
+		command = { type = add_countryculture which = mali }
+		command = { type = treasury value = 300 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 60 }
+		command = { type = setflag which = zim_mali_subjugated }
+	}
+}
+
+# 7512: Maritime Circumnavigation of the Cape
+decision = {
+	id = 7512
+	trigger = {
+		tag = ZIM
+		flag = zim_swahili_united
+		owned = { province = 774 data = -1 } # Transkei
+		owned = { province = 775 data = -1 } # Ciskei
+		owned = { province = 778 data = -1 } # Table
+		NOT = { flag = zim_cape_route }
+	}
+	name = "Maritime Circumnavigation of the Cape"
+	desc = "While our armies march north along the Nile, our sailors have rounded the Cape of Storms, establishing strongholds at Table Bay and securing the maritime gateway between the Indian and Atlantic oceans. Our naval reach encircles the entire continent."
+	action = {
+		command = { type = domestic which = land value = -1 }
+		command = { type = naval value = 350 }
+		command = { type = fortress which = 778 value = 1 }
+		command = { type = warships which = 778 value = 5 }
+		command = { type = treasury value = -80 }
+		command = { type = vp value = 30 }
+		command = { type = setflag which = zim_cape_route }
+	}
+}
+
+# 7513: Proclaim the Great Pan-African Empire (Imperium Africae)
+decision = {
+	id = 7513
+	trigger = {
+		tag = ZIM
+		flag = zim_swahili_united
+		flag = zim_egypt_conquered
+		flag = zim_maghreb_united
+		flag = zim_mali_subjugated
+		NOT = { flag = zim_panafrican_empire }
+	}
+	name = "Proclaim the Great Pan-African Empire"
+	desc = "From the granite citadel of Great Zimbabwe to the minarets of Alexandria, from the bustling port of Zanzibar to the mud-brick palaces of Timbuktu, every corner of Africa stands united under the Mwene Mutapa. No foreign invader shall ever divide our lands again!"
+	action = {
+		command = { type = stability value = 3 }
+		command = { type = badboy value = -6 }
+		command = { type = domestic which = centralization value = 2 }
+		command = { type = provincetax which = 1509 value = 3 }
+		command = { type = provincetax which = 1508 value = 2 }
+		command = { type = treasury value = 400 }
+		command = { type = vp value = 150 }
+		command = { type = setflag which = zim_panafrican_empire }
+	}
+}
+
+# 7514: Establish the Imperial Highway (Trans-African Royal Road)
+decision = {
+	id = 7514
+	trigger = {
+		tag = ZIM
+		flag = zim_panafrican_empire
+		NOT = { flag = zim_royal_road }
+	}
+	name = "Establish the Imperial Trans-African Highway"
+	desc = "To maintain communication across thousands of leagues, we shall establish a permanent system of courier posts, stone cisterns, and garrisoned waystations connecting Sofala, the Red Sea ports, Cairo, Tangiers, and Timbuktu."
+	action = {
+		command = { type = infra value = 400 }
+		command = { type = trade value = 400 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = treasury value = -120 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 35 }
+		command = { type = setflag which = zim_royal_road }
+	}
+}
+
+# 7515: Monumental Stone Fortresses of the Empire
+decision = {
+	id = 7515
+	trigger = {
+		tag = ZIM
+		flag = zim_citadel_rebuilt
+		flag = zim_panafrican_empire
+		NOT = { flag = zim_stone_fortresses }
+	}
+	name = "Monumental Stone Fortresses of the Empire"
+	desc = "Exporting our dry-stone masonry tradition throughout the continent, we construct unshakeable granite bastions guarding the strategic chokepoints of Africa: Sofala, Massawa, Cairo, and the Straits of Gibraltar."
+	action = {
+		command = { type = fortress which = 1508 value = 1 } # Sofala
+		command = { type = fortress which = 752 value = 1 } # Massawa
+		command = { type = fortress which = 746 value = 1 } # Cairo
+		command = { type = fortress which = 732 value = 1 } # Tangiers
+		command = { type = domestic which = quality value = 1 }
+		command = { type = treasury value = -150 }
+		command = { type = vp value = 30 }
+		command = { type = setflag which = zim_stone_fortresses }
+	}
+}

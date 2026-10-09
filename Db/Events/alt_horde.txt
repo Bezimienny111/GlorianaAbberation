@@ -1,0 +1,293 @@
+# =======================================================================
+# GLORIANA 1337 - ALTERNATE DESTINIES
+# MODULE 11: BLUE & GOLDEN HORDE (BHR / STE) EVENTS
+# =======================================================================
+# IDs Reserved: 3010100 - 3010149
+# =======================================================================
+
+# 3010100: The Reign of Ozbeg Khan: Zenith of the Steppes
+event = {
+	id = 3010100
+	trigger = {
+		OR = {
+			tag = BHR
+			tag = STE
+		}
+		owned = { province = 458 data = -1 } # Sarai
+	}
+	random = no
+	country = BHR
+	name = "The Reign of Ozbeg Khan: Zenith of the Steppes"
+	desc = "Under the majestic rule of Ozbeg Khan, the Ulus of Jochi enjoys unmatched peace, religious harmony, and economic prosperity. From his palace at Sarai, the Khan directs the trade of three continents, commands the absolute obedience of the Russian princes, and leads a host of two hundred thousand horsemen. The Golden Horde is the terror and admiration of Eurasia."
+	style = 1
+
+	date = { day = 1 month = may year = 1338 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1341 }
+
+	action_a = {
+		name = "May the rule of the Golden Khan endure forever!"
+		command = { type = stability value = 2 }
+		command = { type = treasury value = 80 }
+		command = { type = land value = 150 }
+		command = { type = infra value = 150 }
+	}
+}
+
+# 3010101: Sanitation and Trade Quarantine along the Volga
+event = {
+	id = 3010101
+	trigger = {
+		OR = {
+			tag = BHR
+			tag = STE
+		}
+		owned = { province = 458 data = -1 }
+	}
+	random = no
+	country = BHR
+	name = "Trade Quarantine along the Volga"
+	desc = "Rumors of a devastating black pestilence spreading from the Black Sea ports reach the court of Sarai. Rather than allowing panic to disrupt the realm, the Khan orders strict inspection points along the Volga and Don rivers. Caravans entering Astrakhan and Sarai are held in desert encampments for forty days before entering city bazaars. Thanks to swift action, the cities of the Volga are spared the worst of the Black Death."
+	style = 1
+
+	date = { day = 1 month = june year = 1347 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1352 }
+
+	action_a = {
+		name = "Enforce quarantine along all river ports"
+		command = { type = treasury value = -50 }
+		command = { type = stability value = 1 }
+		command = { type = population which = 458 value = 2000 }
+		command = { type = population which = 457 value = 1500 }
+		command = { type = vp value = 25 }
+	}
+	action_b = {
+		name = "Leave the merchants unrestricted"
+		command = { type = stability value = -1 }
+		command = { type = population which = 458 value = -2000 }
+		command = { type = population which = 457 value = -1500 }
+	}
+}
+
+# 3010102: The Great Troubles Averted
+event = {
+	id = 3010102
+	trigger = {
+		OR = {
+			tag = BHR
+			tag = STE
+		}
+		flag = ste_kurultai_reformed
+	}
+	random = no
+	country = BHR
+	name = "The Great Troubles Averted"
+	desc = "In previous generations, the death of a Great Khan brought bloody fratricide among rival Chinggisid pretenders and greedy provincial emirs. But our reinforced Kurultai stands vigilant. When ambitious princes attempt to raise rival banners, the imperial guard arrests the conspirators and installs the legitimate heir with overwhelming acclaim. The Great Troubles that threatened to tear the Horde apart have been averted forever."
+	style = 1
+
+	date = { day = 1 month = january year = 1360 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1385 }
+
+	action_a = {
+		name = "Order and unity prevail in the Steppe!"
+		command = { type = stability value = 2 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = badboy value = -2 }
+		command = { type = vp value = 35 }
+	}
+}
+
+# 3010103: The Submission of Dmitry of Moscow
+event = {
+	id = 3010103
+	trigger = {
+		OR = {
+			tag = BHR
+			tag = STE
+		}
+		owned = { province = 458 data = -1 }
+		owned = { province = 270 data = -1 } # Moscow
+	}
+	random = no
+	country = BHR
+	name = "The Submission of the Grand Prince of Moscow"
+	desc = "Realizing that the Golden Horde remains undefeated and united, Grand Prince Dmitry of Moscow abandons all thoughts of rebellion. Arriving in Sarai with a vast train of silver, furs, and hunting gerfalcons, he kneels before the Khan's golden throne, kissing the hem of his robe and renewing the ancient oaths of feudal vassalage."
+	style = 1
+
+	date = { day = 1 month = january year = 1380 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1420 }
+
+	action_a = {
+		name = "Accept the submission and confirm his Yarlik"
+		command = { type = treasury value = 250 }
+		command = { type = stability value = 1 }
+		command = { type = relation which = MOS value = 100 }
+		command = { type = vp value = 30 }
+	}
+	action_b = {
+		name = "Abolish the Grand Principality and rule Rus directly"
+		command = { type = domestic which = centralization value = 2 }
+		command = { type = stability value = -1 }
+		command = { type = provincetax which = 270 value = 1 }
+		command = { type = vp value = 35 }
+	}
+}
+
+# 3010104: The Battle on the Terek: Repelling Timur
+event = {
+	id = 3010104
+	trigger = {
+		OR = {
+			tag = BHR
+			tag = STE
+		}
+		owned = { province = 458 data = -1 } # Sarai
+		owned = { province = 457 data = -1 } # Astrakhan
+		owned = { province = 468 data = -1 } # Kouban
+	}
+	random = no
+	country = BHR
+	name = "The Battle on the Terek: Repelling Timur"
+	desc = "The ferocious conqueror Timur the Lame marched out of Central Asia intent on sacking Sarai, razing Astrakhan, and destroying the Golden Horde. But our scouts tracked his army across the steppes, and on the banks of the Terek river our disciplined horse archers trapped his van in a devastating pincer. Routed and battered, the Timurid host retreats beyond the Caucasus. The cities of the Volga remain untouched and glorious!"
+	style = 1
+
+	date = { day = 1 month = january year = 1395 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1410 }
+
+	action_a = {
+		name = "The Steppe belongs to the Golden Horde!"
+		command = { type = stability value = 2 }
+		command = { type = land value = 350 }
+		command = { type = treasury value = 150 }
+		command = { type = vp value = 50 }
+	}
+}
+
+# 3010105: The Eternal Yassa Restored
+event = {
+	id = 3010105
+	trigger = {
+		OR = {
+			tag = BHR
+			tag = STE
+		}
+		flag = ste_pax_mongolica
+	}
+	random = no
+	country = STE
+	name = "The Eternal Yassa Restored"
+	desc = "Chroniclers from Paris to Peking write in astonishment of the miraculous resurrection of the Pax Mongolica. The Great Horde has not only preserved its ancient empire, but perfected it—governing Russian farmers, Tatar horsemen, Persian artisans, and Central Asian merchants with majestic equity. The legacy of Genghis Khan shines brighter than ever."
+	style = 1
+
+	date = { day = 1 month = january year = 1440 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1750 }
+
+	action_a = {
+		name = "Hail the Supreme Khagan of the Steppes!"
+		command = { type = stability value = 2 }
+		command = { type = badboy value = -4 }
+		command = { type = treasury value = 300 }
+		command = { type = vp value = 80 }
+	}
+}
+
+# 3010106: Provincial Integration of the Volga and Caspian Steppes
+event = {
+	id = 3010106
+	trigger = {
+		OR = {
+			tag = BHR
+			tag = STE
+		}
+		flag = ste_horde_reunited
+		owned = { province = 458 data = -1 }
+		owned = { province = 457 data = -1 }
+		ownerchange = { province = 458 years = 10 }
+		ownerchange = { province = 457 years = 10 }
+	}
+	random = no
+	country = STE
+	name = "Provincial Integration of the Volga Basin"
+	desc = "A decade of stable imperial administration has enriched the Volga basin. River barge traffic flows seamlessly, and settlements flourish along both banks."
+	style = 1
+
+	date = { day = 1 month = january year = 1370 }
+	offset = 120
+	deathdate = { day = 1 month = january year = 1800 }
+
+	action_a = {
+		name = "The Volga is the spine of our empire"
+		command = { type = provincetax which = 458 value = 1 }
+		command = { type = provincetax which = 457 value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 20 }
+	}
+}
+
+# 3010107: Provincial Integration of the Rus' Lands
+event = {
+	id = 3010107
+	trigger = {
+		OR = {
+			tag = BHR
+			tag = STE
+		}
+		flag = ste_tatar_yoke_enforced
+		owned = { province = 270 data = -1 } # Moscow
+		ownerchange = { province = 270 years = 10 }
+	}
+	random = no
+	country = STE
+	name = "Provincial Integration of the Rus' Lands"
+	desc = "A decade of unquestioned Mongol governance has settled the Rus' territories. Local boyars collect taxes with precision and send regular contingents of auxilliary infantry to the imperial army."
+	style = 1
+
+	date = { day = 1 month = january year = 1400 }
+	offset = 120
+	deathdate = { day = 1 month = january year = 1800 }
+
+	action_a = {
+		name = "The Rus' bow in humble obedience"
+		command = { type = provincetax which = 270 value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 25 }
+	}
+}
+
+# 3010108: Provincial Integration of Transoxiana
+event = {
+	id = 3010108
+	trigger = {
+		OR = {
+			tag = BHR
+			tag = STE
+		}
+		flag = ste_transoxiana_subdued
+		owned = { province = 1592 data = -1 } # Samarkand
+		owned = { province = 1532 data = -1 } # Bukhara
+		ownerchange = { province = 1592 years = 10 }
+		ownerchange = { province = 1532 years = 10 }
+	}
+	random = no
+	country = STE
+	name = "Provincial Integration of Transoxiana"
+	desc = "A decade of peace has reconciled the scholars, artisans, and oasis farmers of Samarkand and Bukhara to the rule of the Golden Horde. The Silk Road hums with unending prosperity."
+	style = 1
+
+	date = { day = 1 month = january year = 1430 }
+	offset = 120
+	deathdate = { day = 1 month = january year = 1800 }
+
+	action_a = {
+		name = "Transoxiana flourishes under the Khagan"
+		command = { type = provincetax which = 1592 value = 1 }
+		command = { type = provincetax which = 1532 value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 25 }
+	}
+}

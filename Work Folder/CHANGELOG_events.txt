@@ -39,6 +39,10 @@ global shared event/decision ID space, monarch space, and leader space:
 | 6. Celtic Union             | SCO, WLS, EIR | 7250-7255 | 3009500-3009545 | 12280-12294   | 39601-39608   |
 | 7. Solomonic Ethiopia       | ETH           | 7300-7305 | 3009600-3009645 | Vanilla       | 39651-39658   |
 | 8. Joseon Korea             | KOR           | 7350-7355 | 3009700-3009745 | Vanilla       | Vanilla/18691+|
+| 9. Mali Empire              | MAL           | 7450-7469 | 3009800-3009845 | Vanilla       | 39451-39458   |
+| 10. Great Zimbabwe          | ZIM           | 7500-7519 | 3009900-3009949 | Vanilla       | 39461-39470   |
+| 11. Kingdom of Georgia      | GEO           | 7550-7569 | 3010000-3010049 | Vanilla       | 39471-39480   |
+| 12. Blue & Golden Horde     | BHR, STE      | 7600-7619 | 3010100-3010149 | Vanilla       | 39481-39490   |
 
 * Custom Religions defined in Db/Religions/religions.txt:
   - roman_pagan (Western Roman Empire revival)
@@ -678,4 +682,107 @@ global shared event/decision ID space, monarch space, and leader space:
   * 3009841-3009845: Integration Waves (Bambuk, Gao, Dakar, Fez, Andalusia).
 - Leaders Implemented (Db/Leaders/leaders_mal.txt: 39451-39458):
   * Sundiata II, Tiramakhan Traore, Sankar Zouma, Abu Bakr the Navigator (explorer), Mansa Mahmud, Al-Hajj Sekou (conquistador), Ibrahim of Cordoba, Ousmane of the Ocean.
+================================================================================
+
+================================================================================
+MODULE 10: GREAT ZIMBABWE (ZIM) - PAN-AFRICAN UNIFICATION
+================================================================================
+- Tag: ZIM
+- Core Themes:
+  * Overcoming Central African PTI: Continental unification via the Swahili Coast corridor,
+    Horn of Africa, Nile Valley, Lower Egypt, Maghreb, and Trans-Saharan descent into Mali.
+  * Maritime circumnavigation route around the Cape of Good Hope to the Atlantic.
+  * Dry-stone architecture, goldfields of Sofala, Indian Ocean trade (Zheng He Ming contact).
+- Decisions Implemented (Db/Decisions/alt_zimbabwe.txt: 7500-7515):
+  * 7500: Rebuild the Stone Citadel of Great Zimbabwe
+  * 7501: Exploit the Goldfields of Sofala and the Zambezi
+  * 7502: Advance to the Swahili Coast
+  * 7503: Subjugate the Swahili Maritime Sultanates (adds swahili culture, CoT in Sofala)
+  * 7504: Construct the Imperial Ocean Fleet
+  * 7505: Establish the Indian Ocean Trade Network
+  * 7506: Subdue the Horn of Africa (adds somali culture)
+  * 7507: Advance along the Red Sea and Upper Nile (adds nubian culture)
+  * 7508: The Conquest of Cairo and the Lower Nile (adds arabic culture)
+  * 7509: Unification of the Maghreb Coastline (adds berber culture)
+  * 7510: The Trans-Saharan Highway to the Sahel
+  * 7511: Subjugation of the Western Empire (Mali) (adds mali culture)
+  * 7512: Maritime Circumnavigation of the Cape
+  * 7513: Proclaim the Great Pan-African Empire (Imperium Africae)
+  * 7514: Establish the Imperial Trans-African Highway
+  * 7515: Monumental Stone Fortresses of the Empire
+- Events Implemented (Db/Events/alt_zimbabwe.txt: 3009900-3009910):
+  * 3009900: The Awakening of Great Zimbabwe
+  * 3009901: The Monomutapa Ascendancy
+  * 3009902: The Merchants of Kilwa Seek Trade Treaties
+  * 3009903: Envoys from the Ming Treasure Fleet
+  * 3009904: The Great Savanna Drought
+  * 3009905: Encounter with Christian Ethiopia (adds ethiopian culture option)
+  * 3009906: The Religious Harmony of the Pan-African Realm
+  * 3009907: Triumph of the Two Golden Empires
+  * 3009908-3009910: Provincial Integration Waves (Swahili, Egypt, Sahel)
+- Leaders Implemented (Db/Leaders/leaders_zim.txt: 39461-39467):
+  * Nyatsimba Mutota, Matope Nyanhehwe, Changa Changamire, General Mukombwe, Admiral Karemba, General Kapararidze, Tendai the Navigator.
+
+================================================================================
+MODULE 11: KINGDOM OF GEORGIA (GEO) - CAUCASIAN BULWARK
+================================================================================
+- Tag: GEO
+- Core Themes:
+  * Golden Age revival under Giorgi V the Brilliant, avoiding the Black Death via mountain quarantines.
+  * Defending Orthodox Christianity against Sunni expansion (Ottomans, Turcomans) and Shiite expansion (Safavid/Persian).
+  * Unification of the Caucasus: Georgia, Armenia, Shirvan/Baku, Trebizond/Pontus, Cilician Armenia.
+- Decisions Implemented (Db/Decisions/alt_georgia.txt: 7550-7560):
+  * 7550: Codification of Laws: The Dzeglisdeba
+  * 7551: Fortify the Caucasian Gates (Darial Gorge and Derbent)
+  * 7552: Reclaim the Kingdom of Greater Armenia (adds armenian culture)
+  * 7553: Subjugate Shirvan and the Caspian Shore (CoT in Baku)
+  * 7554: Protectorate over the Empire of Trebizond (adds greek culture)
+  * 7555: Bulwark against the Sunni Powers
+  * 7556: Fortress against the Shiite Powers
+  * 7557: Restore the Kingdom of Cilician Armenia
+  * 7558: Proclaim the Pan-Caucasian Empire
+  * 7559: The Orthodox Holy League of the East
+  * 7560: Rebuild the Monasteries of Gelati and Svetitskhoveli
+- Events Implemented (Db/Events/alt_georgia.txt: 3010000-3010008):
+  * 3010000: The Glory of Giorgi V the Brilliant
+  * 3010001: Mountain Quarantine against the Black Death
+  * 3010002: Defiance against the Steppe Khanates
+  * 3010003: Concord of the Caucasian Churches
+  * 3010004: Halting the Turcoman Incursions
+  * 3010005: The Iron Mountain of the East
+  * 3010006-3010008: Provincial Integration Waves (Armenia, Shirvan, Trebizond)
+- Leaders Implemented (Db/Leaders/leaders_geo.txt: 39471-39476):
+  * Giorgi V the Brilliant, Davit IX, Bagrat V the Great, Giorgi VII the Resolute, General Shalva of Akhaltsikhe, Admiral Demetre of Trebizond.
+
+================================================================================
+MODULE 12: BLUE & GOLDEN HORDE (BHR / STE) - PAX MONGOLICA
+================================================================================
+- Tag: BHR (starting), WHR (eastern), STE (unified Golden Horde)
+- Core Themes:
+  * Averting the Great Troubles (Zamyatnya) and preserving the Volga cities from Black Death.
+  * Reunification of Blue and White Hordes into the United Golden Horde (STE).
+  * Enforcing the Tatar Yoke upon Rus' (subjugation of Moscow, Novgorod, etc.).
+  * Defeating Timur on the Terek, securing Central Asia / Transoxiana, restoring Genghis Khan's Universal Empire.
+- Decisions Implemented (Db/Decisions/alt_horde.txt: 7600-7609):
+  * 7600: Reform the Imperial Kurultai
+  * 7601: Codify the Imperial Yassa of the Steppes
+  * 7602: Reunite the Blue and White Hordes (transforms into STE, adds tatar/altai/mongol cultures)
+  * 7603: Reassert the Tatar Yoke over Rus' (adds russian culture)
+  * 7604: Dominance of the Northern Silk Road (CoT in Astrakhan)
+  * 7605: Subdue Chagatai and Transoxiana
+  * 7606: The Grand Western March into Eastern Europe
+  * 7607: Restoration of the Universal Mongol Empire (Pax Mongolica)
+  * 7608: The Imperial Yam Relay Network
+  * 7609: Monumental Palaces of Sarai
+- Events Implemented (Db/Events/alt_horde.txt: 3010100-3010108):
+  * 3010100: The Reign of Ozbeg Khan: Zenith of the Steppes
+  * 3010101: Trade Quarantine along the Volga
+  * 3010102: The Great Troubles Averted
+  * 3010103: The Submission of the Grand Prince of Moscow
+  * 3010104: The Battle on the Terek: Repelling Timur
+  * 3010105: The Eternal Yassa Restored
+  * 3010106-3010108: Provincial Integration Waves (Volga, Rus, Transoxiana)
+- Leaders Implemented (Db/Leaders/leaders_bhr.txt & leaders_ste.txt: 39481-39490):
+  * BHR: Ozbeg Khan, Jani Beg Khan, Mamai the Emir, Tokhtamysh Khan, Edigu the Great Emir.
+  * STE: Tokhtamysh the Great, Edigu the Victorious, Ulugh Muhammad, General Boroldai, Ahmad Khan.
 ================================================================================

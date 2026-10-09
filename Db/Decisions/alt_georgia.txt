@@ -1,0 +1,253 @@
+# =======================================================================
+# GLORIANA 1337 - ALTERNATE DESTINIES
+# MODULE 10: KINGDOM OF GEORGIA (GEO) DECISIONS
+# =======================================================================
+# IDs Reserved: 7550 - 7569
+# =======================================================================
+
+# 7550: The Legacy of Giorgi the Brilliant: Codification of Laws (Dzeglisdeba)
+decision = {
+	id = 7550
+	trigger = {
+		tag = GEO
+		owned = { province = 470 data = -1 } # Georgia / Tbilisi
+		control = { province = 470 data = -1 }
+		NOT = { flag = geo_dzeglisdeba }
+	}
+	name = "Codification of Laws: The Dzeglisdeba"
+	desc = "King Giorgi V the Brilliant has unified the Georgian realms and swept away the remnants of foreign Mongol oppression. To cement royal authority and restore domestic peace among the mountaineers and feudal eristavis, we must promulgate the comprehensive legal code known as the Dzeglisdeba, unifying judiciary customs under the crown."
+	action = {
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = domestic which = aristocracy value = -1 }
+		command = { type = stability value = 1 }
+		command = { type = infra value = 150 }
+		command = { type = treasury value = -50 }
+		command = { type = vp value = 20 }
+		command = { type = setflag which = geo_dzeglisdeba }
+	}
+}
+
+# 7551: Fortify the Caucasian Gates (Darial Gorge and Derbent)
+decision = {
+	id = 7551
+	trigger = {
+		tag = GEO
+		flag = geo_dzeglisdeba
+		owned = { province = 470 data = -1 } # Georgia
+		owned = { province = 469 data = -1 } # Abkhazia
+		NOT = { flag = geo_caucasian_gates }
+	}
+	name = "Fortify the Caucasian Gates"
+	desc = "Since antiquity, the Darial Pass and the narrow Caspian shore at Derbent have formed the natural gates separating the civilizations of the south from the nomadic horsemen of the northern steppes. By constructing stone watchtowers, rock-hewn fortresses, and permanent garrisons in these defiles, we will render the Caucasus impenetrable to northern hordes."
+	action = {
+		command = { type = fortress which = 470 value = 1 } # Tbilisi / Darial
+		command = { type = fortress which = 469 value = 1 } # Abkhazia
+		command = { type = domestic which = offensive value = -1 }
+		command = { type = domestic which = quality value = 1 }
+		command = { type = treasury value = -100 }
+		command = { type = vp value = 25 }
+		command = { type = setflag which = geo_caucasian_gates }
+	}
+}
+
+# 7552: Reclaim the Kingdom of Greater Armenia
+decision = {
+	id = 7552
+	trigger = {
+		tag = GEO
+		owned = { province = 472 data = -1 } # Armenia / Yerevan
+		control = { province = 472 data = -1 }
+		NOT = { flag = geo_armenia_reunited }
+	}
+	name = "Reclaim the Kingdom of Greater Armenia"
+	desc = "For centuries, the Christian kingdoms of Georgia and Armenia have shared faith, blood, and mutual defense against eastern conquerors. With Yerevan secure under our banner, we formally restore the joint Georgian-Armenian crown, rallying the Armenian nakharars to our sovereign service."
+	action = {
+		command = { type = add_countryculture which = armenian }
+		command = { type = addcore which = 473 } # Kurdistan / Lake Van
+		command = { type = addcore which = 474 } # Sivas
+		command = { type = addcore which = 483 } # Adana / Cilicia
+		command = { type = provincetax which = 472 value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 30 }
+		command = { type = setflag which = geo_armenia_reunited }
+	}
+}
+
+# 7553: Subjugate Shirvan and Daghestan (The Caspian Shore)
+decision = {
+	id = 7553
+	trigger = {
+		tag = GEO
+		owned = { province = 471 data = -1 } # Daghestan / Derbent
+		owned = { province = 487 data = -1 } # Azerbaijan / Baku
+		control = { province = 471 data = -1 }
+		control = { province = 487 data = -1 }
+		NOT = { flag = geo_caspian_secured }
+	}
+	name = "Subjugate Shirvan and the Caspian Shore"
+	desc = "The Shirvanshahs and Daghestani mountain clans command the eastern flank of the Caucasus and the oil-rich ports of Baku. By imposing our protectorate over Shirvan, we establish undisputed mastery over the Caspian littoral and gain control of vital Silk Road trade terminals."
+	action = {
+		command = { type = cot which = 487 } # Center of trade in Baku
+		command = { type = trade value = 250 }
+		command = { type = addcore which = 530 } # Tabriz
+		command = { type = treasury value = 120 }
+		command = { type = vp value = 35 }
+		command = { type = setflag which = geo_caspian_secured }
+	}
+}
+
+# 7554: Protectorate over the Empire of Trebizond
+decision = {
+	id = 7554
+	trigger = {
+		tag = GEO
+		owned = { province = 475 data = -1 } # Trabzon / Trebizond
+		control = { province = 475 data = -1 }
+		NOT = { flag = geo_trebizond_secured }
+	}
+	name = "Protectorate over the Empire of Trebizond"
+	desc = "Founded with the aid of Queen Tamar of Georgia, the Komnenian Empire of Trebizond has long been a sister realm on the Black Sea. By fully incorporating the Pontic coast under our imperial shield, we secure maritime access, shipyards, and naval access to Constantinople and the Mediterranean."
+	action = {
+		command = { type = add_countryculture which = greek }
+		command = { type = domestic which = land value = -1 }
+		command = { type = naval value = 250 }
+		command = { type = warships which = 475 value = 5 }
+		command = { type = transports which = 475 value = 3 }
+		command = { type = vp value = 30 }
+		command = { type = setflag which = geo_trebizond_secured }
+	}
+}
+
+# 7555: Repelling the Sunni Threat (Bulwark against Turcomans & Ottomans)
+decision = {
+	id = 7555
+	trigger = {
+		tag = GEO
+		flag = geo_armenia_reunited
+		owned = { province = 474 data = -1 } # Sivas
+		control = { province = 474 data = -1 }
+		NOT = { flag = geo_sunni_repelled }
+	}
+	name = "Bulwark against the Sunni Powers"
+	desc = "To the west and south, aggressive Sunni sultanates—the rising Ottomans, the Turcoman confederations of Aq Qoyunlu, and the Syrian emirs—seek to overrun the Christian Caucasus. By declaring an enduring holy defensive march along the Anatolian border, our armies stand as an unyielding wall against Sunni expansion."
+	action = {
+		command = { type = domestic which = quality value = 1 }
+		command = { type = domestic which = offensive value = 1 }
+		command = { type = land value = 350 }
+		command = { type = addcore which = 485 } # Aleppo
+		command = { type = stability value = 1 }
+		command = { type = vp value = 40 }
+		command = { type = setflag which = geo_sunni_repelled }
+	}
+}
+
+# 7556: Repelling the Shiite Threat (Fortress against Persia & Safavids)
+decision = {
+	id = 7556
+	trigger = {
+		tag = GEO
+		flag = geo_caspian_secured
+		owned = { province = 530 data = -1 } # Tabriz
+		control = { province = 530 data = -1 }
+		NOT = { flag = geo_shiite_repelled }
+	}
+	name = "Fortress against the Shiite Powers"
+	desc = "To the southeast, the Iranian plateau brews religious fervor under Shiite dynasties and militant Sufi orders centered around Ardabil and Tabriz. By fortifying the southern Azerbaijani frontier and crushing hostile incursions into the Armenian plateau, we banish the threat of Shiite subjugation forever."
+	action = {
+		command = { type = fortress which = 530 value = 1 }
+		command = { type = land value = 300 }
+		command = { type = treasury value = 150 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 40 }
+		command = { type = setflag which = geo_shiite_repelled }
+	}
+}
+
+# 7557: Restore the Kingdom of Cilician Armenia
+decision = {
+	id = 7557
+	trigger = {
+		tag = GEO
+		flag = geo_armenia_reunited
+		owned = { province = 483 data = -1 } # Adana / Little Armenia
+		control = { province = 483 data = -1 }
+		NOT = { flag = geo_cilicia_restored }
+	}
+	name = "Restore the Kingdom of Cilician Armenia"
+	desc = "The Kingdom of Lesser Armenia in Cilicia was the proud maritime refuge of the Armenian nation, maintaining close ties with Western Europe and Crusader princes. By liberating the Gulf of Alexandretta and rebuilding the coastal ports of Cilicia, we open a direct maritime highway to Mediterranean commerce."
+	action = {
+		command = { type = trade value = 250 }
+		command = { type = naval value = 200 }
+		command = { type = provincetax which = 483 value = 2 }
+		command = { type = treasury value = 100 }
+		command = { type = vp value = 30 }
+		command = { type = setflag which = geo_cilicia_restored }
+	}
+}
+
+# 7558: Proclaim the Pan-Caucasian Empire
+decision = {
+	id = 7558
+	trigger = {
+		tag = GEO
+		flag = geo_dzeglisdeba
+		flag = geo_armenia_reunited
+		flag = geo_caspian_secured
+		flag = geo_trebizond_secured
+		flag = geo_sunni_repelled
+		flag = geo_shiite_repelled
+		NOT = { flag = geo_caucasian_empire }
+	}
+	name = "Proclaim the Pan-Caucasian Empire"
+	desc = "From the Black Sea to the Caspian, from the snowy crags of Mount Elbrus to the plains of Lake Van and Tabriz, all Caucasian peoples stand united under the Bagrationi dynasty. King of Kings, Sovereign of Georgians, Armenians, Pontic Greeks, and Alans—the Pan-Caucasian Empire stands triumphant!"
+	action = {
+		command = { type = stability value = 3 }
+		command = { type = badboy value = -5 }
+		command = { type = domestic which = centralization value = 2 }
+		command = { type = provincetax which = 470 value = 3 } # Tbilisi
+		command = { type = provincetax which = 472 value = 2 } # Yerevan
+		command = { type = treasury value = 350 }
+		command = { type = vp value = 120 }
+		command = { type = setflag which = geo_caucasian_empire }
+	}
+}
+
+# 7559: The Orthodox Holy League of the East
+decision = {
+	id = 7559
+	trigger = {
+		tag = GEO
+		flag = geo_caucasian_empire
+		NOT = { flag = geo_holy_league }
+	}
+	name = "The Orthodox Holy League of the East"
+	desc = "As the pre-eminent Christian superpower in the Near East, Georgia extends its hand to our fellow Orthodox brothers across Eastern Europe and Byzantium. Together, we form an unbreakable Holy League dedicated to the defense and prosperity of Eastern Christianity."
+	action = {
+		command = { type = diplomatic value = 200 }
+		command = { type = stability value = 1 }
+		command = { type = infra value = 300 }
+		command = { type = vp value = 25 }
+		command = { type = setflag which = geo_holy_league }
+	}
+}
+
+# 7560: Rebuild the Monasteries of Gelati and Svetitskhoveli
+decision = {
+	id = 7560
+	trigger = {
+		tag = GEO
+		flag = geo_dzeglisdeba
+		treasury = 100
+		NOT = { flag = geo_monasteries_rebuilt }
+	}
+	name = "Rebuild the Monasteries of Gelati and Svetitskhoveli"
+	desc = "The monastic academy of Gelati, founded by David the Builder, and the patriarchal cathedral of Svetitskhoveli in Mtskheta are the intellectual and spiritual foundations of Georgian culture. By endowing scriptoriums, philosophical chairs, and stone restorations, we foster an illustrious Orthodox renaissance."
+	action = {
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = infra value = 250 }
+		command = { type = stability value = 2 }
+		command = { type = treasury value = -80 }
+		command = { type = vp value = 20 }
+		command = { type = setflag which = geo_monasteries_rebuilt }
+	}
+}

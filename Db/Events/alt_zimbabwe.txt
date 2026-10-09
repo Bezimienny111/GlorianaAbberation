@@ -1,0 +1,341 @@
+# =======================================================================
+# GLORIANA 1337 - ALTERNATE DESTINIES
+# MODULE 9: GREAT ZIMBABWE (ZIM) EVENTS
+# =======================================================================
+# IDs Reserved: 3009900 - 3009949
+# =======================================================================
+
+# 3009900: The Awakening of Great Zimbabwe
+event = {
+	id = 3009900
+	trigger = {
+		tag = ZIM
+		owned = { province = 1509 data = -1 } # Zimbabwe
+	}
+	random = no
+	country = ZIM
+	name = "The Awakening of Great Zimbabwe"
+	desc = "Upon the fertile granite plateau between the Zambezi and Limpopo rivers, our ancestors have carved an empire of stone and gold. The Great Enclosure stands tall, its dry-stone masonry unmatched across the world. Our priests offer sacrifices to Mwari in the sacred hill complex, while the royal court looks outward toward the coastal trading ports. A new era of continental destiny begins for Great Zimbabwe."
+	style = 1
+
+	date = { day = 1 month = may year = 1338 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1345 }
+
+	action_a = {
+		name = "Proclaim the sovereign majesty of the Mwene Mutapa"
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 50 }
+		command = { type = land value = 100 }
+		command = { type = infra value = 100 }
+	}
+}
+
+# 3009901: The Monomutapa Ascendancy
+event = {
+	id = 3009901
+	trigger = {
+		tag = ZIM
+		flag = zim_citadel_rebuilt
+	}
+	random = no
+	country = ZIM
+	name = "The Monomutapa Ascendancy"
+	desc = "With the restoration of our monumental stone capital, the authority of the Mwene Mutapa has solidified over all subordinate Shona clans and regional chieftains. Tributary cattle and gold ingots flow directly into the royal storehouses, enabling us to sustain standing regiments of disciplined warriors."
+	style = 1
+
+	date = { day = 1 month = january year = 1340 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1450 }
+
+	action_a = {
+		name = "Centralize the royal administration"
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = domestic which = aristocracy value = -1 }
+		command = { type = infantry which = 1509 value = 4000 }
+		command = { type = cavalry which = 1509 value = 1000 }
+		command = { type = vp value = 15 }
+	}
+	action_b = {
+		name = "Honor the rights of clan elders"
+		command = { type = domestic which = aristocracy value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 80 }
+	}
+}
+
+# 3009902: The Merchants of Kilwa Seek Trade Treaties
+event = {
+	id = 3009902
+	trigger = {
+		tag = ZIM
+		flag = zim_coast_advanced
+		owned = { province = 1508 data = -1 } # Sofala
+	}
+	random = no
+	country = ZIM
+	name = "The Merchants of Kilwa Seek Trade Treaties"
+	desc = "As our armies establish firm control over Sofala and the Zambezi mouth, delegations of wealthy Swahili and Arab patricians from Kilwa have arrived at our coastal outpost. They bring exquisite silks, glassware, and spices, seeking exclusive monopolies over our inland gold and ivory exports."
+	style = 1
+
+	date = { day = 1 month = january year = 1342 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1460 }
+
+	action_a = {
+		name = "Demand full political submission and tribute"
+		command = { type = relation which = KIL value = -100 }
+		command = { type = casusbelli which = KIL value = 60 }
+		command = { type = badboy value = 1 }
+		command = { type = vp value = 10 }
+	}
+	action_b = {
+		name = "Grant commercial concessions in exchange for gold bullion"
+		command = { type = relation which = KIL value = 75 }
+		command = { type = trade value = 150 }
+		command = { type = treasury value = 100 }
+	}
+}
+
+# 3009903: Envoys from the Ming Treasure Fleet
+event = {
+	id = 3009903
+	trigger = {
+		tag = ZIM
+		flag = zim_swahili_united
+		owned = { province = 765 data = -1 } # Zanzibar
+	}
+	random = no
+	country = ZIM
+	name = "Envoys from the Ming Treasure Fleet"
+	desc = "Gigantic multi-decked treasure junks carrying the banners of the Ming Emperor of China have dropped anchor at Zanzibar and Malindi! Their admirals bring chests of blue-and-white porcelain, raw silks, and diplomatic seals, seeking an audience with the sovereign of Great Zimbabwe. In return for our gifts of gold and exotic wildlife, they offer trade ties and knowledge of distant maritime routes."
+	style = 1
+
+	date = { day = 1 month = january year = 1405 }
+	offset = 120
+	deathdate = { day = 1 month = january year = 1440 }
+
+	action_a = {
+		name = "Welcome the Celestial envoys and sign a treaty of commerce"
+		command = { type = trade value = 250 }
+		command = { type = naval value = 200 }
+		command = { type = treasury value = 150 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = vp value = 25 }
+	}
+}
+
+# 3009904: The Great Savanna Drought
+event = {
+	id = 3009904
+	trigger = {
+		tag = ZIM
+		owned = { province = 1509 data = -1 }
+	}
+	random = no
+	country = ZIM
+	name = "The Great Savanna Drought"
+	desc = "Severe climatic shifts have brought consecutive dry seasons across southern Africa. The grasslands are parched, rivers have dwindled to trickles, and the cattle herds that represent the foundation of our kingdom's wealth are threatened with famine. How shall the crown respond?"
+	style = 1
+
+	date = { day = 1 month = january year = 1370 }
+	offset = 150
+	deathdate = { day = 1 month = january year = 1390 }
+
+	action_a = {
+		name = "Open royal grain stores and dig stone irrigation canals"
+		command = { type = treasury value = -70 }
+		command = { type = infra value = 150 }
+		command = { type = stability value = 1 }
+	}
+	action_b = {
+		name = "Let the pastoralists migrate to coastal river valleys"
+		command = { type = provincetax which = 1509 value = -1 }
+		command = { type = provincetax which = 1508 value = 1 }
+		command = { type = stability value = -1 }
+	}
+}
+
+# 3009905: Encounter with the Christian Empire of Ethiopia
+event = {
+	id = 3009905
+	trigger = {
+		tag = ZIM
+		flag = zim_horn_secured
+		owned = { province = 752 data = -1 } # Massawa
+	}
+	random = no
+	country = ZIM
+	name = "Encounter with Christian Ethiopia"
+	desc = "As our imperial advance reaches the highlands of the Horn, we make contact with the ancient Solomonic dynasty of Ethiopia. Perched within their mountainous redoubts, the Ethiopian monarchs maintain a proud Christian tradition dating back to the Apostles. They regard our southern empire with wonder and apprehension."
+	style = 1
+
+	date = { day = 1 month = january year = 1380 }
+	offset = 100
+	deathdate = { day = 1 month = january year = 1550 }
+
+	action_a = {
+		name = "Forge an alliance of mutual respect and mountain trade"
+		command = { type = add_countryculture which = ethiopian }
+		command = { type = relation which = ETH value = 100 }
+		command = { type = trade value = 150 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 20 }
+	}
+	action_b = {
+		name = "Demand immediate tribute and vassalage"
+		command = { type = relation which = ETH value = -150 }
+		command = { type = casusbelli which = ETH value = 60 }
+		command = { type = badboy value = 1 }
+	}
+}
+
+# 3009906: The Religious Harmony of the Pan-African Realm
+event = {
+	id = 3009906
+	trigger = {
+		tag = ZIM
+		flag = zim_egypt_conquered
+	}
+	random = no
+	country = ZIM
+	name = "The Religious Harmony of the Pan-African Realm"
+	desc = "Our empire now encompasses the traditional ancestral faith of the Shona, the Coptic Christians of Nubia and Egypt, and the Sunni Muslim scholars of Cairo, Alexandria, and the Swahili coast. To preserve internal stability across such a vast expanse, the Mwene Mutapa must establish an imperial policy toward the religions of Africa."
+	style = 1
+
+	date = { day = 1 month = january year = 1420 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1600 }
+
+	action_a = {
+		name = "Proclaim universal protection and freedom of worship"
+		command = { type = domestic which = innovative value = 2 }
+		command = { type = stability value = 2 }
+		command = { type = trade value = 200 }
+		command = { type = badboy value = -2 }
+		command = { type = vp value = 30 }
+	}
+	action_b = {
+		name = "Elevate the royal ancestral cult as supreme over all lands"
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = domestic which = innovative value = -1 }
+		command = { type = stability value = -1 }
+		command = { type = revoltrisk which = 24 value = 2 }
+	}
+}
+
+# 3009907: Triumph of the Two Golden Empires
+event = {
+	id = 3009907
+	trigger = {
+		tag = ZIM
+		flag = zim_mali_subjugated
+	}
+	random = no
+	country = ZIM
+	name = "Triumph of the Two Golden Empires"
+	desc = "The impossible has been accomplished. Starting from the granite cliffs of Great Zimbabwe, traversing the Swahili coast, the Red Sea, the Nile, the Mediterranean Maghreb, and descending across the Sahara, our armies have united Great Zimbabwe and Mali into a colossal continental empire. Africa speaks with a single, indomitable voice."
+	style = 1
+
+	date = { day = 1 month = january year = 1450 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1750 }
+
+	action_a = {
+		name = "Hail the Emperor of all Africa!"
+		command = { type = stability value = 2 }
+		command = { type = treasury value = 250 }
+		command = { type = badboy value = -3 }
+		command = { type = vp value = 75 }
+	}
+}
+
+# 3009908: Provincial Integration of the Swahili Coast
+event = {
+	id = 3009908
+	trigger = {
+		tag = ZIM
+		flag = zim_swahili_united
+		owned = { province = 766 data = -1 }
+		owned = { province = 765 data = -1 }
+		ownerchange = { province = 766 years = 10 }
+		ownerchange = { province = 765 years = 10 }
+	}
+	random = no
+	country = ZIM
+	name = "Provincial Integration of the Swahili Coast"
+	desc = "A decade of stable administration has fully woven Kilwa, Zanzibar, and the Swahili coastal cities into our imperial polity. Their sailors serve in our navies and their merchants finance our state banks."
+	style = 1
+
+	date = { day = 1 month = january year = 1350 }
+	offset = 120
+	deathdate = { day = 1 month = january year = 1800 }
+
+	action_a = {
+		name = "The coast is an inseparable part of our realm"
+		command = { type = provincetax which = 766 value = 1 }
+		command = { type = provincetax which = 765 value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 20 }
+	}
+}
+
+# 3009909: Provincial Integration of the Nile and Horn
+event = {
+	id = 3009909
+	trigger = {
+		tag = ZIM
+		flag = zim_nile_corridor
+		owned = { province = 746 data = -1 }
+		owned = { province = 744 data = -1 }
+		ownerchange = { province = 746 years = 10 }
+		ownerchange = { province = 744 years = 10 }
+	}
+	random = no
+	country = ZIM
+	name = "Provincial Integration of Lower Egypt and Nubia"
+	desc = "A decade of orderly governance along the Nile has reconciled the Egyptian fellahin and Coptic scribes to the crown of Great Zimbabwe. Taxation is regularized and public order reigns supreme."
+	style = 1
+
+	date = { day = 1 month = january year = 1430 }
+	offset = 120
+	deathdate = { day = 1 month = january year = 1800 }
+
+	action_a = {
+		name = "The Nile brings prosperity to the entire empire"
+		command = { type = provincetax which = 746 value = 2 }
+		command = { type = provincetax which = 744 value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 25 }
+	}
+}
+
+# 3009910: Provincial Integration of the Maghreb and Sahel
+event = {
+	id = 3009910
+	trigger = {
+		tag = ZIM
+		flag = zim_mali_subjugated
+		owned = { province = 1495 data = -1 }
+		owned = { province = 733 data = -1 }
+		ownerchange = { province = 1495 years = 10 }
+		ownerchange = { province = 733 years = 10 }
+	}
+	random = no
+	country = ZIM
+	name = "Provincial Integration of the Maghreb and Sahel"
+	desc = "The provinces of Fez, the Atlas, and the Niger basin have grown accustomed to the imperial law of Great Zimbabwe. Trade flows unhindered across the desert routes, and local leaders proudly bear imperial insignia."
+	style = 1
+
+	date = { day = 1 month = january year = 1460 }
+	offset = 120
+	deathdate = { day = 1 month = january year = 1800 }
+
+	action_a = {
+		name = "One continent, one destiny"
+		command = { type = provincetax which = 1495 value = 1 }
+		command = { type = provincetax which = 733 value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 25 }
+	}
+}
