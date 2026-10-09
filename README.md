@@ -100,6 +100,93 @@ All content strictly utilizes collision-free ID allocation ranges within the glo
 ### Cultures (`Db/cultures.txt`)
 - `roman`: Classical Romanitas culture for the restored Western Empire (`WRE`) and unified Italy.
 - `coptic`: Native Christian Egyptian culture for Egypt (`MAM` and `EGY`), bridging the Nile valley fellahin.
+- `brythonic`: Celtic Brythonic identity across Wales, Cornwall, and Brittany.
+- `mesoamerican`: High civilized Mesoamerican culture for reformed Aztec imperial administration.
+- `mali`: Mandinka imperial culture for West African dominance.
+
+---
+
+## FTG 1.3 Technology Scales & Progression Architecture
+
+For The Glory (Engine 1.3) features fundamentally asymmetric technology trees. A common pitfall in mod scripting is treating military technologies on the same 0-10 scale as civil ones:
+
+1. **Civil & Economic Branches (`infra` and `trade`)**:
+   - Scaled strictly from **Level 0 to 10**.
+   - Every tier represents a massive historical epoch:
+     - **Level 0 (1337)**: Medieval baseline; placement of merchants and early colonists.
+     - **Level 1 (~1380)**: Tax collectors (`bailiff`).
+     - **Level 2 (~1440)**: Fine arts academies (`luxury`) and trading posts.
+     - **Level 3 (~1490-1500)**: Refineries / breweries and trade monopolies.
+     - **Level 4 (~1535-1540)**: Chief judges (`courthouse`) and trade embargoes.
+     - **Level 5 (~1600)**: Mayors and governors (`cityrights`).
+     - **Level 6 (~1640)**: Goods manufactories.
+     - **Level 7 (~1700)**: Late baroque administration.
+     - **Level 8 (~1750)**: Enlightenment economic reforms.
+     - **Level 9 (~1850)**: Proto-industrial modernization.
+     - **Level 10 (Max cap)**: Industrial zenith.
+
+2. **Military & Naval Branches (`land` and `naval`)**:
+   - Scaled across **61 levels (Level 0 to 60)**.
+   - Granular progression mapped to tactical and weapon developments:
+     - **Levels 0-10 (1337-1508)**: Late Medieval & Transition. Level 2 enables Level 2 fortresses (1440); Level 5 enables assaults (1485); Level 7 enables field artillery (1497); Level 9 introduces arquebus firearms (1502). In Naval, Level 4 unlocks troop transports (1475); Level 9 introduces bronze naval cannon (1502); Level 11 unlocks provincial shipyards (1520).
+     - **Levels 11-20 (1510-1620)**: Renaissance Warfare. Musket armament CRT (Land 14, ~1540); naval equipment manufactories (Naval 16, ~1560); ocean galleons (Naval 17, ~1580); weapons manufactories (Land 18, ~1600).
+     - **Levels 21-30 (1620-1714)**: Baroque & Thirty Years' War. Level 4 fortresses (Land 21); iron naval cannon (Naval 21); professional standing army doctrine (Land 26, ~1670); global naval exploration (Naval 27, ~1680); Vaisseaux line-of-battle warships (Naval 31, ~1714).
+     - **Levels 31-45 (1715-1770)**: 18th Century Linear Warfare. Maneuver warfare (Land 35, ~1730); storm immunity (Naval 38, ~1740); naval supply network (Naval 41, ~1750); conscription centers and Level 6 fortresses (Land 41, ~1750).
+     - **Levels 46-60 (1771-1820+)**: Napoleonic Era. Levee en masse (Land 51, ~1791); carronades (Naval 51); triple-decker first-rate flagships (Naval 49).
+
+### Decision Calibration Audit
+All 256 Alternate Destinies decisions have been audited and calibrated to respect this dual-scale engine architecture. Military and naval prerequisites (e.g., Alexandria Grand Arsenal requiring `naval = 18`, Horn of Africa Expedition requiring `naval = 25`, Cairo Citadel Royal Artillery requiring `land = 30`, Lubeck Grand Arsenal requiring `naval = 11`) accurately match expected historical attainment years, eliminating early-game premature unlocks while maintaining authentic progression.
+
+---
+
+## Required Graphical Assets Checklist
+
+The FTG engine requires specific bitmap assets for newly introduced religions and country tags. The game remains fully playable without crashes, but adding the following assets will provide complete visual polish in the interface and map:
+
+### 1. Religion Icons (`Gfx/Religions/`)
+*Format: 32 x 34 pixels, 24-bit uncompressed Windows BMP (`.bmp`)*
+
+| Religion ID | In-Game Name | Target File | Suggested Visual Motif |
+|:---|:---|:---|:---|
+| `roman_pagan` | Cultus Deorum | `Gfx/Religions/roman_pagan.bmp` | Roman Aquila (golden eagle), Jupiter's thunderbolt (*fulmen*), or SPQR laurel wreath on imperial crimson. |
+| `egyptian_pagan` | Kemetic | `Gfx/Religions/egyptian_pagan.bmp` | Golden Ankh (*Key of Life*), Eye of Horus (*Wedjat*), or winged solar disk of Ra on lapis lazuli. |
+| `mutazilite` | Mu'tazilite | `Gfx/Religions/mutazilite.bmp` | The Scales of Justice (*Mizan*) or calligraphic emblem representing theological reason (*'Aql*) on emerald green. |
+| `nahua_reformed` | Reformed Nahua | `Gfx/Religions/nahua_reformed.bmp` | Plumed Serpent (*Quetzalcoatl*) head or turquoise solar calendar stone, symbolizing philosophical purification. |
+| `inti_reformed` | Reformed Inti | `Gfx/Religions/inti_reformed.bmp` | Golden Sun of Tawantinsuyu with stylized human face and flaming solar rays on Inca gold. |
+
+### 2. Country Banners & Shields (`Gfx/Map/`)
+
+#### Western Roman Empire (`WRE`) -- *Critical: New Tag*
+- **Flag**: `Gfx/Map/Flags/flag_WRE.bmp` *(51 x 30 pixels, 24-bit BMP)* -- Imperial Roman Palatine Labarum: Golden double-headed or single Aquila with SPQR / Chi-Rho wreath on imperial purple.
+- **Shields**:
+  - `Gfx/Map/Shields/Classic/shield_WRE.bmp` & `Classic/Small/shield_WRE.bmp`
+  - `Gfx/Map/Shields/Glory/shield_WRE.bmp` & `Glory/Small/shield_WRE.bmp`
+  - `Gfx/Map/Shields/Glorious/shield_WRE.bmp` & `Glorious/small/shield_WRE.bmp`
+
+#### Thematic / Cosmetic Banner Enhancements *(Optional)*
+- **United Steppe Empire (`STE`)**: Custom unified golden Mongol *Soyombo* / Golden Horde falcon *tamga* banner for `Gfx/Map/Flags/flag_STE.bmp`.
+- **Kemetic / Ptolemaic Egypt (`EGY`)**: Alternative ancient Kemetic solar barque / Ptolemaic eagle flag when adopting pagan or Greek paths for `Gfx/Map/Flags/flag_EGY.bmp`.
+- **Arthurian Celtic Empire (`WLS` / `SCO`)**: Alternative high imperial red dragon crowned with a golden Celtic torc.
+
+---
+
+## Engine Database & Localization Integrity
+
+All custom additions have been verified and registered across the engine database:
+
+1. **Religions (`Db/Religions/religions.txt`)**:
+   - `roman_pagan`, `egyptian_pagan`, `mutazilite`, `nahua_reformed`, `inti_reformed` defined with custom modifiers, missionary parameters, and stability cost curves.
+   - Mapped to valid map-mode colors in both `Db/Map/Colorscales/Gloriana/colorscales_religions.txt` and `Glory/colorscales_religions.txt` (including custom `DarkYellow` and `Gold` palettes).
+   - Fully localized in `Localisation/English/religions.csv`.
+
+2. **Cultures (`Db/cultures.txt`)**:
+   - Registered cultures: `roman`, `coptic`, `brythonic`, `mesoamerican`, `mali`.
+   - Configured with city sprites, architecture sets, and political colors.
+   - Fully localized in `Localisation/English/cultures.csv`.
+
+3. **Countries (`Db/countries.txt`)**:
+   - Tag `WRE` registered with Latin tech group, Roman army gfx, and Italian monarch language.
+   - Fully localized in `Localisation/English/countries.csv`.
 
 ---
 

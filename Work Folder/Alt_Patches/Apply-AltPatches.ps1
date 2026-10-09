@@ -58,4 +58,30 @@ if (Test-Path $MonarchsEgyFile) {
     }
 }
 
+# 5. Localisation
+$ReligionsCsv = Join-Path $ModDir "Localisation\English\religions.csv"
+if (Test-Path $ReligionsCsv) {
+    $content = Get-Content $ReligionsCsv -Raw
+    if ($content -notmatch "RELIGION_MUTAZILITE") {
+        Write-Host "Restoring custom religions to Localisation\English\religions.csv..." -ForegroundColor Yellow
+        "RELIGION_MUTAZILITE;Mu'tazilite;x`r`nRELIGION_ROMAN_PAGAN;Cultus Deorum;x`r`nRELIGION_EGYPTIAN_PAGAN;Kemetic;x`r`nRELIGION_NAHUA_REFORMED;Reformed Nahua;x`r`nRELIGION_INTI_REFORMED;Reformed Inti;x" | Add-Content $ReligionsCsv -Encoding ascii
+    }
+}
+$CulturesCsv = Join-Path $ModDir "Localisation\English\cultures.csv"
+if (Test-Path $CulturesCsv) {
+    $content = Get-Content $CulturesCsv -Raw
+    if ($content -notmatch "CULTURE_COPTIC") {
+        Write-Host "Restoring custom cultures to Localisation\English\cultures.csv..." -ForegroundColor Yellow
+        "CULTURE_COPTIC;Coptic;x`r`nCULTURE_ROMAN;Roman;x" | Add-Content $CulturesCsv -Encoding ascii
+    }
+}
+$CountriesCsv = Join-Path $ModDir "Localisation\English\countries.csv"
+if (Test-Path $CountriesCsv) {
+    $content = Get-Content $CountriesCsv -Raw
+    if ($content -notmatch "WRE;") {
+        Write-Host "Restoring WRE to Localisation\English\countries.csv..." -ForegroundColor Yellow
+        "WRE;Western Roman Empire;x`r`nWRE_DESC;The Western Roman Empire, restored through the union of the Italian crown and the revived Senate of Rome, stands as the sovereign heir to Caesar and Augustus.;x" | Add-Content $CountriesCsv -Encoding ascii
+    }
+}
+
 Write-Host "Patches verification complete!" -ForegroundColor Green
