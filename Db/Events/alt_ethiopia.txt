@@ -221,3 +221,84 @@ event = {
 		command = { type = stability value = 1 }
 	}
 }
+
+#----------------------------------------------------------------
+# Smaczki & Kryzysy
+#----------------------------------------------------------------
+
+# 3009602: Bunt Mnichow z Debre Libanos (Reakcja na sojusz z Rzymem)
+event = {
+	id = 3009602
+	random = no
+	country = ETH
+	name = "Bunt Mnichow z Debre Libanos"
+	desc = "Podpisanie unii z Rzymem wywolalo radosc na europejskich dworach, lecz w gorskich klasztorach Abisynii zawrzalo! Radykalni mnisi z Debre Libanos glosza, ze cesarz zaprzedal dusze zachodnim heretykom. Zbrojne tlumy chlopow wspierane przez duchownych ruszaja na stolice."
+
+	trigger = {
+		flag = eth_rome_alliance
+	}
+
+	date = { day = 1 month = january year = 1450 }
+	offset = 300
+	deathdate = { day = 30 month = december year = 1600 }
+
+	action_a = {
+		name = "Stlumic bunt heretykow!"
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = stability value = -2 }
+		command = { type = sleepevent which = 3009602 }
+	}
+}
+
+# 3009603: Zagrozenie ze strony Imamatu
+event = {
+	id = 3009603
+	random = no
+	country = ETH
+	name = "Wielki Dżihad Ahmada Gragna"
+	desc = "Ambitny imam Ahmad ibn Ibrahim al-Ghazi, zwany przez nas Gragn (Mankut), zjednoczyl pod sztandarem dżihadu zwaśnione plemiona wschodu i uzyskal dostawy broni palnej od Osmanow. Jego celem jest calkowite zniszczenie chrzescijanskiego Cesarstwa Etiopii!"
+
+	trigger = {
+		year = 1520
+		not = { year = 1545 }
+	}
+
+	date = { day = 1 month = january year = 1527 }
+	offset = 300
+	deathdate = { day = 30 month = december year = 1543 }
+
+	action_a = {
+		name = "Musimy obronic nasza wiare i ojczyzne!"
+		command = { type = stability value = -2 }
+		command = { type = revolt which = -1 }
+		command = { type = revolt which = -1 }
+		command = { type = desertion which = -1 value = 5000 }
+		command = { type = casusbelli which = ADA value = 120 }
+	}
+}
+
+# 3009604: Chwala Syjonu i Nowe Jeruzalem
+event = {
+	id = 3009604
+	random = no
+	country = ETH
+	name = "Chwala Syjonu: Nowe Jeruzalem"
+	desc = "Zwyciestwo Salomonskiego Cesarstwa w Ziemi Swietej zapoczatkowalo zloty wiek w historii Abisynii. Pielgrzymi z calej Afryki i Europy przybywaja by podziwiac triumf Prawdziwej Wiary. Etiopia osiagnela swoj ostateczny, boski cel!"
+
+	trigger = {
+		flag = eth_jerusalem_decided
+	}
+
+	date = { day = 1 month = january year = 1450 }
+	offset = 300
+	deathdate = { day = 30 month = december year = 1800 }
+
+	action_a = {
+		name = "Prawdziwie jestesmy Narodem Wybranym!"
+		command = { type = stability value = 2 }
+		command = { type = infra value = 800 }
+		command = { type = vp value = 100 }
+	}
+}
