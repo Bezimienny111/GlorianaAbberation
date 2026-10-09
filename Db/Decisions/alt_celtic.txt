@@ -33,7 +33,7 @@ decision = {
 	action = {
 		command = { type = country which = WLS }
 		command = { type = capital which = 243 }
-		command = { type = add_countryculture which = welsh }
+		command = { type = add_countryculture which = brythonic }
 		command = { type = addcore_national which = 243 } # Wales
 		command = { type = addcore_claim which = 242 } # The Marches
 		command = { type = treasury value = -150 }
@@ -114,7 +114,11 @@ decision = {
 	trigger = {
 		treasury = 100
 		atwar = yes
-		war = { country = ENG }
+		OR = {
+			war = { country = ENG country = SCO }
+			war = { country = ENG country = WLS }
+			war = { country = ENG country = EIR }
+		}
 		stability = 1
 	}
 
@@ -159,8 +163,8 @@ decision = {
 
 	action = {
 		command = { type = add_countryculture which = gaelic }
-		command = { type = add_countryculture which = welsh }
-		command = { type = add_countryculture which = breton }
+		command = { type = add_countryculture which = brythonic }
+		command = { type = add_countryculture which = brythonic }
 		command = { type = addcore_national which = 236 } # Highlands
 		command = { type = addcore_national which = 237 } # Grampians
 		command = { type = addcore_national which = 238 } # Strathclyde
