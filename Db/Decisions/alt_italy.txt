@@ -1,0 +1,691 @@
+# =======================================================================
+# GLORIANA 1337 - ALTERNATE DESTINIES
+# EXPANDED ITALIAN UNIFICATION & RENAISSANCE EMPIRE (ITA) DECISIONS
+# =======================================================================
+# IDs Reserved: 7080 - 7129
+# =======================================================================
+
+# -----------------------------------------------------------------------
+# PART 1: OPTION 1 - REGIONAL ITALIAN PATHS TO THE CROWN OF ITALY
+# -----------------------------------------------------------------------
+
+# 7080: The Milanese Ascendancy: Visconti Hegemony over the Po Valley (Tag MLO)
+decision = {
+	id = 7080
+	potential = {
+		tag = MLO
+		NOT = { flag = ita_mlo_hegemony }
+		NOT = { exists = ITA }
+	}
+	trigger = {
+		owned = { province = 389 data = -1 } # Lombardia
+		control = { province = 389 data = -1 }
+		someof = {
+			number = 2
+			owned = { province = 390 data = -1 } # Mantua
+			owned = { province = 402 data = -1 } # Emilia
+			owned = { province = 404 data = -1 } # Piemonte
+			owned = { province = 403 data = -1 } # Liguria
+		}
+		stability = 1
+	}
+	name = "Visconti Hegemony over the Po Valley"
+	desc = "Bearing the Viper banner of the Visconti, the Duchy of Milan commands the richest plains and most populous cities of northern Italy. By asserting feudal supremacy over our neighbors in Lombardy and Emilia, we lay the groundwork for reviving the historic Kingdom of Italy."
+	action = {
+		command = { type = setflag which = ita_mlo_hegemony }
+		command = { type = addcore_claim which = 370 } # Veneto
+		command = { type = addcore_claim which = 401 } # Firenze
+		command = { type = addcore_claim which = 391 } # Romagna
+		command = { type = addcore_claim which = 399 } # Roma
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 25 }
+	}
+}
+
+# 7081: The Iron Crown of Italy (Milanese Proclamation - Tag MLO -> ITA)
+decision = {
+	id = 7081
+	potential = {
+		tag = MLO
+		flag = ita_mlo_hegemony
+		NOT = { exists = ITA }
+	}
+	trigger = {
+		owned = { province = 389 data = -1 } # Lombardia
+		control = { province = 389 data = -1 }
+		someof = {
+			number = 3
+			owned = { province = 370 data = -1 } # Veneto
+			owned = { province = 401 data = -1 } # Firenze
+			owned = { province = 403 data = -1 } # Liguria
+			owned = { province = 404 data = -1 } # Piemonte
+			owned = { province = 399 data = -1 } # Roma
+		}
+		stability = 2
+		treasury = 200
+	}
+	name = "Proclaim the Kingdom of Italy: The Iron Crown of Monza"
+	desc = "In the cathedral of Monza, the sacred Iron Crown of Lombardy is placed upon the head of the Duke of Milan! Communes, princes, and guilds throughout the peninsula acknowledge our sovereign majesty. The fragmented city-states are united into the sovereign Kingdom of Italy."
+	action = {
+		command = { type = country which = ITA }
+		command = { type = setflag which = ita_unified }
+		command = { type = setflag which = ita_mlo_origin }
+		command = { type = capital which = 389 } # Milano
+		command = { type = addcore which = 389 }
+		command = { type = addcore which = 390 }
+		command = { type = addcore which = 391 }
+		command = { type = addcore which = 392 }
+		command = { type = addcore which = 399 }
+		command = { type = addcore which = 400 }
+		command = { type = addcore which = 401 }
+		command = { type = addcore which = 402 }
+		command = { type = addcore which = 403 }
+		command = { type = addcore which = 404 }
+		command = { type = addcore which = 370 }
+		command = { type = treasury value = -150 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 50 }
+	}
+}
+
+# 7082: The Tuscan Renaissance League: Florentine Primacy (Tag FLO)
+decision = {
+	id = 7082
+	potential = {
+		tag = FLO
+		NOT = { flag = ita_flo_primacy }
+		NOT = { exists = ITA }
+	}
+	trigger = {
+		owned = { province = 401 data = -1 } # Firenze
+		control = { province = 401 data = -1 }
+		someof = {
+			number = 2
+			owned = { province = 400 data = -1 } # Siena
+			owned = { province = 391 data = -1 } # Romagna
+			owned = { province = 392 data = -1 } # Marche
+			owned = { province = 402 data = -1 } # Emilia
+		}
+		stability = 1
+	}
+	name = "Florentine Primacy: The Tuscan League"
+	desc = "Through the diplomatic genius of our chancellors and the boundless credit of the Medici banks, the Republic of Florence has emerged as the arbiter of Italian balance. By federating Tuscany, Romagna, and the central communes under our leadership, we champion the cause of a united Italy."
+	action = {
+		command = { type = setflag which = ita_flo_primacy }
+		command = { type = addcore_claim which = 389 } # Lombardia
+		command = { type = addcore_claim which = 370 } # Veneto
+		command = { type = addcore_claim which = 403 } # Liguria
+		command = { type = addcore_claim which = 399 } # Roma
+		command = { type = trade value = 250 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 25 }
+	}
+}
+
+# 7083: Proclamation of the Italian Commonwealth (Florentine Proclamation - Tag FLO -> ITA)
+decision = {
+	id = 7083
+	potential = {
+		tag = FLO
+		flag = ita_flo_primacy
+		NOT = { exists = ITA }
+	}
+	trigger = {
+		owned = { province = 401 data = -1 } # Firenze
+		control = { province = 401 data = -1 }
+		someof = {
+			number = 3
+			owned = { province = 389 data = -1 } # Lombardia
+			owned = { province = 403 data = -1 } # Liguria
+			owned = { province = 399 data = -1 } # Roma
+			owned = { province = 370 data = -1 } # Veneto
+			owned = { province = 393 data = -1 } # Napoli
+		}
+		stability = 2
+		treasury = 200
+	}
+	name = "Proclaim the Sovereign State of Italy: Florentine Triumph"
+	desc = "From the marble terraces of the Duomo to the halls of the Signoria, the bells of Florence ring out for a united nation. Integrating civic humanism, world-spanning banking networks, and armed legions, Florence proclaims the sovereign State of Italy."
+	action = {
+		command = { type = country which = ITA }
+		command = { type = setflag which = ita_unified }
+		command = { type = setflag which = ita_flo_origin }
+		command = { type = capital which = 401 } # Firenze
+		command = { type = addcore which = 389 }
+		command = { type = addcore which = 390 }
+		command = { type = addcore which = 391 }
+		command = { type = addcore which = 392 }
+		command = { type = addcore which = 399 }
+		command = { type = addcore which = 400 }
+		command = { type = addcore which = 401 }
+		command = { type = addcore which = 402 }
+		command = { type = addcore which = 403 }
+		command = { type = addcore which = 404 }
+		command = { type = addcore which = 370 }
+		command = { type = merchants value = 6 }
+		command = { type = trade value = 300 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 50 }
+	}
+}
+
+# 7084: Expansion of the Terraferma: Venetian Primacy (Tag VEN)
+decision = {
+	id = 7084
+	potential = {
+		tag = VEN
+		NOT = { flag = ita_ven_primacy }
+		NOT = { exists = ITA }
+	}
+	trigger = {
+		owned = { province = 370 data = -1 } # Veneto
+		control = { province = 370 data = -1 }
+		someof = {
+			number = 2
+			owned = { province = 390 data = -1 } # Mantua
+			owned = { province = 391 data = -1 } # Romagna
+			owned = { province = 389 data = -1 } # Lombardia
+			owned = { province = 392 data = -1 } # Marche
+		}
+		stability = 1
+	}
+	name = "Expansion of the Venetian Terraferma"
+	desc = "The Lion of Saint Mark cannot rely solely upon islands and coastal lagoons for its sustenance. By driving our gonfalons inland across the Adige and Po, Venice asserts mastery over northern Italy, creating an unshakeable continental base for our maritime empire."
+	action = {
+		command = { type = setflag which = ita_ven_primacy }
+		command = { type = addcore_claim which = 389 } # Lombardia
+		command = { type = addcore_claim which = 402 } # Emilia
+		command = { type = addcore_claim which = 403 } # Liguria
+		command = { type = addcore_claim which = 399 } # Roma
+		command = { type = domestic which = mercantilism value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 25 }
+	}
+}
+
+# 7085: Serenissima Repubblica d'Italia (Venetian Proclamation - Tag VEN -> ITA)
+decision = {
+	id = 7085
+	potential = {
+		tag = VEN
+		flag = ita_ven_primacy
+		NOT = { exists = ITA }
+	}
+	trigger = {
+		owned = { province = 370 data = -1 } # Veneto
+		control = { province = 370 data = -1 }
+		someof = {
+			number = 3
+			owned = { province = 389 data = -1 } # Lombardia
+			owned = { province = 403 data = -1 } # Liguria
+			owned = { province = 401 data = -1 } # Firenze
+			owned = { province = 399 data = -1 } # Roma
+			owned = { province = 394 data = -1 } # Apulia
+		}
+		stability = 2
+		treasury = 200
+	}
+	name = "Proclaim the Serenissima Repubblica d'Italia"
+	desc = "The Doge and the Grand Council of Venice proclaim the maritime and continental unification of the entire peninsula! From the Alps to the Ionian Sea, Italy is welded together as the Serenissima Repubblica d'Italia, ruling both land and sea with unmatched republican grandeur."
+	action = {
+		command = { type = country which = ITA }
+		command = { type = setflag which = ita_unified }
+		command = { type = setflag which = ita_ven_origin }
+		command = { type = capital which = 370 } # Venezia
+		command = { type = addcore which = 389 }
+		command = { type = addcore which = 390 }
+		command = { type = addcore which = 391 }
+		command = { type = addcore which = 392 }
+		command = { type = addcore which = 399 }
+		command = { type = addcore which = 400 }
+		command = { type = addcore which = 401 }
+		command = { type = addcore which = 402 }
+		command = { type = addcore which = 403 }
+		command = { type = addcore which = 404 }
+		command = { type = addcore which = 370 }
+		command = { type = warships which = 370 value = 6 }
+		command = { type = naval value = 300 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 50 }
+	}
+}
+
+# 7086: Ligurian Mastery: Bank of Saint George Unifies Italy (Tag GEN -> ITA)
+decision = {
+	id = 7086
+	potential = {
+		tag = GEN
+		NOT = { exists = ITA }
+	}
+	trigger = {
+		owned = { province = 403 data = -1 } # Liguria
+		control = { province = 403 data = -1 }
+		someof = {
+			number = 3
+			owned = { province = 404 data = -1 } # Piemonte
+			owned = { province = 389 data = -1 } # Lombardia
+			owned = { province = 401 data = -1 } # Firenze
+			owned = { province = 370 data = -1 } # Veneto
+			owned = { province = 399 data = -1 } # Roma
+		}
+		stability = 2
+		treasury = 200
+	}
+	name = "Proclaim Maritime Italy: Triumph of the Republic of Saint George"
+	desc = "Backed by the financial might of the Casa delle Compere e dei Banchi di San Giorgio and the daring navigators of Liguria, Genoa claims the sovereignty of Italy! Uniting the mercantile ports with the inland valleys, we inaugurate an era of oceanic and continental prosperity."
+	action = {
+		command = { type = country which = ITA }
+		command = { type = setflag which = ita_unified }
+		command = { type = setflag which = ita_gen_origin }
+		command = { type = capital which = 403 } # Genova
+		command = { type = addcore which = 389 }
+		command = { type = addcore which = 390 }
+		command = { type = addcore which = 391 }
+		command = { type = addcore which = 392 }
+		command = { type = addcore which = 399 }
+		command = { type = addcore which = 400 }
+		command = { type = addcore which = 401 }
+		command = { type = addcore which = 402 }
+		command = { type = addcore which = 403 }
+		command = { type = addcore which = 404 }
+		command = { type = addcore which = 370 }
+		command = { type = trade value = 300 }
+		command = { type = naval value = 250 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 50 }
+	}
+}
+
+# 7087: The Southern Crown Marches North: Neapolitan Primacy (Tag NAP)
+decision = {
+	id = 7087
+	potential = {
+		tag = NAP
+		NOT = { flag = ita_nap_primacy }
+		NOT = { exists = ITA }
+	}
+	trigger = {
+		owned = { province = 393 data = -1 } # Napoli
+		owned = { province = 394 data = -1 } # Apulia
+		control = { province = 393 data = -1 }
+		owned = { province = 399 data = -1 } # Roma
+		control = { province = 399 data = -1 }
+		stability = 1
+	}
+	name = "Neapolitan Primacy: The Crown of the South Marches North"
+	desc = "Having secured our dominion over the Mezzogiorno and entered Rome as masters of the Eternal City, the Kingdom of Naples refuses to remain a peripheral power. We declare our sovereign right to unite all Italy under the scepter of the South."
+	action = {
+		command = { type = setflag which = ita_nap_primacy }
+		command = { type = addcore_claim which = 401 } # Firenze
+		command = { type = addcore_claim which = 391 } # Romagna
+		command = { type = addcore_claim which = 389 } # Lombardia
+		command = { type = addcore_claim which = 370 } # Veneto
+		command = { type = domestic which = offensive value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 25 }
+	}
+}
+
+# 7088: The Unified Kingdom of the Two Sicilies and Italy (Tag NAP -> ITA)
+decision = {
+	id = 7088
+	potential = {
+		tag = NAP
+		flag = ita_nap_primacy
+		NOT = { exists = ITA }
+	}
+	trigger = {
+		owned = { province = 393 data = -1 } # Napoli
+		owned = { province = 399 data = -1 } # Roma
+		someof = {
+			number = 3
+			owned = { province = 401 data = -1 } # Firenze
+			owned = { province = 389 data = -1 } # Lombardia
+			owned = { province = 370 data = -1 } # Veneto
+			owned = { province = 403 data = -1 } # Liguria
+			owned = { province = 395 data = -1 } # Messina
+		}
+		stability = 2
+		treasury = 200
+	}
+	name = "Proclaim the Grand Kingdom of Italy from the South"
+	desc = "From the Bay of Naples to the snowy peaks of the Alps, the ancient chivalry of the South merges with the industrious towns of the North. King of Italy, master of Rome, and lord of the seas, the monarch of Naples achieves the total unification of the fatherland."
+	action = {
+		command = { type = country which = ITA }
+		command = { type = setflag which = ita_unified }
+		command = { type = setflag which = ita_nap_origin }
+		command = { type = capital which = 393 } # Napoli
+		command = { type = addcore which = 389 }
+		command = { type = addcore which = 390 }
+		command = { type = addcore which = 391 }
+		command = { type = addcore which = 392 }
+		command = { type = addcore which = 399 }
+		command = { type = addcore which = 400 }
+		command = { type = addcore which = 401 }
+		command = { type = addcore which = 402 }
+		command = { type = addcore which = 403 }
+		command = { type = addcore which = 404 }
+		command = { type = addcore which = 370 }
+		command = { type = addcore which = 393 }
+		command = { type = addcore which = 394 }
+		command = { type = addcore which = 395 }
+		command = { type = addcore which = 396 }
+		command = { type = land value = 300 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 50 }
+	}
+}
+
+# 7089: The Alpine Risorgimento: House of Savoy (Tag SAV -> ITA)
+decision = {
+	id = 7089
+	potential = {
+		tag = SAV
+		NOT = { exists = ITA }
+	}
+	trigger = {
+		owned = { province = 404 data = -1 } # Piemonte
+		control = { province = 404 data = -1 }
+		someof = {
+			number = 3
+			owned = { province = 389 data = -1 } # Lombardia
+			owned = { province = 403 data = -1 } # Liguria
+			owned = { province = 401 data = -1 } # Firenze
+			owned = { province = 370 data = -1 } # Veneto
+			owned = { province = 399 data = -1 } # Roma
+		}
+		stability = 2
+		treasury = 200
+	}
+	name = "The Alpine Risorgimento: House of Savoy Unifies Italy"
+	desc = "Guarding the Alpine defiles against all foreign invaders, the Dukes of Savoy descend into the plains to fulfill their historic destiny. By welding disciplined Piedmontese regiments with the wealth of Lombardy and Liguria, the House of Savoy ascends the throne of a united Italy."
+	action = {
+		command = { type = country which = ITA }
+		command = { type = setflag which = ita_unified }
+		command = { type = setflag which = ita_sav_origin }
+		command = { type = capital which = 404 } # Torino
+		command = { type = addcore which = 389 }
+		command = { type = addcore which = 390 }
+		command = { type = addcore which = 391 }
+		command = { type = addcore which = 392 }
+		command = { type = addcore which = 399 }
+		command = { type = addcore which = 400 }
+		command = { type = addcore which = 401 }
+		command = { type = addcore which = 402 }
+		command = { type = addcore which = 403 }
+		command = { type = addcore which = 404 }
+		command = { type = addcore which = 370 }
+		command = { type = domestic which = quality value = 1 }
+		command = { type = land value = 350 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 50 }
+	}
+}
+
+# -----------------------------------------------------------------------
+# PART 2: OPTION 2 - DEEPENING THE UNIFIED KINGDOM OF ITALY (TAG ITA)
+# -----------------------------------------------------------------------
+
+# 7090: Statuto Italiano: Codification of Unified Italian Law
+decision = {
+	id = 7090
+	potential = {
+		tag = ITA
+		NOT = { flag = ita_statuto_promulgated }
+	}
+	trigger = {
+		stability = 1
+		treasury = 150
+	}
+	name = "Statuto Italiano: Codification of Unified Law"
+	desc = "Municipal statutes, feudal customs, and fragmented regional decrees must yield to an overarching national legal architecture. Drawing upon Roman jurisprudence, canon law, and civic statutes, we promulgate the Statuto Italiano, establishing equal courts, uniform taxation, and royal justice throughout the realm."
+	action = {
+		command = { type = setflag which = ita_statuto_promulgated }
+		command = { type = domestic which = centralization value = 2 }
+		command = { type = domestic which = aristocracy value = -1 }
+		command = { type = infra value = 350 }
+		command = { type = treasury value = -120 }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 30 }
+	}
+}
+
+# 7091: Antemurale d'Italia: Fortifying the Alpine Barrier
+decision = {
+	id = 7091
+	potential = {
+		tag = ITA
+		NOT = { flag = ita_alpine_barrier }
+	}
+	trigger = {
+		owned = { province = 404 data = -1 } # Piemonte
+		owned = { province = 389 data = -1 } # Lombardia
+		stability = 1
+		treasury = 200
+	}
+	name = "Antemurale d'Italia: Fortifying the Alpine Barrier"
+	desc = "For centuries, foreign kings—Valois of France and Habsburgs of Austria—have treated Italy as a battleground for their ambitions. By erecting modern polygonal fortresses in the Alpine passes of Susa, Aosta, and the Valtellina, we seal the northern frontier forever. Italy shall never again suffer foreign invasion!"
+	action = {
+		command = { type = setflag which = ita_alpine_barrier }
+		command = { type = fortress which = 404 value = 1 } # Piemonte
+		command = { type = fortress which = 389 value = 1 } # Lombardia
+		command = { type = domestic which = offensive value = -1 }
+		command = { type = domestic which = quality value = 1 }
+		command = { type = treasury value = -180 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 35 }
+	}
+}
+
+# 7092: Resolution of the Imperial Question: Severing Ties with the HRE
+decision = {
+	id = 7092
+	potential = {
+		tag = ITA
+		flag = ita_statuto_promulgated
+		NOT = { flag = ita_hre_severed }
+	}
+	trigger = {
+		stability = 1
+	}
+	name = "Sever Imperial Ties with the Holy Roman Empire"
+	desc = "German Emperors have long laid archaic claims of feudal suzerainty over northern Italian cities. With a united nation standing strong, we formally denounce all imperial investitures and declare Italy an entirely sovereign, independent crown, beholden to no foreign potentate."
+	action = {
+		command = { type = setflag which = ita_hre_severed }
+		command = { type = badboy value = -3 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 30 }
+	}
+}
+
+# 7093: Banco Nazionale d'Italia: Centralization of High Finance
+decision = {
+	id = 7093
+	potential = {
+		tag = ITA
+		flag = ita_statuto_promulgated
+		NOT = { flag = ita_banco_nazionale }
+	}
+	trigger = {
+		treasury = 200
+		stability = 1
+	}
+	name = "Founding of the Banco Nazionale d'Italia"
+	desc = "By uniting the accounting mastery of Florence, the treasury vaults of Genoa's San Giorgio, and the international credit networks of Venice into a supreme national bank, Italy achieves financial supremacy. The state regulates the golden florin, curtails inflation, and commands limitless capital for public works."
+	action = {
+		command = { type = setflag which = ita_banco_nazionale }
+		command = { type = inflation value = -2 }
+		command = { type = trade value = 400 }
+		command = { type = merchants value = 6 }
+		command = { type = treasury value = -150 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 35 }
+	}
+}
+
+# 7094: Esercito Nazionale: Standing Royal Army
+decision = {
+	id = 7094
+	potential = {
+		tag = ITA
+		flag = ita_statuto_promulgated
+		NOT = { flag = ita_esercito_nazionale }
+	}
+	trigger = {
+		stability = 1
+		treasury = 250
+	}
+	name = "Esercito Nazionale: The Standing National Army"
+	desc = "Niccolo Machiavelli warned that no realm relying on condottieri mercenaries can long survive. By disbanding the treacherous mercenary companies and establishing professional provincial regiments recruited from citizen yeomen, Italy creates a fierce, disciplined national army loyal exclusively to the state."
+	action = {
+		command = { type = setflag which = ita_esercito_nazionale }
+		command = { type = domestic which = quality value = 2 }
+		command = { type = domestic which = offensive value = 1 }
+		command = { type = infantry which = -2 value = 8000 }
+		command = { type = cavalry which = -2 value = 2000 }
+		command = { type = treasury value = -200 }
+		command = { type = land value = 400 }
+		command = { type = vp value = 40 }
+	}
+}
+
+# 7095: Renaissance Academies and the Scientific Revolution
+decision = {
+	id = 7095
+	potential = {
+		tag = ITA
+		flag = ita_statuto_promulgated
+		NOT = { flag = ita_academies_founded }
+	}
+	trigger = {
+		stability = 1
+		treasury = 150
+	}
+	name = "Endow National Renaissance Academies"
+	desc = "By patronizing the Accademia della Crusca to standardize our illustrious language, and the Accademia dei Lincei to spearhead the experimental sciences of Galileo, Italy leads mankind into the light of the Scientific Revolution. Scholars, astronomers, and engineers flock from across Europe to Italian universities."
+	action = {
+		command = { type = setflag which = ita_academies_founded }
+		command = { type = domestic which = innovative value = 2 }
+		command = { type = infra value = 450 }
+		command = { type = treasury value = -120 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 35 }
+	}
+}
+
+# 7096: Mare Nostrum: Subjugation of the Barbary Pirate Harbors
+decision = {
+	id = 7096
+	potential = {
+		tag = ITA
+		flag = ita_esercito_nazionale
+		NOT = { flag = ita_mare_nostrum }
+	}
+	trigger = {
+		someof = {
+			number = 2
+			owned = { province = 370 data = -1 } # Veneto
+			owned = { province = 403 data = -1 } # Liguria
+			owned = { province = 393 data = -1 } # Napoli
+		}
+		stability = 1
+	}
+	name = "Mare Nostrum: Security of the Mediterranean Seas"
+	desc = "Barbary corsairs have raided Italian coastal villages and taken thousands into captivity for decades. Under the banner of the united navy, Italian armadas strike across the Mediterranean, fortifying our island ramparts in Sicily, Malta, and Sardinia while demanding retribution across the North African coastline."
+	action = {
+		command = { type = setflag which = ita_mare_nostrum }
+		command = { type = addcore_claim which = 739 } # Tunisia
+		command = { type = addcore_claim which = 740 } # Tripolitania
+		command = { type = naval value = 350 }
+		command = { type = warships which = -2 value = 6 }
+		command = { type = transports which = -2 value = 4 }
+		command = { type = vp value = 35 }
+	}
+}
+
+# 7097: Imperial Arsenals: The Unified Navy of Venice and Genoa
+decision = {
+	id = 7097
+	potential = {
+		tag = ITA
+		flag = ita_mare_nostrum
+		NOT = { flag = ita_naval_supremacy }
+	}
+	trigger = {
+		owned = { province = 370 data = -1 } # Veneto
+		owned = { province = 403 data = -1 } # Liguria
+		stability = 1
+		treasury = 200
+	}
+	name = "Unify the Great Arsenals of Venice and Genoa"
+	desc = "The Venetian Arsenale—the world's first modern assembly-line manufactory—and the Genoese Darsena are combined into a coordinated state shipyard system. Standardized galleasses and oceanic galleons can be fitted and launched in record time, assuring Italian naval supremacy across the seas."
+	action = {
+		command = { type = setflag which = ita_naval_supremacy }
+		command = { type = domestic which = land value = -1 }
+		command = { type = naval value = 450 }
+		command = { type = warships which = 370 value = 6 }
+		command = { type = warships which = 403 value = 6 }
+		command = { type = treasury value = -180 }
+		command = { type = vp value = 40 }
+	}
+}
+
+# 7098: Pan-Italian Road Infrastructure: The New Via Appia & Via Emilia
+decision = {
+	id = 7098
+	potential = {
+		tag = ITA
+		flag = ita_statuto_promulgated
+		NOT = { flag = ita_via_imperiale }
+	}
+	trigger = {
+		stability = 1
+		treasury = 250
+	}
+	name = "Restoration of the Imperial Highway Network"
+	desc = "Reviving the legendary Roman highways, we pave modern postal and commercial arteries linking Milan, Venice, Florence, Rome, and Naples. Relays of swift couriers and toll-free trade routes foster unprecedented economic vitality throughout the entire peninsula."
+	action = {
+		command = { type = setflag which = ita_via_imperiale }
+		command = { type = provincetax which = 389 value = 1 } # Lombardia
+		command = { type = provincetax which = 401 value = 1 } # Firenze
+		command = { type = provincetax which = 399 value = 1 } # Roma
+		command = { type = provincetax which = 393 value = 1 } # Napoli
+		command = { type = infra value = 400 }
+		command = { type = trade value = 300 }
+		command = { type = treasury value = -200 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 35 }
+	}
+}
+
+# 7099: Zenith of the Italian Nation: Proclamation of the Renaissance Empire
+decision = {
+	id = 7099
+	potential = {
+		tag = ITA
+		flag = ita_statuto_promulgated
+		flag = ita_banco_nazionale
+		flag = ita_esercito_nazionale
+		flag = ita_mare_nostrum
+		NOT = { flag = ita_zenith_proclaimed }
+	}
+	trigger = {
+		owned = { province = 399 data = -1 } # Roma
+		control = { province = 399 data = -1 }
+		stability = 3
+		treasury = 300
+	}
+	name = "Zenith of the Italian Nation: The Renaissance Empire"
+	desc = "Through martial fortitude, unmatched financial power, and the cultural brilliance of the Renaissance, Italy stands peerless among the powers of the earth. From the Alps to Sicily and across the Mediterranean, the dream of Dante and Petrarch is fulfilled. Italy is whole, invincible, and sovereign!"
+	action = {
+		command = { type = setflag which = ita_zenith_proclaimed }
+		command = { type = stability value = 2 }
+		command = { type = badboy value = -6 }
+		command = { type = domestic which = centralization value = 2 }
+		command = { type = domestic which = quality value = 1 }
+		command = { type = treasury value = 400 }
+		command = { type = vp value = 150 }
+	}
+}

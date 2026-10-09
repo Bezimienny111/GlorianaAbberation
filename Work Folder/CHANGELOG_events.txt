@@ -43,6 +43,7 @@ global shared event/decision ID space, monarch space, and leader space:
 | 10. Great Zimbabwe          | ZIM           | 7500-7519 | 3009900-3009949 | Vanilla       | 39461-39470   |
 | 11. Kingdom of Georgia      | GEO           | 7550-7569 | 3010000-3010049 | Vanilla       | 39471-39480   |
 | 12. Blue & Golden Horde     | BHR, STE      | 7600-7619 | 3010100-3010149 | Vanilla       | 39481-39490   |
+| 13. Italian Unification Ext | MLO, FLO, etc | 7080-7099 | 3010200-3010249 | Vanilla       | leaders_ita   |
 
 * Custom Religions defined in Db/Religions/religions.txt:
   - roman_pagan (Western Roman Empire revival)
@@ -785,4 +786,40 @@ MODULE 12: BLUE & GOLDEN HORDE (BHR / STE) - PAX MONGOLICA
 - Leaders Implemented (Db/Leaders/leaders_bhr.txt & leaders_ste.txt: 39481-39490):
   * BHR: Ozbeg Khan, Jani Beg Khan, Mamai the Emir, Tokhtamysh Khan, Edigu the Great Emir.
   * STE: Tokhtamysh the Great, Edigu the Victorious, Ulugh Muhammad, General Boroldai, Ahmad Khan.
+================================================================================
+
+================================================================================
+MODULE 13: EXPANDED ITALIAN UNIFICATION & RENAISSANCE EMPIRE (ITA)
+================================================================================
+- Tags: MLO (Milan), FLO (Florence), VEN (Venice), GEN (Genoa), NAP (Naples), SAV (Savoy) -> ITA (Kingdom of Italy)
+- Option 1: Multi-Polar Italian Unification Pathways:
+  * 7080: Visconti Hegemony over the Po Valley (Tag MLO)
+  * 7081: Proclaim the Kingdom of Italy: The Iron Crown of Monza (MLO -> ITA, capital Milan)
+  * 7082: Florentine Primacy: The Tuscan League (Tag FLO)
+  * 7083: Proclaim the Sovereign State of Italy: Florentine Triumph (FLO -> ITA, capital Florence)
+  * 7084: Expansion of the Venetian Terraferma (Tag VEN)
+  * 7085: Proclaim the Serenissima Repubblica d'Italia (VEN -> ITA, capital Venice)
+  * 7086: Proclaim Maritime Italy: Triumph of the Republic of Saint George (GEN -> ITA, capital Genoa)
+  * 7087: Neapolitan Primacy: The Crown of the South Marches North (Tag NAP)
+  * 7088: Proclaim the Grand Kingdom of Italy from the South (NAP -> ITA, capital Naples)
+  * 7089: The Alpine Risorgimento: House of Savoy Unifies Italy (SAV -> ITA, capital Turin)
+- Option 2: Post-Unification Deepening of the Kingdom of Italy:
+  * 7090: Statuto Italiano: Codification of Unified Law (centralization, stability)
+  * 7091: Antemurale d'Italia: Fortifying the Alpine Barrier (Alpine fortresses in Piedmont and Lombardy, preventing Italian Wars)
+  * 7092: Sever Imperial Ties with the Holy Roman Empire (independence from HRE)
+  * 7093: Founding of the Banco Nazionale d'Italia (financial centralization, inflation reduction)
+  * 7094: Esercito Nazionale: The Standing National Army (replaces condottieri mercenaries with national citizen regiments)
+  * 7095: Endow National Renaissance Academies (Accademia della Crusca, Accademia dei Lincei, Galileo patronage)
+  * 7096: Mare Nostrum: Security of the Mediterranean Seas (corsair suppression, cores on Tunis and Tripoli)
+  * 7097: Unify the Great Arsenals of Venice and Genoa (naval mass-production, fleet expansion)
+  * 7098: Restoration of the Imperial Highway Network (Via Appia & Via Emilia paved postal network)
+  * 7099: Zenith of the Italian Nation: The Renaissance Empire (superpower acclamation, permanent cores)
+- Events Implemented (Db/Events/alt_italy.txt: 3010200-3010208):
+  * 3010200: Italia Mia: The Clamor for Italian Unity (Petrarch / Dante vision)
+  * 3010201: The Crown of Italy Accepted
+  * 3010202: The Seat of Sovereignty: Choice of the Capital (Rome vs Founding City)
+  * 3010203: The Condottieri Dilemma: Disbanding the Free Companies
+  * 3010204: The French Challenge: Guarding the Alpine Wall
+  * 3010205: Golden Age of the Italian Renaissance (Da Vinci, Michelangelo, Machiavelli)
+  * 3010206-3010208: Provincial Integration Waves (North, Tuscany, Mezzogiorno)
 ================================================================================

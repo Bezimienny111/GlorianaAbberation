@@ -68,6 +68,11 @@ decision = {
 		command = { type = addcore which = 767 } # Lindi
 		command = { type = addcore which = 766 } # Rufiji / Kilwa
 		command = { type = addcore which = 765 } # Zanzibar
+		command = { type = addcore which = 773 } # Natal
+		command = { type = addcore which = 774 } # Transkei
+		command = { type = addcore which = 775 } # Ciskei
+		command = { type = addcore which = 778 } # Table / Cape
+		command = { type = colonists value = 3 }
 		command = { type = stability value = 1 }
 		command = { type = vp value = 25 }
 		command = { type = setflag which = zim_coast_advanced }
@@ -314,9 +319,12 @@ decision = {
 	trigger = {
 		tag = ZIM
 		flag = zim_swahili_united
-		owned = { province = 774 data = -1 } # Transkei
-		owned = { province = 775 data = -1 } # Ciskei
-		owned = { province = 778 data = -1 } # Table
+		OR = {
+			owned = { province = 778 data = -1 } # Table
+			owned = { province = 774 data = -1 } # Transkei
+			owned = { province = 775 data = -1 } # Ciskei
+			control = { province = 778 data = -1 }
+		}
 		NOT = { flag = zim_cape_route }
 	}
 	name = "Maritime Circumnavigation of the Cape"
@@ -400,3 +408,4 @@ decision = {
 		command = { type = setflag which = zim_stone_fortresses }
 	}
 }
+

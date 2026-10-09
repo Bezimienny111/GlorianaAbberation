@@ -1,0 +1,271 @@
+# =======================================================================
+# GLORIANA 1337 - ALTERNATE DESTINIES
+# EXPANDED ITALIAN UNIFICATION & RENAISSANCE EMPIRE (ITA) EVENTS
+# =======================================================================
+# IDs Reserved: 3010200 - 3010249
+# =======================================================================
+
+# 3010200: Italia Mia: The Clamor for Italian Unity
+event = {
+	id = 3010200
+	trigger = {
+		OR = {
+			tag = MLO
+			tag = FLO
+			tag = VEN
+			tag = GEN
+			tag = NAP
+			tag = SAV
+			tag = PAP
+		}
+	}
+	random = no
+	name = "Italia Mia: The Clamor for Italian Unity"
+	desc = "In his stirring canzone 'Italia Mia', Francesco Petrarca laments the mortal wounds of our divided land and the scourge of foreign mercenaries. Across Milan, Florence, Venice, and Rome, humanists and statesmen begin to dream of reviving the ancient glory of Italy. The fragmented city-states must find a champion to bind them into a single, sovereign nation."
+	style = 1
+
+	date = { day = 1 month = may year = 1338 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1345 }
+
+	action_a = {
+		name = "Heed the poet's call: Italy shall be united!"
+		command = { type = stability value = 1 }
+		command = { type = infra value = 100 }
+		command = { type = diplomats value = 2 }
+		command = { type = vp value = 15 }
+	}
+}
+
+# 3010201: The Crown of Italy Accepted
+event = {
+	id = 3010201
+	trigger = {
+		tag = ITA
+		flag = ita_unified
+	}
+	random = no
+	country = ITA
+	name = "The Crown of Italy Accepted"
+	desc = "Across every piazza from the Alps to the Straits of Messina, crowds erupt in rejoicing as the proclamation of Italian unity is read aloud. Centuries of factional conflict between Guelfs and Ghibellines are swept away. The Italian nation takes its rightful seat among the sovereign realms of Europe."
+	style = 1
+
+	date = { day = 1 month = january year = 1340 }
+	offset = 15
+	deathdate = { day = 1 month = january year = 1800 }
+
+	action_a = {
+		name = "Viva l'Italia unita e sovrana!"
+		command = { type = stability value = 2 }
+		command = { type = treasury value = 150 }
+		command = { type = badboy value = -4 }
+		command = { type = vp value = 50 }
+	}
+}
+
+# 3010202: The Choice of the National Capital
+event = {
+	id = 3010202
+	trigger = {
+		tag = ITA
+		flag = ita_unified
+		owned = { province = 399 data = -1 } # Roma
+	}
+	random = no
+	country = ITA
+	name = "The Seat of Sovereignty: Choice of the Capital"
+	desc = "With the peninsula united and Rome in our hands, the national assembly debates the permanent seat of government. Shall we establish our throne in Rome, the Eternal City of ancient emperors and pontiffs, or remain anchored in our proud regional founding metropolis?"
+	style = 1
+
+	date = { day = 1 month = january year = 1340 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1800 }
+
+	action_a = {
+		name = "Rome is the only true capital of Italy"
+		command = { type = capital which = 399 } # Roma
+		command = { type = stability value = 1 }
+		command = { type = provincetax which = 399 value = 2 }
+		command = { type = vp value = 25 }
+	}
+	action_b = {
+		name = "Keep the government in our historic founding city"
+		command = { type = stability value = 1 }
+		command = { type = treasury value = 100 }
+		command = { type = vp value = 15 }
+	}
+}
+
+# 3010203: The Condottieri Dilemma: Disbanding the Free Companies
+event = {
+	id = 3010203
+	trigger = {
+		tag = ITA
+		flag = ita_esercito_nazionale
+	}
+	random = no
+	country = ITA
+	name = "The Condottieri Dilemma: Disbanding the Mercenary Companies"
+	desc = "Infamous mercenary captains—Hawkwood, Colleoni, and the leaders of the Great Companies—demand exorbitant condotte contracts, threatening rebellion if their bands are dismissed. Our war minister insists that Italy must completely eliminate reliance on sold soldiers of fortune, relying solely upon native citizen regiments."
+	style = 1
+
+	date = { day = 1 month = january year = 1380 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1550 }
+
+	action_a = {
+		name = "Outlaw all private condotte and enforce national service"
+		command = { type = domestic which = quality value = 1 }
+		command = { type = domestic which = aristocracy value = -1 }
+		command = { type = land value = 250 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 20 }
+	}
+	action_b = {
+		name = "Pardon the captains and incorporate them into the royal staff"
+		command = { type = treasury value = -80 }
+		command = { type = cavalry which = -2 value = 4000 }
+		command = { type = stability value = -1 }
+	}
+}
+
+# 3010204: The French Challenge: Repelling Valois Invasions
+event = {
+	id = 3010204
+	trigger = {
+		tag = ITA
+		flag = ita_alpine_barrier
+	}
+	random = no
+	country = ITA
+	name = "The French Challenge: Guarding the Alpine Wall"
+	desc = "The French crown casts covetous eyes over the riches of Milan, Genoa, and Naples, seeking to revive Angevin or Milanese dynastic claims. But upon encountering the formidable bastions of the Alpine barrier and a united Italian army standing under a single flag, the French marshals realize that Italy is no longer a playground for foreign kings, but an unbreakable fortress."
+	style = 1
+
+	date = { day = 1 month = january year = 1494 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1530 }
+
+	action_a = {
+		name = "The Alps are Italy's sacred shield!"
+		command = { type = stability value = 1 }
+		command = { type = land value = 300 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = vp value = 35 }
+	}
+}
+
+# 3010205: Golden Age of the Italian Renaissance
+event = {
+	id = 3010205
+	trigger = {
+		tag = ITA
+		flag = ita_academies_founded
+	}
+	random = no
+	country = ITA
+	name = "Golden Age of the Italian Renaissance"
+	desc = "Free from the devastation of civil wars and enriched by worldwide commerce, united Italy becomes the intellectual and artistic center of Western civilization. Leonardo da Vinci constructs royal engineering works, Michelangelo sculpts monuments of state, and Niccolo Machiavelli serves as chief chancellor. Art, philosophy, and statecraft reach an apex unvisited since classical antiquity."
+	style = 1
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1600 }
+
+	action_a = {
+		name = "A glorious dawn for the human spirit!"
+		command = { type = stability value = 2 }
+		command = { type = infra value = 500 }
+		command = { type = trade value = 500 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = treasury value = 200 }
+		command = { type = vp value = 60 }
+	}
+}
+
+# 3010206: Provincial Integration of Lombardy and Venetia
+event = {
+	id = 3010206
+	trigger = {
+		tag = ITA
+		owned = { province = 389 data = -1 } # Lombardia
+		owned = { province = 370 data = -1 } # Veneto
+		ownerchange = { province = 389 years = 10 }
+		ownerchange = { province = 370 years = 10 }
+	}
+	random = no
+	country = ITA
+	name = "Provincial Integration of Lombardy and Venetia"
+	desc = "A decade of unified Italian administration has dissolved ancient rivalries between Milan and Venice. The agricultural wealth of the Po basin and the maritime commerce of the Adriatic are fully harmonized under national law."
+	style = 1
+
+	date = { day = 1 month = january year = 1360 }
+	offset = 120
+	deathdate = { day = 1 month = january year = 1800 }
+
+	action_a = {
+		name = "The North flourishes as the heart of Italy"
+		command = { type = provincetax which = 389 value = 1 }
+		command = { type = provincetax which = 370 value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 20 }
+	}
+}
+
+# 3010207: Provincial Integration of Tuscany and Romagna
+event = {
+	id = 3010207
+	trigger = {
+		tag = ITA
+		owned = { province = 401 data = -1 } # Firenze
+		owned = { province = 391 data = -1 } # Romagna
+		ownerchange = { province = 401 years = 10 }
+		ownerchange = { province = 391 years = 10 }
+	}
+	random = no
+	country = ITA
+	name = "Provincial Integration of Tuscany and Romagna"
+	desc = "A decade of stable governance has bound the Tuscan hills and the Romagnol plains to the central crown. Commerce, textile manufactories, and municipal courts operate in complete harmony."
+	style = 1
+
+	date = { day = 1 month = january year = 1370 }
+	offset = 120
+	deathdate = { day = 1 month = january year = 1800 }
+
+	action_a = {
+		name = "Central Italy is at peace"
+		command = { type = provincetax which = 401 value = 1 }
+		command = { type = provincetax which = 391 value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 20 }
+	}
+}
+
+# 3010208: Provincial Integration of the Mezzogiorno and Sicily
+event = {
+	id = 3010208
+	trigger = {
+		tag = ITA
+		owned = { province = 393 data = -1 } # Napoli
+		owned = { province = 396 data = -1 } # Sicily
+		ownerchange = { province = 393 years = 10 }
+		ownerchange = { province = 396 years = 10 }
+	}
+	random = no
+	country = ITA
+	name = "Provincial Integration of the Mezzogiorno and Sicily"
+	desc = "A decade of order has brought peace to the southern provinces. Feudal abuses have been checked by national magistrates, grain harvests supply northern cities, and southern harbors guard the approaches to the peninsula."
+	style = 1
+
+	date = { day = 1 month = january year = 1380 }
+	offset = 120
+	deathdate = { day = 1 month = january year = 1800 }
+
+	action_a = {
+		name = "Italy is one from the Alps to Mount Etna"
+		command = { type = provincetax which = 393 value = 1 }
+		command = { type = provincetax which = 396 value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 20 }
+	}
+}
