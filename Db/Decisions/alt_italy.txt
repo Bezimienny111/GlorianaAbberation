@@ -1018,3 +1018,316 @@ decision = {
 		command = { type = vp value = 40 }
 	}
 }
+
+# -----------------------------------------------------------------------
+# PART 4: REBORN WESTERN ROMAN EMPIRE (TAG WRE / ITA -> WRE)
+# -----------------------------------------------------------------------
+
+# 7120: Renovatio Imperii Romanorum: Elevation of Italy to the Western Roman Empire
+decision = {
+	id = 7120
+	potential = {
+		tag = ITA
+		flag = ita_unified
+		NOT = { exists = WRE }
+		NOT = { flag = wre_restored_from_ita }
+	}
+	trigger = {
+		owned = { province = 399 data = -1 } # Roma
+		control = { province = 399 data = -1 }
+		owned = { province = 389 data = -1 } # Lombardia
+		owned = { province = 393 data = -1 } # Napoli
+		owned = { province = 401 data = -1 } # Firenze
+		stability = 2
+		treasury = 300
+	}
+	name = "Renovatio Imperii: Restoration of the Western Roman Empire"
+	desc = "A millennium after the deposition of Romulus Augustulus, Eternal Rome reclaims its universal destiny! In the Senate on the Capitoline and before the assembled legions, the sovereign of united Italy is crowned Imperator Caesar Augustus of the West. The Golden Eagles are unfurled once more across Europe."
+	action = {
+		command = { type = setflag which = wre_restored_from_ita }
+		command = { type = setflag which = pap_path_empire }
+		command = { type = country which = WRE }
+		command = { type = capital which = 399 } # Roma
+		command = { type = add_countryculture which = roman }
+		command = { type = addcore which = 399 } # Roma
+		command = { type = addcore which = 389 } # Lombardia
+		command = { type = addcore which = 390 } # Mantua
+		command = { type = addcore which = 391 } # Romagna
+		command = { type = addcore which = 392 } # Marche
+		command = { type = addcore which = 393 } # Napoli
+		command = { type = addcore which = 394 } # Apulia
+		command = { type = addcore which = 395 } # Messina
+		command = { type = addcore which = 396 } # Sicily
+		command = { type = addcore which = 400 } # Siena
+		command = { type = addcore which = 401 } # Firenze
+		command = { type = addcore which = 402 } # Emilia
+		command = { type = addcore which = 403 } # Liguria
+		command = { type = addcore which = 404 } # Piemonte
+		command = { type = addcore which = 370 } # Veneto
+		command = { type = treasury value = -250 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 100 }
+	}
+}
+
+# 7121: Reconstitution of the Imperial Legions (Legio Augusta)
+decision = {
+	id = 7121
+	potential = {
+		tag = WRE
+		NOT = { flag = wre_legions_reconstituted }
+	}
+	trigger = {
+		stability = 1
+		treasury = 250
+	}
+	name = "Reconstitution of the Imperial Legions"
+	desc = "Discarding corrupt mercenary companies, the restored Western Empire revives the classical Roman Legionary organization. Disciplined citizen-soldiers form the permanent Legio I Italica, Legio Gemina, and the elite Cohors Praetoria, armed with modern muskets, bayonets, and field artillery under the golden aquila."
+	action = {
+		command = { type = setflag which = wre_legions_reconstituted }
+		command = { type = domestic which = quality value = 2 }
+		command = { type = domestic which = offensive value = 1 }
+		command = { type = infantry which = 399 value = 10000 }
+		command = { type = cavalry which = 399 value = 3000 }
+		command = { type = land value = 450 }
+		command = { type = treasury value = -200 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 40 }
+	}
+}
+
+# 7122: Classis Praetoria: Imperial Domination of Mare Nostrum
+decision = {
+	id = 7122
+	potential = {
+		tag = WRE
+		NOT = { flag = wre_classis_praetoria }
+	}
+	trigger = {
+		owned = { province = 399 data = -1 } # Roma
+		someof = {
+			number = 2
+			owned = { province = 370 data = -1 } # Veneto
+			owned = { province = 403 data = -1 } # Liguria
+			owned = { province = 393 data = -1 } # Napoli
+		}
+		stability = 1
+		treasury = 250
+	}
+	name = "Classis Praetoria: Imperial Fleet of Mare Nostrum"
+	desc = "The Mediterranean was known to our forebears simply as Mare Nostrum--Our Sea. By uniting the arsenals of Ravenna, Misenum, Genoa, and Venice under the Praefectus Classis, we launch an invincible imperial battlefleet to purge the seas of pirates and protect Roman maritime commerce."
+	action = {
+		command = { type = setflag which = wre_classis_praetoria }
+		command = { type = domestic which = land value = -1 }
+		command = { type = naval value = 450 }
+		command = { type = warships which = 399 value = 8 }
+		command = { type = transports which = 399 value = 4 }
+		command = { type = treasury value = -200 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 40 }
+	}
+}
+
+# 7123: Provincia Hesperia: Roman Colonial Empire in the New World
+decision = {
+	id = 7123
+	potential = {
+		tag = WRE
+		NOT = { flag = wre_provincia_hesperia }
+	}
+	trigger = {
+		stability = 1
+		treasury = 250
+	}
+	name = "Provincia Hesperia: The Imperial New World"
+	desc = "Beyond the Pillars of Hercules lies the Hesperian continent. Establishing imperial chartered settlements under Roman proconsular governors, the Western Empire plants the Roman Eagle upon the shores of the Atlantic and the Caribbean."
+	action = {
+		command = { type = setflag which = wre_provincia_hesperia }
+		command = { type = colonists value = 5 }
+		command = { type = merchants value = 4 }
+		command = { type = trade value = 400 }
+		command = { type = treasury value = -200 }
+		command = { type = vp value = 35 }
+	}
+}
+
+# 7124: Reclaiming Praefectura Aegypti & the Canal of the Pharaohs
+decision = {
+	id = 7124
+	potential = {
+		tag = WRE
+		NOT = { flag = wre_aegyptus_reclaimed }
+	}
+	trigger = {
+		owned = { province = 746 data = -1 } # Cairo / Egypt
+		owned = { province = 744 data = -1 } # Alexandria
+		stability = 1
+		treasury = 300
+	}
+	name = "Praefectura Aegypti: The Imperial Granary and Canal"
+	desc = "Egypt was the most precious crown domain of the Caesars, providing grain for the populace of Rome. By restoring the Praefectura Aegypti and reopening Trajan's Canal to the Red Sea, the Western Empire controls the supreme commercial gateway between Europe and Asia."
+	action = {
+		command = { type = setflag which = wre_aegyptus_reclaimed }
+		command = { type = provincetax which = 746 value = 2 }
+		command = { type = provincetax which = 744 value = 2 }
+		command = { type = trade value = 500 }
+		command = { type = merchants value = 6 }
+		command = { type = treasury value = 250 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 50 }
+	}
+}
+
+# 7125: Restoring the Limes Danubianus & Limes Alpinus
+decision = {
+	id = 7125
+	potential = {
+		tag = WRE
+		NOT = { flag = wre_limes_fortified }
+	}
+	trigger = {
+		stability = 1
+		treasury = 250
+	}
+	name = "Restoring the Limes Alpinus and Danubianus"
+	desc = "To protect the core provinces of the Empire from northern raids, the Emperor restores the ancient stone Limes. Polygonal bastions, stone redoubts, and garrison camps seal the Alpine passes and Danubian frontier, guaranteeing perpetual security."
+	action = {
+		command = { type = setflag which = wre_limes_fortified }
+		command = { type = fortress which = 389 value = 1 } # Lombardia
+		command = { type = fortress which = 404 value = 1 } # Piemonte
+		command = { type = fortress which = 370 value = 1 } # Veneto
+		command = { type = domestic which = offensive value = -1 }
+		command = { type = domestic which = quality value = 1 }
+		command = { type = treasury value = -200 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 40 }
+	}
+}
+
+# 7126: Monumental Splendor of Rome: Restauratio Urbis
+decision = {
+	id = 7126
+	potential = {
+		tag = WRE
+		NOT = { flag = wre_restauratio_urbis }
+	}
+	trigger = {
+		owned = { province = 399 data = -1 } # Roma
+		treasury = 300
+		stability = 2
+	}
+	name = "Restauratio Urbis: The Monumental Glory of Rome"
+	desc = "Clearing away medieval rubble, the Emperor restores the monumental splendour of the Eternal City. The Forum Romanum is excavated, triumphal arches are dedicated to imperial victories, and new classical boulevards link the Capitoline, the Colosseum, and the Vatican."
+	action = {
+		command = { type = setflag which = wre_restauratio_urbis }
+		command = { type = provincetax which = 399 value = 3 }
+		command = { type = population which = 399 value = 8000 }
+		command = { type = infra value = 400 }
+		command = { type = treasury value = -250 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 60 }
+	}
+}
+
+# 7127: Academia Caesarea: The Imperial Scientific Renaissance
+decision = {
+	id = 7127
+	potential = {
+		tag = WRE
+		NOT = { flag = wre_academia_caesarea }
+	}
+	trigger = {
+		infra = 4
+		stability = 1
+		treasury = 200
+	}
+	name = "Academia Caesarea: The Imperial Scientific Academy"
+	desc = "Emperors of old welcomed philosophers and mathematicians from Athens and Alexandria. Under the patronage of the restored Caesar, the Academia Caesarea gathers the leading minds of the Renaissance and Enlightenment--Galileo, Leonardo, and Volta--crowning scientific truth with imperial laurels."
+	action = {
+		command = { type = setflag which = wre_academia_caesarea }
+		command = { type = domestic which = innovative value = 2 }
+		command = { type = infra value = 450 }
+		command = { type = treasury value = -150 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 40 }
+	}
+}
+
+# 7128: Senatus Populusque Romanus: The Imperial Senate Reformed
+decision = {
+	id = 7128
+	potential = {
+		tag = WRE
+		NOT = { flag = wre_senatus_reformed }
+	}
+	trigger = {
+		stability = 1
+		treasury = 150
+	}
+	name = "Senatus Populusque Romanus: Reforming the Senate"
+	desc = "Balancing autocratic authority with classical civic virtue, the Emperor reconstitutes the Roman Senate. Composed of leading jurists, provincial proconsuls, and illustrious scholars, the Curia Julia convenes once more to advise the Princeps on imperial legislation and administration."
+	action = {
+		command = { type = setflag which = wre_senatus_reformed }
+		command = { type = domestic which = centralization value = 2 }
+		command = { type = domestic which = aristocracy value = -1 }
+		command = { type = stability value = 2 }
+		command = { type = badboy value = -3 }
+		command = { type = vp value = 35 }
+	}
+}
+
+# 7129: Limes Africanus: Securing the Saharan Border
+decision = {
+	id = 7129
+	potential = {
+		tag = WRE
+		owned = { province = 739 data = -1 } # Tunisia
+		owned = { province = 740 data = -1 } # Tripolitania
+		NOT = { flag = wre_limes_africanus }
+	}
+	trigger = {
+		stability = 1
+		treasury = 200
+	}
+	name = "Limes Africanus: Securing the Saharan Border"
+	desc = "Roman Africa was the wealthy breadbasket and olive grove of antiquity. By stationing desert cavalry patrols (Limitanei) and rebuilding stone cisterns and border watchtowers across Tripolitania and Numidia, we shield the fertile Mediterranean coast from nomadic incursions."
+	action = {
+		command = { type = setflag which = wre_limes_africanus }
+		command = { type = provincetax which = 739 value = 2 }
+		command = { type = provincetax which = 740 value = 1 }
+		command = { type = infra value = 300 }
+		command = { type = treasury value = -150 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 35 }
+	}
+}
+
+# 7130: Pax Romana Universalis: Acclamation of the Eternal Empire
+decision = {
+	id = 7130
+	potential = {
+		tag = WRE
+		flag = wre_legions_reconstituted
+		flag = wre_classis_praetoria
+		flag = wre_restauratio_urbis
+		flag = wre_senatus_reformed
+		NOT = { flag = wre_pax_romana_proclaimed }
+	}
+	trigger = {
+		owned = { province = 399 data = -1 } # Roma
+		control = { province = 399 data = -1 }
+		stability = 3
+		treasury = 400
+	}
+	name = "Pax Romana Universalis: The Eternal Empire Triumphant"
+	desc = "From the marble palaces of Rome to the harbors of Carthage, from the Rhine to the Nile, the civilized world salutes the resurrected Western Roman Empire. With law, arms, and enlightened science, the Pax Romana reigns supreme over mankind!"
+	action = {
+		command = { type = setflag which = wre_pax_romana_proclaimed }
+		command = { type = stability value = 2 }
+		command = { type = badboy value = -6 }
+		command = { type = domestic which = centralization value = 2 }
+		command = { type = domestic which = quality value = 2 }
+		command = { type = treasury value = 500 }
+		command = { type = vp value = 200 }
+	}
+}

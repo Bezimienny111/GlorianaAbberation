@@ -707,3 +707,316 @@ event = {
 		command = { type = relation which = HAB value = 100 }
 	}
 }
+
+# -----------------------------------------------------------------------
+# REBORN WESTERN ROMAN EMPIRE (WRE) HISTORICAL EVENTS (1500 - 1800)
+# -----------------------------------------------------------------------
+
+# 3010230: The Eagle Returns to Rome: Acclamation of Caesar Augustus
+event = {
+	id = 3010230
+	trigger = {
+		tag = WRE
+		owned = { province = 399 data = -1 } # Roma
+	}
+	random = no
+	country = WRE
+	name = "The Eagle Returns to Rome: Acclamation of Caesar Augustus"
+	desc = "Before the assembled Senate on the Capitoline Hill and tens of thousands of cheering citizens in the Forum, the golden laurel wreath is placed upon the head of our sovereign. Acclaimed as Imperator Caesar Augustus of the West, the Roman Empire rises like a phoenix from the ashes of the Middle Ages. The civilization that civilized Europe has returned to rule."
+	style = 1
+
+	date = { day = 1 month = january year = 1500 }
+	offset = 15
+	deathdate = { day = 1 month = january year = 1800 }
+
+	action_a = {
+		name = "Ave Caesar! Senatus Populusque Romanus!"
+		command = { type = stability value = 3 }
+		command = { type = treasury value = 200 }
+		command = { type = badboy value = -4 }
+		command = { type = vp value = 50 }
+	}
+}
+
+# 3010231: Leonardo da Vinci: Praefectus Fabrum of the Empire
+event = {
+	id = 3010231
+	trigger = {
+		tag = WRE
+	}
+	random = no
+	country = WRE
+	name = "Leonardo da Vinci: Praefectus Fabrum of the Empire"
+	desc = "The Emperor summons the greatest mind in Christendom, Leonardo da Vinci, appointing him Praefectus Fabrum--Chief Architect and Engineer of the Western Roman Empire. Leonardo directs the rebuilding of imperial aqueducts, fortifies the Alpine defiles, and designs advanced siege engines worthy of Vitruvius and Archimedes."
+	style = 1
+
+	date = { day = 1 month = january year = 1503 }
+	offset = 60
+	deathdate = { day = 1 month = may year = 1519 }
+
+	action_a = {
+		name = "Crown Leonardo with the Imperial Laurel"
+		command = { type = infra value = 450 }
+		command = { type = land value = 300 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = treasury value = -80 }
+		command = { type = vp value = 35 }
+	}
+}
+
+# 3010232: Niccolo Machiavelli: The Imperial Prefect
+event = {
+	id = 3010232
+	trigger = {
+		tag = WRE
+	}
+	random = no
+	country = WRE
+	name = "Niccolo Machiavelli: Imperial Prefect of Statecraft"
+	desc = "Drawing lessons from the conquests of Scipio, Caesar, and Augustus, Niccolo Machiavelli presents the Emperor with his treatises on the Roman legions and imperial statecraft. Appointed Imperial Chancellor, Machiavelli reorganizes the state apparatus around civic duty, citizen legions, and unyielding virtue (virtu)."
+	style = 1
+
+	date = { day = 1 month = january year = 1515 }
+	offset = 60
+	deathdate = { day = 1 month = june year = 1527 }
+
+	action_a = {
+		name = "Enforce classical virtue and iron discipline"
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = domestic which = quality value = 1 }
+		command = { type = diplomats value = 3 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 30 }
+	}
+}
+
+# 3010233: The Imperial Triumph in the Roman Forum
+event = {
+	id = 3010233
+	trigger = {
+		tag = WRE
+		flag = wre_classis_praetoria
+	}
+	random = no
+	country = WRE
+	name = "The Imperial Triumph in the Roman Forum"
+	desc = "Following resounding victories over our Mediterranean foes, the Emperor enters the Eternal City in classical splendour. Dressed in the purple tunica palmata and riding a gilded chariot drawn by four white steeds, the imperator leads victorious legions, captured enemy ensigns, and trophies along the Via Sacra to the Temple of Jupiter Optimus Maximus on the Capitoline."
+	style = 1
+
+	date = { day = 1 month = january year = 1550 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1750 }
+
+	action_a = {
+		name = "Io Triumphe! The Empire is invincible!"
+		command = { type = stability value = 2 }
+		command = { type = land value = 350 }
+		command = { type = naval value = 350 }
+		command = { type = badboy value = -3 }
+		command = { type = vp value = 50 }
+	}
+}
+
+# 3010234: Galileo Galilei before the Roman Senate
+event = {
+	id = 3010234
+	trigger = {
+		tag = WRE
+	}
+	random = no
+	country = WRE
+	name = "Galileo Galilei before the Roman Senate"
+	desc = "When conservative inquisitors attempt to silence Galileo Galilei for his telescopic discoveries, the Emperor intervenes decisively. Summoning Galileo to the Curia Julia before the Roman Senate, Caesar Augustus proclaims: 'The truth of nature belongs to the grandeur of Rome! No scholar under our protection shall be gagged by dogma.' Galileo is crowned philosopher laureate of the Empire."
+	style = 1
+
+	date = { day = 1 month = january year = 1633 }
+	offset = 60
+	deathdate = { day = 1 month = december year = 1633 }
+
+	action_a = {
+		name = "Truth and science are the pillars of the Empire"
+		command = { type = domestic which = innovative value = 2 }
+		command = { type = infra value = 500 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 40 }
+	}
+}
+
+# 3010235: Gian Lorenzo Bernini: Rebuilding Imperial Rome
+event = {
+	id = 3010235
+	trigger = {
+		tag = WRE
+		owned = { province = 399 data = -1 }
+	}
+	random = no
+	country = WRE
+	name = "Gian Lorenzo Bernini: Rebuilding Imperial Rome"
+	desc = "Commissioned by the Emperor, Gian Lorenzo Bernini blends Roman monumental majesty with theatrical baroque splendor. Re-erecting ancient Egyptian obelisks across imperial fora, designing monumental colonnades, and carving breathtaking marble deities, Bernini ensures Rome stands unmatched as the capital of the world."
+	style = 1
+
+	date = { day = 1 month = january year = 1655 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1680 }
+
+	action_a = {
+		name = "Rome is the eternal masterpiece of mankind!"
+		command = { type = treasury value = -120 }
+		command = { type = stability value = 1 }
+		command = { type = infra value = 350 }
+		command = { type = vp value = 35 }
+	}
+}
+
+# 3010236: The Plague of Milan Checked by Imperial Edicts
+event = {
+	id = 3010236
+	trigger = {
+		tag = WRE
+		owned = { province = 389 data = -1 } # Lombardia
+	}
+	random = no
+	country = WRE
+	name = "The Plague of Milan Checked by Imperial Edicts"
+	desc = "When pestilence strikes northern Italy in 1630, the Emperor acts with ruthless Roman discipline. Legionary cohorts seal all roads leading into the Po valley, imperial medical prefects distribute grain and remedies, and public lazarettos isolate the infected. Thanks to Roman organization, the mortality is cut short and the province rapidly recovers."
+	style = 1
+
+	date = { day = 1 month = january year = 1630 }
+	offset = 30
+	deathdate = { day = 1 month = december year = 1631 }
+
+	action_a = {
+		name = "Enforce Roman discipline and medical order"
+		command = { type = treasury value = -120 }
+		command = { type = population which = 389 value = -1000 }
+		command = { type = stability value = 1 }
+		command = { type = infra value = 200 }
+	}
+}
+
+# 3010237: The Rebirth of the Latin Tongue: The Imperial Chancellery
+event = {
+	id = 3010237
+	trigger = {
+		tag = WRE
+	}
+	random = no
+	country = WRE
+	name = "The Rebirth of Classical Latin: The Imperial Chancellery"
+	desc = "To unite our diverse Mediterranean provinces--Italians, Provençaux, Spaniards, and North Africans--the Emperor issues an imperial edict establishing Classical Latin as the official co-language of state diplomacy, law, and high literature alongside Italian. From Lisbon to Naples, the language of Cicero and Virgil binds the Empire together."
+	style = 1
+
+	date = { day = 1 month = january year = 1680 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1750 }
+
+	action_a = {
+		name = "Lingua Latina est vinculum Imperii!"
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = infra value = 300 }
+		command = { type = vp value = 30 }
+	}
+}
+
+# 3010238: Beccaria and the Novus Codex Iustinianus
+event = {
+	id = 3010238
+	trigger = {
+		tag = WRE
+	}
+	random = no
+	country = WRE
+	name = "Cesare Beccaria and the Novus Codex Iustinianus"
+	desc = "Summoned to the imperial court, legal scholar Cesare Beccaria collaborates with the Senate to draft the Novus Codex Iustinianus--a comprehensive civil and penal code blending classical Roman jurisprudence with the Enlightenment. The code abolishes judicial torture, guarantees public defence, and establishes equal justice for all citizens."
+	style = 1
+
+	date = { day = 1 month = january year = 1765 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1785 }
+
+	action_a = {
+		name = "Promulgate the Enlightened Roman Law"
+		command = { type = domestic which = innovative value = 2 }
+		command = { type = domestic which = serfdom value = -2 }
+		command = { type = revoltrisk which = 60 value = -2 }
+		command = { type = infra value = 400 }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 50 }
+	}
+}
+
+# 3010239: Antonio Canova: The New Augustus in Marble
+event = {
+	id = 3010239
+	trigger = {
+		tag = WRE
+	}
+	random = no
+	country = WRE
+	name = "Antonio Canova: The New Augustus in Marble"
+	desc = "Master sculptor Antonio Canova unveils a colossal white marble statue of the reigning Caesar Augustus on the Capitoline. Depicting the monarch in classical heroic cuirass with the Nike of victory in his palm, the masterpiece captures the serene majesty of the revived Roman Empire in the Age of Enlightenment."
+	style = 1
+
+	date = { day = 1 month = january year = 1790 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1810 }
+
+	action_a = {
+		name = "Dedicate the monument to eternal Rome!"
+		command = { type = stability value = 1 }
+		command = { type = treasury value = -80 }
+		command = { type = vp value = 30 }
+	}
+}
+
+# 3010240: The Limes Alpinus Defended: Defeat of the Barbarians
+event = {
+	id = 3010240
+	trigger = {
+		tag = WRE
+		flag = wre_limes_fortified
+	}
+	random = no
+	country = WRE
+	name = "The Limes Alpinus Defended: Defeat of Foreign Invasions"
+	desc = "Foreign armies attempting to breach the Alpine passes are met by the disciplined fire and interlocking crossfire of the restored Roman Limes. Trapped in rocky gorges and shattered by legionary artillery, the invaders are driven back in disarray. The borders of Rome remain impregnable."
+	style = 1
+
+	date = { day = 1 month = january year = 1700 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1799 }
+
+	action_a = {
+		name = "The Limes shall never be breached!"
+		command = { type = stability value = 1 }
+		command = { type = land value = 300 }
+		command = { type = vp value = 35 }
+	}
+}
+
+# 3010241: The Golden Age of the Pax Romana
+event = {
+	id = 3010241
+	trigger = {
+		tag = WRE
+		flag = wre_pax_romana_proclaimed
+	}
+	random = no
+	country = WRE
+	name = "The Golden Age of the Pax Romana"
+	desc = "Foreign ambassadors, philosophers, and travelers marvel at the miracle of Eternal Rome. Where other empires tore themselves apart in fanaticism and revolutions, the Western Roman Empire stands as a beacon of enlightened law, thriving commerce, and unshakeable order. Rome was, Rome is, and Rome shall always be the mistress of the world!"
+	style = 1
+
+	date = { day = 1 month = january year = 1750 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1820 }
+
+	action_a = {
+		name = "Roma Aeterna! Long live the Emperor!"
+		command = { type = stability value = 2 }
+		command = { type = badboy value = -5 }
+		command = { type = treasury value = 300 }
+		command = { type = vp value = 100 }
+	}
+}
