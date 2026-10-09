@@ -64,7 +64,7 @@ decision = {
 	action = {
 		command = { type = treasury value = -100 }
 		command = { type = addcore_national which = 1493 }
-		command = { type = cavalry which = 1493 value = 3000 }
+		command = { type = CAV which = 1493 value = 3000 }
 		command = { type = domestic which = offensive value = 1 }
 		command = { type = stability value = 1 }
 		command = { type = setflag which = mal_mossi_subdued }
@@ -460,7 +460,7 @@ decision = {
 		command = { type = treasury value = -250 }
 		command = { type = domestic which = land value = -3 } # Shift to naval
 		command = { type = naval value = 600 }
-		command = { type = shipyard which = 799 }
+		command = { type = gainbuilding which = 799 value = shipyard }
 		command = { type = transports which = 799 value = 10 }
 		command = { type = warships which = 799 value = 10 }
 		command = { type = setflag which = mal_ocean_dockyards }

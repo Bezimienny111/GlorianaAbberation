@@ -37,8 +37,8 @@ event = {
 	action_b = {
 		name = "Enlarge the imperial cavalry and recruit royal archers!"
 		ai_chance = 30
-		command = { type = cavalry which = 1492 value = 4000 }
-		command = { type = infantry which = 1492 value = 6000 }
+		command = { type = CAV which = 1492 value = 4000 }
+		command = { type = INF which = 1492 value = 6000 }
 		command = { type = domestic which = offensive value = 1 }
 		command = { type = vp value = 30 }
 	}
@@ -148,7 +148,7 @@ event = {
 	action_a = {
 		name = "Integrate the Moroccan emirs and prepare the crossing to Europe!"
 		command = { type = treasury value = 300 }
-		command = { type = cavalry which = 733 value = 5000 }
+		command = { type = CAV which = 733 value = 5000 }
 		command = { type = stability value = 1 }
 		command = { type = vp value = 80 }
 	}
@@ -295,7 +295,7 @@ event = {
 	action_a = {
 		name = "Deploy the imperial army to crush the raiders"
 		ai_chance = 70
-		command = { type = infantry which = 1488 value = 4000 }
+		command = { type = INF which = 1488 value = 4000 }
 		command = { type = treasury value = -100 }
 		command = { type = stability value = 1 }
 	}

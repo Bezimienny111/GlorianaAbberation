@@ -1055,8 +1055,8 @@ decision = {
 		command = { type = land value = 800 }
 		command = { type = domestic which = quality value = 1 }
 		command = { type = domestic which = offensive value = 1 }
-		command = { type = artillery which = 746 value = 15 }
-		command = { type = infantry which = 746 value = 5000 }
+		command = { type = ART which = 746 value = 15 }
+		command = { type = INF which = 746 value = 5000 }
 		command = { type = stability value = 1 }
 		command = { type = vp value = 50 }
 	}
@@ -1193,6 +1193,10 @@ decision = {
 	major = yes
 	unique = yes
 	potential = {
+		OR = {
+			tag = MAM
+			tag = EGY
+		}
 		religion = egyptian_pagan
 		NOT = { flag = kemet_abu_simbel }
 	}
@@ -1230,6 +1234,10 @@ decision = {
 	major = yes
 	unique = yes
 	potential = {
+		OR = {
+			tag = MAM
+			tag = EGY
+		}
 		religion = egyptian_pagan
 		NOT = { flag = kemet_per_ankh }
 	}
@@ -1267,6 +1275,10 @@ decision = {
 	major = yes
 	unique = yes
 	potential = {
+		OR = {
+			tag = MAM
+			tag = EGY
+		}
 		religion = mutazilite
 		NOT = { flag = mutazilite_observatory }
 	}
@@ -1304,6 +1316,10 @@ decision = {
 	major = yes
 	unique = yes
 	potential = {
+		OR = {
+			tag = MAM
+			tag = EGY
+		}
 		religion = mutazilite
 		NOT = { flag = mutazilite_new_ijtihad }
 	}
@@ -1402,8 +1418,8 @@ decision = {
 		command = { type = treasury value = -350 }
 		command = { type = domestic which = quality value = 1 }
 		command = { type = domestic which = centralization value = 1 }
-		command = { type = infantry which = 746 value = 10000 }
-		command = { type = cavalry which = 746 value = 4000 }
+		command = { type = INF which = 746 value = 10000 }
+		command = { type = CAV which = 746 value = 4000 }
 		command = { type = stability value = 1 }
 		command = { type = vp value = 100 }
 	}

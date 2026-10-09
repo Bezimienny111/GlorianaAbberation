@@ -8,6 +8,9 @@
 # 7550: The Legacy of Giorgi the Brilliant: Codification of Laws (Dzeglisdeba)
 decision = {
 	id = 7550
+	potential = {
+		tag = GEO
+	}
 	trigger = {
 		tag = GEO
 		owned = { province = 470 data = -1 } # Georgia / Tbilisi
@@ -30,6 +33,9 @@ decision = {
 # 7551: Fortify the Caucasian Gates (Darial Gorge and Derbent)
 decision = {
 	id = 7551
+	potential = {
+		tag = GEO
+	}
 	trigger = {
 		tag = GEO
 		flag = geo_dzeglisdeba
@@ -53,6 +59,9 @@ decision = {
 # 7552: Reclaim the Kingdom of Greater Armenia
 decision = {
 	id = 7552
+	potential = {
+		tag = GEO
+	}
 	trigger = {
 		tag = GEO
 		owned = { province = 472 data = -1 } # Armenia / Yerevan
@@ -76,6 +85,9 @@ decision = {
 # 7553: Subjugate Shirvan and Daghestan (The Caspian Shore)
 decision = {
 	id = 7553
+	potential = {
+		tag = GEO
+	}
 	trigger = {
 		tag = GEO
 		owned = { province = 471 data = -1 } # Daghestan / Derbent
@@ -99,6 +111,9 @@ decision = {
 # 7554: Protectorate over the Empire of Trebizond
 decision = {
 	id = 7554
+	potential = {
+		tag = GEO
+	}
 	trigger = {
 		tag = GEO
 		owned = { province = 475 data = -1 } # Trabzon / Trebizond
@@ -121,6 +136,9 @@ decision = {
 # 7555: Repelling the Sunni Threat (Bulwark against Turcomans & Ottomans)
 decision = {
 	id = 7555
+	potential = {
+		tag = GEO
+	}
 	trigger = {
 		tag = GEO
 		flag = geo_armenia_reunited
@@ -144,6 +162,9 @@ decision = {
 # 7556: Repelling the Shiite Threat (Fortress against Persia & Safavids)
 decision = {
 	id = 7556
+	potential = {
+		tag = GEO
+	}
 	trigger = {
 		tag = GEO
 		flag = geo_caspian_secured
@@ -166,6 +187,9 @@ decision = {
 # 7557: Restore the Kingdom of Cilician Armenia
 decision = {
 	id = 7557
+	potential = {
+		tag = GEO
+	}
 	trigger = {
 		tag = GEO
 		flag = geo_armenia_reunited
@@ -188,6 +212,9 @@ decision = {
 # 7558: Proclaim the Pan-Caucasian Empire
 decision = {
 	id = 7558
+	potential = {
+		tag = GEO
+	}
 	trigger = {
 		tag = GEO
 		flag = geo_dzeglisdeba
@@ -215,6 +242,9 @@ decision = {
 # 7559: The Orthodox Holy League of the East
 decision = {
 	id = 7559
+	potential = {
+		tag = GEO
+	}
 	trigger = {
 		tag = GEO
 		flag = geo_caucasian_empire
@@ -223,7 +253,8 @@ decision = {
 	name = "The Orthodox Holy League of the East"
 	desc = "As the pre-eminent Christian superpower in the Near East, Georgia extends its hand to our fellow Orthodox brothers across Eastern Europe and Byzantium. Together, we form an unbreakable Holy League dedicated to the defense and prosperity of Eastern Christianity."
 	action = {
-		command = { type = diplomatic value = 200 }
+		command = { type = diplomats value = 3 }
+		command = { type = DIP value = 2 }
 		command = { type = stability value = 1 }
 		command = { type = infra value = 300 }
 		command = { type = vp value = 25 }
@@ -234,6 +265,9 @@ decision = {
 # 7560: Rebuild the Monasteries of Gelati and Svetitskhoveli
 decision = {
 	id = 7560
+	potential = {
+		tag = GEO
+	}
 	trigger = {
 		tag = GEO
 		flag = geo_dzeglisdeba
