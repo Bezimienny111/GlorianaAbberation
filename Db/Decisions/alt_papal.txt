@@ -622,6 +622,383 @@ decision = {
 	}
 }
 
+#-----------------------------------------------------------------------------
+# T08: Reassertion of Papal Suzerainty over the Two Sicilies (Regnum Siciliae)
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7131
+	major = yes
+	unique = yes
+	potential = {
+		tag = PAP
+		flag = pap_path_theocracy
+		NOT = { flag = pap_mezzogiorno_fief }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 1
+		treasury = 150
+		owned = { province = 399 data = -1 } #Roma
+	}
+	ai_trigger = {
+	}
+
+	name = "Reassertion of Papal Suzerainty over the Two Sicilies"
+	desc = "Since the Norman investitures of the eleventh century, the Kingdom of Sicily and Naples has been held as an apostolic fief under the suzerainty of Saint Peter, consecrated by the annual tribute of the white palfrey (la Chinea). Asserting the direct lordship of the Holy See over the south terminates foreign Angevine and Aragonese pretensions, uniting all peninsular Italy under the Vicar of Christ."
+
+	action = {
+		command = { type = setflag which = pap_mezzogiorno_fief }
+		command = { type = treasury value = -150 }
+		command = { type = addcore_claim which = 393 } #Napoli
+		command = { type = addcore_claim which = 394 } #Apulia
+		command = { type = addcore_claim which = 395 } #Calabria
+		command = { type = addcore_claim which = 396 } #Messina
+		command = { type = addcore_claim which = 397 } #Sicilia
+		command = { type = relation which = NAP value = -150 }
+		command = { type = relation which = SIC value = -150 }
+		command = { type = relation which = ARG value = -100 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 30 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# T09: Classis Pontificia: War Galleys of the Holy See
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7132
+	major = yes
+	unique = yes
+	potential = {
+		tag = PAP
+		flag = pap_path_theocracy
+		NOT = { flag = pap_classis_pontificia }
+	}
+	trigger = {
+		atwar = no
+		treasury = 200
+		owned = { province = 399 data = -1 } #Roma / Civitavecchia
+		control = { province = 399 data = -1 }
+	}
+	ai_trigger = {
+	}
+
+	name = "Classis Pontificia: War Galleys of the Holy See"
+	desc = "To sweep Barbary corsairs and Ottoman raiders from the Tyrrhenian Sea, the Pope expands the great papal naval arsenal at Civitavecchia. Cooperating closely with the Sovereign Military Order of Saint John, modern galleys and heavily gunned galleasses flying the crossed keys of Saint Peter take to the waves to defend Christendom's sea lanes."
+
+	action = {
+		command = { type = setflag which = pap_classis_pontificia }
+		command = { type = treasury value = -200 }
+		command = { type = gainbuilding which = 399 value = shipyard }
+		command = { type = warships which = 399 value = 10 }
+		command = { type = galleys which = 399 value = 15 }
+		command = { type = naval value = 600 }
+		command = { type = domestic which = land value = -1 }
+		command = { type = vp value = 35 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# T10: Sacra Congregatio de Propaganda Fide: Global Apostolic Missions
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7133
+	major = yes
+	unique = yes
+	potential = {
+		tag = PAP
+		flag = pap_path_theocracy
+		NOT = { flag = pap_propaganda_fide }
+	}
+	trigger = {
+		atwar = no
+		stability = 1
+		treasury = 250
+		owned = { province = 399 data = -1 } #Roma
+	}
+	ai_trigger = {
+	}
+
+	name = "Sacra Congregatio de Propaganda Fide: Global Apostolic Missions"
+	desc = "Pope Gregory XV establishes the Sacred Congregation for the Propagation of the Faith (De Propaganda Fide) to orchestrate world evangelization directly from the Holy See. Bypassing the political interference of Iberian crowns, Rome dispatches multilingual apostolic vicars, trained scholars, and mission printers to the Americas, Africa, India, and East Asia."
+
+	action = {
+		command = { type = setflag which = pap_propaganda_fide }
+		command = { type = treasury value = -250 }
+		command = { type = infra value = 500 }
+		command = { type = trade value = 500 }
+		command = { type = missionaries value = 4 }
+		command = { type = colonists value = 3 }
+		command = { type = diplomats value = 3 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 50 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# T11: Supreme Sacred Congregation of the Holy Office (Roman Inquisition)
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7134
+	major = yes
+	unique = yes
+	potential = {
+		tag = PAP
+		flag = pap_path_theocracy
+		NOT = { flag = pap_holy_office }
+	}
+	trigger = {
+		atwar = no
+		stability = 1
+		treasury = 150
+		owned = { province = 399 data = -1 } #Roma
+	}
+	ai_trigger = {
+	}
+
+	name = "Supreme Sacred Congregation of the Holy Office"
+	desc = "To defend the unity of faith and eradicate doctrinal subversion, Pope Paul III reorganizes the Supreme Sacred Congregation of the Roman and Universal Inquisition. Staffed by rigorous canonists and Dominican inquisitors, the Holy Office defends orthodoxy throughout the peninsula and promulgates the Index of Prohibited Books."
+
+	action = {
+		command = { type = setflag which = pap_holy_office }
+		command = { type = treasury value = -150 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = domestic which = innovative value = -1 }
+		command = { type = missionaries value = 3 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 25 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# T12: The Roman Baroque Transformation: Urban Renewal of the Holy City
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7135
+	major = yes
+	unique = yes
+	potential = {
+		tag = PAP
+		flag = pap_path_theocracy
+		NOT = { flag = pap_roman_baroque }
+	}
+	trigger = {
+		atwar = no
+		treasury = 300
+		owned = { province = 399 data = -1 } #Roma
+		control = { province = 399 data = -1 }
+	}
+	ai_trigger = {
+	}
+
+	name = "The Roman Baroque Transformation: Urban Renewal of the Holy City"
+	desc = "Through the vision of Popes Urban VIII, Innocent X, and Alexander VII, Rome undergoes a dazzling architectural renaissance. Gian Lorenzo Bernini and Francesco Borromini shape Piazza San Pietro, monumental fountains, dramatic triumphal avenues, and soaring domes, transforming the Eternal City into the triumphant capital of world Catholicism."
+
+	action = {
+		command = { type = setflag which = pap_roman_baroque }
+		command = { type = treasury value = -300 }
+		command = { type = infra value = 600 }
+		command = { type = provincetax which = 399 value = 4 } #Roma
+		command = { type = provincemanpower which = 399 value = 2 } #Roma
+		command = { type = stability value = 1 }
+		command = { type = vp value = 75 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# T13: The Pontine Drainage and Agro Romano Reclamation
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7136
+	major = yes
+	unique = yes
+	potential = {
+		tag = PAP
+		flag = pap_path_theocracy
+		NOT = { flag = pap_pontine_drainage }
+	}
+	trigger = {
+		atwar = no
+		treasury = 150
+		owned = { province = 399 data = -1 } #Roma
+	}
+	ai_trigger = {
+	}
+
+	name = "The Pontine Drainage and Agro Romano Reclamation"
+	desc = "For centuries the Pontine marshes south of Rome bred pestilence and malaria, leaving vast tracts of fertile Campania uncultivated. Ambitious drainage canals, hydraulic sluices, and agricultural settlements sponsored by the Holy See transform stagnant swamplands into prosperous wheat fields and vineyards."
+
+	action = {
+		command = { type = setflag which = pap_pontine_drainage }
+		command = { type = treasury value = -150 }
+		command = { type = populationpercent which = 399 value = 10 } #Roma
+		command = { type = provincetax which = 399 value = 3 } #Roma
+		command = { type = infra value = 350 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 30 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# T14: Banco di Santo Spirito and the Papal Scudo
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7137
+	major = yes
+	unique = yes
+	potential = {
+		tag = PAP
+		flag = pap_path_theocracy
+		NOT = { flag = pap_banco_spirito }
+	}
+	trigger = {
+		atwar = no
+		stability = 1
+		treasury = 200
+		owned = { province = 399 data = -1 } #Roma
+	}
+	ai_trigger = {
+	}
+
+	name = "Banco di Santo Spirito and the Papal Scudo"
+	desc = "In 1605, Pope Paul V founds the Banco di Santo Spirito, the first national public deposit bank in Rome. Managing state bonds (luoghi di monte), financing public works, and issuing reliable silver and gold Scudi d'Oro, the papal banking system restores financial stability across the peninsula."
+
+	action = {
+		command = { type = setflag which = pap_banco_spirito }
+		command = { type = treasury value = -100 }
+		command = { type = inflation value = -3 }
+		command = { type = trade value = 500 }
+		command = { type = infra value = 300 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = vp value = 40 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# T15: Bastions of the Patrimony: The Alpine Defenses
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7138
+	major = yes
+	unique = yes
+	potential = {
+		tag = PAP
+		flag = pap_path_theocracy
+		NOT = { flag = pap_alpine_bastions }
+	}
+	trigger = {
+		atwar = no
+		treasury = 250
+		owned = { province = 404 data = -1 } #Piemonte
+		owned = { province = 389 data = -1 } #Lombardia
+	}
+	ai_trigger = {
+	}
+
+	name = "Bastions of the Patrimony: The Alpine Defenses"
+	desc = "To protect the heart of Catholic Italy against transalpine invasions, the Holy See erects state-of-the-art star fortresses along the Alpine defiles and the Po Valley. Formidable bastions in Piedmont and Lombardy create an impassable shield guarding the Roman peace."
+
+	action = {
+		command = { type = setflag which = pap_alpine_bastions }
+		command = { type = treasury value = -250 }
+		command = { type = fortress which = 404 value = 1 } #Piemonte
+		command = { type = fortress which = 389 value = 1 } #Lombardia
+		command = { type = land value = 500 }
+		command = { type = domestic which = offensive value = -1 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 45 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# T16: The Vatican Secret Archives and Scientific Congregations
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7139
+	major = yes
+	unique = yes
+	potential = {
+		tag = PAP
+		flag = pap_path_theocracy
+		NOT = { flag = pap_secret_archives }
+	}
+	trigger = {
+		atwar = no
+		stability = 1
+		treasury = 150
+		owned = { province = 399 data = -1 } #Roma
+	}
+	ai_trigger = {
+	}
+
+	name = "The Vatican Secret Archives and Scientific Congregations"
+	desc = "Pope Paul V establishes the Archivum Secretum Vaticanum, consolidating the diplomatic correspondence, papal registers, and medieval treaties of the Church into a centralized repository. Combined with patronage of the Vatican Observatory, Rome becomes the intellectual and documentary memory of Western civilization."
+
+	action = {
+		command = { type = setflag which = pap_secret_archives }
+		command = { type = treasury value = -150 }
+		command = { type = infra value = 400 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = diplomats value = 3 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 35 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# T17: Res Publica Christiana: Rome the Universal Arbiter of Nations
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7140
+	major = yes
+	unique = yes
+	potential = {
+		tag = PAP
+		flag = pap_path_theocracy
+		NOT = { flag = pap_res_publica_christiana }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 2
+		treasury = 400
+		owned = { province = 399 data = -1 } #Roma
+		owned = { province = 389 data = -1 } #Lombardia
+		owned = { province = 401 data = -1 } #Firenze
+		owned = { province = 393 data = -1 } #Napoli
+	}
+	ai_trigger = {
+	}
+
+	name = "Res Publica Christiana: Rome the Universal Arbiter of Nations"
+	desc = "Through centuries of spiritual governance, institutional resilience, and moral leadership, the unified Papal realm stands at the pinnacle of European civilization. Uniting all Italy from the Alps to the Straits of Messina under the Keys of Saint Peter, Rome acts as the universal conscience and supreme arbiter of Christian sovereigns, inaugurating a golden age of peace and justice."
+
+	action = {
+		command = { type = setflag which = pap_res_publica_christiana }
+		command = { type = treasury value = -400 }
+		command = { type = badboy value = -10 }
+		command = { type = stability value = 2 }
+		command = { type = relation which = FRA value = 100 }
+		command = { type = relation which = HAB value = 100 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = relation which = POL value = 100 }
+		command = { type = relation which = POR value = 100 }
+		command = { type = infra value = 1000 }
+		command = { type = vp value = 300 }
+	}
+}
+
 #=============================================================================
 # BRANCH K: KINGDOM OF ITALY (Tag ITA)
 #=============================================================================
@@ -749,7 +1126,7 @@ decision = {
 	}
 
 	name = "The Italian Oceanic Company: Overseas Expansion"
-	desc = "Italian mercantile syndicates across the Mediterranean unite into a royal chartered company. Italian navigators—heirs to Columbus, the Cabots, and Vespucci—venture across the Atlantic to establish trading colonies in the New World."
+	desc = "Italian mercantile syndicates across the Mediterranean unite into a royal chartered company. Italian navigators--heirs to Columbus, the Cabots, and Vespucci--venture across the Atlantic to establish trading colonies in the New World."
 
 	action = {
 		command = { type = setflag which = ita_oceanic_company }
@@ -982,7 +1359,7 @@ decision = {
 	}
 
 	name = "Reconquista Hispaniae Romanae: Provinces of Iberia"
-	desc = "Baetica, Lusitania, and Tarraconensis—the sun-drenched realms of Iberia await the return of Roman legions. We assert imperial claims over southern and eastern Hispania, compelling local crowns to yield to Augustus."
+	desc = "Baetica, Lusitania, and Tarraconensis--the sun-drenched realms of Iberia await the return of Roman legions. We assert imperial claims over southern and eastern Hispania, compelling local crowns to yield to Augustus."
 
 	action = {
 		command = { type = setflag which = wre_hispania_claims }
@@ -1136,7 +1513,7 @@ decision = {
 	}
 
 	name = "Pax Romana Restaurata: Triumph of the Western Empire"
-	desc = "The four pillars of the ancient West—Italia, Africa, Hispania, and Gallia—stand reunited beneath the golden eagle. The Mediterranean becomes once more an inland Roman lake (Mare Nostrum), ushering in an era of peace, law, and prosperity."
+	desc = "The four pillars of the ancient West--Italia, Africa, Hispania, and Gallia--stand reunited beneath the golden eagle. The Mediterranean becomes once more an inland Roman lake (Mare Nostrum), ushering in an era of peace, law, and prosperity."
 
 	action = {
 		command = { type = setflag which = wre_pax_romana }

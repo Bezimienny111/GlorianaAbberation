@@ -306,7 +306,7 @@ event = {
 		command = { type = treasury value = 200 }
 	}
 	action_b = {
-		name = "Wskrzesmy pradawne kulty rzymskie i Panteon Bogow (Sol Invictus)!"
+		name = "Revive the ancient Roman rites and the Pantheon (Sol Invictus)!"
 		ai_chance = 20
 		command = { type = religion which = roman_pagan }
 		command = { type = setflag which = wre_pagan_restoration }
@@ -423,7 +423,7 @@ event = {
 		NOT = { core = { province = 401 data = -1 } }
 	}
 	name = "Provincial Integration: Florence"
-	desc = "The cradle of the Renaissance—Florence—having enjoyed a decade of stable governance, willingly embraces our sovereign authority."
+	desc = "The cradle of the Renaissance--Florence--having enjoyed a decade of stable governance, willingly embraces our sovereign authority."
 	style = 1
 	date = { day = 1 month = january year = 1347 }
 	offset = 60
@@ -784,7 +784,7 @@ event = {
 	}
 
 	name = "Conclave in Rome: Election of Julius II"
-	desc = "Giuliano della Rovere—the 'Warrior Pope' Julius II. He begins construction of the new Saint Peter's Basilica and commissions Michelangelo."
+	desc = "Giuliano della Rovere--the 'Warrior Pope' Julius II. He begins construction of the new Saint Peter's Basilica and commissions Michelangelo."
 	style = 1
 
 	date = { day = 1 month = january year = 1503 }
@@ -815,7 +815,7 @@ event = {
 	}
 
 	name = "Conclave in Rome: Election of Leo X"
-	desc = "Giovanni de' Medici—son of Lorenzo the Magnificent. Leo X marks the golden age of Renaissance patronage and humanist arts."
+	desc = "Giovanni de' Medici--son of Lorenzo the Magnificent. Leo X marks the golden age of Renaissance patronage and humanist arts."
 	style = 1
 
 	date = { day = 1 month = january year = 1513 }
@@ -1127,7 +1127,7 @@ event = {
 	}
 
 	name = "Conclave in Rome: Election of Urban VIII"
-	desc = "Maffeo Barberini reigns as Urban VIII—great patron of Gian Lorenzo Bernini and architect of baroque Rome."
+	desc = "Maffeo Barberini reigns as Urban VIII--great patron of Gian Lorenzo Bernini and architect of baroque Rome."
 	style = 1
 
 	date = { day = 1 month = january year = 1623 }
@@ -1282,7 +1282,7 @@ event = {
 	}
 
 	name = "Conclave in Rome: Election of Benedict XIV"
-	desc = "Prospero Lambertini—the great Pope of the Enlightenment Benedict XIV, legal reformer, patron of universities and scientific inquiry."
+	desc = "Prospero Lambertini--the great Pope of the Enlightenment Benedict XIV, legal reformer, patron of universities and scientific inquiry."
 	style = 1
 
 	date = { day = 1 month = january year = 1740 }
@@ -1674,3 +1674,414 @@ event = {
 		command = { type = treasury value = 100 }
 	}
 }
+
+#=============================================================================
+# BRANCH T: HISTORICAL PAPAL FLAVOR & EPOCHS (1500-1800)
+# IDs: 3010250 - 3010260
+#=============================================================================
+
+#-----------------------------------------------------------------------------
+# 3010250: The Defense of Castel Sant'Angelo & The Swiss Guard (1527)
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3010250
+	random = no
+	country = PAP
+
+	trigger = {
+		owned = { province = 399 data = -1 } #Roma
+		control = { province = 399 data = -1 }
+		flag = pap_path_theocracy
+	}
+
+	name = "The Defense of Castel Sant'Angelo and the Swiss Guard"
+	desc = "In May 1527, mutinous imperial landsknechts and Spanish mercenaries storm the walls of the Borgo. Outside Saint Peter's Basilica, Captain Kaspar Roist and 189 Swiss Guards make a legendary last stand against overwhelming odds, holding the line until Pope Clement VII safely escapes through the Passetto di Borgo into the fortress of Castel Sant'Angelo. With the citadel heavily armed and provisioned, the Pope rallies the Roman militia to beat back the pillagers and save the Eternal City."
+	style = 1
+
+	date = { day = 6 month = may year = 1527 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1530 }
+
+	action_a = {
+		name = "Hold the ramparts of Castel Sant'Angelo!"
+		command = { type = fortress which = 399 value = 1 }
+		command = { type = infantry which = 399 value = 5000 }
+		command = { type = stability value = 1 }
+		command = { type = treasury value = -100 }
+		command = { type = vp value = 50 }
+	}
+	action_b = {
+		name = "Pay subsidies to disperse the mutinous mercenary hosts"
+		command = { type = treasury value = -250 }
+		command = { type = stability value = 1 }
+		command = { type = relation which = HAB value = 50 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 3010251: The Council of Trent (1545-1563)
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3010251
+	random = no
+	country = PAP
+
+	trigger = {
+		flag = pap_path_theocracy
+		owned = { province = 399 data = -1 }
+	}
+
+	name = "The Council of Trent: The Catholic Counter-Reformation"
+	desc = "Assembled in the Alpine city of Trento, cardinals, bishops, and theologians from across Christendom convene for the definitive ecumenical council of the early modern era. Clarifying Catholic dogma on justification and the sacraments, mandating diocesan seminaries, reforming monastic discipline, and codifying the Tridentine Roman Missal, the Council revitalizes the spiritual vitality and missionary zeal of the Universal Church."
+	style = 1
+
+	date = { day = 13 month = december year = 1545 }
+	offset = 60
+	deathdate = { day = 4 month = december year = 1563 }
+
+	action_a = {
+		name = "Promulgate the Tridentine Decrees across Christendom!"
+		command = { type = domestic which = innovative value = -1 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = stability value = 2 }
+		command = { type = missionaries value = 3 }
+		command = { type = infra value = 400 }
+		command = { type = vp value = 60 }
+	}
+	action_b = {
+		name = "Seek theological rapprochement with moderate reformers"
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = stability value = -1 }
+		command = { type = relation which = ENG value = 50 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 3010252: Marcantonio Colonna and the Victory of Lepanto (1571)
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3010252
+	random = no
+	country = PAP
+
+	trigger = {
+		flag = pap_path_theocracy
+		owned = { province = 399 data = -1 }
+	}
+
+	name = "Marcantonio Colonna and the Victory of Lepanto"
+	desc = "In October 1571, the united Christian armada of the Holy League confronts the Ottoman grand fleet in the Gulf of Patras. Commanded by Duke Marcantonio Colonna aboard the Papal flagship Capitana, the center squadron shatters the Turkish line, capturing dozens of enemy galleys and freeing thousands of Christian rowers. Pope Saint Pius V orders the bells of Rome to peal in triumphant thanksgiving, honoring the Mother of God as Our Lady of Victory."
+	style = 1
+
+	date = { day = 7 month = october year = 1571 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1575 }
+
+	action_a = {
+		name = "Sing the Te Deum: The cross triumphs upon the waters!"
+		command = { type = naval value = 600 }
+		command = { type = warships which = 399 value = 5 }
+		command = { type = galleys which = 399 value = 8 }
+		command = { type = relation which = VEN value = 100 }
+		command = { type = relation which = SPA value = 100 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 75 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 3010253: The Gregorian Calendar Reform (1582)
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3010253
+	random = no
+	country = PAP
+
+	trigger = {
+		flag = pap_path_theocracy
+		owned = { province = 399 data = -1 }
+	}
+
+	name = "The Gregorian Calendar Reform: Inter Gravissimas"
+	desc = "Recognizing that the Julian calendar had drifted ten days out of sync with the solar year and the astronomical vernal equinox, Pope Gregory XIII promulgates the papal bull Inter Gravissimas. Advised by the Jesuit astronomer Christopher Clavius and physician Aloysius Lilius, the reform introduces the leap-year rule and removes ten superfluous days in October 1582, establishing the most accurate calendar in human history."
+	style = 1
+
+	date = { day = 4 month = october year = 1582 }
+	offset = 10
+	deathdate = { day = 30 month = december year = 1585 }
+
+	action_a = {
+		name = "Restore chronological order to creation!"
+		command = { type = infra value = 400 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = HAB value = 50 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = POL value = 50 }
+		command = { type = vp value = 50 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 3010254: Father Matteo Ricci and the Jesuit Mission to Ming China (1582-1610)
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3010254
+	random = no
+	country = PAP
+
+	trigger = {
+		flag = pap_path_theocracy
+		owned = { province = 399 data = -1 }
+	}
+
+	name = "Father Matteo Ricci and the Jesuit Mission to Ming China"
+	desc = "Sent under apostolic mandate, the Italian Jesuit Father Matteo Ricci reaches the imperial court of the Wanli Emperor in Beijing. Mastering classical Chinese language and Confucian philosophy, Ricci presents the Emperor with mechanical clocks, astronomical astrolabes, and the Kunyu Wanguo Quantu world map. His inculturation policy opens the Celestial Empire to Catholic baptism and international trade."
+	style = 1
+
+	date = { day = 1 month = january year = 1600 }
+	offset = 90
+	deathdate = { day = 30 month = december year = 1615 }
+
+	action_a = {
+		name = "Support the apostolic mission in Beijing with subsidies"
+		command = { type = treasury value = -75 }
+		command = { type = trade value = 400 }
+		command = { type = infra value = 400 }
+		command = { type = diplomats value = 2 }
+		command = { type = vp value = 40 }
+	}
+	action_b = {
+		name = "Insist on strict Western Latin liturgical practices"
+		command = { type = domestic which = innovative value = -1 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 3010255: The Dialogue with Galileo Galilei and the Lincei Academy (1610-1633)
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3010255
+	random = no
+	country = PAP
+
+	trigger = {
+		flag = pap_path_theocracy
+		owned = { province = 399 data = -1 }
+	}
+
+	name = "Galileo Galilei and the Telescope: Science and Faith"
+	desc = "Galileo Galilei's telescopic discoveries of the moons of Jupiter, sunspots, and lunar craters spark passionate debate within the Roman Curia. While Cardinal Bellarmine and conservative theologians advise caution regarding Copernican heliocentrism, Maffeo Barberini (Pope Urban VIII) is a personal friend and admirer of the Tuscan scientist. The Holy See must balance scriptural hermeneutics with cutting-edge natural observation."
+	style = 1
+
+	date = { day = 1 month = january year = 1616 }
+	offset = 120
+	deathdate = { day = 30 month = december year = 1635 }
+
+	action_a = {
+		name = "Patronize natural science as contemplation of God's cosmos"
+		command = { type = domestic which = innovative value = 2 }
+		command = { type = infra value = 600 }
+		command = { type = stability value = -1 }
+		command = { type = vp value = 50 }
+	}
+	action_b = {
+		name = "Demand hypothetical presentation and scholastic caution"
+		command = { type = domestic which = innovative value = -1 }
+		command = { type = stability value = 1 }
+		command = { type = missionaries value = 1 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 3010256: Gian Lorenzo Bernini: Master of the Roman Baroque (1629-1680)
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3010256
+	random = no
+	country = PAP
+
+	trigger = {
+		flag = pap_path_theocracy
+		owned = { province = 399 data = -1 }
+	}
+
+	name = "Gian Lorenzo Bernini: Master of the Roman Baroque"
+	desc = "Commissioned by Popes Urban VIII and Alexander VII, Gian Lorenzo Bernini becomes the preeminent architect and sculptor of Europe. Over five decades of ceaseless genius, Bernini creates the bronze Baldachin of Saint Peter's, the majestic elliptical colonnade embracing the world in Saint Peter's Square, the Ecstasy of Saint Teresa, and the dramatic Fountain of the Four Rivers in Piazza Navona, turning Rome into a living theater of the sacred."
+	style = 1
+
+	date = { day = 1 month = january year = 1650 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1675 }
+
+	action_a = {
+		name = "Glorify the City of God in marble, bronze, and stone!"
+		command = { type = treasury value = -200 }
+		command = { type = infra value = 600 }
+		command = { type = provincetax which = 399 value = 3 } #Roma
+		command = { type = stability value = 1 }
+		command = { type = vp value = 80 }
+	}
+	action_b = {
+		name = "Curtail building expenses in favor of frontier defense"
+		command = { type = land value = 400 }
+		command = { type = treasury value = 50 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 3010257: The Great Quarantine of Rome (1656)
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3010257
+	random = no
+	country = PAP
+
+	trigger = {
+		flag = pap_path_theocracy
+		owned = { province = 399 data = -1 }
+	}
+
+	name = "The Great Quarantine of Rome"
+	desc = "In the summer of 1656, a catastrophic plague erupts in Naples, killing over half its inhabitants. As panic spreads toward Rome, Pope Alexander VII and Cardinal Girolamo Gastaldi enforce a ruthless, scientifically organized public health cordon: isolating Trastevere, patrolling city gates with the Swiss Guard, closing contaminated taverns, and providing free rations and clean linen to quarantined households. Through these extraordinary measures, Rome escapes the mass mortalities that ravage the rest of Italy."
+	style = 1
+
+	date = { day = 1 month = june year = 1656 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1658 }
+
+	action_a = {
+		name = "Enforce the sanitary cordon and protect the populace!"
+		command = { type = treasury value = -120 }
+		command = { type = infra value = 300 }
+		command = { type = stability value = 1 }
+		command = { type = provincetax which = 399 value = 1 }
+		command = { type = vp value = 40 }
+	}
+	action_b = {
+		name = "Rely solely on penitential processions"
+		command = { type = populationpercent which = 399 value = -10 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 3010258: Pope Innocent XI and the Relief of Vienna (1683)
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3010258
+	random = no
+	country = PAP
+
+	trigger = {
+		flag = pap_path_theocracy
+		owned = { province = 399 data = -1 }
+	}
+
+	name = "Pope Innocent XI and the Holy League of Vienna"
+	desc = "When an Ottoman army of over 150,000 men lays siege to Vienna in 1683, the fate of Central Europe hangs in the balance. Pope Innocent XI works tirelessly to forge a grand Holy League between Emperor Leopold I and King Jan III Sobieski of Poland. Emptying the papal treasury of 1.5 million florins to pay and supply the allied soldiers, the Pontiff ensures the winged hussars and imperial troops arrive in time to lift the siege and save Europe."
+	style = 1
+
+	date = { day = 12 month = september year = 1683 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1685 }
+
+	action_a = {
+		name = "Pour papal gold into the defense of Vienna!"
+		command = { type = treasury value = -200 }
+		command = { type = relation which = HAB value = 150 }
+		command = { type = relation which = POL value = 150 }
+		command = { type = stability value = 1 }
+		command = { type = badboy value = -2 }
+		command = { type = vp value = 80 }
+	}
+	action_b = {
+		name = "Reserve the treasury for internal Italian security"
+		command = { type = land value = 300 }
+		command = { type = relation which = HAB value = -50 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 3010259: Giovanni Battista Piranesi and the Vedute di Roma (1745-1778)
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3010259
+	random = no
+	country = PAP
+
+	trigger = {
+		flag = pap_path_theocracy
+		owned = { province = 399 data = -1 }
+	}
+
+	name = "Giovanni Battista Piranesi and the Vedute di Roma"
+	desc = "Venetian-born architect and master printmaker Giovanni Battista Piranesi publishes his monumental series of etchings--the Vedute di Roma and Le Antichita Romane. Portraying the colossal ruins, triumphal arches, and baroque basilicas of Rome with dramatic chiaroscuro, Piranesi's prints captivate travelers on the Grand Tour, cementing Rome's prestige as the cultural capital of the civilized world."
+	style = 1
+
+	date = { day = 1 month = january year = 1750 }
+	offset = 120
+	deathdate = { day = 30 month = december year = 1780 }
+
+	action_a = {
+		name = "Patronize the master printmaker and the Grand Tour"
+		command = { type = treasury value = -80 }
+		command = { type = trade value = 400 }
+		command = { type = infra value = 400 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 50 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 3010260: The Revolutionary Tempest: The Defense of the Church (1789-1799)
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3010260
+	random = no
+	country = PAP
+
+	trigger = {
+		flag = pap_path_theocracy
+		owned = { province = 399 data = -1 }
+	}
+
+	name = "The Revolutionary Tempest: The Defense of the Church"
+	desc = "The outbreak of the French Revolution unleashes virulent anti-clericalism across Western Europe. Revolutionary armies march across the Alps seeking to overthrow ancient thrones and dismantle the Papal state. Pope Pius VI firmly condemns the Civil Constitution of the Clergy and mobilizes the spiritual and civic defenses of the Holy See, standing as an unyielding beacon of faith against revolutionary terror."
+	style = 1
+
+	date = { day = 1 month = january year = 1791 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1799 }
+
+	action_a = {
+		name = "Stand steadfast in defense of apostolic sovereignty!"
+		command = { type = infantry which = 399 value = 10000 }
+		command = { type = cavalry which = 399 value = 2000 }
+		command = { type = fortress which = 399 value = 1 }
+		command = { type = domestic which = offensive value = 1 }
+		command = { type = relation which = FRA value = -200 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 60 }
+	}
+	action_b = {
+		name = "Seek diplomatic conciliation with the French Republic"
+		command = { type = relation which = FRA value = 50 }
+		command = { type = treasury value = -200 }
+		command = { type = stability value = -1 }
+	}
+}
+

@@ -40,7 +40,7 @@ event = {
 	id = 3009701
 	random = no
 	country = KOR
-	name = "Zegary Wodne i Deszczomierze Jang Yeong-sila"
+	name = "Water Clocks and Pluviometers of Jang Yeong-sil"
 	desc = "In response to recurrent pirate raids along the southern provinces, General Yi Jong-mu leads a royal expeditionary fleet of over two hundred warships to Tsushima Island. The Wokou pirate encampments are destroyed, securing navigation along the Korean Strait."
 
 	trigger = {
@@ -54,7 +54,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1460 }
 
 	action_a = {
-		name = "Wdrozyc wynalazki w kazdej prowincji krolestwa!"
+		name = "Implement the inventions throughout every province!"
 		command = { type = infra value = 500 }
 		command = { type = provincetax which = 641 value = 2 }
 		command = { type = provincetax which = 642 value = 2 }
@@ -63,7 +63,7 @@ event = {
 	}
 }
 
-# 3009710: Triumf Okretow Zolwi w Ciesninie Tsushima
+# 3009710: Triumph of the Turtle Ships in Tsushima Strait
 event = {
 	id = 3009710
 	random = no
@@ -93,12 +93,12 @@ event = {
 # Native 10-Year Integration Events (FTG 1.3 ownerchange = 10)
 #----------------------------------------------------------------
 
-# 3009741: Integracja Kyongsang / Pusan (641)
+# 3009741: Integration of Kyongsang / Pusan (641)
 event = {
 	id = 3009741
 	random = no
 	country = KOR
-	name = "Integracja Pusan"
+	name = "Integration of Pusan"
 	desc = "A decade of stable administration, roadbuilding, and fortress construction has firmly linked Liaoning with the royal administration of Joseon."
 
 	trigger = {
@@ -113,18 +113,18 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Pusan jest sercem poludniowej marynarki"
+		name = "Pusan is the heart of the southern navy"
 		command = { type = addcore_national which = 641 }
 		command = { type = stability value = 1 }
 	}
 }
 
-# 3009742: Integracja Pyongan / Phenianu (643)
+# 3009742: Integration of Pyongan / Pyongyang (643)
 event = {
 	id = 3009742
 	random = no
 	country = KOR
-	name = "Integracja Phenianu"
+	name = "Integration of Pyongyang"
 	desc = "Ten years of civic governance have established peace, bringing the communities of Jilin into the fold of the realm."
 
 	trigger = {
@@ -139,18 +139,18 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Pyongan jest tarcza krolestwa"
+		name = "Pyongan is the shield of the kingdom"
 		command = { type = addcore_national which = 643 }
 		command = { type = stability value = 1 }
 	}
 }
 
-# 3009743: Integracja Liaodong / Yalu (636)
+# 3009743: Integration of Liaodong / Yalu (636)
 event = {
 	id = 3009743
 	random = no
 	country = KOR
-	name = "Integracja Liaodong i Ziemi za Yalu"
+	name = "Integration of Liaodong and Lands Beyond the Yalu"
 	desc = "Ten years of military garrisons along the northern rivers have established the Amur borderlands as an unshakeable boundary of the empire."
 
 	trigger = {
@@ -165,7 +165,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Ziemie za Yalu powracaja do macierzy"
+		name = "The lands beyond the Yalu return to the realm"
 		command = { type = addcore_national which = 636 }
 		command = { type = stability value = 1 }
 	}
@@ -197,13 +197,13 @@ event = {
 	}
 }
 
-# 3009745: Integracja Regionu Amuru (638)
+# 3009745: Integration of the Amur River Region (638)
 event = {
 	id = 3009745
 	random = no
 	country = KOR
-	name = "Integracja Regionu Rzeki Amur"
-	desc = "Dziesiec lat stabilnosci na polnocnej granicy uczynilo rzeke Amur wieczysta rubieza cesarstwa."
+	name = "Integration of the Amur River Region"
+	desc = "Ten years of stability along the northern border have established the Amur River as the eternal frontier of the realm."
 
 	trigger = {
 		owned = { province = 638 data = -1 }
@@ -217,7 +217,7 @@ event = {
 	deathdate = { day = 30 month = december year = 1838 }
 
 	action_a = {
-		name = "Amur wyznacza granice mocarstwa wschodu"
+		name = "The Amur River marks the border of the Eastern Power"
 		command = { type = addcore_national which = 638 }
 		command = { type = stability value = 1 }
 	}
