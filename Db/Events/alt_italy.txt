@@ -269,3 +269,441 @@ event = {
 		command = { type = vp value = 20 }
 	}
 }
+
+# -----------------------------------------------------------------------
+# HISTORICAL CHARACTERS & FLAVOR EVENTS (1500 - 1800)
+# -----------------------------------------------------------------------
+
+# 3010210: Leonardo da Vinci: Royal Chief Engineer and Architect
+event = {
+	id = 3010210
+	trigger = {
+		tag = ITA
+		owned = { province = 389 data = -1 } # Lombardia
+	}
+	random = no
+	country = ITA
+	name = "Leonardo da Vinci: Royal Chief Engineer and Architect"
+	desc = "The universal genius Leonardo da Vinci places his astonishing talents at the service of the Italian Crown. Rather than departing for foreign courts, Leonardo directs state canal systems in Lombardy, designs revolutionary military fortifications, and drafts flying machines in the royal workshops. His multifaceted intellect brings unprecedented glory to our realm."
+	style = 1
+
+	date = { day = 1 month = january year = 1502 }
+	offset = 60
+	deathdate = { day = 1 month = may year = 1519 }
+
+	action_a = {
+		name = "Appoint Leonardo as Supreme Master of Royal Works"
+		command = { type = infra value = 400 }
+		command = { type = land value = 250 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = treasury value = -80 }
+		command = { type = vp value = 30 }
+	}
+}
+
+# 3010211: Niccolo Machiavelli: The Prince and National Statecraft
+event = {
+	id = 3010211
+	trigger = {
+		tag = ITA
+		owned = { province = 401 data = -1 } # Firenze
+	}
+	random = no
+	country = ITA
+	name = "Niccolo Machiavelli: The Prince and National Statecraft"
+	desc = "Having dedicated his masterwork 'Il Principe' to the unifier of Italy, Niccolo Machiavelli enters the royal cabinet as Secretary of State. His penetrating realism cuts through medieval illusions, counseling the monarch to maintain domestic arms, anticipate foreign balance of power shifts, and govern with the cunning of the fox and the courage of the lion."
+	style = 1
+
+	date = { day = 1 month = january year = 1513 }
+	offset = 60
+	deathdate = { day = 1 month = june year = 1527 }
+
+	action_a = {
+		name = "Adopt Machiavelli's doctrine of national interest"
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = domestic which = offensive value = 1 }
+		command = { type = diplomats value = 3 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 25 }
+	}
+}
+
+# 3010212: Amerigo Vespucci & Giovanni da Verrazzano: Italian Expeditions
+event = {
+	id = 3010212
+	trigger = {
+		tag = ITA
+	}
+	random = no
+	country = ITA
+	name = "The Fourth Part of the World: Italian Navigators"
+	desc = "Florentine cosmographer Amerigo Vespucci realizes that the lands across the western ocean constitute an entirely new continent--the Mundus Novus. Joining him, navigator Giovanni da Verrazzano sails an Italian royal caravel to explore the eastern shores of North America, naming harbors and bays after Italian cities."
+	style = 1
+
+	date = { day = 1 month = january year = 1507 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1530 }
+
+	action_a = {
+		name = "Fund the Royal Cartographic Bureau"
+		command = { type = naval value = 300 }
+		command = { type = trade value = 250 }
+		command = { type = colonists value = 2 }
+		command = { type = treasury value = -75 }
+		command = { type = vp value = 30 }
+	}
+}
+
+# 3010213: The Sack of Rome Averted
+event = {
+	id = 3010213
+	trigger = {
+		tag = ITA
+		owned = { province = 399 data = -1 } # Roma
+	}
+	random = no
+	country = ITA
+	name = "The Defense of the Eternal City (1527)"
+	desc = "An unruly host of foreign imperial mercenaries and mutinous troops advances toward Rome, intent on pillaging churches and palaces. But unlike in fractured times, a united Italian army stands ready behind the Aurelian walls and the Castel Sant'Angelo. Meeting the invaders in battle before the gates, the Italian legions crush the marauders and save Rome from devastation."
+	style = 1
+
+	date = { day = 1 month = may year = 1527 }
+	offset = 30
+	deathdate = { day = 1 month = december year = 1527 }
+
+	action_a = {
+		name = "The Eternal City stands inviolate!"
+		command = { type = stability value = 2 }
+		command = { type = land value = 250 }
+		command = { type = relation which = HAB value = -50 }
+		command = { type = vp value = 40 }
+	}
+}
+
+# 3010214: Andrea Doria and the Battle of Lepanto
+event = {
+	id = 3010214
+	trigger = {
+		tag = ITA
+		owned = { province = 370 data = -1 } # Veneto
+		owned = { province = 403 data = -1 } # Liguria
+	}
+	random = no
+	country = ITA
+	name = "Andrea Doria and the Victorious Armada of Lepanto"
+	desc = "In the waters of the Gulf of Patras, the unified armada of Italy--led by veteran Genoese Admiral Andrea Doria and Venetian naval patricians--clashes with the grand fleet of the Ottoman Empire. The devastating broadsides of our heavy galleasses smash the enemy center. The victory at Lepanto shatters Ottoman naval dominance in the Mediterranean."
+	style = 1
+
+	date = { day = 1 month = october year = 1571 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1575 }
+
+	action_a = {
+		name = "Triumph of the Italian Navy!"
+		command = { type = naval value = 400 }
+		command = { type = stability value = 2 }
+		command = { type = badboy value = -3 }
+		command = { type = vp value = 50 }
+	}
+}
+
+# 3010215: The Trial of Galileo Galilei: Science vs. Inquisition
+event = {
+	id = 3010215
+	trigger = {
+		tag = ITA
+	}
+	random = no
+	country = ITA
+	name = "The Trial of Galileo Galilei: Science vs. Inquisition"
+	desc = "Astronomer Galileo Galilei of the Accademia dei Lincei has published his revolutionary 'Dialogue Concerning the Two Chief World Systems', asserting that the Earth revolves around the Sun. Conservative theologians of the Inquisition summon Galileo to Rome, demanding his recantation under threat of torture. The King must decide whether to shield the greatest scientist of the age or yield to clerical pressure."
+	style = 1
+
+	date = { day = 1 month = january year = 1633 }
+	offset = 60
+	deathdate = { day = 1 month = december year = 1633 }
+
+	action_a = {
+		name = "Shield Galileo under royal protection: Truth shall not be chained!"
+		command = { type = domestic which = innovative value = 2 }
+		command = { type = infra value = 400 }
+		command = { type = relation which = PAP value = -75 }
+		command = { type = stability value = -1 }
+		command = { type = vp value = 40 }
+	}
+	action_b = {
+		name = "Submit to inquisitorial censure to maintain religious harmony"
+		command = { type = domestic which = innovative value = -1 }
+		command = { type = stability value = 1 }
+		command = { type = relation which = PAP value = 50 }
+	}
+}
+
+# 3010216: Claudio Monteverdi and the Birth of Italian Opera
+event = {
+	id = 3010216
+	trigger = {
+		tag = ITA
+	}
+	random = no
+	country = ITA
+	name = "Claudio Monteverdi and the Birth of Italian Opera"
+	desc = "In the ducal courts of Mantua and the public theatres of Venice, composer Claudio Monteverdi pioneers the musical drama--the Opera. Blending dramatic poetry, polyphony, and emotional melody, works like 'L'Orfeo' take Europe by storm. Italian becomes the universal language of European music and theatrical art."
+	style = 1
+
+	date = { day = 1 month = january year = 1607 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1640 }
+
+	action_a = {
+		name = "Endow the Royal Opera Theatres"
+		command = { type = stability value = 1 }
+		command = { type = treasury value = -60 }
+		command = { type = infra value = 200 }
+		command = { type = vp value = 25 }
+	}
+}
+
+# 3010217: Gian Lorenzo Bernini & the Grand Baroque
+event = {
+	id = 3010217
+	trigger = {
+		tag = ITA
+		owned = { province = 399 data = -1 } # Roma
+	}
+	random = no
+	country = ITA
+	name = "Gian Lorenzo Bernini and the Roman Baroque"
+	desc = "Master sculptor, architect, and urban planner Gian Lorenzo Bernini transforms the Eternal City into a breathtaking theatre of stone and water. The sweeping colonnades of Saint Peter's square, the Fountain of the Four Rivers in Piazza Navona, and ecstatic marble statues dazzle travelers from across the earth."
+	style = 1
+
+	date = { day = 1 month = january year = 1650 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1680 }
+
+	action_a = {
+		name = "Rome is the artistic capital of the world!"
+		command = { type = treasury value = -120 }
+		command = { type = stability value = 1 }
+		command = { type = infra value = 300 }
+		command = { type = vp value = 35 }
+	}
+}
+
+# 3010218: The Great Pestilence of Milan (1630)
+event = {
+	id = 3010218
+	trigger = {
+		tag = ITA
+		owned = { province = 389 data = -1 } # Lombardia
+	}
+	random = no
+	country = ITA
+	name = "The Great Pestilence of Milan (1630)"
+	desc = "Brought by armies traversing the Alps during the Mantuan War, bubonic plague breaks out in Milan and the Po Valley. As depicted in chroniclers' accounts, the lazaretto of Milan is filled with thousands of suffering souls. The royal government must mobilize all medical and military resources to enforce quarantine cordons."
+	style = 1
+
+	date = { day = 1 month = january year = 1630 }
+	offset = 30
+	deathdate = { day = 1 month = december year = 1631 }
+
+	action_a = {
+		name = "Enforce military isolation and royal relief funds"
+		command = { type = treasury value = -150 }
+		command = { type = population which = 389 value = -2000 }
+		command = { type = stability value = 1 }
+		command = { type = infra value = 200 }
+	}
+	action_b = {
+		name = "Let local parish magistrates handle the crisis"
+		command = { type = population which = 389 value = -6000 }
+		command = { type = stability value = -2 }
+	}
+}
+
+# 3010219: Antonio Stradivari and the Cremonese Lute Makers
+event = {
+	id = 3010219
+	trigger = {
+		tag = ITA
+		owned = { province = 389 data = -1 } # Lombardia
+	}
+	random = no
+	country = ITA
+	name = "Antonio Stradivari and the Cremonese Violins"
+	desc = "In the town of Cremona, master luthier Antonio Stradivari crafts stringed instruments of supernatural acoustic perfection and radiant varnish. Monarchs, princes, and virtuosos across Europe pay vast fortunes in gold for a single Stradivarius or Guarneri violin, turning Cremona into an acoustic legend."
+	style = 1
+
+	date = { day = 1 month = january year = 1690 }
+	offset = 90
+	deathdate = { day = 1 month = january year = 1730 }
+
+	action_a = {
+		name = "Grant royal patronages to the Cremonese workshops"
+		command = { type = trade value = 200 }
+		command = { type = treasury value = 50 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 20 }
+	}
+}
+
+# 3010220: Giambattista Vico: The New Science of Civilizations
+event = {
+	id = 3010220
+	trigger = {
+		tag = ITA
+		owned = { province = 393 data = -1 } # Napoli
+	}
+	random = no
+	country = ITA
+	name = "Giambattista Vico: The New Science of Civilizations"
+	desc = "In Naples, philosopher and legal scholar Giambattista Vico publishes 'Scienza Nuova' (The New Science). Rejecting dry Cartesian rationalism, Vico reveals that human history progresses through cyclical poetic and heroic ages driven by culture, myth, and human action, founding the modern philosophy of history."
+	style = 1
+
+	date = { day = 1 month = january year = 1725 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1744 }
+
+	action_a = {
+		name = "Celebrate the wisdom of the Neapolitan school"
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = infra value = 250 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 25 }
+	}
+}
+
+# 3010221: Cesare Beccaria and Pietro Verri: The Caffe Circle
+event = {
+	id = 3010221
+	trigger = {
+		tag = ITA
+		owned = { province = 389 data = -1 } # Lombardia
+	}
+	random = no
+	country = ITA
+	name = "The Enlightenment in Milan: The Caffe Circle"
+	desc = "In Milan, young reformist intellectuals led by Pietro Verri and Cesare Beccaria form the Accademia dei Pugni and publish the radical journal 'Il Caffe'. Debating economics, justice, and human dignity, they advocate for free trade, equal taxes, and the total abolition of feudal servitude."
+	style = 1
+
+	date = { day = 1 month = january year = 1764 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1780 }
+
+	action_a = {
+		name = "Welcome the enlightened reformers into the royal administration"
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = domestic which = serfdom value = -1 }
+		command = { type = trade value = 300 }
+		command = { type = infra value = 300 }
+		command = { type = vp value = 30 }
+	}
+}
+
+# 3010222: Alessandro Volta & Luigi Galvani: The Dawn of Electricity
+event = {
+	id = 3010222
+	trigger = {
+		tag = ITA
+	}
+	random = no
+	country = ITA
+	name = "Alessandro Volta & Luigi Galvani: The Dawn of Electricity"
+	desc = "At the University of Pavia and in Bologna, Italian natural philosophers pioneer electrical science. Luigi Galvani discovers bioelectricity in nerve impulses, while Alessandro Volta constructs the world's first chemical battery--the Voltaic Pile. Napoleon and the scientific academies of Europe acclaim Italy as the cradle of modern physics."
+	style = 1
+
+	date = { day = 1 month = january year = 1780 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1800 }
+
+	action_a = {
+		name = "Fund the Royal Physical Institutes"
+		command = { type = infra value = 500 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = treasury value = -100 }
+		command = { type = vp value = 35 }
+	}
+}
+
+# 3010223: Antonio Canova: Neoclassical Sculpture of the Fatherland
+event = {
+	id = 3010223
+	trigger = {
+		tag = ITA
+	}
+	random = no
+	country = ITA
+	name = "Antonio Canova: Neoclassical Sculpture of the Fatherland"
+	desc = "Master sculptor Antonio Canova carves white Carrara marble with serene neoclassical harmony, reviving the heroic purity of ancient Rome and Greece. European emperors and kings commission his masterpieces, cementing Italy's aesthetic primacy in the Age of Reason."
+	style = 1
+
+	date = { day = 1 month = january year = 1785 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1810 }
+
+	action_a = {
+		name = "Commission monumental sculptures for the capital"
+		command = { type = stability value = 1 }
+		command = { type = treasury value = -80 }
+		command = { type = vp value = 25 }
+	}
+}
+
+# 3010224: Carlo Goldoni: The Reform of Italian Comedy
+event = {
+	id = 3010224
+	trigger = {
+		tag = ITA
+		owned = { province = 370 data = -1 } # Veneto
+	}
+	random = no
+	country = ITA
+	name = "Carlo Goldoni: The Reform of Italian Theatre"
+	desc = "Venetian playwright Carlo Goldoni revitalizes European theatre by replacing masked improvisations of the old Commedia dell'Arte with scripted, realistic character comedies depicting the vibrant life of merchants, gondoliers, and nobles. His plays charm audiences from Venice to Paris."
+	style = 1
+
+	date = { day = 1 month = january year = 1750 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1775 }
+
+	action_a = {
+		name = "Patronize national civic playhouses"
+		command = { type = stability value = 1 }
+		command = { type = infra value = 150 }
+		command = { type = vp value = 20 }
+	}
+}
+
+# 3010225: The Storm of 1789: The Revolutionary Challenge
+event = {
+	id = 3010225
+	trigger = {
+		tag = ITA
+	}
+	random = no
+	country = ITA
+	name = "The Storm of 1789: The Revolutionary Challenge"
+	desc = "The fall of the Bastille in Paris and the proclamation of the Rights of Man send shockwaves through every European court. In Italy, secret patriotic societies and Jacobin clubs call for liberty, while traditional aristocrats urge armed suppression. The Italian Crown must steer the ship of state through the revolutionary tempest."
+	style = 1
+
+	date = { day = 1 month = august year = 1789 }
+	offset = 30
+	deathdate = { day = 1 month = december year = 1795 }
+
+	action_a = {
+		name = "Embrace progressive constitutional reform"
+		command = { type = domestic which = aristocracy value = -1 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = badboy value = -2 }
+		command = { type = vp value = 30 }
+	}
+	action_b = {
+		name = "Stand as an unshakeable champion of royal order"
+		command = { type = domestic which = aristocracy value = 1 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = land value = 300 }
+		command = { type = relation which = HAB value = 100 }
+	}
+}

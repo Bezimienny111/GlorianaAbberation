@@ -689,3 +689,332 @@ decision = {
 		command = { type = vp value = 150 }
 	}
 }
+
+# -----------------------------------------------------------------------
+# PART 3: THE EARLY MODERN & ENLIGHTENMENT ERA (1500 - 1800)
+# -----------------------------------------------------------------------
+
+# 7100: Transatlantic Venture: Colonies of Nuova Italia
+decision = {
+	id = 7100
+	potential = {
+		tag = ITA
+		flag = ita_unified
+		NOT = { flag = ita_transatlantic_colonies }
+	}
+	trigger = {
+		stability = 1
+		treasury = 250
+	}
+	name = "Transatlantic Venture: Colonies of Nuova Italia"
+	desc = "Italian navigators--Amerigo Vespucci, Giovanni da Verrazzano, and the Cabots--have charted distant continents across the Atlantic. By establishing royal chartered settlements in the Caribbean and South America under the Italian flag, we secure our share of the New World wealth."
+	action = {
+		command = { type = setflag which = ita_transatlantic_colonies }
+		command = { type = colonists value = 4 }
+		command = { type = merchants value = 4 }
+		command = { type = trade value = 350 }
+		command = { type = treasury value = -200 }
+		command = { type = domestic which = mercantilism value = -1 }
+		command = { type = vp value = 35 }
+	}
+}
+
+# 7101: Il Canale dei Due Mari: Red Sea Navigation & Levant Trade
+decision = {
+	id = 7101
+	potential = {
+		tag = ITA
+		flag = ita_mare_nostrum
+		NOT = { flag = ita_suez_precursor }
+	}
+	trigger = {
+		treasury = 300
+		infra = 3
+		stability = 1
+	}
+	name = "Il Canale dei Due Mari: Trade of the Red Sea"
+	desc = "To counter the Portuguese monopoly around the Cape of Good Hope, our engineers revive the ancient vision of connecting the Mediterranean with the Red Sea. By digging overland transit canals and stationing an Italian merchant squadron at Suez, we re-establish direct maritime access to India."
+	action = {
+		command = { type = setflag which = ita_suez_precursor }
+		command = { type = trade value = 500 }
+		command = { type = merchants value = 6 }
+		command = { type = treasury value = -250 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 40 }
+	}
+}
+
+# 7102: The Crusade of Lepanto: Liberation of the Levant & Aegean
+decision = {
+	id = 7102
+	potential = {
+		tag = ITA
+		flag = ita_naval_supremacy
+		NOT = { flag = ita_lepanto_crusade }
+	}
+	trigger = {
+		stability = 1
+		treasury = 200
+	}
+	name = "The Crusade of Lepanto: Supremacy over the Levant"
+	desc = "The Ottoman fleet threatens the islands of the eastern Mediterranean. Mobilizing our colossal battle line of Venetian galleasses and Genoese galleons under the unified banner of Italy, we crush Ottoman naval ambitions and assert protection over Cyprus and Crete."
+	action = {
+		command = { type = setflag which = ita_lepanto_crusade }
+		command = { type = addcore_claim which = 484 } # Cyprus
+		command = { type = addcore_claim which = 480 } # Crete
+		command = { type = addcore_claim which = 479 } # Corfu
+		command = { type = naval value = 400 }
+		command = { type = treasury value = -150 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 50 }
+	}
+}
+
+# 7103: Royal Manufactories of Northern Italy
+decision = {
+	id = 7103
+	potential = {
+		tag = ITA
+		flag = ita_statuto_promulgated
+		NOT = { flag = ita_royal_manufactories }
+	}
+	trigger = {
+		infra = 3
+		treasury = 250
+		stability = 1
+	}
+	name = "Royal Manufactories: Luxury and Armaments"
+	desc = "From the crystal mirrors of Murano to the fine damasks of Como, from the firearms workshops of Brescia to the master luthiers of Cremona, northern Italy is the workshop of Europe. By granting royal charters and tariff protections, we establish state-backed manufactories across Lombardy and Venetia."
+	action = {
+		command = { type = setflag which = ita_royal_manufactories }
+		command = { type = provincetax which = 389 value = 1 } # Lombardia
+		command = { type = provincetax which = 370 value = 1 } # Veneto
+		command = { type = trade value = 350 }
+		command = { type = infra value = 350 }
+		command = { type = treasury value = -200 }
+		command = { type = vp value = 30 }
+	}
+}
+
+# 7104: The Sanitary Lazarettos: Central Royal Health Magistracies
+decision = {
+	id = 7104
+	potential = {
+		tag = ITA
+		flag = ita_statuto_promulgated
+		NOT = { flag = ita_lazarettos_established }
+	}
+	trigger = {
+		treasury = 150
+		stability = 1
+	}
+	name = "The Sanitary Lazarettos: Royal Health Magistracies"
+	desc = "Recalling the ravages of historic plagues, our kingdom establishes permanent Magistrati della Sanita across all ports and provinces. Maritime quarantine stations, isolated island lazarettos, and strict disinfection protocols ensure our populace is protected against contagion."
+	action = {
+		command = { type = setflag which = ita_lazarettos_established }
+		command = { type = population which = 389 value = 3000 }
+		command = { type = population which = 370 value = 2000 }
+		command = { type = population which = 399 value = 2000 }
+		command = { type = infra value = 250 }
+		command = { type = treasury value = -120 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 25 }
+	}
+}
+
+# 7105: Alpine Intervention in the Thirty Years' War
+decision = {
+	id = 7105
+	potential = {
+		tag = ITA
+		flag = ita_alpine_barrier
+		flag = ita_esercito_nazionale
+		NOT = { flag = ita_westphalia_guarantor }
+	}
+	trigger = {
+		stability = 1
+		treasury = 200
+	}
+	name = "Alpine Intervention: Guarantor of European Peace"
+	desc = "As the German lands and Austrian Habsburgs exhaust their forces in religious warfare, Italy asserts its role as a premier arbiter of European equilibrium. By securing our natural Alpine borders in Trent and Istria, Italy guarantees continental balance at the negotiating table."
+	action = {
+		command = { type = setflag which = ita_westphalia_guarantor }
+		command = { type = addcore which = 368 } # Istria
+		command = { type = diplomats value = 3 }
+		command = { type = badboy value = -4 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 40 }
+	}
+}
+
+# 7106: The Monumental Baroque: Reggia di Caserta & Roman Splendor
+decision = {
+	id = 7106
+	potential = {
+		tag = ITA
+		flag = ita_statuto_promulgated
+		NOT = { flag = ita_baroque_splendor }
+	}
+	trigger = {
+		treasury = 300
+		stability = 2
+	}
+	name = "The Monumental Baroque: Royal Palaces and Piazzas"
+	desc = "Summoning Bernini, Borromini, and Vanvitelli, the Italian crown erects monumental palaces and triumphal piazzas to dwarf Versailles. The colossal Royal Palace of Caserta, the colonnades of Saint Peter's, and the fountains of Rome stand as eternal monuments to our sovereign majesty."
+	action = {
+		command = { type = setflag which = ita_baroque_splendor }
+		command = { type = domestic which = aristocracy value = 1 }
+		command = { type = treasury value = -250 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 50 }
+	}
+}
+
+# 7107: Illuminismo Italiano: Legal Reforms of Cesare Beccaria
+decision = {
+	id = 7107
+	potential = {
+		tag = ITA
+		flag = ita_academies_founded
+		NOT = { flag = ita_beccaria_reforms }
+	}
+	trigger = {
+		stability = 1
+		infra = 4
+	}
+	name = "Illuminismo Italiano: Legal Reforms of Cesare Beccaria"
+	desc = "Inspired by Cesare Beccaria's groundbreaking treatise 'On Crimes and Punishments', Italy becomes the first nation on Earth to abolish judicial torture and capital punishment. Replacing archaic inquisitorial brutality with rational, humane civil trials, our enlightened justice earns the veneration of the civilized world."
+	action = {
+		command = { type = setflag which = ita_beccaria_reforms }
+		command = { type = domestic which = innovative value = 2 }
+		command = { type = domestic which = serfdom value = -2 }
+		command = { type = revoltrisk which = 60 value = -2 }
+		command = { type = infra value = 400 }
+		command = { type = stability value = 2 }
+		command = { type = vp value = 60 }
+	}
+}
+
+# 7108: The Grand Agrarian Reclamation: Draining the Marshes
+decision = {
+	id = 7108
+	potential = {
+		tag = ITA
+		flag = ita_statuto_promulgated
+		NOT = { flag = ita_marshes_drained }
+	}
+	trigger = {
+		treasury = 250
+		stability = 1
+	}
+	name = "The Grand Agrarian Reclamation: Draining the Marshes"
+	desc = "For millennia, the malarial bogs of the Pontine Marshes in Lazio, the Tuscan Maremma, and the lower Po delta have sapped our agricultural vitality. By directing hydraulic canals, sluices, and eucalyptus plantations, we convert hundreds of leagues of stagnant swamps into golden wheat fields."
+	action = {
+		command = { type = setflag which = ita_marshes_drained }
+		command = { type = provincetax which = 399 value = 1 } # Roma
+		command = { type = provincetax which = 400 value = 1 } # Siena / Maremma
+		command = { type = provincetax which = 402 value = 1 } # Emilia
+		command = { type = population which = 399 value = 4000 }
+		command = { type = population which = 400 value = 3000 }
+		command = { type = treasury value = -200 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 35 }
+	}
+}
+
+# 7109: Industrial Dawn: The Hydraulic Silk Mills of Piedmont
+decision = {
+	id = 7109
+	potential = {
+		tag = ITA
+		flag = ita_royal_manufactories
+		NOT = { flag = ita_hydraulic_mills }
+	}
+	trigger = {
+		infra = 4
+		treasury = 250
+		stability = 1
+	}
+	name = "Industrial Dawn: The Hydraulic Silk Mills of Piedmont"
+	desc = "Long before steam engines rose in Britain, northern Italy perfected the multistoried hydraulic silk throwing mill (il torcitoio da seta). Powered by Alpine torrents and synchronized gear trains, these pioneering proto-factories output tons of the finest organzine silk for worldwide export."
+	action = {
+		command = { type = setflag which = ita_hydraulic_mills }
+		command = { type = provincetax which = 404 value = 2 } # Piemonte
+		command = { type = trade value = 450 }
+		command = { type = infra value = 450 }
+		command = { type = treasury value = -180 }
+		command = { type = vp value = 40 }
+	}
+}
+
+# 7110: The Constitutional Sovereign Monarchy: Carta Costituzionale
+decision = {
+	id = 7110
+	potential = {
+		tag = ITA
+		flag = ita_beccaria_reforms
+		NOT = { flag = ita_constitution_promulgated }
+	}
+	trigger = {
+		stability = 2
+	}
+	name = "The Sovereign Charter: Carta Costituzionale"
+	desc = "As revolutionary winds sweep across Europe, Italy chooses the path of enlightened constitutionalism. The King promulgates the Carta Costituzionale, establishing an elected national parliament, freedom of the press, and legal equality while preserving royal stability against mob anarchy."
+	action = {
+		command = { type = setflag which = ita_constitution_promulgated }
+		command = { type = domestic which = aristocracy value = -2 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = stability value = 2 }
+		command = { type = badboy value = -5 }
+		command = { type = vp value = 60 }
+	}
+}
+
+# 7111: The National Universities of Bologna and Padua
+decision = {
+	id = 7111
+	potential = {
+		tag = ITA
+		flag = ita_academies_founded
+		NOT = { flag = ita_universities_reformed }
+	}
+	trigger = {
+		treasury = 200
+		stability = 1
+	}
+	name = "Endow the Imperial Universities of Bologna and Padua"
+	desc = "Bologna--the oldest university in the Western world--and Padua, where Galileo taught, are elevated into imperial research institutes. Generous stipends attract luminaries in mathematics, physics, and medicine, cementing Italy's leadership in the European Enlightenment."
+	action = {
+		command = { type = setflag which = ita_universities_reformed }
+		command = { type = infra value = 400 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = treasury value = -150 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 30 }
+	}
+}
+
+# 7112: The Italian East India Company
+decision = {
+	id = 7112
+	potential = {
+		tag = ITA
+		flag = ita_suez_precursor
+		NOT = { flag = ita_east_india_charter }
+	}
+	trigger = {
+		treasury = 300
+		trade = 4
+		stability = 1
+	}
+	name = "Charter of the Italian East India Company"
+	desc = "Uniting merchants from Genoa, Venice, and Livorno, the Compagnia Reale delle Indie Orientali establishes permanent factories in Calicut, Surat, and the Malacca Strait. Armed convoys return to Naples and Venice laden with tea, spices, and silk, turning Italy into an oceanic emporium."
+	action = {
+		command = { type = setflag which = ita_east_india_charter }
+		command = { type = trade value = 500 }
+		command = { type = merchants value = 6 }
+		command = { type = treasury value = -250 }
+		command = { type = vp value = 40 }
+	}
+}
