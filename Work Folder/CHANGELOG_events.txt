@@ -33,7 +33,7 @@ global shared event/decision ID space, monarch space, and leader space:
 |-----------------------------|---------------|-----------|-----------------|---------------|---------------|
 | 1. Byzantine Empire         | BYZ           | 6000-6065 | 3009000-3009022 | Vanilla       | Vanilla       |
 | 2. Papal States / Italy/WRE | PAP, ITA, WRE | 7010-7049 | 3009100-3009194 | 39001-39023   | 39101-39109   |
-| 3. Mameluks & Ptolemaic Egy | MAM, EGY      | 7050-7076 | 3009200-3009245 | 39201-39232   | 39251-39259   |
+| 3. Mameluks & Ptolemaic Egy | MAM, EGY      | 7050-7079, 7170-7184 | 3009200-3009265 | 39201-39232   | 39251-39275   |
 | 4. Hanseatic League         | HSA           | 7150-7160 | 3009300-3009345 | 13599-13763   | 39401-39410   |
 | 5. Pre-Columbian Americas   | AZT, INC      | 7200-7214 | 3009400-3009425 | Vanilla       | 39501-39558   |
 | 6. Celtic Union             | SCO, WLS, EIR | 7250-7255 | 3009500-3009545 | 12280-12294   | 39601-39608   |
@@ -308,6 +308,62 @@ global shared event/decision ID space, monarch space, and leader space:
    - 3009232: Expedition to the Mythical Land of Punt (Red Sea incense and gold trade).
    - 3009233: Cleopatra VIII Philopator on the Throne of the Nile (wakes monarch 39202).
    - 3009234: Revolt of the Mamluk Emirs in Upper Egypt (crushing feudal reaction).
+
+[2026-10-09] Expansion Phase 3 (Comprehensive 1500-1800 Era for All Religious Paths, Universal Decisions, Dynamic Flavor & Commanders):
+1. Universal Nile Modernization (Decisions 7074, 7077-7079, 7170-7176):
+   - Available to any ruler of the Nile (OR = { tag = MAM tag = EGY }):
+     * 7074: Red Sea Armada & Battle of Diu (Indian Ocean counter to European explorers, naval dominance).
+     * 7077: Malabar Spice Entrepot & Calicut Factory (direct Indian spice trade and commercial emporiums).
+     * 7078: Mocha Coffee Monopoly & Red Sea Customs (monopolizing the Yemeni coffee trade via Suez and Jeddah).
+     * 7079: Maritime Locks on the Canal of the Pharaohs (widening canal locks for ocean-going galleons).
+     * 7170: Long-Staple Delta Cotton Cultivation (cash-crop revolution, proto-industrial textile wealth).
+     * 7171: Grand Sugar Cane Refineries of Upper Egypt (large-scale sugar manufacturing in Asyut and Qena).
+     * 7172: Alexandria Grand Naval Arsenal & Basin (modern dry docks and deep-water Mediterranean naval supremacy).
+     * 7173: Eastern Mediterranean Customs Union (tariffs and commercial treaties across Levant and Aegean).
+     * 7174: Horn of Africa Expedition & Bab el-Mandeb (securing the strait, trade factories in Zeila & Berbera).
+     * 7175: Cairo Citadel Artillery Foundry (heavy siege ordnance and field guns, army modernization).
+     * 7176: Pax Aegyptiaca (imperial prestige, monumental stability, hegemony over the Fertile Crescent).
+2. Four Dynamic Religious / Ideological Paths (1500-1800 Decisions 7177-7184):
+   - Ptolemaic Hellenism (EGY):
+     * 7177: Grand Naval College of Alexandria & Ptolemaic Fleet Doctrine.
+     * 7178: The Grand Mouseion of the Enlightenment (classical Greek and modern natural sciences academy).
+   - Kemetic Paganism (egyptian_pagan):
+     * 7179: Grand Festival of Opet and Sacred Barque Processions (monumental religious pageant in Karnak).
+     * 7180: The Eternal Necropolis of Abydos and Royal Cult of Osiris (state pilgrimage center).
+   - Mu'tazilite Rationalism (mutazilite):
+     * 7181: House of Wisdom in Cairo (Bayt al-Hikma) (rationalist translation and scientific research academy).
+     * 7182: The Cairo Kalam Academy: Supreme Rationalist Court (theological scholasticism and legal reform).
+   - Traditional Sunni Mameluk Sultanate (sunni):
+     * 7183: Al-Azhar: Citadel of Sunnism and Islamic Orthodoxy (patronage of four orthodox madrasas, Islamic prestige).
+     * 7184: Modernized Royal Mameluk Cavalry Corps (integrating fire-drill horse archery and carbines).
+3. Historical Events & Flavor (Events 3009255-3009265):
+   - 3009255: The Battle of Diu and the Indian Ocean Struggle (1509).
+   - 3009256: Rise of the Cairene Coffeehouses (1530-1550).
+   - 3009257: Discovery and Decipherment of the Rosetta Stone (1600-1650).
+   - 3009258: The Great Plague of Damietta and Quarantine Lazarettos (1620-1680).
+   - 3009259: The Merchant Guilds of Khan el-Khalili (1650-1720).
+   - 3009260: Evliya Celebi's Journey through the Land of the Nile (1672-1680).
+   - 3009261: Corsairs of the Red Sea and the Strait of Bab el-Mandeb (1690-1730).
+   - 3009262: The Temple of Dendera and the Sacred Zodiac (1720-1760).
+   - 3009263: Restoration of the Roda Nilometer (1740-1780).
+   - 3009264: Ali Bey al-Kabir and the Modernizing Autocracy (1768-1773).
+   - 3009265: The Great Battery and Defense of Alexandria (1790-1810).
+4. Historical Military & Naval Commanders (1500-1800):
+   - EGY (39260-39265 in Db/Leaders/leaders_egy.txt):
+     * 39260: Amir Husayn al-Kurdi (admiral, 1505-1522)
+     * 39261: Selman Reis (admiral, 1515-1538)
+     * 39262: Sinan al-Iskandarani (general, 1565-1592)
+     * 39263: Ali Bey al-Kabir (general, 1765-1773)
+     * 39264: Murad Bey (general, 1775-1801)
+     * 39265: Hassan Pasha al-Gharbi (admiral, 1780-1805)
+   - MAM (Db/Leaders/leaders_mam.txt created with vanilla base + 39270-39275):
+     * 39270: Amir Husayn al-Kurdi (admiral, 1505-1522)
+     * 39271: Selman Reis (admiral, 1515-1538)
+     * 39272: Sinan Pasha (general, 1565-1592)
+     * 39273: Ridwan Bey (general, 1630-1656)
+     * 39274: Ali Bey al-Kabir (general, 1765-1773)
+     * 39275: Hassan Pasha al-Gharbi (admiral, 1780-1805)
+
 
 ================================================================================
 6. MODULE 4: HANSEATIC LEAGUE (HSA)

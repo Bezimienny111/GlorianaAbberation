@@ -533,3 +533,371 @@ event = {
 		command = { type = treasury value = 150 } #Skonfiskowane skarby emirow
 	}
 }
+
+#=============================================================================
+# NILE EMPIRE HISTORICAL FLAVOR & EPOCHS (1500-1800)
+# ID Range: 3009255 - 3009265
+#=============================================================================
+
+#-----------------------------------------------------------------------------
+# 3009255: The Battle of Diu and the Indian Ocean Crusade (1509)
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3009255
+	random = no
+	trigger = {
+		OR = { tag = MAM tag = EGY }
+		owned = { province = 747 data = -1 } # Nile / Red Sea
+	}
+
+	name = "The Battle of Diu and the Indian Ocean Crusade"
+	desc = "In the waters off the port of Diu in Gujarat, the combined armada of Egypt, Gujarat, and Calicut commanded by Admiral Amir Husayn al-Kurdi confronts the Portuguese fleet of Viceroy Francisco de Almeida. Armed with heavy bronze bombards and backed by Venetian naval advisers, the Red Sea squadron battles fiercely to smash the European intruders and protect the freedom of Indian Ocean navigation."
+	style = 1
+
+	date = { day = 3 month = february year = 1509 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1515 }
+
+	action_a = {
+		name = "Break the foreign fleet and preserve the spice seas!"
+		command = { type = naval value = 600 }
+		command = { type = warships which = 747 value = 5 }
+		command = { type = galleys which = 747 value = 5 }
+		command = { type = relation which = POR value = -150 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 75 }
+	}
+	action_b = {
+		name = "Negotiate a commercial compromise over oceanic trade"
+		command = { type = relation which = POR value = 50 }
+		command = { type = treasury value = 200 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 3009256: The Rise of the Cairene Coffeehouses (1530-1560)
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3009256
+	random = no
+	trigger = {
+		OR = { tag = MAM tag = EGY }
+		owned = { province = 746 data = -1 } # Cairo
+	}
+
+	name = "The Rise of the Cairene Coffeehouses"
+	desc = "Introduced from Yemen by mystical Sufi orders, coffee (qahwa) becomes an astonishing cultural phenomenon. Vibrant coffeehouses multiply throughout the bazaars of Cairo, becoming lively centers of intellectual debate, poetry, and chess. While conservative scholars condemn the drink as an illicit innovation, poets and merchants praise it as the nectar of wakefulness and divine inspiration."
+	style = 1
+
+	date = { day = 1 month = january year = 1540 }
+	offset = 90
+	deathdate = { day = 30 month = december year = 1565 }
+
+	action_a = {
+		name = "Patronize the coffeehouses as engines of civic life!"
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = provincetax which = 746 value = 2 }
+		command = { type = trade value = 400 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 40 }
+	}
+	action_b = {
+		name = "Heed conservative jurists and tax the coffeehouses heavily"
+		command = { type = treasury value = 150 }
+		command = { type = domestic which = innovative value = -1 }
+		command = { type = stability value = -1 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 3009257: The Rosetta Stone Unveiled: Deciphering the Sacred Script (1580-1620)
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3009257
+	random = no
+	trigger = {
+		OR = { tag = MAM tag = EGY }
+		owned = { province = 745 data = -1 } # Delta / Rosetta
+	}
+
+	name = "The Rosetta Stone Unveiled: Deciphering the Sacred Script"
+	desc = "While excavating defense walls at the coastal fortress of Rosetta, royal engineers uncover a granodiorite stele inscribed with the same royal decree in three scripts: classical Greek, demotic Egyptian, and sacred hieroglyphic. Assembled scholars from Alexandria and Cairo compare the parallel texts, miraculously deciphering the phonetic values of the ancient hieroglyphs centuries ahead of European scholars!"
+	style = 1
+
+	date = { day = 1 month = january year = 1600 }
+	offset = 120
+	deathdate = { day = 30 month = december year = 1625 }
+
+	action_a = {
+		name = "Unlock the immortal memory of ancient Egypt!"
+		command = { type = infra value = 600 }
+		command = { type = domestic which = innovative value = 2 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 80 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 3009258: The Great Lazaretto of Damietta: Maritime Quarantine (1619)
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3009258
+	random = no
+	trigger = {
+		OR = { tag = MAM tag = EGY }
+		owned = { province = 745 data = -1 } # Delta
+	}
+
+	name = "The Great Lazaretto of Damietta: Maritime Quarantine"
+	desc = "When a virulent plague breaks out among merchant crews sailing from Smyrna and Constantinople, the port governors of Damietta and Alexandria construct isolated stone lazarettos and implement a mandatory forty-day maritime quarantine. Through systematic fumigation, linen washing, and medical isolation, the epidemic is contained, sparing the crowded cities of the Nile."
+	style = 1
+
+	date = { day = 1 month = may year = 1619 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1622 }
+
+	action_a = {
+		name = "Enforce the quarantine and protect the people of the Nile!"
+		command = { type = treasury value = -100 }
+		command = { type = infra value = 300 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 40 }
+	}
+	action_b = {
+		name = "Rely solely on prayers and avoid commercial disruptions"
+		command = { type = populationpercent which = 745 value = -10 }
+		command = { type = populationpercent which = 746 value = -5 }
+		command = { type = stability value = -2 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 3009259: The Silk and Damask Guilds of Khan el-Khalili (1640)
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3009259
+	random = no
+	trigger = {
+		OR = { tag = MAM tag = EGY }
+		owned = { province = 746 data = -1 } # Cairo
+	}
+
+	name = "The Silk and Damask Guilds of Khan el-Khalili"
+	desc = "The labyrinthine bazaar of Khan el-Khalili in Cairo becomes the bustling manufacturing heart of the Middle East. Over five hundred master workshops weave gold-threaded damask, fine silks, copperware, and exotic perfumes. Granting civic charters and export protections to the master guild wardens supercharges merchant wealth and state revenues."
+	style = 1
+
+	date = { day = 1 month = january year = 1640 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1660 }
+
+	action_a = {
+		name = "Grant charters and encourage craft excellence"
+		command = { type = trade value = 500 }
+		command = { type = provincetax which = 746 value = 2 }
+		command = { type = treasury value = 150 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 40 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 3009260: The Chronicles of Evliya Celebi along the Nile (1672-1680)
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3009260
+	random = no
+	trigger = {
+		OR = { tag = MAM tag = EGY }
+		owned = { province = 746 data = -1 } # Cairo
+	}
+
+	name = "The Chronicles of Evliya Celebi along the Nile"
+	desc = "The legendary Ottoman globetrotter Evliya Celebi spends eight years exploring Egypt, sailing up the Nile to Nubia and recording the marvels of the realm in his Seyahatname. Astonished by the towering granaries, magnificent mosques, ancient pagan temples, and bustling multilingual bazaars, Celebi's chronicles spread the renown of the Nile Empire across the Islamic world."
+	style = 1
+
+	date = { day = 1 month = january year = 1675 }
+	offset = 60
+	deathdate = { day = 30 month = december year = 1685 }
+
+	action_a = {
+		name = "Welcome the famous traveler to the royal court"
+		command = { type = infra value = 300 }
+		command = { type = diplomats value = 2 }
+		command = { type = relation which = TUR value = 50 }
+		command = { type = vp value = 40 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 3009261: The Suppression of Somali Pirates at Bab el-Mandeb (1690)
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3009261
+	random = no
+	trigger = {
+		OR = { tag = MAM tag = EGY }
+		owned = { province = 747 data = -1 }
+	}
+
+	name = "The Suppression of Corsairs at the Gate of Tears"
+	desc = "Rapacious pirate flotillas operating out of the horn of Africa and the Yemeni coves plague shipping passing through the Bab el-Mandeb strait (the Gate of Tears). A dedicated squadron of fast Egyptian gun-pinnaces based at Perim Island patrols the narrows, annihilating corsair hideouts and guaranteeing uninterrupted spice convoys."
+	style = 1
+
+	date = { day = 1 month = january year = 1690 }
+	offset = 90
+	deathdate = { day = 30 month = december year = 1710 }
+
+	action_a = {
+		name = "Clear the narrows and safeguard maritime commerce!"
+		command = { type = naval value = 500 }
+		command = { type = warships which = 747 value = 4 }
+		command = { type = trade value = 400 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 45 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 3009262: The Dendera Zodiac and Temple Restoration (1730)
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3009262
+	random = no
+	trigger = {
+		OR = { tag = MAM tag = EGY }
+		owned = { province = 747 data = -1 } # Nile
+	}
+
+	name = "The Dendera Zodiac and Temple Restoration"
+	desc = "Scholars visiting the temple complex of Hathor at Dendera study the magnificent astronomical bas-relief of the celestial ceiling, depicting the constellations of the zodiac, lunar cycles, and solar eclipses. The royal administration funds the meticulous preservation of the sanctuary, inspiring native mathematicians and astronomers."
+	style = 1
+
+	date = { day = 1 month = january year = 1730 }
+	offset = 120
+	deathdate = { day = 30 month = december year = 1750 }
+
+	action_a = {
+		name = "Preserve the sacred ceiling of Hathor's temple"
+		command = { type = infra value = 400 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = treasury value = -80 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 40 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 3009263: The Great Nilometer at Roda: Year of Divine Bounty (1750)
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3009263
+	random = no
+	trigger = {
+		OR = { tag = MAM tag = EGY }
+		owned = { province = 746 data = -1 } # Cairo / Roda
+	}
+
+	name = "The Nilometer at Roda: Year of Divine Bounty"
+	desc = "The historic octagonal Nilometer on Roda Island registers an ideal inundation of sixteen cubits. Crowds gather along the banks of Cairo for the joyful ceremony of the Cutting of the Dam (Wafaa al-Nil). Rich alluvial silt guarantees bumper wheat, barley, and flax harvests throughout the entire Nile basin."
+	style = 1
+
+	date = { day = 15 month = august year = 1750 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1765 }
+
+	action_a = {
+		name = "Rejoice in the bounty of the sacred river!"
+		command = { type = treasury value = 300 }
+		command = { type = provincetax which = 745 value = 1 }
+		command = { type = provincetax which = 746 value = 1 }
+		command = { type = provincetax which = 747 value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 40 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 3009264: Ali Bey al-Kabir: Liberation of the Nile (1768)
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3009264
+	random = no
+	trigger = {
+		OR = { tag = MAM tag = EGY }
+		owned = { province = 746 data = -1 } # Cairo
+	}
+
+	name = "Ali Bey al-Kabir: Liberation of the Nile"
+	desc = "A brilliant and charismatic reformer, Ali Bey al-Kabir rises to the leadership of the state. He modernizes tax collection, reorganizes the army along modern lines with European military instructors, asserts complete sovereignty over the Levant and the Hejaz, and issues independent gold coinage declaring the undiminished dignity of the Nile realm."
+	style = 1
+
+	date = { day = 1 month = january year = 1768 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1775 }
+
+	action_a = {
+		name = "Support Ali Bey's national reforms and expansion!"
+		command = { type = domestic which = centralization value = 2 }
+		command = { type = domestic which = quality value = 1 }
+		command = { type = domestic which = offensive value = 1 }
+		command = { type = treasury value = 300 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 75 }
+	}
+	action_b = {
+		name = "Curtail his ambitions to preserve aristocratic harmony"
+		command = { type = domestic which = aristocracy value = 1 }
+		command = { type = stability value = 1 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 3009265: The Defense of Alexandria against Western Invasion (1798)
+#-----------------------------------------------------------------------------
+
+event = {
+	id = 3009265
+	random = no
+	trigger = {
+		OR = { tag = MAM tag = EGY }
+		owned = { province = 744 data = -1 } # Alexandria
+		control = { province = 744 data = -1 }
+	}
+
+	name = "The Defense of Alexandria against Western Invasion"
+	desc = "A massive European expeditionary armada suddenly appears off the shores of Alexandria, seeking to seize Egypt as the golden gateway to India. But the modern seaward forts of Qaitbay, coastal artillery redoubts, and disciplined gunboats along the Nile stand ready. Mobilizing fellahin levies and elite cavalry, the realm turns Alexandria into an unyielding bastion."
+	style = 1
+
+	date = { day = 1 month = july year = 1798 }
+	offset = 15
+	deathdate = { day = 30 month = december year = 1805 }
+
+	action_a = {
+		name = "Shatter the foreign expedition upon our shores!"
+		command = { type = fortress which = 744 value = 1 }
+		command = { type = infantry which = 744 value = 10000 }
+		command = { type = cavalry which = 746 value = 4000 }
+		command = { type = domestic which = offensive value = 1 }
+		command = { type = relation which = FRA value = -200 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 80 }
+	}
+	action_b = {
+		name = "Seek diplomatic negotiations with the expeditionary generals"
+		command = { type = relation which = FRA value = 50 }
+		command = { type = treasury value = -250 }
+		command = { type = stability value = -1 }
+	}
+}
+

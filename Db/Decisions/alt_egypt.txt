@@ -648,3 +648,764 @@ decision = {
 		command = { type = vp value = 100 }
 	}
 }
+
+#=============================================================================
+# EXPANSION: NILE EMPIRE MODERNIZATION (1500-1800)
+# ID Range: 7074, 7077 - 7079, 7170 - 7184
+#=============================================================================
+
+#-----------------------------------------------------------------------------
+# 7074: The Red Sea Armada & Battle of Diu (1509)
+# Universal: Open to both MAM and EGY
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7074
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = MAM
+			tag = EGY
+		}
+		NOT = { flag = egy_red_sea_armada }
+	}
+	trigger = {
+		atwar = no
+		treasury = 250
+		owned = { province = 747 data = -1 } # Nile / Red Sea
+		control = { province = 747 data = -1 }
+		stability = 1
+	}
+	ai_trigger = {
+	}
+
+	name = "The Red Sea Armada: Expulsion of Ocean Invaders"
+	desc = "Foreign European navigators have rounded the Cape of Storms, encroaching into the Arabian Sea and threatening the sacred waters of the Red Sea and the Indian Ocean trade. Building heavy ocean-going war galleasses armed with bronze ordnance at Suez under Admiral Amir Husayn al-Kurdi expels the intruders and restores sovereign mastery over the eastern sea lanes."
+
+	action = {
+		command = { type = setflag which = egy_red_sea_armada }
+		command = { type = treasury value = -250 }
+		command = { type = gainbuilding which = 747 value = shipyard }
+		command = { type = warships which = 747 value = 15 }
+		command = { type = galleys which = 747 value = 10 }
+		command = { type = naval value = 800 }
+		command = { type = domestic which = land value = -1 }
+		command = { type = relation which = POR value = -200 }
+		command = { type = casusbelli which = POR value = 48 }
+		command = { type = vp value = 50 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 7077: The Indian Ocean Spice Trade Monopoly & Calicut Factory (1520)
+# Universal: Open to both MAM and EGY
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7077
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = MAM
+			tag = EGY
+		}
+		flag = egy_red_sea_armada
+		NOT = { flag = egy_spice_monopoly }
+	}
+	trigger = {
+		atwar = no
+		treasury = 200
+		stability = 1
+		owned = { province = 747 data = -1 }
+	}
+	ai_trigger = {
+	}
+
+	name = "The Indian Ocean Spice Trade Monopoly"
+	desc = "Through treaties with the Zamorin of Calicut, the Sultan of Gujarat, and Acehnese merchants in the East Indies, Egypt establishes permanent merchant factories in India. Direct naval convoys bringing pepper, cinnamon, and cloves to the Nile Delta restore our undisputed monopoly over the lucrative spice trade."
+
+	action = {
+		command = { type = setflag which = egy_spice_monopoly }
+		command = { type = treasury value = -200 }
+		command = { type = trade value = 800 }
+		command = { type = merchants value = 6 }
+		command = { type = diplomats value = 2 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 60 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 7078: The Mocha Coffee Monopoly: Black Gold of the Red Sea (1550)
+# Universal: Open to both MAM and EGY
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7078
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = MAM
+			tag = EGY
+		}
+		NOT = { flag = egy_coffee_monopoly }
+	}
+	trigger = {
+		atwar = no
+		treasury = 200
+		owned = { province = 746 data = -1 } # Cairo
+		stability = 1
+	}
+	ai_trigger = {
+	}
+
+	name = "The Mocha Coffee Monopoly: Black Gold of the Red Sea"
+	desc = "Cultivated in the terraced highlands of Yemen and shipped through the port of Mocha, the fragrant coffee bean becomes a global sensation. By strictly controlling the roasting and re-export of coffee beans through the markets of Cairo and Alexandria, Egypt secures an immense revenue stream from coffeehouses multiplying across the Mediterranean."
+
+	action = {
+		command = { type = setflag which = egy_coffee_monopoly }
+		command = { type = treasury value = -150 }
+		command = { type = provincetax which = 746 value = 3 } # Cairo
+		command = { type = provincetax which = 744 value = 2 } # Alexandria
+		command = { type = trade value = 600 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 50 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 7079: Expansion of the Maritime Canal: The Great Lock System (1600)
+# Universal: Open to both MAM and EGY
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7079
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = MAM
+			tag = EGY
+		}
+		owned = { province = 745 data = -1 } # Delta
+		owned = { province = 747 data = -1 } # Nile / Red Sea
+		NOT = { flag = egy_modern_canal }
+	}
+	trigger = {
+		atwar = no
+		treasury = 500
+		stability = 2
+		owned = { province = 745 data = -1 }
+		owned = { province = 746 data = -1 }
+		owned = { province = 747 data = -1 }
+		owned = { province = 494 data = -1 } # Sinai
+	}
+	ai_trigger = {
+	}
+
+	name = "Expansion of the Maritime Canal: The Great Lock System"
+	desc = "Building upon ancient channels, royal hydraulic engineers construct monumental stone locks and deep basins through the Bitter Lakes, linking the Mediterranean Sea to the Gulf of Suez. War galleons and merchant argosies now traverse between Europe and the Indies in mere days, making Egypt the pivotal crossroad of global seafaring."
+
+	action = {
+		command = { type = setflag which = egy_modern_canal }
+		command = { type = treasury value = -500 }
+		command = { type = infra value = 800 }
+		command = { type = trade value = 800 }
+		command = { type = provincetax which = 745 value = 4 } # Delta
+		command = { type = provincetax which = 494 value = 2 } # Sinai
+		command = { type = stability value = 1 }
+		command = { type = vp value = 150 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 7170: Agricultural Renaissance of the Delta: Egyptian Long-Staple Cotton (1620)
+# Universal: Open to both MAM and EGY
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7170
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = MAM
+			tag = EGY
+		}
+		NOT = { flag = egy_cotton_revolution }
+	}
+	trigger = {
+		atwar = no
+		treasury = 250
+		owned = { province = 745 data = -1 } # Delta
+		control = { province = 745 data = -1 }
+		stability = 1
+	}
+	ai_trigger = {
+	}
+
+	name = "Agricultural Renaissance of the Delta: Long-Staple Cotton"
+	desc = "Through sophisticated barrage gates and perennial irrigation channels across the Rosetta and Damietta branches of the Nile, Egyptian fellahin cultivate supreme long-staple cotton and flax. Highly prized by weavers throughout Europe and the Levant, Egyptian textiles become a cornerstone of national prosperity."
+
+	action = {
+		command = { type = setflag which = egy_cotton_revolution }
+		command = { type = treasury value = -250 }
+		command = { type = populationpercent which = 745 value = 10 } # Delta
+		command = { type = provincetax which = 745 value = 3 }
+		command = { type = infra value = 500 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 40 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 7171: The Sugar Mills and Refineries of Upper Egypt (1650)
+# Universal: Open to both MAM and EGY
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7171
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = MAM
+			tag = EGY
+		}
+		NOT = { flag = egy_sugar_refineries }
+	}
+	trigger = {
+		atwar = no
+		treasury = 200
+		owned = { province = 747 data = -1 } # Nile
+		control = { province = 747 data = -1 }
+		stability = 1
+	}
+	ai_trigger = {
+	}
+
+	name = "Sugar Mills and Refineries of Upper Egypt"
+	desc = "The sun-drenched fertile banks of Upper Egypt from Minya to Luxor are lined with sugarcane plantations. Installing water-powered press wheels and copper refining cauldrons produces crystal white sugar, coveted by sweetmakers and apothecaries across the civilized world."
+
+	action = {
+		command = { type = setflag which = egy_sugar_refineries }
+		command = { type = treasury value = -200 }
+		command = { type = gainmanufactory which = 747 value = refinery }
+		command = { type = provincetax which = 747 value = 3 }
+		command = { type = infra value = 400 }
+		command = { type = vp value = 40 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 7172: The Alexandria Grand Arsenal: Sovereign Shipwrights of the Levant (1670)
+# Universal: Open to both MAM and EGY
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7172
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = MAM
+			tag = EGY
+		}
+		NOT = { flag = egy_alexandria_arsenal }
+	}
+	trigger = {
+		atwar = no
+		treasury = 300
+		owned = { province = 744 data = -1 } # Alexandria
+		control = { province = 744 data = -1 }
+		stability = 1
+	}
+	ai_trigger = {
+	}
+
+	name = "The Alexandria Grand Arsenal: Sovereign Shipwrights of the Levant"
+	desc = "Expanding the ancient dockyards into a massive state arsenal equipped with dry docks, ropewalks, and cannon-boring mills enables Alexandria to construct formidable ships-of-the-line. Guarding the northern shores against Mediterranean armadas, the Alexandrian fleet secures sovereign maritime supremacy."
+
+	action = {
+		command = { type = setflag which = egy_alexandria_arsenal }
+		command = { type = treasury value = -300 }
+		command = { type = warships which = 744 value = 12 }
+		command = { type = naval value = 600 }
+		command = { type = domestic which = land value = -1 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 50 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 7173: The Eastern Mediterranean Customs Union (1725)
+# Universal: Open to both MAM and EGY
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7173
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = MAM
+			tag = EGY
+		}
+		NOT = { flag = egy_customs_union }
+	}
+	trigger = {
+		atwar = no
+		stability = 2
+		treasury = 200
+		owned = { province = 744 data = -1 } # Alexandria
+		owned = { province = 490 data = -1 } # Syria
+	}
+	ai_trigger = {
+	}
+
+	name = "The Eastern Mediterranean Customs Union"
+	desc = "Eliminating internal river tolls, standardizing harbor tariffs, and entering reciprocity treaties with maritime states unites the ports of Alexandria, Damietta, Beirut, and Famagusta into an integrated free-trade zone, supercharging commercial prosperity across the Levant."
+
+	action = {
+		command = { type = setflag which = egy_customs_union }
+		command = { type = treasury value = -150 }
+		command = { type = trade value = 800 }
+		command = { type = merchants value = 6 }
+		command = { type = diplomats value = 2 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 40 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 7174: The Grand Expedition to the Horn of Africa and Zanzibar (1750)
+# Universal: Open to both MAM and EGY
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7174
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = MAM
+			tag = EGY
+		}
+		NOT = { flag = egy_zanzibar_expedition }
+	}
+	trigger = {
+		atwar = no
+		treasury = 250
+		stability = 1
+		owned = { province = 747 data = -1 } # Red Sea port
+	}
+	ai_trigger = {
+	}
+
+	name = "The Grand Expedition to the Horn of Africa and Zanzibar"
+	desc = "Commanding fleets out of the Red Sea southward down the Swahili coast, Egyptian navigators establish fortified protectorates and trading emporia in Mogadishu, Mombasa, and the clove-scented island of Zanzibar. Controlling the coastal trade cements Egyptian hegemony over the Western Indian Ocean."
+
+	action = {
+		command = { type = setflag which = egy_zanzibar_expedition }
+		command = { type = treasury value = -250 }
+		command = { type = colonists value = 3 }
+		command = { type = discover which = 761 } # Zanzibar
+		command = { type = discover which = 758 } # Malindi
+		command = { type = discover which = 759 } # Mombasa
+		command = { type = trade value = 600 }
+		command = { type = vp value = 60 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 7175: Royal Artillery Foundry of the Citadel of Cairo (1775)
+# Universal: Open to both MAM and EGY
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7175
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = MAM
+			tag = EGY
+		}
+		NOT = { flag = egy_citadel_artillery }
+	}
+	trigger = {
+		atwar = no
+		treasury = 300
+		owned = { province = 746 data = -1 } # Cairo
+		control = { province = 746 data = -1 }
+		stability = 1
+	}
+	ai_trigger = {
+	}
+
+	name = "Royal Artillery Foundry of the Citadel of Cairo"
+	desc = "Beneath the soaring walls of the Saladin Citadel in Cairo, the crown establishes an advanced ordnance complex with reverberatory furnaces. Casting hundreds of uniform bronze field cannons, howitzers, and siege mortars creates a formidable military arm capable of shattering any foreign host."
+
+	action = {
+		command = { type = setflag which = egy_citadel_artillery }
+		command = { type = treasury value = -300 }
+		command = { type = land value = 800 }
+		command = { type = domestic which = quality value = 1 }
+		command = { type = domestic which = offensive value = 1 }
+		command = { type = artillery which = 746 value = 15 }
+		command = { type = infantry which = 746 value = 5000 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 50 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 7176: Pax Aegyptiaca: Empire of the Two Seas (1790)
+# Universal Culmination
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7176
+	major = yes
+	unique = yes
+	potential = {
+		OR = {
+			tag = MAM
+			tag = EGY
+		}
+		NOT = { flag = egy_pax_aegyptiaca }
+	}
+	trigger = {
+		atwar = no
+		isvassal = no
+		stability = 2
+		treasury = 500
+		owned = { province = 744 data = -1 } # Alexandria
+		owned = { province = 745 data = -1 } # Delta
+		owned = { province = 746 data = -1 } # Cairo
+		owned = { province = 747 data = -1 } # Nile
+		owned = { province = 490 data = -1 } # Syria
+	}
+	ai_trigger = {
+	}
+
+	name = "Pax Aegyptiaca: Empire of the Two Seas"
+	desc = "Through five centuries of statecraft, hydraulic engineering, and martial valor, Egypt stands supreme as the master of the Two Seas. Linking the Mediterranean and the Indian Ocean through peace and enterprise, the Nile realm shines as a beacon of global civilization, wealth, and enlightened majesty."
+
+	action = {
+		command = { type = setflag which = egy_pax_aegyptiaca }
+		command = { type = treasury value = -500 }
+		command = { type = badboy value = -10 }
+		command = { type = stability value = 2 }
+		command = { type = infra value = 1500 }
+		command = { type = trade value = 1500 }
+		command = { type = provincetax which = 746 value = 4 } # Cairo
+		command = { type = provincetax which = 744 value = 4 } # Alexandria
+		command = { type = vp value = 500 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 7177: The Pan-Hellenic Koinon and Alexandrian Games
+# Branch E: Ptolemaic State (tag = EGY)
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7177
+	major = yes
+	unique = yes
+	potential = {
+		tag = EGY
+		flag = egy_ptolemaic
+		NOT = { flag = egy_panhellenic_games }
+	}
+	trigger = {
+		atwar = no
+		treasury = 200
+		owned = { province = 744 data = -1 } # Alexandria
+		stability = 2
+	}
+	ai_trigger = {
+	}
+
+	name = "The Pan-Hellenic Koinon and Alexandrian Games"
+	desc = "Reviving the ancient festival of the Ptolemaieia, King Ptolemy convenes athletes, poets, dramatists, and philosophers from across Greece, the Aegean, and Egypt to compete in splendid stadium contests in Alexandria, reaffirming the cultural solidarity of the Hellenistic world."
+
+	action = {
+		command = { type = setflag which = egy_panhellenic_games }
+		command = { type = treasury value = -200 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = relation which = BYZ value = 100 }
+		command = { type = relation which = VEN value = 50 }
+		command = { type = vp value = 50 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 7178: Neoclassical Alexandria: Restoring the Agoras and Porticoes
+# Branch E: Ptolemaic State (tag = EGY)
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7178
+	major = yes
+	unique = yes
+	potential = {
+		tag = EGY
+		flag = egy_ptolemaic
+		NOT = { flag = egy_neoclassical_alexandria }
+	}
+	trigger = {
+		atwar = no
+		treasury = 250
+		owned = { province = 744 data = -1 } # Alexandria
+		control = { province = 744 data = -1 }
+		stability = 1
+	}
+	ai_trigger = {
+	}
+
+	name = "Neoclassical Alexandria: Restoring the Agoras and Porticoes"
+	desc = "Colonnaded boulevards of white marble, stately agoras, grand civic academies, and lush royal gardens are restored across the Brucheion district of Alexandria, blending classical Greek aesthetic symmetry with the timeless grandeur of the Nile."
+
+	action = {
+		command = { type = setflag which = egy_neoclassical_alexandria }
+		command = { type = treasury value = -250 }
+		command = { type = infra value = 500 }
+		command = { type = provincetax which = 744 value = 3 }
+		command = { type = provincemanpower which = 744 value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 60 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 7179: Colossal Rock Temples of Abu Simbel
+# Branch P: Kemetic Pagan (religion = egyptian_pagan)
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7179
+	major = yes
+	unique = yes
+	potential = {
+		religion = egyptian_pagan
+		NOT = { flag = kemet_abu_simbel }
+	}
+	trigger = {
+		atwar = no
+		treasury = 300
+		religion = egyptian_pagan
+		owned = { province = 748 data = -1 } # Batn al-Hajar / Nubia border
+		control = { province = 748 data = -1 }
+		stability = 1
+	}
+	ai_trigger = {
+	}
+
+	name = "Restoration of the Colossal Temples of Abu Simbel"
+	desc = "Carved into the sheer sandstone cliffs overlooking the Nile at the Nubian frontier, the four colossal seated statues of Ramesses the Great and Queen Nefertari are cleared of shifting desert sands. Restoring the solar sanctuary ensures that twice each year the morning sun illuminates the holy statues of Amun and the Pharaoh."
+
+	action = {
+		command = { type = setflag which = kemet_abu_simbel }
+		command = { type = treasury value = -300 }
+		command = { type = stability value = 2 }
+		command = { type = provincetax which = 748 value = 2 }
+		command = { type = missionaries value = 3 }
+		command = { type = vp value = 80 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 7180: Restoration of the Scribes and Houses of Life (Per Ankh)
+# Branch P: Kemetic Pagan (religion = egyptian_pagan)
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7180
+	major = yes
+	unique = yes
+	potential = {
+		religion = egyptian_pagan
+		NOT = { flag = kemet_per_ankh }
+	}
+	trigger = {
+		atwar = no
+		treasury = 200
+		religion = egyptian_pagan
+		owned = { province = 746 data = -1 } # Memphis / Cairo
+		stability = 1
+	}
+	ai_trigger = {
+	}
+
+	name = "The Houses of Life (Per Ankh) and the Hieroglyphic Revival"
+	desc = "Attached to major temples throughout the realm, the ancient Houses of Life (Per Ankh) are revived as academies of medicine, astronomy, mathematics, and theology. Scribes trained in sacred hieroglyphs and hieratic script document state chronicles and legal decrees, restoring the sacred wisdom of Thoth."
+
+	action = {
+		command = { type = setflag which = kemet_per_ankh }
+		command = { type = treasury value = -200 }
+		command = { type = infra value = 600 }
+		command = { type = domestic which = innovative value = 1 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 50 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 7181: The Royal Astronomical Observatory on Mokattam Hills
+# Branch M: Mu'tazilite Islam (religion = mutazilite)
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7181
+	major = yes
+	unique = yes
+	potential = {
+		religion = mutazilite
+		NOT = { flag = mutazilite_observatory }
+	}
+	trigger = {
+		atwar = no
+		treasury = 250
+		religion = mutazilite
+		owned = { province = 746 data = -1 } # Cairo
+		control = { province = 746 data = -1 }
+		stability = 1
+	}
+	ai_trigger = {
+	}
+
+	name = "The Royal Astronomical Observatory of the Mokattam Hills"
+	desc = "Upon the high limestone bluffs of the Mokattam hills overlooking Cairo, the crown constructs a grand astronomical observatory. Furnished with colossal mural sextants, astrolabes, and mechanical celestial globes, Egyptian astronomers calculate stellar positions and celestial mechanics with unprecedented mathematical precision."
+
+	action = {
+		command = { type = setflag which = mutazilite_observatory }
+		command = { type = treasury value = -250 }
+		command = { type = infra value = 500 }
+		command = { type = domestic which = innovative value = 2 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 60 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 7182: The Code of Reason: The New Ijtihad of Cairo
+# Branch M: Mu'tazilite Islam (religion = mutazilite)
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7182
+	major = yes
+	unique = yes
+	potential = {
+		religion = mutazilite
+		NOT = { flag = mutazilite_new_ijtihad }
+	}
+	trigger = {
+		atwar = no
+		treasury = 200
+		religion = mutazilite
+		stability = 2
+	}
+	ai_trigger = {
+	}
+
+	name = "The Code of Reason: The New Ijtihad of Cairo"
+	desc = "Rejecting blind imitation (taqlid) of medieval commentators, the scholars of Cairo establish a dynamic legal code grounded in rational analysis (ijtihad), natural equity, and public welfare (maslaha). This harmonious synthesis of legal philosophy and scientific inquiry turns Egypt into the most just and progressive society in the East."
+
+	action = {
+		command = { type = setflag which = mutazilite_new_ijtihad }
+		command = { type = treasury value = -200 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = domestic which = serfdom value = -1 }
+		command = { type = stability value = 2 }
+		command = { type = infra value = 400 }
+		command = { type = vp value = 50 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 7183: The Sacred Mahmal Caravan and Restoration of the Kaaba
+# Branch S: Orthodox Sunni Mameluk Sultanate (tag = MAM, religion = sunni)
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7183
+	major = yes
+	unique = yes
+	potential = {
+		tag = MAM
+		religion = sunni
+		NOT = { flag = mam_mahmal_caravan }
+	}
+	trigger = {
+		atwar = no
+		treasury = 200
+		religion = sunni
+		owned = { province = 498 data = -1 } # Mecca
+		control = { province = 498 data = -1 }
+		stability = 2
+	}
+	ai_trigger = {
+	}
+
+	name = "The Sacred Mahmal Caravan and the Kiswah of Mecca"
+	desc = "Annually departing the gates of Cairo with royal military escort, the splendid ceremonial palanquin (the Mahmal) transports the magnificent gold-embroidered black silk covering (the Kiswah) woven in the workshops of Cairo to drape the Holy Kaaba in Mecca, confirming the Sultan as the supreme protector of all Sunni Islam."
+
+	action = {
+		command = { type = setflag which = mam_mahmal_caravan }
+		command = { type = treasury value = -200 }
+		command = { type = stability value = 2 }
+		command = { type = relation which = TUR value = 50 }
+		command = { type = relation which = MOR value = 50 }
+		command = { type = relation which = PER value = -50 }
+		command = { type = vp value = 75 }
+	}
+}
+
+#-----------------------------------------------------------------------------
+# 7184: The Grand Imperial Sultanate of Cairo
+# Branch S: Orthodox Sunni Mameluk Sultanate (tag = MAM, religion = sunni)
+#-----------------------------------------------------------------------------
+
+decision = {
+	id = 7184
+	major = yes
+	unique = yes
+	potential = {
+		tag = MAM
+		religion = sunni
+		NOT = { flag = mam_imperial_sultanate }
+	}
+	trigger = {
+		atwar = no
+		treasury = 350
+		stability = 2
+		owned = { province = 746 data = -1 } # Cairo
+		owned = { province = 490 data = -1 } # Syria
+		owned = { province = 498 data = -1 } # Mecca
+	}
+	ai_trigger = {
+	}
+
+	name = "The Grand Imperial Sultanate of Cairo"
+	desc = "Standing triumphant over the Levant, Egypt, and the holy sanctuaries of Arabia, the Sultanate of Cairo establishes a permanent standing army of professional musket-armed Janissaries of the Nile, eclipsing Istanbul and Isfahan as the unshakeable bastion of Islamic orthodoxy."
+
+	action = {
+		command = { type = setflag which = mam_imperial_sultanate }
+		command = { type = treasury value = -350 }
+		command = { type = domestic which = quality value = 1 }
+		command = { type = domestic which = centralization value = 1 }
+		command = { type = infantry which = 746 value = 10000 }
+		command = { type = cavalry which = 746 value = 4000 }
+		command = { type = stability value = 1 }
+		command = { type = vp value = 100 }
+	}
+}
+
